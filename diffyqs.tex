@@ -15687,9 +15687,12 @@ $F_{\text{odd}}(t)$ is called
 the \emph{\myindex{odd periodic extension}} of $f(t)$, and
 $F_{\text{even}}(t)$ is called the
 \emph{\myindex{even periodic extension}} of $f(t)$.
+For the odd extension we generally assume that $f(0) = f(L) = 0$.
 
 \begin{exercise}
-Check that $F_{\text{odd}}(t)$ is odd and that $F_{\text{even}}(t)$ is even.
+Check that $F_{\text{odd}}(t)$ is odd and $F_{\text{even}}(t)$ is even.
+For $F_{\text{odd}}$,
+assume $f(0) = f(L) = 0$.
 \end{exercise}
 
 \begin{example}
@@ -16191,8 +16194,8 @@ before, where we have a mass $m$
 on a spring with spring constant $k$,
 with damping $c$, and a force $F(t)$ applied to the mass.  Suppose 
 the forcing function $F(t)$ is $2L$-periodic for some $L > 0$.
-We have already seen
-this problem in \chapterref{ho:chapter} with a simple $F(t)$.  The
+We saw
+this problem in \chapterref{ho:chapter} with $F(t) = F_0 \cos (\omega t)$.  The
 equation that governs this particular setup is
 \begin{equation} \label{afs:eq}
 mx''(t) + cx'(t) + kx(t) = F(t) .
@@ -16207,7 +16210,7 @@ in a particular solution $x_p$ that does not decay
 and is periodic with the same period as $F(t)$.  We call this particular
 solution
 the \emph{\myindex{steady periodic solution}} and we write it as $x_{sp}$ as before.
-What will be new in this section is that we consider an arbitrary
+What is new in this section is that we consider an arbitrary
 forcing function $F(t)$ instead of a simple cosine.
 
 For simplicity, let us suppose that $c=0$.  The problem with $c > 0$ is very
@@ -16366,16 +16369,16 @@ $F(t)$ itself.  See \figurevref{afs:steadyexfig} for the plot of this solution.
 
 \subsection{Resonance}
 
-Just like when the forcing function was a simple cosine, resonance could still
-happen.  Let us assume $c=0$ and we will discuss only pure resonance.
+Just like when the forcing function was a simple cosine, resonance can still
+happen.  Let us assume $c=0$ and let us discuss only pure resonance.
 Again, take the equation
 \begin{equation*}
 m x''(t) + k x (t) = F(t) .
 \end{equation*}
 When we expand $F(t)$ and find that some of its terms coincide with the
 complementary solution to $mx''+kx=0$, we cannot use those terms in the
-guess.  Just like before, they will disappear when we plug into the left hand
-side and we will get a contradictory equation (such as $0=1$).   That is,
+guess.  Just like before, they disappear when we plug them into the left hand
+side and we get a contradictory equation (such as $0=1$).   That is,
 suppose
 \begin{equation*}
 x_c = A \cos (\omega_0 t) + B \sin (\omega_0 t), 
@@ -16395,22 +16398,22 @@ b_n \sin \left( \frac{n \pi}{L} \, t \right) .
 In other words, we multiply the offending term by $t$.  From then on, we
 proceed as before.
 
-Of course, the solution will not be a Fourier series (it will not even be
+Of course, the solution is not a Fourier series (it is not even
 periodic) since it contains these terms multiplied by $t$.  Further, the
 terms
 $t \left( a_N \cos \left( \frac{N \pi}{L}\, t \right) +
-b_N \sin \left( \frac{N \pi}{L}\, t \right) \right)$ will eventually dominate and lead to
+b_N \sin \left( \frac{N \pi}{L}\, t \right) \right)$ eventually dominate and lead to
 wild oscillations.  As before, this behavior is called \emph{\myindex{pure
 resonance}} or just \emph{\myindex{resonance}}.
 
 Note that there now may be infinitely many resonance frequencies to hit.
 That is, as we change the frequency of $F$ (we change $L$), different
 terms from the Fourier series of $F$ may interfere with the complementary
-solution and will cause resonance.
+solution and cause resonance.
 However, we should note that since everything is an approximation and in
 particular $c$ is never actually zero but something very close to zero,
 only the first
-few resonance frequencies will matter.
+few resonance frequencies matter in real life.
 
 \begin{example}
 We want to solve the equation
@@ -16443,10 +16446,14 @@ x(t) = c_1 \cos  (3\pi t) + c_2 \sin (3\pi t) + x_p (t)
 \end{equation*}
 for some particular solution $x_p$.
 
-We note that if we just tried a Fourier series with $\sin (n\pi t)$ as usual,
-we would get duplication when $n=3$.  Therefore, we pull out that term and
-multiply by $t$.  We also have to add a cosine term to get everything right.
-That is, we must try
+If we just try a Fourier series with $\sin (n\pi t)$ as usual,
+the complementary equation eats our 3rd harmonic, that is, the term
+with $\sin(3 \pi t)$
+is in
+in our complementary solution.
+Therefore, we pull that term out and
+multiply it by $t$.  We also add a cosine term to get everything right.
+That is, we try
 \begin{equation*}
 x_p(t) =
 a_3
@@ -16476,7 +16483,7 @@ x_p''(t) =
 \end{multline*}
 We now plug into the left hand side of the differential equation.
 \begin{align*}
-2x_p'' + 18\pi^2 x = & 
+2x_p'' + 18\pi^2 x_p = & 
 - 12 a_3 \pi \sin (3 \pi t)
 - 18\pi^2 a_3 t \cos (3 \pi t)
 + 12 b_3 \pi \cos (3 \pi t)
@@ -16495,7 +16502,7 @@ We now plug into the left hand side of the differential equation.
 \end{align*}
 If we simplify we obtain
 \begin{equation*}
-2x_p'' + 18\pi^2 x =
+2x_p'' + 18\pi^2 x_p =
 - 12 a_3
 \pi \sin (3 \pi t)
 +
@@ -16528,8 +16535,8 @@ t \, \cos (3 \pi t)
 \end{equation*}
 \end{example}
 
-When $c > 0$, you will not have to worry about pure resonance.  That is,
-there will never be any conflicts and you do not need to multiply any
+When $c > 0$, you do not have to worry about pure resonance.  That is,
+there are never any conflicts and you do not need to multiply any
 terms by $t$.  There is a corresponding concept of
 \myindex{practical resonance}
 and it is very similar to the ideas we already explored in
@@ -16632,13 +16639,13 @@ will be our main application of Fourier series.
 A PDE is said to be \emph{linear\index{linear PDE}} if the dependent
 variable and its derivatives appear at most to the first power and in no
 functions.  We will only talk about linear PDEs.  Together with a PDE,
-we usually have specified some
+we usually specify some
 \emph{boundary conditions\index{boundary conditions for a PDE}},
-where the value of the solution or its derivatives is specified along
+where the value of the solution or its derivatives is given along
 the boundary of a region, and/or
 some 
 \emph{initial conditions\index{initial conditions for a PDE}} where the value
-of the solution or its derivatives is specified for some initial time.
+of the solution or its derivatives is given for some initial time.
 Sometimes such conditions are mixed together and we will refer to them
 simply as 
 \emph{side conditions\index{side conditions for a PDE}}.
@@ -16700,11 +16707,11 @@ boundary conditions.
 We assume that the ends of the wire are either exposed 
 and touching some body of constant heat, or the ends are insulated.
 For example, if the ends of the wire are kept at temperature 0, then
-we must have the conditions
+the conditions are
 \begin{equation*}
 u(0,t) = 0 \qquad \text{and} \qquad u(L,t) = 0.
 \end{equation*}
-If, on the other hand, the ends are also insulated we get the conditions
+If, on the other hand, the ends are also insulated, the conditions are
 \begin{equation*}
 u_x(0,t) = 0 \qquad \text{and} \qquad
 u_x(L,t) = 0 .
@@ -16712,10 +16719,11 @@ u_x(L,t) = 0 .
 In other words, heat is not flowing in nor out of the wire at the ends.
 We always have two conditions along the $x$ axis as there are
 two derivatives in the $x$ direction.
-These side conditions are called \emph{homogeneous\index{homogeneous side
-conditions}} (that is, $u$ or a derivative of $u$ is set to zero).
+These side conditions are said to be
+\emph{homogeneous\index{homogeneous side conditions}}
+(that is, $u$ or a derivative of $u$ is set to zero).
 
-Furthermore, suppose that we know the initial temperature distribution
+We also need an initial condition---the temperature distribution
 at time $t=0$.  That is,
 \begin{equation*}
 u(x,0) = f(x) ,
@@ -17390,10 +17398,11 @@ y_t(x,0) = g(x) & \qquad \text{for } \; 0 < x < L .
 
 The reason for all this complexity is that superposition only works for
 homogeneous conditions such as
-$y(0,t) = y(L,t) = 0$, $y(x,0) = 0$, or $y_t(x,0) = 0$.  Therefore, we will be
-able to use the idea of separation of variables to find many building-block
+$y(0,t) = y(L,t) = 0$, $y(x,0) = 0$, or $y_t(x,0) = 0$.  Therefore,
+we can
+use separation of variables to find many building-block
 solutions solving all the homogeneous conditions.  We can then use them to
-construct a solution solving the remaining nonhomogeneous condition.
+construct a solution satisfying the remaining nonhomogeneous condition.
 
 Let us start with \eqref{wave:weq}.
 We try a solution of the form $w(x,t) = X(x) T(t)$ again.  We plug into
@@ -17502,7 +17511,8 @@ z_n(x,t) =
 \sin \left( \frac{n \pi}{L} \, x \right) \,
 \cos \left( \frac{n \pi a}{L} \, t \right) .
 \end{equation*}
-We expand $f(x)$ in terms of these sines as
+As $z_n(x,0) = \sin \left( \frac{n \pi}{L} \, x \right)$,
+we expand $f(x)$ in terms of these sines as
 \begin{equation*}
 f(x) =
 \sum_{n=1}^\infty c_n \sin \left( \frac{n \pi}{L} \, x \right) .
@@ -17970,7 +17980,7 @@ the constant of integration depends on $\xi$; for each $\xi$ we might get a
 different constant of integration.  We get
 $y_{\xi} = C(\xi)$.
 Next, we integrate with respect to $\xi$ and notice that the constant of
-integration must depend on $\eta$.
+integration depends on $\eta$.
 Thus,
 $y = \int C(\xi) ~ d\xi + B(\eta)$.
 The solution must, therefore, be of the following form for some functions
@@ -18505,7 +18515,10 @@ B_n = \frac{- \cosh \left( \frac{n \pi h }{w} \right)}%
 {\sinh \left( \frac{n \pi h }{w} \right)} .
 \end{equation*}
 After we plug the $A_n$ and $B_n$ we
-into \eqref{dirich:Yngensol} and simplify, we find
+into \eqref{dirich:Yngensol} and simplify by using
+the identity $\sinh(\alpha-\beta) =
+\sinh(\alpha) \cosh(\beta) -
+\cosh(\alpha) \sinh(\beta)$, we find
 \begin{equation*}
 Y_n(y) =
 \frac{\sinh \left( \frac{n \pi (h-y) }{w} \right)}%
@@ -18548,17 +18561,17 @@ b_n
 }
 \end{equation*}
 As $u_n$ satisfies \eqref{dirich:eq1}--\eqref{dirich:eq4} and any linear
-combination (finite or infinite) of $u_n$ must also satisfy 
-\eqref{dirich:eq1}--\eqref{dirich:eq4}, we see that $u$ must satisfy
+combination (finite or infinite) of $u_n$ also satisfies 
+\eqref{dirich:eq1}--\eqref{dirich:eq4}, then $u$ satisfies
 \eqref{dirich:eq1}--\eqref{dirich:eq4}.
-By plugging in $y=0$ it is easy to see that $u$
+By plugging in $y=0$, we see $u$
 satisfies 
 \eqref{dirich:eq5} as well.
 
 \begin{example}
-Suppose that we take $w=h=\pi$ and we let $f(x) = \pi$.  We compute the sine
-series for the function $\pi$ (we will get the square wave).  We find
-that for $0 < x < \pi$ we have
+Take $w=h=\pi$ and let $f(x) = \pi$.  Let us compute the sine
+series for the function $\pi$ (same as the series for the square wave).
+For $0 < x < \pi$, we have
 \begin{equation*}
 f(x) =
 \sum_{\substack{n=1 \\ n \text{ odd}}}^\infty
@@ -19048,7 +19061,7 @@ u(r,\theta) = r^{10} \cos(10\,\theta) .
 See the plot in \figurevref{dirichdisc:tenspeedfig}.
 The thing to notice in this example is that the effect of a high frequency
 is mostly felt at the boundary.  In the middle of the disc, the solution
-is very close to zero.  That is because $r^{10}$ rather small when $r$
+is very close to zero.  That is because $r^{10}$ is rather small when $r$
 is close to 0.
 \begin{figure}[h!t]
 \capstart
@@ -19068,9 +19081,9 @@ the Laplace equation in two dimensions.  Let us put the center of the rod at
 the origin and we have exactly the region we are currently
 studying---a circle of radius 1.  For the boundary conditions, suppose in
 Cartesian coordinates $x$ and
-$y$, the temperature is fixed at 0 when $y < 0$ and at $2y$ when $y > 0$.
+$y$, the temperature on the boundary is 0 when $y < 0$, and it is $2y$ when $y > 0$.
 
-We set the problem up.  As $y = r\sin(\theta)$, then on the
+Let us set up the problem.  As $y = r\sin(\theta)$, then on the
 circle of radius 1 we have $2y = 2\sin(\theta)$.  So
 %The problem becomes
 \begin{align*}
@@ -19148,7 +19161,8 @@ For instance, as $P(r,\theta,\alpha)$
 will have infinitely many derivatives, then
 via differentiating under the integral we find
 that the solution $u(r,\theta)$ has infinitely many derivatives, at least
-when inside the circle, $r < 1$.  By infinitely many derivatives what you
+when inside the circle, $r < 1$.  By ``having infinitely many derivatives,''
+what you
 should think of is that $u(r,\theta)$ has \myquote{no corners} and all of its
 partial derivatives of all orders exist and also have \myquote{no corners.}
 
@@ -19284,12 +19298,15 @@ re^{-i(\theta-\alpha)}\bigr)}^{n} .
 \end{equation*}
 In the above expression we recognize the
 \emph{\myindex{geometric series}}.
-That is, recall from calculus that as long as $\lvert z \rvert < 1$, then
+Recall from calculus that if $z$ is a complex number where $\lvert z \rvert < 1$, then
 \begin{equation*}
 \sum_{n=1}^\infty z^n = \frac{z}{1-z} .
 \end{equation*}
 Note that $n$ starts at $1$ and that is why we have the $z$ in the numerator.
-It is the standard geometric series multiplied by $z$.  Let us
+It is the standard geometric series multiplied by $z$.
+We can use $z = re^{i(\theta-\alpha)}$, as
+lo and behold $\lvert re^{i(\theta-\alpha)} \rvert = r < 1$.
+Let us
 continue with the computation.
 \begin{equation*}
 \begin{split}

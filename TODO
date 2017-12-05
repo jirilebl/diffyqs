@@ -1,5 +1,5 @@
 
-SHOULD (in next big edition):
+SHOULD (in next big (but compatible) edition):
 * Expand discussion of vector field and how it is drawn in 3.1.
 * Another example of application of first order system, perhaps flow with two
   tanks.
@@ -18,6 +18,16 @@ SHOULD (in next big edition):
 * In whirling string, plot several of the eigenfunctions to show how it crosses
   the axis k-1 times
 * Search for: will, previously, have, can, note, notice
+* Another section on solving PDEs with Laplace?
+* A section on first order PDEs?
+
+IN CASE OF BIG CHANGE (incompatible edition):
+* Split Fourier Series - PDE, probably move the "applications of eigen-series"
+  to the PDE chapter.  In this case, add first order PDEs before the second
+  order ones since it leads naturally into d'Alembert.
+* Add factorization idea in wave equation (d'Alembert) to write it as
+  two vector fields applied to y perhaps?  Makes more sense if we have 
+  first order before this.
 
 MAYBE:
 * Perhaps change name of \vec{x}_1 solutions to avoid confusion with x_1
