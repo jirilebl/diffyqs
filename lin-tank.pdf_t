@@ -1,0 +1,21 @@
+\begin{picture}(0,0)%
+\includegraphics{lin-tank.pdf}%
+\end{picture}%
+\setlength{\unitlength}{3947sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined%
+\gdef\SetFigFont#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(1559,2201)(768,-2362)
+\put(1084,-1563){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}\unit[60]{L}}%
+}}}}
+\put(1718,-2298){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}\unitfrac[3]{L}{min}}%
+}}}}
+\put(814,-1820){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}\unit[10]{kg} of salt}%
+}}}}
+\put(1256,-320){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\familydefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}\unitfrac[5]{L}{min}, \unitfrac[0.1]{kg}{L}}%
+}}}}
+\end{picture}%

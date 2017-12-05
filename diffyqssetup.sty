@@ -1,0 +1,273 @@
+
+\usepackage[T1]{fontenc}
+
+% Footnotes should use symbols, not numbers.  Numbered footnotes are
+% evil
+\usepackage[perpage,symbol*]{footmisc}
+
+\usepackage{enumerate}
+\usepackage{ifpdf}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage[pdftex]{graphicx}
+\usepackage{color}
+%\usepackage{graphics}
+\usepackage[headings]{fullpage}
+\usepackage{url}
+\usepackage{varioref}
+\usepackage{makeidx}
+\usepackage[pdftex]{hyperref}
+\usepackage{hypcap}
+\usepackage[font={small,it}]{caption}
+\usepackage[all]{xy}
+\usepackage{units}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{floatflt}
+\usepackage{cancel}
+%\usepackage{wrapfig}
+
+% Times
+\usepackage{txfonts}
+% Is this a nicer font?  But it changes the pagination
+%\usepackage{newtxtext}
+%\usepackage[cmintegrals,cmbraces,varbb]{newtxmath}
+%\usepackage{newtxmath}
+
+
+% San Serif fonts
+%\renewcommand{\familydefault}{\sfdefault}
+
+% To allow skrinking to 5.5 x 8.5 inches without whitespaces
+% Make sure to rerun makeindex as well
+% Useful for printing on lilu.com and saving on paper
+%\addtolength{\textheight}{2.13in}
+%\addtolength{\paperheight}{2.13in}
+
+\hypersetup{
+    pdfborderstyle={/S/U/W 0.5},
+    %colorlinks,
+    %citecolor=black,
+    %filecolor=black,
+    %linkcolor=black,
+    %urlcolor=black,
+    pdftitle={Notes on Diffy Qs: Differential Equations for Engineers},
+    pdfsubject={Differential Equations},
+    pdfkeywords={differential equations, ODE, PDE, Fourier series, Laplace
+transform},
+    pdfauthor={Jiri Lebl}
+}
+
+% Set up our index
+\makeindex
+
+% Very simple indexing
+\newcommand{\myindex}[1]{#1\index{#1}}
+
+% Quotes
+\newcommand{\myquote}[1]{``#1''}
+
+% define this to be empty to kill notes
+\newcommand{\sectionnotes}[1]{\noindent \emph{Note: #1} \medskip \par}
+
+% Define this to be empty to not skip page before the sections to
+% save some paper
+\newcommand{\sectionnewpage}{\clearpage}
+%\newcommand{\sectionnewpage}{}
+
+% This is used throughout for less obtrusive references to EP.
+% Make it blank to remove unnecessary references to EP.
+\newcommand{\EPref}[1]{#1}
+%\newcommand{\EPref}[1]{}
+
+%references to BD
+\newcommand{\BDref}[1]{#1}
+%\newcommand{\BDref}[1]{}
+
+% Don't include subsections
+\setcounter{tocdepth}{1}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+
+\newtheoremstyle{exercise}% name
+  {}% Space above
+  {}% Space below
+  {\itshape}% Body font
+  {}% Indent amount 1
+  {\bfseries \itshape}% Theorem head font
+  {:}% Punctuation after theorem head
+  {.5em}% Space after theorem head 2
+  {}% Theorem head spec (can be left empty, meaning "normal")
+
+
+\theoremstyle{exercise}
+\newtheorem{exercise}{Exercise}[section]
+
+% Answers
+\newbox\answerscollect
+
+\newcommand{\theanswer}{\textbf{\theexercise:}}
+
+\def\exsol#1{\setbox\answerscollect=\vbox{\unvbox\answerscollect\medskip\par\noindent\theanswer\quad #1\par}}
+\def\printanswers{
+ \cleardoublepage  
+ \phantomsection
+ \chapter*{Solutions to Selected Exercises}
+ \markboth{SOLUTIONS TO SELECTED EXERCISES}{SOLUTIONS TO SELECTED EXERCISES}
+ \addfakecontentsline{Solutions to Selected Exercises}
+ \unvbox\answerscollect\setbox\answerscollect=\vbox{}
+}
+
+%\newtheoremstyle{example}% name
+%  {}% Space above
+%  {}% Space below
+%  {}% Body font
+%  {}% Indent amount 1
+%  {\bfseries}% Theorem head font
+%  {:}% Punctuation after theorem head
+%  {.5em}% Space after theorem head 2
+%  {}% Theorem head spec (can be left empty, meaning "normal")
+%
+%\theoremstyle{example}
+%\newtheorem{example}{Example}[section]
+%\newtheorem{remark}{Remark}[section]
+%
+
+%%
+%% Hand made example and remark so that it works with floating figure
+%%
+\newcounter{example}[section]
+\renewcommand{\theexample}{\thesection.\arabic{example}}
+\def\exampleclaim{\par\addvspace{\medskipamount}\noindent\refstepcounter{example}\hbox{\bf
+Example
+\thesection.\arabic{example}:}\hspace{0.5em}\ignorespaces}
+\def\exampleclaimname#1{\par\addvspace{\medskipamount}\noindent\refstepcounter{example}\hbox{\bf
+Example
+\thesection.\arabic{example} {\rm (#1)}:}\hspace{0.5em}\ignorespaces}
+\def\endexampleclaim{
+\par\addvspace{\medskipamount}}
+\newenvironment{example}[1][]{\ifx\namearg#1\namearg\exampleclaim\else\exampleclaimname{#1}\fi}{\endexampleclaim}
+
+\newcounter{remark}[section]
+\renewcommand{\theremark}{\thesection.\arabic{remark}}
+\def\remarkclaim{\par\addvspace{\medskipamount}\noindent\refstepcounter{remark}\hbox{\bf
+Remark
+\thesection.\arabic{remark}:}\hspace{0.5em}\ignorespaces}
+\def\remarkclaimname#1{\par\addvspace{\medskipamount}\noindent\refstepcounter{remark}\hbox{\bf
+Remark
+\thesection.\arabic{remark} {\rm (#1)}:}\hspace{0.5em}\ignorespaces}
+\def\endremarkclaim{
+\par\addvspace{\medskipamount}}
+\newenvironment{remark}[1][]{\ifx\namearg#1\namearg\remarkclaim\else\remarkclaimname{#1}\fi}{\endremarkclaim}
+
+
+% referencing
+    \DeclareRobustCommand{\myvref}[2]{%
+      \leavevmode%
+      \begingroup
+        \let\T@pageref\@pagerefstar
+        \hyperref[{#2}]{%
+	  #1~\ref*{#2}%
+        }%
+        \vpageref[\unskip]{#2}%
+      \endgroup
+    }%
+
+    \DeclareRobustCommand{\myref}[2]{%
+      \leavevmode%
+      \begingroup
+        \let\T@pageref\@pagerefstar
+        \hyperref[{#2}]{%
+	  #1~\ref*{#2}%
+        }%
+      \endgroup
+    }%
+
+\newcommand{\figurevref}[1]{\myvref{Figure}{#1}}
+\newcommand{\figureref}[1]{\myref{Figure}{#1}}
+\newcommand{\tablevref}[1]{\myvref{Table}{#1}}
+\newcommand{\tableref}[1]{\myref{Table}{#1}}
+\newcommand{\chapterref}[1]{\myref{chapter}{#1}}
+\newcommand{\Chapterref}[1]{\myref{Chapter}{#1}}
+\newcommand{\sectionref}[1]{\myref{\S}{#1}}
+\newcommand{\exercisevref}[1]{\myvref{Exercise}{#1}}
+\newcommand{\exerciseref}[1]{\myref{Exercise}{#1}}
+\newcommand{\examplevref}[1]{\myvref{Example}{#1}}
+\newcommand{\exampleref}[1]{\myref{Example}{#1}}
+\newcommand{\thmvref}[1]{\myvref{Theorem}{#1}}
+\newcommand{\thmref}[1]{\myref{Theorem}{#1}}
+
+
+
+% Here we input .pdf_t files
+\newcommand{\inputpdft}[1]{\input #1.pdf_t}
+
+%Fake contents lines
+\newcommand{\addfakecontentsline}[1]{\addcontentsline{toc}{chapter}{#1}}
+
+%Extra space in table of contents to make things fit
+\newcommand{\addextraspacetotoc}{\addtocontents{toc}{\protect\enlargethispage{\baselineskip}}}
+
+% graphics include
+\newcommand{\diffyincludegraphics}[3]{\includegraphics[#1]{#3}}
+
+% only for pdf output
+\newcommand{\diffypdfversion}[1]{#1}
+
+% Our floating figure with two sizes:
+% Note that floating figures work badly in theorem like environments as those are implemented as
+% lists.  That's why example and remark are reimplemented instead of using
+% amsthm
+\newenvironment{diffyfloatingfigure}[2]{\begin{floatingfigure}{#1}}{\end{floatingfigure}}
+\newenvironment{diffyfloatingfigurer}[2]{\begin{floatingfigure}[r]{#1}}{\end{floatingfigure}}
+\newenvironment{diffyfloatingfigurepdfonly}[1]{\begin{floatingfigure}{#1}}{\end{floatingfigure}}
+
+%Do the Index
+\newcommand{\diffyindex}{
+ \cleardoublepage  
+ \phantomsection
+ \addfakecontentsline{\indexname}
+ \printindex
+}
+
+%Do the TOC
+\newcommand{\diffytableofcontents}{
+\microtypesetup{protrusion=false}
+\tableofcontents
+\microtypesetup{protrusion=true}
+}
+
+% A title page
+\newcommand{\makediffytitlepage}{
+ \ifpdf
+   \pdfbookmark{Title Page}{title}
+ \fi
+ \newlength{\centeroffset}
+ \setlength{\centeroffset}{-0.5\oddsidemargin}
+ \addtolength{\centeroffset}{0.5\evensidemargin}
+ %\addtolength{\textwidth}{-\centeroffset}
+ \thispagestyle{empty}
+ \vspace*{\stretch{1}}
+ \noindent\hspace*{\centeroffset}\makebox[0pt][l]{\begin{minipage}{\textwidth}
+ \flushright
+ {\Huge\bfseries \sffamily Notes on Diffy Qs }
+ \noindent\rule[-1ex]{\textwidth}{5pt}\\[2.5ex]
+ \hfill\emph{\Large \sffamily Differential Equations for Engineers}
+ \end{minipage}}
+ 
+ \vspace{\stretch{1}}
+ \noindent\hspace*{\centeroffset}\makebox[0pt][l]{\begin{minipage}{\textwidth}
+ \flushright
+ {\bfseries 
+ by Ji{\v r}\'i Lebl\\[3ex]} 
+ \today
+ \\
+ (version \theversion)
+ \end{minipage}}
+ 
+ %\addtolength{\textwidth}{\centeroffset}
+ \vspace{\stretch{2}}
+}

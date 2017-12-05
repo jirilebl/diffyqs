@@ -1,0 +1,41 @@
+
+SHOULD (in next big edition):
+* Expand discussion of vector field and how it is drawn in 3.1.
+* Another example of application of first order system, perhaps flow with two
+  tanks.
+* Add exercises for setting up applications in 3.1
+* Also split up 3.1 into subsection maybe
+* Number the examples/applications
+* Generalized eigenvector discussion is a little too terse and perhaps still
+  misleading.  Do another larger example perhaps, most exercises are 3x3 so we
+  should have an example of that.
+* Add exercise for formulas for A^n in the matrix exponential section
+* In 3.6 add more exercises on forced, and also improve the exposition wrt
+  the units.
+* In 3.4 (or earlier?) Add some exercises on constant nonhomogeneity for
+  an invertible A, that just translates the point.
+* Use more underbrace / cancel.  See subsection 3.9.2
+* In whirling string, plot several of the eigenfunctions to show how it crosses
+  the axis k-1 times
+* Search for: will, previously, have, can, note, notice
+
+MAYBE:
+* Perhaps change name of \vec{x}_1 solutions to avoid confusion with x_1
+  components, see what other books do
+* Include annihilator method at least in exercises of section of 2.5 
+* exponential order / type, need to use one term only.  Order at infinity
+  also should be emphasized at more places.
+* Root test for power series?  Are we just adding too much to 7.1?
+
+PROBABLY NOT/VAGUE:
+* Perhaps an appendix with more info on existence uniqueness, linear
+  independence (maybe wronskian, though perhaps it might be best to avoid
+  wronskian, to avoid plug and play maddness), some proofs and extra
+  information in general, basically some extra optional sections.  etc..
+  Need more ideas for this.
+
+
+DONE:
+* Add Dirac delta function to chapter 6 such as chapter 6.5 in [BD]
+* Should mention that transfer functions are impulse response, may be
+  connected to adding delta function.

@@ -1,0 +1,269 @@
+
+\usepackage[T1]{fontenc}
+
+\usepackage{makeidx}
+\usepackage{enumerate}
+\usepackage{ifpdf}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+%\usepackage{color}
+%\usepackage{graphics}
+\usepackage[headings]{fullpage}
+\usepackage{url}
+\usepackage{floatflt}
+%\usepackage{wrapfig}
+\usepackage[tex4ht]{hyperref}
+% hypcap doesn't work?
+%\usepackage{hypcap}
+\usepackage[compatibility=false,font={small,it}]{caption}
+\usepackage[all]{xy}
+\usepackage{units}
+\usepackage{booktabs}
+\usepackage{cancel}
+
+% No varioref for tex4ht
+\newcommand{\vref}[1]{\ref{#1}}
+
+% hypcap misbehaving with tex4ht?
+\newcommand{\capstart}{}
+
+% Times
+\usepackage{txfonts}
+
+% San Serif fonts
+%\renewcommand{\familydefault}{\sfdefault}
+
+% To allow skrinking to 5.5 x 8.5 inches without whitespaces
+% Make sure to rerun makeindex as well
+% Useful for printing on lilu.com and saving on paper
+%\addtolength{\textheight}{2.13in}
+%\addtolength{\paperheight}{2.13in}
+
+\hypersetup{
+    colorlinks,%
+    citecolor=black,%
+    filecolor=black,%
+    linkcolor=black,%
+    urlcolor=black
+}
+
+% Set up our index
+\makeindex
+
+% Very simple indexing
+\newcommand{\myindex}[1]{#1\index{#1}}
+
+% Quotes
+\newcommand{\myquote}[1]{``#1''}
+
+% define this to be empty to kill notes
+\newcommand{\sectionnotes}[1]{\noindent \emph{Note: #1} \medskip \par}
+
+% Define this to be empty to not skip page before the sections to
+% save some paper
+\newcommand{\sectionnewpage}{\clearpage}
+%\newcommand{\sectionnewpage}{}
+
+% This is used throughout for less obtrusive references to EP.
+% Make it blank to remove unnecessary references to EP.
+% This is still enabled even in the SA (standalone) pdf from the website
+\newcommand{\EPref}[1]{#1}
+%\newcommand{\EPref}[1]{}
+
+%references to BD
+\newcommand{\BDref}[1]{#1}
+%\newcommand{\BDref}[1]{}
+
+% Don't include subsections
+\setcounter{tocdepth}{1}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+
+\newtheoremstyle{exercise}% name
+  {}% Space above
+  {}% Space below
+  {\itshape}% Body font
+  {}% Indent amount 1
+  {\bfseries \itshape}% Theorem head font
+  {:}% Punctuation after theorem head
+  {.5em}% Space after theorem head 2
+  {}% Theorem head spec (can be left empty, meaning "normal")
+
+
+\theoremstyle{exercise}
+\newtheorem{exercise}{Exercise}[section]
+
+% Answers
+\newbox\answerscollect
+
+\newcommand{\theanswer}{\textbf{\theexercise:}}
+
+\def\exsol#1{\setbox\answerscollect=\vbox{\unvbox\answerscollect\medskip\par\noindent\theanswer\quad #1\par}}
+\def\printanswers{
+ \cleardoublepage  
+ \phantomsection
+ \chapter*{Solutions to Selected Exercises}
+ \markboth{SOLUTIONS TO SELECTED EXERCISES}{SOLUTIONS TO SELECTED EXERCISES}
+ \addfakecontentsline{Solutions to Selected Exercises}
+ \unvbox\answerscollect\setbox\answerscollect=\vbox{}
+}
+
+\newtheoremstyle{example}% name
+  {}% Space above
+  {}% Space below
+  {}% Body font
+  {}% Indent amount 1
+  {\bfseries}% Theorem head font
+  {:}% Punctuation after theorem head
+  {.5em}% Space after theorem head 2
+  {}% Theorem head spec (can be left empty, meaning "normal")
+
+\theoremstyle{example}
+\newtheorem{example}{Example}[section]
+\newtheorem{remark}{Remark}[section]
+
+% Perhaps for html numbers are fine and at least will show up
+% Footnotes should use symbols, not numbers.  Numbered footnotes are
+% evil
+%\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+% referencing
+\newcommand{\figureref}[1]{\hyperref[#1]{Figure~\ref*{#1}}}
+\newcommand{\figurevref}[1]{\hyperref[#1]{Figure~\ref*{#1}}}
+\newcommand{\tableref}[1]{\hyperref[#1]{Table~\ref*{#1}}}
+\newcommand{\tablevref}[1]{\hyperref[#1]{Table~\ref*{#1}}}
+\newcommand{\chapterref}[1]{\hyperref[#1]{chapter~\ref*{#1}}}
+\newcommand{\Chapterref}[1]{\hyperref[#1]{Chapter~\ref*{#1}}}
+\newcommand{\sectionref}[1]{\hyperref[#1]{\S~\ref*{#1}}}
+\newcommand{\exercisevref}[1]{\hyperref[#1]{Exercise~\ref*{#1}}}
+\newcommand{\exerciseref}[1]{\hyperref[#1]{Exercise~\ref*{#1}}}
+\newcommand{\examplevref}[1]{\hyperref[#1]{Example~\ref*{#1}}}
+\newcommand{\exampleref}[1]{\hyperref[#1]{Example~\ref*{#1}}}
+\newcommand{\thmvref}[1]{\hyperref[#1]{Theorem~\ref*{#1}}}
+\newcommand{\thmref}[1]{\hyperref[#1]{Theorem~\ref*{#1}}}
+
+% Here we input .pdf_t files
+\newcommand{\inputpdft}[1]{\includegraphics{#1-tex4ht.png}}
+
+%Fake contents lines (no such things in tex4ht)
+\newcommand{\addfakecontentsline}[1]{}
+
+%Extra space in table of contents to make things fit (no need in tex4ht)
+\newcommand{\addextraspacetotoc}{}
+
+% graphics include (take the second meassurement)
+\newcommand{\diffyincludegraphics}[3]{\includegraphics[#2]{#3}}
+
+% only for pdf output
+\newcommand{\diffypdfversion}[1]{}
+
+% our floating figure with two sizes (take the second)
+\newenvironment{diffyfloatingfigure}[2]{\begin{floatingfigure}{#2}}{\end{floatingfigure}}
+\newenvironment{diffyfloatingfigurer}[2]{\begin{floatingfigure}[r]{#2}}{\end{floatingfigure}}
+\newenvironment{diffyfloatingfigurepdfonly}[1]{\begin{figure}[h!t]}{\end{figure}}
+
+
+%Do the Index
+\newcommand{\diffyindex}{
+\printindex
+}
+
+%Do the TOC
+\newcommand{\diffytableofcontents}{
+\tableofcontents
+}
+
+% A title page
+\newcommand{\makediffytitlepage}{
+
+ \Tag{TITLE+}{Notes On Diffy Qs}
+
+ % This would be good, but still has some kinks,
+ %\Configure{Picture}{.svg}
+
+ %All math is using images
+ \Configure{$}{\PicMath}{\EndPicMath}{}  
+ % FIXME: Seems like align is broken, but eqnarray works good however,
+ % we use align features
+ %\renewenvironment{align}{\begin{eqnarray}}{\end{eqnarray}}
+ %\renewenvironment{align*}{\begin{eqnarray*}}{\end{eqnarray*}}
+ \ConfigureEnv{align}{\PicDisplay}{\EndPicDisplay}{}{}
+ \ConfigureEnv{align*}{\PicDisplay}{\EndPicDisplay}{}{}
+
+ \Configure{crosslinks+}{\HCode{<p class="noindent"><span class="mainpagelink">[<a
+href="http://www.jirka.org/diffyqs/">Notes on Diffy Qs home</a>]
+[<a
+onclick="_gaq.push(['_trackEvent', 'PDF', 'Download', 'crosslinks /diffyqs/diffyqs.pdf']);"
+href="http://www.jirka.org/diffyqs/diffyqs.pdf">PDF version</a>]
+[<a
+onclick="_gaq.push(['_trackEvent', 'amazon', 'Link', 'crosslinks diffyqs']);"
+href="http://www.amazon.com/Notes-Diffy-Differential-Equations-Engineers/dp/1541329058/">Buy paperback on Amazon</a>]</span>
+<p class="noindent">\Hnewline
+ <script type="text/javascript">\Hnewline
+  var _gaq = _gaq || [];\Hnewline
+  _gaq.push(['_setAccount', 'UA-36064105-1']);\Hnewline
+  _gaq.push(['_trackPageview']);\Hnewline
+  (function() {\Hnewline
+    var ga = document.createElement('script'); ga.type =
+'text/javascript';\Hnewline
+ga.async = true;\Hnewline
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl'
+:\Hnewline
+'http://www') + '.google-analytics.com/ga.js';\Hnewline
+    var s = document.getElementsByTagName('script')[0];\Hnewline
+s.parentNode.insertBefore(ga, s);\Hnewline
+  })();\Hnewline
+</script>}}{}{}{}
+  \Css{@media screen and (min-device-width:860px) and (min-width:860px) { body { margin-left:4\%; margin-right:4\%; width:auto; max-width:850px; text-align:justify;}}}
+  \Css{.floatingfigure-r { text-indent:0; text-align:right; } .floatingfigure-l { text-indent:0; text-align:left;}}
+  \Css{@media only screen and (max-device-width:550px) { .floatingfigure-r { float:none; } .floatingfigure-l { float:none; } }}
+  \Css{@media only screen and (max-width:550px) { .floatingfigure-r { float:none; } .floatingfigure-l { float:none; } }}
+  \Css{@media only screen { body {background-color:\#fefdf5;} }}
+  \Css{a:link {color:\#900b09; background-color:transparent; }}
+  \Css{a:visited {color:\#500805; background-color:transparent; }}
+  \Css{@media print { a:visited {color:\#900b09; background-color:transparent; } }}
+  \Css{a:hover {color:\#ff0000; background-color:transparent; }}
+  \Css{a:active {color:\#ff0000; background-color:transparent; }} 
+  \Css{span.mainpagelink {font-size:120\%; font-weight:bold;} }
+
+ \HCode{<p class="noindent"><span class="mainpagelink">[<a
+href="http://www.jirka.org/diffyqs/">Notes on Diffy Qs home</a>]
+[<a
+onclick="_gaq.push(['_trackEvent', 'PDF', 'Download', 'htmlvermain /diffyqs/diffyqs.pdf']);"
+href="http://www.jirka.org/diffyqs/diffyqs.pdf">PDF version</a>]
+[<a
+onclick="_gaq.push(['_trackEvent', 'amazon', 'Link', 'htmlvermain diffyqs']);"
+href="http://www.amazon.com/Notes-Diffy-Differential-Equations-Engineers/dp/1541329058/">Buy paperback on Amazon</a>]</span>
+<p class="noindent">\Hnewline
+}
+
+ {\Huge\bfseries \sffamily Notes on Diffy Qs }
+
+ \emph{\Large \sffamily Differential Equations for Engineers}
+ 
+ {\bfseries 
+ by Ji{\v r}\'i Lebl} 
+
+ {(version \theversion)}
+
+ \HCode{<script type="text/javascript">\Hnewline
+  var _gaq = _gaq || [];\Hnewline
+  _gaq.push(['_setAccount', 'UA-36064105-1']);\Hnewline
+  _gaq.push(['_trackPageview']);\Hnewline
+  (function() {\Hnewline
+    var ga = document.createElement('script'); ga.type =
+'text/javascript';\Hnewline
+ga.async = true;\Hnewline
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl'
+:\Hnewline
+'http://www') + '.google-analytics.com/ga.js';\Hnewline
+    var s = document.getElementsByTagName('script')[0];\Hnewline
+s.parentNode.insertBefore(ga, s);\Hnewline
+  })();\Hnewline
+</script>}
+
+}

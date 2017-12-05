@@ -1,0 +1,1474 @@
+\documentclass[12pt]{book}
+%Paper saving
+%\documentclass[12pt,openany]{book}
+%\documentclass[10pt,openany]{book}
+%\documentclass[8pt,openany]{extbook}
+
+\usepackage{diffyqssetup}
+
+\author{Ji\v{r}\'i Lebl}
+
+\title{Notes on Diffy Qs: Differential Equations for Engineers}
+
+\begin{document}
+\setcounter{chapter}{7}
+
+\textbf{FIXME: It's in the main document now}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Nonlinear systems} \label{nlin:chapter}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Linearization, critical points, and equilibria}
+
+\sectionnotes{1 lectures \EPref{, \S?.? in \cite{EP}}\BDref{,
+\S?.? in \cite{BD}}}
+
+%\subsection{Nonlinear equations}
+
+Except for a few brief detours in \chapterref{fo:chapter},
+we considered mostly linear
+equations.  Linear equations suffice in many applications, but in reality
+most phenomena require nonlinear equations.  Nonlinear equations, however,
+are notoriously more difficult to understand than linear ones, and 
+many strange new phenomena appear when we allow our equations to be
+nonlinear.
+
+Not to worry, we did not waste all this time studying linear equations.
+Nonlinear equations can often be approximated by linear ones if we only need
+a solution ``locally,'' for example, only for a short period of time, or
+only for certain parameters.  Understanding similar linear equations can
+also give us qualitative understanding about a more general nonlinear
+problem.  The idea is similar to what you did in calculus in trying to
+approximate a function by a line with the right slope.
+
+\begin{diffyfloatingfigure}{1.45in}{1.75in}
+\noindent
+\inputpdft{mv-pend}
+\end{diffyfloatingfigure}
+%For example,
+In \sectionref{sec:mv} we looked at the pendulum of %mass $m$ and
+length $L$.  The goal was to solve for the angle $\theta(t)$ as
+a function of the time $t$.  The equation for the setup is
+the nonlinear equation
+\begin{equation*}
+\theta'' + \frac{g}{L} \sin \theta = 0 .
+\end{equation*}
+Instead of solving this equation, we solved the rather easier linear
+equation
+\begin{equation*}
+\theta'' + \frac{g}{L} \theta = 0 .
+\end{equation*}
+While the solution to the linear equation is not exactly what we were
+looking for, it is rather close to the original as long as the
+angle $\theta$ is small and the time period involved is short.
+
+You might ask: Why don't we just solve the nonlinear problem?  Well, it
+might be very difficult, impractical, or impossible to solve analytically,
+depending on the equation in question.  We may
+not even be interested in the actual solution, we might only be interested
+in some qualitative idea of what the solution is doing.  For example,
+%we may be interested in
+what happens as time goes to infinity?
+%In the case
+%of the pendulum we found that it oscillates and we can even approximate
+%the period well if the swings are small.
+%In other words, why do more work, when we can do less.
+%The exact solution, even if found, might be harder to analyze.
+
+\subsection{Autonomous systems and phase plane analysis}
+
+We restrict our attention to a two dimensional autonomous system
+\begin{equation*}
+x' = f(x,y) , \qquad y' = g(x,y) ,
+\end{equation*}
+where $f(x,y)$ and $g(x,y)$ are functions of two variables, and the
+derivatives are taken with respect to time $t$.  Solutions are
+functions $x(t)$ and $y(t)$ such that
+\begin{equation*}
+x'(t) = f\bigl(x(t),y(t)\bigr), \qquad
+y'(t) = g\bigl(x(t),y(t)\bigr) .
+\end{equation*}
+The way we will analyze the system is very similar to
+\sectionref{autoeq:section}, where we studied a single autonomous equation.  The
+ideas in two dimensions are the same, but the behavior can be
+far more complicated.
+%We will do the same sort of analysis.  We will
+%look for the \emph{critical points} of the system and then we will analyze
+%what happens when time goes to infinity.
+
+It may be best to think of the system of equations as the single vector equation
+\begin{equation} \label{eq:nlinautn2}
+\begin{bmatrix} x \\ y \end{bmatrix} ' =
+\begin{bmatrix} f(x,y) \\ g(x,y) \end{bmatrix} .
+\end{equation}
+As in \sectionref{sec:introtosys} we draw
+the \emph{\myindex{phase portrait}} (or \emph{\myindex{phase diagram}}),
+where each point $(x,y)$ corresponds to a specific state of the system.
+We draw the \emph{\myindex{vector field}}
+given at each
+point $(x,y)$ by the vector
+$\left[ \begin{smallmatrix} f(x,y) \\ g(x,y) \end{smallmatrix} \right]$.
+And as before if we find solutions, we draw the trajectories
+by plotting all points $\bigl(x(t),y(t)\bigr)$ for a certain range of $t$.
+
+\begin{example} \label{example:nlin-1b-example}
+Consider the second order equation $x''=-x+x^2$.
+Write this equation as a first order nonlinear system
+\begin{equation*}
+x' = y , \qquad y' = -x+x^2 .
+\end{equation*}
+The phase portrait with some trajectories are drawn in
+\figurevref{fig:nlin-1b}.
+%\begin{diffyfloatingfigurepdfonly}{3.1in}
+\begin{figure}[h!t]
+\capstart
+\begin{center}
+\diffyincludegraphics{width=3in}{width=4.5in}{nlin-1b}
+\caption{Phase portrait with some trajectories of
+$x' = y$, $y' = -x+x^2$. \label{fig:nlin-1b}}
+\end{center}
+\end{figure}
+%\end{diffyfloatingfigurepdfonly}
+
+From the phase portrait it should be clear that even this simple system has
+fairly complicated behavior.  Some trajectories keep oscillating around the
+origin, and some go off towards infinity.  We will return to this example
+often, and analyze it completely in this (and the next) section.
+\end{example}
+
+Let us concentrate on those points in the phase diagram
+above where the trajectories
+seem to start, end, or go around.  We see two such points:
+$(0,0)$ and $(1,0)$.  The trajectories seem to go around the point $(0,0)$,
+and they seem to either go in or out of the point $(1,0)$.
+%
+These points are precisely those points where the derivatives of both $x$
+and $y$ are zero.  Let us define the \emph{critical points}\index{critical point}
+as the points $(x,y)$ such that
+\begin{equation*} 
+\begin{bmatrix} f(x,y) \\ g(x,y) \end{bmatrix} = \vec{0} .
+\end{equation*}
+In other words, the points where both $f(x,y)=0$ and $g(x,y)=0$.
+
+The critical points are where the behavior of the system is
+in some sense the most complicated.  The reason is that if
+$\left[ \begin{smallmatrix} f(x,y) \\ g(x,y) \end{smallmatrix} \right]$
+is zero, then nearby the vector can point in any direction whatsoever.
+Also, the trajectories are either going towards, away from, or around these
+points, so if we are looking for long term behavior of the system, we
+should look at what happens there.
+
+Critical points are also sometimes called
+\emph{equilibria}\index{equilibrium}, since we have so-called
+\emph{equilibrium solutions}\index{equilibrium solution} at critical points.
+If $(x_0,y_0)$ is a critical point, then we have the solutions
+\begin{equation*}
+x(t) = x_0, \quad y(t) = y_0 .
+\end{equation*}
+In \examplevref{example:nlin-1b-example}, there are two equilibrium
+solutions:
+\begin{equation*}
+x(t) = 0, \quad y(t) = 0,
+\qquad \text{and} \qquad
+x(t) = 1, \quad y(t) = 0.
+\end{equation*}
+Compare this discussion on equilibria to the discussion in
+\sectionref{auteq:section}.  The underlying concept is
+exactly the same.
+
+\subsection{Linearization}
+
+In \sectionref{sec:twodimaut} we studied the behavior of a homogeneous
+linear system of two equations near a critical point.  For a linear system
+of two variables the only critical point is generally the origin $(0,0)$.
+Let us put the understanding we gained in that section to good use
+understanding what happens near critical points of nonlinear systems.
+
+%Just as
+In calculus we learned to estimate a function by taking its
+derivative and linearizing.  We work similarly with nonlinear systems of ODE.
+%The idea is the following procedure.
+Suppose $(x_0,y_0)$ is a critical point.
+First change variables to $(u,v)$ so that $(u,v)=(0,0)$ corresponds to
+$(x_0,y_0)$.  That is,
+\begin{equation*}
+u=x-x_0, \qquad v=y-y_0 .
+\end{equation*}
+Next we need to find the derivative.  In multivariable calculus you may
+have seen that the several variables version of the derivative is the
+\emph{\myindex{Jacobian matrix}}.   The Jacobian matrix of 
+the vector-valued function
+$\left[ \begin{smallmatrix} f(x,y) \\ g(x,y) \end{smallmatrix} \right]$
+at $(x_0,y_0)$ is 
+\begin{equation*}
+\begin{bmatrix}
+\frac{\partial f}{\partial x}(x_0,y_0) &
+\frac{\partial f}{\partial y}(x_0,y_0) \\
+\frac{\partial g}{\partial x}(x_0,y_0) &
+\frac{\partial g}{\partial y}(x_0,y_0)
+\end{bmatrix} .
+\end{equation*}
+This matrix gives the best linear approximation as $v$ and $v$ (and
+therefore $x$ and $y$) varies.  
+We define the \emph{\myindex{linearization}} of the equation
+\eqref{eq:nlinautn2} as the linear system
+\begin{equation*}
+\begin{bmatrix} u \\ v \end{bmatrix} ' =
+\begin{bmatrix}
+\frac{\partial f}{\partial x}(x_0,y_0) &
+\frac{\partial f}{\partial y}(x_0,y_0) \\
+\frac{\partial g}{\partial x}(x_0,y_0) &
+\frac{\partial g}{\partial y}(x_0,y_0)
+\end{bmatrix} 
+\begin{bmatrix} u \\ v \end{bmatrix} .
+\end{equation*}
+
+\begin{example} \label{example:nlin-1b-examplelin}
+Let us keep with the same equations as \exampleref{example:nlin-1b-example}:
+$x' = y$, $y' = -x+x^2$.  There are two critical points, $(0,0)$
+and $(1,0)$.  The Jacobian matrix at any point is
+\begin{equation*}
+\begin{bmatrix}
+\frac{\partial f}{\partial x}(x,y) &
+\frac{\partial f}{\partial y}(x,y) \\
+\frac{\partial g}{\partial x}(x,y) &
+\frac{\partial g}{\partial y}(x,y)
+\end{bmatrix} =
+\begin{bmatrix}
+0 & 1 \\
+-1+2x & 0
+\end{bmatrix}.
+\end{equation*}
+Therefore at $(0,0)$ the linearization is
+\begin{equation*}
+\begin{bmatrix} u \\ v \end{bmatrix} ' =
+\begin{bmatrix}
+0 & 1 \\
+-1 & 0
+\end{bmatrix}
+\begin{bmatrix} u \\ v \end{bmatrix} ,
+\end{equation*}
+where $u=x$ and $v=y$.
+
+At the point $(1,0)$, we have $u=x-1$ and $v=y$, and the linearization is
+\begin{equation*}
+\begin{bmatrix} u \\ v \end{bmatrix} ' =
+\begin{bmatrix}
+0 & 1 \\
+1 & 0
+\end{bmatrix}
+\begin{bmatrix} u \\ v \end{bmatrix} .
+\end{equation*}
+
+\begin{figure}[h!t]
+\capstart
+\begin{center}
+\diffyincludegraphics{width=3in}{width=4.5in}{nlin-1b-lin-00}
+\diffyincludegraphics{width=3in}{width=4.5in}{nlin-1b-lin-01}
+\caption{Phase diagram with some trajectories of
+linearizations at the critical points $(0,0)$ (left) and $(0,1)$ (right) of
+$x' = y$, $y' = -x+x^2$. \label{fig:nlin-1b-lin}}
+\end{center}
+\end{figure}
+
+The phase diagrams of the two linearizations at the
+point $(0,0)$ and $(0,1)$ are given in \figurevref{fig:nlin-1b-lin}.  Note
+that the variables are now $u$ and $v$.  Compare
+\figureref{fig:nlin-1b-lin} with \figurevref{fig:nlin-1b}, and especially look at the
+behavior near the critical points.
+\end{example}
+
+\subsection{Exercises}
+
+\begin{exercise}
+Find the critical points and linearizations of the following systems.\\
+a) FIXME \qquad b) FIXME \qquad c) FIXME
+\end{exercise}
+
+\begin{exercise}
+FIXME
+\end{exercise}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sectionnewpage
+\section{Stability and classification of isolated critical points}
+
+\sectionnotes{2 lectures \EPref{, \S?.? in \cite{EP}}\BDref{,
+\S?.? in \cite{BD}}}
+
+\subsection{Isolated critical points and almost linear systems}
+
+A critical point is
+\emph{isolated}\index{isolated critical point}
+if it is the only critical point in some small
+``neighborhood'' of the point.  That is, if we zoom in far enough it is the
+only critical point we see.  In the above example, the critical point was
+isolated.  If on the other hand there would be a whole curve of critical
+points, then it would not be isolated.
+
+A  system is called \emph{\myindex{almost linear}} (at a critical point
+$(x_0,y_0)$) if the critical point is isolated and the Jacobian at the point
+is invertible, or equivalently if the linearized system has an isolated
+critical point.  In such a case, the nonlinear terms will be very small
+and the system will behave like its linearization, at least if we are close
+to the critical point.
+
+In particular the system we have just seen in
+Examples~\ref{example:nlin-1b-example} and \ref{example:nlin-1b-examplelin}
+has two isolated critical points $(0,0)$ and $(0,1)$, and
+is almost linear at both critical points as 
+both of
+the Jacobian matrices
+$\left[ \begin{smallmatrix} 0 & 1 \\ -1 & 0 \end{smallmatrix} \right]$ and
+$\left[ \begin{smallmatrix} 0 & 1 \\ 1 & 0 \end{smallmatrix} \right]$ are
+invertible.
+
+On the other hand a system such as $x' = x^2$, $y' = y^2$ has an isolated
+critical point at $(0,0)$, however the Jacobian matrix
+\begin{equation*}
+\begin{bmatrix} 2x & 0 \\ 0 & 2y \end{bmatrix}
+\end{equation*}
+is zero when $(x,y) = (0,0)$.  Therefore the system is not almost
+linear.
+Even worse, the system $x' = x$, $y' = x^2$ does not have an
+isolated critical point, as $x'$ and $y'$ are both zero
+whenever $x=0$, that is, the entire $y$ axis.
+
+Fortunately, most often (given an arbitrary nonlinear system) critical
+points are isolated, and the system is almost linear at the critical
+points.  So if we learn what happens here, we have figured out the majority
+of situations that arise in applications.
+
+
+
+\subsection{Stability and classification of isolated critical points}
+
+Once we have an isolated critical point, the system is almost linear at
+that critical point, and we computed the
+associated linearized system, we can classify what happens to the 
+solutions.  We more or less use the classification for linear
+two-variable systems from \sectionref{sec:twodimaut}, with one minor
+caveat.
+Let us list the behaviors depending on the eigenvalues of
+the Jacobian matrix at the critical point in \tablevref{pln:behtab2}.
+This table is very similar to \tablevref{pln:behtab}, with
+the exception of missing ``center'' points.
+%There is also a new column
+%that we will discuss.
+We will discuss centers later, as they are more complicated.
+
+\begin{table}[h!t]
+\capstart
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Eigenvalues of the Jacobian matrix & Behavior & Stability \\
+\midrule
+real and both positive & source / unstable node & unstable \\
+real and both negative & sink / stable node & asymptotically stable \\
+real and opposite signs & saddle & unstable \\
+complex with positive real part & spiral source & unstable \\
+complex with negative real part & spiral sink & asymptotically stable \\
+\bottomrule
+\end{tabular}
+\end{center}
+\caption{Behavior of an almost linear system near an isolated critical
+point.  \label{pln:behtab2}}
+\end{table}
+
+In the new third column,
+we have marked points as \emph{asymptotically stable} or \emph{unstable}.  Formally, a
+\emph{\myindex{stable critical point}} $(x_0,y_0)$ is one where given any small distance $\epsilon$ to
+$(x_0,y_0)$, and any initial condition within a perhaps smaller radius
+around $(x_0,y_0)$, the trajectory
+of the system will never go further away from $(x_0,y_0)$ than $\epsilon$.
+An \emph{\myindex{unstable critical point}} is one that is not stable.
+Informally, a point is stable if we start close to a critical point and
+follow a trajectory we will either go towards, or at least not get away from
+this critical point.
+
+A stable critical point $(x_0,y_0)$ is called \emph{\myindex{asymptotically stable}} if
+given any initial condition sufficiently close to $(x_0,y_0)$ and any
+solution $\bigl( x(t), y(t) \bigr)$ given that condition, then
+\begin{equation*}
+\lim_{t \to \infty} \bigl( x(t), y(t) \bigr) = (x_0,y_0) .
+\end{equation*}
+That is, the critical point is asymptotically stable
+if any trajectory for a sufficiently close initial condition
+goes towards the critical point $(x_0,y_0)$.
+
+\begin{example}
+Consider
+$x'=-y-x^2$,
+$y'=-x+y^2$.
+See \figurevref{fig:nlin-ex813-new} for the phase diagram.
+Let us find the critical points.  These are the points where
+$-y-x^2 = 0$ and $-x+y^2=0$.  The first equation means $y = -x^2$, and
+so $y^2 = x^4$.  Plugging into the second equation we obtain 
+$-x+x^4 = 0$.  Factoring we obtain $x(1-x^3)=0$.  Since we are looking only
+for real solutions we get either $x=0$ or $x=1$.  Solving for the
+corresponding $y$ using $y = -x^2$, we get two critical points, one being $(0,0)$
+and the other being $(1,-1)$.  Clearly the critical points are isolated.
+Let us compute the Jacobian matrix:
+\begin{equation*}
+\begin{bmatrix}
+-2x & -1 \\
+-1 & 2y
+\end{bmatrix} .
+\end{equation*}
+
+At the point $(0,0)$ we get the matrix
+$\left[ \begin{smallmatrix} 0 & -1 \\ -1 & 0 \end{smallmatrix} \right]$ and
+so the two eigenvalues are $1$ and $-1$.  As the matrix is invertible, the system is almost linear
+at $(0,0)$.  As the eigenvalues are real
+and of opposite signs, we get a saddle point, which is an unstable
+equilibrium point.
+
+%\begin{diffyfloatingfigurepdfonly}{3.1in}
+\begin{figure}[h!t]
+\capstart
+\begin{center}
+\diffyincludegraphics{width=3in}{width=4.5in}{nlin-ex813-new}
+\caption{The phase portrait with few sample trajectories of 
+$x'=-y-x^2$, $y'=-x+y^2$.  \label{fig:nlin-ex813-new}}
+\end{center}
+%\end{diffyfloatingfigurepdfonly}
+\end{figure}
+At the point $(1,-1)$ we get the matrix
+$\left[ \begin{smallmatrix} -2 & -1 \\ -1 & -2 \end{smallmatrix} \right]$ and
+computing the eigenvalues we get $-1$, $-3$.
+The matrix is invertible, and so the system is almost linear at $(1,-1)$.
+As we have real eigenvalues both negative, the critical
+point is a sink, and therefore an asymptotically stable equilibrium point.
+That is, if we start with any point $(x_i,y_i)$ that is close to $(1,-1)$ as
+an initial condition and plot a trajectory it will approach $(1,-1)$, that
+is
+\begin{equation*}
+\lim_{t \to \infty} \bigl( x(t), y(t) \bigr) = (1,-1) .
+\end{equation*}
+As you can 
+see from the diagram, this behavior is true even for some
+initial points quite far from $(1,-1)$, but it is definitely not true for all
+initial points.
+\end{example}
+
+\begin{example}
+Let us look at
+$x'=y+y^2e^x$,
+$y'=x$.  First let us find the critical points.  These are the points where
+$y+y^2e^x = 0$ and $x=0$.  Simplifying we get $0=y+y^2 = y(y+1)$.  So the
+critical points are $(0,0)$ and $(0,-1)$, and hence are isolated.  Let us
+compute the Jacobian matrix:
+\begin{equation*}
+\begin{bmatrix}
+y^2e^x & 1+2ye^x \\
+1 & 0
+\end{bmatrix}.
+\end{equation*}
+
+At the point $(0,0)$ we get the matrix
+$\left[ \begin{smallmatrix} 0 & 1 \\ 1 & 0 \end{smallmatrix} \right]$ and
+so the two eigenvalues are $1$ and $-1$.  As the matrix is invertible, the system is almost linear
+at $(0,0)$.  And, as the eigenvalues are real
+and of opposite signs, we get a saddle point, which is an unstable
+equilibrium point.
+
+At the point $(0,-1)$ we get the matrix
+$\left[ \begin{smallmatrix} 1 & -1 \\ 1 & 0 \end{smallmatrix} \right]$ and
+computing the eigenvalues we get $\frac{1}{2} \pm i \frac{\sqrt{3}}{2}$.
+The matrix is invertible, and so the system is almost linear at $(0,-1)$.
+As we have complex eigenvalues with positive real part, the critical
+point is a spiral source, and therefore an unstable equilibrium point.
+
+%\begin{diffyfloatingfigurepdfonly}{3.1in}
+\begin{figure}[h!t]
+\capstart
+\begin{center}
+\diffyincludegraphics{width=3in}{width=4.5in}{nlin-ex813}
+\caption{The phase portrait with few sample trajectories of 
+$x'=y+y^2e^x$, $y'=x$.  \label{fig:nlin-ex813}}
+\end{center}
+\end{figure}
+%\end{diffyfloatingfigurepdfonly}
+
+See \figurevref{fig:nlin-ex813} for the phase diagram.  Notice the two
+critical points, and the behavior of the arrows in the vector field around
+these points.
+\end{example}
+
+\subsection{The trouble with centers}
+
+Recall that a linear system which had a center meant that trajectories
+travelled in closed elliptical orbits
+in some direction around the critical point.  Such
+a critical point we would call a \emph{\myindex{center}} or
+a \emph{\myindex{stable center}}.  It would not be an asymptotically 
+stable critical point, as the trajectories would never approach the critical
+point, but at least if you start sufficiently close to the critical point,
+you will stay close to the critical point.  The simplest example of such
+behavior is the linear system that has a center.  Another
+example is the critical point $(0,0)$ in
+\examplevref{example:nlin-1b-example}.
+%We will also see two examples of
+%behavior in the next section where we study the predator-prey system.
+
+The trouble with a center is that whether the trajectory goes towards or
+away from the critical point is governed by the sign of the real part of
+the eigenvalues of the Jacobian.  Since this real part is zero at the 
+critical point itself, it can have either sign nearby,
+meaning the trajectory could be pulled towards or away from the critical
+point.
+
+\begin{example}
+An easy example where such a problematic behavior is exhibited is the system
+$x'=y, y' = -x+y^3$.  The only critical point
+is the origin $(0,0)$.  The Jacobian matrix is 
+\begin{equation*}
+\begin{bmatrix}
+0 & 1 \\
+-1 & 3 y^2 \\
+\end{bmatrix} .
+\end{equation*}
+The linearization at $(0,0)$ will have the Jacobian matrix
+$\left[ \begin{smallmatrix}
+0 & 1 \\
+-1 & 0 \\
+\end{smallmatrix} \right]$, which has eigenvalues $\pm i$.  Therefore, the
+linearization has a center.
+
+Using the quadratic equation, we find that the eigenvalues of the
+Jacobian matrix at any point $(x,y)$ are
+\begin{equation*}
+\lambda = 
+\frac{3}{2}y^2 \pm
+\frac{\sqrt{9y^4-4}}{2} .
+\end{equation*}
+In particular, at any point where $y \not= 0$ (so at most points near the origin), the eigenvalues have a positive real part ($y^2$ can
+never be negative).  This positive real part 
+will pull the trajectory away from the origin.  A sample trajectory for an
+initial condition near the origin is given in
+\figurevref{fig:nlin-unstable-center}.
+\begin{figure}[h!t]
+\capstart
+\begin{center}
+\diffyincludegraphics{width=3in}{width=4.5in}{nlin-unstable-centerfig}
+\caption{An unstable critical point (spiral source) at the origin
+for $x'=y, y' = -x+y^3$, even if the linearization has a center.  \label{fig:nlin-unstable-center}}
+\end{center}
+\end{figure}
+\end{example}
+
+The moral of the example is that further analysis is needed when the
+linearization has a center.  The analysis will in general be more
+complicated than in the above example, and is more likely to involve
+case-by-case consideration.  Such a complication should not be
+surprising to you.  By now in your mathematical career, you have
+seen many places where a simple test is inconclusive, perhaps starting with
+the second derivative test for maxima or minima, and requires more careful,
+and perhaps ad hoc analysis of the situation.
+
+\subsection{Conservative equations}
+
+An equation of the form
+\begin{equation*}
+x'' + f(x) = 0
+\end{equation*}
+for an arbitrary function $f(x)$ is called a
+\emph{\myindex{conservative equation}}.  For example the pendulum equation
+is a conservative equation.  The equations are conservative as there is no
+friction in the system so the energy in the system is ``conserved.''
+Let us write this equation as a
+system of nonlinear ODE.
+\begin{equation*}
+x' = y, \qquad y' = -f(x) .
+\end{equation*}
+These types of equations have the
+advantage that we can solve for their trajectories easily.
+
+The trick is to first think of $y$ as a function of $x$ for a moment.  Then
+the chain rule
+\begin{equation*}
+x'' = y' = y \frac{dy}{dx}
+\end{equation*}
+where the prime indicates a derivative with respect to $t$.  In any case,
+we now obtain $y \frac{dy}{dx} + f(x) = 0$.  We can integrate with respect to
+$x$ to get
+$\int y \frac{dy}{dx} \,dx + \int f(x)\, dx = C$, or in other words
+\begin{equation*}
+\frac{1}{2} y^2  + \int f(x)\, dx = C .
+\end{equation*}
+We have obtained an implicit equation for the trajectories.  Different
+values of $C$ are conserved on any trajectory.  This expression is
+sometimes called the \emph{\myindex{Hamiltonian}} or the energy of the system
+
+\begin{example}
+Let us find the trajectories for the equation $x'' + x-x^2 = 0$,
+which is the equation from
+\examplevref{example:nlin-1b-example}.  The corresponding
+first order system is
+\begin{equation*}
+x' = y , \qquad y' = -x+x^2 .
+\end{equation*}
+We find that trajectories
+\begin{equation*}
+\frac{1}{2} y^2  + \frac{1}{2} x^2 - \frac{1}{3} x^3  = C .
+\end{equation*}
+We solve for $y$
+\begin{equation*}
+y = \pm \sqrt{-x^2 + \frac{2}{3} x^3  + 2C} .
+\end{equation*}
+
+Plotting these trajectories we get exactly the trajectories in 
+\figurevref{fig:nlin-1b}.  In particular we notice that near the origin
+the trajectories are \emph{\myindex{closed curves}}, that is they keep going
+around the origin, never spiraling in or out.  Therefore we discovered a way
+to verify that the critical point at $(0,0)$ is a stable center.
+The critical point at $(0,1)$ is a saddle as we already noticed.  It turns
+out that this example is typical for conservative equations.
+\end{example}
+
+Consider an arbitrary
+conservative equation.
+The trajectories are given by
+\begin{equation*}
+y = \pm \sqrt{ - 2 \int f(x)\, dx + 2C} ,
+\end{equation*}
+so all trajectories are mirrored across the $x$-axis.  In particular,
+there can be no spiral sources nor sinks.
+All critical points occur when $y=0$ (the
+$x$-axis), that is when $x' = 0$.  The critical points are 
+simply those points on the $x$-axis where $f(x) = 0$.
+The Jacobian matrix is
+\begin{equation*}
+\begin{bmatrix}
+0 & 1 \\
+-f'(x) & 0
+\end{bmatrix} .
+\end{equation*}
+So the critical point is almost linear if $f'(x) \not= 0$ at the critical 
+point.  Let us find the eigenvalues, let $J$ denote the Jacobian matrix,
+then the eigenvalues are solutions to
+\begin{equation*}
+0 = \det(J - \lambda I) = \lambda^2 + f'(x)
+\end{equation*}
+Therefore $\lambda = \pm \sqrt{-f'(x)}$.  In other words, either we get
+real eigenvalues of opposite signs, or we get purely imaginary eigenvalues.
+There are only two possibilities for critical points, either an unstable
+saddle point, or a stable center.  There are never any asymptotically stable
+points.
+
+\subsection{Exercises}
+
+\begin{exercise}
+For the systems below, find and classify the critical points.\\
+a) FIXME \qquad b) FIXME \qquad c) FIXME
+\end{exercise}
+
+\begin{exercise}
+Find the implicit equations of the trajectories of the following
+conservative systems.  Next find their critical points (if any) and classify them.
+\\
+a) $x''+ x^2 = 0$
+\qquad
+b) $\theta''+\sin \theta = 0$
+\qquad
+c) $z''+ (z-1)(z+1) = 0$
+\qquad
+d) $x''+ x^2+1 = 0$
+\end{exercise}
+
+\begin{exercise}
+FIXME
+\end{exercise}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sectionnewpage
+\section{Applications of nonlinear systems}
+
+\sectionnotes{2 lectures \EPref{, \S?.? in \cite{EP}}\BDref{,
+\S?.? in \cite{BD}}}
+
+In this section we will study two very standard examples of nonlinear
+systems.  We will look at the nonlinear pendulum equation.  We saw
+the pendulum equation's linearization before, but noted it
+was only valid for small angles and short times.  Now we will find out what
+happens for large angles.  Next, we will look at the predator-prey equation
+which finds various applications in modeling problems in biology, chemistry,
+economics and elsewhere.
+
+\subsection{Pendulum}
+
+The first example we will study is the pendulum.  That is, we will
+analyze the equation
+$\theta''+\frac{g}{L} \sin \theta = 0$.  Here, $\theta$ is the angular
+displacement, $g$ is the gravitational constant, and $L$ is the length of
+the pendulum.  In this equation we disregard friction, so we are talking
+about an idealized pendulum.
+
+\begin{diffyfloatingfigure}{1.45in}{1.75in}
+\noindent
+\inputpdft{mv-pend}
+\bigskip
+\end{diffyfloatingfigure}
+As we have mentioned before, this equation is a conservative
+equation, so we will be able to use our analysis of conservative equations
+from the previous section.
+Let us change this to a two
+dimensional system in variables $(\theta,\omega)$ by introducing the new
+variable $\omega$:
+\begin{equation*}
+\begin{bmatrix}
+\theta \\ \omega
+\end{bmatrix} '
+=
+\begin{bmatrix}
+\omega \\
+- \frac{g}{L} \sin \theta
+\end{bmatrix} .
+\end{equation*}
+The critical points of this system are when $\omega = 0$ and $-\frac{g}{L}
+\sin \theta = 0$, or in other words if $\sin \theta = 0$.  So the critical
+points are when $\omega = 0$ and $\theta$ is a multiple of $\pi$.  That is
+the points are $\ldots (-2\pi,0), (-\pi,0), (0,0), (\pi,0), (2\pi,0)
+\ldots$.  While there are infinitely many critical points, they are all isolated.
+Let us compute the Jacobian matrix:
+\begin{equation*}
+\begin{bmatrix}
+\frac{\partial}{\partial \theta} \Bigl( \omega \Bigr) & 
+\frac{\partial}{\partial \omega} \Bigl( \omega \Bigr) \\
+\frac{\partial}{\partial \theta} \Bigl( - \frac{g}{L} \sin \theta \Bigr) & 
+\frac{\partial}{\partial \omega} \Bigl( - \frac{g}{L} \sin \theta \Bigr)
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 & 1 \\
+- \frac{g}{L} \cos \theta & 0
+\end{bmatrix} .
+\end{equation*}
+
+We have seen that for conservative equations, there are two types of
+critical points.  Either stable centers, or saddle points.  The eigenvalues
+of the Jacobian are $\lambda = \pm \sqrt{-\frac{g}{L}\cos \theta}$.
+
+The
+eigenvalues are going to be real what is under the integral is positive,
+and so if $\cos \theta < 0$.  This happens at the odd multiples of $\pi$.
+The
+eigenvalues are going to be purely imaginary what is under the integral is
+negative, and so if $\cos \theta > 0$.  This happens at the even
+multiples of $\pi$.  Therefore the system has a stable center at
+the points are $\ldots (-2\pi,0), (0,0), (2\pi,0) \ldots$, and it has an
+unstable saddle at
+$\ldots (-3\pi,0), (-\pi,0), (\pi,0), (3\pi,0) \ldots$.  Look at the
+phase diagram in \figurevref{fig:nlin-pend-phasediag},
+where for simplicity we let $\frac{g}{L} = 1$.
+
+\begin{figure}[h!t]
+\capstart
+\begin{center}
+\diffyincludegraphics{width=3in}{width=4.5in}{nlin-pend-phasediag}
+\caption{Phase plane diagram and some trajectories of
+the nonlinear pendulum equation. \label{fig:nlin-pend-phasediag}}
+\end{center}
+\end{figure}
+
+In the linearized equation we only had a single critical point, the center
+at $(0,0)$.  We can now see more clearly what we meant when we said that the
+linearization was good for small angles.  The horizontal axis is the
+deflection angle.  The vertical axis is the angular velocity of the
+pendulum.  Suppose we start at $\theta = 0$ (no deflection), and
+we start with a small angular velocity $\omega$.  Then the trajectory keeps going
+around the critical point $(0,0)$ in an approximate circle.  This
+corresponds to short swings of the pendulum back and forth.  When $\theta$
+stays small, the trajectories really look like circles and hence are very
+close to our linearization.
+
+When we give the pendulum a big enough push, it will
+go across the top and keep spinning about its axis.  This behavior
+corresponds to the
+wavy curves that do not cross the horizontal axis in the phase diagram.
+Let us suppose we look at the top curves, that is when the angular velocity
+is large and positive $\omega$ is positive.  Then the pendulum is going
+around and around its axis.  You notice that here the velocity is going to
+be large when the pendulum is near the bottom and it is the lowest when it
+is close to the top of its loop.
+
+At each critical point, there is an equilibrium solution.  The solution
+$\theta = 0$ is a stable solution.  That is when the pendulum is not moving
+and is hanging straight down.  Clearly this is a stable place for the
+pendulum to be, hence this is a \emph{stable} equilibrium.
+
+The other type of equilibrium solution is at the unstable point, for example
+$\theta = \pi$.  Here the pendulum is upside down.  Sure you can balance the
+pendulum this way and it will stay, but this is an \emph{unstable} equilibrium.  An
+even the tiniest push will make the pendulum start swinging wildly.
+
+See \figurevref{fig:nlin-pend} for a diagram.  The first picture is the
+stable equilibrium $\theta = 0$.  The second picture corresponds to those
+``almost circles'' in the phase diagram around $\theta =0$ when the angular
+velocity is small.  The next picture is the unstable equilibrium $\theta =
+\pi$.  The last picture corresponds to the wavy lines for large angular
+velocities.
+
+\begin{figure}[h!t]
+\capstart
+\begin{center}
+\inputpdft{nlin-pend}
+\caption{Various possibilities for the motion of the pendulum. \label{fig:nlin-pend}}
+\end{center}
+\end{figure}
+
+The quantity 
+\begin{equation*}
+\frac{1}{2} \omega^2  - \frac{g}{L} \cos \theta 
+\end{equation*}
+is conserved by any solution.  This is the energy or the Hamiltonian of
+the system.
+
+We have a conservative equation and so (exercise) the
+trajectories are given by
+\begin{equation*}
+\omega = \pm \sqrt{ \frac{2g}{L} \cos \theta + C} ,
+\end{equation*}
+for various values of $C$.  Let us figure out what $C$ corresponds to an
+initial condition of $(\theta_0,0)$, that is, if we take the pendulum to
+angle $\theta_0$, and just let it go (initial angular velocity 0).  We we
+plug in the initial conditions into the above and solve we obtain
+\begin{equation*}
+C = - \frac{2g}{L} \cos \theta_0 .
+\end{equation*}
+So the expression for the trajectory is
+\begin{equation*}
+\omega = \pm \sqrt{ \frac{2g}{L}} \sqrt{ \cos \theta - \cos \theta_0 } .
+\end{equation*}
+
+Let us figure out the period.  That is, the time it takes for the pendulum
+to swing back and forth.
+We notice that the oscillation about the
+origin in the phase plane is symmetric about both the $\theta$ and the
+$\omega$ axis.  That is, in terms of $\theta$,
+the time it takes from $\theta_0$ to $-\theta_0$
+is the same as it takes from $-\theta_0$ back to $\theta_0$.  Furthermore,
+the time it takes from $-\theta_0$ to $0$ is the same as to go from $0$ to
+$\theta_0$.  Therefore, let us figure out by finding how long it takes for
+the pendulum to go from angle 0 to angle $\theta_0$, which is a quarter of
+the full oscillation.
+
+We can figure this out by finding
+$\frac{dt}{d\theta}$ and then integrating from $0$ to $\omega_0$.
+The period is four times
+this integral.  Let us stay in the region where $\omega$ is positive.
+Since $\omega = \frac{d\theta}{dt}$, inverting we get
+\begin{equation*}
+\frac{dt}{d\theta} = \sqrt{\frac{L}{2g}} \frac{1}{\sqrt{\cos \theta - \cos \theta_0 }} .
+\end{equation*}
+Therefore the period $T$ is given by
+\begin{equation*}
+T = 4 \sqrt{\frac{L}{2g}} \int_0^{\theta_0} \frac{1}{\sqrt{\cos \theta -
+\cos \theta_0 }}\, d\theta .
+\end{equation*}
+Notice that the integral is an improper integral, and that we cannot in
+general evaluate it symbolically, and we must resort to numerical
+approximation.
+
+Recall from \sectionref{sec:mv}, the linearized equation $\theta''+\frac{g}{L}\theta
+= 0$ has period
+\begin{equation*}
+T_{\text{linear}} = 2\pi \sqrt{\frac{L}{g}} .
+\end{equation*}
+We plot $T$, $T_{\text{linear}}$, and the relative error
+$\frac{T-T_{\text{linear}}}{T}$ in \figurevref{fig:TvsT0}.  The relative error
+says how far is our approximation from the real period percentage-wise.
+Note that $T_{\text{linear}}$ is simply a constant (it does not change with
+the initial angle $\theta_0$).  However the actual period $T$ gets larger and larger as
+$\theta_0$ gets larger.
+Notice how the relative error is small when $\theta_0$ is small, but it is
+still only $15\%$ when $\theta_0 = \frac{\pi}{2}$, that is, a 90 degree
+angle.  The error is only $3.8\%$ when starting at $\frac{\pi}{4}$, that is,
+a 45 degree angle.  At a 5 degree initial angle, the error is only $0.048 \%$.
+
+\begin{figure}[h!t]
+\capstart
+\begin{center}
+\diffyincludegraphics{width=3in}{width=4.5in}{nlin-T-vs-T0-abs}
+\diffyincludegraphics{width=3in}{width=4.5in}{nlin-T-vs-T0-relerr}
+\caption{The plot of $T$ and $T_{\text{linear}}$ with $\frac{g}{L} =
+1$ (left), and the plot of the relative
+error $\frac{T-T_{\text{linear}}}{T}$ (right), for $\theta_0$ between 0 and $\pi/2$. \label{fig:TvsT0}}
+\end{center}
+\end{figure}
+
+While it is not immediately obvious from the formula, it is true that
+\begin{equation*}
+\lim_{\theta_0 \uparrow \pi} T = \infty .
+\end{equation*}
+That is, the period goes to infinity as the initial angle approaches the
+unstable equilibrium point.  So if we put the pendulum almost upside down it
+may take a very long time before it gets down.  This is consistent with the
+limitting behavior, where the exactly upside down pendulum never makes an
+oscillation, so we could think of that as infinite period.
+
+\subsection{Predator-prey or Lotka-Volterra systems}
+
+One of the most common simple applications of nonlinear systems are the
+so-called \emph{\myindex{predator-pray}} systems or
+\emph{\myindex{Lotka-Volterra}} systems.  These systems arise for example
+when two species interact, one as a prey and one as a predator.  It is
+then no surprise that the equation also sees applications in economics.  Another
+example where the system arises is in chemical reactions.
+This simple system of equations explains the natural periodic variations of populations of
+different species in nature.  Before the application of differential
+equations, these periodic variations in the population baffled biologists.
+
+Let us keep
+with the classical example of hares and foxes in a forest, as it is the
+easiest to understand.
+\begin{equation*}
+\begin{aligned}
+& x = \text{\# of hares (the prey),} \\
+& y = \text{\# of foxes (the predator).}
+\end{aligned}
+\end{equation*}
+When there are a lot of hares, there is plenty of food for the foxes, so
+the fox population grows.  However, when the fox population grows, the foxes
+eat more hares, so when there are lots of foxes, the hare population
+should go down, and vice versa.
+The Lotka-Volterra model proposes that this 
+behavior is described by the system of equations
+\begin{equation*}
+\begin{aligned}
+& x' = (a-by)x, \\
+& y' = (cx-d)y,
+\end{aligned}
+\end{equation*}
+where $a,b,c,d$ are some parameters that describe the interaction of the
+foxes and hares\footnote{This interaction does not end well for the
+hare.}.  In this model, these are all positive numbers.
+
+Let us analyze the idea behind this model.  The model is a slightly more
+complicated idea based on the exponential population model.
+First expand,
+\begin{equation*}
+x' = ax - byx .
+\end{equation*}
+The hares are expected to simply grow exponentially in the absence of foxes,
+that is where the $ax$ term comes in, the growth in population is
+proportional to the population itself.  We are assuming the hares
+will always find enough food and have enough space to reproduce.  However,
+there is another component $-byx$, that is, the population also is
+decreasing proportionally to the number of foxes.  Together we can write the
+equation as $(a-by)x$, so it is like exponential growth or decay but the
+constant depends on the number of foxes.
+
+The equation for foxes is very similar, expand again
+\begin{equation*}
+y' = cxy-dy .
+\end{equation*}
+The foxes need food (hares) to reproduce, the more food, the bigger the
+rate of growth, hence the $cxy$ term.  On the other hand, there is some
+natural deaths in the fox population, and hence the $-dy$ term.
+
+Without further delay, let us start with an explicit example.  Suppose the
+equations are 
+\begin{equation*}
+x' = (0.4-0.01y)x, \qquad y' = (0.003x-0.3)y .
+\end{equation*}
+See \figurevref{fig:nlin-pred-prey} for the phase portrait.  In this example
+it makes sense to also plot $x$ and $y$ as graphs with respect to time.
+Therefore the second graph in 
+\figureref{fig:nlin-pred-prey} is the graph of $x$ and $y$ on the vertical
+axis (the prey $x$ is the thinner line with taller peaks), against time
+on the horizontal axis.  The particular trajectory graphed was with initial
+conditions of 20 foxes and 50 hares.
+\begin{figure}[h!t]
+\capstart
+\begin{center}
+\diffyincludegraphics{width=3in}{width=4.5in}{nlin-pred-prey-phase}
+\diffyincludegraphics{width=3in}{width=4.5in}{nlin-pred-prey-graphs}
+\caption{The phase portrait (left) and graphs of $x$ and $y$ for
+a sample trajectory (right). \label{fig:nlin-pred-prey}}
+\end{center}
+\end{figure}
+
+Let us try to analyze what we see on the graphs.  Let us work in the general
+setting rather than putting in real numbers.  First, let us find
+the critical points.  Set $(a-by)x = 0$, and $(cx-d)y = 0$.
+First equation is satisfied if either $x=0$ or $y=\frac{a}{b}$.  If $x=0$, then the
+second equation implies $y=0$.  If $y= \frac{a}{b}$, the second equation implies
+$x=\frac{d}{c}$.
+So there are two equilibria, first at $(0,0)$ (no animals at all), or
+$(\frac{d}{c},\frac{a}{b})$.  
+
+In our specific example $x = \frac{d}{c} = 100$, and $y = \frac{a}{b} = 40$.
+So this is the point where there are 100 hares and 40 foxes.
+
+Let us compute the Jacobian:
+\begin{equation*}
+\begin{bmatrix}
+a-by & -bx \\
+cy & cx-d
+\end{bmatrix} .
+\end{equation*}
+At the origin $(0,0)$ we get the matrix
+$\left[ \begin{smallmatrix}
+a & 0 \\
+0 & -d
+\end{smallmatrix} \right]$, so the eigenvalues are $a$ and $-d$, hence real
+and of opposite signs.  So the critical point at the origin is a saddle.
+This makes sense.  If you started with some foxes but no hares, then the
+foxes would go extinct, that is, you would approach the origin.  If you
+started with no foxes and a few hares, then the hares would keep multiplying
+without check, and so you would go away from the origin.
+
+OK, how about the other critical point at $(\frac{d}{c},\frac{a}{b})$.  Here
+the Jacobian matrix becomes
+\begin{equation*}
+\begin{bmatrix}
+0 & -\frac{bd}{c} \\
+\frac{ac}{b} & 0
+\end{bmatrix} .
+\end{equation*}
+Computing the eigenvalues we get the equation $\lambda^2 + ad = 0$.  In
+other words, $\lambda = \pm i \sqrt{ad}$, and so the eigenvalues being
+purely imaginary, we are in the case where we cannot quite decide using only
+linearization.  We could
+have a stable center, spiral sink, or a spiral source.  That is, the
+equilibrium could be asymptotically stable, stable, or unstable.  Of
+course I gave you a picture above which seems to imply that it is a stable
+center.  But never trust a picture only.  It could be that the oscillations
+is getting larger and larger but only very slowly.  Of course this would be
+bad as it would imply that something will go wrong with our population
+sooner or later.  And I only graphed a very specific example with very
+specific trajectories.
+
+How can we be sure that we are in the stable situation?
+As we said before, in the case of purely imaginary eigenvalues, we have to
+do a bit more work.  Previously we found that for conservative systems,
+there was a certain quantity which was conserved on the trajectories, and
+hence the trajectories had to go in circles.
+We can use a similar technique here.  We have to figure out what is that
+conserved quantity.  After long trial and error we might find that the
+constant
+\begin{equation*}
+C = \frac{y^a x^d}{e^{cx+by}} = y^a x^d e^{-cx-by}
+\end{equation*}
+is conserved.  Such a quantity is called the \emph{\myindex{constant of
+motion}}.  Let us check $C$ really is a constant of motion.  How do we check, you say?  Well, a constant is
+something that does not change with time, so let us compute the derivative
+with respect to time:
+\begin{equation*}
+C' = 
+a y^{a-1}y' x^d e^{-cx-by}
++
+y^a d x^{d-1} x' e^{-cx-by}
++
+y^a x^d e^{-cx-by} (-cx'-by') .
+\end{equation*}
+Our equations give us what $x'$ and $y'$ are so let us plug those in:
+\begin{equation*}
+\begin{split}
+C' & = 
+a y^{a-1} (cx-d)y x^d e^{-cx-by}
++
+y^a d x^{d-1} (a-by)x e^{-cx-by}
++
+y^a x^d e^{-cx-by} \bigl(-c(a-by)x-b(cx-d)y\bigr)
+\\
+& =
+y^a x^d e^{-cx-by}
+\Bigl(
+a (cx-d)
++
+d (a-by)
++
+\bigl(-c(a-by)x-b(cx-d)y\bigr) \Bigr)
+\\
+& = 
+0 .
+\end{split}
+\end{equation*}
+So along the trajectories $C$ is constant.  In fact, the expression $C =
+\frac{y^a x^d}{e^{cx+by}}$ gives us an implicit equation for the
+trajectories.  In any case, once we have found this constant of motion,
+it must be true that the
+trajectories are some simple curves, that is, the level curves of
+$\frac{y^a x^d}{e^{cx+by}}$.  It turns out, that the critical point at
+$(\frac{d}{c},\frac{a}{b})$ is a maximum for $C$ (left as an exercise).
+So $(\frac{d}{c},\frac{a}{b})$ is a stable equilibrium point, and 
+so we do not have to worry about the foxes and hares going extinct or their
+populations exploding.
+
+One blemish on this wonderful model is that the number of foxes and hares
+are discrete quantities and we are modeling with continuous variables.  Our
+model has no problem with there being 0.1 fox in the forest for example,
+while in reality that makes no sense.  The approximation is a reasonable one
+as long as the number of foxes and hares are large, but it does not make
+much sense for small numbers.  So one must be careful in interpreting any
+results from such a model.
+
+An interesting paradox shown by this model is that adding animals to
+the forest might lead to extinction, because the variations will get too
+close to zero.  For example, suppose there are 20 foxes and 50 hares as
+before, but now we bring in more foxes, bringing their number to 200.  If we
+run the computation we will find that the number of hares will plummet to just
+slightly more than 1 hare in the whole forest.  In reality that will most
+likely mean the hares die out, and then the foxes will die out as well
+as they will have nothing to eat.
+
+Showing that a system of equations has a stable solution can be a very
+difficult problem.  In fact, when Isaac Newton put forth his laws of
+planetary motions, he proved that a single planet orbiting a single sun is a
+stable system.  But any solar system with more than 1 planet proved very
+difficult indeed.  In fact, such a system will behave chaotically (see the
+next section), meaning small changes in initial conditions will lead to very
+different long term outcomes.  From numerical experimentation and
+measurements, we know that the earth will not fly out into the empty space
+or crash into the sun, for at least some millions of years to go.  But we do
+not know what happens beyond that.
+
+\subsection{Exercises}
+
+\begin{exercise}
+FIXME
+\end{exercise}
+
+\begin{exercise}
+a) Suppose $x$ and $y$ are
+positive variables.  Show $\frac{y x}{e^{x+y}}$
+attains a maximum at $(1,1)$.\\
+b) Suppose $a,b,c,d$ are positive constants, and also suppose $x$ and $y$ are
+positive variables.  Show $\frac{y^a x^d}{e^{cx+by}}$
+attains a maximum at $(\frac{d}{c},\frac{a}{b})$.
+\end{exercise}
+
+\begin{exercise}[Challenging]
+Take the pendulum, suppose the initial position is $\theta = 0$. \\
+a) Find the expression for $\omega$ giving the trajectory
+with initial condition $(0,\omega_0)$.  Hint: Figure out what $C$
+should be in terms of $\omega_0$.\\
+b) Find the crucial angular velocity $\omega_1$, such that
+for any higher initial angular velocity,
+the pendulum will keep going around its
+axis, and for any lower initial angular velocity, the pendulum will simply
+swing back and forth.
+Hint: When the pendulum doesn't go over the top the expression for $\omega$
+will be undefined for some $\theta$s.
+\\
+c) What do you think happens if the initial condition is $(0,\omega_1)$,
+that is, the initial angle is 0, and the initial angular velocity is exactly
+$\omega_1$.
+\end{exercise}
+
+%We have a conservative equation and so (exercise) the
+%trajectories are given by
+%\begin{equation*}
+%\omega = \pm \sqrt{ \frac{2g}{L} \cos \theta + C} ,
+%\end{equation*}
+%for various values of $C$.  Let us figure out what $C$ corresponds to an
+%initial condition $(0,\omega_0)$.  A little bit of thought tells us that
+%such a $C = \omega_0^2 - \frac{2g}{L}$.  Taking just the top part of the
+%trajectory we get
+%\begin{equation*}
+%\omega = \sqrt{ \frac{2g}{L} \cos \theta - \frac{2g}{L} + \omega_0^2} .
+%\end{equation*}
+%What we are trying to do is figure out when this will have no ``gaps,'' that
+%is when what is under the square root is always positive.  The minimum is
+%clearly taken when $\theta$ is an odd multiple of $\pi$, in this case we
+%will get precisely zero when
+%\begin{equation*}
+%0 = \frac{2g}{L} \cos \pi - \frac{2g}{L} + \omega_0^2 ,
+%\end{equation*}
+%or in other words, solving for $\omega_0$ (and assuming it is positive) we
+%have
+%\begin{equation*}
+%\omega_0 = 2 \sqrt{\frac{g}{L}} .
+%\end{equation*}
+%In the case we graphed, that is when $\frac{g}{L} = 1$, then this magic
+%$\omega_0 = 2$.  Notice that the trajectory that seems to go through the 
+%saddle points goes through the point $(0,2)$.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sectionnewpage
+\section{Chaos}
+
+\sectionnotes{1 lecture \EPref{, \S?.? in \cite{EP}}\BDref{,
+\S?.? in \cite{BD}}}
+
+You have surely heard the story about the
+flap of a butterfly wing in the Amazon causing hurricanes in the North
+Atlantic.  In the previous section, we mentioned that a small change in
+initial conditions of the planets can lead to very different configuration
+of the planets in the long term.  These are examples of
+\emph{\myindex{chaotic systems}}.
+Mathematical chaos is not really chaos, there is precise order behind the
+scenes.  Everything is still deterministic.  However the system is extremely
+sensitive, and numerically unpredictable in the future, which is generally
+the trouble as chaotic systems cannot be in general solved analytically.
+
+Take the weather for example.  If a small change in the initial conditions
+(the temperature at every point of the atmosphere for example) produces
+drastically different predictions in relatively short time, then we cannot
+accurately predict weather.  This is because we do not actually know the
+exact initial conditions, we measure temperatures at a few points with some
+error and then we somehow estimate what is in between.  There is no way we
+can accurately measure the effects of every butterfly wing.  Then of course,
+we will solve numerically which introduces new errors.  That is why you
+should not trust weather prediction more than a few days out.
+
+The idea of chaotic behavior was first noticed by Edward
+Lorenz\footnote{\href{http://en.wikipedia.org/wiki/Edward_Norton_Lorenz}{Edward Norton Lorenz} (1917--2008) was
+an American mathematician and meteorologist.}
+in the
+1960s when trying to model thermally induced air convection (movement).
+The equations Lorentz was looking at is the relatively simple looking
+system:
+\begin{equation*}
+x' = -10x +10y, \qquad y' = 28x-y+xz, \qquad z'=-\frac{8}{3}z + xy .
+\end{equation*}
+A small change in the initial conditions yield a very different solution
+after a reasonably short time.
+
+\begin{diffyfloatingfigure}{0.95in}{1.25in}
+\noindent
+\inputpdft{chaos-pend}
+\end{diffyfloatingfigure}
+A very simple example that the reader can experiment with, which displays
+chaotic behavior is a double pendulum.  The equations that govern this
+system are somewhat complicated and their derivation is quite tedious, so we
+will not bother to write them down.  The idea is to put a pendulum on the
+end of another pendulum.  If you look at the movement of the bottom mass,
+the movement will appear chaotic.  This type of system is a basis for a
+whole number of office novelty desk toys.  It is very simple to build a
+version.  Take a piece of a string, and tie two heavy nuts at different
+points of the string; one at the end, and one a bit above.  Now give the
+bottom nut a little push, as long as the swings are not too big and the
+string stays tight, you have a double pendulum system.
+
+\subsection{Duffing equation and strange attractors}
+
+Let us study the so-called \emph{\myindex{Duffing equation}}:
+\begin{equation*}
+x'' + a x' + bx + cx^3 = C \cos(\omega t) .
+\end{equation*}
+Here $a$, $b$, $c$, $C$, and $\omega$ are constants.
+You will recognize that except for the $c x^3$ term, this equation looks like
+a forced mass-spring system.  The $c x^3$ term comes up when the spring does
+not exactly obey Hooke's law (which no real-world spring actually does obey
+exactly).  When $c$ is not zero, the equation does not have a nice closed
+form solution, so we have to resort to numerical solutions as is usual for
+nonlinear systems.  Not all choices of constants and initial conditions
+will exhibit chaotic behavior.  Let us study
+\begin{equation*}
+x''+0.05 x' + x^3 = 8\cos(t) .
+\end{equation*}
+Notice that the equation is not autonomous, and so we will not be able to 
+draw the vector field in the phase plane.  We can still draw the
+trajectories however.
+
+In \figurevref{nlin:duf-two-traj} we plot trajectories for $t$ going from 0
+to 15, for two very close initial conditions
+$(2,3)$ and $(2,2.9)$, and also the solutions in the $(x,t)$ space.  The two
+trajectories are close at first, but after a while diverge significantly.
+This sensitivity to initial conditions is precisely what
+we mean by the system behaving chaotically.
+
+\begin{figure}[h!t]
+\capstart
+\begin{center}
+\diffyincludegraphics{width=3in}{width=4.5in}{nlin-duf-two-traj}
+\diffyincludegraphics{width=3in}{width=4.5in}{nlin-duf-two-sols}
+\caption{On left, two trajectories in phase space for $0 \leq t \leq 15$, for the Duffing equation
+one with initial conditions $(2,3)$ and the other with $(2,2.9)$.  On
+right the two solutions in $(x,t)$-space. \label{nlin:duf-two-traj}}
+\end{center}
+\end{figure}
+
+\begin{figure}[h!t]
+\capstart
+\begin{center}
+\diffyincludegraphics{width=6in}{width=9in}{nlin-duf-long}
+\caption{The solution to the given Duffing equation for $t$ from 0 to 100.
+\label{nlin:duf-long}}
+\end{center}
+\end{figure}
+
+Let us see the long term behavior.
+In \figurevref{nlin:duf-long},
+we plot the behavior of the system for initial conditions $(2,3)$, but for
+much longer period of time.  Note that for this period of time it was
+necessary to use a ridiculously large number of steps in the numerical algorithm
+used to produce the graph since even small errors quickly
+propagate\footnote{In
+fact for reference, 30,000 steps were used with the Runge-Kutta
+algorithm, see exercise FIXME.}.
+From the graph it is hard to see any particular pattern
+in the shape of the solution except that it seems to oscillate, but each
+oscillation appears quite unique.  The oscillation is expected from the
+forcing term.
+
+In general it is very difficult to analyze chaotic systems, or to find the
+order behind the madness, but let us try to do something that we did for
+say the standard mass-spring system.  One way we analyzed
+what happens is that we figured out what was the long term behavior (not
+dependent on initial conditions).  From the figure above it is clear
+that we will not get a nice description of the long term behavior, but
+perhaps we can figure out some order to what happens on each ``oscillation''
+and what do these oscillations have in common.
+
+%The concept we will explore
+%is that of an \emph{\myindex{attractor}}.  First instead of 
+The concept we will explore
+is that of an \emph{\myindex{Poincar\`e section}}.  First instead of 
+looking at $t$ in a certain interval, we will simply look at where the
+system is at certain points.  Imagine simply flashing a strobe at a certain
+fixed frequency and simply drawing points where the solution is.
+The right strobing frequency
+depends on the system in question.
+The
+correct frequency to use for the forced Duffing equation (and other similar
+systems) is the frequency of the forcing term.
+For the Duffing equation above is to find a solution
+$\bigl(x(t),y(t)\bigr)$ look at and plot the points
+\begin{equation*}
+\bigl(x(0),y(0)\bigr),
+\bigl(x(2\pi),y(2\pi)\bigr),
+\bigl(x(4\pi),y(4\pi)\bigr),
+\bigl(x(6\pi),y(6\pi)\bigr), \ldots
+\end{equation*}
+As we are really not interested in the transient part of the solution, that
+is, the part of the solution that depends on the initial condition we might
+skip some number of steps.  For example we might skip the first 100 such
+steps and start plotting points at $t = 100(2\pi)$, that is
+\begin{equation*}
+\bigl(x(200\pi),y(200\pi)\bigr),
+\bigl(x(202\pi),y(202\pi)\bigr),
+\bigl(x(204\pi),y(204\pi)\bigr),
+\bigl(x(206\pi),y(206\pi)\bigr), \ldots
+\end{equation*}
+The plot of these points is the Poincar\`e section.
+After plotting enough points, a curious pattern emerges in
+\figurevref{nlin:strange} (the left hand picture), a so-called
+\emph{\myindex{strange attractor}}.
+
+\begin{figure}[h!t]
+\capstart
+\begin{center}
+\diffyincludegraphics{width=3in}{width=4.5in}{nlin-strange}
+\diffyincludegraphics{width=3in}{width=4.5in}{nlin-strange2}
+\caption{Strange attractor.  The left hand side
+is with no phase shift, the right hand side with phase shift
+$\nicefrac{\pi}{4}$. \label{nlin:strange}}
+\end{center}
+\end{figure}
+
+If we have a sequence of points, then 
+an \emph{\myindex{attractor}} is a set towards which the points
+in the sequence
+eventually get closer and closer to, that is, they are attracted.  The
+Poincar\`e section above is not then really the attractor itself, but as
+the points are very close to it, we can see its shape.  The strange
+attractor in the figure is a very complicated set, and it in fact has
+fractal structure, that is, if you would zoom in as far as you want, you
+would keep seeing the same complicated structure.
+
+Notice that the initial condition does not really make any difference.  If
+we started with different initial condition, the points would eventually
+gravitate towards the attractor, and so as long as we throw away the first
+few points, we will always get the same picture.
+
+An amazing thing is that a chaotic system such as the Duffing equation is
+not random at all.  There is a very complicated order to it, and the strange
+attractor says something about this order.  We cannot quite say what state
+the system will be in eventually, but given a fixed strobing frequency we
+can narrow it down to the points on the attractor.
+
+If you would use a phase shift, for example $\nicefrac{\pi}{4}$, and look at the
+times
+\begin{equation*}
+\nicefrac{\pi}{4}, 2\pi+\nicefrac{\pi}{4},
+4\pi+\nicefrac{\pi}{4}, \ldots
+\end{equation*}
+you would obtain a slightly different looking attractor.
+The picture is the right hand side of 
+\figurevref{nlin:strange}.
+It is as if we had
+rotated distorted slightly and then moved the original.
+Therefore for each phase shift you can find the
+set of points towards which the system periodically keeps coming back to.
+
+You should study the pictures and notice especially the scales, where are
+these attractors located in the phase plane.  Notice the
+regions where the strange attractor lives and compare it to the plot of the
+trajectories in \figurevref{nlin:duf-two-traj}.
+
+Just to compare to the discussion in chapter FIXME about forced
+oscillations.  Take the equation
+\begin{equation*}
+x''+2p x' + \omega_0^2 x = \frac{F_0}{m} \cos (\omega t) .
+\end{equation*}
+This is like the Duffing equation but with no $x^3$ term.
+The steady periodic solution is of the form
+\begin{equation*}
+x = C \cos (\omega t + \gamma) .
+\end{equation*}
+Strobing using the frequency $\omega$ we would obtain a single point in the
+phase space.  So the attractor in this setting is a single point.  An
+expected result as the system is not chaotic.  In fact it was the opposite
+of chaotic.  Any difference induced by the initial conditions dies away very
+quickly, and we settle into always the same steady periodic motion.
+
+\subsection{Exercises}
+
+\begin{exercise}
+For the nonchaotic equation
+$x''+2p x' + \omega_0^2 x = \frac{F_0}{m} \cos (\omega t)$, suppose we
+strobe with frequency $\omega$ as we mentioned above.  Use the known
+steady periodic solution to find precisely the point which is the attractor
+for the Poincar\`e section.
+\end{exercise}
+
+\begin{exercise}
+FIXME
+\end{exercise}
+
+\begin{exercise}[Project]
+A simple fractal attractor can be drawn via the following chaos game.  Draw three
+points of a triangle (just the vertices) and number them, say $p_1$, $p_2$
+and $p_3$.  Start with some
+random point $p$ (does not have to be one of the three points above) and
+draw it.  Roll a die, and use it to pick of the $p_1$, $p_2$, or $p_3$
+randomly (for example 1 and 4 mean $p_1$, 2 and 5 mean $p_2$, and 3 and 6
+mean $p_3$).  Suppose we picked $p_2$, then let $p_{\text{new}}$ be the
+point exactly halfway between $p$ and $p_2$.  Draw this point and let $p$
+now refer to this new point $p_{\text{new}}$.  Rinse, repeat.  Try to be
+precise and draw as many iterations as possible.  Your points should be
+attracted to the so-called \emph{\myindex{Sierpinski triangle}}.  A computer
+was used to run the game for 10,000 iterations to obtain the picture in
+\figurevref{nlin:sierpinski}.
+\end{exercise}
+
+\begin{figure}[h!t]
+\capstart
+\begin{center}
+\diffyincludegraphics{width=3in}{width=4.5in}{nlin-sierpinski}
+\caption{10,000 iterations of the chaos game producing the 
+Sierpinski triangle. \label{nlin:sierpinski}}
+\end{center}
+\end{figure}
+
+\begin{exercise}[Writing project]
+Construct the double pendulum described in the text with a string and two
+nuts (or heavy beads).  Play around with the position of the middle nut, and
+perhaps use different weight nuts.  Describe what you find.
+\end{exercise}
+
+\end{document}

@@ -1,0 +1,832 @@
+\documentclass[12pt]{book}
+%Paper saving
+%\documentclass[12pt,openany]{book}
+%\documentclass[10pt,openany]{book}
+%\documentclass[8pt,openany]{extbook}
+
+\usepackage{diffyqssetup}
+
+\author{Ji\v{r}\'i Lebl}
+
+\title{Notes on Diffy Qs: Differential Equations for Engineers}
+
+\begin{document}
+\setcounter{chapter}{6}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Power series methods} \label{ps:chapter}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Power series\EPsec{3.1}}
+
+\sectionnotes{1 or 1.5 lecture \EPref{, \S3.1 in \cite{EP}}\BDref{,
+\S5.1 in \cite{BD}}}
+
+Many functions can be written in terms of a power series
+\begin{equation*}
+\sum_{k=0}^\infty a_k {(x-x_0)}^k .
+\end{equation*}
+If we assume that a solution of a differential equation is written as a
+power series, then perhaps we can use a method reminiscent of undetermined
+coefficients.  That is, we will try to solve for the numbers $a_k$.
+
+\medskip
+
+Before we can carry out this process, let us review some results
+and concepts about power series.
+As we said a \emph{\myindex{power series}} is an expression such as
+\begin{equation} \label{ps:sereq1}
+\sum_{k=0}^\infty a_k {(x-x_0)}^k =
+a_0 + 
+a_1 (x-x_0) +
+a_2 {(x-x_0)}^2 +
+a_3 {(x-x_0)}^3 + \cdots,
+\end{equation}
+where $a_k$ and $x_0$ are constants.  Let
+\begin{equation*}
+S_n(x) = \sum_{k=0}^n a_k {(x-x_0)}^k =
+a_0 + a_1 (x-x_0) + a_2 {(x-x_0)}^2 + a_3 {(x-x_0)}^3 + \cdots + a_n {(x-x_0)}^n ,
+\end{equation*}
+denote the so-called \emph{\myindex{partial sum}}.  If for some $x$,
+the limit
+\begin{equation*}
+\lim_{n\to \infty} S_n(x) = \lim_{n\to\infty} \sum_{k=0}^n a_k {(x-x_0)}^k
+\end{equation*}
+exists, then we say that the series \eqref{ps:sereq1}
+\emph{converges}\index{convergence of a series} at $x$.
+Note that for $x=x_0$, the series always converges to $a_0$.
+When \eqref{ps:sereq1}
+converges at any other point $x \not= x_0$,
+we say that \eqref{ps:sereq1} is a
+\emph{\myindex{convergent power series}}.  In this case we write
+\begin{equation*}
+\sum_{k=0}^\infty a_k {(x-x_0)}^k = 
+\lim_{n\to\infty} \sum_{k=0}^n a_k {(x-x_0)}^k.
+\end{equation*}
+If the series does not converge for any point $x \not= x_0$, we say that
+the series is \emph{divergent}\index{divergent power series}.
+
+\begin{example} \label{ps:expex}
+The series
+\begin{equation*}
+\sum_{k=0}^\infty \frac{1}{k!} x^k = 
+1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \cdots
+\end{equation*}
+is convergent for any $x$.
+Recall that $k! = 1\cdot 2\cdot 3 \cdots k$ is the
+factorial.  By convention we define $0! = 1$.
+In fact, you may recall that this series
+converges to $e^x$.
+\end{example}
+
+\medskip
+
+We say that \eqref{ps:sereq1}
+\emph{\myindex{converges absolutely}}\index{absolute convergence}
+at $x$ whenever the limit
+\begin{equation*}
+\lim_{n\to\infty} \sum_{k=0}^n
+\lvert a_k \rvert \, {\lvert x-x_0 \rvert}^k 
+\end{equation*}
+exists.  That is, if the series
+$\sum_{k=0}^\infty \lvert a_k \rvert \, {\lvert x-x_0 \rvert}^k$
+is convergent.
+Note that if \eqref{ps:sereq1} converges absolutely at $x$, then it
+converges at $x$.  However, the opposite is not true.
+
+\begin{example} \label{ps:1kex}
+The series
+\begin{equation*}
+\sum_{k=1}^\infty \frac{1}{k} x^k
+\end{equation*}
+converges absolutely at any $x \in (-1,1)$.  It converges at $x=-1$,
+as
+$\sum_{k=1}^\infty \frac{{(-1)}^k}{k}$ converges (conditionally)
+by the alternating series
+test.
+But the power series does not converge absolutely at $x=-1$, because
+$\sum_{k=1}^\infty \frac{1}{k}$ does not converge.
+\end{example}
+
+Notice that if a series converges at some $x_1$, then all the terms
+$a_k (x_1-x_0)^k$ for all $x$ such that
+$\lvert x - x_0  \rvert < \lvert x_0 - x_1 \vert$ we have that
+$\lvert a_k (x-x_0)^k \rvert$ is smaller than
+$\lvert a_k (x_1-x_0)^k \rvert$.  Therefore, the series must converge
+at $x$.  In fact we get the following.
+
+\begin{theorem}
+For a power series \eqref{ps:sereq1}, there exists a number
+$\rho$ called the \emph{\myindex{radius of convergence}} such that
+the series converges absolutely on the interval
+$(x_0-\rho,x_0+\rho)$ and diverges for $x < x_0-\rho$ and $x > x_0+\rho$.
+We allow to be $\infty$ if the series converges for all $x$.
+\end{theorem}
+
+\begin{figure}[h!t]
+\capstart
+\begin{center}
+\inputpdft{ps-conv}
+\caption{Convergence of a power series.\label{ps:convfig}}
+\end{center}
+\end{figure}
+
+See \figurevref{ps:convfig}.
+In \exampleref{ps:expex} the radius of convergence is $\rho = \infty$
+as the series converges everywhere.  In \exampleref{ps:1kex}
+the radius of convergence is $\rho=1$.
+We note that $\rho = 0$ is another way of saying that the series is
+divergent.
+
+A useful test for convergence is the
+\emph{ratio test}\index{ratio test for series}.  Suppose that
+\begin{equation*}
+\sum_{k=0}^\infty c_k
+\end{equation*}
+is a series such that the limit
+\begin{equation*}
+L = \lim_{n\to\infty} \left \lvert \frac{c_{k+1}}{c_k} \right \rvert
+\end{equation*}
+exists.  Then the series converges absolutely if $L < 1$ and diverges
+if $L > 1$.
+
+Let us apply this test to the series \eqref{ps:sereq1}.  That is
+we let $c_k = a_k {(x - x_0)}^k$ in the test.  We let
+\begin{equation*}
+L = \lim_{n\to\infty} \left \lvert \frac{c_{k+1}}{c_k} \right \rvert
+=
+\lim_{n\to\infty} \left \lvert
+\frac{a_{k+1} {(x - x_0)}^{k+1}}{a_k {(x - x_0)}^k}
+\right \rvert
+=
+\lim_{n\to\infty} \left \lvert
+\frac{a_{k+1}}{a_k}
+\right \rvert
+\lvert  x - x_0 \rvert .
+\end{equation*}
+Define $A$ by
+\begin{equation*}
+A =
+\lim_{n\to\infty} \left \lvert
+\frac{a_{k+1}}{a_k}
+\right \rvert .
+\end{equation*}
+Then if $1 > L = A \lvert x - x_0 \rvert$ the series converges absolutely.
+So if $A = 0$ the series always converges.  If $A > 0$, then
+the series converges $\lvert x - x_0 \rvert < \nicefrac{1}{A}$,
+and diverges if $\lvert x - x_0 \rvert > \nicefrac{1}{A}$.  That is,
+the radius of convergence is $\nicefrac{1}{A}$.  Let us summarize.
+
+\begin{theorem}
+Let
+\begin{equation*}
+\sum_{k=0}^\infty a_k {(x-x_0)}^k
+\end{equation*}
+be a power series such that
+\begin{equation*}
+A =
+\lim_{n\to\infty}
+\left \lvert
+\frac{a_{k+1}}{a_k}
+\right \rvert
+\end{equation*}
+exists.  If $A = 0$, then the radius of convergence of the series
+is $\infty$.  Otherwise the radius of convergence is $\nicefrac{1}{A}$.
+\end{theorem}
+
+\begin{example}
+Suppose we have the series
+\begin{equation*}
+\sum_{k=0}^\infty 2^{-k} {(x-1)}^k .
+\end{equation*}
+First we compute,
+\begin{equation*}
+A = \lim_{k\to\infty} 
+\left \lvert
+\frac{a_{k+1}}{a_k}
+\right \rvert
+=
+\lim_{k\to\infty} 
+\left \lvert
+\frac{2^{-k-1}}{2^{-k}}
+\right \rvert
+=
+2^{-1} = \nicefrac{1}{2}.
+\end{equation*}
+Therefore the radius of convergence is $2$, and the series
+converges absolutely on the interval $(-1,3)$.
+\end{example}
+
+Functions represented by series are called
+\emph{\myindex{analytic functions}}.  Not every function is analytic,
+although the majority of the functions you have seen in calculus are.
+
+An analytic function $f(x)$ is equal to its \emph{\myindex{Taylor series}}%
+\footnote{Named after the English mathematician Brook Taylor
+(1685 -- 1731).}
+near a point $x_0$.
+That is, for $x$ near $x_0$ we have
+\begin{equation*}
+f(x) = \sum_{k=0}^\infty \frac{f^{(k)}(x_0)}{k!} {(x-x_0)}^k ,
+\end{equation*}
+where $f^{(k)}(x_0)$ denotes the $k^{\text{th}}$ derivative of $f(x)$
+at the point $x_0$.
+
+For example, sine is an analytic function and its Taylor series
+around $x_0 = 0$
+is given by
+\begin{equation*}
+\sin(x) = \sum_{k=1}^\infty \frac{(-1)^k}{(2k+1)!}
+ x^{2k+1} .
+\end{equation*}
+In \figurevref{ps:sin} we plot $\sin(x)$ and the truncations of the
+series up to degree 5 and 9.  You can see that the approximation is very
+good for $x$ near 0, but gets worse for larger $x$.  This is in general
+what will happen.  To get good approximation far away from $x_0$ you
+will need to take more and more terms of the Taylor series.
+\begin{figure}[h!t]
+\capstart
+\begin{center}
+\diffyincludegraphics{width=3in}{width=4.5in}{ps-sin}
+\caption{The sine function and its Taylor approximations
+of $5^{\text{th}}$ and $9^{\text{th}}$ degree.\label{ps:sin}}
+\end{center}
+\end{figure}
+
+\medskip
+
+Convergent power series can be added and multiplied by
+constants and multiplied together using the
+following rules.  Firstly, we can add series
+by adding them term by term,
+\begin{equation*}
+\left(\sum_{k=0}^\infty a_k {(x-x_0)}^k\right)
++
+\left(\sum_{k=0}^\infty b_k {(x-x_0)}^k\right)
+=
+\sum_{k=0}^\infty (a_k+b_k) {(x-x_0)}^k .
+\end{equation*}
+We can multiply by constants,
+\begin{equation*}
+\alpha
+\left(\sum_{k=0}^\infty a_k {(x-x_0)}^k\right)
+=
+\sum_{k=0}^\infty \alpha a_k {(x-x_0)}^k .
+\end{equation*}
+We can also multiply series together,
+\begin{equation*}
+\left(\sum_{k=0}^\infty a_k {(x-x_0)}^k\right)
+\,
+\left(\sum_{k=0}^\infty b_k {(x-x_0)}^k\right)
+=
+\sum_{k=0}^\infty c_k {(x-x_0)}^k ,
+\end{equation*}
+where
+$c_k = a_0b_k + a_1 b_{k-1} + \cdots + a_k b_0$.
+The radius of convergence of the sum or the product
+is at least the minimum of the radii of convergence of
+the two series involved.
+
+\medskip
+
+Note that a series defining a function only defines the function
+on an interval.  For example, for $-1 < x < 1$ we have
+\begin{equation*}
+\frac{1}{1-x} =
+\sum_{k=0}^\infty x^k =
+1 + x + x^2 + \cdots
+\end{equation*}
+This series is called the \emph{\myindex{geometric series}}.  The ratio
+test above tells us that the radius of convergence is $1$.  The series
+simply diverges for $x \leq -1$ and $x \geq 1$, even though
+$\frac{1}{1-x}$ is defined for all $x \not= 1$.
+
+Notice that
+polynomials are simply finite power series.  That is series where
+the $a_k$ beyond a certain point are all zero.  We can always expand
+a polynomial about any point $x_0$ as a power series.  For example,
+let us write
+$2x^2-3x+4$ as a series around $x_0 = 1$:
+\begin{equation*}
+2x^2-3x+4 = 3 + (x-1) + 2(x-1)^2 .
+\end{equation*}
+In other words $a_0 = 3$, $a_1 = 1$, $a_2 = 2$, and all other
+$a_k = 0$.
+
+We can use the geometric series together with rules for addition and
+multiplication of power series to expand rational functions around
+a point, as long as the denominator is not zero at $x_0$.  We could
+also use the Taylor series expansion.
+
+\begin{example}
+Expand $\frac{x}{1+2x+x^2}$ as a power series around the origin and
+find the radius of convergence.
+
+First, write $1+2x+x^2 = {(1+x)}^2 = {\bigl(1-(-x)\bigr)}^2$.  Now we
+compute
+\begin{equation*}
+\begin{split}
+\frac{x}{1+2x+x^2}
+&=
+x \,
+{\left(
+\frac{1}{1-(-x)}
+\right)}^2
+\\
+&=
+x \,
+\left( 
+\sum_{k=0}^\infty (-1)^k x^k 
+\right)
+\\
+&=
+x \,
+\left(
+\sum_{k=0}^\infty c_k x^k 
+\right)
+\\
+&=
+\sum_{k=0}^\infty c_k x^{k+1} ,
+\end{split}
+\end{equation*}
+where using the formula for product of product of series
+we obtain, $c_0 = 1$, $c_1 = -1 -1 = -2$, $c_2 = 1+1+1 = 3$, etc\ldots.
+Therefore
+\begin{equation*}
+\frac{x}{1+2x+x^2}
+=
+\sum_{k=1}^\infty (-1)^{k+1} k x^k
+= x-2x^2+3x^3-4x^4+\cdots
+\end{equation*}
+The radius of convergence is at least 1.  If we look at
+\begin{equation*}
+\lim_{k\to\infty}
+\left\lvert \frac{a_{k+1}}{a_k} \right\rvert
+=
+\lim_{k\to\infty}
+\left\lvert \frac{(-1)^{k+2} (k+1)}{(-1)^{k+1}k} \right\rvert
+=
+\lim_{k\to\infty}
+\frac{k+1}{k}
+= 1 .
+\end{equation*}
+So the radius of convergence is actually equal to 1.
+\end{example}
+
+\subsection{Exercises}
+
+\begin{exercise}
+Is the power series $\displaystyle \sum_{k=0}^\infty e^k x^k$ convergent?
+If so what is the radius of convergence?
+\end{exercise}
+
+\begin{exercise}
+Is the power series $\displaystyle \sum_{k=0}^\infty k x^k$ convergent?
+If so what is the radius of convergence?
+\end{exercise}
+
+\begin{exercise}
+Is the power series $\displaystyle \sum_{k=0}^\infty k! x^k$ convergent?
+If so what is the radius of convergence?
+\end{exercise}
+
+\begin{exercise}
+Is the power series $\displaystyle \sum_{k=0}^\infty \frac{1}{(2k)!} (x-10)^k$
+convergent?  If so what is the radius of convergence?
+\end{exercise}
+
+\begin{exercise}
+Determine the Taylor series for $\sin x$ around the point $x_0 = \pi$.
+\end{exercise}
+
+\begin{exercise}
+Determine the Taylor series for $\ln x$ around the point $x_0 = 1$,
+and find the radius of convergence.
+\end{exercise}
+
+\begin{exercise}
+Determine the Taylor series
+and find the radius of convergence $\frac{1}{1+x}$
+around $x_0 = 0$.
+\end{exercise}
+
+\begin{exercise}
+Determine the Taylor series and find the radius of convergence
+$\frac{x^{10}}{1-x^2}$ around $x_0 = 0$.
+\end{exercise}
+
+\begin{exercise}
+Expand $x^5+5x+1$ as a power series around $x_0 = 5$.
+\end{exercise}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sectionnewpage
+\section{Series solutions of linear second order ODEs\EPsec{3.2}}
+
+\sectionnotes{1 lecture \EPref{, \S3.1 in \cite{EP}}\BDref{,
+\S5.2 and \S5.3 in \cite{BD}}}
+
+Suppose we have a linear second order homogeneous ODE of the form
+\begin{equation}
+p(x) y'' + q(x) y' + r(x) y = 0 .
+\end{equation}
+Suppose that $p(x)$, $q(x)$, and $r(x)$ are polynomials.  We will 
+try a solution of the form
+\begin{equation}
+y = \sum_{k=0} a_k {(x-x_0)}^k
+\end{equation}
+and solve for the $a_k$ to try and obtain a solution defined in some
+interval around $x_0$.
+
+The point $x_0$ is called an \emph{\myindex{ordinary point}}
+if $p(x_0) \not= 0$.  That is, the functions
+\begin{equation}
+\frac{q(x)}{p(x)} \qquad \text{and} \qquad \frac{r(x)}{p(x)}
+\end{equation}
+are defined for $x$ near $x_0$.  If $p(x_0) = 0$, then we say $x_0$
+is a \emph{\myindex{singular point}}.  Handling singular points is
+harder than ordinary points and so we will focus only on ordinary points
+in this section.
+
+\begin{example}
+Let us start with a very simple example
+\begin{equation*}
+y'' - y = 0 .
+\end{equation*}
+Let us try a power series solution near $x_0 = 0$,
+which is an ordinary point.  Every point is an ordinary
+point in fact as the equation is constant coefficient.  We already know
+we should obtain exponentials or the hyperbolic sine and cosine,
+but let us pretend we do not know this.
+
+We try
+\begin{equation*}
+y = \sum_{k=0} a_k x^k .
+\end{equation*}
+If we differentiate, the $k=0$ term is a constant and hence disappears.
+We therefore get
+\begin{equation*}
+y' = \sum_{k=1} k a_k x^{k-1} .
+\end{equation*}
+We differentiate yet again to obtain (now the $k=1$ term disappears)
+\begin{equation*}
+y'' = \sum_{k=2} k(k-1) a_k x^{k-2} .
+\end{equation*}
+We reindex the series to obtain
+\begin{equation*}
+y'' = \sum_{k=0} (k+2)\,(k+1) \, a_{k+2} x^k .
+\end{equation*}
+Now we plug into the equation
+\begin{equation*}
+\begin{split}
+y''-y & = 
+\Biggl( \sum_{k=0} (k+2)\,(k+1) \, a_{k+2} x^k  \Biggr)
+-
+\Biggl( \sum_{k=0} a_k x^k \Biggr)
+\\
+& =
+\sum_{k=0} \,\Bigl( (k+2)\,(k+1) \, a_{k+2} x^k 
+-
+a_k x^k \Bigr)
+\\
+& =
+\sum_{k=0} \,\bigl( (k+2)\,(k+1) \,a_{k+2} - a_k \bigr) \, x^k  .
+\end{split}
+\end{equation*}
+As $y'' - y$ is supposed to be equal to 0, we know that the
+coefficients of the resulting series must be 0.  Therefore,
+\begin{equation*}
+(k+2)\,(k+1) \,a_{k+2} - a_k = 0 ,
+\qquad
+\text{or}
+\qquad
+a_{k+2} = \frac{a_k}{(k+2)(k+1)} .
+\end{equation*}
+The above equation is called a \emph{\myindex{recurrence relation}}
+for the coefficients of the power series.
+It did not matter what $a_0$ or $a_1$ was, they can be arbitrary.
+But once we pick $a_0$ and $a_1$, then all other coefficients are
+determined by the recurrence relation.
+
+So let us see what the coefficients
+must be.  First, $a_0$ and $a_1$ are arbitrary
+\begin{equation*}
+a_2 = \frac{a_0}{2}, \quad
+a_3 = \frac{a_1}{(3)(2)}, \quad
+a_4 = \frac{a_2}{(4)(3)} = \frac{a_0}{(4)(3)(2)}, \quad
+a_5 = \frac{a_3}{(5)(4)} = \frac{a_1}{(4)(3)(2)}, \quad \ldots
+\end{equation*}
+So we note that for even $k$, that is $k=2n$
+we get
+\begin{equation}
+a_k = a_{2n} = \frac{a_0}{(2n)!} ,
+\end{equation}
+and for odd $k$, that is $k=2n+1$ we have
+\begin{equation}
+a_k = a_{2n+1} = \frac{a_1}{(2n+1)!} .
+\end{equation}
+Let us write down the series
+\begin{equation*}
+y =
+\sum_{k=0}^\infty
+a_k x^k
+=
+\sum_{n=0}^\infty
+\left(
+\frac{a_0}{(2n)!} \,x^{2n}
++
+\frac{a_1}{(2n+1)!} \,x^{2n+1}
+\right)
+=
+a_0
+\sum_{n=0}^\infty
+\frac{1}{(2n)!} \,x^{2n}
++
+a_1
+\sum_{n=0}^\infty
+\frac{1}{(2n+1)!} \,x^{2n+1} .
+\end{equation*}
+Now we recognize the two series as the hyperbolic sine and cosine.
+Therefore,
+\begin{equation*}
+y =
+a_0 \cosh x + a_1 \sinh x .
+\end{equation*}
+\end{example}
+
+Of course, in general we will not be able to recognize 
+the series that appears, since usually there will not be
+any elementary function that matches it.  In that case we will be
+content with the series.
+
+\begin{example}
+Let us do a more complex example.  Suppose we wish to solve
+\emph{\myindex{Airy's equation}}%
+\footnote{Named after the English mathematician Sir George Biddell Airy
+(1801 -- 1892).}, that is
+\begin{equation*}
+y'' - xy = 0 ,
+\end{equation*}
+near the point $x_0 = 0$.  Note that $x_0 = 0$ is an ordinary point.
+
+We try
+\begin{equation*}
+y = \sum_{k=0} a_k x^k .
+\end{equation*}
+We differentiate twice (as above) to obtain
+\begin{equation*}
+y'' = \sum_{k=2} k\,(k-1) \, a_k x^{k-2} .
+\end{equation*}
+Now we plug into the equation
+\begin{equation*}
+\begin{split}
+y''-xy &= 
+\Biggl( \sum_{k=2} k\,(k-1) \, a_k x^{k-2}  \Biggr)
+-
+x
+\Biggl( \sum_{k=0} a_k x^k \Biggr)
+\\
+&=
+\Biggl( \sum_{k=2} k\,(k-1) \, a_k x^{k-2}  \Biggr)
+-
+\Biggl( \sum_{k=0} a_k x^{k+1} \Biggr) .
+\end{split}
+\end{equation*}
+Now we reindex to make things easier to sum
+\begin{equation*}
+\begin{split}
+y''-xy
+&= 
+2 a_2 + 
+\Biggl( \sum_{k=1} (k+2)\,(k+1) \, a_{k+2} x^k  \Biggr)
+-
+\Biggl( \sum_{k=1} a_{k-1} x^k \Biggr) .
+\\
+&= 
+2 a_2 + 
+\sum_{k=1} \Bigl( (k+2)\,(k+1) \, a_{k+2} - a_{k-1} \Bigr) \, x^k .
+\end{split}
+\end{equation*}
+Again $y''-xy$ is supposed to be 0 so first we notice that $a_2 = 0$
+and also
+\begin{equation*}
+(k+2)\,(k+1) \,a_{k+2} - a_{k-1} = 0 ,
+\qquad
+\text{or}
+\qquad
+a_{k+2} = \frac{a_{k-1}}{(k+2)(k+1)} .
+\end{equation*}
+Now we jump in steps of three.  First we notice that since $a_2 = 0$
+we must have that, $a_5 = 0$, $a_8 = 0$, $a_{11}=0$, etc\ldots.
+In general $a_{2+3n} = 0$.
+
+The constants $a_0$ and $a_1$ are arbitrary and we obtain
+\begin{equation*}
+a_3 = \frac{a_0}{(3)(2)}, \quad
+a_4 = \frac{a_1}{(4)(3)}, \quad
+a_6 = \frac{a_3}{(6)(5)} = \frac{a_0}{(6)(5)(3)(2)}, \quad
+a_7 = \frac{a_4}{(7)(6)} = \frac{a_1}{(7)(6)(4)(3)}, \quad \ldots
+\end{equation*}
+For $a_k$ where $k$ is a multiple of $3$, that is $k=3n$ we notice
+that
+\begin{equation*}
+a_{3n} = \frac{a_0}{(2)(3)(5)(6) \cdots (3n-1)(3n)} .
+\end{equation*}
+For $a_k$ where $k = 3n+1$, we notice
+\begin{equation*}
+a_{3n+1} = \frac{a_1}{(3)(4)(6)(7) \cdots (3n)(3n+1)} .
+\end{equation*}
+In other words, if we write down the series for $y$ we notice that
+it has two parts
+\begin{equation*}
+\begin{split}
+y &=
+\left(
+a_0 + \frac{a_0}{6} x^3 + \frac{a_0}{180} x^6 + \cdots +
+\frac{a_0}{(2)(3)(5)(6) \cdots (3n-1)(3n)} x^{3n} + \cdots
+\right)
+\\
+&\phantom{=}
++
+\left(
+a_1 x + \frac{a_1}{12} x^4 + \frac{a_1}{504} x^7 + \cdots +
+\frac{a_1}{(3)(4)(6)(7) \cdots (3n)(3n+1)} x^{3n+1} + \cdots
+\right)
+\\
+& =
+a_0
+\left(
+1 + \frac{1}{6} x^3 + \frac{1}{180} x^6 + \cdots +
+\frac{1}{(2)(3)(5)(6) \cdots (3n-1)(3n)} x^{3n} + \cdots
+\right)
+\\
+&\phantom{=}
++
+a_1
+\left(
+x + \frac{1}{12} x^4 + \frac{1}{504} x^7 + \cdots +
+\frac{1}{(3)(4)(6)(7) \cdots (3n)(3n+1)} x^{3n+1} + \cdots
+\right) .
+\end{split}
+\end{equation*}
+We define
+\begin{align*}
+y_1(x) &= 
+1 + \frac{1}{6} x^3 + \frac{1}{180} x^6 + \cdots +
+\frac{1}{(2)(3)(5)(6) \cdots (3n-1)(3n)} x^{3n} + \cdots, \\
+y_2(x) &= 
+x + \frac{1}{12} x^4 + \frac{1}{504} x^7 + \cdots +
+\frac{1}{(3)(4)(6)(7) \cdots (3n)(3n+1)} x^{3n+1} + \cdots ,
+\end{align*}
+and write the general solution to the equation as
+$y(x)= a_0 y_1(x) + a_1 y_2(x)$.
+
+The functions $y_1$ and $y_2$ cannot be written in terms of the elementary
+functions that you know.  See \figureref{ps:airyfig} for the plot of
+the solutions $y_1$ and $y_2$.  These functions have very intersting
+properties.  For example, they are oscillatory for negative $x$ and
+for positive $x$ they just simply keep rising.
+\begin{figure}[h!t]
+\capstart
+\begin{center}
+\diffyincludegraphics{width=3in}{width=4.5in}{ps-airy}
+\caption{The two solutions $y_1$ and $y_2$ to Airy's equation.\label{ps:airyfig}}
+\end{center}
+\end{figure}
+\end{example}
+
+Sometimes the solution turns out to be a polynomial.
+
+\begin{example}
+Let us find a solution to the so-called \emph{Hermite's equation
+of order $n$}\index{Hermite's equation of order n}%
+\footnote{Named after the French mathematician
+Charles Hermite (1822--1901).} is the equation
+\begin{equation*}
+y'' -2xy' + 2n y = 0 .
+\end{equation*}
+
+Let us find a solution around the point $x_0 = 0$.
+We try
+\begin{equation*}
+y = \sum_{k=0} a_k x^k .
+\end{equation*}
+We differentiate (as above) to obtain
+\begin{align*}
+y' &= \sum_{k=1} k a_k x^{k-1} ,
+\\
+y'' &= \sum_{k=2} k\,(k-1) \, a_k x^{k-2} .
+\end{align*}
+
+Now we plug into the equation
+\begin{equation*}
+\begin{split}
+y''-2xy'+2ny &= 
+\Biggl( \sum_{k=2} k\,(k-1) \, a_k x^{k-2}  \Biggr)
+-
+2x
+\Biggl( \sum_{k=1} k a_k x^{k-1} \Biggr)
++
+2n
+\Biggl( \sum_{k=0} a_k x^k \Biggr)
+\\
+&=
+\Biggl( \sum_{k=2} k\,(k-1) \, a_k x^{k-2}  \Biggr)
+-
+\Biggl( \sum_{k=1} 2k a_k x^k \Biggr)
++
+\Biggl( \sum_{k=0} 2n a_k x^k \Biggr)
+\\
+&=
+\Biggl(2a_2+
+ \sum_{k=1} (k+2)\,(k+1) \, a_{k+2} x^k  \Biggr)
+-
+\Biggl( \sum_{k=1} 2k a_k x^k \Biggr)
++
+\Biggl(
+2na_0 + 
+\sum_{k=1} 2n a_k x^k \Biggr)
+\\
+&=
+2a_2+2na_0+
+\sum_{k=1} \bigl( (k+2)\,(k+1) \, a_{k+2} - 2ka_k + 2n a_k \bigr) x^k .
+\end{split}
+\end{equation*}
+As $y''-2xy'+2ny = 0$ we have
+\begin{equation*}
+(k+2)\,(k+1) \, a_{k+2} + ( - 2k+ 2n) a_k = 0 ,
+\qquad
+\text{or}
+\qquad
+a_{k+2} = \frac{(2k-2n)}{(k+2)(k+1)} a_k .
+\end{equation*}
+This recurrence relation actually includes
+$a_2 = -na_0$ (which comes about from $2a_2+2na_0 = 0$).
+Again $a_0$ and $a_1$ are arbitrary.
+\begin{align*}
+& a_2 = \frac{2n}{(2)(1)}a_0, \qquad
+a_3 = \frac{2(1-n)}{(3)(2)} a_1,
+\\
+& a_4 = \frac{2(2-n)}{(4)(3)} a_2 = \frac{2^2(2-n)(-n)}{(4)(3)(2)(1)} a_0 ,
+\\
+&
+a_5 = \frac{2(3-n)}{(5)(4)} a_3 = \frac{2^2(3-n)(1-n)}{(5)(4)(3)(2)} a_1 ,
+\quad \ldots
+\end{align*}
+Let us separate the even and odd powers again and and
+write down the two series
+\begin{align*}
+y_1(x) & = 
+1+\frac{2(-n)}{2!} x^2 + \frac{2^2(-n)(2-n)}{4!} x^4 + 
+\frac{2^4(-n)(2-n)(4-n)}{6!} x^6 + \cdots ,
+\\
+y_2(x) & = 
+x+\frac{2(1-n)}{3!} x^3 + \frac{2^2(1-n)(3-n)}{5!} x^5 + 
+\frac{2^4(1-n)(3-n)(5-n)}{7!} x^7 + \cdots .
+\end{align*}
+We then write
+\begin{equation}
+y(x) = a_0 y_1(x) + a_1 y_2(x) .
+\end{equation}
+
+We also notice that if $n$ is a positive even integer, then $y_1(x)$ is a
+polynomial as all the coefficients in the series beyond a certain
+degree are zero.  If $n$ is a positive odd integer, then $y_2(x)$ is
+a polynomial.  For example if $n=4$, then
+\begin{equation}
+y_1(x) = 1 + \frac{2(-4)}{2!} x^2 + \frac{2^2(-4)(2-4)}{4!} x^4
+= 1 - 4x^2 + \frac{4}{3} x^4 .
+\end{equation}
+\end{example}
+
+\subsection{Exercises}
+
+\begin{exercise}
+Solve $y''+4xy = 0$ near the point $x_0 = 0$.
+\end{exercise}
+
+\begin{exercise}
+Solve $y''-xy = 0$ near the point $x_0 = 1$.
+\end{exercise}
+
+\begin{exercise}
+Solve $y''+x^2y = 0$ near the point $x_0 = 0$.
+\end{exercise}
+
+\begin{exercise}
+The methods work for other orders than second order.  Try the methods
+of this section to solve the first order system $y'-xy = 0$ around
+the point $x_0 = 0$.
+\end{exercise}
+
+\begin{exercise}
+Find a polynomial solution to $(x^2+1) y''-2xy'+2y = 0$ using
+power series methods.
+\end{exercise}
+
+\end{document}

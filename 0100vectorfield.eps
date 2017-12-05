@@ -1,0 +1,2715 @@
+%!PS-Adobe-2.0 PCF-2.0
+%%Title: /home/jirka/zinccvs/Teaching/286/notes/0100vectorfield.eps
+%%Creator: GtkPlot v3.x Copyright (c) 1999 Adrian E. Feiguin
+%%CreationDate: Mon Apr 25 17:17:26 2011
+%%Magnification: 1.0000
+%%Orientation: Portrait
+%%BoundingBox: 0 0 400 300
+%%Pages: 1
+%%EndComments
+/cp {closepath} bind def
+/c {curveto} bind def
+/f {fill} bind def
+/a {arc} bind def
+/ef {eofill} bind def
+/ex {exch} bind def
+/gr {grestore} bind def
+/gs {gsave} bind def
+/sa {save} bind def
+/rs {restore} bind def
+/l {lineto} bind def
+/m {moveto} bind def
+/rm {rmoveto} bind def
+/n {newpath} bind def
+/s {stroke} bind def
+/sh {show} bind def
+/slc {setlinecap} bind def
+/slj {setlinejoin} bind def
+/slw {setlinewidth} bind def
+/srgb {setrgbcolor} bind def
+/rot {rotate} bind def
+/sc {scale} bind def
+/sd {setdash} bind def
+/ff {findfont} bind def
+/sf {setfont} bind def
+/scf {scalefont} bind def
+/sw {stringwidth pop} bind def
+/tr {translate} bind def
+/JR {
+ neg 0
+ rmoveto
+} bind def
+/JC {
+ 2 div neg 0
+ rmoveto
+} bind def
+
+/ellipsedict 8 dict def
+ellipsedict /mtrx matrix put
+/ellipse
+{ ellipsedict begin
+   /endangle exch def
+   /startangle exch def
+   /yrad exch def
+   /xrad exch def
+   /y exch def
+   /x exch def   /savematrix mtrx currentmatrix def
+   x y tr xrad yrad sc
+   0 0 1 startangle endangle arc
+   savematrix setmatrix
+   end
+} def
+
+[ /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /space /exclam /quotedbl /numbersign /dollar /percent /ampersand /quoteright
+/parenleft /parenright /asterisk /plus /comma /hyphen /period /slash /zero /one
+/two /three /four /five /six /seven /eight /nine /colon /semicolon
+/less /equal /greater /question /at /A /B /C /D /E
+/F /G /H /I /J /K /L /M /N /O
+/P /Q /R /S /T /U /V /W /X /Y
+/Z /bracketleft /backslash /bracketright /asciicircum /underscore /quoteleft /a /b /c
+/d /e /f /g /h /i /j /k /l /m
+/n /o /p /q /r /s /t /u /v /w
+/x /y /z /braceleft /bar /braceright /asciitilde /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/space /exclamdown /cent /sterling /currency /yen /brokenbar /section /dieresis /copyright
+/ordfeminine /guillemotleft /logicalnot /hyphen /registered /macron /degree /plusminus /twosuperior /threesuperior
+/acute /mu /paragraph /periodcentered /cedilla /onesuperior /ordmasculine /guillemotright /onequarter /onehalf
+/threequarters /questiondown /Agrave /Aacute /Acircumflex /Atilde /Adieresis /Aring /AE /Ccedilla
+/Egrave /Eacute /Ecircumflex /Edieresis /Igrave /Iacute /Icircumflex /Idieresis /Eth /Ntilde
+/Ograve /Oacute /Ocircumflex /Otilde /Odieresis /multiply /Oslash /Ugrave /Uacute /Ucircumflex
+/Udieresis /Yacute /Thorn /germandbls /agrave /aacute /acircumflex /atilde /adieresis /aring
+/ae /ccedilla /egrave /eacute /ecircumflex /edieresis /igrave /iacute /icircumflex /idieresis
+/eth /ntilde /ograve /oacute /ocircumflex /otilde /odieresis /divide /oslash /ugrave
+/uacute /ucircumflex /udieresis /yacute /thorn /ydieresis] /isolatin1encoding exch def
+/Times-Roman-latin1
+    /Times-Roman findfont
+    dup length dict begin
+   {1 index /FID ne {def} {pop pop} ifelse} forall
+   /Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Times-Italic-latin1
+    /Times-Italic findfont
+    dup length dict begin
+   {1 index /FID ne {def} {pop pop} ifelse} forall
+   /Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Times-Bold-latin1
+    /Times-Bold findfont
+    dup length dict begin
+   {1 index /FID ne {def} {pop pop} ifelse} forall
+   /Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Times-BoldItalic-latin1
+    /Times-BoldItalic findfont
+    dup length dict begin
+   {1 index /FID ne {def} {pop pop} ifelse} forall
+   /Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/AvantGarde-Book-latin1
+    /AvantGarde-Book findfont
+    dup length dict begin
+   {1 index /FID ne {def} {pop pop} ifelse} forall
+   /Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/AvantGarde-BookOblique-latin1
+    /AvantGarde-BookOblique findfont
+    dup length dict begin
+   {1 index /FID ne {def} {pop pop} ifelse} forall
+   /Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/AvantGarde-Demi-latin1
+    /AvantGarde-Demi findfont
+    dup length dict begin
+   {1 index /FID ne {def} {pop pop} ifelse} forall
+   /Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/AvantGarde-DemiOblique-latin1
+    /AvantGarde-DemiOblique findfont
+    dup length dict begin
+   {1 index /FID ne {def} {pop pop} ifelse} forall
+   /Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Bookman-Light-latin1
+    /Bookman-Light findfont
+    dup length dict begin
+   {1 index /FID ne {def} {pop pop} ifelse} forall
+   /Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Bookman-LightItalic-latin1
+    /Bookman-LightItalic findfont
+    dup length dict begin
+   {1 index /FID ne {def} {pop pop} ifelse} forall
+   /Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Bookman-Demi-latin1
+    /Bookman-Demi findfont
+    dup length dict begin
+   {1 index /FID ne {def} {pop pop} ifelse} forall
+   /Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Bookman-DemiItalic-latin1
+    /Bookman-DemiItalic findfont
+    dup length dict begin
+   {1 index /FID ne {def} {pop pop} ifelse} forall
+   /Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Courier-latin1
+    /Courier findfont
+    dup length dict begin
+   {1 index /FID ne {def} {pop pop} ifelse} forall
+   /Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Courier-Oblique-latin1
+    /Courier-Oblique findfont
+    dup length dict begin
+   {1 index /FID ne {def} {pop pop} ifelse} forall
+   /Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Courier-Bold-latin1
+    /Courier-Bold findfont
+    dup length dict begin
+   {1 index /FID ne {def} {pop pop} ifelse} forall
+   /Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Courier-BoldOblique-latin1
+    /Courier-BoldOblique findfont
+    dup length dict begin
+   {1 index /FID ne {def} {pop pop} ifelse} forall
+   /Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Helvetica-latin1
+    /Helvetica findfont
+    dup length dict begin
+   {1 index /FID ne {def} {pop pop} ifelse} forall
+   /Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Helvetica-Oblique-latin1
+    /Helvetica-Oblique findfont
+    dup length dict begin
+   {1 index /FID ne {def} {pop pop} ifelse} forall
+   /Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Helvetica-Bold-latin1
+    /Helvetica-Bold findfont
+    dup length dict begin
+   {1 index /FID ne {def} {pop pop} ifelse} forall
+   /Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Helvetica-BoldOblique-latin1
+    /Helvetica-BoldOblique findfont
+    dup length dict begin
+   {1 index /FID ne {def} {pop pop} ifelse} forall
+   /Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Helvetica-Narrow-latin1
+    /Helvetica-Narrow findfont
+    dup length dict begin
+   {1 index /FID ne {def} {pop pop} ifelse} forall
+   /Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Helvetica-Narrow-Oblique-latin1
+    /Helvetica-Narrow-Oblique findfont
+    dup length dict begin
+   {1 index /FID ne {def} {pop pop} ifelse} forall
+   /Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Helvetica-Narrow-Bold-latin1
+    /Helvetica-Narrow-Bold findfont
+    dup length dict begin
+   {1 index /FID ne {def} {pop pop} ifelse} forall
+   /Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Helvetica-Narrow-BoldOblique-latin1
+    /Helvetica-Narrow-BoldOblique findfont
+    dup length dict begin
+   {1 index /FID ne {def} {pop pop} ifelse} forall
+   /Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/NewCenturySchoolbook-Roman-latin1
+    /NewCenturySchoolbook-Roman findfont
+    dup length dict begin
+   {1 index /FID ne {def} {pop pop} ifelse} forall
+   /Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/NewCenturySchoolbook-Italic-latin1
+    /NewCenturySchoolbook-Italic findfont
+    dup length dict begin
+   {1 index /FID ne {def} {pop pop} ifelse} forall
+   /Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/NewCenturySchoolbook-Bold-latin1
+    /NewCenturySchoolbook-Bold findfont
+    dup length dict begin
+   {1 index /FID ne {def} {pop pop} ifelse} forall
+   /Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/NewCenturySchoolbook-BoldItalic-latin1
+    /NewCenturySchoolbook-BoldItalic findfont
+    dup length dict begin
+   {1 index /FID ne {def} {pop pop} ifelse} forall
+   /Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Palatino-Roman-latin1
+    /Palatino-Roman findfont
+    dup length dict begin
+   {1 index /FID ne {def} {pop pop} ifelse} forall
+   /Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Palatino-Italic-latin1
+    /Palatino-Italic findfont
+    dup length dict begin
+   {1 index /FID ne {def} {pop pop} ifelse} forall
+   /Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Palatino-Bold-latin1
+    /Palatino-Bold findfont
+    dup length dict begin
+   {1 index /FID ne {def} {pop pop} ifelse} forall
+   /Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Palatino-BoldItalic-latin1
+    /Palatino-BoldItalic findfont
+    dup length dict begin
+   {1 index /FID ne {def} {pop pop} ifelse} forall
+   /Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Symbol-latin1
+    /Symbol findfont
+definefont pop
+/ZapfChancery-MediumItalic-latin1
+    /ZapfChancery-MediumItalic findfont
+    dup length dict begin
+   {1 index /FID ne {def} {pop pop} ifelse} forall
+   /Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/ZapfDingbats-latin1
+    /ZapfDingbats findfont
+    dup length dict begin
+   {1 index /FID ne {def} {pop pop} ifelse} forall
+   /Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+0 300 translate
+0.625 -0.625 scale
+%%EndProlog
+
+
+gsave
+gsave
+gsave
+1 1 1 setrgbcolor
+n
+48 36 m
+592 36 l
+592 444 l
+48 444 l
+f
+s
+gsave
+48 36 544 408 rectclip
+0.74902 0.74902 0.74902 setrgbcolor
+1 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+320 444 m
+320 36 l
+s
+0.74902 0.74902 0.74902 setrgbcolor
+1 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+48 240 m
+592 240 l
+s
+0.74902 0.74902 0.74902 setrgbcolor
+1 slw
+1 slc
+0 slj
+[2 3] 0 sd
+48 444 m
+48 36 l
+s
+0.74902 0.74902 0.74902 setrgbcolor
+1 slw
+1 slc
+0 slj
+[2 3] 0 sd
+184 444 m
+184 36 l
+s
+0.74902 0.74902 0.74902 setrgbcolor
+1 slw
+1 slc
+0 slj
+[2 3] 0 sd
+320 444 m
+320 36 l
+s
+0.74902 0.74902 0.74902 setrgbcolor
+1 slw
+1 slc
+0 slj
+[2 3] 0 sd
+456 444 m
+456 36 l
+s
+0.74902 0.74902 0.74902 setrgbcolor
+1 slw
+1 slc
+0 slj
+[2 3] 0 sd
+592 444 m
+592 36 l
+s
+0.74902 0.74902 0.74902 setrgbcolor
+1 slw
+1 slc
+0 slj
+[2 3] 0 sd
+48 444 m
+592 444 l
+s
+0.74902 0.74902 0.74902 setrgbcolor
+1 slw
+1 slc
+0 slj
+[2 3] 0 sd
+48 342 m
+592 342 l
+s
+0.74902 0.74902 0.74902 setrgbcolor
+1 slw
+1 slc
+0 slj
+[2 3] 0 sd
+48 240 m
+592 240 l
+s
+0.74902 0.74902 0.74902 setrgbcolor
+1 slw
+1 slc
+0 slj
+[2 3] 0 sd
+48 138 m
+592 138 l
+s
+0.74902 0.74902 0.74902 setrgbcolor
+1 slw
+1 slc
+0 slj
+[2 3] 0 sd
+48 36 m
+592 36 l
+s
+grestore
+0 0 0 setrgbcolor
+2 slw
+2 slc
+0 slj
+[] 0 sd
+[] 0 sd
+48 444 m
+592 444 l
+s
+1 slw
+0 slc
+0 slj
+[] 0 sd
+48 444 m
+48 436 l
+s
+61.6 444 m
+61.6 440 l
+s
+75.2 444 m
+75.2 440 l
+s
+88.8 444 m
+88.8 440 l
+s
+102.4 444 m
+102.4 440 l
+s
+116 444 m
+116 440 l
+s
+129.6 444 m
+129.6 440 l
+s
+143.2 444 m
+143.2 440 l
+s
+156.8 444 m
+156.8 440 l
+s
+170.4 444 m
+170.4 440 l
+s
+184 444 m
+184 436 l
+s
+197.6 444 m
+197.6 440 l
+s
+211.2 444 m
+211.2 440 l
+s
+224.8 444 m
+224.8 440 l
+s
+238.4 444 m
+238.4 440 l
+s
+252 444 m
+252 440 l
+s
+265.6 444 m
+265.6 440 l
+s
+279.2 444 m
+279.2 440 l
+s
+292.8 444 m
+292.8 440 l
+s
+306.4 444 m
+306.4 440 l
+s
+320 444 m
+320 436 l
+s
+333.6 444 m
+333.6 440 l
+s
+347.2 444 m
+347.2 440 l
+s
+360.8 444 m
+360.8 440 l
+s
+374.4 444 m
+374.4 440 l
+s
+388 444 m
+388 440 l
+s
+401.6 444 m
+401.6 440 l
+s
+415.2 444 m
+415.2 440 l
+s
+428.8 444 m
+428.8 440 l
+s
+442.4 444 m
+442.4 440 l
+s
+456 444 m
+456 436 l
+s
+469.6 444 m
+469.6 440 l
+s
+483.2 444 m
+483.2 440 l
+s
+496.8 444 m
+496.8 440 l
+s
+510.4 444 m
+510.4 440 l
+s
+524 444 m
+524 440 l
+s
+537.6 444 m
+537.6 440 l
+s
+551.2 444 m
+551.2 440 l
+s
+564.8 444 m
+564.8 440 l
+s
+578.4 444 m
+578.4 440 l
+s
+592 444 m
+592 436 l
+s
+0 0 0 setrgbcolor
+0 0 0 setrgbcolor
+[] 0 sd
+0 slw
+1 slc
+0 slj
+[] 0 sd
+gsave
+48 460 translate
+0 rotate
+0 0 m
+1 -1 sc
+/Helvetica-latin1 ff 12 scf sf
+(-10) sw JC
+(-10) show
+grestore
+n
+0 0 0 setrgbcolor
+[] 0 sd
+0 slw
+1 slc
+0 slj
+[] 0 sd
+gsave
+184 460 translate
+0 rotate
+0 0 m
+1 -1 sc
+/Helvetica-latin1 ff 12 scf sf
+(-5) sw JC
+(-5) show
+grestore
+n
+0 0 0 setrgbcolor
+[] 0 sd
+0 slw
+1 slc
+0 slj
+[] 0 sd
+gsave
+320 460 translate
+0 rotate
+0 0 m
+1 -1 sc
+/Helvetica-latin1 ff 12 scf sf
+(0) sw JC
+(0) show
+grestore
+n
+0 0 0 setrgbcolor
+[] 0 sd
+0 slw
+1 slc
+0 slj
+[] 0 sd
+gsave
+456 460 translate
+0 rotate
+0 0 m
+1 -1 sc
+/Helvetica-latin1 ff 12 scf sf
+(5) sw JC
+(5) show
+grestore
+n
+0 0 0 setrgbcolor
+[] 0 sd
+0 slw
+1 slc
+0 slj
+[] 0 sd
+gsave
+592 460 translate
+0 rotate
+0 0 m
+1 -1 sc
+/Helvetica-latin1 ff 12 scf sf
+(10) sw JC
+(10) show
+grestore
+n
+0 0 0 setrgbcolor
+2 slw
+2 slc
+0 slj
+[] 0 sd
+[] 0 sd
+48 36 m
+592 36 l
+s
+1 slw
+0 slc
+0 slj
+[] 0 sd
+48 36 m
+48 44 l
+s
+61.6 36 m
+61.6 40 l
+s
+75.2 36 m
+75.2 40 l
+s
+88.8 36 m
+88.8 40 l
+s
+102.4 36 m
+102.4 40 l
+s
+116 36 m
+116 40 l
+s
+129.6 36 m
+129.6 40 l
+s
+143.2 36 m
+143.2 40 l
+s
+156.8 36 m
+156.8 40 l
+s
+170.4 36 m
+170.4 40 l
+s
+184 36 m
+184 44 l
+s
+197.6 36 m
+197.6 40 l
+s
+211.2 36 m
+211.2 40 l
+s
+224.8 36 m
+224.8 40 l
+s
+238.4 36 m
+238.4 40 l
+s
+252 36 m
+252 40 l
+s
+265.6 36 m
+265.6 40 l
+s
+279.2 36 m
+279.2 40 l
+s
+292.8 36 m
+292.8 40 l
+s
+306.4 36 m
+306.4 40 l
+s
+320 36 m
+320 44 l
+s
+333.6 36 m
+333.6 40 l
+s
+347.2 36 m
+347.2 40 l
+s
+360.8 36 m
+360.8 40 l
+s
+374.4 36 m
+374.4 40 l
+s
+388 36 m
+388 40 l
+s
+401.6 36 m
+401.6 40 l
+s
+415.2 36 m
+415.2 40 l
+s
+428.8 36 m
+428.8 40 l
+s
+442.4 36 m
+442.4 40 l
+s
+456 36 m
+456 44 l
+s
+469.6 36 m
+469.6 40 l
+s
+483.2 36 m
+483.2 40 l
+s
+496.8 36 m
+496.8 40 l
+s
+510.4 36 m
+510.4 40 l
+s
+524 36 m
+524 40 l
+s
+537.6 36 m
+537.6 40 l
+s
+551.2 36 m
+551.2 40 l
+s
+564.8 36 m
+564.8 40 l
+s
+578.4 36 m
+578.4 40 l
+s
+592 36 m
+592 44 l
+s
+0 0 0 setrgbcolor
+0 0 0 setrgbcolor
+[] 0 sd
+0 slw
+1 slc
+0 slj
+[] 0 sd
+gsave
+48 32 translate
+0 rotate
+0 0 m
+1 -1 sc
+/Helvetica-latin1 ff 12 scf sf
+(-10) sw JC
+(-10) show
+grestore
+n
+0 0 0 setrgbcolor
+[] 0 sd
+0 slw
+1 slc
+0 slj
+[] 0 sd
+gsave
+184 32 translate
+0 rotate
+0 0 m
+1 -1 sc
+/Helvetica-latin1 ff 12 scf sf
+(-5) sw JC
+(-5) show
+grestore
+n
+0 0 0 setrgbcolor
+[] 0 sd
+0 slw
+1 slc
+0 slj
+[] 0 sd
+gsave
+320 32 translate
+0 rotate
+0 0 m
+1 -1 sc
+/Helvetica-latin1 ff 12 scf sf
+(0) sw JC
+(0) show
+grestore
+n
+0 0 0 setrgbcolor
+[] 0 sd
+0 slw
+1 slc
+0 slj
+[] 0 sd
+gsave
+456 32 translate
+0 rotate
+0 0 m
+1 -1 sc
+/Helvetica-latin1 ff 12 scf sf
+(5) sw JC
+(5) show
+grestore
+n
+0 0 0 setrgbcolor
+[] 0 sd
+0 slw
+1 slc
+0 slj
+[] 0 sd
+gsave
+592 32 translate
+0 rotate
+0 0 m
+1 -1 sc
+/Helvetica-latin1 ff 12 scf sf
+(10) sw JC
+(10) show
+grestore
+n
+0 0 0 setrgbcolor
+2 slw
+2 slc
+0 slj
+[] 0 sd
+[] 0 sd
+48 444 m
+48 36 l
+s
+1 slw
+0 slc
+0 slj
+[] 0 sd
+48 444 m
+56 444 l
+s
+48 433.8 m
+52 433.8 l
+s
+48 423.6 m
+52 423.6 l
+s
+48 413.4 m
+52 413.4 l
+s
+48 403.2 m
+52 403.2 l
+s
+48 393 m
+52 393 l
+s
+48 382.8 m
+52 382.8 l
+s
+48 372.6 m
+52 372.6 l
+s
+48 362.4 m
+52 362.4 l
+s
+48 352.2 m
+52 352.2 l
+s
+48 342 m
+56 342 l
+s
+48 331.8 m
+52 331.8 l
+s
+48 321.6 m
+52 321.6 l
+s
+48 311.4 m
+52 311.4 l
+s
+48 301.2 m
+52 301.2 l
+s
+48 291 m
+52 291 l
+s
+48 280.8 m
+52 280.8 l
+s
+48 270.6 m
+52 270.6 l
+s
+48 260.4 m
+52 260.4 l
+s
+48 250.2 m
+52 250.2 l
+s
+48 240 m
+56 240 l
+s
+48 229.8 m
+52 229.8 l
+s
+48 219.6 m
+52 219.6 l
+s
+48 209.4 m
+52 209.4 l
+s
+48 199.2 m
+52 199.2 l
+s
+48 189 m
+52 189 l
+s
+48 178.8 m
+52 178.8 l
+s
+48 168.6 m
+52 168.6 l
+s
+48 158.4 m
+52 158.4 l
+s
+48 148.2 m
+52 148.2 l
+s
+48 138 m
+56 138 l
+s
+48 127.8 m
+52 127.8 l
+s
+48 117.6 m
+52 117.6 l
+s
+48 107.4 m
+52 107.4 l
+s
+48 97.2 m
+52 97.2 l
+s
+48 87 m
+52 87 l
+s
+48 76.8 m
+52 76.8 l
+s
+48 66.6 m
+52 66.6 l
+s
+48 56.4 m
+52 56.4 l
+s
+48 46.2 m
+52 46.2 l
+s
+48 36 m
+56 36 l
+s
+0 0 0 setrgbcolor
+0 0 0 setrgbcolor
+[] 0 sd
+0 slw
+1 slc
+0 slj
+[] 0 sd
+gsave
+38 450 translate
+0 rotate
+0 0 m
+1 -1 sc
+/Helvetica-latin1 ff 12 scf sf
+(-10) sw JR
+(-10) show
+grestore
+n
+0 0 0 setrgbcolor
+[] 0 sd
+0 slw
+1 slc
+0 slj
+[] 0 sd
+gsave
+38 348 translate
+0 rotate
+0 0 m
+1 -1 sc
+/Helvetica-latin1 ff 12 scf sf
+(-5) sw JR
+(-5) show
+grestore
+n
+0 0 0 setrgbcolor
+[] 0 sd
+0 slw
+1 slc
+0 slj
+[] 0 sd
+gsave
+38 245 translate
+0 rotate
+0 0 m
+1 -1 sc
+/Helvetica-latin1 ff 12 scf sf
+(0) sw JR
+(0) show
+grestore
+n
+0 0 0 setrgbcolor
+[] 0 sd
+0 slw
+1 slc
+0 slj
+[] 0 sd
+gsave
+38 144 translate
+0 rotate
+0 0 m
+1 -1 sc
+/Helvetica-latin1 ff 12 scf sf
+(5) sw JR
+(5) show
+grestore
+n
+0 0 0 setrgbcolor
+[] 0 sd
+0 slw
+1 slc
+0 slj
+[] 0 sd
+gsave
+38 42 translate
+0 rotate
+0 0 m
+1 -1 sc
+/Helvetica-latin1 ff 12 scf sf
+(10) sw JR
+(10) show
+grestore
+n
+0 0 0 setrgbcolor
+2 slw
+2 slc
+0 slj
+[] 0 sd
+[] 0 sd
+592 444 m
+592 36 l
+s
+1 slw
+0 slc
+0 slj
+[] 0 sd
+592 444 m
+584 444 l
+s
+592 433.8 m
+588 433.8 l
+s
+592 423.6 m
+588 423.6 l
+s
+592 413.4 m
+588 413.4 l
+s
+592 403.2 m
+588 403.2 l
+s
+592 393 m
+588 393 l
+s
+592 382.8 m
+588 382.8 l
+s
+592 372.6 m
+588 372.6 l
+s
+592 362.4 m
+588 362.4 l
+s
+592 352.2 m
+588 352.2 l
+s
+592 342 m
+584 342 l
+s
+592 331.8 m
+588 331.8 l
+s
+592 321.6 m
+588 321.6 l
+s
+592 311.4 m
+588 311.4 l
+s
+592 301.2 m
+588 301.2 l
+s
+592 291 m
+588 291 l
+s
+592 280.8 m
+588 280.8 l
+s
+592 270.6 m
+588 270.6 l
+s
+592 260.4 m
+588 260.4 l
+s
+592 250.2 m
+588 250.2 l
+s
+592 240 m
+584 240 l
+s
+592 229.8 m
+588 229.8 l
+s
+592 219.6 m
+588 219.6 l
+s
+592 209.4 m
+588 209.4 l
+s
+592 199.2 m
+588 199.2 l
+s
+592 189 m
+588 189 l
+s
+592 178.8 m
+588 178.8 l
+s
+592 168.6 m
+588 168.6 l
+s
+592 158.4 m
+588 158.4 l
+s
+592 148.2 m
+588 148.2 l
+s
+592 138 m
+584 138 l
+s
+592 127.8 m
+588 127.8 l
+s
+592 117.6 m
+588 117.6 l
+s
+592 107.4 m
+588 107.4 l
+s
+592 97.2 m
+588 97.2 l
+s
+592 87 m
+588 87 l
+s
+592 76.8 m
+588 76.8 l
+s
+592 66.6 m
+588 66.6 l
+s
+592 56.4 m
+588 56.4 l
+s
+592 46.2 m
+588 46.2 l
+s
+592 36 m
+584 36 l
+s
+0 0 0 setrgbcolor
+0 0 0 setrgbcolor
+[] 0 sd
+0 slw
+1 slc
+0 slj
+[] 0 sd
+gsave
+602 450 translate
+0 rotate
+0 0 m
+1 -1 sc
+/Helvetica-latin1 ff 12 scf sf
+(-10) show
+grestore
+n
+0 0 0 setrgbcolor
+[] 0 sd
+0 slw
+1 slc
+0 slj
+[] 0 sd
+gsave
+602 348 translate
+0 rotate
+0 0 m
+1 -1 sc
+/Helvetica-latin1 ff 12 scf sf
+(-5) show
+grestore
+n
+0 0 0 setrgbcolor
+[] 0 sd
+0 slw
+1 slc
+0 slj
+[] 0 sd
+gsave
+602 245 translate
+0 rotate
+0 0 m
+1 -1 sc
+/Helvetica-latin1 ff 12 scf sf
+(0) show
+grestore
+n
+0 0 0 setrgbcolor
+[] 0 sd
+0 slw
+1 slc
+0 slj
+[] 0 sd
+gsave
+602 144 translate
+0 rotate
+0 0 m
+1 -1 sc
+/Helvetica-latin1 ff 12 scf sf
+(5) show
+grestore
+n
+0 0 0 setrgbcolor
+[] 0 sd
+0 slw
+1 slc
+0 slj
+[] 0 sd
+gsave
+602 42 translate
+0 rotate
+0 0 m
+1 -1 sc
+/Helvetica-latin1 ff 12 scf sf
+(10) show
+grestore
+n
+gsave
+gsave
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+94.58 423.6 m
+55.82 423.6 l
+s
+n
+61.82 420.6 m
+55.82 423.6 l
+61.82 426.6 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+90.2733 382.8 m
+60.1267 382.8 l
+s
+n
+66.1267 379.8 m
+60.1267 382.8 l
+66.1267 385.8 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+85.9667 342 m
+64.4333 342 l
+s
+n
+70.4333 339 m
+64.4333 342 l
+70.4333 345 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+81.66 301.2 m
+68.74 301.2 l
+s
+n
+74.74 298.2 m
+68.74 301.2 l
+74.74 304.2 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+77.3533 260.4 m
+73.0467 260.4 l
+s
+n
+79.0467 257.4 m
+73.0467 260.4 l
+79.0467 263.4 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+73.0467 219.6 m
+77.3533 219.6 l
+s
+n
+71.3533 222.6 m
+77.3533 219.6 l
+71.3533 216.6 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+68.74 178.8 m
+81.66 178.8 l
+s
+n
+75.66 181.8 m
+81.66 178.8 l
+75.66 175.8 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+64.4333 138 m
+85.9667 138 l
+s
+n
+79.9667 141 m
+85.9667 138 l
+79.9667 135 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+60.1267 97.2 m
+90.2733 97.2 l
+s
+n
+84.2733 100.2 m
+90.2733 97.2 l
+84.2733 94.2 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+55.82 56.4 m
+94.58 56.4 l
+s
+n
+88.58 59.4 m
+94.58 56.4 l
+88.58 53.4 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+148.98 423.6 m
+110.22 423.6 l
+s
+n
+116.22 420.6 m
+110.22 423.6 l
+116.22 426.6 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+144.673 382.8 m
+114.527 382.8 l
+s
+n
+120.527 379.8 m
+114.527 382.8 l
+120.527 385.8 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+140.367 342 m
+118.833 342 l
+s
+n
+124.833 339 m
+118.833 342 l
+124.833 345 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+136.06 301.2 m
+123.14 301.2 l
+s
+n
+129.14 298.2 m
+123.14 301.2 l
+129.14 304.2 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+131.753 260.4 m
+127.447 260.4 l
+s
+n
+133.447 257.4 m
+127.447 260.4 l
+133.447 263.4 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+127.447 219.6 m
+131.753 219.6 l
+s
+n
+125.753 222.6 m
+131.753 219.6 l
+125.753 216.6 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+123.14 178.8 m
+136.06 178.8 l
+s
+n
+130.06 181.8 m
+136.06 178.8 l
+130.06 175.8 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+118.833 138 m
+140.367 138 l
+s
+n
+134.367 141 m
+140.367 138 l
+134.367 135 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+114.527 97.2 m
+144.673 97.2 l
+s
+n
+138.673 100.2 m
+144.673 97.2 l
+138.673 94.2 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+110.22 56.4 m
+148.98 56.4 l
+s
+n
+142.98 59.4 m
+148.98 56.4 l
+142.98 53.4 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+203.38 423.6 m
+164.62 423.6 l
+s
+n
+170.62 420.6 m
+164.62 423.6 l
+170.62 426.6 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+199.073 382.8 m
+168.927 382.8 l
+s
+n
+174.927 379.8 m
+168.927 382.8 l
+174.927 385.8 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+194.767 342 m
+173.233 342 l
+s
+n
+179.233 339 m
+173.233 342 l
+179.233 345 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+190.46 301.2 m
+177.54 301.2 l
+s
+n
+183.54 298.2 m
+177.54 301.2 l
+183.54 304.2 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+186.153 260.4 m
+181.847 260.4 l
+s
+n
+187.847 257.4 m
+181.847 260.4 l
+187.847 263.4 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+181.847 219.6 m
+186.153 219.6 l
+s
+n
+180.153 222.6 m
+186.153 219.6 l
+180.153 216.6 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+177.54 178.8 m
+190.46 178.8 l
+s
+n
+184.46 181.8 m
+190.46 178.8 l
+184.46 175.8 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+173.233 138 m
+194.767 138 l
+s
+n
+188.767 141 m
+194.767 138 l
+188.767 135 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+168.927 97.2 m
+199.073 97.2 l
+s
+n
+193.073 100.2 m
+199.073 97.2 l
+193.073 94.2 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+164.62 56.4 m
+203.38 56.4 l
+s
+n
+197.38 59.4 m
+203.38 56.4 l
+197.38 53.4 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+257.78 423.6 m
+219.02 423.6 l
+s
+n
+225.02 420.6 m
+219.02 423.6 l
+225.02 426.6 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+253.473 382.8 m
+223.327 382.8 l
+s
+n
+229.327 379.8 m
+223.327 382.8 l
+229.327 385.8 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+249.167 342 m
+227.633 342 l
+s
+n
+233.633 339 m
+227.633 342 l
+233.633 345 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+244.86 301.2 m
+231.94 301.2 l
+s
+n
+237.94 298.2 m
+231.94 301.2 l
+237.94 304.2 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+240.553 260.4 m
+236.247 260.4 l
+s
+n
+242.247 257.4 m
+236.247 260.4 l
+242.247 263.4 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+236.247 219.6 m
+240.553 219.6 l
+s
+n
+234.553 222.6 m
+240.553 219.6 l
+234.553 216.6 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+231.94 178.8 m
+244.86 178.8 l
+s
+n
+238.86 181.8 m
+244.86 178.8 l
+238.86 175.8 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+227.633 138 m
+249.167 138 l
+s
+n
+243.167 141 m
+249.167 138 l
+243.167 135 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+223.327 97.2 m
+253.473 97.2 l
+s
+n
+247.473 100.2 m
+253.473 97.2 l
+247.473 94.2 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+219.02 56.4 m
+257.78 56.4 l
+s
+n
+251.78 59.4 m
+257.78 56.4 l
+251.78 53.4 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+312.18 423.6 m
+273.42 423.6 l
+s
+n
+279.42 420.6 m
+273.42 423.6 l
+279.42 426.6 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+307.873 382.8 m
+277.727 382.8 l
+s
+n
+283.727 379.8 m
+277.727 382.8 l
+283.727 385.8 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+303.567 342 m
+282.033 342 l
+s
+n
+288.033 339 m
+282.033 342 l
+288.033 345 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+299.26 301.2 m
+286.34 301.2 l
+s
+n
+292.34 298.2 m
+286.34 301.2 l
+292.34 304.2 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+294.953 260.4 m
+290.647 260.4 l
+s
+n
+296.647 257.4 m
+290.647 260.4 l
+296.647 263.4 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+290.647 219.6 m
+294.953 219.6 l
+s
+n
+288.953 222.6 m
+294.953 219.6 l
+288.953 216.6 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+286.34 178.8 m
+299.26 178.8 l
+s
+n
+293.26 181.8 m
+299.26 178.8 l
+293.26 175.8 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+282.033 138 m
+303.567 138 l
+s
+n
+297.567 141 m
+303.567 138 l
+297.567 135 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+277.727 97.2 m
+307.873 97.2 l
+s
+n
+301.873 100.2 m
+307.873 97.2 l
+301.873 94.2 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+273.42 56.4 m
+312.18 56.4 l
+s
+n
+306.18 59.4 m
+312.18 56.4 l
+306.18 53.4 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+366.58 423.6 m
+327.82 423.6 l
+s
+n
+333.82 420.6 m
+327.82 423.6 l
+333.82 426.6 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+362.273 382.8 m
+332.127 382.8 l
+s
+n
+338.127 379.8 m
+332.127 382.8 l
+338.127 385.8 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+357.967 342 m
+336.433 342 l
+s
+n
+342.433 339 m
+336.433 342 l
+342.433 345 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+353.66 301.2 m
+340.74 301.2 l
+s
+n
+346.74 298.2 m
+340.74 301.2 l
+346.74 304.2 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+349.353 260.4 m
+345.047 260.4 l
+s
+n
+351.047 257.4 m
+345.047 260.4 l
+351.047 263.4 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+345.047 219.6 m
+349.353 219.6 l
+s
+n
+343.353 222.6 m
+349.353 219.6 l
+343.353 216.6 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+340.74 178.8 m
+353.66 178.8 l
+s
+n
+347.66 181.8 m
+353.66 178.8 l
+347.66 175.8 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+336.433 138 m
+357.967 138 l
+s
+n
+351.967 141 m
+357.967 138 l
+351.967 135 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+332.127 97.2 m
+362.273 97.2 l
+s
+n
+356.273 100.2 m
+362.273 97.2 l
+356.273 94.2 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+327.82 56.4 m
+366.58 56.4 l
+s
+n
+360.58 59.4 m
+366.58 56.4 l
+360.58 53.4 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+420.98 423.6 m
+382.22 423.6 l
+s
+n
+388.22 420.6 m
+382.22 423.6 l
+388.22 426.6 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+416.673 382.8 m
+386.527 382.8 l
+s
+n
+392.527 379.8 m
+386.527 382.8 l
+392.527 385.8 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+412.367 342 m
+390.833 342 l
+s
+n
+396.833 339 m
+390.833 342 l
+396.833 345 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+408.06 301.2 m
+395.14 301.2 l
+s
+n
+401.14 298.2 m
+395.14 301.2 l
+401.14 304.2 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+403.753 260.4 m
+399.447 260.4 l
+s
+n
+405.447 257.4 m
+399.447 260.4 l
+405.447 263.4 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+399.447 219.6 m
+403.753 219.6 l
+s
+n
+397.753 222.6 m
+403.753 219.6 l
+397.753 216.6 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+395.14 178.8 m
+408.06 178.8 l
+s
+n
+402.06 181.8 m
+408.06 178.8 l
+402.06 175.8 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+390.833 138 m
+412.367 138 l
+s
+n
+406.367 141 m
+412.367 138 l
+406.367 135 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+386.527 97.2 m
+416.673 97.2 l
+s
+n
+410.673 100.2 m
+416.673 97.2 l
+410.673 94.2 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+382.22 56.4 m
+420.98 56.4 l
+s
+n
+414.98 59.4 m
+420.98 56.4 l
+414.98 53.4 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+475.38 423.6 m
+436.62 423.6 l
+s
+n
+442.62 420.6 m
+436.62 423.6 l
+442.62 426.6 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+471.073 382.8 m
+440.927 382.8 l
+s
+n
+446.927 379.8 m
+440.927 382.8 l
+446.927 385.8 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+466.767 342 m
+445.233 342 l
+s
+n
+451.233 339 m
+445.233 342 l
+451.233 345 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+462.46 301.2 m
+449.54 301.2 l
+s
+n
+455.54 298.2 m
+449.54 301.2 l
+455.54 304.2 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+458.153 260.4 m
+453.847 260.4 l
+s
+n
+459.847 257.4 m
+453.847 260.4 l
+459.847 263.4 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+453.847 219.6 m
+458.153 219.6 l
+s
+n
+452.153 222.6 m
+458.153 219.6 l
+452.153 216.6 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+449.54 178.8 m
+462.46 178.8 l
+s
+n
+456.46 181.8 m
+462.46 178.8 l
+456.46 175.8 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+445.233 138 m
+466.767 138 l
+s
+n
+460.767 141 m
+466.767 138 l
+460.767 135 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+440.927 97.2 m
+471.073 97.2 l
+s
+n
+465.073 100.2 m
+471.073 97.2 l
+465.073 94.2 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+436.62 56.4 m
+475.38 56.4 l
+s
+n
+469.38 59.4 m
+475.38 56.4 l
+469.38 53.4 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+529.78 423.6 m
+491.02 423.6 l
+s
+n
+497.02 420.6 m
+491.02 423.6 l
+497.02 426.6 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+525.473 382.8 m
+495.327 382.8 l
+s
+n
+501.327 379.8 m
+495.327 382.8 l
+501.327 385.8 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+521.167 342 m
+499.633 342 l
+s
+n
+505.633 339 m
+499.633 342 l
+505.633 345 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+516.86 301.2 m
+503.94 301.2 l
+s
+n
+509.94 298.2 m
+503.94 301.2 l
+509.94 304.2 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+512.553 260.4 m
+508.247 260.4 l
+s
+n
+514.247 257.4 m
+508.247 260.4 l
+514.247 263.4 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+508.247 219.6 m
+512.553 219.6 l
+s
+n
+506.553 222.6 m
+512.553 219.6 l
+506.553 216.6 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+503.94 178.8 m
+516.86 178.8 l
+s
+n
+510.86 181.8 m
+516.86 178.8 l
+510.86 175.8 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+499.633 138 m
+521.167 138 l
+s
+n
+515.167 141 m
+521.167 138 l
+515.167 135 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+495.327 97.2 m
+525.473 97.2 l
+s
+n
+519.473 100.2 m
+525.473 97.2 l
+519.473 94.2 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+491.02 56.4 m
+529.78 56.4 l
+s
+n
+523.78 59.4 m
+529.78 56.4 l
+523.78 53.4 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+584.18 423.6 m
+545.42 423.6 l
+s
+n
+551.42 420.6 m
+545.42 423.6 l
+551.42 426.6 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+579.873 382.8 m
+549.727 382.8 l
+s
+n
+555.727 379.8 m
+549.727 382.8 l
+555.727 385.8 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+575.567 342 m
+554.033 342 l
+s
+n
+560.033 339 m
+554.033 342 l
+560.033 345 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+571.26 301.2 m
+558.34 301.2 l
+s
+n
+564.34 298.2 m
+558.34 301.2 l
+564.34 304.2 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+566.953 260.4 m
+562.647 260.4 l
+s
+n
+568.647 257.4 m
+562.647 260.4 l
+568.647 263.4 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+562.647 219.6 m
+566.953 219.6 l
+s
+n
+560.953 222.6 m
+566.953 219.6 l
+560.953 216.6 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+558.34 178.8 m
+571.26 178.8 l
+s
+n
+565.26 181.8 m
+571.26 178.8 l
+565.26 175.8 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+554.033 138 m
+575.567 138 l
+s
+n
+569.567 141 m
+575.567 138 l
+569.567 135 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+549.727 97.2 m
+579.873 97.2 l
+s
+n
+573.873 100.2 m
+579.873 97.2 l
+573.873 94.2 l
+s
+0 0 1 setrgbcolor
+2 slw
+1 slc
+0 slj
+[] 0 sd
+[] 0 sd
+545.42 56.4 m
+584.18 56.4 l
+s
+n
+578.18 59.4 m
+584.18 56.4 l
+578.18 53.4 l
+s
+grestore
+showpage
+%%Trailer
+%%EOF
