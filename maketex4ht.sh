@@ -18,7 +18,9 @@ echo rm '*.html' 'diffy*.png' '*.css'
 rm *.html diffy*.png *.css
 
 echo RUNNING FIGURES at 192dpi, will be downscaled to 96dpi later...
+cd figures
 ./figurerun.sh 192
+cd ..
 echo htlatex diffyqs "html,index=2,3,fn-in,next,uni-html4" ' -cunihtf' "-p"
 htlatex diffyqs "html,index=2,3,fn-in,next,uni-html4" ' -cunihtf' "-p"
 echo tex '\def\filename{{diffyqs}{idx}{4dx}{ind}} \input idxmake.4ht'

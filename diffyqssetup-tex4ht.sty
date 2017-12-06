@@ -147,7 +147,7 @@
 \newcommand{\thmref}[1]{\hyperref[#1]{Theorem~\ref*{#1}}}
 
 % Here we input .pdf_t files
-\newcommand{\inputpdft}[1]{\includegraphics{#1-tex4ht.png}}
+\newcommand{\inputpdft}[1]{\includegraphics{figures/#1-tex4ht.png}}
 
 %Fake contents lines (no such things in tex4ht)
 \newcommand{\addfakecontentsline}[1]{}
@@ -156,7 +156,7 @@
 \newcommand{\addextraspacetotoc}{}
 
 % graphics include (take the second meassurement)
-\newcommand{\diffyincludegraphics}[3]{\includegraphics[#2]{#3}}
+\newcommand{\diffyincludegraphics}[3]{\includegraphics[#2]{figures/#3}}
 
 % only for pdf output
 \newcommand{\diffypdfversion}[1]{}
