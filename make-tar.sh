@@ -1,5 +1,5 @@
 #!/bin/sh
-FILES=`git ls-files | grep -v '^D' | fgrep -v '.cvsignore' | fgrep -v 'make-tar.sh' | fgrep -v 'extraprobs.' | grep -v '.gel$' | grep -v '[1-4]\.[1-6]\.tex' | grep -v -- '-tex4ht.png'`
+FILES=`git ls-files | fgrep -v '.gitignore' | fgrep -v 'make-tar.sh' | grep -v '.gel$' | grep -v '[1-4]\.[1-6]\.tex' | grep -v -- '-tex4ht.png'`
 
 rm -fR diffyqs
 mkdir diffyqs
