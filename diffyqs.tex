@@ -22448,16 +22448,16 @@ x(t) =
 \end{equation*}
 \end{example}
 
-Let us notice something about the above example.  We have proved before that
-when the input was $f(t)$, then the solution to $Lx = f(t)$
-was given by
+Let us notice something about the above example.  We showed before that
+when the input is $f(t)$, then the solution to $Lx = f(t)$
+is given by
 \begin{equation*}
 x(t) = 
 \int_0^t
 f(\tau) 
 \frac{\sin \bigl( \omega_0 (t-\tau) \bigr)}{\omega_0} ~ d\tau .
 \end{equation*}
-Notice that the solution for an arbitrary input is given as
+That is, the solution for an arbitrary input is given as
 convolution with the impulse response.  Let us see why.
 The key is to notice that for functions $x(t)$ and $f(t)$,
 \begin{equation*}
@@ -22477,7 +22477,7 @@ integral\footnote{You should really think of the integral going over
 $(-\infty,\infty)$ rather than over $[0,t]$ and simply assume that $f(t)$ and
 $x(t)$ are continuous and zero for negative $t$.}, the details are
 left as an exercise.
-And so if we convolve the entire equation \eqref{eq:lteximpulseresp},
+If we convolve the entire equation \eqref{eq:lteximpulseresp},
 the left hand side becomes
 \begin{equation*}
 (x'' + \omega_0^2 x) * f =
@@ -22546,7 +22546,7 @@ beam satisfy the conditions,
 & y(0) = 0, \qquad y''(0) = 0, \\
 & y(L) = 0, \qquad y''(L) = 0.
 \end{align*}
-See \sectionref{sec:appeig}, for further information about endpoint
+See \sectionref{sec:appeig} for further information about endpoint
 conditions applied to beams.
 
 
