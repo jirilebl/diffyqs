@@ -15698,7 +15698,7 @@ assume $f(0) = f(L) = 0$.
 \begin{example}
 Take the function $f(t) = t\,(1-t)$ defined on $[0,1]$. 
 \figurevref{scs:oddevenextfig}
-shows the plots of the odd and even extensions of $f(t)$.
+shows the plots of the odd and even periodic extensions of $f(t)$.
 
 \begin{figure}[h!t]
 \capstart
@@ -15771,7 +15771,7 @@ where the original function is defined.
 
 \begin{theorem}
 Let $f(t)$ be a piecewise smooth function defined on $[0,L]$.
-Then the odd extension
+Then the odd periodic extension
 of $f(t)$ has the Fourier series
 \begin{equation*}
 \boxed{~~
@@ -15786,7 +15786,7 @@ b_n =
 \frac{2}{L} \int_{0}^L f(t)\, \sin \left( \frac{n \pi}{L} \, t \right) ~ dt .
 ~~}
 \end{equation*}
-The even extension of $f(t)$ has the Fourier series
+The even periodic extension of $f(t)$ has the Fourier series
 \begin{equation*}
 \boxed{~~
 F_{\text{even}}(t) = \frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos \left(
@@ -15866,7 +15866,7 @@ a_n & = \frac{2}{\pi}
 \end{split}
 \end{equation*}
 Note that we have \myquote{detected} the continuity of the extension since the
-coefficients decay as $\frac{1}{n^2}$.  That is, the even extension
+coefficients decay as $\frac{1}{n^2}$.  That is, the even periodic extension
 of $t^2$ has no jump discontinuities.  It does have corners, since
 the derivative, which is an odd function and a sine series, has jumps; it has
 a Fourier series whose coefficients decay only as $\frac{1}{n}$.
@@ -15878,10 +15878,10 @@ Explicitly, the first few terms of the series are
 \end{example}
 
 \begin{exercise}
-a) Compute the derivative of the even extension of $f(t)$ above and verify it
+a) Compute the derivative of the even periodic extension of $f(t)$ above and verify it
 has jump discontinuities.  Use the actual definition of $f(t)$, not its cosine
-series!  b) Why is it that the derivative of the even extension of $f(t)$ is the
-odd extension of $f'(t)$?
+series!  b) Why is it that the derivative of the even periodic extension of $f(t)$ is the
+odd periodic extension of $f'(t)$?
 \end{exercise}
 
 \subsection{Application}
@@ -17999,8 +17999,8 @@ be applied to more complicated hyperbolic PDE.
 We know what any solution must look like, but we need to solve for the
 given side conditions.  We will just give the formula and see that it works.
 First let $F(x)$
-denote the \emph{odd extension} of $f(x)$, and let $G(x)$ denote the
-\emph{odd extension} of $g(x)$.  Define
+denote the odd periodic extension of $f(x)$, and let $G(x)$ denote the
+odd periodic extension of $g(x)$.  Define
 \begin{equation*}
 A(x) = \frac{1}{2} F(x) - \frac{1}{2a} \int_0^x G(s) ~ds ,
 \qquad
@@ -18192,7 +18192,7 @@ the side conditions
 \eqref{dalemb:weqside}.
 \end{exercise}
 
-\textbf{Warning:}  Make sure you use the odd extensions $F(x)$ and $G(x)$,
+\textbf{Warning:}  Make sure you use the odd periodic extensions $F(x)$ and $G(x)$,
 when you have formulas for $f(x)$ and $g(x)$.
 The thing is, those formulas in general hold
 only for $0 < x < L$, and are not usually equal to $F(x)$ and $G(x)$
@@ -18204,7 +18204,7 @@ for other $x$.
 Using the d'Alembert solution solve $y_{tt} = 4y_{xx}$, $0 < x < \pi$, $t >
 0$,
 $y(0,t) = y(\pi, t) = 0$, $y(x,0) = \sin x$, and
-$y_t(x,0) = \sin x$.  Hint: Note that $\sin x$ is the odd extension of
+$y_t(x,0) = \sin x$.  Hint: Note that $\sin x$ is the odd periodic extension of
 $y(x,0)$ and $y_t(x,0)$.
 \end{exercise}
 
@@ -19161,8 +19161,8 @@ For instance, as $P(r,\theta,\alpha)$
 will have infinitely many derivatives, then
 via differentiating under the integral we find
 that the solution $u(r,\theta)$ has infinitely many derivatives, at least
-when inside the circle, $r < 1$.  By ``having infinitely many derivatives,''
-what you
+when inside the circle, $r < 1$.  By \myquote{having infinitely many
+derivatives,} what you
 should think of is that $u(r,\theta)$ has \myquote{no corners} and all of its
 partial derivatives of all orders exist and also have \myquote{no corners.}
 
@@ -20551,7 +20551,7 @@ y(x,t) =
 \end{figure}
 
 It is not hard to compute specific values
-for an odd extension of a function and
+for an odd periodic extension of a function and
 hence \eqref{natfreq:exsol} is a wonderful solution to the problem.
 For example it is very easy to have a computer do it, unlike a series solution.
 A plot is given in \figurevref{natfreq:forcedvibfig}.
