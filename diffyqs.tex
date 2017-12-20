@@ -187,27 +187,28 @@ See \url{http://www.jirka.org/diffyqs/} for more information
 \section{Notes about these notes}
 \label{notes:section}
 
-This book originated from my class notes for teaching Math 286
+This book originated from my class notes for Math 286
 at the \href{http://www.math.uiuc.edu/}{University of Illinois at
 Urbana-Champaign}
 in Fall 2008 and
 Spring 2009.
 It is a first course on differential equations for engineers.
-I also taught Math 285 at UIUC
-and Math 20D at \href{http://www.math.ucsd.edu/}{UCSD} using 
-this book.
-The standard book at UIUC was 
+Using this book, I also taught Math 285 at UIUC,
+Math 20D at
+\href{http://www.math.ucsd.edu/}{UCSD},
+and Math 4233 at 
+\href{http://www.math.okstate.edu/}{OSU}.
+Normally these courses are taught with
 Edwards and Penney, \emph{Differential
-Equations and Boundary Value Problems: Computing and Modeling}~\cite{EP},
-fourth edition.
-The standard book at UCSD is
+Equations and Boundary Value Problems: Computing and Modeling}~\cite{EP}, or
 Boyce and DiPrima's
 \emph{Elementary
-Differential Equations and Boundary Value Problems}~\cite{BD}.
-As the syllabus at UIUC was based on~\cite{EP}, the early
-chapters in the book have some resemblance to~\cite{EP} in choice of
-material and its sequence, and examples used.
-Among other books I used as sources of information and inspiration
+Differential Equations and Boundary Value Problems}~\cite{BD},
+and this book aims to be more or less a drop-in replacement.
+%As the syllabus at UIUC was based on~\cite{EP}, the early
+%chapters in the book have some resemblance to~\cite{EP} in choice of
+%material, its sequence, and examples used.
+Other books I used as sources of information and inspiration
 are E.L.\ Ince's classic (and inexpensive)
 \emph{Ordinary Differential Equations}~\cite{I},
 Stanley Farlow's \emph{Differential Equations and Their
@@ -218,6 +219,124 @@ and William Trench's free book
 \emph{Elementary
 Differential Equations with Boundary Value Problems}~\cite{T}.
 See the \hyperref[furtherreading:chapter]{Further Reading} chapter at the end of the book.
+
+The organization of this book to some degree
+requires chapters be done in order.
+Later chapters can be dropped.
+The dependence of the material covered is roughly:
+
+\begin{equation*}
+%FIXME: check for tex4ht
+\begin{tikzcd}[cramped, row sep=small]
+& {\text{\hyperref[intro:chapter]{Introduction}}} \arrow[d] \\
+& {\text{\Chapterref{fo:chapter}}} \arrow[d] \\
+& {\text{\Chapterref{ho:chapter}}} \arrow[dr] \arrow[dd] \arrow[dl] \arrow[drr] \\
+{\text{\Chapterref{sys:chapter}}} \arrow[dr, dashed] \arrow[d] & &
+  {\text{\Chapterref{LT:chapter}}} &
+  {\text{\Chapterref{ps:chapter}}} \\
+{\text{\Chapterref{nlin:chapter}}} & {\text{\Chapterref{FS:chapter}}} \arrow[d] \\
+& {\text{\Chapterref{SL:chapter}}}
+\end{tikzcd}
+%\xymatrix@-7pt{
+%& *+[F.:<3pt>]{\text{\hyperref[intro:chapter]{Introduction}}} \ar[d] \\
+%& *+[F.:<3pt>]{\text{\Chapterref{fo:chapter}}} \ar[d] \\
+%& *+[F.:<3pt>]{\text{\Chapterref{ho:chapter}}} \ar[dr] \ar[dd] \ar[dl] \ar[drr] \\
+%*+[F.:<3pt>]{\text{\Chapterref{sys:chapter}}} \ar@{-->}[dr] \ar[d] & &
+  %*+[F.:<3pt>]{\text{\Chapterref{LT:chapter}}} &
+  %*+[F.:<3pt>]{\text{\Chapterref{ps:chapter}}} \\
+%*+[F.:<3pt>]{\text{\Chapterref{nlin:chapter}}} & *+[F.:<3pt>]{\text{\Chapterref{FS:chapter}}} \ar[d] \\
+%& *+[F.:<3pt>]{\text{\Chapterref{SL:chapter}}}
+%}
+\end{equation*}
+
+There are some references in chapters \ref{FS:chapter} and \ref{SL:chapter}
+to material from \chapterref{sys:chapter} (some linear algebra), but these
+references are not absolutely essential and can be skimmed over,
+so \chapterref{sys:chapter}
+can safely be dropped, while still covering
+chapters \ref{FS:chapter} and \ref{SL:chapter}.
+The textbook was originally made for two types of courses.  Either
+at 4 hours a week for a semester (Math 286 at UIUC):
+
+\medskip
+
+\noindent
+\hyperref[intro:chapter]{Introduction},
+\chapterref{fo:chapter},
+\chapterref{ho:chapter},
+\chapterref{sys:chapter},
+\chapterref{FS:chapter} (w/o \sectionref{dirichdisc:section}),
+\chapterref{SL:chapter} (or
+\ref{LT:chapter} or \ref{ps:chapter} or \ref{nlin:chapter}).
+
+\medskip
+
+For a shorter version (3 hours a week) of the above course, skip
+chapters \ref{FS:chapter} and \ref{SL:chapter}.
+The second type of the course at 3 hours a week (Math 285 at UIUC) was:
+
+\medskip
+
+\noindent
+\hyperref[intro:chapter]{Introduction},
+\chapterref{fo:chapter},
+\chapterref{ho:chapter},
+\chapterref{FS:chapter} (w/o \sectionref{dirichdisc:section}),
+(and maybe \chapterref{SL:chapter},
+\ref{LT:chapter}, or \ref{ps:chapter}).
+
+\medskip
+
+The complete book can be covered at a reasonably
+fast pace at approximately 75 lectures,
+not accounting for exams, review,
+or time spent in computer lab. % (if using IODE for example).
+A two quarter course can be easily run with the material,
+and if one does not rush, a two semester course.  For example:
+
+\medskip
+
+\noindent
+Semester 1:
+\hyperref[intro:chapter]{Introduction},
+\chapterref{fo:chapter},
+\chapterref{ho:chapter},
+\chapterref{LT:chapter},
+\chapterref{ps:chapter}, (and perhaps bits of \ref{FS:chapter}).
+\\
+Semester 2: 
+\Chapterref{sys:chapter},
+\chapterref{nlin:chapter},
+\chapterref{FS:chapter},
+\chapterref{SL:chapter}.
+
+\medskip
+
+%The schedule assumes you spend 
+%two class periods in the computer lab with IODE.
+%IODE need not be used for either version.
+%If IODE is not used,
+%some additional material %(such as part of \chapterref{ps:chapter})
+%may need to be covered instead.
+%
+%\medskip
+
+The chapter on
+Laplace transform (\chapterref{LT:chapter}),
+the chapter on Sturm-Liouville (\chapterref{SL:chapter}),
+the chapter on power series (\chapterref{ps:chapter}),
+and the chapter on nonlinear systems (\chapterref{nlin:chapter}),
+are more or less interchangeable time-wise.
+If \chapterref{nlin:chapter} is covered it may be best to place it right 
+after \chapterref{sys:chapter}.
+%Laplace transform or power series are not normally
+%covered at UIUC 285/286, but
+%I think it is essential that any course on
+%differential equations at least mention the Laplace transform.
+If time is short, the first two sections of
+\chapterref{ps:chapter} make a reasonable self-contained unit.
+
+\medskip
 
 I taught the UIUC courses using the IODE\index{IODE software} software
 (\url{http://www.math.uiuc.edu/iode/}).  IODE is a free software package that
@@ -237,9 +356,10 @@ in class to show these (and other) graphs.
 This book
 is available from
 \url{http://www.jirka.org/diffyqs/}.  Check there for any possible
-updates or errata.  The \LaTeX\ source is also available from the same site
+updates or errata.  The \LaTeX\ source is also available
 for possible modification and customization.
 
+\textbf{Acknowlegements:}
 Firstly, I would like to acknowledge Rick Laugesen.  I used his handwritten
 class notes
 the first time I taught
@@ -278,136 +398,6 @@ have forgotten.
 Finally I would like
 to acknowledge NSF grants DMS-0900885 and DMS-1362337.
 
-The organization of this book to some degree
-requires chapters be done in order.
-Later chapters can be dropped.
-The dependence of the material covered is roughly:
-
-\begin{equation*}
-%FIXME: check for tex4ht
-\begin{tikzcd}[row sep=small]
-& {\text{\hyperref[intro:chapter]{Introduction}}} \arrow[d] \\
-& {\text{\Chapterref{fo:chapter}}} \arrow[d] \\
-& {\text{\Chapterref{ho:chapter}}} \arrow[dr] \arrow[dd] \arrow[dl] \arrow[drr] \\
-{\text{\Chapterref{sys:chapter}}} \arrow[dr, dashed] \arrow[d] & &
-  {\text{\Chapterref{LT:chapter}}} &
-  {\text{\Chapterref{ps:chapter}}} \\
-{\text{\Chapterref{nlin:chapter}}} & {\text{\Chapterref{FS:chapter}}} \arrow[d] \\
-& {\text{\Chapterref{SL:chapter}}}
-\end{tikzcd}
-%\xymatrix@-7pt{
-%& *+[F.:<3pt>]{\text{\hyperref[intro:chapter]{Introduction}}} \ar[d] \\
-%& *+[F.:<3pt>]{\text{\Chapterref{fo:chapter}}} \ar[d] \\
-%& *+[F.:<3pt>]{\text{\Chapterref{ho:chapter}}} \ar[dr] \ar[dd] \ar[dl] \ar[drr] \\
-%*+[F.:<3pt>]{\text{\Chapterref{sys:chapter}}} \ar@{-->}[dr] \ar[d] & &
-  %*+[F.:<3pt>]{\text{\Chapterref{LT:chapter}}} &
-  %*+[F.:<3pt>]{\text{\Chapterref{ps:chapter}}} \\
-%*+[F.:<3pt>]{\text{\Chapterref{nlin:chapter}}} & *+[F.:<3pt>]{\text{\Chapterref{FS:chapter}}} \ar[d] \\
-%& *+[F.:<3pt>]{\text{\Chapterref{SL:chapter}}}
-%}
-\end{equation*}
-
-\medskip
-
-There are some references in chapters \ref{FS:chapter} and \ref{SL:chapter}
-to material from \chapterref{sys:chapter} (some linear algebra), but these
-references are not absolutely essential and can be skimmed over,
-so \chapterref{sys:chapter}
-can safely be dropped, while still covering
-chapters \ref{FS:chapter} and \ref{SL:chapter}.
-The textbook was originally done for two types of courses.  Either
-at 4 hours a week for a semester (Math 286 at UIUC):
-
-\medskip
-
-\noindent
-\hyperref[intro:chapter]{Introduction},
-\chapterref{fo:chapter},
-\chapterref{ho:chapter},
-\chapterref{sys:chapter},
-\chapterref{FS:chapter} (w/o \sectionref{dirichdisc:section}),
-\chapterref{SL:chapter} (or
-\ref{LT:chapter} or \ref{ps:chapter} or \ref{nlin:chapter}).
-
-\medskip
-
-Or a shorter version (Math 285 at UIUC) of the course at 3 hours a week for
-a semester:
-
-\medskip
-
-\noindent
-\hyperref[intro:chapter]{Introduction},
-\chapterref{fo:chapter},
-\chapterref{ho:chapter},
-\chapterref{FS:chapter} (w/o \sectionref{dirichdisc:section}),
-(and maybe \chapterref{SL:chapter},
-\ref{LT:chapter}, or \ref{ps:chapter}).
-
-%\medskip
-%
-%A version I have been told people run with the material:
-%
-%\medskip
-%
-%\noindent
-%\hyperref[intro:chapter]{Introduction},
-%\chapterref{fo:chapter},
-%\chapterref{ho:chapter},
-%\chapterref{sys:chapter}.
-
-\medskip
-
-If one does not rush, a two semester course could be run, for example as:
-
-\medskip
-
-\noindent
-Semester 1:
-\hyperref[intro:chapter]{Introduction},
-\chapterref{fo:chapter},
-\chapterref{ho:chapter},
-\chapterref{LT:chapter},
-\chapterref{ps:chapter}, (and perhaps bits of \ref{FS:chapter}).
-\\
-Semester 2: 
-\Chapterref{sys:chapter},
-\chapterref{nlin:chapter},
-\chapterref{FS:chapter},
-\chapterref{SL:chapter}.
-
-\medskip
-
-The complete book can be covered at a reasonably
-fast pace at approximately 75 lectures,
-not accounting for exams, review,
-or time spent in computer lab. % (if using IODE for example).
-A two quarter course can be easily run with the material,
-and if one does not rush a two semester course as above.
-
-%The schedule assumes you spend 
-%two class periods in the computer lab with IODE.
-%IODE need not be used for either version.
-%If IODE is not used,
-%some additional material %(such as part of \chapterref{ps:chapter})
-%may need to be covered instead.
-%
-%\medskip
-
-The chapter on
-Laplace transform (\chapterref{LT:chapter}),
-the chapter on Sturm-Liouville (\chapterref{SL:chapter}),
-the chapter on power series (\chapterref{ps:chapter}),
-and the chapter on nonlinear systems (\chapterref{nlin:chapter}),
-are more or less interchangeable time-wise.
-If \chapterref{nlin:chapter} is covered it may be best to place it right 
-after \chapterref{sys:chapter}.
-%Laplace transform or power series are not normally
-%covered at UIUC 285/286, but
-%I think it is essential that any course on
-%differential equations at least mention the Laplace transform.
-If time is short, the first two sections of
-\chapterref{ps:chapter} make a reasonable self-contained unit.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
