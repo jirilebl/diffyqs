@@ -1,5 +1,7 @@
 
 SHOULD (in next big (but compatible) edition):
+* Add appendix chapter on linear algebra for courses that don't want to require
+  that as prerequisite
 * Expand discussion of vector field and how it is drawn in 3.1.
 * Another example of application of first order system, perhaps flow with two
   tanks.

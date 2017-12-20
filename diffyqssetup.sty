@@ -11,17 +11,19 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{amsthm}
-\usepackage[pdftex]{graphicx}
+\usepackage{graphicx}
 \usepackage{color}
 %\usepackage{graphics}
 \usepackage[headings]{fullpage}
 \usepackage{url}
 \usepackage{varioref}
 \usepackage{makeidx}
-\usepackage[pdftex]{hyperref}
+\usepackage{hyperref} % do NOT set [ocgcolorlinks] here!
+\usepackage[ocgcolorlinks]{ocgx2} %perhaps run without for lulu/createspace
 \usepackage{hypcap}
 \usepackage[font={small,it}]{caption}
 \usepackage[all]{xy}
+\usepackage{tikz-cd}
 \usepackage{units}
 \usepackage{booktabs}
 \usepackage{microtype}
@@ -47,13 +49,15 @@
 %\addtolength{\textheight}{2.13in}
 %\addtolength{\paperheight}{2.13in}
 
+\definecolor{mypersianblue}{rgb}{0.11, 0.22, 0.73}
+
 \hypersetup{
     pdfborderstyle={/S/U/W 0.5},
     %colorlinks,
-    %citecolor=black,
-    %filecolor=black,
-    %linkcolor=black,
-    %urlcolor=black,
+    citecolor=mypersianblue,
+    filecolor=mypersianblue,
+    linkcolor=mypersianblue,
+    urlcolor=mypersianblue,
     pdftitle={Notes on Diffy Qs: Differential Equations for Engineers},
     pdfsubject={Differential Equations},
     pdfkeywords={differential equations, ODE, PDE, Fourier series, Laplace
