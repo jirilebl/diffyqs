@@ -10,10 +10,9 @@ A free online textbook.  See http://www.jirka.org/diffyqs/
 
 Figures are in figures/
 
-Note: Some of the shell(.sh) and Perl(.pl) scripts here are really for me
-and are really hacky ways to just do things.  Most of them are for generating the
-web version.  Feel free to ignore them.
+Note: Some of the shell(.sh) and Perl(.pl) scripts here are really for me and are really hacky ways to just do things.  Most of them are for generating the web version.  Feel free to ignore them.
 
-Note that the tex sources require a very recent LaTeX, if your latex does not
-have a recent enough ocgx2 package, you can simply comment out that line in
+* convert-to-mbx.??: is work in progress conversion script to Pretext (used to be MBX) for a better looking online version.
+
+The tex sources require a very recent LaTeX, if your latex does not have a recent enough ocgx2 package, you can simply comment out that line in
 diffyqssetup.sty.
