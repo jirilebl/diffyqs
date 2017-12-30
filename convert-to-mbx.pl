@@ -87,7 +87,7 @@ if ($commands ne "" || $macrosextra ne "") {
 }
 
 print $out "</docinfo>\n";
-print $out "<book xml:id=\"diffyqs\">\n";
+print $out "<book xml:id=\"diffyqsxml\">\n";
 
 $didp = 0;
 $inchapter = 0;
@@ -615,14 +615,14 @@ while(1)
 		print "(index $1)\n";
 		$index = $1;
 		$index =~ s|\$(.*?)\$|<m>$1</m>|sg;
-		$index =~ s|^(.*)!(.*)$|<main>$1</main><sub>$2</sub>|s;
-		print $out "<index>$index</index>"; 
+		$index =~ s|^(.*)!(.*)$|<h>$1</h><h>$2</h>|s;
+		print $out "<idx>$index</idx>"; 
 	} elsif ($para =~ s/^\\myindex\{([^}]*)\}//) {
 		open_paragraph_if_not_open ();
 		print "(myindex $1)\n";
 		$index = $1;
 		$index =~ s|\$(.*?)\$|<m>$1</m>|sg;
-		print $out "$index<index>$index</index>"; 
+		print $out "$index<idx>$index</idx>"; 
 
 	} elsif ($para =~ s/^\\eqref\{([^}]*)\}//) {
 		open_paragraph_if_not_open ();
@@ -1189,9 +1189,9 @@ while(1)
 		$indexo = "";
 		while ($para =~ s/^[ \n]*\\index\{(.*?)\}[ \n]*//s) {
 			$term = $1;
-			$term =~ s|^(.*)!(.*)$|<main>$1</main><sub>$2</sub>|s;
+			$term =~ s|^(.*)!(.*)$|<h>$1</h><h>$2</h>|s;
 			$term =~ s|\$(.*?)\$|<m>$1</m>|sg;
-			$indexo = $indexo . "<index>$term</index>\n";
+			$indexo = $indexo . "<idx>$term</idx>\n";
 		}
 
 		#FIXME: hack because I sometime switch index and label
@@ -1258,7 +1258,7 @@ while(1)
 			print $out "<title>$title</title>\n";
 		}
 		if ($index ne "") {
-			print $out "<index>$index</index>\n";
+			print $out "<idx>$index</idx>\n";
 		}
 		print $out "<statement>\n";
 		open_paragraph();
