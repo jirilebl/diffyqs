@@ -1,0 +1,982 @@
+\chapter*{Introduction} \label{intro:chapter}
+%mbxSTARTIGNORE
+\addfakecontentsline{Introduction}
+\markboth{INTRODUCTION}{INTRODUCTION}
+%mbxENDIGNORE
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Notes about these notes}
+\label{notes:section}
+
+This book originated from my class notes for Math 286
+at the \href{http://www.math.uiuc.edu/}{University of Illinois at
+Urbana-Champaign}
+in Fall 2008 and
+Spring 2009.
+It is a first course on differential equations for engineers.
+Using this book, I also taught Math 285 at UIUC,
+Math 20D at
+\href{http://www.math.ucsd.edu/}{UCSD},
+and Math 4233 at 
+\href{http://www.math.okstate.edu/}{OSU}.
+Normally these courses are taught with
+Edwards and Penney, \emph{Differential
+Equations and Boundary Value Problems: Computing and Modeling}~\cite{EP}, or
+Boyce and DiPrima's
+\emph{Elementary
+Differential Equations and Boundary Value Problems}~\cite{BD},
+and this book aims to be more or less a drop-in replacement.
+%As the syllabus at UIUC was based on~\cite{EP}, the early
+%chapters in the book have some resemblance to~\cite{EP} in choice of
+%material, its sequence, and examples used.
+Other books I used as sources of information and inspiration
+are E.L.\ Ince's classic (and inexpensive)
+\emph{Ordinary Differential Equations}~\cite{I},
+Stanley Farlow's \emph{Differential Equations and Their
+Applications}~\cite{F}, now available from Dover,
+Berg and McGregor's
+\emph{Elementary Partial Differential Equations}~\cite{BM},
+and William Trench's free book
+\emph{Elementary
+Differential Equations with Boundary Value Problems}~\cite{T}.
+See the \hyperref[furtherreading:chapter]{Further Reading} chapter at the end of the book.
+
+The organization of this book to some degree
+requires chapters be done in order.
+Later chapters can be dropped.
+The dependence of the material covered is roughly:
+
+\begin{equation*}
+%FIXME: check for tex4ht
+\begin{tikzcd}[cramped, row sep=small]
+& {\text{\hyperref[intro:chapter]{Introduction}}} \arrow[d] \\
+& {\text{\Chapterref{fo:chapter}}} \arrow[d] \\
+& {\text{\Chapterref{ho:chapter}}} \arrow[dr] \arrow[dd] \arrow[dl] \arrow[drr] \\
+{\text{\Chapterref{sys:chapter}}} \arrow[dr, dashed] \arrow[d] & &
+  {\text{\Chapterref{LT:chapter}}} &
+  {\text{\Chapterref{ps:chapter}}} \\
+{\text{\Chapterref{nlin:chapter}}} & {\text{\Chapterref{FS:chapter}}} \arrow[d] \\
+& {\text{\Chapterref{SL:chapter}}}
+\end{tikzcd}
+%\xymatrix@-7pt{
+%& *+[F.:<3pt>]{\text{\hyperref[intro:chapter]{Introduction}}} \ar[d] \\
+%& *+[F.:<3pt>]{\text{\Chapterref{fo:chapter}}} \ar[d] \\
+%& *+[F.:<3pt>]{\text{\Chapterref{ho:chapter}}} \ar[dr] \ar[dd] \ar[dl] \ar[drr] \\
+%*+[F.:<3pt>]{\text{\Chapterref{sys:chapter}}} \ar@{-->}[dr] \ar[d] & &
+  %*+[F.:<3pt>]{\text{\Chapterref{LT:chapter}}} &
+  %*+[F.:<3pt>]{\text{\Chapterref{ps:chapter}}} \\
+%*+[F.:<3pt>]{\text{\Chapterref{nlin:chapter}}} & *+[F.:<3pt>]{\text{\Chapterref{FS:chapter}}} \ar[d] \\
+%& *+[F.:<3pt>]{\text{\Chapterref{SL:chapter}}}
+%}
+\end{equation*}
+
+There are some references in chapters \ref{FS:chapter} and \ref{SL:chapter}
+to material from \chapterref{sys:chapter} (some linear algebra), but these
+references are not absolutely essential and can be skimmed over,
+so \chapterref{sys:chapter}
+can safely be dropped, while still covering
+chapters \ref{FS:chapter} and \ref{SL:chapter}.
+The textbook was originally made for two types of courses.  Either
+at 4 hours a week for a semester (Math 286 at UIUC):
+
+\medskip
+
+\noindent
+\hyperref[intro:chapter]{Introduction},
+\chapterref{fo:chapter},
+\chapterref{ho:chapter},
+\chapterref{sys:chapter},
+\chapterref{FS:chapter} (w/o \sectionref{dirichdisc:section}),
+\chapterref{SL:chapter} (or
+\ref{LT:chapter} or \ref{ps:chapter} or \ref{nlin:chapter}).
+
+\medskip
+
+For a shorter version (3 hours a week) of the above course, skip
+chapters \ref{FS:chapter} and \ref{SL:chapter}.
+The second type of the course at 3 hours a week (Math 285 at UIUC) was:
+
+\medskip
+
+\noindent
+\hyperref[intro:chapter]{Introduction},
+\chapterref{fo:chapter},
+\chapterref{ho:chapter},
+\chapterref{FS:chapter} (w/o \sectionref{dirichdisc:section}),
+(and maybe \chapterref{SL:chapter},
+\ref{LT:chapter}, or \ref{ps:chapter}).
+
+\medskip
+
+The complete book can be covered at a reasonably
+fast pace at approximately 75 lectures,
+not accounting for exams, review,
+or time spent in computer lab. % (if using IODE for example).
+A two quarter course can be easily run with the material,
+and if one does not rush, a two semester course.  For example:
+
+\medskip
+
+\noindent
+Semester 1:
+\hyperref[intro:chapter]{Introduction},
+\chapterref{fo:chapter},
+\chapterref{ho:chapter},
+\chapterref{LT:chapter},
+\chapterref{ps:chapter}, (and perhaps bits of \ref{FS:chapter}).
+\\
+Semester 2: 
+\Chapterref{sys:chapter},
+\chapterref{nlin:chapter},
+\chapterref{FS:chapter},
+\chapterref{SL:chapter}.
+
+\medskip
+
+%The schedule assumes you spend 
+%two class periods in the computer lab with IODE.
+%IODE need not be used for either version.
+%If IODE is not used,
+%some additional material %(such as part of \chapterref{ps:chapter})
+%may need to be covered instead.
+%
+%\medskip
+
+The chapter on
+Laplace transform (\chapterref{LT:chapter}),
+the chapter on Sturm-Liouville (\chapterref{SL:chapter}),
+the chapter on power series (\chapterref{ps:chapter}),
+and the chapter on nonlinear systems (\chapterref{nlin:chapter}),
+are more or less interchangeable time-wise.
+If \chapterref{nlin:chapter} is covered it may be best to place it right 
+after \chapterref{sys:chapter}.
+%Laplace transform or power series are not normally
+%covered at UIUC 285/286, but
+%I think it is essential that any course on
+%differential equations at least mention the Laplace transform.
+If time is short, the first two sections of
+\chapterref{ps:chapter} make a reasonable self-contained unit.
+
+\medskip
+
+I taught the UIUC courses using the IODE\index{IODE software} software
+(\url{http://www.math.uiuc.edu/iode/}).  IODE is a free software package that
+works with Matlab (proprietary) or Octave (free software).
+%Projects and labs from the IODE
+%website are referenced throughout the book.  They need not be used,
+%but I recommend using them.
+%This gives students some practice with Matlab, very useful for
+%engineers.
+Unfortunately IODE is not kept up to date at this point, and may have
+trouble running on newer versions of Matlab.
+The graphs in the book were made with
+the Genius\index{Genius software} software
+(see \url{http://www.jirka.org/genius.html}).  I used Genius
+in class to show these (and other) graphs.
+
+This book
+is available from
+\url{http://www.jirka.org/diffyqs/}.  Check there for any possible
+updates or errata.  The \LaTeX\ source is also available
+for possible modification and customization.
+
+\medskip
+
+\textbf{Acknowlegements:}
+Firstly, I would like to acknowledge Rick Laugesen.  I used his handwritten
+class notes
+the first time I taught
+Math 286.  My organization of this book through chapter 5,
+and the choice of
+material covered, is heavily influenced by his notes.  Many
+examples and computations are taken from his notes.  I am also heavily
+indebted to Rick for all the advice he has given me, not just on teaching
+Math 286.
+For spotting errors and other suggestions,
+I would also like to acknowledge (in no particular order):
+John P.\ D'Angelo,
+Sean Raleigh, Jessica Robinson, Michael Angelini, Leonardo Gomes, Jeff
+Winegar, Ian Simon, Thomas Wicklund, Eliot Brenner, Sean Robinson,
+Jannett Susberry, Dana Al-Quadi, Cesar Alvarez, Cem Bagdatlioglu,
+Nathan Wong, Alison Shive, Shawn White, Wing Yip Ho, Joanne Shin,
+Gladys Cruz, Jonathan Gomez, Janelle Louie, Navid Froutan,
+Grace Victorine, Paul Pearson, Jared Teague, Ziad Adwan,
+Martin Weilandt, S\"{o}nmez \c{S}ahuto\u{g}lu,
+Pete Peterson, Thomas Gresham, Prentiss Hyde, Jai Welch,
+Simon Tse, Andrew Browning, James Choi, Dusty Grundmeier,
+John Marriott,
+Jim Kruidenier,
+Barry Conrad,
+Wesley Snider,
+Colton Koop,
+Sarah Morse,
+Erik Boczko,
+Asif Shakeel,
+Chris Peterson,
+Nicholas Hu,
+Paul Seeburger,
+Jonathan McCormick,
+and probably others I
+have forgotten.
+Finally I would like
+to acknowledge NSF grants DMS-0900885 and DMS-1362337.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sectionnewpage
+\section{Introduction to differential equations}
+\label{introde:section}
+
+\sectionnotes{more than 1 lecture\EPref{, \S1.1 in \cite{EP}}\BDref{,
+chapter 1 in \cite{BD}}}
+
+\subsection{Differential equations}
+
+The laws of physics are generally written down as differential
+equations.  Therefore, all of science and engineering use
+differential equations to some degree.  Understanding
+differential equations is essential to understanding almost anything you will
+study in your science and engineering classes.
+You can think of mathematics as the language of science, and
+differential equations are one of the most important parts of this
+language as far as science and engineering are concerned.  As an analogy,
+suppose all your classes from now on were given in Swahili.  
+It would be important to first learn Swahili, or you would have a very
+tough time getting a good grade in your classes.
+
+You saw many
+differential equations already without perhaps knowing about it.
+And you even solved simple
+differential equations when you took calculus.
+Let us see an example you may not have seen:
+\begin{equation} \label{eq1}
+\frac{dx}{dt} + x = 2 \cos t .
+\end{equation}
+Here $x$ is the \emph{\myindex{dependent variable}} and $t$ is the
+\emph{\myindex{independent variable}}.
+Equation \eqref{eq1}
+is a basic example of a \emph{\myindex{differential equation}}.  In fact, it
+is an example of a \emph{\myindex{first order differential equation}}, since
+it involves only the first derivative of the dependent variable.  This 
+equation arises from Newton's law of cooling where the ambient
+temperature oscillates with time.
+
+\subsection{Solutions of differential equations}
+
+Solving the differential equation means finding $x$ in terms of $t$.  That
+is, we want to find a function of $t$, which we will call $x$, such that when
+we plug $x$, $t$, and $\frac{dx}{dt}$ into \eqref{eq1}, the equation holds.
+It is
+the same idea as it would be for a normal (algebraic) equation of just
+$x$ and $t$.  We claim that
+\begin{equation*}
+x = x(t) = \cos t + \sin t
+\end{equation*}
+is a \emph{\myindex{solution}}.
+How do we check?  We simply plug $x$ into equation \eqref{eq1}!  First we
+need to compute $\frac{dx}{dt}$.  We find that $\frac{dx}{dt} = 
+-\sin t + \cos t$.  Now let us compute the left hand side
+of \eqref{eq1}.
+\begin{equation*}
+\frac{dx}{dt} + x = 
+(-\sin t + \cos t)
++
+(\cos t + \sin t)
+=
+2\cos t .
+\end{equation*}
+Yay!  We got precisely the right hand side.
+But there is more!
+We claim
+$x = \cos t + \sin t + e^{-t}$ is also
+a solution.  Let us try,
+\begin{equation*}
+\frac{dx}{dt} = -\sin t + \cos t - e^{-t} .
+\end{equation*}
+Again plugging into the left hand side of \eqref{eq1}
+\begin{equation*}
+\frac{dx}{dt} + x = 
+(-\sin t + \cos t - e^{-t}) +
+(\cos t + \sin t + e^{-t})
+= 2\cos t .
+\end{equation*}
+And it works yet again!
+
+So there can be many different solutions.  In fact, for this equation all
+solutions can be written in the form
+\begin{equation*}
+x = \cos t + \sin t + C e^{-t}
+\end{equation*}
+for some constant $C$.  See \figurevref{intro:plotsfig} for the graph of a
+few of these solutions. 
+We will see how we find these solutions
+a few lectures from now.
+
+%\begin{figure}[h!t]
+%\begin{diffyfloatingfigure}{3.1in}{4.6in}
+\begin{diffyfloatingfigurepdfonly}{3.1in}
+\capstart
+\begin{center}
+\diffyincludegraphics{width=3in}{width=4.5in}{intro-plots-alt}
+\caption{Few solutions of $\frac{dx}{dt} + x = 2 \cos t$.\label{intro:plotsfig}}
+\end{center}
+%\end{figure}
+%\end{diffyfloatingfigure}
+\end{diffyfloatingfigurepdfonly}
+
+\medskip
+
+It turns out that solving differential equations can be quite hard.  
+There is no general method that solves every differential equation.  We will
+generally focus on how to get exact formulas for solutions of certain
+differential
+equations, but we will also spend a little bit of time
+on getting approximate solutions.
+
+For most of the course we will look at
+\emph{ordinary differential equations\index{ordinary differential equation}} or ODEs\index{ODE}, by which we mean that there
+is only one independent variable and derivatives are only with respect to
+this one variable.
+If there are several independent variables, we will get
+\emph{partial differential equations\index{partial differential equation}}
+or PDEs\index{PDE}.
+We will briefly see these near the
+end of the course.
+
+Even for ODEs, which are very well understood, it is not a simple question
+of turning a crank to get answers.  
+It is important to
+know when it is easy to find solutions and how to do so.
+Although in real applications you will
+leave much of the actual calculations to computers, you
+need to understand what they are doing.  It is often necessary
+to simplify or transform your equations into something that a computer can
+understand and solve.
+You may need to make certain assumptions and changes in your
+model to achieve this.
+
+To be a successful engineer or scientist, you will be required to solve
+problems in your job that you never saw before.  It is important to
+learn problem solving techniques, so that you may apply those techniques to
+new problems.  A common mistake is to expect to learn some prescription for
+solving all the problems you will encounter in your later career.  This
+course is no exception.
+
+
+\subsection{Differential equations in practice}
+
+\begin{diffyfloatingfigurer}{3.05in}{3.35in}
+\noindent
+\inputpdft{1-1-fig}
+\end{diffyfloatingfigurer}
+So how do we use differential equations in science and engineering?  
+First, we have some \emph{\myindex{real world problem}} we wish
+to understand.
+We make some simplifying assumptions and create a \emph{\myindex{mathematical
+model}}.
+That is, we translate the real world situation into a
+set of differential equations.
+Then we apply mathematics to get some sort of a \emph{\myindex{mathematical
+solution}}.
+There is still something left to do.  We have to interpret the results.
+We have to figure out what the mathematical solution says about the real world
+problem we started with.
+
+Learning how to formulate the mathematical model and how to interpret the
+results is what your physics and engineering classes do.  In this
+course we will focus mostly on the mathematical analysis.  Sometimes we will
+work with simple real world examples, so that we have some intuition and
+motivation about what we are doing.
+
+Let us look at 
+an example of this process.
+One of the most basic differential equations
+is the standard \emph{\myindex{exponential growth model}}.
+Let $P$ denote the population 
+of some bacteria on a Petri dish.  We assume that there is enough food
+and enough space.  Then the rate of growth of bacteria is proportional
+to the population---a large population grows quicker.  Let $t$ denote
+time (say in seconds) and $P$ the population.  Our model
+is
+\begin{equation*}
+\frac{dP}{dt} = kP ,
+\end{equation*}
+for some positive constant $k > 0$.
+
+\begin{example}
+Suppose there are 100 bacteria at time 0 and 200 bacteria 10 seconds later.
+How many bacteria will there be 1 minute from time 0 (in 60 seconds)?
+
+First we have to solve the equation.  We claim that a solution is given by
+\begin{equation*}
+P(t) = C e^{kt} ,
+\end{equation*}
+where $C$ is a constant.  Let us try:
+\begin{equation*}
+\frac{dP}{dt} = C k e^{kt} = k P .
+\end{equation*}
+And it really is a solution.
+
+OK, so what now?  We do not know $C$ and we do not know $k$.  But we know
+something.  We know $P(0) = 100$, and we also know 
+$P(10) = 200$.  Let us plug these conditions in and see what happens.
+\begin{align*}
+& 100 = P(0) = C e^{k0} = C ,\\
+& 200 = P(10) = 100 \, e^{k10} .
+\end{align*}
+Therefore, $2 = e^{10k}$ or $\frac{\ln 2}{10} = k \approx 0.069$.
+So we know that
+\begin{equation*}
+P(t) = 100 \, e^{(\ln 2) t / 10} \approx 100 \, e^{0.069 t} .
+\end{equation*}
+At one minute, $t=60$, the population is $P(60) = 6400$.  See
+\figurevref{intro:plotbactfig}.
+
+%\begin{figure}[h!t]
+%\begin{diffyfloatingfigure}{3.1in}{4.6in}
+\begin{diffyfloatingfigurepdfonly}{3.1in}
+\capstart
+\begin{center}
+\diffyincludegraphics{width=3in}{width=4.5in}{intro-plotbact}
+\caption{Bacteria growth in the first 60 seconds.\label{intro:plotbactfig}}
+\end{center}
+%\end{figure}
+%\end{diffyfloatingfigure}
+\end{diffyfloatingfigurepdfonly}
+
+Let us talk about the interpretation of the results.  Does our solution
+mean that
+there must be exactly 6400 bacteria on the plate at 60s?  No!  We made
+assumptions that might not be true exactly, just approximately.
+If our assumptions are reasonable,
+then there will be approximately 6400 bacteria.
+Also, in real life $P$ is a
+discrete quantity, not a real number.  However, our model has no problem saying
+that for example at 61 seconds, $P(61) \approx 6859.35$.
+%Obviously there 
+%are either 6859 bacteria or 6860 bacteria.
+\end{example}
+
+Normally, the $k$ in $P' = kP$ is known,
+and we want to solve
+the equation for different \emph{initial conditions\index{initial condition}}.
+What does that mean?
+Take $k=1$ for simplicity.  Now suppose we want to solve the equation
+$\frac{dP}{dt} = P$ 
+subject to $P(0) = 1000$ (the initial condition).
+Then the solution turns out to be (exercise)
+\begin{equation*}
+P(t) = 1000 \, e^t .
+\end{equation*}
+
+We call $P(t) = C e^t$ \emph{the \myindex{general solution}},
+as every solution
+of the equation can be written in this form for some constant $C$.  You
+will need an initial condition to find out what $C$ is, in order to find the
+\emph{\myindex{particular solution}} we are looking for.  Generally, when we say
+\myquote{particular solution,} we just mean some solution.
+
+\medskip
+
+Let us get to what we will call the four fundamental equations.
+These equations appear very often and it is useful to just memorize what
+their solutions are.
+These solutions
+are reasonably easy
+to guess by recalling properties of exponentials, sines, and cosines.
+They are also simple to check, which is something that you should always do.
+There is no need to wonder if you remembered the solution correctly.
+%You will be
+%required to know these and be able to solve these.
+%I promise at least one or
+%two of these will appear on EVERY test.  You should just memorize their
+%solutions.  You can and should always check that you have the
+%right solution, so that makes the memorization easier.  It is in fact not
+%hard to guess these solutions.
+
+\medskip
+
+First such equation is,
+\begin{equation*}
+\frac{dy}{dx} = k y ,
+\end{equation*}
+for some constant $k > 0$.
+Here $y$ is the dependent and $x$ the independent variable.
+The general solution for this equation is
+\begin{equation*}
+y(x) = C e^{kx} .
+\end{equation*}
+We saw above that this function is a solution, although we used different
+variable names.
+
+\medskip
+
+Next,
+\begin{equation*}
+\frac{dy}{dx} = -k y ,
+\end{equation*}
+for some constant $k > 0$.
+The general solution for this equation is
+\begin{equation*}
+y(x) = C e^{-kx} .
+\end{equation*}
+
+\begin{exercise}
+Check that the $y$ given is really a solution to the equation.
+\end{exercise}
+
+Next, take the
+\emph{\myindex{second order differential equation}}
+\begin{equation*}
+\frac{d^2y}{{dx}^2} = -k^2 y ,
+\end{equation*}
+for some constant $k > 0$.
+The general solution for this equation is
+\begin{equation*}
+y(x) = C_1 \cos(kx) + C_2 \sin(kx) .
+\end{equation*}
+Note that
+because
+we have a second order differential equation,
+we have two constants in our general solution.
+
+\begin{exercise}
+Check that the $y$ given is really a solution to the equation.
+\end{exercise}
+
+And finally, take the second order differential equation
+\begin{equation*}
+\frac{d^2y}{{dx}^2} = k^2 y ,
+\end{equation*}
+for some constant $k > 0$.
+The general solution for this equation is
+\begin{equation*}
+y(x) = C_1 e^{kx} + C_2 e^{-kx} ,
+\end{equation*}
+or
+\begin{equation*}
+y(x) = D_1 \cosh(kx) + D_2 \sinh(kx) .
+\end{equation*}
+
+For those that do not know, $\cosh$ and $\sinh$ are defined by
+\begin{align*}
+\cosh x &= \frac{e^{x} + e^{-x}}{2} , \\
+\sinh x &= \frac{e^{x} - e^{-x}}{2} .
+\end{align*}
+These functions are sometimes easier to
+work with than exponentials.  They have some nice familiar
+properties such as
+$\cosh 0 = 1$, $\sinh 0 = 0$, and $\frac{d}{dx} \cosh x = \sinh x$ (no that is
+not a typo)
+and $\frac{d}{dx} \sinh x = \cosh x$.
+
+\begin{exercise}
+Check that both forms of the $y$ given are
+really solutions to the equation.
+\end{exercise}
+
+An interesting note about $\cosh$:  The graph of $\cosh$ is the exact shape
+a hanging chain will make.  This shape is called
+a \emph{\myindex{catenary}}.
+Contrary to popular belief this is not a
+parabola.  If you invert the graph of $\cosh$ it is also the ideal arch for
+supporting its own weight.
+For example, the gateway arch in Saint Louis is an inverted graph of
+$\cosh$---if it were just a parabola it might fall down.  The formula
+used in the design is
+inscribed inside the arch:
+\begin{equation*}
+y = -127.7 \; \textrm{ft} \cdot \cosh({x / 127.7  \; \textrm{ft}}) + 757.7 \;
+\textrm{ft} .
+\end{equation*}
+
+
+\subsection{Exercises}
+
+\begin{exercise}
+Show that $x = e^{4t}$ is a solution to $x'''-12 x'' + 48 x' - 64 x = 0$.
+\end{exercise}
+
+\begin{exercise}
+Show that $x = e^{t}$ is not a solution to $x'''-12 x'' + 48 x' - 64 x = 0$.
+\end{exercise}
+
+\begin{exercise}
+Is $y = \sin t$ a solution to ${\left( \frac{dy}{dt} \right)}^2 = 1 - y^2$?
+Justify.
+\end{exercise}
+
+\begin{exercise}
+Let $y'' + 2y' - 8y = 0$.  Now try a solution of the form $y = e^{rx}$ for
+some (unknown) constant $r$.  Is this a solution
+for some $r$?  If so, find all such $r$.
+\end{exercise}
+
+\begin{exercise}
+Verify that $x = C e^{-2t}$ is a solution to $x' = -2x$.
+Find $C$ to solve for the initial condition $x(0) = 100$.
+\end{exercise}
+
+\begin{exercise}
+Verify that $x = C_1 e^{-t} + C_2 e^{2t}$ is a solution to $x'' - x' -2 x =
+0$.  Find $C_1$ and $C_2$ to solve for the initial conditions $x(0) = 10$
+and $x'(0) = 0$.
+\end{exercise}
+
+\begin{exercise}
+Find a solution to
+${(x')}^2 + x^2 = 4$
+using your knowledge of derivatives of functions that you
+know from basic calculus.
+\end{exercise}
+
+\begin{exercise}
+Solve:
+\medskip
+
+\noindent
+\begin{tabular}{llll}
+a) $\dfrac{dA}{dt} = -10 A$,~ $A(0)=5$ & &
+b) $\dfrac{dH}{dx} = 3 H$,~ $H(0)=1$ \\[12pt]
+c) $\dfrac{d^2y}{dx^2} = 4 y$,~ $y(0)=0$,~ $y'(0)=1$ &&
+d) $\dfrac{d^2x}{dy^2} = -9 x$,~ $x(0)=1$,~ $x'(0)=0$
+\end{tabular}
+\end{exercise}
+
+\begin{exercise}
+Is there a solution to $y' = y$, such that $y(0) = y(1)$?
+\end{exercise}
+
+%\medskip
+
+%mbxSTARTIGNORE
+\noindent
+\emph{Note: Exercises with numbers 101 and higher have solutions in the
+back of the book.}
+%mbxENDIGNORE
+
+%mbx <p><em>Note: Exercises with numbers 101 and higher have solutions.</em></p>
+
+\setcounter{exercise}{100}
+
+\begin{exercise}
+Show that $x = e^{-2t}$ is a solution to $x'' + 4x' + 4x = 0$.
+\end{exercise}
+\exsol{%
+Compute $x' = -2e^{-2t}$ and $x'' = 4e^{-2t}$.  Then
+$(4e^{-2t}) + 4 (-2e^{-2t}) + 4 (e^{-2t}) = 0$.
+}
+
+\begin{exercise}
+Is $y = x^2$ a solution to $x^2y'' - 2y = 0$?  Justify.
+\end{exercise}
+\exsol{%
+Yes.
+}
+
+\begin{exercise}
+Let $xy'' - y' = 0$.  Try a solution of the form $y = x^r$.  Is this a
+solution for some $r$?  If so, find all such $r$.
+\end{exercise}
+\exsol{%
+$y=x^r$ is a solution for $r=0$ and $r=2$.
+}
+
+
+\begin{exercise}
+Verify that $x=C_1e^t+C_2$ is a solution to $x''-x' = 0$.  Find $C_1$ and
+$C_2$ so that $x$ satisfies $x(0) = 10$ and $x'(0) = 100$.
+\end{exercise}
+\exsol{%
+$C_1 = 100$, $C_2 = -90$
+}
+
+\begin{exercise}
+Solve $\frac{d\varphi}{ds} = 8 \varphi$ and $\varphi(0) = -9$.
+\end{exercise}
+\exsol{%
+$\varphi = -9 e^{8s}$
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sectionnewpage
+\section{Classification of differential equations}
+\label{classification:section}
+
+%Perhaps no [EP] ref?
+\sectionnotes{less than 1 lecture or left as reading\BDref{, \S1.3 in \cite{BD}}}
+
+There are many types of differential equations and we classify them into
+different categories based on their properties.  Let us quickly go over
+the most basic classification.  We already saw the distinction
+between ordinary and partial differential equations:
+\begin{itemize}
+\item
+\emph{Ordinary differential equations}
+\index{Ordinary differential equations}\index{ODE} or (ODE) are
+equations where the derivatives are taken with respect to only one variable.
+That is, there is only one independent variable.
+\item
+\emph{Partial differential equations}
+\index{Partial differential equations}\index{PDE} or (PDE) are
+equations that depend on partial derivatives of several variables.
+That is, there are several independent variables.
+\end{itemize}
+
+Let us see some examples of ordinary differential equations:
+\begin{align*}
+& \frac{d y}{dt} = ky , & & \text{(\myindex{Newton's law of cooling})} \\
+& m \frac{d^2 x}{dt^2} + c \frac{dx}{dt} + kx = f(t) . & &
+\text{(\myindex{Mechanical vibrations})}
+\end{align*}
+And of partial differential equations:
+\begin{align*}
+& \frac{\partial y}{\partial t} + c \frac{\partial y}{\partial x} = 0 , & & 
+\text{(\myindex{Transport equation})} \\
+& \frac{\partial u}{\partial t} = \frac{\partial^2 u}{\partial x^2} , & & 
+\text{(\myindex{Heat equation})} \\
+& \frac{\partial^2 u}{\partial t^2} = \frac{\partial^2 u}{\partial x^2} +
+\frac{\partial^2 u}{\partial y^2} . & & 
+\text{(\myindex{Wave equation in 2 dimensions})}
+\end{align*}
+
+If there are several equations working together we have a so-called
+\emph{\myindex{system of differential equations}}.  For example,
+\begin{equation*}
+y' = x , \qquad x' = y
+\end{equation*}
+is a simple system of ordinary differential equations.
+\myindex{Maxwell's equations} governing electromagnetics,
+\begin{align*}
+& \nabla \cdot \vec{D} = \rho, & & \nabla \cdot \vec{B} = 0 , \\
+& \nabla \times \vec{E} = - \frac{\partial \vec{B}}{\partial t}, &
+& \nabla \times \vec{H} = \vec{J} + \frac{\partial \vec{D}}{\partial t} ,
+\end{align*}
+are a system of partial differential equations. 
+The divergence operator $\nabla \cdot$ and the
+curl operator $\nabla \times$ can be written out in partial derivatives of
+the functions involved in the $x$, $y$, and $z$ variables.
+
+\medskip
+
+The next bit of information is the \emph{\myindex{order}} of the
+equation (or system).  The order is simply the order of the largest
+derivative that appears.  If the highest derivative that appears is
+the first derivative, the equation is of first order.  If the highest
+derivative that appears is the second derivative, then the equation is of second
+order.  For example, Newton's law of cooling above is a first order
+equation, while the Mechanical vibrations equation is a second order equation.
+The equation governing transversal vibrations in a beam,
+\begin{equation*}
+a^4 \frac{\partial^4 y}{\partial x^4} + \frac{\partial^2 y}{\partial t^2} = 0,
+\end{equation*}
+is a fourth order partial differential equation.  It is
+fourth order since at least one derivative is the fourth derivative.  It
+does not matter that derivatives with respect to $t$ are only second order.
+
+In the first chapter we will start attacking first order ordinary
+differential equations, that is, equations of the form $\frac{dy}{dx} = f(x,y)$.
+In general, lower order equations are easier to work with and have simpler
+behavior, which is why we start with them.
+
+\medskip
+
+We also distinguish how the dependent variables appear in the equation (or
+system).  In particular, we say an equation is
+\emph{linear}\index{linear equation} if the
+dependent variable (or variables) and their derivatives appear linearly,
+that is only as first powers, they are not multiplied together, and no other functions of the dependent
+variables appear.  In other words, the equation is a sum of terms,
+where each term is
+some function of the independent variables
+or 
+some function of the independent variables
+multiplied by a dependent variable
+or its derivative.
+Otherwise the equation is called
+\emph{nonlinear}\index{nonlinear equation}.
+For example,
+an ordinary differential equation is linear if it can be
+put into the form
+\begin{equation} \label{classification:eqlingen}
+a_n(x) \frac{d^n y}{dx^n} + 
+a_{n-1}(x) \frac{d^{n-1} y}{dx^{n-1}} + 
+\cdots
++
+a_{1}(x) \frac{dy}{dx}
++
+a_{0}(x) y = b(x) .
+\end{equation}
+The functions $a_0$, $a_1$, \ldots, $a_n$ are called the
+\emph{\myindex{coefficients}}.
+The equation is allowed to depend arbitrarily on the independent variables.
+So 
+\begin{equation} \label{classification:eqlinex}
+e^x \frac{d^2 y}{dx^2} + 
+\sin(x) \frac{d y}{dx} + 
+x^2 y
+=
+\frac{1}{x}
+\end{equation}
+is still a linear equation as $y$ and its derivatives only appear linearly.
+
+All the equations and systems given above as examples are linear.  
+It may not be immediately obvious for Maxwell's equations unless you write out
+the divergence and curl in terms of partial derivatives.  Let us see some
+nonlinear equations.  For example \myindex{Burger's equation},
+\begin{equation*}
+\frac{\partial y}{\partial t} + 
+y \frac{\partial y}{\partial x} =
+\nu \frac{\partial^2 y}{\partial x^2} ,
+\end{equation*}
+is a nonlinear second order partial differential equation.  It is nonlinear
+because $y$ and $\frac{\partial y}{\partial x}$ are multiplied together.
+The equation
+\begin{equation} \label{classification:eqnonlinode}
+\frac{dx}{dt} = x^2
+\end{equation}
+is a nonlinear first order differential equation as there is a power of
+the dependent variable $x$.
+
+\medskip
+
+A linear equation may further be called \emph{\myindex{homogeneous}}, if
+all terms depend on the dependent variable.  That is, if there is no
+term that is a function of the independent variables alone.  Otherwise the
+equation is called \emph{\myindex{nonhomogeneous}} or
+\emph{\myindex{inhomogeneous}}.  For example,
+Newton's law of cooling, Transport equation, Wave equation, above are homogeneous,
+while Mechanical vibrations equation above is nonhomogeneous.
+A homogeneous linear ODE can be put into the form
+\begin{equation*}
+a_n(x) \frac{d^n y}{dx^n} + 
+a_{n-1}(x) \frac{d^{n-1} y}{dx^{n-1}} + 
+\cdots
++
+a_{1}(x) \frac{dy}{dx}
++
+a_{0}(x) y = 0 .
+\end{equation*}
+Compare to \eqref{classification:eqlingen} and notice there is no
+function $b(x)$.
+
+\medskip
+
+If the coefficients of a linear equation are actually constant functions,
+then the equation is said to have \emph{\myindex{constant coefficients}}.
+The coefficients are the functions multiplying the dependent
+variable(s) or one of its derivatives, not the function standing alone.
+That is, a constant coefficient ODE is
+\begin{equation*}
+a_n \frac{d^n y}{dx^n} + 
+a_{n-1} \frac{d^{n-1} y}{dx^{n-1}} + 
+\cdots
++
+a_{1} \frac{dy}{dx}
++
+a_{0} y = b(x) ,
+\end{equation*}
+where $a_0, a_1, \ldots, a_n$ are all constants, but $b$ may depend on 
+the independent variable $x$.  The Mechanical vibrations equation
+above is constant coefficient nonhomogeneous second order ODE.
+Same nomenclature applies to PDEs, so the Transport equation,
+Heat equation and Wave equation are all examples of constant coefficient
+linear PDEs.
+
+\medskip
+
+Finally, an equation (or system) is called \emph{\myindex{autonomous}}
+if the equation does not depend on the independent variable.
+Usually here we only consider ordinary differential equations and the
+independent variable is then thought of as time.  Autonomous equation
+means an equation that does not change with time.
+For example, Newton's law of cooling is autonomous, so is equation
+\eqref{classification:eqnonlinode}.  On the other hand, Mechanical
+vibrations or 
+\eqref{classification:eqlinex} are not autonomous.
+
+\subsection{Exercises}
+
+\begin{exercise}
+Classify the following equations.  Are they ODE or PDE?  Is it an equation
+or a system?  What is the order?  Is it linear or nonlinear, and if it is
+linear, is it homogeneous, constant coefficient?  If it is an ODE, is it
+autonomous?\\[3pt]
+a) $\displaystyle \sin(t) \frac{d^2 x}{dt^2} + \cos(t) x = t^2$ \\[3pt]
+b) $\displaystyle \frac{\partial u}{\partial x} + 3 \frac{\partial u}{\partial y} = xy$
+\\[3pt]
+c) $\displaystyle y''+3y+5x=0, \quad x''+x-y=0$ \\[3pt]
+d) $\displaystyle \frac{\partial^2 u}{\partial t^2} + u\frac{\partial^2 u}{\partial s^2} =
+0$ \\[3pt]
+e) $\displaystyle x''+tx^2=t$ \\[3pt]
+f) $\displaystyle \frac{d^4 x}{dt^4} = 0$
+\end{exercise}
+
+\begin{exercise}
+If $\vec{u} = (u_1,u_2,u_3)$ is a vector, we have the divergence
+$\nabla \cdot \vec{u} =
+\frac{\partial u_1}{\partial x} +
+\frac{\partial u_2}{\partial y} +
+\frac{\partial u_3}{\partial z}$ and curl
+$\nabla \times \vec{u} =
+\Bigl(
+\frac{\partial u_3}{\partial y} - \frac{\partial u_2}{\partial z} , ~
+\frac{\partial u_1}{\partial z} - \frac{\partial u_3}{\partial x} , ~
+\frac{\partial u_2}{\partial x} - \frac{\partial u_1}{\partial y} \Bigr)$.
+Notice that curl of a vector is still a vector.  Write out Maxwell's
+equations in terms of partial derivatives and classify the system.
+\end{exercise}
+
+\begin{exercise}
+Suppose $F$ is a linear function, that is,
+$F(x,y) = ax+by$ for constants $a$ and $b$.  What is the
+classification of equations of the form $F(y',y) = 0$.
+\end{exercise}
+
+\begin{exercise}
+Write down an explicit example of a third order, linear, nonconstant coefficient,
+nonautonomous, nonhomogeneous system of two ODE such that every derivative
+that could appear, does appear.
+\end{exercise}
+
+\setcounter{exercise}{100}
+
+\begin{exercise}
+Classify the following equations.  Are they ODE or PDE?  Is it an equation
+or a system?  What is the order?  Is it linear or nonlinear, and if it is
+linear, is it homogeneous, constant coefficient?  If it is an ODE, is it
+autonomous?\\[3pt]
+a) $\displaystyle \frac{\partial^2 v}{\partial x^2} + 3 \frac{\partial^2
+v}{\partial y^2} = \sin(x)$ \\[3pt]
+b) $\displaystyle \frac{d x}{dt} + \cos(t) x = t^2+t+1$ \\[3pt]
+c) $\displaystyle \frac{d^7 F}{dx^7} = 3F(x)$ \\[3pt]
+d) $\displaystyle y''+8y'=1$ \\[3pt]
+e) $\displaystyle x''+tyx'=0, \quad y''+txy = 0$ \\[3pt]
+f) $\displaystyle \frac{\partial u}{\partial t} = \frac{\partial^2 u}{\partial s^2} + u^2$
+\end{exercise}
+\exsol{%
+a) 
+PDE, equation, second order, linear, nonhomogeneous, constant coefficient.\\
+b) 
+ODE, equation, first order, linear, nonhomogeneous, not constant coefficient, not autonomous.\\
+c) 
+ODE, equation, seventh order, linear, homogeneous, constant coefficient, autonomous.\\
+d) 
+ODE, equation, second order, linear, nonhomogeneous, constant coefficient, autonomous.\\
+e) 
+ODE, system, second order, nonlinear.\\
+f) 
+PDE, equation, second order, nonlinear.
+}
+
+\begin{exercise}
+Write down the general \emph{zero}th order linear ordinary differential
+equation.  Write down the general solution.
+\end{exercise}
+\exsol{%
+equation: $a(x) y = b(x)$, solution: $y = \frac{b(x)}{a(x)}$.
+}
+

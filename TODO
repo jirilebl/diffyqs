@@ -1,13 +1,14 @@
 
 SHOULD (in next big (but compatible) edition):
+* More on the reduction of order method in 2.1 (split into subsections)
 * Add appendix chapter on linear algebra for courses that don't want to require
   that as prerequisite
-* Expand discussion of vector field and how it is drawn in 3.1.
+* Expand discussion of vector fields and how they are drawn in 3.1.
 * Another example of application of first order system, perhaps flow with two
   tanks.
 * Add exercises for setting up applications in 3.1
-* Also split up 3.1 into subsection maybe
-* Number the examples/applications
+* Also split up 3.1 into subsections maybe
+* Number the examples/applications (in 3.1)
 * Generalized eigenvector discussion is a little too terse and perhaps still
   misleading.  Do another larger example perhaps, most exercises are 3x3 so we
   should have an example of that.
@@ -16,7 +17,8 @@ SHOULD (in next big (but compatible) edition):
   the units.
 * In 3.4 (or earlier?) Add some exercises on constant nonhomogeneity for
   an invertible A, that just translates the point.
-* Use more underbrace / cancel.  See subsection 3.9.2
+* Use more underbrace / cancel (cancel only if really needed, it can look weird).
+  See subsection 3.9.2
 * In whirling string, plot several of the eigenfunctions to show how it crosses
   the axis k-1 times
 * Search for: will, previously, have, can, note, notice

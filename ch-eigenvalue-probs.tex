@@ -1,0 +1,1239 @@
+\chapter{Eigenvalue problems} \label{SL:chapter}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Sturm-Liouville problems}
+
+\sectionnotes{2 lectures\EPref{, \S10.1 in \cite{EP}}\BDref{,
+\S11.2 in \cite{BD}}}
+
+\subsection{Boundary value problems}
+
+We have encountered several different eigenvalue problems such as:
+\begin{equation*}
+X''(x) + \lambda X(x) = 0
+\end{equation*}
+with different boundary
+conditions\index{Dirichlet boundary conditions}%
+\index{Neumann boundary conditions}%
+\index{Mixed boundary conditions}
+\begin{equation*}
+\begin{array}{rrl}
+X(0) = 0 & ~~X(L) = 0 & ~~\text{(Dirichlet) or}, \\
+X'(0) = 0 & ~~X'(L) = 0 & ~~\text{(Neumann) or}, \\
+X'(0) = 0 & ~~X(L) = 0 & ~~\text{(Mixed) or}, \\
+X(0) = 0 & ~~X'(L) = 0 & ~~\text{(Mixed)}, \ldots
+\end{array}
+\end{equation*}
+For example for the insulated wire,
+Dirichlet conditions correspond to applying a
+zero temperature at the ends, Neumann means insulating the ends, etc\ldots.
+Other types of endpoint conditions also arise naturally, such as
+the \emph{\myindex{Robin boundary conditions}}
+\begin{equation*}
+hX(0) - X'(0) = 0 \qquad hX(L) + X'(L) = 0 ,
+\end{equation*}
+for some constant $h$.  These conditions come up when the ends are immersed
+in some medium.
+
+Boundary problems came up in the study of the heat equation $u_t =
+k u_{xx}$ when we were trying to solve the equation by the method of
+separation of
+variables.  In the computation
+we encountered a certain eigenvalue problem and found the
+eigenfunctions
+$X_n(x)$.  We then found the \emph{\myindex{eigenfunction decomposition}} of
+the initial
+temperature $f(x) = u(x,0)$ in terms of the eigenfunctions
+\begin{equation*}
+f(x) = \sum_{n=1}^\infty c_n X_n(x) .
+\end{equation*}
+Once we had this decomposition
+and found suitable $T_n(t)$ such that $T_n(0) = 1$
+and $T_n(t)X(x)$ were solutions,
+the solution to the original problem including the initial
+condition could be written as
+\begin{equation*}
+u(x,t) = \sum_{n=1}^\infty c_n T_n(t) X_n(x) .
+\end{equation*}
+
+\medskip
+
+We will try to solve more general problems using this method.
+First,
+we will study 
+second order linear equations of the form
+\begin{equation} \label{SL:eq}
+\frac{d}{dx} \left( p(x) \frac{dy}{dx} \right)
+- q(x) y + \lambda r(x) y = 0 .
+\end{equation}
+Essentially
+any second order linear equation
+of the form $a(x) y'' + b(x) y' + c(x) y + \lambda d(x) y = 0$
+can be written as \eqref{SL:eq}
+after multiplying by a proper factor.
+
+\begin{example}[Bessel]
+Put the following equation into the form \eqref{SL:eq}:
+\begin{equation*}
+x^2 y'' + xy' + \left(\lambda x^2 - n^2\right)y = 0 .
+\end{equation*}
+Multiply both sides by $\frac{1}{x}$ to obtain
+\begin{equation*}
+\frac{1}{x} \left( x^2 y'' + xy' + \left(\lambda x^2 - n^2\right)y \right)
+=
+x y'' + y' + \left(\lambda x - \frac{n^2}{x}\right)y 
+=
+\frac{d}{dx} \left( x \frac{dy}{dx} \right)
+- \frac{n^2}{x} y + \lambda x y  = 0.
+\end{equation*}
+\end{example}
+
+The so-called 
+\emph{\myindex{Sturm-Liouville problem}}%
+\footnote{Named after the French mathematicians
+\href{http://en.wikipedia.org/wiki/Jacques_Charles_Fran\%C3\%A7ois_Sturm}{Jacques Charles Fran\c{c}ois Sturm}
+(1803--1855) and
+\href{http://en.wikipedia.org/wiki/Liouville}{Joseph Liouville}
+(1809--1882).} is to seek
+nontrivial solutions to
+\begin{equation} \label{sl:slprob}
+\boxed{~~
+\begin{aligned}
+&\frac{d}{dx} \left( p(x) \frac{dy}{dx} \right)
+- q(x) y + \lambda r(x) y = 0, \qquad a < x < b, \\
+&\alpha_1 y(a) - \alpha_2 y'(a) = 0, \\
+&\beta_1 y(b) + \beta_2 y'(b) = 0.
+\end{aligned}
+~~}
+\end{equation}
+In particular, we seek $\lambda$s that allow for nontrivial solutions.
+The $\lambda$s that admit nontrivial solutions
+are called the \emph{eigenvalues\index{eigenvalue}}
+and the corresponding
+nontrivial solutions are called
+\emph{eigenfunctions\index{eigenfunction}}.
+The constants $\alpha_1$ and $\alpha_2$ should not be both zero, same for
+$\beta_1$ and $\beta_2$.
+
+\begin{theorem} \label{sl:slregthm}
+Suppose $p(x)$, $p'(x)$, $q(x)$ and $r(x)$ are continuous on $[a,b]$
+and suppose $p(x) > 0$ and $r(x) > 0$ for all $x$ in $[a,b]$.
+Then the Sturm-Liouville problem \eqref{sl:slprob}
+has an increasing sequence of eigenvalues
+\begin{equation*}
+\lambda_1 < \lambda_2 < \lambda_3 < \cdots 
+\end{equation*}
+such that
+\begin{equation*}
+\lim_{n \to \infty} \lambda_n = +\infty
+\end{equation*}
+and such that to each $\lambda_n$ there is (up to a constant multiple)
+a single eigenfunction $y_n(x)$. 
+
+Moreover, if $q(x) \geq 0$ and $\alpha_1, \alpha_2, \beta_1, \beta_2 \geq 0$,
+then $\lambda_n \geq 0$ for all $n$.
+\end{theorem}
+
+Problems satisfying the hypothesis of the
+theorem are called
+\emph{regular Sturm-Liouville problems\index{regular Sturm-Liouville problem}}%
+\index{Sturm-Liouville problem!regular}
+and we will only consider such problems here.
+That is, a regular problem is one where
+$p(x)$, $p'(x)$, $q(x)$ and $r(x)$ are continuous, $p(x) > 0$, $r(x) > 0$,
+$q(x) \geq 0$, and $\alpha_1, \alpha_2, \beta_1, \beta_2 \geq 0$.
+Note: Be careful about the signs.  Also be careful about the inequalities
+for $r$ and $p$, they
+must be strict for all $x$!
+
+When zero
+is an eigenvalue, we usually
+start labeling the eigenvalues at 0 rather than at 1 for convenience.
+
+\begin{example}
+The problem $y''+\lambda y$, $0 < x < L$, $y(0) = 0$, and $y(L) = 0$
+is a regular Sturm-Liouville problem.  $p(x) = 1$, $q(x) = 0$, $r(x) = 1$,
+and we have $p(x) = 1 > 0$ and $r(x) = 1 > 0$.
+The eigenvalues are $\lambda_n = \frac{n^2 \pi^2}{L^2}$ and eigenfunctions
+are $y_n(x) = \sin(\frac{n\pi}{L} x)$.  All eigenvalues are nonnegative as
+predicted by the theorem.
+\end{example}
+
+\begin{exercise}
+Find eigenvalues and eigenfunctions for
+\begin{equation*}
+y'' + \lambda y = 0, \quad y'(0) = 0, \quad y'(1) = 0.
+\end{equation*}
+Identify
+the $p, q, r, \alpha_j, \beta_j$.
+Can you use the theorem to make the search for eigenvalues easier?
+(Hint: Consider the condition $-y'(0)=0$)
+\end{exercise}
+
+\begin{example}
+Find eigenvalues and eigenfunctions of the problem
+\begin{align*}
+& y''+\lambda y = 0, \quad 0 < x < 1 , \\
+& hy(0)- y'(0) = 0, \quad y'(1)  = 0, \quad h > 0.
+\end{align*}
+
+These equations give a regular Sturm-Liouville problem.
+
+\begin{exercise}
+Identify $p, q, r, \alpha_j, \beta_j$ in the example above.
+\end{exercise}
+
+First note that
+$\lambda \geq 0$ by \thmref{sl:slregthm}.
+Therefore, the general solution (without boundary conditions) is
+\begin{equation*}
+\begin{aligned}
+ & y(x) = A \cos (\! \sqrt{\lambda}\, x) + B \sin (\!
+\sqrt{\lambda}\, x) & & \qquad \text{if } \; \lambda > 0 , \\
+& y(x) = A x + B & & \qquad \text{if } \; \lambda = 0 .
+\end{aligned}
+\end{equation*}
+
+Let us see if $\lambda = 0$ is an eigenvalue:
+We must satisfy $0 = hB - A$ and $A = 0$, hence $B=0$ (as $h > 0$).
+Therefore, 0 is not an eigenvalue (no nonzero solution, so no eigenfunction).
+
+Now let us
+try $\lambda > 0$.  We plug in the boundary conditions.
+\begin{align*}
+& 0 = h A - \sqrt{\lambda}\, B , \\
+& 0 = -A \sqrt{\lambda}\, \sin (\!\sqrt{\lambda}) +B \sqrt{\lambda}\,
+\cos (\!\sqrt{\lambda}) .
+\end{align*}
+If $A=0$, then $B=0$ and vice-versa, hence both are nonzero.
+So $B = \frac{hA}{\sqrt{\lambda}}$, and
+$0 = -A \sqrt{\lambda}\, \sin (\! \sqrt{\lambda}) + \frac{hA}{\sqrt{\lambda}}
+\sqrt{\lambda}\, \cos (\! \sqrt{\lambda})$.  As $A \not= 0$ we get
+\begin{equation*}
+0 = 
+- \sqrt{\lambda}\, \sin (\! \sqrt{\lambda}) + h \cos (\! \sqrt{\lambda}) ,
+\end{equation*}
+or
+\begin{equation*}
+\frac{h}{\sqrt{\lambda}} = \tan \sqrt{\lambda} .
+\end{equation*}
+
+Now use a computer to find $\lambda_n$.  There are tables available,
+though using a computer or a graphing calculator
+is far more convenient nowadays.
+Easiest method is to plot the functions 
+$\nicefrac{h}{x}$ and $\tan x$ and see for which $x$ they intersect.
+There is an infinite number of intersections.  Denote
+the first intersection
+by $\sqrt{\lambda_1}$,
+the second intersection by $\sqrt{\lambda_2}$, etc\ldots.
+For example, when
+$h=1$, we get $\sqrt{\lambda_1} \approx 0.86$, 
+$\sqrt{\lambda_2} \approx 3.43$, \ldots.
+That is $\lambda_1 \approx 0.74$, $\lambda_2 \approx 11.73$, \ldots.
+A plot for $h=1$ is given in \figurevref{sl:tanx1overxfig}.
+The appropriate eigenfunction
+(let $A = 1$ for convenience, then
+$B=\nicefrac{h}{\sqrt{\lambda}}$) is
+\begin{equation*}
+y_n(x) = \cos (\! \sqrt{\lambda_n}\, x ) + \frac{h}{\sqrt{\lambda_n}} \,
+\sin (\!\sqrt{\lambda_n} \, x ) .
+\end{equation*}
+When $h=1$ we get (approximately)
+\begin{equation*}
+y_1(x) \approx \cos (0.86\, x ) + \frac{1}{0.86} \,
+\sin (0.86 \, x ) , \qquad
+y_2(x) \approx \cos (3.43\, x ) + \frac{1}{3.43} \,
+\sin (3.43 \, x ) , \qquad \ldots .
+\end{equation*}
+\begin{figure}[h!t]
+\capstart
+\begin{center}
+\diffyincludegraphics{width=3in}{width=4.5in}{sl-tanx1overx}
+\caption{Plot of $\frac{1}{x}$ and $\tan x$.%
+\label{sl:tanx1overxfig}}
+\end{center}
+\end{figure}
+\end{example}
+
+\subsection{Orthogonality}
+
+We have seen the notion of orthogonality before.  For example,
+we have shown that $\sin (nx)$ are orthogonal for distinct $n$ on $[0,\pi]$.
+For general Sturm-Liouville problems we will need a more general setup.
+Let $r(x)$
+be a \emph{\myindex{weight function}} (any function, though generally we will
+assume it is positive) on $[a,b]$.  Two functions $f(x)$, $g(x)$
+are said to be
+\emph{orthogonal\index{orthogonal!with respect to a weight}} 
+with respect to the weight function
+$r(x)$ when
+\begin{equation*}
+\int_a^b f(x) \, g(x) \, r(x) ~dx = 0 .
+\end{equation*}
+In this setting,
+we define the \emph{inner product\index{inner product of functions}} as
+\begin{equation*}
+\langle f , g \rangle \overset{\text{def}}{=} \int_a^b f(x) \, g(x) \, r(x) ~dx ,
+\end{equation*}
+and then say $f$ and $g$ are orthogonal whenever $\langle f , g \rangle = 0$.
+The results and concepts are again analogous to 
+finite dimensional linear algebra.
+
+The idea of the given inner product is that those $x$ where $r(x)$
+is greater have more weight.
+Nontrivial (nonconstant)
+$r(x)$ arise naturally, for example from a change of variables.
+Hence, you could
+think of a change of variables such that $d\xi = r(x)~ dx$.
+
+We have the following orthogonality property of eigenfunctions of a
+regular Sturm-Liouville problem.
+
+\begin{theorem}
+Suppose we have a regular Sturm-Liouville problem
+\begin{align*}
+&\frac{d}{dx} \left( p(x) \frac{dy}{dx} \right)
+- q(x) y + \lambda r(x) y = 0 , \\
+&\alpha_1 y(a) - \alpha_2 y'(a) = 0 , \\
+&\beta_1 y(b) + \beta_2 y'(b) = 0 .
+\end{align*}
+Let $y_j$ and $y_k$ be two distinct eigenfunctions for two
+distinct eigenvalues $\lambda_j$ and $\lambda_k$.  Then
+\begin{equation*}
+\int_a^b y_j(x) \, y_k(x) \, r(x) ~dx = 0,
+\end{equation*}
+that is, $y_j$ and $y_k$ are orthogonal with respect to the weight function
+$r$.
+\end{theorem}
+
+Proof is very similar to the analogous theorem from \sectionref{bvp:section}.
+It can also be found in many books including, for example,
+Edwards and Penney \cite{EP}.
+
+\subsection{Fredholm alternative}
+
+We also have the \emph{Fredholm alternative} theorem we talked about before
+for all regular Sturm-Liouville problems.  We state it here for completeness.
+
+\begin{theorem}[Fredholm alternative]%
+\index{Fredholm alternative!Sturm-Liouville problems}
+Suppose that we have a regular Sturm-Liouville problem.
+Then either
+\begin{align*}
+&\frac{d}{dx} \left( p(x) \frac{dy}{dx} \right)
+- q(x) y + \lambda r(x) y = 0 , \\
+&\alpha_1 y(a) - \alpha_2 y'(a) = 0 , \\
+&\beta_1 y(b) + \beta_2 y'(b) = 0 ,
+\end{align*}
+has a nonzero solution, or
+\begin{align*}
+&\frac{d}{dx} \left( p(x) \frac{dy}{dx} \right)
+- q(x) y + \lambda r(x) y = f(x) , \\
+&\alpha_1 y(a) - \alpha_2 y'(a) = 0 , \\
+&\beta_1 y(b) + \beta_2 y'(b) = 0 ,
+\end{align*}
+has a unique solution for any $f(x)$ continuous on $[a,b]$.
+\end{theorem}
+
+This theorem is used in much the same way as we did before in
+\sectionref{sec:scs}.  It is used when solving more general nonhomogeneous
+boundary value problems.  The theorem does not help us solve the problem, but
+it tells us when a unique solution exists, so
+that we know when to spend time looking for it.  To solve the problem
+we decompose $f(x)$ and $y(x)$ in terms of eigenfunctions of the
+homogeneous
+problem, and then solve for the coefficients of the series for $y(x)$.
+
+\subsection{Eigenfunction series}
+
+What we want to do with the eigenfunctions once we have them is to
+compute the \emph{\myindex{eigenfunction decomposition}} of an arbitrary
+function $f(x)$.  That is, we wish to write
+\begin{equation} \label{sl:fdecomp}
+f(x) = \sum_{n=1}^\infty c_n y_n(x) ,
+\end{equation}
+where $y_n(x)$ are eigenfunctions.
+We wish to find out if we can represent
+any function $f(x)$ in this way,
+and if so, we wish to calculate $c_n$ (and of course we would want to know if
+the sum converges).  OK, so imagine
+we could write $f(x)$ as \eqref{sl:fdecomp}.  We will assume convergence and
+the ability to integrate the series term by term.
+Because of orthogonality we have
+\begin{equation*}
+\begin{split}
+\langle f , y_m \rangle & =
+\int_a^b f(x) \, y_m (x) \, r(x) ~ dx\\
+&= \sum_{n=1}^\infty c_n \int_a^b y_n(x) \, y_m (x) \, r(x) ~ dx\\
+&= c_m \int_a^b y_m(x) \, y_m (x) \, r(x) ~ dx = c_m \langle y_m , y_m \rangle
+.
+\end{split}
+\end{equation*}
+Hence,
+\begin{equation} \label{sl:cm}
+\boxed{~~
+c_m = \frac{\langle f , y_m \rangle}{\langle y_m , y_m \rangle}
+=
+\frac{\int_a^b f(x) \, y_m (x)\, r(x) ~ dx}%
+{\int_a^b {\bigl(y_m(x)\bigr)}^2 \, r(x) ~dx} .
+~~}
+\end{equation}
+
+Note that $y_m$ are known up to a constant multiple, so we could have picked
+a scalar multiple of an eigenfunction such that
+$\langle y_m , y_m \rangle = 1$ (if we had an arbitrary eigenfunction
+$\tilde{y}_m$, divide it
+by $\sqrt{\langle \tilde{y}_m , \tilde{y}_m \rangle}$).
+When
+$\langle y_m , y_m \rangle = 1$
+we have the
+simpler form $c_m = \langle f, y_m \rangle$ as we did for the
+Fourier series.  The following theorem holds
+more generally, but the statement given is enough for our purposes.
+
+\begin{theorem}
+Suppose $f$ is a piecewise smooth continuous function on $[a,b]$.  If $y_1,
+y_2, \ldots$ are eigenfunctions of a regular Sturm-Liouville problem,
+one for each eigenvalue,
+then there exist real constants $c_1, c_2, \ldots$ given by \eqref{sl:cm}
+such that
+\eqref{sl:fdecomp} converges and holds for $a < x < b$.
+\end{theorem}
+
+\begin{example}
+Take the simple Sturm-Liouville problem
+\begin{align*}
+& y'' + \lambda y = 0, \quad 0 < x < \frac{\pi}{2} , \\
+& y(0) =0, \quad y'\left(\frac{\pi}{2}\right) = 0 .
+\end{align*}
+The above is a regular problem and furthermore we know by
+\thmvref{sl:slregthm}
+that $\lambda \geq 0$.
+
+Suppose $\lambda = 0$, then the general solution is $y(x) = Ax + B$,
+we plug in the
+initial conditions to get $0=y(0) = B$, and $0 = y'(\frac{\pi}{2}) = A$, hence
+$\lambda = 0$ is not an eigenvalue.
+The general solution, therefore, is
+\begin{equation*}
+y(x) = A \cos (\! \sqrt{\lambda} \, x ) + B \sin (\! \sqrt{\lambda} \, x) .
+\end{equation*}
+Plugging in the boundary conditions we get
+$0 = y(0) = A$ and $0 = y'\bigl(\frac{\pi}{2}\bigr)
+= \sqrt{\lambda} \, B \cos \bigl(\!\sqrt{\lambda} \, \frac{\pi}{2}\bigr)$.
+$B$ cannot be zero and hence $\cos \bigl(\! \sqrt{\lambda} \,
+\frac{\pi}{2}\bigr) = 0$.
+This means that
+$\sqrt{\lambda} \,\frac{\pi}{2}$ must be an odd integral multiple of
+$\frac{\pi}{2}$,
+i.e.\ $(2n-1)\frac{\pi}{2} = \sqrt{\lambda_n} \,\frac{\pi}{2}$.
+Hence
+\begin{equation*}
+\lambda_n = {(2n-1)}^2 .
+\end{equation*}
+We can take $B = 1$.  Hence our eigenfunctions are
+\begin{equation*}
+y_n(x) = \sin \bigl( (2n-1)x \bigr) .
+\end{equation*}
+Finally we compute
+\begin{equation*}
+\int_0^{\frac{\pi}{2}} {\Bigl( \sin \bigl( (2n-1)x \bigr) \Bigr)}^2 ~ dx
+= \frac{\pi}{4} .
+\end{equation*}
+
+So any piecewise smooth function on $[0,\frac{\pi}{2}]$ can be written as
+\begin{equation*}
+f(x) = \sum_{n=1}^\infty c_n \sin \bigl( (2n-1)x \bigr) ,
+\end{equation*}
+where
+\begin{equation*}
+c_n = \frac{\langle f , y_n \rangle}{\langle y_n , y_n \rangle}
+= \frac{\int_0^{\frac{\pi}{2}} f(x) \, \sin \bigl( (2n-1)x \bigr) ~ dx
+}{\int_0^{\frac{\pi}{2}} {\Bigl(\sin \bigl((2n-1)x\bigr)\Bigr)}^2 ~ dx}
+= \frac{4}{\pi} \int_0^{\frac{\pi}{2}} f(x) \,\sin \bigl( (2n-1)x \bigr) ~ dx .
+\end{equation*}
+
+Note that the series converges to an odd $2\pi$-periodic (not
+$\pi$-periodic!) extension of $f(x)$.
+\end{example}
+
+\begin{exercise}[challenging]
+In the above example, the function is defined on $0 < x < \frac{\pi}{2}$,
+yet the series converges to an odd $2\pi$-periodic extension of $f(x)$.
+Find out how is the extension defined for $\frac{\pi}{2} < x < \pi$.
+\end{exercise}
+
+\subsection{Exercises}
+
+\begin{exercise}
+Find eigenvalues and eigenfunctions of
+\begin{equation*}
+y''+\lambda y = 0, \quad y(0)- y'(0) = 0, \quad y(1) = 0 .
+\end{equation*}
+\end{exercise}
+
+\begin{exercise}
+Expand the function $f(x) = x$ on $0 \leq x \leq 1$ using eigenfunctions
+of the system
+\begin{equation*}
+y'' + \lambda y = 0, \quad y'(0) = 0, \quad y(1) = 0 .
+\end{equation*}
+\end{exercise}
+
+\begin{exercise}
+Suppose that you had a Sturm-Liouville problem on the interval
+$[0,1]$ and came up with
+$y_n(x) = \sin (\gamma n x)$, where $\gamma > 0$ is some constant.
+Decompose $f(x) = x$, $0 < x < 1$ in terms of these eigenfunctions.
+\end{exercise}
+
+\begin{exercise}
+Find eigenvalues and eigenfunctions of
+\begin{equation*}
+y^{(4)}+\lambda y = 0, \quad y(0) = 0, \quad y'(0) = 0, \quad y(1) = 0, \quad
+y'(1) = 0 .
+\end{equation*}
+This problem is not a Sturm-Liouville problem, but the idea is the same.
+\end{exercise}
+
+\begin{exercise}[more challenging]
+Find eigenvalues and eigenfunctions for
+\begin{equation*}
+\frac{d}{dx} (e^x y') + \lambda e^x y = 0, \quad y(0) = 0, \quad y(1) = 0 .
+\end{equation*}
+%Or at least set up the integrals you would need to solve.
+Hint: First write the system as a constant coefficient system to find
+general solutions.  Do note that \thmvref{sl:slregthm} guarantees $\lambda \geq 0$.
+\end{exercise}
+
+\setcounter{exercise}{100}
+
+\begin{exercise}
+Find eigenvalues and eigenfunctions of
+\begin{equation*}
+y'' + \lambda y = 0, \quad y(-1) = 0, \quad y(1) = 0 .
+\end{equation*}
+\end{exercise}
+\exsol{%
+$\lambda_n = \frac{(2n-1)\pi}{2}$, $n=1,2,3,\ldots$, 
+$y_n = \cos\left(\frac{(2n-1)\pi}{2} x\right)$
+}
+
+\begin{exercise}
+Put the following problems into the standard form for Sturm-Liouville
+problems, that is, find $p(x)$, $q(x)$, $r(x)$,
+$\alpha_1$,
+$\alpha_2$,
+$\beta_1$, and
+$\beta_2$,
+and decide if the problems are regular or not.\\
+a) $x y'' + \lambda y = 0$ for $0 < x < 1$, $y(0) = 0$, $y(1) = 0$,\\
+b)\footnote{In a previous version of the book, a typo rendered the equation
+as $(1+x^2) y'' - 2xy' + (\lambda-x^2) y = 0$ ending up with something
+harder than intended.  Try this equation for a further challenge.}
+$(1+x^2) y'' + 2xy' + (\lambda-x^2) y = 0$ for $-1 < x < 1$, $y(-1) = 0$, $y(1)+y'(1) =
+0$.
+\end{exercise}
+\exsol{%
+a)~$p(x) = 1$, $q(x) = 0$, $r(x) = \frac{1}{x}$, $\alpha_1 = 1$, $\alpha_2 =
+0$, $\beta_1 = 1$, $\beta_2 = 0$.  The problem is not regular.
+b)~$p(x) = 1+x^2$, $q(x) = x^2$, $r(x) = 1$, $\alpha_1 = 1$, $\alpha_2 =
+0$, $\beta_1 = 1$, $\beta_2 = 1$.  The problem is regular.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sectionnewpage
+\section{Application of eigenfunction series}
+\label{sec:appeig}
+
+\sectionnotes{1 lecture\EPref{, \S10.2 in \cite{EP}}\BDref{,
+exercises in \S11.2 in \cite{BD}}}
+
+The eigenfunction series can arise even from higher order equations.
+Suppose we have an elastic beam (say made of steel).  We will study the
+transversal vibrations of the beam.  That is, assume the beam lies along
+the $x$ axis and let $y(x,t)$ measure the displacement of the point $x$
+on the beam at time $t$.  See \figurevref{appeig:transbeamfig}.
+
+\begin{figure}[h!t]
+\capstart
+\begin{center}
+\inputpdft{trans-beam}
+\caption{Transversal vibrations of a beam.\label{appeig:transbeamfig}}
+\end{center}
+\end{figure}
+
+The equation that governs this setup is
+\begin{equation*}
+a^4 \frac{\partial^4 y}{\partial x^4} + \frac{\partial^2 y}{\partial t^2} = 0,
+\end{equation*}
+for some constant $a > 0$.%\EPref{ ($a^4 = \nicefrac{EI}{\rho}$ in \cite{EP})}.
+
+Suppose the beam is of length 1 simply supported (hinged) at the ends.
+The beam is displaced by some function $f(x)$ at time $t=0$ and then
+let go (initial velocity is 0).  Then $y$ satisfies:
+\begin{equation} \label{appeig:beameq}
+\begin{aligned}
+& a^4 y_{xxxx} + y_{tt} = 0 \quad (0 < x < 1, t > 0), \\
+& y(0,t) = y_{xx}(0,t) = 0 , \\
+& y(1,t) = y_{xx}(1,t) = 0 , \\
+& y(x,0) = f(x), \quad y_{t}(x,0) = 0 .
+\end{aligned}
+\end{equation}
+
+Again we try $y(x,t) = X(x)T(t)$ and plug in to get
+$a^4 X^{(4)}T + XT'' = 0$ or 
+\begin{equation*}
+\frac{X^{(4)}}{X} = \frac{- T''}{a^4T} = \lambda .
+\end{equation*}
+We note that we want $T'' + \lambda a^4T = 0$.  Let us assume that $\lambda >
+0$.  We can argue that we expect vibration and not exponential growth nor
+decay in the $t$ direction (there is no friction in our model for instance).
+Similarly $\lambda = 0$ will not occur.
+
+\begin{exercise}
+Try to justify $\lambda > 0$ just from the equations.
+\end{exercise}
+
+Write $\omega^4 = \lambda$, so that we do not need to write the fourth root
+all the time.  For $X$ we get the equation $X^{(4)} - \omega^4 X = 0$.  The
+general solution is
+\begin{equation*}
+X(x) = A e^{\omega x} + B e^{-\omega x} + C \sin (\omega x) +
+D \cos (\omega x) .
+\end{equation*}
+Now $0 = X(0) = A+B+D$, $0 = X''(0) = \omega^2 (A + B - D)$.  Hence, $D = 0$ and $A+B = 0$, or $B = - A$.  So we have
+\begin{equation*}
+X(x) = A e^{\omega x} - A e^{-\omega x} + C \sin (\omega x) .
+\end{equation*}
+Also $0 = X(1) = A (e^{\omega} - e^{-\omega}) + C \sin \omega$, and
+$0 = X''(1) = A \omega^2 (e^{\omega} - e^{-\omega}) - C \omega^2 \sin \omega$.
+This means that $C \sin \omega  = 0$ and 
+$A (e^{\omega} - e^{-\omega}) = 2 A \sinh \omega = 0$.  If $\omega > 0$, then
+$\sinh \omega \not= 0$ and so $A = 0$.  This means that $C \not=0$ otherwise
+$\lambda$ is not an
+eigenvalue.  Also $\omega$ must be an integer multiple of
+$\pi$.   Hence $\omega = n \pi$ and $n \geq 1$ (as $\omega > 0$).  We can take
+$C=1$.  So the eigenvalues are $\lambda_n = n^4 \pi^4$ and corresponding eigenfunctions
+are $\sin (n \pi x)$.
+
+Now 
+$T'' + n^4 \pi^4 a^4 T = 0$.  The general solution is $T(t) =
+A \sin (n^2 \pi^2 a^2 t) + B \cos (n^2 \pi^2 a^2 t)$.  But $T'(0) = 0$ and hence
+we must have $A=0$ and we can take $B=1$ to make $T(0) = 1$ for convenience.
+So our solutions are $T_n(t) = \cos (n^2 \pi^2 a^2 t)$.
+
+As eigenfunctions are just sines again, we can decompose the function
+$f(x)$ on $0 < x < 1$ using the sine series.
+We find numbers $b_n$ such that for
+$0 < x < 1$ we have
+\begin{equation*}
+f(x) = \sum_{n=1}^\infty b_n \sin (n \pi x) .
+\end{equation*}
+Then the solution to \eqref{appeig:beameq} is
+\begin{equation*}
+y(x,t) = \sum_{n=1}^\infty b_n
+X_n(x) T_n(t)
+= \sum_{n=1}^\infty b_n
+\sin (n \pi x)  \cos ( n^2 \pi^2 a^2 t ) .
+\end{equation*}
+The point is that $X_nT_n$ is a solution that satisfies all the homogeneous
+conditions (that is, all conditions except the initial position).  And since
+and $T_n(0) = 1$, we have
+\begin{equation*}
+y(x,0) = \sum_{n=1}^\infty b_n X_n(x) T_n(0) = 
+\sum_{n=1}^\infty b_n X_n(x) =
+\sum_{n=1}^\infty b_n
+\sin (n \pi x) = f(x) .
+\end{equation*}
+So $y(x,t)$ solves \eqref{appeig:beameq}.
+
+The natural (angular) frequencies of the system are $n^2 \pi^2 a^2$.
+These frequencies are all integer multiples of the fundamental frequency
+$\pi^2 a^2$, so we get a nice musical note.  The exact frequencies
+and their amplitude
+are what musicians call the \emph{\myindex{timbre}} of the note (outside
+of music it is called the spectrum).
+
+The timbre of a beam
+is different than for a vibrating string where we get \myquote{more}
+of the lower frequencies since we get all integer multiples,
+$1,2,3,4,5,\ldots$.  For a steel beam we get
+only the square multiples $1,4,9,16,25,\ldots$.  That is why when you hit a
+steel beam you hear a very pure sound.  The sound of a
+xylophone or vibraphone is, therefore, very different from a guitar or piano.
+
+\begin{example}
+Let us assume that $f(x) = \frac{x(x-1)}{10}$.  
+On $0 < x < 1$ we have (you know how to do this by now)
+\begin{equation*}
+f(x) = \sum_{\substack{n=1\\n \text{~odd}}}^\infty \frac{4}{5\pi^3 n^3}
+\sin (n \pi x) .
+\end{equation*}
+Hence, the solution to \eqref{appeig:beameq} with the given initial
+position $f(x)$ is
+\begin{equation*}
+y(x,t) = \sum_{\substack{n=1\\n \text{~odd}}}^\infty \frac{4}{5\pi^3 n^3}
+\sin (n \pi x) \cos ( n^2 \pi^2 a^2 t ) .
+\end{equation*}
+\end{example}
+
+\subsection{Exercises}
+
+\begin{exercise}
+Suppose you have a beam of length 5 with free ends.  Let $y$ be the
+transverse deviation of the beam at position $x$ on the beam ($0 < x < 5$).
+You know that the
+constants are such that this satisfies the equation $y_{tt} + 4 y_{xxxx} =
+0$.   Suppose you know that the initial shape of the beam is the graph of
+$x(5-x)$, and the initial velocity is uniformly equal to 2 (same for each $x$)
+in the positive $y$ direction.  Set up the equation together with the
+boundary and initial conditions.  Just set up, do not solve.
+\end{exercise}
+
+\begin{exercise}
+Suppose you have a beam of length 5 with one end free and one end fixed
+(the fixed end is at $x=5$).
+Let $u$ be the
+longitudinal deviation of the beam at position $x$ on the beam ($0 < x < 5$).
+You know that the
+constants are such that this satisfies the equation $u_{tt} = 4 u_{xx}$.
+Suppose you know that the initial displacement of the beam
+is $\frac{x-5}{50}$, and the initial velocity is $\frac{-(x-5)}{100}$
+in the positive $u$ direction.  Set up the equation together with the
+boundary and initial conditions.  Just set up, do not solve.
+\end{exercise}
+
+\begin{exercise}
+Suppose the beam is $L$ units long, everything else kept the same
+as in \eqref{appeig:beameq}.  What is the equation and the series
+solution?
+\end{exercise}
+
+\begin{exercise}
+Suppose you have 
+\begin{equation*}
+\begin{aligned}
+& a^4 y_{xxxx} + y_{tt} = 0 \quad (0 < x < 1, t > 0) , \\
+& y(0,t) = y_{xx}(0,t) = 0,\\
+& y(1,t) = y_{xx}(1,t) = 0 ,\\
+& y(x,0) = f(x), \quad y_{t}(x,0) = g(x) .
+\end{aligned}
+\end{equation*}
+That is, you have also an initial velocity.  Find a series solution.  Hint:
+Use the same idea as we did for the wave equation.
+\end{exercise}
+
+\setcounter{exercise}{100}
+
+\begin{exercise}
+Suppose you have a beam of length 1 with hinged ends.  Let $y$ be the
+transverse deviation of the beam at position $x$ on the beam ($0 < x < 1$).
+You know that the
+constants are such that this satisfies the equation $y_{tt} + 4 y_{xxxx} =
+0$.   Suppose you know that the initial shape of the beam is the graph of
+$\sin (\pi x)$, and the initial velocity is 0.  Solve for $y$.
+\end{exercise}
+\exsol{%
+$y(x,t) = \sin(\pi x) \cos (4 \pi^2 t)$
+}
+
+\begin{exercise}
+Suppose you have a beam of length 10 with two fixed ends.  Let $y$ be the
+transverse deviation of the beam at position $x$ on the beam ($0 < x < 10$).
+You know that the
+constants are such that this satisfies the equation $y_{tt} + 9 y_{xxxx} =
+0$.   Suppose you know that the initial shape of the beam is the graph of
+$\sin(\pi x)$, and the initial velocity is uniformly equal to $x(10-x)$.
+Set up the equation together with the
+boundary and initial conditions.  Just set up, do not solve.
+\end{exercise}
+\exsol{%
+$9 y_{xxxx} + y_{tt} = 0 \quad (0 < x < 10, t > 0)$, \quad
+$y(0,t) = y_{x}(0,t) = 0$, \quad
+$y(10,t) = y_{x}(10,t) = 0$, \quad
+$y(x,0) = \sin(\pi x), \quad y_{t}(x,0) = x(10-x)$.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sectionnewpage
+\section{Steady periodic solutions}
+
+\sectionnotes{1--2 lectures\EPref{, \S10.3 in \cite{EP}}\BDref{,
+not in \cite{BD}}}
+
+\subsection{Forced vibrating string.}
+
+Suppose that we have a guitar string of length $L$.  We have studied the
+wave equation problem in this case, where $x$ was the position on the string,
+$t$ was time and $y$ was the displacement of the string.  See
+\figurevref{sps:vibstrfig}.
+
+\begin{figure}[h!t]
+\capstart
+\begin{center}
+\inputpdft{sps-vibstr}
+\caption{Vibrating string.\label{sps:vibstrfig}}
+\end{center}
+\end{figure}
+
+The problem is governed by the equations
+\begin{equation} \label{sps:freevib}
+\begin{array}{ll}
+y_{tt} = a^2 y_{xx} , & \\
+\noalign{\smallskip}
+y(0,t) = 0 , & y(L,t) = 0 , \\
+y(x,0) = f(x) , & y_t(x,0) = g(x) .
+\end{array}
+\end{equation}
+We saw previously that 
+the solution is of the form
+\begin{equation*}
+y = 
+\sum_{n=1}^\infty \left( A_n \cos \left( \frac{n\pi a}{L} \, t \right) +
+B_n \sin \left( \frac{n\pi a}{L} \, t \right) \right)
+\sin \left( \frac{n\pi}{L} \, x \right) ,
+\end{equation*}
+where $A_n$ and $B_n$ were determined by the initial conditions.  The natural
+frequencies of the system are the (angular) frequencies $\frac{n \pi a}{L}$
+for integers $n \geq 1$.
+
+But these are free vibrations.  What if there is an external force acting on
+the string.  Let us assume say air vibrations (noise), for example a second
+string.  Or perhaps a jet engine.  For simplicity, assume nice pure
+sound and assume the force is uniform at every position on the string.
+Let us say $F(t) = F_0 \cos (\omega t)$ as force per unit mass.  Then our wave
+equation becomes (remember force is mass times acceleration)
+\begin{equation} \label{sps:forcedeq}
+y_{tt} = a^2 y_{xx} + F_0 \cos ( \omega t) ,
+\end{equation}
+with the same boundary conditions of course.
+
+We want to find the solution here that satisfies the above equation and
+\begin{equation} \label{sps:forcedinitcond}
+y(0,t) = 0, \qquad y(L,t) = 0, \qquad
+y(x,0) = 0, \qquad y_t(x,0) = 0.
+\end{equation}
+That is, the string is initially at rest.  First we find a particular
+solution $y_p$ of \eqref{sps:forcedeq} that satisfies
+$y(0,t) = y(L,t) = 0$.  We define the functions $f$ and $g$ as
+\begin{equation*}
+f(x) = -y_p(x,0), \qquad g(x) = -\frac{\partial y_p}{\partial t} (x,0) .
+\end{equation*}
+We then find solution $y_c$ of \eqref{sps:freevib}.  If we add the two
+solutions, we find that $y = y_c + y_p$ solves \eqref{sps:forcedeq} with
+the initial conditions.
+
+\begin{exercise}
+Check that $y = y_c + y_p$ solves \eqref{sps:forcedeq} and the
+side conditions \eqref{sps:forcedinitcond}.
+\end{exercise}
+
+So the big issue here is to find the particular solution $y_p$.
+We look at the equation and we make an educated guess
+\begin{equation*}
+y_p(x,t) = X(x) \cos (\omega t) .
+\end{equation*}
+We plug in to get
+\begin{equation*}
+-\omega^2 X \cos ( \omega t) = a^2 X'' \cos ( \omega t) +
+F_0 \cos ( \omega t ) ,
+\end{equation*}
+or
+$-\omega^2 X = a^2 X'' + F_0$ after canceling the cosine.
+We know how to find a general solution to this equation (it is a
+nonhomogeneous constant coefficient equation).
+The general solution is
+\begin{equation*}
+X(x) = A \cos \left( \frac{\omega}{a} \, x \right)
++ B \sin \left( \frac{\omega}{a} \, x \right) -
+\frac{F_0}{\omega^2} .
+\end{equation*}
+The endpoint conditions imply $X(0) = X(L) = 0$.  So
+\begin{equation*}
+0 = X(0) = A - \frac{F_0}{\omega^2} ,
+\end{equation*}
+or $A = \frac{F_0}{\omega^2}$, and also
+\begin{equation*}
+0 = X(L)
+= \frac{F_0}{\omega^2} \cos \left( \frac{\omega L}{a} \right)
++ B \sin \left( \frac{\omega L}{a} \right) -
+\frac{F_0}{\omega^2} .
+\end{equation*}
+Assuming that $\sin ( \frac{\omega L}{a} )$ is not zero we can solve for $B$ to
+get
+\begin{equation} \label{natfreq:Beq}
+B = 
+\frac{-F_0 \left( \cos \left( \frac{\omega L}{a} \right) - 1 \right)}%
+{\omega^2 \sin \left( \frac{\omega L}{a} \right)}.
+\end{equation}
+Therefore,
+\begin{equation*}
+X(x) =
+\frac{F_0}{\omega^2} \left(
+\cos \left(  \frac{\omega}{a} \, x \right) -
+\frac{\cos \left( \frac{\omega L}{a} \right) - 1}%
+{\sin \left( \frac{\omega L}{a} \right)}
+\sin \left( \frac{\omega}{a} \, x \right)
+- 1
+\right) .
+\end{equation*}
+The particular solution $y_p$ we are looking for is
+\begin{equation*}
+\boxed{~~
+y_p(x,t) =
+\frac{F_0}{\omega^2} \left(
+\cos \left( \frac{\omega}{a} \, x \right) -
+\frac{\cos \left( \frac{\omega L}{a} \right) - 1}%
+{\sin \left( \frac{\omega L}{a}\right)}
+\sin \left( \frac{\omega}{a} \, x \right)
+-1
+\right)
+\cos ( \omega t) .
+~~}
+\end{equation*}
+
+\begin{exercise}
+Check that $y_p$ works.
+\end{exercise}
+
+Now we get to the point that we skipped.  Suppose 
+$\sin ( \frac{\omega L}{a} ) = 0$.  What this means is that
+$\omega$ is equal to one of the natural frequencies of the system,
+i.e.\ a multiple of $\frac{\pi a}{L}$.  We notice that if $\omega$
+is not equal to a multiple of the base frequency, but is very close,
+then the coefficient $B$ in \eqref{natfreq:Beq} seems to
+become very large.  But let us not jump to conclusions just yet.
+When $\omega = \frac{n \pi a}{L}$
+for $n$ even, then $\cos (\frac{\omega L}{a}) = 1$ and hence we really get that
+$B=0$.  So resonance occurs only when 
+both $\cos (\frac{\omega L}{a}) = -1$ and
+$\sin (\frac{\omega L}{a}) = 0$.  That is when $\omega = \frac{n \pi a }{L}$
+for \emph{odd} $n$.
+
+We could again solve for the resonance solution if we wanted to, but it is, in the right sense, the limit of the solutions as $\omega$ gets
+close to a resonance frequency.
+In real life, pure resonance never occurs anyway.
+%You would get a particular solution that would have a term
+%such as $t \cos (\omega t)$ in it (though it would be harder (but possible)
+%to find the solution using the above method).
+
+The above calculation explains why a string will begin to vibrate if the
+identical string is plucked close by.  In the absence of friction this vibration
+would get louder and louder as time goes on.
+On the other hand, you are unlikely to get large vibration if the forcing 
+frequency is not close to a resonance frequency even if you have a jet engine
+running close to
+the string.  That is, the amplitude will not keep
+increasing unless you tune to just the right frequency.
+
+Similar resonance phenomena occur when you break a wine glass using human
+voice (yes
+this is possible, but not easy%
+\footnote{\emph{Mythbusters}, episode 31, Discovery Channel, originally aired
+may 18th 2005.}) if you happen to hit just the right
+frequency.  Remember a glass has much purer sound, i.e.\ it is more like a
+vibraphone, so there are far fewer resonance frequencies to hit.
+
+When the forcing function is more complicated, you decompose it in terms of
+the Fourier series and apply the above result.  You may also need to solve
+the above problem if the forcing function is a sine rather than a cosine,
+but if you think about it, the solution is almost the same.
+%  That is, the
+%particular solution has $\sin$ instead of cosine and otherwise is identical.
+%Your complementary solution will be slightly different as $f$ and $g$
+%will differ.
+
+\begin{example}
+Let us do the computation for specific values.
+Suppose $F_0 = 1$ and $\omega = 1$ and $L=1$ and $a=1$.  Then 
+\begin{equation*}
+y_p(x,t) =
+\left(
+\cos (x) -
+\frac{\cos (1) - 1}{\sin (1)}
+\sin (x)
+-1
+\right)
+\cos (t) .
+\end{equation*}
+Write $B = \frac{\cos (1) - 1}{\sin (1)}$ for simplicity.
+
+Then plug in $t=0$ to get
+\begin{equation*}
+f(x) =- y_p(x,0) = 
+- \cos x +
+B \sin x
++1 ,
+\end{equation*}
+and after differentiating in $t$ we see that 
+$g(x) = -\frac{\partial y_p}{\partial t}(x,0) = 0$.
+
+Hence to find $y_c$ we need to solve the problem
+\begin{align*}
+& y_{tt} = y_{xx} , \\
+& y(0,t) = 0 , \quad y(1,t) = 0 , \\
+& y(x,0) = - \cos x + B \sin x +1 , \\
+& y_t(x,0) = 0 .
+\end{align*}
+Note that the formula that we use to define $y(x,0)$ is not odd,
+hence it is not a simple matter of plugging in to apply the D'Alembert
+formula directly!  You must define $F$ to be the odd, 2-periodic
+extension of $y(x,0)$.  Then our solution would look like
+\begin{equation} \label{natfreq:exsol}
+y(x,t) = 
+\frac{F(x+t) + F(x-t)}{2} + 
+\left(
+\cos (x) -
+\frac{\cos (1) - 1}{\sin (1)}
+\sin (x)
+-1
+\right)
+\cos (t) .
+\end{equation}
+
+\begin{figure}[h!t]
+\capstart
+\begin{center}
+\diffyincludegraphics{width=5in}{width=7.5in}{natfreq-forcedvib}
+\caption[Plot of $y(x,t)$.]{Plot of $y(x,t) = \frac{F(x+t) + F(x-t)}{2} + \left( \cos (x) -
+\frac{\cos (1) - 1}{\sin (1)} \sin (x) -1 \right) \cos (t)$.%
+\label{natfreq:forcedvibfig}}
+%%%
+%%% Tex4ht is giving trouble here because of the math, it for some
+%%% reason does not like the left and right.  Giving the optional short
+%%% caption without it makes the problem go away.
+%%%
+\end{center}
+\end{figure}
+
+It is not hard to compute specific values
+for an odd periodic extension of a function and
+hence \eqref{natfreq:exsol} is a wonderful solution to the problem.
+For example it is very easy to have a computer do it, unlike a series solution.
+A plot is given in \figurevref{natfreq:forcedvibfig}.
+\end{example}
+
+\subsection{Underground temperature oscillations}
+
+Let $u(x,t)$ be the temperature at a certain location at depth $x$
+underground at time $t$.  See \figurevref{sps:groundtempfig}.
+
+%\begin{figure}[h!t]
+\begin{diffyfloatingfigurer}{2.5in}{2.5in}
+\capstart
+\begin{center}
+\inputpdft{sps-groundtemp}
+\caption{Underground temperature.\label{sps:groundtempfig}}
+\end{center}
+\end{diffyfloatingfigurer}
+%\end{figure}
+
+The temperature $u$ satisfies the heat equation $u_t = ku_{xx}$, where $k$
+is the diffusivity of the soil.
+We know the temperature at the surface $u(0,t)$ from weather
+records.  Let us assume for simplicity that
+\begin{equation*}
+u(0,t) = T_0 + A_0 \cos (\omega t) ,
+\end{equation*}
+where $T_0$ is the yearly mean
+temperature, and
+$t=0$ is midsummer (you can put
+negative sign above to make it midwinter if you wish).  $A_0$ gives 
+the typical variation for the year.  That is,
+the hottest temperature is $T_0 + A_0$ and the coldest is $T_0 - A_0$.
+For simplicity, we will assume that $T_0 = 0$.
+The frequency $\omega$ is picked depending on the units of $t$, such that
+when $t=\unit[1]{year}$, then $\omega t = 2 \pi$.  For example if $t$ is
+in years, then $\omega = 2\pi$.
+
+It seems reasonable that the temperature at depth $x$ will also oscillate
+with the same frequency.  This, in fact, will be the steady periodic
+solution, independent of the initial conditions.
+So we are looking for a solution of the form
+\begin{equation*}
+u(x,t) = V(x) \cos (\omega t) + W (x) \sin ( \omega t) .
+\end{equation*}
+for the problem
+\begin{equation} \label{sps:ueq}
+u_t = k u_{xx}, \qquad u(0,t) = A_0 \cos ( \omega t) .
+\end{equation}
+
+We will employ the complex exponential here to make calculations simpler.
+Suppose we have a complex valued function
+\begin{equation*}
+h(x,t) = X(x)\, e^{i\omega t} .
+\end{equation*}
+We will look for an $h$ such that $\operatorname{Re} h = u$.
+To find an $h$, whose real part satisfies \eqref{sps:ueq}, we look for
+an $h$ such that
+\begin{equation} \label{sps:heq}
+h_t = k h_{xx}, \qquad h(0,t) = A_0 e^{i\omega t} .
+\end{equation}
+
+\begin{exercise}
+Suppose $h$ satisfies \eqref{sps:heq}.
+Use \hyperref[eulersformula]{Euler's formula} for the complex exponential to
+check that $u = \operatorname{Re} h$ satisfies \eqref{sps:ueq}.
+\end{exercise}
+
+Substitute $h$ into \eqref{sps:heq}.
+\begin{equation*}
+i\omega X e^{i\omega t} = k X'' e^{i \omega t} .
+\end{equation*}
+Hence,
+\begin{equation*}
+k X''  - i \omega X = 0 ,
+\end{equation*}
+or 
+\begin{equation*}
+X''  - \alpha^2 X = 0 ,
+\end{equation*}
+where $\alpha = \pm \sqrt{\frac{i\omega}{k}}$.  Note that $\pm \sqrt{i} = \pm
+\frac{1+i}{\sqrt{2}}$ so you could simplify to
+$\alpha = \pm (1+i)\sqrt{\frac{\omega}{2k}}$.
+Hence the general solution is
+\begin{equation*}
+X(x) = A e^{-(1+i)\sqrt{\frac{\omega}{2k}} \, x}
++ B e^{(1+i)\sqrt{\frac{\omega}{2k}} \, x} .
+\end{equation*}
+We assume that an $X(x)$ that solves the problem must be bounded as $x \to
+\infty$ since $u(x,t)$ should be bounded (we are not worrying about the earth
+core!).
+If you use \hyperref[eulersformula]{Euler's formula} to expand the complex exponentials, you will
+note that the second term will be unbounded (if $B \not = 0$),
+while the first term is always bounded.  Hence $B=0$.
+
+\begin{exercise}
+Use \hyperref[eulersformula]{Euler's formula} to show that
+$e^{(1+i)\sqrt{\frac{\omega}{2k}} \, x}$ is unbounded as $x \to \infty$,
+while $e^{-(1+i)\sqrt{\frac{\omega}{2k}} \, x}$ is bounded
+as $x \to \infty$.
+\end{exercise}
+
+Furthermore, $X(0) = A_0$ since $h(0,t) = A_0 e^{i \omega t}$.
+Thus $A=A_0$.  This means that
+\begin{equation*}
+h(x,t) = A_0 e^{-(1+i)\sqrt{\frac{\omega}{2k}} \, x} e^{i \omega t}
+=
+A_0 e^{-(1+i)\sqrt{\frac{\omega}{2k}} \, x + i \omega t}
+=
+A_0 e^{-\sqrt{\frac{\omega}{2k}} \, x}
+e^{i(\omega t - \sqrt{\frac{\omega}{2k}} \, x)} .
+\end{equation*}
+We will need to get the real part of $h$, so
+we apply \hyperref[eulersformula]{Euler's formula} to get
+\begin{equation*}
+h(x,t) =
+A_0 e^{-\sqrt{\frac{\omega}{2k}} \, x}
+\left(\cos \left(\omega t - \sqrt{\frac{\omega}{2k}}\, x\right) + 
+i \sin \left(\omega t - \sqrt{\frac{\omega}{2k}}\, x\right) \right) .
+\end{equation*}
+Then finally
+\begin{equation*}
+u(x,t) = \operatorname{Re} h(x,t) =
+A_0 e^{-\sqrt{\frac{\omega}{2k}}\, x}
+\cos \left(\omega t - \sqrt{\frac{\omega}{2k}}\, x\right) .
+\end{equation*}
+Yay!
+
+Notice the phase is different at different depths.  At depth $x$ the
+phase is delayed by $x \sqrt{\frac{\omega}{2k}}$.
+For example in cgs units (centimeters-grams-seconds)\index{cgs units}
+we have $k=0.005$ (typical value for soil),
+$\omega = \frac{2\pi}{\text{seconds in a year}}
+= \frac{2\pi}{31,557,341} \approx 1.99 \times {10}^{-7}$.   Then
+if we compute where the phase shift $x \sqrt{\frac{\omega}{2k}} = \pi$
+we find the depth in centimeters where the seasons are reversed.  That is,
+we get the depth at which summer is the coldest and winter is the warmest.
+We get
+approximately 700 centimeters, which is approximately 23 feet below ground.
+
+Be careful not to jump to conclusions.  The temperature swings decay rapidly as you dig deeper.  The
+amplitude of the temperature swings is
+$A_0 e^{-\sqrt{\frac{\omega}{2k}} x}$.  This function decays \emph{very}
+quickly as $x$ (the depth) grows.
+Let us again take
+typical parameters as above.  We will also assume that
+our surface temperature swing is $\pm {15}^\circ$ Celsius, that is,
+$A_0 = 15$.  Then the maximum temperature variation at 700 centimeters
+is only $\pm {0.66}^\circ$ Celsius.
+
+You need not dig very deep to get an effective
+\myquote{refrigerator,} with nearly constant temperature.  That is why wines are kept in a cellar; you need consistent
+temperature.
+The temperature differential could also be used for energy.  A home could
+be heated or cooled by taking advantage of the above fact.
+Even without the earth core you could heat a home in the winter and cool it
+in the summer.  The earth core makes the
+temperature higher the deeper you dig, although you need to dig somewhat
+deep to feel a difference.
+We did not take that into account above.
+
+\subsection{Exercises}
+
+\begin{exercise} \label{sps:sinforceexr}
+Suppose that the forcing function for the vibrating string
+is $F_0 \sin (\omega t)$.  Derive the particular solution $y_p$.
+\end{exercise}
+
+\begin{exercise}
+Take the forced vibrating string.
+Suppose that $L=1$, $a=1$.  Suppose that the forcing function
+is the square wave that is 1 on the interval $0 < x < 1$ and
+$-1$ on the interval $-1 < x< 0$.
+Find the particular solution.  Hint: You may want to use result
+of \exerciseref{sps:sinforceexr}.
+\end{exercise}
+
+\begin{exercise}
+The units are cgs (centimeters-grams-seconds)\index{cgs units}.
+For $k=0.005$, $\omega = 1.991 \times {10}^{-7}$, $A_0 = 20$.
+Find the depth at which the temperature variation is half ($\pm 10$
+degrees) of what it is on the surface.
+\end{exercise}
+
+\begin{exercise}
+Derive the solution for underground temperature oscillation without assuming
+that $T_0 = 0$.
+\end{exercise}
+
+\setcounter{exercise}{100}
+
+\begin{exercise}
+Take the forced vibrating string.
+Suppose that $L=1$, $a=1$.  Suppose that the forcing function
+is a sawtooth, that is $\lvert x \rvert -\frac{1}{2}$
+on $-1 < x < 1$ extended periodically.
+Find the particular solution.
+\end{exercise}
+\exsol{%
+$y_p(x,t) =
+\sum\limits_{\substack{n=1 \\ n \text{ odd}}}^\infty
+\frac{-4}{n^4 \pi^4} \,
+\left(
+\cos(n \pi x ) -
+\frac{\cos ( n \pi ) - 1}%
+{\sin( n \pi)}
+\sin( n \pi x)
+-1
+\right)
+\cos (n \pi t) .
+$
+}
+
+\begin{exercise}
+The units are cgs (centimeters-grams-seconds)\index{cgs units}.
+For $k=0.01$, $\omega = 1.991 \times {10}^{-7}$, $A_0 = 25$.
+Find the depth at which the summer is again the hottest point.
+\end{exercise}
+\exsol{%
+%$x \sqrt{\frac{\omega}{2k}} = 2\pi$
+%$x = 2\pi\sqrt{\frac{2k}{\omega}}$
+%$x = 2\pi\sqrt{\frac{0.02}{1.991 x 10^-7}}$
+Approximately 1991 centimeters
+}

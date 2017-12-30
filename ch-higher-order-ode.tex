@@ -1,0 +1,2791 @@
+\chapter{Higher order linear ODEs} \label{ho:chapter}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Second order linear ODEs}
+
+\sectionnotes{less than 1 lecture\EPref{,
+first part of \S3.1 in \cite{EP}}\BDref{,
+parts of \S3.1 and \S3.2 in \cite{BD}}}
+
+Let us consider the general
+\emph{\myindex{second order linear differential equation}}
+\begin{equation*}
+A(x) y'' + B(x)y' + C(x)y = F(x) .
+\end{equation*}
+We usually divide through by $A(x)$ to get
+\begin{equation} \label{sol:eqlin}
+y'' + p(x)y' + q(x)y = f(x) ,
+\end{equation}
+where $p(x) = \nicefrac{B(x)}{A(x)}$, $q(x) = \nicefrac{C(x)}{A(x)}$, and
+$f(x) = \nicefrac{F(x)}{A(x)}$.
+The word \emph{linear\index{linear equation}} means that the equation contains no powers nor
+functions of $y$, $y'$, and $y''$.
+
+In the special case when $f(x) = 0$, we have a so-called
+\emph{homogeneous\index{homogeneous linear equation}}
+equation
+\begin{equation} \label{sol:eqlinhom}
+y'' + p(x)y' + q(x)y = 0 .
+\end{equation}
+We have already seen some second order linear homogeneous equations.
+\begin{align*}
+\qquad y'' + k^2 y & = 0 &
+& \text{Two solutions are:} \quad y_1 = \cos (kx), \quad y_2 = \sin(kx) . \qquad \\
+\qquad y'' - k^2 y & = 0 &
+& \text{Two solutions are:} \quad y_1 = e^{kx}, \quad y_2 = e^{-kx} . \qquad
+\end{align*}
+
+If we know two solutions of a linear homogeneous equation, we know a lot
+more of them.
+
+\begin{theorem}[Superposition]\index{superposition}
+Suppose $y_1$ and $y_2$ are two solutions of the
+homogeneous equation \eqref{sol:eqlinhom}.  Then 
+\begin{equation*}
+y(x) = C_1 y_1(x) + C_2 y_2(x) ,
+\end{equation*}
+also solves \eqref{sol:eqlinhom} for arbitrary constants $C_1$ and $C_2$.
+\end{theorem}
+
+That is, we can add solutions together and multiply them by constants to
+obtain new and different solutions.  We call
+the expression $C_1 y_1 + C_2 y_2$ a
+\emph{\myindex{linear combination}} of $y_1$ and $y_2$.
+Let us
+prove this theorem; the
+proof is very enlightening and illustrates how linear equations work.
+
+\medskip
+
+Proof:
+Let 
+$y = C_1 y_1 + C_2 y_2$.  Then
+\begin{equation*}
+\begin{split}
+y'' + py' + qy & =
+(C_1 y_1 + C_2 y_2)'' + p(C_1 y_1 + C_2 y_2)' + q(C_1 y_1 + C_2 y_2) \\
+& = C_1 y_1'' + C_2 y_2'' + C_1 p y_1' + C_2 p y_2' + C_1 q y_1 + C_2 q y_2 \\
+& = C_1 ( y_1'' + p y_1' + q y_1 ) + C_2 ( y_2'' + p y_2' + q y_2 ) \\
+& = C_1 \cdot 0 + C_2 \cdot 0 = 0 . \qed
+\end{split}
+\end{equation*}
+
+\medskip
+
+The proof becomes even simpler to state if we use the
+operator notation.
+An \emph{\myindex{operator}} is an object that eats functions and spits out functions (kind of
+like what a function is, but a function eats numbers and spits out numbers).
+Define the operator $L$ by
+\begin{equation*}
+Ly = y'' + py' + qy .
+\end{equation*}
+The differential equation now becomes $Ly=0$.
+The operator (and the equation)
+$L$ being \emph{linear}\index{linear operator} means that $L(C_1y_1 + C_2y_2) = 
+C_1 Ly_1 + C_2 Ly_2$.  The proof above becomes
+\begin{equation*}
+Ly = L(C_1y_1 + C_2y_2) = 
+C_1 Ly_1 + C_2 Ly_2 = C_1 \cdot 0 + C_2 \cdot 0 = 0 .
+\end{equation*}
+
+\medskip
+
+Two different solutions to the second equation $y'' - k^2y = 0$ are
+$y_1 = \cosh (kx)$ and $y_2 = \sinh (kx)$.  Let us remind ourselves of the
+definition, $\cosh x = \frac{e^x  + e^{-x}}{2}$ and
+$\sinh x = \frac{e^x - e^{-x}}{2}$.  Therefore, these are solutions by
+superposition as they
+are linear combinations of the two
+exponential solutions.
+
+The functions $\sinh$ and $\cosh$ are sometimes more convenient to use than the
+exponential.  Let us review some of their properties.
+\begin{align*}
+& \cosh 0  = 1 &   & \sinh 0 = 0 \\
+& \frac{d}{dx} \cosh x = \sinh x &  & \frac{d}{dx} \sinh x = \cosh x \\
+& \cosh^2 x - \sinh^2 x = 1
+\end{align*}
+
+
+\begin{exercise}
+Derive these properties using the definitions of $\sinh$
+and $\cosh$ in terms of exponentials.
+\end{exercise}
+
+
+Linear equations have nice and simple
+answers to the existence and uniqueness question.
+
+\begin{theorem}[Existence and uniqueness]\index{existence and uniqueness}
+Suppose $p, q, f$ are continuous functions on some interval
+$I$, $a$ is a number in $I$,
+and $a, b_0, b_1$ are constants.
+The equation
+\begin{equation*}
+y'' + p(x) y' + q(x) y = f(x) ,
+\end{equation*}
+has exactly one solution $y(x)$ defined on the same interval $I$ satisfying the initial conditions
+\begin{equation*}
+y(a) = b_0 , \qquad y'(a) = b_1 .
+\end{equation*}
+\end{theorem}
+
+For example, the equation $y'' + k^2 y = 0$ with $y(0) = b_0$ and $y'(0) = b_1$
+has the solution
+\begin{equation*}
+y(x) = b_0 \cos (kx) + \frac{b_1}{k} \sin (kx) .
+\end{equation*}
+
+The equation $y'' - k^2 y = 0$ with $y(0) = b_0$ and $y'(0) = b_1$
+has the solution
+\begin{equation*}
+y(x) = b_0 \cosh (kx) + \frac{b_1}{k} \sinh (kx) .
+\end{equation*}
+Using $\cosh$ and $\sinh$ in this solution allows us to solve for
+the initial conditions
+in a cleaner way
+than if we have used the exponentials.
+
+\medskip
+
+The initial conditions for a second order ODE consist of two
+equations.  Common sense tells us that
+if we have two arbitrary constants and two equations, then we should 
+be able to solve
+for the constants and find a solution to the differential equation
+satisfying the initial conditions.
+
+Question: Suppose we find two different solutions $y_1$ and $y_2$ to the
+homogeneous equation \eqref{sol:eqlinhom}.  Can every solution
+be written (using superposition) in the form
+$y = C_1 y_1 + C_2 y_2$?
+
+Answer is affirmative!  Provided that $y_1$ and $y_2$ are different enough in
+the following sense.  We say $y_1$ and $y_2$ are \emph{\myindex{linearly
+independent}} if one is not a constant multiple of the other.
+
+\begin{theorem}
+Let $p, q$ be continuous functions.
+Let $y_1$ and $y_2$ be two linearly independent
+solutions to the homogeneous equation \eqref{sol:eqlinhom}. 
+Then every other solution is 
+of the form
+\begin{equation*}
+y = C_1 y_1 + C_2 y_2 .
+\end{equation*}
+That is, $y = C_1 y_1 + C_2 y_2$ is the general solution.
+\end{theorem}
+
+For example, we found the solutions
+$y_1 = \sin x$ and $y_2 = \cos x$ for the
+equation $y'' + y = 0$.  It is not hard to see that sine and cosine are not
+constant
+multiples of each other.  If $\sin x = A \cos x$ for some constant $A$,
+we let $x=0$ and this would imply $A = 0$.  But then $\sin x = 0$ for all
+$x$, which is preposterous.
+So $y_1$ and $y_2$ are linearly independent.  Hence
+\begin{equation*}
+y = C_1 \cos x + C_2 \sin x 
+\end{equation*}
+is the general solution to $y'' + y = 0$.
+
+\medskip
+
+We will study the solution of nonhomogeneous equations in
+\sectionref{sec:nonhom}.  We will first focus on finding general solutions to
+homogeneous equations.
+
+\subsection{Exercises}
+
+\begin{exercise}
+Show that $y=e^x$ and $y=e^{2x}$ are linearly independent.
+\end{exercise}
+
+\begin{exercise}
+Take $y'' + 5 y = 10 x + 5$.  Find (guess!) a solution.
+\end{exercise}
+
+\begin{exercise}
+Prove the superposition principle for nonhomogeneous equations.  Suppose that
+$y_1$ is a solution to $L y_1 = f(x)$ and $y_2$ is a solution to
+$L y_2 = g(x)$ (same linear operator $L$).  Show that $y = y_1+y_2$ solves
+$Ly = f(x) + g(x)$.
+\end{exercise}
+
+\begin{exercise}
+For the equation $x^2 y'' - x y' = 0$, find two solutions, show that they
+are linearly independent and find the general solution.
+Hint: Try $y = x^r$.
+\end{exercise}
+
+Equations of the form $a x^2 y'' + b x y' + c y = 0$ are called
+\emph{Euler's equations\index{Euler's equation}} or
+\emph{Cauchy-Euler equations\index{Cauchy-Euler equation}}.
+They are solved by trying
+$y=x^r$ and solving for $r$ (assume that $x \geq 0$ for simplicity).
+
+\begin{exercise} \label{sol:eulerex}
+Suppose that ${(b-a)}^2-4ac > 0$.  a) Find a formula for the general solution
+of $a x^2 y'' + b x y' + c y = 0$.  Hint: Try $y=x^r$ and find a formula for
+$r$.
+b) What happens when ${(b-a)}^2-4ac = 0$ or ${(b-a)}^2-4ac < 0$?
+\end{exercise}
+
+We will revisit the case when ${(b-a)}^2-4ac < 0$ later.
+
+\begin{exercise} \label{sol:eulerexln}
+Same equation as in \exerciseref{sol:eulerex}.
+Suppose ${(b-a)}^2-4ac = 0$.  Find a formula for the general solution
+of $a x^2 y'' + b x y' + c y = 0$.  Hint: Try $y=x^r \ln x$ for the second
+solution.
+\end{exercise}
+
+If you have one solution to a second order linear homogeneous
+equation you can find another one.  This is the \emph{\myindex{reduction of
+order method}}.
+
+\begin{exercise}[reduction of order] \label{exercise:reductionoforder}
+Suppose $y_1$ is a solution to $y'' + p(x) y' + q(x) y = 0$.
+Show that
+\begin{equation*}
+y_2(x) = y_1(x) \int \frac{e^{-\int p(x)\,dx}}{{\bigl(y_1(x)\bigr)}^2} ~dx
+\end{equation*}
+is also a solution.
+\end{exercise}
+
+Note: If you wish to come up with the formula for reduction of order
+yourself,
+start by trying $y_2(x) = y_1(x) v(x)$.  Then plug $y_2$ into the
+equation, use the fact that $y_1$ is a solution, substitute
+$w = v'$, and you have a first order linear equation in $w$.  Solve for
+$w$ and then for $v$.  When solving for $w$, make sure to include a constant
+of integration.
+Let us solve some famous equations using the method.
+
+\begin{exercise}[\myindex{Chebyshev's equation of order 1}]
+Take 
+$(1-x^2)y''-xy' + y = 0$.  a) Show that $y=x$ is a solution.
+b) Use reduction of order to find a second linearly independent solution.
+c) Write down the general solution.
+\end{exercise}
+
+\begin{exercise}[\myindex{Hermite's equation of order 2}]
+Take 
+$y''-2xy' + 4y = 0$.  a) Show that $y=1-2x^2$ is a solution.  
+b) Use reduction of order to find a second linearly independent solution.
+c) Write down the general solution.
+\end{exercise}
+
+\setcounter{exercise}{100}
+
+\begin{exercise}
+Are $\sin(x)$ and $e^x$ linearly independent?  Justify.
+\end{exercise}
+\exsol{%
+Yes.  To justify try to find a constant $A$ such that $\sin(x) = A e^x$
+for all $x$.
+}
+
+\begin{exercise}
+Are $e^x$ and $e^{x+2}$ linearly independent?  Justify.
+\end{exercise}
+\exsol{%
+No.  $e^{x+2} = e^2 e^x$.
+}
+
+\begin{exercise}
+Guess a solution to $y'' + y' + y= 5$.
+\end{exercise}
+\exsol{%
+$y=5$
+}
+
+\begin{exercise}
+Find the general solution to
+$x y'' + y' = 0$.  Hint: Notice that it is a first order ODE in $y'$.
+\end{exercise}
+\exsol{%
+$y=C_1 \ln(x) + C_2$
+}
+
+\begin{exercise}
+Write down an equation (guess) for which we have the solutions
+$e^x$ and $e^{2x}$.  Hint: Try an equation of the form
+$y''+Ay'+By = 0$ for constants $A$ and $B$,
+plug in both $e^x$ and $e^{2x}$ and solve for $A$ and $B$.
+\end{exercise}
+\exsol{%
+$y''-3y'+2y = 0$
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sectionnewpage
+\section{Constant coefficient second order linear ODEs}
+\label{sec:ccsol}
+
+\sectionnotes{more than 1 lecture\EPref{,
+second part of \S3.1 in \cite{EP}}\BDref{,
+\S3.1 in \cite{BD}}}
+
+Suppose we have the problem
+\begin{equation*}
+y''-6y'+8y = 0, \qquad y(0) = - 2, \qquad y'(0) = 6 .
+\end{equation*}
+This is a second order linear homogeneous equation with constant
+coefficients.  \emph{Constant coefficients\index{constant coefficient}}
+means that the functions 
+in front of $y''$, $y'$, and $y$ are constants, not depending on $x$.
+
+To guess a solution, think of a function that you know stays essentially the
+same when we differentiate it, so that we can take the function and its
+derivatives, add some multiples of these together, and end up with zero.
+
+Let us try a solution of the form $y = e^{rx}$.  Then $y' = r e^{rx}$ and
+$y'' = r^2 e^{rx}$.  Plug in to get
+\begin{align*}
+y''-6y'+8y & = 0 , \\
+r^2 e^{rx} -6 r e^{rx}+8 e^{rx} & = 0 , \\
+r^2 -6 r +8 & = 0 \qquad \text{(divide through by } e^{rx} \text{)},\\
+(r-2)(r-4) & = 0 .
+\end{align*}
+Hence, if $r=2$ or $r=4$, then $e^{rx}$ is a solution.  So let $y_1 = e^{2x}$
+and $y_2 = e^{4x}$.
+
+\begin{exercise}
+Check that $y_1$ and $y_2$ are solutions.
+\end{exercise}
+
+The functions $e^{2x}$ and $e^{4x}$ are linearly independent.  If they
+were not linearly independent we could write $e^{4x} = C e^{2x}$ for
+some constant $C$,
+implying that $e^{2x} = C$ for all $x$, which is clearly not possible. 
+Hence, we can write the general solution as
+\begin{equation*}
+y = C_1 e^{2x} + C_2 e^{4x} .
+\end{equation*}
+We need to solve for $C_1$ and $C_2$.  To apply the initial conditions
+we first find $y' = 2 C_1 e^{2x} + 4 C_2 e^{4x}$.  We plug in $x=0$ and
+solve.
+\begin{align*}
+-2 & = y(0) = C_1 + C_2 , \\
+6 & = y'(0) = 2 C_1 + 4 C_2 .
+\end{align*}
+Either apply some matrix algebra, or just solve these by high school
+math.  For example, divide the second equation by 2
+to obtain $3 = C_1 + 2 C_2$, and subtract the two equations to
+get $5 = C_2$.  Then $C_1 = -7$ as $-2 = C_1 + 5$.  Hence, the solution we
+are
+looking for is
+\begin{equation*}
+y = -7 e^{2x} + 5 e^{4x} .
+\end{equation*}
+
+\medskip
+
+Let us generalize this example into a method.
+Suppose that we have an equation
+\begin{equation} \label{ccsol:eq}
+a y'' + b y' + c y = 0 ,
+\end{equation}
+where $a, b, c$ are constants.  Try the solution $y = e^{rx}$ to obtain
+\begin{align*}
+a r^2 e^{rx} + 
+b r e^{rx} + 
+c e^{rx} & = 0 , \\
+a r^2 + 
+b r + 
+c & = 0 .
+\end{align*}
+The equation $a r^2 + b r + c = 0$ is called the \emph{\myindex{characteristic
+equation}} of the ODE.
+Solve for the $r$ by using the \myindex{quadratic formula}.
+\begin{equation*}
+r_1, r_2 = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} .
+\end{equation*}
+Therefore, we have $e^{r_1 x}$ and $e^{r_2 x}$ as solutions.  There is
+still a difficulty if $r_1 = r_2$, but it is not hard to overcome.
+
+\begin{theorem}
+Suppose that $r_1$ and $r_2$ are the roots of the characteristic equation.
+\begin{enumerate}[(i)]
+\item If $r_1$ and $r_2$ are distinct and real (when $b^2 - 4ac > 0$),
+then \eqref{ccsol:eq} has the general solution
+\begin{equation*}
+y = C_1 e^{r_1 x} + C_2 e^{r_2 x} .
+\end{equation*}
+\item If $r_1 = r_2$ (happens when $b^2 - 4ac = 0$), 
+then \eqref{ccsol:eq} has the general solution
+\begin{equation*}
+y = (C_1 + C_2 x)\, e^{r_1 x} .
+\end{equation*}
+\end{enumerate}
+\end{theorem}
+
+For another example of the
+first case, take the equation $y'' - k^2 y = 0$.  Here the
+characteristic equation is $r^2 - k^2 = 0$ or 
+$(r-k)(r+k) = 0$.  Consequently, $e^{-k x}$ and $e^{kx}$ are the two
+linearly independent solutions.
+
+\begin{example}
+Find the general solution of
+\begin{equation*}
+y'' -8 y' + 16 y = 0 .
+\end{equation*}
+
+The characteristic equation is $r^2 - 8 r + 16 = {(r-4)}^2 = 0$.
+The equation has a 
+double root $r_1 = r_2 = 4$.  The general solution is, therefore,
+\begin{equation*}
+y = (C_1 + C_2 x)\, e^{4 x} = C_1 e^{4x} + C_2 x e^{4x} .
+\end{equation*}
+
+\begin{exercise}
+Check that $e^{4x}$ and $x e^{4x}$ are linearly independent.
+\end{exercise}
+
+That $e^{4x}$ solves the equation is clear.  If $x e^{4x}$ solves the
+equation, then we know we are done.  Let us compute
+$y' = e^{4x} + 4xe^{4x}$ and
+$y'' = 8 e^{4x} + 16xe^{4x}$.  Plug in
+\begin{equation*}
+y'' - 8 y' + 16 y = 
+8 e^{4x} + 16xe^{4x} - 8(e^{4x} + 4xe^{4x}) + 16 xe^{4x} = 
+0 .
+\end{equation*}
+\end{example}
+
+We should note that in practice, doubled root rarely happens.  If
+coefficients are 
+picked truly randomly we are very unlikely to get a doubled root.
+
+Let us give a short proof for why the solution $x e^{r x}$ works when the
+root is doubled.  This case is really a limiting case of when
+the two roots are distinct and very close.  Note that 
+$\frac{e^{r_2 x} - e^{r_1 x}}{r_2 - r_1}$ is a solution when the roots are
+distinct.  When we take the limit as $r_1$ goes to $r_2$, we are really
+taking the
+derivative of $e^{rx}$ using $r$ as the variable.  Therefore, the limit is 
+$x e^{rx}$, and hence this is a solution in the doubled root case.
+
+\subsection{Complex numbers and Euler's formula}
+
+It may happen that a polynomial has some complex roots.  For example, the
+equation $r^2 + 1 = 0$ has no real roots, but it does have two complex roots.
+Here we review some properties of complex numbers\index{complex number}.
+
+\medskip
+
+Complex numbers may seem a strange concept, especially because of the
+terminology.  There is nothing imaginary or really complicated about complex
+numbers.
+A complex number is simply a pair of real numbers, $(a,b)$.  We can
+think of a complex number as a point in the plane.  We add complex numbers
+in the straightforward way: $(a,b)+(c,d)=(a+c,b+d)$.  We define
+multiplication\index{multiplication of complex numbers} by
+\begin{equation*}
+(a,b) \times (c,d) \overset{\text{def}}{=} (ac-bd,ad+bc) .
+\end{equation*}
+It turns out that with this multiplication rule, all the standard properties
+of arithmetic hold.  Further, and most importantly $(0,1) \times (0,1) =
+(-1,0)$.
+
+Generally we just write $(a,b)$ as $a+ib$, and we treat $i$ as if it were an
+unknown.  When $b$ is zero, then $(a,0)$ is just the number $a$.
+We do arithmetic with complex numbers just as we would
+with polynomials.  The property we just mentioned becomes $i^2 = -1$.
+So whenever we see $i^2$, we replace it by $-1$.
+The numbers
+$i$ and $-i$ are the two roots of $r^2 + 1 = 0$.
+
+Note that engineers often use the letter $j$ instead of $i$ for the square
+root of $-1$.  We will use the mathematicians' convention and use $i$.
+
+\begin{exercise}
+Make sure you understand (that you can justify)
+the following identities:
+\begin{itemize}
+\item $i^2 = -1$, $i^3 = -i$, $i^4 = 1$,
+\item $\dfrac{1}{i} = -i$,
+\item $(3-7i)(-2-9i) = \cdots = -69-13i$,
+\item $(3-2i)(3+2i) = 3^2 - {(2i)}^2 = 3^2 + 2^2 = 13$,
+\item $\frac{1}{3-2i} = \frac{1}{3-2i} \frac{3+2i}{3+2i} = \frac{3+2i}{13}
+= \frac{3}{13}+\frac{2}{13}i$.
+\end{itemize}
+\end{exercise}
+
+We also define the exponential $e^{a+ib}$ of a complex number.  We do
+this by writing down the Taylor series and plugging in the complex
+number.  Because most properties of the exponential can be proved by looking
+at the Taylor series, these
+properties still hold for the complex
+exponential.  For example the very important property: $e^{x+y} = e^x e^y$.  This means that
+$e^{a+ib} = e^a e^{ib}$.  Hence if we can compute $e^{ib}$, we can
+compute $e^{a+ib}$.  For $e^{ib}$ we use the so-called
+\emph{\myindex{Euler's formula}}.
+
+\begin{theorem}[Euler's formula] \label{eulersformula}
+\begin{equation*}
+\boxed{~~
+e^{i \theta} = \cos \theta + i \sin \theta
+\qquad \text{ and } \qquad
+e^{- i \theta} = \cos \theta - i \sin \theta .
+~~}
+\end{equation*}
+\end{theorem}
+
+In other words, $e^{a+ib} = e^a \bigl( \cos(b) + i \sin(b) \bigr) = e^a \cos(b) + i e^a \sin(b)$.
+
+\begin{exercise}
+Using Euler's formula, check the identities:
+\begin{equation*}
+\cos \theta = \frac{e^{i \theta} + e^{-i \theta}}{2}
+\qquad \text{and} \qquad
+\sin \theta = \frac{e^{i \theta} - e^{-i \theta}}{2i}.
+\end{equation*}
+\end{exercise}
+
+\begin{exercise}
+Double angle identities:
+Start with $e^{i(2\theta)} = {\bigl(e^{i \theta} \bigr)}^2$.  Use Euler on
+each side and deduce:
+\begin{equation*}
+\cos (2\theta) = \cos^2 \theta - \sin^2 \theta
+\qquad \text{and} \qquad
+\sin (2\theta) = 2 \sin \theta \cos \theta .
+\end{equation*}
+\end{exercise}
+
+For a complex number $a+ib$ we call
+$a$ the \emph{\myindex{real part}} and $b$ the \emph{\myindex{imaginary part}} of the number.
+Often the following notation is used,
+\begin{equation*}
+\operatorname{Re}(a+ib) = a
+\qquad \text{and} \qquad
+\operatorname{Im}(a+ib) = b.
+\end{equation*}
+
+\subsection{Complex roots}
+
+Suppose the equation $ay'' + by' + cy = 0$ has the 
+characteristic equation
+$a r^2 + b r + c = 0$ that has \myindex{complex roots}.
+By the quadratic
+formula, the roots are
+$\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$.
+These roots are complex if $b^2 - 4ac < 0$.  In this case the
+roots are
+\begin{equation*}
+r_1, r_2 = \frac{-b}{2a} \pm i\frac{\sqrt{4ac - b^2}}{2a} .
+\end{equation*}
+As you can see, we always get a pair of roots of the form $\alpha \pm i
+\beta$.  In this case we can still write the solution as
+\begin{equation*}
+y = C_1 e^{(\alpha+i\beta)x} + C_2 e^{(\alpha-i\beta)x} .
+\end{equation*}
+However, the exponential is now complex valued.  We would need to allow
+$C_1$ and $C_2$ to be complex numbers to obtain a real-valued solution (which
+is what we are after).  While there is nothing particularly wrong with this
+approach,
+it can make calculations harder and it is generally preferred
+to find two real-valued
+solutions.
+
+Here we can use \hyperref[eulersformula]{Euler's formula}.  Let
+\begin{equation*}
+y_1 = e^{(\alpha+i\beta)x} \qquad \text{and} \qquad y_2 = e^{(\alpha-i\beta)x} .
+\end{equation*}
+Then 
+\begin{align*}
+y_1 & = e^{\alpha x} \cos (\beta x) + i e^{\alpha x} \sin (\beta x) , \\
+y_2 & = e^{\alpha x} \cos (\beta x) - i e^{\alpha x} \sin (\beta x) .
+\end{align*}
+
+Linear combinations of solutions are also solutions.  Hence,
+\begin{align*}
+y_3 & = \frac{y_1 + y_2}{2} = e^{\alpha x} \cos (\beta x) , \\ 
+y_4 & = \frac{y_1 - y_2}{2i} = e^{\alpha x} \sin (\beta x) ,
+\end{align*}
+are also solutions.  Furthermore, they are real-valued.  It is not hard to
+see that they are linearly independent (not multiples of each other).
+Therefore, we have the following theorem.
+
+\begin{theorem}
+Take the equation
+\begin{equation*}
+ay'' + by' + cy = 0 .
+\end{equation*}
+If the characteristic equation has the roots $\alpha \pm i \beta$
+(when $b^2 - 4ac < 0$),
+then the general solution is
+\begin{equation*}
+y = C_1 e^{\alpha x} \cos (\beta x) + C_2 e^{\alpha x} \sin (\beta x) .
+\end{equation*}
+\end{theorem}
+
+\begin{example}
+Find the general solution of $y'' + k^2 y = 0$, for a constant
+$k > 0$.
+
+The characteristic equation is $r^2 + k^2 = 0$.  Therefore,
+the roots are $r = \pm ik$, and by the theorem, we have the general solution
+\begin{equation*}
+y = C_1 \cos (kx) + C_2 \sin (kx) .
+\end{equation*}
+\end{example}
+
+\begin{example}
+Find the solution of $y'' - 6 y' + 13 y = 0$, $y(0) = 0$, $y'(0) =
+10$.
+
+The characteristic equation is $r^2 - 6 r + 13 = 0$.  By completing the
+square we get ${(r-3)}^2 + 2^2 = 0$ and hence the roots are
+$r = 3 \pm 2i$.
+By the theorem we have the general solution
+\begin{equation*}
+y = C_1 e^{3x} \cos (2x) + C_2 e^{3x} \sin (2x) .
+\end{equation*}
+To find the solution satisfying the initial conditions, we first plug in zero
+to get
+\begin{equation*}
+0 = y(0) = C_1 e^{0} \cos 0 + C_2 e^{0} \sin 0  = C_1 .
+\end{equation*}
+Hence $C_1 = 0$ and $y = C_2 e^{3x} \sin (2x)$.  We differentiate
+\begin{equation*}
+y' = 3C_2 e^{3x} \sin (2x) + 2C_2 e^{3x} \cos (2x) .
+\end{equation*}
+We again plug in the initial condition and obtain $10 = y'(0) = 2C_2$, or
+$C_2 = 5$.  Hence the solution we are seeking is
+\begin{equation*}
+y = 5 e^{3x} \sin (2x) .
+\end{equation*}
+\end{example}
+
+\subsection{Exercises}
+
+\begin{exercise}
+Find the general solution of $2y'' + 2y' -4 y = 0$.
+\end{exercise}
+
+\begin{exercise}
+Find the general solution of $y'' + 9y' - 10 y = 0$.
+\end{exercise}
+
+\begin{exercise}
+Solve $y'' - 8y' + 16 y = 0$ for $y(0) = 2$, $y'(0) = 0$.
+\end{exercise}
+
+\begin{exercise}
+Solve $y'' + 9y' = 0$ for $y(0) = 1$, $y'(0) = 1$.
+\end{exercise}
+
+\begin{exercise}
+Find the general solution of $2y'' + 50y = 0$.
+\end{exercise}
+
+\begin{exercise}
+Find the general solution of $y'' + 6 y' + 13 y = 0$.
+\end{exercise}
+
+\begin{exercise}
+Find the general solution of $y'' = 0$ using the methods of this section.
+\end{exercise}
+
+\begin{exercise}
+The method of this section applies to equations of other orders than two.
+We will see
+higher orders later.  Try to solve the first order equation
+$2y' + 3y = 0$ using the methods of this section.
+\end{exercise}
+
+\begin{exercise}
+Let us revisit the Cauchy-Euler equations\index{Cauchy-Euler equation} of
+\exercisevref{sol:eulerex}.  Suppose now
+that ${(b-a)}^2-4ac < 0$.  Find a formula for the general solution
+of $a x^2 y'' + b x y' + c y = 0$.  Hint: Note that $x^r = e^{r \ln x}$.
+\end{exercise}
+
+\begin{exercise}
+Find the solution to
+$y''-(2\alpha) y' + \alpha^2 y=0$, $y(0) = a$, $y'(0)=b$,
+where $\alpha$, $a$, and $b$ are real numbers.
+\end{exercise}
+
+\begin{exercise}
+Construct an equation such that $y = C_1 e^{-2x} \cos(3x) + C_2 e^{-2x}
+\sin(3x)$ is the general
+solution.
+\end{exercise}
+
+\setcounter{exercise}{100}
+
+\begin{exercise}
+Find the general solution to
+$y''+4y'+2y=0$.
+\end{exercise}
+\exsol{%
+$y =
+C_1 e^{(-2+\sqrt{2}) x}
++
+C_2 e^{(-2-\sqrt{2}) x}$
+}
+
+\begin{exercise}
+Find the general solution to
+$y''-6y'+9y=0$.
+\end{exercise}
+\exsol{%
+$y =
+C_1 e^{3x}
++
+C_2 x e^{3x}$
+}
+
+\begin{exercise}
+Find the solution to
+$2y''+y'+y=0$, $y(0) = 1$, $y'(0)=-2$.
+\end{exercise}
+\exsol{%
+$y =
+e^{-x/4} \cos\bigl((\nicefrac{\sqrt{7}}{4})x\bigr)
+-
+\sqrt{7}
+e^{-x/4} \sin\bigl((\nicefrac{\sqrt{7}}{4})x\bigr)$
+}
+
+\begin{exercise}
+Find the solution to
+$2y''+y'-3y=0$, $y(0) = a$, $y'(0)=b$.
+\end{exercise}
+\exsol{%
+$y = \frac{2(a-b)}{5} \, e^{-3x/2}+\frac{3 a+2 b}{5} \, e^x$
+}
+
+\begin{exercise}
+Find the solution to
+$z''(t) = -2z'(t)-2z(t)$, $z(0) = 2$, $z'(0)= -2$.
+\end{exercise}
+\exsol{%
+$z(t) =
+2e^{-t} \cos(t)$
+}
+
+\begin{exercise}
+Find the solution to
+$y''-(\alpha+\beta) y' + \alpha \beta y=0$, $y(0) = a$, $y'(0)=b$,
+where $\alpha$, $\beta$, $a$, and $b$ are real numbers, and $\alpha \not=
+\beta$.
+\end{exercise}
+\exsol{%
+$y =
+\frac{a \beta-b}{\beta-\alpha} e^{\alpha x} + 
+\frac{b-a \alpha}{\beta-\alpha} e^{\beta x}$
+}
+
+\begin{exercise}
+Construct an equation such that $y = C_1 e^{3x} + C_2 e^{-2x}$ is the general
+solution.
+\end{exercise}
+\exsol{%
+$y'' -y'-6y=0$
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sectionnewpage
+\section{Higher order linear ODEs} \label{sec:hol}
+
+\sectionnotes{somewhat more than 1 lecture\EPref{, \S3.2 and \S3.3 in
+\cite{EP}}\BDref{,
+\S4.1 and \S4.2 in \cite{BD}}}
+
+%After reading this lecture, it may be good to try
+%Project III\index{IODE software!Project III} from the
+%IODE website: \url{http://www.math.uiuc.edu/iode/}.
+%
+%\medskip
+
+We briefly study higher order equations.
+Equations appearing in applications tend to be second
+order.  Higher order equations do appear from time to time, but
+generally the world around us is \myquote{second order.}  
+
+The basic results about linear ODEs of higher order are essentially 
+the same as for second order equations, with 2 replaced by $n$.
+The important concept
+of linear independence is somewhat more complicated when more than two
+functions are involved.
+For higher order constant coefficient ODEs, the methods developed are also
+somewhat harder to apply,
+but we will not dwell on these complications.
+It is also possible to use the methods for systems
+of linear equations from \chapterref{sys:chapter} to solve higher order
+constant coefficient equations.
+
+Let us start with a general homogeneous linear equation
+\begin{equation} \label{hol:eqlinhom}
+y^{(n)} + p_{n-1}(x)y^{(n-1)} + \cdots + p_1(x) y' + p_0(x) y = 0 .
+\end{equation}
+
+\begin{theorem}[Superposition]\index{superposition}
+Suppose $y_1$, $y_2$, \ldots, $y_n$ are solutions of the
+homogeneous equation \eqref{hol:eqlinhom}.  Then 
+\begin{equation*}
+y(x) = C_1 y_1(x) + C_2 y_2(x) + \cdots + C_n y_n(x) 
+\end{equation*}
+also solves \eqref{hol:eqlinhom}
+for arbitrary constants $C_1, C_2, \ldots, C_n$.
+\end{theorem}
+
+In other words, a \emph{\myindex{linear combination}} of solutions
+to \eqref{hol:eqlinhom}
+is also a solution to \eqref{hol:eqlinhom}.
+We also have the existence and uniqueness theorem for nonhomogeneous linear
+equations.
+
+\begin{theorem}[Existence and uniqueness]\index{existence and uniqueness}
+Suppose $p_0$ through $p_{n-1}$, and $f$ are continuous functions
+on some interval $I$,
+$a$ is a number in $I$,
+and $b_0, b_1, \ldots, b_{n-1}$ are constants.
+The equation
+\begin{equation*} %\label{hol:eqlin}
+y^{(n)} + p_{n-1}(x)y^{(n-1)} + \cdots + p_1(x) y' + p_0(x) y = f(x) 
+\end{equation*}
+has exactly one solution $y(x)$ defined on the same interval $I$
+satisfying the initial conditions
+\begin{equation*}
+y(a) = b_0, \quad y'(a) = b_1, \quad \ldots, \quad y^{(n-1)}(a) = b_{n-1} .
+\end{equation*}
+\end{theorem}
+
+\subsection{Linear independence}
+
+When we had two functions $y_1$ and $y_2$ we said they were linearly
+independent if one was not the multiple of the other.  Same idea holds for
+$n$ functions.  In this case it is easier to state as follows. The functions
+$y_1$, $y_2$, \ldots, $y_n$ are \emph{\myindex{linearly independent}} if
+the equation
+\begin{equation*}
+c_1 y_1 + c_2 y_2 + \cdots + c_n y_n = 0 
+\end{equation*}
+has only the trivial solution $c_1 = c_2 = \cdots = c_n = 0$, where the
+equation must hold for all $x$.  If we can
+solve equation with some constants where for example $c_1 \not= 0$, then we
+can solve for $y_1$ as a linear combination of the others.  If the functions
+are not
+linearly independent, they are \emph{\myindex{linearly dependent}}.
+
+\begin{example}
+Show that $e^x, e^{2x}, e^{3x}$ are linearly independent.
+
+Let us give several ways to show this fact.
+Many textbooks (including \cite{EP} and
+\cite{F}) introduce Wronskians, but it is difficult to see why they work and
+they are not really necessary here.
+
+Let us write down
+\begin{equation*}
+c_1 e^x + c_2 e^{2x} + c_3 e^{3x} = 0.
+\end{equation*}
+We use rules of exponentials and write $z = e^x$.  Hence $z^2 = e^{2x}$
+and $z^3 = e^{3x}$.  Then we have
+\begin{equation*}
+c_1 z + c_2 z^2 + c_3 z^3 = 0.
+\end{equation*}
+The left hand side is a third degree polynomial in $z$.
+It is either identically zero,
+or it has at most 3 zeros.  Therefore, it is identically zero,
+$c_1 = c_2 = c_3 = 0$, and the functions are linearly independent.
+
+Let us try another way.  As before we write
+\begin{equation*}
+c_1 e^x + c_2 e^{2x} + c_3 e^{3x} = 0.
+\end{equation*}
+This equation has to hold for all $x$.  We divide through
+by $e^{3x}$ to get
+\begin{equation*}
+c_1 e^{-2x} + c_2 e^{-x} + c_3 = 0.
+\end{equation*}
+As the equation is true for all $x$, let $x \to \infty$.  After taking the
+limit we see that $c_3 = 0$.  Hence our equation becomes
+\begin{equation*}
+c_1 e^x + c_2 e^{2x} = 0.
+\end{equation*}
+Rinse, repeat!
+
+How about yet another way.  We again write
+\begin{equation*}
+c_1 e^x + c_2 e^{2x} + c_3 e^{3x} = 0.
+\end{equation*}
+We can evaluate the equation and its derivatives at different
+values of $x$ to obtain equations for
+$c_1$, $c_2$, and $c_3$.
+Let us first
+divide by $e^{x}$ for simplicity.
+\begin{equation*}
+c_1 + c_2 e^{x} + c_3 e^{2x} = 0.
+\end{equation*}
+We set $x=0$ to get the equation $c_1 + c_2 + c_3 = 0$.  Now differentiate
+both sides
+\begin{equation*}
+c_2 e^{x} + 2 c_3 e^{2x} = 0 .
+\end{equation*}
+We set $x=0$ to get $c_2 + 2c_3 = 0$.  We divide by $e^x$ again and
+differentiate to get
+$2 c_3 e^{x} = 0$.  It is clear that $c_3$ is zero.  Then $c_2$ must be
+zero as $c_2 = -2c_3$, and $c_1$ must be zero because $c_1 + c_2 + c_3 = 0$.
+
+There is no one best way to do it.  All of these methods are perfectly valid.
+The important thing is to understand why the functions are linearly
+independent.
+\end{example}
+
+\begin{example}
+On the other hand, the functions $e^x$, $e^{-x}$, and $\cosh x$ are linearly
+dependent.  Simply apply definition of the hyperbolic cosine:
+\begin{equation*}
+\cosh x = \frac{e^x + e^{-x}}{2} 
+\qquad
+\text{or}
+\qquad
+2 \cosh x - e^x - e^{-x} = 0.
+\end{equation*}
+\end{example}
+
+\subsection{Constant coefficient higher order ODEs}
+
+When we have a higher order constant coefficient homogeneous linear
+equation, the song and dance is exactly the same as it was for second order.
+We just need to find more solutions.  If the equation is
+$n^{\text{th}}$ order we need to find $n$ linearly independent solutions.
+It is best seen by example.
+
+\begin{example}
+Find the general solution to
+\begin{equation} \label{hol:cceq1}
+y''' - 3 y'' - y' + 3y = 0 .
+\end{equation}
+
+Try: $y = e^{rx}$.  We plug in and get
+\begin{equation*}
+\underbrace{r^3 e^{rx}}_{y'''} - 3 \underbrace{r^2 e^{rx}}_{y''} -
+\underbrace{r e^{rx}}_{y'} + 3 \underbrace{e^{rx}}_{y} = 0 .
+\end{equation*}
+We divide through by $e^{rx}$.  Then 
+\begin{equation*}
+r^3 - 3 r^2 - r + 3 = 0 .
+\end{equation*}
+The trick now is to find the roots.  There is a formula for the roots of
+degree 3 and 4 polynomials but it is very complicated.  There is no formula
+for higher degree polynomials.  That does not mean that the roots do not
+exist.  There are always
+$n$ roots for an $n^{\text{th}}$ degree polynomial.  They may be
+repeated\index{repeated roots}
+and they may be complex.  Computers are pretty good at finding roots
+approximately for reasonable size polynomials.
+
+A good place to start is to plot the polynomial and check where it is zero.
+We can also simply try plugging in.  We
+just start plugging
+in numbers $r=-2,-1,0,1,2,\ldots$ and see if we get a hit (we can also
+try complex numbers).  Even
+if we do not get a hit, we may get an indication
+of where the root is.  For example, we plug
+$r=-2$ into our polynomial and get $-15$; we plug in $r=0$ and get 3.
+That means there is a root between $r=-2$ and $r=0$,
+because the sign changed.
+If we find one root, say $r_1$, then we know $(r-r_1)$ is a factor
+of our polynomial.  Polynomial long division can then be used.
+
+A good strategy is to begin with $r=-1$, 1, or 0.  These are
+easy to compute.  Our polynomial happens to have
+two such roots, $r_1 = -1$
+and $r_2 = 1$.  There should be 3 roots and the last root is reasonably
+easy to find.  The constant
+term in a monic polynomial such as this is the multiple of the negations of all the roots
+because $r^3 - 3 r^2 - r + 3 = (r-r_1)(r-r_2)(r-r_3)$.
+So
+\begin{equation*}
+3 = (-r_1)(-r_2)(-r_3) = (1)(-1)(-r_3) = r_3 .
+\end{equation*}
+You should check that $r_3 = 3$ really
+is a root.  Hence we know that $e^{-x}$, $e^{x}$
+and $e^{3x}$ are solutions to \eqref{hol:cceq1}.  They are linearly independent
+as can easily be checked, and there are 3 of them, which happens to be exactly
+the number we need.  Hence the general solution is
+\begin{equation*}
+y = C_1 e^{-x} + C_2 e^{x} + C_3 e^{3x} .
+\end{equation*}
+
+Suppose we were given some initial conditions $y(0) = 1$, $y'(0) = 2$,
+and $y''(0) = 3$.  Then
+\begin{align*}
+1 = y(0) & = C_1 + C_2 + C_3 , \\
+2 = y'(0) & = -C_1 + C_2 + 3C_3 , \\
+3 = y''(0) & = C_1 + C_2 + 9C_3 .
+\end{align*}
+It is possible to find the solution by high school algebra, but it would be a
+pain.
+The sensible way to solve a system of equations such as this is to use
+matrix algebra, see
+\sectionref{sec:matrix}.  For now we note that the solution is $C_1 =
+-\nicefrac{1}{4}$,
+$C_2 = 1$, and $C_3 = \nicefrac{1}{4}$.  The specific solution
+to the ODE is
+\begin{equation*}
+y = \frac{-1}{4}\, e^{-x} + e^x + \frac{1}{4}\, e^{3x} .
+\end{equation*}
+\end{example}
+
+Next, suppose that we have real roots, but they are repeated.  Let us say
+we have
+a root $r$ repeated $k$ times.  In the spirit of the second
+order solution, and for the same reasons, we have the solutions
+\begin{equation*}
+e^{rx}, \quad xe^{rx}, \quad x^2 e^{rx}, \quad \ldots, \quad x^{k-1} e^{rx} .
+\end{equation*}
+We take a linear combination of these solutions to find the general
+solution.
+
+\begin{example}
+Solve
+\begin{equation*}
+y^{(4)} - 3 y''' + 3 y'' - y' =  0 .
+\end{equation*}
+
+We note that the characteristic equation is
+\begin{equation*}
+r^4 - 3r^3 + 3r^2 -r = 0 .
+\end{equation*}
+By inspection we note that $r^4 - 3r^3 + 3r^2 -r = r{(r-1)}^3$.  Hence
+the roots given with \myindex{multiplicity} are $r = 0, 1, 1, 1$.  Thus the general
+solution is
+\begin{equation*}
+y = \underbrace{(C_1 + C_2 x + C_3 x^2)\, e^x}_{\text{terms coming from }
+r=1} + \underbrace{C_4}_{\text{from } r=0} .
+\end{equation*}
+\end{example}
+
+The case of complex roots is similar
+to second order equations.
+Complex roots
+always come in pairs $r = \alpha \pm i \beta$.  Suppose we have
+two such complex roots, each repeated $k$ times.
+The corresponding solution is
+\begin{equation*}
+( C_0 + C_1 x + \cdots + C_{k-1} x^{k-1} ) \, e^{\alpha x} \cos (\beta x)
++
+( D_0 + D_1 x + \cdots + D_{k-1} x^{k-1} ) \, e^{\alpha x} \sin (\beta x) .
+\end{equation*}
+where $C_0$, \ldots, $C_{k-1}$, $D_0$, \ldots, $D_{k-1}$ are arbitrary
+constants.
+
+\begin{example}
+Solve
+\begin{equation*}
+y^{(4)} - 4 y''' + 8 y'' - 8 y' + 4y = 0 .
+\end{equation*}
+
+The characteristic equation is
+\begin{align*}
+r^4 - 4 r^3 + 8 r^2 - 8 r + 4 & = 0 , \\
+{(r^2-2r+2)}^2 & = 0 , \\
+{\bigl({(r-1)}^2+1\bigr)}^2 & = 0 .
+\end{align*}
+Hence the roots are $1 \pm i$, both with multiplicity 2.  Hence the general
+solution to the ODE is
+\begin{equation*}
+y = 
+( C_1 + C_2 x ) \, e^{x} \cos x
++
+( C_3 + C_4 x ) \, e^{x} \sin x .
+\end{equation*}
+The way we solved the characteristic equation above is really by guessing or
+by inspection.  It is not so easy in general.  We could also have asked
+a computer or an advanced calculator for the roots.
+\end{example}
+
+%FIXME: the operator stuff?
+
+\subsection{Exercises}
+
+\begin{exercise}
+Find the general solution for $y''' - y'' + y' - y = 0$.
+\end{exercise}
+
+\begin{exercise}
+Find the general solution for $y^{(4)} - 5 y''' + 6 y'' = 0$.
+\end{exercise}
+
+\begin{exercise}
+Find the general solution for $y''' + 2 y'' + 2 y' = 0$.
+\end{exercise}
+
+\begin{exercise}
+Suppose the characteristic equation for a differential equation is
+${(r-1)}^2{(r-2)}^2 = 0$.  a) Find such a differential equation.
+b) Find its general solution.
+\end{exercise}
+
+\begin{exercise} \label{hol:eqfromsolex}
+Suppose that a fourth order equation has a solution
+$y = 2 e^{4x} x \cos x$.  
+a) Find such an equation.  b) Find the initial conditions that the given
+solution satisfies.
+\end{exercise}
+
+\begin{exercise}
+Find the general solution for the equation of \exerciseref{hol:eqfromsolex}.
+\end{exercise}
+
+\begin{exercise}
+Let
+$f(x) = e^x - \cos x$, $g(x) = e^x + \cos x$, and $h(x) = \cos x$.
+Are $f(x)$, $g(x)$, and $h(x)$
+linearly independent?  If so, show
+it, if not, find a linear combination that works.
+\end{exercise}
+
+\begin{exercise}
+Let
+$f(x) = 0$, $g(x) = \cos x$, and $h(x) = \sin x$.
+Are $f(x)$, $g(x)$, and $h(x)$
+linearly independent?  If so, show
+it, if not, find a linear combination that works.
+\end{exercise}
+
+\begin{exercise}
+Are $x$, $x^2$, and $x^4$
+linearly independent?  If so, show
+it, if not, find a linear combination that works.
+\end{exercise}
+
+\begin{exercise}
+Are $e^x$, $xe^x$, and $x^2e^x$
+linearly independent?  If so, show
+it, if not, find a linear combination that works.
+\end{exercise}
+
+\begin{exercise}
+Find an equation such that $y=xe^{-2x}\sin(3x)$ is a solution.
+\end{exercise}
+
+\setcounter{exercise}{100}
+
+\begin{exercise}
+Find the general solution of $y^{(5)}-y^{(4)}=0$
+\end{exercise}
+\exsol{%
+$y=C_1 e^x +C_2 x^3 + C_3 x^2 +C_4 x + C_5$
+}
+
+\begin{exercise}
+Suppose that the characteristic equation of a third order differential
+equation has
+roots $\pm 2i$ and 3.  a) What is the characteristic equation?  b) Find the
+corresponding differential equation.  c) Find the general solution.
+\end{exercise}
+\exsol{%
+a) $r^3-3r^2+4r-12 = 0$,
+b) $y'''-3y''+4y'-12y = 0$,
+c) $y = C_1 e^{3x} + C_2 \sin(2x) + C_3 \cos(2x)$
+}
+
+\begin{exercise}
+Solve $1001y'''+3.2y''+\pi y'-\sqrt{4} y = 0$, $y(0)=0$, $y'(0) = 0$,
+$y''(0) = 0$.
+\end{exercise}
+\exsol{%
+$y=0$
+}
+
+\begin{exercise}
+Are $e^{x}$, $e^{x+1}$, $e^{2x}$, $\sin(x)$ linearly independent?
+If so, show it, if not find a linear combination that works.
+\end{exercise}
+\exsol{%
+No.  $e^1 e^x -  e^{x+1} = 0$.
+}
+
+\begin{exercise}
+Are $\sin(x)$, $x$, $x\sin(x)$ linearly independent?
+If so, show it, if not find a linear combination that works.
+\end{exercise}
+\exsol{%
+Yes.  (Hint: First note that $\sin(x)$ is bounded.  Then note that
+$x$ and $x\sin(x)$ cannot be multiples of each other.)
+}
+
+\begin{exercise}
+Find an equation such that $y=\cos(x)$, $y=\sin(x)$, $y=e^x$ are solutions.
+\end{exercise}
+\exsol{%
+$y'''-y''+y'-y=0$
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sectionnewpage
+\section{Mechanical vibrations} \label{sec:mv}
+
+\sectionnotes{2 lectures\EPref{, \S3.4 in \cite{EP}}\BDref{,
+\S3.7 in \cite{BD}}}
+
+Let us look at some applications of linear second order constant
+coefficient equations.
+
+\subsection{Some examples}
+
+\begin{diffyfloatingfigure}{2.0in}{2.3in}
+\noindent
+\inputpdft{massfigforce}
+\end{diffyfloatingfigure}
+Our first example is a mass on a spring.  Suppose we have a mass $m > 0$
+(in kilograms) connected
+by a spring with spring constant $k > 0$ (in newtons per meter)
+to a fixed wall.  There may be some external
+force $F(t)$ (in newtons) acting on the mass.  Finally, there is some
+friction measured by $c \geq 0$ (in newton-seconds per meter) as the mass
+slides along the floor (or perhaps there is a damper connected).
+
+Let $x$ be the displacement of the mass ($x=0$ is the rest position), with
+$x$ growing to the right (away from the wall).
+The force exerted by the spring is proportional to the
+compression of the spring by \myindex{Hooke's law}.
+Therefore, it is $kx$ in the negative direction.
+Similarly the amount of force exerted by friction is proportional
+to the velocity of the mass.
+By \myindex{Newton's second law} we know that force equals mass times acceleration
+and hence $mx'' = F(t)-cx'-kx$ or
+\begin{equation*}
+mx'' + cx' + kx = F(t) .
+\end{equation*}
+This is a linear second order constant coefficient ODE.  We set up some
+terminology about this equation.  We say the motion is
+%mbxSTARTIGNORE
+%FIXMEevillayouthack
+\vspace*{0.5\baselineskip}
+%mbxENDIGNORE
+\begin{enumerate}[(i)]
+\item \emph{forced\index{forced motion}}, if $F \not\equiv 0$ (if $F$ is not identically zero),
+\item \emph{unforced\index{unforced motion}} or \emph{free\index{free
+motion}}, if $F \equiv 0$ (if $F$ is identically zero),
+\item \emph{damped\index{damped motion}}, if $c > 0$, and
+\item \emph{undamped\index{undamped motion}}, if $c = 0$.
+\end{enumerate}
+
+This system appears in lots of applications even if it does not at first
+seem like it.  Many real world scenarios can be simplified to
+a mass on a spring.  For example, a bungee jump setup is essentially a mass
+and spring system (you are the mass).  It would be good if someone did the math
+before you jump off the bridge, right?  Let us give two other examples.
+
+\medskip
+
+\begin{diffyfloatingfigure}{1.35in}{1.65in}
+\noindent
+\inputpdft{mv-rlc}
+\end{diffyfloatingfigure}
+Here is an example for electrical engineers.  Suppose that we have the
+pictured \myindex{RLC circuit}.
+There is a resistor with a resistance of $R$ ohms, an
+inductor with an inductance of $L$ henries,
+and a capacitor with a capacitance of $C$ farads.  There is also
+an electric source (such as a battery) giving a voltage of $E(t)$ volts
+at time $t$ (measured in seconds).
+Let $Q(t)$ be the charge in coulombs on the capacitor
+and $I(t)$ be the current in the circuit.  The relation between the two is
+$Q' = I$.  By elementary principles we have that
+$L I' + RI + \nicefrac{Q}{C} = E$.   If we differentiate we get
+\begin{equation*}
+L I''(t) + R I'(t) + \frac{1}{C} I(t) = E'(t) .
+\end{equation*}
+This is a nonhomogeneous second order constant coefficient linear equation.
+Further, as $L, R$, and $C$ are all positive, this system behaves just like the
+mass and spring system.  The position of the mass is replaced by the current.
+Mass is replaced by the inductance, damping is replaced by resistance and
+the spring constant is replaced by one over the capacitance.  The change in
+voltage becomes the forcing function.  Hence for constant voltage this is an
+unforced motion.
+
+\medskip
+
+\begin{diffyfloatingfigure}{1.45in}{1.75in}
+\diffypdfversion{\vspace*{-0.2cm}}
+\noindent
+\inputpdft{mv-pend}
+\end{diffyfloatingfigure}
+Our next example behaves like a mass and spring system only
+approximately. Suppose we have a
+mass $m$ on a pendulum of length $L$.  We wish to find an equation for
+the angle $\theta(t)$.  Let $g$ be the force of gravity.
+Elementary physics mandates that the equation is
+of the form
+\begin{equation*}
+\theta'' + \frac{g}{L} \sin \theta = 0 .
+\end{equation*}
+
+Let us derive this equation using \myindex{Newton's second law};
+force equals mass times acceleration.  The acceleration is
+$L \theta''$ and mass is $m$.  So $mL\theta''$ has to be equal
+to the tangential component of the force given by the gravity, that is
+$m g \sin \theta$ in the opposite direction.
+So $mL\theta'' = -mg \sin \theta$.
+The $m$ curiously cancels from the equation.
+
+Now we make our approximation.  For small $\theta$ we have that approximately
+$\sin \theta \approx \theta$.  This can be seen by looking at the graph.
+In \figurevref{mv:sinthetafig} we can see that for approximately
+$-0.5 < \theta < 0.5$ (in radians) the graphs of $\sin \theta$ and $\theta$ are almost the
+same.
+
+\begin{figure}[h!t]
+\capstart
+\begin{center}
+\diffyincludegraphics{width=3in}{width=4.5in}{mv-sintheta}
+\caption{The graphs of $\sin \theta$ and $\theta$ (in radians).\label{mv:sinthetafig}}
+\end{center}
+\end{figure}
+
+Therefore, when the swings are small, $\theta$ is always small and we can
+model the behavior by the simpler linear equation
+\begin{equation*}
+\theta'' + \frac{g}{L} \theta = 0 .
+\end{equation*}
+Note that the errors that we get from the approximation build up.
+So after a
+very long time, the behavior of the real system might be substantially
+different from our solution.  Also we will
+see that in a mass-spring system, the amplitude is independent of the
+period.
+This is not true for a pendulum.  Nevertheless, for reasonably short periods of time
+and small swings (for example if the pendulum is very long),
+the approximation is reasonably good.
+
+In real world problems it is often necessary to make these types of
+simplifications.  We must understand both the mathematics and
+the physics of the situation to see if the simplification is valid in the
+context of the questions we are trying to answer.
+
+\subsection{Free undamped motion}
+
+In this section we will only consider free or unforced motion,
+as we cannot yet solve nonhomogeneous equations.  Let us start with
+\myindex{undamped} motion where $c=0$.  We have the equation
+\begin{equation*}
+mx'' + kx = 0 .
+\end{equation*}
+If we divide by $m$ and let $\omega_0 = \sqrt{\nicefrac{k}{m}}$, then we can write the equation as
+\begin{equation*}
+x'' + \omega_0^2 x = 0 .
+\end{equation*}
+The general solution to this equation is
+\begin{equation*}
+x(t) = A \cos (\omega_0 t) + B \sin (\omega_0 t) .
+\end{equation*}
+By a trigonometric identity, we have that for two 
+different
+constants $C$ and $\gamma$, we have
+\begin{equation*}
+A \cos (\omega_0 t) + B \sin (\omega_0 t) =
+C \cos ( \omega_0 t - \gamma ) .
+\end{equation*}
+It is not hard to compute that $C= \sqrt{A^2 + B^2}$ and $\tan \gamma =
+\nicefrac{B}{A}$.  Therefore, we let
+$C$ and $\gamma$ be our arbitrary constants and write
+$x(t) = C \cos ( \omega_0 t - \gamma )$.
+
+\begin{exercise}
+Justify the above identity and verify the equations for $C$
+and $\gamma$.  Hint: Start with
+$\cos (\alpha-\beta) = \cos (\alpha) \cos
+(\beta) + \sin (\alpha)\sin (\beta)$ and multiply by $C$.  Then think what should
+$\alpha$ and $\beta$ be.
+\end{exercise}
+
+While it is generally easier to use the first form with $A$ and $B$
+to solve for the initial conditions, the second form is much
+more natural.  The constants $C$ and $\gamma$ have very nice interpretation.
+We look at the form of the solution
+\begin{equation*}
+x(t) = C \cos ( \omega_0 t - \gamma ) .
+\end{equation*}
+We can see that the \emph{\myindex{amplitude}} is $C$, $\omega_0$ is the (angular)
+frequency, and $\gamma$ is the so-called \emph{\myindex{phase shift}}.
+The phase shift just shifts the
+graph left or right.
+We call $\omega_0$ the \emph{\myindex{natural (angular) frequency}}.
+This entire setup is usually  
+called \emph{\myindex{simple harmonic motion}}.
+
+Let us pause to explain the word \emph{angular}\index{angular frequency}
+before the word \emph{frequency}.
+The units of
+$\omega_0$ are radians per unit time, not cycles per unit time 
+as is the usual measure of frequency.  Because one cycle is $2
+\pi$ radians, the usual frequency is given by $\frac{\omega_0}{2\pi}$.
+It is simply a matter of where we put the constant $2\pi$, and that is a
+matter of taste.
+
+The \emph{\myindex{period}} of the motion is one over the frequency (in cycles per unit
+time) and hence $\frac{2\pi}{\omega_0}$.  That is the amount of time it takes
+to complete one full cycle.
+
+
+\begin{example}
+Suppose that $m=\unit[2]{kg}$ and $k=\unitfrac[8]{N}{m}$.
+The whole mass and spring setup is sitting on
+a truck that was traveling at \unitfrac[1]{m}{s}.
+The truck crashes and hence stops.
+The mass was held in place 0.5 meters forward from the rest position.  During
+the crash the mass gets loose.  That is, the mass is now 
+moving forward at \unitfrac[1]{m}{s}, while the other end of the
+spring is held
+in place.  The mass therefore starts oscillating.
+What is the frequency of the resulting oscillation and what is the amplitude.
+The units are the mks units\index{mks units} (meters-kilograms-seconds).
+
+The setup means that the mass was at half a meter in the positive
+direction during the crash and
+relative to the wall the spring is mounted to, the mass was moving forward
+(in the positive direction) at \unitfrac[1]{m}{s}.  This gives us the initial
+conditions.
+
+So the equation with initial conditions is
+\begin{equation*}
+2 x'' + 8 x = 0 , \qquad x(0) = 0.5, \qquad x'(0) = 1.
+\end{equation*}
+We can directly compute $\omega_0 = \sqrt{\nicefrac{k}{m}} = \sqrt{4} = 2$.
+Hence the angular frequency is 2.  The usual frequency in Hertz (cycles per
+second) is $\nicefrac{2}{2\pi} = \nicefrac{1}{\pi} \approx 0.318$.
+
+The general solution is
+\begin{equation*}
+x(t) = A \cos (2t) + B \sin (2t) .
+\end{equation*}
+Letting $x(0) = 0.5$ means $A = 0.5$.  Then $x'(t) = - 2(0.5) \sin (2t)
++ 2B \cos (2t)$.
+Letting $x'(0) = 1$ we get $B = 0.5$.  Therefore, the amplitude is
+$C = \sqrt{A^2+B^2} = \sqrt{0.25+0.25} = \sqrt{0.5} \approx 0.707$.  The solution is
+\begin{equation*}
+x(t) = 0.5 \cos (2t) + 0.5 \sin (2t) .
+\end{equation*}
+A plot of $x(t)$ is shown in \figurevref{mv:undampedfig}.
+
+\begin{figure}[h!t]
+%\begin{floatingfigure}{3.1in}
+\capstart
+\begin{center}
+\diffyincludegraphics{width=3in}{width=4.5in}{mv-undamped}
+\caption{Simple undamped oscillation.\label{mv:undampedfig}}
+\end{center}
+\end{figure}
+%\end{floatingfigure}
+\end{example}
+
+In general, for free undamped motion, a solution of the
+form
+\begin{equation*}
+x(t) = A \cos (\omega_0 t) + B \sin (\omega_0 t) ,
+\end{equation*}
+corresponds to the initial conditions $x(0) = A$ and $x'(0) = \omega_0 B$.
+Therefore, it is easy to figure out $A$ and $B$ from the initial
+conditions. 
+The amplitude and the phase shift can then be computed from $A$ and $B$.
+In the example, we have already found the amplitude $C$.  Let us
+compute the phase shift.  We know that $\tan \gamma = \nicefrac{B}{A} = 1$.  We take the
+arctangent of 1 and get $\nicefrac{\pi}{4}$ or approximately 0.785.
+We still need to check if this $\gamma$ is in the correct quadrant
+(and add $\pi$ to $\gamma$ if it is not).
+Since both $A$ and $B$ are positive, then $\gamma$ should be in the first
+quadrant, $\nicefrac{\pi}{4}$ radians is in the first quadrant, so $\gamma =
+\nicefrac{\pi}{4}$.
+
+Note: Many
+calculators and computer software do not only have the
+\texttt{atan}\index{atan} function
+for arctangent, but also what is sometimes called \texttt{atan2}\index{atan2}.
+This function
+takes two arguments, $B$ and $A$, and returns a $\gamma$ in the
+correct quadrant for you.
+
+\subsection{Free damped motion}
+
+Let us now focus on \myindex{damped} motion.  Let us rewrite the equation
+\begin{equation*}
+m x'' + c x' + kx = 0,
+\end{equation*}
+as
+\begin{equation*}
+x'' + 2p x' + \omega_0^2 x = 0,
+\end{equation*}
+where
+\begin{equation*}
+\omega_0 = \sqrt{\frac{k}{m}}, \qquad p = \frac{c}{2m} .
+\end{equation*}
+The characteristic equation is
+\begin{equation*}
+r^2 + 2 pr + \omega_0^2 = 0 .
+\end{equation*}
+Using the quadratic formula we get that the roots are
+\begin{equation*}
+r = -p \pm \sqrt{p^2 - \omega_0^2} .
+\end{equation*}
+The form of the solution depends on whether we get complex or real roots.
+We get real roots if and only if the following number is nonnegative:
+\begin{equation*}
+p^2 - \omega_0^2 = {\left( \frac{c}{2m} \right)}^2 - \frac{k}{m}
+= \frac{c^2 - 4km}{4m^2} .
+\end{equation*}
+The sign of $p^2-\omega_0^2$ is the same as the sign of
+$c^2 - 4km$.  Thus we get real roots if and only if $c^2-4km$ is
+nonnegative, or in other words if $c^2 \geq 4km$.
+
+\subsubsection{Overdamping}
+
+When
+$c^2 - 4km > 0$, we say the system is \emph{\myindex{overdamped}}.  In this case,
+there are two distinct real roots $r_1$ and $r_2$.  Both roots are
+negative:  As $\sqrt{p^2 - \omega_0^2}$ is always less than $p$,
+then
+$-p \pm \sqrt{p^2 - \omega_0^2}$ is negative in either case.
+
+%\begin{figure}[h!t]
+\begin{diffyfloatingfigurepdfonly}{3.1in}
+\capstart
+\begin{center}
+\diffypdfversion{\vspace*{-0.4cm}}
+\diffyincludegraphics{width=3in}{width=4.5in}{mv-overdamped}
+\caption{Overdamped motion for several different initial conditions.\label{mv:overdampedfig}}
+\diffypdfversion{\vspace*{0.4cm}}
+\end{center}
+%\end{figure}
+\end{diffyfloatingfigurepdfonly}
+
+The solution is
+\begin{equation*}
+x(t) = C_1 e^{r_1 t} + C_2 e^{r_2 t} .
+\end{equation*}
+Since $r_1, r_2$ are negative, $x(t) \to 0$ as $t \to \infty$.
+Thus the mass will tend towards the rest position as
+time goes to infinity.  For a few sample plots for different initial
+conditions, see \figurevref{mv:overdampedfig}.
+
+Do note that no oscillation happens.  In fact, the graph will cross the $x$
+axis at most once.  To see why, we try to solve
+$0 = C_1 e^{r_1 t} + C_2 e^{r_2 t}$.
+Therefore, $C_1 e^{r_1 t} = - C_2 e^{r_2 t}$ and using laws of exponents we
+obtain
+\begin{equation*}
+\frac{-C_1}{C_2} = e^{(r_2-r_1) t} .
+\end{equation*}
+This equation has at most one solution $t \geq 0$.
+For some initial conditions the graph will never cross the $x$ axis, as is
+evident from the sample graphs.
+
+\begin{example}
+Suppose the mass is released from rest.  That is
+$x(0) = x_0$ and $x'(0) = 0$.
+Then
+\begin{equation*}
+x(t) = \frac{x_0}{r_1-r_2} \left(r_1 e^{r_2 t} - r_2 e^{r_1 t} \right) .
+\end{equation*}
+It is not hard to see that this satisfies the initial conditions.
+\end{example}
+
+\subsubsection{Critical damping}
+
+When
+$c^2 - 4km = 0$, we say the system is \emph{\myindex{critically damped}}.  In this case,
+there is one root of multiplicity 2 and this root is $-p$.  Our solution is
+\begin{equation*}
+x(t) = C_1 e^{-pt} + C_2 t e^{-pt} .
+\end{equation*}
+The behavior of a critically damped system is very similar to an overdamped
+system.  After all a critically damped system is in some sense a limit
+of overdamped systems.  Since these equations are really only an
+approximation to the real world, in reality we are never critically
+damped, it is a place we can only reach in theory.  We are always
+a little bit underdamped or a little bit overdamped.  It is better not to
+dwell on critical damping.
+
+\subsubsection{Underdamping}
+
+%\begin{figure}[h!t]
+\begin{diffyfloatingfigurepdfonly}{3.1in}
+\capstart
+\begin{center}
+\diffyincludegraphics{width=3in}{width=4.5in}{mv-underdamped}
+\caption{Underdamped motion with the envelope curves shown.\label{mv:underdampedfig}}
+\end{center}
+%\end{figure}
+\end{diffyfloatingfigurepdfonly}
+
+When
+$c^2 - 4km < 0$, we say the system is \emph{\myindex{underdamped}}.  In this case,
+the roots are complex.
+\begin{equation*}
+\begin{split}
+r & =
+-p \pm \sqrt{p^2 - \omega_0^2} \\
+& = 
+-p \pm \sqrt{-1}\sqrt{\omega_0^2 - p^2} \\
+& = 
+-p \pm i \omega_1 ,
+\end{split}
+\end{equation*}
+where $\omega_1 =\sqrt{\omega_0^2 - p^2}$.  Our solution is
+\begin{equation*}
+x(t) = e^{-pt} \bigl( A \cos (\omega_1 t) + B \sin (\omega_1 t) \bigr) ,
+\end{equation*}
+or
+\begin{equation*}
+x(t) = C e^{-pt} \cos ( \omega_1 t - \gamma ) .
+\end{equation*}
+An example plot is given in \figurevref{mv:underdampedfig}.  Note that we
+still have that $x(t) \to 0$ as $t \to \infty$.
+
+In the figure
+we also show the \emph{\myindex{envelope curves}}
+$C e^{-pt}$ and $-C e^{-pt}$.  The solution
+is the oscillating line between the two envelope curves.
+The envelope curves give
+the maximum amplitude of the oscillation at any given point in time.  For
+example if you are bungee jumping, you are really interested in computing the
+envelope curve so that you do not hit the concrete with your head.
+
+The phase shift $\gamma$ just shifts the graph left or right but within the
+envelope curves (the envelope curves do not change if $\gamma$
+changes).
+
+Finally note that the angular \emph{\myindex{pseudo-frequency}}
+(we do not call it a frequency
+since the solution is not really a periodic function) $\omega_1$ becomes
+smaller when the damping $c$ (and hence $p$) becomes larger.  This makes sense.
+When we change the damping just a little bit, we do not
+expect the behavior of the solution to change dramatically.
+If we keep making $c$ larger, then
+at some point the solution should start looking 
+like the solution for critical damping or overdamping, where no oscillation
+happens.  So if $c^2$ approaches $4km$, we want $\omega_1$ to approach 0.
+
+On the other hand when $c$ becomes smaller, $\omega_1$ approaches $\omega_0$
+($\omega_1$ is always smaller than $\omega_0$), and the solution looks more and more like the steady
+periodic motion of the undamped case.  The envelope curves become flatter and
+flatter as $c$ (and hence $p$) goes to 0.
+
+\subsection{Exercises}
+
+\begin{exercise} \label{mv:ex1}
+Consider a mass and spring system with a mass $m=2$, spring constant $k=3$, and
+damping constant $c=1$.
+a) Set up and find the general solution of the system.
+b) Is the system underdamped, overdamped or critically damped?
+c) If the system is not critically damped, find a $c$ that makes the system
+critically damped.
+\end{exercise}
+
+\begin{exercise}
+Do \exerciseref{mv:ex1} for
+$m=3$, $k=12$, and $c=12$.
+\end{exercise}
+
+\begin{exercise} \label{mv:exwt1}
+Using the mks units (meters-kilograms-seconds)\index{mks units},
+suppose you have a spring with spring constant \unitfrac[4]{N}{m}.
+You want to use
+it to weigh items.  Assume no friction.  You place the mass on
+the spring and put it in motion.
+a) You count and find that the frequency is
+\unit[0.8]{Hz} (cycles per second).  What is the mass?
+b) Find a formula for the mass $m$
+given the frequency $\omega$ in \unit{Hz}.
+\end{exercise}
+
+\begin{exercise}
+Suppose we add possible friction to \exerciseref{mv:exwt1}.
+Further, suppose you do not know the spring constant, but you have
+two reference weights \unit[1]{kg} and \unit[2]{kg} to calibrate your setup.
+You put each in motion on your spring and measure the
+frequency.  For the \unit[1]{kg}
+weight you measured \unit[1.1]{Hz}, for the \unit[2]{kg} weight you
+measured \unit[0.8]{Hz}.  a) Find $k$ (spring constant) and $c$ (damping constant).
+b) Find a formula for the mass in terms of the frequency in Hz.  \emph{Note that
+there may be more than one possible mass for a given frequency.}
+c) For an unknown object you measured \unit[0.2]{Hz}, what is the mass of the
+object?  Suppose that you know that the mass of the unknown object
+is more than a kilogram.
+\end{exercise}
+
+\begin{exercise}
+Suppose you wish to measure the friction a mass of \unit[0.1]{kg} experiences
+as it slides along a floor (you wish to find $c$).  You have a spring with
+spring constant $k=\unitfrac[5]{N}{m}$.  You take the spring, you attach it
+to the mass and fix it to a wall.  Then you pull on the spring and let the
+mass go.  You find that the mass oscillates with frequency \unit[1]{Hz}.
+What is the friction?
+\end{exercise}
+
+\setcounter{exercise}{100}
+
+\begin{exercise}
+A mass of $2$ kilograms is on a spring with spring constant $k$ newtons per
+meter with no damping.  Suppose the system is at rest and at time $t=0$ the
+mass is kicked and starts traveling at 2 meters per second.  How large
+does $k$ have to be to so that the mass does not go further than 3 meters
+from the rest position?
+\end{exercise}
+\exsol{%
+$k=\nicefrac{8}{9}$ (and larger)
+}
+
+\begin{exercise}
+Suppose we have an RLC circuit with a resistor of 100 milliohms (0.1 ohms),
+inductor of inductance of 50 millihenries (0.05 henries), and a capacitor of 5 farads, with
+constant voltage.  a) Set up the ODE equation for the current $I$. b) Find
+the general solution.  c) Solve for $I(0) = 10$ and $I'(0) = 0$.
+\end{exercise}
+\exsol{%
+\\
+a) $0.05 I'' + 0.1 I' + (\nicefrac{1}{5}) I = 0$
+\\
+b) $x(t) = C e^{-t} \cos(\sqrt{3} \, t - \gamma)$
+\\
+c) $x(t) = 10 e^{-t} \cos(\sqrt{3} \, t) + \frac{10}{\sqrt{3}} e^{-t}
+\sin(\sqrt{3} \, t)$
+}
+
+\begin{exercise}
+A \unit[5000]{kg} railcar hits a bumper (a spring) at \unitfrac[1]{m}{s},
+and the spring compresses by \unit[0.1]{m}.  Assume no damping.
+a) Find $k$. b) Find out how far does the spring compress when a
+\unit[10000]{kg} railcar hits the spring at the same speed. c) If the spring
+would break if it compresses further than \unit[0.3]{m}, what is the maximum
+mass of a railcar that can hit it at \unitfrac[1]{m}{s}? d) What is
+the maximum mass of a railcar that can hit the spring without breaking
+at \unitfrac[2]{m}{s}?
+\end{exercise}
+\exsol{%
+a) $k=500000$,
+b) $\frac{1}{5\sqrt{2}} \approx 0.141$,
+c) \unit[45000]{kg},
+d) \unit[11250]{kg}
+}
+
+\begin{exercise}
+A mass of $m$ \unit{kg} is on a spring with $k=\unitfrac[3]{N}{m}$ and
+$c=\unitfrac[2]{Ns}{m}$.  Find the mass $m_0$ for which there is critical
+damping.  If $m < m_0$, does the system oscillate or not, that is, is it
+underdamped or overdamped.
+\end{exercise}
+\exsol{%
+$m_0 = \frac{1}{3}$.  If $m < m_0$, then the system is overdamped and will
+not oscillate.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sectionnewpage
+\section{Nonhomogeneous equations}
+\label{sec:nonhom}
+
+\sectionnotes{2 lectures\EPref{, \S3.5 in \cite{EP}}\BDref{,
+\S3.5 and \S3.6 in \cite{BD}}}
+
+\subsection{Solving nonhomogeneous equations}
+
+We have solved linear constant coefficient homogeneous 
+equations.
+What about nonhomogeneous linear ODEs?
+For example, the equations for forced mechanical vibrations.
+%Now suppose that we drop the requirement of homogeneity.
+%This
+%usually corresponds to some outside input to the system we are trying to
+%model, like the forcing function for the mechanical vibrations of last
+%section.
+That is, suppose we have an equation such as
+\begin{equation} \label{eq3.5:nh}
+y'' + 5y'+ 6y = 2x+1 .
+\end{equation}
+%We still say this equation is constant coefficient equation.  We
+%only require constants in front of the $y''$, $y'$, and $y$.
+
+We will write $Ly = 2x+1$ when the exact form of the operator is not
+important.
+We solve \eqref{eq3.5:nh} in the following manner.  First, we find the general
+solution $y_c$
+to the \emph{\myindex{associated homogeneous equation}}
+\begin{equation} \label{eq3.5:h}
+y'' + 5y'+ 6y = 0 .
+\end{equation}
+We call $y_c$ the \emph{\myindex{complementary solution}}.
+Next, we find a
+single \emph{\myindex{particular solution}} $y_p$ to \eqref{eq3.5:nh} in some
+way.  Then
+\begin{equation*}
+y = y_c + y_p
+\end{equation*}
+is the general solution to \eqref{eq3.5:nh}.  
+We have $L y_c = 0$ and $L y_p = 2x+1$.  As
+$L$ is a \emph{\myindex{linear operator}}
+we verify that $y$ is a solution, $L y = L ( y_c + y_p) = L y_c + L y_p = 0
++ (2x+1)$.  Let us see
+why we obtain the \emph{general} solution.
+
+Let $y_p$ and $\tilde{y}_p$ be two different
+particular solutions 
+to \eqref{eq3.5:nh}.
+Write the difference as
+$w = y_p - \tilde{y}_p$.  Then plug $w$
+into the left hand side of the equation to get
+\begin{equation*}
+w'' + 5w'+ 6w =
+(y_p'' + 5y_p'+ 6y_p) -
+(\tilde{y}_p'' + 5\tilde{y}_p'+ 6\tilde{y}_p) =
+(2x+1) - (2x+1) = 0 .
+\end{equation*}
+Using the operator notation the calculation becomes simpler.
+%As $L$ is a \emph{\myindex{linear operator}} and so we could just
+As $L$ is a linear operator we write
+\begin{equation*}
+Lw = L(y_p - \tilde{y}_p) =
+Ly_p - L\tilde{y}_p =
+(2x+1)-(2x+1) = 0 .
+\end{equation*}
+So $w = y_p - \tilde{y}_p$ is a solution to \eqref{eq3.5:h}, that is
+$Lw = 0$.  Any two
+solutions of \eqref{eq3.5:nh} differ by a solution to the homogeneous
+equation \eqref{eq3.5:h}.  The solution $y = y_c + y_p$ includes \emph{all}
+solutions to \eqref{eq3.5:nh},
+since $y_c$ is the general solution to the associated homogeneous equation.
+
+\begin{theorem}
+Let $Ly=f(x)$ be a linear ODE (not necessarily constant
+coefficient).  Let $y_c$ be the complementary solution
+(the general
+solution to the associated homogeneous equation $Ly = 0$) and let $y_p$
+be any particular solution to $Ly=f(x)$.  Then the general
+solution to $Ly=f(x)$ is
+\begin{equation*}
+y = y_c + y_p.
+\end{equation*}
+\end{theorem}
+
+The moral of the story is that we can find the particular solution in any old
+way.  If we find a different particular solution (by a different method,
+or simply by guessing),
+then we still get the same general solution.
+The formula may 
+look different, and the constants we will have to choose to
+satisfy
+the initial conditions may be different, but it is the same solution.
+
+\subsection{Undetermined coefficients}
+\index{undetermined coefficients}
+
+The trick is to somehow, in a smart way, guess one particular solution to
+\eqref{eq3.5:nh}.  Note that $2x+1$ is a polynomial, and the left hand 
+side of the equation will be a polynomial if we let $y$ be a polynomial of
+the same degree.  Let us try
+\begin{equation*}
+y_p = Ax + B .
+\end{equation*}
+We plug in to obtain
+\begin{equation*}
+y_p'' + 5y_p'+ 6y_p =
+(Ax+B)'' + 5(Ax+B)' + 6(Ax+B) = 
+0 + 5A + 6Ax + 6B = 6Ax+ (5A+6B) .
+\end{equation*}
+So $6Ax+(5A+6B) = 2x+1$.  Therefore, $A = \nicefrac{1}{3}$ and $B = \nicefrac{-1}{9}$.
+That means
+$y_p = \frac{1}{3}\, x - \frac{1}{9} = \frac{3x-1}{9}$.
+Solving the complementary
+problem (exercise!) we get
+\begin{equation*}
+y_c = C_1 e^{-2x} + C_2 e^{-3x}.
+\end{equation*}
+Hence the general solution to \eqref{eq3.5:nh} is
+\begin{equation*}
+y = C_1 e^{-2x} + C_2 e^{-3x} + \frac{3x-1}{9} .
+\end{equation*}
+Now suppose we are further given some initial conditions.  For example, $y(0) = 0$ and
+$y'(0) = \nicefrac{1}{3}$.  First find $y' = - 2C_1 e^{-2x} - 3C_2 e^{-3x}
++ \nicefrac{1}{3}$.
+Then
+\begin{equation*}
+0 = y(0) = C_1 + C_2 -\frac{1}{9} , \qquad
+\frac{1}{3} = y'(0) = - 2C_1 - 3C_2 + \frac{1}{3} .
+\end{equation*}
+We solve to get $C_1 = \nicefrac{1}{3}$ and $C_2 = \nicefrac{-2}{9}$.
+The particular solution we want is
+\begin{equation*}
+y(x) = \frac{1}{3} e^{-2x} - \frac{2}{9} e^{-3x} + \frac{3x-1}{9} =
+\frac{3 e^{-2x} - 2 e^{-3x} + 3x-1}{9} .
+\end{equation*}
+
+\begin{exercise}
+Check that $y$ really solves the equation \eqref{eq3.5:nh}
+and the given initial conditions.
+\end{exercise}
+
+Note: A common mistake is to solve for constants using the initial
+conditions with $y_c$ and only add the particular solution $y_p$ after that.
+That will \emph{not} work.  You need to first compute $y = y_c + y_p$ and
+\emph{only then} solve for the constants using the initial conditions.
+
+\medskip
+
+A right hand side consisting of exponentials, sines, and cosines
+can be handled similarly.  For example,
+\begin{equation*}
+y''+2y'+2y = \cos (2x) .
+\end{equation*}
+Let us find some $y_p$.  We start by guessing the solution
+includes some multiple of $\cos(2x)$.
+We may have to also
+add a multiple of $\sin (2x)$ to our guess since derivatives of cosine are
+sines.  We try
+\begin{equation*}
+y_p = A \cos (2x) + B \sin (2x) .
+\end{equation*}
+We plug $y_p$ into the equation and we get
+\begin{equation*}
+-4 A \cos (2x) - 4 B \sin (2x) 
+-4A \sin (2x) + 4B \cos (2x)
++ 2A \cos (2x) + 2B \sin (2x)
+= \cos (2x) .
+\end{equation*}
+The left hand side must equal to right hand side.  We group terms and
+we get that $-4A + 4B + 2A = 1$ and
+$-4B - 4A + 2B = 0$.  So $-2A+4B =1$ and $2A+B=0$ and hence
+$A=\nicefrac{-1}{10}$ and $B=\nicefrac{1}{5}$.  So
+\begin{equation*}
+y_p = A \cos (2x) + B \sin (2x) = \frac{-\cos (2x) + 2 \sin (2x)}{10} .
+\end{equation*}
+
+Similarly, if the right hand side contains exponentials we try
+exponentials.  For example, for
+%if the equation is (where $L$ is a linear constant coefficient operator)
+\begin{equation*}
+Ly = e^{3x},
+\end{equation*}
+we will try $y = A e^{3x}$ as our guess and try to solve for $A$.
+
+\medskip
+
+When the right hand side is a multiple of sines, cosines, exponentials,
+and polynomials, we can use the product rule
+for differentiation to come up with a guess.  We
+need to guess a
+form for $y_p$ such that $Ly_p$ is of the same form, and 
+has all the terms needed to for 
+the right hand side.
+For example,
+\begin{equation*}
+Ly = (1+3x^2)\,e^{-x}\cos (\pi x) .
+\end{equation*}
+For this equation, we will guess
+\begin{equation*}
+y_p = (A + Bx + Cx^2)\,e^{-x} \cos (\pi x) + 
+(D + Ex + Fx^2)\,e^{-x} \sin (\pi x) .
+\end{equation*}
+We will plug in and then hopefully get equations that we can solve for
+$A,B,C,D,E,$ and $F$.  As you can see this can make for a very long and
+\myindex{tedious} % a bit of fun
+calculation very quickly.  C'est \myindex{la vie}! %bit more fun
+
+\medskip
+
+There is one hiccup in all this.  It could be that our guess actually
+solves the associated homogeneous equation.  That is, suppose we have
+\begin{equation*}
+y'' - 9y = e^{3x} .
+\end{equation*}
+We would love to guess $y = Ae^{3x}$, but if we plug this into the left
+hand side of the equation we get
+\begin{equation*}
+y''-9y = 9Ae^{3x} - 9Ae^{3x} = 0 \not= e^{3x} .
+\end{equation*}
+There is no way we can choose $A$ to make the left hand side be $e^{3x}$.
+The trick in
+this case
+is to multiply our guess by $x$ to get rid of duplication with the
+complementary solution.  That is first we compute $y_c$ (solution to $Ly =
+0$)
+\begin{equation*}
+y_c = C_1 e^{-3x} + C_2 e^{3x} ,
+\end{equation*}
+and we note that the $e^{3x}$ term is a duplicate with our desired guess.
+We modify our guess to $y = Axe^{3x}$ and notice there is no
+duplication anymore.  Let us try.  Note that
+$y' = Ae^{3x} + 3Axe^{3x}$ and 
+$y'' = 6Ae^{3x} + 9Axe^{3x}$.  So
+\begin{equation*}
+y'' -9y = 6Ae^{3x} + 9Axe^{3x} - 9Axe^{3x} = 
+6Ae^{3x} .
+\end{equation*}
+Thus $6Ae^{3x}$ is supposed to equal $e^{3x}$.  Hence,
+$6A = 1$ and so $A=\nicefrac{1}{6}$.  We can now write the general
+solution as
+\begin{equation*}
+y = y_c + y_p = 
+C_1 e^{-3x} + C_2 e^{3x} + \frac{1}{6}\,xe^{3x} .
+\end{equation*}
+
+\medskip
+
+It is possible that
+multiplying by $x$ does not get rid of all
+duplication.  For example,
+\begin{equation*}
+y''-6y'+9y = e^{3x} .
+\end{equation*}
+The complementary solution is
+$y_c = C_1 e^{3x} + C_2 x e^{3x}$.  Guessing $y=A xe^{3x}$
+would not get us anywhere.  In this case we want to guess
+$y_p = Ax^2e^{3x}$. Basically, we want to multiply our guess by $x$
+until all duplication is gone.  \emph{But no more!}  Multiplying too many
+times will not work.
+
+\medskip
+
+Finally, what if the right hand side has several terms, such as
+\begin{equation*}
+Ly = e^{2x} + \cos x .
+\end{equation*}
+In this case we find $u$ that solves $Lu = e^{2x}$ and $v$ that
+solves $Lv = \cos x$ (that is, do each term separately).  Then note
+that if $y = u+ v$, then $Ly = e^{2x} + \cos x$.  This is because
+$L$ is linear; we have
+$Ly = L(u+v) = Lu + Lv = e^{2x} + \cos x$.
+
+\subsection{Variation of parameters}
+
+The method of undetermined coefficients will work for many basic
+problems that crop up.  But it does not work all the time.  It only works
+when the right hand side of the equation $Ly = f(x)$ has only finitely many
+linearly independent derivatives, so that we can write a guess that consists
+of them all.  Some equations are a bit tougher.  Consider
+\begin{equation*}
+y''+y = \tan x .
+\end{equation*}
+Note that each new derivative of $\tan x$ looks completely different and
+cannot be written as a linear combination of the previous derivatives.
+We get $\sec^2 x$, $2\sec^2 x \tan x$, etc\ldots.
+
+This equation calls for a different method.  We present the method of
+\emph{\myindex{variation of parameters}}, which will handle any equation of
+the form $Ly = f(x)$,
+provided we can solve certain integrals.  For simplicity, we restrict
+ourselves to second order constant coefficient equations,
+but the method works for higher
+order equations just as well (the computations become more
+\myindex{tedious}). % a bit of fun 
+The method also works for equations with nonconstant coefficients,
+provided we can solve the associated homogeneous equation.
+
+Perhaps it is best to explain this method by example.
+Let us try to solve the equation
+\begin{equation*}
+Ly = y''+y = \tan x .
+\end{equation*}
+First we find the complementary solution (solution to $Ly_c = 0$).  
+We get $y_c = C_1 y_1 + C_2 y_2$, where $y_1 = \cos x$ and $y_2 = \sin x$.
+To find a particular solution to the nonhomogeneous equation we try
+\begin{equation*}
+y_p = y = u_1 y_1 + u_2 y_2 ,
+\end{equation*}
+where $u_1$ and $u_2$ are \emph{functions} and not constants.
+We are trying to satisfy $Ly = \tan x$.  That gives us one condition on the
+functions $u_1$ and $u_2$.
+Compute (note the product rule!)
+\begin{equation*}
+y' = (u_1' y_1 + u_2' y_2) + (u_1 y_1' + u_2 y_2').
+\end{equation*}
+We can still
+impose one more condition at our discretion to simplify computations (we have two unknown functions,
+so we should be allowed two conditions).  We require that
+$(u_1' y_1 + u_2' y_2) = 0$.  This makes computing the second derivative
+easier.
+\begin{align*}
+& y' = u_1 y_1' + u_2 y_2' , \\
+& y'' = (u_1' y_1' + u_2' y_2') + (u_1 y_1'' + u_2 y_2'') .
+\end{align*}
+Since $y_1$ and $y_2$ are solutions to $y''+y = 0$, we know
+that $y_1'' = - y_1$
+and $y_2'' = - y_2$.
+(Note: If the equation was instead $y''+p(x)y' +q(x)y = 0$ we would have
+$y_i'' = -p(x)y_i' -q(x)y_i$.) So 
+\begin{equation*}
+y'' = (u_1' y_1' + u_2' y_2') - (u_1 y_1 + u_2 y_2) .
+\end{equation*}
+We have $(u_1 y_1 + u_2 y_2) = y$ and so
+\begin{equation*}
+y'' = (u_1' y_1' + u_2' y_2') - y ,
+\end{equation*}
+and hence
+\begin{equation*}
+y'' + y = Ly = u_1' y_1' + u_2' y_2' .
+\end{equation*}
+For $y$ to satisfy $Ly = f(x)$ we must have
+$f(x) = u_1' y_1' + u_2' y_2'$.
+
+So what we need to solve are the two equations (conditions) we imposed
+on $u_1$ and $u_2$:
+\begin{equation*}
+\boxed{~~
+\begin{aligned}
+& u_1' y_1 + u_2' y_2 = 0 ,\\
+& u_1' y_1' + u_2' y_2' = f(x) .
+\end{aligned}
+~~}
+\end{equation*}
+We now solve for $u_1'$ and $u_2'$ in terms of $f(x)$, $y_1$ and $y_2$.
+We always get these formulas for any $Ly = f(x)$, where $Ly =
+y''+p(x)y'+q(x)y$.  There is a general
+formula for the solution we can just plug into, but it is better to
+just repeat what we do below.  In our case the two equations become
+\begin{align*}
+u_1' \cos (x) + u_2' \sin (x) &= 0 ,\\
+-u_1' \sin (x) + u_2' \cos (x) &= \tan (x) .
+\end{align*}
+Hence
+\begin{align*}
+u_1' \cos (x) \sin (x) + u_2' \sin^2 (x) & = 0 ,\\
+-u_1' \sin (x) \cos (x) + u_2' \cos^2 (x) & = \tan (x) \cos (x) = \sin (x) .
+\end{align*}
+And thus
+\begin{align*}
+& u_2' \bigl(\sin^2 (x) + \cos^2 (x)\bigr) = \sin (x) , \\
+& u_2' = \sin (x) , \\
+& u_1' = \frac{- \sin^2 (x)}{\cos (x)} = - \tan (x) \sin (x) .
+\end{align*}
+Now we need to integrate $u_1'$ and $u_2'$ to get $u_1$ and $u_2$.
+\begin{align*}
+& u_1 = \int u_1'~dx 
+= \int - \tan (x) \sin (x)~dx
+= \frac{1}{2}
+\ln \left\lvert \frac{\sin (x)-1}{\sin (x) + 1} \right\rvert
++ \sin (x) , \\
+& u_2 = \int u_2'~dx 
+= \int \sin (x)~dx = -\cos (x) .
+\end{align*}
+So our particular solution is
+\begin{multline*}
+y_p = u_1 y_1 + u_2 y_2 =
+\frac{1}{2} \cos (x) \ln \left\lvert \frac{\sin (x)-1}{\sin (x) + 1}
+\right\rvert
++ \cos (x) \sin (x)
+-\cos (x) \sin (x)
+= \\ =
+\frac{1}{2} \cos (x) \ln \left\lvert \frac{\sin (x)-1}{\sin (x) + 1}
+\right\rvert .
+\end{multline*}
+The general solution to $y'' + y = \tan x$ is, therefore,
+\begin{equation*}
+y = C_1 \cos (x) + C_2 \sin (x) +
+\frac{1}{2} \cos (x) \ln \left\lvert \frac{\sin (x)-1}{\sin (x) + 1}
+\right\rvert .
+\end{equation*}
+
+\subsection{Exercises}
+
+\begin{exercise}
+Find a particular solution of
+$y''-y' -6y = e^{2x}$.
+\end{exercise}
+
+\begin{exercise}
+Find a particular solution of
+$y''-4y' +4y = e^{2x}$.
+\end{exercise}
+
+\begin{exercise}
+Solve the initial value problem
+$y''+9y = \cos (3x) + \sin (3x)$ for $y(0) = 2$, $y'(0) = 1$.
+\end{exercise}
+
+\begin{exercise}
+Set up the form of the particular solution but do not solve
+for the coefficients for $y^{(4)}-2y'''+y'' = e^x$.
+\end{exercise}
+
+\begin{exercise}
+Set up the form of the particular solution but do not solve
+for the coefficients for $y^{(4)}-2y'''+y'' = e^x + x + \sin x$.
+\end{exercise}
+
+\begin{exercise}
+a) Using variation of parameters find a particular solution of
+$y''-2y'+y = e^x$.  b)~Find a particular solution using undetermined
+coefficients.  c)~Are the two solutions you found the same?
+See also \exerciseref{exercise:diffvarparunder}.
+\end{exercise}
+
+\begin{exercise}
+Find a particular solution of
+$y''-2y' +y = \sin (x^2)$.  It is OK to leave the answer as a definite
+integral.
+\end{exercise}
+
+\begin{exercise}
+For an arbitrary constant $c$ find a particular solution
+to $y''-y=e^{cx}$.  Hint: Make sure to handle every possible real $c$.
+\end{exercise}
+
+\begin{exercise} \label{exercise:diffvarparunder}
+a) Using variation of parameters find a particular solution of
+$y''-y = e^x$.  b)~Find a particular solution using undetermined
+coefficients.  c)~Are the two solutions you found the same?
+What is going on?
+\end{exercise}
+
+\setcounter{exercise}{100}
+
+\begin{exercise}
+Find a particular solution to $y''-y'+y=2\sin(3x)$
+\end{exercise}
+\exsol{%
+$y=\frac{-16\sin(3x)+6\cos(3x)}{73}$
+}
+
+\begin{exercise}
+a) Find a particular solution to $y''+2y=e^x + x^3$.
+b) Find the general solution.
+\end{exercise}
+\exsol{%
+a) $y=\frac{2e^x+3x^3-9x}{6}$,
+b) $y=C_1 \cos(\sqrt{2} x) + C_2 \sin(\sqrt{2} x) + \frac{2e^x+3x^3-9x}{6}$
+}
+
+\begin{exercise}
+Solve $y''+2y'+y = x^2$, $y(0)=1$, $y'(0)=2$.
+\end{exercise}
+\exsol{%
+$y(x) = x^2-4 x+6+e^{-x}(x-5)$
+}
+
+\begin{exercise}
+Use variation of parameters to
+find a particular solution of $y''-y = \frac{1}{e^x+e^{-x}}$.
+\end{exercise}
+\exsol{%
+$y = \frac{2xe^x-(e^x+e^{-x})\log(e^{2x}+1)}{4}$
+}
+
+\begin{exercise}
+For an arbitrary constant $c$ find the general solution
+to $y''-2y=\sin(x+c)$.
+\end{exercise}
+\exsol{%
+$y=\frac{-\sin(x+c)}{3}+C_1 e^{\sqrt{2}\,x}+C_2 e^{-\sqrt{2}\,x}$
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sectionnewpage
+\section{Forced oscillations and resonance} \label{forcedo:section}
+
+\sectionnotes{2 lectures\EPref{, \S3.6 in \cite{EP}}\BDref{,
+\S3.8 in \cite{BD}}}
+
+\begin{diffyfloatingfigure}{2.0in}{2.3in}
+\noindent
+\inputpdft{massfigforce}
+%\vspace*{0.3in}
+\end{diffyfloatingfigure}
+Let us return back to the example of a mass on a spring.  We now examine
+the case of forced oscillations, which we did not yet handle.  That is, we consider the equation
+\begin{equation*}
+mx'' + cx' + kx = F(t) ,
+\end{equation*}
+for some nonzero $F(t)$.  The setup
+is again: $m$ is mass, $c$ is friction, $k$ is the spring constant, and
+$F(t)$ is an external force acting on the mass.
+
+We are interested in periodic
+forcing, such as noncentered rotating parts, or perhaps loud sounds, or
+other sources of periodic force.  Once we learn about Fourier series in
+\chapterref{FS:chapter}, we
+will see that we cover all periodic functions
+by simply considering $F(t) = F_0 \cos (\omega t)$ (or sine instead of cosine,
+the calculations are essentially the same).
+
+\subsection{Undamped forced motion and resonance}
+
+First let us consider undamped ($c=0$) motion for simplicity.
+We have the equation
+\begin{equation*}
+mx'' + kx = F_0 \cos (\omega t) .
+\end{equation*}
+This equation has the complementary solution (solution to the associated homogeneous
+equation)
+\begin{equation*}
+x_c = C_1 \cos (\omega_0 t) + C_2 \sin (\omega_0 t) ,
+\end{equation*}
+where $\omega_0 = \sqrt{\nicefrac{k}{m}}$ is the
+\emph{\myindex{natural frequency}} (angular).  It is the frequency
+at which the system \myquote{wants to oscillate} without external interference.
+
+Let us suppose that $\omega_0 \not= \omega$.  We try the solution
+$x_p = A \cos (\omega t)$ and solve for $A$.  Note that we do not need a sine
+in our trial solution as after plugging in we only have cosines.
+If you include a sine, it is fine; you will find that its
+coefficient is zero (I could not find a second rhyme).
+
+We solve using the method of undetermined coefficients.  We find that
+\begin{equation*}
+x_p = \frac{F_0}{m(\omega_0^2 - \omega^2)} \cos (\omega t) .
+\end{equation*}
+We leave it as an exercise to do the algebra required.
+
+The general solution is
+\begin{equation*}
+\boxed{
+~~
+x = C_1 \cos (\omega_0 t) + C_2 \sin (\omega_0 t) +
+\frac{F_0}{m(\omega_0^2 - \omega^2)} \cos (\omega t) .
+~~
+}
+\end{equation*}
+Written another way
+\begin{equation*}
+x = C \cos (\omega_0 t - \gamma) +
+\frac{F_0}{m(\omega_0^2 - \omega^2)} \cos (\omega t) .
+\end{equation*}
+The solution is a superposition of two cosine waves at different frequencies.
+
+\begin{example}
+Take
+\begin{equation*}
+0.5 x'' + 8 x = 10 \cos (\pi t), \qquad x(0)=0, \qquad x'(0)=0 .
+\end{equation*}
+
+Let us compute.  First we read off the parameters:
+$\omega = \pi$, $\omega_0 = \sqrt{\nicefrac{8}{0.5}} = 4$, $F_0 = 10$,
+$m=0.5$.  The general solution is
+\begin{equation*}
+x = C_1 \cos (4 t) + C_2 \sin (4 t) +
+\frac{20}{16 - \pi^2} \cos (\pi t) .
+\end{equation*}
+
+Solve for $C_1$ and $C_2$ using the initial conditions.
+It is easy to see that
+$C_1 = \frac{-20}{16 - \pi^2}$ and $C_2 = 0$.  Hence
+\begin{equation*}
+x = 
+\frac{20}{16 - \pi^2} \bigl( \cos (\pi t)- \cos (4 t) \bigr) .
+\end{equation*}
+
+\begin{diffyfloatingfigurepdfonly}{3.1in}
+%\begin{figure}[h!t]
+\capstart
+\begin{center}
+\diffyincludegraphics{width=3in}{width=4.5in}{3-6-beating}
+\caption[Graph of \myquote{beating} behavior.]{Graph of
+$\frac{20}{16 - \pi^2} \bigl( \cos (\pi t)- \cos (4 t) \bigr)$.\label{3.6:beatingfig}}
+%%%
+%%% Tex4ht is giving trouble here because of the math, it for some
+%%% reason does not like the bigl and bigr.  Giving the optional short
+%%% caption without it makes the problem go away.
+%%%
+\end{center}
+\end{diffyfloatingfigurepdfonly}
+%\end{figure}
+
+Notice the \myquote{beating} behavior\index{beating}
+in \figurevref{3.6:beatingfig}.  First
+use the 
+trigonometric identity
+\begin{equation*}
+2\,\sin \left( \frac{A-B}{2} \right) \,\sin \left( \frac{A+B}{2} \right) =
+\cos B -\cos A 
+\end{equation*}
+to get 
+\begin{equation*}
+x = 
+\frac{20}{16 - \pi^2} \left( 2 \, \sin \left(\frac{4-\pi}{2} \, t \right)
+\,\sin \left( \frac{4+\pi}{2}\, t \right) \right) .
+\end{equation*}
+The function $x$ is a high frequency wave modulated by a low frequency
+wave.
+\end{example}
+
+Now suppose $\omega_0 = \omega$.  Obviously, we cannot try
+the solution $A \cos (\omega t)$ and then use the method of undetermined
+coefficients.  We notice that $\cos (\omega t)$ solves the associated
+homogeneous equation.  Therefore,
+we 
+try $x_p = A t \cos (\omega t) + B t \sin (\omega t)$.  This time we need
+the sine
+term, since the second derivative of $t \cos (\omega t)$ contains sines.
+We write the equation
+\begin{equation*}
+x'' + \omega^2 x = \frac{F_0}{m} \cos ( \omega t) .
+\end{equation*}
+Plugging $x_p$ into the left hand side we get
+\begin{equation*}
+2 B \omega \cos (\omega t) - 2 A \omega \sin (\omega t) = 
+\frac{F_0}{m} \cos (\omega t) .
+\end{equation*}
+Hence $A = 0$ and $B = \frac{F_0}{2m\omega}$.  Our particular solution is
+$\frac{F_0}{2m\omega} \, t \sin (\omega t)$ and our general solution is
+\begin{equation*}
+x = C_1 \cos (\omega t) + C_2 \sin (\omega t)
++ \frac{F_0}{2m\omega} \, t \sin (\omega t) .
+\end{equation*}
+
+
+\begin{diffyfloatingfigurepdfonly}{3.1in}
+%\begin{figure}[h!t]
+\capstart
+\begin{center}
+\diffyincludegraphics{width=3in}{width=4.5in}{3-6-resonance}
+\caption{Graph of
+$\frac{1}{\pi} t \sin (\pi t)$.\label{3.6:resonancefig}}
+\end{center}
+%\end{figure}
+\end{diffyfloatingfigurepdfonly}
+
+The important term is the last one (the particular solution we found).  
+This term grows without bound as $t \to \infty$.  In fact it
+oscillates 
+between $\frac{F_0 t}{2m\omega}$ and
+$\frac{- F_0 t}{2m\omega}$.  The first two terms only oscillate between
+$\pm\sqrt{C_1^2 + C_2^2}$, which becomes smaller and smaller in proportion to
+the oscillations of the last term as $t$ gets larger.  In
+\figurevref{3.6:resonancefig} we see the graph with $C_1=C_2=0$, $F_0 = 2$,
+$m=1$, $\omega = \pi$.
+
+By forcing the system in just the right frequency we produce very wild
+oscillations.  This kind of behavior is called \emph{\myindex{resonance}} or
+perhaps
+\emph{\myindex{pure resonance}}.  Sometimes resonance is
+desired.  For
+example, remember when as a kid you could start swinging by just moving back
+and forth on the swing seat in the \myquote{correct frequency}?  You were trying to
+achieve resonance.  The force of each one of your moves was small, but after a
+while it produced large swings.
+
+On the other hand resonance can be destructive.
+In an earthquake some buildings collapse while
+others may be relatively undamaged.  This is due to different buildings
+having different resonance frequencies.  So figuring out the resonance
+frequency can be very important.
+
+A common (but wrong) example of destructive force of resonance is the Tacoma
+Narrows bridge failure.  It turns out there was a different
+phenomenon at play%
+\footnote{K.\ Billah and R.\ Scanlan, \emph{Resonance, Tacoma Narrows
+Bridge Failure, and Undergraduate Physics Textbooks}, American Journal of
+Physics, 59(2), 1991, 118--124,
+\url{http://www.ketchum.org/billah/Billah-Scanlan.pdf}}.
+
+\subsection{Damped forced motion and practical resonance}
+
+In real life things are not as simple as they were above.  There is,
+of course, some damping.  Our equation becomes
+\begin{equation} \label{3.6:deq}
+mx'' + cx' + kx = F_0 \cos (\omega t) ,
+\end{equation}
+for some $c > 0$.  We solved the homogeneous problem before.  We let
+\begin{equation*}
+p = \frac{c}{2m},  \qquad \omega_0 = \sqrt{\frac{k}{m}} .
+\end{equation*}
+We replace equation \eqref{3.6:deq} with
+\begin{equation*}
+x'' + 2px' + \omega_0^2x = \frac{F_0}{m} \cos (\omega t) .
+\end{equation*}
+The roots of the characteristic equation of the associated
+homogeneous problem are $r_1,r_2 = -p \pm \sqrt{p^2 - \omega_0^2}$.  The form
+of the general solution of the associated homogeneous equation
+depends on the sign of $p^2 - \omega_0^2$, or
+equivalently on the sign of $c^2 - 4km$, as we have
+seen before.  That is,
+\begin{equation*}
+x_c =
+\begin{cases}
+C_1 e^{r_1 t} + C_2 e^{r_2 t} & \text{if } \; c^2 > 4km , \\
+C_1 e^{-p t} + C_2 t e^{-p t} & \text{if } \; c^2 = 4km , \\
+e^{-p t} \bigl( C_1 \cos (\omega_1 t) + C_2 \sin (\omega_1 t) \bigr) &
+  \text{if } \; c^2 < 4km ,
+\end{cases}
+\end{equation*}
+where $\omega_1 = \sqrt{\omega_0^2 - p^2}$.  In any case, we see that
+$x_c(t) \to 0$ as $t \to \infty$.  Furthermore,
+there can be no conflicts when trying to solve for the
+undetermined coefficients by trying $x_p = A \cos (\omega t)
++ B \sin (\omega t)$.
+%Hence, we will never get the kind of catastrophic scenario we have seen
+%before.
+%A slightly different notion of \myquote{resonance} will still occur.
+Let us plug
+in and solve for $A$ and $B$.
+We get (the \myindex{tedious} % a bit of fun
+details are left to reader)
+\begin{equation*}
+\bigl((\omega_0^2  - \omega^2)B - 2\omega p A\bigr) \sin (\omega t)
++
+\bigl((\omega_0^2  - \omega^2)A + 2\omega p B\bigr) \cos (\omega t)
+=
+\frac{F_0}{m} \cos (\omega t) .
+\end{equation*}
+
+We solve for $A$ and $B$:
+\begin{align*}
+& A=\frac{(\omega_0^2-\omega^2) F_0}
+{m{(2\omega p)}^2+m{(\omega_0^2-\omega^2)}^2} , \\
+& B=\frac{2 \omega p F_0}
+{m{(2\omega p)}^2+m{(\omega_0^2-\omega^2)}^2} .
+\end{align*}
+We also compute $C = \sqrt{A^2+B^2}$
+to be
+\begin{equation*}
+C = \frac{F_0}{m \sqrt{{(2\omega p)}^2+{(\omega_0^2-\omega^2)}^2}} .
+\end{equation*}
+Thus our particular solution is
+\begin{equation*}
+x_p = 
+\frac{(\omega_0^2-\omega^2) F_0}
+{m{(2\omega p)}^2+m{(\omega_0^2-\omega^2)}^2} \cos (\omega t) +
+\frac{2 \omega p F_0}
+{m{(2\omega p)}^2+m{(\omega_0^2-\omega^2)}^2} \sin (\omega t) .
+\end{equation*}
+Or in the alternative notation we have amplitude $C$ and phase shift $\gamma$
+where (if $\omega \not= \omega_0$)
+\begin{equation*}
+\tan \gamma = \frac{B}{A} = \frac{2\omega p}{\omega_0^2-\omega^2} .
+\end{equation*}
+Hence we have
+\begin{equation*}
+\boxed{~~
+x_p = 
+\frac{F_0}{m \sqrt{{(2\omega p)}^2+{(\omega_0^2-\omega^2)}^2}} 
+\cos ( \omega t - \gamma ) .
+~~}
+\end{equation*}
+If $\omega = \omega_0$ we see that $A=0$, $B = C = \frac{F_0}{2m\omega p}$,
+and $\gamma = \nicefrac{\pi}{2}$.
+
+The exact formula is not as important as the idea.  Do not memorize
+the above formula, you should instead remember the ideas involved.
+For a different forcing function $F$, you will get a different formula
+for $x_p$.
+So there is no point in memorizing this specific
+formula.  You can always recompute it later or look it up if you really need
+it.
+
+\medskip
+
+For reasons we will explain in a moment, we call $x_c$ the
+\emph{\myindex{transient solution}}
+and denote it by $x_{tr}$.  We call the
+$x_p$ we found above the \emph{\myindex{steady periodic solution}} and denote it
+by $x_{sp}$.
+The general solution to our problem is
+\begin{equation*}
+x = x_c + x_p = x_{tr} + x_{sp} .
+\end{equation*}
+
+\begin{diffyfloatingfigurepdfonly}{3.1in}
+%\begin{figure}[h!t]
+\capstart
+\begin{center}
+\diffyincludegraphics{width=3in}{width=4.5in}{3-6-transbeh}
+\caption{Solutions with different initial conditions for parameters
+$k=1$, $m=1$, $F_0 = 1$, $c=0.7$, and $\omega=1.1$.\label{3.6:transbehfig}}
+\end{center}
+%\end{figure}
+\end{diffyfloatingfigurepdfonly}
+
+The transient solution $x_c = x_{tr}$ goes to zero as $t \to \infty$,
+as all the terms involve an exponential with a negative exponent.  So
+for large $t$, the effect of $x_{tr}$ is negligible and we see essentially
+only $x_{sp}$.
+Hence the name \emph{transient}.
+Notice that $x_{sp}$ involves no arbitrary constants, and
+the initial conditions only affect $x_{tr}$.  This means that the effect
+of the initial conditions is negligible after some period of time.
+Because of this behavior,
+we might as well focus on the
+steady periodic solution and ignore the transient solution.  See
+\figurevref{3.6:transbehfig} for a graph given several different initial conditions.
+
+The speed at which $x_{tr}$ goes to zero depends on $p$ (and
+hence $c$).  The
+bigger $p$ is (the bigger $c$ is), the \myquote{faster} $x_{tr}$ becomes negligible. 
+So the smaller the damping, the longer the \myquote{transient region.}  This agrees
+with the observation that when $c=0$, the initial conditions affect the
+behavior for all time (i.e.\ an infinite \myquote{transient region}).
+
+\medskip
+
+Let us describe what we mean by resonance when damping is present.
+Since there were no conflicts when solving with undetermined coefficient,
+there is no term that goes to infinity.  We look at the
+maximum value of the amplitude of the steady periodic solution.
+Let $C$ be the amplitude of $x_{sp}$.
+If we plot $C$ as a function of $\omega$ (with all other
+parameters fixed) we can find its maximum.
+We call the $\omega$ that achieves this maximum
+the \emph{\myindex{practical resonance frequency}}.
+We call the maximal amplitude $C(\omega)$
+the \emph{\myindex{practical resonance amplitude}}.
+Thus when damping is present we talk of \emph{\myindex{practical resonance}}
+rather than pure resonance.
+A sample plot for three different
+values of $c$ is given in \figurevref{3.6:pracresfig}.  As you can see the
+practical resonance amplitude grows as damping gets smaller, and 
+practical resonance can disappear altogether when damping is large.
+
+\begin{figure}[h!t]
+\capstart
+\begin{center}
+\diffyincludegraphics{width=3in}{width=4.5in}{3-6-pracres}
+\caption{Graph of $C(\omega)$ showing practical resonance with parameters
+$k=1$, $m=1$, $F_0 = 1$. The top line is with $c=0.4$, the middle line with
+$c=0.8$, and the bottom line with
+$c=1.6$.\label{3.6:pracresfig}}
+\end{center}
+\end{figure}
+
+To find the maximum we need to find the derivative $C'(\omega)$.
+Computation shows
+\begin{equation*}
+C'(\omega) =
+\frac{- 2\omega( 2p^2+\omega^2-\omega_0^2)F_0}
+{m {\bigl({(2\omega p)}^2+{(\omega_0^2-\omega^2)}^2\bigr)}^{3/2}} .
+\end{equation*}
+This is zero either when $\omega = 0$ or when
+$2p^2+\omega^2-\omega_0^2 = 0$.  In other words, $C'(\omega) = 0$ when
+\begin{equation*}
+\boxed{
+~~
+\omega = \sqrt{\omega_0^2 - 2p^2} \quad \text{or} \quad \omega = 0 .
+~~
+}
+\end{equation*}
+It can be shown that if 
+$\omega_0^2 - 2p^2$ is positive, then 
+$\sqrt{\omega_0^2 - 2p^2}$ is the practical resonance frequency (that is the
+point where $C(\omega)$ is maximal, note that in this case $C'(\omega) > 0$
+for small $\omega$).  If $\omega=0$ is the maximum, then
+there is no practical resonance since we assume $\omega > 0$
+in our system.  In this case the amplitude gets larger as the forcing
+frequency gets smaller.
+
+If practical resonance occurs, the frequency is smaller than
+$\omega_0$.  As the damping $c$ (and hence $p$) becomes smaller, the
+practical resonance frequency
+goes to $\omega_0$.  So when damping is very
+small, $\omega_0$ is a good estimate of the resonance frequency.  This
+behavior
+agrees with the observation that when $c=0$, then $\omega_0$ is the resonance
+frequency.
+
+The behavior is more complicated if the forcing function is not an
+exact cosine wave, but for example a \myindex{square wave}.
+The reader is encouraged to come
+back to this section once we have learned about the Fourier series.
+
+\subsection{Exercises}
+
+\begin{exercise}
+Derive a formula for $x_{sp}$ if the equation is
+$m x'' + c x' + kx = F_0 \sin (\omega t)$.  Assume $c > 0$.
+\end{exercise}
+
+\begin{exercise}
+Derive a formula for $x_{sp}$ if the equation is
+$m x'' + c x' + kx = F_0 \cos (\omega t) + F_1 \cos (3\omega t)$.
+Assume $c > 0$.
+\end{exercise}
+
+\begin{exercise}
+Take $m x'' + c x' + kx = F_0 \cos (\omega t)$.
+Fix $m > 0$, $k > 0$, and $F_0 > 0$.  Consider the function $C(\omega)$.
+For what values of $c$ (solve in terms of $m$, $k$, and $F_0$) will there be no
+practical resonance (that is, for what values of $c$ is there no maximum of
+$C(\omega)$ for $\omega > 0$)?
+\end{exercise}
+
+\begin{exercise}
+Take $m x'' + c x' + kx = F_0 \cos (\omega t)$.
+Fix $c > 0$, $k > 0$, and $F_0 > 0$.  Consider the function $C(\omega)$.
+For what values of $m$ (solve in terms of $c$, $k$, and $F_0$) will there be no
+practical resonance (that is, for what values of $m$ is there no maximum of
+$C(\omega)$ for $\omega > 0$)?
+\end{exercise}
+
+\begin{exercise}
+Suppose a water tower in an earthquake acts as a mass-spring system.
+Assume that the container on top is full and the water does not move around.
+The container then acts as a mass and the support acts as the spring, where
+the induced vibrations are horizontal.  Suppose that the container with water
+has a mass of $m=\unit[10,000]{kg}$.  It takes a force of 1000 newtons to displace 
+the container 1 meter.  For simplicity assume no friction.
+When the earthquake hits the water tower is at rest (it is not moving).
+
+Suppose that an earthquake induces an external force 
+$F(t) = m A \omega^2 \cos (\omega t)$.
+
+a) What is the natural frequency of the water tower?
+
+b) If $\omega$ is not the natural frequency, find a formula for the maximal
+amplitude of the resulting oscillations of the water container (the maximal
+deviation from the rest position).  The motion will be a high frequency wave
+modulated by a low frequency wave, so simply find the constant in front of the
+sines.
+
+c) Suppose $A = 1$ and an earthquake with frequency 0.5 cycles per second
+comes.  What is the amplitude of the oscillations?  Suppose that if the water
+tower moves more than 1.5 meter from the rest position, the tower collapses.  Will the tower collapse?
+\end{exercise}
+
+\setcounter{exercise}{100}
+
+\begin{exercise}
+A mass of \unit[4]{kg} on a spring with $k=\unitfrac[4]{N}{m}$ and a damping
+constant $c=\unitfrac[1]{Ns}{m}$.
+Suppose that $F_0 = \unit[2]{N}$.  Using forcing function $F_0 \cos (\omega t)$,
+find the $\omega$ that causes practical resonance and find the amplitude.
+\end{exercise}
+\exsol{%
+$\omega = \frac{\sqrt{31}}{4\sqrt{2}} \approx 0.984$ \quad
+$C(\omega) = \frac{16}{3\sqrt{7}} \approx 2.016$
+}
+
+\begin{exercise}
+Derive a formula for $x_{sp}$ for
+$mx''+cx'+kx = F_0 \cos(\omega t) + A$,
+where $A$ is some constant.  Assume $c > 0$.
+\end{exercise}
+\exsol{%
+$x_{sp} = 
+\frac{(\omega_0^2-\omega^2) F_0}
+{m{(2\omega p)}^2+m{(\omega_0^2-\omega^2)}^2} \cos (\omega t) +
+\frac{2 \omega p F_0}
+{m{(2\omega p)}^2+m{(\omega_0^2-\omega^2)}^2} \sin (\omega t)
++ \frac{A}{k}$,
+where
+$p = \frac{c}{2m}$ and $\omega_0 = \sqrt{\frac{k}{m}}$.
+}
+
+\begin{exercise}
+Suppose there is no damping in a mass and spring system with
+$m = 5$, $k= 20$, and $F_0 = 5$.  Suppose $\omega$ is chosen
+to be precisely the resonance frequency.  a)~Find $\omega$.  b)~Find
+the amplitude of the oscillations at time $t=100$, given the system is at
+rest at $t=0$.
+\end{exercise}
+\exsol{%
+a) $\omega = 2$,
+b) $25$
+}

@@ -1,0 +1,1916 @@
+\chapter{The Laplace transform} \label{LT:chapter}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{The Laplace transform}
+
+\sectionnotes{1.5--2 lectures\EPref{, \S10.1 in \cite{EP}}\BDref{,
+\S6.1 and parts of \S6.2 in \cite{BD}}}
+
+\subsection{The transform}
+
+In this chapter we will discuss the Laplace transform%
+\footnote{Just like the Laplace equation and the Laplacian, the Laplace
+transform is also named after 
+\href{http://en.wikipedia.org/wiki/Laplace}{Pierre-Simon, marquis de Laplace}
+(1749--1827).}.
+The Laplace transform
+turns out to be a very efficient method to solve certain ODE problems.  In
+particular, the transform can take a differential equation and turn it into
+an algebraic equation.  If the algebraic equation can be solved, applying the
+inverse transform gives us our desired solution.
+The Laplace transform also has applications in
+the analysis of 
+electrical circuits, NMR spectroscopy, signal processing, and elsewhere.
+Finally,
+understanding the Laplace
+transform will also help with understanding the related Fourier transform,
+which, however, requires more
+understanding of complex numbers.  We will not cover the Fourier transform.
+
+The Laplace transform also gives a lot of insight into the nature of the
+equations we are dealing with.  It can be seen as converting between the time
+and the frequency domain.  For example, take the standard equation
+\begin{equation*}
+m x''(t) + c x'(t) + k x(t) = f(t) .
+\end{equation*}
+We can think of $t$ as time and $f(t)$ as incoming signal.  The Laplace
+transform will convert the equation from a differential equation in time to
+an algebraic (no derivatives) equation, where the new independent variable
+$s$ is the frequency.
+
+We can think of the \emph{\myindex{Laplace transform}} as a black box.  It
+eats functions and spits out functions in a new variable.  We write
+$\mathcal{L} \{ f(t) \} = F(s)$ for the Laplace transform of $f(t)$.  It is common to write lower case letters for
+functions in the time domain and upper case letters for functions in the
+frequency domain.  We use the same letter to denote that one function
+is the Laplace transform of the other.  For example $F(s)$ is the Laplace
+transform of $f(t)$.  Let us define the transform.
+\begin{equation*}
+\mathcal{L} \{ f(t) \} =
+F(s) \overset{\text{def}}{=} \int_0^\infty e^{-st} f(t) ~ dt .
+\end{equation*}
+We note that we are only considering $t \geq 0$ in the transform.  Of course,
+if we think of $t$ as time there is no problem, we are generally interested in
+finding out what will happen in the future (Laplace transform is one place
+where it is safe to ignore the past).  Let us compute some simple
+transforms.
+
+\begin{example}
+Suppose $f(t) = 1$, then
+\begin{equation*}
+\mathcal{L} \{1\} = \int_0^\infty e^{-st} ~ dt
+=
+\left[ \frac{e^{-st}}{-s} \right]_{t=0}^\infty
+=
+\lim_{h\to\infty}
+\left[ \frac{e^{-st}}{-s} \right]_{t=0}^h
+=
+\lim_{h\to\infty}
+\left( \frac{e^{-sh}}{-s} - \frac{1}{-s} \right)
+= \frac{1}{s} .
+\end{equation*}
+The limit (the improper integral) only exists if $s > 0$.  So 
+$\mathcal{L} \{1\}$ is only defined for $s > 0$.
+\end{example}
+
+\begin{example}
+Suppose $f(t) = e^{-at}$, then
+\begin{equation*}
+\mathcal{L} \{e^{-at}\}
+= \int_0^\infty e^{-st} e^{-at} ~ dt
+= \int_0^\infty e^{-(s+a)t} ~ dt
+=
+\left[ \frac{e^{-(s+a)t}}{-(s+a)} \right]_{t=0}^\infty
+= \frac{1}{s+a} .
+\end{equation*}
+The limit only exists if $s+a > 0$.  So 
+$\mathcal{L} \{e^{-at}\}$ is only defined for $s+a > 0$.
+\end{example}
+
+\begin{example}
+Suppose $f(t) = t$, then using integration by parts
+\begin{equation*}
+\begin{split}
+\mathcal{L} \{t\}
+& = \int_0^\infty e^{-st} t ~ dt \\
+& =
+\left[ \frac{-te^{-st}}{s} \right]_{t=0}^\infty
++
+\frac{1}{s}
+\int_0^\infty e^{-st} ~dt \\
+& =
+0
++
+\frac{1}{s}
+\left[ \frac{e^{-st}}{-s} \right]_{t=0}^\infty \\
+& =
+\frac{1}{s^2} .
+\end{split}
+\end{equation*}
+Again, the limit only exists if $s > 0$.
+\end{example}
+
+\begin{example}
+A common function is the \emph{\myindex{unit step function}}, which is
+sometimes called the \emph{\myindex{Heaviside function}}%
+\footnote{The function is named after the English mathematician, engineer, and
+physicist
+\href{http://en.wikipedia.org/wiki/Heaviside}{Oliver Heaviside}
+(1850--1925).  Only
+by coincidence is the function \myquote{heavy} on \myquote{one side.}}.
+This function is generally given as
+\begin{equation*}
+u(t) = 
+\begin{cases}
+0 & \text{if } \; t < 0 , \\
+1 & \text{if } \; t \geq 0 .
+\end{cases}
+\end{equation*}
+%Note that some authors prefer to define $u(0) = \frac{1}{2}$.
+Let us find the Laplace transform of $u(t-a)$, where $a \geq 0$
+is some constant.
+That is, the function that is 0 for $t < a$ and 1 for $t \geq a$.
+\begin{equation*}
+\mathcal{L} \{ u(t-a) \}
+=
+\int_0^{\infty} e^{-st} u(t-a) ~ dt
+=
+\int_a^{\infty} e^{-st} ~ dt
+=
+\left[ \frac{e^{-st}}{-s} \right]_{t=a}^\infty \\
+=
+\frac{e^{-as}}{s} ,
+\end{equation*}
+where of course $s > 0$ (and $a \geq 0$ as we said before).
+\end{example}
+
+By applying similar procedures we can compute the transforms of many
+elementary functions.  Many basic transforms are listed in
+\tablevref{lt:table}.
+
+\begin{table}[h!t]
+\capstart
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+\toprule
+$f(t)$ & $\mathcal{L} \{ f(t) \}$ \\
+\midrule
+$C$ & $\frac{C}{s}$ \\[3pt]
+$t$ & $\frac{1}{s^2}$ \\[3pt]
+$t^2$ & $\frac{2}{s^3}$ \\[3pt]
+$t^3$ & $\frac{6}{s^4}$ \\[3pt]
+$t^n$ & $\frac{n!}{s^{n+1}}$ \\[3pt]
+$e^{-at}$ & $\frac{1}{s+a}$ \\[3pt]
+$\sin (\omega t)$ & $\frac{\omega}{s^2+\omega^2}$ \\[3pt]
+$\cos (\omega t)$ & $\frac{s}{s^2+\omega^2}$ \\[3pt]
+$\sinh (\omega t)$ & $\frac{\omega}{s^2-\omega^2}$ \\[3pt]
+$\cosh (\omega t)$ & $\frac{s}{s^2-\omega^2}$ \\[3pt]
+$u(t-a)$ & $\frac{e^{-as}}{s}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\caption{Some Laplace transforms ($C$, $\omega$, and $a$ are
+constants).\label{lt:table}}
+\end{table}
+
+\begin{exercise}
+Verify \tablevref{lt:table}.
+\end{exercise}
+
+Since the transform is defined by an integral.  We can use the linearity
+properties of the integral.  For example, suppose $C$ is a constant, then
+\begin{equation*}
+\mathcal{L} \{ C f(t) \} =
+\int_0^\infty e^{-st} C f(t) ~dt =
+C \int_0^\infty e^{-st} f(t) ~dt =
+C \mathcal{L} \{ f(t) \} .
+\end{equation*}
+So we can \myquote{pull out} a constant out of the transform.  Similarly  we have
+linearity.
+Since linearity is very important we state it as a theorem.
+
+\begin{theorem}[Linearity of the Laplace transform]
+\index{linearity of the Laplace transform}
+Suppose that $A$, $B$, and $C$ are constants, then
+\begin{equation*}
+\boxed{~~
+\mathcal{L} \{ A f(t) + B g(t) \} =
+A \mathcal{L} \{ f(t) \} +
+B \mathcal{L} \{ g(t) \} ,
+~~}
+\end{equation*}
+and in particular
+\begin{equation*}
+\mathcal{L} \{ C f(t) \} =
+C \mathcal{L} \{ f(t) \} .
+\end{equation*}
+\end{theorem}
+
+\begin{exercise}
+Verify the theorem.  That is, show that
+$\mathcal{L} \{ A f(t) + B g(t) \} =
+A \mathcal{L} \{ f(t) \} +
+B \mathcal{L} \{ g(t) \}$.
+\end{exercise}
+
+These rules together with \tablevref{lt:table} make it easy to find
+the Laplace transform of a whole lot of functions already.
+But be careful.
+It is a common mistake to think that the Laplace transform of a product
+is the product of the transforms.  In general 
+\begin{equation*}
+\mathcal{L} \{ f(t) g(t) \} \not=
+\mathcal{L} \{ f(t) \}
+\mathcal{L} \{ g(t) \} .
+\end{equation*}
+
+It must also be noted that not all functions have a Laplace transform.  For
+example, the function $\frac{1}{t}$ does not have a Laplace transform as the
+integral diverges for all $s$.  Similarly,
+$\tan t$ or $e^{t^2}$ do not have Laplace transforms.
+
+\subsection{Existence and uniqueness}
+
+Let us consider when does the Laplace transform exist in more detail.  First
+let us consider functions of exponential order.  The function $f(t)$ is of
+\emph{\myindex{exponential order}} as $t$ goes to infinity if
+\begin{equation*}
+\lvert f(t) \rvert \leq M e^{ct} ,
+\end{equation*}
+for some constants $M$ and $c$, for
+sufficiently large $t$ (say for all $t > t_0$ for some $t_0$).  The simplest
+way to check this condition is to try and compute
+\begin{equation*}
+\lim_{t\to \infty} \frac{f(t)}{e^{ct}} .
+\end{equation*}
+If the limit exists and is finite (usually zero), then $f(t)$ is of
+exponential order.
+
+\begin{exercise}
+Use L'Hopital's rule from calculus to show that a polynomial is of
+exponential order.  Hint: Note that a sum of two exponential order functions
+is also of exponential order.  Then show that $t^n$ is of exponential order
+for any $n$.
+\end{exercise}
+
+For an exponential order function we have existence and uniqueness of the
+Laplace transform.
+
+\begin{theorem}[Existence]
+Let $f(t)$ be continuous and of exponential order for a certain
+constant $c$.  Then $F(s) = \mathcal{L} \{ f(t) \}$ is defined for
+all $s > c$.
+\end{theorem}
+
+The existence is not difficult to see.  Let $f(t)$ be of exponential order,
+that is $\lvert f(t) \rvert \leq M e^{ct}$ for all $t > 0$ (for simplicity $t_0 = 0$).
+Let $s > c$, or in other words $(c-s) < 0$.
+By the comparison theorem from calculus, the improper integral defining
+$\mathcal{L} \{ f(t) \}$ exists if the following integral exists
+\begin{equation*}
+\int_0^\infty e^{-st} ( M e^{ct} ) ~dt
+=
+M \int_0^\infty e^{(c-s)t} ~dt = M \left[ \frac{e^{(c-s)t}}{c-s}
+\right]_{t=0}^\infty = \frac{M}{c-s} .
+\end{equation*}
+
+The transform also exists for some other functions
+that are not of exponential
+order, but that will not be relevant to us.
+Before dealing with uniqueness, let
+us note that for exponential order functions we obtain that their
+Laplace transform decays at infinity:
+\begin{equation*}
+\lim_{s\to\infty} F(s) = 0 .
+\end{equation*}
+
+\begin{theorem}[Uniqueness] \label{lt:uniqthm}
+Let $f(t)$ and $g(t)$ be continuous and of exponential order.
+Suppose that there exists a constant $C$,
+such that $F(s) = G(s)$ for all $s > C$.
+Then $f(t) = g(t)$ for all $t \geq 0$.
+\end{theorem}
+
+Both theorems hold for piecewise continuous functions as well.
+Recall that piecewise continuous means that the function
+is continuous except perhaps at a discrete set of points where it has jump
+discontinuities like the Heaviside function.  Uniqueness, however, does
+not \myquote{see} values at the discontinuities.  So we can only conclude that
+$f(t) = g(t)$ outside of discontinuities.  For example, the unit step
+function is sometimes defined using $u(0) = \nicefrac{1}{2}$.  This new
+step function, however, has the exact same Laplace transform
+as the one we defined earlier where $u(0) = 1$.
+
+\subsection{The inverse transform}
+
+As we said, the Laplace transform will allow us to convert a differential
+equation into an algebraic equation.  Once we solve the
+algebraic equation in the frequency domain we will want to get back to the
+time domain, as that is what we are interested in.
+If we have a function $F(s)$, to be able
+to find $f(t)$ such that $\mathcal{L} \{ f(t) \} = F(s)$, we need to first
+know if such a function is unique.  It turns out we are in luck by
+\thmref{lt:uniqthm}.  So we can without fear make the following
+definition.
+
+If $F(s) = \mathcal{L} \{ f(t) \}$ for some function $f(t)$.  We define the
+\emph{\myindex{inverse Laplace transform}} as
+\begin{equation*}
+{\mathcal{L}}^{-1} \{ F(s) \} \overset{\text{def}}{=} f(t) .
+\end{equation*}
+There is an integral formula for the inverse, but it is not as simple
+as the transform itself---it requires complex numbers and path integrals.
+For us it will
+suffice to
+compute the inverse using \tablevref{lt:table}.
+
+\begin{example}
+Take
+$F(s) = \frac{1}{s+1}$.  Find the inverse Laplace transform.
+
+We look at the table to find
+\begin{equation*}
+{\mathcal{L}}^{-1} \left\{ \frac{1}{s+1} \right\} = 
+e^{-t} .
+\end{equation*}
+\end{example}
+
+As the Laplace transform is linear, the inverse Laplace
+transform is also linear.  That is,
+\begin{equation*}
+{\mathcal{L}}^{-1} \{ A F(s) + B G(s) \} =
+A {\mathcal{L}}^{-1} \{ F(s) \} +
+B {\mathcal{L}}^{-1} \{ G(s) \} .
+\end{equation*}
+Of course, we also have
+${\mathcal{L}}^{-1} \{ A F(s) \} = A {\mathcal{L}}^{-1} \{ F(s) \}$.
+Let us demonstrate how linearity can be used.
+
+\begin{example}
+Take
+$F(s) = \frac{s^2+s+1}{s^3+s}$.  Find the inverse Laplace transform.
+
+First we use the \emph{\myindex{method of partial fractions}} to write $F$ in a form where
+we can use \tablevref{lt:table}.  We factor the denominator as
+$s(s^2+1)$ and write
+\begin{equation*}
+\frac{s^2+s+1}{s^3+s}
+=
+\frac{A}{s} + 
+\frac{Bs+C}{s^2+1} .
+\end{equation*}
+Putting the right hand side over a common
+denominator and equating the numerators we get
+$A(s^2+1) + s(Bs+C) = s^2+s+1$.  Expanding and equating coefficients
+we obtain $A+B = 1$, $C=1$, $A=1$,
+and thus $B=0$.  In
+other words,
+\begin{equation*}
+F(s) =
+\frac{s^2+s+1}{s^3+s}
+=
+\frac{1}{s} +
+\frac{1}{s^2+1} .
+\end{equation*}
+By linearity of the inverse Laplace transform we get 
+\begin{equation*}
+{\mathcal{L}}^{-1} \left\{ 
+\frac{s^2+s+1}{s^3+s} \right\}
+=
+{\mathcal{L}}^{-1} \left\{ 
+\frac{1}{s} \right\} 
++
+{\mathcal{L}}^{-1} \left\{ 
+\frac{1}{s^2+1} \right\}
+=
+1 + 
+\sin t .
+\end{equation*}
+\end{example}
+
+Another useful property is the 
+so-called \emph{\myindex{shifting property}} or
+the \emph{\myindex{first shifting property}}
+\begin{equation*}
+\boxed{~~
+\mathcal{L} \{ e^{-at} f(t) \} = F(s+a) ,
+~~}
+\end{equation*}
+where $F(s)$ is the Laplace transform of $f(t)$.
+
+\begin{exercise}
+Derive the first shifting property
+from the definition of the Laplace transform.
+\end{exercise}
+
+The shifting property can be used, for example, when the denominator is a
+more complicated quadratic that may come up in the method of partial
+fractions.  We complete the square and write such quadratics as ${(s+a)}^2+b$
+and then use the shifting property.
+
+\begin{example}
+Find
+${\mathcal{L}}^{-1} \left\{ \frac{1}{s^2+4s+8} \right\}$.
+
+First we complete the square to make the denominator ${(s+2)}^2+4$.  
+Next we find
+\begin{equation*}
+{\mathcal{L}}^{-1} \left\{ \frac{1}{s^2+4} \right\}
+=
+\frac{1}{2} \sin (2t) .
+\end{equation*}
+Putting it all together with the shifting property, we find
+\begin{equation*}
+{\mathcal{L}}^{-1} \left\{ \frac{1}{s^2+4s+8} \right\} = 
+{\mathcal{L}}^{-1} \left\{ \frac{1}{{(s+2)}^2+4} \right\}
+=
+\frac{1}{2}\,e^{-2t} \sin (2t) .
+\end{equation*}
+\end{example}
+
+In general, we want to be able to apply the Laplace transform to
+rational functions, that is functions of the form
+\begin{equation*}
+\frac{F(s)}{G(s)}
+\end{equation*}
+where $F(s)$ and $G(s)$ are polynomials.  Since normally, for the functions
+that we are considering, the Laplace transform goes
+to zero as $s \to \infty$, it is not hard to see that the degree of $F(s)$
+must be smaller than that of $G(s)$.  Such rational functions
+are called \emph{proper rational functions\index{proper rational function}}
+and we can always apply the method of partial fractions.  Of
+course this means we need to be able to factor the denominator into
+linear and quadratic terms, which involves finding the roots of the
+denominator.
+
+\subsection{Exercises}
+
+\begin{exercise}
+Find the Laplace transform of $3+t^5+\sin (\pi t)$.
+\end{exercise}
+
+\begin{exercise}
+Find the Laplace transform of $a+bt+ct^2$ for some constants $a$, $b$, and
+$c$.
+\end{exercise}
+
+\begin{exercise}
+Find the Laplace transform of $A \cos (\omega t) + B \sin (\omega t)$.
+\end{exercise}
+
+\begin{exercise}
+Find the Laplace transform of $\cos^2 (\omega t)$.
+\end{exercise}
+
+\begin{exercise}
+Find the inverse Laplace transform of $\frac{4}{s^2-9}$.
+\end{exercise}
+
+\begin{exercise}
+Find the inverse Laplace transform of $\frac{2s}{s^2-1}$.
+\end{exercise}
+
+\begin{exercise}
+Find the inverse Laplace transform of $\frac{1}{{(s-1)}^2(s+1)}$.
+\end{exercise}
+
+\begin{exercise}
+Find the Laplace transform of $f(t) =
+\begin{cases}
+t & \text{if } \; t \geq 1, \\
+0 & \text{if } \; t < 1.
+\end{cases}$
+\end{exercise}
+
+\begin{exercise}
+Find the inverse Laplace transform of $\frac{s}{(s^2+s+2)(s+4)}$.
+\end{exercise}
+
+\begin{exercise}
+Find the Laplace transform of $\sin\bigl(\omega (t-a)\bigr)$.
+\end{exercise}
+
+\begin{exercise}
+Find the Laplace transform of $t\sin(\omega t)$.  Hint: Several integrations
+by parts.
+\end{exercise}
+
+\setcounter{exercise}{100}
+
+\begin{exercise}
+Find the Laplace transform of $4{(t+1)}^2$.
+\end{exercise}
+\exsol{%
+$\frac{8}{s^3} + \frac{8}{s^2} + \frac{4}{s}$
+}
+
+\begin{exercise}
+Find the inverse Laplace transform of $\frac{8}{s^3(s+2)}$.
+\end{exercise}
+\exsol{%
+$2t^2-2t+1-e^{-2t}$
+}
+
+\begin{exercise}
+Find the Laplace transform of $te^{-t}$ (Hint: integrate by parts).
+\end{exercise}
+\exsol{%
+$\frac{1}{{(s+1)}^2}$
+}
+
+\begin{exercise}
+Find the Laplace transform of $\sin(t)e^{-t}$ (Hint: integrate by parts).
+\end{exercise}
+\exsol{%
+$\frac{1}{s^2+2s+2}$
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sectionnewpage
+\section{Transforms of derivatives and ODEs}
+
+\sectionnotes{2 lectures\EPref{, \S7.2--7.3 in \cite{EP}}\BDref{,
+\S6.2 and \S6.3 in \cite{BD}}}
+
+\subsection{Transforms of derivatives}
+
+Let us see how the Laplace transform is used for differential equations.
+First let us try to find the Laplace transform of a function that is a
+derivative.  Suppose $g(t)$ is a differentiable function
+of exponential order, that is, $\lvert g(t) \rvert \leq M e^{ct}$ for some
+$M$ and $c$.  So $\mathcal{L} \{ g(t) \}$ exists, and what is more,
+$\lim_{t\to\infty} e^{-st}g(t) = 0$ when $s > c$.  Then
+\begin{equation*}
+\mathcal{L} \left\{ g'(t) \right\}
+=
+\int_0^\infty
+e^{-st}
+g'(t) ~dt
+=
+\Bigl[e^{-st} g(t) \Bigr]_{t=0}^\infty
+-
+\int_0^\infty
+(-s)\,
+e^{-st}
+g(t) ~dt
+=
+-g(0) + s \mathcal{L} \{ g(t) \} .
+\end{equation*}
+We repeat this procedure for higher derivatives.
+The results are
+listed in \tablevref{ltd:table}.  The procedure also works for piecewise
+smooth functions, that is functions that are piecewise continuous with a
+piecewise continuous derivative.
+%The fact that the function is of
+%exponential order is used to show that the limits appearing above 
+%exist.  We will not worry much about this fact.
+
+\begin{table}[h!t]
+\capstart
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+\toprule
+$f(t)$ & $\mathcal{L} \{ f(t) \} = F(s)$ \\
+\midrule
+$g'(t)$ & $sG(s)-g(0)$ \\[3pt]
+$g''(t)$ & $s^2G(s)-sg(0)-g'(0)$ \\[3pt]
+$g'''(t)$ & $s^3G(s)-s^2g(0)-sg'(0)-g''(0)$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\caption{Laplace transforms of derivatives ($G(s) = \mathcal{L} \{ g(t) \}$
+as usual).\label{ltd:table}}
+\end{table}
+
+\begin{exercise}
+Verify \tablevref{ltd:table}.
+\end{exercise}
+
+\subsection{Solving ODEs with the Laplace transform}
+
+Notice that the Laplace transform turns differentiation into
+multiplication by $s$.  Let us see how to apply this fact to differential
+equations.
+
+\begin{example}
+Take the equation
+\begin{equation*}
+x''(t) + x(t) = \cos (2t), \quad x(0) = 0, \quad x'(0) = 1 .
+\end{equation*}
+We will take the Laplace transform of both sides.
+By $X(s)$ we will, as usual, denote the Laplace transform of
+$x(t)$.
+\begin{align*}
+\mathcal{L} \{ x''(t) + x(t) \} & = \mathcal{L} \{ \cos (2t) \} , \\
+s^2 X(s) -sx(0)-x'(0) + X(s) & = \frac{s}{s^2 + 4} .
+\end{align*}
+We plug in the initial conditions now---this makes the computations more
+streamlined---to obtain
+\begin{equation*}
+s^2 X(s) -1 + X(s) = \frac{s}{s^2 + 4} .
+\end{equation*}
+We solve for $X(s)$,
+\begin{equation*}
+X(s) = \frac{s}{(s^2+1)(s^2 + 4)} + \frac{1}{s^2+1} .
+\end{equation*}
+We use partial fractions (exercise) to write
+\begin{equation*}
+X(s) =\frac{1}{3} \, \frac{s}{s^2+1} - 
+\frac{1}{3}\, \frac{s}{s^2+4} + \frac{1}{s^2+1} .
+\end{equation*}
+Now take the inverse Laplace transform to obtain
+\begin{equation*}
+x(t) =\frac{1}{3}  \cos (t) -
+\frac{1}{3} \cos (2t) + \sin (t) .
+\end{equation*}
+\end{example}
+
+The procedure for linear constant coefficient equations is as follows.
+We take an ordinary differential
+equation in the time variable $t$.  We apply the Laplace transform
+to transform the equation into an algebraic (non differential) equation in
+the frequency domain.  All the $x(t)$, $x'(t)$, $x''(t)$, and so on, will
+be converted to $X(s)$, $sX(s) - x(0)$, $s^2X(s) - sx(0) - x'(0)$,
+and so on.
+We solve the equation for $X(s)$.
+Then taking the inverse transform, if possible, we find $x(t)$.
+
+It should be noted that since not every function has a Laplace transform,
+not every equation can be solved in this manner.  Also if the equation
+is not a linear constant coefficient ODE,
+then by applying the Laplace transform we may not
+obtain an algebraic equation.
+
+\subsection{Using the Heaviside function}
+
+Before we move on to more general equations
+than those we could solve before,
+we want to consider the Heaviside function.  See \figurevref{lt:heavisidefig}
+for the graph.
+\begin{equation*}
+u(t) =
+\begin{cases}
+0 & \text{if } \; t < 0 , \\ 
+1 & \text{if } \; t \geq 0 .
+\end{cases}
+\end{equation*}
+
+\begin{figure}[h!t]
+%\begin{diffyfloatingfigurepdfonly}{3.1in}
+\capstart
+\begin{center}
+\diffyincludegraphics{width=3in}{width=4.5in}{lt-heaviside}
+\caption{Plot of the Heaviside (unit step) function
+$u(t)$.\label{lt:heavisidefig}}
+\end{center}
+\end{figure}
+%\end{diffyfloatingfigurepdfonly}
+
+This function is useful for
+putting together functions, or cutting functions off.  Most commonly it is
+used as $u(t-a)$ for some constant $a$.  This just shifts the graph to the
+right by $a$.  That is, it is a function that is 0 when $t < a$ and 1
+when $t \geq a$.  Suppose for example that $f(t)$ is a \myquote{signal} and
+you started receiving the signal
+$\sin t$ at time $t=\pi$.  The function $f(t)$ should then be defined as
+\begin{equation*}
+f(t) =
+\begin{cases}
+0 & \text{if } \; t < \pi , \\ 
+\sin t & \text{if } \; t \geq \pi .
+\end{cases}
+\end{equation*}
+Using the Heaviside function, $f(t)$ can
+be written as
+\begin{equation*}
+f(t) = u(t - \pi) \, \sin t .
+\end{equation*}
+Similarly the step function that is 1 on the interval $[1,2)$ and zero
+everywhere else can be written as
+\begin{equation*}
+u(t - 1) - u(t-2) .
+\end{equation*}
+The Heaviside function is useful to define functions defined piecewise.  If
+you want to define $f(t)$ such that $f(t) = t$ when $t$ is in $[0,1]$,
+$f(t) = -t+2$
+when $t$ is in $[1,2]$, and $f(t) = 0$ otherwise, then you can use the expression
+\begin{equation*}
+f(t) = t \, \bigl( u(t) - u(t-1) \bigr) + 
+(-t+2) \, \bigl( u(t - 1) - u(t-2) \bigr) .
+\end{equation*}
+
+Hence it is 
+useful to know how the Heaviside function interacts with the Laplace
+transform.  We have already seen that
+\begin{equation*}
+\mathcal{L} \{ u(t-a) \} = \frac{e^{-as}}{s} .
+\end{equation*}
+This can be generalized into a \emph{\myindex{shifting property}}
+or \emph{\myindex{second shifting property}}.
+\begin{equation} \label{ltd:sseq}
+\boxed{~~
+\mathcal{L} \{ f(t-a) \, u(t-a) \} = e^{-as} \mathcal{L} \{ f(t) \} .
+~~}
+\end{equation}
+
+\begin{example} \label{lt:rocketex}
+Suppose that the forcing function is not periodic.  For example,
+suppose that we had a mass-spring system
+\begin{equation*}
+x''(t) + x(t) = f(t) , \quad x(0) = 0, \quad x'(0) = 0,
+\end{equation*}
+where $f(t) = 1$ if $1 \leq t < 5$ and zero otherwise.  We could imagine a
+mass-spring system, where a rocket is fired for 4 seconds starting at
+$t=1$.  Or perhaps an RLC circuit, where the voltage is raised
+at a constant rate for 4 seconds starting at $t=1$, and then held steady 
+again
+starting at $t=5$.
+
+We can
+write $f(t) = u(t-1) - u(t-5)$.  We transform the equation and we plug in
+the initial conditions as before to obtain
+\begin{equation*}
+s^2 X(s) + X(s) = \frac{e^{-s}}{s} - \frac{e^{-5s}}{s} .
+\end{equation*}
+We solve for $X(s)$ to obtain
+\begin{equation*}
+X(s) = \frac{e^{-s}}{s(s^2+1)} - \frac{e^{-5s}}{s(s^2+1)} .
+\end{equation*}
+We leave it as an exercise to the reader to show that
+\begin{equation*}
+{\mathcal{L}}^{-1} \left\{ \frac{1}{s(s^2+1)} \right\}
+= 1 - \cos t .
+\end{equation*}
+In other words 
+$\mathcal{L} \{ 1 - \cos t  \} = 
+\frac{1}{s(s^2+1)}$.  So using \eqref{ltd:sseq} we find
+\begin{equation*}
+{\mathcal{L}}^{-1} \left\{ \frac{e^{-s}}{s(s^2+1)} \right\}
+=
+{\mathcal{L}}^{-1} \left\{
+e^{-s}
+\mathcal{L} \{ 1 - \cos t \}
+\right\}
+=
+\bigl( 1 - \cos (t-1) \bigr) \, u(t-1) .
+\end{equation*}
+Similarly
+\begin{equation*}
+{\mathcal{L}}^{-1} \left\{ \frac{e^{-5s}}{s(s^2+1)} \right\}
+=
+{\mathcal{L}}^{-1} \left\{
+e^{-5s}
+\mathcal{L} \{ 1 - \cos t \}
+\right\}
+=
+\bigl( 1 - \cos (t-5) \bigr) \, u(t-5) .
+\end{equation*}
+Hence, the solution is
+\begin{equation*}
+x(t) = 
+\bigl( 1 - \cos (t-1) \bigr) \, u(t-1) -
+\bigl( 1 - \cos (t-5) \bigr) \, u(t-5) .
+\end{equation*}
+The plot of this solution is given in \figurevref{lt:heavisideexfig}.
+
+\begin{figure}[h!t]
+%\begin{diffyfloatingfigure}{3.1in}{4.6in}
+\capstart
+\begin{center}
+\diffyincludegraphics{width=3in}{width=4.5in}{lt-heavisideex}
+\caption{Plot of $x(t)$.\label{lt:heavisideexfig}}
+\end{center}
+\end{figure}
+%\end{diffyfloatingfigure}
+%FIXME: check
+\end{example}
+
+\subsection{Transfer functions}
+
+Laplace transform leads to the following useful concept for studying the
+steady state behavior of a linear system.  Suppose we have an equation of the
+form
+\begin{equation*}
+L x = f(t) ,
+\end{equation*}
+where $L$ is a linear constant coefficient differential operator.
+Then $f(t)$ is usually thought of as input of the system and $x(t)$ is
+thought of as the output of the system.  For example, for a mass-spring
+system the input is the forcing function and output is the behavior of the
+mass.  We would like to have a convenient way to study the behavior of
+the system for different inputs.
+
+Let us suppose that
+all the initial conditions are zero and take the Laplace transform
+of the equation, we obtain the equation
+\begin{equation*}
+A(s) X(s) = F(s) .
+\end{equation*}
+Solving for the ratio $\nicefrac{X(s)}{F(s)}$ we obtain the so-called
+\emph{\myindex{transfer function}}
+$H(s) = \nicefrac{1}{A(s)}$.
+\begin{equation*}
+H(s) = \frac{X(s)}{F(s)} .
+\end{equation*}
+In other words, $X(s) = H(s) F(s)$.  We obtain an algebraic dependence of
+the output of the system based on the input.  We can now easily study the
+steady state behavior of the system given different inputs by simply
+multiplying by the transfer function.
+
+\begin{example}
+Given $x'' + \omega_0^2 x = f(t)$, let us find the transfer function
+(assuming the initial conditions are zero).
+
+First, we take the Laplace transform of the equation.
+\begin{equation*}
+s^2 X(s) + \omega_0^2 X(s) = F(s) .
+\end{equation*}
+Now we solve for the transfer function $\nicefrac{X(s)}{F(s)}$.
+\begin{equation*}
+H(s) = \frac{X(s)}{F(s)} = \frac{1}{s^2 + \omega_0^2} .
+\end{equation*}
+
+Let us see how to use the transfer function.  Suppose we have the constant input
+$f(t) = 1$.  Hence $F(s) = \nicefrac{1}{s}$, and
+\begin{equation*}
+X(s) = H(s) F(s) = \frac{1}{s^2+\omega_0^2} \frac{1}{s} .
+\end{equation*}
+Taking the inverse Laplace transform of $X(s)$ we obtain
+\begin{equation*}
+x(t) = \frac{1-\cos(\omega_0 t)}{\omega_0^2} .
+\end{equation*}
+\end{example}
+
+\subsection{Transforms of integrals}
+
+A feature of Laplace transforms is that it is also able to easily deal
+with integral equations.  That is, equations in which integrals rather than
+derivatives of functions appear.  The basic property, which can be proved
+by applying the definition and doing integration by parts, is 
+\begin{equation*}
+\boxed{~~
+\mathcal{L} \left\{
+\int_0^t f(\tau) ~ d\tau
+\right\} = \frac{1}{s} \, F(s) .
+~~}
+\end{equation*}
+It is sometimes useful (e.g.\ for computing the inverse transform) to write
+this as
+\begin{equation*}
+\int_0^t f(\tau) ~ d\tau
+=
+{\mathcal{L}}^{-1} \left\{
+\frac{1}{s} \, F(s) \right\} .
+\end{equation*}
+
+\begin{example}
+To compute ${\mathcal{L}}^{-1} \left\{\frac{1}{s(s^2+1)}\right\}$ we could
+proceed by applying this integration rule.  
+\begin{equation*}
+{\mathcal{L}}^{-1} \left\{
+\frac{1}{s} \, \frac{1}{s^2+1} \right\} 
+=
+\int_0^t 
+{\mathcal{L}}^{-1} \left\{
+\frac{1}{s^2+1} \right\} ~ d\tau
+=
+\int_0^t 
+\sin \tau ~ d\tau
+=
+1 - \cos t .
+\end{equation*}
+\end{example}
+
+\begin{example}
+An equation containing an integral of the unknown function is
+called an \emph{\myindex{integral equation}}.  For example, take
+\begin{equation*}
+t^2 = \int_0^t e^{\tau} x(\tau) ~d\tau ,
+\end{equation*}
+where we wish to solve for $x(t)$.
+We apply the Laplace transform and the shifting property to get
+\begin{equation*}
+\frac{2}{s^3} = \frac{1}{s} \, \mathcal{L} \{ e^{t} x(t) \}
+=
+\frac{1}{s} \, X(s-1) ,
+\end{equation*}
+where $X(s) = \mathcal{L} \{ x(t) \}$.  Thus
+\begin{equation*}
+X(s-1) =
+\frac{2}{s^2} \qquad \text{or} \qquad
+X(s) =
+\frac{2}{{(s+1)}^2}.
+\end{equation*}
+We use the shifting property again
+\begin{equation*}
+x(t) = 2 e^{-t} t .
+\end{equation*}
+%More complicated integral
+%equations can also be solved using convolution, about which we will
+%learn in the next section.
+\end{example}
+
+\subsection{Exercises}
+
+\begin{exercise}
+Using the Heaviside function write down the piecewise function
+that is 0 for $t < 0$, $t^2$ for $t$ in $[0,1]$ and $t$ for $t > 1$.
+\end{exercise}
+
+\begin{exercise}
+Using the Laplace transform solve
+\begin{equation*}
+m x'' + c x' + k x = 0 , \quad x(0) = a, \quad x'(0) = b ,
+\end{equation*}
+where $m > 0$, $c > 0$, $k > 0$, and
+$c^2 - 4km > 0$ (system is overdamped).
+\end{exercise}
+
+\begin{exercise}
+Using the Laplace transform solve
+\begin{equation*}
+m x'' + c x' + k x = 0 , \quad x(0) = a, \quad x'(0) = b ,
+\end{equation*}
+where $m > 0$, $c > 0$, $k > 0$, and
+$c^2 - 4km < 0$ (system is underdamped).
+\end{exercise}
+
+\begin{exercise}
+Using the Laplace transform solve
+\begin{equation*}
+m x'' + c x' + k x = 0 , \quad x(0) = a, \quad x'(0) = b ,
+\end{equation*}
+where $m > 0$, $c > 0$, $k > 0$, and
+$c^2 = 4km$ (system is critically damped).
+\end{exercise}
+
+\begin{exercise}
+Solve $x'' + x = u(t-1)$ for initial conditions $x(0) = 0$ and $x'(0) = 0$.
+\end{exercise}
+
+\begin{exercise}
+Show the differentiation of the transform property.  Suppose
+$\mathcal{L} \{ f(t) \} = F(s)$, then show
+\begin{equation*}
+\mathcal{L} \{ -t f(t) \} = F'(s) .
+\end{equation*}
+Hint: Differentiate under the integral sign.
+\end{exercise}
+
+\begin{exercise}
+Solve $x''' + x = t^3 u(t-1)$ for initial conditions $x(0) = 1$ and $x'(0) =
+0$, $x''(0) = 0$.
+\end{exercise}
+
+\begin{exercise}
+Show the second shifting property: 
+$\mathcal{L} \{ f(t-a) \, u(t-a) \} = e^{-as} \mathcal{L} \{ f(t) \}$.
+\end{exercise}
+
+\begin{exercise}
+Let us think of the mass-spring system with a rocket from
+\exampleref{lt:rocketex}.  We noticed that the solution kept oscillating
+after the rocket stopped running.  The amplitude of the oscillation depends
+on the time that the rocket was fired (for 4 seconds in the example).  a)
+Find a formula for the amplitude of the resulting oscillation
+in terms of the amount of time the rocket is fired.  b) Is there
+a nonzero time (if so what is it?)
+for which the rocket fires and the resulting oscillation
+has amplitude 0 (the mass is not moving)?
+\end{exercise}
+
+\begin{exercise}
+Define
+\begin{equation*}
+f(t) =
+\begin{cases}
+{(t-1)}^2 & \text{if } \; 1 \leq t < 2, \\
+3-t & \text{if } \; 2 \leq t < 3, \\
+0 & \text{otherwise} .
+\end{cases}
+\end{equation*}
+a) Sketch the graph of $f(t)$.
+b) Write down $f(t)$ using the Heaviside function.
+c) Solve $x''+x=f(t)$, $x(0)=0$, $x'(0) = 0$ using Laplace transform.
+\end{exercise}
+
+\begin{exercise}
+Find the transfer function for 
+$m x'' + c x' + kx = f(t)$
+(assuming the initial conditions are zero).
+\end{exercise}
+
+\setcounter{exercise}{100}
+
+\begin{exercise}
+Using the Heaviside function $u(t)$, write down the function
+\begin{equation*}
+f(t) =
+\begin{cases}
+0 & \text{if } \; \phantom{1 \leq {}} t < 1  , \\
+t-1 & \text{if } \; 1 \leq t < 2 , \\
+1 & \text{if } \; 2 \leq t .
+\end{cases}
+\end{equation*}
+\end{exercise}
+\exsol{%
+$f(t) =
+(t-1)\bigl(u(t-1) - u(t-2)\bigr) + 
+u(t-2)$
+}
+
+\begin{exercise}
+Solve $x''-x = (t^2-1) u(t-1)$ for initial conditions $x(0)=1$, $x'(0) = 2$
+using the Laplace transform.
+\end{exercise}
+\exsol{%
+$x(t) = (2e^{t-1}-t^2-1) u(t-1) -\frac{e^{-t}}{2}+\frac{3 e^t}{2}$
+}
+ 
+\begin{exercise}
+Find the transfer function for 
+$x' + x = f(t)$
+(assuming the initial conditions are zero).
+\end{exercise}
+\exsol{%
+$H(s) = \frac{1}{s+1}$
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sectionnewpage
+\section{Convolution}
+
+\sectionnotes{1 or 1.5 lectures\EPref{, \S7.2 in \cite{EP}}\BDref{,
+\S6.6 in \cite{BD}}}
+
+\subsection{The convolution}
+
+We said that the Laplace transformation of a product is not the product
+of the transforms.  All hope is not lost however.  We simply have to use
+a different type of a \myquote{product.}
+Take
+two functions $f(t)$ and $g(t)$ defined for $t \geq 0$,
+and define the \emph{\myindex{convolution}}%
+\footnote{%
+For those that have seen convolution defined before, you may have
+seen it defined as
+$(f * g)(t) =
+\int_{-\infty}^\infty f(\tau) g(t-\tau) ~ d\tau$.  This definition
+agrees with \eqref{ltc:convdef} if you define $f(t)$ and $g(t)$
+to be zero for $t < 0$.
+When discussing the Laplace transform the definition we gave is
+sufficient.  Convolution does occur in many other applications, however,
+where you may have to use the more general definition with infinities.
+}
+of $f(t)$ and $g(t)$ as
+\begin{equation} \label{ltc:convdef}
+\boxed{~~
+(f * g)(t) \overset{\text{def}}{=}
+\int_0^t f(\tau) g(t-\tau) ~ d\tau .
+~~}
+\end{equation}
+As you can see, the convolution of two functions of $t$ is another function of $t$.
+
+
+\begin{example}
+Take $f(t) = e^t$ and $g(t) = t$ for $t \geq 0$.  Then 
+\begin{equation*}
+(f*g)(t)
+=
+\int_0^t e^\tau (t-\tau) ~ d\tau
+=
+e^t - t - 1 .
+\end{equation*}
+To solve the integral we
+did one integration by parts.
+\end{example}
+
+\begin{example} \label{ltc:convsincosex}
+Take $f(t) = \sin (\omega t)$ and $g(t) = \cos (\omega t)$ for $t \geq 0$.
+Then 
+\begin{equation*}
+(f*g)(t)
+=
+\int_0^t  \sin ( \omega \tau ) \,
+\cos \bigl( \omega (t-\tau) \bigr) ~ d\tau .
+\end{equation*}
+We apply the identity
+\begin{equation*}
+\cos (\theta) \sin (\psi) =
+\frac{1}{2} \, \bigl( \sin (\theta + \psi) - \sin (\theta - \psi) \bigr) .
+\end{equation*}
+Hence,
+\begin{equation*}
+\begin{split}
+(f*g)(t)
+& =
+\int_0^t
+\frac{1}{2} \, \bigl( \sin (\omega t) - \sin (\omega t - 2 \omega \tau
+) \bigr) ~ d\tau
+\\
+& =
+\left[ \frac{1}{2} \, \tau  \sin (\omega t) + \frac{1}{4\omega} \, \cos (2 \omega \tau -
+\omega t) \right]_{\tau=0}^t
+\\
+& = \frac{1}{2} \, t \sin (\omega t) .
+\end{split}
+\end{equation*}
+The formula holds only for $t \geq 0$.  We assumed that $f$
+and $g$ are zero (or simply not defined) for negative $t$.
+\end{example}
+
+The convolution has many properties that make it behave like a product.
+Let $c$ be a constant and $f$, $g$, and $h$ be functions then
+\begin{align*}
+& f * g = g * f , \\
+& (c f) * g = f * (c g) = c (f*g) , \\
+& ( f * g ) * h = f * ( g * h ) .
+\end{align*}
+The most interesting property for us, and
+the main result of this section is the following theorem.
+
+\begin{theorem}
+Let $f(t)$ and $g(t)$ be of exponential type, then
+\begin{equation*}
+\boxed{~~
+\mathcal{L} \left\{ (f*g)(t) \right\}
+=
+\mathcal{L} \left\{ \int_0^t f(\tau) g(t-\tau) ~ d\tau \right\}
+=
+\mathcal{L} \{ f(t) \} \mathcal{L} \{ g(t) \} .
+~~}
+\end{equation*}
+\end{theorem}
+
+In other words, the Laplace transform of a convolution is the product
+of the Laplace transforms.  The simplest way to use this result is in
+reverse.
+
+\begin{example}
+Suppose we have the function of $s$
+defined by
+\begin{equation*}
+\frac{1}{(s+1)s^2} = 
+\frac{1}{s+1}\,
+\frac{1}{s^2} .
+\end{equation*}
+We recognize the two entries of \tableref{ltd:table}.  That is
+\begin{equation*}
+\mathcal{L}^{-1} 
+\left\{
+\frac{1}{s+1} \right\}
+= e^{-t}
+\qquad \text{and} \qquad
+\mathcal{L}^{-1} 
+\left\{
+\frac{1}{s^2} \right\} 
+= t.
+\end{equation*}
+Therefore,
+\begin{equation*}
+\mathcal{L}^{-1}
+\left\{
+\frac{1}{s+1}\,
+\frac{1}{s^2} \right\}
+=
+\int_0^t
+\tau e^{-(t-\tau)} ~d\tau
+=
+e^{-t}+t-1 .
+\end{equation*}
+The calculation of the integral involved an integration by parts.
+\end{example}
+
+\subsection{Solving ODEs}
+
+The next example demonstrates the full power of the convolution and
+the Laplace transform.  We can give the solution to
+the forced oscillation problem for any forcing function as a definite
+integral.
+
+\begin{example}
+Find the solution to
+\begin{equation*}
+x'' + \omega_0^2 x = f(t) , \quad x(0) = 0, \quad x'(0) = 0 ,
+\end{equation*}
+for an arbitrary function $f(t)$.
+
+We first apply the Laplace transform to the equation.  Denote
+the transform of $x(t)$ by $X(s)$ and the transform of $f(t)$ by
+$F(s)$ as usual.
+\begin{equation*}
+s^2 X(s) + \omega_0^2 X(s) = F(s) ,
+\end{equation*}
+or in other words
+\begin{equation*}
+X(s) = F(s) \frac{1}{s^2+ \omega_0^2} .
+\end{equation*}
+We know
+\begin{equation*}
+{\mathcal{L}}^{-1} \left\{
+\frac{1}{s^2+ \omega_0^2}
+\right\} = 
+\frac{\sin (\omega_0 t)}{\omega_0} .
+\end{equation*}
+Therefore,
+\begin{equation*}
+x(t) = 
+\int_0^t
+f(\tau) 
+\frac{\sin \bigl( \omega_0 (t-\tau) \bigr)}{\omega_0} ~ d\tau ,
+\end{equation*}
+or if we reverse the order
+\begin{equation*}
+x(t) = 
+\int_0^t
+\frac{\sin (\omega_0 \tau)}{\omega_0}
+f(t-\tau) ~ d\tau .
+\end{equation*}
+\end{example}
+
+Let us notice one more feature of this example.
+We can now see how Laplace transform
+handles \myindex{resonance}.  Suppose that $f(t) =
+\cos (\omega_0 t)$.  Then
+\begin{equation*}
+x(t) = 
+\int_0^t
+\frac{\sin (\omega_0 \tau)}{\omega_0} \,
+\cos \bigl( \omega_0 (t-\tau) \bigr) ~ d\tau
+=
+\frac{1}{\omega_0}
+\int_0^t
+\sin ( \omega_0 \tau ) \,
+\cos \bigl(\omega_0 (t-\tau) \bigr) ~ d\tau .
+\end{equation*}
+We have computed the convolution of sine and cosine in
+\exampleref{ltc:convsincosex}.  Hence
+\begin{equation*}
+x(t) =
+\left(
+\frac{1}{\omega_0}
+\right) \,
+\left(
+\frac{1}{2} \,
+t \,
+\sin ( \omega_0 t )
+\right)
+=
+\frac{1}{2 \omega_0} \,
+t
+\,
+\sin ( \omega_0 t ).
+\end{equation*}
+Note the $t$ in front of the sine.  The solution, therefore, grows without
+bound as $t$ gets large, meaning we get resonance.
+
+Similarly,
+we can solve any constant coefficient equation with an arbitrary forcing
+function $f(t)$ as a definite integral using convolution.
+A definite integral, rather than a closed form solution, is usually enough
+for most practical purposes.  It is
+not hard to numerically evaluate a definite integral.
+
+\subsection{Volterra integral equation}
+
+A common integral equation\index{integral equation}
+is the \emph{\myindex{Volterra integral equation}}%
+\footnote{Named for the Italian mathematician
+\href{http://en.wikipedia.org/wiki/Vito_Volterra}{Vito Volterra}
+(1860--1940).}
+\begin{equation*}
+x(t) = f(t) + \int_0^t g(t-\tau) x(\tau) ~ d\tau ,
+\end{equation*}
+where $f(t)$ and $g(t)$ are known functions and $x(t)$ is an unknown we
+wish to solve for.
+To find $x(t)$,
+we apply the Laplace transform to the equation to obtain 
+\begin{equation*}
+X(s) = F(s) + G(s) X(s) ,
+\end{equation*}
+where $X(s)$, $F(s)$, and $G(s)$ are the Laplace transforms of $x(t)$, $f(t)$, and
+$g(t)$ respectively.  We find
+\begin{equation*}
+X(s) = \frac{F(s)}{1-G(s)} .
+\end{equation*}
+To find $x(t)$ we now need to find the 
+inverse Laplace transform of $X(s)$.
+
+\begin{example}
+Solve
+\begin{equation*}
+x(t) =  e^{-t} + \int_0^t \sinh(t-\tau) x(\tau) ~ d\tau .
+\end{equation*}
+
+We apply Laplace transform to obtain
+\begin{equation*}
+X(s) = \frac{1}{s+1} + \frac{1}{s^2-1} X(s) ,
+\end{equation*}
+or
+\begin{equation*}
+X(s) = \frac{\frac{1}{s+1}}{1- \frac{1}{s^2-1}}
+=
+\frac{s-1}{s^2 - 2}
+=
+\frac{s}{s^2 - 2}
+-
+\frac{1}{s^2 - 2} .
+\end{equation*}
+It is not hard to apply \tablevref{lt:table} to find
+\begin{equation*}
+x(t) = \cosh (\! \sqrt{2} \, t) -
+\frac{1}{\sqrt{2}} \sinh (\!  \sqrt{2}\, t ).
+\end{equation*}
+\end{example}
+
+\subsection{Exercises}
+
+\begin{exercise}
+Let $f(t) = t^2$ for $t \geq 0$, and $g(t) = u(t-1)$.  Compute
+$f * g$.
+\end{exercise}
+
+\begin{exercise}
+Let $f(t) = t$ for $t \geq 0$, and $g(t) = \sin t $ for $t \geq 0$.  Compute
+$f * g$.
+\end{exercise}
+
+\begin{exercise}
+Find the solution to
+\begin{equation*}
+m x'' + c x' + k x = f(t) , \quad x(0) = 0, \quad x'(0) = 0 ,
+\end{equation*}
+for an arbitrary function $f(t)$, where $m > 0$, $c > 0$, $k > 0$,
+and $c^2 - 4km > 0$ (system is overdamped).
+Write the solution as a definite integral.
+\end{exercise}
+
+\begin{exercise}
+Find the solution to
+\begin{equation*}
+m x'' + c x' + k x = f(t) , \quad x(0) = 0, \quad x'(0) = 0 ,
+\end{equation*}
+for an arbitrary function $f(t)$, where $m > 0$, $c > 0$, $k > 0$,
+and $c^2 - 4km < 0$ (system is underdamped).
+Write the solution as a definite integral.
+\end{exercise}
+
+\begin{exercise}
+Find the solution to
+\begin{equation*}
+m x'' + c x' + k x = f(t) , \quad x(0) = 0, \quad x'(0) = 0 ,
+\end{equation*}
+for an arbitrary function $f(t)$, where $m > 0$, $c > 0$, $k > 0$,
+and $c^2 = 4km$ (system is critically damped).
+Write the solution as a definite integral.
+\end{exercise}
+
+\begin{exercise}
+Solve
+\begin{equation*}
+x(t) =  e^{-t} + \int_0^t \cos(t-\tau) x(\tau) ~ d\tau .
+\end{equation*}
+\end{exercise}
+
+\begin{exercise}
+Solve
+\begin{equation*}
+x(t) =  \cos t + \int_0^t \cos(t-\tau) x(\tau) ~ d\tau .
+\end{equation*}
+\end{exercise}
+
+\begin{exercise}
+Compute ${\mathcal{L}}^{-1} \left\{ \frac{s}{{(s^2+4)}^2} \right\}$ using
+convolution.
+\end{exercise}
+
+\begin{exercise}
+Write down the solution to
+$x''-2x=e^{-t^2}$, $x(0)=0$, $x'(0)=0$ as a
+definite integral.  Hint: Do not try to compute the
+Laplace transform of $e^{-t^2}$.
+\end{exercise}
+
+\setcounter{exercise}{100}
+
+\begin{exercise}
+Let $f(t) = \cos t$ for $t \geq 0$, and $g(t) = e^{-t}$.  Compute
+$f * g$.
+\end{exercise}
+\exsol{%
+$\frac{1}{2}(\cos t + \sin t - e^{-t})$
+}
+
+\begin{exercise}
+Compute ${\mathcal{L}}^{-1} \left\{ \frac{5}{s^4+s^2} \right\}$ using
+convolution.
+\end{exercise}
+\exsol{%
+$5t-5\sin t$
+}
+
+
+\begin{exercise}
+Solve $x''+x = \sin t$, $x(0) = 0$, $x'(0)=0$ using convolution.
+\end{exercise}
+\exsol{%
+$\frac{1}{2}(\sin t - t \cos t)$
+}
+
+\begin{exercise}
+Solve $x'''+x' = f(t)$, $x(0) = 0$, $x'(0)=0$, $x''(0)=0$ using convolution.
+Write the result as a definite integral.
+\end{exercise}
+\exsol{%
+$\int_0^t f(\tau) \bigl( 1 - \cos (t-\tau)\bigr)~ d\tau$
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sectionnewpage
+\section{Dirac delta and impulse response}
+
+\sectionnotes{1 or 1.5 lecture\EPref{, \S7.6 in \cite{EP}}\BDref{,
+\S6.5 in \cite{BD}}}
+
+\subsection{Rectangular pulse}
+
+Often in applications we study a physical system by putting in a short pulse 
+and then seeing what the system does.  The resulting behavior is
+often called \emph{\myindex{impulse response}}.
+Let us see what we mean by a pulse.
+The simplest kind of a pulse is a simple rectangular pulse defined by
+\begin{equation*}
+\varphi(t) = 
+\begin{cases}
+0 & \text{if } \; \phantom{a \leq {}} t < a , \\
+M & \text{if } \; a \leq t < b , \\
+0 & \text{if } \; b \leq t .
+\end{cases}
+\end{equation*}
+See \figureref{lt:sqpulse} for a graph.
+Notice that
+\begin{equation*}
+\varphi(t) = M \bigl( u(t-a) - u(t-b) \bigr) ,
+\end{equation*}
+where $u(t)$ is the unit step function.
+
+\begin{figure}[h!t]
+\begin{center}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{lt-sqpulse}
+\caption{Sample square pulse with $a=0.5$, $b=1$ and $M = 2$.\label{lt:sqpulse}}
+\end{center}
+\end{figure}
+
+Let us take the Laplace transform of a square pulse,
+\begin{equation*}
+{\mathcal{L}} \left\{ \varphi(t) \right\}
+=
+{\mathcal{L}} \left\{ M \bigl( u(t-a) - u(t-b) \bigr)  \right\}
+=
+M
+\frac{e^{-as} - e^{-bs}}{s} .
+\end{equation*}
+
+For simplicity we let $a=0$, and it is convenient
+to set $M = \nicefrac{1}{b}$ to have
+\begin{equation*}
+\int_0^\infty \varphi(t) ~dt = 1 .
+\end{equation*}
+That is, to have the pulse have \myquote{unit mass.}
+For such a pulse we
+compute
+\begin{equation*}
+{\mathcal{L}} \left\{ \varphi(t) \right\}
+=
+{\mathcal{L}} \left\{ \frac{u(t) - u(t-b)}{b}  \right\}
+=
+\frac{1 - e^{-bs}}{bs} .
+\end{equation*}
+We generally want $b$ to be very small.  That is, we wish to have
+the pulse be very short and very tall.  By letting $b$ go to zero we arrive
+at the concept of the Dirac delta function.
+
+\subsection{The delta function}
+
+The \emph{\myindex{Dirac delta function}}\index{delta function}%
+\footnote{Named after the English physicist and mathematician
+\href{http://en.wikipedia.org/wiki/Paul_Dirac}{Paul Adrien Maurice Dirac}
+(1902--1984).}
+is not exactly a function; it is sometimes called a
+\emph{\myindex{generalized function}}.  We
+avoid unnecessary details and simply say that it is an object
+that does not really make sense unless we integrate it.  The motivation is
+that we would like a \myquote{function} $\delta(t)$
+such that 
+for any continuous function $f(t)$ we have
+\begin{equation*}
+\boxed{~~
+\int_{-\infty}^\infty \delta(t) f(t) ~dt = f(0) .
+~~}
+\end{equation*}
+The formula should hold if we integrate over any interval that contains 0,
+not just $(-\infty,\infty)$.
+So $\delta(t)$ is a \myquote{function} 
+with all its \myquote{mass} at the single point $t=0$.  In other words, for any
+interval $[c,d]$
+\begin{equation*}
+\int_c^d \delta(t) ~dt = 
+\begin{cases}
+1 & \text{if the interval $[c,d]$ contains 0, i.e. } c \leq 0 \leq d, \\
+0 & \text{otherwise.}
+\end{cases}
+\end{equation*}
+Unfortunately there is no such function in the classical sense.  You could
+informally think that $\delta(t)$ is zero for $t\not=0$ and somehow
+infinite at $t=0$.
+
+A good way to think about $\delta(t)$ is as a limit of short pulses
+whose integral is $1$.  For example, suppose that
+we have a square pulse $\varphi(t)$ as above with $a=0$,
+$M=\nicefrac{1}{b}$, that is $\varphi(t) = \frac{u(t) - u(t-b)}{b}$.
+Compute
+\begin{equation*}
+\int_{-\infty}^\infty \varphi(t) f(t) ~dt =
+\int_{-\infty}^\infty \frac{u(t) - u(t-b)}{b} f(t) ~dt =
+\frac{1}{b} \int_{0}^b f(t) ~dt .
+\end{equation*}
+If $f(t)$ is continuous at $t=0$, then
+for very small $b$, the function $f(t)$ is approximately equal to $f(0)$ on
+the interval $[0,b]$.  We approximate the integral
+\begin{equation*}
+\frac{1}{b} \int_{0}^b f(t) ~dt \approx
+\frac{1}{b} \int_{0}^b f(0) ~dt = f(0) .
+\end{equation*}
+Therefore,
+\begin{equation*}
+\lim_{b\to 0}
+\int_{-\infty}^\infty \varphi(t) f(t) ~dt =
+\lim_{b\to 0}
+\frac{1}{b} \int_{0}^b f(t) ~dt  = f(0) .
+\end{equation*}
+
+Let us therefore accept $\delta(t)$ as an object that is possible to
+integrate.  We often want to shift $\delta$ to another point, for example
+$\delta(t-a)$.  In that case we have
+\begin{equation*}
+\int_{-\infty}^\infty \delta(t-a) f(t) ~dt = f(a) .
+\end{equation*}
+Note that $\delta(a-t)$ is the same object as $\delta(t-a)$.
+In other words, the convolution of $\delta(t)$ with $f(t)$ is again $f(t)$,
+\begin{equation*}
+(f * \delta) (t) = 
+\int_{0}^t \delta(t-s) f(s) ~ds
+= f(t) .
+\end{equation*}
+
+As we can integrate $\delta(t)$, let us compute its Laplace transform.
+\begin{equation*}
+\boxed{~~
+{\mathcal{L}} \left\{ \delta(t-a) \right\}
+=
+\int_{0}^\infty e^{-st} \delta(t-a) ~dt = e^{-as} .
+~~}
+\end{equation*}
+In particular,
+\begin{equation*}
+{\mathcal{L}} \left\{ \delta(t) \right\} = 1 .
+\end{equation*}
+
+\begin{remark}
+Notice that the Laplace transform of $\delta(t-a)$ looks like
+the Laplace transform of the derivative of the Heaviside function
+$u(t-a)$, if we could differentiate the Heaviside function.
+First notice
+\begin{equation*}
+{\mathcal{L}} \bigl\{ u(t-a) \bigr\} = \frac{e^{-as}}{s}.
+\end{equation*}
+To obtain what the Laplace transform of the derivative would be
+we multiply by $s$, to obtain $e^{-as}$, which is the Laplace transform
+of $\delta(t-a)$.
+We see the same thing using integration,
+\begin{equation*}
+\int_0^t \delta(s-a)~ds = u(t-a) .
+\end{equation*}
+So in a certain sense
+\begin{equation*}
+\text{``} \quad \frac{d}{dt} \Bigl[ u(t-a) \Bigr] = \delta(t-a) . \quad \text{''}
+\end{equation*}
+This line of reasoning allows us to talk about derivatives of functions with jump
+discontinuities.
+We can think of
+the derivative of the Heaviside function $u(t-a)$ as being somehow infinite
+at $a$, which is precisely our intuitive understanding of the delta
+function.
+\end{remark}
+
+\begin{example}
+Let us compute ${\mathcal{L}}^{-1} \left\{ \frac{s+1}{s} \right\}$.  So
+far we have always looked at proper rational functions in the $s$ variable.
+That is, the numerator was always of lower degree than the denominator.
+Not so with $\frac{s+1}{s}$.
+We write,
+\begin{equation*}
+{\mathcal{L}}^{-1} \left\{ \frac{s+1}{s} \right\}
+=
+{\mathcal{L}}^{-1} \left\{ 1 + \frac{1}{s} \right\}
+=
+{\mathcal{L}}^{-1} \left\{ 1 \right\}
++
+{\mathcal{L}}^{-1} \left\{ \frac{1}{s} \right\}
+=
+\delta(t) + 1 .
+\end{equation*}
+The resulting object is a generalized
+function and only makes sense when put underneath an integral.
+\end{example}
+
+\subsection{Impulse response}
+
+As we said before, in the differential equation
+$L x = f(t)$,
+we think of $f(t)$ as input, and $x(t)$ as the output.  Often it is important
+to find the response to an impulse, and then we use
+the delta function in place of $f(t)$.
+The solution to
+\begin{equation*}
+L x = \delta(t)
+\end{equation*}
+is called the
+\emph{\myindex{impulse response}}.
+
+\begin{example}
+Solve (find the impulse response)
+\begin{equation} \label{eq:lteximpulseresp}
+x'' + \omega_0^2 x = \delta(t) , \quad x(0) = 0, \quad x'(0) = 0 .
+\end{equation}
+
+We first apply the Laplace transform to the equation.  Denote
+the transform of $x(t)$ by $X(s)$.
+\begin{equation*}
+s^2 X(s) + \omega_0^2 X(s) = 1 ,
+\qquad \text{and so} \qquad
+X(s) = \frac{1}{s^2+ \omega_0^2} .
+\end{equation*}
+Taking the inverse Laplace transform we obtain
+\begin{equation*}
+x(t) = 
+\frac{\sin (\omega_0 t)}{\omega_0} .
+\end{equation*}
+\end{example}
+
+Let us notice something about the above example.  We showed before that
+when the input is $f(t)$, then the solution to $Lx = f(t)$
+is given by
+\begin{equation*}
+x(t) = 
+\int_0^t
+f(\tau) 
+\frac{\sin \bigl( \omega_0 (t-\tau) \bigr)}{\omega_0} ~ d\tau .
+\end{equation*}
+That is, the solution for an arbitrary input is given as
+convolution with the impulse response.  Let us see why.
+The key is to notice that for functions $x(t)$ and $f(t)$,
+\begin{equation*}
+(x * f)''(t) =
+\frac{d^2}{dt^2}\left[
+\int_0^t
+f(\tau) 
+x(t-\tau) ~ d\tau \right]
+=
+\int_0^t
+f(\tau) 
+x''(t-\tau) ~ d\tau
+= (x'' * f)(t) .
+\end{equation*}
+We simply differentiate twice under the
+integral\footnote{You should really think of the integral going over
+$(-\infty,\infty)$ rather than over $[0,t]$ and simply assume that $f(t)$ and
+$x(t)$ are continuous and zero for negative $t$.}, the details are
+left as an exercise.
+If we convolve the entire equation \eqref{eq:lteximpulseresp},
+the left hand side becomes
+\begin{equation*}
+(x'' + \omega_0^2 x) * f =
+(x'' * f) + \omega_0^2 (x * f) =
+(x * f)'' + \omega_0^2 (x * f) .
+\end{equation*}
+The right hand side becomes
+\begin{equation*}
+(\delta * f)(t) = f(t).
+\end{equation*}
+Therefore $y(t) = (x * f)(t)$ is the solution to
+\begin{equation*}
+y'' + \omega_0^2 y = f(t) .
+\end{equation*}
+This procedure works in general for other linear
+equations $Lx = f(t)$.  If you determine the impulse response,
+you also know how to obtain the output $x(t)$ for any input $f(t)$
+by simply convolving
+the impulse response and the input $f(t)$.
+
+\subsection{Three-point beam bending}
+\index{three-point beam bending}
+
+Let us give another quite different
+example where delta functions turn up.  In this case 
+representing point loads on a steel beam.  Suppose we have a beam
+of length $L$, resting on two simple supports at the ends.  Let $x$ denote
+the position on the beam, and let $y(x)$ denote the deflection of the beam in
+the vertical direction.  The deflection $y(x)$ satisfies the
+\emph{\myindex{Euler-Bernoulli equation}}%
+\footnote{Named for the Swiss mathematicians
+\href{http://en.wikipedia.org/wiki/Jacob_Bernoulli}{Jacob Bernoulli}
+(1654--1705),
+\href{http://en.wikipedia.org/wiki/Daniel_Bernoulli}{Daniel Bernoulli}
+---nephew of Jacob---
+(1700--1782), and
+\href{http://en.wikipedia.org/wiki/Euler}{Leonhard Paul Euler}
+(1707--1783).},
+\begin{equation*}
+EI \frac{d^4 y}{dx^4} = F(x) ,
+\end{equation*}
+where $E$ and $I$ are constants\footnote{$E$ is the elastic modulus and $I$
+is the second moment of area.  Let us not worry about the details and simply
+think of these as some given constants.} and
+$F(x)$ is the force applied per unit length at position $x$.  The situation
+we are interested in is when the force is applied at a single point as in
+\figurevref{lt:beambendingfig}.
+
+\begin{figure}[h!t]
+\capstart
+\begin{center}
+\inputpdft{beam-bending}
+\caption{Three-point bending.\label{lt:beambendingfig}}
+\end{center}
+\end{figure}
+
+In this case the equation becomes
+\begin{equation*}
+EI \frac{d^4 y}{dx^4} = -F \delta(x-a) ,
+\end{equation*}
+where $x=a$ is the point where the mass is applied.  $F$ is the force
+applied and the minus sign indicates that the force is downward, that is, in the
+negative $y$ direction.  The end points of the
+beam satisfy the conditions,
+\begin{align*}
+& y(0) = 0, \qquad y''(0) = 0, \\
+& y(L) = 0, \qquad y''(L) = 0.
+\end{align*}
+See \sectionref{sec:appeig} for further information about endpoint
+conditions applied to beams.
+
+
+\begin{example} \label{lt:examplebeam}
+Suppose that length of the beam is 2, and suppose that $EI=1$ for
+simplicity.  Further suppose that the force $F=1$ is applied at $x=1$.
+That is, we have the equation
+\begin{equation*}
+\frac{d^4 y}{dx^4} = -\delta(x-1) ,
+\end{equation*}
+and the endpoint conditions are
+\begin{equation*}
+y(0) = 0, \qquad y''(0) = 0, \qquad
+y(2) = 0, \qquad y''(2) = 0.
+\end{equation*}
+
+We could integrate, but using the Laplace transform
+is even easier.
+We apply the transform
+in the $x$ variable rather than the $t$ variable.  Let us again denote the
+transform of $y(x)$ as $Y(s)$.
+\begin{equation*}
+s^4Y(s)-s^3y(0)-s^2y'(0)-sy''(0)-y'''(0)
+= -e^{-s}.
+\end{equation*}
+We notice that $y(0) = 0$ and $y''(0) = 0$.  Let us
+call $C_1 = y'(0)$ and $C_2=y'''(0)$.
+We solve for $Y(s)$,
+\begin{equation*}
+Y(s) = \frac{-e^{-s}}{s^4} + \frac{C_1}{s^2}+ \frac{C_2}{s^4} .
+\end{equation*}
+We take the inverse Laplace transform utilizing the 
+second shifting property \eqref{ltd:sseq} to take the inverse of the first
+term.
+\begin{equation*}
+y(x) = \frac{-{(x-1)}^3}{6} u(x-1) + C_1 x + \frac{C_2}{6} x^3 .
+\end{equation*}
+We still need to apply two of the endpoint conditions.  As the conditions
+are at $x=2$ we can simply replace $u(x-1) = 1$ when taking
+the derivatives.  Therefore,
+\begin{equation*}
+0 = y(2) = \frac{-{(2-1)}^3}{6} + C_1 (2) + \frac{C_2}{6} 2^3 =
+\frac{-1}{6} + 2 C_1 + \frac{4}{3} C_2 ,
+\end{equation*}
+and
+\begin{equation*}
+0 = y''(2) = \frac{-3\cdot 2 \cdot (2-1)}{6} + \frac{C_2}{6} 3\cdot 2 \cdot 2
+ = -1 + 2 C_2 .
+\end{equation*}
+Hence $C_2 = \frac{1}{2}$ and solving for $C_1$ using the first
+equation we obtain
+$C_1 = \frac{-1}{4}$.  Our solution for the beam deflection is
+\begin{equation*}
+y(x) = \frac{-{(x-1)}^3}{6} u(x-1) - \frac{x}{4} + \frac{x^3}{12} .
+\end{equation*}
+\end{example}
+
+\subsection{Exercises}
+
+\begin{exercise}
+Solve (find the impulse response)
+$x'' + x' + x = \delta(t)$, $x(0) = 0$, $x'(0)=0$.
+\end{exercise}
+
+\begin{exercise}
+Solve (find the impulse response)
+$x'' + 2 x' + x = \delta(t)$, $x(0) = 0$, $x'(0)=0$.
+\end{exercise}
+
+\begin{exercise}
+A pulse can come later and can be bigger.
+Solve 
+$x'' + 4 x = 4\delta(t-1)$, $x(0) = 0$, $x'(0)=0$.
+\end{exercise}
+
+\begin{exercise}
+Suppose that $f(t)$ and $g(t)$ are differentiable functions
+and suppose that $f(t) = g(t) = 0$ for all $t \leq 0$.  Show that
+\begin{equation*}
+(f * g)'(t) = (f' * g)(t) = (f * g')(t) .
+\end{equation*}
+\end{exercise}
+
+\begin{exercise}
+Suppose that $L x = \delta(t)$, $x(0) = 0$, $x'(0) = 0$, has the solution
+$x = e^{-t}$ for $t > 0$.  Find the solution to
+$Lx = t^2$, $x(0) = 0$, $x'(0) = 0$ for $t > 0$.
+\end{exercise}
+
+\begin{exercise}
+Compute
+${\mathcal{L}}^{-1} \left\{ \frac{s^2+s+1}{s^2} \right\}$.
+\end{exercise}
+
+\begin{exercise}[challenging]
+Solve \exampleref{lt:examplebeam} via integrating 4 times in the $x$ variable.
+\end{exercise}
+
+\begin{exercise}
+Suppose we have a beam of length $1$ simply supported at the ends and
+suppose that force $F=1$ is applied at $x=\frac{3}{4}$ in the downward
+direction.  Suppose that $EI=1$ for simplicity.  Find the beam deflection
+$y(x)$.
+\end{exercise}
+
+\setcounter{exercise}{100}
+
+\begin{exercise}
+Solve (find the impulse response)
+$x'' = \delta(t)$, $x(0) = 0$, $x'(0)=0$.
+\end{exercise}
+\exsol{%
+$x(t) = t$
+}
+
+\begin{exercise}
+Solve (find the impulse response)
+$x' + a x = \delta(t)$, $x(0) = 0$, $x'(0)=0$.
+\end{exercise}
+\exsol{%
+$x(t) = e^{-at}$
+}
+%$sX+aX = 1$
+%$X = \frac{1}{s+a}$
+
+\begin{exercise}
+Suppose that $L x = \delta(t)$, $x(0) = 0$, $x'(0) = 0$, has the solution
+$x(t) = \cos(t)$ for $t > 0$.  Find (in closed form) the solution to
+$Lx = \sin(t)$, $x(0) = 0$, $x'(0) = 0$ for $t > 0$.
+\end{exercise}
+\exsol{%
+$x(t) = (\cos * \sin)(t) = \frac{1}{2} t \sin(t)$
+}
+
+\begin{exercise}
+Compute
+${\mathcal{L}}^{-1} \left\{ \frac{s^2}{s^2+1} \right\}$.
+\end{exercise}
+\exsol{%
+$\delta(t) - \sin(t)$
+}
+%1 - 1/(s^2+1)
+
+\begin{exercise}
+Compute
+${\mathcal{L}}^{-1} \left\{ \frac{3 s^2 e^{-s} + 2}{s^2} \right\}$.
+\end{exercise}
+\exsol{%
+$3 \delta(t-1) + 2 t$
+}
