@@ -74,6 +74,11 @@
         		  <xsl:value-of select="@width" />
         		  <xsl:text>; </xsl:text>
 		        </xsl:if>
+			<xsl:if test="@maxwidth">
+        		  <xsl:text>max-width:</xsl:text>
+        		  <xsl:value-of select="@maxwidth" />
+        		  <xsl:text>; </xsl:text>
+		        </xsl:if>
 			<xsl:if test="@height">
         		  <xsl:text>height:</xsl:text>
         		  <xsl:value-of select="@height" />
@@ -100,6 +105,11 @@
         		  <xsl:value-of select="@width" />
         		  <xsl:text>; </xsl:text>
 		        </xsl:if>
+			<xsl:if test="@maxwidth">
+        		  <xsl:text>max-width:</xsl:text>
+        		  <xsl:value-of select="@maxwidth" />
+        		  <xsl:text>; </xsl:text>
+		        </xsl:if>
 			<xsl:if test="@height">
         		  <xsl:text>height:</xsl:text>
         		  <xsl:value-of select="@height" />
@@ -118,9 +128,24 @@
         </xsl:when>
         <xsl:otherwise>
             <xsl:element name="img">
-                <xsl:attribute name="width">
-		    <xsl:value-of select="@width" />
-                </xsl:attribute>
+        	<xsl:attribute name="style">
+			<xsl:if test="@width">
+        		  <xsl:text>width:</xsl:text>
+        		  <xsl:value-of select="@width" />
+        		  <xsl:text>; </xsl:text>
+		        </xsl:if>
+			<xsl:if test="@maxwidth">
+        		  <xsl:text>max-width:</xsl:text>
+        		  <xsl:value-of select="@maxwidth" />
+        		  <xsl:text>; </xsl:text>
+		        </xsl:if>
+			<xsl:if test="@height">
+        		  <xsl:text>height:</xsl:text>
+        		  <xsl:value-of select="@height" />
+        		  <xsl:text>; </xsl:text>
+		        </xsl:if>
+        		<xsl:text>margin:auto; vertical-align:middle;</xsl:text>
+        	</xsl:attribute>
                 <xsl:attribute name="src">
                     <xsl:value-of select="@source" />
                 </xsl:attribute>
@@ -153,6 +178,11 @@
         		  <xsl:value-of select="@width" />
         		  <xsl:text>; </xsl:text>
 		        </xsl:if>
+			<xsl:if test="@maxwidth">
+        		  <xsl:text>max-width:</xsl:text>
+        		  <xsl:value-of select="@maxwidth" />
+        		  <xsl:text>; </xsl:text>
+		        </xsl:if>
 			<xsl:if test="@height">
         		  <xsl:text>height:</xsl:text>
         		  <xsl:value-of select="@height" />
@@ -179,6 +209,11 @@
         		  <xsl:value-of select="@width" />
         		  <xsl:text>; </xsl:text>
 		        </xsl:if>
+			<xsl:if test="@maxwidth">
+        		  <xsl:text>max-width:</xsl:text>
+        		  <xsl:value-of select="@maxwidth" />
+        		  <xsl:text>; </xsl:text>
+		        </xsl:if>
 			<xsl:if test="@height">
         		  <xsl:text>height:</xsl:text>
         		  <xsl:value-of select="@height" />
@@ -197,16 +232,24 @@
         </xsl:when>
         <xsl:otherwise>
             <xsl:element name="img">
-		<xsl:if test="@width">
-                    <xsl:attribute name="width">
-		        <xsl:value-of select="@width" />
-                    </xsl:attribute>
-	        </xsl:if>
-		<xsl:if test="@height">
-                    <xsl:attribute name="height">
-		        <xsl:value-of select="@height" />
-                    </xsl:attribute>
-	        </xsl:if>
+        	<xsl:attribute name="style">
+			<xsl:if test="@width">
+        		  <xsl:text>width:</xsl:text>
+        		  <xsl:value-of select="@width" />
+        		  <xsl:text>; </xsl:text>
+		        </xsl:if>
+			<xsl:if test="@maxwidth">
+        		  <xsl:text>max-width:</xsl:text>
+        		  <xsl:value-of select="@maxwidth" />
+        		  <xsl:text>; </xsl:text>
+		        </xsl:if>
+			<xsl:if test="@height">
+        		  <xsl:text>height:</xsl:text>
+        		  <xsl:value-of select="@height" />
+        		  <xsl:text>; </xsl:text>
+		        </xsl:if>
+        		<xsl:text>margin:auto; vertical-align:middle;</xsl:text>
+        	</xsl:attribute>
                 <xsl:attribute name="src">
                     <xsl:value-of select="@source" />
                 </xsl:attribute>

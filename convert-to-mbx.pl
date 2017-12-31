@@ -978,13 +978,13 @@ while(1)
 			$fig =~ s/\\medskip[ \n]*//g;
 
 			if ($fig =~ m/^[ \n]*\\inputpdft\{(.*?)\}[ \n]*$/) {
-				$thefile = $1;
-				$thesizestr = get_size_of_svg("figures/$thefile-tex4ht.svg");
+				$thefile = "figures/$1";
+				$thesizestr = get_size_of_svg("$thefile-tex4ht.svg");
 				open_paragraph ();
 				if ($thesizestr ne "") {
-					print $out "<diffyqsimage source=\"figures/$thefile-tex4ht\" $thesizestr />\n";
+					print $out "<diffyqsimage source=\"$thefile-tex4ht\" $thesizestr />\n";
 				} else {
-					print $out "<diffyqsimage source=\"figures/$thefile-tex4ht\" width=\"$thesize\" />\n";
+					print $out "<diffyqsimage source=\"$thefile-tex4ht\" width=\"$thesize\" />\n";
 				}
 				close_paragraph ();
 			} else {
@@ -996,17 +996,17 @@ while(1)
 
 	#FIXME: this is based entirely too much on my usage :)
 	} elsif ($para =~ s/^\\begin\{center\}[ \n]*\\inputpdft\{(.*?)\}[ \n]*\\end\{center\}[ \n]*//) {
-		$thefile = $1;
+		$thefile = "figures/$1";
 		print "(CENTERED inputpdft)\n";
-		open_paragraph ();
-		$thesizestr = get_size_of_svg("figures/$thefile-tex4ht.svg");
+		#open_paragraph ();
+		$thesizestr = get_size_of_svg("$thefile-tex4ht.svg");
 		open_paragraph ();
 		if ($thesizestr ne "") {
-			print $out "<diffyqsimage source=\"figures/$thefile-tex4ht\" $thesizestr />\n";
+			print $out "<diffyqsimage source=\"$thefile-tex4ht\" $thesizestr />\n";
 		} else {
 			#FIXME
 			print "\n\n\nHUH?\n\n\nCan't figure out the size of $thefile\n\n";
-			print $out "<diffyqsimage source=\"figures/$thefile-tex4ht\" height=\"1in\" />\n";
+			print $out "<diffyqsimage source=\"$thefile-tex4ht\" height=\"1in\" />\n";
 		}
 		close_paragraph ();
 		#
@@ -1105,30 +1105,38 @@ while(1)
 				print $out "<figure xml:id=\"$theid\">\n";
 				print $out "  <caption>$caption</caption>\n";
 
-				if ($fig =~ m/^[ \n]*\\diffyincludegraphics\{[^}]*?\}\{[^}]*?\}\{([^}]*?)\}[ \n]*$/) {
-					$thefile = $1;
+				if ($fig =~ m/^[ \n]*\\diffyincludegraphics\{[^}]*?\}\{([^}]*?)\}\{([^}]*?)\}[ \n]*$/) {
+					$thesize = $1;
+					$thefile = "figures/$2";
+					$thesize =~ s/width=//g;
 					#ensure_svg_version ($thefile);
 					ensure_mbx_png_version ($thefile);
-					print $out "  <image source=\"$thefile-mbx.png\" width=\"100\%\" />\n";
+					print $out "  <diffyqsimage source=\"$thefile-mbx.png\" width=\"100\%\" maxwidth=\"$thesize\" />\n";
 					#if ($thesize ne "") {
 					#print $out "  <diffyqsimage source=\"$thefile\" width=\"$thesize\" />\n";
 					#} else {
 					#$thesizestr = get_size_of_svg("$thefile.svg");
 					#print $out "  <diffyqsimage source=\"$thefile\" $thesizestr />\n";
 					#}
-				} elsif ($fig =~ m/^[ \n]*\\diffyincludegraphics\{[^}]*?\}\{[^}]*?\}\{([^}]*?)\}[ \n]*\\\\[ \n]*\\diffyincludegraphics\{[^}]*?\}\{[^}]*?\}\{([^}]*?)\}[ \n]*$/) {
-					$thefile1 = $1;
-					$thefile2 = $2;
+				} elsif ($fig =~ m/^[ \n]*\\diffyincludegraphics\{[^}]*?\}\{([^}]*?)\}\{([^}]*?)\}[ \n]*\\\\[ \n]*\\diffyincludegraphics\{[^}]*?\}\{([^}]*?)\}\{([^}]*?)\}[ \n]*$/) {
+					$thesize1 = $1;
+					$thefile1 = "figures/$2";
+					$thesize2 = $3;
+					$thefile2 = "figures/$4";
+					$thesize1 =~ s/width=//g;
+					$thesize2 =~ s/width=//g;
 					#ensure_svg_version ($thefile1);
 					#ensure_svg_version ($thefile2);
 					ensure_mbx_png_version ($thefile1);
 					ensure_mbx_png_version ($thefile2);
-					print $out "  <image source=\"$thefile1-mbx.png\" width=\"100\%\" />\n";
-					print $out "  <image source=\"$thefile2\" width=\"100\%\" />\n";
+					#FIXME: what about maxwidth?
+					print $out "  <image source=\"$thefile1-mbx.png\" width=\"100\%\" maxwidth=\"$thesize\" />\n";
+					print $out "  <image source=\"$thefile2-mbx.png\" width=\"100\%\" maxwidth=\"$thesize\" />\n";
+
 				#2 picture version FIXME: removing these, adding hand-done guys
 				#} elsif ($fig =~ m/^[ \n]*\\diffyincludegraphics\{[^}]*?\}\{[^}]*?\}\{([^}]*?)}[ \n]*\\diffyincludegraphics\{[^}]*?\}\{[^}]*?\}\{([^}]*?)\}[ \n]*$/) {
-				#$thefile1 = $1;
-				#$thefile2 = $2;
+				#$thefile1 = "figures/$1";
+				#$thefile2 = "figures/$2";
 				#print "DOUBLEFIGURE!\n"
 				#ensure_svg_version ($thefile1);
 				#ensure_svg_version ($thefile2);
@@ -1155,10 +1163,10 @@ while(1)
 					#}
 				#4 picture version FIXME: removing these, adding hand-done guys
 				#} elsif ($fig =~ m/^[ \n]*\\diffyincludegraphics\{[^}]*?\}\{[^}]*?\}\{([^}]*?)\}[ \n]*\\diffyincludegraphics\{[^}]*?\}\{[^}]*?\}\{([^}]*?)\}[ \n]*\\diffyincludegraphics\{[^}]*?\}\{[^}]*?\}\{([^}]*?)\}[ \n]*\\diffyincludegraphics\{[^}]*?\}\{[^}]*?\}\{([^}]*?)}[ \n]*$/) {
-				#$thefile1 = $1;
-				#$thefile2 = $2;
-				#$thefile3 = $3;
-				#$thefile4 = $4;
+				#$thefile1 = "figures/$1";
+				#$thefile2 = "figures/$2";
+				#$thefile3 = "figures/$3";
+				#$thefile4 = "figures/$4";
 				#print "QUADFIGURE!\n"
 				#ensure_svg_version ($thefile1);
 				#ensure_svg_version ($thefile2);
@@ -1180,9 +1188,9 @@ while(1)
 					#print $out "  <diffyqsimage source=\"$thefile4\" $thesizestr />\n";
 					#print $out "</figure>\n";
 				} elsif ($fig =~ m/^[ \n]*\\inputpdft\{(.*?)\}[ \n]*$/) {
-					$thefile = $1;
-					$thesizestr = get_size_of_svg("figures/$thefile-tex4ht.svg");
-					print $out "<diffyqsimage source=\"figures/$thefile-tex4ht\" $thesizestr />\n";
+					$thefile = "figures/$1";
+					$thesizestr = get_size_of_svg("$thefile-tex4ht.svg");
+					print $out "<diffyqsimage source=\"$thefile-tex4ht\" $thesizestr />\n";
 				} else {
 					print "\n\n\nHUH?\n\n\nFigure too complicated!\n\nFIG=>$fig<\n\n";
 				}
