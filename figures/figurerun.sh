@@ -2,6 +2,6 @@
 
 res="$1"
 
-for n in figures/*.pdf_t ; do
+for n in *.pdf_t ; do
 	./figurerun-one.sh "$n" "$res"
 done
