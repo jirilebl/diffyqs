@@ -1,0 +1,236 @@
+<?xml version='1.0'?>
+
+<!-- Identify as a stylesheet -->
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+
+<!-- Import the usual html conversion templates            -->
+<xsl:import href="/home/jirka/mathbook/xsl/mathbook-html.xsl" />
+
+<!-- Intend output for rendering by html -->
+<!--<xsl:output method="html" />-->
+
+<!-- apply-imports applies also the original, apply-templates ignores the original-->
+
+<!-- need hardcoded numbers on everything, so nonstandard mathbookxml -->
+<xsl:template match="men|mrow|exercise|example|remark|theorem|chapter|section|subsection|subsubsection" mode="number">
+    <xsl:choose>
+        <xsl:when test="@number">
+            <xsl:value-of select="@number" />
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:apply-imports />
+        </xsl:otherwise>
+    </xsl:choose>
+</xsl:template>
+
+<!-- Want hardcoded reference labels so nonstandard mathbookxml -->
+<xsl:template match="biblio" mode="serial-number">
+    <xsl:choose>
+        <xsl:when test="@tag">
+            <xsl:value-of select="@tag" />
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:apply-imports />
+        </xsl:otherwise>
+    </xsl:choose>
+</xsl:template>
+
+
+<!-- need multline so allow custom environments -->
+<xsl:template match="me|men" mode="displaymath-alignment">
+    <xsl:choose>
+        <xsl:when test="@latexenv">
+            <xsl:value-of select="@latexenv" />
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:apply-imports />
+        </xsl:otherwise>
+    </xsl:choose>
+</xsl:template>
+
+
+<!-- need break, so nonstandard mathbookxml -->
+<xsl:template match="diffyqsbr">
+	<br/>
+</xsl:template>
+
+<!-- need inline image, so nonstandard mathbookxml -->
+<xsl:template match="diffyqsinlineimage">
+    <!-- condition on file extension -->
+    <!-- no period, lowercase'ed     -->
+    <xsl:variable name="extension">
+        <xsl:call-template name="file-extension">
+            <xsl:with-param name="filename" select="@source" />
+        </xsl:call-template>
+    </xsl:variable>
+    <xsl:choose>
+        <!-- no extension, presume SVG -->
+        <xsl:when test="$extension=''">
+            <xsl:element name="object">
+                <xsl:attribute name="type">image/svg+xml</xsl:attribute>
+        	<xsl:attribute name="style">
+			<xsl:if test="@width">
+        		  <xsl:text>width:</xsl:text>
+        		  <xsl:value-of select="@width" />
+        		  <xsl:text>; </xsl:text>
+		        </xsl:if>
+			<xsl:if test="@height">
+        		  <xsl:text>height:</xsl:text>
+        		  <xsl:value-of select="@height" />
+        		  <xsl:text>; </xsl:text>
+		        </xsl:if>
+        		<xsl:text>margin:auto; vertical-align:middle;</xsl:text>
+        	</xsl:attribute>
+                <xsl:attribute name="data">
+	        	<!--<xsl:value-of select="$directory.images" />
+        	    <xsl:text>/</xsl:text>-->
+        	    <xsl:value-of select="@source" />
+        	    <!--<xsl:apply-templates select="." mode="internal-id" />-->
+                    <xsl:text>.svg</xsl:text>
+                </xsl:attribute>
+                <p style="margin:auto">&lt;&lt;Your browser is unable to render this SVG image&gt;&gt;</p>
+            </xsl:element>
+        </xsl:when>
+        <xsl:when test="$extension='svg'">
+            <xsl:element name="object">
+                <xsl:attribute name="type">image/svg+xml</xsl:attribute>
+        	<xsl:attribute name="style">
+			<xsl:if test="@width">
+        		  <xsl:text>width:</xsl:text>
+        		  <xsl:value-of select="@width" />
+        		  <xsl:text>; </xsl:text>
+		        </xsl:if>
+			<xsl:if test="@height">
+        		  <xsl:text>height:</xsl:text>
+        		  <xsl:value-of select="@height" />
+        		  <xsl:text>; </xsl:text>
+		        </xsl:if>
+        		<xsl:text>margin:auto; vertical-align:middle;</xsl:text>
+        	</xsl:attribute>
+                <xsl:attribute name="data">
+	        	<!--<xsl:value-of select="$directory.images" />
+        	    <xsl:text>/</xsl:text>-->
+        	    <xsl:value-of select="@source" />
+        	    <!--<xsl:apply-templates select="." mode="internal-id" />-->
+                </xsl:attribute>
+                <p style="margin:auto">&lt;&lt;Your browser is unable to render this SVG image&gt;&gt;</p>
+            </xsl:element>
+        </xsl:when>
+        <xsl:otherwise>
+            <xsl:element name="img">
+                <xsl:attribute name="width">
+		    <xsl:value-of select="@width" />
+                </xsl:attribute>
+                <xsl:attribute name="src">
+                    <xsl:value-of select="@source" />
+                </xsl:attribute>
+                <!-- alt attribute for accessibility -->
+                <xsl:attribute name="alt">
+                    <xsl:apply-templates select="description" />
+                </xsl:attribute>
+            </xsl:element>
+        </xsl:otherwise>
+    </xsl:choose>
+</xsl:template>
+
+<!-- need image with real width, so nonstandard mathbookxml -->
+<xsl:template match="diffyqsimage">
+    <!-- condition on file extension -->
+    <!-- no period, lowercase'ed     -->
+    <xsl:variable name="extension">
+        <xsl:call-template name="file-extension">
+            <xsl:with-param name="filename" select="@source" />
+        </xsl:call-template>
+    </xsl:variable>
+    <xsl:choose>
+        <!-- no extension, presume SVG -->
+        <xsl:when test="$extension=''">
+            <xsl:element name="object">
+                <xsl:attribute name="type">image/svg+xml</xsl:attribute>
+        	<xsl:attribute name="style">
+			<xsl:if test="@width">
+        		  <xsl:text>width:</xsl:text>
+        		  <xsl:value-of select="@width" />
+        		  <xsl:text>; </xsl:text>
+		        </xsl:if>
+			<xsl:if test="@height">
+        		  <xsl:text>height:</xsl:text>
+        		  <xsl:value-of select="@height" />
+        		  <xsl:text>; </xsl:text>
+		        </xsl:if>
+        		<xsl:text>margin:auto; vertical-align:middle; display:block;</xsl:text>
+        	</xsl:attribute>
+                <xsl:attribute name="data">
+	        	<!--<xsl:value-of select="$directory.images" />
+        	    <xsl:text>/</xsl:text>-->
+        	    <xsl:value-of select="@source" />
+        	    <!--<xsl:apply-templates select="." mode="internal-id" />-->
+                    <xsl:text>.svg</xsl:text>
+                </xsl:attribute>
+                <p style="margin:auto">&lt;&lt;Your browser is unable to render this SVG image&gt;&gt;</p>
+            </xsl:element>
+        </xsl:when>
+        <xsl:when test="$extension='svg'">
+            <xsl:element name="object">
+                <xsl:attribute name="type">image/svg+xml</xsl:attribute>
+        	<xsl:attribute name="style">
+			<xsl:if test="@width">
+        		  <xsl:text>width:</xsl:text>
+        		  <xsl:value-of select="@width" />
+        		  <xsl:text>; </xsl:text>
+		        </xsl:if>
+			<xsl:if test="@height">
+        		  <xsl:text>height:</xsl:text>
+        		  <xsl:value-of select="@height" />
+        		  <xsl:text>; </xsl:text>
+		        </xsl:if>
+        		<xsl:text>margin:auto; vertical-align:middle; display:block;</xsl:text>
+        	</xsl:attribute>
+                <xsl:attribute name="data">
+	        	<!--<xsl:value-of select="$directory.images" />
+        	    <xsl:text>/</xsl:text>-->
+        	    <xsl:value-of select="@source" />
+        	    <!--<xsl:apply-templates select="." mode="internal-id" />-->
+                </xsl:attribute>
+                <p style="margin:auto">&lt;&lt;Your browser is unable to render this SVG image&gt;&gt;</p>
+            </xsl:element>
+        </xsl:when>
+        <xsl:otherwise>
+            <xsl:element name="img">
+		<xsl:if test="@width">
+                    <xsl:attribute name="width">
+		        <xsl:value-of select="@width" />
+                    </xsl:attribute>
+	        </xsl:if>
+		<xsl:if test="@height">
+                    <xsl:attribute name="height">
+		        <xsl:value-of select="@height" />
+                    </xsl:attribute>
+	        </xsl:if>
+                <xsl:attribute name="src">
+                    <xsl:value-of select="@source" />
+                </xsl:attribute>
+                <!-- alt attribute for accessibility -->
+                <xsl:attribute name="alt">
+                    <xsl:apply-templates select="description" />
+                </xsl:attribute>
+            </xsl:element>
+        </xsl:otherwise>
+    </xsl:choose>
+</xsl:template>
+
+
+<xsl:param name="html.knowl.theorem" select="'no'" />
+<xsl:param name="html.knowl.proof" select="'yes'" />
+<xsl:param name="html.knowl.definition" select="'no'" />
+<xsl:param name="html.knowl.example" select="'no'" />
+<xsl:param name="html.knowl.list" select="'no'" />
+<xsl:param name="html.knowl.remark" select="'no'" />
+<xsl:param name="html.knowl.figure" select="'no'" />
+<xsl:param name="html.knowl.table" select="'no'" />
+<xsl:param name="html.knowl.listing" select="'no'" />
+<xsl:param name="html.knowl.exercise.inline" select="'no'" />
+<xsl:param name="html.knowl.exercise.sectional" select="'no'" />
+
+
+</xsl:stylesheet>

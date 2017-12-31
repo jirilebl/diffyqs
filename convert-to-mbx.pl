@@ -127,14 +127,20 @@ sub close_item {
 }
 sub close_subsubsection {
 	close_paragraph ();
-	if ($insubsubsection) {
+	if ($insubsubsection == 2) {
+		$insubsubsection = 0;
+		print $out "</introduction>\n\n"
+	} elsif ($insubsubsection) {
 		$insubsubsection = 0;
 		print $out "</subsubsection>\n\n"
 	}
 }
 sub close_subsection {
 	close_subsubsection ();
-	if ($insubsection) {
+	if ($insubsection == 2) {
+		$insubsection = 0;
+		print $out "</introduction>\n\n"
+	} elsif ($insubsection) {
 		$insubsection = 0;
 		print $out "</subsection>\n\n"
 	}
@@ -171,6 +177,7 @@ sub open_item {
 }
 sub open_subsubsection {
 	my $theid = shift;
+	my $name = shift;
 	close_subsubsection ();
 	$insubsubsection = 1;
 	$subsubsection_num = $subsubsection_num+1;
@@ -180,9 +187,18 @@ sub open_subsubsection {
 	} else {
 		print $out "\n<subsubsection number=\"$chapter_num.$section_num.$subsection_num.$subsubsection_num\">\n"
 	}
+
+	print "(subsubsection >$name< label >$theid<)\n";
+	print $out "<title>$name</title>\n"; 
+}
+sub open_intro_subsubsection {
+	$insubsubsection = 2;
+
+	print $out "\n<introduction>\n";
 }
 sub open_subsection {
 	my $theid = shift;
+	my $name = shift;
 	close_subsection ();
 	$insubsection = 1;
 	$subsection_num = $subsection_num+1;
@@ -194,9 +210,20 @@ sub open_subsection {
 	} else {
 		print $out "\n<subsection number=\"$chapter_num.$section_num.$subsection_num\">\n"
 	}
+
+	print "(subsection >$name< label >$theid<)\n";
+	print $out "<title>$name</title>\n"; 
+
+	# Don't open an intro subsubsection, that's done manually with %mbxINTROSUBSUBSECTION
+}
+sub open_intro_subsection {
+	$insubsection = 2;
+
+	print $out "\n<introduction>\n";
 }
 sub open_section {
 	my $theid = shift;
+	my $name = shift;
 	close_section ();
 	$insection = 1;
 	$section_num = $section_num+1;
@@ -214,6 +241,11 @@ sub open_section {
 	} else {
 		print $out "\n<section number=\"$chapter_num.$section_num\">\n"
 	}
+
+	print "(section >$name< label >$theid<)\n";
+	print $out "<title>$name</title>\n"; 
+
+	open_intro_subsection();
 }
 
 sub open_chapter {
@@ -244,6 +276,7 @@ sub modify_id {
 	my $theid = shift;
 	$theid =~ s/^([0-9])/X$1/;
 	$theid =~ s/:/_/g;
+	$theid =~ s/\./_/g;
 	return $theid;
 }
 
@@ -427,6 +460,8 @@ sub read_paragraph {
 			;
 		} elsif ($line =~ m/^%mbxBACKMATTER/) {
 			close_chapter ();
+		} elsif ($line =~ m/^%mbxINTROSUBSUBSECTION/) {
+			open_intro_subsubsection ();
 		} elsif ($mbxignore == 0) {
 			$newline = 1;
 			if ($line =~ m/^%/ || $line =~ m/[^\\]%/) {
@@ -545,44 +580,32 @@ while(1)
 		$name = $1;
 		$theid = modify_id($2);
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
-		open_section($theid);
-		print "(section >$name< label >$theid<)\n";
-		print $out "<title>$name</title>\n"; 
+		open_section($theid,$name);
 	} elsif ($para =~ s/^\\section\{([^}]*)\}[ \n]*//) {
 		$name = $1;
 		$theid = modify_id($2);
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
-		open_section();
-		print "(section >$name<)\n";
-		print $out "<title>$name</title>\n"; 
+		open_section("",$name);
 	} elsif ($para =~ s/^\\subsection\{([^}]*)\}[ \n]*\\label\{([^}]*)\}[ \n]*//) {
 		$name = $1;
 		$theid = modify_id($2);
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
-		open_subsection($theid);
-		print "(subsection >$name< label >$theid<)\n";
-		print $out "<title>$name</title>\n"; 
+		open_subsection($theid,$name);
 	} elsif ($para =~ s/^\\subsection\{([^}]*)\}[ \n]*//) {
 		$name = $1;
 		$theid = modify_id($2);
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
-		open_subsection("");
-		print "(subsection >$name<)\n";
-		print $out "<title>$name</title>\n"; 
+		open_subsection("",$name);
 	} elsif ($para =~ s/^\\subsubsection\{([^}]*)\}[ \n]*\\label\{([^}]*)\}[ \n]*//) {
 		$name = $1;
 		$theid = modify_id($2);
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
-		open_subsubsection($theid);
-		print "(subsubsection >$name< label >$theid<)\n";
-		print $out "<title>$name</title>\n"; 
+		open_subsubsection($theid,$name);
 	} elsif ($para =~ s/^\\subsubsection\{([^}]*)\}[ \n]*//) {
 		$name = $1;
 		$theid = modify_id($2);
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
-		open_subsubsection("");
-		print "(subsubsection >$name<)\n";
-		print $out "<title>$name</title>\n"; 
+		open_subsubsection("",$name);
 
 	# this assumes sectionnotes come in their own $para
 	} elsif ($para =~ s/^\\sectionnotes\{(.*)\}[ \n\t]*//s) {
@@ -652,13 +675,13 @@ while(1)
 		$theid = modify_id($1);
 		open_paragraph_if_not_open ();
 		print "(named ref $theid)\n";
-		print $out "<xref ref=\"$theid\" autoname=\"yes\"/>";
+		print $out "<xref ref=\"$theid\" text=\"type-global\"/>";
 	} elsif ($para =~ s/^\\hyperref\[([^[]*)\]\{([^}]*)\}//) {
 		$name = $2;
 		$theid = modify_id($1);
 		open_paragraph_if_not_open ();
 		print "(hyperref $theid $name)\n";
-		print $out "<xref ref=\"$theid\" autoname=\"title\">$name</xref>";
+		print $out "<xref ref=\"$theid\" text=\"title\">$name</xref>";
 	} elsif ($para =~ s/^\\emph\{//) {
 		print "(em start)\n";
 		open_paragraph_if_not_open();
@@ -897,7 +920,7 @@ while(1)
 			if ($docenter && $inparagraph == 0) {
 				#FIXME: this doesn't work!
 				#print $out "<p halign=\"center\">\n";
-				print $out "<table>\n";
+				print $out "<p>\n";
 			}
 			if ($dorules) {
 				print $out "<tabular top=\"major\" halign=\"left\">\n";
@@ -932,14 +955,15 @@ while(1)
 
 			print $out "$table</cell></row>\n</tabular>\n";
 			if ($docenter && $inparagraph == 0) {
-				#print $out "</p>\n";
-				print $out "</table>\n";
+				print $out "</p>\n";
 			}
 		} else {
 			print "\n\n\nHUH?\n\n\nNo end tabular/center!\n\n$para\n\n";
 		}
 		
 	#FIXME:Assuming that diffyfloatingfigure(r) never has a caption
+	#FIXME:THAT'S NOT TRUE
+	#
 	#FIXME:Assuming that diffyfloatingfigure(r) is always just an inputpdft
 	} elsif ($para =~ s/^\\begin\{diffyfloatingfigurer?\}\{.*?\}\{(.*?)\}[ \n]*//) {
 		$thesize = $1;
@@ -958,9 +982,9 @@ while(1)
 				$thesizestr = get_size_of_svg("$thefile-tex4ht.svg");
 				open_paragraph ();
 				if ($thesizestr ne "") {
-					print $out "<image source=\"$thefile-tex4ht\" $thesizestr />\n";
+					print $out "<diffyqsimage source=\"$thefile-tex4ht\" $thesizestr />\n";
 				} else {
-					print $out "<image source=\"$thefile-tex4ht\" width=\"$thesize\" />\n";
+					print $out "<diffyqsimage source=\"$thefile-tex4ht\" width=\"$thesize\" />\n";
 				}
 				close_paragraph ();
 			} else {
@@ -978,11 +1002,11 @@ while(1)
 		$thesizestr = get_size_of_svg("$thefile-tex4ht.svg");
 		open_paragraph ();
 		if ($thesizestr ne "") {
-			print $out "<image source=\"$thefile-tex4ht\" $thesizestr />\n";
+			print $out "<diffyqsimage source=\"$thefile-tex4ht\" $thesizestr />\n";
 		} else {
 			#FIXME
 			print "\n\n\nHUH?\n\n\nCan't figure out the size of $thefile\n\n";
-			print $out "<image source=\"$thefile-tex4ht\" height=\"1in\" />\n";
+			print $out "<diffyqsimage source=\"$thefile-tex4ht\" height=\"1in\" />\n";
 		}
 		close_paragraph ();
 		#
@@ -1087,10 +1111,10 @@ while(1)
 					ensure_mbx_png_version ($thefile);
 					print $out "  <image source=\"$thefile-mbx.png\" width=\"100\%\" />\n";
 					#if ($thesize ne "") {
-					#print $out "  <image source=\"$thefile\" width=\"$thesize\" />\n";
+					#print $out "  <diffyqsimage source=\"$thefile\" width=\"$thesize\" />\n";
 					#} else {
 					#$thesizestr = get_size_of_svg("$thefile.svg");
-					#print $out "  <image source=\"$thefile\" $thesizestr />\n";
+					#print $out "  <diffyqsimage source=\"$thefile\" $thesizestr />\n";
 					#}
 				} elsif ($fig =~ m/^[ \n]*\\diffyincludegraphics\{[^}]*?\}\{[^}]*?\}\{([^}]*?)\}[ \n]*\\\\[ \n]*\\diffyincludegraphics\{[^}]*?\}\{[^}]*?\}\{([^}]*?)\}[ \n]*$/) {
 					$thefile1 = $1;
@@ -1118,16 +1142,16 @@ while(1)
 				#print $out "  </figure>\n";
 				#print $out "</sidebyside>\n";
 					#if ($thesize1 ne "") {
-					#print $out "  <image source=\"$thefile1\" width=\"$thesize1\" />\n";
+					#print $out "  <diffyqsimage source=\"$thefile1\" width=\"$thesize1\" />\n";
 					#} else {
 					#$thesizestr = get_size_of_svg("$thefile1.svg");
-					#print $out "  <image source=\"$thefile1\" $thesizestr />\n";
+					#print $out "  <diffyqsimage source=\"$thefile1\" $thesizestr />\n";
 					#}
 					#if ($thesize2 ne "") {
-					#print $out "  <image source=\"$thefile2\" width=\"$thesize2\" />\n";
+					#print $out "  <diffyqsimage source=\"$thefile2\" width=\"$thesize2\" />\n";
 					#} else {
 					#$thesizestr = get_size_of_svg("$thefile2.svg");
-					#print $out "  <image source=\"$thefile2\" $thesizestr />\n";
+					#print $out "  <diffyqsimage source=\"$thefile2\" $thesizestr />\n";
 					#}
 				#4 picture version FIXME: removing these, adding hand-done guys
 				#} elsif ($fig =~ m/^[ \n]*\\diffyincludegraphics\{[^}]*?\}\{[^}]*?\}\{([^}]*?)\}[ \n]*\\diffyincludegraphics\{[^}]*?\}\{[^}]*?\}\{([^}]*?)\}[ \n]*\\diffyincludegraphics\{[^}]*?\}\{[^}]*?\}\{([^}]*?)\}[ \n]*\\diffyincludegraphics\{[^}]*?\}\{[^}]*?\}\{([^}]*?)}[ \n]*$/) {
@@ -1147,18 +1171,18 @@ while(1)
 				#print $out "  <image source=\"$thefile3\" />\n";
 				#print $out "  <image source=\"$thefile4\" />\n";
 					#$thesizestr = get_size_of_svg("$thefile1.svg");
-					#print $out "  <image source=\"$thefile1\" $thesizestr />\n";
+					#print $out "  <diffyqsimage source=\"$thefile1\" $thesizestr />\n";
 					#$thesizestr = get_size_of_svg("$thefile2.svg");
-					#print $out "  <image source=\"$thefile2\" $thesizestr />\n";
+					#print $out "  <diffyqsimage source=\"$thefile2\" $thesizestr />\n";
 					#$thesizestr = get_size_of_svg("$thefile3.svg");
-					#print $out "  <image source=\"$thefile3\" $thesizestr />\n";
+					#print $out "  <diffyqsimage source=\"$thefile3\" $thesizestr />\n";
 					#$thesizestr = get_size_of_svg("$thefile4.svg");
-					#print $out "  <image source=\"$thefile4\" $thesizestr />\n";
+					#print $out "  <diffyqsimage source=\"$thefile4\" $thesizestr />\n";
 					#print $out "</figure>\n";
 				} elsif ($fig =~ m/^[ \n]*\\inputpdft\{(.*?)\}[ \n]*$/) {
 					$thefile = $1;
 					$thesizestr = get_size_of_svg("$thefile-tex4ht.svg");
-					print $out "<image source=\"$thefile-tex4ht\" $thesizestr />\n";
+					print $out "<diffyqsimage source=\"$thefile-tex4ht\" $thesizestr />\n";
 				} else {
 					print "\n\n\nHUH?\n\n\nFigure too complicated!\n\nFIG=>$fig<\n\n";
 				}
