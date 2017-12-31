@@ -12,7 +12,8 @@ Figures are in figures/
 
 Note: Some of the shell(.sh) and Perl(.pl) scripts here are really for me and are really hacky ways to just do things.  Most of them are for generating the web version.  Feel free to ignore them.
 
-* convert-to-mbx.??: is work in progress conversion script to Pretext (used to be MBX) for a better looking online version.
+* convert-to-mbx.??: is work in progress conversion script to Pretext (used to be mathbook or mbx) for a better looking online version.
+* diffyqs-html.xsl: The xsl to use to convert the Pretext output (there are custom elements in the conversion)
 
 The tex sources require a very recent LaTeX, if your latex does not have a recent enough ocgx2 package, you can simply comment out that line in
 diffyqssetup.sty.
