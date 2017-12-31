@@ -979,12 +979,12 @@ while(1)
 
 			if ($fig =~ m/^[ \n]*\\inputpdft\{(.*?)\}[ \n]*$/) {
 				$thefile = $1;
-				$thesizestr = get_size_of_svg("$thefile-tex4ht.svg");
+				$thesizestr = get_size_of_svg("figures/$thefile-tex4ht.svg");
 				open_paragraph ();
 				if ($thesizestr ne "") {
-					print $out "<diffyqsimage source=\"$thefile-tex4ht\" $thesizestr />\n";
+					print $out "<diffyqsimage source=\"figures/$thefile-tex4ht\" $thesizestr />\n";
 				} else {
-					print $out "<diffyqsimage source=\"$thefile-tex4ht\" width=\"$thesize\" />\n";
+					print $out "<diffyqsimage source=\"figures/$thefile-tex4ht\" width=\"$thesize\" />\n";
 				}
 				close_paragraph ();
 			} else {
@@ -999,14 +999,14 @@ while(1)
 		$thefile = $1;
 		print "(CENTERED inputpdft)\n";
 		open_paragraph ();
-		$thesizestr = get_size_of_svg("$thefile-tex4ht.svg");
+		$thesizestr = get_size_of_svg("figures/$thefile-tex4ht.svg");
 		open_paragraph ();
 		if ($thesizestr ne "") {
-			print $out "<diffyqsimage source=\"$thefile-tex4ht\" $thesizestr />\n";
+			print $out "<diffyqsimage source=\"figures/$thefile-tex4ht\" $thesizestr />\n";
 		} else {
 			#FIXME
 			print "\n\n\nHUH?\n\n\nCan't figure out the size of $thefile\n\n";
-			print $out "<diffyqsimage source=\"$thefile-tex4ht\" height=\"1in\" />\n";
+			print $out "<diffyqsimage source=\"figures/$thefile-tex4ht\" height=\"1in\" />\n";
 		}
 		close_paragraph ();
 		#
@@ -1181,8 +1181,8 @@ while(1)
 					#print $out "</figure>\n";
 				} elsif ($fig =~ m/^[ \n]*\\inputpdft\{(.*?)\}[ \n]*$/) {
 					$thefile = $1;
-					$thesizestr = get_size_of_svg("$thefile-tex4ht.svg");
-					print $out "<diffyqsimage source=\"$thefile-tex4ht\" $thesizestr />\n";
+					$thesizestr = get_size_of_svg("figures/$thefile-tex4ht.svg");
+					print $out "<diffyqsimage source=\"figures/$thefile-tex4ht\" $thesizestr />\n";
 				} else {
 					print "\n\n\nHUH?\n\n\nFigure too complicated!\n\nFIG=>$fig<\n\n";
 				}
