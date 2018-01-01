@@ -1133,8 +1133,8 @@ while(1)
 					ensure_mbx_png_version ($thefile1);
 					ensure_mbx_png_version ($thefile2);
 					#FIXME: what about maxwidth?
-					print $out "  <image source=\"$thefile1-mbx.png\" width=\"100\%\" maxwidth=\"$thesize\" />\n";
-					print $out "  <image source=\"$thefile2-mbx.png\" width=\"100\%\" maxwidth=\"$thesize\" />\n";
+					print $out "  <diffyqsimage source=\"$thefile1-mbx.png\" width=\"100\%\" maxwidth=\"$thesize1\" />\n";
+					print $out "  <diffyqsimage source=\"$thefile2-mbx.png\" width=\"100\%\" maxwidth=\"$thesize2\" />\n";
 
 				#2 picture version FIXME: removing these, adding hand-done guys
 				#} elsif ($fig =~ m/^[ \n]*\\diffyincludegraphics\{[^}]*?\}\{[^}]*?\}\{([^}]*?)}[ \n]*\\diffyincludegraphics\{[^}]*?\}\{[^}]*?\}\{([^}]*?)\}[ \n]*$/) {

@@ -1618,6 +1618,7 @@ dwell on critical damping.
 
 \subsubsection{Underdamping}
 
+%mbxSTARTIGNORE
 %\begin{figure}[h!t]
 \begin{diffyfloatingfigurepdfonly}{3.1in}
 \capstart
@@ -1627,6 +1628,8 @@ dwell on critical damping.
 \end{center}
 %\end{figure}
 \end{diffyfloatingfigurepdfonly}
+%mbxENDIGNORE
+% for the MBX see below
 
 When
 $c^2 - 4km < 0$, we say the system is \emph{\myindex{underdamped}}.  In this case,
@@ -1651,6 +1654,11 @@ x(t) = C e^{-pt} \cos ( \omega_1 t - \gamma ) .
 \end{equation*}
 An example plot is given in \figurevref{mv:underdampedfig}.  Note that we
 still have that $x(t) \to 0$ as $t \to \infty$.
+
+%mbxlatex \begin{figure}[h!t]
+%mbxlatex \diffyincludegraphics{width=3in}{width=4.5in}{mv-underdamped}
+%mbxlatex \caption{Underdamped motion with the envelope curves shown.\label{mv:underdampedfig}}
+%mbxlatex \end{figure}
 
 In the figure
 we also show the \emph{\myindex{envelope curves}}

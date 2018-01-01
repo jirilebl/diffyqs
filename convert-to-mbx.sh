@@ -36,5 +36,14 @@ echo
 xsltproc ../diffyqs-html.xsl ../diffyqs-out.xml
 
 echo
+echo FIXING UP HTML ...
+echo
+
+for n in *.html; do
+	perl ../fixup-html-file.pl < $n > tmpout
+	mv tmpout $n
+done
+
+echo
 echo DONE ...
 echo
