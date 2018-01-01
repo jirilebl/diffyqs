@@ -1,42 +1,16 @@
+#
+# Script to convert this particular LaTeX file to Pretext or PTX (used to be Mathbook or MBX)
+#
+# I assume this could be adapted to other projects, but it would need to be heavily modified.
+# It does not read arbitrary latex.
+#
 print "running ...\n"; 
-
-
-
-# regex playground tests
-#$str = "uBu\nobo\noko";
-#
-#if ($str =~ m/^uBu/) { print "match ^ubu\n"; }
-#if ($str =~ m/^obo/) { print "match ^obo\n"; }
-#if ($str =~ m/^obo/s) { print "match ^obo s\n"; }
-#if ($str =~ m/^obo/m) { print "match ^obo m\n"; }
-#if ($str =~ m/obo$/) { print "match obo\$\n"; }
-#if ($str =~ m/obo$/s) { print "match obo\$ s\n"; }
-#if ($str =~ m/obo$/m) { print "match obo\$ m\n"; }
-#if ($str =~ m/uBu.*?oko/) { print "match uBu.*?oko\n"; }
-#if ($str =~ m/uBu.*?oko/s) { print "match uBu.*?oko s\n"; }
-#if ($str =~ m/uBu.*?oko/m) { print "match uBu.*?oko m\n"; }
-#if ($str =~ m/uBu[^p]*oko/) { print "match uBu[^p]*?oko\n"; }
-#if ($str =~ m/uBu[^p]*oko/s) { print "match uBu[^p]*?oko s\n"; }
-#if ($str =~ m/uBu[^p]*oko/m) { print "match uBu[^p]*?oko m\n"; }
-#
-#exit 1;
 
 my @ins;
  
 open(my $in,'<', "diffyqs.tex") or die $!; 
 open(my $out, '>' ,"diffyqs-out.xml") or die $!; 
  
-#my $line = <$in>; 
-#
-#chomp($line);
-#
-#$line =~ s/ /,/g; 
-#print $out "$line"; 
-#$line =<$in>;  
-#print $out "$line"; 
-#
-#
-
 $mbxignore = 0;
 
 $commands = "";
@@ -87,7 +61,7 @@ if ($commands ne "" || $macrosextra ne "") {
 }
 
 print $out "</docinfo>\n";
-print $out "<book xml:id=\"diffyqsxml\">\n";
+print $out "<book xml:id=\"diffyqs\">\n";
 
 $didp = 0;
 $inchapter = 0;
@@ -397,10 +371,10 @@ sub ensure_mbx_png_version {
 }
 
 sub read_paragraph {
-	$para = "";
-	$read_something = 0;
+	my $para = "";
+	my $read_something = 0;
 	while(1) {
-		$line = <$in>;
+		my $line = <$in>;
 		if ( ! defined $line) {
 			print "FOUND END OF FILE\n";
 			if (@ins) {
@@ -429,7 +403,7 @@ sub read_paragraph {
 
 		} elsif ($mbxignore == 0 &&
 			 $line =~ m/^\\input[ \t][ \t]*(.*)$/) {
-			 $thefile = $1;
+			 my $thefile = $1;
 			 push @ins, $in;
 			 undef $in;
 			 print "\n((((\nFOUND \\input $thefile\n";
@@ -442,7 +416,7 @@ sub read_paragraph {
 		#This will only work right if the paragraphs are separated, that is if it is
 		#in the middle of a paragraph it put the %mbx line in the wrong place
 		} elsif ($line =~ m/^%mbx[ \t](.*)$/) {
-			$thembxline = $1;
+			my $thembxline = $1;
 			#FIXME: this is a terrible hack, but the only way I can get this
 			#hardcoded number stuff to work
 			#This will only work right if the paragraphs are separated, that is if it is
@@ -463,7 +437,7 @@ sub read_paragraph {
 		} elsif ($line =~ m/^%mbxINTROSUBSUBSECTION/) {
 			open_intro_subsubsection ();
 		} elsif ($mbxignore == 0) {
-			$newline = 1;
+			my $newline = 1;
 			if ($line =~ m/^%/ || $line =~ m/[^\\]%/) {
 				$newline = 0;
 			}
@@ -541,14 +515,14 @@ while(1)
 		print $out "$1";
 
 	} elsif ($para =~ s/^\$([^\$]+)\$//) {
-		$line = $1;
+		my $line = $1;
 		open_paragraph_if_not_open ();
 		print $out "<m>$line</m>";
 
 	} elsif ($para =~ s/^\\chapter\*\{([^}]*)\}[\n ]*\\label\{([^}]*)\}[ \n]*//) {
 		#FIXME: un-numbered
-		$name = $1;
-		$theid = modify_id($2);
+		my $name = $1;
+		my $theid = modify_id($2);
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
 		$chapter_num = $chapter_num-1; #hack
 		open_chapter($theid);
@@ -556,7 +530,7 @@ while(1)
 		print $out "<title>$name</title>\n"; 
 		print "PARA:>$para<\n";
 	} elsif ($para =~ s/^\\chapter\*\{([^}]*)\}[ \n]*//) {
-		$name = $1;
+		my $name = $1;
 		#FIXME: un-numbered
 		$chapter_num = $chapter_num-1; #hack
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
@@ -564,52 +538,52 @@ while(1)
 		print "(chapter >$name<)\n";
 		print $out "<title>$name</title>\n"; 
 	} elsif ($para =~ s/^\\chapter\{([^}]*)\}[\n ]*\\label\{([^}]*)\}[ \n]*//) {
-		$name = $1;
-		$theid = modify_id($2);
+		my $name = $1;
+		my $theid = modify_id($2);
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
 		open_chapter($theid);
 		print "(chapter >$name< label >$theid<)\n";
 		print $out "<title>$name</title>\n"; 
 	} elsif ($para =~ s/^\\chapter\{([^}]*)\}[ \n]*//) {
-		$name = 1;
+		my $name = 1;
 		open_chapter("");
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
 		print "(chapter >$name<)\n";
 		print $out "<title>$name</title>\n"; 
 	} elsif ($para =~ s/^\\section\{([^}]*)\}[ \n]*\\label\{([^}]*)\}[ \n]*//) {
-		$name = $1;
-		$theid = modify_id($2);
+		my $name = $1;
+		my $theid = modify_id($2);
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
 		open_section($theid,$name);
 	} elsif ($para =~ s/^\\section\{([^}]*)\}[ \n]*//) {
-		$name = $1;
-		$theid = modify_id($2);
+		my $name = $1;
+		my $theid = modify_id($2);
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
 		open_section("",$name);
 	} elsif ($para =~ s/^\\subsection\{([^}]*)\}[ \n]*\\label\{([^}]*)\}[ \n]*//) {
-		$name = $1;
-		$theid = modify_id($2);
+		my $name = $1;
+		my $theid = modify_id($2);
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
 		open_subsection($theid,$name);
 	} elsif ($para =~ s/^\\subsection\{([^}]*)\}[ \n]*//) {
-		$name = $1;
-		$theid = modify_id($2);
+		my $name = $1;
+		my $theid = modify_id($2);
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
 		open_subsection("",$name);
 	} elsif ($para =~ s/^\\subsubsection\{([^}]*)\}[ \n]*\\label\{([^}]*)\}[ \n]*//) {
-		$name = $1;
-		$theid = modify_id($2);
+		my $name = $1;
+		my $theid = modify_id($2);
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
 		open_subsubsection($theid,$name);
 	} elsif ($para =~ s/^\\subsubsection\{([^}]*)\}[ \n]*//) {
-		$name = $1;
-		$theid = modify_id($2);
+		my $name = $1;
+		my $theid = modify_id($2);
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
 		open_subsubsection("",$name);
 
 	# this assumes sectionnotes come in their own $para
 	} elsif ($para =~ s/^\\sectionnotes\{(.*)\}[ \n\t]*//s) {
-		$secnotes = $1;
+		my $secnotes = $1;
 		$secnotes =~ s|\\cite\{([^}]*)\}|<xref ref=\"biblio-$1\"/>|g;
 		$secnotes =~ s|\\BDref\{([^}]*)\}|$1|g;
 		$secnotes =~ s|\\EPref\{([^}]*)\}|$1|g;
@@ -636,25 +610,25 @@ while(1)
 	} elsif ($para =~ s/^\\index\{([^}]*)\}//) {
 		open_paragraph_if_not_open ();
 		print "(index $1)\n";
-		$index = $1;
+		my $index = $1;
 		$index =~ s|\$(.*?)\$|<m>$1</m>|sg;
 		$index =~ s|^(.*)!(.*)$|<h>$1</h><h>$2</h>|s;
 		print $out "<idx>$index</idx>"; 
 	} elsif ($para =~ s/^\\myindex\{([^}]*)\}//) {
 		open_paragraph_if_not_open ();
 		print "(myindex $1)\n";
-		$index = $1;
+		my $index = $1;
 		$index =~ s|\$(.*?)\$|<m>$1</m>|sg;
 		print $out "$index<idx>$index</idx>"; 
 
 	} elsif ($para =~ s/^\\eqref\{([^}]*)\}//) {
 		open_paragraph_if_not_open ();
-		$theid = modify_id($1);
+		my $theid = modify_id($1);
 		print "(eqref $theid)\n";
 		print $out "<xref ref=\"$theid\"/>";
 	} elsif ($para =~ s/^\\ref\{([^}]*)\}//) {
 		open_paragraph_if_not_open ();
-		$theid = modify_id($1);
+		my $theid = modify_id($1);
 		print "(ref $theid)\n";
 		print $out "<xref ref=\"$theid\"/>";
 	} elsif ($para =~ s/^\\chapterref\{([^}]*)\}// ||
@@ -672,13 +646,13 @@ while(1)
 		$para =~ s/^\\examplevref\{([^}]*)\}// ||
 		$para =~ s/^\\exerciseref\{([^}]*)\}// ||
 		$para =~ s/^\\exercisevref\{([^}]*)\}//) {
-		$theid = modify_id($1);
+		my $theid = modify_id($1);
 		open_paragraph_if_not_open ();
 		print "(named ref $theid)\n";
 		print $out "<xref ref=\"$theid\" text=\"type-global\"/>";
 	} elsif ($para =~ s/^\\hyperref\[([^[]*)\]\{([^}]*)\}//) {
-		$name = $2;
-		$theid = modify_id($1);
+		my $name = $2;
+		my $theid = modify_id($1);
 		open_paragraph_if_not_open ();
 		print "(hyperref $theid $name)\n";
 		print $out "<xref ref=\"$theid\" text=\"title\">$name</xref>";
@@ -708,8 +682,8 @@ while(1)
 		open_paragraph_if_not_open ();
 		print $out "$1"; 
 	} elsif ($para =~ s/^\\unit\[(.*?)\]\{(.*?)\}//s) {
-		$txt = $1;
-		$unit = $2;
+		my $txt = $1;
+		my $unit = $2;
 		$txt =~ s|\$(.*?)\$|<m>$1</m>|gs;
 		print "(unit $txt $unit)\n";
 		open_paragraph_if_not_open ();
@@ -719,9 +693,9 @@ while(1)
 		open_paragraph_if_not_open ();
 		print $out "<m>\\nicefrac{\\text{$1}}{\\text{$2}}</m>"; 
 	} elsif ($para =~ s/^\\unitfrac\[(.*?)\]\{(.*?)\}\{(.*?)\}//s) {
-		$txt = $1;
-		$unitnum = $2;
-		$unitden = $3;
+		my $txt = $1;
+		my $unitnum = $2;
+		my $unitden = $3;
 
 		$txt =~ s|\$(.*?)\$|<m>$1</m>|gs;
 		print "(unitfrac $txt $unitnum/$unitden)\n";
@@ -731,10 +705,18 @@ while(1)
 	} elsif ($para =~ s/^\\begin\{align\*\}[ \n]*//) {
 		print "(ALIGN*)\n";
 		if ($para =~ s/^(.*?)\\end\{align\*\}[ \n]*//s) {
-			$eqn = $1;
+			my $eqn = $1;
+
+			my $indexes = "";
+			while ($eqn =~ s/\\myindex\{(.*?)\}/$1/) {
+				$indexes = $indexes . "<idx>$1</idx>";
+			}
+			while ($eqn =~ s/\\index\{(.*?)\}//) {
+				$indexes = $indexes . "<idx>$1</idx>";
+			}
 
 			#FIXME: Is wrapping in aligned all kosher?
-			print $out "<me>\n";
+			print $out "<me>$indexes\n";
 			print $out "\\begin{aligned}\n";
 			print "(wrapping in aligned) EQ = $eqn\n";
 			print $out "$eqn";
@@ -746,13 +728,21 @@ while(1)
 	} elsif ($para =~ s/^\\begin\{align\}[ \n]*//) {
 		print "(ALIGN)\n";
 		if ($para =~ s/^(.*?)\\end\{align\}[ \n]*//s) {
-			$eqn = $1;
+			my $eqn = $1;
 			#$theid = "";
 			#if ($para =~ s/^ *\\label\{(.*?)\} *//) {
 			#	$theid = $1;
 			#}
 
-			print $out "<md>\n";
+			my $indexes = "";
+			while ($eqn =~ s/\\myindex\{(.*?)\}/$1/) {
+				$indexes = $indexes . "<idx>$1</idx>";
+			}
+			while ($eqn =~ s/\\index\{(.*?)\}//) {
+				$indexes = $indexes . "<idx>$1</idx>";
+			}
+
+			print $out "<md>$indexes\n";
 			print $out "<mrow>\n";
 
 			#FIXME: this will mess up things with cases
@@ -772,9 +762,17 @@ while(1)
 	} elsif ($para =~ s/^\\begin\{multline\*\}[ \n]*//) {
 		print "(MULTLINE*)\n";
 		if ($para =~ s/^(.*?)\\end\{multline\*\}[ \n]*//s) {
-			$eqn = $1;
+			my $eqn = $1;
 
-			print $out "<me latexenv=\"multline*\">\n";
+			my $indexes = "";
+			while ($eqn =~ s/\\myindex\{(.*?)\}/$1/) {
+				$indexes = $indexes . "<idx>$1</idx>";
+			}
+			while ($eqn =~ s/\\index\{(.*?)\}//) {
+				$indexes = $indexes . "<idx>$1</idx>";
+			}
+
+			print $out "<me latexenv=\"multline*\">$indexes\n";
 			print "EQ(multline*) = $eqn\n";
 			print $out "$eqn";
 			print $out "</me>\n";
@@ -784,19 +782,27 @@ while(1)
 	} elsif ($para =~ s/^\\begin\{multline\}[ \n]*//) {
 		print "(MULTLINE)\n";
 		if ($para =~ s/^(.*?)\\end\{multline\}[ \n]*//s) {
-			$eqn = $1;
-			$theid = "";
+			my $eqn = $1;
+			my $theid = "";
 			if ($eqn =~ s/^[ \n]*\\label\{(.*?)\}[ \n]*//s) {
 				$theid = modify_id($1);
 			}
 
+			my $indexes = "";
+			while ($eqn =~ s/\\myindex\{(.*?)\}/$1/) {
+				$indexes = $indexes . "<idx>$1</idx>";
+			}
+			while ($eqn =~ s/\\index\{(.*?)\}//) {
+				$indexes = $indexes . "<idx>$1</idx>";
+			}
+
 			$equation_num = $equation_num+1;
-			$the_num = get_equation_number ();
+			my $the_num = get_equation_number ();
 
 			if ($theid eq "") {
-				print $out "<men number=\"$the_num\" latexenv=\"multline\">\n";
+				print $out "<men number=\"$the_num\" latexenv=\"multline\">$indexes\n";
 			} else {
-				print $out "<men xml:id=\"$theid\" number=\"$the_num\" latexenv=\"multline\">\n";
+				print $out "<men xml:id=\"$theid\" number=\"$the_num\" latexenv=\"multline\">$indexes\n";
 			}
 			print "EQ(multline) = $eqn\n";
 			print $out "$eqn";
@@ -808,8 +814,17 @@ while(1)
 	} elsif ($para =~ s/^\\begin\{equation\*\}[ \n]*//) {
 		print "(EQUATION*)\n";
 		if ($para =~ s/^(.*?)\\end\{equation\*\}[ \n]*//s) {
-			$eqn = $1;
-			print $out "<me>\n";
+			my $eqn = $1;
+
+			my $indexes = "";
+			while ($eqn =~ s/\\myindex\{(.*?)\}/$1/) {
+				$indexes = $indexes . "<idx>$1</idx>";
+			}
+			while ($eqn =~ s/\\index\{(.*?)\}//) {
+				$indexes = $indexes . "<idx>$1</idx>";
+			}
+
+			print $out "<me>$indexes\n";
 			print "EQ = $eqn\n";
 			print $out "$eqn</me>\n";
 		} else {
@@ -818,18 +833,27 @@ while(1)
 	} elsif ($para =~ s/^\\begin\{equation\}[ \n]*//) {
 		print "(EQUATION)\n";
 		if ($para =~ s/^(.*?)\\end\{equation\}[ \n]*//s) {
-			$eqn = $1;
-			$theid = "";
+			my $eqn = $1;
+			my $theid = "";
 			if ($eqn =~ s/^[ \n]*\\label\{(.*?)\}[ \n]*//s) {
 				$theid = modify_id($1);
 			}
+
+			my $indexes = "";
+			while ($eqn =~ s/\\myindex\{(.*?)\}/$1/) {
+				$indexes = $indexes . "<idx>$1</idx>";
+			}
+			while ($eqn =~ s/\\index\{(.*?)\}//) {
+				$indexes = $indexes . "<idx>$1</idx>";
+			}
+
 			$equation_num = $equation_num+1;
-			$the_num = get_equation_number ();
+			my $the_num = get_equation_number ();
 
 			if ($theid eq "") {
-				print $out "<men number=\"$the_num\">\n";
+				print $out "<men number=\"$the_num\">$indexes\n";
 			} else {
-				print $out "<men xml:id=\"$theid\" number=\"$the_num\">\n";
+				print $out "<men xml:id=\"$theid\" number=\"$the_num\">$indexes\n";
 			}
 			print "EQ = $eqn\n";
 			print $out "$eqn</men>\n";
@@ -842,13 +866,13 @@ while(1)
 	} elsif ($para =~ s/^\\begin\{table\}(\[.*?\])?[ \n]*//) {
 		print "(TABLE)\n";
 		if ($para =~ s/^(.*?)\\end\{table\}[ \n]*//s) {
-			$table = $1;
+			my $table = $1;
 
 			# FIXME possibly not ok within math?
 			$table =~ s|~|<nbsp/>|g;
 
-			$caption = "";
-			$theid = "";
+			my $caption = "";
+			my $theid = "";
 			if ($table =~ s/\\caption\{(.*?)[ \n]*\\label\{(.*?)\}\}[ \n]*//s) {
 				$caption = $1;
 				$theid = modify_id($2);
@@ -899,22 +923,21 @@ while(1)
 	#on contents and/or caption
 	} elsif ($para =~ s/^(\\begin\{center\}[ \n]*)?\\begin\{tabular\}.*[ \n]*//) {
 		print "(TABULARONLY)\n";
-		$docenter = 0;
+		my $docenter = 0;
 		if ($1 =~ m/^\\begin\{center\}/) {
 			$docenter = 1;
 		}
 		if ($para =~ s/^(.*?)\\end\{tabular\}[ \n]*(\\end\{center\}[ \n]*)?//s) {
-			$table = $1;
+			my $table = $1;
 
 			# FIXME possibly not ok within math?
 			$table =~ s|~|<nbsp/>|g;
 
 			# kill the rules 
 			$table =~ s/\\capstart[ \n]*//g;
+			my $dorules = 0;
 			if ($table =~ s/\\(mid|bottom|top)rule[ \n]*//g) {
 				$dorules = 1;
-			} else {
-				$dorules = 0;
 			}
 
 			if ($docenter && $inparagraph == 0) {
@@ -968,10 +991,10 @@ while(1)
 		if ($1 == 'r') {
 			$float = "right";
 		}
-		$thesize = $2;
+		my $thesize = $2;
 		print "(DIFFYFLOATINGFIGURE)\n";
 		if ($para =~ s/^(.*?)\\end\{diffyfloatingfiguresimpler?\}[ \n]*//s) {
-			$fig = $1;
+			my $fig = $1;
 
 			# kill unneccesaray things
 			$fig =~ s/\\\\[ \n]*//g;
@@ -999,10 +1022,10 @@ while(1)
 
 	#FIXME: this is based entirely too much on my usage :)
 	} elsif ($para =~ s/^\\begin\{center\}[ \n]*\\inputpdft\{(.*?)\}[ \n]*\\end\{center\}[ \n]*//) {
-		$thefile = "figures/$1";
+		my $thefile = "figures/$1";
 		print "(CENTERED inputpdft)\n";
 		#open_paragraph ();
-		$thesizestr = get_size_of_svg("$thefile-tex4ht.svg");
+		my $thesizestr = get_size_of_svg("$thefile-tex4ht.svg");
 		open_paragraph ();
 		if ($thesizestr ne "") {
 			print $out "<diffyqsimage source=\"$thefile-tex4ht\" $thesizestr />\n";
@@ -1015,8 +1038,8 @@ while(1)
 		#
 	#FIXME: this is based entirely too much on my usage :)
 	} elsif ($para =~ s/^\\\\[ \n]*\\includegraphics\[width=(.*?)\]\{(.*?)\}[ \n]*\\\\[ \n]*//) {
-		$width = $1;
-		$thefile = $2;
+		my $width = $1;
+		my $thefile = $2;
 		print "(BRed image >$width< >$thefile<\n)";
 		#ensure_svg_version ($thefile);
 		ensure_mbx_png_version ($thefile);
@@ -1026,8 +1049,8 @@ while(1)
 
 	#FIXME: this is based entirely too much on my usage :)
 	} elsif ($para =~ s/^\\parbox\[c\]\{.*?\}\{\\includegraphics\[width=(.*?)\]\{(.*?)\}\}[ \n]*//) {
-		$width = $1;
-		$thefile = $2;
+		my $width = $1;
+		my $thefile = $2;
 		print "(PARBOXED image >$width< >$thefile<\n)";
 		#ensure_svg_version ($thefile);
 		ensure_mbx_png_version ($thefile);
@@ -1042,7 +1065,7 @@ while(1)
 		if ($para =~ s/^(.*?)\\end\{figure\}[ \n]*//s ||
 		    $para =~ s/^(.*?)\\end\{diffyfloatingfigurepdfonly\}[ \n]*//s ||
 		    $para =~ s/^(.*?)\\end\{diffyfloatingfigurer?\}[ \n]*//s) {
-			$figure = $1;
+			my $figure = $1;
 
 			#print "FIGFIG >$figure<\n";
 			
@@ -1052,7 +1075,7 @@ while(1)
 			$figure =~ s/\\noindent[ \n]*//g;
 			$figure =~ s/\\diffypdfversion\{\\vspace\*\{.*?\}\}[ \n]*//g;
 
-			@figs = ();
+			my @figs = ();
 
 			#print "FIGFIG2 >$figure<\n";
 
@@ -1079,12 +1102,12 @@ while(1)
 			#print @figs;
 
 			foreach (@figs) {
-				$fig = $_;
+				my $fig = $_;
 
 				#print "FIGFIG3 >$fig<\n";
 				
-				$caption = "";
-				$theid = "";
+				my $caption = "";
+				my $theid = "";
 				if ($fig =~ s/\\caption(\[.*?\])?\{(.*?)[ \n]*\\label\{(.*?)\}\}[ \n]*//s) {
 					$caption = $2;
 					$theid = modify_id($3);
@@ -1109,8 +1132,8 @@ while(1)
 				print $out "  <caption>$caption</caption>\n";
 
 				if ($fig =~ m/^[ \n]*\\diffyincludegraphics\{[^}]*?\}\{([^}]*?)\}\{([^}]*?)\}[ \n]*$/) {
-					$thesize = $1;
-					$thefile = "figures/$2";
+					my $thesize = $1;
+					my $thefile = "figures/$2";
 					$thesize =~ s/width=//g;
 					#ensure_svg_version ($thefile);
 					ensure_mbx_png_version ($thefile);
@@ -1122,10 +1145,10 @@ while(1)
 					#print $out "  <diffyqsimage source=\"$thefile\" $thesizestr />\n";
 					#}
 				} elsif ($fig =~ m/^[ \n]*\\diffyincludegraphics\{[^}]*?\}\{([^}]*?)\}\{([^}]*?)\}[ \n]*\\\\[ \n]*\\diffyincludegraphics\{[^}]*?\}\{([^}]*?)\}\{([^}]*?)\}[ \n]*$/) {
-					$thesize1 = $1;
-					$thefile1 = "figures/$2";
-					$thesize2 = $3;
-					$thefile2 = "figures/$4";
+					my $thesize1 = $1;
+					my $thefile1 = "figures/$2";
+					my $thesize2 = $3;
+					my $thefile2 = "figures/$4";
 					$thesize1 =~ s/width=//g;
 					$thesize2 =~ s/width=//g;
 					#ensure_svg_version ($thefile1);
@@ -1191,8 +1214,8 @@ while(1)
 					#print $out "  <diffyqsimage source=\"$thefile4\" $thesizestr />\n";
 					#print $out "</figure>\n";
 				} elsif ($fig =~ m/^[ \n]*\\inputpdft\{(.*?)\}[ \n]*$/) {
-					$thefile = "figures/$1";
-					$thesizestr = get_size_of_svg("$thefile-tex4ht.svg");
+					my $thefile = "figures/$1";
+					my $thesizestr = get_size_of_svg("$thefile-tex4ht.svg");
 					print $out "<diffyqsimage source=\"$thefile-tex4ht\" $thesizestr />\n";
 				} else {
 					print "\n\n\nHUH?\n\n\nFigure too complicated!\n\nFIG=>$fig<\n\n";
@@ -1206,22 +1229,21 @@ while(1)
 
 	} elsif ($para =~ s/^\\begin\{theorem\}[ \n]*//) {
 		close_paragraph();
+		my $title = "";
 		if ($para =~ s/^\[(.*?)\][ \n]*//s) {
 			$title = do_thmtitle_subs($1);
-		} else {
-			$title = "";
 		}
 
 		$thm_num = $thm_num+1;
 		$the_num = get_thm_number ();
 
-		$theid = "";
+		my $theid = "";
 		if ($para =~ s/^[ \n]*\\label\{(.*?)\}[ \n]*//s) {
 			$theid = modify_id($1);
 		}
 
 		#FIXME: hack because I sometime switch index and label
-		$indexo = "";
+		my $indexo = "";
 		while ($para =~ s/^[ \n]*\\index\{(.*?)\}[ \n]*//s) {
 			$term = $1;
 			$term =~ s|^(.*)!(.*)$|<h>$1</h><h>$2</h>|s;
@@ -1256,10 +1278,10 @@ while(1)
 
 
 	} elsif ($para =~ s/^\\begin\{exercise\}\[(easy|challenging|tricky|computer project|project|little harder|harder|more challenging)\][ \n]*//) {
-		$note = $1;
+		my $note = $1;
 		close_paragraph();
 		$exercise_num = $exercise_num+1;
-		$the_num = get_exercise_number ();
+		my $the_num = get_exercise_number ();
 		if ($para =~ s/^\\label\{([^}]*)\}[ \n]*//) {
 			$theid = modify_id($1);
 			print "(exercise start note >$note< id >$theid< $the_num)\n";
@@ -1273,15 +1295,15 @@ while(1)
 		print $out "<em>($note)</em><nbsp/><nbsp/>\n";
 
 	} elsif ($para =~ s/^\\begin\{exercise\}\[(.*?)\][ \n]*//s) {
-		$title = $1;
+		my $title = $1;
 		$title =~ s|\$(.*?)\$|<m>$1</m>|sg;
-		$index = "";
+		my $index = "";
 		if ($title =~ s/\\myindex\{(.*?)\}/$1/) {
 			$index = $1;
 		}
 		close_paragraph();
 		$exercise_num = $exercise_num+1;
-		$the_num = get_exercise_number ();
+		my $the_num = get_exercise_number ();
 		if ($para =~ s/^\\label\{([^}]*)\}[ \n]*//) {
 			$theid = modify_id($1);
 			print "(exercise start title >$title< id >$theid< $the_num)\n";
@@ -1302,7 +1324,7 @@ while(1)
 	} elsif ($para =~ s/^\\begin\{exercise\}[ \n]*//) {
 		close_paragraph();
 		$exercise_num = $exercise_num+1;
-		$the_num = get_exercise_number ();
+		my $the_num = get_exercise_number ();
 		if ($para =~ s/^\\label\{([^}]*)\}[ \n]*//) {
 			$theid = modify_id($1);
 			print "(exercise start >$theid< $the_num)\n";
@@ -1329,7 +1351,7 @@ while(1)
 	} elsif ($para =~ s/^\\begin\{example\}[ \n]*//) {
 		close_paragraph();
 		$example_num = $example_num+1;
-		$the_num = get_example_number ();
+		my $the_num = get_example_number ();
 		if ($para =~ s/^\\label\{([^}]*)\}[ \n]*//) {
 			$theid = modify_id($1);
 			print "(example start >$theid<)\n";
@@ -1348,7 +1370,7 @@ while(1)
 	} elsif ($para =~ s/^\\begin\{remark\}[ \n]*//) {
 		close_paragraph();
 		$remark_num = $remark_num+1;
-		$the_num = get_remark_number ();
+		my $the_num = get_remark_number ();
 		if ($para =~ s/^\\label\{([^}]*)\}[ \n]*//) {
 			$theid = modify_id($1);
 			print "(remark start >$theid<)\n";
@@ -1390,10 +1412,10 @@ while(1)
 		open_paragraph();
 
 	} elsif ($para =~ s/^([^\$\\{]*?)\}//) {
-		$line = $1;
+		my $line = $1;
 		print "closing tag after >$line<\n\n";
 		print_line($line);
-		$tagtoclose = pop @cltags;
+		my $tagtoclose = pop @cltags;
 		if ($tagtoclose eq "em") {
 			print $out "</em>";
 		} elsif ($tagtoclose eq "myquote") {
@@ -1451,7 +1473,8 @@ while(1)
 			#} else {
 			#print $out "<p><nbsp/></p><!--FIXME:this seems an ugly solution-->\n"; 
 		}
-	} elsif ($para =~ s/^\\\\//) {
+	} elsif ($para =~ s/^\\\\\[[0-9a-z]*\]// ||
+		 $para =~ s/^\\\\//) {
 		print "(BR)\n";
 		if ($inparagraph) {
 			#print $out "</p><p><!--FIXME:this seems an ugly solution-->"; 
@@ -1484,10 +1507,10 @@ while(1)
 		print "(end{samepage} do nothing)\n";
 
 	} elsif ($para =~ s/^([^\\]+?)\$/\$/) {
-		$line = $1;
+		my $line = $1;
 		print_line($line);
 	} elsif ($para =~ s/^([^\\]+?)\\/\\/) {
-		$line = $1;
+		my $line = $1;
 		print_line($line);
 	} elsif ($para =~ s/^(\\[^ \n\r\t{]*)//) {
 		print "\n\nHUH???\n\nUNHANDLED escape $1!\n$para\n\n";

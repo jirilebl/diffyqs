@@ -1,0 +1,13 @@
+% This is not really from a fig file, but it is useful to just abuse our infrastructure
+\begin{equation*}
+\begin{tikzcd}[cramped, row sep=small]
+& {\text{Introduction}} \arrow[d] \\
+& {\text{Chapter 1}} \arrow[d] \\
+& {\text{Chapter 2}} \arrow[dr] \arrow[dd] \arrow[dl] \arrow[drr] \\
+{\text{Chapter 3}} \arrow[dr, dashed] \arrow[d] & &
+  {\text{Chapter 6}} &
+  {\text{Chapter 7}} \\
+{\text{Chapter 8}} & {\text{Chapter 4}} \arrow[d] \\
+& {\text{Chapter 5}}
+\end{tikzcd}
+\end{equation*}

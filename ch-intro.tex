@@ -47,6 +47,10 @@ requires chapters be done in order.
 Later chapters can be dropped.
 The dependence of the material covered is roughly:
 
+% If changing make sure to also update figures/chapterdiagram.pdf_t
+% That's a hopefully short term hack before I figure out how to do it
+% better so that it also gets links and such
+%mbxSTARTIGNORE
 \begin{equation*}
 %FIXME: check for tex4ht
 \begin{tikzcd}[cramped, row sep=small]
@@ -70,6 +74,10 @@ The dependence of the material covered is roughly:
 %& *+[F.:<3pt>]{\text{\Chapterref{SL:chapter}}}
 %}
 \end{equation*}
+%mbxENDIGNORE
+%mbxlatex \begin{center}
+%mbxlatex \inputpdft{chapterdiagram}
+%mbxlatex \end{center}
 
 There are some references in chapters \ref{FS:chapter} and \ref{SL:chapter}
 to material from \chapterref{sys:chapter} (some linear algebra), but these

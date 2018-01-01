@@ -47,3 +47,5 @@ done
 echo
 echo DONE ...
 echo
+echo Perhaps now do: rsync -av -e ssh html zinc.5z.com:/var/www/jirka/diffyqs/
+echo
