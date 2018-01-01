@@ -895,7 +895,8 @@ while(1)
 
 			if ($table =~ s/^(.*?)[ \n]*\\\\(\[.*?\])?[ \n]*//s) {
 				$fline = $1;
-				$fline =~ s|[ \n]*\&amp;[ \n]*|</cell><cell>|g;
+				#FIXME: add spacing, though this should really be fixed in PreTeXt
+				$fline =~ s|[ \n]*\&amp;[ \n]*|<nbsp/></cell><cell><nbsp/>|g;
 				$fline =~ s|\$(.*?)\$|<m>$1</m>|sg;
 				print $out "    <row bottom=\"minor\"><cell>$fline</cell></row>\n";
 			} else {
@@ -908,7 +909,8 @@ while(1)
 
 			$table =~ s|\$(.*?)\$|<m>$1</m>|sg;
 
-			$table =~ s|[ \n]*\&amp;[ \n]*|</cell><cell>|g;
+			#FIXME: add spacing, though this should really be fixed in PreTeXt
+			$table =~ s|[ \n]*\&amp;[ \n]*|<nbsp/></cell><cell><nbsp/>|g;
 			$table =~ s|[ \n]*\\\\(\[.*?\])?[ \n]*|</cell></row>\n    <row><cell>|g;
 
 			# last row should have bottom minor
@@ -954,7 +956,8 @@ while(1)
 			if ($dorules) {
 				if ($table =~ s/^(.*?)[ \n]*\\\\(\[.*?\])?[ \n]*//s) {
 					$fline = $1;
-					$fline =~ s|[ \n]*\&amp;[ \n]*|</cell><cell>|g;
+					#FIXME: add spacing, though this should really be fixed in PreTeXt
+					$fline =~ s|[ \n]*\&amp;[ \n]*|<nbsp/></cell><cell><nbsp/>|g;
 					$fline =~ s|\$(.*?)\$|<m>$1</m>|sg;
 					print $out "  <row bottom=\"minor\"><cell>$fline</cell></row>\n";
 				} else {
@@ -968,7 +971,8 @@ while(1)
 
 			$table =~ s|\$(.*?)\$|<m>$1</m>|sg;
 
-			$table =~ s|[ \n]*\&amp;[ \n]*|</cell><cell>|g;
+			#FIXME: add spacing, though this should really be fixed in PreTeXt
+			$table =~ s|[ \n]*\&amp;[ \n]*|<nbsp/></cell><cell><nbsp/>|g;
 			$table =~ s|[ \n]*\\\\(\[.*?\])?[ \n]*|</cell></row>\n  <row><cell>|g;
 
 			# last row should have bottom minor
