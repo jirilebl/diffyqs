@@ -93,9 +93,14 @@
 				</xsl:otherwise>
 			</xsl:choose>
 			<xsl:if test="@float">
-        		  <xsl:text>float:</xsl:text>
-        		  <xsl:value-of select="@float" />
-        		  <xsl:text>; </xsl:text>
+			  <xsl:choose>
+			    <xsl:when test="@float = 'left'">
+        		    <xsl:text>float:left; margin-right:15px;</xsl:text>
+			    </xsl:when>
+			    <xsl:when test="@float = 'right'">
+        		    <xsl:text>float:right; margin-left:15px;</xsl:text>
+			    </xsl:when>
+		          </xsl:choose>
 		        </xsl:if>
         	</xsl:attribute>
                 <xsl:attribute name="data">
@@ -136,9 +141,14 @@
 				</xsl:otherwise>
 			</xsl:choose>
 			<xsl:if test="@float">
-        		  <xsl:text>float:</xsl:text>
-        		  <xsl:value-of select="@float" />
-        		  <xsl:text>; </xsl:text>
+			  <xsl:choose>
+			    <xsl:when test="@float = 'left'">
+        		    <xsl:text>float:left; margin-right:15px;</xsl:text>
+			    </xsl:when>
+			    <xsl:when test="@float = 'right'">
+        		    <xsl:text>float:right; margin-left:15px;</xsl:text>
+			    </xsl:when>
+		          </xsl:choose>
 		        </xsl:if>
         	</xsl:attribute>
                 <xsl:attribute name="data">
@@ -177,9 +187,14 @@
 				</xsl:otherwise>
 			</xsl:choose>
 			<xsl:if test="@float">
-        		  <xsl:text>float:</xsl:text>
-        		  <xsl:value-of select="@float" />
-        		  <xsl:text>; </xsl:text>
+			  <xsl:choose>
+			    <xsl:when test="@float = 'left'">
+        		    <xsl:text>float:left; margin-right:15px;</xsl:text>
+			    </xsl:when>
+			    <xsl:when test="@float = 'right'">
+        		    <xsl:text>float:right; margin-left:15px;</xsl:text>
+			    </xsl:when>
+		          </xsl:choose>
 		        </xsl:if>
         	</xsl:attribute>
                 <xsl:attribute name="src">
