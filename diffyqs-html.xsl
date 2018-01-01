@@ -54,111 +54,7 @@
 	<br/>
 </xsl:template>
 
-<!-- need inline image, so nonstandard mathbookxml -->
-<xsl:template match="diffyqsinlineimage">
-    <!-- condition on file extension -->
-    <!-- no period, lowercase'ed     -->
-    <xsl:variable name="extension">
-        <xsl:call-template name="file-extension">
-            <xsl:with-param name="filename" select="@source" />
-        </xsl:call-template>
-    </xsl:variable>
-    <xsl:choose>
-        <!-- no extension, presume SVG -->
-        <xsl:when test="$extension=''">
-            <xsl:element name="object">
-                <xsl:attribute name="type">image/svg+xml</xsl:attribute>
-        	<xsl:attribute name="style">
-			<xsl:if test="@width">
-        		  <xsl:text>width:</xsl:text>
-        		  <xsl:value-of select="@width" />
-        		  <xsl:text>; </xsl:text>
-		        </xsl:if>
-			<xsl:if test="@maxwidth">
-        		  <xsl:text>max-width:</xsl:text>
-        		  <xsl:value-of select="@maxwidth" />
-        		  <xsl:text>; </xsl:text>
-		        </xsl:if>
-			<xsl:if test="@height">
-        		  <xsl:text>height:</xsl:text>
-        		  <xsl:value-of select="@height" />
-        		  <xsl:text>; </xsl:text>
-		        </xsl:if>
-        		<xsl:text>margin:auto; vertical-align:middle;</xsl:text>
-        	</xsl:attribute>
-                <xsl:attribute name="data">
-	        	<!--<xsl:value-of select="$directory.images" />
-        	    <xsl:text>/</xsl:text>-->
-        	    <xsl:value-of select="@source" />
-        	    <!--<xsl:apply-templates select="." mode="internal-id" />-->
-                    <xsl:text>.svg</xsl:text>
-                </xsl:attribute>
-                <p style="margin:auto">&lt;&lt;Your browser is unable to render this SVG image&gt;&gt;</p>
-            </xsl:element>
-        </xsl:when>
-        <xsl:when test="$extension='svg'">
-            <xsl:element name="object">
-                <xsl:attribute name="type">image/svg+xml</xsl:attribute>
-        	<xsl:attribute name="style">
-			<xsl:if test="@width">
-        		  <xsl:text>width:</xsl:text>
-        		  <xsl:value-of select="@width" />
-        		  <xsl:text>; </xsl:text>
-		        </xsl:if>
-			<xsl:if test="@maxwidth">
-        		  <xsl:text>max-width:</xsl:text>
-        		  <xsl:value-of select="@maxwidth" />
-        		  <xsl:text>; </xsl:text>
-		        </xsl:if>
-			<xsl:if test="@height">
-        		  <xsl:text>height:</xsl:text>
-        		  <xsl:value-of select="@height" />
-        		  <xsl:text>; </xsl:text>
-		        </xsl:if>
-        		<xsl:text>margin:auto; vertical-align:middle;</xsl:text>
-        	</xsl:attribute>
-                <xsl:attribute name="data">
-	        	<!--<xsl:value-of select="$directory.images" />
-        	    <xsl:text>/</xsl:text>-->
-        	    <xsl:value-of select="@source" />
-        	    <!--<xsl:apply-templates select="." mode="internal-id" />-->
-                </xsl:attribute>
-                <p style="margin:auto">&lt;&lt;Your browser is unable to render this SVG image&gt;&gt;</p>
-            </xsl:element>
-        </xsl:when>
-        <xsl:otherwise>
-            <xsl:element name="img">
-        	<xsl:attribute name="style">
-			<xsl:if test="@width">
-        		  <xsl:text>width:</xsl:text>
-        		  <xsl:value-of select="@width" />
-        		  <xsl:text>; </xsl:text>
-		        </xsl:if>
-			<xsl:if test="@maxwidth">
-        		  <xsl:text>max-width:</xsl:text>
-        		  <xsl:value-of select="@maxwidth" />
-        		  <xsl:text>; </xsl:text>
-		        </xsl:if>
-			<xsl:if test="@height">
-        		  <xsl:text>height:</xsl:text>
-        		  <xsl:value-of select="@height" />
-        		  <xsl:text>; </xsl:text>
-		        </xsl:if>
-        		<xsl:text>margin:auto; vertical-align:middle;</xsl:text>
-        	</xsl:attribute>
-                <xsl:attribute name="src">
-                    <xsl:value-of select="@source" />
-                </xsl:attribute>
-                <!-- alt attribute for accessibility -->
-                <xsl:attribute name="alt">
-                    <xsl:apply-templates select="description" />
-                </xsl:attribute>
-            </xsl:element>
-        </xsl:otherwise>
-    </xsl:choose>
-</xsl:template>
-
-<!-- need image with real width, so nonstandard mathbookxml -->
+<!-- need inline image, custom width, maxwidth, etc.., so nonstandard mathbookxml -->
 <xsl:template match="diffyqsimage">
     <!-- condition on file extension -->
     <!-- no period, lowercase'ed     -->
@@ -188,7 +84,19 @@
         		  <xsl:value-of select="@height" />
         		  <xsl:text>; </xsl:text>
 		        </xsl:if>
-        		<xsl:text>margin:auto; vertical-align:middle; display:block;</xsl:text>
+        		<xsl:text>margin:auto; vertical-align:middle;</xsl:text>
+			<xsl:choose>
+				<xsl:when test="@inline = 'yes'">
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:text>display:block;</xsl:text>
+				</xsl:otherwise>
+			</xsl:choose>
+			<xsl:if test="@float">
+        		  <xsl:text>float:</xsl:text>
+        		  <xsl:value-of select="@float" />
+        		  <xsl:text>; </xsl:text>
+		        </xsl:if>
         	</xsl:attribute>
                 <xsl:attribute name="data">
 	        	<!--<xsl:value-of select="$directory.images" />
@@ -219,7 +127,19 @@
         		  <xsl:value-of select="@height" />
         		  <xsl:text>; </xsl:text>
 		        </xsl:if>
-        		<xsl:text>margin:auto; vertical-align:middle; display:block;</xsl:text>
+        		<xsl:text>margin:auto; vertical-align:middle;</xsl:text>
+			<xsl:choose>
+				<xsl:when test="@inline = 'yes'">
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:text>display:block;</xsl:text>
+				</xsl:otherwise>
+			</xsl:choose>
+			<xsl:if test="@float">
+        		  <xsl:text>float:</xsl:text>
+        		  <xsl:value-of select="@float" />
+        		  <xsl:text>; </xsl:text>
+		        </xsl:if>
         	</xsl:attribute>
                 <xsl:attribute name="data">
 	        	<!--<xsl:value-of select="$directory.images" />
@@ -249,6 +169,18 @@
         		  <xsl:text>; </xsl:text>
 		        </xsl:if>
         		<xsl:text>margin:auto; vertical-align:middle;</xsl:text>
+			<xsl:choose>
+				<xsl:when test="@inline = 'yes'">
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:text>display:block;</xsl:text>
+				</xsl:otherwise>
+			</xsl:choose>
+			<xsl:if test="@float">
+        		  <xsl:text>float:</xsl:text>
+        		  <xsl:value-of select="@float" />
+        		  <xsl:text>; </xsl:text>
+		        </xsl:if>
         	</xsl:attribute>
                 <xsl:attribute name="src">
                     <xsl:value-of select="@source" />
@@ -261,7 +193,6 @@
         </xsl:otherwise>
     </xsl:choose>
 </xsl:template>
-
 
 <xsl:param name="html.knowl.theorem" select="'no'" />
 <xsl:param name="html.knowl.proof" select="'yes'" />

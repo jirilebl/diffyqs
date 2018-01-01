@@ -961,14 +961,16 @@ while(1)
 			print "\n\n\nHUH?\n\n\nNo end tabular/center!\n\n$para\n\n";
 		}
 		
-	#FIXME:Assuming that diffyfloatingfigure(r) never has a caption
-	#FIXME:THAT'S NOT TRUE
-	#
-	#FIXME:Assuming that diffyfloatingfigure(r) is always just an inputpdft
-	} elsif ($para =~ s/^\\begin\{diffyfloatingfigurer?\}\{.*?\}\{(.*?)\}[ \n]*//) {
-		$thesize = $1;
+	#FIXME:Assuming that diffyfloatingfiguresimple(r) never has a caption
+	#FIXME:Assuming that diffyfloatingfiguresimple(r) is always just an inputpdft
+	} elsif ($para =~ s/^\\begin\{diffyfloatingfiguresimple(r?)\}\{.*?\}\{(.*?)\}[ \n]*//) {
+		my $float = "left";
+		if ($1 == 'r') {
+			$float = "right";
+		}
+		$thesize = $2;
 		print "(DIFFYFLOATINGFIGURE)\n";
-		if ($para =~ s/^(.*?)\\end\{diffyfloatingfigurer?\}[ \n]*//s) {
+		if ($para =~ s/^(.*?)\\end\{diffyfloatingfiguresimpler?\}[ \n]*//s) {
 			$fig = $1;
 
 			# kill unneccesaray things
@@ -976,15 +978,16 @@ while(1)
 			$fig =~ s/\\noindent[ \n]*//g;
 			$fig =~ s/\\bigskip[ \n]*//g;
 			$fig =~ s/\\medskip[ \n]*//g;
+			$fig =~ s/\\diffypdfversion\{.*?\{.*?\}\}[ \n]*//g;
 
 			if ($fig =~ m/^[ \n]*\\inputpdft\{(.*?)\}[ \n]*$/) {
 				$thefile = "figures/$1";
 				$thesizestr = get_size_of_svg("$thefile-tex4ht.svg");
 				open_paragraph ();
 				if ($thesizestr ne "") {
-					print $out "<diffyqsimage source=\"$thefile-tex4ht\" $thesizestr />\n";
+					print $out "<diffyqsimage source=\"$thefile-tex4ht\" $thesizestr float=\"$float\" />\n";
 				} else {
-					print $out "<diffyqsimage source=\"$thefile-tex4ht\" width=\"$thesize\" />\n";
+					print $out "<diffyqsimage source=\"$thefile-tex4ht\" width=\"$thesize\" float=\"$float\" />\n";
 				}
 				close_paragraph ();
 			} else {
@@ -1018,9 +1021,7 @@ while(1)
 		#ensure_svg_version ($thefile);
 		ensure_mbx_png_version ($thefile);
 		open_paragraph ();
-		#FIXME: diffyqsinlineimage can't do PNG!!
-		print "\n\n\nHUH???\n\n\ndiffyqsinlineimage can't PNG yet\n\n\n";
-		print $out "<diffyqsinlineimage source=\"$thefile-mbx.png\" width=\"$width\" />\n";
+		print $out "<diffyqsimage source=\"$thefile-mbx.png\" width=\"$width\" inline=\"yes\" />\n";
 		close_paragraph ();
 
 	#FIXME: this is based entirely too much on my usage :)
@@ -1030,15 +1031,17 @@ while(1)
 		print "(PARBOXED image >$width< >$thefile<\n)";
 		#ensure_svg_version ($thefile);
 		ensure_mbx_png_version ($thefile);
-		print $out "<diffyqsinlineimage source=\"$thefile-mbx.png\" width=\"$width\" />\n";
+		print $out "<diffyqsimage source=\"$thefile-mbx.png\" width=\"$width\" inline=\"yes\" />\n";
 
 	#FIXME: not all substitutions are made, so check if more processing needs to be done
 	#on caption
 	} elsif ($para =~ s/^\\begin\{figure\}(\[.*?\])?[ \n]*// ||
-	         $para =~ s/^\\begin\{diffyfloatingfigurepdfonly\}\{.*?\}[ \n]*//) {
+	         $para =~ s/^\\begin\{diffyfloatingfigurepdfonly\}\{.*?\}[ \n]*// ||
+	         $para =~ s/^\\begin\{diffyfloatingfigurer?\}\{.*?\}\{.*?\}[ \n]*//) {
 		print "(FIGURE)\n";
 		if ($para =~ s/^(.*?)\\end\{figure\}[ \n]*//s ||
-		    $para =~ s/^(.*?)\\end\{diffyfloatingfigurepdfonly\}[ \n]*//s) {
+		    $para =~ s/^(.*?)\\end\{diffyfloatingfigurepdfonly\}[ \n]*//s ||
+		    $para =~ s/^(.*?)\\end\{diffyfloatingfigurer?\}[ \n]*//s) {
 			$figure = $1;
 
 			#print "FIGFIG >$figure<\n";
@@ -1474,7 +1477,11 @@ while(1)
 		print $out "<fn>"; 
 		push @cltags, "footnote";
 
+	} elsif ($para =~ s/^\\begin\{samepage\}//) {
+		print "(begin samepage} do nothing)\n";
 
+	} elsif ($para =~ s/^\\end\{samepage\}//) {
+		print "(end{samepage} do nothing)\n";
 
 	} elsif ($para =~ s/^([^\\]+?)\$/\$/) {
 		$line = $1;
