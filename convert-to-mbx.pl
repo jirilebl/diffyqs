@@ -583,7 +583,7 @@ while(1)
 
 	# this assumes sectionnotes come in their own $para
 	} elsif ($para =~ s/^\\sectionnotes\{(.*)\}[ \n\t]*//s) {
-		my $secnotes = $1;
+		my $secnotes = do_line_subs($1);
 		$secnotes =~ s|\\cite\{([^}]*)\}|<xref ref=\"biblio-$1\"/>|g;
 		$secnotes =~ s|\\BDref\{([^}]*)\}|$1|g;
 		$secnotes =~ s|\\EPref\{([^}]*)\}|$1|g;
