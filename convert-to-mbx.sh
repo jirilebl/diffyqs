@@ -1,5 +1,5 @@
 #!/bin/zsh
-echo THIS POSSIBLY WONT WORK, IT IS A WORK IN PROGRESS!  Do ^C to get out
+echo Conversion to HTML through PreTeXt.  It is still beta quality and work in progress.  Do ^C to get out
 read
 #exit 0
 
