@@ -1,0 +1,3 @@
+.main #content { max-width: 800px; text-align: justify; }
+#masthead.smallbuttons { max-width: 1104px; }
+.container.has-sidebar-left, .has-sidebar-left .container { max-width: 1104px; }

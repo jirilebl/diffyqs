@@ -1,7 +1,6 @@
 #!/bin/zsh
 echo Conversion to HTML through PreTeXt.  It is still beta quality and work in progress.  Do ^C to get out
 read
-#exit 0
 
 echo
 echo RUNNING FIGURES...
@@ -28,6 +27,8 @@ mv html html.$RANDOM$RANDOM$RANDOM
 mkdir html
 cd html
 cp -a ../figures .
+cp ../extra.css .
+cp ../logo.png .
 
 echo
 echo RUNNING xsltproc
@@ -48,4 +49,5 @@ echo
 echo DONE ...
 echo
 echo Perhaps now do: rsync -av -e ssh html zinc.5z.com:/var/www/jirka/diffyqs/
+echo Or perhaps even before, run optimize-pngs.sh in the figures/ directory
 echo
