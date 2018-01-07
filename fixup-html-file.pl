@@ -14,6 +14,9 @@ while($line = <>)
 		print "  },\n";
 		print " });\n";
 		print "</script>\n";
+		print "<style>\n";
+		print " .hidden-content { display:none; }\n";
+		print "</style>\n";
 	}
 	print $line;
 }
