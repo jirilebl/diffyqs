@@ -37,3 +37,10 @@
  
  background-attachment: local, local, scroll, scroll;
 }
+
+@media print {
+	.navbar { display:none; }
+	.sidebar { display:none; }
+	.searchwrapper { display:none; }
+	.has-sidebar-left.mathbook-loaded.sidebar-left-open .main { margin-left:0px; left:auto; }
+}

@@ -14,6 +14,8 @@ while($line = <>)
 		print "  },\n";
 		print " });\n";
 		print "</script>\n";
+		
+		# Not really critical, but makes initial look slightly nicer as external .css files get loaded slowly
 		print "<style>\n";
 		print " .hidden-content { display:none; }\n";
 		print "</style>\n";

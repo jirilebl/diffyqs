@@ -124,6 +124,8 @@
   <xsl:param name="html.knowl.exercise.inline" select="'no'"/>
   <xsl:param name="html.knowl.exercise.sectional" select="'no'"/>
 
+  <xsl:param name="debug.datedfiles" select="'no'"/>
+
   <xsl:param name="html.css.extra" select="'extra.css'"/>
 
 </xsl:stylesheet>
