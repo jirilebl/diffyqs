@@ -6,5 +6,14 @@ while($line = <>)
 		print "<a class=\"index-button toolbar-item button\" href=\"http://www.jirka.org/diffyqs/diffyqs.pdf\" title=\"PDFt=\"PDF\">PDF</a>\n";
 		print "<a class=\"index-button toolbar-item button\" style=\"width:100px;\" href=\"https://smile.amazon.com/dp/1541329058\" title=\"Paperback\" alt=\"Buy Paperback\">Paperback</a>\n";
 	}
+	if ($line =~ m/<\/head>/) {
+		print "<script type=\"text/x-mathjax-config\">\n";
+		print " MathJax.Hub.Config({\n";
+		print "  \"fast-preview\": {\n";
+		print "   disabled: true,\n";
+		print "  },\n";
+		print " });\n";
+		print "</script>\n";
+	}
 	print $line;
 }
