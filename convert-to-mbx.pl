@@ -350,13 +350,13 @@ sub get_size_of_svg {
 	return $thesizestr
 }
 
-sub ensure_svg_version {
+sub ensure_mbx_svg_version {
 	my $thefile = shift;
 
-	print "ENSURE $thefile.svg\n";
-	if ((not -e "$thefile.svg") and (-e "$thefile.pdf")) {
-		print "MAKING $thefile.svg from PDF\n";
-		system("pdf2svg $thefile.pdf $thefile.svg");
+	print "ENSURE $thefile-mbx.svg\n";
+	if ((not -e "$thefile-mbx.svg") and (-e "$thefile.pdf")) {
+		print "MAKING $thefile-mbx.svg from PDF\n";
+		system("pdf2svg $thefile.pdf $thefile-mbx.svg");
 	}
 }
 
@@ -1045,10 +1045,10 @@ while(1)
 		my $width = $1;
 		my $thefile = $2;
 		print "(BRed image >$width< >$thefile<\n)";
-		#ensure_svg_version ($thefile);
+		ensure_mbx_svg_version ($thefile);
 		ensure_mbx_png_version ($thefile);
 		open_paragraph ();
-		print $out "<diffyqsimage source=\"$thefile-mbx.png\" width=\"$width\" inline=\"yes\" />\n";
+		print $out "<diffyqsimage source=\"$thefile-mbx\" width=\"$width\" inline=\"yes\" />\n";
 		close_paragraph ();
 
 	#FIXME: this is based entirely too much on my usage :)
@@ -1056,9 +1056,9 @@ while(1)
 		my $width = $1;
 		my $thefile = $2;
 		print "(PARBOXED image >$width< >$thefile<\n)";
-		#ensure_svg_version ($thefile);
+		ensure_mbx_svg_version ($thefile);
 		ensure_mbx_png_version ($thefile);
-		print $out "<diffyqsimage source=\"$thefile-mbx.png\" width=\"$width\" inline=\"yes\" />\n";
+		print $out "<diffyqsimage source=\"$thefile-mbx\" width=\"$width\" inline=\"yes\" />\n";
 
 	#FIXME: not all substitutions are made, so check if more processing needs to be done
 	#on caption
@@ -1139,14 +1139,14 @@ while(1)
 					my $thesize = $1;
 					my $thefile = "figures/$2";
 					$thesize =~ s/width=//g;
-					#ensure_svg_version ($thefile);
+					ensure_mbx_svg_version ($thefile);
 					ensure_mbx_png_version ($thefile);
-					print $out "  <diffyqsimage source=\"$thefile-mbx.png\" width=\"100\%\" maxwidth=\"$thesize\" />\n";
+					print $out "  <diffyqsimage source=\"$thefile-mbx\" width=\"100\%\" maxwidth=\"$thesize\" />\n";
 					#if ($thesize ne "") {
-					#print $out "  <diffyqsimage source=\"$thefile\" width=\"$thesize\" />\n";
+					#print $out "  <diffyqsimage source=\"$thefile-mbx\" width=\"$thesize\" />\n";
 					#} else {
-					#$thesizestr = get_size_of_svg("$thefile.svg");
-					#print $out "  <diffyqsimage source=\"$thefile\" $thesizestr />\n";
+					#$thesizestr = get_size_of_svg("$thefile-mbx.svg");
+					#print $out "  <diffyqsimage source=\"$thefile-mbx\" $thesizestr />\n";
 					#}
 				} elsif ($fig =~ m/^[ \n]*\\diffyincludegraphics\{[^}]*?\}\{([^}]*?)\}\{([^}]*?)\}[ \n]*\\\\[ \n]*\\diffyincludegraphics\{[^}]*?\}\{([^}]*?)\}\{([^}]*?)\}[ \n]*$/) {
 					my $thesize1 = $1;
@@ -1155,21 +1155,21 @@ while(1)
 					my $thefile2 = "figures/$4";
 					$thesize1 =~ s/width=//g;
 					$thesize2 =~ s/width=//g;
-					#ensure_svg_version ($thefile1);
-					#ensure_svg_version ($thefile2);
+					ensure_mbx_svg_version ($thefile1);
+					ensure_mbx_svg_version ($thefile2);
 					ensure_mbx_png_version ($thefile1);
 					ensure_mbx_png_version ($thefile2);
 					#FIXME: what about maxwidth?
-					print $out "  <diffyqsimage source=\"$thefile1-mbx.png\" width=\"100\%\" maxwidth=\"$thesize1\" />\n";
-					print $out "  <diffyqsimage source=\"$thefile2-mbx.png\" width=\"100\%\" maxwidth=\"$thesize2\" />\n";
+					print $out "  <diffyqsimage source=\"$thefile1-mbx\" width=\"100\%\" maxwidth=\"$thesize1\" />\n";
+					print $out "  <diffyqsimage source=\"$thefile2-mbx\" width=\"100\%\" maxwidth=\"$thesize2\" />\n";
 
 				#2 picture version FIXME: removing these, adding hand-done guys
 				#} elsif ($fig =~ m/^[ \n]*\\diffyincludegraphics\{[^}]*?\}\{[^}]*?\}\{([^}]*?)}[ \n]*\\diffyincludegraphics\{[^}]*?\}\{[^}]*?\}\{([^}]*?)\}[ \n]*$/) {
 				#$thefile1 = "figures/$1";
 				#$thefile2 = "figures/$2";
 				#print "DOUBLEFIGURE!\n"
-				#ensure_svg_version ($thefile1);
-				#ensure_svg_version ($thefile2);
+				#ensure_mbx_svg_version ($thefile1);
+				#ensure_mbx_svg_version ($thefile2);
 				#print $out "<sidebyside xml:id=\"$theid\">\n";
 				#print $out "  <caption>$caption</caption>\n";
 				#print $out "  <figure>\n";
