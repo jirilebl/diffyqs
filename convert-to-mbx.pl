@@ -1048,7 +1048,7 @@ while(1)
 		ensure_mbx_svg_version ($thefile);
 		ensure_mbx_png_version ($thefile);
 		open_paragraph ();
-		print $out "<diffyqsimage source=\"$thefile-mbx\" width=\"$width\" inline=\"yes\" />\n";
+		print $out "<diffyqsimage source=\"$thefile-mbx\" width=\"$width\" background-color=\"white\" inline=\"yes\" />\n";
 		close_paragraph ();
 
 	#FIXME: this is based entirely too much on my usage :)
@@ -1058,7 +1058,7 @@ while(1)
 		print "(PARBOXED image >$width< >$thefile<\n)";
 		ensure_mbx_svg_version ($thefile);
 		ensure_mbx_png_version ($thefile);
-		print $out "<diffyqsimage source=\"$thefile-mbx\" width=\"$width\" inline=\"yes\" />\n";
+		print $out "<diffyqsimage source=\"$thefile-mbx\" width=\"$width\" background-color=\"white\" inline=\"yes\" />\n";
 
 	#FIXME: not all substitutions are made, so check if more processing needs to be done
 	#on caption
@@ -1141,7 +1141,7 @@ while(1)
 					$thesize =~ s/width=//g;
 					ensure_mbx_svg_version ($thefile);
 					ensure_mbx_png_version ($thefile);
-					print $out "  <diffyqsimage source=\"$thefile-mbx\" width=\"100\%\" maxwidth=\"$thesize\" />\n";
+					print $out "  <diffyqsimage source=\"$thefile-mbx\" width=\"100\%\" background-color=\"white\" maxwidth=\"$thesize\" />\n";
 					#if ($thesize ne "") {
 					#print $out "  <diffyqsimage source=\"$thefile-mbx\" width=\"$thesize\" />\n";
 					#} else {
@@ -1160,8 +1160,8 @@ while(1)
 					ensure_mbx_png_version ($thefile1);
 					ensure_mbx_png_version ($thefile2);
 					#FIXME: what about maxwidth?
-					print $out "  <diffyqsimage source=\"$thefile1-mbx\" width=\"100\%\" maxwidth=\"$thesize1\" />\n";
-					print $out "  <diffyqsimage source=\"$thefile2-mbx\" width=\"100\%\" maxwidth=\"$thesize2\" />\n";
+					print $out "  <diffyqsimage source=\"$thefile1-mbx\" width=\"100\%\" background-color=\"white\" maxwidth=\"$thesize1\" />\n";
+					print $out "  <diffyqsimage source=\"$thefile2-mbx\" width=\"100\%\" background-color=\"white\" maxwidth=\"$thesize2\" />\n";
 
 				#2 picture version FIXME: removing these, adding hand-done guys
 				#} elsif ($fig =~ m/^[ \n]*\\diffyincludegraphics\{[^}]*?\}\{[^}]*?\}\{([^}]*?)}[ \n]*\\diffyincludegraphics\{[^}]*?\}\{[^}]*?\}\{([^}]*?)\}[ \n]*$/) {

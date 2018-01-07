@@ -73,6 +73,11 @@
           <xsl:value-of select="@height"/>
           <xsl:text>; </xsl:text>
         </xsl:if>
+        <xsl:if test="@background-color">
+          <xsl:text>background-color:</xsl:text>
+          <xsl:value-of select="@background-color"/>
+          <xsl:text>; </xsl:text>
+        </xsl:if>
         <xsl:text>margin:auto; vertical-align:middle;</xsl:text>
         <xsl:choose>
           <xsl:when test="@inline = 'yes'">
