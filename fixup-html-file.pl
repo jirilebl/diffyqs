@@ -7,6 +7,7 @@ while($line = <>)
 		print "<a class=\"index-button toolbar-item button\" style=\"width:100px;\" href=\"https://smile.amazon.com/dp/1541329058\" title=\"Paperback\" alt=\"Buy Paperback\">Paperback</a>\n";
 	}
 	if ($line =~ m/<\/head>/) {
+		# Fast preview doesn't seem worth it and it could be confusing since it's not quite right so disable it
 		print "<script type=\"text/x-mathjax-config\">\n";
 		print " MathJax.Hub.Config({\n";
 		print "  \"fast-preview\": {\n";
@@ -15,10 +16,18 @@ while($line = <>)
 		print " });\n";
 		print "</script>\n";
 		
-		# Not really critical, but makes initial look slightly nicer as external .css files get loaded slowly
 		print "<style>\n";
+		# Not really critical, avoids flashing some LaTeX code on initial load, as external .css files get loaded slowly
 		print " .hidden-content { display:none; }\n";
+		# This is for the print PDF warning below
+		print " .print-pdf-warning { display:none; }\n";
+		print " \@media print { .print-pdf-warning { display:inline; } }\n";
 		print "</style>\n";
+	}
+	if ($line =~ m/<\/body>/) {
+		print "<span class=\"print-pdf-warning\">\n";
+		print " <em>For a higher quality printout use the PDF version: <tt>http://www.jirka.org/diffyqs/diffyqs.pdf</tt></em>\n";
+		print "</span>\n";
 	}
 	print $line;
 }

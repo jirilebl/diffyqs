@@ -7,7 +7,7 @@
 .container.has-sidebar-left, .has-sidebar-left .container {
  max-width: 1104px;
 }
-/*.MJXc-display, */
+/*.MJXc-display, (this is already in mainline) */
 .figure-like {
  background-image: 
  linear-gradient(to right, white, white),
@@ -22,7 +22,7 @@
  
  background-attachment: local, local, scroll, scroll;
 }
-/*.knowl .MJXc-display, */
+/*.knowl .MJXc-display, (this is already in mainline) */
 .knowl .figure-like {
  background-image: 
  linear-gradient(to right, #f5f5ff, #f5f5ff),
@@ -38,9 +38,11 @@
  background-attachment: local, local, scroll, scroll;
 }
 
+/* in mainline now
 @media print {
 	.navbar { display:none; }
 	.sidebar { display:none; }
 	.searchwrapper { display:none; }
 	.has-sidebar-left.mathbook-loaded.sidebar-left-open .main { margin-left:0px; left:auto; }
 }
+*/
