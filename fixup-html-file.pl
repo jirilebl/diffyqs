@@ -29,5 +29,6 @@ while($line = <>)
 		print " <em>For a higher quality printout use the PDF version: <tt>http://www.jirka.org/diffyqs/diffyqs.pdf</tt></em>\n";
 		print "</span>\n";
 	}
+	$line =~ s/>Authored in PreTeXt</>Created with PreTeXt</;
 	print $line;
 }

@@ -1,11 +1,11 @@
 .main #content {
- max-width: 800px; text-align: justify;
+ max-width: 800px !important; text-align: justify !important;
 }
 #masthead.smallbuttons {
- max-width: 1104px;
+ max-width: 1104px !important;
 }
 .container.has-sidebar-left, .has-sidebar-left .container {
- max-width: 1104px;
+ max-width: 1104px !important;
 }
 /*.MJXc-display, (this is already in mainline) */
 .figure-like {
