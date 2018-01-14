@@ -1,3 +1,4 @@
+#!/usr/bin/perl
 #
 # Script to convert this particular LaTeX file to Pretext or PTX (used to be Mathbook or MBX)
 #

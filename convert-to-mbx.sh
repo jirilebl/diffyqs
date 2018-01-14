@@ -1,12 +1,17 @@
 #!/bin/zsh
 echo Conversion to HTML through PreTeXt.  It is still beta quality and work in
-echo progress.  Do ^C to get out.
+echo progress.  The diffyqs-html.xsl assumes a fixed location for the PreTeXt
+echo xsl file.  You need to edit this first.
+echo Do ^C to get out.
 echo 
 echo You should first run with --runpdft --optimize-svg --optmize-png which
 echo runs the pdft figures and then also optimizes pngs and svgs.  Without
 echo --runpdft some figures will be missing.  You can also use --full
 echo which does all three arguments.
 echo Optimizations are the optimize-pngs.sh and optimize-svgs.sh in figures/
+echo
+echo The option --add-track will add my google tracking, this is probably
+echo only for me.
 echo
 echo To rerun all figures first do \"rm "*-mbx.*" "*-tex4ht.*"\", or run
 echo this script with --kill-generated
@@ -15,6 +20,7 @@ echo
 PDFT=no
 OPTPNG=no
 OPTSVG=no
+ADDTRACK=yes
 
 # parse parameters
 while [ "$1" != "" ]; do
@@ -23,25 +29,29 @@ while [ "$1" != "" ]; do
             exit
             ;;
         --runpdft)
-	    echo (runpdft) Will run pdf_t figures
+	    echo OPTION (runpdft) Will run pdf_t figures
 	    PDFT=yes
             ;;
         --optimize-png)
-	    echo (optimize-png) Will run optimize-pngs.sh
+	    echo OPTION (optimize-png) Will run optimize-pngs.sh
 	    OPTPNG=yes
             ;;
         --optimize-svg)
-	    echo (optimize-svg) Will run optimize-svgs.sh
+	    echo OPTION (optimize-svg) Will run optimize-svgs.sh
 	    OPTSVG=yes
 	    ;;
+        --add-track)
+	    echo OPTION add tracking
+	    ADDTRACK=yes
+	    ;;
         --full)
-	    echo (full) Will run pdf_t optimize pngs and svgs
+	    echo OPTION (full) Will run pdf_t optimize pngs and svgs
 	    PDFT=yes
 	    OPTPNG=yes
 	    OPTSVG=yes
             ;;
         --kill-generated)
-	    echo (kill-generated) Killing generated figures and exiting.
+	    echo OPTION (kill-generated) Killing generated figures and exiting.
 	    cd figures
 	    rm *-mbx.svg
 	    rm *-mbx.png
@@ -51,7 +61,7 @@ while [ "$1" != "" ]; do
 	    exit
 	    ;;
         *)
-            echo "ERROR: unknown parameter \"$PARAM\""
+            echo "ERROR: unknown parameter \"$1\""
             exit 1
             ;;
     esac
@@ -123,7 +133,7 @@ echo FIXING UP HTML ...
 echo
 
 for n in *.html; do
-	perl ../fixup-html-file.pl < $n > tmpout
+	../fixup-html-file.pl --track=$ADDTRACK < $n > tmpout
 	mv tmpout $n
 done
 

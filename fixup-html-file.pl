@@ -1,7 +1,19 @@
+#!/usr/bin/perl
+
 # This is hackish, but I can't figure out how to modify the html output otherwise
-while($line = <>)
+
+my ($arg) = @ARGV;
+
+my $track = 0;
+
+if (defined $arg && $arg eq "--track=yes") {
+	$track = 1;
+}
+
+while($line = <STDIN>)
 {
 	if ($line =~ m/<a class="index-button.*index-1.html.*Index/) {
+		# Add extra buttons
 		print "<a class=\"index-button toolbar-item button\" href=\"http://www.jirka.org/diffyqs/\" title=\"Home\" alt=\"Book Home\">Home</a>\n";
 		print "<a class=\"index-button toolbar-item button\" href=\"http://www.jirka.org/diffyqs/diffyqs.pdf\" title=\"PDFt=\"PDF\">PDF</a>\n";
 		print "<a class=\"index-button toolbar-item button\" style=\"width:100px;\" href=\"https://smile.amazon.com/dp/1541329058\" title=\"Paperback\" alt=\"Buy Paperback\">Paperback</a>\n";
@@ -30,5 +42,19 @@ while($line = <>)
 		print "</span>\n";
 	}
 	$line =~ s/>Authored in PreTeXt</>Created with PreTeXt</;
+
+	#print line
 	print $line;
+
+	#this goes after the line
+	if ($track && $line =~ m/^<head>/) {
+		print "<!-- Global site tag (gtag.js) - Google Analytics -->\n";
+		print "<script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-36064105-1\"></script>\n";
+		print "<script>\n";
+		print "window.dataLayer = window.dataLayer || [];\n";
+		print "function gtag(){dataLayer.push(arguments);}\n";
+		print "gtag('js', new Date());\n";
+		print "gtag('config', 'UA-36064105-1');\n";
+		print "</script>\n";
+	}
 }
