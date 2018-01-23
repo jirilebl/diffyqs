@@ -1,8 +1,8 @@
 
 SHOULD (in next big (but compatible) edition):
-* More on the reduction of order method in 2.1 (split into subsections)
-* Add appendix chapter on linear algebra for courses that don't want to require
-  that as prerequisite
+* More on the reduction of order method in 2.1 (and split into subsections)
+* Add appendix chapter on linear algebra for courses that don't want to
+  require that as prerequisite.
 * Expand discussion of vector fields and how they are drawn in 3.1.
 * Another example of application of first order system, perhaps flow with two
   tanks.
@@ -10,8 +10,8 @@ SHOULD (in next big (but compatible) edition):
 * Also split up 3.1 into subsections maybe
 * Number the examples/applications (in 3.1)
 * Generalized eigenvector discussion is a little too terse and perhaps still
-  misleading.  Do another larger example perhaps, most exercises are 3x3 so we
-  should have an example of that.
+  misleading.  Do another larger example perhaps.  Most of the exercises are
+  3x3 so we should have an example of that.
 * Add exercise for formulas for A^n in the matrix exponential section
 * In 3.6 add more exercises on forced, and also improve the exposition wrt
   the units.
@@ -22,13 +22,15 @@ SHOULD (in next big (but compatible) edition):
 * In whirling string, plot several of the eigenfunctions to show how it crosses
   the axis k-1 times
 * Search for: will, previously, have, can, note, notice
-* Another section on solving PDEs with Laplace?
-* A section on first order PDEs?
+* Another section on solving PDEs with Laplace? (in the Laplace chapter)
+* A section on first order PDEs?  (Perhaps in chapter 1?? would need to change
+  title to "First order equations" from "First order ODEs")
 
 IN CASE OF BIG CHANGE (incompatible edition):
 * Split Fourier Series - PDE, probably move the "applications of eigen-series"
-  to the PDE chapter.  In this case, add first order PDEs before the second
-  order ones since it leads naturally into d'Alembert.
+  to the PDE chapter.  In this case, first order PDEs might make sense
+  before the second order ones since it leads naturally into d'Alembert,
+  unless of course they are in chapter 1 to begin with.
 * Add factorization idea in wave equation (d'Alembert) to write it as
   two vector fields applied to y perhaps?  Makes more sense if we have 
   first order before this.
