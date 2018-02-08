@@ -20,6 +20,6 @@ The shell(``.sh``) and Perl(``.pl``) scripts here are really for me and are real
 The tex sources require a very recent LaTeX, if your latex does not have a recent enough ocgx2 package, you can simply comment out that line in
 diffyqssetup.sty.
 
-Some of the files in ``old/``:
+Some of the files in ``old/`` (not in the .tar.gz file from the website):
 
 * ``diffyqssetup-tex4ht.sty`` is the preamble for creating the old web version with tex4ht, but this is unlikely to work for anyone but me at the moment.  Also note that the google tracking code for my website is here, so if you want to use this you should change that first.
