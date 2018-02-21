@@ -20,7 +20,7 @@ echo
 PDFT=no
 OPTPNG=no
 OPTSVG=no
-ADDTRACK=yes
+ADDTRACK=no
 
 # parse parameters
 while [ "$1" != "" ]; do
@@ -115,7 +115,9 @@ echo
 echo MOVING OLD html, CREATING NEW html, COPYING figures/ in there
 echo
 
-mv html html.$RANDOM$RANDOM$RANDOM
+if [ -e html ] ; then
+	mv html html.$RANDOM$RANDOM$RANDOM
+fi
 mkdir html
 cd html
 cp -a ../figures .
