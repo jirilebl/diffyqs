@@ -29,29 +29,29 @@ while [ "$1" != "" ]; do
             exit
             ;;
         --runpdft)
-	    echo OPTION (runpdft) Will run pdf_t figures
+	    echo "OPTION (runpdft) Will run pdf_t figures"
 	    PDFT=yes
             ;;
         --optimize-png)
-	    echo OPTION (optimize-png) Will run optimize-pngs.sh
+	    echo "OPTION (optimize-png) Will run optimize-pngs.sh"
 	    OPTPNG=yes
             ;;
         --optimize-svg)
-	    echo OPTION (optimize-svg) Will run optimize-svgs.sh
+	    echo "OPTION (optimize-svg) Will run optimize-svgs.sh"
 	    OPTSVG=yes
 	    ;;
         --add-track)
-	    echo OPTION add tracking
+	    echo "OPTION add tracking"
 	    ADDTRACK=yes
 	    ;;
         --full)
-	    echo OPTION (full) Will run pdf_t optimize pngs and svgs
+	    echo "OPTION (full) Will run pdf_t optimize pngs and svgs"
 	    PDFT=yes
 	    OPTPNG=yes
 	    OPTSVG=yes
             ;;
         --kill-generated)
-	    echo OPTION (kill-generated) Killing generated figures and exiting.
+	    echo "OPTION (kill-generated) Killing generated figures and exiting."
 	    cd figures
 	    rm *-mbx.svg
 	    rm *-mbx.png
