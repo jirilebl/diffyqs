@@ -1,13 +1,8 @@
 #!/bin/sh
 # This is really overly anal
-pdflatex diffyqs
-pdflatex diffyqs
-pdflatex diffyqs
-makeindex diffyqs
-pdflatex diffyqs
-pdflatex diffyqs
-pdflatex diffyqs
-makeindex diffyqs
-pdflatex diffyqs
-pdflatex diffyqs
+for n in 1 2 3 4 5 ; do
+  pdflatex diffyqs
+  makeindex diffyqs
+done
+
 pdflatex diffyqs
