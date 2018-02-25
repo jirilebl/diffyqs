@@ -1,3 +1,4 @@
+%FIXME: for PRINT run for lulu or createspace, search for %PRINT
 
 \usepackage[T1]{fontenc}
 
@@ -15,6 +16,20 @@
 \usepackage{color}
 %\usepackage{graphics}
 \usepackage[headings]{fullpage}
+
+%PRINT (USE FOR PRINT)
+%\addtolength{\oddsidemargin}{0.25in}
+%\addtolength{\evensidemargin}{-0.25in}
+
+%PRINT (USE FOR PRINT)
+% to convert to smaller print we make the page slightly smaller
+% I run it through a ghostscript resize run, so this is not the actual size
+%\addtolength{\paperheight}{-0.5in}
+%\addtolength{\topmargin}{-0.25in}
+
+%\usepackage[margin=0.75in]{geometry}
+%\usepackage[paperwidth=6in,paperheight=9in]{geometry}
+%\usepackage[letterpaper, total={6.5in,8in}, includefoot, footskip=3pt]{geometry}
 \usepackage{url}
 \usepackage{varioref}
 \usepackage{makeidx}
@@ -22,6 +37,7 @@
 
 %If you have an older tex installation you might need
 %to comment out the next line:
+%PRINT (COMMENT OUT FOR PRINT)
 \usepackage[ocgcolorlinks]{ocgx2} %perhaps run without for lulu/createspace
 
 \usepackage{hypcap}
