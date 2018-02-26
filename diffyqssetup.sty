@@ -18,18 +18,19 @@
 \usepackage[headings]{fullpage}
 
 %PRINT (USE FOR PRINT)
-%\addtolength{\oddsidemargin}{0.25in}
-%\addtolength{\evensidemargin}{-0.25in}
+%\addtolength{\oddsidemargin}{0.2in}
+%\addtolength{\evensidemargin}{-0.2in}
 
 %PRINT (USE FOR PRINT)
-% to convert to smaller print we make the page slightly smaller
-% I run it through a ghostscript resize run, so this is not the actual size
-%\addtolength{\paperheight}{-0.5in}
-%\addtolength{\topmargin}{-0.25in}
+%Now cut page size a bit.  I'll run it through ghostcript anyway
+%to convert to the right size, but this is good for crown quatro
+%conversion, don't use for the full letter size versions
+%\addtolength{\paperwidth}{-0.3in}
+%\addtolength{\paperheight}{-1in}
+%\addtolength{\topmargin}{-0.5in}
+%\addtolength{\oddsidemargin}{-0.15in}
+%\addtolength{\evensidemargin}{-0.15in}
 
-%\usepackage[margin=0.75in]{geometry}
-%\usepackage[paperwidth=6in,paperheight=9in]{geometry}
-%\usepackage[letterpaper, total={6.5in,8in}, includefoot, footskip=3pt]{geometry}
 \usepackage{url}
 \usepackage{varioref}
 \usepackage{makeidx}
@@ -42,7 +43,6 @@
 
 \usepackage{hypcap}
 \usepackage[font={small,it}]{caption}
-%\usepackage[all]{xy}
 \usepackage{tikz-cd}
 \usepackage{units}
 \usepackage{booktabs}
@@ -62,12 +62,6 @@
 
 % San Serif fonts
 %\renewcommand{\familydefault}{\sfdefault}
-
-% To allow skrinking to 5.5 x 8.5 inches without whitespaces
-% Make sure to rerun makeindex as well
-% Useful for printing on lilu.com and saving on paper
-%\addtolength{\textheight}{2.13in}
-%\addtolength{\paperheight}{2.13in}
 
 \definecolor{mypersianblue}{rgb}{0.11, 0.22, 0.73}
 
