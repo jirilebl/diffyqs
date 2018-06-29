@@ -16,10 +16,10 @@ while($line = <STDIN>)
 		# Add extra buttons
 
 		print "<a onclick=\"gtag('event','download',{'event_category': 'diffyqs', 'event_action': 'Link', 'event_label': 'PTXhtml(top) home diffyqs'});\"\n";
-		print " class=\"index-button toolbar-item button\" href=\"http://www.jirka.org/diffyqs/\" title=\"Home\" alt=\"Book Home\">Home</a>\n";
+		print " class=\"index-button toolbar-item button\" href=\"https://www.jirka.org/diffyqs/\" title=\"Home\" alt=\"Book Home\">Home</a>\n";
 
 		print "<a onclick=\"gtag('event','download',{'event_category': 'PDF', 'event_action': 'Download', 'event_label': 'PTXhtml(top) /diffyqs/diffyqs.pdf'});\"\n";
-		print " class=\"index-button toolbar-item button\" href=\"http://www.jirka.org/diffyqs/diffyqs.pdf\" title=\"PDF\">PDF</a>\n";
+		print " class=\"index-button toolbar-item button\" href=\"https://www.jirka.org/diffyqs/diffyqs.pdf\" title=\"PDF\">PDF</a>\n";
 
 		print "<a onclick=\"gtag('event','download',{'event_category': 'amazon', 'event_action': 'Link', 'event_label': 'PTXhtml(top) diffyqs'});\"\n";
 		print " class=\"index-button toolbar-item button\" style=\"width:100px;\" href=\"https://smile.amazon.com/dp/1541329058\" title=\"Paperback\" alt=\"Buy Paperback\">Paperback</a>\n";
@@ -44,7 +44,7 @@ while($line = <STDIN>)
 	}
 	if ($line =~ m/<\/body>/) {
 		print "<span class=\"print-pdf-warning\">\n";
-		print " <em>For a higher quality printout use the PDF version: <tt>http://www.jirka.org/diffyqs/diffyqs.pdf</tt></em>\n";
+		print " <em>For a higher quality printout use the PDF version: <tt>https://www.jirka.org/diffyqs/diffyqs.pdf</tt></em>\n";
 		print "</span>\n";
 	}
 	$line =~ s/>Authored in PreTeXt</>Created with PreTeXt</;
