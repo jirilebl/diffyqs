@@ -3,6 +3,9 @@ Notes on Diffy Qs: Differential Equations for Engineers
 
 A free online textbook.  See http://www.jirka.org/diffyqs/
 
+* ``master`` branch is the current working version, currently it is what will become edition 6.
+* ``edition5`` branch is edition5 and only smaller fixes or smaller changes that don't really change content or pagination go here
+
 * ``diffyqs.tex`` is the main file, no real content here, that's in the chapter files
 * ``ch-*.tex`` are the files with the content of the various chapters
 * ``diffyqssetup.sty`` is the preamble for the PDF version
