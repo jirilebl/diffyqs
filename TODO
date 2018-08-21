@@ -1,16 +1,10 @@
 
-SHOULD (in next big (but compatible) edition):
+SHOULD (edition 6)
 * More on the reduction of order method in 2.1 (and split into subsections)
 * Add appendix chapter on linear algebra for courses that don't want to
   require that as prerequisite.
-* In 3.1 define/talk about more of the terms more carefully rather than just
-  assuming they are the same as in the one variable case.
 * Expand discussion of vector fields and how they are drawn in 3.1.
-* Another example of application of first order system, perhaps flow with two
-  tanks.
-* Add exercises for setting up applications in 3.1
-* Also split up 3.1 into subsections maybe
-* Number the examples/applications (in 3.1)
+* Add maybe more exercises for setting up applications in 3.1
 * Generalized eigenvector discussion is a little too terse and perhaps still
   misleading.  Do another larger example perhaps.  Most of the exercises are
   3x3 so we should have an example of that.

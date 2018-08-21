@@ -7,15 +7,19 @@
 \sectionnotes{1 lecture\EPref{, \S4.1 in \cite{EP}}\BDref{,
 \S7.1 in \cite{BD}}}
 
+\subsection{Systems}
+
 Often we do not have just one dependent variable and one equation.
 And as we will see, we may end up with systems of several
 equations and several dependent variables even if we start with a single
 equation.
 
-If we have several dependent variables, suppose $y_1$, $y_2$, \ldots, $y_n$,
+If we have several dependent variables,
+suppose $y_1$, $y_2$, \ldots, $y_n$,
 then
 we can have a differential equation involving all of them and their
-derivatives.  For example, $y_1'' = f(y_1',y_2',y_1,y_2,x)$.
+derivatives with respect to one independent variable $x$.
+For example, $y_1'' = f(y_1',y_2',y_1,y_2,x)$.
 Usually, when we have two dependent variables we have two equations
 such as
 \begin{align*}
@@ -24,10 +28,39 @@ y_2'' & = f_2(y_1',y_2',y_1,y_2,x) ,
 \end{align*}
 for some functions $f_1$ and $f_2$.  We call the above a
 \emph{\myindex{system of differential equations}}.
-More precisely, the above is a second order system of ODEs as second
+More precisely, the above is a \emph{\myindex{second order system}}
+of ODEs as second
 order derivatives appear.
+The system
+\begin{align*}
+x_1' & = g_1(x_1,x_2,x_3,t) , \\
+x_2' & = g_2(x_1,x_2,x_3,t) , \\
+x_3' & = g_3(x_1,x_2,x_3,t) ,
+\end{align*}
+is a \emph{\myindex{first order system}} where the dependent variables
+are $x_1,x_2,x_3$ and $t$ is the independent variable.
+
 The terminology for systems is essentially the same as for
 single equations.
+For example, for the above system a
+\emph{solution}\index{solution to a system}
+is the set of three functions $x_1(t)$, $x_2(t)$, $x_3(t)$, such that
+\begin{equation*}
+x_1'(t) = g_1\bigl(x_1(t),x_2(t),x_3(t),t\bigr) , \quad
+x_2'(t) = g_2\bigl(x_1(t),x_2(t),x_3(t),t\bigr) , \quad
+x_3'(t) = g_3\bigl(x_1(t),x_2(t),x_3(t),t\bigr) .
+\end{equation*}
+
+We usually also have an
+\emph{initial condition}\index{initial condition for a system}.  Just like
+for single equations we specify $x_1$, $x_2$, and $x_3$ for some fixed $t$.
+For example, $x_1(0) = a_1$, $x_2(0) = a_2$, $x_3(0) = a_3$.
+For some constants $a_1$, $a_2$, and $a_3$.  For the second order system
+we would also specify the derivatives at a point.
+And if we find a solution with constants in it where by solving for the
+constants we find a solution for any initial condition, we call this
+solution the \emph{general solution}\index{general solution to a system}.
+Best to look at a simple example.
 
 \begin{example}
 Sometimes a system is easy to solve
@@ -38,8 +71,9 @@ the first order system
 y_1' & = y_1 , \\
 y_2' & = y_1 - y_2 ,
 \end{align*}
-with initial conditions
-of the form $y_1(0) = 1$, $y_2(0) = 2$.
+with $y_1$, $y_2$ as the dependent variables and $x$ as the independent
+variable.  And consider initial conditions
+$y_1(0) = 1$, $y_2(0) = 2$.
 
 We note that $y_1 = C_1 e^x$ is the general solution of the first equation.
 We then plug this $y_1$ into the second equation
@@ -65,14 +99,101 @@ $y_2 = (\nicefrac{1}{2}) e^x + (\nicefrac{3}{2}) e^{-x}$.
 Generally, we will not be so lucky to be able to solve for
 each variable separately as in the 
 example above, and we will have to solve for all variables at once.
+While we won't generally be able to solve for one variable and then the
+next, we will try to salvage as much as possible from this technique.
+It will turn out that in a certain sense we will still (try to) solve
+a bunch of single equations and put their solutions together.  Let's not
+worry right now about how to solve systems yet.
 
-\medskip
+We will mostly consider the \emph{\myindex{linear systems}}.  The example
+above is an example of a \emph{\myindex{linear first order system}}.
+It is linear as none of the dependent variables or their derivatives
+appear in nonlinear functions or with powers
+higher than one ($x$, $y$, $x'$ and $y'$, constants, and functions of $t$
+can appear, but not $xy$ or ${(y')}^2$ or $x^3$).  Another, more
+complicated, example of a linear system is
+\begin{align*}
+y_1'' &= e^t y_1' + t^2 y_1 + 5 y_2 + \sin(t), \\
+y_2'' &= t y_1'-y_2' + 2 y_1 + \cos(t).
+\end{align*}
+
+\subsection{Applications}
+
+Let us consider some simple applications of systems and how to set up the
+equations.
+
+\begin{example} \label{sintro:closedbrine-example}
+First, we consider salt and brine tanks, but this time water flows
+from one to the other and back.  We again consider that the tanks are
+evenly mixed.
+
+\begin{figure}[h!t]
+\capstart
+\begin{center}
+\inputpdft{lin-tank-sys}
+\caption{A closed system of two brine tanks.\label{sintro:closedbrine}}
+\end{center}
+\end{figure}
+
+Suppose we have two tanks, each containing volume $V$ liters of salt brine.
+The amount of salt in the first tank is $x_1$ grams, and the amount of salt
+in the second tank is $x_2$ grams.  The liquid is perfectly mixed and
+flows at the rate $r$ liters per second out of each tank into the other.
+See \figurevref{sintro:closedbrine}.
+
+The rate of change of $x_1$,
+that is $x_1'$, is the
+rate of salt coming in minus the rate going out.
+The rate coming in is the
+density of the salt in tank 2, that is $\frac{x_2}{V}$, times the rate $r$.
+The rate coming out is the
+density of the salt in tank 1, that is $\frac{x_1}{V}$, times the rate $r$.
+In other words it is
+\begin{equation*}
+x_1' = \frac{x_2}{V} r - \frac{x_1}{V} r =
+\frac{r}{V} x_2 - \frac{r}{V} x_1  = \frac{r}{V} (x_2-x_1).
+\end{equation*}
+Similarly we find the rate $x_2'$, where the roles of $x_1$ and $x_2$
+are reversed.  All in all, the system is
+\begin{align*}
+x_1' & = \frac{r}{V} (x_2-x_1), \\
+x_2' & = \frac{r}{V} (x_1-x_2).
+\end{align*}
+In this system we cannot solve for $x_1$ or $x_2$ separately.  We must
+solve for both $x_1$ and $x_2$ at once, which is intuitively clear since
+the amount of salt in one tank affects the amount in the other.
+We can't know $x_1$ before we know $x_2$, and vice versa.
+
+We can't yet find all the solutions, but
+intuitively we can at least find some solutions.  Suppose we
+know that initially, the tanks have the same amount of salt.  That is,
+we have an initial condition such as $x_1(0)=x_2(0) = C$.  Then clearly the
+amount of salt coming and out of each tank is the same, so the amounts are
+not changing.  In other words, $x_1 = C$ and $x_2 = C$ (the constant
+functions) is a solution:  $x_1' = x_2' = 0$, and
+$x_2-x_1 = x_1-x_2 = 0$, so the equations are satisfied.
+
+Let us think about the setup a little bit more without solving.  Suppose the
+initial condition is $x_1(0) = A$ and $x_2(0) = B$, for two different
+constants.  Since no salt is coming in our out of this closed system, the
+total amount of salt is constant, that is $x_1+x_2$ is constant so it equals
+$A+B$.
+Intuitively if $A$ is bigger than $B$, then more salt will flow out of tank
+one than into it.  Eventually, after a long time we would then expect
+the amount of salt in each tank to equalize, that is the solution should
+tend towards $\frac{A+B}{2}$.  Once you know how to solve systems
+you will find out that this really is so.
+\end{example}
+
+\begin{example} \label{sintro:carts-example}
+Let us look at another example, this time second order.
+Let us think of mass and spring setup again, but this time we will
+consider two masses.
 
 \begin{diffyfloatingfiguresimple}{2.00in}{2.25in}
 \noindent
 \inputpdft{cartsfig}
 \end{diffyfloatingfiguresimple}
-As an example application, let us think of mass and spring systems again.
 Suppose we have one spring with constant $k$, but two masses $m_1$
 and $m_2$.  We can think of the masses as carts, and we will suppose that
 they ride along a straight track with no friction.  Let $x_1$ be the displacement of the first
@@ -88,19 +209,19 @@ since $x_2-x_1$ is how far the string is stretched (or compressed) from
 the rest position.  The force exerted on the second cart is the opposite,
 thus the same thing with a negative sign.
 \myindex{Newton's second law} states that
-force equals mass times acceleration.  So the system of equations governing
-the setup is
+force equals mass times acceleration.  So the system of equations is
 \begin{align*}
 m_1 x_1'' & = k(x_2-x_1) , \\
 m_2 x_2'' & = - k(x_2-x_1) .
 \end{align*}
 
-In this system we cannot solve for the $x_1$ or $x_2$ variable separately.
+Again, in this system we cannot solve for the $x_1$ or $x_2$ variable separately.
 That we must solve for both $x_1$ and $x_2$ at once
 is intuitively clear, since where the first cart goes
 depends on exactly where the second cart goes and vice-versa.
+\end{example}
 
-\medskip
+\subsection{Changing to first order}
 
 Before we talk about how to handle systems, let us note that
 in some sense
@@ -124,17 +245,35 @@ for the $u$'s,
 we can discard $u_2$ through $u_n$ and let $y = u_1$.
 This $y$ solves the original equation.
 
-For example, take $x''' = 2x''+ 8x' + x + t$.  Letting $u_1 = x$, $u_2 = x'$, $u_3
+\begin{example}
+Take $x''' = 2x''+ 8x' + x + t$.  Letting $u_1 = x$, $u_2 = x'$, $u_3
 = x''$, we find the system:
 \begin{equation*}
 u_1' = u_2, \qquad u_2' = u_3, \qquad u_3' = 2u_3 + 8u_2 + u_1 + t .
 \end{equation*}
+\end{example}
 
 A similar process can be followed for a system of higher order differential
 equations.  For example, a system of $k$ differential equations in $k$
 unknowns, all of order $n$, can be transformed into a first
 order system of $n \times k$
 equations and $n \times k$ unknowns.
+
+\begin{example}
+Consider the system from the carts example,
+\begin{equation*}
+m_1 x_1''  = k(x_2-x_1), \qquad m_2 x_2'' = - k(x_2-x_1) .
+\end{equation*}
+Let $u_1 = x_1$, $u_2 = x_1'$, 
+$u_3 = x_2$, $u_4 = x_2'$.  The second order system becomes the
+first order system
+\begin{equation*}
+u_1' = u_2, \qquad
+m_1 u_2'  = k(u_3-u_1), \qquad
+u_3' = u_4, \qquad
+m_2 u_4' = - k(u_3-u_1) .
+\end{equation*}
+\end{example}
 
 \begin{example}
 We can use this idea in reverse as well.  Let us consider 
@@ -183,18 +322,12 @@ almost no distinction in syntax.
 %In fact, this is what IODE was doing when you had it solve a second order
 %equation numerically in the IODE Project III if you have done that project.
 
-\medskip
+\subsection{Autonomous systems and vector fields}
 
-We call the above example a \emph{\myindex{linear first order
-system}}.
-%It is first order as only first derivatives of $x$ and $y$ appear.
-It is linear as none of the dependent variables or their derivatives
-appear in nonlinear functions or with powers
-higher than one ($x$, $y$, $x'$ and $y'$, constants, and functions of $t$
-can appear, but not $xy$ or ${(y')}^2$ or $x^3$).
-It is also \emph{autonomous\index{autonomous system}}
-as the equations do not depend
-on the independent variable $t$.
+A system where the equations do not depend on the independent variable
+is called an \emph{\myindex{autonomous system}}.  For example
+the system $y'=2y-x$, $y'=x$ is autonomous as $t$ is the independent
+variable but does not appear in the equations.
 
 For autonomous systems we can draw the so-called
 \emph{\myindex{direction field}} or \emph{\myindex{vector field}}.  That is,
@@ -274,6 +407,21 @@ Write $x'' + y^2 y' - x^3 = \sin(t)$,
 $y'' + {(x'+y')}^2 -x = 0$ as a first order system of ODEs.
 \end{exercise}
 
+\begin{exercise}
+Suppose two masses on carts on frictionless surface are at 
+displacements $x_1$ and $x_2$ as in \examplevref{sintro:carts-example}.
+Suppose that a rocket applies force $F$ in the positive direction on cart
+$x_1$.  Set up the system of equations.
+\end{exercise}
+
+\begin{exercise}
+Suppose the tanks are as in 
+\examplevref{sintro:closedbrine-example}, starting both at volume $V$,
+but now the rate of flow from tank 1 to tank 2 is $r_1$, and
+rate of flow from tank 2 to tank one is $r_2$.  In particular,
+the volumes will now be changing.  Set up the system of equations.
+\end{exercise}
+
 \setcounter{exercise}{100}
 
 \begin{exercise}
@@ -316,13 +464,31 @@ $y_2' = y_4$
 
 \begin{exercise}
 Suppose two masses on carts on frictionless surface are at 
-displacements $x_1$ and $x_2$ as in the example of this section.
+displacements $x_1$ and $x_2$ as in \examplevref{sintro:carts-example}.
 Suppose initial displacement is $x_1(0)=x_2(0)=0$, and initial velocity is $x_1'(0) = x_2'(0) = a$ for some number $a$.
 Use your intuition
 to solve the system, explain your reasoning.
 \end{exercise}
 \exsol{%
 $x_1 = x_2 = at$.  Explanation of the intuition is left to reader.
+}
+
+\begin{exercise}
+Suppose the tanks are as in 
+\examplevref{sintro:closedbrine-example} except that clean water flows in
+at the rate $s$ liters per second into tank 1, and brine flows out of tank 2
+and into the sewer also at the rate of $s$ liters per second.
+\\
+a)~Draw the picture.\\
+b)~Set up the system of equations.\\
+c)~Intuitively, what happens as $t$ goes to infinity, explain.
+\end{exercise}
+\exsol{%
+a) Left to reader. b) 
+$x_1' = \frac{r}{V} (x_2-x_1),
+x_2' = \frac{r}{V} x_1- \frac{r-s}{V}x_2.$
+c) As $t$ goes to infinity, both $x_1$ and $x_2$ go to zero,
+explanation is left to reader.
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1182,8 +1348,9 @@ $N=\left[ \begin{smallmatrix}
 a & 0 & 0 \\
 0 & b & 0 \\
 0 & 0 & c
-\end{smallmatrix}\right]$.
-a) Compute $M^{-1}$.  b) Compute $N^{-1}$.
+\end{smallmatrix}\right]$.\\
+a) Compute $M^{-1}$.\\
+b) Compute $N^{-1}$.
 \end{exercise}
 \exsol{%
 a) $\left[ \begin{smallmatrix}
@@ -2720,6 +2887,10 @@ complex with negative real part & spiral sink \\
 \caption{Summary of behavior of linear homogeneous two dimensional systems.\label{pln:behtab}}
 \end{table}
 
+Systems where one of the eigenvalues is zero also come up in practice, see
+\examplevref{sintro:closedbrine-example}, and the pictures are somewhat
+different (simpler in a way).  See the exercises.
+
 \subsection{Exercises}
 
 \begin{exercise}
@@ -2748,6 +2919,14 @@ Does this look like any of the pictures we have drawn?
 Which behaviors are possible if $P$ is diagonal, that is
 $P = \left[ \begin{smallmatrix} a & 0 \\ 0 & b \end{smallmatrix} \right]$?
 You can assume that $a$ and $b$ are not zero.
+\end{exercise}
+
+\begin{exercise}
+Take the system from \examplevref{sintro:closedbrine-example},
+$x_1'=\frac{r}{V}(x_2-x_1)$,
+$x_2'=\frac{r}{V}(x_1-x_2)$.
+As we said, one of the eigenvalues is zero.  What is the other eigenvalue, how
+does the picture look like and what happens when $t$ goes to infinity.
 \end{exercise}
 
 \setcounter{exercise}{100}
