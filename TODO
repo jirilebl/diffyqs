@@ -3,6 +3,8 @@ SHOULD (in next big (but compatible) edition):
 * More on the reduction of order method in 2.1 (and split into subsections)
 * Add appendix chapter on linear algebra for courses that don't want to
   require that as prerequisite.
+* In 3.1 define/talk about more of the terms more carefully rather than just
+  assuming they are the same as in the one variable case.
 * Expand discussion of vector fields and how they are drawn in 3.1.
 * Another example of application of first order system, perhaps flow with two
   tanks.

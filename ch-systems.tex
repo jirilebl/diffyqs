@@ -24,7 +24,10 @@ y_2'' & = f_2(y_1',y_2',y_1,y_2,x) ,
 \end{align*}
 for some functions $f_1$ and $f_2$.  We call the above a
 \emph{\myindex{system of differential equations}}.
-More precisely, the above is a second order system of ODEs.
+More precisely, the above is a second order system of ODEs as second
+order derivatives appear.
+The terminology for systems is essentially the same as for
+single equations.
 
 \begin{example}
 Sometimes a system is easy to solve
@@ -118,8 +121,8 @@ u_n' & = F(u_n,u_{n-1},\ldots,u_2,u_1,x) .
 We solve
 this system for $u_1$, $u_2$, \ldots, $u_n$.  Once we have solved
 for the $u$'s,
-we can discard $u_2$ through $u_n$ and let $y = u_1$.  We note
-that this $y$ solves the original equation.
+we can discard $u_2$ through $u_n$ and let $y = u_1$.
+This $y$ solves the original equation.
 
 For example, take $x''' = 2x''+ 8x' + x + t$.  Letting $u_1 = x$, $u_2 = x'$, $u_3
 = x''$, we find the system:
@@ -150,7 +153,7 @@ we know that $x=y'$.  So,
 y'' = x' = 2y-x = 2y-y' .
 \end{equation*}
 We now have the equation $y''+y'-2y = 0$.  We know how to solve this
-equation and we find that $y = C_1 e^{-2t} + C_2 e^t$.  Once we have $y$
+equation and we find that $y = C_1 e^{-2t} + C_2 e^t$.  Once we have $y$,
 we use the equation $y' = x$ to get $x$.
 \begin{equation*}
 x = y' = -2 C_1 e^{-2t} + C_2 e^t .
@@ -169,9 +172,10 @@ Plug in and check that this really is the solution.
 \end{exercise}
 
 It is useful to go back and forth between systems and higher order equations
-for other reasons.  For example, the ODE approximation methods are generally
-only given as solutions for first order systems.  It is not very hard
-to adapt the code for the Euler method for first order equations to handle first
+for other reasons.  For example, software for solving ODE numerically
+(approximation) is generally for first order systems.  It is not very hard
+to adapt computer code for the Euler method for first order equations to
+handle first
 order systems.  We essentially just treat the dependent variable not as
 a number but as a vector.  In many mathematical computer languages there is
 almost no distinction in syntax.
@@ -181,10 +185,14 @@ almost no distinction in syntax.
 
 \medskip
 
-The above example is what we call a \emph{\myindex{linear first order
-system}},
-as none of the dependent variables appear in any functions or with any higher
-powers than one.  It is also \emph{autonomous\index{autonomous system}}
+We call the above example a \emph{\myindex{linear first order
+system}}.
+%It is first order as only first derivatives of $x$ and $y$ appear.
+It is linear as none of the dependent variables or their derivatives
+appear in nonlinear functions or with powers
+higher than one ($x$, $y$, $x'$ and $y'$, constants, and functions of $t$
+can appear, but not $xy$ or ${(y')}^2$ or $x^3$).
+It is also \emph{autonomous\index{autonomous system}}
 as the equations do not depend
 on the independent variable $t$.
 
