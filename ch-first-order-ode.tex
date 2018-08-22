@@ -3241,7 +3241,7 @@ $F(x,y) = C$ leads to the same solution as the example.
 
 \sectionnewpage
 \section{First order linear PDE}
-\label{firstorderpde:section}
+\label{fopde:section}
 
 \sectionnotes{1 lecture, normally not covered}
 
@@ -3254,6 +3254,8 @@ a(x,t) \, u_x + b(x,t) \, u_t + c(x,t) \, u = g(x,t), \qquad u(x,0) = f(x) , \qq
 where $u(x,t)$ is a function of $x$ and $t$.
 Notice that the \emph{initial condition}\index{initial condition for a PDE}
 $u(x,0) = f(x)$ is now a function rather than just a number.
+In these problems it is useful to think of $x$ as position and $t$ as time.
+The equation describes the evolution of a function in time.
 Below, the coefficients $a$, $b$, $c$, and the function $g$
 are mostly going to be constant or zero.
 The method we describe works with nonconstant coefficients,
@@ -3342,9 +3344,27 @@ convection equation: everything travels at some constant speed.
 An example application is material being moved by a river where the material
 does not diffuse and is simply carried along.  In this setup, $x$ may be
 position along the river, $t$ is the time, and $u(x,t)$ the concentration the
-material at the position $x$ at time $t$.
+material at the position $x$ at time $t$.  See
+\figurevref{fopde:transportfig} for an example.
+\begin{figure}[h!t]
+\capstart
+\begin{center}
+%mbxSTARTIGNORE
+\diffyincludegraphics{width=3in}{width=4.5in}{fopde-transport-1}
+\qquad
+\diffyincludegraphics{width=3in}{width=4.5in}{fopde-transport-2}
+%mbxENDIGNORE
+%mbxlatex \diffyincludegraphics{width=6in}{width=9in}{sosa-modes-1-2}
+\caption{Example of convection for $u_t-u_x = 0$ (that is, $\alpha = 1$) and the
+initial condition $f(x)$ is a peak at the origin.  On the left is a graph
+of the initial condition $u(x,0)$ and on the right is a graph of
+the function $u(x,1)$, that is at time $t=1$, and notice it is one unit to
+the right.\label{fopde:transportfig}}
+\end{center}
+\end{figure}
 \end{example}
 
+\pagebreak[2]
 We can use similar idea in the more general case:
 \begin{equation*}
 a u_x + b u_t + c u = g, \qquad u(x,0) = f(x)  .
@@ -3444,7 +3464,8 @@ e^{-\xi^2-s} + (1 - \xi) e^{-s} +s+\xi-1
 =
 e^{-{(x-t)}^2-t} + (1 - x + t) e^{-t} +x-1 .
 \end{equation*}
-See \figurevref{fopde:surfaceplot} for a graph of $u(x,t)$.
+See \figurevref{fopde:surfaceplot} for a plot of $u(x,t)$ as a function of
+two variables.
 \begin{figure}[h!t]
 \capstart
 \begin{center}
