@@ -2093,6 +2093,7 @@ a)~Construct the differential equation.  b)~Show that if $kM > h$, then
 the equation is still logistic.  c)~What happens when $kM < h$?
 \end{exercise}
 
+\pagebreak[2]
 \begin{exercise}
 A disease is spreading through the country.  Let $x$ be the number of people
 infected.  Let the constant $S$ be the number of people susceptible to
@@ -3246,58 +3247,74 @@ $F(x,y) = C$ leads to the same solution as the example.
 
 FIXME: this is so far just a dump from my PDE lecture notes.
 
-We have only considered ODE so far, let us consider the linear first order
-PDE.  That is, we consider the equation
+We only considered ODE so far, so let us solve a linear first order
+PDE.  Consider the equation
 \begin{equation*}
-a(x,t) u_x + b(x,t) u_t + c(x,t)u = 0, \qquad u(x,0) = f(x) , \qquad -\infty < x < \infty,
-\quad t > 0 .
+a(x,t) u_x + b(x,t) u_t + c(x,t) u = 0, \qquad u(x,0) = f(x) , \qquad -\infty < x < \infty,
+\quad t > 0 ,
 \end{equation*}
-The functions $a$, $b$, and $c$ do not have to be constant.  The method
-we apply will work with nonconstant coefficients, although the computations
-can get difficult for nonconstant coefficients, and so we will concentrate
+where $u(x,t)$ is a function of $x$ and $t$.
+Notice that the \emph{initial condition}\index{initial condition for a PDE}
+$u(x,0) = f(x)$ is now a function rather than just a number.
+The $a$, $b$, and $c$ do not have to be constant; the method
+we apply works with nonconstant coefficients, although the computations
+can get difficult. So we concentrate
 on the case where $a$, $b$, and $c$ are constant.
 
 The method we use is the
-\emph{\myindex{method of characteristicts}}\index{characteristicts}.
-Take
-$$
-u_t - \alpha u_x = 0, \qquad u(x,0) = f(x)
-$$
-It turns out that things propagate along curves called characteristics.  If
-we change to so-called \emph{characteristic coordinates}.  If we change to these
-coordinates, the equation simplifies.
-$$
-\xi = x + \alpha t ,  \qquad s = t
-$$
-Let's see what the equation becomes:
-$$
-u_t = u_\xi \xi_t + u_s s_t =  \alpha u_\xi + u_s
-$$
-$$
-u_x = u_\xi \xi_x + u_s s_x = u_\xi
-$$
-So the equation becomes
-$$
-\alpha u_\xi + u_s = \alpha u_\xi
-$$
-or
-$$
-u_s = 0
-$$
-and that's trivial to solve.  If we integrate we get a function that does
-not depend on $s$, that is, there is some function $A$ such that
-$$
-u = A(\xi) = A(x + \alpha t)
-$$
-Using the initial condition when $t=0$ we get $A = f$.  So
-$$
-u(x,t) = f(x+\alpha t)
-$$
-Simply everything is moving left at speed $\alpha$.  The curve given by $\xi
-= $const is called the ``characteristic''.  Note that along this curve the
-solution does not change.
+\emph{\myindex{method of characteristics}}\index{characteristics}.
+The idea is that we will find lines along which we just solve an ODE.
 
-DRAW CURVES.  Note that in the $(x,t)$ coordinates, writing $t =
+Consider the equation
+\begin{equation*}
+u_t - \alpha u_x = 0, \qquad u(x,0) = f(x) .
+\end{equation*}
+The data will propagate along curves called characteristics.  The
+idea is to change to the
+so-called \emph{\myindex{characteristic coordinates}}.  If we change to these
+coordinates, the equation simplifies.  The change of variables for this
+equation is
+\begin{equation*}
+\xi = x + \alpha t ,  \qquad s = t
+\end{equation*}
+Let's see what the equation becomes, remember the chain rule in several
+variables.
+\begin{align*}
+& u_t = u_\xi \xi_t + u_s s_t =  \alpha u_\xi + u_s , \\
+& u_x = u_\xi \xi_x + u_s s_x = u_\xi .
+\end{align*}
+So the equation in the coordinates $\xi$ and $s$ becomes
+\begin{equation*}
+\alpha u_\xi + u_s = \alpha u_\xi
+\end{equation*}
+or in other words
+\begin{equation*}
+u_s = 0 .
+\end{equation*}
+That's trivial to solve.  We integrate to get a function that does
+not depend on $s$.  That is, there is some function $A$ such that
+\begin{equation*}
+u = A(\xi) = A(x + \alpha t) .
+\end{equation*}
+The initial condition says that:
+\begin{equation*}
+f(x) = u(x,0) = A(x + \alpha 0) = A(x) ,
+\end{equation*}
+so $A=f$.  In other words,
+\begin{equation*}
+u(x,t) = f(x+\alpha t)
+\end{equation*}
+Simply everything is moving left at speed $\alpha$.
+The curve given by the equation
+\begin{equation}
+\xi = \text{constant}
+\end{equation}
+is called the characteristic.  In this case, the solution does not change
+along the characteristic.
+
+FIXME: DRAW CURVES.
+
+Note that in the $(x,t)$ coordinates, writing $t =
 \frac{1}{\alpha} ( \xi-x)$, so slope of characteristic lines is $\frac{-1}{\alpha}$.
 
 In this case, it is the so called ``convection equation'', so everything
@@ -3310,9 +3327,7 @@ a(x,t) u_x + b(x,t) u_t + c(x,t)u = 0, \qquad u(x,0) = f(x) , \qquad -\infty < x
 \quad t > 0 .
 \end{equation*}
 We change coordinates to the
-characteristic coordinates, let us call the new coordinates $(\xi,s)$ (The
-book uses $\tau$ instead of $\xi$ but that's confusing as $\tau$ was used
-before for the ``new time'', so ... let's do it this way.)
+characteristic coordinates, let us call the new coordinates $(\xi,s)$.
 
 DRAW picture.
 
