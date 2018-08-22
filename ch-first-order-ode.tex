@@ -3239,172 +3239,236 @@ $F(x,y) = C$ leads to the same solution as the example.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\sectionnewpage
 \section{First order linear PDE}
 \label{firstorderpde:section}
 
-\sectionnotes{1 lecture\EPref{, \S?.? in \cite{EP}}\BDref{, \S?.? in
-\cite{BD}}, normally not covered}
-
-FIXME: this is so far just a dump from my PDE lecture notes.
+\sectionnotes{1 lecture, normally not covered}
 
 We only considered ODE so far, so let us solve a linear first order
 PDE.  Consider the equation
 \begin{equation*}
-a(x,t) u_x + b(x,t) u_t + c(x,t) u = 0, \qquad u(x,0) = f(x) , \qquad -\infty < x < \infty,
+a(x,t) \, u_x + b(x,t) \, u_t + c(x,t) \, u = g(x,t), \qquad u(x,0) = f(x) , \qquad -\infty < x < \infty,
 \quad t > 0 ,
 \end{equation*}
 where $u(x,t)$ is a function of $x$ and $t$.
 Notice that the \emph{initial condition}\index{initial condition for a PDE}
 $u(x,0) = f(x)$ is now a function rather than just a number.
-The $a$, $b$, and $c$ do not have to be constant; the method
-we apply works with nonconstant coefficients, although the computations
-can get difficult. So we concentrate
-on the case where $a$, $b$, and $c$ are constant.
+Below, the coefficients $a$, $b$, $c$, and the function $g$
+are mostly going to be constant or zero.
+The method we describe works with nonconstant coefficients,
+although the computations may get difficult quickly.
 
 The method we use is the
 \emph{\myindex{method of characteristics}}\index{characteristics}.
 The idea is that we will find lines along which we just solve an ODE.
+We will see this technique again for second order PDE
+when we encounter the wave equation.
 
+\begin{example}
 Consider the equation
 \begin{equation*}
-u_t - \alpha u_x = 0, \qquad u(x,0) = f(x) .
+u_t + \alpha u_x = 0, \qquad u(x,0) = f(x) .
 \end{equation*}
+This particular equation, $u_t + \alpha u_x = 0$, is
+called the \emph{\myindex{convection equation}}.
+
 The data will propagate along curves called characteristics.  The
 idea is to change to the
 so-called \emph{\myindex{characteristic coordinates}}.  If we change to these
 coordinates, the equation simplifies.  The change of variables for this
 equation is
 \begin{equation*}
-\xi = x + \alpha t ,  \qquad s = t
+\xi = x - \alpha t ,  \qquad s = t .
 \end{equation*}
 Let's see what the equation becomes, remember the chain rule in several
 variables.
 \begin{align*}
-& u_t = u_\xi \xi_t + u_s s_t =  \alpha u_\xi + u_s , \\
+& u_t = u_\xi \xi_t + u_s s_t = - \alpha u_\xi + u_s , \\
 & u_x = u_\xi \xi_x + u_s s_x = u_\xi .
 \end{align*}
-So the equation in the coordinates $\xi$ and $s$ becomes
+The equation in the coordinates $\xi$ and $s$ becomes
 \begin{equation*}
-\alpha u_\xi + u_s = \alpha u_\xi
+\underbrace{(- \alpha u_\xi + u_s)}_{u_t} + \alpha
+\underbrace{(u_\xi)}_{u_x} = 0 ,
 \end{equation*}
 or in other words
 \begin{equation*}
 u_s = 0 .
 \end{equation*}
-That's trivial to solve.  We integrate to get a function that does
-not depend on $s$.  That is, there is some function $A$ such that
+That's trivial to solve.  If we treat $\xi$ as simply a parameter, we have
+obtained the ODE $\frac{d u}{d s} = 0$.
+
+The solution is a function that does
+not depend on $s$ (but it does depend on $\xi$).
+That is, there is some function $A$ such that
 \begin{equation*}
-u = A(\xi) = A(x + \alpha t) .
+u = A(\xi) = A(x - \alpha t) .
 \end{equation*}
 The initial condition says that:
 \begin{equation*}
-f(x) = u(x,0) = A(x + \alpha 0) = A(x) ,
+f(x) = u(x,0) = A(x - \alpha 0) = A(x) ,
 \end{equation*}
 so $A=f$.  In other words,
 \begin{equation*}
-u(x,t) = f(x+\alpha t)
+u(x,t) = f(x-\alpha t) .
 \end{equation*}
-Simply everything is moving left at speed $\alpha$.
+Simply everything is moving right at speed $\alpha$ as $t$ increases.
 The curve given by the equation
-\begin{equation}
+\begin{equation*}
 \xi = \text{constant}
-\end{equation}
-is called the characteristic.  In this case, the solution does not change
+\end{equation*}
+is called the characteristic.
+See \figurevref{fopde:charcurves}.
+In this case, the solution does not change
 along the characteristic.
 
-FIXME: DRAW CURVES.
+\begin{figure}[h!t]
+\capstart
+\begin{center}
+\inputpdft{char-curves}
+\caption{Characteristic curves.\label{fopde:charcurves}}
+\end{center}
+\end{figure}
 
-Note that in the $(x,t)$ coordinates, writing $t =
-\frac{1}{\alpha} ( \xi-x)$, so slope of characteristic lines is $\frac{-1}{\alpha}$.
+In the $(x,t)$ coordinates, the characteristic curves have
+the equation $t = \frac{1}{\alpha} ( x- \xi)$, and in fact lines.
+The slope of characteristic lines is
+$\frac{1}{\alpha}$, and for each different $\xi$ we get a different
+characteristic line.
 
-In this case, it is the so called ``convection equation'', so everything
-travels at some constant speed.  If we change coordinates we find that along
-the characteristics the solution does not change.
+We can see why $u_t + \alpha u_x = 0$ is called the
+convection equation: everything travels at some constant speed.
+An example application is material being moved by a river where the material
+does not diffuse and is simply carried along.  In this setup, $x$ may be
+position along the river, $t$ is the time, and $u(x,t)$ the concentration the
+material at the position $x$ at time $t$.
+\end{example}
 
-We can use similar idea in the general case.
+We can use similar idea in the more general case:
 \begin{equation*}
-a(x,t) u_x + b(x,t) u_t + c(x,t)u = 0, \qquad u(x,0) = f(x) , \qquad -\infty < x < \infty,
-\quad t > 0 .
+a u_x + b u_t + c u = g, \qquad u(x,0) = f(x)  .
+%, \qquad -\infty < x < \infty, \quad t > 0 .
 \end{equation*}
 We change coordinates to the
-characteristic coordinates, let us call the new coordinates $(\xi,s)$.
+characteristic coordinates: let us call these coordinates $(\xi,s)$.
+These are coordinates where $a u_x + b u_t$ becomes differentiation
+in the $s$ variable.
 
-DRAW picture.
+So, along the characteristic curves (where $\xi$ is constant), we get a
+new ODE in the $s$ variable.  In the convection
+equation we got the simple $\frac{du}{ds} = 0$.  In general,
+we get the linear equation
+\begin{equation} \label{eq:fopde:charode}
+\frac{du}{ds} + c u = g.
+\end{equation}
+Here we think of everything as a function of $\xi$ and $s$,
+although
+we are thinking of $\xi$ as a parameter rather than an independent variable.
+So the equation is an ODE.  It is a linear
+ODE that we can solve using the integrating factor.
 
-Along the characteristics, that is, where $\xi$ is constant, we will get a
-new ODE in the $s$ variable that we solve.  Before we got a simple $u_s =
-0$.  We will in general get some more complicated equation
+To find the characteristics, think of a curve given parametrically
+$\bigl(x(s),t(s)\bigr)$.  We try to have the curve satisfy 
 \begin{equation*}
-\frac{du}{ds} + c(x,t) u = 0,
-\end{equation*}
-Where $x$ and $t$ should now be thought of as functions of $\xi$ and $s$,
-and we are thinking of $\xi$ as a parameter, so it is an ODE.
-
-To find the characteristics we must pick the characteristic curves
-$\bigl(x(s),t(s)\bigr)$ to satisfy
-\begin{equation*}
-\frac{dx}{ds} = a(x,t), \qquad \frac{dt}{ds} = b(x,t)
+\frac{dx}{ds} = a, \qquad \frac{dt}{ds} = b .
 \end{equation*}
 Why?
-%Because on the curve we want to compute $\frac{du}{ds}$ so
-%\begin{equation*}
-%\frac{du}{ds}
-%=
-%\frac{\partial u}{\partial x} \frac{dx}{ds}
-%+
-%\frac{\partial u}{\partial y} \frac{dy}{ds}
-%\end{equation*}
-%So picking $x(s)$ and $y(s)$ as given will give us the desired ODE.
-Because
+Because when we think of $x$ and $t$ as functions of $s$ we find, using the
+chain rule,
 \begin{equation*}
-\frac{du}{ds} + c(x,t) u = 
-\left( u_x \frac{dx}{ds} + u_t \frac{dt}{ds}\right) + c(x,t)u =
-a(x,t) u_x + b(x,t) u_t + c(x,t) u = 0
+\frac{du}{ds} + c u = 
+\left( u_x \frac{dx}{ds} + u_t \frac{dt}{ds}\right) + c u =
+a u_x + b u_t + c u = g .
 \end{equation*}
-and we get the ODE above.
+So we get the ODE \eqref{eq:fopde:charode}, which
+then describes the value of the solution $u$ of
+the PDE along
+this characteristic curve.
+It is also convenient to make sure that $s=0$
+corresponds to $t=0$, that is $t(0) = 0$.  It will be convenient also for
+$x(0) = \xi$.
+See \figurevref{fopde:charcurvecurvy}.
 
-Let's take a slightly more complicated example
+\begin{figure}[h!t]
+\capstart
+\begin{center}
+\inputpdft{char-curve-curvy}
+\caption{General characteristic curve.\label{fopde:charcurvecurvy}}
+\end{center}
+\end{figure}
+
+
+\begin{example}
+Consider
 \begin{equation*}
-u_x + u_t + u = 0, \qquad u(x,0) = e^{-x^2} , \qquad -\infty < x < \infty,
-\quad t > 0 .
+u_x + u_t + u = x, \qquad u(x,0) = e^{-x^2} .
+% , \qquad -\infty < x < \infty, \quad t > 0 .
 \end{equation*}
 We find the characteristics, that is, they are given by
 \begin{equation*}
-\frac{dx}{ds} = 1, \qquad \frac{dt}{ds} = 1
+\frac{dx}{ds} = 1, \qquad \frac{dt}{ds} = 1 .
 \end{equation*}
 So
 \begin{equation*}
-x = s + c_1, \qquad t = s+ c_2
+x = s + c_1, \qquad t = s+ c_2 ,
 \end{equation*}
-At $s=0$ we wish to get the line $t=0$, and $x$ should be $\xi$.  So
+for some $c_1$ and $c_2$.
+At $s=0$ we want $t=0$, and $x$ should be $\xi$.  So
+we let $c_1 = \xi$ and $c_2 = 0$:
 \begin{equation*}
 x = s + \xi, \qquad t = s .
 \end{equation*}
 
-DRAW picture
+The ODE is $\frac{du}{ds} + u = x$, and $x = s+\xi$.  So the ODE
+we are solving along the characteristic is
+\begin{equation*}
+\frac{du}{ds} + u = s+ \xi .
+\end{equation*}
+The general solution of this ODE, treating $\xi$ as just a parameter, is 
+$u = C e^{-s}+s+\xi-1$, for some constant $C$.
+At $s=0$, our initial condition is that $u$ is
+$e^{-\xi^2}$ as at $s=0$ we have that $x=\xi$.
+Given this initial condition, we find $C=e^{-\xi^2} - \xi +1$, and so
+\begin{equation*}
+u =
+\bigl(e^{-\xi^2} - \xi +1\bigr) e^{-s}+s+\xi-1
+=
+e^{-\xi^2-s} + (1 - \xi) e^{-s} +s+\xi-1 .
+\end{equation*}
+Now substitute $\xi = x-t$ and $s=t$ to find $u$ in terms of $x$ and $t$:
+\begin{equation*}
+u
+=
+e^{-\xi^2-s} + (1 - \xi) e^{-s} +s+\xi-1 
+=
+e^{-{(x-t)}^2-t} + (1 - x + t) e^{-t} +x-1 .
+\end{equation*}
+See \figurevref{fopde:surfaceplot} for a graph of $u(x,t)$.
+\begin{figure}[h!t]
+\capstart
+\begin{center}
+\diffyincludegraphics{width=5in}{width=7.5in}{sol-to-fo-pde}
+\caption{Plot of the solution $u(x,t)$ to
+$u_x + u_t + u = x$,  $u(x,0) = e^{-x^2}$.\label{fopde:surfaceplot}}
+\end{center}
+\end{figure}
+\end{example}
 
-OK, let's solve the ODE
+\pagebreak[2]
+\begin{example}
+Finally let's do an example with a variable coefficient
 \begin{equation*}
-\frac{du}{ds} + u = 0
+x u_x + u_t + 2 u = 0, \qquad u(x,0) = \cos(x) . % , \qquad -\infty < x < \infty,
+%\quad t > 0 .
 \end{equation*}
-This is for a fixed $\xi$.  At $s=0$, we should get that $u$ is
-$e^{-\xi^2}$, so that's our initial condition, or
+We find the characteristics, that is, the curves given by
 \begin{equation*}
-u = e^{-s} e^{-\xi^2}  = e^{-(\xi^2+s)} = e^{-\bigl({(x-t)}^2+t\bigr)}.
-\end{equation*}
-
-Let's do a yet more complicated example
-\begin{equation*}
-x u_x + u_t + 2 u = 0, \qquad u(x,0) = \cos(x) , \qquad -\infty < x < \infty,
-\quad t > 0 .
-\end{equation*}
-We find the characteristics, that is, they are given by
-\begin{equation*}
-\frac{dx}{ds} = x, \qquad \frac{dt}{ds} = 1
+\frac{dx}{ds} = x, \qquad \frac{dt}{ds} = 1 .
 \end{equation*}
 So
 \begin{equation*}
-x = c_1 e^{s} , \qquad t = s+ c_2
+x = c_1 e^{s} , \qquad t = s+ c_2 .
 \end{equation*}
 At $s=0$ we wish to get the line $t=0$, and $x$ should be $\xi$.  So
 \begin{equation*}
@@ -3413,67 +3477,54 @@ x = \xi e^s, \qquad t = s .
 
 OK, let's solve the ODE
 \begin{equation*}
-\frac{du}{ds} + 2 u = 0
+\frac{du}{ds} + 2 u = 0 .
 \end{equation*}
 This is for a fixed $\xi$.  At $s=0$, we should get that $u$ is
-$\cos(\xi)$, so that's our initial condition, or
+$\cos(\xi)$, so that's our initial condition.  So
 \begin{equation*}
 u = e^{-2s} \cos(\xi)= e^{-2t} \cos(xe^{-t}) .
 \end{equation*}
+\end{example}
 
-Hmm, let's do another example, to show how easily the computations get
-complicated
-\begin{equation*}
-u_x + (1+x^2) u_t + u = 0, \qquad u(x,0) = \cos(x) , \qquad -\infty < x < \infty,
-\quad t > 0 .
-\end{equation*}
-We really want the coefficient of $u_t$ to never be zero or change
-sign, otherwise we'd run into trouble as characteristic changes direction.
-We also should always first change the coefficient of $u_t$ to be positive
-so that the characteristic runs up as time goes forward.
+If $a$ or $b$ in the equation are variable, the computations can
+quickly get out of hand, as the expressions for the characteristic
+coordinates become messy and then solving the ODE becomes even messier.
+In the above examples, $b$ was always $1$ meaning we got $s=t$ for the 
+characteristic example, if $b$ is not constant, your expression for $s$
+will become more complicated.
 
-We find the characteristics, that is, they are given by
+One thing to keep in mind is that we would get into trouble if the
+coefficient in front of $u_t$, that is the $b$, is every zero.
+Let us consider a quick example of what can go wrong:
 \begin{equation*}
-\frac{dx}{ds} = 1, \qquad \frac{dt}{ds} = 1+x^2
+u_x + u = 0, \qquad u(x,0) = \sin(x).
 \end{equation*}
-So we could first solve for $x$, where $x$ should be $\xi$ at $s=0$ so
-\begin{equation*}
-x = s + \xi 
-\end{equation*}
-Now we have
-\begin{equation*}
-\frac{dt}{ds} = 1+(s+\xi)^2 = (1+\xi^2)+2\xi s + s^2 
-\end{equation*}
-so
-\begin{equation*}
-t = (1+ \xi^2)s + \xi s^2 + \frac{1}{3}s^3 + c_2
-\end{equation*}
-at $s=0$, we should get $t=0$, so $c_2 = 0$.
-We can solve for $s$, but it is complicated.  We want it as a function
-of $x$ and $t$, so plug in $\xi = x-s$, and solve.  One would use
-a computer perhaps.  There is a cubic formula, but one never does this by
-hand.  Let's not worry about it and just write it as $s$.
-When I did it by computer I got
-\begin{align*}
-s&={\left(
-\frac{\sqrt{{x}^{6}+6\,{x}^{4}-6\,t\,{x}^{3}+9\,{x}^{2}-18\,t\,x+9\,{t}^{2}+4}}{2}+\frac{-{x}^{3}-3\,x+3\,t}{2}\right)
-}^{\frac{1}{3}}\\
-&-{\left(
-\frac{\sqrt{{x}^{6}+6\,{x}^{4}-6\,t\,{x}^{3}+9\,{x}^{2}-18\,t\,x+9\,{t}^{2}+4}}{2}+\frac{-{x}^{3}-3\,x+3\,t}{2}\right)
-}^{-\frac{1}{3}}+x
-\end{align*}
+This PDE has no solution.  If we had a solution it
+would imply that $u_x(x,0) = \cos(x)$,
+but $u_x(x,0) + u(x,0) = \cos(x) + \sin(x) \not= 0$.
+The problem is that the characteristic curve is now the line $t=0$,
+and the solution is already provided on that line!
 
-OK, let's solve the ODE
-\begin{equation*}
-\frac{du}{ds} + u = 0
-\end{equation*}
-At $s=0$, we should get that $u$ is
-$\cos(\xi)$, so that's our initial condition, or
-\begin{equation*}
-u = e^{-s} \cos(\xi)= e^{-s} \cos\bigl(x-s\bigr) .
-\end{equation*}
-where $s$ is the complicated expression above.
+In fact, in the above setup
+it is convenient to ensure that $b$ is positive by multiplying by $-1$
+if necessary, so that positive $s$ means positive $t$.  As $b$ should never
+be zero, you could also always divide by $b$ to make the coefficient
+always $1$, however, that may make the other coefficients more complicated.
 
+\subsection{Exercises}
+
+\begin{exercise}
+FIXME
+\end{exercise}
+
+\setcounter{exercise}{100}
+
+\begin{exercise}
+FIXME
+\end{exercise}
+\exsol{%
+FIXME
+}
 
 
 
