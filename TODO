@@ -19,14 +19,12 @@ SHOULD (edition 6)
   the axis k-1 times
 * Search for: will, previously, have, can, note, notice
 * Another section on solving PDEs with Laplace? (in the Laplace chapter)
-* A section on first order PDEs?  (Perhaps in chapter 1?? would need to change
-  title to "First order equations" from "First order ODEs")
 
 IN CASE OF BIG CHANGE (incompatible edition):
 * Split Fourier Series - PDE, probably move the "applications of eigen-series"
   to the PDE chapter.  In this case, first order PDEs might make sense
   before the second order ones since it leads naturally into d'Alembert,
-  unless of course they are in chapter 1 to begin with.
+  but they are in chapter 1, where they might make more sense.
 * Add factorization idea in wave equation (d'Alembert) to write it as
   two vector fields applied to y perhaps?  Makes more sense if we have 
   first order before this.

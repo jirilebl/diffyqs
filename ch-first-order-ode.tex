@@ -1,4 +1,4 @@
-\chapter{First order ODEs} \label{fo:chapter}
+\chapter{First order equations} \label{fo:chapter}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -3235,4 +3235,231 @@ b) $-x \, dx + \frac{1}{y} \, dy = 0$, leads to
 potential function $F(x,y) = -\frac{x^2}{2} + \ln \lvert y \rvert$, solving
 $F(x,y) = C$ leads to the same solution as the example.
 }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{First order linear PDE}
+\label{firstorderpde:section}
+
+\sectionnotes{1 lecture\EPref{, \S?.? in \cite{EP}}\BDref{, \S?.? in
+\cite{BD}}, normally not covered}
+
+FIXME: this is so far just a dump from my PDE lecture notes.
+
+We have only considered ODE so far, let us consider the linear first order
+PDE.  That is, we consider the equation
+\begin{equation*}
+a(x,t) u_x + b(x,t) u_t + c(x,t)u = 0, \qquad u(x,0) = f(x) , \qquad -\infty < x < \infty,
+\quad t > 0 .
+\end{equation*}
+The functions $a$, $b$, and $c$ do not have to be constant.  The method
+we apply will work with nonconstant coefficients, although the computations
+can get difficult for nonconstant coefficients, and so we will concentrate
+on the case where $a$, $b$, and $c$ are constant.
+
+The method we use is the
+\emph{\myindex{method of characteristicts}}\index{characteristicts}.
+Take
+$$
+u_t - \alpha u_x = 0, \qquad u(x,0) = f(x)
+$$
+It turns out that things propagate along curves called characteristics.  If
+we change to so-called \emph{characteristic coordinates}.  If we change to these
+coordinates, the equation simplifies.
+$$
+\xi = x + \alpha t ,  \qquad s = t
+$$
+Let's see what the equation becomes:
+$$
+u_t = u_\xi \xi_t + u_s s_t =  \alpha u_\xi + u_s
+$$
+$$
+u_x = u_\xi \xi_x + u_s s_x = u_\xi
+$$
+So the equation becomes
+$$
+\alpha u_\xi + u_s = \alpha u_\xi
+$$
+or
+$$
+u_s = 0
+$$
+and that's trivial to solve.  If we integrate we get a function that does
+not depend on $s$, that is, there is some function $A$ such that
+$$
+u = A(\xi) = A(x + \alpha t)
+$$
+Using the initial condition when $t=0$ we get $A = f$.  So
+$$
+u(x,t) = f(x+\alpha t)
+$$
+Simply everything is moving left at speed $\alpha$.  The curve given by $\xi
+= $const is called the ``characteristic''.  Note that along this curve the
+solution does not change.
+
+DRAW CURVES.  Note that in the $(x,t)$ coordinates, writing $t =
+\frac{1}{\alpha} ( \xi-x)$, so slope of characteristic lines is $\frac{-1}{\alpha}$.
+
+In this case, it is the so called ``convection equation'', so everything
+travels at some constant speed.  If we change coordinates we find that along
+the characteristics the solution does not change.
+
+We can use similar idea in the general case.
+\begin{equation*}
+a(x,t) u_x + b(x,t) u_t + c(x,t)u = 0, \qquad u(x,0) = f(x) , \qquad -\infty < x < \infty,
+\quad t > 0 .
+\end{equation*}
+We change coordinates to the
+characteristic coordinates, let us call the new coordinates $(\xi,s)$ (The
+book uses $\tau$ instead of $\xi$ but that's confusing as $\tau$ was used
+before for the ``new time'', so ... let's do it this way.)
+
+DRAW picture.
+
+Along the characteristics, that is, where $\xi$ is constant, we will get a
+new ODE in the $s$ variable that we solve.  Before we got a simple $u_s =
+0$.  We will in general get some more complicated equation
+\begin{equation*}
+\frac{du}{ds} + c(x,t) u = 0,
+\end{equation*}
+Where $x$ and $t$ should now be thought of as functions of $\xi$ and $s$,
+and we are thinking of $\xi$ as a parameter, so it is an ODE.
+
+To find the characteristics we must pick the characteristic curves
+$\bigl(x(s),t(s)\bigr)$ to satisfy
+\begin{equation*}
+\frac{dx}{ds} = a(x,t), \qquad \frac{dt}{ds} = b(x,t)
+\end{equation*}
+Why?
+%Because on the curve we want to compute $\frac{du}{ds}$ so
+%\begin{equation*}
+%\frac{du}{ds}
+%=
+%\frac{\partial u}{\partial x} \frac{dx}{ds}
+%+
+%\frac{\partial u}{\partial y} \frac{dy}{ds}
+%\end{equation*}
+%So picking $x(s)$ and $y(s)$ as given will give us the desired ODE.
+Because
+\begin{equation*}
+\frac{du}{ds} + c(x,t) u = 
+\left( u_x \frac{dx}{ds} + u_t \frac{dt}{ds}\right) + c(x,t)u =
+a(x,t) u_x + b(x,t) u_t + c(x,t) u = 0
+\end{equation*}
+and we get the ODE above.
+
+Let's take a slightly more complicated example
+\begin{equation*}
+u_x + u_t + u = 0, \qquad u(x,0) = e^{-x^2} , \qquad -\infty < x < \infty,
+\quad t > 0 .
+\end{equation*}
+We find the characteristics, that is, they are given by
+\begin{equation*}
+\frac{dx}{ds} = 1, \qquad \frac{dt}{ds} = 1
+\end{equation*}
+So
+\begin{equation*}
+x = s + c_1, \qquad t = s+ c_2
+\end{equation*}
+At $s=0$ we wish to get the line $t=0$, and $x$ should be $\xi$.  So
+\begin{equation*}
+x = s + \xi, \qquad t = s .
+\end{equation*}
+
+DRAW picture
+
+OK, let's solve the ODE
+\begin{equation*}
+\frac{du}{ds} + u = 0
+\end{equation*}
+This is for a fixed $\xi$.  At $s=0$, we should get that $u$ is
+$e^{-\xi^2}$, so that's our initial condition, or
+\begin{equation*}
+u = e^{-s} e^{-\xi^2}  = e^{-(\xi^2+s)} = e^{-\bigl({(x-t)}^2+t\bigr)}.
+\end{equation*}
+
+Let's do a yet more complicated example
+\begin{equation*}
+x u_x + u_t + 2 u = 0, \qquad u(x,0) = \cos(x) , \qquad -\infty < x < \infty,
+\quad t > 0 .
+\end{equation*}
+We find the characteristics, that is, they are given by
+\begin{equation*}
+\frac{dx}{ds} = x, \qquad \frac{dt}{ds} = 1
+\end{equation*}
+So
+\begin{equation*}
+x = c_1 e^{s} , \qquad t = s+ c_2
+\end{equation*}
+At $s=0$ we wish to get the line $t=0$, and $x$ should be $\xi$.  So
+\begin{equation*}
+x = \xi e^s, \qquad t = s .
+\end{equation*}
+
+OK, let's solve the ODE
+\begin{equation*}
+\frac{du}{ds} + 2 u = 0
+\end{equation*}
+This is for a fixed $\xi$.  At $s=0$, we should get that $u$ is
+$\cos(\xi)$, so that's our initial condition, or
+\begin{equation*}
+u = e^{-2s} \cos(\xi)= e^{-2t} \cos(xe^{-t}) .
+\end{equation*}
+
+Hmm, let's do another example, to show how easily the computations get
+complicated
+\begin{equation*}
+u_x + (1+x^2) u_t + u = 0, \qquad u(x,0) = \cos(x) , \qquad -\infty < x < \infty,
+\quad t > 0 .
+\end{equation*}
+We really want the coefficient of $u_t$ to never be zero or change
+sign, otherwise we'd run into trouble as characteristic changes direction.
+We also should always first change the coefficient of $u_t$ to be positive
+so that the characteristic runs up as time goes forward.
+
+We find the characteristics, that is, they are given by
+\begin{equation*}
+\frac{dx}{ds} = 1, \qquad \frac{dt}{ds} = 1+x^2
+\end{equation*}
+So we could first solve for $x$, where $x$ should be $\xi$ at $s=0$ so
+\begin{equation*}
+x = s + \xi 
+\end{equation*}
+Now we have
+\begin{equation*}
+\frac{dt}{ds} = 1+(s+\xi)^2 = (1+\xi^2)+2\xi s + s^2 
+\end{equation*}
+so
+\begin{equation*}
+t = (1+ \xi^2)s + \xi s^2 + \frac{1}{3}s^3 + c_2
+\end{equation*}
+at $s=0$, we should get $t=0$, so $c_2 = 0$.
+We can solve for $s$, but it is complicated.  We want it as a function
+of $x$ and $t$, so plug in $\xi = x-s$, and solve.  One would use
+a computer perhaps.  There is a cubic formula, but one never does this by
+hand.  Let's not worry about it and just write it as $s$.
+When I did it by computer I got
+\begin{align*}
+s&={\left(
+\frac{\sqrt{{x}^{6}+6\,{x}^{4}-6\,t\,{x}^{3}+9\,{x}^{2}-18\,t\,x+9\,{t}^{2}+4}}{2}+\frac{-{x}^{3}-3\,x+3\,t}{2}\right)
+}^{\frac{1}{3}}\\
+&-{\left(
+\frac{\sqrt{{x}^{6}+6\,{x}^{4}-6\,t\,{x}^{3}+9\,{x}^{2}-18\,t\,x+9\,{t}^{2}+4}}{2}+\frac{-{x}^{3}-3\,x+3\,t}{2}\right)
+}^{-\frac{1}{3}}+x
+\end{align*}
+
+OK, let's solve the ODE
+\begin{equation*}
+\frac{du}{ds} + u = 0
+\end{equation*}
+At $s=0$, we should get that $u$ is
+$\cos(\xi)$, so that's our initial condition, or
+\begin{equation*}
+u = e^{-s} \cos(\xi)= e^{-s} \cos\bigl(x-s\bigr) .
+\end{equation*}
+where $s$ is the complicated expression above.
+
+
+
+
 
