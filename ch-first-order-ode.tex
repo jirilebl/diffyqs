@@ -3368,7 +3368,6 @@ the right.\label{fopde:transportfig}}
 We can use similar idea in the more general case:
 \begin{equation*}
 a u_x + b u_t + c u = g, \qquad u(x,0) = f(x)  .
-%, \qquad -\infty < x < \infty, \quad t > 0 .
 \end{equation*}
 We change coordinates to the
 characteristic coordinates: let us call these coordinates $(\xi,s)$.
@@ -3423,7 +3422,6 @@ See \figurevref{fopde:charcurvecurvy}.
 Consider
 \begin{equation*}
 u_x + u_t + u = x, \qquad u(x,0) = e^{-x^2} .
-% , \qquad -\infty < x < \infty, \quad t > 0 .
 \end{equation*}
 We find the characteristics, that is, they are given by
 \begin{equation*}
@@ -3507,15 +3505,13 @@ u = e^{-2s} \cos(\xi)= e^{-2t} \cos(xe^{-t}) .
 \end{equation*}
 \end{example}
 
-If $a$ or $b$ in the equation are variable, the computations can
-quickly get out of hand, as the expressions for the characteristic
-coordinates become messy and then solving the ODE becomes even messier.
-In the above examples, $b$ was always $1$ meaning we got $s=t$ for the 
-characteristic example, if $b$ is not constant, your expression for $s$
-will become more complicated.
+
+Let us make a few closing remarks.
+
+\medskip
 
 One thing to keep in mind is that we would get into trouble if the
-coefficient in front of $u_t$, that is the $b$, is every zero.
+coefficient in front of $u_t$, that is the $b$, is ever zero.
 Let us consider a quick example of what can go wrong:
 \begin{equation*}
 u_x + u = 0, \qquad u(x,0) = \sin(x).
@@ -3528,25 +3524,76 @@ and the solution is already provided on that line!
 
 In fact, in the above setup
 it is convenient to ensure that $b$ is positive by multiplying by $-1$
-if necessary, so that positive $s$ means positive $t$.  As $b$ should never
-be zero, you could also always divide by $b$ to make the coefficient
-always $1$, however, that may make the other coefficients more complicated.
+if necessary, so that positive $s$ means positive $t$.
+
+\medskip
+
+If $a$ or $b$ in the equation are variable, the computations can
+quickly get out of hand, as the expressions for the characteristic
+coordinates become messy and then solving the ODE becomes even messier.
+In the above examples, $b$ was always $1$ meaning we got $s=t$ in the 
+characteristic coordinates.  If $b$ is not constant, your expression for $s$
+will become more complicated.
+
+We also remark that finding the characteristic coordinates is really
+a system of ODE in general if $a$ depends on $t$ or if $b$ depends on $x$.
+In that case, we would need techniques of systems of ODE
+to solve, see \chapterref{sys:chapter} or \chapterref{nlin:chapter}.  In
+general, if $a$ and $b$ are not linear functions or constants, finding closed
+form expressions for the characteristic coordinates may be impossible.
 
 \subsection{Exercises}
 
+%FIXME: need more
+
 \begin{exercise}
-FIXME
+Solve a)~$u_t +9u_x = 0$, $u(x,0) = \sin(x)$,
+b)~$u_t -8u_x = 0$, $u(x,0) = \sin(x)$,
+c)~$u_t +\pi u_x = 0$, $u(x,0) = \sin(x)$.
+\end{exercise}
+
+\begin{exercise}
+Solve $u_t +3u_x = 1$, $u(x,0) = x^2$.
+\end{exercise}
+
+\begin{exercise}
+Solve $u_t +3u_x = x$, $u(x,0) = e^x$.
+\end{exercise}
+
+\begin{exercise}
+Solve $u_x+u_t+xu = 0$, $u(x,0) = \cos(x)$.
+\end{exercise}
+
+\begin{exercise}
+a)~Find the characteristic coordinates for the
+following equations\\
+1)~$u_x+u_t + u = 1$, $u(x,0) = \cos(x)$,\\
+2)~$2u_x+2u_t +2u = 2$, $u(x,0) = \cos(x)$,\\
+b)~Solve the two equations using the coordinates.\\
+c)~Explain why
+you got the same solution, although the characteristic coordinates
+you found were different.
 \end{exercise}
 
 \setcounter{exercise}{100}
 
 \begin{exercise}
-FIXME
+Solve $u_t - 5u_x = 0$, $u(x,0) = \frac{1}{1+x^2}$.
 \end{exercise}
 \exsol{%
-FIXME
+$u = \frac{1}{1+{(x+5t)}^2}$
 }
 
+\begin{exercise}
+Solve $u_x+u_t+tu = 0$, $u(x,0) = \cos(x)$.
+\end{exercise}
+\exsol{%
+$u = \cos(x-t)e^{-t^2/2}$
+}
 
-
-
+\begin{exercise}
+Solve $u_x+u_t = 5$, $u(x,0) = x$.
+\end{exercise}
+\exsol{%
+$u = x + 4t$
+}
