@@ -1,6 +1,6 @@
 
 SHOULD (edition 6)
-* Make pages larger as we did in realanal to save paper, but must check that
+* Made pages larger as we did in realanal to save paper, but must check that
   the layout still work, especially inset floating figures might go bad.
 * More on the reduction of order method in 2.1 (and split into subsections)
 * Add appendix chapter on linear algebra for courses that don't want to

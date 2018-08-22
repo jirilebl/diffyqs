@@ -15,13 +15,23 @@
 \usepackage{graphicx}
 \usepackage{color}
 %\usepackage{graphics}
+
+% Remove page numbers on chapter opens
+% must come before fullpage
+\usepackage{nopageno}
+
 \usepackage[headings]{fullpage}
 
-%PRINT (USE FOR PRINT)
+% smaller margins top/bottom margins
+\addtolength{\textheight}{0.8in}
+\addtolength{\topmargin}{-0.3in}
+
+%PRINT
+%First offset even/odd pages a bit
 %\addtolength{\oddsidemargin}{0.2in}
 %\addtolength{\evensidemargin}{-0.2in}
 
-%PRINT (USE FOR PRINT)
+%PRINT
 %Now cut page size a bit.  I'll run it through ghostcript anyway
 %to convert to the right size, but this is good for crown quatro
 %conversion, don't use for the full letter size versions
@@ -39,7 +49,7 @@
 %If you have an older tex installation you might need
 %to comment out the next line:
 %PRINT (COMMENT OUT FOR PRINT)
-\usepackage[ocgcolorlinks]{ocgx2} %perhaps run without for lulu/createspace
+\usepackage[ocgcolorlinks]{ocgx2} %run without for lulu/createspace
 
 \usepackage{hypcap}
 \usepackage[font={small,it}]{caption}
