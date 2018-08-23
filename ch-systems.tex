@@ -4,7 +4,7 @@
 
 \section{Introduction to systems of ODEs} \label{sec:introtosys}
 
-\sectionnotes{1 lecture\EPref{, \S4.1 in \cite{EP}}\BDref{,
+\sectionnotes{1 to 1.5 lectures\EPref{, \S4.1 in \cite{EP}}\BDref{,
 \S7.1 in \cite{BD}}}
 
 \subsection{Systems}
@@ -478,10 +478,11 @@ Suppose the tanks are as in
 \examplevref{sintro:closedbrine-example} except that clean water flows in
 at the rate $s$ liters per second into tank 1, and brine flows out of tank 2
 and into the sewer also at the rate of $s$ liters per second.
-\\
-a)~Draw the picture.\\
-b)~Set up the system of equations.\\
-c)~Intuitively, what happens as $t$ goes to infinity, explain.
+\begin{enumerate}[a)]
+\item Draw the picture.
+\item Set up the system of equations.
+\item Intuitively, what happens as $t$ goes to infinity, explain.
+\end{enumerate}
 \end{exercise}
 \exsol{%
 a) Left to reader. b) 
@@ -731,7 +732,7 @@ c & d
 ad-bc .
 \end{equation*}
 
-Before trying to compute the
+Before trying to define the
 determinant for larger matrices, let us note
 the meaning of the determinant.  Consider an $n \times n$ matrix
 as a mapping of the $n$ dimensional euclidean space ${\mathbb{R}}^n$ to 
@@ -739,7 +740,7 @@ itself, where $\vec{x}$ gets sent to $A \vec{x}$.
 In particular, a $2 \times 2$ matrix $A$ is a mapping of
 the plane to itself.  The
 determinant of 
-$A$ is the factor by which the area of objects gets changed. 
+$A$ is the factor by which the area of objects changes. 
 If we take the unit square (square of side 1) in the plane, then
 $A$ takes the square to a parallelogram of area $\lvert\det(A)\rvert$.  The sign
 of $\det(A)$ denotes changing of orientation (negative if the axes get flipped).  For
@@ -751,7 +752,7 @@ A =
 -1 & 1
 \end{bmatrix} .
 \end{equation*}
-Then $\det(A) = 1+1 = 2$.  Let us see where the square with vertices
+Then $\det(A) = 1+1 = 2$.  Let us see where the (unit) square with vertices
 $(0,0)$, $(1,0)$, $(0,1)$, and $(1,1)$ gets sent.  Clearly $(0,0)$ gets sent
 to $(0,0)$.  
 \begin{equation*}
@@ -815,7 +816,7 @@ carries the unit square to the given parallelogram.
 
 \medskip
 
-Let us define the determinant for larger matrices.  We define $A_{ij}$ as
+Let us look at the determinant for larger matrices.  We define $A_{ij}$ as
 the matrix $A$ with the $i^{\text{th}}$ row and the $j^{\text{th}}$ column
 deleted.  To compute the determinant of a matrix, pick one row, say the
 $i^{\text{th}}$ row and compute:
@@ -840,7 +841,8 @@ a_{13} \det (A_{13}) -
 \end{cases}
 \end{equation*}
 We alternately add and subtract the determinants of the submatrices
-$A_{ij}$ for a fixed $i$ and all $j$.  For a $3 \times 3$ matrix,
+$A_{ij}$ multiplied by $a_{ij}$ for a fixed $i$ and all $j$.
+For a $3 \times 3$ matrix,
 picking the first row, we get $\det (A) = a_{11} \det (A_{11}) -
 a_{12} \det (A_{12}) + a_{13} \det (A_{13})$.  For example,
 \begin{equation*}
@@ -890,11 +892,14 @@ The numbers ${(-1)}^{i+j}\det(A_{ij})$ are called
 \emph{cofactors\index{cofactor}}
 of the matrix and
 this way of computing the determinant is called the
-\emph{\myindex{cofactor expansion}}.  It is also possible to compute the
+\emph{\myindex{cofactor expansion}}.
+No matter which row you pick, you always get the same number.
+It is also possible to compute the
 determinant by expanding
 along columns (picking a column instead of a row above).
+It is true that $\det(A) = \det(A^T)$.
 
-Note that a common notation for the determinant is a pair of vertical
+A common notation for the determinant is a pair of vertical
 lines:
 \begin{equation*}
 \begin{vmatrix}
@@ -910,20 +915,39 @@ c & d
 \right) .
 \end{equation*}
 I personally find this notation confusing as vertical lines usually
-mean a positive quantity, while determinants can be negative.  I will not
+mean a positive quantity, while determinants can be negative.  Also
+think about how to write the absolute value of a determinant.  I will not
 use this notation in this book.
 
 \medskip
 
-One of the most important properties of determinants (in the context of
-this course)
-is the following theorem.
+Think of the determinants telling you the scaling of a mapping.  
+If $B$ doubles the sizes of geometric objects and $A$ tripples them,
+then $AB$ (which applies $B$ to an object and then $A$) should make size
+go up by a factor of $6$.  This is true in general:
+\begin{equation*}
+\det(AB) = \det(A)\det(B) .
+\end{equation*}
+This property is one of the most useful, and it is employed often to 
+actually compute determinants.  A particularly interesting consequence is to
+note what it means for existence of inverses.
+Take $A$ and $B$ to be inverses, that is $AB=I$.  Then
+\begin{equation*}
+\det(A)\det(B) = \det(AB) = \det(I) = 1 .
+\end{equation*}
+Neither $\det(A)$ nor $\det(B)$ can be zero.
+Let us state this as a theorem
+as it will be very important in the context of this course.
 
 \begin{theorem}
 An $n \times n$ matrix $A$ is invertible if and only if $\det (A) \not= 0$.
 \end{theorem}
 
-In fact, there is a formula for the inverse of a $2 \times 2$ matrix
+In fact, $\det(A^{-1}) \det(A) = 1$ says that $\det(A^{-1}) =
+\frac{1}{\det(A)}$.  So we even know what the determinant of $A^{-1}$ is
+before we know how to compute $A^{-1}$.
+
+There is a simple formula for the inverse of a $2 \times 2$ matrix
 \begin{equation*}
 \begin{bmatrix}
 a & b \\
@@ -936,7 +960,9 @@ d & -b \\
 -c & a
 \end{bmatrix} .
 \end{equation*}
-Notice the determinant of the matrix in the denominator of the fraction.
+Notice the determinant of the matrix
+$[\begin{smallmatrix}a&b\\c&d\end{smallmatrix}]$
+in the denominator of the fraction.
 The formula only works if the determinant is nonzero, otherwise we are
 dividing by zero.
 
@@ -1102,7 +1128,7 @@ equation) the system is \emph{inconsistent\index{inconsistent system}} and
 has no solution.  For
 example for a system of 3 equations and 3 unknowns, if you find a row
 such as $[\,0 \quad 0 \quad 0 ~\,|\,~ 1\,]$ in the augmented matrix,
-you know the system is inconsistent.
+you know the system is inconsistent.  That row corresponds to $0=1$.
 
 \medskip
 
@@ -1348,9 +1374,11 @@ $N=\left[ \begin{smallmatrix}
 a & 0 & 0 \\
 0 & b & 0 \\
 0 & 0 & c
-\end{smallmatrix}\right]$.\\
-a) Compute $M^{-1}$.\\
-b) Compute $N^{-1}$.
+\end{smallmatrix}\right]$.
+\begin{enumerate}[a)]
+\item Compute $M^{-1}$.
+\item Compute $N^{-1}$.
+\end{enumerate}
 \end{exercise}
 \exsol{%
 a) $\left[ \begin{smallmatrix}
@@ -1400,8 +1428,8 @@ a_{21}(t) & a_{22}(t) & \cdots & a_{2n}(t) \\
 a_{n1}(t) & a_{n2}(t) & \cdots & a_{nn}(t)
 \end{bmatrix} .
 \end{equation*}
-We can talk about the derivative $A'(t)$ or $\frac{dA}{dt}$.
-This is just the matrix valued function
+The derivative $A'(t)$ or $\frac{dA}{dt}$ is
+just the matrix valued function
 whose $ij^{\text{th}}$ entry is $a_{ij}'(t)$.
 
 Rules of differentiation of matrix valued functions

@@ -2,7 +2,9 @@
 SHOULD (edition 6)
 * Update(check) EP references to 5th edition
 * Update(check) BD references to 11th edition
-* Made pages larger as we did in realanal to save paper, but must check that
+* Double check the total number of estimated lectures
+* Change all exercise parts to enumerates
+* Made pages larger as in realanal to save paper, but must check that
   the layout still work, especially inset floating figures might go bad.
 * More on the reduction of order method in 2.1 (and split into subsections)
 * Add appendix chapter on linear algebra for courses that don't want to
