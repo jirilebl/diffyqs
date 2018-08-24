@@ -1,16 +1,14 @@
 
 SHOULD (edition 6)
-* Update(check) EP references to 5th edition
-* Update(check) BD references to 11th edition
-* Double check the total number of estimated lectures
-* Change all exercise parts to enumerates
-* Made pages larger as in realanal to save paper, but must check that
-  the layout still work, especially inset floating figures might go bad.
-* More on the reduction of order method in 2.1 (and split into subsections)
+BIG(er):
 * Add appendix chapter on linear algebra for courses that don't want to
   require that as prerequisite.
+* Another section on solving PDEs with Laplace? (in the Laplace chapter)
+
+SMALLER THINGS:
 * Expand discussion of vector fields and how they are drawn in 3.1.
-* Add maybe more exercises for setting up applications in 3.1
+* More on the reduction of order method in 2.1 (and split into subsections)
+* Add maybe a few more exercises for setting up applications in 3.1
 * Generalized eigenvector discussion is a little too terse and perhaps still
   misleading.  Do another larger example perhaps.  Most of the exercises are
   3x3 so we should have an example of that.
@@ -19,14 +17,29 @@ SHOULD (edition 6)
   the units.
 * In 3.4 (or earlier?) Add some exercises on constant nonhomogeneity for
   an invertible A, that just translates the point.
-* Use more underbrace / cancel (cancel only if really needed, it can look weird).
-  See subsection 3.9.2
 * In whirling string, plot several of the eigenfunctions to show how it crosses
   the axis k-1 times
-* Search for: will, previously, have, can, note, notice
-* Another section on solving PDEs with Laplace? (in the Laplace chapter)
+* exponential order / type, need to use one term only.  Order at infinity
+  also should be emphasized at more places.
+* Include annihilator method at least in exercises of section of 2.5 
 
-IN CASE OF BIG CHANGE (incompatible edition):
+SMALL THIGS WHEN WE ARE CLOSER TO DONE:
+* Double check the total number of estimated lectures
+
+TECHNICAL:
+* Update(check) EP references to 5th edition
+* Update(check) BD references to 11th edition
+* Change all exercise parts to enumerates
+* Made pages larger as in realanal to save paper, but must check that
+  the layout still work, especially inset floating figures might go bad.
+* Use more underbrace / cancel (cancel only if really needed,
+  it can look weird).
+  See subsection 3.9.2
+* Search for: will, previously, have, can, note, notice
+
+
+
+IN CASE OF BIG CHANGE in the Star Trek future (incompatible edition):
 * Split Fourier Series - PDE, probably move the "applications of eigen-series"
   to the PDE chapter.  In this case, first order PDEs might make sense
   before the second order ones since it leads naturally into d'Alembert,
@@ -38,10 +51,6 @@ IN CASE OF BIG CHANGE (incompatible edition):
 MAYBE:
 * Perhaps change name of \vec{x}_1 solutions to avoid confusion with x_1
   components, see what other books do
-* Include annihilator method at least in exercises of section of 2.5 
-* exponential order / type, need to use one term only.  Order at infinity
-  also should be emphasized at more places.
-* Root test for power series?  Are we just adding too much to 7.1?
 
 PROBABLY NOT/VAGUE:
 * Perhaps an appendix with more info on existence uniqueness, linear
@@ -49,9 +58,3 @@ PROBABLY NOT/VAGUE:
   wronskian, to avoid plug and play maddness), some proofs and extra
   information in general, basically some extra optional sections.  etc..
   Need more ideas for this.
-
-
-DONE:
-* Add Dirac delta function to chapter 6 such as chapter 6.5 in [BD]
-* Should mention that transfer functions are impulse response, may be
-  connected to adding delta function.

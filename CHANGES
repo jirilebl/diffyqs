@@ -13,6 +13,9 @@
 
 * 3.2: mention det(A)det(B) = det(AB) since it makes sense when talking about invertible matrices, and is generally a useful thing anyway.
 
-* Renumberings: Figures in chapter 3, examples in 3.1
+* 7.1: Add root test and an example for it.
+
+* Renumberings: Figures in chapter 3, examples in 3.1, examples in 7.1 past
+  the root test.
 
 * Add exercises 3.1.6, 3.1.7, 3.1.106, 3.5.5

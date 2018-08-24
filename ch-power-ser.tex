@@ -216,12 +216,68 @@ Therefore the radius of convergence is $2$, and the series
 converges absolutely on the interval $(-1,3)$.
 \end{example}
 
-The ratio test does not always apply.  That is
-the limit
-of $\bigl \lvert \frac{a_{k+1}}{a_k} \bigr \rvert$ might not exist.
-There exist more sophisticated ways of finding the radius of convergence,
-but those would be beyond the scope of this chapter.
 
+Another very similar test is the \emph{\myindex{root test}}.  Suppose
+\begin{equation*}
+L = \lim_{k\to\infty} \sqrt[k]{\lvert c_k \rvert}
+\end{equation*}
+exists.  Then $\sum_{k=0}^\infty c_k$ converges absolutely if $L < 1$
+and diverges if $L > 1$.  For power series we find
+
+\begin{theorem}
+Let
+\begin{equation*}
+\sum_{k=0}^\infty a_k {(x-x_0)}^k
+\end{equation*}
+be a power series such that
+\begin{equation*}
+A =
+\lim_{k\to\infty} \sqrt[k]{\lvert a_k \rvert}
+\end{equation*}
+exists.  If $A = 0$, then the radius of convergence of the series
+is $\infty$.  Otherwise the radius of convergence is $\nicefrac{1}{A}$.
+\end{theorem}
+
+\begin{example}
+Consider
+\begin{equation*}
+\sum_{k=0}^\infty \frac{1}{k^k} {x}^k .
+\end{equation*}
+Compute
+\begin{equation*}
+A =
+\lim_{k\to\infty} 
+\sqrt[k]{\lvert a_k \rvert}
+=
+\lim_{k\to\infty} 
+\sqrt[k]{
+\left\lvert\frac{1}{k^k}\right\rvert}
+=
+\lim_{k\to\infty} 
+\sqrt[k]{
+{\left\lvert\frac{1}{k}\right\rvert}^{k}}
+=
+\lim_{k\to\infty} 
+\frac{1}{k}
+=
+0 .
+\end{equation*}
+So the radius of convergence is $\infty$: the series
+converges everywhere.
+\end{example}
+
+The root or the ratio test does not always apply.  That is
+the limit
+of
+$\bigl \lvert \frac{a_{k+1}}{a_k} \bigr \rvert$
+or
+$\sqrt[k]{\lvert a_k \rvert}$
+might not exist.
+There exist more sophisticated ways of finding the radius of convergence,
+but those would be beyond the scope of this chapter.  The above two methods
+cover many of the series that arise in practice.  Often if the root test
+applies, so does the ratio test and vice versa, though the limit might
+be easier to compute in one way that the other.
 
 \subsection{Analytic functions}
 
