@@ -140,7 +140,7 @@ A useful test for convergence of a series is the
 \begin{equation*}
 \sum_{k=0}^\infty c_k
 \end{equation*}
-is a series such that the limit
+is a series and the limit
 \begin{equation*}
 L = \lim_{n\to\infty} \left \lvert \frac{c_{k+1}}{c_k} \right \rvert
 \end{equation*}
@@ -174,9 +174,19 @@ If $A = 0$, then the series always converges.  If $A > 0$, then
 the series converges absolutely
 if $\lvert x - x_0 \rvert < \nicefrac{1}{A}$,
 and diverges if $\lvert x - x_0 \rvert > \nicefrac{1}{A}$.  That is,
-the radius of convergence is $\nicefrac{1}{A}$.  Let us summarize.
+the radius of convergence is $\nicefrac{1}{A}$.
 
-\begin{theorem}
+Another very similar test is the \emph{root test}\index{root test for series}.
+Suppose
+\begin{equation*}
+L = \lim_{k\to\infty} \sqrt[k]{\lvert c_k \rvert}
+\end{equation*}
+exists.  Then $\sum_{k=0}^\infty c_k$ converges absolutely if $L < 1$
+and diverges if $L > 1$.  We can use the same calculation as above
+to find $A$.
+Let us summarize.
+
+\begin{theorem}[Ratio and root tests for power series]
 Let
 \begin{equation*}
 \sum_{k=0}^\infty a_k {(x-x_0)}^k
@@ -188,6 +198,9 @@ A =
 \left \lvert
 \frac{a_{k+1}}{a_k}
 \right \rvert
+\qquad \text{or} \qquad
+A =
+\lim_{k\to\infty} \sqrt[k]{\lvert a_k \rvert}
 \end{equation*}
 exists.  If $A = 0$, then the radius of convergence of the series
 is $\infty$.  Otherwise the radius of convergence is $\nicefrac{1}{A}$.
@@ -198,7 +211,7 @@ Suppose we have the series
 \begin{equation*}
 \sum_{k=0}^\infty 2^{-k} {(x-1)}^k .
 \end{equation*}
-First we compute,
+First we compute the limit in the ratio test,
 \begin{equation*}
 A = \lim_{k\to\infty} 
 \left \lvert
@@ -210,40 +223,37 @@ A = \lim_{k\to\infty}
 \frac{2^{-k-1}}{2^{-k}}
 \right \rvert
 =
+\lim_{k\to\infty} 
 2^{-1} = \nicefrac{1}{2}.
 \end{equation*}
 Therefore the radius of convergence is $2$, and the series
 converges absolutely on the interval $(-1,3)$.
+And we could just as well have used the root test:
+\begin{equation*}
+A = \lim_{k\to\infty} 
+\lim_{k\to\infty} 
+\sqrt[k]{\lvert
+a_k
+\rvert}
+=
+\lim_{k\to\infty} 
+\sqrt[k]{\lvert
+2^{-k}
+\rvert}
+=
+\lim_{k\to\infty} 
+2^{-1}
+=
+\nicefrac{1}{2}.
+\end{equation*}
 \end{example}
-
-
-Another very similar test is the \emph{\myindex{root test}}.  Suppose
-\begin{equation*}
-L = \lim_{k\to\infty} \sqrt[k]{\lvert c_k \rvert}
-\end{equation*}
-exists.  Then $\sum_{k=0}^\infty c_k$ converges absolutely if $L < 1$
-and diverges if $L > 1$.  For power series we find
-
-\begin{theorem}
-Let
-\begin{equation*}
-\sum_{k=0}^\infty a_k {(x-x_0)}^k
-\end{equation*}
-be a power series such that
-\begin{equation*}
-A =
-\lim_{k\to\infty} \sqrt[k]{\lvert a_k \rvert}
-\end{equation*}
-exists.  If $A = 0$, then the radius of convergence of the series
-is $\infty$.  Otherwise the radius of convergence is $\nicefrac{1}{A}$.
-\end{theorem}
 
 \begin{example}
 Consider
 \begin{equation*}
 \sum_{k=0}^\infty \frac{1}{k^k} {x}^k .
 \end{equation*}
-Compute
+Compute the limit for the root test,
 \begin{equation*}
 A =
 \lim_{k\to\infty} 
@@ -263,7 +273,7 @@ A =
 0 .
 \end{equation*}
 So the radius of convergence is $\infty$: the series
-converges everywhere.
+converges everywhere.  The ratio test would also work here.
 \end{example}
 
 The root or the ratio test does not always apply.  That is
@@ -276,8 +286,8 @@ might not exist.
 There exist more sophisticated ways of finding the radius of convergence,
 but those would be beyond the scope of this chapter.  The above two methods
 cover many of the series that arise in practice.  Often if the root test
-applies, so does the ratio test and vice versa, though the limit might
-be easier to compute in one way that the other.
+applies, so does the ratio test, and vice versa, though the limit might
+be easier to compute in one way than the other.
 
 \subsection{Analytic functions}
 

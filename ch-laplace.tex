@@ -1918,3 +1918,181 @@ ${\mathcal{L}}^{-1} \left\{ \frac{3 s^2 e^{-s} + 2}{s^2} \right\}$.
 \exsol{%
 $3 \delta(t-1) + 2 t$
 }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sectionnewpage
+\section{Solving PDEs with the Laplace transform}
+\label{diracdelta:section}
+
+\sectionnotes{? lecture\EPref{, \S?.? in \cite{EP}}\BDref{,
+\S?.? in \cite{BD}}}
+
+FIXME: Just a dump from my draft notes:
+
+Maybe a simpler example (variable side codintions on a finite rod? perhaps)  Maybe the first order one first?  What about
+infinite $x$ on both sides.
+
+Let us use Laplace for the following problem
+
+$u_t = u_{xx}$, $0 < x < \infty$,
+
+$u_x(0,t) = f(t)$,
+
+$u(x,0) = 0$
+
+Transform the equation
+
+$sU(x) = U''(x)$
+
+The general solution here is
+$$
+U(x) = A e^{\sqrt{s}x} + B e^{-\sqrt{s} x}
+$$
+
+Now how about the boundary conditions.  Firstly $A=0$ since otherwise
+unbounded.
+ We transform $U'(0) = F(s)$ and
+so
+$-\sqrt{s}B = F(s)$, and
+$$
+U(x) = - F(s) \frac{1}{\sqrt{s}} e^{-\sqrt{s} x}
+$$
+
+If we look up the inverse transform in a table (or we spend the afternoon
+doing calculus) we find 
+$$
+{\mathcal L}^{-1}[e^{-\sqrt{s} x}] =
+\frac{x}{\sqrt{4\pi t^3}} e^{\frac{-x^2}{4t}}
+$$
+$$
+{\mathcal L}^{-1}[\frac{1}{\sqrt{s}} e^{-\sqrt{s} x}] =
+\frac{1}{\sqrt{\pi t}} e^{\frac{-x^2}{4t}}
+$$
+So
+$$
+u(x,t) =
+{\mathcal L}^{-1} \left[
+F(s) e^{-\sqrt{s} x}\right]
+=
+\int_0^t
+f(\tau) 
+\frac{1}{\sqrt{\pi {(t-\tau)}}} e^{\frac{-x^2}{4(t-\tau)}} \, d\tau
+$$
+
+\medskip
+\hrule
+\medskip
+
+Laplace is often useful in places where separation of variables fails.
+Laplace does not mind nonhomogeneity, but it is essentially only useful for
+constant coefficient equations.
+
+\medskip
+\hrule
+\medskip
+
+$$
+\mathcal{L} \{ e^{-at} f(t) \} = F(s+a) ,
+$$
+
+$$
+\mathcal{L} \{
+\int_0^t f(\tau)\,d\tau
+\}
+=
+\frac{1}{s}F(s)
+$$
+
+$$
+\mathcal{L} \{ - t f(t) \} = F'(s) ,
+$$
+
+So e.g.
+
+$$
+\mathcal{L} \{ t \sin(t) \} = \frac{2s}{(s^2+1)^2} ,
+$$
+
+
+FIXME: another dump:
+
+Let us
+solve a simple IBVP.  
+
+PDE: $u_t = - \nu u_x$, $x > 0$, $t > 0$.
+BC: $u(0,t) = C$
+IC: $u(x,0) = 0$.
+
+DRAW the setup.  Think say a river of moving goo (no diffusion),
+where $u$ is concentration of
+some toxic substance (it's a goo already, we're not hurting the environment
+much more).  At $x=0$, $t=0$, we start pouring the toxic substance to the
+river so that at
+$x=0$ the concentration is always $C$.
+
+Let's use Laplace to solve this since we have just learned it:
+
+$U(x) = {\mathcal L}[u(x,t)]$
+in the $t$ direction and we'll treat $s$ as parameter again.  $u(x,0) = 0$ and
+so
+
+$sU(x) = -\nu U'(x)$, $U(0) = \frac{C}{s}$.
+So
+$$
+U(x) = \frac{C}{s} e^{-\frac{s}{\nu} x}
+$$
+For the inverse transform we use the Heaviside function
+$$
+H(t) = \begin{cases} 0 & \text{if $t < 0$}, \\ 1 & \text{otherwise}
+\end{cases}
+$$
+We note
+that
+$$
+{\mathcal L}[H(t-a)] =
+\int_0^\infty H(t-a) e^{-st} dt
+=
+\int_a^\infty e^{-st} dt
+=
+\frac{e^{-as}}{s}
+$$
+So
+$$
+u(x,t) = C H(t-x/\nu)
+$$
+In other words
+$$
+u(x,t) =
+\begin{cases}
+0 & \text{if $t < x/\nu$}, \\
+C & \text{otherwise}
+\end{cases}
+$$
+
+DRAW PLOT Slope of wavefront is $1/\nu$.
+
+Shhh ... $u$ is not differentiable (nobody ever seems to notice this).
+Well, just think of something very very close to $u$ that is differentiable.
+What the equation does is simply move the initial condition to the right at
+speed $\nu$.
+
+
+FIXME
+
+\subsection{Exercises}
+
+FIXME
+
+\begin{exercise}
+FIXME
+\end{exercise}
+
+\setcounter{exercise}{100}
+
+\begin{exercise}
+FIXME
+\end{exercise}
+\exsol{%
+FIXME
+}
