@@ -1262,7 +1262,7 @@ by a spring with spring constant $k > 0$ (in newtons per meter)
 to a fixed wall.  There may be some external
 force $F(t)$ (in newtons) acting on the mass.  Finally, there is some
 friction measured by $c \geq 0$ (in newton-seconds per meter) as the mass
-slides along the floor (or perhaps there is a damper connected).
+slides along the floor (or perhaps a damper is connected).
 
 Let $x$ be the displacement of the mass ($x=0$ is the rest position), with
 $x$ growing to the right (away from the wall).
@@ -1276,8 +1276,8 @@ and hence $mx'' = F(t)-cx'-kx$ or
 \begin{equation*}
 mx'' + cx' + kx = F(t) .
 \end{equation*}
-This is a linear second order constant coefficient ODE.  We set up some
-terminology about this equation.  We say the motion is
+This is a linear second order constant coefficient ODE.
+We say the motion is
 \begin{enumerate}[(i)]
 \item \emph{forced\index{forced motion}}, if $F \not\equiv 0$ (if $F$ is not identically zero),
 \item \emph{unforced\index{unforced motion}} or \emph{free\index{free
@@ -1299,7 +1299,7 @@ before you jump off the bridge, right?  Let us give two other examples.
 \noindent
 \inputpdft{mv-rlc}
 \end{mywrapfigsimp}
-Here is an example for electrical engineers.  Suppose that we have the
+Here is an example for electrical engineers.  Consider the
 pictured \myindex{RLC circuit}.
 There is a resistor with a resistance of $R$ ohms, an
 inductor with an inductance of $L$ henries,
@@ -1308,13 +1308,13 @@ an electric source (such as a battery) giving a voltage of $E(t)$ volts
 at time $t$ (measured in seconds).
 Let $Q(t)$ be the charge in coulombs on the capacitor
 and $I(t)$ be the current in the circuit.  The relation between the two is
-$Q' = I$.  By elementary principles we have that
-$L I' + RI + \nicefrac{Q}{C} = E$.   If we differentiate we get
+$Q' = I$.  By elementary principles we find 
+$L I' + RI + \nicefrac{Q}{C} = E$.   We differentiate to get
 \begin{equation*}
 L I''(t) + R I'(t) + \frac{1}{C} I(t) = E'(t) .
 \end{equation*}
 This is a nonhomogeneous second order constant coefficient linear equation.
-Further, as $L, R$, and $C$ are all positive, this system behaves just like the
+As $L, R$, and $C$ are all positive, this system behaves just like the
 mass and spring system.  The position of the mass is replaced by the current.
 Mass is replaced by the inductance, damping is replaced by resistance and
 the spring constant is replaced by one over the capacitance.  The change in
@@ -1340,7 +1340,7 @@ of the form
 Let us derive this equation using \myindex{Newton's second law};
 force equals mass times acceleration.  The acceleration is
 $L \theta''$ and mass is $m$.  So $mL\theta''$ has to be equal
-to the tangential component of the force given by the gravity, that is
+to the tangential component of the force given by the gravity, which is
 $m g \sin \theta$ in the opposite direction.
 So $mL\theta'' = -mg \sin \theta$.
 The $m$ curiously cancels from the equation.
@@ -1362,30 +1362,30 @@ model the behavior by the simpler linear equation
 \begin{equation*}
 \theta'' + \frac{g}{L} \theta = 0 .
 \end{equation*}
-Note that the errors that we get from the approximation build up.
+The errors from this approximation build up.
 So after a
-very long time, the behavior of the real system might be substantially
+long time, the state of the real-world system might be substantially
 different from our solution.  Also we will
 see that in a mass-spring system, the amplitude is independent of the
 period.
 This is not true for a pendulum.  Nevertheless, for reasonably short periods of time
-and small swings (for example if the pendulum is very long),
+and small swings (that is, only small angles $\theta$),
 the approximation is reasonably good.
 
-In real world problems it is often necessary to make these types of
+In real-world problems it is often necessary to make these types of
 simplifications.  We must understand both the mathematics and
 the physics of the situation to see if the simplification is valid in the
 context of the questions we are trying to answer.
 
 \subsection{Free undamped motion}
 
-In this section we will only consider free or unforced motion,
-as we cannot yet solve nonhomogeneous equations.  Let us start with
-\myindex{undamped} motion where $c=0$.  We have the equation
+In this section we only consider free or unforced motion,
+as we do not know yet how to solve nonhomogeneous equations.  Let us start with
+\myindex{undamped} motion where $c=0$.  The equation is
 \begin{equation*}
 mx'' + kx = 0 .
 \end{equation*}
-If we divide by $m$ and let $\omega_0 = \sqrt{\nicefrac{k}{m}}$, then we can write the equation as
+We divide by $m$ and let $\omega_0 = \sqrt{\nicefrac{k}{m}}$ to rewrite the equation as
 \begin{equation*}
 x'' + \omega_0^2 x = 0 .
 \end{equation*}
@@ -1393,13 +1393,12 @@ The general solution to this equation is
 \begin{equation*}
 x(t) = A \cos (\omega_0 t) + B \sin (\omega_0 t) .
 \end{equation*}
-By a trigonometric identity, we have that for two 
-different
-constants $C$ and $\gamma$, we have
+By a trigonometric identity
 \begin{equation*}
 A \cos (\omega_0 t) + B \sin (\omega_0 t) =
-C \cos ( \omega_0 t - \gamma ) .
+C \cos ( \omega_0 t - \gamma ) ,
 \end{equation*}
+for two different constants $C$ and $\gamma$.
 It is not hard to compute that $C= \sqrt{A^2 + B^2}$ and $\tan \gamma =
 \nicefrac{B}{A}$.  Therefore, we let
 $C$ and $\gamma$ be our arbitrary constants and write
@@ -1415,20 +1414,22 @@ $\alpha$ and $\beta$ be.
 
 While it is generally easier to use the first form with $A$ and $B$
 to solve for the initial conditions, the second form is much
-more natural.  The constants $C$ and $\gamma$ have very nice interpretation.
-We look at the form of the solution
+more natural.  The constants $C$ and $\gamma$ have nice physical interpretation.
+Write the solution as
 \begin{equation*}
 x(t) = C \cos ( \omega_0 t - \gamma ) .
 \end{equation*}
-We can see that the \emph{\myindex{amplitude}} is $C$, $\omega_0$ is the (angular)
-frequency, and $\gamma$ is the so-called \emph{\myindex{phase shift}}.
+This is a pure-frequency oscillation (a sine wave).
+The \emph{\myindex{amplitude}} is $C$, $\omega_0$ is the (angular)
+\emph{\myindex{frequency}}\index{angular frequency},
+and $\gamma$ is the so-called \emph{\myindex{phase shift}}.
 The phase shift just shifts the
 graph left or right.
 We call $\omega_0$ the \emph{\myindex{natural (angular) frequency}}.
 This entire setup is usually  
 called \emph{\myindex{simple harmonic motion}}.
 
-Let us pause to explain the word \emph{angular}\index{angular frequency}
+Let us pause to explain the word \emph{angular}
 before the word \emph{frequency}.
 The units of
 $\omega_0$ are radians per unit time, not cycles per unit time 
@@ -1452,7 +1453,7 @@ the crash the mass gets loose.  That is, the mass is now
 moving forward at \unitfrac[1]{m}{s}, while the other end of the
 spring is held
 in place.  The mass therefore starts oscillating.
-What is the frequency of the resulting oscillation and what is the amplitude.
+What is the frequency of the resulting oscillation?  What is the amplitude?
 The units are the mks units\index{mks units} (meters-kilograms-seconds).
 
 The setup means that the mass was at half a meter in the positive
@@ -1465,7 +1466,7 @@ So the equation with initial conditions is
 \begin{equation*}
 2 x'' + 8 x = 0 , \qquad x(0) = 0.5, \qquad x'(0) = 1.
 \end{equation*}
-We can directly compute $\omega_0 = \sqrt{\nicefrac{k}{m}} = \sqrt{4} = 2$.
+We directly compute $\omega_0 = \sqrt{\nicefrac{k}{m}} = \sqrt{4} = 2$.
 Hence the angular frequency is 2.  The usual frequency in Hertz (cycles per
 second) is $\nicefrac{2}{2\pi} = \nicefrac{1}{\pi} \approx 0.318$.
 
@@ -1508,7 +1509,7 @@ quadrant, $\nicefrac{\pi}{4}$ radians is in the first quadrant, so $\gamma =
 \nicefrac{\pi}{4}$.
 
 Note: Many
-calculators and computer software do not only have the
+calculators and computer software have not only the
 \texttt{atan}\index{atan} function
 for arctangent, but also what is sometimes called \texttt{atan2}\index{atan2}.
 This function
@@ -2035,10 +2036,10 @@ complementary solution.  That is first we compute $y_c$ (solution to $Ly =
 y_c = C_1 e^{-3x} + C_2 e^{3x} ,
 \end{equation*}
 and we note that the $e^{3x}$ term is a duplicate with our desired guess.
-We modify our guess to $y = Axe^{3x}$ and notice there is no
-duplication anymore.  Let us try.  Note that
+We modify our guess to $y = Axe^{3x}$ so that there is no
+duplication anymore.  Let us try:
 $y' = Ae^{3x} + 3Axe^{3x}$ and 
-$y'' = 6Ae^{3x} + 9Axe^{3x}$.  So
+$y'' = 6Ae^{3x} + 9Axe^{3x}$, so
 \begin{equation*}
 y'' -9y = 6Ae^{3x} + 9Axe^{3x} - 9Axe^{3x} = 
 6Ae^{3x} .
@@ -2080,20 +2081,20 @@ $Ly = L(u+v) = Lu + Lv = e^{2x} + \cos x$.
 
 \subsection{Variation of parameters}
 
-The method of undetermined coefficients will work for many basic
+The method of undetermined coefficients works for many basic
 problems that crop up.  But it does not work all the time.  It only works
-when the right hand side of the equation $Ly = f(x)$ has only finitely many
+when the right hand side of the equation $Ly = f(x)$ has finitely many
 linearly independent derivatives, so that we can write a guess that consists
 of them all.  Some equations are a bit tougher.  Consider
 \begin{equation*}
 y''+y = \tan x .
 \end{equation*}
-Note that each new derivative of $\tan x$ looks completely different and
+Each new derivative of $\tan x$ looks completely different and
 cannot be written as a linear combination of the previous derivatives.
 We get $\sec^2 x$, $2\sec^2 x \tan x$, etc\ldots.
 
 This equation calls for a different method.  We present the method of
-\emph{\myindex{variation of parameters}}, which will handle any equation of
+\emph{\myindex{variation of parameters}}, which handles any equation of
 the form $Ly = f(x)$,
 provided we can solve certain integrals.  For simplicity, we restrict
 ourselves to second order constant coefficient equations,
@@ -2163,7 +2164,7 @@ We now solve for $u_1'$ and $u_2'$ in terms of $f(x)$, $y_1$ and $y_2$.
 We always get these formulas for any $Ly = f(x)$, where $Ly =
 y''+p(x)y'+q(x)y$.  There is a general
 formula for the solution we can just plug into, but it is better to
-just repeat what we do below.  In our case the two equations become
+just repeat what we do below.  In our case the two equations are
 \begin{align*}
 u_1' \cos (x) + u_2' \sin (x) &= 0 ,\\
 -u_1' \sin (x) + u_2' \cos (x) &= \tan (x) .
@@ -2179,7 +2180,7 @@ And thus
 & u_2' = \sin (x) , \\
 & u_1' = \frac{- \sin^2 (x)}{\cos (x)} = - \tan (x) \sin (x) .
 \end{align*}
-Now we need to integrate $u_1'$ and $u_2'$ to get $u_1$ and $u_2$.
+We integrate $u_1'$ and $u_2'$ to get $u_1$ and $u_2$.
 \begin{align*}
 & u_1 = \int u_1'~dx 
 = \int - \tan (x) \sin (x)~dx
@@ -2315,7 +2316,7 @@ $y=\frac{-\sin(x+c)}{3}+C_1 e^{\sqrt{2}\,x}+C_2 e^{-\sqrt{2}\,x}$
 \noindent
 \inputpdft{massfigforce}
 \end{mywrapfigsimp}
-Let us return back to the example of a mass on a spring.  We now examine
+Let us return back to the example of a mass on a spring.  We examine
 the case of forced oscillations, which we did not yet handle.  That is, we consider the equation
 \begin{equation*}
 mx'' + cx' + kx = F(t) ,
@@ -2576,7 +2577,7 @@ where (if $\omega \not= \omega_0$)
 \begin{equation*}
 \tan \gamma = \frac{B}{A} = \frac{2\omega p}{\omega_0^2-\omega^2} .
 \end{equation*}
-Hence we have
+Hence
 \begin{equation*}
 \boxed{~~
 x_p = 
@@ -2584,7 +2585,7 @@ x_p =
 \cos ( \omega t - \gamma ) .
 ~~}
 \end{equation*}
-If $\omega = \omega_0$ we see that $A=0$, $B = C = \frac{F_0}{2m\omega p}$,
+If $\omega = \omega_0$, then $A=0$, $B = C = \frac{F_0}{2m\omega p}$,
 and $\gamma = \nicefrac{\pi}{2}$.
 
 The exact formula is not as important as the idea.  Do not memorize
@@ -2691,11 +2692,13 @@ $2p^2+\omega^2-\omega_0^2 = 0$.  In other words, $C'(\omega) = 0$ when
 ~~
 }
 \end{equation*}
-It can be shown that if 
-$\omega_0^2 - 2p^2$ is positive, then 
+If $\omega_0^2 - 2p^2$ is positive, then
 $\sqrt{\omega_0^2 - 2p^2}$ is the practical resonance frequency (that is the
-point where $C(\omega)$ is maximal, note that in this case $C'(\omega) > 0$
-for small $\omega$).  If $\omega=0$ is the maximum, then
+point where $C(\omega)$ is maximal).  This follows by the first derivative
+test for example as then $C'(\omega) > 0$ for small $\omega$ in this case.
+If on the other hand $\omega_0^2 - 2p^2$ is not positive, then
+$C(\omega)$ achieves its maximum at
+$\omega=0$, and
 there is no practical resonance since we assume $\omega > 0$
 in our system.  In this case the amplitude gets larger as the forcing
 frequency gets smaller.
@@ -2704,7 +2707,7 @@ If practical resonance occurs, the frequency is smaller than
 $\omega_0$.  As the damping $c$ (and hence $p$) becomes smaller, the
 practical resonance frequency
 goes to $\omega_0$.  So when damping is very
-small, $\omega_0$ is a good estimate of the resonance frequency.  This
+small, $\omega_0$ is a good estimate of the practical resonance frequency.  This
 behavior
 agrees with the observation that when $c=0$, then $\omega_0$ is the resonance
 frequency.
