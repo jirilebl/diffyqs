@@ -28,7 +28,10 @@ $macrosextra = "";
 while($line = <$in>)
 {
 	chomp($line);
-	if ($line =~ m/^%mbxSTARTIGNORE/) {
+	if ($line =~ m/^%mbxFIXME/) {
+		printf("FOUND mbxFIXME!\n");
+		exit 1;
+	} elsif ($line =~ m/^%mbxSTARTIGNORE/) {
 		$mbxignore = 1;
 	} elsif ($line =~ m/^%mbxENDIGNORE/) {
 		$mbxignore = 0;
@@ -397,7 +400,10 @@ sub read_paragraph {
 		#as %mbx) but should be ignored by latex
 		$line =~ s/^%mbxlatex //;
 
-		if ($line =~ m/^%mbxSTARTIGNORE/) {
+		if ($line =~ m/^%mbxFIXME/) {
+			printf("FOUND mbxFIXME!\n");
+			exit 1;
+		} eliif ($line =~ m/^%mbxSTARTIGNORE/) {
 			$mbxignore = 1;
 		} elsif ($line =~ m/^%mbxENDIGNORE/) {
 			$mbxignore = 0;

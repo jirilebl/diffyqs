@@ -660,16 +660,12 @@ u(t) =
 \end{cases}
 \end{equation*}
 
-\begin{figure}[h!t]
-%\begin{diffyfloatingfigurepdfonly}{3.1in}
+\begin{myfig}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=3in}{width=4.5in}{lt-heaviside}
 \caption{Plot of the Heaviside (unit step) function
 $u(t)$.\label{lt:heavisidefig}}
-\end{center}
-\end{figure}
-%\end{diffyfloatingfigurepdfonly}
+\end{myfig}
 
 This function is useful for
 putting together functions, or cutting functions off.  Most commonly it is
@@ -778,16 +774,11 @@ x(t) =
 \end{equation*}
 The plot of this solution is given in \figurevref{lt:heavisideexfig}.
 
-\begin{figure}[h!t]
-%\begin{diffyfloatingfigure}{3.1in}{4.6in}
+\begin{myfig}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=3in}{width=4.5in}{lt-heavisideex}
 \caption{Plot of $x(t)$.\label{lt:heavisideexfig}}
-\end{center}
-\end{figure}
-%\end{diffyfloatingfigure}
-%FIXME: check
+\end{myfig}
 \end{example}
 
 \subsection{Transfer functions}
@@ -1464,13 +1455,11 @@ Notice that
 \end{equation*}
 where $u(t)$ is the unit step function.
 
-\begin{figure}[h!t]
-\begin{center}
+\begin{myfig}
 \capstart
 \diffyincludegraphics{width=3in}{width=4.5in}{lt-sqpulse}
 \caption{Sample square pulse with $a=0.5$, $b=1$ and $M = 2$.\label{lt:sqpulse}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 Let us take the Laplace transform of a square pulse,
 \begin{equation*}
@@ -1747,13 +1736,11 @@ $F(x)$ is the force applied per unit length at position $x$.  The situation
 we are interested in is when the force is applied at a single point as in
 \figurevref{lt:beambendingfig}.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \inputpdft{beam-bending}
 \caption{Three-point bending.\label{lt:beambendingfig}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 In this case the equation becomes
 \begin{equation*}
@@ -1923,14 +1910,104 @@ $3 \delta(t-1) + 2 t$
 
 \sectionnewpage
 \section{Solving PDEs with the Laplace transform}
-\label{diracdelta:section}
+\label{laplacepde:section}
 
 \sectionnotes{? lecture\EPref{, \S?.? in \cite{EP}}\BDref{,
 \S?.? in \cite{BD}}}
 
+The Laplace transform comes from the same family of transforms as does the
+Fourier series\footnote{There is a corresponding Fourier transform
+on the real line as well, that looks sort of like the Laplace transform.}.
+It is therefore not surprising that we can also solve PDEs with the Laplace
+transform.
+
+Suppose we have a PDE in two independent variables.  The idea is to use the
+Laplace transform to transform one of the variables (taking the transform
+of everything in sight), and derivatives in that variable become
+multiplications by $s$.  Therefore, a PDE becomes an ODE which can be
+solved.  Then we transform things back.
+It is best to see it on an example.
+
+\begin{example}
+Consider the first order PDE
+\begin{equation*}
+u_t = - \alpha u_x, \qquad \text{for } x > 0, t > 0,
+\end{equation*}
+with side conditions
+\begin{equation*}
+u(0,t) = C, \qquad u(x,0) = 0 .
+\end{equation*}
+This equation is 
+called the \emph{\myindex{convection equation}} or sometimes
+the \emph{\myindex{transport equation}}, and it already made
+an appearance in \sectionref{fopde:section}, with different conditions.
+
+A physical setup of this equation is a river of goo (we are assuming no
+diffusion, or at least very little diffusion).  The function
+$u$ is the concentration of
+some toxic substance (it's a goo already, we're not hurting the environment
+much more).  The variable $x$ denotes position where $x=0$
+is the location of a factory spewing the toxic substance into the
+river.  The toxic substance is poured into the river so that at $x=0$ the
+concentration is always $C$.  We wish to see what happens past the factory,
+that is at $x > 0$.  We let $t$ be the time.  Finally we are assuming the
+factory initiated operation at $t=0$, so that at $t=0$ the river is just
+pure goo.
+
+FIXME: picture of the setup
+
+FIXME: the rest is a dump of notes
+
+Let's use Laplace to solve this since we have just learned it:
+
+$U(x) = {\mathcal L}[u(x,t)]$
+in the $t$ direction and we'll treat $s$ as parameter again.  $u(x,0) = 0$ and
+so
+
+$sU(x) = -\alpha U'(x)$, $U(0) = \frac{C}{s}$.
+So
+$$
+U(x) = \frac{C}{s} e^{-\frac{s}{\alpha} x}
+$$
+For the inverse transform we use the Heaviside function
+$$
+H(t) = \begin{cases} 0 & \text{if $t < 0$}, \\ 1 & \text{otherwise}
+\end{cases}
+$$
+We note
+that
+$$
+{\mathcal L}[H(t-a)] =
+\int_0^\infty H(t-a) e^{-st} dt
+=
+\int_a^\infty e^{-st} dt
+=
+\frac{e^{-as}}{s}
+$$
+So
+$$
+u(x,t) = C H(t-x/\alpha)
+$$
+In other words
+$$
+u(x,t) =
+\begin{cases}
+0 & \text{if $t < x/\alpha$}, \\
+C & \text{otherwise}
+\end{cases}
+$$
+
+DRAW PLOT Slope of wavefront is $1/\alpha$.
+
+Shhh ... $u$ is not differentiable (nobody ever seems to notice this).
+Well, just think of something very very close to $u$ that is differentiable.
+What the equation does is simply move the initial condition to the right at
+speed $\alpha$.
+\end{example}
+
 FIXME: Just a dump from my draft notes:
 
-Maybe a simpler example (variable side codintions on a finite rod? perhaps)  Maybe the first order one first?  What about
+Maybe a simpler example (variable side conditions on a finite rod? perhaps)  Maybe the first order one first?  What about
 infinite $x$ on both sides.
 
 Let us use Laplace for the following problem
@@ -2017,65 +2094,6 @@ $$
 
 FIXME: another dump:
 
-Let us
-solve a simple IBVP.  
-
-PDE: $u_t = - \nu u_x$, $x > 0$, $t > 0$.
-BC: $u(0,t) = C$
-IC: $u(x,0) = 0$.
-
-DRAW the setup.  Think say a river of moving goo (no diffusion),
-where $u$ is concentration of
-some toxic substance (it's a goo already, we're not hurting the environment
-much more).  At $x=0$, $t=0$, we start pouring the toxic substance to the
-river so that at
-$x=0$ the concentration is always $C$.
-
-Let's use Laplace to solve this since we have just learned it:
-
-$U(x) = {\mathcal L}[u(x,t)]$
-in the $t$ direction and we'll treat $s$ as parameter again.  $u(x,0) = 0$ and
-so
-
-$sU(x) = -\nu U'(x)$, $U(0) = \frac{C}{s}$.
-So
-$$
-U(x) = \frac{C}{s} e^{-\frac{s}{\nu} x}
-$$
-For the inverse transform we use the Heaviside function
-$$
-H(t) = \begin{cases} 0 & \text{if $t < 0$}, \\ 1 & \text{otherwise}
-\end{cases}
-$$
-We note
-that
-$$
-{\mathcal L}[H(t-a)] =
-\int_0^\infty H(t-a) e^{-st} dt
-=
-\int_a^\infty e^{-st} dt
-=
-\frac{e^{-as}}{s}
-$$
-So
-$$
-u(x,t) = C H(t-x/\nu)
-$$
-In other words
-$$
-u(x,t) =
-\begin{cases}
-0 & \text{if $t < x/\nu$}, \\
-C & \text{otherwise}
-\end{cases}
-$$
-
-DRAW PLOT Slope of wavefront is $1/\nu$.
-
-Shhh ... $u$ is not differentiable (nobody ever seems to notice this).
-Well, just think of something very very close to $u$ that is differentiable.
-What the equation does is simply move the initial condition to the right at
-speed $\nu$.
 
 
 FIXME

@@ -34,6 +34,7 @@ TECHNICAL:
 * Change all exercise parts to enumerates
 * Made pages larger as in realanal to save paper, but must check that
   the layout still work, especially inset floating figures might go bad.
+* Double check all figures
 * Use more underbrace / cancel (cancel only if really needed,
   it can look weird).
   See subsection 3.9.2

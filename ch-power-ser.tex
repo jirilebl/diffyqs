@@ -120,13 +120,11 @@ We write $\rho=\infty$ if
 the series converges for all $x$.
 \end{theorem}
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \inputpdft{ps-conv}
 \caption{Convergence of a power series.\label{ps:convfig}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 See \figurevref{ps:convfig}.
 In \exampleref{ps:expex} the radius of convergence is $\rho = \infty$
@@ -307,15 +305,13 @@ f(x) = \sum_{k=0}^\infty \frac{f^{(k)}(x_0)}{k!} {(x-x_0)}^k ,
 where $f^{(k)}(x_0)$ denotes the $k^{\text{th}}$ derivative of $f(x)$
 at the point $x_0$.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=3in}{width=4.5in}{ps-sin}
 \caption{The sine function and its Taylor approximations
 around $x_0=0$
 of $5^{\text{th}}$ and $9^{\text{th}}$ degree.\label{ps:sin}}
-\end{center}
-\end{figure}
+\end{myfig}
 For example, sine is an analytic function and its Taylor series
 around $x_0 = 0$
 is given by
@@ -884,13 +880,11 @@ that $y_1(0) = 1$ and $y_2(0) = 0$.  Also,
 $y_1'(0) = 0$ and $y_2'(0) = 1$.  Therefore $y(x)$ is a solution
 that satisfies the initial conditions $y(0) = a_0$ and $y'(0) = a_1$.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=3in}{width=4.5in}{ps-airy}
 \caption{The two solutions $y_1$ and $y_2$ to Airy's equation.\label{ps:airyfig}}
-\end{center}
-\end{figure}
+\end{myfig}
 \end{example}
 The functions $y_1$ and $y_2$ cannot be written in terms of the elementary
 functions that you know.  See \figureref{ps:airyfig} for the plot of
@@ -1690,9 +1684,8 @@ in general the derivative of $J_n(x)$ can be written as a linear
 combination of $J_{n-1}(x)$ and $J_{n+1}(x)$.  Furthermore, these
 functions oscillate, although they are not periodic.  See
 \figurevref{bessel:graphsfig} for graphs of Bessel functions.
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \noindent
 %mbxSTARTIGNORE
 \diffyincludegraphics{width=3in}{width=4.5in}{bessel-first}%
@@ -1702,8 +1695,7 @@ functions oscillate, although they are not periodic.  See
 %mbxlatex \diffyincludegraphics{width=6in}{width=9in}{bessel-first-second}
 \caption{Plot of the $J_0(x)$ and $J_1(x)$ in the first graph
 and $Y_0(x)$ and $Y_1(x)$ in the second graph.\label{bessel:graphsfig}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 \begin{example}
 Other equations can sometimes be solved in terms of the Bessel functions.

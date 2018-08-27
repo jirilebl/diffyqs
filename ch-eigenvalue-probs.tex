@@ -248,14 +248,12 @@ y_1(x) \approx \cos (0.86\, x ) + \frac{1}{0.86} \,
 y_2(x) \approx \cos (3.43\, x ) + \frac{1}{3.43} \,
 \sin (3.43 \, x ) , \qquad \ldots .
 \end{equation*}
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=3in}{width=4.5in}{sl-tanx1overx}
 \caption{Plot of $\frac{1}{x}$ and $\tan x$.%
 \label{sl:tanx1overxfig}}
-\end{center}
-\end{figure}
+\end{myfig}
 \end{example}
 
 \subsection{Orthogonality}
@@ -559,13 +557,11 @@ transversal vibrations of the beam.  That is, assume the beam lies along
 the $x$ axis and let $y(x,t)$ measure the displacement of the point $x$
 on the beam at time $t$.  See \figurevref{appeig:transbeamfig}.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \inputpdft{trans-beam}
 \caption{Transversal vibrations of a beam.\label{appeig:transbeamfig}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 The equation that governs this setup is
 \begin{equation*}
@@ -775,13 +771,11 @@ wave equation problem in this case, where $x$ was the position on the string,
 $t$ was time and $y$ was the displacement of the string.  See
 \figurevref{sps:vibstrfig}.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \inputpdft{sps-vibstr}
 \caption{Vibrating string.\label{sps:vibstrfig}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 The problem is governed by the equations
 \begin{equation} \label{sps:freevib}
@@ -998,20 +992,13 @@ y(x,t) =
 \cos (t) .
 \end{equation}
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=5in}{width=7.5in}{natfreq-forcedvib}
-\caption[Plot of $y(x,t)$.]{Plot of $y(x,t) = \frac{F(x+t) + F(x-t)}{2} + \left( \cos (x) -
+\caption{Plot of $y(x,t) = \frac{F(x+t) + F(x-t)}{2} + \left( \cos (x) -
 \frac{\cos (1) - 1}{\sin (1)} \sin (x) -1 \right) \cos (t)$.%
 \label{natfreq:forcedvibfig}}
-%%%
-%%% Tex4ht is giving trouble here because of the math, it for some
-%%% reason does not like the left and right.  Giving the optional short
-%%% caption without it makes the problem go away.
-%%%
-\end{center}
-\end{figure}
+\end{myfig}
 
 It is not hard to compute specific values
 for an odd periodic extension of a function and
@@ -1025,15 +1012,11 @@ A plot is given in \figurevref{natfreq:forcedvibfig}.
 Let $u(x,t)$ be the temperature at a certain location at depth $x$
 underground at time $t$.  See \figurevref{sps:groundtempfig}.
 
-%\begin{figure}[h!t]
-\begin{diffyfloatingfigurer}{2.5in}{2.5in}
+\begin{mywrapfig}{2.65in}
 \capstart
-\begin{center}
 \inputpdft{sps-groundtemp}
 \caption{Underground temperature.\label{sps:groundtempfig}}
-\end{center}
-\end{diffyfloatingfigurer}
-%\end{figure}
+\end{mywrapfig}
 
 The temperature $u$ satisfies the heat equation $u_t = ku_{xx}$, where $k$
 is the diffusivity of the soil.

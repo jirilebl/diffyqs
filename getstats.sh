@@ -7,8 +7,8 @@ echo
 echo Exercises:"                    \t"`grep '^[\]begin{exercise' *.tex | wc -l`
 echo '\\---> with solutions:         '"\t"`grep '^[\]exsol' *.tex | wc -l`
 echo
-echo Figures:"                      \t"`grep '^[\]begin{\(figure\|diffyfloatingfigure\)' *.tex | wc -l`
-echo '\\---> which are simple insets:'"\t"`grep '^[\]begin{diffyfloatingfiguresimple' *.tex | wc -l`
+echo Figures:"                      \t"`grep '^[\]begin{\(myfig\|mywrapfig\)' *.tex | wc -l`
+echo '\\---> which are simple insets:'"\t"`grep '^[\]begin{mywrapfigsimp' *.tex | wc -l`
 echo
 echo Tables:"                       \t"`grep '^[\]begin{table}' *.tex | wc -l`
 

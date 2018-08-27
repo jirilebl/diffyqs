@@ -6,7 +6,8 @@
 % evil
 \usepackage[perpage,symbol*]{footmisc}
 
-\usepackage{enumerate}
+
+\usepackage[shortlabels]{enumitem}
 \usepackage{ifpdf}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -15,6 +16,7 @@
 \usepackage{graphicx}
 \usepackage{color}
 %\usepackage{graphics}
+\usepackage{tcolorbox}
 
 % Remove page numbers on chapter opens
 % must come before fullpage
@@ -57,9 +59,10 @@
 \usepackage{units}
 \usepackage{booktabs}
 \usepackage{microtype}
-\usepackage{floatflt}
+%\usepackage{floatflt}
 \usepackage{cancel}
-%\usepackage{wrapfig}
+\usepackage{wrapfig}
+%\usepackage{cutwin}
 \usepackage{import}
 
 % Times
@@ -246,15 +249,56 @@ Remark
 % only for pdf output
 \newcommand{\diffypdfversion}[1]{#1}
 
+\newcommand{\mybeginframe}{%
+\begin{tcolorbox}[colback=white,colframe=lightgray,left=5pt,right=5pt]%
+}
+\newcommand{\myendframe}{%
+\end{tcolorbox}%
+}
+
+\newlength\myoldintextsep
+
+% floaty figures
+\newenvironment{mywrapfig}[1]{%
+\setlength{\myoldintextsep}{\intextsep}%
+\setlength{\intextsep}{0.5\intextsep}%
+\wrapfigure{r}{#1}%
+\mybeginframe%
+\centering%
+}{%
+\myendframe%
+\endwrapfigure%
+\setlength{\intextsep}{\myoldintextsep}%
+}
+
+\newenvironment{mywrapfigsimp}[1]{%
+\setlength{\myoldintextsep}{\intextsep}%
+\setlength{\intextsep}{0.5\intextsep}%
+\wrapfigure{r}{#1}%
+\centering%
+}{%
+\setlength{\intextsep}{\myoldintextsep}%
+\endwrapfigure%
+}
+
+\newenvironment{myfig}{%
+\begin{figure}[h!t]
+\mybeginframe%
+\centering%
+}{%
+\myendframe
+\end{figure}%
+}
+
 % Our floating figure with two sizes:
 % Note that floating figures work badly in theorem like environments as those are implemented as
 % lists.  That's why example and remark are reimplemented instead of using
 % amsthm
-\newenvironment{diffyfloatingfigure}[2]{\begin{floatingfigure}{#1}}{\end{floatingfigure}}
-\newenvironment{diffyfloatingfigurer}[2]{\begin{floatingfigure}[r]{#1}}{\end{floatingfigure}}
-\newenvironment{diffyfloatingfiguresimple}[2]{\begin{floatingfigure}{#1}}{\end{floatingfigure}}
-\newenvironment{diffyfloatingfiguresimpler}[2]{\begin{floatingfigure}[r]{#1}}{\end{floatingfigure}}
-\newenvironment{diffyfloatingfigurepdfonly}[1]{\begin{floatingfigure}{#1}}{\end{floatingfigure}}
+%\newenvironment{diffyfloatingfigure}[2]{\begin{wrapfigure}{o}{#1}}{\end{wrapfigure}}
+%\newenvironment{diffyfloatingfigurer}[2]{\begin{wrapfigure}{r}{#1}}{\end{wrapfigure}}
+%\newenvironment{diffyfloatingfiguresimple}[2]{\begin{wrapfigure}{r}{#1}}{\end{wrapfigure}}
+%\newenvironment{diffyfloatingfiguresimpler}[2]{\begin{wrapfigure}{r}{#1}}{\end{wrapfigure}}
+%\newenvironment{diffyfloatingfigurepdfonly}[1]{\begin{wrapfigure}{o}{#1}}{\end{wrapfigure}}
 
 %Do the Index
 \newcommand{\diffyindex}{

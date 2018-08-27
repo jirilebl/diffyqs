@@ -498,13 +498,11 @@ is fixed at the beginning and end
 points.  Hence, $y(0) = 0$ and $y(L) = 0$.  See
 \figureref{bvp:whirstringfig}.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \inputpdft{bvp-whirstring}
 \caption{Whirling string.\label{bvp:whirstringfig}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 We rewrite the equation as
 $y'' + \frac{\rho \omega^2}{T} y = 0$.
@@ -692,14 +690,12 @@ defined only on the half-open interval $(-L,L]$ and then define $f(-L) = f(L)$.
 \begin{example}
 Define $f(t) = 1-t^2$ on $[-1,1]$.  Now extend $f(t)$ periodically to
 a 2-periodic function.  See \figurevref{ts:perextofinvertedparabolafig}.
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=3in}{width=4.5in}{ts-perextofinvertedparabola}
 \caption{Periodic extension of the function
 $1-t^2$.\label{ts:perextofinvertedparabolafig}}
-\end{center}
-\end{figure}
+\end{myfig}
 \end{example}
 
 You should be careful to distinguish between $f(t)$ and its extension.  A common
@@ -913,13 +909,11 @@ f(t) = t
 for $t$ in $(-\pi,\pi]$.  Extend $f(t)$ periodically and write it 
 as a Fourier series.  This function is called the \emph{\myindex{sawtooth}}.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=3in}{width=4.5in}{ts-sawtooth}
 \caption{The graph of the sawtooth function.\label{ts:sawtoothfig}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 The plot of the extended periodic function is given in
 \figurevref{ts:sawtoothfig}.
@@ -992,19 +986,17 @@ The plot of these first three terms of the series, along with a plot
 of the first 20 terms is given in
 \figurevref{ts:sawtoothfsfig}.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 %mbxSTARTIGNORE
 \diffyincludegraphics{width=3in}{width=4.5in}{ts-sawtooth-fs3}
-\qquad
+\quad
 \diffyincludegraphics{width=3in}{width=4.5in}{ts-sawtooth-fs20}
 %mbxENDIGNORE
 %mbxlatex \diffyincludegraphics{width=6in}{width=9in}{ts-sawtooth-fs3-fs20}
 \caption{First 3 (left graph) and 20 (right graph) harmonics of the sawtooth
 function.\label{ts:sawtoothfsfig}}
-\end{center}
-\end{figure}
+\end{myfig}
 \end{example}
 
 \begin{example}
@@ -1022,13 +1014,11 @@ as a Fourier series.  This function or its variants appear often
 in applications and the function is called the
 \emph{\myindex{square wave}}.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=3in}{width=4.5in}{ts-squarewave}
 \caption{The graph of the square wave function.\label{ts:squarewavefig}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 The plot of the extended periodic function is given in
 \figurevref{ts:squarewavefig}.
@@ -1081,19 +1071,17 @@ The plot of these first three and also of the first 20 terms of the series
 is given in
 \figurevref{ts:squarewavefsfig}.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 %mbxSTARTIGNORE
 \diffyincludegraphics{width=3in}{width=4.5in}{ts-squarewave-fs3}
-\qquad
+\quad
 \diffyincludegraphics{width=3in}{width=4.5in}{ts-squarewave-fs20}
 %mbxENDIGNORE
 %mbxlatex \diffyincludegraphics{width=6in}{width=9in}{ts-squarewave-fs3-fs20}
 \caption{First 3 (left graph) and 20 (right graph) harmonics of the
 square wave function.\label{ts:squarewavefsfig}}
-\end{center}
-\end{figure}
+\end{myfig}
 \end{example}
 
 We have so far skirted the issue of convergence.  For example,
@@ -1143,15 +1131,13 @@ This behavior is known as the \emph{\myindex{Gibbs phenomenon}}.
 The region where the error is large does get smaller, however, the more
 terms in the series we take.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=3in}{width=4.5in}{ts-squarewave-gibbs}
 \caption{Gibbs phenomenon in action.\label{ts:squarewavegibbsfig}}
-\end{center}
-\end{figure}
+\end{myfig}
 
-We can think of a periodic function as a \myquote{signal} being a superposition of 
+We can think of a periodic function as a \myquote{signal} being a superposition of
 many signals of pure frequency.  For example, we could think of the square
 wave as a tone of certain base frequency.
 This base frequency is called the
@@ -1377,13 +1363,11 @@ extended periodically.  The plot of the
 periodic extension is given in \figurevref{gfs:sawcontfig}.
 Compute the Fourier series of $f(t)$.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=3in}{width=4.5in}{gfs-sawcont}
 \caption{Periodic extension of the function $f(t)$.\label{gfs:sawcontfig}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 We want to
 write $f(t) = \frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos (n \pi t) + b_n
@@ -1439,9 +1423,8 @@ harmonic is given in
 to the real function.  You should also notice that there is no
 \myquote{Gibbs phenomenon} present as there are no discontinuities.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 %mbxSTARTIGNORE
 \diffyincludegraphics{width=3in}{width=4.5in}{gfs-sawcontfs3}
 \quad
@@ -1451,8 +1434,7 @@ to the real function.  You should also notice that there is no
 \caption{Fourier series of $f(t)$ up to the $3^{\text{rd}}$ harmonic (left
 graph)
 and up to the ${20}^{\text{th}}$ harmonic (right graph).\label{gfs:sawcontfsfig}}
-\end{center}
-\end{figure}
+\end{myfig}
 \end{example}
 
 \subsection{Convergence}
@@ -1636,13 +1618,11 @@ and extend to a
 2-periodic function.  The plot is given in
 \figurevref{gfs:smoothexfig}.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=3in}{width=4.5in}{gfs-smoothex}
 \caption{Smooth 2-periodic function.\label{gfs:smoothexfig}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 This function has one derivative everywhere, but it
 does not have a second derivative whenever $t$ is an integer.
@@ -2053,9 +2033,8 @@ Take the function $f(t) = t\,(1-t)$ defined on $[0,1]$.
 \figurevref{scs:oddevenextfig}
 shows the plots of the odd and even periodic extensions of $f(t)$.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 %mbxSTARTIGNORE
 \diffyincludegraphics{width=3in}{width=4.5in}{scs-oddext}
 \quad
@@ -2064,8 +2043,7 @@ shows the plots of the odd and even periodic extensions of $f(t)$.
 %mbxlatex \diffyincludegraphics{width=6in}{width=9in}{scs-ext-odd-even}
 \caption{Odd and even 2-periodic extension of $f(t) =
 t\,(1-t)$, $0 \leq t \leq 1$.\label{scs:oddevenextfig}}
-\end{center}
-\end{figure}
+\end{myfig}
 \end{example}
 
 \subsection{Sine and cosine series}
@@ -2539,10 +2517,10 @@ not in \cite{BD}}}
 
 \subsection{Periodically forced oscillation}
 
-\begin{diffyfloatingfiguresimple}{2.0in}{2.3in}
+\begin{mywrapfigsimp}{2.0in}
 \noindent
 \inputpdft{massfigforce}
-\end{diffyfloatingfiguresimple}
+\end{mywrapfigsimp}
 Let us return to the forced oscillations.  Consider a mass-spring system as
 before, where we have a mass $m$
 on a spring with spring constant $k$,
@@ -2710,15 +2688,13 @@ x_{sp}(t) = \frac{1}{4} + \sum_{\substack{n=1 \\ n \text{ odd}}}^\infty
 We know this is the steady periodic solution as it contains no terms 
 of the complementary solution and it is periodic with the same period as
 $F(t)$ itself.  See \figurevref{afs:steadyexfig} for the plot of this solution.
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=3in}{width=4.5in}{afs-steadyex}
 \caption{Plot of the steady periodic solution $x_{sp}$ of
 \exampleref{afs:steadyex}.%
 \label{afs:steadyexfig}}
-\end{center}
-\end{figure}
+\end{myfig}
 \end{example}
 
 \subsection{Resonance}
@@ -3025,13 +3001,11 @@ except at the
 endpoints.  Let $x$ denote the position along the wire and let $t$ denote
 time.  See \figurevref{heat:wirefig}.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \inputpdft{heat-wire}
 \caption{Insulated wire.\label{heat:wirefig}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 Let $u(x,t)$ denote the temperature at point $x$ at time $t$.
 The equation governing this setup is the
@@ -3231,14 +3205,12 @@ Let $k=0.003$.  Then suppose that initial heat distribution
 is $u(x,0) = 50\,x\,(1-x)$.
 See \figurevref{heat:wireexinitfig}.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=3in}{width=4.5in}{heat-wireex-init}
 \caption{Initial distribution of temperature in the
 wire.\label{heat:wireexinitfig}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 We want to find the temperature function $u(x,t)$.  Let us suppose we also
 want to find when (at what $t$) does the maximum temperature in the wire 
@@ -3266,14 +3238,12 @@ b_n = 2 \int_0^1 50\,x\,(1-x) \sin (n \pi x) ~dx
 \end{cases}
 \end{equation*}
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=5in}{width=7.5in}{heat-wireex}
 \caption{Plot of the temperature of the wire at position $x$
 at time $t$.\label{heat:wireexfig}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 
 The solution $u(x,t)$, plotted in
@@ -3318,15 +3288,13 @@ Let us plot the function $u(0.5,t)$, the temperature at the midpoint of the wire
 at time $t$, in \figurevref{heat:wireexmaxfig}.  The figure also
 plots the approximation by the first term.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=3in}{width=4.5in}{heat-wireex-max}
 \caption{Temperature at the midpoint of the wire (the bottom curve),
 and the approximation of this temperature by using only the first term in
 the series (top curve).\label{heat:wireexmaxfig}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 After $t=5$ or so
 it would be hard to tell the difference
@@ -3479,14 +3447,12 @@ u(x,t)
 \, e^{-n^2 \pi^2 \, 0.003 \, t} .
 \end{equation*}
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=5in}{width=7.5in}{heat-wireisolex}
 \caption{Plot of the temperature of the insulated wire at position $x$
 at time $t$.\label{heat:wireisolexfig}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 Note in the graph
 that the temperature evens out across the wire.  Eventually, all the
@@ -3679,13 +3645,11 @@ denote the displacement of the string from the rest position.
 See
 \figurevref{we:vibstrfig}.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \inputpdft{sps-vibstr}
 \caption{Vibrating string.\label{we:vibstrfig}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 The equation that governs this setup is the so-called
 \emph{\myindex{one-dimensional wave equation}}\index{wave equation}:
@@ -3960,13 +3924,11 @@ The string starts at rest ($g(x) =
 0$).  Suppose that $a=1$ in the wave
 equation for simplicity.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \inputpdft{wave-pluckedstr}
 \caption{Plucked string.\label{wave:pluckedstrfig}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 We leave it to the reader to compute the sine series of $f(x)$.  The series
 will be
@@ -4024,13 +3986,11 @@ y(x,t) & =
 \end{split}
 \end{equation*}
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=5in}{width=7.5in}{wave-pluckedex}
 \caption{Shape of the plucked string for $0 < t < 3$.\label{wave:pluckedexfig}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 A plot for $0 < t < 3$ is given in \figurevref{wave:pluckedexfig}.  Notice
 that unlike the heat equation, the solution does not become
@@ -4479,9 +4439,8 @@ $y(0.1,0.6) = \frac{-1 + 0}{2} = -0.5$.  As you can see the d'Alembert
 solution is much easier to actually compute and to plot than the Fourier series
 solution.  See \figurevref{dalemb:impulsfig} for plots of the solution $y$
 for several different $t$.
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \noindent
 %mbxSTARTIGNORE
 \diffyincludegraphics{width=3in}{width=4.5in}{dalemb-impuls1}%
@@ -4501,8 +4460,7 @@ for several different $t$.
 \caption{Plot of the d'Alembert solution for $t=0$, $t=0.2$, $t=0.4$, and
 $t=0.6$.%
 \label{dalemb:impulsfig}}
-\end{center}
-\end{figure}
+\end{myfig}
 \end{example}
 
 \subsection{Another way to solve for the side conditions}
@@ -4946,14 +4904,12 @@ u(x,y) =
 .
 \end{equation*}
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=5in}{width=7.5in}{dirichsquareplot}
 \caption{Steady state temperature of a square plate with three sides
 held at zero and one side held at $\pi$.\label{dirichsquareplot:fig}}
-\end{center}
-\end{figure}
+\end{myfig}
 \end{example}
 
 This scenario
@@ -5170,11 +5126,11 @@ A more natural setting for the Laplace equation $\Delta u = 0$
 is the circle rather than the square.  On the other hand, what makes the
 problem somewhat more difficult is that we need polar coordinates.
 
-\begin{diffyfloatingfiguresimpler}{1.3in}{1.5in}
+\begin{mywrapfigsimp}{1.3in}
 \noindent
 \inputpdft{polarcoords}
-\\
-\end{diffyfloatingfiguresimpler}
+\diffypdfversion{\vspace*{10pt}}
+\end{mywrapfigsimp}
 Recall that the polar coordinates for the $(x,y)$-plane are $(r,\theta)$: 
 \begin{equation*}
 x = r \cos \theta , \quad y = r \sin \theta ,
@@ -5187,10 +5143,6 @@ to solve.  We have a circular region of radius 1, and we are interested
 in the Dirichlet problem for the Laplace equation for this region.  Let
 $u(r,\theta)$ denote the temperature at the point $(r,\theta)$ in polar
 coordinates.  We have the problem:
-\begin{diffyfloatingfiguresimpler}{2.4in}{2.7in}
-\noindent
-\inputpdft{dirichdiscsetup}
-\end{diffyfloatingfiguresimpler}
 \begin{equation} \label{dirichdisc:theprobeq}
 \begin{aligned}
 & \Delta u = 0 , & & \text{for } \; r < 1, \\
@@ -5198,6 +5150,10 @@ coordinates.  We have the problem:
 \end{aligned}
 \end{equation}
 
+\begin{mywrapfigsimp}{2.4in}
+\noindent
+\inputpdft{dirichdiscsetup}
+\end{mywrapfigsimp}
 The first issue we face is that we do not know what the Laplacian
 is in polar coordinates.
 Normally we would find $u_{xx}$ and $u_{yy}$ in terms of
@@ -5208,10 +5164,12 @@ reverse.  Let us instead compute derivatives in $r$ and $\theta$ in terms
 of derivatives in $x$ and $y$ and then solve.  The
 computations are easier this way.  First
 \begin{equation*}
-x_r = \cos \theta, \qquad
-x_\theta = - r \sin \theta, \qquad
-y_r = \sin \theta, \qquad
+\begin{aligned}
+& x_r = \cos \theta, & &
+x_\theta = - r \sin \theta, \\
+& y_r = \sin \theta, & &
 y_\theta = r \cos \theta.
+\end{aligned}
 \end{equation*}
 Next by chain rule we obtain
 \begin{align*}
@@ -5419,14 +5377,12 @@ The thing to notice in this example is that the effect of a high frequency
 is mostly felt at the boundary.  In the middle of the disc, the solution
 is very close to zero.  That is because $r^{10}$ is rather small when $r$
 is close to 0.
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=5in}{width=7.5in}{dirichdisc-tenspeed}
 \caption{The solution of the Dirichlet problem in the disc with
 $\cos(10\,\theta)$ as boundary data.\label{dirichdisc:tenspeedfig}}
-\end{center}
-\end{figure}
+\end{myfig}
 \end{example}
 
 \begin{example}
@@ -5477,14 +5433,12 @@ r\sin(\theta)
 +
 \sum_{n=1}^\infty \frac{-4r^{2n}}{\pi(4n^2-1)}\, \cos(2n\theta) .
 \end{equation*}
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=5in}{width=7.5in}{dirichdisc-zero2y}
 \caption{The solution of the Dirichlet problem with
 boundary data 0 for $y < 0$ and $2y$ for $y > 0$.\label{dirichdisc:zero2yfig}}
-\end{center}
-\end{figure}
+\end{myfig}
 %The plot of the solution is given in \figurevref{dirichdisc:zero2yfig}.
 \end{example}
 
@@ -5716,10 +5670,10 @@ Also, often the limits
 of the integral are given as 0 to $2\pi$; everything inside is
 $2\pi$-periodic in $\alpha$, so this does not change the integral.
 
-\begin{diffyfloatingfiguresimpler}{2.1in}{2.4in}
+\begin{mywrapfigsimp}{2.1in}
 \noindent
 \inputpdft{poisson}
-\end{diffyfloatingfiguresimpler}
+\end{mywrapfigsimp}
 Let us not leave the Poisson kernel without explaining its geometric
 meaning.  Let $s$ be the distance from $(r,\theta)$ to
 $(1,\alpha)$.

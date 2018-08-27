@@ -399,9 +399,9 @@ As we said, the general first order equation we are studying looks like
 \begin{equation*}
 y' = f(x,y).
 \end{equation*}
-In general, we cannot simply solve these kinds of equations explicitly.
+A lot of the time, we cannot simply solve these kinds of equations explicitly.
 It would be nice if we could at least figure out the shape and behavior of
-the solutions, or if we could find approximate solutions.
+the solutions, or find approximate solutions.
 
 \subsection{Slope fields}
 
@@ -409,82 +409,85 @@ the solutions, or if we could find approximate solutions.
 The equation $y' = f(x,y)$
 gives you a slope at each point 
 in the
-$(x,y)$-plane.  And this is the slope a solution $y(x)$ would have at the
+$(x,y)$-plane.  And this is the slope a solution $y(x)$ would have 
+at $x$ if its value was $y$.  In other words, $f(x,y)$ is the slope
+of a solution whose graph runs through the
 point $(x,y)$.  At a point $(x,y)$, we plot a short line
 with the slope $f(x,y)$.
 For example, if $f(x,y) = xy$, then at point $(2,1.5)$ we draw a
-short line of slope $2 \times 1.5 = 3$.  That is, if $y(x)$ is a solution
+short line of slope $xy = 2 \times 1.5 = 3$.  So, if $y(x)$ is a solution
 and $y(2) = 1.5$, then the equation mandates that $y'(2) = 3$.
 See \figurevref{1.3:fig0}.
 
-\begin{figure}[h!t]
-%\begin{diffyfloatingfigurepdfonly}{3.1in}
-\begin{center}
+\begin{myfig}
 \capstart
 \diffyincludegraphics{width=3in}{width=4.5in}{1-3-xysl-one}
 \caption{The slope $y'=xy$ at $(2,1.5)$.\label{1.3:fig0}}
-\end{center}
-%\end{diffyfloatingfigurepdfonly}
-\end{figure}
+\end{myfig}
 
-To get an idea of how the solutions behave, we draw such lines at lots
-of points in the plane, not just the point $(2,1.5)$.  Usually we pick a
-grid of such points fine enough so that it shows the behavior, but not too
+To get an idea of how solutions behave, we draw such lines at lots
+of points in the plane, not just the point $(2,1.5)$.  We would
+ideally want to see the slope at every point, but that is
+just not possible.  Usually we pick a
+grid of points fine enough so that it shows the behavior, but not too
 fine so that we can still recognize the individual lines.
-See \figurevref{1.3:fig1}.
 We call this picture the \emph{\myindex{slope field}} of the equation.
+See \figurevref{1.3:fig1} for the slope field of the equation $y' = xy$.
 Usually in practice, one does not do this by hand, but has a computer do the
 drawing.
 
 Suppose we are given a specific initial condition $y(x_0) = y_0$.
 A solution, that is, the graph of the solution, would be a curve
-that follows the slopes.  For a few sample
-solutions, see \figurevref{1.3:fig2}.  It is easy to roughly sketch (or at
-least imagine)
+that follows the slopes we drew.
+For a few sample
+solutions, see \figurevref{1.3:fig2}.  It is easy to roughly sketch
+(or at least imagine)
 possible solutions in the slope field, just from looking at the slope field
-itself.
+itself.  You simply sketch a line that roughly fits the little line segments
+and goes through your initial condition.
 
-\begin{figure}[h!t]
-\begin{center}
-\parbox[t]{3.1in}{
+\begin{myfig}
+\parbox[t]{3.0in}{
  \capstart
- \diffyincludegraphics{width=3in}{width=4.5in}{1-3-xysl}
+ \diffyincludegraphics{width=3.0in}{width=4.5in}{1-3-xysl}
  \caption{Slope field of $y' = xy$.\label{1.3:fig1}}
 }
 \quad
-\parbox[t]{3.1in}{
+\parbox[t]{3.0in}{
  \capstart
- \diffyincludegraphics{width=3in}{width=4.5in}{1-3-xysl-sol}
+ \diffyincludegraphics{width=3.0in}{width=4.5in}{1-3-xysl-sol}
  \caption{Slope field of $y' = xy$ with a graph of solutions satisfying
  $y(0) = 0.2$, $y(0) = 0$, and $y(0) = -0.2$.\label{1.3:fig2}}
 }
-\end{center}
-\end{figure}
+\end{myfig}
 
-By looking at the slope field we can get a lot of information
-about the behavior of
-solutions.  For
-example, in \figureref{1.3:fig2} we can see what the solutions do when the initial conditions
+By looking at the slope field we get a lot of information
+about the behavior of solutions without having to solve
+the equation.  For
+example, in \figureref{1.3:fig2} we see what the solutions do when the initial conditions
 are $y(0) > 0$, $y(0) = 0$ and $y(0) < 0$.
-Note that a small change in the
+A small change in the
 initial condition causes quite different behavior.
-We can see this behavior just
-from the slope field imagining what solutions ought to do.
-On the other hand, plotting a few solutions of the equation
-$y' = -y$,
+We see this behavior just
+from the slope field and imagining what solutions ought to do.
+
+We see a different behavior for the equation
+$y' = -y$.  The slope field and a few solutions is in
+see \figurevref{1.3:fig3}.
+If we think of moving from left to right (perhaps $x$ is time
+and time is usually increasing), then
 we see that no matter what $y(0)$ is, all solutions tend to zero as $x$
 tends to infinity.
-See \figurevref{1.3:fig3}.  Again that behavior should be clear from simply
+Again that behavior is clear from simply
 from looking at the slope field itself.
 
-\begin{figure}[h!t]
-\begin{center}
+\begin{myfig}
 \capstart
 \diffyincludegraphics{width=3in}{width=4.5in}{1-3-mysl-sol}
 \caption{Slope field of $y' = -y$ with a graph of a few solutions.\label{1.3:fig3}}
-\end{center}
-\end{figure}
+\end{myfig}
 
+\pagebreak[2]
 \subsection{Existence and uniqueness}
 
 We wish to ask two fundamental questions about the problem
@@ -519,22 +522,20 @@ Integrate to find the general solution $y = \ln \, \lvert x \rvert + C$.  The
 solution does not exist at $x=0$.  See \figurevref{1.3:xinvfig}.
 The equation may have been written as the seemingly harmless $x y' = 1$.
 
-\begin{figure}[h!t]
-\begin{center}
-\parbox[t]{3.1in}{
+\begin{myfig}
+\parbox[t]{3in}{
  \capstart
  \diffyincludegraphics{width=3in}{width=4.5in}{1-3-xinv-sol}
  \caption{Slope field of $y' = \nicefrac{1}{x}$.\label{1.3:xinvfig}}
 }
 \quad
-\parbox[t]{3.1in}{
+\parbox[t]{3in}{
  \capstart
  \diffyincludegraphics{width=3in}{width=4.5in}{1-3-sqrt-sol}
  \caption{Slope field of $y' = 2 \sqrt{\lvert y \rvert}$ with two
  solutions satisfying $y(0) = 0$.\label{1.3:sqrtfig}}
 }
-\end{center}
-\end{figure}
+\end{myfig}
 \end{example}
 
 \begin{example}
@@ -1261,10 +1262,10 @@ For example, linear equations are used in
 figuring out the concentration of
 chemicals in bodies of water (rivers and lakes).
 
-\begin{diffyfloatingfiguresimpler}{1.45in}{1.75in}
+\begin{mywrapfigsimp}{1.35in}
 \noindent
 \inputpdft{lin-tank}
-\end{diffyfloatingfiguresimpler}
+\end{mywrapfigsimp}
 A 100 liter tank contains 10 kilograms of salt dissolved in 60 liters of
 water.  Solution of water and salt (brine) with concentration of 0.1
 kilograms per
@@ -1352,15 +1353,17 @@ dt
 +C{(60+2t)}^{-3/2} .
 \end{align*}
 
-\begin{diffyfloatingfigurepdfonly}{3.1in}
+%mbxBEGINIGNORE
+\begin{mywrapfig}{3.25in}
 \capstart
-\begin{center}
-\diffypdfversion{\vspace*{-0.4cm}}
 \diffyincludegraphics{width=3in}{width=4.5in}{linear-salt-graph}
 \caption{Graph of the solution $x$ kilograms of salt in the tank at time
 $t$.\label{linear-salt-graph:fig}}
-\end{center}
-\end{diffyfloatingfigurepdfonly}
+\end{mywrapfig}
+%mbxENDIGNORE
+%
+% Make sure to keep the above and the the mbx figure below in sync!
+%
 We need to find $C$.  We know that at $t=0$, $x=10$.  So
 \begin{equation*}
 10 = x(0)
@@ -1376,7 +1379,7 @@ or
 C=4 ({60}^{3/2}) \approx 1859.03 .
 \end{equation*}
 
-We are interested in $x$ when the tank is full.  So we note that the tank is
+We are interested in $x$ when the tank is full.  The tank is
 full when $60+2t = 100$, or when $t=20$.  So
 \begin{equation*}
 \begin{split}
@@ -1393,16 +1396,15 @@ x(20) & =
 \end{equation*}
 See \figurevref{linear-salt-graph:fig} for the graph of $x$ over $t$.
 
-The concentration at the end is approximately \unitfrac[0.1186]{kg}{liter} and we started
+The concentration when the tank is full is approximately
+\unitfrac[0.1186]{kg}{liter}, and we started
 with $\nicefrac{1}{6}$ or \unitfrac[0.167]{kg}{liter}.
-%\begin{figure}[h!t]
-%\begin{center}
-%\capstart
-%\diffyincludegraphics{width=3in}{width=4.5in}{linear-salt-graph}
-%\caption{Graph of the solution $x$ kilograms of salt in the tank at time
-%$t$.\label{linear-salt-graph:fig}}
-%\end{center}
-%\end{figure}
+%mbxlatex \begin{myfig}
+%mbxlatex \capstart
+%mbxlatex \diffyincludegraphics{width=3in}{width=4.5in}{linear-salt-graph}
+%mbxlatex \caption{Graph of the solution $x$ kilograms of salt in the tank at time
+%mbxlatex $t$.\label{linear-salt-graph:fig}}
+%mbxlatex \end{myfig}
 \end{example}
 
 \subsection{Exercises}
@@ -1859,9 +1861,8 @@ In this simple example it turns out that all solutions in fact go to $A$
 as $t \to \infty$.  If a critical point is not stable we would say it is
 \emph{unstable}\index{unstable critical point}.
 
-\begin{figure}[h!t]
-\begin{center}
-\parbox[t]{3.1in}{
+\begin{myfig}
+\parbox[t]{3.0in}{
  \capstart
  \diffyincludegraphics{width=2.93in}{width=4.5in}{2-2-coffee}
  \caption{The slope field and some solutions of
@@ -1870,14 +1871,13 @@ as $t \to \infty$.  If a critical point is not stable we would say it is
  %$t=0$, $x=10$, $x=5$, $x=0$, $x=-5$, $x=-10$.
 }
 \quad
-\parbox[t]{3.1in}{
+\parbox[t]{3.0in}{
  \capstart
  \diffyincludegraphics{width=3in}{width=4.5in}{2-2-logistic}
  \caption{The slope field and some solutions of
  $x' = 0.1\,x\,(5-x)$.\label{2.2:logisticfig}}
 }
-\end{center}
-\end{figure}
+\end{myfig}
 
 \medskip
 
@@ -1992,7 +1992,7 @@ B = \frac{kM - \sqrt{{(kM)}^2 - 4hk}}{2k} .
 \end{equation*}
 
 \begin{exercise}
-Draw the phase diagram for different possibilities.  Note
+Sketch a phase diagram for different possibilities.  Note
 that these possibilities are $A > B$, or $A=B$, or $A$ and $B$ both complex
 (i.e.\ no real solutions).  Hint: Fix some simple $k$ and $M$ and then vary
 $h$.
@@ -2008,23 +2008,21 @@ the population drops below $B$,
 humans will die out, and the fast food restaurant serving them will go out
 of business.
 
-\begin{figure}[h!t]
-\begin{center}
-\parbox[t]{3.1in}{
+\begin{myfig}
+\parbox[t]{3.0in}{
  \capstart
  \diffyincludegraphics{width=3in}{width=4.5in}{2-2-logistic-h1}
  \caption{The slope field and some solutions of
  $x' = 0.1\,x\,(8-x)-1$.\label{2.2:harv1}}
 }
 \quad
-\parbox[t]{3.1in}{
+\parbox[t]{3.0in}{
  \capstart
  \diffyincludegraphics{width=3in}{width=4.5in}{2-2-logistic-hc}
  \caption{The slope field and some solutions of
  $x' = 0.1\,x\,(8-x)-1.6$.\label{2.2:harvc}}
 }
-\end{center}
-\end{figure}
+\end{myfig}
 
 When $h = 1.6$, then $A=B=4$.  There is only one critical point and it is
 unstable.  When the population starts above 4 million it will tend towards
@@ -2039,14 +2037,12 @@ The population
 will always plummet towards zero, no matter how well stocked the planet
 starts.  See \figurevref{2.2:harv2}.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=3in}{width=4.5in}{2-2-logistic-h2}
 \caption{The slope field and some solutions of
 $x' = 0.1\,x\,(8-x)-2$.\label{2.2:harv2}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 %$dx/dt = 0.1*x*(8-x)-1$, $t: [0,20], x: [-5,10]$,
 
@@ -2054,31 +2050,37 @@ $x' = 0.1\,x\,(8-x)-2$.\label{2.2:harv2}}
 
 \begin{exercise}
 Take $x' = x^2$.
-a) Draw the phase diagram,
+\begin{enumerate}[a)]
+\item Draw the phase diagram,
 find the critical points, and mark them stable or unstable.
-b) Sketch typical solutions of the equation.
-c) Find $\displaystyle \lim_{t\to \infty} x(t)$ for the solution with the initial condition
+\item Sketch typical solutions of the equation.
+\item Find $\displaystyle \lim_{t\to \infty} x(t)$ for the solution with the initial condition
 $x(0) = -1$.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
 Take $x' = \sin x$.
-a) Draw the phase diagram for $-4\pi \leq x \leq 4\pi$.  On this interval
+\begin{enumerate}[a)]
+\item Draw the phase diagram for $-4\pi \leq x \leq 4\pi$.  On this interval
 mark the critical points stable or unstable.
-b) Sketch typical solutions of the equation.
-c) Find $\displaystyle \lim_{t\to \infty} x(t)$ for the solution with the initial condition
+\item Sketch typical solutions of the equation.
+\item Find $\displaystyle \lim_{t\to \infty} x(t)$ for the solution with the initial condition
 $x(0) = 1$.
+\end{enumerate}
 \end{exercise}
 
 \begin{samepage}
 \begin{exercise}
 Suppose $f(x)$ is positive for $0 < x < 1$, it is zero when $x=0$ and $x=1$,
 and it is negative for all other $x$.
-a) Draw the phase diagram for $x' = f(x)$,
+\begin{enumerate}[a)]
+\item Draw the phase diagram for $x' = f(x)$,
 find the critical points, and mark them stable or unstable.
-b) Sketch typical solutions of the equation.
-c) Find $\displaystyle \lim_{t\to \infty} x(t)$ for the solution with the initial condition
+\item Sketch typical solutions of the equation.
+\item Find $\displaystyle \lim_{t\to \infty} x(t)$ for the solution with the initial condition
 $x(0) = 0.5$.
+\end{enumerate}
 \end{exercise}
 \end{samepage}
 
@@ -2089,31 +2091,40 @@ Suppose we modify our harvesting.  That is we will only harvest
 an amount proportional to current population.  In other words, we harvest $hx$
 per unit of time
 for some $h > 0$ (Similar to earlier example with $h$ replaced with $hx$).
-a)~Construct the differential equation.  b)~Show that if $kM > h$, then
-the equation is still logistic.  c)~What happens when $kM < h$?
+\begin{enumerate}[a)]
+\item Construct the differential equation. 
+\item Show that if $kM > h$, then
+the equation is still logistic.
+\item What happens when $kM < h$?
+\end{enumerate}
 \end{exercise}
 
-\pagebreak[2]
 \begin{exercise}
 A disease is spreading through the country.  Let $x$ be the number of people
 infected.  Let the constant $S$ be the number of people susceptible to
 infection.  The infection rate $\frac{dx}{dt}$ is proportional to the product
 of already infected people, $x$, and the number of susceptible but
 uninfected people, $S-x$.
-a)~Write down the differential equation.
-b)~Supposing $x(0) > 0$, that is, some people are infected at time $t=0$,
+\begin{enumerate}[a)]
+\item Write down the differential equation.
+\item Supposing $x(0) > 0$, that is, some people are infected at time $t=0$,
 what is
 $\displaystyle \lim_{t\to\infty} x(t)$.
-c)~Does the solution to part b) agree with your intuition?  Why or why not?
+\item Does the solution to part b) agree with your intuition?  Why or why not?
+\end{enumerate}
 \end{exercise}
 
 
 \setcounter{exercise}{100}
 
 \begin{exercise}
-Let $x'=(x-1)(x-2)x^2$.  a)~Sketch the phase diagram and find critical
-points.  b)~Classify the critical points.  c)~If $x(0)=0.5$ then
-find $\displaystyle \lim_{t\to\infty} x(t)$.
+Let $x'=(x-1)(x-2)x^2$.
+\begin{enumerate}[a)]
+\item Sketch the phase diagram and find critical
+points.
+\item Classify the critical points.
+\item If $x(0)=0.5$ then find $\displaystyle \lim_{t\to\infty} x(t)$.
+\end{enumerate}
 \end{exercise}
 \exsol{%
 \\
@@ -2125,9 +2136,12 @@ c) 1
 }
 
 \begin{exercise}
-Let $x'=e^{-x}$. a) Find and classify all critical points.  b)
-Find $\displaystyle \lim_{t\to\infty} x(t)$ given any 
+Let $x'=e^{-x}$.
+\begin{enumerate}[a)]
+\item Find and classify all critical points.
+\item Find $\displaystyle \lim_{t\to\infty} x(t)$ given any 
 initial condition.
+\end{enumerate}
 \end{exercise}
 \exsol{%
 a) There are no critical points.
@@ -2138,8 +2152,11 @@ b) $\infty$
 \begin{exercise}
 Assume that a population of fish in a lake satisfies
 $\frac{dx}{dt} = kx(M-x)$.  Now suppose that fish are continually added
-at $A$ fish per unit of time.  a) Find the differential equation for $x$.
-b)~What is the new limiting population?
+at $A$ fish per unit of time.
+\begin{enumerate}[a)]
+\item Find the differential equation for $x$.
+\item What is the new limiting population?
+\end{enumerate}
 \end{exercise}
 \exsol{%
 a) $\frac{dx}{dt} = kx(M-x)+A$
@@ -2149,14 +2166,18 @@ b) $\frac{kM + \sqrt{{(kM)}^2 + 4Ak}}{2k}$
 
 \begin{exercise}
 Suppose $\frac{dx}{dt} = (x-\alpha)(x-\beta)$ for two numbers $\alpha <
-\beta$.\\
-a) Find the critical points, and classify them.
-\\
+\beta$.
+\begin{enumerate}[a)]
+\item Find the critical points, and classify them.
+\end{enumerate}
+%mbxFIXME
 For b), c), d), find $\displaystyle \lim_{t\to\infty} x(t)$ based on
-the phase diagram.\\
-b) $x(0) < \alpha$, \qquad
-c) $\alpha < x(0) < \beta$, \qquad
-d) $\beta < x(0)$.
+the phase diagram.
+\begin{enumerate}[a),resume]
+\item $x(0) < \alpha$,
+\item $\alpha < x(0) < \beta$,
+\item $\beta < x(0)$.
+\end{enumerate}
 \end{exercise}
 \exsol{%
 a) $\alpha$ is a stable critical point, $\beta$ is an unstable one.
@@ -2211,20 +2232,18 @@ Rinse, repeat!  That is, compute $x_2$ and $y_2$ using $x_1$ and $y_1$.
 For an example of the first two steps of the method see
 \figurevref{euler-step12:fig}.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 %mbxSTARTIGNORE
 \diffyincludegraphics{width=3in}{width=4.5in}{euler-step1}
-\qquad
+\quad
 \diffyincludegraphics{width=3in}{width=4.5in}{euler-step2}
 %mbxENDIGNORE
 %mbxlatex \diffyincludegraphics{width=6in}{width=9in}{euler-steps-1-2}
 \caption{First two steps of Euler's method with $h=1$ for
 the equation $y' = \frac{y^2}{3}$ with initial conditions $y(0)=1$.%
 \label{euler-step12:fig}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 More abstractly, for any $i=1,2,3,\ldots$, we compute
 \begin{equation*}
@@ -2236,16 +2255,14 @@ Generally it is not exactly the solution.  See
 \figurevref{euler-step12-sol:fig} for the plot of the real solution
 and the approximation.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=3in}{width=4.5in}{euler-step12-sol}
 \caption{Two steps of Euler's method (step size 1) and the exact solution for
 the equation $y' = \frac{y^2}{3}$ with initial conditions $y(0)=1$.
 %
 \label{euler-step12-sol:fig}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 Let us see what happens with the equation $y' = \nicefrac{y^2}{3}$, $y(0)=1$.
 Let us try
@@ -2272,6 +2289,7 @@ error.  If we knew the error exactly \ldots what is the point of doing the
 approximation?
 
 \begin{table}[h!t]
+\mybeginframe
 \capstart
 \begin{center}
 \begin{tabular}{@{}rrrr@{}}
@@ -2291,6 +2309,7 @@ $h$ & Approximate $y(2)$ & Error & $\frac{\text{Error}}{\text{Previous error}}$ 
 \end{center}
 \caption{Euler's method approximation of $y(2)$ where
 of $y'=\nicefrac{y^2}{3}$, $y(0)=1$.\label{euler-table:table}}
+\myendframe
 \end{table}
 
 We notice that except for the first few times, every time we halved 
@@ -2350,6 +2369,7 @@ notice that the solution does not exist at $x=3$.  In fact, the solution goes
 to infinity when you approach $x=3$.
 
 \begin{table}[h!t]
+\mybeginframe
 \capstart
 \begin{center}
 \begin{tabular}{@{}rr@{}}
@@ -2369,6 +2389,7 @@ $h$ & Approximate $y(3)$ \\
 \end{center}
 \caption{Attempts to use Euler's to approximate $y(3)$ where
 of $y'=\nicefrac{y^2}{3}$, $y(0)=1$.\label{euler-table2:table}}
+\myendframe
 \end{table}
 
 Another case where things go bad is if the solution oscillates wildly
@@ -2601,20 +2622,15 @@ Let us make up a simple example.  Let
 F(x,y) = x^2+y^2 .
 \end{equation*}
 
-%\begin{figure}[h!t]
-\begin{diffyfloatingfigurepdfonly}{3.1in}
+\begin{mywrapfig}{3.25in}
 \capstart
-\begin{center}
-\diffypdfversion{\vspace*{-0.4cm}}
 \diffyincludegraphics{width=3in}{width=4.5in}{circlesfig}
 \caption{Solutions to $F(x,y) = x^2+y^2 = C$ for various
 $C$.\label{exact:circlesfig}}
-\diffypdfversion{\vspace*{0.4cm}}
-\end{center}
-%\end{figure}
-\end{diffyfloatingfigurepdfonly}
+\end{mywrapfig}
 We are interested in the lines of constant energy, that is lines where
-the energy is conserved;  we want curves where $F(x,y) = C$, for some constant $C$.  In
+the energy is conserved;  we want curves where $F(x,y) = C$,
+for some constant $C$.  In
 our example, the curves $x^2+y^2=C$ are circles.  See
 \figurevref{exact:circlesfig}.
 
@@ -2882,19 +2898,13 @@ $y = \tan(C) x$.  That is, the solution is a straight line.  Solving $y(1) =
 2$ gives us that $\tan(C) = 2$, and so $y= 2x$ is the desired solution.
 See \figurevref{exact:y2x}, and note that the solution only exists for $x >
 0$.
-\begin{figure}[h!t]
-%\begin{diffyfloatingfigurepdfonly}{3.1in}
+\begin{myfig}
 \capstart
-\begin{center}
-%\diffypdfversion{\vspace*{-0.4cm}}
 \diffyincludegraphics{width=3in}{width=4.5in}{exact-y2x}
 \caption{Solution to 
 $-\frac{y}{x^2+y^2} dx + \frac{x}{x^2+y^2} dy = 0$, $y(1) = 2$,
 with initial point marked.\label{exact:y2x}}
-%\diffypdfversion{\vspace*{0.4cm}}
-\end{center}
-\end{figure}
-%\end{diffyfloatingfigurepdfonly}
+\end{myfig}
 \end{example}
 
 \begin{example} \label{exact:exampleabove}
@@ -3273,7 +3283,8 @@ Consider the equation
 u_t + \alpha u_x = 0, \qquad u(x,0) = f(x) .
 \end{equation*}
 This particular equation, $u_t + \alpha u_x = 0$, is
-called the \emph{\myindex{convection equation}}.
+called the \emph{\myindex{convection equation}} or sometimes
+the \emph{\myindex{transport equation}}.
 
 The data will propagate along curves called characteristics.  The
 idea is to change to the
@@ -3325,13 +3336,11 @@ See \figurevref{fopde:charcurves}.
 In this case, the solution does not change
 along the characteristic.
 
-\begin{figure}[h!t]
+\begin{mywrapfig}{2.8in}
 \capstart
-\begin{center}
 \inputpdft{char-curves}
 \caption{Characteristic curves.\label{fopde:charcurves}}
-\end{center}
-\end{figure}
+\end{mywrapfig}
 
 In the $(x,t)$ coordinates, the characteristic curves have
 the equation $t = \frac{1}{\alpha} ( x- \xi)$, and in fact lines.
@@ -3339,19 +3348,18 @@ The slope of characteristic lines is
 $\frac{1}{\alpha}$, and for each different $\xi$ we get a different
 characteristic line.
 
-We can see why $u_t + \alpha u_x = 0$ is called the
+We see why $u_t + \alpha u_x = 0$ is called the
 convection equation: everything travels at some constant speed.
 An example application is material being moved by a river where the material
-does not diffuse and is simply carried along.  In this setup, $x$ may be
-position along the river, $t$ is the time, and $u(x,t)$ the concentration the
-material at the position $x$ at time $t$.  See
+does not diffuse and is simply carried along.  In this setup, $x$ is 
+the position along the river, $t$ is the time, and $u(x,t)$ the concentration the
+material at position $x$ and time $t$.  See
 \figurevref{fopde:transportfig} for an example.
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 %mbxSTARTIGNORE
 \diffyincludegraphics{width=3in}{width=4.5in}{fopde-transport-1}
-\qquad
+\quad
 \diffyincludegraphics{width=3in}{width=4.5in}{fopde-transport-2}
 %mbxENDIGNORE
 %mbxlatex \diffyincludegraphics{width=6in}{width=9in}{sosa-modes-1-2}
@@ -3360,11 +3368,9 @@ initial condition $f(x)$ is a peak at the origin.  On the left is a graph
 of the initial condition $u(x,0)$ and on the right is a graph of
 the function $u(x,1)$, that is at time $t=1$, and notice it is one unit to
 the right.\label{fopde:transportfig}}
-\end{center}
-\end{figure}
+\end{myfig}
 \end{example}
 
-\pagebreak[2]
 We can use similar idea in the more general case:
 \begin{equation*}
 a u_x + b u_t + c u = g, \qquad u(x,0) = f(x)  .
@@ -3409,13 +3415,11 @@ corresponds to $t=0$, that is $t(0) = 0$.  It will be convenient also for
 $x(0) = \xi$.
 See \figurevref{fopde:charcurvecurvy}.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \inputpdft{char-curve-curvy}
 \caption{General characteristic curve.\label{fopde:charcurvecurvy}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 
 \begin{example}
@@ -3464,14 +3468,12 @@ e^{-{(x-t)}^2-t} + (1 - x + t) e^{-t} +x-1 .
 \end{equation*}
 See \figurevref{fopde:surfaceplot} for a plot of $u(x,t)$ as a function of
 two variables.
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=5in}{width=7.5in}{sol-to-fo-pde}
 \caption{Plot of the solution $u(x,t)$ to
 $u_x + u_t + u = x$,  $u(x,0) = e^{-x^2}$.\label{fopde:surfaceplot}}
-\end{center}
-\end{figure}
+\end{myfig}
 \end{example}
 
 \pagebreak[2]

@@ -1242,10 +1242,10 @@ coefficient equations.
 
 \subsection{Some examples}
 
-\begin{diffyfloatingfiguresimple}{2.0in}{2.3in}
+\begin{mywrapfigsimp}{2.0in}
 \noindent
 \inputpdft{massfigforce}
-\end{diffyfloatingfiguresimple}
+\end{mywrapfigsimp}
 Our first example is a mass on a spring.  Suppose we have a mass $m > 0$
 (in kilograms) connected
 by a spring with spring constant $k > 0$ (in newtons per meter)
@@ -1288,10 +1288,11 @@ before you jump off the bridge, right?  Let us give two other examples.
 
 \medskip
 
-\begin{diffyfloatingfiguresimple}{1.35in}{1.65in}
+\begin{mywrapfigsimp}{1.35in}
+\diffypdfversion{\vspace*{-10pt}}
 \noindent
 \inputpdft{mv-rlc}
-\end{diffyfloatingfiguresimple}
+\end{mywrapfigsimp}
 Here is an example for electrical engineers.  Suppose that we have the
 pictured \myindex{RLC circuit}.
 There is a resistor with a resistance of $R$ ohms, an
@@ -1316,11 +1317,10 @@ unforced motion.
 
 \medskip
 
-\begin{diffyfloatingfiguresimple}{1.45in}{1.75in}
-\diffypdfversion{\vspace*{-0.2cm}}
+\begin{mywrapfigsimp}{1.46in}
 \noindent
 \inputpdft{mv-pend}
-\end{diffyfloatingfiguresimple}
+\end{mywrapfigsimp}
 Our next example behaves like a mass and spring system only
 approximately. Suppose we have a
 mass $m$ on a pendulum of length $L$.  We wish to find an equation for
@@ -1345,13 +1345,11 @@ In \figurevref{mv:sinthetafig} we can see that for approximately
 $-0.5 < \theta < 0.5$ (in radians) the graphs of $\sin \theta$ and $\theta$ are almost the
 same.
 
-\begin{figure}[h!t]
+\begin{mywrapfig}{3.25in}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=3in}{width=4.5in}{mv-sintheta}
 \caption{The graphs of $\sin \theta$ and $\theta$ (in radians).\label{mv:sinthetafig}}
-\end{center}
-\end{figure}
+\end{mywrapfig}
 
 Therefore, when the swings are small, $\theta$ is always small and we can
 model the behavior by the simpler linear equation
@@ -1477,17 +1475,13 @@ $C = \sqrt{A^2+B^2} = \sqrt{0.25+0.25} = \sqrt{0.5} \approx 0.707$.  The solutio
 x(t) = 0.5 \cos (2t) + 0.5 \sin (2t) .
 \end{equation*}
 A plot of $x(t)$ is shown in \figurevref{mv:undampedfig}.
+\end{example}
 
-\begin{figure}[h!t]
-%\begin{floatingfigure}{3.1in}
+\begin{mywrapfig}{3.25in}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=3in}{width=4.5in}{mv-undamped}
 \caption{Simple undamped oscillation.\label{mv:undampedfig}}
-\end{center}
-\end{figure}
-%\end{floatingfigure}
-\end{example}
+\end{mywrapfig}
 
 In general, for free undamped motion, a solution of the
 form
@@ -1551,6 +1545,17 @@ nonnegative, or in other words if $c^2 \geq 4km$.
 
 \subsubsection{Overdamping}
 
+%mbxSTARTIGNORE
+\begin{mywrapfig}{3.25in}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{mv-overdamped}
+\caption{Overdamped motion for several different initial conditions.\label{mv:overdampedfig}}
+\end{mywrapfig}
+%mbxENDIGNORE
+%
+% make sure the MBX below is synced!
+%
+
 When
 $c^2 - 4km > 0$, we say the system is \emph{\myindex{overdamped}}.  In this case,
 there are two distinct real roots $r_1$ and $r_2$.  Both roots are
@@ -1558,17 +1563,6 @@ negative:  As $\sqrt{p^2 - \omega_0^2}$ is always less than $p$,
 then
 $-p \pm \sqrt{p^2 - \omega_0^2}$ is negative in either case.
 
-%\begin{figure}[h!t]
-\begin{diffyfloatingfigurepdfonly}{3.1in}
-\capstart
-\begin{center}
-\diffypdfversion{\vspace*{-0.4cm}}
-\diffyincludegraphics{width=3in}{width=4.5in}{mv-overdamped}
-\caption{Overdamped motion for several different initial conditions.\label{mv:overdampedfig}}
-\diffypdfversion{\vspace*{0.4cm}}
-\end{center}
-%\end{figure}
-\end{diffyfloatingfigurepdfonly}
 
 The solution is
 \begin{equation*}
@@ -1578,6 +1572,11 @@ Since $r_1, r_2$ are negative, $x(t) \to 0$ as $t \to \infty$.
 Thus the mass will tend towards the rest position as
 time goes to infinity.  For a few sample plots for different initial
 conditions, see \figurevref{mv:overdampedfig}.
+
+%mbxlatex \begin{myfig}
+%mbxlatex \diffyincludegraphics{width=3in}{width=4.5in}{mv-overdamped}
+%mbxlatex \caption{Overdamped motion for several different initial conditions.\label{mv:overdampedfig}}
+%mbxlatex \end{myfig}
 
 Do note that no oscillation happens.  In fact, the graph will cross the $x$
 axis at most once.  To see why, we try to solve
@@ -1620,17 +1619,15 @@ dwell on critical damping.
 \subsubsection{Underdamping}
 
 %mbxSTARTIGNORE
-%\begin{figure}[h!t]
-\begin{diffyfloatingfigurepdfonly}{3.1in}
+\begin{mywrapfig}{3.25in}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=3in}{width=4.5in}{mv-underdamped}
 \caption{Underdamped motion with the envelope curves shown.\label{mv:underdampedfig}}
-\end{center}
-%\end{figure}
-\end{diffyfloatingfigurepdfonly}
+\end{mywrapfig}
 %mbxENDIGNORE
-% for the MBX see below
+%
+% make sure the MBX below is synced!
+%
 
 When
 $c^2 - 4km < 0$, we say the system is \emph{\myindex{underdamped}}.  In this case,
@@ -1656,10 +1653,10 @@ x(t) = C e^{-pt} \cos ( \omega_1 t - \gamma ) .
 An example plot is given in \figurevref{mv:underdampedfig}.  Note that we
 still have that $x(t) \to 0$ as $t \to \infty$.
 
-%mbxlatex \begin{figure}[h!t]
+%mbxlatex \begin{myfig}
 %mbxlatex \diffyincludegraphics{width=3in}{width=4.5in}{mv-underdamped}
 %mbxlatex \caption{Underdamped motion with the envelope curves shown.\label{mv:underdampedfig}}
-%mbxlatex \end{figure}
+%mbxlatex \end{myfig}
 
 In the figure
 we also show the \emph{\myindex{envelope curves}}
@@ -2307,11 +2304,11 @@ $y=\frac{-\sin(x+c)}{3}+C_1 e^{\sqrt{2}\,x}+C_2 e^{-\sqrt{2}\,x}$
 \sectionnotes{2 lectures\EPref{, \S3.6 in \cite{EP}}\BDref{,
 \S3.8 in \cite{BD}}}
 
-\begin{diffyfloatingfiguresimple}{2.0in}{2.3in}
+\begin{mywrapfigsimp}{2.0in}
+\diffypdfversion{\vspace*{-10pt}}
 \noindent
 \inputpdft{massfigforce}
-%\vspace*{0.3in}
-\end{diffyfloatingfiguresimple}
+\end{mywrapfigsimp}
 Let us return back to the example of a mass on a spring.  We now examine
 the case of forced oscillations, which we did not yet handle.  That is, we consider the equation
 \begin{equation*}
@@ -2387,6 +2384,19 @@ x = C_1 \cos (4 t) + C_2 \sin (4 t) +
 \frac{20}{16 - \pi^2} \cos (\pi t) .
 \end{equation*}
 
+%mbxSTARTIGNORE
+\begin{mywrapfig}{3.25in}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{3-6-beating}
+\caption{Graph of
+$\frac{20}{16 - \pi^2} \bigl( \cos (\pi t)- \cos (4 t) \bigr)$.\label{3.6:beatingfig}}
+\end{mywrapfig}
+%mbxSTARTIGNORE
+%
+% make sure the MBX below is synced!
+%
+
+
 Solve for $C_1$ and $C_2$ using the initial conditions.
 It is easy to see that
 $C_1 = \frac{-20}{16 - \pi^2}$ and $C_2 = 0$.  Hence
@@ -2395,21 +2405,12 @@ x =
 \frac{20}{16 - \pi^2} \bigl( \cos (\pi t)- \cos (4 t) \bigr) .
 \end{equation*}
 
-\begin{diffyfloatingfigurepdfonly}{3.1in}
-%\begin{figure}[h!t]
-\capstart
-\begin{center}
-\diffyincludegraphics{width=3in}{width=4.5in}{3-6-beating}
-\caption[Graph of \myquote{beating} behavior.]{Graph of
-$\frac{20}{16 - \pi^2} \bigl( \cos (\pi t)- \cos (4 t) \bigr)$.\label{3.6:beatingfig}}
-%%%
-%%% Tex4ht is giving trouble here because of the math, it for some
-%%% reason does not like the bigl and bigr.  Giving the optional short
-%%% caption without it makes the problem go away.
-%%%
-\end{center}
-\end{diffyfloatingfigurepdfonly}
-%\end{figure}
+%mbxlatex \begin{myfig}
+%mbxlatex \capstart
+%mbxlatex \diffyincludegraphics{width=3in}{width=4.5in}{3-6-beating}
+%mbxlatex \caption{Graph of
+%mbxlatex $\frac{20}{16 - \pi^2} \bigl( \cos (\pi t)- \cos (4 t) \bigr)$.\label{3.6:beatingfig}}
+%mbxlatex \end{myfig}
 
 Notice the \myquote{beating} behavior\index{beating}
 in \figurevref{3.6:beatingfig}.  First
@@ -2453,18 +2454,6 @@ x = C_1 \cos (\omega t) + C_2 \sin (\omega t)
 + \frac{F_0}{2m\omega} \, t \sin (\omega t) .
 \end{equation*}
 
-
-\begin{diffyfloatingfigurepdfonly}{3.1in}
-%\begin{figure}[h!t]
-\capstart
-\begin{center}
-\diffyincludegraphics{width=3in}{width=4.5in}{3-6-resonance}
-\caption{Graph of
-$\frac{1}{\pi} t \sin (\pi t)$.\label{3.6:resonancefig}}
-\end{center}
-%\end{figure}
-\end{diffyfloatingfigurepdfonly}
-
 The important term is the last one (the particular solution we found).  
 This term grows without bound as $t \to \infty$.  In fact it
 oscillates 
@@ -2474,6 +2463,13 @@ $\pm\sqrt{C_1^2 + C_2^2}$, which becomes smaller and smaller in proportion to
 the oscillations of the last term as $t$ gets larger.  In
 \figurevref{3.6:resonancefig} we see the graph with $C_1=C_2=0$, $F_0 = 2$,
 $m=1$, $\omega = \pi$.
+
+\begin{mywrapfig}{3.25in}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{3-6-resonance}
+\caption{Graph of
+$\frac{1}{\pi} t \sin (\pi t)$.\label{3.6:resonancefig}}
+\end{mywrapfig}
 
 By forcing the system in just the right frequency we produce very wild
 oscillations.  This kind of behavior is called \emph{\myindex{resonance}} or
@@ -2605,16 +2601,17 @@ The general solution to our problem is
 x = x_c + x_p = x_{tr} + x_{sp} .
 \end{equation*}
 
-\begin{diffyfloatingfigurepdfonly}{3.1in}
-%\begin{figure}[h!t]
+%mbxSTARTIGNORE
+\begin{mywrapfig}{3.25in}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=3in}{width=4.5in}{3-6-transbeh}
 \caption{Solutions with different initial conditions for parameters
 $k=1$, $m=1$, $F_0 = 1$, $c=0.7$, and $\omega=1.1$.\label{3.6:transbehfig}}
-\end{center}
-%\end{figure}
-\end{diffyfloatingfigurepdfonly}
+\end{mywrapfig}
+%mbxENDIGNORE
+%
+% make sure the MBX below is synced!
+%
 
 The transient solution $x_c = x_{tr}$ goes to zero as $t \to \infty$,
 as all the terms involve an exponential with a negative exponent.  So
@@ -2628,6 +2625,13 @@ Because of this behavior,
 we might as well focus on the
 steady periodic solution and ignore the transient solution.  See
 \figurevref{3.6:transbehfig} for a graph given several different initial conditions.
+
+%mbxlatex \begin{myfig}
+%mbxlatex \capstart
+%mbxlatex \diffyincludegraphics{width=3in}{width=4.5in}{3-6-transbeh}
+%mbxlatex \caption{Solutions with different initial conditions for parameters
+%mbxlatex $k=1$, $m=1$, $F_0 = 1$, $c=0.7$, and $\omega=1.1$.\label{3.6:transbehfig}}
+%mbxlatex \end{mywrapfig}
 
 The speed at which $x_{tr}$ goes to zero depends on $p$ (and
 hence $c$).  The
@@ -2656,16 +2660,14 @@ values of $c$ is given in \figurevref{3.6:pracresfig}.  As you can see the
 practical resonance amplitude grows as damping gets smaller, and 
 practical resonance can disappear altogether when damping is large.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=3in}{width=4.5in}{3-6-pracres}
 \caption{Graph of $C(\omega)$ showing practical resonance with parameters
 $k=1$, $m=1$, $F_0 = 1$. The top line is with $c=0.4$, the middle line with
 $c=0.8$, and the bottom line with
 $c=1.6$.\label{3.6:pracresfig}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 To find the maximum we need to find the derivative $C'(\omega)$.
 Computation shows

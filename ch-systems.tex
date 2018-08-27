@@ -45,11 +45,11 @@ single equations.
 For example, for the above system a
 \emph{solution}\index{solution to a system}
 is the set of three functions $x_1(t)$, $x_2(t)$, $x_3(t)$, such that
-\begin{equation*}
-x_1'(t) = g_1\bigl(x_1(t),x_2(t),x_3(t),t\bigr) , \quad
-x_2'(t) = g_2\bigl(x_1(t),x_2(t),x_3(t),t\bigr) , \quad
-x_3'(t) = g_3\bigl(x_1(t),x_2(t),x_3(t),t\bigr) .
-\end{equation*}
+\begin{align*}
+x_1'(t) &= g_1\bigl(x_1(t),x_2(t),x_3(t),t\bigr) , \\
+x_2'(t) &= g_2\bigl(x_1(t),x_2(t),x_3(t),t\bigr) , \\
+x_3'(t) &= g_3\bigl(x_1(t),x_2(t),x_3(t),t\bigr) .
+\end{align*}
 
 We usually also have an
 \emph{initial condition}\index{initial condition for a system}.  Just like
@@ -127,13 +127,11 @@ First, we consider salt and brine tanks, but this time water flows
 from one to the other and back.  We again consider that the tanks are
 evenly mixed.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \inputpdft{lin-tank-sys}
 \caption{A closed system of two brine tanks.\label{sintro:closedbrine}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 Suppose we have two tanks, each containing volume $V$ liters of salt brine.
 The amount of salt in the first tank is $x_1$ grams, and the amount of salt
@@ -154,7 +152,7 @@ x_1' = \frac{x_2}{V} r - \frac{x_1}{V} r =
 \frac{r}{V} x_2 - \frac{r}{V} x_1  = \frac{r}{V} (x_2-x_1).
 \end{equation*}
 Similarly we find the rate $x_2'$, where the roles of $x_1$ and $x_2$
-are reversed.  All in all, the system is
+are reversed.  All in all, the system of ODEs for this problem is
 \begin{align*}
 x_1' & = \frac{r}{V} (x_2-x_1), \\
 x_2' & = \frac{r}{V} (x_1-x_2).
@@ -164,9 +162,9 @@ solve for both $x_1$ and $x_2$ at once, which is intuitively clear since
 the amount of salt in one tank affects the amount in the other.
 We can't know $x_1$ before we know $x_2$, and vice versa.
 
-We can't yet find all the solutions, but
+We don't yet know how to find all the solutions, but
 intuitively we can at least find some solutions.  Suppose we
-know that initially, the tanks have the same amount of salt.  That is,
+know that initially the tanks have the same amount of salt.  That is,
 we have an initial condition such as $x_1(0)=x_2(0) = C$.  Then clearly the
 amount of salt coming and out of each tank is the same, so the amounts are
 not changing.  In other words, $x_1 = C$ and $x_2 = C$ (the constant
@@ -187,13 +185,13 @@ you will find out that this really is so.
 
 \begin{example} \label{sintro:carts-example}
 Let us look at another example, this time second order.
-Let us think of mass and spring setup again, but this time we will
+We return to the mass and spring setup again, but this time we will
 consider two masses.
 
-\begin{diffyfloatingfiguresimple}{2.00in}{2.25in}
+\begin{mywrapfigsimp}{2.00in}
 \noindent
 \inputpdft{cartsfig}
-\end{diffyfloatingfiguresimple}
+\end{mywrapfigsimp}
 Suppose we have one spring with constant $k$, but two masses $m_1$
 and $m_2$.  We can think of the masses as carts, and we will suppose that
 they ride along a straight track with no friction.  Let $x_1$ be the displacement of the first
@@ -357,25 +355,23 @@ we compute $x(2)$ and $y(2)$ to find
 $x(2) \approx 2.475$ and $y(2) \approx 2.457$.  This point corresponds
 to the top right end of the plotted solution curve in the figure.
 
-\begin{figure}[h!t]
-\begin{center}
-\parbox[t]{3.1in}{
+\begin{myfig}
+\parbox[t]{3.0in}{
  \capstart
- \diffyincludegraphics{width=2.9in}{width=4.5in}{sintro-vectorfield}
+ \diffyincludegraphics{width=3.0in}{width=4.5in}{sintro-vectorfield}
  \caption{The direction field for $x' = 2y-x$, $y' = x$.%
  \label{sintro-vectorfield:fig}}
 }
 \quad
-\parbox[t]{3.1in}{
+\parbox[t]{3.0in}{
  \capstart
- \diffyincludegraphics{width=2.9in}{width=4.5in}{sintro-vectorfield-sol}
+ \diffyincludegraphics{width=3.0in}{width=4.5in}{sintro-vectorfield-sol}
  \caption{The direction field for $x' = 2y-x$, $y' = x$ with
  the trajectory of the solution starting at $(1,0)$
  for $0 \leq t \leq 2$.%
  \label{sintro-vectorfield-sol:fig}}
 }
-\end{center}
-\end{figure}
+\end{myfig}
 
 
 Notice the similarity to the diagrams we drew for autonomous systems in one
@@ -2656,15 +2652,11 @@ eigenvectors.
 
 \medskip
 
-%\begin{figure}[h!t]
-\begin{diffyfloatingfigurepdfonly}{3.1in}
+\begin{mywrapfig}{3.25in}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=3in}{width=4.5in}{pln-source-eig}
 \caption{Eigenvectors of $P$.\label{pln:source-eigfig}}
-\end{center}
-%\end{figure}
-\end{diffyfloatingfigurepdfonly}
+\end{mywrapfig}
 
 
 \emph{Case 1.}  Suppose that the eigenvalues of $P$ are real and positive.
@@ -2707,22 +2699,20 @@ with arrows coming out from the origin.
 Hence we call this type of picture a
 \emph{\myindex{source}} or sometimes an \emph{\myindex{unstable node}}.
 
-\begin{figure}[h!t]
-\begin{center}
-\parbox[t]{3.1in}{
+\begin{myfig}
+\parbox[t]{3.0in}{
  \capstart
  \diffyincludegraphics{width=3in}{width=4.5in}{pln-source-eig-arr}
  \caption{Eigenvectors of $P$ with directions.\label{pln:source-eig-arrfig}}
 }
 \quad
-\parbox[t]{3.1in}{
+\parbox[t]{3.0in}{
  \capstart
  \diffyincludegraphics{width=3in}{width=4.5in}{pln-source-full}
  \caption{Example source vector field with eigenvectors and
  solutions.\label{pln:source-fullfig}}
 }
-\end{center}
-\end{figure}
+\end{myfig}
 
 \medskip
 
@@ -2739,23 +2729,21 @@ the eigenvalues are negative and hence all arrows are reversed.  We get the
 picture in \figurevref{pln:sink-fullfig}.  We call this kind of picture a
 \emph{\myindex{sink}} or sometimes a \emph{\myindex{stable node}}.
 
-\begin{figure}[h!t]
-\begin{center}
-\parbox[t]{3.1in}{
+\begin{myfig}
+\parbox[t]{3.0in}{
  \capstart
  \diffyincludegraphics{width=3in}{width=4.5in}{pln-sink-full}
  \caption{Example sink vector field with eigenvectors and
  solutions.\label{pln:sink-fullfig}}
 }
 \quad
-\parbox[t]{3.1in}{
+\parbox[t]{3.0in}{
  \capstart
  \diffyincludegraphics{width=3in}{width=4.5in}{pln-saddle-full}
  \caption{Example saddle vector field with eigenvectors and
  solutions.\label{pln:saddle-fullfig}}
 }
-\end{center}
-\end{figure}
+\end{myfig}
 
 \medskip
 
@@ -2809,21 +2797,19 @@ So when the eigenvalues are purely imaginary, we get
 solutions.  This type of picture is sometimes called a
 \emph{\myindex{center}}.  See \figurevref{pln:ellipsesfig}.
 
-\begin{figure}[h!t]
-\begin{center}
-\parbox[t]{3.1in}{
+\begin{myfig}
+\parbox[t]{3.0in}{
  \capstart
  \diffyincludegraphics{width=3in}{width=4.5in}{pln-ellipses}
  \caption{Example center vector field.\label{pln:ellipsesfig}}
 }
 \quad
-\parbox[t]{3.1in}{
+\parbox[t]{3.0in}{
  \capstart
  \diffyincludegraphics{width=3in}{width=4.5in}{pln-spiral-source}
  \caption{Example spiral source vector field.\label{pln:spiral-sourcefig}}
 }
-\end{center}
-\end{figure}
+\end{myfig}
 
 \medskip
 
@@ -2883,13 +2869,11 @@ shrink in magnitude while spinning around the origin.  Hence we get
 a \emph{\myindex{spiral sink}}.
 See \figurevref{pln:spiral-sinkfig}.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=3in}{width=4.5in}{pln-spiral-sink}
 \caption{Example spiral sink vector field.\label{pln:spiral-sinkfig}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 \medskip
 
@@ -2898,6 +2882,7 @@ in \tableref{pln:behtab}.
 
 \begin{table}[h!t]
 \capstart
+\mybeginframe
 \begin{center}
 \begin{tabular}{@{}ll@{}}
 \toprule
@@ -2913,6 +2898,7 @@ complex with negative real part & spiral sink \\
 \end{tabular}
 \end{center}
 \caption{Summary of behavior of linear homogeneous two dimensional systems.\label{pln:behtab}}
+\myendframe
 \end{table}
 
 Systems where one of the eigenvalues is zero also come up in practice, see
@@ -3042,13 +3028,11 @@ as usual, positive values go right (as $x_1$ grows, the first mass is
 moving right).
 See \figurevref{sosa:threecartsfig}.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \inputpdft{threecartsfig}
 \caption{System of masses and springs.\label{sosa:threecartsfig}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 This simple system turns up in unexpected places.  For example, 
 our world really consists of many small particles of matter interacting together.
@@ -3218,17 +3202,15 @@ are missing to zero.
 \subsection{Examples}
 
 \begin{example}
-Suppose we have the system in \figurevref{sosa:twocartswallfig}, with
+Suppose we have the setup in \figurevref{sosa:twocartswallfig}, with
 $m_1 = \unit[2]{kg}$, $m_2 = \unit[1]{kg}$, $k_1 = \unitfrac[4]{N}{m}$, and
 $k_2 = \unitfrac[2]{N}{m}$.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \inputpdft{twocartswallfig}
 \caption{System of masses and springs.\label{sosa:twocartswallfig}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 The equations we write down are
 \begin{equation*}
@@ -3278,21 +3260,19 @@ And the two (angular) frequencies are the
 The first natural frequency is 1, and second natural frequency is 2.
 The two modes are plotted in \figurevref{sosa:modesfig}.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 %Interesting, the mode1 picture is slightly larger
 %mbxSTARTIGNORE
 \diffyincludegraphics{width=2.9in}{width=4.5in}{sosa-mode1}
-\qquad
+\quad
 \diffyincludegraphics{width=3in}{width=4.5in}{sosa-mode2}
 %mbxENDIGNORE
 %mbxlatex \diffyincludegraphics{width=6in}{width=9in}{sosa-modes-1-2}
 \caption{The two modes of the mass-spring system.  In the left plot
 the masses are moving in unison and in the right plot are masses moving in the
 opposite direction.\label{sosa:modesfig}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 Let us write the solution as
 \begin{equation*}
@@ -3344,13 +3324,11 @@ The bumper acts like a spring of spring constant $k=\unitfrac[2]{N}{m}$.
 The second
 car is 10 meters from a wall.  See \figurevref{sosa:railcarscrashfig}.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \inputpdft{railcarscrash}
 \caption{The crash of two rail cars.\label{sosa:railcarscrashfig}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 We want to ask several questions.  At what time after the cars link does
 impact with the wall happen?  What is the speed of car 2 when it hits the
@@ -3467,15 +3445,11 @@ We have $x_2(t) =
 2 t - \frac{2}{\sqrt{3}} \sin (\! \sqrt{3} \, t)$.  See \figurevref{sosa:railcarfig}
 for the plot of $x_2$ versus time.
 
-%\begin{figure}[h!t]
-\begin{diffyfloatingfigurepdfonly}{3.1in}
+\begin{mywrapfig}{3.25in}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=3in}{width=4.5in}{sosa-railcar}
 \caption{Position of the second car in time (ignoring the wall).\label{sosa:railcarfig}}
-\end{center}
-%\end{figure}
-\end{diffyfloatingfigurepdfonly}
+\end{mywrapfig}
 
 
 Just from the graph we can see that time of impact will be a little

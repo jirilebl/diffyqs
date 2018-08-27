@@ -26,11 +26,10 @@ also give us qualitative understanding about a more general nonlinear
 problem.  The idea is similar to what you did in calculus in trying to
 approximate a function by a line with the right slope.
 
-\begin{diffyfloatingfiguresimple}{1.45in}{1.75in}
+\begin{mywrapfigsimp}{1.45in}
 \noindent
 \inputpdft{mv-pend}
-\end{diffyfloatingfiguresimple}
-%For example,
+\end{mywrapfigsimp}
 In \sectionref{sec:mv} we looked at the pendulum of %mass $m$ and
 length $L$.  The goal was to solve for the angle $\theta(t)$ as
 a function of the time $t$.  The equation for the setup is
@@ -104,16 +103,12 @@ x' = y , \qquad y' = -x+x^2 .
 \end{equation*}
 The phase portrait with some trajectories is drawn in
 \figurevref{fig:nlin-1b}.
-%\begin{diffyfloatingfigurepdfonly}{3.1in}
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=3in}{width=4.5in}{nlin-1b}
 \caption{Phase portrait with some trajectories of
 $x' = y$, $y' = -x+x^2$. \label{fig:nlin-1b}}
-\end{center}
-\end{figure}
-%\end{diffyfloatingfigurepdfonly}
+\end{myfig}
 
 From the phase portrait it should be clear that even this simple system has
 fairly complicated behavior.  Some trajectories keep oscillating around the
@@ -248,19 +243,18 @@ At the point $(1,0)$, we have $u=x-1$ and $v=y$, and the linearization is
 \begin{bmatrix} u \\ v \end{bmatrix} .
 \end{equation*}
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 %mbxSTARTIGNORE
 \diffyincludegraphics{width=3in}{width=4.5in}{nlin-1b-lin-00}
+\quad
 \diffyincludegraphics{width=3in}{width=4.5in}{nlin-1b-lin-01}
 %mbxENDIGNORE
 %mbxlatex \diffyincludegraphics{width=6in}{width=9in}{nlin-1b-lin-00-01}
 \caption{Phase diagram with some trajectories of
 linearizations at the critical points $(0,0)$ (left) and $(1,0)$ (right) of
 $x' = y$, $y' = -x+x^2$. \label{fig:nlin-1b-lin}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 The phase diagrams of the two linearizations at the
 point $(0,0)$ and $(1,0)$ are given in \figurevref{fig:nlin-1b-lin}.  Note
@@ -545,16 +539,12 @@ at $(0,0)$.  As the eigenvalues are real
 and of opposite signs, we get a saddle point, which is an unstable
 equilibrium point.
 
-%\begin{diffyfloatingfigurepdfonly}{3.1in}
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=3in}{width=4.5in}{nlin-ex813-new}
 \caption{The phase portrait with few sample trajectories of 
 $x'=-y-x^2$, $y'=-x+y^2$.  \label{fig:nlin-ex813-new}}
-\end{center}
-%\end{diffyfloatingfigurepdfonly}
-\end{figure}
+\end{myfig}
 At the point $(1,-1)$ we get the matrix
 $\left[ \begin{smallmatrix} -2 & -1 \\ -1 & -2 \end{smallmatrix} \right]$ and
 computing the eigenvalues we get $-1$, $-3$.
@@ -601,16 +591,12 @@ The matrix is invertible, and so the system is almost linear at $(0,-1)$.
 As we have complex eigenvalues with positive real part, the critical
 point is a spiral source, and therefore an unstable equilibrium point.
 
-%\begin{diffyfloatingfigurepdfonly}{3.1in}
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=3in}{width=4.5in}{nlin-ex813}
 \caption{The phase portrait with few sample trajectories of 
 $x'=y+y^2e^x$, $y'=x$.  \label{fig:nlin-ex813}}
-\end{center}
-\end{figure}
-%\end{diffyfloatingfigurepdfonly}
+\end{myfig}
 
 See \figurevref{fig:nlin-ex813} for the phase diagram.  Notice the two
 critical points, and the behavior of the arrows in the vector field around
@@ -673,14 +659,12 @@ never be negative).  This positive real part
 will pull the trajectory away from the origin.  A sample trajectory for an
 initial condition near the origin is given in
 \figurevref{fig:nlin-unstable-center}.
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=3in}{width=4.5in}{nlin-unstable-centerfig}
 \caption{An unstable critical point (spiral source) at the origin
 for $x'=y, y' = -x+y^3$, even if the linearization has a center.  \label{fig:nlin-unstable-center}}
-\end{center}
-\end{figure}
+\end{myfig}
 \end{example}
 
 The moral of the example is that further analysis is needed when the
@@ -922,11 +906,10 @@ displacement, $g$ is the gravitational constant, and $L$ is the length of
 the pendulum.  In this equation we disregard friction, so we are talking
 about an idealized pendulum.
 
-\begin{diffyfloatingfiguresimple}{1.45in}{1.75in}
+\begin{mywrapfigsimp}{1.45in}
 \noindent
 \inputpdft{mv-pend}
-\bigskip
-\end{diffyfloatingfiguresimple}
+\end{mywrapfigsimp}
 As we mentioned before, this equation is a conservative
 equation, so we can use our analysis of conservative equations
 from the previous section.
@@ -979,14 +962,12 @@ the points $\ldots (-3\pi,0), (-\pi,0), (\pi,0), (3\pi,0) \ldots$.  Look at the
 phase diagram in \figurevref{fig:nlin-pend-phasediag},
 where for simplicity we let $\frac{g}{L} = 1$.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=3in}{width=4.5in}{nlin-pend-phasediag}
 \caption{Phase plane diagram and some trajectories of
 the nonlinear pendulum equation. \label{fig:nlin-pend-phasediag}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 In the linearized equation we only had a single critical point, the center
 at $(0,0)$.  We can now see more clearly what we meant when we said the
@@ -1027,13 +1008,11 @@ velocity is small.  The next picture is the unstable equilibrium $\theta =
 \pi$.  The last picture corresponds to the wavy lines for large angular
 velocities.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \inputpdft{nlin-pend}
 \caption{Various possibilities for the motion of the pendulum. \label{fig:nlin-pend}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 The quantity 
 \begin{equation*}
@@ -1105,19 +1084,18 @@ still only $15\%$ when $\theta_0 = \frac{\pi}{2}$, that is, a 90 degree
 angle.  The error is $3.8\%$ when starting at $\frac{\pi}{4}$, 
 a 45 degree angle.  At a 5 degree initial angle, the error is only $0.048 \%$.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 %mbxSTARTIGNORE
-\diffyincludegraphics{width=3in}{width=4.5in}{nlin-T-vs-T0-abs}
+\diffyincludegraphics{width=2.88in}{width=4.5in}{nlin-T-vs-T0-abs}
+\quad
 \diffyincludegraphics{width=3in}{width=4.5in}{nlin-T-vs-T0-relerr}
 %mbxENDIGNORE
 %mbxlatex \diffyincludegraphics{width=6in}{width=9in}{nlin-T-vs-T0-abs-relerr}
 \caption{The plot of $T$ and $T_{\text{linear}}$ with $\frac{g}{L} =
 1$ (left), and the plot of the relative
 error $\frac{T-T_{\text{linear}}}{T}$ (right), for $\theta_0$ between 0 and $\pi/2$. \label{fig:TvsT0}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 While it is not immediately obvious from the formula, it is true that
 \begin{equation*}
@@ -1207,18 +1185,17 @@ Therefore the second graph in
 axis (the prey $x$ is the thinner line with taller peaks), against time
 on the horizontal axis.  The particular solution graphed was with initial
 conditions of 20 foxes and 50 hares.
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 %mbxSTARTIGNORE
 \diffyincludegraphics{width=3in}{width=4.5in}{nlin-pred-prey-phase}
+\quad
 \diffyincludegraphics{width=3in}{width=4.5in}{nlin-pred-prey-graphs}
 %mbxENDIGNORE
 %mbxlatex \diffyincludegraphics{width=6in}{width=9in}{nlin-pred-prey-phase-graphs}
 \caption{The phase portrait (left) and graphs of $x$ and $y$ for
 a sample solution (right). \label{fig:nlin-pred-prey}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 Let us analyze what we see on the graphs.  We work in the general
 setting rather than putting in specific numbers.  We start with finding
@@ -1563,18 +1540,17 @@ trajectories seem to very quickly settle on a closed curve.  On the right
 hand plot we have the plot of a single solution for $t=0$ to $t=30$ with
 initial conditions $x(0) = 0.1$ and $x'(0) = 0.1$.  Notice how the solution
 quickly tends to a periodic solution.
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 %mbxSTARTIGNORE
 \diffyincludegraphics{width=3in}{width=4.5in}{nlin-van-der-phase}
+\quad
 \diffyincludegraphics{width=3in}{width=4.5in}{nlin-van-der-plot1}
 %mbxENDIGNORE
 %mbxlatex \diffyincludegraphics{width=6in}{width=9in}{nlin-van-der-phase-plot1}
 \caption{The phase portrait (left) and a graph of a sample solution
 of the Van der Pol oscillator.\label{fig:nlin-van-der-fig}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 The Van der Pol oscillator is an 
 example of so-called \emph{\myindex{relaxation oscillation}}.  The word
@@ -1892,10 +1868,10 @@ x' = -10x +10y, \qquad y' = 28x-y-xz, \qquad z'=-\frac{8}{3}z + xy .
 A small change in the initial conditions yield a very different solution
 after a reasonably short time.
 
-\begin{diffyfloatingfiguresimple}{0.95in}{1.25in}
+\begin{mywrapfigsimp}{0.95in}
 \noindent
 \inputpdft{chaos-pend}
-\end{diffyfloatingfiguresimple}
+\end{mywrapfigsimp}
 A very simple example the reader can experiment with, which displays
 chaotic behavior, is a double pendulum.  The equations that govern this
 system are somewhat complicated and their derivation is quite tedious, so we
@@ -1937,28 +1913,25 @@ trajectories are close at first, but after a while diverge significantly.
 This sensitivity to initial conditions is precisely what
 we mean by the system behaving chaotically.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 %mbxSTARTIGNORE
 \diffyincludegraphics{width=3in}{width=4.5in}{nlin-duf-two-traj}
-\diffyincludegraphics{width=3in}{width=4.5in}{nlin-duf-two-sols}
+\quad
+\diffyincludegraphics{width=2.9in}{width=4.5in}{nlin-duf-two-sols}
 %mbxENDIGNORE
 %mbxlatex \diffyincludegraphics{width=6in}{width=9in}{nlin-duf-two-traj-sols}
 \caption{On left, two trajectories in phase space for $0 \leq t \leq 15$, for the Duffing equation
 one with initial conditions $(2,3)$ and the other with $(2,2.9)$.  On
 right the two solutions in $(x,t)$-space. \label{nlin:duf-two-traj}}
-\end{center}
-\end{figure}
+\end{myfig}
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=6in}{width=9in}{nlin-duf-long}
 \caption{The solution to the given Duffing equation for $t$ from 0 to 100.
 \label{nlin:duf-long}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 Let us see the long term behavior.
 In \figurevref{nlin:duf-long},
@@ -2023,19 +1996,18 @@ After plotting enough points, a curious pattern emerges in
 \figurevref{nlin:strange} (the left hand picture), a so-called
 \emph{\myindex{strange attractor}}.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 %mbxSTARTIGNORE
 \diffyincludegraphics{width=3in}{width=4.5in}{nlin-strange}
-\diffyincludegraphics{width=3in}{width=4.5in}{nlin-strange2}
+\quad
+\diffyincludegraphics{width=2.9in}{width=4.5in}{nlin-strange2}
 %mbxENDIGNORE
 %mbxlatex \diffyincludegraphics{width=6in}{width=9in}{nlin-strange-strange2}
 \caption{Strange attractor.  The left plot 
 is with no phase shift, the right plot has phase shift
 $\nicefrac{\pi}{4}$. \label{nlin:strange}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 If we have a sequence of points, then 
 an \emph{\myindex{attractor}} is a set towards which the points
@@ -2117,13 +2089,11 @@ x' = -10x +10y, \qquad y' = 28x-y-xz, \qquad z'=-\frac{8}{3}z + xy .
 The Lorenz system is an autonomous system in three dimensions
 exhibiting chaotic behavior.
 See the \figurevref{nlin:lorenz} for a sample trajectory.
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
-\diffyincludegraphics{width=5in}{width=7.5in}{nlin-lorenz}
+\diffyincludegraphics{width=3in}{width=4.5in}{nlin-lorenz}
 \caption{A trajectory in the Lorenz system. \label{nlin:lorenz}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 The solutions tend to an \emph{attractor} in space,
 the so-called \emph{\myindex{Lorenz attractor}}.  In this case no strobing is
@@ -2142,14 +2112,12 @@ just as it is not really easy to predict far in advance when the solution
 will jump onto the other side.  See \figurevref{nlin:lorenz-graphx} for a
 plot of the $x$ component of the solution drawn above.
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=3in}{width=4.5in}{nlin-lorenz-graphx}
 \caption{Graph of the $x(t)$ component of the solution.
 \label{nlin:lorenz-graphx}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 \subsection{Exercises}
 
@@ -2177,14 +2145,12 @@ was used to run the game for 10,000 iterations to obtain the picture in
 \figurevref{nlin:sierpinski}.
 \end{exercise}
 
-\begin{figure}[h!t]
+\begin{myfig}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=3in}{width=4.5in}{nlin-sierpinski}
 \caption{10,000 iterations of the chaos game producing the 
 Sierpinski triangle. \label{nlin:sierpinski}}
-\end{center}
-\end{figure}
+\end{myfig}
 
 \begin{exercise}[project]
 Construct the double pendulum described in the text with a string and two

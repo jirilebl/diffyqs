@@ -296,17 +296,11 @@ few of these solutions.
 We will see how we find these solutions
 a few lectures from now.
 
-%\begin{figure}[h!t]
-%\begin{diffyfloatingfigure}{3.1in}{4.6in}
-\begin{diffyfloatingfigurepdfonly}{3.1in}
+\begin{mywrapfig}{3.25in}
 \capstart
-\begin{center}
 \diffyincludegraphics{width=3in}{width=4.5in}{intro-plots-alt}
 \caption{Few solutions of $\frac{dx}{dt} + x = 2 \cos t$.\label{intro:plotsfig}}
-\end{center}
-%\end{figure}
-%\end{diffyfloatingfigure}
-\end{diffyfloatingfigurepdfonly}
+\end{mywrapfig}%
 
 \medskip
 
@@ -349,19 +343,19 @@ course is no exception.
 
 \subsection{Differential equations in practice}
 
-\begin{diffyfloatingfiguresimpler}{3.05in}{3.35in}
+\begin{mywrapfigsimp}{3.05in}
 \noindent
 \inputpdft{1-1-fig}
-\end{diffyfloatingfiguresimpler}
+\end{mywrapfigsimp}
 So how do we use differential equations in science and engineering?  
 First, we have some \emph{\myindex{real world problem}} we wish
 to understand.
-We make some simplifying assumptions and create a \emph{\myindex{mathematical
-model}}.
+We make some simplifying assumptions and create a
+\emph{\myindex{mathematical model}}.
 That is, we translate the real world situation into a
 set of differential equations.
-Then we apply mathematics to get some sort of a \emph{\myindex{mathematical
-solution}}.
+Then we apply mathematics to get some sort of a
+\emph{\myindex{mathematical solution}}.
 There is still something left to do.  We have to interpret the results.
 We have to figure out what the mathematical solution says about the real world
 problem we started with.
@@ -401,6 +395,16 @@ where $C$ is a constant.  Let us try:
 \end{equation*}
 And it really is a solution.
 
+%mbxSTARTIGNORE
+\begin{mywrapfig}{3.25in}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{intro-plotbact}
+\caption{Bacteria growth in the first 60 seconds.\label{intro:plotbactfig}}
+\end{mywrapfig}
+%mbxENDIGNORE
+%
+% Make sure to keep the above and the the mbx figure below in sync!
+%
 OK, so what now?  We do not know $C$ and we do not know $k$.  But we know
 something.  We know $P(0) = 100$, and we also know 
 $P(10) = 200$.  Let us plug these conditions in and see what happens.
@@ -416,17 +420,13 @@ P(t) = 100 \, e^{(\ln 2) t / 10} \approx 100 \, e^{0.069 t} .
 At one minute, $t=60$, the population is $P(60) = 6400$.  See
 \figurevref{intro:plotbactfig}.
 
-%\begin{figure}[h!t]
-%\begin{diffyfloatingfigure}{3.1in}{4.6in}
-\begin{diffyfloatingfigurepdfonly}{3.1in}
-\capstart
-\begin{center}
-\diffyincludegraphics{width=3in}{width=4.5in}{intro-plotbact}
-\caption{Bacteria growth in the first 60 seconds.\label{intro:plotbactfig}}
-\end{center}
-%\end{figure}
-%\end{diffyfloatingfigure}
-\end{diffyfloatingfigurepdfonly}
+
+%mbxlatex \begin{myfig}
+%mbxlatex \capstart
+%mbxlatex \diffyincludegraphics{width=3in}{width=4.5in}{intro-plotbact}
+%mbxlatex \caption{Bacteria growth in the first 60 seconds.\label{intro:plotbactfig}}
+%mbxlatex \end{myfig}
+
 
 Let us talk about the interpretation of the results.  Does our solution
 mean that
@@ -623,8 +623,6 @@ d) $\dfrac{d^2x}{dy^2} = -9 x$,~ $x(0)=1$,~ $x'(0)=0$
 \begin{exercise}
 Is there a solution to $y' = y$, such that $y(0) = y(1)$?
 \end{exercise}
-
-%\medskip
 
 %mbxSTARTIGNORE
 \noindent
