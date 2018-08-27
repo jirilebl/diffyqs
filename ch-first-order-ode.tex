@@ -661,15 +661,24 @@ what happens to $y(x)$ as $x$ goes to positive infinity?  Explain.
 \end{exercise}
 
 \begin{exercise}[challenging]
-Take $(y-x)y' = 0$, $y(0) = 0$.  a) Find two distinct solutions.  b)
-Explain why this does not violate Picard's theorem.  
+Take $(y-x)y' = 0$, $y(0) = 0$.
+\begin{enumerate}[a)]
+\item Find two distinct solutions.
+\item Explain why this does not violate Picard's theorem.  
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
 Suppose $y' = f(x,y)$.  What will the slope field look like, explain and
-sketch an example, if you have the following about $f(x,y)$.  a) $f$ does
-not depend on $y$.  b) $f$ does not depend on $x$.  c) $f(t,t) = 0$ for any
-number $t$.  d) $f(x,0) = 0$ and $f(x,1) = 1$ for all $x$.
+sketch an example, if you know the following about $f(x,y)$:
+\begin{enumerate}[a)]
+\item $f$ does
+not depend on $y$.
+\item $f$ does not depend on $x$.
+\item $f(t,t) = 0$ for any
+number $t$.
+\item $f(x,0) = 0$ and $f(x,1) = 1$ for all $x$.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -1086,9 +1095,14 @@ The range is approximately 7.45 to 12.15 minutes.
 A population $x$ of rabbits on an island is modeled by
 $x' = x- \bigl(\nicefrac{1}{1000} \bigr) x^2$, where the independent
 variable is time in months.  At time $t=0$, there are 40 rabbits
-on the island.  a) Find the solution to the equation with the initial
-condition.  b) How many rabbits are on the island in 1 month, 5 months, 
+on the island.
+\begin{enumerate}[a)]
+\item Find the solution to the equation with the initial
+condition.
+\item
+How many rabbits are on the island in 1 month, 5 months, 
 10 months, 15 months (round to the nearest integer).
+\end{enumerate}
 \end{exercise}
 \exsol{%
 a) $x = \frac{1000e^t}{e^t+24}$. b) 102 rabbits after one month,
@@ -1443,11 +1457,15 @@ The first lake contains 100 thousand liters of water and the
 second lake contains 200 thousand liters of water.
 A truck with \unit[500]{kg} of toxic substance
 crashes into the first lake.  Assume that the water is being continually
-mixed perfectly by the stream.  a) Find the concentration of toxic substance
-as a function of time in both lakes.  b) When will the
+mixed perfectly by the stream.
+\begin{enumerate}[a)]
+\item Find the concentration of toxic substance
+as a function of time in both lakes.
+\item When will the
 concentration in the first lake be below \unit[0.001]{kg} per liter?
-c) When will the
+\item When will the
 concentration in the second lake be maximal?
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -1456,8 +1474,12 @@ $x$ is the temperature, $t$ is time, $A$ is the ambient temperature,
 and $k > 0$ is a constant.
 Suppose that $A = A_0 \cos (\omega t)$ for some constants $A_0$ and $\omega$.
 That is, the ambient temperature oscillates (for example night and day
-temperatures).  a) Find the general solution.  b) In the long term, will the
+temperatures).
+\begin{enumerate}[a)]
+\item Find the general solution.
+\item In the long term, will the
 initial conditions make much of a difference?  Why or why not?
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -2451,15 +2473,21 @@ Consider $\dfrac{dx}{dt} = {(2t-x)}^2$, $x(0)=2$.  Use Euler's method
 with step size $h=0.5$ to approximate $x(1)$.
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}
-Consider $\dfrac{dx}{dt} = t-x$, $x(0)=1$.  a) Use Euler's method
+Consider $\dfrac{dx}{dt} = t-x$, $x(0)=1$.
+\begin{enumerate}[a)]
+\item Use Euler's method
 with step sizes $h = 1, \nicefrac{1}{2}, \nicefrac{1}{4}, \nicefrac{1}{8}$ to
 approximate
-$x(1)$.  b) Solve the equation exactly.
-c) Describe what happens to the
+$x(1)$. 
+\item Solve the equation exactly.
+\item Describe what happens to the
 errors for each $h$ you used.  That is, find the factor by which the error
 changed each time you halved the interval.
+\end{enumerate}
 \end{exercise}
+\end{samepage}
 
 \begin{exercise}
 Approximate the value of $e$ by looking at the initial value problem
@@ -2498,10 +2526,14 @@ y_{i+1} = y_i + \frac{k_1 + 2k_2 + 2k_3 + k_4}{6}\,h ,  \\
 
 \begin{exercise}
 Consider $\dfrac{dy}{dx} = yx^2$, $y(0)=1$.
-a) Use Runge-Kutta (see above) with step sizes $h=1$ and $h=\nicefrac{1}{2}$
-to approximate $y(1)$.  b) Use Euler's method with $h=1$ and
-$h=\nicefrac{1}{2}$.  c) Solve exactly, find the exact value of
+\begin{enumerate}[a)]
+\item Use Runge-Kutta (see above) with step sizes $h=1$ and $h=\nicefrac{1}{2}$
+to approximate $y(1)$.
+\item Use Euler's method with $h=1$ and
+$h=\nicefrac{1}{2}$.
+\item Solve exactly, find the exact value of
 $y(1)$, and compare.
+\end{enumerate}
 \end{exercise}
 
 \setcounter{exercise}{100}
@@ -2517,9 +2549,11 @@ Approximately: 1.0000, 1.2397, 1.3829
 
 \begin{exercise}
 Let $x' = 2t$, and $x(0)=0$.
-a) Approximate $x(4)$ using Euler's method with step sizes 4, 2, and 1.
-b) Solve exactly, and compute the errors.
-c) Compute the factor by which the errors changed.
+\begin{enumerate}[a)]
+\item Approximate $x(4)$ using Euler's method with step sizes 4, 2, and 1.
+\item Solve exactly, and compute the errors.
+\item Compute the factor by which the errors changed.
+\end{enumerate}
 \end{exercise}
 \exsol{%
 \\
@@ -2532,8 +2566,10 @@ c) Factors are 0.5, 0.5, 0.5.
 
 \begin{exercise}
 Let $x' = x e^{xt+1}$, and $x(0)=0$.
-a) Approximate $x(4)$ using Euler's method with step sizes 4, 2, and 1.
-b) Guess an exact solution based on part a) and compute the errors.
+\begin{enumerate}[a)]
+\item Approximate $x(4)$ using Euler's method with step sizes 4, 2, and 1.
+\item Guess an exact solution based on part a) and compute the errors.
+\end{enumerate}
 \end{exercise}
 \exsol{%
 a) 0, 0, 0
@@ -2566,10 +2602,15 @@ x_{i+1} = x_i + h , \\
 
 \begin{exercise}
 Consider $\dfrac{dy}{dx} = x+y$, $y(0)=1$.
-a) Use the improved Euler's method with step sizes $h=\nicefrac{1}{4}$ and $h=\nicefrac{1}{8}$
-to approximate $y(1)$.  b) Use Euler's method with
-$h=\nicefrac{1}{4}$ and $h=\nicefrac{1}{8}$.  c) Solve exactly, find the exact value of
-$y(1)$.  d) Compute the errors, and the factors by which the errors changed.
+\begin{enumerate}[a)]
+\item Use the improved Euler's method (see above) with step sizes $h=\nicefrac{1}{4}$ and $h=\nicefrac{1}{8}$
+to approximate $y(1)$.
+\item Use Euler's method with
+$h=\nicefrac{1}{4}$ and $h=\nicefrac{1}{8}$.
+\item Solve exactly, find the exact value of
+$y(1)$.
+\item Compute the errors, and the factors by which the errors changed.
+\end{enumerate}
 \end{exercise}
 \exsol{%
 a) Improved Euler: $y(1) \approx 3.3897$ for $h=\nicefrac{1}{4}$, 
@@ -2981,8 +3022,8 @@ Therefore,
 \begin{equation*}
 (M_y-N_x)u = u_x N - u_y M .
 \end{equation*}
-At first it may seem we replaced one differential equation by another
-one.  True, but hope is not lost.
+At first it may seem we replaced one differential equation by another.
+True, but all hope is not lost.
 
 A strategy that often works is to look for a $u$ that is a function
 of $x$ alone, or a function of $y$ alone.  If $u$ is a function of $x$
@@ -3101,76 +3142,87 @@ equation is satisfied.  So $y=0$ is also a solution.
 
 \begin{exercise}
 Solve the following exact equations, implicit general solutions
-will suffice:\\
-a)
+will suffice:
+\begin{enumerate}[a)]
+\item
 $(2 xy + x^2) \, dx + (x^2+y^2+1) \, dy = 0$
-\\
-b)
+\item
 $x^5 + y^5 \frac{dy}{dx} = 0$
-\\
-c)
+\item
 $e^x+y^3 + 3xy^2 \frac{dy}{dx} = 0$
-\\
-d)
+\item
 $(x+y)\cos(x)+\sin(x) + \sin(x)y' = 0$
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
 Find the integrating factor for the following equations making them into
-exact equations:\\
-a)
+exact equations:
+\begin{enumerate}[a)]
+\item
 $e^{xy} \, dx + \frac{y}{x} e^{xy} \, dy = 0$
-\\
-b)
+\item
 $\frac{e^x+y^3}{y^2} \, dx + 3x \, dy = 0$
-\\
-c)
+\item
 $4(y^2+x) \, dx + \frac{2x+2y^2}{y} \, dy = 0$
-\\
-d)
+\item
 $2\sin(y) \, dx + x\cos(y)\, dy = 0$
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
 Suppose you have an equation of the form:
-$f(x) + g(y) \frac{dy}{dx} = 0$. \\
-a) Show it is exact.\\
-b) Find the form of the potential function in terms of $f$ and $g$.
+$f(x) + g(y) \frac{dy}{dx} = 0$.
+\begin{enumerate}[a)]
+\item
+Show it is exact.
+\item
+Find the form of the potential function in terms of $f$ and $g$.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
-Suppose that we have the equation $f(x) \, dx - dy = 0$.\\
-a) Is this equation exact?\\
-b) Find the general solution using a definite integral.
+Suppose that we have the equation $f(x) \, dx - dy = 0$.
+\begin{enumerate}[a)]
+\item
+Is this equation exact?
+\item
+Find the general solution using a definite integral.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
 Find the potential function $F(x,y)$ of the exact equation $\frac{1+xy}{x}\, dx +
-\bigl(\nicefrac{1}{y} + x \bigr) \, dy = 0$ in two different ways.\\
-a) Integrate $M$ in terms of $x$ and then differentiate in $y$ and set to
-$N$.\\
-b) Integrate $N$ in terms of $y$ and then differentiate in $x$ and set to
+\bigl(\nicefrac{1}{y} + x \bigr) \, dy = 0$ in two different ways.
+\begin{enumerate}[a)]
+\item
+Integrate $M$ in terms of $x$ and then differentiate in $y$ and set to
+$N$.
+\item
+Integrate $N$ in terms of $y$ and then differentiate in $x$ and set to
 $M$.
+\end{enumerate}
 \end{exercise}
 
 \begin{samepage}
 \begin{exercise}
 A function $u(x,y)$ is said to be \emph{\myindex{harmonic function}} if
 $u_{xx} + u_{yy} = 0$.
-\\
-a) Show that $-u_y \, dx + u_x dy = 0$ is an exact equation.  Therefore
+\begin{enumerate}[a)]
+\item
+Show that $-u_y \, dx + u_x dy = 0$ is an exact equation.  Therefore
 there exists (at least locally)
 the so-called \emph{\myindex{harmonic conjugate}} function
 $v(x,y)$ such that $v_x = -u_y$ and $v_y = u_x$.
-\\
+\end{enumerate}
 Verify that the following $u$ are harmonic and 
 find the corresponding harmonic conjugates $v$:
-\\
-b) $u = 2xy$
-\\
-c) $u = e^x \cos y$
-\\
-d) $u = x^3-3xy^2$
+%mbxFIXME
+\begin{enumerate}[a),resume]
+\item $u = 2xy$
+\item $u = e^x \cos y$
+\item $u = x^3-3xy^2$
+\end{enumerate}
 \end{exercise}
 \end{samepage}
 
@@ -3178,18 +3230,17 @@ d) $u = x^3-3xy^2$
 
 \begin{exercise}
 Solve the following exact equations, implicit general solutions
-will suffice:\\
-a)
+will suffice:
+\begin{enumerate}[a)]
+\item
 $\cos(x)+ye^{xy} + xe^{xy} y' = 0$
-\\
-b)
+\item
 $(2x+y)\, dx + (x-4y) \, dy = 0$
-\\
-c)
+\item
 $e^x + e^y \frac{dy}{dx} = 0$
-\\
-d)
+\item
 $(3x^2+3y)\,dx + (3y^2+3x)\, dy = 0$
+\end{enumerate}
 \end{exercise}
 \exsol{%
 a) $e^{xy}+\sin(x)=C$, \qquad
@@ -3200,18 +3251,17 @@ d) $x^3 + 3xy+ y^3 = C$.
 
 \begin{exercise}
 Find the integrating factor for the following equations making them into
-exact equations:\\
-a)
+exact equations:
+\begin{enumerate}[a)]
+\item
 $\frac{1}{y}\, dx + 3y \, dy = 0$
-\\
-b)
+\item
 $dx - e^{-x-y} \, dy = 0$
-\\
-c)
+\item
 $\bigl( \frac{\cos(x)}{y^2} + \frac{1}{y} \bigr) \, dx + \frac{1}{y^2} \, dy = 0$
-\\
-d)
+\item
 $\bigl( 2y + \frac{y^2}{x} \bigr) \, dx + ( 2y+x )\, dy = 0$
+\end{enumerate}
 \end{exercise}
 \exsol{%
 a) Integrating factor is $y$, the equation becomes $dx + 3y^2\,dx = 0$.
@@ -3227,11 +3277,14 @@ d) Integrating factor is $x$, the equation becomes $( 2xy+y^2 )\, dx +
 }
 
 \begin{exercise}
-a) Show that every
+{\ }
+\begin{enumerate}[a)]
+\item Show that every
 separable equation $y' = f(x)g(y)$ can be written as an exact equation,
 and verify that it is indeed exact.
-b)~Using this rewrite $y' = xy$ as an exact equation, solve it and verify
+\item Using this rewrite $y' = xy$ as an exact equation, solve it and verify
 that the solution is the same as it was in \exampleref{example:yprimeisxy}.
+\end{enumerate}
 \end{exercise}
 \exsol{%
 a) The equation is $ - f(x) \, dx + \frac{1}{g(y)} \, dy$,
@@ -3258,20 +3311,22 @@ a(x,t) \, u_x + b(x,t) \, u_t + c(x,t) \, u = g(x,t), \qquad u(x,0) = f(x) , \qq
 \quad t > 0 ,
 \end{equation*}
 where $u(x,t)$ is a function of $x$ and $t$.
-Notice that the \emph{initial condition}\index{initial condition for a PDE}
-$u(x,0) = f(x)$ is now a function rather than just a number.
+The \emph{initial condition}\index{initial condition for a PDE}
+$u(x,0) = f(x)$ is now a function of $x$ rather than just a number.
 In these problems it is useful to think of $x$ as position and $t$ as time.
-The equation describes the evolution of a function in time.
+The equation describes the evolution of a function of $x$ as
+time goes on.
 Below, the coefficients $a$, $b$, $c$, and the function $g$
 are mostly going to be constant or zero.
 The method we describe works with nonconstant coefficients,
 although the computations may get difficult quickly.
 
-The method we use is the
+This method we use is the
 \emph{\myindex{method of characteristics}}\index{characteristics}.
-The idea is that we will find lines along which we just solve an ODE.
+The idea is that we find lines along which the equation is
+an ODE that we solve.
 We will see this technique again for second order PDE
-when we encounter the wave equation.
+when we encounter the wave equation in \sectionref{dalemb:section}.
 
 \begin{example}
 Consider the equation
@@ -3279,8 +3334,7 @@ Consider the equation
 u_t + \alpha u_x = 0, \qquad u(x,0) = f(x) .
 \end{equation*}
 This particular equation, $u_t + \alpha u_x = 0$, is
-called the \emph{\myindex{convection equation}} or sometimes
-the \emph{\myindex{transport equation}}.
+called the \emph{\myindex{transport equation}}.
 
 The data will propagate along curves called characteristics.  The
 idea is to change to the
@@ -3345,7 +3399,8 @@ $\frac{1}{\alpha}$, and for each different $\xi$ we get a different
 characteristic line.
 
 We see why $u_t + \alpha u_x = 0$ is called the
-convection equation: everything travels at some constant speed.
+transport equation: everything travels at some constant speed.
+Sometimes this is called \emph{\myindex{convection}}.
 An example application is material being moved by a river where the material
 does not diffuse and is simply carried along.  In this setup, $x$ is 
 the position along the river, $t$ is the time, and $u(x,t)$ the concentration the
@@ -3355,10 +3410,11 @@ material at position $x$ and time $t$.  See
 \capstart
 %original files fopde-transport-1 fopde-transport-2
 \diffyincludegraphics{width=6.24in}{width=9in}{fopde-transport-1-2}
-\caption{Example of convection for $u_t-u_x = 0$ (that is, $\alpha = 1$) and the
+\caption{Example of \myquote{transport}
+in $u_t-u_x = 0$ (that is, $\alpha = 1$) where the
 initial condition $f(x)$ is a peak at the origin.  On the left is a graph
-of the initial condition $u(x,0)$ and on the right is a graph of
-the function $u(x,1)$, that is at time $t=1$, and notice it is one unit to
+of the initial condition $u(x,0)$.  On the right is a graph of
+the function $u(x,1)$, that is at time $t=1$.  Notice it is one unit to
 the right.\label{fopde:transportfig}}
 \end{myfig}
 \end{example}
@@ -3373,7 +3429,7 @@ These are coordinates where $a u_x + b u_t$ becomes differentiation
 in the $s$ variable.
 
 So, along the characteristic curves (where $\xi$ is constant), we get a
-new ODE in the $s$ variable.  In the convection
+new ODE in the $s$ variable.  In the transport
 equation we got the simple $\frac{du}{ds} = 0$.  In general,
 we get the linear equation
 \begin{equation} \label{eq:fopde:charode}
