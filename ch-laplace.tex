@@ -42,13 +42,13 @@ $s$ is the frequency.
 
 We can think of the \emph{\myindex{Laplace transform}} as a black box.  It
 eats functions and spits out functions in a new variable.  We write
-$\mathcal{L} \{ f(t) \} = F(s)$ for the Laplace transform of $f(t)$.  It is common to write lower case letters for
+$\mathcal{L} \bigl\{ f(t) \bigr\} = F(s)$ for the Laplace transform of $f(t)$.  It is common to write lower case letters for
 functions in the time domain and upper case letters for functions in the
 frequency domain.  We use the same letter to denote that one function
 is the Laplace transform of the other.  For example $F(s)$ is the Laplace
 transform of $f(t)$.  Let us define the transform.
 \begin{equation*}
-\mathcal{L} \{ f(t) \} =
+\mathcal{L} \bigl\{ f(t) \bigr\} =
 F(s) \overset{\text{def}}{=} \int_0^\infty e^{-st} f(t) ~ dt .
 \end{equation*}
 We note that we are only considering $t \geq 0$ in the transform.  Of course,
@@ -78,7 +78,7 @@ $\mathcal{L} \{1\}$ is only defined for $s > 0$.
 \begin{example}
 Suppose $f(t) = e^{-at}$, then
 \begin{equation*}
-\mathcal{L} \{e^{-at}\}
+\mathcal{L} \bigl\{e^{-at}\bigr\}
 = \int_0^\infty e^{-st} e^{-at} ~ dt
 = \int_0^\infty e^{-(s+a)t} ~ dt
 =
@@ -86,7 +86,7 @@ Suppose $f(t) = e^{-at}$, then
 = \frac{1}{s+a} .
 \end{equation*}
 The limit only exists if $s+a > 0$.  So 
-$\mathcal{L} \{e^{-at}\}$ is only defined for $s+a > 0$.
+$\mathcal{L} \bigl\{e^{-at}\bigr\}$ is only defined for $s+a > 0$.
 \end{example}
 
 \begin{example}
@@ -133,7 +133,7 @@ Let us find the Laplace transform of $u(t-a)$, where $a \geq 0$
 is some constant.
 That is, the function that is 0 for $t < a$ and 1 for $t \geq a$.
 \begin{equation*}
-\mathcal{L} \{ u(t-a) \}
+\mathcal{L} \bigl\{ u(t-a) \bigr\}
 =
 \int_0^{\infty} e^{-st} u(t-a) ~ dt
 =
@@ -151,28 +151,45 @@ elementary functions.  Many basic transforms are listed in
 \tablevref{lt:table}.
 
 \begin{table}[h!t]
+\mybeginframe
 \capstart
 \begin{center}
-\begin{tabular}{@{}ll@{}}
+\begin{tabular}{@{}lllll@{}}
 \toprule
-$f(t)$ & $\mathcal{L} \{ f(t) \}$ \\
+%mbxFIXME
+%the hspace might not work with the conversion script check
+$f(t)$ & $\mathcal{L} \bigl\{ f(t) \bigr\}$ & \hspace*{1.5cm} &
+$f(t)$ & $\mathcal{L} \bigl\{ f(t) \bigr\}$ \\
 \midrule
-$C$ & $\frac{C}{s}$ \\[3pt]
-$t$ & $\frac{1}{s^2}$ \\[3pt]
-$t^2$ & $\frac{2}{s^3}$ \\[3pt]
-$t^3$ & $\frac{6}{s^4}$ \\[3pt]
-$t^n$ & $\frac{n!}{s^{n+1}}$ \\[3pt]
-$e^{-at}$ & $\frac{1}{s+a}$ \\[3pt]
-$\sin (\omega t)$ & $\frac{\omega}{s^2+\omega^2}$ \\[3pt]
-$\cos (\omega t)$ & $\frac{s}{s^2+\omega^2}$ \\[3pt]
-$\sinh (\omega t)$ & $\frac{\omega}{s^2-\omega^2}$ \\[3pt]
-$\cosh (\omega t)$ & $\frac{s}{s^2-\omega^2}$ \\[3pt]
-$u(t-a)$ & $\frac{e^{-as}}{s}$ \\
+$C$ & $\frac{C}{s}$
+& &
+$\sin (\omega t)$ & $\frac{\omega}{s^2+\omega^2}$
+\\[3pt]
+$t$ & $\frac{1}{s^2}$
+& &
+$\cos (\omega t)$ & $\frac{s}{s^2+\omega^2}$
+\\[3pt]
+$t^2$ & $\frac{2}{s^3}$
+& &
+$\sinh (\omega t)$ & $\frac{\omega}{s^2-\omega^2}$
+\\[3pt]
+$t^3$ & $\frac{6}{s^4}$
+& &
+$\cosh (\omega t)$ & $\frac{s}{s^2-\omega^2}$
+\\[3pt]
+$t^n$ & $\frac{n!}{s^{n+1}}$
+& &
+$u(t-a)$ & $\frac{e^{-as}}{s}$
+\\[3pt]
+$e^{-at}$ & $\frac{1}{s+a}$
+& & &
+\\
 \bottomrule
 \end{tabular}
 \end{center}
 \caption{Some Laplace transforms ($C$, $\omega$, and $a$ are
 constants).\label{lt:table}}
+\myendframe
 \end{table}
 
 \begin{exercise}
@@ -182,10 +199,10 @@ Verify \tablevref{lt:table}.
 Since the transform is defined by an integral.  We can use the linearity
 properties of the integral.  For example, suppose $C$ is a constant, then
 \begin{equation*}
-\mathcal{L} \{ C f(t) \} =
+\mathcal{L} \bigl\{ C f(t) \bigr\} =
 \int_0^\infty e^{-st} C f(t) ~dt =
 C \int_0^\infty e^{-st} f(t) ~dt =
-C \mathcal{L} \{ f(t) \} .
+C \mathcal{L} \bigl\{ f(t) \bigr\} .
 \end{equation*}
 So we can \myquote{pull out} a constant out of the transform.  Similarly  we have
 linearity.
@@ -196,23 +213,23 @@ Since linearity is very important we state it as a theorem.
 Suppose that $A$, $B$, and $C$ are constants, then
 \begin{equation*}
 \boxed{~~
-\mathcal{L} \{ A f(t) + B g(t) \} =
-A \mathcal{L} \{ f(t) \} +
-B \mathcal{L} \{ g(t) \} ,
+\mathcal{L} \bigl\{ A f(t) + B g(t) \bigr\} =
+A \mathcal{L} \bigl\{ f(t) \bigr\} +
+B \mathcal{L} \bigl\{ g(t) \bigr\} ,
 ~~}
 \end{equation*}
 and in particular
 \begin{equation*}
-\mathcal{L} \{ C f(t) \} =
-C \mathcal{L} \{ f(t) \} .
+\mathcal{L} \bigl\{ C f(t) \bigr\} =
+C \mathcal{L} \bigl\{ f(t) \bigr\} .
 \end{equation*}
 \end{theorem}
 
 \begin{exercise}
 Verify the theorem.  That is, show that
-$\mathcal{L} \{ A f(t) + B g(t) \} =
-A \mathcal{L} \{ f(t) \} +
-B \mathcal{L} \{ g(t) \}$.
+$\mathcal{L} \bigl\{ A f(t) + B g(t) \bigr\} =
+A \mathcal{L} \bigl\{ f(t) \bigr\} +
+B \mathcal{L} \bigl\{ g(t) \bigr\}$.
 \end{exercise}
 
 These rules together with \tablevref{lt:table} make it easy to find
@@ -221,9 +238,9 @@ But be careful.
 It is a common mistake to think that the Laplace transform of a product
 is the product of the transforms.  In general 
 \begin{equation*}
-\mathcal{L} \{ f(t) g(t) \} \not=
-\mathcal{L} \{ f(t) \}
-\mathcal{L} \{ g(t) \} .
+\mathcal{L} \bigl\{ f(t) g(t) \bigr\} \not=
+\mathcal{L} \bigl\{ f(t) \bigr\}
+\mathcal{L} \bigl\{ g(t) \bigr\} .
 \end{equation*}
 
 It must also be noted that not all functions have a Laplace transform.  For
@@ -260,7 +277,7 @@ Laplace transform.
 
 \begin{theorem}[Existence]
 Let $f(t)$ be continuous and of exponential order for a certain
-constant $c$.  Then $F(s) = \mathcal{L} \{ f(t) \}$ is defined for
+constant $c$.  Then $F(s) = \mathcal{L} \bigl\{ f(t) \bigr\}$ is defined for
 all $s > c$.
 \end{theorem}
 
@@ -268,7 +285,7 @@ The existence is not difficult to see.  Let $f(t)$ be of exponential order,
 that is $\lvert f(t) \rvert \leq M e^{ct}$ for all $t > 0$ (for simplicity $t_0 = 0$).
 Let $s > c$, or in other words $(c-s) < 0$.
 By the comparison theorem from calculus, the improper integral defining
-$\mathcal{L} \{ f(t) \}$ exists if the following integral exists
+$\mathcal{L} \bigl\{ f(t) \bigr\}$ exists if the following integral exists
 \begin{equation*}
 \int_0^\infty e^{-st} ( M e^{ct} ) ~dt
 =
@@ -310,15 +327,15 @@ equation into an algebraic equation.  Once we solve the
 algebraic equation in the frequency domain we will want to get back to the
 time domain, as that is what we are interested in.
 If we have a function $F(s)$, to be able
-to find $f(t)$ such that $\mathcal{L} \{ f(t) \} = F(s)$, we need to first
+to find $f(t)$ such that $\mathcal{L} \bigl\{ f(t) \bigr\} = F(s)$, we need to first
 know if such a function is unique.  It turns out we are in luck by
 \thmref{lt:uniqthm}.  So we can without fear make the following
 definition.
 
-If $F(s) = \mathcal{L} \{ f(t) \}$ for some function $f(t)$.  We define the
+If $F(s) = \mathcal{L} \bigl\{ f(t) \bigr\}$ for some function $f(t)$.  We define the
 \emph{\myindex{inverse Laplace transform}} as
 \begin{equation*}
-{\mathcal{L}}^{-1} \{ F(s) \} \overset{\text{def}}{=} f(t) .
+{\mathcal{L}}^{-1} \bigl\{ F(s) \bigr\} \overset{\text{def}}{=} f(t) .
 \end{equation*}
 There is an integral formula for the inverse, but it is not as simple
 as the transform itself---it requires complex numbers and path integrals.
@@ -340,12 +357,13 @@ e^{-t} .
 As the Laplace transform is linear, the inverse Laplace
 transform is also linear.  That is,
 \begin{equation*}
-{\mathcal{L}}^{-1} \{ A F(s) + B G(s) \} =
-A {\mathcal{L}}^{-1} \{ F(s) \} +
-B {\mathcal{L}}^{-1} \{ G(s) \} .
+{\mathcal{L}}^{-1} \bigl\{ A F(s) + B G(s) \bigr\} =
+A {\mathcal{L}}^{-1} \bigl\{ F(s) \bigr\} +
+B {\mathcal{L}}^{-1} \bigl\{ G(s) \bigr\} .
 \end{equation*}
 Of course, we also have
-${\mathcal{L}}^{-1} \{ A F(s) \} = A {\mathcal{L}}^{-1} \{ F(s) \}$.
+${\mathcal{L}}^{-1} \bigl\{ A F(s) \bigr\} =
+A {\mathcal{L}}^{-1} \bigl\{ F(s) \bigr\}$.
 Let us demonstrate how linearity can be used.
 
 \begin{example}
@@ -395,7 +413,7 @@ so-called \emph{\myindex{shifting property}} or
 the \emph{\myindex{first shifting property}}
 \begin{equation*}
 \boxed{~~
-\mathcal{L} \{ e^{-at} f(t) \} = F(s+a) ,
+\mathcal{L} \bigl\{ e^{-at} f(t) \bigr\} = F(s+a) ,
 ~~}
 \end{equation*}
 where $F(s)$ is the Laplace transform of $f(t)$.
@@ -543,10 +561,10 @@ Let us see how the Laplace transform is used for differential equations.
 First let us try to find the Laplace transform of a function that is a
 derivative.  Suppose $g(t)$ is a differentiable function
 of exponential order, that is, $\lvert g(t) \rvert \leq M e^{ct}$ for some
-$M$ and $c$.  So $\mathcal{L} \{ g(t) \}$ exists, and what is more,
+$M$ and $c$.  So $\mathcal{L} \bigl\{ g(t) \bigr\}$ exists, and what is more,
 $\lim_{t\to\infty} e^{-st}g(t) = 0$ when $s > c$.  Then
 \begin{equation*}
-\mathcal{L} \left\{ g'(t) \right\}
+\mathcal{L} \bigl\{ g'(t) \bigr\}
 =
 \int_0^\infty
 e^{-st}
@@ -559,7 +577,7 @@ g'(t) ~dt
 e^{-st}
 g(t) ~dt
 =
--g(0) + s \mathcal{L} \{ g(t) \} .
+-g(0) + s \mathcal{L} \bigl\{ g(t) \bigr\} .
 \end{equation*}
 We repeat this procedure for higher derivatives.
 The results are
@@ -571,11 +589,12 @@ piecewise continuous derivative.
 %exist.  We will not worry much about this fact.
 
 \begin{table}[h!t]
+\mybeginframe
 \capstart
 \begin{center}
 \begin{tabular}{@{}ll@{}}
 \toprule
-$f(t)$ & $\mathcal{L} \{ f(t) \} = F(s)$ \\
+$f(t)$ & $\mathcal{L} \bigl\{ f(t) \bigr\} = F(s)$ \\
 \midrule
 $g'(t)$ & $sG(s)-g(0)$ \\[3pt]
 $g''(t)$ & $s^2G(s)-sg(0)-g'(0)$ \\[3pt]
@@ -583,8 +602,10 @@ $g'''(t)$ & $s^3G(s)-s^2g(0)-sg'(0)-g''(0)$ \\
 \bottomrule
 \end{tabular}
 \end{center}
-\caption{Laplace transforms of derivatives ($G(s) = \mathcal{L} \{ g(t) \}$
+\caption{Laplace transforms of derivatives
+($G(s) = \mathcal{L} \bigl\{ g(t) \bigr\}$
 as usual).\label{ltd:table}}
+\myendframe
 \end{table}
 
 \begin{exercise}
@@ -606,7 +627,7 @@ We will take the Laplace transform of both sides.
 By $X(s)$ we will, as usual, denote the Laplace transform of
 $x(t)$.
 \begin{align*}
-\mathcal{L} \{ x''(t) + x(t) \} & = \mathcal{L} \{ \cos (2t) \} , \\
+\mathcal{L} \bigl\{ x''(t) + x(t) \bigr\} & = \mathcal{L} \bigl\{ \cos (2t) \bigr\} , \\
 s^2 X(s) -sx(0)-x'(0) + X(s) & = \frac{s}{s^2 + 4} .
 \end{align*}
 We plug in the initial conditions now---this makes the computations more
@@ -704,13 +725,14 @@ Hence it is
 useful to know how the Heaviside function interacts with the Laplace
 transform.  We have already seen that
 \begin{equation*}
-\mathcal{L} \{ u(t-a) \} = \frac{e^{-as}}{s} .
+\mathcal{L} \bigl\{ u(t-a) \bigr\} = \frac{e^{-as}}{s} .
 \end{equation*}
 This can be generalized into a \emph{\myindex{shifting property}}
 or \emph{\myindex{second shifting property}}.
 \begin{equation} \label{ltd:sseq}
 \boxed{~~
-\mathcal{L} \{ f(t-a) \, u(t-a) \} = e^{-as} \mathcal{L} \{ f(t) \} .
+\mathcal{L} \bigl\{ f(t-a) \, u(t-a) \bigr\}
+= e^{-as} \mathcal{L} \bigl\{ f(t) \bigr\} .
 ~~}
 \end{equation}
 
@@ -886,11 +908,11 @@ t^2 = \int_0^t e^{\tau} x(\tau) ~d\tau ,
 where we wish to solve for $x(t)$.
 We apply the Laplace transform and the shifting property to get
 \begin{equation*}
-\frac{2}{s^3} = \frac{1}{s} \, \mathcal{L} \{ e^{t} x(t) \}
+\frac{2}{s^3} = \frac{1}{s} \, \mathcal{L} \bigl\{ e^{t} x(t) \bigr\}
 =
 \frac{1}{s} \, X(s-1) ,
 \end{equation*}
-where $X(s) = \mathcal{L} \{ x(t) \}$.  Thus
+where $X(s) = \mathcal{L} \bigl\{ x(t) \bigr\}$.  Thus
 \begin{equation*}
 X(s-1) =
 \frac{2}{s^2} \qquad \text{or} \qquad
@@ -946,9 +968,9 @@ Solve $x'' + x = u(t-1)$ for initial conditions $x(0) = 0$ and $x'(0) = 0$.
 
 \begin{exercise}
 Show the differentiation of the transform property.  Suppose
-$\mathcal{L} \{ f(t) \} = F(s)$, then show
+$\mathcal{L} \bigl\{ f(t) \bigr\} = F(s)$, then show
 \begin{equation*}
-\mathcal{L} \{ -t f(t) \} = F'(s) .
+\mathcal{L} \bigl\{ -t f(t) \bigr\} = F'(s) .
 \end{equation*}
 Hint: Differentiate under the integral sign.
 \end{exercise}
@@ -960,7 +982,8 @@ Solve $x''' + x = t^3 u(t-1)$ for initial conditions $x(0) = 1$ and $x'(0) =
 
 \begin{exercise}
 Show the second shifting property: 
-$\mathcal{L} \{ f(t-a) \, u(t-a) \} = e^{-as} \mathcal{L} \{ f(t) \}$.
+$\mathcal{L} \bigl\{ f(t-a) \, u(t-a) \bigr\}
+= e^{-as} \mathcal{L} \bigl\{ f(t) \bigr\}$.
 \end{exercise}
 
 \begin{exercise}
@@ -1131,11 +1154,11 @@ the main result of this section is the following theorem.
 Let $f(t)$ and $g(t)$ be of exponential type, then
 \begin{equation*}
 \boxed{~~
-\mathcal{L} \left\{ (f*g)(t) \right\}
+\mathcal{L} \bigl\{ (f*g)(t) \bigr\}
 =
 \mathcal{L} \left\{ \int_0^t f(\tau) g(t-\tau) ~ d\tau \right\}
 =
-\mathcal{L} \{ f(t) \} \mathcal{L} \{ g(t) \} .
+\mathcal{L} \bigl\{ f(t) \bigr\} \mathcal{L} \bigl\{ g(t) \bigr\} .
 ~~}
 \end{equation*}
 \end{theorem}
@@ -1463,9 +1486,9 @@ where $u(t)$ is the unit step function.
 
 Let us take the Laplace transform of a square pulse,
 \begin{equation*}
-{\mathcal{L}} \left\{ \varphi(t) \right\}
+{\mathcal{L}} \bigl\{ \varphi(t) \bigr\}
 =
-{\mathcal{L}} \left\{ M \bigl( u(t-a) - u(t-b) \bigr)  \right\}
+{\mathcal{L}} \bigl\{ M \bigl( u(t-a) - u(t-b) \bigr)  \bigr\}
 =
 M
 \frac{e^{-as} - e^{-bs}}{s} .
@@ -1480,7 +1503,7 @@ That is, to have the pulse have \myquote{unit mass.}
 For such a pulse we
 compute
 \begin{equation*}
-{\mathcal{L}} \left\{ \varphi(t) \right\}
+{\mathcal{L}} \bigl\{ \varphi(t) \bigr\}
 =
 {\mathcal{L}} \left\{ \frac{u(t) - u(t-b)}{b}  \right\}
 =
@@ -1566,14 +1589,14 @@ In other words, the convolution of $\delta(t)$ with $f(t)$ is again $f(t)$,
 As we can integrate $\delta(t)$, let us compute its Laplace transform.
 \begin{equation*}
 \boxed{~~
-{\mathcal{L}} \left\{ \delta(t-a) \right\}
+{\mathcal{L}} \bigl\{ \delta(t-a) \bigr\}
 =
 \int_{0}^\infty e^{-st} \delta(t-a) ~dt = e^{-as} .
 ~~}
 \end{equation*}
 In particular,
 \begin{equation*}
-{\mathcal{L}} \left\{ \delta(t) \right\} = 1 .
+{\mathcal{L}} \bigl\{ \delta(t) \bigr\} = 1 .
 \end{equation*}
 
 \begin{remark}
@@ -1614,7 +1637,7 @@ We write,
 =
 {\mathcal{L}}^{-1} \left\{ 1 + \frac{1}{s} \right\}
 =
-{\mathcal{L}}^{-1} \left\{ 1 \right\}
+{\mathcal{L}}^{-1} \{ 1 \}
 +
 {\mathcal{L}}^{-1} \left\{ \frac{1}{s} \right\}
 =
@@ -1960,7 +1983,7 @@ FIXME: the rest is a dump of notes
 
 Let's use Laplace to solve this since we have just learned it:
 
-$U(x) = {\mathcal L}[u(x,t)]$
+$U(x) = {\mathcal L} \bigl\{ u(x,t) \bigr\}$
 in the $t$ direction and we'll treat $s$ as parameter again.  $u(x,0) = 0$ and
 so
 

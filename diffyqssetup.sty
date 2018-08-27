@@ -247,6 +247,8 @@ Remark
 % only for pdf output
 \newcommand{\diffypdfversion}[1]{#1}
 
+% this draws a frame (implemented not as an environment as that for some
+% reason does not play well with wrapfigure
 \newcommand{\mybeginframe}{%
 \begin{tcolorbox}[colback=white,colframe=lightgray,left=5pt,right=5pt]%
 }
@@ -254,9 +256,12 @@ Remark
 \end{tcolorbox}%
 }
 
+% to keep track of old inttextsep
 \newlength\myoldintextsep
 
-% floaty figures
+% floaty inset figures
+
+% this one should have a caption, first argument is the size
 \newenvironment{mywrapfig}[1]{%
 \setlength{\myoldintextsep}{\intextsep}%
 \setlength{\intextsep}{0.5\intextsep}%
@@ -269,7 +274,9 @@ Remark
 \setlength{\intextsep}{\myoldintextsep}%
 }
 
-\newenvironment{mywrapfigsimp}[1]{%
+% this one has no caption, first argument is size,
+% the second argument is a larger size used for HTML (ignored by latex)
+\newenvironment{mywrapfigsimp}[2]{%
 \setlength{\myoldintextsep}{\intextsep}%
 \setlength{\intextsep}{0.5\intextsep}%
 \wrapfigure{r}{#1}%
@@ -279,6 +286,7 @@ Remark
 \endwrapfigure%
 }
 
+% this is just my figure style
 \newenvironment{myfig}{%
 \begin{figure}[h!t]
 \mybeginframe%
@@ -288,15 +296,9 @@ Remark
 \end{figure}%
 }
 
-% Our floating figure with two sizes:
-% Note that floating figures work badly in theorem like environments as those are implemented as
-% lists.  That's why example and remark are reimplemented instead of using
-% amsthm
-%\newenvironment{diffyfloatingfigure}[2]{\begin{wrapfigure}{o}{#1}}{\end{wrapfigure}}
-%\newenvironment{diffyfloatingfigurer}[2]{\begin{wrapfigure}{r}{#1}}{\end{wrapfigure}}
-%\newenvironment{diffyfloatingfiguresimple}[2]{\begin{wrapfigure}{r}{#1}}{\end{wrapfigure}}
-%\newenvironment{diffyfloatingfiguresimpler}[2]{\begin{wrapfigure}{r}{#1}}{\end{wrapfigure}}
-%\newenvironment{diffyfloatingfigurepdfonly}[1]{\begin{wrapfigure}{o}{#1}}{\end{wrapfigure}}
+% Note that floating (inset) figures work badly in theorem like environments
+% as those are implemented as lists.  That's why example and remark are
+% reimplemented instead of using amsthm
 
 %Do the Index
 \newcommand{\diffyindex}{

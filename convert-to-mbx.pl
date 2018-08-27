@@ -894,6 +894,8 @@ while(1)
 			$table =~ s/\\(mid|bottom|top)rule[ \n]*//g;
 			$table =~ s/\\begin\{tabular\}.*[ \n]*//;
 			$table =~ s/\\end\{tabular\}[ \n]*//;
+			$table =~ s/\\mybeginframe[ \n]*//;
+			$table =~ s/\\myendframe[ \n]*//;
 
 			close_paragraph ();
 			print $out "<table xml:id=\"$theid\">\n";
@@ -995,16 +997,13 @@ while(1)
 			print "\n\n\nHUH?\n\n\nNo end tabular/center!\n\n$para\n\n";
 		}
 		
-	#FIXME:Assuming that diffyfloatingfiguresimple(r) never has a caption
-	#FIXME:Assuming that diffyfloatingfiguresimple(r) is always just an inputpdft
-	} elsif ($para =~ s/^\\begin\{diffyfloatingfiguresimple(r?)\}\{.*?\}\{(.*?)\}[ \n]*//) {
-		my $float = "left";
-		if ($1 == 'r') {
-			$float = "right";
-		}
-		my $thesize = $2;
+	#FIXME:Assuming that mywrapfigsimp never has a caption
+	#FIXME:Assuming that mywrapfigsimp is always just an inputpdft
+	} elsif ($para =~ s/^\\begin\{mywrapfigsimp\}\{.*?\}\{(.*?)\}[ \n]*//) {
+		$float = "right";
+		my $thesize = $1;
 		print "(DIFFYFLOATINGFIGURE)\n";
-		if ($para =~ s/^(.*?)\\end\{diffyfloatingfiguresimpler?\}[ \n]*//s) {
+		if ($para =~ s/^(.*?)\\end\{mywrapfigsimp\}[ \n]*//s) {
 			my $fig = $1;
 
 			# kill unneccesaray things
@@ -1025,10 +1024,10 @@ while(1)
 				}
 				close_paragraph ();
 			} else {
-				print "\n\n\nHUH?\n\n\nDiffyfloatingfigure(r) not just an inputpdft!\n\nFIG=>$fig<\n\n";
+				print "\n\n\nHUH?\n\n\nmywrapfigsimp not just an inputpdft!\n\nFIG=>$fig<\n\n";
 			}
 		} else {
-			print "\n\n\nHUH?\n\n\nNo end diffyfloatingfigurer?\n\n$para\n\n";
+			print "\n\n\nHUH?\n\n\nNo end mywrapfigsimp\n\n$para\n\n";
 		}
 
 	#FIXME: this is based entirely too much on my usage :)
@@ -1070,12 +1069,12 @@ while(1)
 	#FIXME: not all substitutions are made, so check if more processing needs to be done
 	#on caption
 	} elsif ($para =~ s/^\\begin\{figure\}(\[.*?\])?[ \n]*// ||
-	         $para =~ s/^\\begin\{diffyfloatingfigurepdfonly\}\{.*?\}[ \n]*// ||
-	         $para =~ s/^\\begin\{diffyfloatingfigurer?\}\{.*?\}\{.*?\}[ \n]*//) {
+	         $para =~ s/^\\begin\{mywrapfig\}\{.*?\}[ \n]*// ||
+	         $para =~ s/^\\begin\{myfig\}[ \n]*//) {
 		print "(FIGURE)\n";
 		if ($para =~ s/^(.*?)\\end\{figure\}[ \n]*//s ||
-		    $para =~ s/^(.*?)\\end\{diffyfloatingfigurepdfonly\}[ \n]*//s ||
-		    $para =~ s/^(.*?)\\end\{diffyfloatingfigurer?\}[ \n]*//s) {
+		    $para =~ s/^(.*?)\\end\{mywrapfig\}[ \n]*//s ||
+		    $para =~ s/^(.*?)\\end\{myfig\}[ \n]*//s) {
 			my $figure = $1;
 
 			#print "FIGFIG >$figure<\n";

@@ -26,7 +26,7 @@ also give us qualitative understanding about a more general nonlinear
 problem.  The idea is similar to what you did in calculus in trying to
 approximate a function by a line with the right slope.
 
-\begin{mywrapfigsimp}{1.45in}
+\begin{mywrapfigsimp}{1.45in}{1.75in}
 \noindent
 \inputpdft{mv-pend}
 \end{mywrapfigsimp}
@@ -245,12 +245,8 @@ At the point $(1,0)$, we have $u=x-1$ and $v=y$, and the linearization is
 
 \begin{myfig}
 \capstart
-%mbxSTARTIGNORE
-\diffyincludegraphics{width=3in}{width=4.5in}{nlin-1b-lin-00}
-\quad
-\diffyincludegraphics{width=3in}{width=4.5in}{nlin-1b-lin-01}
-%mbxENDIGNORE
-%mbxlatex \diffyincludegraphics{width=6in}{width=9in}{nlin-1b-lin-00-01}
+%original files nlin-1b-lin-00 nlin-1b-lin-01
+\diffyincludegraphics{width=6.24in}{width=9in}{nlin-1b-lin-00-01}
 \caption{Phase diagram with some trajectories of
 linearizations at the critical points $(0,0)$ (left) and $(1,0)$ (right) of
 $x' = y$, $y' = -x+x^2$. \label{fig:nlin-1b-lin}}
@@ -472,6 +468,7 @@ the exception of missing \myquote{center} points.
 We will discuss centers later, as they are more complicated.
 
 \begin{table}[h!t]
+\mybeginframe
 \capstart
 \begin{center}
 \begin{tabular}{@{}lll@{}}
@@ -488,6 +485,7 @@ complex with negative real part & spiral sink & asymptotically stable \\
 \end{center}
 \caption{Behavior of an almost linear system near an isolated critical
 point.  \label{pln:behtab2}}
+\myendframe
 \end{table}
 
 In the new third column,
@@ -495,10 +493,10 @@ we have marked points as \emph{asymptotically stable} or \emph{unstable}.  Forma
 \emph{\myindex{stable critical point}} $(x_0,y_0)$ is one where given any small distance $\epsilon$ to
 $(x_0,y_0)$, and any initial condition within a perhaps smaller radius
 around $(x_0,y_0)$, the trajectory
-of the system will never go further away from $(x_0,y_0)$ than $\epsilon$.
+of the system never goes further away from $(x_0,y_0)$ than $\epsilon$.
 An \emph{\myindex{unstable critical point}} is one that is not stable.
 Informally, a point is stable if we start close to a critical point and
-follow a trajectory we will either go towards, or at least not get away
+follow a trajectory we either go towards, or at least not away
 from,
 this critical point.
 
@@ -552,7 +550,7 @@ The matrix is invertible, and so the system is almost linear at $(1,-1)$.
 As we have real eigenvalues and both negative, the critical
 point is a sink, and therefore an asymptotically stable equilibrium point.
 That is, if we start with any point $(x_i,y_i)$ close to $(1,-1)$ as
-an initial condition and plot a trajectory, it will approach $(1,-1)$.
+an initial condition and plot a trajectory, it approaches $(1,-1)$.
 In other words,
 \begin{equation*}
 \lim_{t \to \infty} \bigl( x(t), y(t) \bigr) = (1,-1) .
@@ -605,19 +603,17 @@ these points.
 
 \subsection{The trouble with centers}
 
-Recall, a linear system with a center meant that trajectories
-traveled in closed elliptical orbits
+Recall, a linear system with a center means that trajectories
+travel in closed elliptical orbits
 in some direction around the critical point.  Such
-a critical point we would call a \emph{\myindex{center}} or
-a \emph{\myindex{stable center}}.  It would not be an asymptotically 
-stable critical point, as the trajectories would never approach the critical
+a critical point we call a \emph{\myindex{center}} or
+a \emph{\myindex{stable center}}.  It is not an asymptotically 
+stable critical point, as the trajectories never approach the critical
 point, but at least if you start sufficiently close to the critical point,
-you will stay close to the critical point.  The simplest example of such
+you stay close to the critical point.  The simplest example of such
 behavior is the linear system with a center.  Another
 example is the critical point $(0,0)$ in
 \examplevref{example:nlin-1b-example}.
-%We will also see two examples of
-%behavior in the next section where we study the predator-prey system.
 
 The trouble with a center in a nonlinear system is that whether the
 trajectory goes towards or away from the critical point is governed by the
@@ -656,7 +652,7 @@ i
 \end{equation*}
 At any point where $y \not= 0$ (so at most points near the origin), the eigenvalues have a positive real part ($y^2$ can
 never be negative).  This positive real part 
-will pull the trajectory away from the origin.  A sample trajectory for an
+pulls the trajectory away from the origin.  A sample trajectory for an
 initial condition near the origin is given in
 \figurevref{fig:nlin-unstable-center}.
 \begin{myfig}
@@ -672,7 +668,7 @@ linearization has a center.  The analysis will in general be more
 complicated than in the above example, and is more likely to involve
 case-by-case consideration.  Such a complication should not be
 surprising to you.  By now in your mathematical career, you have
-seen many places where a simple test is inconclusive, perhaps starting with
+seen many places where a simple test is inconclusive, recall for example
 the second derivative test for maxima or minima, and requires more careful,
 and perhaps ad hoc analysis of the situation.
 
@@ -890,23 +886,23 @@ A critical point $x_0$ is stable if $f'(x_0) < 0$ and unstable when $f'(x_0)
 \sectionnotes{2 lectures\EPref{, \S6.3--\S6.4 in \cite{EP}}\BDref{, \S9.3,
 \S9.5 in \cite{BD}}}
 
-In this section we will study two very standard examples of nonlinear
-systems.  First, we will look at the nonlinear pendulum equation.  We saw
+In this section we study two very standard examples of nonlinear
+systems.  First, we look at the nonlinear pendulum equation.  We saw
 the pendulum equation's linearization before, but we noted it
-was only valid for small angles and short times.  Now we will find out what
-happens for large angles.  Next, we will look at the predator-prey equation,
+was only valid for small angles and short times.  Now we find out what
+happens for large angles.  Next, we look at the predator-prey equation,
 which finds various applications in modeling problems in biology, chemistry,
 economics, and elsewhere.
 
 \subsection{Pendulum}
 
-The first example we will study is the pendulum equation
+The first example we study is the pendulum equation
 $\theta''+\frac{g}{L} \sin \theta = 0$.  Here, $\theta$ is the angular
 displacement, $g$ is the gravitational constant, and $L$ is the length of
 the pendulum.  In this equation we disregard friction, so we are talking
 about an idealized pendulum.
 
-\begin{mywrapfigsimp}{1.45in}
+\begin{mywrapfigsimp}{1.45in}{1.75in}
 \noindent
 \inputpdft{mv-pend}
 \end{mywrapfigsimp}
@@ -980,8 +976,8 @@ corresponds to short swings of the pendulum back and forth.  When $\theta$
 stays small, the trajectories really look like circles and hence are very
 close to our linearization.
 
-When we give the pendulum a big enough push, it will
-go across the top and keep spinning about its axis.  This behavior
+When we give the pendulum a big enough push, it
+goes across the top and keeps spinning about its axis.  This behavior
 corresponds to the
 wavy curves that do not cross the horizontal axis in the phase diagram.
 Let us suppose we look at the top curves, when the angular velocity $\omega$
@@ -1086,12 +1082,8 @@ a 45 degree angle.  At a 5 degree initial angle, the error is only $0.048 \%$.
 
 \begin{myfig}
 \capstart
-%mbxSTARTIGNORE
-\diffyincludegraphics{width=2.88in}{width=4.5in}{nlin-T-vs-T0-abs}
-\quad
-\diffyincludegraphics{width=3in}{width=4.5in}{nlin-T-vs-T0-relerr}
-%mbxENDIGNORE
-%mbxlatex \diffyincludegraphics{width=6in}{width=9in}{nlin-T-vs-T0-abs-relerr}
+%original files nlin-T-vs-T0-abs nlin-T-vs-T0-relerr
+\diffyincludegraphics{width=6.24in}{width=9in}{nlin-T-vs-T0-abs-relerr}
 \caption{The plot of $T$ and $T_{\text{linear}}$ with $\frac{g}{L} =
 1$ (left), and the plot of the relative
 error $\frac{T-T_{\text{linear}}}{T}$ (right), for $\theta_0$ between 0 and $\pi/2$. \label{fig:TvsT0}}
@@ -1159,7 +1151,7 @@ x' = (a-by)x = ax - byx .
 The hares are expected to simply grow exponentially in the absence of foxes,
 that is where the $ax$ term comes in, the growth in population is
 proportional to the population itself.  We are assuming the hares
-will always find enough food and have enough space to reproduce.  However,
+always find enough food and have enough space to reproduce.  However,
 there is another component $-byx$, that is, the population also is
 decreasing proportionally to the number of foxes.  Together we can write the
 equation as $(a-by)x$, so it is like exponential growth or decay but the
@@ -1187,12 +1179,8 @@ on the horizontal axis.  The particular solution graphed was with initial
 conditions of 20 foxes and 50 hares.
 \begin{myfig}
 \capstart
-%mbxSTARTIGNORE
-\diffyincludegraphics{width=3in}{width=4.5in}{nlin-pred-prey-phase}
-\quad
-\diffyincludegraphics{width=3in}{width=4.5in}{nlin-pred-prey-graphs}
-%mbxENDIGNORE
-%mbxlatex \diffyincludegraphics{width=6in}{width=9in}{nlin-pred-prey-phase-graphs}
+%original files nlin-pred-prey-phase nlin-pred-prey-graphs
+\diffyincludegraphics{width=6.24in}{width=9in}{nlin-pred-prey-phase-graphs}
 \caption{The phase portrait (left) and graphs of $x$ and $y$ for
 a sample solution (right). \label{fig:nlin-pred-prey}}
 \end{myfig}
@@ -1317,9 +1305,9 @@ An interesting consequence (perhaps counterintuitive) of this model is that addi
 the forest might lead to extinction, because the variations will get too
 big, and one of the populations will get close to zero.  For example, suppose there are 20 foxes and 50 hares as
 before, but now we bring in more foxes, bringing their number to 200.  If we
-run the computation, we will find the number of hares will plummet to just
-slightly more than 1 hare in the whole forest.  In reality that will most
-likely mean the hares die out, and then the foxes will die out as well
+run the computation, we find the number of hares will plummet to just
+slightly more than 1 hare in the whole forest.  In reality that most
+likely means the hares die out, and then the foxes will die out as well
 as they will have nothing to eat.
 
 Showing that a system of equations has a stable solution can be a very
@@ -1457,8 +1445,8 @@ $\left[
 3/25 & 1/4
 \end{smallmatrix}
 \right]$, which has eigenvalues $\frac{5\pm i \sqrt{327}}{40}$.  Therefore
-there is a spiral source.  This means the solution will spiral
-outwards.  The solution will eventually hit one of the axis $x=0$ or $y=0$
+there is a spiral source.  This means the solution spirals
+outwards.  The solution will eventually hit one of the axis, $x=0$ or $y=0$,
 so something will die out in the forest.
 }
 
@@ -1537,17 +1525,13 @@ For simplicity, let us use $\mu = 1$.  A
 phase diagram is given in the left hand plot in
 \figurevref{fig:nlin-van-der-fig}.  Notice how the
 trajectories seem to very quickly settle on a closed curve.  On the right
-hand plot we have the plot of a single solution for $t=0$ to $t=30$ with
-initial conditions $x(0) = 0.1$ and $x'(0) = 0.1$.  Notice how the solution
+hand side is the plot of a single solution for $t=0$ to $t=30$ with
+initial conditions $x(0) = 0.1$ and $x'(0) = 0.1$.  The solution
 quickly tends to a periodic solution.
 \begin{myfig}
 \capstart
-%mbxSTARTIGNORE
-\diffyincludegraphics{width=3in}{width=4.5in}{nlin-van-der-phase}
-\quad
-\diffyincludegraphics{width=3in}{width=4.5in}{nlin-van-der-plot1}
-%mbxENDIGNORE
-%mbxlatex \diffyincludegraphics{width=6in}{width=9in}{nlin-van-der-phase-plot1}
+%original files nlin-van-der-phase nlin-van-der-plot1
+\diffyincludegraphics{width=6.24in}{width=9in}{nlin-van-der-phase-plot1}
 \caption{The phase portrait (left) and a graph of a sample solution
 of the Van der Pol oscillator.\label{fig:nlin-van-der-fig}}
 \end{myfig}
@@ -1556,7 +1540,7 @@ The Van der Pol oscillator is an
 example of so-called \emph{\myindex{relaxation oscillation}}.  The word
 relaxation comes from the sudden jump (the very steep part of the solution).
 For larger $\mu$ the steep part becomes even more pronounced, for small $\mu$ 
-the limit cycle looks more like a circle.  In fact setting
+the limit cycle looks more like a circle.  In fact, setting
 $\mu = 0$, we get $x''+x=0$, which is a linear system with a
 center and all trajectories become circles.
 \end{example}
@@ -1643,7 +1627,7 @@ Another caveat is that the theorem only works in two
 dimensions.  In three dimensions and higher, there is simply too much room.
 
 Let us next look when limit cycles (or periodic orbits) do not exist.
-We will assume
+We assume
 the equation \eqref{nlin:gensys} is defined on a
 \emph{\myindex{simply connected region}}, that is, a region with no holes
 we can go around.  For example the entire plane is a simply
@@ -1845,43 +1829,45 @@ almost impossible to numerically approximate for long times.
 This is large part of
 the trouble as chaotic systems cannot be in general solved analytically.
 
-Take the weather for example.  As a small change in the initial conditions
+Take the weather, the most well known chaotic system.
+A small change in the initial conditions
 (the temperature at every point of the atmosphere for example) produces
-drastically different predictions in relatively short time, we cannot
-accurately predict weather.  This is because we do not actually know the
-exact initial conditions, we measure temperatures at a few points with some
-error and then we somehow estimate what is in between.  There is no way we
-can accurately measure the effects of every butterfly wing.  Then
-we solve numerically introducing new errors.  That is why you
+drastically different predictions in relatively short time, and so we cannot
+accurately predict weather.  And we do not actually know the
+exact initial conditions.  We measure temperatures at a few points with some
+error and then we somehow estimate what is in between.
+There is no way we
+can accurately measure the effects of every butterfly wing.
+Then
+we solve the equations numerically introducing new errors.  You
 should not trust weather prediction more than a few days out.
 
-The idea of chaotic behavior was first noticed by Edward
+Chaotic behavior was first noticed by Edward
 Lorenz\footnote{\href{https://en.wikipedia.org/wiki/Edward_Norton_Lorenz}{Edward Norton Lorenz} (1917--2008) was
 an American mathematician and meteorologist.}
 in the
 1960s when trying to model thermally induced air convection (movement).
-The equations Lorentz was looking at form the relatively simple looking
-system:
+Lorentz was looking at the relatively simple system:
 \begin{equation*}
 x' = -10x +10y, \qquad y' = 28x-y-xz, \qquad z'=-\frac{8}{3}z + xy .
 \end{equation*}
-A small change in the initial conditions yield a very different solution
+A small change in the initial conditions yields a very different solution
 after a reasonably short time.
 
-\begin{mywrapfigsimp}{0.95in}
+\begin{mywrapfigsimp}{0.95in}{1.25in}
 \noindent
 \inputpdft{chaos-pend}
 \end{mywrapfigsimp}
-A very simple example the reader can experiment with, which displays
-chaotic behavior, is a double pendulum.  The equations that govern this
-system are somewhat complicated and their derivation is quite tedious, so we
+A simple example the reader can experiment with, and which displays
+chaotic behavior, is a double pendulum.  The equations for this
+setup are somewhat complicated and their derivation is quite tedious, so we
 will not bother to write them down.  The idea is to put a pendulum on the
-end of another pendulum.  If you look at the movement of the bottom mass,
-the movement will appear chaotic.  This type of system is a basis for a
-whole number of office novelty desk toys.  It is very simple to build a
-version.  Take a piece of a string, and tie two heavy nuts at different
+end of another pendulum.  The movement of the bottom mass
+will appear chaotic.  This type of chaotic system is a basis for a
+whole number of office novelty desk toys.  It is simple to build a
+version.  Take a piece of a string.  Tie two heavy nuts at different
 points of the string; one at the end, and one a bit above.  Now give the
-bottom nut a little push, as long as the swings are not too big and the
+bottom nut a little push.  As long as the swings are not too big and the
 string stays tight, you have a double pendulum system.
 
 \subsection{Duffing equation and strange attractors}
@@ -1891,11 +1877,11 @@ Let us study the so-called \emph{\myindex{Duffing equation}}:
 x'' + a x' + bx + cx^3 = C \cos(\omega t) .
 \end{equation*}
 Here $a$, $b$, $c$, $C$, and $\omega$ are constants.
-You will recognize that except for the $c x^3$ term, this equation looks like
-a forced mass-spring system.  The $c x^3$ term comes up when the spring does
+Except for the $c x^3$ term, this equation looks like
+a forced mass-spring system.  The $c x^3$ means the spring does
 not exactly obey Hooke's law (which no real-world spring actually does obey
-exactly).  When $c$ is not zero, the equation does not have a nice closed
-form solution, so we have to resort to numerical solutions as is usual for
+exactly).  When $c$ is not zero, the equation does not have a closed
+form solution, so we must resort to numerical solutions, as is usual for
 nonlinear systems.  Not all choices of constants and initial conditions
 exhibit chaotic behavior.  Let us study
 \begin{equation*}
@@ -1915,12 +1901,8 @@ we mean by the system behaving chaotically.
 
 \begin{myfig}
 \capstart
-%mbxSTARTIGNORE
-\diffyincludegraphics{width=3in}{width=4.5in}{nlin-duf-two-traj}
-\quad
-\diffyincludegraphics{width=2.9in}{width=4.5in}{nlin-duf-two-sols}
-%mbxENDIGNORE
-%mbxlatex \diffyincludegraphics{width=6in}{width=9in}{nlin-duf-two-traj-sols}
+%original files nlin-duf-two-traj nlin-duf-two-sols
+\diffyincludegraphics{width=6.24in}{width=9in}{nlin-duf-two-traj-sols}
 \caption{On left, two trajectories in phase space for $0 \leq t \leq 15$, for the Duffing equation
 one with initial conditions $(2,3)$ and the other with $(2,2.9)$.  On
 right the two solutions in $(x,t)$-space. \label{nlin:duf-two-traj}}
@@ -1928,50 +1910,52 @@ right the two solutions in $(x,t)$-space. \label{nlin:duf-two-traj}}
 
 \begin{myfig}
 \capstart
-\diffyincludegraphics{width=6in}{width=9in}{nlin-duf-long}
+\diffyincludegraphics{width=6.24in}{width=9in}{nlin-duf-long}
 \caption{The solution to the given Duffing equation for $t$ from 0 to 100.
 \label{nlin:duf-long}}
 \end{myfig}
 
 Let us see the long term behavior.
 In \figurevref{nlin:duf-long},
-we plot the behavior of the system for initial conditions $(2,3)$, but for
-much longer period of time.  Note that for this period of time it was
-necessary to use a ridiculously large number of steps in the numerical algorithm
-used to produce the graph, as even small errors quickly
-propagate\footnote{In
-fact for reference, 30,000 steps were used with the Runge-Kutta
-algorithm, see exercises in \sectionref{numer:section}.}.
-From the graph it is hard to see any particular pattern
+we plot the behavior of the system for initial conditions $(2,3)$ for
+a longer period of time.
+It is hard to see any particular pattern
 in the shape of the solution except that it seems to oscillate, but each
-oscillation appears quite unique.  The oscillation is expected due to the
-forcing term.
+oscillation appears quite unique.  The oscillation
+is expected due to the forcing term.
+We mention that to produce the picture accurately,
+a ridiculously large number of steps\footnote{In
+fact for reference, 30,000 steps were used with the Runge-Kutta
+algorithm, see exercises in \sectionref{numer:section}.}
+had to be used in the numerical
+algorithm,
+as even small errors quickly propagate in a chaotic system.
 
-In general it is very difficult to analyze chaotic systems, or to find the
+
+It is very difficult to analyze chaotic systems, or to find the
 order behind the madness, but let us try to do something that we did for
 the standard mass-spring system.  One way we analyzed
 the system is that we figured out what was the long term behavior (not
-dependent on initial conditions).  From the figure above it is clear
-that we will not get a nice description of the long term behavior
+dependent on initial conditions).  From the figure above, it is clear
+that we will not get a nice exact description of the long term behavior
 for this chaotic system, but
-perhaps we can figure out some order to what happens on each
+perhaps we can find some order to what happens on each
 \myquote{oscillation}
 and what do these oscillations have in common.
 
-%The concept we will explore
-%is that of an \emph{\myindex{attractor}}.  First instead of 
 The concept we explore
 is that of a \emph{\myindex{Poincar\`e section}}%
 \footnote{Named for the French polymath
 \href{https://en.wikipedia.org/wiki/Henri_Poincar\%C3\%A9}{Jules Henri
 Poincar\`e} (1854--1912).}.  Instead of 
 looking at $t$ in a certain interval, we look at where the
-system is at a certain sequence of points in time.  Imagine flashing a strobe at a certain
+system is at a certain sequence of points in time.
+Imagine flashing a strobe at a
 fixed frequency and drawing the points where the solution is during the flashes.
 The right strobing frequency
 depends on the system in question.
 The
-correct frequency to use for the forced Duffing equation (and other similar
+correct frequency for the forced Duffing equation (and other similar
 systems) is the frequency of the forcing term.
 For the Duffing equation above, find a solution
 $\bigl(x(t),y(t)\bigr)$, and look at the points
@@ -1982,7 +1966,7 @@ $\bigl(x(t),y(t)\bigr)$, and look at the points
 \bigl(x(6\pi),y(6\pi)\bigr), \quad \ldots
 \end{equation*}
 As we are really not interested in the transient part of the solution, that
-is, the part of the solution that depends on the initial condition we 
+is, the part of the solution that depends on the initial condition, we 
 skip some number of steps in the beginning.  For example, we might skip the first 100 such
 steps and start plotting points at $t = 100(2\pi)$, that is
 \begin{equation*}
@@ -1998,24 +1982,20 @@ After plotting enough points, a curious pattern emerges in
 
 \begin{myfig}
 \capstart
-%mbxSTARTIGNORE
-\diffyincludegraphics{width=3in}{width=4.5in}{nlin-strange}
-\quad
-\diffyincludegraphics{width=2.9in}{width=4.5in}{nlin-strange2}
-%mbxENDIGNORE
-%mbxlatex \diffyincludegraphics{width=6in}{width=9in}{nlin-strange-strange2}
+%original files nlin-strange nlin-strange2
+\diffyincludegraphics{width=6.24in}{width=9in}{nlin-strange-strange2}
 \caption{Strange attractor.  The left plot 
 is with no phase shift, the right plot has phase shift
 $\nicefrac{\pi}{4}$. \label{nlin:strange}}
 \end{myfig}
 
-If we have a sequence of points, then 
+Given a sequence of points, 
 an \emph{\myindex{attractor}} is a set towards which the points
 in the sequence
 eventually get closer and closer to, that is, they are attracted.  The
 Poincar\`e section is not really the attractor itself, but as
 the points are very close to it, we see its shape.  The strange
-attractor in the figure is a very complicated set.   In fact, it has
+attractor is a very complicated set.   It has
 fractal structure, that is, if you zoom in as far as you want, you
 keep seeing the same complicated structure.
 
@@ -2028,8 +2008,8 @@ Similarly small errors in the numerical approximations do not matter here.
 An amazing thing is that a chaotic system such as the Duffing equation is
 not random at all.  There is a very complicated order to it, and the strange
 attractor says something about this order.  We cannot quite say what state
-the system will be in eventually, but given a fixed strobing frequency we
-can narrow it down to the points on the attractor.
+the system will be in eventually, but given the fixed strobing frequency we
+narrow it down to the points on the attractor.
 
 If we use a phase shift, for example $\nicefrac{\pi}{4}$, and look at the
 times
@@ -2040,21 +2020,21 @@ times
 6\pi+\nicefrac{\pi}{4}, \quad
 \ldots
 \end{equation*}
-we obtain a slightly different looking attractor.
+we obtain a slightly different attractor.
 The picture is the right hand side of 
 \figurevref{nlin:strange}.
 It is as if we had
-rotated, distorted slightly, and then moved the original.
-Therefore for each phase shift you can find the
+rotated, moved, and slightly distorted the original.
+For each phase shift you can find the
 set of points towards which the system periodically keeps coming back to.
 
-You should study the pictures and notice especially the scales---where are
+Study the pictures and notice especially the scales---where are
 these attractors located in the phase plane.  Notice the
 regions where the strange attractor lives and compare it to the plot of the
 trajectories in \figurevref{nlin:duf-two-traj}.
 
 Let us
-compare the discussion in this section to the discussion in \sectionref{forcedo:section} about forced
+compare this section to the discussion in \sectionref{forcedo:section} about forced
 oscillations.  Take the equation
 \begin{equation*}
 x''+2p x' + \omega_0^2 x = \frac{F_0}{m} \cos (\omega t) .
@@ -2064,24 +2044,25 @@ The steady periodic solution is of the form
 \begin{equation*}
 x = C \cos (\omega t + \gamma) .
 \end{equation*}
-Strobing using the frequency $\omega$ we would obtain a single point in the
-phase space.  So the attractor in this setting is a single point---an
-expected result as the system is not chaotic.  In fact it was the opposite
-of chaotic.  Any difference induced by the initial conditions dies away very
+Strobing using the frequency $\omega$, we obtain a single point in the
+phase space.  The attractor in this setting is a single point---an
+expected result as the system is not chaotic.  It was the opposite
+of chaotic:  Any difference induced by the initial conditions dies away very
 quickly, and we settle into always the same steady periodic motion.
 
 \subsection{The Lorenz system}
 
-In two dimensions to have the kind of chaotic behavior we are looking for,
-we have to study forced, or non-autonomous, systems such as the Duffing
+In two dimensions to find chaotic behavior,
+we must study forced, or non-autonomous, systems such as the Duffing
 equation.
-Due to the Poincar\`e-Bendixson Theorem, if an autonomous
-two-dimensional system has a solution that exists for all time in the future
-and does not go towards infinity,
-then it is periodic or it tends towards a periodic solution.  Hardly the chaotic
+The Poincar\`e-Bendixson Theorem says that
+a solution to an autonomous
+two-dimensional system that exists for all time in the future
+and does not go towards infinity
+is periodic or tends towards a periodic solution.  Hardly the chaotic
 behavior we are looking for.
-%In three dimensions even autonomous systems can be chaotic.
 
+In three dimensions even autonomous systems can be chaotic.
 Let us very briefly return to the \myindex{Lorenz system}
 \begin{equation*}
 x' = -10x +10y, \qquad y' = 28x-y-xz, \qquad z'=-\frac{8}{3}z + xy .
@@ -2096,21 +2077,34 @@ See the \figurevref{nlin:lorenz} for a sample trajectory.
 \end{myfig}
 
 The solutions tend to an \emph{attractor} in space,
-the so-called \emph{\myindex{Lorenz attractor}}.  In this case no strobing is
+the so-called \emph{\myindex{Lorenz attractor}}.
+In this case no strobing is
 necessary.
 Again we cannot quite see the attractor itself, but if we try to follow a solution
 for long enough, as in the figure,
-we will get a pretty good picture of what the attractor looks
+we get a pretty good picture of what the attractor looks
 like.
+The Lorenz attractor is also a strange attractor and has a complicated
+fractal structure.  And, just as for the Duffing equation, what we want to
+draw is not the whole trajectory, but start drawing the trajectory after a
+while, once it is close to the attractor.
 
-The path is not just a repeating figure-eight.  The trajectory will spin some
-seemingly random number of times on the left, then spin a number of times on
+The path of the trajectory is not simply a repeating figure-eight.
+The trajectory spins some
+seemingly random number of times on the left, then spins a number of times on
 the right, and so on.  As this system arose in weather prediction, one can
 perhaps imagine a few days of warm weather and then a few days of cold
 weather, where it is not easy to predict when the weather will change,
 just as it is not really easy to predict far in advance when the solution
 will jump onto the other side.  See \figurevref{nlin:lorenz-graphx} for a
-plot of the $x$ component of the solution drawn above.
+plot of the $x$ component of the solution drawn above.  A negative $x$
+corresponds to the left \myquote{loop} and a positive $x$
+corresponds to the right \myquote{loop}.
+
+Most of the mathematics we studied in this book is quite classical and
+well understood.
+On the other hand, Chaos, including the Lorenz system, continues to be the
+subject of current research.
 
 \begin{myfig}
 \capstart
@@ -2129,6 +2123,7 @@ steady periodic solution to find precisely the point which is the attractor
 for the Poincar\`e section.
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}[project]
 A simple fractal attractor can be drawn via the following chaos game.  Draw three
 points of a triangle (just the vertices) and number them, say $p_1$, $p_2$
@@ -2144,6 +2139,7 @@ attracted to the so-called \emph{\myindex{Sierpinski triangle}}.  A computer
 was used to run the game for 10,000 iterations to obtain the picture in
 \figurevref{nlin:sierpinski}.
 \end{exercise}
+\end{samepage}
 
 \begin{myfig}
 \capstart
