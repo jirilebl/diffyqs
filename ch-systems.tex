@@ -1093,7 +1093,7 @@ system and, voil\`a, it works!
 Check that the solution above really solves the given equations.
 \end{exercise}
 
-If we write this equation in matrix notation as
+We write this equation in matrix notation as
 \begin{equation*}
 A \vec{x} = \vec{b} ,
 \end{equation*}
@@ -1107,7 +1107,7 @@ $\left[ \begin{smallmatrix}
 2 \\
 5 \\
 10
-\end{smallmatrix} \right]$.  The solution can be also computed via the
+\end{smallmatrix} \right]$.  The solution can also be computed via the
 inverse,
 \begin{equation*}
 \vec{x} = A^{-1} A \vec{x} = A^{-1} \vec{b} .
@@ -1115,14 +1115,14 @@ inverse,
 
 \medskip
 
-One last note to make about linear systems of equations is that it is
-possible that the solution is not unique (or that no solution exists).
+It is
+possible that the solution is not unique, or that no solution exists.
 It is easy to tell if a solution does not exist.  If during the row
 reduction you come up with a row where all the entries except the last one
 are zero (the last entry in a row corresponds to the right hand side of the
 equation) the system is \emph{inconsistent\index{inconsistent system}} and
 has no solution.  For
-example for a system of 3 equations and 3 unknowns, if you find a row
+example, for a system of 3 equations and 3 unknowns, if you find a row
 such as $[\,0 \quad 0 \quad 0 ~\,|\,~ 1\,]$ in the augmented matrix,
 you know the system is inconsistent.  That row corresponds to $0=1$.
 
@@ -1594,7 +1594,11 @@ associated homogeneous equation, and finally we add the two together.
 
 Alright, suppose you have found the general solution of
 ${\vec{x}\,}' = P\vec{x} + \vec{f}$.  Next suppose you are given an
-initial condition of the form $\vec{x}(t_0) = \vec{b}$ for some constant
+initial condition of the form
+\begin{equation*}
+\vec{x}(t_0) = \vec{b}
+\end{equation*}
+for some fixed $t_0$ and a constant
 vector $\vec{b}$.  Let $X(t)$ be a fundamental matrix solution
 of the associated homogeneous equation
 (i.e.\ columns of $X(t)$ are solutions).  The general solution can be
@@ -1639,7 +1643,7 @@ We write the system and the initial conditions as
 \end{bmatrix} .
 \end{equation*}
 
-We found the general solution was
+We found the general solution is
 $x_1 = c_1 e^t $ and
 $x_2 = \frac{c_1}{2}e^{t} + c_2e^{-t}$. 
 Letting $c_1=1$ and $c_2=0$, we obtain the solution
@@ -1705,7 +1709,9 @@ ${\vec{x}\,}' = P(t) \vec{x} + \vec{f}(t)$.
 \end{exercise}
 
 \begin{exercise}
-a)~Verify that the system ${\vec{x}\,}' =
+{\ }
+\begin{enumerate}[a)]
+\item Verify that the system ${\vec{x}\,}' =
 \left[ \begin{smallmatrix}
 1 & 3 \\ 3 & 1
 \end{smallmatrix} \right] \vec{x}$ has the two solutions
@@ -1715,9 +1721,10 @@ $\left[ \begin{smallmatrix}
 $\left[ \begin{smallmatrix}
 1 \\ -1
 \end{smallmatrix} \right] e^{-2t}$.
-b)~Write down the general solution.
-c)~Write down the general solution in the form $x_1 = ?$, $x_2 = ?$
+\item Write down the general solution.
+\item Write down the general solution in the form $x_1 = ?$, $x_2 = ?$
 (i.e.\ write down a formula for each element of the solution).
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -1761,10 +1768,12 @@ are linearly independent.
 \begin{exercise}
 Take the system $x_1' + x_2' = x_1$,
 $x_1' - x_2' = x_2$.
-a)~Write it in the form
+\begin{enumerate}[a)]
+\item Write it in the form
 $A {\vec{x}\,}' = B \vec{x}$ for matrices $A$ and $B$.
-b)~Compute $A^{-1}$ and use that to write the system in the form
+\item Compute $A^{-1}$ and use that to write the system in the form
 ${\vec{x}\,}' = P \vec{x}$.
+\end{enumerate}
 \end{exercise}
 
 \setcounter{exercise}{100}
@@ -1834,8 +1843,12 @@ e^{t} \\ 0
 }
 
 \begin{exercise}
-a) Write $x_1'=2tx_2$, $x_2'=2tx_2$ in matrix notation.  b)~Solve and write
+{\ }
+\begin{enumerate}[a)]
+\item Write $x_1'=2tx_2$, $x_2'=2tx_2$ in matrix notation.
+\item Solve and write
 the solution in matrix notation.
+\end{enumerate}
 \end{exercise}
 \exsol{%
 a)
