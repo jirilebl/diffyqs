@@ -1979,53 +1979,120 @@ pure goo.
 
 FIXME: picture of the setup
 
-FIXME: the rest is a dump of notes
+We have a function of two variables $u(x,t)$ that we wish to transform, so
+we fix one variable and transform the other.  Let us transform the $t$
+variable.  For convenience, we will treat the transformed $s$
+variable as a parameter,
+as there will be no derivatives in $s$.  That is, the transformed function
+will be a function of $x$ with depending on a parameter $s$
+That is, we write $U(x)$ for the transformed function:
+\begin{equation*}
+U(x)
+= {\mathcal L} \bigl\{ u(x,t) \bigr\}
+= \int_0^\infty u(x,t) e^{-st} ~ds .
+\end{equation*}
+The $x$ derivative is not difficult to compute:
+\begin{equation*}
+{\mathcal L} \bigl\{ u_x(x,t) \bigr\} =
+\int_0^\infty u_x(x,t) e^{-st} ~ds
+=
+\frac{d}{dx} \left[\int_0^\infty u(x,t) e^{-st} ~ds \right]
+=
+U'(x) .
+\end{equation*}
+The derivative in $t$ is the derivative of the transformed variable
+\begin{equation*}
+{\mathcal L} \bigl\{ u_t(x,t) \bigr\} 
+=
+sU(x) - u(x,0) .
+\end{equation*}
 
-Let's use Laplace to solve this since we have just learned it:
+As $u(x,0)=0$, then in our specific case,
+${\mathcal L} \bigl\{ u_t(x,t) \bigr\} = sU(x)$.  We transform the equation
+to find
+\begin{equation*}
+sU(x) = -\alpha U'(x) .
+\end{equation*}
+We need an initial condition for this ODE.  This initial condition is the
+other side condition of the PDE, the one that depends on $x$.  Since we have
+transformed everything we need to transform this condition too
+\begin{equation*}
+U(0) = 
+{\mathcal L} \bigl\{ u(0,t) \bigr\} 
+=
+{\mathcal L} \bigl\{ C \bigr\} 
+=
+\frac{C}{s} .
+\end{equation*}
 
-$U(x) = {\mathcal L} \bigl\{ u(x,t) \bigr\}$
-in the $t$ direction and we'll treat $s$ as parameter again.  $u(x,0) = 0$ and
-so
-
-$sU(x) = -\alpha U'(x)$, $U(0) = \frac{C}{s}$.
-So
-$$
-U(x) = \frac{C}{s} e^{-\frac{s}{\alpha} x}
-$$
-For the inverse transform we use the Heaviside function
-$$
+We solve the ODE $sU(x) = -\alpha U'(x)$, $U(0) = \frac{C}{s}$ to find
+\begin{equation*}
+U(x) = \frac{C}{s} e^{-\frac{s}{\alpha} x} .
+\end{equation*}
+We are not done, we have $U(x)$, but we really want $u(x,t)$.  We need
+to transform the $s$ variable back to $t$.
+Let us use
+\begin{equation*}
 H(t) = \begin{cases} 0 & \text{if $t < 0$}, \\ 1 & \text{otherwise}
 \end{cases}
-$$
-We note
-that
-$$
-{\mathcal L}[H(t-a)] =
-\int_0^\infty H(t-a) e^{-st} dt
+\end{equation*}
+for the Heaviside function,
+since we clearly cannot use $u$.
+As
+\begin{equation*}
+{\mathcal L} \bigl\{ H(t-a) \bigr\} =
+\int_0^\infty H(t-a) \, e^{-st} ~dt
 =
-\int_a^\infty e^{-st} dt
+\int_a^\infty e^{-st} ~dt
 =
-\frac{e^{-as}}{s}
-$$
-So
-$$
-u(x,t) = C H(t-x/\alpha)
-$$
+\frac{e^{-as}}{s} .
+\end{equation*}
+Then
+\begin{equation*}
+u(x,t) = {\mathcal L}^{-1} \left\{
+\frac{C}{s} e^{-\frac{s}{\alpha} x}
+\right\}
+=
+C H\bigl(t-\nicefrac{x}{\alpha}\bigr) .
+\end{equation*}
 In other words
-$$
+\begin{equation*}
 u(x,t) =
 \begin{cases}
-0 & \text{if $t < x/\alpha$}, \\
-C & \text{otherwise}
+0 & \text{if $t < \nicefrac{x}{\alpha}$}, \\
+C & \text{otherwise.}
 \end{cases}
-$$
+\end{equation*}
 
-DRAW PLOT Slope of wavefront is $1/\alpha$.
+FIXME: Plot,  slope of wavefront is $1/\alpha$.
 
-Shhh ... $u$ is not differentiable (nobody ever seems to notice this).
-Well, just think of something very very close to $u$ that is differentiable.
 What the equation does is simply move the initial condition to the right at
 speed $\alpha$.
+Shhh ... $u$ is not differentiable, it is not even continuous
+(nobody ever seems to notice this).
+Well, just think of a function very very close to $u$ that is differentiable.
+Or, if you recognize the derivative of the Heaviside function as the delta
+function, then all is well too:
+\begin{equation*}
+u_t (x,t) = \frac{\partial}{\partial t} \left[
+C  H\bigl(t-\nicefrac{x}{\alpha}\bigr)
+\right]
+=
+C  H'\bigl(t-\nicefrac{x}{\alpha}\bigr)
+=
+C \delta\bigl(t-\nicefrac{x}{\alpha}\bigr)
+\end{equation*}
+and
+\begin{equation*}
+u_x (x,t) = \frac{\partial}{\partial x} \left[
+C  H\bigl(t-\nicefrac{x}{\alpha}\bigr)
+\right]
+=
+- \frac{C}{\alpha}  H'\bigl(t-\nicefrac{x}{\alpha}\bigr)
+=
+- \frac{C}{\alpha} \delta\bigl(t-\nicefrac{x}{\alpha}\bigr) .
+\end{equation*}
+So $u_t = - \alpha u_x$.
 \end{example}
 
 FIXME: Just a dump from my draft notes:
