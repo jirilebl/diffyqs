@@ -512,6 +512,8 @@ a_{21} & a_{22} & a_{23} & a_{24} & a_{25} \\
 a_{31} & a_{32} & a_{33} & a_{34} & a_{35}
 \end{bmatrix} .
 \end{equation*}
+The numbers $a_{ij}$ are called \emph{elements}\index{element of a matrix}
+or \emph{entries}\index{entry of a matrix}.
 
 By a \emph{\myindex{vector}} we usually mean a \emph{\myindex{column
 vector}}, that is an $m \times 1$ matrix.  If we mean a \emph{\myindex{row
@@ -1400,11 +1402,11 @@ $\left[ \begin{smallmatrix}
 second part of \S5.1 in \cite{EP}}\BDref{,
 \S7.4 in \cite{BD}}}
 
-First let us talk about matrix or vector valued functions.  
+First let us talk about matrix- or vector-valued functions.  
 Such a function is
 just a matrix whose entries depend on some variable.
 If $t$ is the independent variable, we write a
-\emph{\myindex{vector valued function}}
+\emph{\myindex{vector-valued function}}
 $\vec{x}(t)$ as
 \begin{equation*}
 \vec{x}(t) = \begin{bmatrix}
@@ -1414,7 +1416,7 @@ x_2(t) \\
 x_n(t)
 \end{bmatrix} .
 \end{equation*}
-Similarly a \emph{\myindex{matrix valued function}} $A(t)$ is
+Similarly a \emph{\myindex{matrix-valued function}} $A(t)$ is
 \begin{equation*}
 A(t) =
 \begin{bmatrix}
@@ -1425,12 +1427,12 @@ a_{n1}(t) & a_{n2}(t) & \cdots & a_{nn}(t)
 \end{bmatrix} .
 \end{equation*}
 The derivative $A'(t)$ or $\frac{dA}{dt}$ is
-just the matrix valued function
+just the matrix-valued function
 whose $ij^{\text{th}}$ entry is $a_{ij}'(t)$.
 
-Rules of differentiation of matrix valued functions
+Rules of differentiation of matrix-valued functions
 are similar to rules for normal
-functions.  Let $A(t)$ and $B(t)$ be matrix valued
+functions.  Let $A(t)$ and $B(t)$ be matrix-valued
 functions.  Let $c$ a scalar and let $C$ be a constant matrix.
 Then
 \begin{align*}
@@ -1447,12 +1449,12 @@ written as the vector equation
 \begin{equation*}
 {\vec{x}\,}'(t) = P(t)\vec{x}(t) + \vec{f}(t),
 \end{equation*}
-where $P(t)$ is a matrix valued function,
-and $\vec{x}(t)$ and $\vec{f}(t)$ are vector
-valued functions.  We will often suppress the dependence on $t$ and
+where $P(t)$ is a matrix-valued function,
+and $\vec{x}(t)$ and $\vec{f}(t)$ are vector-valued functions.
+We will often suppress the dependence on $t$ and
 only write ${\vec{x}\,}' = P\vec{x} + \vec{f}$.  A solution of
-the system is a vector
-valued function $\vec{x}$ satisfying the vector equation.
+the system is a vector-valued function
+$\vec{x}$ satisfying the vector equation.
 
 For example, the equations
 \begin{align*}
@@ -1499,12 +1501,12 @@ $\vec{x}_1,\vec{x}_2,\ldots,\vec{x}_n$ are linearly independent, then every
 solution  $\vec{x}$ can be written as \eqref{syshom:eq1}.
 \end{theorem}
 
-Linear independence for vector valued functions is the same idea as
+Linear independence for vector-valued functions is the same idea as
 for normal functions.
-The vector valued functions
+The vector-valued functions
 $\vec{x}_1,\vec{x}_2,\ldots,\vec{x}_n$ are
 linearly independent
-\index{linearly independent!for vector valued functions}
+\index{linearly independent!for vector-valued functions}
 when
 \begin{equation*}
 c_1 \vec{x}_1 + c_2 \vec{x}_2 + \cdots + c_n \vec{x}_n  = \vec{0}
@@ -1564,7 +1566,7 @@ where $X(t)$ is the matrix with columns $\vec{x}_1, \vec{x}_2, \ldots, \vec{x}_n
 and $\vec{c}$ is the column vector with entries $c_1, c_2, \ldots, c_n$.
 Assuming that $\vec{x}_1,\vec{x}_2,\ldots,\vec{x}_n$ are linearly
 independent,
-the matrix valued function $X(t)$ is called a \emph{\myindex{fundamental matrix}},
+the matrix-valued function $X(t)$ is called a \emph{\myindex{fundamental matrix}},
 or a \emph{\myindex{fundamental matrix solution}}.
 
 \medskip
@@ -2125,8 +2127,10 @@ $\lambda = 3$ in the example above?  How are the two eigenvectors related?
 \end{exercise}
 
 \begin{exercise}
-When the matrix is $2 \times 2$ you do not need to write
-down the augmented matrix and do row operations when computing eigenvectors
+When the matrix is $2 \times 2$ you do not need to
+%write down the augmented matrix and
+do row operations when computing an eigenvector,
+you can read it off from $A-\lambda I$
 (if you have computed the eigenvalues correctly).
 Can you see why?  Explain.  Try it for the matrix
 $\left[ \begin{smallmatrix} 2 & 1 \\ 1 & 2 \end{smallmatrix} \right]$.
@@ -2222,7 +2226,7 @@ e^{3t}
 c_1 e^t+c_3 e^{3t} \\ -c_1 e^t + c_2 e^{2t} + c_3 e^{3t} \\ - c_2 e^{2t}
 \end{bmatrix} .
 \end{equation*}
-In terms of a fundamental matrix solution
+In terms of a fundamental matrix solution,
 \begin{equation*}
 \vec{x} = X(t)\, \vec{c}
 =
@@ -2241,7 +2245,7 @@ c_1 \\ c_2 \\ c_3
 Check that this $\vec{x}$ really solves the system.
 \end{exercise}
 
-Note: If we write a homogeneous linear constant coefficient $n^{\text{th}}$
+Note: If we write a single homogeneous linear constant coefficient $n^{\text{th}}$
 order equation as a first order system (as we did in \sectionref{sec:introtosys}),
 then the eigenvalue equation
 \begin{equation*}
@@ -2252,8 +2256,8 @@ is essentially the same as the characteristic equation we got in
 
 \subsection{Complex eigenvalues}
 
-A matrix might very well have complex eigenvalues even if all the entries are
-real.  For example, suppose that we have the system
+A matrix may very well have complex eigenvalues even if all the entries are
+real.  Take, for example,
 \begin{equation*}
 {\vec{x}\,}' = 
 \begin{bmatrix}
@@ -2278,7 +2282,7 @@ the matrix $P = \left[ \begin{smallmatrix} 1 & 1 \\ -1 & 1 \end{smallmatrix}
 \end{equation*}
 Thus $\lambda = 1 \pm i$.
 Corresponding eigenvectors are also complex.
-First take $\lambda = 1-i$,
+Start with $\lambda = 1-i$.
 \begin{align*}
 \bigl(P-(1-i) I\bigr) \vec{v} & = \vec{0} , \\
 \begin{bmatrix}
@@ -2309,10 +2313,11 @@ c_1 e^{(1-i)t} + c_2 e^{(1+i)t}
 \end{equation*}
 We would then need to look for complex values $c_1$ and $c_2$ to solve
 any initial conditions.  It is perhaps not completely clear
-that we get a real solution.  We could use
+that we get a real solution.  After solving for $c_1$ and $c_2$,
+we could use
 \hyperref[eulersformula]{Euler's formula} and do the
-whole song and dance we did before, but we will not.   We will do something
-a bit smarter first.
+whole song and dance we did before, but we will not.   We will apply
+the formula in a smarter way first to find independent real solutions.
 
 \medskip
 
@@ -2320,14 +2325,15 @@ We claim that we did not have to look for a second eigenvector
 (nor for the second eigenvalue).  All complex eigenvalues come in pairs
 (because the matrix $P$ is real).
 
-First a small side note.  The real part of
+First a small detour.  The real part of
 a complex number $z$ can be computed as $\frac{z + \bar{z}}{2}$, where
 the bar above $z$ means $\overline{a+ib} = a -ib$.  This operation is called the
 \emph{\myindex{complex conjugate}}.
 If $a$ is a real number, then $\bar{a} = a$.
 Similarly
-we can bar whole vectors or matrices.  If a matrix $P$ is real, then
-$\overline{P} = P$.  We note that $\overline{P\vec{x}} = \overline{P} \,
+we bar whole vectors or matrices by taking the complex conjugate
+of every entry.  Suppose a matrix $P$ is real.  Then
+$\overline{P} = P$, and so $\overline{P\vec{x}} = \overline{P} \,
 \overline{\vec{x}} = P \overline{\vec{x}}$.
 Therefore,
 \begin{equation*}
@@ -2335,7 +2341,7 @@ Therefore,
 =
 (P-\bar{\lambda} I)\overline{\vec{v}} .
 \end{equation*}
-So if $\lambda = a+ib$ is an eigenvalue, then so is $\bar{\lambda} = a-ib$.
+In other words, if $\lambda = a+ib$ is an eigenvalue, then so is $\bar{\lambda} = a-ib$.
 And if $\vec{v}$ is an eigenvector corresponding to the eigenvalue
 $\lambda$, then $\overline{\vec{v}}$ is an eigenvector corresponding
 to the eigenvalue $\bar{\lambda}$.  
@@ -2345,8 +2351,9 @@ is a corresponding eigenvector.  Then
 \begin{equation*}
 \vec{x}_1 = \vec{v} e^{(a+ib)t}
 \end{equation*}
-is a solution (complex valued) of
-${\vec{x}\,}' = P \vec{x}$.  Euler's formula shows that $\overline{e^{a+ib}} =
+is a solution (complex-valued) of
+${\vec{x}\,}' = P \vec{x}$.  \hyperref[eulersformula]{Euler's formula}
+shows that $\overline{e^{a+ib}} =
 e^{a-ib}$,
 and so
 \begin{equation*}
@@ -2432,7 +2439,7 @@ c_1 e^t \sin t + c_2 e^t \cos t \\
 c_1 e^t \cos t - c_2 e^t \sin t
 \end{bmatrix} .
 \end{equation*}
-This solution is real-valued for real $c_1$ and $c_2$.  Now we can solve
+This solution is real-valued for real $c_1$ and $c_2$.  We now solve
 for any initial conditions that we may have.
 
 \medskip
@@ -6094,7 +6101,7 @@ to the nonhomogeneous equation of the form
 \begin{equation*}
 \vec{x}_p = X(t)\, \vec{u}(t) ,
 \end{equation*}
-where $\vec{u}(t)$ is a vector valued function instead of a constant.
+where $\vec{u}(t)$ is a vector-valued function instead of a constant.
 We substitute $\vec{x}_p$ into \eqref{nhsys:nhvceq} to obtain
 \begin{equation*}
 %{\vec{x}_p{}\!}'(t)
