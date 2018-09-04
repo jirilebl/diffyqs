@@ -2450,7 +2450,7 @@ Let us summarize as a theorem.
 Let $P$ be a real-valued constant matrix.
 If $P$ has a complex eigenvalue $a+ib$ and a corresponding eigenvector
 $\vec{v}$, then $P$ also has a complex eigenvalue $a-ib$ with
-a corresponding eigenvector $\bar{\vec{v}}$.
+a corresponding eigenvector $\overline{\vec{v}}$.
 Furthermore,
 ${\vec{x}\,}' = P\vec{x}$ has
 two linearly independent real-valued solutions
@@ -2676,10 +2676,20 @@ parts of \S7.5 and \S7.6 in \cite{BD}}}
 Let us take a moment to talk about constant coefficient linear
 homogeneous systems in the plane.
 Much intuition can be obtained by studying this simple case.
-Suppose we have a $2 \times 2$ matrix $P$ and the system
+Suppose we use corodinates $(x,y)$ for the plane as usual,
+and suppose
+$P = \left[ \begin{smallmatrix} a & b \\ c & d \end{smallmatrix} \right]$ 
+is a $2 \times 2$ matrix.  Consider the system
 \begin{equation} \label{pln:eq}
 \begin{bmatrix} x \\ y \end{bmatrix} ' =
-P \begin{bmatrix} x \\ y \end{bmatrix} .
+P \begin{bmatrix} x \\ y \end{bmatrix} 
+\qquad 
+\text{or}
+\qquad
+\begin{bmatrix} x \\ y \end{bmatrix} ' =
+\begin{bmatrix} a & b \\ c & d \end{bmatrix} 
+\begin{bmatrix} x \\ y \end{bmatrix} 
+.
 \end{equation}
 The system is autonomous (compare this section
 to \sectionref{auteq:section})
@@ -2711,24 +2721,24 @@ $\left[ \begin{smallmatrix} 1 \\ 0 \end{smallmatrix} \right]$ and
 $\left[ \begin{smallmatrix} 1 \\ 1 \end{smallmatrix} \right]$.  See
 \figurevref{pln:source-eigfig}.
 
-Now suppose that $x$ and $y$ are on the line determined by an eigenvector
+Suppose the point $(x,y)$ is on the line determined by an eigenvector
 $\vec{v}$ for an eigenvalue $\lambda$.
 That is,
-$\left[ \begin{smallmatrix} x \\ y \end{smallmatrix} \right] = a \vec{v}$
-for some scalar $a$.
+$\left[ \begin{smallmatrix} x \\ y \end{smallmatrix} \right] = \alpha \vec{v}$
+for some scalar $\alpha$.
 Then 
 \begin{equation*}
 \begin{bmatrix} x \\ y \end{bmatrix} '
 =
 P \begin{bmatrix} x \\ y \end{bmatrix}
 =
-P ( a \vec{v} ) =  a ( P \vec{v} )
-= a \lambda \vec{v} .
+P ( \alpha \vec{v} ) =  \alpha ( P \vec{v} )
+= \alpha \lambda \vec{v} .
 \end{equation*}
 The derivative is a multiple of $\vec{v}$ and hence points along the
 line determined by $\vec{v}$.  As $\lambda > 0$, the derivative points in the
-direction of $\vec{v}$ when $a$ is positive and in the opposite direction when
-$a$ is negative.  Let us draw the lines determined by
+direction of $\vec{v}$ when $\alpha$ is positive and in the opposite direction
+when $\alpha$ is negative.  Let us draw the lines determined by
 the eigenvectors, and let us draw
 arrows on the lines to indicate the directions.
 See \figurevref{pln:source-eig-arrfig}.
@@ -2817,14 +2827,14 @@ $\left[ \begin{smallmatrix} 1 \\ -2i \end{smallmatrix} \right]$.  Consider
 the eigenvalue $2i$ and its eigenvector
 $\left[ \begin{smallmatrix} 1 \\ 2i \end{smallmatrix} \right]$.
 The real and imaginary
-parts of $\vec{v} e^{i2t}$ are
+parts of $\vec{v} e^{2it}$ are
 \begin{align*}
 \operatorname{Re}
-\begin{bmatrix} 1 \\ 2i \end{bmatrix} e^{i2t} & =
+\begin{bmatrix} 1 \\ 2i \end{bmatrix} e^{2it} & =
 \begin{bmatrix} \cos (2t) \\ -2 \sin (2t)  \end{bmatrix} ,
 \\
 \operatorname{Im}
-\begin{bmatrix} 1 \\ 2i \end{bmatrix} e^{i2t} & =
+\begin{bmatrix} 1 \\ 2i \end{bmatrix} e^{2it} & =
 \begin{bmatrix} \sin (2t) \\ 2 \cos (2t) \end{bmatrix} .
 \end{align*}
 We can take any linear combination of them to get other solutions,
@@ -3091,13 +3101,13 @@ dimensional wave equation (that we study in \sectionref{we:section}).
 But we digress.
 
 Let us set up the equations for the \myindex{three mass system}.
-By \myindex{Hooke's law} we have that the force acting on the mass equals the 
+By \myindex{Hooke's law}, the force acting on the mass equals the 
 spring compression times the spring constant.  By
-\myindex{Newton's second law}
-we have
-that force is mass times acceleration.  So if we sum the forces acting
-on each mass and put the right sign in front of each term, depending on the
-direction in which it is acting, we end up with the desired system of
+\myindex{Newton's second law},
+force is mass times acceleration.  So if we sum the forces acting
+on each mass, put the right sign in front of each term, depending on the
+direction in which it is acting, and set this equal to mass
+times the acceleration, we end up with the desired system of
 equations.
 \begin{equation*}
 \begin{aligned}
@@ -3211,7 +3221,7 @@ arbitrary constants $a$ and $b$.
 \end{exercise}
 
 \begin{theorem}
-Let $A$ be an $n \times n$ matrix
+Let $A$ be a real $n \times n$ matrix
 with $n$ distinct real negative (or zero) eigenvalues we
 denote by $-\omega_1^2 > -\omega_2^2 > \cdots > -\omega_n^2$, and
 corresponding
@@ -3250,7 +3260,7 @@ are missing to zero.
 \subsection{Examples}
 
 \begin{example}
-Suppose we have the setup in \figurevref{sosa:twocartswallfig}, with
+Consider the setup in \figurevref{sosa:twocartswallfig}, with
 $m_1 = \unit[2]{kg}$, $m_2 = \unit[1]{kg}$, $k_1 = \unitfrac[4]{N}{m}$, and
 $k_2 = \unitfrac[2]{N}{m}$.
 
@@ -4609,15 +4619,15 @@ I + D + \frac{1}{2} D^2 +
 =
 \begin{bmatrix} e^a & 0 \\ 0 & e^b \end{bmatrix} .
 \end{equation*}
-So by this rationale we have that
+So by this rationale
 \begin{equation*}
 e^I = \begin{bmatrix} e & 0\\ 0 & e \end{bmatrix}
 \qquad \text{and} \qquad
 e^{aI} = \begin{bmatrix} e^a & 0\\ 0 & e^a \end{bmatrix}.
 \end{equation*}
 
-This makes exponentials of certain other matrices easy to compute.  Notice
-for example that the matrix
+This makes exponentials of certain other matrices easy to compute.  
+For example, the matrix
 $A = \left[ \begin{smallmatrix} 5 & 4 \\ -1 & 1 \end{smallmatrix} \right]$
 can be written as
 $3I + B$ where
@@ -4644,10 +4654,10 @@ I + tB
 =
 \begin{bmatrix} (1+2t)\,e^{3t} & 4te^{3t} \\ -te^{3t} & (1-2t)\,e^{3t} \end{bmatrix} .
 \end{multline*}
-So we have found a fundamental matrix solution for the
+We found a fundamental matrix solution for the
 system ${\vec{x}\,}' = A \vec{x}$.  Note that this matrix has a repeated
 eigenvalue with a defect; there is only one eigenvector for the eigenvalue
-3.  So we have found a perhaps easier way to handle this case.  In fact, if
+3.  So we found a perhaps easier way to handle this case.  In fact, if
 a matrix $A$ is $2 \times 2$ and has an eigenvalue $\lambda$ of multiplicity
 2, then
 either $A$ is diagonal, or $A = \lambda I + B$ where $B^2 = 0$.  This is a
@@ -4786,11 +4796,11 @@ for computing a fundamental matrix solution $e^{tA}$ for the
 system ${\vec{x}\,}' = A \vec{x}$, in the case where we have
 $n$ linearly independent eigenvectors.
 
-Notice that this computation still works when the eigenvalues and
+This computation still works when the eigenvalues and
 eigenvectors are complex, though then you will have to compute with complex
 numbers.  It is clear from the definition that if $A$ is real,
 then $e^{tA}$ is real.  So you will only need complex numbers in the
-computation and you may need to apply
+computation and not for the result.  You may need to apply
 \hyperref[eulersformula]{Euler's formula} to simplify the
 result.  If simplified properly the final matrix will not have any complex
 numbers in it.
@@ -5766,7 +5776,7 @@ We get the two equations
 & \xi_2' = 4\xi_2 + e^t + t, & & \text{where } \xi_2(0) = a_2 = \frac{-1}{16} .
 \end{align*}
 We solve with integrating factor.  Computation of the integral is left as
-an exercise to the student.  Note that you will need integration by parts.
+an exercise to the student.  You will need integration by parts.
 \begin{equation*}
 \xi_1 = e^{-2t}\int e^{2t} \, (e^t-t) ~ dt + C_1 e^{-2t} = 
 \frac{e^t}{3}-\frac{t}{2}+\frac{1}{4}+C_1 e^{-2t} .
