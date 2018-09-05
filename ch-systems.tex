@@ -1447,12 +1447,12 @@ Note the order of the multiplication in the last two expressions.
 A \emph{\myindex{first order linear system of ODEs}} is a system that can be
 written as the vector equation
 \begin{equation*}
-{\vec{x}\,}'(t) = P(t)\vec{x}(t) + \vec{f}(t),
+{\vec{x}}'(t) = P(t)\vec{x}(t) + \vec{f}(t),
 \end{equation*}
 where $P(t)$ is a matrix-valued function,
 and $\vec{x}(t)$ and $\vec{f}(t)$ are vector-valued functions.
 We will often suppress the dependence on $t$ and
-only write ${\vec{x}\,}' = P\vec{x} + \vec{f}$.  A solution of
+only write ${\vec{x}}' = P\vec{x} + \vec{f}$.  A solution of
 the system is a vector-valued function
 $\vec{x}$ satisfying the vector equation.
 
@@ -1463,7 +1463,7 @@ x_2' &= \frac{x_1}{t} -x_2 + e^t ,
 \end{align*}
 can be written as
 \begin{equation*}
-{\vec{x}\,}' = 
+{\vec{x}}' = 
 \begin{bmatrix}
 2t & e^t \\
 \nicefrac{1}{t} & -1
@@ -1489,7 +1489,7 @@ principle of superposition, just like for single homogeneous equations.
 
 \begin{theorem}[Superposition]\index{superposition}
 Let
-${\vec{x}\,}' = P\vec{x}$ be a linear homogeneous system of ODEs.  Suppose
+${\vec{x}}' = P\vec{x}$ be a linear homogeneous system of ODEs.  Suppose
 that $\vec{x}_1,\vec{x}_2,\ldots,\vec{x}_n$ are $n$ solutions of the equation
 and $c_1,c_2,\ldots,c_n$ are any constants, then
 \begin{equation} \label{syshom:eq1}
@@ -1576,7 +1576,7 @@ technique as we applied to solve single linear nonhomogeneous equations.
 
 \begin{theorem}
 Let
-${\vec{x}\,}' = P\vec{x} + \vec{f}$ be a linear system of ODEs.
+${\vec{x}}' = P\vec{x} + \vec{f}$ be a linear system of ODEs.
 Suppose $\vec{x}_p$ is one particular solution.  Then every solution
 can be written as
 \begin{equation*}
@@ -1584,7 +1584,7 @@ can be written as
 \end{equation*}
 where $\vec{x}_c$ is a solution to the
 \myindex{associated homogeneous equation}
-(${\vec{x}\,}' = P\vec{x}$).
+(${\vec{x}}' = P\vec{x}$).
 \end{theorem}
 
 So the procedure for systems is the same as for single equations.
@@ -1595,7 +1595,7 @@ associated homogeneous equation, and finally we add the two together.
 \medskip
 
 Alright, suppose you have found the general solution of
-${\vec{x}\,}' = P\vec{x} + \vec{f}$.  Next suppose you are given an
+${\vec{x}}' = P\vec{x} + \vec{f}$.  Next suppose you are given an
 initial condition of the form
 \begin{equation*}
 \vec{x}(t_0) = \vec{b}
@@ -1630,7 +1630,7 @@ Let us consider this problem in the language of this section.
 The system is homogeneous, so $\vec{f}(t) = \vec{0}$.
 We write the system and the initial conditions as
 \begin{equation*}
-{\vec{x}\,}'
+{\vec{x}}'
 =
 \begin{bmatrix}
 1 & 0 \\
@@ -1707,13 +1707,13 @@ This new solution agrees with our previous solution from \sectionref{sec:introto
 \begin{exercise}
 Write the system $x_1' = 2 x_1 - 3t x_2 + \sin t$,
 $x_2' = e^t x_1 + 3 x_2 + \cos t$ in the form
-${\vec{x}\,}' = P(t) \vec{x} + \vec{f}(t)$.
+${\vec{x}}' = P(t) \vec{x} + \vec{f}(t)$.
 \end{exercise}
 
 \begin{exercise}
 {\ }
 \begin{enumerate}[a)]
-\item Verify that the system ${\vec{x}\,}' =
+\item Verify that the system ${\vec{x}}' =
 \left[ \begin{smallmatrix}
 1 & 3 \\ 3 & 1
 \end{smallmatrix} \right] \vec{x}$ has the two solutions
@@ -1772,9 +1772,9 @@ Take the system $x_1' + x_2' = x_1$,
 $x_1' - x_2' = x_2$.
 \begin{enumerate}[a)]
 \item Write it in the form
-$A {\vec{x}\,}' = B \vec{x}$ for matrices $A$ and $B$.
+$A {\vec{x}}' = B \vec{x}$ for matrices $A$ and $B$.
 \item Compute $A^{-1}$ and use that to write the system in the form
-${\vec{x}\,}' = P \vec{x}$.
+${\vec{x}}' = P \vec{x}$.
 \end{enumerate}
 \end{exercise}
 
@@ -1884,7 +1884,7 @@ In this section we will learn how to solve linear homogeneous constant
 coefficient systems of ODEs by the eigenvalue method.
 Suppose we have such a system
 \begin{equation*}
-{\vec{x}\,}' = P\vec{x} ,
+{\vec{x}}' = P\vec{x} ,
 \end{equation*}
 where
 $P$ is a
@@ -1895,7 +1895,7 @@ constant coefficient equation by trying the function $e^{\lambda t}$.
 However, $\vec{x}$ is a vector.  So we try $\vec{x} = \vec{v} e^{\lambda t}$, where
 $\vec{v}$ is an arbitrary constant vector.  We plug this $\vec{x}$ into the equation to get
 \begin{equation*}
-\underbrace{\lambda \vec{v} e^{\lambda t}}_{{\vec{x}\,}'} =
+\underbrace{\lambda \vec{v} e^{\lambda t}}_{{\vec{x}}'} =
 \underbrace{P\vec{v} e^{\lambda t}}_{P\vec{x}} .
 \end{equation*}
 We divide by $e^{\lambda t}$ and notice that we are looking for a scalar $\lambda$
@@ -2140,7 +2140,7 @@ $\left[ \begin{smallmatrix} 2 & 1 \\ 1 & 2 \end{smallmatrix} \right]$.
 
 OK.  We have the system of equations
 \begin{equation*}
-{\vec{x}\,}' = P\vec{x} .
+{\vec{x}}' = P\vec{x} .
 \end{equation*}
 We find the eigenvalues $\lambda_1$, $\lambda_2$, \ldots, $\lambda_n$
 of the matrix $P$, and corresponding eigenvectors
@@ -2157,12 +2157,12 @@ $
 is a solution.
 
 \begin{theorem}
-Take ${\vec{x}\,}' = P\vec{x}$.  If $P$ is an $n \times n$ constant matrix
+Take ${\vec{x}}' = P\vec{x}$.  If $P$ is an $n \times n$ constant matrix
 that
 has $n$ distinct real eigenvalues $\lambda_1$, $\lambda_2$, \ldots, $\lambda_n$,
 then there exist $n$ linearly independent corresponding eigenvectors
 $\vec{v}_1$, $\vec{v}_2$, \ldots, $\vec{v}_n$, and the general solution to
-${\vec{x}\,}' = P\vec{x}$
+${\vec{x}}' = P\vec{x}$
 can be written as
 \begin{equation*}
 \boxed{~~
@@ -2182,7 +2182,7 @@ $\vec{v}_j e^{\lambda_j t}$.
 \begin{example}
 Consider the system
 \begin{equation*}
-{\vec{x}\,}'
+{\vec{x}}'
 =
 \begin{bmatrix}
 2 & 1 & 1 \\
@@ -2259,7 +2259,7 @@ is essentially the same as the characteristic equation we got in
 A matrix may very well have complex eigenvalues even if all the entries are
 real.  Take, for example,
 \begin{equation*}
-{\vec{x}\,}' = 
+{\vec{x}}' = 
 \begin{bmatrix}
 1 & 1 \\
 -1 & 1
@@ -2352,7 +2352,7 @@ is a corresponding eigenvector.  Then
 \vec{x}_1 = \vec{v} e^{(a+ib)t}
 \end{equation*}
 is a solution (complex-valued) of
-${\vec{x}\,}' = P \vec{x}$.  \hyperref[eulersformula]{Euler's formula}
+${\vec{x}}' = P \vec{x}$.  \hyperref[eulersformula]{Euler's formula}
 shows that $\overline{e^{a+ib}} =
 e^{a-ib}$,
 and so
@@ -2452,7 +2452,7 @@ If $P$ has a complex eigenvalue $a+ib$ and a corresponding eigenvector
 $\vec{v}$, then $P$ also has a complex eigenvalue $a-ib$ with
 a corresponding eigenvector $\overline{\vec{v}}$.
 Furthermore,
-${\vec{x}\,}' = P\vec{x}$ has
+${\vec{x}}' = P\vec{x}$ has
 two linearly independent real-valued solutions
 \begin{equation*}
 \vec{x}_1 = \operatorname{Re} \vec{v} e^{(a+ib)t} ,
@@ -2490,7 +2490,7 @@ Find $A \vec{v}$.
 \item
 Find the general solution of $x_1' = 2 x_1$, $x_2' = 3 x_2$ using the
 eigenvalue method (first write the system in the form
-${\vec{x}\,}' = A \vec{x}$).
+${\vec{x}}' = A \vec{x}$).
 \item
 Solve the system by solving each equation
 separately and verify you get the same general solution.
@@ -2519,7 +2519,7 @@ $A = \left[ \begin{smallmatrix}
 10 & -2 & -6
 \end{smallmatrix} \right]$.
 \item
-Find the general solution of ${\vec{x}\,}' = A \vec{x}$.
+Find the general solution of ${\vec{x}}' = A \vec{x}$.
 \end{enumerate}
 \end{exercise}
 
@@ -3139,7 +3139,7 @@ k_2 & -(k_2+k_3) & k_3 \\
 \end{equation*}
 We write the equation simply as
 \begin{equation*}
-M {\vec{x}\,}'' = K \vec{x} .
+M {\vec{x}}'' = K \vec{x} .
 \end{equation*}
 At this point we could introduce 3 new variables and write out a system
 of 6 first order equations.  We claim this simple setup is easier to handle as
@@ -3173,9 +3173,9 @@ $M M^{-1} = M^{-1} M = I$.
 \medskip
 
 Let $A = M^{-1}K$.  We look at the system
-${\vec{x}\,}'' = M^{-1}K \vec{x}$, or
+${\vec{x}}'' = M^{-1}K \vec{x}$, or
 \begin{equation*}
-{\vec{x}\,}'' = A \vec{x} .
+{\vec{x}}'' = A \vec{x} .
 \end{equation*}
 Many real world systems can be modeled by this equation.  For simplicity,
 we will only talk about the
@@ -3184,7 +3184,7 @@ given masses-and-springs problem.  We try a solution of the form
 \vec{x} = \vec{v} e^{\alpha t} .
 \end{equation*}
 We compute that for this guess,
-${\vec{x}\,}'' = \alpha^2 \vec{v} e^{\alpha t}$.
+${\vec{x}}'' = \alpha^2 \vec{v} e^{\alpha t}$.
 We plug our guess into the equation and get
 \begin{equation*}
 \alpha^2 \vec{v} e^{\alpha t} = A\vec{v} e^{\alpha t} .
@@ -3216,7 +3216,7 @@ solutions, where $\vec{v}$ is an eigenvector corresponding to the eigenvalue
 \begin{exercise}
 Show that if $A$ has a zero eigenvalue and $\vec{v}$ is a
 corresponding eigenvector, then $\vec{x} = \vec{v} (a + bt)$ is a solution
-of ${\vec{x}\,}'' = A \vec{x}$ for
+of ${\vec{x}}'' = A \vec{x}$ for
 arbitrary constants $a$ and $b$.
 \end{exercise}
 
@@ -3236,7 +3236,7 @@ $\vec{v}_1$, $\vec{v}_2$, \ldots, $\vec{v}_n$.  If $A$ is invertible
 \end{equation*}
 is the general solution of
 \begin{equation*}
-{\vec{x}\,}'' = A \vec{x},
+{\vec{x}}'' = A \vec{x},
 \end{equation*}
 for some arbitrary constants $a_i$ and $b_i$.
 If $A$ has a zero eigenvalue, that is $\omega_1 = 0$,
@@ -3276,7 +3276,7 @@ The equations we write down are
 2 & 0 \\
 0 & 1
 \end{bmatrix}
-{\vec{x}\,}'' =
+{\vec{x}}'' =
 \begin{bmatrix}
 -(4+2) & 2 \\
 2 & -2
@@ -3285,7 +3285,7 @@ The equations we write down are
 \end{equation*}
 or
 \begin{equation*}
-{\vec{x}\,}'' =
+{\vec{x}}'' =
 \begin{bmatrix}
 -3 & 1 \\
 2 & -2
@@ -3399,7 +3399,7 @@ system of the previous example but without $k_1$.  Hence the equation is
 2 & 0 \\
 0 & 1
 \end{bmatrix}
-{\vec{x}\,}'' =
+{\vec{x}}'' =
 \begin{bmatrix}
 -2 & 2 \\
 2 & -2
@@ -3408,7 +3408,7 @@ system of the previous example but without $k_1$.  Hence the equation is
 \end{equation*}
 or
 \begin{equation*}
-{\vec{x}\,}'' =
+{\vec{x}}'' =
 \begin{bmatrix}
 -1 & 1 \\
 2 & -2
@@ -3460,7 +3460,7 @@ It is not hard to see that $a_1 = a_2 = 0$.  We set $a_1=0$
 and $a_2=0$ in $\vec{x}(t)$
 and differentiate to get
 \begin{equation*}
-{\vec{x}\,}'(t)
+{\vec{x}}'(t)
 =
 \begin{bmatrix}
 b_1 + \sqrt{3} \, b_2 \cos (\! \sqrt{3} \, t ) \\
@@ -3470,7 +3470,7 @@ b_1 - 2 \sqrt{3} \, b_2 \cos (\! \sqrt{3} \, t )
 So
 \begin{equation*}
 \begin{bmatrix} 3 \\ 0 \end{bmatrix} = 
-{\vec{x}\,}'(0)
+{\vec{x}}'(0)
 =
 \begin{bmatrix}
 b_1 + \sqrt{3} \, b_2 \\
@@ -3555,7 +3555,7 @@ that means standing right at the wall.
 Finally we move to forced oscillations\index{forced motion!systems}.
 Suppose that now our system is
 \begin{equation} \label{sosa:forcedeq}
-{\vec{x}\,}'' = A \vec{x} + \vec{F} \cos ( \omega t) .
+{\vec{x}}'' = A \vec{x} + \vec{F} \cos ( \omega t) .
 \end{equation}
 That is, we are adding periodic forcing to the system in the direction of
 the vector $\vec{F}$.
@@ -3564,7 +3564,7 @@ As before, this system just requires us to find one particular solution
 $\vec{x}_p$, add it to the general solution of the associated homogeneous system
 $\vec{x}_c$, and we will have the general solution to \eqref{sosa:forcedeq}.
 Let us suppose that $\omega$ is not one of the natural frequencies of
-${\vec{x}\,}'' = A \vec{x}$, then we can guess
+${\vec{x}}'' = A \vec{x}$, then we can guess
 \begin{equation*}
 \vec{x}_p = \vec{c} \cos (\omega t) ,
 \end{equation*}
@@ -3619,7 +3619,7 @@ The equation is
 2 & 0 \\
 0 & 1
 \end{bmatrix}
-{\vec{x}\,}'' =
+{\vec{x}}'' =
 \begin{bmatrix}
 -4 & 2 \\
 2 & -2
@@ -3630,7 +3630,7 @@ The equation is
 0 \\ 2
 \end{bmatrix}
 \cos (3 t) \qquad \text{or} \qquad
-{\vec{x}\,}'' =
+{\vec{x}}'' =
 \begin{bmatrix}
 -3 & 1 \\
 2 & -2
@@ -3701,7 +3701,7 @@ Hence,
 
 Combining with the general solution of the associated
 homogeneous problem, we get that the general solution to
-${\vec{x}\,}'' = A \vec{x} + \vec{F} \cos (\omega t)$ is
+${\vec{x}}'' = A \vec{x} + \vec{F} \cos (\omega t)$ is
 \begin{equation*}
 \vec{x} = \vec{x}_c + \vec{x}_p =
 \begin{bmatrix} 1 \\
@@ -3726,10 +3726,10 @@ the initial conditions.
 \end{example}
 
 Note that given force $\vec{f}$, we write 
-the equation as $M {\vec{x}\,}'' = K \vec{x} + \vec{f}$ to get the units
+the equation as $M {\vec{x}}'' = K \vec{x} + \vec{f}$ to get the units
 right. Then we write
-${\vec{x}\,}'' = M^{-1}K \vec{x} + M^{-1}\vec{f}$.  The 
-term $\vec{g} = M^{-1} \vec{f}$ in ${\vec{x}\,}'' = A \vec{x} + \vec{g}$ is in units of force
+${\vec{x}}'' = M^{-1}K \vec{x} + M^{-1}\vec{f}$.  The 
+term $\vec{g} = M^{-1} \vec{f}$ in ${\vec{x}}'' = A \vec{x} + \vec{g}$ is in units of force
 per unit mass.
 
 If $\omega$ is a natural frequency of the system
@@ -3748,7 +3748,7 @@ Next, note that the amplitude of this solution grows without bound as $t$ grows.
 \begin{exercise}
 Find a particular solution to
 \begin{equation*}
-{\vec{x}\,}'' =
+{\vec{x}}'' =
 \begin{bmatrix}
 -3 & 1 \\
 2 & -2
@@ -3829,6 +3829,9 @@ $\vec{x}
 \end{smallmatrix}\right]
 \bigl( a_2 \cos (\sqrt{2}\, t)  + b_2 \sin (\sqrt{2}\, t) \bigr)
 +
+$
+\\
+$
 \left[ \begin{smallmatrix}
 0 \\ 0 \\ 1
 \end{smallmatrix}\right]
@@ -3954,7 +3957,7 @@ of this eigenvalue is also 2.
 In all the
 theorems where we required a matrix to have $n$ distinct eigenvalues, we only
 really needed to have $n$ linearly independent eigenvectors.  For example,
-${\vec{x}\,}' = A\vec{x}$ has the general solution
+${\vec{x}}' = A\vec{x}$ has the general solution
 \begin{equation*}
 \vec{x} = 
 c_1 \begin{bmatrix} 1 \\ 0 \end{bmatrix} e^{3t}
@@ -3970,7 +3973,7 @@ has $n$ real eigenvalues (not necessarily distinct), $\lambda_1$,
 $\lambda_2$, \ldots, $\lambda_n$,
 and there are $n$ linearly independent corresponding eigenvectors
 $\vec{v}_1$, $\vec{v}_2$, \ldots, $\vec{v}_n$.  Then the general solution to 
-${\vec{x}\,}' = P\vec{x}$
+${\vec{x}}' = P\vec{x}$
 can be written as
 \begin{equation*}
 \vec{x} = c_1 \vec{v}_1 e^{\lambda_1 t} +
@@ -4060,7 +4063,7 @@ call these \emph{\myindex{generalized eigenvectors}}.
 Let us continue with the example
 $A = \left[ \begin{smallmatrix}
 3 & 1 \\ 0 & 3
-\end{smallmatrix} \right]$ and the equation ${\vec{x}\,}' = A\vec{x}$.
+\end{smallmatrix} \right]$ and the equation ${\vec{x}}' = A\vec{x}$.
 We have an eigenvalue $\lambda=3$ of (algebraic) multiplicity 2 and defect 1.
 We have found one eigenvector 
 $\vec{v}_1 = \left[ \begin{smallmatrix} 1 \\ 0 \end{smallmatrix} \right]$.
@@ -4126,7 +4129,7 @@ By inspection we see that letting $a=0$ ($a$ could be anything in fact) and
 $b=1$ does the job.  Hence we can take $\vec{v}_2 = 
 \left[ \begin{smallmatrix} 0 \\ 1 \end{smallmatrix} \right]$.  Our general
 solution to
-${\vec{x}\,}' = A\vec{x}$ is
+${\vec{x}}' = A\vec{x}$ is
 \begin{equation*}
 \vec{x} =
 c_1 
@@ -4176,7 +4179,7 @@ ${(A-3I)}^2\vec{w} = \vec{0}$ and we just need a $\vec{w}$ such that
 $(A-3I)\vec{w} \not= \vec{0}$.  Then we could use
 $\vec{w}$ for $\vec{v}_2$, and $(A-3I)\vec{w}$ for $\vec{v}_1$.
 
-Note that the system ${\vec{x}\,}' = A \vec{x}$ has a simpler solution since
+Note that the system ${\vec{x}}' = A \vec{x}$ has a simpler solution since
 $A$ is a so-called \emph{\myindex{upper triangular matrix}}, that is
 every entry below the diagonal is zero.
 In particular, the equation for $x_2$
@@ -4184,7 +4187,7 @@ does not depend on $x_1$.  Mind you, not every defective matrix is
 triangular.
 
 \begin{exercise}
-Solve ${\vec{x}\,}' = \left[ \begin{smallmatrix}
+Solve ${\vec{x}}' = \left[ \begin{smallmatrix}
 3 & 1 \\ 0 & 3
 \end{smallmatrix} \right] \vec{x}$ by first solving for $x_2$ and then for
 $x_1$ independently.  Check that you got the same solution as we did
@@ -4250,7 +4253,7 @@ eigenvalue.
 \begin{exercise}
 Let
 $A = \left[ \begin{smallmatrix} 5 & -3 \\ 3 & -1 \end{smallmatrix} \right]$.
-Find the general solution of ${\vec{x}\,}' = A \vec{x}$.
+Find the general solution of ${\vec{x}}' = A \vec{x}$.
 \end{exercise}
 
 \begin{exercise}
@@ -4262,7 +4265,7 @@ $A = \left[ \begin{smallmatrix}
 \end{smallmatrix} \right]$.
 a) What are the eigenvalues?
 b) What is/are the defect(s) of the eigenvalue(s)?
-c) Find the general solution of ${\vec{x}\,}' = A \vec{x}$.
+c) Find the general solution of ${\vec{x}}' = A \vec{x}$.
 \end{exercise}
 
 
@@ -4271,7 +4274,7 @@ Let
 $A = \left[ \begin{smallmatrix} 2 & 1 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 2 \end{smallmatrix} \right]$.
 a) What are the eigenvalues?
 b) What is/are the defect(s) of the eigenvalue(s)?
-c) Find the general solution of ${\vec{x}\,}' = A \vec{x}$ in two different ways and verify you get
+c) Find the general solution of ${\vec{x}}' = A \vec{x}$ in two different ways and verify you get
 the same answer.
 \end{exercise}
 
@@ -4284,7 +4287,7 @@ $A = \left[ \begin{smallmatrix}
 \end{smallmatrix} \right]$.
 a) What are the eigenvalues?
 b) What is/are the defect(s) of the eigenvalue(s)?
-c) Find the general solution of ${\vec{x}\,}' = A \vec{x}$.
+c) Find the general solution of ${\vec{x}}' = A \vec{x}$.
 \end{exercise}
 
 \begin{exercise}
@@ -4296,7 +4299,7 @@ $A = \left[ \begin{smallmatrix}
 \end{smallmatrix} \right]$.
 a) What are the eigenvalues?
 b) What is/are the defect(s) of the eigenvalue(s)?
-c) Find the general solution of ${\vec{x}\,}' = A \vec{x}$.
+c) Find the general solution of ${\vec{x}}' = A \vec{x}$.
 \end{exercise}
 
 \begin{exercise}
@@ -4308,7 +4311,7 @@ $A = \left[ \begin{smallmatrix}
 \end{smallmatrix} \right]$.
 a) What are the eigenvalues?
 b) What is/are the defect(s) of the eigenvalue(s)?
-c) Find the general solution of ${\vec{x}\,}' = A \vec{x}$.
+c) Find the general solution of ${\vec{x}}' = A \vec{x}$.
 \end{exercise}
 
 \begin{exercise}
@@ -4486,7 +4489,7 @@ In this section we present a different way of finding a fundamental
 matrix solution of a system.  Suppose that we have the constant
 coefficient equation
 \begin{equation*}
-{\vec{x}\,}' = P \vec{x} ,
+{\vec{x}}' = P \vec{x} ,
 \end{equation*}
 as usual.  Now suppose that this was one equation ($P$ is a number or a $1
 \times 1$ matrix).  Then the solution to this would be
@@ -4547,7 +4550,7 @@ matrix case we multiply by a column vector $\vec{c}$.
 
 \begin{theorem}
 Let $P$ be an $n \times n$ matrix.  Then the general solution to
-${\vec{x}\,}' = P \vec{x}$ is
+${\vec{x}}' = P \vec{x}$ is
 \begin{equation*}
 \vec{x} = e^{tP} \vec{c} ,
 \end{equation*}
@@ -4571,7 +4574,7 @@ of the homogeneous system.
 If we find a way to compute the matrix exponential,
 we will have another method of solving constant coefficient homogeneous
 systems.  It also makes it easy to solve for initial conditions.  To solve 
-${\vec{x}\,}' = A \vec{x}$, $\vec{x}(0) = \vec{b}$, we take the solution
+${\vec{x}}' = A \vec{x}$, $\vec{x}(0) = \vec{b}$, we take the solution
 \begin{equation*}
 \vec{x} = e^{tA} \vec{b} .
 \end{equation*}
@@ -4655,7 +4658,7 @@ I + tB
 \begin{bmatrix} (1+2t)\,e^{3t} & 4te^{3t} \\ -te^{3t} & (1-2t)\,e^{3t} \end{bmatrix} .
 \end{multline*}
 We found a fundamental matrix solution for the
-system ${\vec{x}\,}' = A \vec{x}$.  Note that this matrix has a repeated
+system ${\vec{x}}' = A \vec{x}$.  Note that this matrix has a repeated
 eigenvalue with a defect; there is only one eigenvector for the eigenvalue
 3.  So we found a perhaps easier way to handle this case.  In fact, if
 a matrix $A$ is $2 \times 2$ and has an eigenvalue $\lambda$ of multiplicity
@@ -4793,7 +4796,7 @@ E^{-1} .
 \end{equation}
 The formula \eqref{matexp:diagfundsol}, therefore, gives the formula
 for computing a fundamental matrix solution $e^{tA}$ for the
-system ${\vec{x}\,}' = A \vec{x}$, in the case where we have
+system ${\vec{x}}' = A \vec{x}$, in the case where we have
 $n$ linearly independent eigenvectors.
 
 This computation still works when the eigenvalues and
@@ -4928,7 +4931,7 @@ A fundamental matrix solution of a system of ODEs is not unique.  The
 exponential is the fundamental matrix solution with the property that
 for $t=0$ we get the identity matrix.  So we
 must find the right fundamental matrix solution.  Let $X$ be any fundamental
-matrix solution to ${\vec{x}\,}' = A \vec{x}$.  Then we claim
+matrix solution to ${\vec{x}}' = A \vec{x}$.  Then we claim
 \begin{equation*}
 e^{tA} = X(t) \left[ X(0) \right]^{-1} .
 \end{equation*}
@@ -5093,7 +5096,7 @@ $\left[ \begin{smallmatrix}
 1
 \end{smallmatrix} \right]$.
 a)~Find matrix $A$ with these properties.
-b)~Find a fundamental matrix solution to ${\vec{x}\,}' = A \vec{x}$.
+b)~Find a fundamental matrix solution to ${\vec{x}}' = A \vec{x}$.
 c)~Solve the system in with initial conditions $\vec{x}(0) =
 \left[ \begin{smallmatrix}
 2 \\
@@ -5117,7 +5120,7 @@ Let $A = \left[ \begin{smallmatrix}
 \end{smallmatrix} \right]$.
 a) Find $e^{tA}$.
 b) Solve
-${\vec{x}\,}' = A \vec{x}$, $\vec{x}(0) =
+${\vec{x}}' = A \vec{x}$, $\vec{x}(0) =
 \left[ \begin{smallmatrix}
 1 \\
 -2
@@ -5238,20 +5241,20 @@ different from \S5.6 in \cite{EP}}\BDref{,
 
 Let us first focus on the nonhomogeneous first order equation
 \begin{equation*}
-{\vec{x}\,}'(t) = A\vec{x}(t) + \vec{f}(t) ,
+{\vec{x}}'(t) = A\vec{x}(t) + \vec{f}(t) ,
 \end{equation*}
 where $A$ is a constant matrix.  The first method we look at is the
 \emph{integrating factor method\index{integrating factor method!for systems}}.
 For simplicity we rewrite the equation as
 \begin{equation*}
-{\vec{x}\,}'(t) + P \vec{x}(t) = \vec{f}(t) ,
+{\vec{x}}'(t) + P \vec{x}(t) = \vec{f}(t) ,
 \end{equation*}
 where $P = -A$.
 We multiply both sides of the
 equation by $e^{tP}$ (being mindful that we are dealing with matrices that
 may not commute) to obtain
 \begin{equation*}
-e^{tP}{\vec{x}\,}'(t) + e^{tP}P\vec{x}(t) = e^{tP}\vec{f}(t) .
+e^{tP}{\vec{x}}'(t) + e^{tP}P\vec{x}(t) = e^{tP}\vec{f}(t) .
 \end{equation*}
 We notice that $P e^{tP} = e^{tP} P$.  This fact follows by writing
 down the series definition of $e^{tP}$:
@@ -5292,7 +5295,7 @@ it will be easy to also solve for the initial conditions.
 Consider the
 equation with initial conditions
 \begin{equation*}
-{\vec{x}\,}'(t) + P\vec{x}(t) = \vec{f}(t) ,
+{\vec{x}}'(t) + P\vec{x}(t) = \vec{f}(t) ,
 \qquad \vec{x}(0) = \vec{b} .
 \end{equation*}
 The solution can then be written as
@@ -5320,7 +5323,7 @@ with initial conditions $x_1(0) = 1, x_2(0) = 0$.
 
 Let us write the system as
 \begin{equation*}
-{\vec{x}\,}' +
+{\vec{x}}' +
 \begin{bmatrix} 5 & -3 \\ 3 & -1 \end{bmatrix}
 \vec{x} =
 \begin{bmatrix} e^t \\ 0 \end{bmatrix} ,
@@ -5452,7 +5455,7 @@ for the system.
 
 Take the equation
 \begin{equation} \label{nhsys:ednhsys}
-{\vec{x}\,}' (t) = A \vec{x}(t) + \vec{f}(t) .
+{\vec{x}}' (t) = A \vec{x}(t) + \vec{f}(t) .
 \end{equation}
 Assume $A$ has $n$ linearly independent eigenvectors
 $\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n$.  Write
@@ -5488,12 +5491,12 @@ We plug \eqref{nhsys:decompx} into \eqref{nhsys:ednhsys}, and note that
 $A \vec{v}_k = \lambda_k \vec{v}_k$.
 \begin{equation*}
 \begin{split}
-%{\vec{x}\,}' & =
+%{\vec{x}}' & =
 \overbrace{
 \vec{v}_1 \, \xi_1' + 
 \vec{v}_2 \, \xi_2' + \cdots +
 \vec{v}_n \, \xi_n'
-}^{{\vec{x}\,}'}
+}^{{\vec{x}}'}
 %\\
 & =
 \overbrace{
@@ -5594,7 +5597,7 @@ Let $A = \left[
 1 & 3 \\
 3 & 1
 \end{smallmatrix} \right]$.
-Solve ${\vec{x}\,}' = A \vec{x} +
+Solve ${\vec{x}}' = A \vec{x} +
 \vec{f}$ where $\vec{f}(t) = 
 \left[ \begin{smallmatrix}
 2e^t \\
@@ -5848,7 +5851,7 @@ Let $A = \left[
 -1 & 0 \\
 -2 & 1
 \end{smallmatrix} \right]$.
-Find a particular solution of ${\vec{x}\,}' = A \vec{x} +
+Find a particular solution of ${\vec{x}}' = A \vec{x} +
 \vec{f}$ where $\vec{f}(t) = 
 \left[ \begin{smallmatrix}
 e^t \\
@@ -5935,9 +5938,9 @@ and
 $\vec{d} =
 \Bigl[ \begin{smallmatrix} d_1 \\ d_2 \end{smallmatrix} \Bigr]$.
 We plug $\vec{x}$ into the equation.  First
-let us compute ${\vec{x}\,}'$.
+let us compute ${\vec{x}}'$.
 \begin{equation*}
-{\vec{x}\,}' = 
+{\vec{x}}' = 
 \left( \vec{a} + \vec{b} \right)
 e^{t}
 +
@@ -5960,7 +5963,7 @@ t e^{t}
 c_1 \\ c_2
 \end{bmatrix} .
 \end{equation*}
-Now ${\vec{x}\,}'$ must equal $A\vec{x} + \vec{f}$, which is
+Now ${\vec{x}}'$ must equal $A\vec{x} + \vec{f}$, which is
 \begin{multline*}
 A \vec{x} + \vec{f} =
 A \vec{a}
@@ -6099,10 +6102,10 @@ homogeneous problem.
 
 Suppose we have the equation
 \begin{equation} \label{nhsys:nhvceq}
-{\vec{x}\,}' = A(t) \, \vec{x} + \vec{f}(t) .
+{\vec{x}}' = A(t) \, \vec{x} + \vec{f}(t) .
 \end{equation}
 Further, suppose we have solved the associated homogeneous equation
-${\vec{x}\,}' = A(t) \, \vec{x}$ and found
+${\vec{x}}' = A(t) \, \vec{x}$ and found
 a fundamental matrix solution
 $X(t)$.  The general solution to the associated homogeneous equation
 is $X(t) \vec{c}$ for a constant vector $\vec{c}$.  Just like for
@@ -6116,7 +6119,7 @@ We substitute $\vec{x}_p$ into \eqref{nhsys:nhvceq} to obtain
 \begin{equation*}
 %{\vec{x}_p{}\!}'(t)
 %=
-\underbrace{X'(t)\, \vec{u}(t) + X(t)\, {\vec{u}\,}'(t)}%
+\underbrace{X'(t)\, \vec{u}(t) + X(t)\, {\vec{u}}'(t)}%
 _{{\vec{x}_p{}\!}'(t)}
 =
 \underbrace{A(t)\, X(t)\, \vec{u}(t)}%
@@ -6126,15 +6129,15 @@ _{A(t) \vec{x}_p (t)}
 But $X(t)$ is a fundamental matrix solution to the homogeneous problem.
 So $X'(t) = A(t)X(t)$, and
 \begin{equation*}
-\cancel{X'(t)\, \vec{u}(t)} + X(t)\, {\vec{u}\,}'(t)
+\cancel{X'(t)\, \vec{u}(t)} + X(t)\, {\vec{u}}'(t)
 =
 \cancel{X'(t)\, \vec{u}(t)} + \vec{f}(t) .
 \end{equation*}
 Hence
-$X(t)\, {\vec{u}\,}'(t) = \vec{f}(t)$.  If we compute
+$X(t)\, {\vec{u}}'(t) = \vec{f}(t)$.  If we compute
 $\left[X(t)\right]^{-1}$,
 then
-${\vec{u}\,}'(t) = \left[X(t)\right]^{-1}\vec{f}(t)$.  We integrate
+${\vec{u}}'(t) = \left[X(t)\right]^{-1}\vec{f}(t)$.  We integrate
 to obtain $\vec{u}$ and we have the particular solution
 $\vec{x}_p = X(t)\, \vec{u}(t)$.
 Let us write this as a formula
@@ -6157,7 +6160,7 @@ which is precisely what we got using the integrating factor method.
 \begin{example}
 Find a particular solution to
 \begin{equation} \label{nhsys:vcexeq}
-{\vec{x}\,}'
+{\vec{x}}'
 =
 \frac{1}{t^2+1}
 \begin{bmatrix}
@@ -6296,7 +6299,7 @@ order systems.
 There are some simplifications that we can make, as we did in 
 \sectionref{sol:section}.  Let the equation be
 \begin{equation*}
-{\vec{x}\,}'' = A \vec{x} + \vec{F}(t) ,
+{\vec{x}}'' = A \vec{x} + \vec{F}(t) ,
 \end{equation*}
 where $A$ is a constant matrix.  If $\vec{F}(t)$ is of the form
 $\vec{F}_0 \cos (\omega t)$, then as two derivatives of cosine is again
@@ -6312,14 +6315,14 @@ If $\vec{F}(t) =
 \vec{F}_0 \cos (\omega_0 t) + 
 \vec{F}_1 \cos (\omega_1 t)$, then we would try
 $\vec{a} \cos (\omega_0 t)$ for the problem
-${\vec{x}\,}'' = A \vec{x} + \vec{F}_0 \cos (\omega_0 t)$, and we would try
+${\vec{x}}'' = A \vec{x} + \vec{F}_0 \cos (\omega_0 t)$, and we would try
 $\vec{b} \cos (\omega_1 t)$ for the problem
-${\vec{x}\,}'' = A \vec{x} + \vec{F}_1 \cos (\omega_1 t)$.  Then we sum the
+${\vec{x}}'' = A \vec{x} + \vec{F}_1 \cos (\omega_1 t)$.  Then we sum the
 solutions.
 
 However, if there is duplication with the
 complementary solution, or the equation is of the form
-${\vec{x}\,}'' = A{\vec{x}\,}'+ B \vec{x} + \vec{F}(t)$, then we need
+${\vec{x}}'' = A{\vec{x}}'+ B \vec{x} + \vec{F}(t)$, then we need
 to do the same thing as we do for first order systems.
 
 You will never go wrong with putting in more terms than needed into
@@ -6330,7 +6333,7 @@ be zero.  But it is useful to save some time and effort.
 
 If we have the system
 \begin{equation*}
-{\vec{x}\,}'' = A \vec{x} + \vec{f}(t) ,
+{\vec{x}}'' = A \vec{x} + \vec{f}(t) ,
 \end{equation*}
 we can do \emph{\myindex{eigenvector decomposition}}, just like for first
 order systems.
@@ -6358,12 +6361,12 @@ where, again, $\vec{g} = E^{-1} \vec{f}$.
 We plug in, and as before we obtain
 \begin{equation*}
 \begin{split}
-%{\vec{x}\,}'' & =
+%{\vec{x}}'' & =
 \overbrace{
 \vec{v}_1 \, \xi_1'' + 
 \vec{v}_2 \, \xi_2'' + \cdots +
 \vec{v}_n \, \xi_n''
-}^{{\vec{x}\,}''}
+}^{{\vec{x}}''}
 %\\
 & =
 \overbrace{
@@ -6427,7 +6430,7 @@ solution).
 Let us do the example from \sectionref{sol:section} using this method.
 The equation is
 \begin{equation*}
-{\vec{x}\,}'' =
+{\vec{x}}'' =
 \begin{bmatrix}
 -3 & 1 \\
 2 & -2
@@ -6547,7 +6550,7 @@ b)~using undetermined coefficients.
 \begin{exercise}
 Take the equation
 \begin{equation*}
-{\vec{x}\,}'
+{\vec{x}}'
 =
 \begin{bmatrix}
 \frac{1}{t} & -1 \\

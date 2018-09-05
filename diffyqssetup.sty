@@ -64,11 +64,19 @@
 \usepackage{import}
 
 % Times
-\usepackage{txfonts}
-% Is this a nicer font?  But it changes the pagination
-%\usepackage{newtxtext}
-%\usepackage[cmintegrals,cmbraces,varbb]{newtxmath}
-%\usepackage{newtxmath}
+%\usepackage{txfonts}
+% NewTX fonts are nicer, though slightly looser.  Using these we
+% can get rid of the extra spaces e.g. {\vec{x}\,}', if going back
+% to txfonts, these would need to be stuck back in.  One disadvantage
+% is that newtx fonts seem to be changing from time to time leading
+% to possible changes in pagination ...
+\usepackage[tighter]{newtxtext}
+\usepackage[vvarbb]{newtxmath}
+%STIX
+%\usepackage{stix}
+%\usepackage{stix2}
+%KP
+%\usepackage{kpfonts}
 
 
 % San Serif fonts
@@ -222,6 +230,8 @@ Remark
 \newcommand{\tableref}[1]{\myref{Table}{#1}}
 \newcommand{\chapterref}[1]{\myref{chapter}{#1}}
 \newcommand{\Chapterref}[1]{\myref{Chapter}{#1}}
+\newcommand{\appendixref}[1]{\myref{appendix}{#1}}
+\newcommand{\Appendixref}[1]{\myref{Appendix}{#1}}
 \newcommand{\sectionref}[1]{\myref{\S}{#1}}
 \newcommand{\exercisevref}[1]{\myvref{Exercise}{#1}}
 \newcommand{\exerciseref}[1]{\myref{Exercise}{#1}}

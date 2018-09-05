@@ -53,13 +53,15 @@ The dependence of the material covered is roughly:
 \begin{equation*}
 \begin{tikzcd}[cramped, row sep=small]
 & {\text{\hyperref[intro:chapter]{Introduction}}} \arrow[d] \\
+{\text{\Appendixref{linalg:appendix}}} \arrow[dd, dotted]
 & {\text{\Chapterref{fo:chapter}}} \arrow[d] \\
-& {\text{\Chapterref{ho:chapter}}} \arrow[dr] \arrow[dd] \arrow[dl] \arrow[drr] \\
-{\text{\Chapterref{sys:chapter}}} \arrow[dr, dashed] \arrow[d] & &
-  {\text{\Chapterref{LT:chapter}}} &
+& {\text{\Chapterref{ho:chapter}}} \arrow[dddr] \arrow[dd] \arrow[dl] \arrow[dr] \\
+{\text{\Chapterref{sys:chapter}}} \arrow[dr, dotted] \arrow[d] & &
   {\text{\Chapterref{ps:chapter}}} \\
-{\text{\Chapterref{nlin:chapter}}} & {\text{\Chapterref{FS:chapter}}} \arrow[d] \\
+{\text{\Chapterref{nlin:chapter}}} & {\text{\Chapterref{FS:chapter}}} \arrow[d]
+\arrow[dr,dotted] \\
 & {\text{\Chapterref{SL:chapter}}}
+& {\text{\Chapterref{LT:chapter}}}
 \end{tikzcd}
 \end{equation*}
 %mbxENDIGNORE
@@ -73,6 +75,16 @@ references are not absolutely essential and can be skimmed over,
 so \chapterref{sys:chapter}
 can safely be dropped, while still covering
 chapters \ref{FS:chapter} and \ref{SL:chapter}.
+The PDE section of \chapterref{LT:chapter} makes some references
+to \chapterref{FS:chapter}, although it could in theory be covered
+separately.
+The more in-depth \appendixref{linalg:appendix} can replace
+\sectionref{sec:matrix}
+for a course that combines linear algebra and ODE.
+
+\medskip
+
+\pagebreak[2]
 The textbook was originally made for two types of courses.  Either
 at 4 hours a week for a semester (Math 286 at UIUC):
 
@@ -109,11 +121,11 @@ The second type of the course at 3 hours a week (Math 285 at UIUC) was:
 \medskip
 
 The complete book can be covered at a reasonably
-fast pace at approximately 76 lectures,
+fast pace at approximately 76 (FIXME?) lectures,
 not accounting for exams, review,
 or time spent in computer lab. % (if using IODE for example).
 A two quarter or a two semester course can be easily run with the material.
-For example (depending on how fast it is run or which sections are skipped):
+For example (with some sections perhaps strategically skipped):
 
 \medskip
 
@@ -123,7 +135,7 @@ Semester 1:
 \chapterref{fo:chapter},
 \chapterref{ho:chapter},
 \chapterref{LT:chapter},
-\chapterref{ps:chapter}, (and perhaps bits of \ref{FS:chapter}).
+\chapterref{ps:chapter}.
 \\
 Semester 2: 
 \Chapterref{sys:chapter},
@@ -133,12 +145,26 @@ Semester 2:
 
 \medskip
 
+A combined course on ODE with linear algebra can run as:
+
+\medskip
+
+\noindent
+\hyperref[intro:chapter]{Introduction},
+\chapterref{fo:chapter} (\ref{integralsols:section}--\ref{numer:section}),
+\chapterref{ho:chapter},
+\appendixref{linalg:appendix},
+\chapterref{sys:chapter} (w/o \sectionref{sec:matrix}), (possibly 
+\chapterref{nlin:chapter}).
+
+\medskip
+
 The chapter on
 Laplace transform (\chapterref{LT:chapter}),
 the chapter on Sturm-Liouville (\chapterref{SL:chapter}),
 the chapter on power series (\chapterref{ps:chapter}),
 and the chapter on nonlinear systems (\chapterref{nlin:chapter}),
-are more or less interchangeable time-wise.
+are more or less interchangeable, and can be treated as ``topics''.
 If \chapterref{nlin:chapter} is covered it may be best to place it right 
 after \chapterref{sys:chapter}.
 If time is short, the first two sections of
@@ -153,7 +179,7 @@ Unfortunately IODE is not kept up to date at this point, and may have
 trouble running on newer versions of Matlab.
 The graphs in the book were made with
 the Genius\index{Genius software} software
-(see \url{https://www.jirka.org/genius.html}).  I used Genius
+(see \url{https://www.jirka.org/genius.html}).  I use Genius
 in class to show these (and other) graphs.
 
 This book
