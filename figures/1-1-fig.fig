@@ -1,8 +1,8 @@
-#FIG 3.2  Produced by xfig version 3.2.5c
+#FIG 3.2  Produced by xfig version 3.2.7a
 Landscape
 Center
 Inches
-A4      
+A4
 100.00
 Single
 -2
@@ -17,7 +17,7 @@ Single
 	1 1 1.00 72.00 112.50
 	 2266 2160 3261 2160
 4 0 0 50 -1 0 12 0.0000 2 135 1125 992 2189 Mathematical\001
-4 0 0 50 -1 0 12 0.0000 2 180 1605 2100 1140 Real world problem\001
+4 0 0 50 -1 0 12 0.0000 2 180 1620 2100 1140 Real-world problem\001
 4 0 0 50 -1 0 12 0.0000 2 180 690 3780 1620 interpret\001
 4 0 0 50 -1 0 12 0.0000 2 135 1125 3360 2160 Mathematical\001
 4 0 0 50 -1 0 12 0.0000 2 135 675 3540 2400 solution\001

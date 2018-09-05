@@ -228,10 +228,13 @@ They are solved by trying
 $y=x^r$ and solving for $r$ (assume that $x \geq 0$ for simplicity).
 
 \begin{exercise} \label{sol:eulerex}
-Suppose that ${(b-a)}^2-4ac > 0$.  a) Find a formula for the general solution
+Suppose that ${(b-a)}^2-4ac > 0$.
+\begin{enumerate}[a)]
+\item Find a formula for the general solution
 of $a x^2 y'' + b x y' + c y = 0$.  Hint: Try $y=x^r$ and find a formula for
 $r$.
-b) What happens when ${(b-a)}^2-4ac = 0$ or ${(b-a)}^2-4ac < 0$?
+\item What happens when ${(b-a)}^2-4ac = 0$ or ${(b-a)}^2-4ac < 0$?
+\end{enumerate}
 \end{exercise}
 
 We will revisit the case when ${(b-a)}^2-4ac < 0$ later.
@@ -267,16 +270,22 @@ Let us solve some famous equations using the method.
 
 \begin{exercise}[\myindex{Chebyshev's equation of order 1}]
 Take 
-$(1-x^2)y''-xy' + y = 0$.  a) Show that $y=x$ is a solution.
-b) Use reduction of order to find a second linearly independent solution.
-c) Write down the general solution.
+$(1-x^2)y''-xy' + y = 0$.
+\begin{enumerate}[a)]
+\item Show that $y=x$ is a solution.
+\item Use reduction of order to find a second linearly independent solution.
+\item Write down the general solution.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}[\myindex{Hermite's equation of order 2}]
 Take 
-$y''-2xy' + 4y = 0$.  a) Show that $y=1-2x^2$ is a solution.  
-b) Use reduction of order to find a second linearly independent solution.
-c) Write down the general solution.
+$y''-2xy' + 4y = 0$.
+\begin{enumerate}[a)]
+\item Show that $y=1-2x^2$ is a solution.  
+\item Use reduction of order to find a second linearly independent solution.
+\item Write down the general solution.
+\end{enumerate}
 \end{exercise}
 
 \setcounter{exercise}{100}
@@ -598,7 +607,7 @@ As you can see, we always get a pair of roots of the form $\alpha \pm i
 \begin{equation*}
 y = C_1 e^{(\alpha+i\beta)x} + C_2 e^{(\alpha-i\beta)x} .
 \end{equation*}
-However, the exponential is now complex valued.  We would need to allow
+However, the exponential is now complex-valued.  We need to allow
 $C_1$ and $C_2$ to be complex numbers to obtain a real-valued solution (which
 is what we are after).  While there is nothing particularly wrong with this
 approach,
@@ -1138,16 +1147,26 @@ Find the general solution for $y''' + 2 y'' + 2 y' = 0$.
 \end{exercise}
 
 \begin{exercise}
-Suppose the characteristic equation for a differential equation is
-${(r-1)}^2{(r-2)}^2 = 0$.  a) Find such a differential equation.
-b) Find its general solution.
+Suppose the characteristic equation for an ODE is
+${(r-1)}^2{(r-2)}^2 = 0$.
+\begin{enumerate}[a)]
+\item
+Find such a differential equation.
+\item
+Find its general solution.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise} \label{hol:eqfromsolex}
 Suppose that a fourth order equation has a solution
 $y = 2 e^{4x} x \cos x$.  
-a) Find such an equation.  b) Find the initial conditions that the given
+\begin{enumerate}[a)]
+\item
+Find such an equation.
+\item
+Find the initial conditions that the given
 solution satisfies.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -1198,8 +1217,16 @@ $y=C_1 e^x +C_2 x^3 + C_3 x^2 +C_4 x + C_5$
 \begin{exercise}
 Suppose that the characteristic equation of a third order differential
 equation has
-roots $\pm 2i$ and 3.  a) What is the characteristic equation?  b) Find the
-corresponding differential equation.  c) Find the general solution.
+roots $\pm 2i$ and 3.
+\begin{enumerate}[a)]
+\item
+What is the characteristic equation?
+\item
+Find the
+corresponding differential equation.
+\item
+Find the general solution.
+\end{enumerate}
 \end{exercise}
 \exsol{%
 a) $r^3-3r^2+4r-12 = 0$,
@@ -1287,7 +1314,7 @@ motion}}, if $F \equiv 0$ (if $F$ is identically zero),
 \end{enumerate}
 
 This system appears in lots of applications even if it does not at first
-seem like it.  Many real world scenarios can be simplified to
+seem like it.  Many real-world scenarios can be simplified to
 a mass on a spring.  For example, a bungee jump setup is essentially a mass
 and spring system (you are the mass).  It would be good if someone did the math
 before you jump off the bridge, right?  Let us give two other examples.
@@ -1316,20 +1343,22 @@ L I''(t) + R I'(t) + \frac{1}{C} I(t) = E'(t) .
 This is a nonhomogeneous second order constant coefficient linear equation.
 As $L, R$, and $C$ are all positive, this system behaves just like the
 mass and spring system.  The position of the mass is replaced by the current.
-Mass is replaced by the inductance, damping is replaced by resistance and
+Mass is replaced by the inductance, damping is replaced by resistance, and
 the spring constant is replaced by one over the capacitance.  The change in
-voltage becomes the forcing function.  Hence for constant voltage this is an
+voltage becomes the forcing function---for constant voltage this is an
 unforced motion.
 
 \medskip
 
-\begin{mywrapfigsimp}{1.46in}{1.76in}
+\begin{mywrapfigsimp}{1.8in}{2.16in}
+\diffypdfversion{\vspace*{-15pt}}
 \noindent
-\inputpdft{mv-pend}
+\inputpdft{mv-pend-deriv}
+%\diffypdfversion{\vspace*{24pt}}
 \end{mywrapfigsimp}
 Our next example behaves like a mass and spring system only
-approximately. Suppose we have a
-mass $m$ on a pendulum of length $L$.  We wish to find an equation for
+approximately. Suppose a
+mass $m$ hangs on a pendulum of length $L$.  We seek an equation for
 the angle $\theta(t)$.  Let $g$ be the force of gravity.
 Elementary physics mandates that the equation is
 of the form
@@ -1625,19 +1654,8 @@ dwell on critical damping.
 
 \subsubsection{Underdamping}
 
-%mbxSTARTIGNORE
-\begin{mywrapfig}{3.25in}
-\capstart
-\diffyincludegraphics{width=3in}{width=4.5in}{mv-underdamped}
-\caption{Underdamped motion with the envelope curves shown.\label{mv:underdampedfig}}
-\end{mywrapfig}
-%mbxENDIGNORE
-%
-% make sure the MBX below is synced!
-%
-
 When
-$c^2 - 4km < 0$, we say the system is \emph{\myindex{underdamped}}.  In this case,
+$c^2 - 4km < 0$, the system is \emph{\myindex{underdamped}}.  In this case,
 the roots are complex.
 \begin{equation*}
 \begin{split}
@@ -1660,27 +1678,28 @@ x(t) = C e^{-pt} \cos ( \omega_1 t - \gamma ) .
 An example plot is given in \figurevref{mv:underdampedfig}.  Note that we
 still have that $x(t) \to 0$ as $t \to \infty$.
 
-%mbxlatex \begin{myfig}
-%mbxlatex \diffyincludegraphics{width=3in}{width=4.5in}{mv-underdamped}
-%mbxlatex \caption{Underdamped motion with the envelope curves shown.\label{mv:underdampedfig}}
-%mbxlatex \end{myfig}
-
-In the figure
-we also show the \emph{\myindex{envelope curves}}
+\begin{mywrapfig}{3.25in}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{mv-underdamped}
+\caption{Underdamped motion with the envelope curves shown.\label{mv:underdampedfig}}
+\end{mywrapfig}
+The figure also 
+shows the \emph{\myindex{envelope curves}}
 $C e^{-pt}$ and $-C e^{-pt}$.  The solution
 is the oscillating line between the two envelope curves.
 The envelope curves give
 the maximum amplitude of the oscillation at any given point in time.  For
-example if you are bungee jumping, you are really interested in computing the
-envelope curve so that you do not hit the concrete with your head.
+example, if you are bungee jumping, you are really interested in computing the
+envelope curve as not to hit the concrete with your head.
 
-The phase shift $\gamma$ just shifts the graph left or right but within the
+The phase shift $\gamma$ shifts the oscillation left or right, but within the
 envelope curves (the envelope curves do not change if $\gamma$
 changes).
 
-Finally note that the angular \emph{\myindex{pseudo-frequency}}
-(we do not call it a frequency
-since the solution is not really a periodic function) $\omega_1$ becomes
+
+Finally notice that the angular \emph{\myindex{pseudo-frequency}}
+\footnote{We do not call $\omega_1$ a frequency
+since the solution is not really a periodic function.}  becomes
 smaller when the damping $c$ (and hence $p$) becomes larger.  This makes sense.
 When we change the damping just a little bit, we do not
 expect the behavior of the solution to change dramatically.
@@ -1696,14 +1715,18 @@ flatter as $c$ (and hence $p$) goes to 0.
 
 \subsection{Exercises}
 
+\begin{samepage}
 \begin{exercise} \label{mv:ex1}
 Consider a mass and spring system with a mass $m=2$, spring constant $k=3$, and
 damping constant $c=1$.
-a) Set up and find the general solution of the system.
-b) Is the system underdamped, overdamped or critically damped?
-c) If the system is not critically damped, find a $c$ that makes the system
+\begin{enumerate}[a)]
+\item Set up and find the general solution of the system.
+\item Is the system underdamped, overdamped or critically damped?
+\item If the system is not critically damped, find a $c$ that makes the system
 critically damped.
+\end{enumerate}
 \end{exercise}
+\end{samepage}
 
 \begin{exercise}
 Do \exerciseref{mv:ex1} for
@@ -1716,10 +1739,12 @@ suppose you have a spring with spring constant \unitfrac[4]{N}{m}.
 You want to use
 it to weigh items.  Assume no friction.  You place the mass on
 the spring and put it in motion.
-a) You count and find that the frequency is
+\begin{enumerate}[a)]
+\item You count and find that the frequency is
 \unit[0.8]{Hz} (cycles per second).  What is the mass?
-b) Find a formula for the mass $m$
+\item Find a formula for the mass $m$
 given the frequency $\omega$ in \unit{Hz}.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -1729,12 +1754,15 @@ two reference weights \unit[1]{kg} and \unit[2]{kg} to calibrate your setup.
 You put each in motion on your spring and measure the
 frequency.  For the \unit[1]{kg}
 weight you measured \unit[1.1]{Hz}, for the \unit[2]{kg} weight you
-measured \unit[0.8]{Hz}.  a) Find $k$ (spring constant) and $c$ (damping constant).
-b) Find a formula for the mass in terms of the frequency in Hz.  \emph{Note that
+measured \unit[0.8]{Hz}.
+\begin{enumerate}[a)]
+\item Find $k$ (spring constant) and $c$ (damping constant).
+\item Find a formula for the mass in terms of the frequency in Hz.  \emph{Note that
 there may be more than one possible mass for a given frequency.}
-c) For an unknown object you measured \unit[0.2]{Hz}, what is the mass of the
+\item For an unknown object you measured \unit[0.2]{Hz}, what is the mass of the
 object?  Suppose that you know that the mass of the unknown object
 is more than a kilogram.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -1762,8 +1790,12 @@ $k=\nicefrac{8}{9}$ (and larger)
 \begin{exercise}
 Suppose we have an RLC circuit with a resistor of 100 milliohms (0.1 ohms),
 inductor of inductance of 50 millihenries (0.05 henries), and a capacitor of 5 farads, with
-constant voltage.  a) Set up the ODE equation for the current $I$. b) Find
-the general solution.  c) Solve for $I(0) = 10$ and $I'(0) = 0$.
+constant voltage.
+\begin{enumerate}[a)]
+\item Set up the ODE equation for the current $I$.
+\item Find the general solution.
+\item Solve for $I(0) = 10$ and $I'(0) = 0$.
+\end{enumerate}
 \end{exercise}
 \exsol{%
 \\
@@ -1775,15 +1807,21 @@ c) $x(t) = 10 e^{-t} \cos(\sqrt{3} \, t) + \frac{10}{\sqrt{3}} e^{-t}
 \sin(\sqrt{3} \, t)$
 }
 
+\pagebreak[2]
 \begin{exercise}
 A \unit[5000]{kg} railcar hits a bumper (a spring) at \unitfrac[1]{m}{s},
 and the spring compresses by \unit[0.1]{m}.  Assume no damping.
-a) Find $k$. b) Find out how far does the spring compress when a
-\unit[10000]{kg} railcar hits the spring at the same speed. c) If the spring
+\begin{enumerate}[a)]
+\item Find $k$.
+\item Find out how far does the spring compress when a
+\unit[10000]{kg} railcar hits the spring at the same speed.
+\item If the spring
 would break if it compresses further than \unit[0.3]{m}, what is the maximum
-mass of a railcar that can hit it at \unitfrac[1]{m}{s}? d) What is
+mass of a railcar that can hit it at \unitfrac[1]{m}{s}?
+\item What is
 the maximum mass of a railcar that can hit the spring without breaking
 at \unitfrac[2]{m}{s}?
+\end{enumerate}
 \end{exercise}
 \exsol{%
 a) $k=500000$,
@@ -2236,10 +2274,15 @@ for the coefficients for $y^{(4)}-2y'''+y'' = e^x + x + \sin x$.
 \end{exercise}
 
 \begin{exercise}
-a) Using variation of parameters find a particular solution of
-$y''-2y'+y = e^x$.  b)~Find a particular solution using undetermined
-coefficients.  c)~Are the two solutions you found the same?
+{\ }
+\begin{enumerate}[a)]
+\item Using variation of parameters find a particular solution of
+$y''-2y'+y = e^x$.
+\item Find a particular solution using undetermined
+coefficients.
+\item Are the two solutions you found the same?
 See also \exerciseref{exercise:diffvarparunder}.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -2254,10 +2297,15 @@ to $y''-y=e^{cx}$.  Hint: Make sure to handle every possible real $c$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:diffvarparunder}
-a) Using variation of parameters find a particular solution of
-$y''-y = e^x$.  b)~Find a particular solution using undetermined
-coefficients.  c)~Are the two solutions you found the same?
+{\ }
+\begin{enumerate}[a)]
+\item Using variation of parameters find a particular solution of
+$y''-y = e^x$.
+\item Find a particular solution using undetermined
+coefficients.
+\item Are the two solutions you found the same?
 What is going on?
+\end{enumerate}
 \end{exercise}
 
 \setcounter{exercise}{100}
@@ -2270,8 +2318,11 @@ $y=\frac{-16\sin(3x)+6\cos(3x)}{73}$
 }
 
 \begin{exercise}
-a) Find a particular solution to $y''+2y=e^x + x^3$.
-b) Find the general solution.
+{\ }
+\begin{enumerate}[a)]
+\item Find a particular solution to $y''+2y=e^x + x^3$.
+\item Find the general solution.
+\end{enumerate}
 \end{exercise}
 \exsol{%
 a) $y=\frac{2e^x+3x^3-9x}{6}$,
@@ -2714,6 +2765,8 @@ frequency.
 
 The behavior is more complicated if the forcing function is not an
 exact cosine wave, but for example a \myindex{square wave}.
+A general periodic function will be the sum (superposition) of many
+cosine waves of different frequencies.
 The reader is encouraged to come
 back to this section once we have learned about the Fourier series.
 
@@ -2746,30 +2799,36 @@ practical resonance (that is, for what values of $m$ is there no maximum of
 $C(\omega)$ for $\omega > 0$)?
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}
-Suppose a water tower in an earthquake acts as a mass-spring system.
+A water tower in an earthquake acts as a mass-spring system.
 Assume that the container on top is full and the water does not move around.
-The container then acts as a mass and the support acts as the spring, where
-the induced vibrations are horizontal.  Suppose that the container with water
-has a mass of $m=\unit[10,000]{kg}$.  It takes a force of 1000 newtons to displace 
-the container 1 meter.  For simplicity assume no friction.
+The container then acts as the mass and the support acts as the spring, where
+the induced vibrations are horizontal.  The container with water
+has a mass of $m=\unit[10,000]{kg}$.  It takes a force of 1000 newtons
+to displace the container 1 meter.  For simplicity assume no friction.
 When the earthquake hits the water tower is at rest (it is not moving).
-
-Suppose that an earthquake induces an external force 
+%
+The earthquake induces an external force 
 $F(t) = m A \omega^2 \cos (\omega t)$.
-
-a) What is the natural frequency of the water tower?
-
-b) If $\omega$ is not the natural frequency, find a formula for the maximal
+\begin{enumerate}[a)]
+\item
+What is the natural frequency of the water tower?
+\item
+If $\omega$ is not the natural frequency, find a formula for the maximal
 amplitude of the resulting oscillations of the water container (the maximal
 deviation from the rest position).  The motion will be a high frequency wave
 modulated by a low frequency wave, so simply find the constant in front of the
 sines.
-
-c) Suppose $A = 1$ and an earthquake with frequency 0.5 cycles per second
+\item
+Suppose $A = 1$ and an earthquake with frequency 0.5 cycles per second
 comes.  What is the amplitude of the oscillations?  Suppose that if the water
-tower moves more than 1.5 meter from the rest position, the tower collapses.  Will the tower collapse?
+tower moves more than 1.5 meter from the rest position, the tower collapses.
+Will the tower collapse?
+\end{enumerate}
 \end{exercise}
+\end{samepage}
+
 
 \setcounter{exercise}{100}
 
