@@ -1339,8 +1339,8 @@ X(s) = \frac{\frac{1}{s+1}}{1- \frac{1}{s^2-1}}
 \end{equation*}
 It is not hard to apply \tablevref{lt:table} to find
 \begin{equation*}
-x(t) = \cosh (\! \sqrt{2} \, t) -
-\frac{1}{\sqrt{2}} \sinh (\!  \sqrt{2}\, t ).
+x(t) = \cosh \bigl( \sqrt{2} \, t \bigr) -
+\frac{1}{\sqrt{2}} \sinh \bigl( \sqrt{2}\, t \bigr).
 \end{equation*}
 \end{example}
 
@@ -1954,11 +1954,11 @@ It is best to see it on an example.
 \begin{example}
 Consider the first order PDE
 \begin{equation*}
-u_t = - \alpha u_x, \qquad \text{for } x > 0, t > 0,
+y_t = - \alpha y_x, \qquad \text{for } x > 0, t > 0,
 \end{equation*}
 with side conditions
 \begin{equation*}
-u(0,t) = C, \qquad u(x,0) = 0 .
+y(0,t) = C, \qquad y(x,0) = 0 .
 \end{equation*}
 This equation is 
 called the \emph{\myindex{convection equation}} or sometimes
@@ -1967,7 +1967,7 @@ an appearance in \sectionref{fopde:section}, with different conditions.
 
 A physical setup of this equation is a river of goo (we are assuming no
 diffusion, or at least very little diffusion).  The function
-$u$ is the concentration of
+$y$ is the concentration of
 some toxic substance (it's a goo already, we're not hurting the environment
 much more).  The variable $x$ denotes position where $x=0$
 is the location of a factory spewing the toxic substance into the
@@ -1979,69 +1979,68 @@ pure goo.
 
 FIXME: picture of the setup
 
-We have a function of two variables $u(x,t)$ that we wish to transform, so
+We have a function of two variables $y(x,t)$ that we wish to transform, so
 we fix one variable and transform the other.  Let us transform the $t$
 variable.  For convenience, we will treat the transformed $s$
 variable as a parameter,
 as there will be no derivatives in $s$.  That is, the transformed function
 will be a function of $x$ with depending on a parameter $s$
-That is, we write $U(x)$ for the transformed function:
+That is, we write $Y(x)$ for the transformed function:
 \begin{equation*}
-U(x)
-= {\mathcal L} \bigl\{ u(x,t) \bigr\}
-= \int_0^\infty u(x,t) e^{-st} ~ds .
+Y(x)
+= {\mathcal L} \bigl\{ y(x,t) \bigr\}
+= \int_0^\infty y(x,t) e^{-st} ~ds .
 \end{equation*}
 The $x$ derivative is not difficult to compute:
 \begin{equation*}
-{\mathcal L} \bigl\{ u_x(x,t) \bigr\} =
-\int_0^\infty u_x(x,t) e^{-st} ~ds
+{\mathcal L} \bigl\{ y_x(x,t) \bigr\} =
+\int_0^\infty y_x(x,t) e^{-st} ~ds
 =
-\frac{d}{dx} \left[\int_0^\infty u(x,t) e^{-st} ~ds \right]
+\frac{d}{dx} \left[\int_0^\infty y(x,t) e^{-st} ~ds \right]
 =
-U'(x) .
+Y'(x) .
 \end{equation*}
 The derivative in $t$ is the derivative of the transformed variable
 \begin{equation*}
-{\mathcal L} \bigl\{ u_t(x,t) \bigr\} 
+{\mathcal L} \bigl\{ y_t(x,t) \bigr\} 
 =
-sU(x) - u(x,0) .
+sY(x) - y(x,0) .
 \end{equation*}
 
-As $u(x,0)=0$, then in our specific case,
-${\mathcal L} \bigl\{ u_t(x,t) \bigr\} = sU(x)$.  We transform the equation
+As $y(x,0)=0$, then in our specific case,
+${\mathcal L} \bigl\{ y_t(x,t) \bigr\} = sY(x)$.  We transform the equation
 to find
 \begin{equation*}
-sU(x) = -\alpha U'(x) .
+sY(x) = -\alpha Y'(x) .
 \end{equation*}
 We need an initial condition for this ODE.  This initial condition is the
 other side condition of the PDE, the one that depends on $x$.  Since we have
 transformed everything we need to transform this condition too
 \begin{equation*}
-U(0) = 
-{\mathcal L} \bigl\{ u(0,t) \bigr\} 
+Y(0) = 
+{\mathcal L} \bigl\{ y(0,t) \bigr\} 
 =
 {\mathcal L} \bigl\{ C \bigr\} 
 =
 \frac{C}{s} .
 \end{equation*}
 
-We solve the ODE $sU(x) = -\alpha U'(x)$, $U(0) = \frac{C}{s}$ to find
+We solve the ODE $sY(x) = -\alpha Y'(x)$, $Y(0) = \frac{C}{s}$ to find
 \begin{equation*}
-U(x) = \frac{C}{s} e^{-\frac{s}{\alpha} x} .
+Y(x) = \frac{C}{s} e^{-\frac{s}{\alpha} x} .
 \end{equation*}
-We are not done, we have $U(x)$, but we really want $u(x,t)$.  We need
+We are not done, we have $Y(x)$, but we really want $y(x,t)$.  We need
 to transform the $s$ variable back to $t$.
-Let us use
+Let 
 \begin{equation*}
-H(t) = \begin{cases} 0 & \text{if $t < 0$}, \\ 1 & \text{otherwise}
+u(t) = \begin{cases} 0 & \text{if $t < 0$}, \\ 1 & \text{otherwise}
 \end{cases}
 \end{equation*}
-for the Heaviside function,
-since we clearly cannot use $u$.
+be the Heaviside function as before.
 As
 \begin{equation*}
-{\mathcal L} \bigl\{ H(t-a) \bigr\} =
-\int_0^\infty H(t-a) \, e^{-st} ~dt
+{\mathcal L} \bigl\{ u(t-a) \bigr\} =
+\int_0^\infty u(t-a) \, e^{-st} ~dt
 =
 \int_a^\infty e^{-st} ~dt
 =
@@ -2049,15 +2048,15 @@ As
 \end{equation*}
 Then
 \begin{equation*}
-u(x,t) = {\mathcal L}^{-1} \left\{
+y(x,t) = {\mathcal L}^{-1} \left\{
 \frac{C}{s} e^{-\frac{s}{\alpha} x}
 \right\}
 =
-C H\bigl(t-\nicefrac{x}{\alpha}\bigr) .
+C u\bigl(t-\nicefrac{x}{\alpha}\bigr) .
 \end{equation*}
 In other words
 \begin{equation*}
-u(x,t) =
+y(x,t) =
 \begin{cases}
 0 & \text{if $t < \nicefrac{x}{\alpha}$}, \\
 C & \text{otherwise.}
@@ -2068,31 +2067,31 @@ FIXME: Plot,  slope of wavefront is $1/\alpha$.
 
 What the equation does is simply move the initial condition to the right at
 speed $\alpha$.
-Shhh ... $u$ is not differentiable, it is not even continuous
+Shhh ... $y$ is not differentiable, it is not even continuous
 (nobody ever seems to notice this).
-Well, just think of a function very very close to $u$ that is differentiable.
+Well, just think of a function very very close to $y$ that is differentiable.
 Or, if you recognize the derivative of the Heaviside function as the delta
 function, then all is well too:
 \begin{equation*}
-u_t (x,t) = \frac{\partial}{\partial t} \left[
-C  H\bigl(t-\nicefrac{x}{\alpha}\bigr)
+y_t (x,t) = \frac{\partial}{\partial t} \left[
+C  u\bigl(t-\nicefrac{x}{\alpha}\bigr)
 \right]
 =
-C  H'\bigl(t-\nicefrac{x}{\alpha}\bigr)
+C  u'\bigl(t-\nicefrac{x}{\alpha}\bigr)
 =
 C \delta\bigl(t-\nicefrac{x}{\alpha}\bigr)
 \end{equation*}
 and
 \begin{equation*}
-u_x (x,t) = \frac{\partial}{\partial x} \left[
-C  H\bigl(t-\nicefrac{x}{\alpha}\bigr)
+y_x (x,t) = \frac{\partial}{\partial x} \left[
+C  u\bigl(t-\nicefrac{x}{\alpha}\bigr)
 \right]
 =
-- \frac{C}{\alpha}  H'\bigl(t-\nicefrac{x}{\alpha}\bigr)
+- \frac{C}{\alpha}  u'\bigl(t-\nicefrac{x}{\alpha}\bigr)
 =
 - \frac{C}{\alpha} \delta\bigl(t-\nicefrac{x}{\alpha}\bigr) .
 \end{equation*}
-So $u_t = - \alpha u_x$.
+So $y_t = - \alpha y_x$.
 \end{example}
 
 FIXME: Just a dump from my draft notes:
@@ -2102,28 +2101,28 @@ infinite $x$ on both sides.
 
 Let us use Laplace for the following problem
 
-$u_t = u_{xx}$, $0 < x < \infty$,
+$y_t = y_{xx}$, $0 < x < \infty$,
 
-$u_x(0,t) = f(t)$,
+$y_x(0,t) = f(t)$,
 
-$u(x,0) = 0$
+$y(x,0) = 0$
 
 Transform the equation
 
-$sU(x) = U''(x)$
+$sY(x) = Y''(x)$
 
 The general solution here is
 $$
-U(x) = A e^{\sqrt{s}x} + B e^{-\sqrt{s} x}
+Y(x) = A e^{\sqrt{s}x} + B e^{-\sqrt{s} x}
 $$
 
 Now how about the boundary conditions.  Firstly $A=0$ since otherwise
 unbounded.
- We transform $U'(0) = F(s)$ and
+ We transform $Y'(0) = F(s)$ and
 so
 $-\sqrt{s}B = F(s)$, and
 $$
-U(x) = - F(s) \frac{1}{\sqrt{s}} e^{-\sqrt{s} x}
+Y(x) = - F(s) \frac{1}{\sqrt{s}} e^{-\sqrt{s} x}
 $$
 
 If we look up the inverse transform in a table (or we spend the afternoon
@@ -2138,7 +2137,7 @@ $$
 $$
 So
 $$
-u(x,t) =
+y(x,t) =
 {\mathcal L}^{-1} \left[
 F(s) e^{-\sqrt{s} x}\right]
 =
@@ -2180,10 +2179,6 @@ So e.g.
 $$
 \mathcal{L} \{ t \sin(t) \} = \frac{2s}{(s^2+1)^2} ,
 $$
-
-
-FIXME: another dump:
-
 
 
 FIXME

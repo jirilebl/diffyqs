@@ -28,6 +28,13 @@
   about invertible matrices, and is generally a useful thing anyway.
 
 * 3.4: Rephrase Exercise 3.4.2 to be more specific.
+* 3.4: For the complex eigenvalue/eigenvector equation mention that
+  the bar of zero is still zero
+* 3.4: After the complex eigenvalue theorem, write down explicitly the
+  general solution for a 2-by-2 system
+
+* 3.6: In Example 3.6.1, also solve for some initial conditions and
+  add a figure of the result.
 
 * 7.1: Add root test and an example for it.
 

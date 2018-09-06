@@ -39,7 +39,9 @@ TECHNICAL:
   it can look weird).
   See subsection 3.9.2
 * Search for: will, previously, have, can, note, notice
-* complex valued => complex-valued, vector-valued, etc...
+* adjectives like complex valued should be complex-valued (done for those,
+  but there are others, find them all)
+* use bigl( bigr) when a sqrt is in a parenthesis perhaps
 
 
 

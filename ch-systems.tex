@@ -2335,8 +2335,10 @@ we bar whole vectors or matrices by taking the complex conjugate
 of every entry.  Suppose a matrix $P$ is real.  Then
 $\overline{P} = P$, and so $\overline{P\vec{x}} = \overline{P} \,
 \overline{\vec{x}} = P \overline{\vec{x}}$.
-Therefore,
+Also the complex conjugate of 0 is still 0,
+therefore,
 \begin{equation*}
+\vec{0} = \overline{\vec{0}} = 
 \overline{(P-\lambda I)\vec{v}}
 =
 (P-\bar{\lambda} I)\overline{\vec{v}} .
@@ -2397,22 +2399,32 @@ Returning to our problem,
 i e^t \cos t + e^t \sin t  \\
 e^t \cos t - i e^t \sin t
 \end{bmatrix}
+=
+\begin{bmatrix}
+e^t \sin t  \\
+e^t \cos t
+\end{bmatrix}
++ i
+\begin{bmatrix}
+e^t \cos t  \\
+- e^t \sin t
+\end{bmatrix}
 .
 \end{equation*}
 Then
-\begin{align*}
-\operatorname{Re} \vec{x}_1 & = 
+\begin{equation*}
+\operatorname{Re} \vec{x}_1 = 
 \begin{bmatrix}
 e^t \sin t  \\
 e^t \cos t
 \end{bmatrix} ,
-\\
-\operatorname{Im} \vec{x}_1 & = 
+\qquad \text{and} \qquad
+\operatorname{Im} \vec{x}_1 = 
 \begin{bmatrix}
 e^t \cos t \\
 - e^t \sin t
 \end{bmatrix} ,
-\end{align*}
+\end{equation*}
 are the two real-valued linearly independent solutions we seek.
 
 \begin{exercise}
@@ -2440,7 +2452,7 @@ c_1 e^t \cos t - c_2 e^t \sin t
 \end{bmatrix} .
 \end{equation*}
 This solution is real-valued for real $c_1$ and $c_2$.  We now solve
-for any initial conditions that we may have.
+for any initial conditions we may have.
 
 \medskip
 
@@ -2469,6 +2481,17 @@ independent solutions.
 We then go on to the next
 eigenvalue, which is either a real eigenvalue or another complex eigenvalue
 pair.  If we have $n$ distinct eigenvalues (real or complex), then we end up with $n$ linearly independent solutions.
+If we had only two equations ($n=2$) as in the example above,
+then once we found two solutions we are
+finished, and our general solution is
+\begin{equation*}
+\vec{x} =
+c_1 \vec{x}_1 + c_2 \vec{x}_2
+= 
+c_1 \bigl( \operatorname{Re} \vec{v} e^{(a+ib)t} \bigr) +
+c_2 \bigl( \operatorname{Im} \vec{v} e^{(a+ib)t} \bigr)
+.
+\end{equation*}
 
 We can now find a real-valued general solution to any homogeneous
 system where the matrix has distinct eigenvalues.  When we have repeated
@@ -3364,6 +3387,72 @@ but in opposite directions.
 
 The general solution is a combination of the two modes.  That is, the
 initial conditions determine the amplitude and phase shift of each mode.
+As an example, suppose we have initial conditions
+\begin{equation*}
+\vec{x}(0) = 
+\begin{bmatrix} 1 \\ -1 \end{bmatrix}
+, \qquad
+\vec{x}'(0) = 
+\begin{bmatrix} 0 \\ 6 \end{bmatrix} .
+\end{equation*}
+We use the $a_j, b_j$ constants to solve for initial conditions.  First
+\begin{equation*}
+\begin{bmatrix} 1 \\ -1 \end{bmatrix}
+=
+\vec{x}(0) = 
+\begin{bmatrix} 1 \\ 2 \end{bmatrix}
+a_1
++
+\begin{bmatrix} 1 \\ -1 \end{bmatrix}
+a_2 
+=
+\begin{bmatrix} a_1+a_2 \\2a_1 - a_2 \end{bmatrix}
+\end{equation*}
+We solve (exercise) to find $a_1 = 0$, $a_2 = 1$.
+To find the $b_1$ and $b_2$, we differentiate first:
+\begin{equation*}
+{\vec{x}}' = 
+\begin{bmatrix} 1 \\ 2 \end{bmatrix}
+\bigl( - a_1 \sin (t) + b_1 \cos (t) \bigr)
++
+\begin{bmatrix} 1 \\ -1 \end{bmatrix}
+\bigl( - 2a_2 \sin (2t) + 2 b_2 \cos (2t) \bigr) .
+\end{equation*}
+Now we solve:
+\begin{equation*}
+\begin{bmatrix} 0 \\ 6 \end{bmatrix}
+=
+{\vec{x}}'(0) = 
+\begin{bmatrix} 1 \\ 2 \end{bmatrix}
+b_1
++
+\begin{bmatrix} 1 \\ -1 \end{bmatrix}
+2 b_2
+=
+\begin{bmatrix} b_1+2b_2 \\ 2b_1-2b_2 \end{bmatrix} .
+\end{equation*}
+Again solve (exercise) to find  $b_1 = 2$, $b_2 = -1$.  So our solution is
+\begin{equation*}
+\vec{x} = 
+\begin{bmatrix} 1 \\ 2 \end{bmatrix}
+2 \sin (t)
++
+\begin{bmatrix} 1 \\ -1 \end{bmatrix}
+\bigl( \cos (2t) - \sin (2t) \bigr)
+=
+\begin{bmatrix}
+2 \sin (t) + \cos(2t)- \sin(2t) \\
+4 \sin (t) - \cos(2t) + \sin(2t)
+\end{bmatrix} .
+\end{equation*}
+The graphs of the two displacements, $x_1$ and $x_2$ of the two carts is in
+\figureref{sosa:superposfig}.
+\begin{myfig}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{sosa-superpos}
+\caption{Superposition of the two modes given the initial
+conditions.\label{sosa:superposfig}}
+\end{myfig}
 \end{example}
 
 \begin{example} \label{sosa:railcarexample}
@@ -3404,7 +3493,7 @@ system of the previous example but without $k_1$.  Hence the equation is
 -2 & 2 \\
 2 & -2
 \end{bmatrix}
-\vec{x} .
+\vec{x} ,
 \end{equation*}
 or
 \begin{equation*}
@@ -3423,8 +3512,9 @@ $\left[ \begin{smallmatrix} 1 \\ 1 \end{smallmatrix} \right]$ and
 $\left[ \begin{smallmatrix} 1 \\ -2 \end{smallmatrix} \right]$ respectively
 (exercise). 
 Then
-$\omega_2 = \sqrt{3}$ and by the second part of the theorem
-we find our general solution to be
+$\omega_1 = 0$,
+$\omega_2 = \sqrt{3}$, and by the second part of the theorem
+the general solution is
 \begin{equation*}
 \begin{split}
 \vec{x} & = 
@@ -3432,13 +3522,13 @@ we find our general solution to be
 \left( a_1 + b_1 t \right) 
 +
 \begin{bmatrix} 1 \\ -2 \end{bmatrix}
-\left( a_2 \cos (\! \sqrt{3} \, t) + b_2 \sin (\! \sqrt{3} \, t ) \right)
+\left( a_2 \cos ( \sqrt{3} \, t) + b_2 \sin ( \sqrt{3} \, t ) \right)
 \\
 & =
 \begin{bmatrix}
-a_1 + b_1 t + a_2 \cos ( \! \sqrt{3} \, t ) + b_2 \sin ( \! \sqrt{3} \, t
+a_1 + b_1 t + a_2 \cos ( \sqrt{3} \, t ) + b_2 \sin ( \sqrt{3} \, t
 ) \\
-a_1 + b_1 t - 2 a_2 \cos ( \! \sqrt{3} \, t ) - 2 b_2 \sin ( \! \sqrt{3}
+a_1 + b_1 t - 2 a_2 \cos ( \sqrt{3} \, t ) - 2 b_2 \sin ( \sqrt{3}
 \, t ) 
 \end{bmatrix} .
 \end{split}
@@ -3463,8 +3553,8 @@ and differentiate to get
 {\vec{x}}'(t)
 =
 \begin{bmatrix}
-b_1 + \sqrt{3} \, b_2 \cos (\! \sqrt{3} \, t ) \\
-b_1 - 2 \sqrt{3} \, b_2 \cos (\! \sqrt{3} \, t )
+b_1 + \sqrt{3} \, b_2 \cos ( \sqrt{3} \, t ) \\
+b_1 - 2 \sqrt{3} \, b_2 \cos ( \sqrt{3} \, t )
 \end{bmatrix} .
 \end{equation*}
 So
@@ -3484,19 +3574,26 @@ find $b_1 = 2$ and $b_2 =
 \begin{equation*}
 \vec{x} = 
 \begin{bmatrix}
-2 t + \frac{1}{\sqrt{3}} \sin ( \! \sqrt{3} \, t ) \\
-2 t - \frac{2}{\sqrt{3}} \sin ( \! \sqrt{3} \, t )
+2 t + \frac{1}{\sqrt{3}} \sin ( \sqrt{3} \, t ) \\
+2 t - \frac{2}{\sqrt{3}} \sin ( \sqrt{3} \, t )
 \end{bmatrix} .
 \end{equation*}
 Note how the presence of the zero eigenvalue resulted in a term containing $t$.
-This means that the carts will be traveling in the positive direction as
+This means that the cars will be traveling in the positive direction as
 time grows, which is what we expect.
 
 
 What we are really interested in is the second expression, the one for $x_2$.
 We have $x_2(t) = 
-2 t - \frac{2}{\sqrt{3}} \sin (\! \sqrt{3} \, t)$.  See \figurevref{sosa:railcarfig}
+2 t - \frac{2}{\sqrt{3}} \sin ( \sqrt{3} \, t)$.  See \figurevref{sosa:railcarfig}
 for the plot of $x_2$ versus time.
+
+Just from the graph we can see that time of impact will be a little
+more than 5 seconds from time zero.  For this we have to solve
+the equation $10 = x_2(t) = 2 t - \frac{2}{\sqrt{3}} \sin ( \sqrt{3} \,
+t)$.
+Using a computer (or even a graphing calculator)
+we find that $t_{\text{impact}} \approx 5.22$ seconds.
 
 \begin{mywrapfig}{3.25in}
 \capstart
@@ -3505,18 +3602,11 @@ for the plot of $x_2$ versus time.
 \end{mywrapfig}
 
 
-Just from the graph we can see that time of impact will be a little
-more than 5 seconds from time zero.  For this we have to solve
-the equation $10 = x_2(t) = 2 t - \frac{2}{\sqrt{3}} \sin (\! \sqrt{3} \,
-t)$.
-Using a computer (or even a graphing calculator)
-we find that $t_{\text{impact}} \approx 5.22$ seconds.
-
-The speed of the second cart is $x_2' = 2 - 2 \cos (\! \sqrt{3} \, t)$.
+The speed of the second car is $x_2' = 2 - 2 \cos ( \sqrt{3} \, t)$.
 At the time of impact (5.22 seconds from $t=0$) we get 
 $x_2'(t_{\text{impact}}) \approx 3.85$.
 %
-The maximum speed is the maximum of $2 - 2 \cos (\! \sqrt{3} \, t )$, which is 4.
+The maximum speed is the maximum of $2 - 2 \cos ( \sqrt{3} \, t )$, which is 4.
 We are traveling at almost the maximum speed when we hit the wall.
 
 \medskip
@@ -3535,16 +3625,17 @@ the wall is at zero speed?
 
 The answer is yes.  Looking at \figurevref{sosa:railcarfig},
 we note the \myquote{plateau} between $t=3$ and $t=4$.  There is a point where
-the speed is zero.  To find it we need to solve $x_2'(t) = 0$.  This is when
-$\cos (\! \sqrt{3} \, t) = 1$ or in other words when $t = \frac{2 \pi}{\sqrt{3}}, 
+the speed is zero.  To find it we solve $x_2'(t) = 0$.  This is when
+$\cos ( \sqrt{3} \, t) = 1$ or in other words when $t = \frac{2 \pi}{\sqrt{3}}, 
 \frac{4 \pi}{\sqrt{3}},\ldots$ and so on.  We plug in the first value to obtain
 $x_2\left(\frac{2 \pi}{\sqrt{3}}\right) = 
 \frac{4 \pi}{\sqrt{3}} \approx 7.26$.  So a \myquote{safe} distance is about 7 and a
 quarter meters from the wall.
 
 Alternatively Bob could move away from the wall
-towards the incoming car 2 where another safe distance is
-$\frac{8 \pi}{\sqrt{3}} \approx 14.51$ and so on, using all the different
+towards the incoming car 2, where another safe distance is
+$x_2 \left( \frac{4 \pi}{\sqrt{3}} \right) = \frac{8 \pi}{\sqrt{3}}
+\approx 14.51$ and so on.  We can use all the different
 $t$ such that $x_2'(t) = 0$.  Of course $t=0$ is always a solution here,
 corresponding to $x_2 = 0$, but
 that means standing right at the wall.
@@ -3575,13 +3666,13 @@ find $\vec{x}_p$.  This is really just the method of
 order systems}}
 for systems.  Let us differentiate $\vec{x}_p$ twice to get
 \begin{equation*}
-{\vec{x}_p{}\!}'' = -\omega^2 \vec{c} \cos (\omega t) .
+{\vec{x}_p}'' = -\omega^2 \vec{c} \cos (\omega t) .
 \end{equation*}
-Plug $\vec{x}_p$ and ${\vec{x}_p{}\!}''$ into equation \eqref{sosa:forcedeq}:
+Plug $\vec{x}_p$ and ${\vec{x}_p}''$ into equation \eqref{sosa:forcedeq}:
 \begin{equation*}
 \overbrace{
 -\omega^2 \vec{c} \cos (\omega t)
-}^{{\vec{x}_p{}\!}''}
+}^{{\vec{x}_p}''}
 =
 \overbrace{
 A \vec{c} \cos (\omega t) 
@@ -3721,8 +3812,9 @@ ${\vec{x}}'' = A \vec{x} + \vec{F} \cos (\omega t)$ is
 \end{bmatrix}
 \cos (3t) .
 \end{equation*}
-The constants $a_1$, $a_2$, $b_1$, and $b_2$ must then be solved for using
-the initial conditions.
+We then solve for the constants
+$a_1$, $a_2$, $b_1$, and $b_2$ using
+any initial conditions we are given.
 \end{example}
 
 Note that given force $\vec{f}$, we write 
@@ -3778,7 +3870,7 @@ time, the first mass will always come to a stop.
 
 \begin{exercise}
 Let us take the \examplevref{sosa:railcarexample}, but that at
-time of impact, cart 2 is moving to the left at the speed of
+time of impact, car 2 is moving to the left at the speed of
 \unitfrac[3]{m}{s}.  a)
 Find the behavior of the system after linkup.  b) Will the second car hit
 the wall, or will it be moving away from the wall as time goes on?  c) At
@@ -6117,10 +6209,10 @@ to the nonhomogeneous equation of the form
 where $\vec{u}(t)$ is a vector-valued function instead of a constant.
 We substitute $\vec{x}_p$ into \eqref{nhsys:nhvceq} to obtain
 \begin{equation*}
-%{\vec{x}_p{}\!}'(t)
+%{\vec{x}_p}'(t)
 %=
 \underbrace{X'(t)\, \vec{u}(t) + X(t)\, {\vec{u}}'(t)}%
-_{{\vec{x}_p{}\!}'(t)}
+_{{\vec{x}_p}'(t)}
 =
 \underbrace{A(t)\, X(t)\, \vec{u}(t)}%
 _{A(t) \vec{x}_p (t)} 
