@@ -7,6 +7,115 @@
 
 \sectionnotes{? lectures}
 
+In real life, there is most often more than one variable.
+So we wish to organize dealing with multiple variables in a consistent
+manner, and in particular organize dealing with linear mappings and linear
+equations, as those are rather easy to handle if done properly.
+There is a joke running among some mathematicians:
+``to an engineer every problem is linear, and everything is a matrix.''
+And well, I would say they are not wrong. 
+Quite often, solving an engineering problem really is figuring out the
+right linear problem to solve.
+Most importantly linear problems are the ones which we know how to solve
+and we have lots and lots of tools to solve them.
+So as engineers, as mathematicians, as physicists, or as any other
+scientists it is absolutely vital to learn linear algebra.
+
+As motivation, suppose we have to solve
+\begin{equation*}
+\begin{aligned}
+& x-y = 2 \\
+& 2x+y = 4 ,
+\end{aligned}
+\end{equation*}
+for $x$ and $y$.
+What you could do is add the equations together to find
+\begin{equation*}
+x+2x-y+y = 2+4, \qquad \text{or} \qquad 3x = 6 .
+\end{equation*}
+And now we find $x=3$.  Once we have that, we can plug in $x=2$ into the
+first equation to find $2-y=2$, so $y=0$.  OK, that was easy.  What is all
+this fuss about linear equations.  Well, now try doing this if you have
+5000 unknowns\footnote{One of the downsides of making everything look like a
+linear problem is that the number of variables tends to become huge.}.
+Also, we will have such equations not of just numbers,
+but of functions and derivatives of functions in differential equations.
+Clearly we need a more systematic way of doing things.
+A consequence of making things systematic and simpler to write down
+is that it also becomes much easier to have computers do the work for us;
+Computers are rather stupid, they do not think,
+but are very good at doing lots of repetitive
+tasks precisely, as long as we figure out a systematic way for them to
+perform the tasks.  This is where linear algebra comes in.
+
+\medskip
+
+Let us start with vectors.  We usually consider $n$ real numbers as an
+$n$-tuple
+\begin{equation*}
+(x_1,x_2,\ldots,x_n). 
+\end{equation*}
+These points span the so-called
+\emph{$n$-dimensional space}\index{n-dimensional space@$n$-dimensional
+space},
+often denoted by ${\mathbb R}^n$.
+For example in two dimensions, ${\mathbb R}^2$ is the cartesian plane.
+So we have say
+the point $(1,2)$, which is one unit to the right and two units up from the
+origin.
+
+Now to do algebra we say these $n$-tuples of numbers are so-called 
+\emph{vectors}\index{vector}.  Mathematicians are keen on separating
+what is a vector and what is a point of a plane, and it turns out
+to be an important distinction, however, for the purposes of linear algebra
+we can think of everything being represented by a vector.
+A way to think of a vector, that's especially useful in calculus
+and differential equations, is an arrow.  It is an object that has
+a direction and a magnitude.  For example, the vector $(1,2)$
+is the arrow from the origin to the point $(1,2)$ in the plane.
+See figure FIXME.
+
+FIXME: figure.
+
+For reasons that will become clear in the next section, it will often be
+useful to write vectors as so-called
+\emph{column vectors}\index{column vector}:
+\begin{equation*}
+\begin{bmatrix}
+x_{1} \\ x_2 \\ \vdots \\ x_n
+\end{bmatrix} .
+\end{equation*}
+Don't worry, it is just a different way of writing the same thing that will
+be useful later.  For example the vector $(1,2)$ can be written as
+\begin{equation*}
+\begin{bmatrix}
+1 \\ 2
+\end{bmatrix} .
+\end{equation*}
+
+Now where does the algebra come in?  Well, arrows are easy to add, subtract
+and multiply by numbers.  First adding.  If we have two arrows, we simply
+move along one, and then along the other.  See Figure FIXME.
+
+FIXME: figure.
+
+It is rather easy to see what it does to the numbers that represent the
+vectors.  Suppose I want to add $(1,2)$ to $(-1,3)$.  So I travel along $(1,2)$
+and then travel along $(-1,3)$.
+What I did was travel one unit right, two units up, and then
+I travelled one unit left (the negative one), and three units up.  That
+means that I added up at $(1-1,2+3) = (0,5)$.  And that's how addition
+always works:
+\begin{equation*}
+\begin{bmatrix}
+x_{1} \\ x_2 \\ \vdots \\ x_n
+\end{bmatrix} .
+\end{equation*}
+
+
+
+
+
 FIXME: just a dump of stuff from chapter 3
 
 A \emph{\myindex{matrix}}
