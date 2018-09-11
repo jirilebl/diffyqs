@@ -36,6 +36,11 @@
 * 3.6: In Example 3.6.1, also solve for some initial conditions and
   add a figure of the result.
 
+* 3.7: Add a quick example of a 3x3 matrix with defective a eigenvalue.
+* 3.7: Add some extra explanation of what to do with algebraic multiplicity
+  3 defective eigenvalues, and improve exposition on the higher
+  multiplicity.
+
 * 7.1: Add root test and an example for it.
 
 * Renumberings: Figures in chapter 3, examples in 3.1, examples in 7.1 past

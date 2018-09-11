@@ -41,6 +41,8 @@ and William Trench's free book
 Differential Equations with Boundary Value Problems}~\cite{T}.
 See the \hyperref[furtherreading:chapter]{Further Reading} chapter at the end of the book.
 
+\subsection{Organization}
+
 The organization of this book to some degree
 requires chapters be done in order.
 Later chapters can be dropped.
@@ -69,20 +71,25 @@ The dependence of the material covered is roughly:
 %mbxlatex \inputpdft{chapterdiagram}
 %mbxlatex \end{center}
 
-There are some references in chapters \ref{FS:chapter} and \ref{SL:chapter}
-to material from \chapterref{sys:chapter} (some linear algebra), but these
-references are not absolutely essential and can be skimmed over,
+There are a few references in chapters \ref{FS:chapter} and \ref{SL:chapter}
+to \chapterref{sys:chapter} (some linear algebra), but these
+references are not essential and can be skimmed over,
 so \chapterref{sys:chapter}
 can safely be dropped, while still covering
 chapters \ref{FS:chapter} and \ref{SL:chapter}.
-The PDE section of \chapterref{LT:chapter} makes some references
-to \chapterref{FS:chapter}, although it could in theory be covered
+\Chapterref{LT:chapter} does not depend on 
+\chapterref{FS:chapter} except that the
+PDE section \ref{laplacepde:section} makes a
+few references to
+\chapterref{FS:chapter},
+although it could in theory be covered
 separately.
-The more in-depth \appendixref{linalg:appendix} can replace
-\sectionref{sec:matrix}
+The more in-depth \appendixref{linalg:appendix} on linear algebra
+can replace the short review \sectionref{sec:matrix}
 for a course that combines linear algebra and ODE.
 
-\medskip
+%\medskip
+\subsection{Typical types of courses}
 
 \pagebreak[2]
 The textbook was originally made for two types of courses.  Either
@@ -121,8 +128,11 @@ The second type of the course at 3 hours a week (Math 285 at UIUC) was:
 \medskip
 
 The complete book can be covered at a reasonably
-fast pace at approximately 76 (FIXME?) lectures,
-not accounting for exams, review,
+fast pace at approximately 76 (FIXME?) lectures
+(without \appendixref{linalg:appendix})
+or FIXME lectures (with \appendixref{linalg:appendix} replacing
+\sectionref{sec:matrix}).
+This is not accounting for exams, review,
 or time spent in computer lab. % (if using IODE for example).
 A two quarter or a two semester course can be easily run with the material.
 For example (with some sections perhaps strategically skipped):
@@ -170,10 +180,16 @@ after \chapterref{sys:chapter}.
 If time is short, the first two sections of
 \chapterref{ps:chapter} make a reasonable self-contained unit.
 
-\medskip
+%\medskip
+\subsection{Computer resources}
 
-I taught the UIUC courses using the IODE\index{IODE software} software
-(\url{https://faculty.math.illinois.edu/iode/}).  IODE is a free software package that
+There are some interactive SAGE demos at the book webpage:
+\url{https://www.jirka.org/diffyqs/#sage}. The PDFs of the
+figures used in the book are also on the book webpage.
+
+I taught the UIUC courses using IODE\index{IODE software}
+(\url{https://faculty.math.illinois.edu/iode/}).
+IODE is a free software package that
 works with Matlab (proprietary) or Octave (free software).
 Unfortunately IODE is not kept up to date at this point, and may have
 trouble running on newer versions of Matlab.
@@ -189,9 +205,12 @@ updates or errata.  The \LaTeX\ source is also available
 for possible modification and customization
 at github (\url{https://github.com/jirilebl/diffyqs}).
 
-\medskip
+%\medskip
 
-\textbf{Acknowlegements:}
+%\textbf{Acknowlegements:}
+
+\subsection{Acknowlegements}
+
 Firstly, I would like to acknowledge Rick Laugesen.  I used his handwritten
 class notes
 the first time I taught

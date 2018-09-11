@@ -11,9 +11,6 @@ SMALLER THINGS:
 * Expand discussion of vector fields and how they are drawn in 3.1.
 * More on the reduction of order method in 2.1 (and split into subsections)
 * Add maybe a few more exercises for setting up applications in 3.1
-* Generalized eigenvector discussion is a little too terse and perhaps still
-  misleading.  Do another larger example perhaps.  Most of the exercises are
-  3x3 so we should have an example of that.
 * Add exercise for formulas for A^n in the matrix exponential section
 * In 3.6 add more exercises on forced, and also improve the exposition wrt
   the units.

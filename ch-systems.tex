@@ -3698,6 +3698,19 @@ invertible.  That matrix is invertible if and only if
 $-\omega^2$ is not an eigenvalue of $A$.  That is true if and only if $\omega$
 is not a natural frequency of the system.
 
+We simplified things a little bit.  If we wish to have the
+forcing term to be in the units of force, say Newtons, then we must write
+\begin{equation*}
+M \vec{x}'' = K \vec{x} + \vec{G} \cos(\omega t) .
+\end{equation*}
+If we then write things in terms of $A = M^{-1} K$, we have
+\begin{equation*}
+\vec{x}'' = M^{-1}K \vec{x} + M^{-1} \vec{G} \cos(\omega t) 
+\qquad \text{or} \qquad
+\vec{x}'' = A \vec{x} + \vec{F} \cos(\omega t) ,
+\end{equation*}
+where $\vec{F} = M^{-1} \vec{G}$.
+
 \begin{example}
 Let us take the example in \figurevref{sosa:twocartswallfig} with
 the same parameters as before:
@@ -3825,7 +3838,7 @@ term $\vec{g} = M^{-1} \vec{f}$ in ${\vec{x}}'' = A \vec{x} + \vec{g}$ is in uni
 per unit mass.
 
 If $\omega$ is a natural frequency of the system
-\emph{\myindex{resonance}} occurs
+\emph{\myindex{resonance}} may occur,
 because we will have to try a particular solution of the form
 \begin{equation*}
 \vec{x}_p =
@@ -4144,7 +4157,7 @@ coefficient matrix.
 
 \medskip
 
-The key observation we use here is that
+Roughly, the key observation is that
 if $\lambda$ is an eigenvalue of $A$ of algebraic multiplicity $m$,
 then we can find certain $m$ linearly independent vectors
 solving the equation ${(A-\lambda I)}^m \vec{v} = \vec{0}$.  We will
@@ -4156,28 +4169,32 @@ Let us continue with the example
 $A = \left[ \begin{smallmatrix}
 3 & 1 \\ 0 & 3
 \end{smallmatrix} \right]$ and the equation ${\vec{x}}' = A\vec{x}$.
-We have an eigenvalue $\lambda=3$ of (algebraic) multiplicity 2 and defect 1.
-We have found one eigenvector 
-$\vec{v}_1 = \left[ \begin{smallmatrix} 1 \\ 0 \end{smallmatrix} \right]$.
-We have the solution
+We found an eigenvalue $\lambda=3$ of (algebraic) multiplicity 2 and defect 1.
+We found one eigenvector 
+$\vec{v} = \left[ \begin{smallmatrix} 1 \\ 0 \end{smallmatrix} \right]$.
+We have one solution
 \begin{equation*}
-\vec{x}_1 = \vec{v}_1 e^{3t} .
+\vec{x}_1 = \vec{v} e^{3t} = \begin{bmatrix} 1 \\ 0 \end{bmatrix} e^{3t} .
 \end{equation*}
-In this case, let us try (in the spirit of repeated roots of the
+We are now stuck, we get no other solutions from standard eigenvectors.  But
+we need two linearly independent solutions to find the general solution of
+the equation.
+
+Let us try (in the spirit of repeated roots of the
 characteristic equation for a single equation) another solution of the form
 \begin{equation*}
 \vec{x}_2 = ( \vec{v}_2 +  \vec{v}_1 t )\, e^{3t} .
 \end{equation*}
 We differentiate to get
 \begin{equation*}
-{\vec{x}_2{}}' =
+{\vec{x}_2}' =
 \vec{v}_1 e^{3t} +
 3 ( \vec{v}_2 +  \vec{v}_1 t )\, e^{3t}
 =
 ( 3 \vec{v}_2 + \vec{v}_1 )\, e^{3t} +  3 \vec{v}_1 t e^{3t} .
 \end{equation*}
-As we are assuming that $\vec{x}_2$ is a solution, ${\vec{x}_2{}}'$ must
-equal $A \vec{x}_2$, and
+As we are assuming that $\vec{x}_2$ is a solution, ${\vec{x}_2}'$ must
+equal $A \vec{x}_2$. So let's compute $A \vec{x}_2$:
 \begin{equation*}
 A \vec{x}_2 = 
 A ( \vec{v}_2 +  \vec{v}_1 t )\, e^{3t}
@@ -4195,8 +4212,10 @@ This means that
 \end{equation*}
 Therefore, $\vec{x}_2$ is a solution
 if these two equations are satisfied.
-The second equation is satisfied as $\vec{v}_1$ is an
-eigenvector.
+The second equation is satisfied if $\vec{v}_1$ is an
+eigenvector, and we found the eigenvector above, so let
+$\vec{v}_1 = 
+\left[ \begin{smallmatrix} 1 \\ 0 \end{smallmatrix} \right]$.
 So, if we can find a $\vec{v}_2$ that solves
 %${(A-3I)}^2\vec{v}_2 = \vec{0}$ and such that
 $(A-3I)\vec{v}_2 = \vec{v}_1$, then we are done.
@@ -4302,7 +4321,108 @@ This gives us two linearly independent solutions
 \vec{x}_2 & = \left( \vec{v}_2 + \vec{v}_1 t \right) e^{\lambda t} .
 \end{align*}
 
-\medskip
+\begin{example}
+Consider the system
+\begin{equation*}
+\vec{x}' =
+\begin{bmatrix}
+2 & -5 & 0 \\
+0 & 2 & 0 \\
+-1 & 4 & 1
+\end{bmatrix}
+\vec{x} .
+\end{equation*}
+Compute the eigenvalues,
+\begin{equation*}
+0 =
+\det(A-\lambda I) = 
+\det\left(
+\begin{bmatrix}
+2-\lambda & -5 & 0 \\
+0 & 2-\lambda & 0 \\
+-1 & 4 & 1-\lambda
+\end{bmatrix}
+\right)
+= (2-\lambda)^2(1-\lambda) .
+\end{equation*}
+So the eigenvalues are 1 and 2, where 2 has multiplicity 2.
+For the eigenvalue $\lambda = 1$ we leave it to the reader to find that
+$\left[ \begin{smallmatrix} 0 \\ 0 \\ 1 \end{smallmatrix} \right]$
+is an eigenvector.
+
+Let's focus on $\lambda = 2$.  Let's compute eigenvectors,
+\begin{equation*}
+\vec{0} =
+(A - 2 I) \vec{v}
+=
+\begin{bmatrix}
+0 & -5 & 0 \\
+0 & 0 & 0 \\
+-1 & 4 & -1
+\end{bmatrix}
+\begin{bmatrix}
+v_1 \\ v_2 \\ v_3
+\end{bmatrix}
+.
+\end{equation*}
+The first equation says that $v_2 = 0$, so the last equation
+is $-v_1 -v_3 = 0$.  Let $v_3$ be the free variable to find
+that $v_1 = -v_3$.  Perhaps let $v_3 = -1$ to find an eigenvector
+$\left[ \begin{smallmatrix} 1 \\ 0 \\ -1 \end{smallmatrix} \right]$.
+Problem is that setting $v_3$ to anything else just gets multiples
+of this vector and so we have a defect of 1.
+Let $\vec{v}_1$ be the eigenvector and let's look for
+a generalized eigenvector $\vec{v}_2$.
+\begin{equation*}
+(A - 2 I) \vec{v}_2 = \vec{v}_1 . 
+\end{equation*}
+or
+\begin{equation*}
+\begin{bmatrix}
+0 & -5 & 0 \\
+0 & 0 & 0 \\
+-1 & 4 & -1
+\end{bmatrix}
+\begin{bmatrix}
+a \\ b \\ c
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 \\ 0 \\ -1
+\end{bmatrix} ,
+\end{equation*}
+where we used $a$, $b$, $c$ as components of $\vec{v}_2$ for simplicity.
+The first equation says $-5b = 1$ so $b = \nicefrac{-1}{5}$.  The
+second equation says nothing.
+The last equation is $-a + 4b - c = -1$ or
+$a + \nicefrac{4}{5} + c = 1$ or
+$a + c = \nicefrac{1}{5}$.  We can let $c$ be the free variable, so let's
+choose it to be $c=0$.  We find
+$\vec{v}_2 = \left[ \begin{smallmatrix} \nicefrac{1}{5} \\ \nicefrac{-1}{5}
+\\ 0 \end{smallmatrix} \right]$.
+
+The general solution is therefore,
+\begin{equation*}
+\vec{x} =
+c_1
+\begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}
+e^t
++
+c_2 
+\begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix}
+e^{2t}
++
+c_3
+\left(
+\begin{bmatrix} \nicefrac{1}{5} \\ \nicefrac{-1}{5} \\ 0 \end{bmatrix}
++
+\begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix}
+t
+\right)
+e^{2t}
+.
+\end{equation*}
+\end{example}
 
 This machinery can also be generalized to higher multiplicities
 and higher defects.
@@ -4316,8 +4436,8 @@ We find vectors such that
 \end{equation*}
 Such vectors are called \emph{\myindex{generalized eigenvectors}} (then
 $\vec{v}_1 = {(A - \lambda I)}^{k-1} \vec{v}$ is an eigenvector).
-For every
-eigenvector $\vec{v}_1$ we find a chain of generalized eigenvectors
+For the
+eigenvector $\vec{v}_1$ there is a chain of generalized eigenvectors
 $\vec{v}_2$ through $\vec{v}_k$ such that:
 \begin{align*}
 (A - \lambda I) \vec{v}_1 & = \vec{0} , \\
@@ -4325,6 +4445,12 @@ $\vec{v}_2$ through $\vec{v}_k$ such that:
 & ~~\vdots \\
 (A - \lambda I) \vec{v}_k & = \vec{v}_{k-1} .
 \end{align*}
+Really once you find the $\vec{v}_k$ such that
+${(A - \lambda I)}^k \vec{v}_k = \vec{0}$ but
+${(A - \lambda I)}^{k-1} \vec{v}_k \not= \vec{0}$, you find the entire
+chain since you can compute the rest,
+$\vec{v}_{k-1} = (A - \lambda I) \vec{v}_k$,
+$\vec{v}_{k-2} = (A - \lambda I) \vec{v}_{k-1}$, etc\ldots.
 We form the linearly independent solutions
 \begin{align*}
 \vec{x}_1 & = \vec{v}_1 e^{\lambda t} , \\
@@ -4336,9 +4462,61 @@ We form the linearly independent solutions
 \right) \, e^{\lambda t} .
 \end{align*}
 Recall that $k! = 1 \cdot 2 \cdot 3 \cdots (k-1) \cdot k$ is the factorial.
-We proceed to find chains until we form $m$ linearly independent solutions
-($m$ is the multiplicity).  You may need to find several chains for every
-eigenvalue.
+If you have an eigevalue of geometric multiplicity $\ell$,
+you will have to find $\ell$ such chains (some of them might be
+short: just the single eigenvector equation).
+We go until we form $m$ linearly independent solutions where
+$m$ is the algebraic multiplicity.
+We don't quite know which specific eigenvectors go with which chain, so
+start by finding $\vec{v}_k$ first for the longest possible chain and
+go from there.
+
+For example, if $\lambda$ is an eigenvalue of $A$
+of algebraic multiplicity 3 and defect 2, then solve
+\begin{equation*}
+(A - \lambda I) \vec{v}_1 = \vec{0} , \qquad
+(A - \lambda I) \vec{v}_2 = \vec{v}_1 , \qquad
+(A - \lambda I) \vec{v}_3 = \vec{v}_2 .
+\end{equation*}
+That is, find $\vec{v}_3$ such that 
+${(A - \lambda I)}^3 \vec{v}_3 = \vec{0}$, but
+${(A - \lambda I)}^2 \vec{v}_3 \not= \vec{0}$.
+Then you are done as
+$\vec{v}_2 = (A - \lambda I) \vec{v}_3$
+and 
+$\vec{v}_1 = (A - \lambda I) \vec{v}_2$.
+The 3 linearly independent solutions are
+\begin{equation*}
+\vec{x}_1 = \vec{v}_1 e^{\lambda t} , \qquad
+\vec{x}_2 = ( \vec{v}_2 + \vec{v}_1 t ) \, e^{\lambda t} , \qquad
+\vec{x}_3 = \left( \vec{v}_3 + \vec{v}_2 t +
+\vec{v}_{1} \frac{t^2}{2} \right) \, e^{\lambda t} .
+\end{equation*}
+
+If on the other hand $A$ has an eigenvalue $\lambda$
+of algebraic multiplicity 3 and defect 1, then 
+solve
+\begin{equation*}
+(A - \lambda I) \vec{v}_1 = \vec{0} , \qquad
+(A - \lambda I) \vec{v}_2 = \vec{0} , \qquad
+(A - \lambda I) \vec{v}_3 = \vec{v}_2 .
+\end{equation*}
+Here $\vec{v}_1$ and $\vec{v}_2$ are actual honest eigenvectors,
+and $\vec{v}_3$ is a generalized eigenvector.
+So there are two chains.
+To solve, first find a 
+$\vec{v}_3$ such that 
+${(A - \lambda I)}^2 \vec{v}_3 = \vec{0}$, but
+$(A - \lambda I) \vec{v}_3 \not= \vec{0}$.
+Then $\vec{v}_2 = (A - \lambda I) \vec{v}_3$ is going to be an eigenvector.
+Then solve for an eigenvector $\vec{v}_1$ that is linearly independent 
+from $\vec{v}_2$.
+You get 3 linearly independent solutions
+\begin{equation*}
+\vec{x}_1 = \vec{v}_1 e^{\lambda t} , \qquad
+\vec{x}_2 = \vec{v}_2 e^{\lambda t} , \qquad
+\vec{x}_3 = ( \vec{v}_3 + \vec{v}_2 t ) \, e^{\lambda t} .
+\end{equation*}
 
 \subsection{Exercises}
 
@@ -4348,6 +4526,7 @@ $A = \left[ \begin{smallmatrix} 5 & -3 \\ 3 & -1 \end{smallmatrix} \right]$.
 Find the general solution of ${\vec{x}}' = A \vec{x}$.
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}
 Let
 $A = \left[ \begin{smallmatrix}
@@ -4355,19 +4534,24 @@ $A = \left[ \begin{smallmatrix}
 0 & 3 & 0 \\
 -2 & 4 & -1
 \end{smallmatrix} \right]$.
-a) What are the eigenvalues?
-b) What is/are the defect(s) of the eigenvalue(s)?
-c) Find the general solution of ${\vec{x}}' = A \vec{x}$.
+\begin{enumerate}[a)]
+\item What are the eigenvalues?
+\item What is/are the defect(s) of the eigenvalue(s)?
+\item Find the general solution of ${\vec{x}}' = A \vec{x}$.
+\end{enumerate}
 \end{exercise}
+\end{samepage}
 
 
 \begin{exercise}
 Let
 $A = \left[ \begin{smallmatrix} 2 & 1 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 2 \end{smallmatrix} \right]$.
-a) What are the eigenvalues?
-b) What is/are the defect(s) of the eigenvalue(s)?
-c) Find the general solution of ${\vec{x}}' = A \vec{x}$ in two different ways and verify you get
-the same answer.
+\begin{enumerate}[a)]
+\item What are the eigenvalues?
+\item What is/are the defect(s) of the eigenvalue(s)?
+\item Find the general solution of ${\vec{x}}' = A \vec{x}$ in two different
+ways and verify you get the same answer.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -4377,9 +4561,11 @@ $A = \left[ \begin{smallmatrix}
 -1 & -2 & -2 \\
 -4 & 4 & 7
 \end{smallmatrix} \right]$.
-a) What are the eigenvalues?
-b) What is/are the defect(s) of the eigenvalue(s)?
-c) Find the general solution of ${\vec{x}}' = A \vec{x}$.
+\begin{enumerate}[a)]
+\item What are the eigenvalues?
+\item What is/are the defect(s) of the eigenvalue(s)?
+\item Find the general solution of ${\vec{x}}' = A \vec{x}$.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -4389,9 +4575,11 @@ $A = \left[ \begin{smallmatrix}
 -1 & -4 & 1 \\
 0 & 0 & -2
 \end{smallmatrix} \right]$.
-a) What are the eigenvalues?
-b) What is/are the defect(s) of the eigenvalue(s)?
-c) Find the general solution of ${\vec{x}}' = A \vec{x}$.
+\begin{enumerate}[a)]
+\item What are the eigenvalues?
+\item What is/are the defect(s) of the eigenvalue(s)?
+\item Find the general solution of ${\vec{x}}' = A \vec{x}$.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -4401,9 +4589,11 @@ $A = \left[ \begin{smallmatrix}
 -1 & 0 & 2 \\
 -1 & -2 & 4
 \end{smallmatrix} \right]$.
-a) What are the eigenvalues?
-b) What is/are the defect(s) of the eigenvalue(s)?
-c) Find the general solution of ${\vec{x}}' = A \vec{x}$.
+\begin{enumerate}[a)]
+\item What are the eigenvalues?
+\item What is/are the defect(s) of the eigenvalue(s)?
+\item Find the general solution of ${\vec{x}}' = A \vec{x}$.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -4422,8 +4612,11 @@ Let $A =
 1 & 1 & 1 \\
 1 & 1 & 1 
 \end{smallmatrix}\right]$.  
-a) What are the eigenvalues?  b) What is/are the defect(s) of the
-eigenvalue(s)?  c) Find the general solution of $\vec{x}\,' = A\vec{x}$.
+\begin{enumerate}[a)]
+\item What are the eigenvalues?
+\item What is/are the defect(s) of the eigenvalue(s)?
+\item Find the general solution of $\vec{x}\,' = A\vec{x}$.
+\end{enumerate}
 \end{exercise}
 \exsol{%
 a) $3,0,0$
@@ -4456,8 +4649,11 @@ Let $A =
 1 & 1 & 0 \\
 -1 & 1 & 2 \\
 \end{smallmatrix}\right]$.  
-a) What are the eigenvalues?  b) What is/are the defect(s) of the
-eigenvalue(s)?  c) Find the general solution of $\vec{x}\,' = A\vec{x}$.
+\begin{enumerate}[a)]
+\item What are the eigenvalues?
+\item What is/are the defect(s) of the eigenvalue(s)?
+\item Find the general solution of $\vec{x}\,' = A\vec{x}$.
+\end{enumerate}
 \end{exercise}
 \exsol{%
 \\
@@ -4500,8 +4696,11 @@ Let $A =
 -1 & -1 & 9 \\
 0 & -1 & 5
 \end{smallmatrix}\right]$.  
-a) What are the eigenvalues?  b) What is/are the defect(s) of the
-eigenvalue(s)?  c) Find the general solution of $\vec{x}\,' = A\vec{x}$.
+\begin{enumerate}[a)]
+\item What are the eigenvalues?
+\item What is/are the defect(s) of the eigenvalue(s)?
+\item Find the general solution of $\vec{x}\,' = A\vec{x}$.
+\end{enumerate}
 \end{exercise}
 \exsol{%
 \\
