@@ -4160,8 +4160,8 @@ coefficient matrix.
 Roughly, the key observation is that
 if $\lambda$ is an eigenvalue of $A$ of algebraic multiplicity $m$,
 then we can find certain $m$ linearly independent vectors
-solving the equation ${(A-\lambda I)}^m \vec{v} = \vec{0}$.  We will
-call these \emph{\myindex{generalized eigenvectors}}.
+solving ${(A-\lambda I)}^k \vec{v} = \vec{0}$ for various powers
+$k$.  We will call these \emph{\myindex{generalized eigenvectors}}.
 
 \medskip
 
@@ -4397,7 +4397,7 @@ second equation says nothing.
 The last equation is $-a + 4b - c = -1$ or
 $a + \nicefrac{4}{5} + c = 1$ or
 $a + c = \nicefrac{1}{5}$.  We can let $c$ be the free variable, so let's
-choose it to be $c=0$.  We find
+choose $c=0$.  We find
 $\vec{v}_2 = \left[ \begin{smallmatrix} \nicefrac{1}{5} \\ \nicefrac{-1}{5}
 \\ 0 \end{smallmatrix} \right]$.
 
@@ -4782,12 +4782,14 @@ coefficient equation
 \begin{equation*}
 {\vec{x}}' = P \vec{x} ,
 \end{equation*}
-as usual.  Now suppose that this was one equation ($P$ is a number or a $1
-\times 1$ matrix).  Then the solution to this would be
+as usual.  If this is just one equation ($P$ is a number or a $1
+\times 1$ matrix), then the solution would be
 \begin{equation*}
 \vec{x} = e^{Pt} .
 \end{equation*}
-The same computation works for matrices when we define
+That doesn't make sense if $P$ is a larger matrix, but
+essentially the same computation that led to the above
+works for matrices when we define
 $e^{Pt}$ properly.  First let us write down the Taylor series for $e^{at}$
 for some number $a$:
 \begin{equation*}
@@ -4802,7 +4804,8 @@ Recall $k! = 1 \cdot 2 \cdot 3 \cdots k$ is the factorial, and $0! = 1$.
 We differentiate this series term by term
 \begin{equation*}
 \frac{d}{dt} \left(e^{at} \right) = 
-a
+0
++ a
 + a^2 t
 + \frac{a^3t^2}{2}
 + \frac{a^4t^3}{6}
@@ -4954,13 +4957,13 @@ eigenvalue with a defect; there is only one eigenvector for the eigenvalue
 3.  So we found a perhaps easier way to handle this case.  In fact, if
 a matrix $A$ is $2 \times 2$ and has an eigenvalue $\lambda$ of multiplicity
 2, then
-either $A$ is diagonal, or $A = \lambda I + B$ where $B^2 = 0$.  This is a
+either $A = \lambda I$, or $A = \lambda I + B$ where $B^2 = 0$.  This is a
 good exercise.
 
 \begin{exercise}%[challenging] No longer challenging with the hint?
 Suppose that $A$ is $2 \times 2$ and $\lambda$
 is the only eigenvalue.  Show that ${(A - \lambda I)}^2 = 0$, and therefore
-that we can write $A = \lambda I + B$, where $B^2 = 0$.
+that we can write $A = \lambda I + B$, where $B^2 = 0$ (and possibly $B=0$).
 Hint: First
 write down what does it mean for the eigenvalue to be of multiplicity 2.
 You will get
@@ -5013,13 +5016,14 @@ I + A + \frac{1}{2} A^2 +
 \end{equation*}
 
 Given a square matrix $A$, 
-we can sometimes write $A = E D E^{-1}$, where $D$ is
+we can usually write $A = E D E^{-1}$, where $D$ is
 diagonal and $E$ invertible.
 This procedure is called \emph{\myindex{diagonalization}}.
 If we can do
 that, the computation  of the
-exponential becomes easy.  Adding $t$ into the mix, 
-we can then easily compute the exponential
+exponential becomes easy as $e^D$ is just taking the exponential of
+the entries on the diagonal.  Adding $t$ into the mix, 
+we can then compute the exponential
 \begin{equation*}
 e^{tA} = E e^{tD} E^{-1} .
 \end{equation*}
@@ -5091,7 +5095,7 @@ system ${\vec{x}}' = A \vec{x}$, in the case where we have
 $n$ linearly independent eigenvectors.
 
 This computation still works when the eigenvalues and
-eigenvectors are complex, though then you will have to compute with complex
+eigenvectors are complex, though then you have to compute with complex
 numbers.  It is clear from the definition that if $A$ is real,
 then $e^{tA}$ is real.  So you will only need complex numbers in the
 computation and not for the result.  You may need to apply
@@ -5230,7 +5234,7 @@ Clearly, if we plug $t=0$ into
 $X(t) \left[ X(0) \right]^{-1}$ we get the identity.  
 We can multiply a fundamental matrix solution on the right by any
 constant invertible matrix and we still get a fundamental matrix solution.
-All we are doing is changing what the arbitrary constants are in the general
+All we are doing is changing what are the arbitrary constants in the general
 solution $\vec{x}(t) = X(t)\, \vec{c}$.
 
 \subsection{Approximations}
@@ -5376,7 +5380,7 @@ this means that $e^A$ is invertible even if $A$ is not.
 \end{exercise}
 
 \begin{exercise}
-Suppose $A$ is a matrix with eigenvalues $-1$, $1$, and
+Let $A$ be a $2 \times 2$ matrix with eigenvalues $-1$, $1$, and
 corresponding eigenvectors
 $\left[ \begin{smallmatrix}
 1 \\
@@ -5386,13 +5390,15 @@ $\left[ \begin{smallmatrix}
 0 \\
 1
 \end{smallmatrix} \right]$.
-a)~Find matrix $A$ with these properties.
-b)~Find a fundamental matrix solution to ${\vec{x}}' = A \vec{x}$.
-c)~Solve the system in with initial conditions $\vec{x}(0) =
+\begin{enumerate}[a)]
+\item Find matrix $A$ with these properties.
+\item Find a fundamental matrix solution to ${\vec{x}}' = A \vec{x}$.
+\item Solve the system in with initial conditions $\vec{x}(0) =
 \left[ \begin{smallmatrix}
 2 \\
 3
 \end{smallmatrix} \right]$ .
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -5409,13 +5415,15 @@ Let $A = \left[ \begin{smallmatrix}
 -1 & -1 \\
 1 & -3
 \end{smallmatrix} \right]$.
-a) Find $e^{tA}$.
-b) Solve
+\begin{enumerate}[a)]
+\item Find $e^{tA}$.
+\item Solve
 ${\vec{x}}' = A \vec{x}$, $\vec{x}(0) =
 \left[ \begin{smallmatrix}
 1 \\
 -2
 \end{smallmatrix} \right]$.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -5471,16 +5479,22 @@ $e^{tA}=\left[ \begin{smallmatrix}
 
 
 \begin{exercise}
-a) Compute
+{\ }
+\begin{enumerate}[a)]
+\item
+Compute
 $e^{tA}$ where
 $A=\left[ \begin{smallmatrix}
 3 & -1 \\
 1 & 1 
-\end{smallmatrix}\right]$.  b) Solve $\vec{x}\,' = A \vec{x}$
+\end{smallmatrix}\right]$.
+\item
+Solve $\vec{x}\,' = A \vec{x}$
 for $\vec{x}(0) =
 \left[ \begin{smallmatrix}
 1 \\ 2
 \end{smallmatrix}\right]$.
+\end{enumerate}
 \end{exercise}
 \exsol{%
 a) $e^{tA}=\left[ \begin{smallmatrix}
@@ -6808,34 +6822,42 @@ This solution matches what we got previously in \sectionref{sol:section}.
 Find a particular solution to
 $x' = x+ 2y +2t$, 
 $y' = 3x + 2y -4$,
-a)~using integrating factor method,
-b)~using eigenvector decomposition,
-c)~using undetermined coefficients.
+\begin{enumerate}[a)]
+\item using integrating factor method,
+\item using eigenvector decomposition,
+\item using undetermined coefficients.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
 Find the general solution to
 $x' = 4x+ y -1$, 
 $y' = x + 4y -e^t$,
-a)~using integrating factor method,
-b)~using eigenvector decomposition,
-c)~using undetermined coefficients.
+\begin{enumerate}[a)]
+\item using integrating factor method,
+\item using eigenvector decomposition,
+\item using undetermined coefficients.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
 Find the general solution to
 $x_1'' = -6x_1+ 3x_2 + \cos (t)$, 
 $x_2'' = 2x_1 -7x_2 + 3\cos (t)$,
-a)~using eigenvector decomposition,
-b)~using undetermined coefficients.
+\begin{enumerate}[a)]
+\item using eigenvector decomposition,
+\item using undetermined coefficients.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
 Find the general solution to
 $x_1'' = -6x_1+ 3x_2 + \cos (2t)$, 
 $x_2'' = 2x_1 -7x_2 + 3\cos (2t)$,
-a)~using eigenvector decomposition,
-b)~using undetermined coefficients.
+\begin{enumerate}[a)]
+\item using eigenvector decomposition,
+\item using undetermined coefficients.
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -6850,7 +6872,9 @@ Take the equation
 \vec{x}
 + \begin{bmatrix} t^2 \\ -t \end{bmatrix} .
 \end{equation*}
-a) Check that
+\begin{enumerate}[a)]
+\item
+Check that
 \begin{equation*}
 \vec{x}_c =
 c_1
@@ -6866,15 +6890,21 @@ t \, \sin t
 \end{bmatrix}
 \end{equation*}
 is the complementary solution.
-b) Use variation of parameters to
+\item
+Use variation of parameters to
 find a particular solution.
+\end{enumerate}
 \end{exercise}
 
 \setcounter{exercise}{100}
 
 \begin{exercise}
-Find a particular solution to $x' = 5x + 4y + t$, $y' = x + 8y - t$, a) using integrating
-factor method, b) using eigenvector decomposition, c) using undetermined coefficients.
+Find a particular solution to $x' = 5x + 4y + t$, $y' = x + 8y - t$,
+\begin{enumerate}[a)]
+\item using integrating factor method,
+\item using eigenvector decomposition,
+\item using undetermined coefficients.
+\end{enumerate}
 \end{exercise}
 \exsol{%
 The general solution is
@@ -6884,10 +6914,16 @@ $y(t) = \frac{1}{5} C_1 (e^{9 t}-e^{4t})+\frac{1}{5} C_2 (4 e^{5 t}+
 e^{4t})+\frac{t}{6}+\frac{7}{216}$
 }
 
+\begin{samepage}
 \begin{exercise}
-Find a particular solution to $x' = y + e^t$, $y' = x +e^t$, a) using integrating
-factor method, b) using eigenvector decomposition, c) using undetermined coefficients.
+Find a particular solution to $x' = y + e^t$, $y' = x +e^t$,
+\begin{enumerate}[a)]
+\item using integrating factor method,
+\item using eigenvector decomposition,
+\item using undetermined coefficients.
+\end{enumerate}
 \end{exercise}
+\end{samepage}
 \exsol{%
 The general solution is
 (particular solutions should agree with one of these):\\
