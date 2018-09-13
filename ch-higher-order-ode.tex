@@ -2128,7 +2128,13 @@ y''+y = \tan x .
 \end{equation*}
 Each new derivative of $\tan x$ looks completely different and
 cannot be written as a linear combination of the previous derivatives.
-We get $\sec^2 x$, $2\sec^2 x \tan x$, etc\ldots.
+If we start differentiating $\tan x$, we get:
+\begin{equation*}
+\sec^2 x, \quad
+2\sec^2 x \, \tan x, \quad
+4 \sec^2 x \, \tan^2 x + 2 \sec^4 x, \quad
+8 \sec^2 x \, \tan^3 x + 16 \sec^4 x \, \tan x, \quad \ldots
+\end{equation*}
 
 This equation calls for a different method.  We present the method of
 \emph{\myindex{variation of parameters}}, which handles any equation of
@@ -2316,6 +2322,7 @@ Find a particular solution to $y''-y'+y=2\sin(3x)$
 $y=\frac{-16\sin(3x)+6\cos(3x)}{73}$
 }
 
+\begin{samepage}
 \begin{exercise}
 {\ }
 \begin{enumerate}[a)]
@@ -2323,6 +2330,7 @@ $y=\frac{-16\sin(3x)+6\cos(3x)}{73}$
 \item Find the general solution.
 \end{enumerate}
 \end{exercise}
+\end{samepage}
 \exsol{%
 a) $y=\frac{2e^x+3x^3-9x}{6}$,
 b) $y=C_1 \cos(\sqrt{2} x) + C_2 \sin(\sqrt{2} x) + \frac{2e^x+3x^3-9x}{6}$
