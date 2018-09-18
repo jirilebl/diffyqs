@@ -1,11 +1,11 @@
 Possible cover art: https://www.jirka.org/album/cervenusa2008/tn/IMGP2805.jpg.html
 
-SHOULD (edition 6)
+SHOULD (edition 6):
 
 BIG(er):
-* Add appendix chapter on linear algebra for courses that don't want to
+* (in progress) Add appendix chapter on linear algebra for courses that don't want to
   require that as prerequisite.
-* Another section on solving PDEs with Laplace? (in the Laplace chapter)
+* (in progress) Another section on solving PDEs with Laplace? (in the Laplace chapter)
 
 SMALLER THINGS:
 * Expand discussion of vector fields and how they are drawn in 3.1.
@@ -24,11 +24,13 @@ SMALLER THINGS:
 
 SMALL THIGS WHEN WE ARE CLOSER TO DONE:
 * Double check the total number of estimated lectures
+* Double check exercises are not split across pages
+* Make archive of all the figures to be usable by instructors
 
 TECHNICAL:
 * Update(check) EP references to 5th edition
 * Update(check) BD references to 11th edition
-* Change all exercise parts to enumerates
+* Change (almost?) all exercise parts to enumerates
 * Made pages larger as in realanal to save paper, but must check that
   the layout still work, especially inset floating figures might go bad.
 * Double check all figures
@@ -41,19 +43,22 @@ TECHNICAL:
 * use bigl( bigr) when a sqrt is in a parenthesis perhaps
 
 
+Non-edition 6 stuff:
 
-IN CASE OF BIG CHANGE in the Star Trek future (incompatible edition):
+MAYBE IN CASE OF BIG CHANGE (incompatible edition) in the Star Trek
+future (quite probably never):
 * Split Fourier Series - PDE, probably move the "applications of eigen-series"
   to the PDE chapter.  In this case, first order PDEs might make sense
   before the second order ones since it leads naturally into d'Alembert,
   but they are in chapter 1, where they might make more sense.
-* Add factorization idea in wave equation (d'Alembert) to write it as
-  two vector fields applied to y perhaps?  Makes more sense if we have 
-  first order before this.
+  This requires much more thought, maybe forget about it.
 
 MAYBE:
 * Perhaps change name of \vec{x}_1 solutions to avoid confusion with x_1
   components, see what other books do
+* Add factorization idea in wave equation (d'Alembert) to write it as
+  two vector fields applied to y perhaps?  Makes more sense if we have 
+  first order before this.
 
 PROBABLY NOT/VAGUE:
 * Perhaps an appendix with more info on existence uniqueness, linear
