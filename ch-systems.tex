@@ -5104,7 +5104,7 @@ result.  If simplified properly the final matrix will not have any complex
 numbers in it.
 
 \begin{example}
-Compute a fundamental matrix solution using the matrix exponentials
+Compute a fundamental matrix solution using the matrix exponential
 for the system
 \begin{equation*}
 \begin{bmatrix}
@@ -5130,10 +5130,40 @@ We first compute (exercise) that the eigenvalues are 3 and $-1$ and
 corresponding eigenvectors are
 $\left[ \begin{smallmatrix} 1 \\ 1 \end{smallmatrix} \right]$ and
 $\left[ \begin{smallmatrix} 1 \\ -1 \end{smallmatrix} \right]$.
-Hence we write
+Hence the diagonalization of $A$ is
+\begin{equation*}
+\underbrace{
+\begin{bmatrix}
+1 & 2 \\
+2 & 1
+\end{bmatrix}
+}_{A}
+=
+\underbrace{
+\begin{bmatrix}
+1 & 1 \\
+1 & -1
+\end{bmatrix}
+}_{E}
+\underbrace{
+\begin{bmatrix}
+3 & 0 \\
+0 & -1
+\end{bmatrix}
+}_{D}
+\underbrace{
+\begin{bmatrix}
+1 & 1 \\
+1 & -1
+\end{bmatrix}^{-1}
+}_{E^{-1}} .
+\end{equation*}
+We write
 \begin{equation*}
 \begin{split}
 e^{t A}
+=
+E e^{tD} E^{-1}
 & =
 \begin{bmatrix}
 1 & 1 \\
@@ -5578,8 +5608,14 @@ I + tP + \frac{1}{2} {(tP)}^2 + \cdots \right) P
 = e^{tP} P . 
 \end{split}
 \end{equation*}
-We have already seen that $\frac{d}{dt} \left( e^{tP} \right)
-= P e^{tP}$.  Hence,
+So $\frac{d}{dt} \left( e^{tP} \right) = P e^{tP} = e^{tP} P$.  The product
+rule says
+\begin{equation*}
+\frac{d}{dt}
+\Bigl( e^{tP} \vec{x}(t) \Bigr) =
+e^{tP}{\vec{x}}'(t) + e^{tP}P\vec{x}(t),
+\end{equation*}
+and so
 \begin{equation*}
 \frac{d}{dt}
 \Bigl( e^{tP} \vec{x}(t) \Bigr) = e^{tP}\vec{f}(t) .
@@ -5636,11 +5672,12 @@ Let us write the system as
 \vec{x}(0) = 
 \begin{bmatrix} 1 \\ 0 \end{bmatrix} .
 \end{equation*}
-We have previously computed $e^{tP}$ for
+The matrix
 $P = \left[
-\begin{smallmatrix} 5 & -3 \\ 3 & -1 \end{smallmatrix} \right]$.  We 
-find
-$e^{-tP}$, simply by negating $t$.
+\begin{smallmatrix} 5 & -3 \\ 3 & -1 \end{smallmatrix} \right]$
+has a doubled eigenvalue 2 with defect 1, and we leave it as an exercise
+to double check we computed $e^{tP}$ correctly.  Once we have
+$e^{tP}$, we find $e^{-tP}$, simply by negating $t$.
 \begin{equation*}
 e^{tP} = 
 \begin{bmatrix}
@@ -5793,7 +5830,7 @@ Hence it is always possible to find $\vec{g}$ when there
 are $n$ linearly independent eigenvectors.
 
 We plug \eqref{nhsys:decompx} into \eqref{nhsys:ednhsys}, and note that
-$A \vec{v}_k = \lambda_k \vec{v}_k$.
+$A \vec{v}_k = \lambda_k \vec{v}_k$:
 \begin{equation*}
 \begin{split}
 %{\vec{x}}' & =
@@ -5867,7 +5904,7 @@ We integrate and solve for $\xi_k$ to get
 \xi_k(t) =  e^{\lambda_k t} 
 \int e^{-\lambda_k t} g_k(t) ~dt + C_k e^{\lambda_k t} .
 \end{equation*}
-If we are looking for just any particular solution, we could set
+If we are looking for just any particular solution, we can set
 $C_k$ to be zero.  If we leave these constants in, we get the
 general solution.  Write
 $\vec{x}(t) =
@@ -5877,7 +5914,7 @@ $\vec{x}(t) =
 
 \medskip
 
-Again, as always,
+As always,
 it is perhaps better to write these integrals as definite integrals.  
 Suppose that we have an initial condition $\vec{x}(0) = \vec{b}$.
 Take $\vec{a} = E^{-1} \vec{b}$ to find
@@ -5889,7 +5926,7 @@ Then if we write
 \int_0^t e^{-\lambda_k s} g_k(s) ~ds + a_k e^{\lambda_k t} ,
 ~~}
 \end{equation*}
-we actually get the particular solution
+we get the particular solution
 $\vec{x}(t) =
 \vec{v}_1 \xi_1(t) + 
 \vec{v}_2 \xi_2(t) + \cdots +
@@ -6107,11 +6144,15 @@ The solution is
 \begin{bmatrix}
 1 \\
 -1
-\end{bmatrix} \left( \frac{e^t-e^{-2t}}{3}+\frac{1-2t}{4} \right) +
+\end{bmatrix}
+\underbrace{\left( \frac{e^t-e^{-2t}}{3}+\frac{1-2t}{4} \right)}%
+_{\xi_1} +
 \begin{bmatrix}
 1 \\
 1
-\end{bmatrix} \left( \frac{e^{4t}-e^t}{3}-\frac{4t+1}{16} \right)
+\end{bmatrix}
+\underbrace{\left( \frac{e^{4t}-e^t}{3}-\frac{4t+1}{16} \right)}%
+_{\xi_2}
 =
 \begin{bmatrix}
 \frac{e^{4t}-e^{-2t}}{3}+\frac{3-12t}{16} \\
@@ -6397,6 +6438,8 @@ quickly for systems.  The equation we considered was pretty simple.
 
 \subsection{First order variable coefficient}
 
+\subsubsection{Variation of parameters}
+
 Just as for a single equation, there is the method of
 variation of parameters\index{variation of parameters!for systems}.
 For constant coefficient systems, it is essentially
@@ -6409,7 +6452,7 @@ Suppose we have the equation
 \begin{equation} \label{nhsys:nhvceq}
 {\vec{x}}' = A(t) \, \vec{x} + \vec{f}(t) .
 \end{equation}
-Further, suppose we have solved the associated homogeneous equation
+Further, suppose we solved the associated homogeneous equation
 ${\vec{x}}' = A(t) \, \vec{x}$ and found
 a fundamental matrix solution
 $X(t)$.  The general solution to the associated homogeneous equation
@@ -6898,6 +6941,7 @@ find a particular solution.
 
 \setcounter{exercise}{100}
 
+\begin{samepage}
 \begin{exercise}
 Find a particular solution to $x' = 5x + 4y + t$, $y' = x + 8y - t$,
 \begin{enumerate}[a)]
@@ -6906,6 +6950,7 @@ Find a particular solution to $x' = 5x + 4y + t$, $y' = x + 8y - t$,
 \item using undetermined coefficients.
 \end{enumerate}
 \end{exercise}
+\end{samepage}
 \exsol{%
 The general solution is
 (particular solutions should agree with one of these):\\
@@ -6914,7 +6959,6 @@ $y(t) = \frac{1}{5} C_1 (e^{9 t}-e^{4t})+\frac{1}{5} C_2 (4 e^{5 t}+
 e^{4t})+\frac{t}{6}+\frac{7}{216}$
 }
 
-\begin{samepage}
 \begin{exercise}
 Find a particular solution to $x' = y + e^t$, $y' = x +e^t$,
 \begin{enumerate}[a)]
@@ -6923,7 +6967,6 @@ Find a particular solution to $x' = y + e^t$, $y' = x +e^t$,
 \item using undetermined coefficients.
 \end{enumerate}
 \end{exercise}
-\end{samepage}
 \exsol{%
 The general solution is
 (particular solutions should agree with one of these):\\
