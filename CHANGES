@@ -43,6 +43,10 @@
 
 * 7.1: Add root test and an example for it.
 
+* Add Section 6.5 on solving PDEs with Laplace (FIXME: still work in progress).
+
+* Add appendix A on linear algebra (FIXME: still work in progress)
+
 * Renumberings: Figures in chapter 3, examples in 3.1, examples in 7.1 past
   the root test.
 
