@@ -474,11 +474,11 @@ Suppose the tanks are as in
 \examplevref{sintro:closedbrine-example} except that clean water flows in
 at the rate $s$ liters per second into tank 1, and brine flows out of tank 2
 and into the sewer also at the rate of $s$ liters per second.
-\begin{enumerate}[a)]
-\item Draw the picture.
-\item Set up the system of equations.
-\item Intuitively, what happens as $t$ goes to infinity, explain.
-\end{enumerate}
+\begin{tasks}
+\task Draw the picture.
+\task Set up the system of equations.
+\task Intuitively, what happens as $t$ goes to infinity, explain.
+\end{tasks}
 \end{exercise}
 \exsol{%
 a) Left to reader. b) 
@@ -1373,10 +1373,10 @@ a & 0 & 0 \\
 0 & b & 0 \\
 0 & 0 & c
 \end{smallmatrix}\right]$.
-\begin{enumerate}[a)]
-\item Compute $M^{-1}$.
-\item Compute $N^{-1}$.
-\end{enumerate}
+\begin{tasks}
+\task Compute $M^{-1}$.
+\task Compute $N^{-1}$.
+\end{tasks}
 \end{exercise}
 \exsol{%
 a) $\left[ \begin{smallmatrix}
@@ -1712,8 +1712,9 @@ ${\vec{x}}' = P(t) \vec{x} + \vec{f}(t)$.
 
 \begin{exercise}
 {\ }
-\begin{enumerate}[a)]
-\item Verify that the system ${\vec{x}}' =
+\begin{tasks}
+\task
+Verify that the system ${\vec{x}}' =
 \left[ \begin{smallmatrix}
 1 & 3 \\ 3 & 1
 \end{smallmatrix} \right] \vec{x}$ has the two solutions
@@ -1723,10 +1724,12 @@ $\left[ \begin{smallmatrix}
 $\left[ \begin{smallmatrix}
 1 \\ -1
 \end{smallmatrix} \right] e^{-2t}$.
-\item Write down the general solution.
-\item Write down the general solution in the form $x_1 = ?$, $x_2 = ?$
+\task
+Write down the general solution.
+\task
+Write down the general solution in the form $x_1 = ?$, $x_2 = ?$
 (i.e.\ write down a formula for each element of the solution).
-\end{enumerate}
+\end{tasks}
 \end{exercise}
 
 \begin{exercise}
@@ -1770,12 +1773,12 @@ are linearly independent.
 \begin{exercise}
 Take the system $x_1' + x_2' = x_1$,
 $x_1' - x_2' = x_2$.
-\begin{enumerate}[a)]
-\item Write it in the form
+\begin{tasks}
+\task Write it in the form
 $A {\vec{x}}' = B \vec{x}$ for matrices $A$ and $B$.
-\item Compute $A^{-1}$ and use that to write the system in the form
+\task Compute $A^{-1}$ and use that to write the system in the form
 ${\vec{x}}' = P \vec{x}$.
-\end{enumerate}
+\end{tasks}
 \end{exercise}
 
 \setcounter{exercise}{100}
@@ -1846,11 +1849,11 @@ e^{t} \\ 0
 
 \begin{exercise}
 {\ }
-\begin{enumerate}[a)]
-\item Write $x_1'=2tx_2$, $x_2'=2tx_2$ in matrix notation.
-\item Solve and write
+\begin{tasks}
+\task Write $x_1'=2tx_2$, $x_2'=2tx_2$ in matrix notation.
+\task Solve and write
 the solution in matrix notation.
-\end{enumerate}
+\end{tasks}
 \end{exercise}
 \exsol{%
 a)
@@ -2509,15 +2512,15 @@ Find $A \vec{v}$.
 
 \begin{exercise}
 {\ }
-\begin{enumerate}[a)]
-\item
+\begin{tasks}
+\task
 Find the general solution of $x_1' = 2 x_1$, $x_2' = 3 x_2$ using the
 eigenvalue method (first write the system in the form
 ${\vec{x}}' = A \vec{x}$).
-\item
+\task
 Solve the system by solving each equation
 separately and verify you get the same general solution.
-\end{enumerate}
+\end{tasks}
 \end{exercise}
 
 \begin{exercise}
@@ -2533,17 +2536,17 @@ Do not use complex exponentials in your solution.
 
 \begin{exercise}
 {\ }
-\begin{enumerate}[a)]
-\item
+\begin{tasks}
+\task
 Compute eigenvalues and eigenvectors of
 $A = \left[ \begin{smallmatrix}
 9 & -2 & -6 \\
 -8 & 3 & 6 \\
 10 & -2 & -6
 \end{smallmatrix} \right]$.
-\item
+\task
 Find the general solution of ${\vec{x}}' = A \vec{x}$.
-\end{enumerate}
+\end{tasks}
 \end{exercise}
 
 %Repeated eigenvalue, do not ask to solve a diffy q quite yet
@@ -2569,18 +2572,18 @@ a & b & c \\
 
 \begin{exercise}
 {\ }
-\begin{enumerate}[a)]
-\item
+\begin{tasks}
+\task
 Compute eigenvalues and eigenvectors of
 $A= \left[ \begin{smallmatrix}
 1 & 0 & 3 \\
 -1 & 0 & 1 \\
 2 & 0 & 2
 \end{smallmatrix}\right]$.
-\item
+\task
 Solve the system
 $\vec{x}\,' = A \vec{x}$.
-\end{enumerate}
+\end{tasks}
 \end{exercise}
 \exsol{%
 \\
@@ -2617,16 +2620,16 @@ C_3
 
 \begin{exercise}
 {\ }
-\begin{enumerate}[a)]
-\item
+\begin{tasks}
+\task
 Compute eigenvalues and eigenvectors of
 $A=\left[ \begin{smallmatrix}
 1 & 1 \\
 -1 & 0 
 \end{smallmatrix}\right]$.
-\item
+\task
 Solve the system $\vec{x}\,' = A\vec{x}$.
-\end{enumerate}
+\end{tasks}
 \end{exercise}
 \exsol{%
 \\
@@ -2985,13 +2988,13 @@ different (simpler in a way).  See the exercises.
 \begin{exercise}
 Take the equation $m x'' + c x' + kx = 0$, with $m > 0$, $c \geq 0$, $k > 0$
 for the mass-spring system.
-\begin{enumerate}[a)]
-\item Convert this to a system of first
+\begin{tasks}
+\task Convert this to a system of first
 order equations.
-\item Classify for what $m, c, k$ do you get which behavior.
-\item Can you explain from physical intuition why you do not get all the
+\task Classify for what $m, c, k$ do you get which behavior.
+\task Can you explain from physical intuition why you do not get all the
 different kinds of behavior here?
-\end{enumerate}
+\end{tasks}
 \end{exercise}
 
 \begin{exercise}
@@ -3026,13 +3029,13 @@ does the picture look like and what happens when $t$ goes to infinity.
 
 \begin{exercise}
 Describe the behavior of the following systems without solving:
-\begin{enumerate}[a)]
-\item $x' = x + y$, \quad $y' = x-y$.
-\item $x_1' = x_1 + x_2$, \quad $x_2' = 2 x_2$.
-\item $x_1' = -2x_2$, \quad $x_2' = 2 x_1$.
-\item $x' = x + 3y$, \quad $y' = -2x-4y$.
-\item $x' = x - 4y$, \quad $y' = -4x+y$.
-\end{enumerate}
+\begin{tasks}(2)
+\task $x' = x + y$, \quad $y' = x-y$.
+\task $x_1' = x_1 + x_2$, \quad $x_2' = 2 x_2$.
+\task $x_1' = -2x_2$, \quad $x_2' = 2 x_1$.
+\task $x' = x + 3y$, \quad $y' = -2x-4y$.
+\task $x' = x - 4y$, \quad $y' = -4x+y$.
+\end{tasks}
 \end{exercise}
 \exsol{%
 a) Two eigenvalues: $\pm \sqrt{2}$ so the behavior is a saddle.
@@ -3884,11 +3887,18 @@ time, the first mass will always come to a stop.
 \begin{exercise}
 Let us take the \examplevref{sosa:railcarexample}, but that at
 time of impact, car 2 is moving to the left at the speed of
-\unitfrac[3]{m}{s}.  a)
-Find the behavior of the system after linkup.  b) Will the second car hit
-the wall, or will it be moving away from the wall as time goes on?  c) At
+\unitfrac[3]{m}{s}.
+\begin{tasks}
+\task
+Find the behavior of the system after linkup.
+\task
+Will the second car hit
+the wall, or will it be moving away from the wall as time goes on?
+\task
+At
 what speed would the first car have to be traveling for the system to
 essentially stay in place after linkup?
+\end{tasks}
 \end{exercise}
 
 \begin{exercise}
@@ -4534,11 +4544,11 @@ $A = \left[ \begin{smallmatrix}
 0 & 3 & 0 \\
 -2 & 4 & -1
 \end{smallmatrix} \right]$.
-\begin{enumerate}[a)]
-\item What are the eigenvalues?
-\item What is/are the defect(s) of the eigenvalue(s)?
-\item Find the general solution of ${\vec{x}}' = A \vec{x}$.
-\end{enumerate}
+\begin{tasks}
+\task What are the eigenvalues?
+\task What is/are the defect(s) of the eigenvalue(s)?
+\task Find the general solution of ${\vec{x}}' = A \vec{x}$.
+\end{tasks}
 \end{exercise}
 \end{samepage}
 
@@ -4546,12 +4556,12 @@ $A = \left[ \begin{smallmatrix}
 \begin{exercise}
 Let
 $A = \left[ \begin{smallmatrix} 2 & 1 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 2 \end{smallmatrix} \right]$.
-\begin{enumerate}[a)]
-\item What are the eigenvalues?
-\item What is/are the defect(s) of the eigenvalue(s)?
-\item Find the general solution of ${\vec{x}}' = A \vec{x}$ in two different
+\begin{tasks}
+\task What are the eigenvalues?
+\task What is/are the defect(s) of the eigenvalue(s)?
+\task Find the general solution of ${\vec{x}}' = A \vec{x}$ in two different
 ways and verify you get the same answer.
-\end{enumerate}
+\end{tasks}
 \end{exercise}
 
 \begin{exercise}
@@ -4561,11 +4571,11 @@ $A = \left[ \begin{smallmatrix}
 -1 & -2 & -2 \\
 -4 & 4 & 7
 \end{smallmatrix} \right]$.
-\begin{enumerate}[a)]
-\item What are the eigenvalues?
-\item What is/are the defect(s) of the eigenvalue(s)?
-\item Find the general solution of ${\vec{x}}' = A \vec{x}$.
-\end{enumerate}
+\begin{tasks}
+\task What are the eigenvalues?
+\task What is/are the defect(s) of the eigenvalue(s)?
+\task Find the general solution of ${\vec{x}}' = A \vec{x}$.
+\end{tasks}
 \end{exercise}
 
 \begin{exercise}
@@ -4575,11 +4585,11 @@ $A = \left[ \begin{smallmatrix}
 -1 & -4 & 1 \\
 0 & 0 & -2
 \end{smallmatrix} \right]$.
-\begin{enumerate}[a)]
-\item What are the eigenvalues?
-\item What is/are the defect(s) of the eigenvalue(s)?
-\item Find the general solution of ${\vec{x}}' = A \vec{x}$.
-\end{enumerate}
+\begin{tasks}
+\task What are the eigenvalues?
+\task What is/are the defect(s) of the eigenvalue(s)?
+\task Find the general solution of ${\vec{x}}' = A \vec{x}$.
+\end{tasks}
 \end{exercise}
 
 \begin{exercise}
@@ -4589,11 +4599,11 @@ $A = \left[ \begin{smallmatrix}
 -1 & 0 & 2 \\
 -1 & -2 & 4
 \end{smallmatrix} \right]$.
-\begin{enumerate}[a)]
-\item What are the eigenvalues?
-\item What is/are the defect(s) of the eigenvalue(s)?
-\item Find the general solution of ${\vec{x}}' = A \vec{x}$.
-\end{enumerate}
+\begin{tasks}
+\task What are the eigenvalues?
+\task What is/are the defect(s) of the eigenvalue(s)?
+\task Find the general solution of ${\vec{x}}' = A \vec{x}$.
+\end{tasks}
 \end{exercise}
 
 \begin{exercise}
@@ -4612,11 +4622,11 @@ Let $A =
 1 & 1 & 1 \\
 1 & 1 & 1 
 \end{smallmatrix}\right]$.  
-\begin{enumerate}[a)]
-\item What are the eigenvalues?
-\item What is/are the defect(s) of the eigenvalue(s)?
-\item Find the general solution of $\vec{x}\,' = A\vec{x}$.
-\end{enumerate}
+\begin{tasks}
+\task What are the eigenvalues?
+\task What is/are the defect(s) of the eigenvalue(s)?
+\task Find the general solution of $\vec{x}\,' = A\vec{x}$.
+\end{tasks}
 \end{exercise}
 \exsol{%
 a) $3,0,0$
@@ -4649,11 +4659,11 @@ Let $A =
 1 & 1 & 0 \\
 -1 & 1 & 2 \\
 \end{smallmatrix}\right]$.  
-\begin{enumerate}[a)]
-\item What are the eigenvalues?
-\item What is/are the defect(s) of the eigenvalue(s)?
-\item Find the general solution of $\vec{x}\,' = A\vec{x}$.
-\end{enumerate}
+\begin{tasks}
+\task What are the eigenvalues?
+\task What is/are the defect(s) of the eigenvalue(s)?
+\task Find the general solution of $\vec{x}\,' = A\vec{x}$.
+\end{tasks}
 \end{exercise}
 \exsol{%
 \\
@@ -4696,11 +4706,11 @@ Let $A =
 -1 & -1 & 9 \\
 0 & -1 & 5
 \end{smallmatrix}\right]$.  
-\begin{enumerate}[a)]
-\item What are the eigenvalues?
-\item What is/are the defect(s) of the eigenvalue(s)?
-\item Find the general solution of $\vec{x}\,' = A\vec{x}$.
-\end{enumerate}
+\begin{tasks}
+\task What are the eigenvalues?
+\task What is/are the defect(s) of the eigenvalue(s)?
+\task Find the general solution of $\vec{x}\,' = A\vec{x}$.
+\end{tasks}
 \end{exercise}
 \exsol{%
 \\
@@ -5420,15 +5430,15 @@ $\left[ \begin{smallmatrix}
 0 \\
 1
 \end{smallmatrix} \right]$.
-\begin{enumerate}[a)]
-\item Find matrix $A$ with these properties.
-\item Find a fundamental matrix solution to ${\vec{x}}' = A \vec{x}$.
-\item Solve the system in with initial conditions $\vec{x}(0) =
+\begin{tasks}
+\task Find matrix $A$ with these properties.
+\task Find a fundamental matrix solution to ${\vec{x}}' = A \vec{x}$.
+\task Solve the system in with initial conditions $\vec{x}(0) =
 \left[ \begin{smallmatrix}
 2 \\
 3
 \end{smallmatrix} \right]$ .
-\end{enumerate}
+\end{tasks}
 \end{exercise}
 
 \begin{exercise}
@@ -5445,15 +5455,15 @@ Let $A = \left[ \begin{smallmatrix}
 -1 & -1 \\
 1 & -3
 \end{smallmatrix} \right]$.
-\begin{enumerate}[a)]
-\item Find $e^{tA}$.
-\item Solve
+\begin{tasks}(2)
+\task Find $e^{tA}$.
+\task Solve
 ${\vec{x}}' = A \vec{x}$, $\vec{x}(0) =
 \left[ \begin{smallmatrix}
 1 \\
 -2
 \end{smallmatrix} \right]$.
-\end{enumerate}
+\end{tasks}
 \end{exercise}
 
 \begin{exercise}
@@ -5463,6 +5473,37 @@ Let $A = \left[ \begin{smallmatrix}
 \end{smallmatrix} \right]$.
 Approximate $e^{tA}$ by expanding the power series
 up to the third order.
+\end{exercise}
+
+\begin{exercise}
+For any positive integer $n$,
+find a formula (or a recipe) for $A^n$ for the following matrices:
+\begin{tasks}(4)
+\task
+$
+\begin{bmatrix}
+3 & 0 \\ 0 & 9
+\end{bmatrix}
+$
+\task
+$
+\begin{bmatrix}
+5 & 2 \\ 4 & 7
+\end{bmatrix}
+$
+\task
+$
+\begin{bmatrix}
+0 & 1 \\ 0 & 0
+\end{bmatrix}
+$
+\task
+$
+\begin{bmatrix}
+2 & 1 \\ 0 & 2
+\end{bmatrix}
+$
+\end{tasks}
 \end{exercise}
 
 \setcounter{exercise}{100}
@@ -5510,21 +5551,21 @@ $e^{tA}=\left[ \begin{smallmatrix}
 
 \begin{exercise}
 {\ }
-\begin{enumerate}[a)]
-\item
+\begin{tasks}(2)
+\task
 Compute
 $e^{tA}$ where
 $A=\left[ \begin{smallmatrix}
 3 & -1 \\
 1 & 1 
 \end{smallmatrix}\right]$.
-\item
+\task
 Solve $\vec{x}\,' = A \vec{x}$
 for $\vec{x}(0) =
 \left[ \begin{smallmatrix}
 1 \\ 2
 \end{smallmatrix}\right]$.
-\end{enumerate}
+\end{tasks}
 \end{exercise}
 \exsol{%
 a) $e^{tA}=\left[ \begin{smallmatrix}
@@ -5558,6 +5599,42 @@ $e^{0.1A} \approx
 1.25 & 0.36 \\
 0.24 & 1.25
 \end{smallmatrix}\right]$
+}
+
+\begin{exercise}
+For any positive integer $n$,
+find a formula (or a recipe) for $A^n$ for the following matrices:
+\begin{tasks}(3)
+\task
+$\begin{bmatrix}
+7 & 4 \\ -5 & -2
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+-3 & 4 \\ -6 & -7
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+0 & 1 \\ 1 & 0
+\end{bmatrix}$
+\end{tasks}
+\end{exercise}
+\exsol{%
+a)
+$\begin{bmatrix}
+5 (3^n)-2^{n+2} & 4 (3^n)-2^{n+2}\\
+5 (2^n)-5 (3^n) & 5 (2^n)-4 (3^n)
+\end{bmatrix}$
+\qquad
+b)
+$\begin{bmatrix}3-2 (3^n) & 2 (3^n)-2\\
+3-3^{n+1} & 3^{n+1}-2\end{bmatrix}$
+\\
+c) 
+$\begin{bmatrix}1 & 0 \\ 0 & 1\end{bmatrix}$
+if $n$ is even,  and
+$\begin{bmatrix}0 & 1 \\ 1 & 0\end{bmatrix}$
+if $n$ is odd.
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -6062,9 +6139,10 @@ E^{-1}
 \end{bmatrix} .
 \end{equation*}
 So $a_1 = \nicefrac{1}{4}$ and $a_2 = \nicefrac{-1}{16}$.
-We plug our $\vec{x}$ into the equation and get that
+We plug our $\vec{x}$ into the equation and get
 \begin{equation*}
 \begin{split}
+\overbrace{
 \begin{bmatrix}
 1 \\
 -1
@@ -6073,7 +6151,9 @@ We plug our $\vec{x}$ into the equation and get that
 1 \\
 1
 \end{bmatrix} \xi_2'
+}^{\vec{x}'}
 & =
+\overbrace{
 A
 \begin{bmatrix}
 1 \\
@@ -6084,7 +6164,9 @@ A
 1 \\
 1
 \end{bmatrix} \xi_2
+}^{A\vec{x}}
 +
+\overbrace{
 \begin{bmatrix}
 1 \\
 -1
@@ -6093,6 +6175,7 @@ A
 1 \\
 1
 \end{bmatrix} g_2
+}^{\vec{f}}
 \\
 & =
 \begin{bmatrix}
@@ -6865,43 +6948,45 @@ This solution matches what we got previously in \sectionref{sol:section}.
 Find a particular solution to
 $x' = x+ 2y +2t$, 
 $y' = 3x + 2y -4$,
-\begin{enumerate}[a)]
-\item using integrating factor method,
-\item using eigenvector decomposition,
-\item using undetermined coefficients.
-\end{enumerate}
+\begin{tasks}
+\task using integrating factor method,
+\task using eigenvector decomposition,
+\task using undetermined coefficients.
+\end{tasks}
 \end{exercise}
 
 \begin{exercise}
 Find the general solution to
 $x' = 4x+ y -1$, 
 $y' = x + 4y -e^t$,
-\begin{enumerate}[a)]
-\item using integrating factor method,
-\item using eigenvector decomposition,
-\item using undetermined coefficients.
-\end{enumerate}
+\begin{tasks}
+\task using integrating factor method,
+\task using eigenvector decomposition,
+\task using undetermined coefficients.
+\end{tasks}
 \end{exercise}
 
 \begin{exercise}
 Find the general solution to
 $x_1'' = -6x_1+ 3x_2 + \cos (t)$, 
 $x_2'' = 2x_1 -7x_2 + 3\cos (t)$,
-\begin{enumerate}[a)]
-\item using eigenvector decomposition,
-\item using undetermined coefficients.
-\end{enumerate}
+\begin{tasks}
+\task using eigenvector decomposition,
+\task using undetermined coefficients.
+\end{tasks}
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}
 Find the general solution to
 $x_1'' = -6x_1+ 3x_2 + \cos (2t)$, 
 $x_2'' = 2x_1 -7x_2 + 3\cos (2t)$,
-\begin{enumerate}[a)]
-\item using eigenvector decomposition,
-\item using undetermined coefficients.
-\end{enumerate}
+\begin{tasks}
+\task using eigenvector decomposition,
+\task using undetermined coefficients.
+\end{tasks}
 \end{exercise}
+\end{samepage}
 
 \begin{exercise}
 Take the equation
@@ -6915,8 +7000,8 @@ Take the equation
 \vec{x}
 + \begin{bmatrix} t^2 \\ -t \end{bmatrix} .
 \end{equation*}
-\begin{enumerate}[a)]
-\item
+\begin{tasks}
+\task
 Check that
 \begin{equation*}
 \vec{x}_c =
@@ -6933,10 +7018,10 @@ t \, \sin t
 \end{bmatrix}
 \end{equation*}
 is the complementary solution.
-\item
+\task
 Use variation of parameters to
 find a particular solution.
-\end{enumerate}
+\end{tasks}
 \end{exercise}
 
 \setcounter{exercise}{100}
@@ -6944,11 +7029,11 @@ find a particular solution.
 \begin{samepage}
 \begin{exercise}
 Find a particular solution to $x' = 5x + 4y + t$, $y' = x + 8y - t$,
-\begin{enumerate}[a)]
-\item using integrating factor method,
-\item using eigenvector decomposition,
-\item using undetermined coefficients.
-\end{enumerate}
+\begin{tasks}
+\task using integrating factor method,
+\task using eigenvector decomposition,
+\task using undetermined coefficients.
+\end{tasks}
 \end{exercise}
 \end{samepage}
 \exsol{%
@@ -6961,11 +7046,11 @@ e^{4t})+\frac{t}{6}+\frac{7}{216}$
 
 \begin{exercise}
 Find a particular solution to $x' = y + e^t$, $y' = x +e^t$,
-\begin{enumerate}[a)]
-\item using integrating factor method,
-\item using eigenvector decomposition,
-\item using undetermined coefficients.
-\end{enumerate}
+\begin{tasks}
+\task using integrating factor method,
+\task using eigenvector decomposition,
+\task using undetermined coefficients.
+\end{tasks}
 \end{exercise}
 \exsol{%
 The general solution is

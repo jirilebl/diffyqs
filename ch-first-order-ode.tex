@@ -644,13 +644,14 @@ Justify.
 \begin{exercise}
 Match equations $y'=1-x$, $y'=x-2y$, $y' = x(1-y)$ to slope fields.
 Justify.
-\\
-a)
+\begin{tasks}(3)
+\task
 \parbox[c]{1.6in}{\includegraphics[width=1.5in]{figures/yprimex1minusyslope}}
-b)
+\task
 \parbox[c]{1.6in}{\includegraphics[width=1.5in]{figures/yprime1minusxslope}}
-c)
+\task
 \parbox[c]{1.6in}{\includegraphics[width=1.5in]{figures/yprimexminus2yslope}}
+\end{tasks}
 \end{exercise}
 
 \begin{exercise}[challenging]
@@ -662,23 +663,23 @@ what happens to $y(x)$ as $x$ goes to positive infinity?  Explain.
 
 \begin{exercise}[challenging]
 Take $(y-x)y' = 0$, $y(0) = 0$.
-\begin{enumerate}[a)]
-\item Find two distinct solutions.
-\item Explain why this does not violate Picard's theorem.  
-\end{enumerate}
+\begin{tasks}
+\task Find two distinct solutions.
+\task Explain why this does not violate Picard's theorem.  
+\end{tasks}
 \end{exercise}
 
 \begin{exercise}
 Suppose $y' = f(x,y)$.  What will the slope field look like, explain and
 sketch an example, if you know the following about $f(x,y)$:
-\begin{enumerate}[a)]
-\item $f$ does
+\begin{tasks}
+\task $f$ does
 not depend on $y$.
-\item $f$ does not depend on $x$.
-\item $f(t,t) = 0$ for any
+\task $f$ does not depend on $x$.
+\task $f(t,t) = 0$ for any
 number $t$.
-\item $f(x,0) = 0$ and $f(x,1) = 1$ for all $x$.
-\end{enumerate}
+\task $f(x,0) = 0$ and $f(x,1) = 1$ for all $x$.
+\end{tasks}
 \end{exercise}
 
 \begin{exercise}
@@ -725,13 +726,14 @@ No, the equation is not defined at $(x,y) = (1,0)$.
 \begin{exercise}
 Match equations $y'=\sin x$, $y'=\cos y$, $y' = y\cos(x)$ to slope fields.
 Justify.
-\\
-a)
+\begin{tasks}(3)
+\task
 \parbox[c]{1.6in}{\includegraphics[width=1.5in]{figures/yprimecosyslope}}
-b)
+\task
 \parbox[c]{1.6in}{\includegraphics[width=1.5in]{figures/yprimecosxyslope}}
-c)
+\task
 \parbox[c]{1.6in}{\includegraphics[width=1.5in]{figures/yprimesinxslope}}
+\end{tasks}
 \end{exercise}
 \exsol{%
 a) $y'=\cos y$,
@@ -1095,13 +1097,13 @@ A population $x$ of rabbits on an island is modeled by
 $x' = x- \bigl(\nicefrac{1}{1000} \bigr) x^2$, where the independent
 variable is time in months.  At time $t=0$, there are 40 rabbits
 on the island.
-\begin{enumerate}[a)]
-\item Find the solution to the equation with the initial
+\begin{tasks}
+\task Find the solution to the equation with the initial
 condition.
-\item
+\task
 How many rabbits are on the island in 1 month, 5 months, 
 10 months, 15 months (round to the nearest integer).
-\end{enumerate}
+\end{tasks}
 \end{exercise}
 \exsol{%
 a) $x = \frac{1000e^t}{e^t+24}$. b) 102 rabbits after one month,
@@ -1457,14 +1459,14 @@ second lake contains 200 thousand liters of water.
 A truck with \unit[500]{kg} of toxic substance
 crashes into the first lake.  Assume that the water is being continually
 mixed perfectly by the stream.
-\begin{enumerate}[a)]
-\item Find the concentration of toxic substance
+\begin{tasks}
+\task Find the concentration of toxic substance
 as a function of time in both lakes.
-\item When will the
+\task When will the
 concentration in the first lake be below \unit[0.001]{kg} per liter?
-\item When will the
+\task When will the
 concentration in the second lake be maximal?
-\end{enumerate}
+\end{tasks}
 \end{exercise}
 
 \begin{exercise}
@@ -1474,11 +1476,11 @@ and $k > 0$ is a constant.
 Suppose that $A = A_0 \cos (\omega t)$ for some constants $A_0$ and $\omega$.
 That is, the ambient temperature oscillates (for example night and day
 temperatures).
-\begin{enumerate}[a)]
-\item Find the general solution.
-\item In the long term, will the
+\begin{tasks}
+\task Find the general solution.
+\task In the long term, will the
 initial conditions make much of a difference?  Why or why not?
-\end{enumerate}
+\end{tasks}
 \end{exercise}
 
 \begin{exercise}
@@ -2071,37 +2073,37 @@ $x' = 0.1\,x\,(8-x)-2$.\label{2.2:harv2}}
 
 \begin{exercise}
 Take $x' = x^2$.
-\begin{enumerate}[a)]
-\item Draw the phase diagram,
+\begin{tasks}
+\task Draw the phase diagram,
 find the critical points, and mark them stable or unstable.
-\item Sketch typical solutions of the equation.
-\item Find $\displaystyle \lim_{t\to \infty} x(t)$ for the solution with the initial condition
+\task Sketch typical solutions of the equation.
+\task Find $\displaystyle \lim_{t\to \infty} x(t)$ for the solution with the initial condition
 $x(0) = -1$.
-\end{enumerate}
+\end{tasks}
 \end{exercise}
 
 \begin{exercise}
 Take $x' = \sin x$.
-\begin{enumerate}[a)]
-\item Draw the phase diagram for $-4\pi \leq x \leq 4\pi$.  On this interval
+\begin{tasks}
+\task Draw the phase diagram for $-4\pi \leq x \leq 4\pi$.  On this interval
 mark the critical points stable or unstable.
-\item Sketch typical solutions of the equation.
-\item Find $\displaystyle \lim_{t\to \infty} x(t)$ for the solution with the initial condition
+\task Sketch typical solutions of the equation.
+\task Find $\displaystyle \lim_{t\to \infty} x(t)$ for the solution with the initial condition
 $x(0) = 1$.
-\end{enumerate}
+\end{tasks}
 \end{exercise}
 
 \begin{samepage}
 \begin{exercise}
 Suppose $f(x)$ is positive for $0 < x < 1$, it is zero when $x=0$ and $x=1$,
 and it is negative for all other $x$.
-\begin{enumerate}[a)]
-\item Draw the phase diagram for $x' = f(x)$,
+\begin{tasks}
+\task Draw the phase diagram for $x' = f(x)$,
 find the critical points, and mark them stable or unstable.
-\item Sketch typical solutions of the equation.
-\item Find $\displaystyle \lim_{t\to \infty} x(t)$ for the solution with the initial condition
+\task Sketch typical solutions of the equation.
+\task Find $\displaystyle \lim_{t\to \infty} x(t)$ for the solution with the initial condition
 $x(0) = 0.5$.
-\end{enumerate}
+\end{tasks}
 \end{exercise}
 \end{samepage}
 
@@ -2112,12 +2114,12 @@ Suppose we modify our harvesting.  That is we will only harvest
 an amount proportional to current population.  In other words, we harvest $hx$
 per unit of time
 for some $h > 0$ (Similar to earlier example with $h$ replaced with $hx$).
-\begin{enumerate}[a)]
-\item Construct the differential equation. 
-\item Show that if $kM > h$, then
+\begin{tasks}
+\task Construct the differential equation. 
+\task Show that if $kM > h$, then
 the equation is still logistic.
-\item What happens when $kM < h$?
-\end{enumerate}
+\task What happens when $kM < h$?
+\end{tasks}
 \end{exercise}
 
 \begin{exercise}
@@ -2126,13 +2128,13 @@ infected.  Let the constant $S$ be the number of people susceptible to
 infection.  The infection rate $\frac{dx}{dt}$ is proportional to the product
 of already infected people, $x$, and the number of susceptible but
 uninfected people, $S-x$.
-\begin{enumerate}[a)]
-\item Write down the differential equation.
-\item Supposing $x(0) > 0$, that is, some people are infected at time $t=0$,
+\begin{tasks}
+\task Write down the differential equation.
+\task Supposing $x(0) > 0$, that is, some people are infected at time $t=0$,
 what is
 $\displaystyle \lim_{t\to\infty} x(t)$.
-\item Does the solution to part b) agree with your intuition?  Why or why not?
-\end{enumerate}
+\task Does the solution to part b) agree with your intuition?  Why or why not?
+\end{tasks}
 \end{exercise}
 
 
@@ -2140,12 +2142,12 @@ $\displaystyle \lim_{t\to\infty} x(t)$.
 
 \begin{exercise}
 Let $x'=(x-1)(x-2)x^2$.
-\begin{enumerate}[a)]
-\item Sketch the phase diagram and find critical
+\begin{tasks}
+\task Sketch the phase diagram and find critical
 points.
-\item Classify the critical points.
-\item If $x(0)=0.5$ then find $\displaystyle \lim_{t\to\infty} x(t)$.
-\end{enumerate}
+\task Classify the critical points.
+\task If $x(0)=0.5$ then find $\displaystyle \lim_{t\to\infty} x(t)$.
+\end{tasks}
 \end{exercise}
 \exsol{%
 \\
@@ -2158,11 +2160,11 @@ c) 1
 
 \begin{exercise}
 Let $x'=e^{-x}$.
-\begin{enumerate}[a)]
-\item Find and classify all critical points.
-\item Find $\displaystyle \lim_{t\to\infty} x(t)$ given any 
+\begin{tasks}(2)
+\task Find and classify all critical points.
+\task Find $\displaystyle \lim_{t\to\infty} x(t)$ given any 
 initial condition.
-\end{enumerate}
+\end{tasks}
 \end{exercise}
 \exsol{%
 a) There are no critical points.
@@ -2174,10 +2176,10 @@ b) $\infty$
 Assume that a population of fish in a lake satisfies
 $\frac{dx}{dt} = kx(M-x)$.  Now suppose that fish are continually added
 at $A$ fish per unit of time.
-\begin{enumerate}[a)]
-\item Find the differential equation for $x$.
-\item What is the new limiting population?
-\end{enumerate}
+\begin{tasks}(2)
+\task Find the differential equation for $x$.
+\task What is the new limiting population?
+\end{tasks}
 \end{exercise}
 \exsol{%
 a) $\frac{dx}{dt} = kx(M-x)+A$
@@ -2188,17 +2190,17 @@ b) $\frac{kM + \sqrt{{(kM)}^2 + 4Ak}}{2k}$
 \begin{exercise}
 Suppose $\frac{dx}{dt} = (x-\alpha)(x-\beta)$ for two numbers $\alpha <
 \beta$.
-\begin{enumerate}[a)]
-\item Find the critical points, and classify them.
-\end{enumerate}
+\begin{tasks}
+\task Find the critical points, and classify them.
+\end{tasks}
 %mbxFIXME
 For b), c), d), find $\displaystyle \lim_{t\to\infty} x(t)$ based on
 the phase diagram.
-\begin{enumerate}[a),resume]
-\item $x(0) < \alpha$,
-\item $\alpha < x(0) < \beta$,
-\item $\beta < x(0)$.
-\end{enumerate}
+\begin{tasks}[resume](3)
+\task $x(0) < \alpha$,
+\task $\alpha < x(0) < \beta$,
+\task $\beta < x(0)$.
+\end{tasks}
 \end{exercise}
 \exsol{%
 a) $\alpha$ is a stable critical point, $\beta$ is an unstable one.
@@ -2475,16 +2477,16 @@ with step size $h=0.5$ to approximate $x(1)$.
 \begin{samepage}
 \begin{exercise}
 Consider $\dfrac{dx}{dt} = t-x$, $x(0)=1$.
-\begin{enumerate}[a)]
-\item Use Euler's method
+\begin{tasks}
+\task Use Euler's method
 with step sizes $h = 1, \nicefrac{1}{2}, \nicefrac{1}{4}, \nicefrac{1}{8}$ to
 approximate
 $x(1)$. 
-\item Solve the equation exactly.
-\item Describe what happens to the
+\task Solve the equation exactly.
+\task Describe what happens to the
 errors for each $h$ you used.  That is, find the factor by which the error
 changed each time you halved the interval.
-\end{enumerate}
+\end{tasks}
 \end{exercise}
 \end{samepage}
 
@@ -2525,14 +2527,14 @@ y_{i+1} = y_i + \frac{k_1 + 2k_2 + 2k_3 + k_4}{6}\,h ,  \\
 
 \begin{exercise}
 Consider $\dfrac{dy}{dx} = yx^2$, $y(0)=1$.
-\begin{enumerate}[a)]
-\item Use Runge-Kutta (see above) with step sizes $h=1$ and $h=\nicefrac{1}{2}$
+\begin{tasks}
+\task Use Runge-Kutta (see above) with step sizes $h=1$ and $h=\nicefrac{1}{2}$
 to approximate $y(1)$.
-\item Use Euler's method with $h=1$ and
+\task Use Euler's method with $h=1$ and
 $h=\nicefrac{1}{2}$.
-\item Solve exactly, find the exact value of
+\task Solve exactly, find the exact value of
 $y(1)$, and compare.
-\end{enumerate}
+\end{tasks}
 \end{exercise}
 
 \setcounter{exercise}{100}
@@ -2548,11 +2550,11 @@ Approximately: 1.0000, 1.2397, 1.3829
 
 \begin{exercise}
 Let $x' = 2t$, and $x(0)=0$.
-\begin{enumerate}[a)]
-\item Approximate $x(4)$ using Euler's method with step sizes 4, 2, and 1.
-\item Solve exactly, and compute the errors.
-\item Compute the factor by which the errors changed.
-\end{enumerate}
+\begin{tasks}
+\task Approximate $x(4)$ using Euler's method with step sizes 4, 2, and 1.
+\task Solve exactly, and compute the errors.
+\task Compute the factor by which the errors changed.
+\end{tasks}
 \end{exercise}
 \exsol{%
 \\
@@ -2565,10 +2567,10 @@ c) Factors are 0.5, 0.5, 0.5.
 
 \begin{exercise}
 Let $x' = x e^{xt+1}$, and $x(0)=0$.
-\begin{enumerate}[a)]
-\item Approximate $x(4)$ using Euler's method with step sizes 4, 2, and 1.
-\item Guess an exact solution based on part a) and compute the errors.
-\end{enumerate}
+\begin{tasks}
+\task Approximate $x(4)$ using Euler's method with step sizes 4, 2, and 1.
+\task Guess an exact solution based on part a) and compute the errors.
+\end{tasks}
 \end{exercise}
 \exsol{%
 a) 0, 0, 0
@@ -2601,15 +2603,15 @@ x_{i+1} = x_i + h , \\
 
 \begin{exercise}
 Consider $\dfrac{dy}{dx} = x+y$, $y(0)=1$.
-\begin{enumerate}[a)]
-\item Use the improved Euler's method (see above) with step sizes $h=\nicefrac{1}{4}$ and $h=\nicefrac{1}{8}$
+\begin{tasks}
+\task Use the improved Euler's method (see above) with step sizes $h=\nicefrac{1}{4}$ and $h=\nicefrac{1}{8}$
 to approximate $y(1)$.
-\item Use Euler's method with
+\task Use Euler's method with
 $h=\nicefrac{1}{4}$ and $h=\nicefrac{1}{8}$.
-\item Solve exactly, find the exact value of
+\task Solve exactly, find the exact value of
 $y(1)$.
-\item Compute the errors, and the factors by which the errors changed.
-\end{enumerate}
+\task Compute the errors, and the factors by which the errors changed.
+\end{tasks}
 \end{exercise}
 \exsol{%
 a) Improved Euler: $y(1) \approx 3.3897$ for $h=\nicefrac{1}{4}$, 
@@ -3142,86 +3144,86 @@ equation is satisfied.  So $y=0$ is also a solution.
 \begin{exercise}
 Solve the following exact equations, implicit general solutions
 will suffice:
-\begin{enumerate}[a)]
-\item
+\begin{tasks}(2)
+\task
 $(2 xy + x^2) \, dx + (x^2+y^2+1) \, dy = 0$
-\item
+\task
 $x^5 + y^5 \frac{dy}{dx} = 0$
-\item
+\task
 $e^x+y^3 + 3xy^2 \frac{dy}{dx} = 0$
-\item
+\task
 $(x+y)\cos(x)+\sin(x) + \sin(x)y' = 0$
-\end{enumerate}
+\end{tasks}
 \end{exercise}
 
 \begin{exercise}
 Find the integrating factor for the following equations making them into
 exact equations:
-\begin{enumerate}[a)]
-\item
+\begin{tasks}(2)
+\task
 $e^{xy} \, dx + \frac{y}{x} e^{xy} \, dy = 0$
-\item
+\task
 $\frac{e^x+y^3}{y^2} \, dx + 3x \, dy = 0$
-\item
+\task
 $4(y^2+x) \, dx + \frac{2x+2y^2}{y} \, dy = 0$
-\item
+\task
 $2\sin(y) \, dx + x\cos(y)\, dy = 0$
-\end{enumerate}
+\end{tasks}
 \end{exercise}
 
 \begin{exercise}
 Suppose you have an equation of the form:
 $f(x) + g(y) \frac{dy}{dx} = 0$.
-\begin{enumerate}[a)]
-\item
+\begin{tasks}
+\task
 Show it is exact.
-\item
+\task
 Find the form of the potential function in terms of $f$ and $g$.
-\end{enumerate}
+\end{tasks}
 \end{exercise}
 
 \begin{exercise}
 Suppose that we have the equation $f(x) \, dx - dy = 0$.
-\begin{enumerate}[a)]
-\item
+\begin{tasks}
+\task
 Is this equation exact?
-\item
+\task
 Find the general solution using a definite integral.
-\end{enumerate}
+\end{tasks}
 \end{exercise}
 
 \begin{exercise}
 Find the potential function $F(x,y)$ of the exact equation $\frac{1+xy}{x}\, dx +
 \bigl(\nicefrac{1}{y} + x \bigr) \, dy = 0$ in two different ways.
-\begin{enumerate}[a)]
-\item
+\begin{tasks}
+\task
 Integrate $M$ in terms of $x$ and then differentiate in $y$ and set to
 $N$.
-\item
+\task
 Integrate $N$ in terms of $y$ and then differentiate in $x$ and set to
 $M$.
-\end{enumerate}
+\end{tasks}
 \end{exercise}
 
 \begin{samepage}
 \begin{exercise}
-A function $u(x,y)$ is said to be \emph{\myindex{harmonic function}} if
+A function $u(x,y)$ is said to be a \emph{\myindex{harmonic function}} if
 $u_{xx} + u_{yy} = 0$.
-\begin{enumerate}[a)]
-\item
-Show that $-u_y \, dx + u_x dy = 0$ is an exact equation.  Therefore
+\begin{tasks}
+\task
+Show that $-u_y \, dx + u_x \, dy = 0$ is an exact equation.  Therefore
 there exists (at least locally)
 the so-called \emph{\myindex{harmonic conjugate}} function
 $v(x,y)$ such that $v_x = -u_y$ and $v_y = u_x$.
-\end{enumerate}
+\end{tasks}
 Verify that the following $u$ are harmonic and 
 find the corresponding harmonic conjugates $v$:
 %mbxFIXME
-\begin{enumerate}[a),resume]
-\item $u = 2xy$
-\item $u = e^x \cos y$
-\item $u = x^3-3xy^2$
-\end{enumerate}
+\begin{tasks}[resume](3)
+\task $u = 2xy$
+\task $u = e^x \cos y$
+\task $u = x^3-3xy^2$
+\end{tasks}
 \end{exercise}
 \end{samepage}
 
@@ -3230,16 +3232,16 @@ find the corresponding harmonic conjugates $v$:
 \begin{exercise}
 Solve the following exact equations, implicit general solutions
 will suffice:
-\begin{enumerate}[a)]
-\item
+\begin{tasks}(2)
+\task
 $\cos(x)+ye^{xy} + xe^{xy} y' = 0$
-\item
+\task
 $(2x+y)\, dx + (x-4y) \, dy = 0$
-\item
+\task
 $e^x + e^y \frac{dy}{dx} = 0$
-\item
+\task
 $(3x^2+3y)\,dx + (3y^2+3x)\, dy = 0$
-\end{enumerate}
+\end{tasks}
 \end{exercise}
 \exsol{%
 a) $e^{xy}+\sin(x)=C$, \qquad
@@ -3248,20 +3250,22 @@ c) $e^x+e^y=C$, \qquad
 d) $x^3 + 3xy+ y^3 = C$.
 }
 
+\begin{samepage}
 \begin{exercise}
 Find the integrating factor for the following equations making them into
 exact equations:
-\begin{enumerate}[a)]
-\item
+\begin{tasks}(2)
+\task
 $\frac{1}{y}\, dx + 3y \, dy = 0$
-\item
+\task
 $dx - e^{-x-y} \, dy = 0$
-\item
+\task
 $\bigl( \frac{\cos(x)}{y^2} + \frac{1}{y} \bigr) \, dx + \frac{1}{y^2} \, dy = 0$
-\item
+\task
 $\bigl( 2y + \frac{y^2}{x} \bigr) \, dx + ( 2y+x )\, dy = 0$
-\end{enumerate}
+\end{tasks}
 \end{exercise}
+\end{samepage}
 \exsol{%
 a) Integrating factor is $y$, the equation becomes $dx + 3y^2\,dx = 0$.
 \qquad
@@ -3277,13 +3281,13 @@ d) Integrating factor is $x$, the equation becomes $( 2xy+y^2 )\, dx +
 
 \begin{exercise}
 {\ }
-\begin{enumerate}[a)]
-\item Show that every
+\begin{tasks}
+\task Show that every
 separable equation $y' = f(x)g(y)$ can be written as an exact equation,
 and verify that it is indeed exact.
-\item Using this rewrite $y' = xy$ as an exact equation, solve it and verify
+\task Using this rewrite $y' = xy$ as an exact equation, solve it and verify
 that the solution is the same as it was in \exampleref{example:yprimeisxy}.
-\end{enumerate}
+\end{tasks}
 \end{exercise}
 \exsol{%
 a) The equation is $ - f(x) \, dx + \frac{1}{g(y)} \, dy$,
@@ -3597,11 +3601,11 @@ form expressions for the characteristic coordinates may be impossible.
 
 \begin{exercise}
 Solve
-\begin{enumerate}[a)]
-\item $u_t +9u_x = 0$, $u(x,0) = \sin(x)$,
-\item $u_t -8u_x = 0$, $u(x,0) = \sin(x)$,
-\item $u_t +\pi u_x = 0$, $u(x,0) = \sin(x)$.
-\end{enumerate}
+\begin{tasks}(2)
+\task $u_t +9u_x = 0$, $u(x,0) = \sin(x)$,
+\task $u_t -8u_x = 0$, $u(x,0) = \sin(x)$,
+\task $u_t +\pi u_x = 0$, $u(x,0) = \sin(x)$.
+\end{tasks}
 \end{exercise}
 
 \begin{exercise}
@@ -3618,18 +3622,18 @@ Solve $u_x+u_t+xu = 0$, $u(x,0) = \cos(x)$.
 
 \begin{exercise}
 {\ }
-\begin{enumerate}[a)]
-\item Find the characteristic coordinates for the
-following equations
-\begin{enumerate}[1)]
-\item $u_x+u_t + u = 1$, \quad $u(x,0) = \cos(x)$,
-\item $2u_x+2u_t +2u = 2$, \quad $u(x,0) = \cos(x)$.
-\end{enumerate}
-\item Solve the two equations using the coordinates.
-\item Explain why
+\begin{tasks}
+\task Find the characteristic coordinates for the
+following equations:
+
+1)~~$u_x+u_t + u = 1$,~~$u(x,0) = \cos(x)$,
+\qquad
+2)~~$2u_x+2u_t +2u = 2$,~~$u(x,0) = \cos(x)$.
+\task Solve the two equations using the coordinates.
+\task Explain why
 you got the same solution, although the characteristic coordinates
 you found were different.
-\end{enumerate}
+\end{tasks}
 \end{exercise}
 
 \setcounter{exercise}{100}
