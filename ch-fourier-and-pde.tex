@@ -943,7 +943,6 @@ $t \sin (nt)$ is even.
 b_n & = \frac{1}{\pi} \int_{-\pi}^\pi t \sin (nt) ~dt \\
 & = \frac{2}{\pi} \int_{0}^\pi t \sin (nt) ~dt \\
 & = \frac{2}{\pi} \left(
-\,
 \left[ \frac{-t \cos (nt)}{n} \right]_{t=0}^{\pi}
 +
 \frac{1}{n}
@@ -951,7 +950,6 @@ b_n & = \frac{1}{\pi} \int_{-\pi}^\pi t \sin (nt) ~dt \\
 \right)
 \\
 & = \frac{2}{\pi} \left(
-\,
 \frac{-\pi \cos (n\pi)}{n}
 +
 0
@@ -1046,11 +1044,11 @@ b_n & = \frac{1}{\pi} \int_{-\pi}^\pi f(t) \sin (nt) ~dt \\
 The Fourier series is
 \begin{equation*}
 \frac{\pi}{2} +  \sum_{\substack{n=1\\n \text{ odd}}}^\infty
-\frac{2}{n} \,
+\frac{2}{n} 
 \sin (n t)
 =
 \frac{\pi}{2} + \sum_{k=1}^\infty
-\frac{2}{2k-1} \,
+\frac{2}{2k-1} 
 \sin \bigl( (2k-1)\, t \bigr) .
 \end{equation*}
 
@@ -1060,7 +1058,7 @@ Let us write out the first 3 harmonics of the series for $f(t)$.
 +
 2 \, \sin (t)
 +
-\frac{2}{3} \, \sin (3t)
+\frac{2}{3}  \sin (3t)
 + \cdots
 \end{equation*}
 The plot of these first three and also of the first 20 terms of the series
@@ -1082,7 +1080,7 @@ the equation
 \begin{equation*}
 f(t) = 
 \frac{\pi}{2} + \sum_{k=1}^\infty
-\frac{2}{2k-1} \,
+\frac{2}{2k-1} 
 \sin \bigl( (2k-1)\, t \bigr) .
 \end{equation*}
 is only an equality for such $t$ where $f(t)$ is continuous.  That is,
@@ -1091,7 +1089,7 @@ of $f(t)$.  It is not hard to see that when $t$ is an integer multiple of
 $\pi$ (which includes all the discontinuities), then
 \begin{equation*}
 \frac{\pi}{2} + \sum_{k=1}^\infty
-\frac{2}{2k-1} \,
+\frac{2}{2k-1} 
 \sin \bigl( (2k-1)\, t \bigr) = \frac{\pi}{2} .
 \end{equation*}
 We redefine $f(t)$ on $[-\pi,\pi]$ as
@@ -1279,20 +1277,20 @@ We have computed the Fourier series for a $2\pi$-periodic function, but what
 about functions of different periods.  Well, fear not, the computation is a
 simple case of change of variables.  We just rescale the independent
 axis.  Suppose we have a $2L$-periodic function $f(t)$.  Then $L$ is called
-the \emph{\myindex{half period}}.  Let $s = \frac{\pi}{L} \, t$.
+the \emph{\myindex{half period}}.  Let $s = \frac{\pi}{L}  t$.
 Then the function
 \begin{equation*}
-g(s) = f\left(\frac{L}{\pi}\,s \right)
+g(s) = f\left(\frac{L}{\pi} s \right)
 \end{equation*}
 is $2\pi$-periodic.  We must also rescale all our sines and cosines.
-In the series we use $\frac{\pi}{L}\,t$ as the variable.  That is, we
+In the series we use $\frac{\pi}{L} t$ as the variable.  That is, we
 want to write
 \begin{equation*}
 \boxed{~~
 f(t) = 
 \frac{a_0}{2} +
-\sum_{n=1}^\infty a_n \cos \left( \frac{n \pi}{L}\, t \right)
-+ b_n \sin \left(\frac{n \pi}{L} \, t \right) .
+\sum_{n=1}^\infty a_n \cos \left( \frac{n \pi}{L} t \right)
++ b_n \sin \left(\frac{n \pi}{L} t \right) .
 ~~}
 \end{equation*}
 If we change variables to $s$ we see that
@@ -1323,7 +1321,7 @@ g(s) \, \cos (n s) ~ ds
 =
 \frac{1}{L}
 \int_{-L}^L
-f(t) \, \cos \left( \frac{n \pi}{L}\, t \right) ~ dt , \\
+f(t) \, \cos \left( \frac{n \pi}{L} t \right) ~ dt , \\
 & b_n =
 \frac{1}{\pi}
 \int_{-\pi}^\pi
@@ -1331,7 +1329,7 @@ g(s) \, \sin (n s) ~ ds
 =
 \frac{1}{L}
 \int_{-L}^L
-f(t) \, \sin \left( \frac{n \pi}{L}\, t \right) ~ dt .
+f(t) \, \sin \left( \frac{n \pi}{L} t \right) ~ dt .
 \end{aligned}
 ~~}
 \end{equation*}
@@ -1397,7 +1395,7 @@ Hence,
 the series is 
 \begin{equation*}
 \frac{1}{2} + 
-\sum_{\substack{n=1 \\ n \text{ odd}}}^\infty \frac{-4}{n^2 \pi^2} \, \cos (n \pi t) .
+\sum_{\substack{n=1 \\ n \text{ odd}}}^\infty \frac{-4}{n^2 \pi^2} \cos (n \pi t) .
 \end{equation*}
 
 Let us explicitly write down the first few terms of the series
@@ -1505,24 +1503,24 @@ of the Fourier series.
 Suppose $f(t)$ is a $2L$-periodic piecewise smooth function.
 Let
 \begin{equation*}
-\frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos \left( \frac{n \pi}{L} \, t
+\frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos \left( \frac{n \pi}{L} t
 \right)
-+ b_n \sin \left( \frac{n \pi}{L} \, t \right)
++ b_n \sin \left( \frac{n \pi}{L} t \right)
 \end{equation*}
 be the Fourier series for $f(t)$.  Then the series converges
 for all $t$.  If $f(t)$ is continuous
 at $t$, then
 \begin{equation*}
 f(t) = \frac{a_0}{2} + \sum_{n=1}^\infty
-a_n \cos \left( \frac{n \pi}{L} \, t \right)
-+ b_n \sin \left( \frac{n \pi}{L} \, t \right) .
+a_n \cos \left( \frac{n \pi}{L} t \right)
++ b_n \sin \left( \frac{n \pi}{L} t \right) .
 \end{equation*}
 Otherwise
 \begin{equation*}
 \frac{f(t-)+f(t+)}{2} =
-\frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos \left( \frac{n \pi}{L} \, t
+\frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos \left( \frac{n \pi}{L}  t
 \right)
-+ b_n \sin \left( \frac{n \pi}{L} \, t \right) .
++ b_n \sin \left( \frac{n \pi}{L} t \right) .
 \end{equation*}
 \end{theorem}
 
@@ -1548,17 +1546,17 @@ integrating term by term.
 \begin{theorem}
 Suppose
 \begin{equation*}
-f(t) = \frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos \left( \frac{n \pi}{L} \, t
+f(t) = \frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos \left( \frac{n \pi}{L} t
 \right)
-+ b_n \sin \left( \frac{n \pi}{L} \, t \right)
++ b_n \sin \left( \frac{n \pi}{L} t \right)
 \end{equation*}
 is a piecewise smooth continuous function and the derivative $f'(t)$ is
 piecewise smooth.  Then the derivative can be
 obtained by differentiating term by term,
 \begin{equation*}
-f'(t) = \sum_{n=1}^\infty \frac{-a_n n \pi}{L} \,
-\sin \left( \frac{n \pi}{L} \, t \right)
-+ \frac{b_n n \pi}{L} \, \cos \left( \frac{n \pi}{L} \, t \right) .
+f'(t) = \sum_{n=1}^\infty \frac{-a_n n \pi}{L} 
+\sin \left( \frac{n \pi}{L} t \right)
++ \frac{b_n n \pi}{L} \cos \left( \frac{n \pi}{L} t \right) .
 \end{equation*}
 \end{theorem}
 
@@ -1571,15 +1569,15 @@ differentiate the series.  Similarly, we can also integrate a Fourier series.
 Suppose
 \begin{equation*}
 f(t) = \frac{a_0}{2} + \sum_{n=1}^\infty
-a_n \cos \left( \frac{n \pi}{L} \, t \right)
-+ b_n \sin \left( \frac{n \pi}{L} \, t \right)
+a_n \cos \left( \frac{n \pi}{L} t \right)
++ b_n \sin \left( \frac{n \pi}{L} t \right)
 \end{equation*}
 is a piecewise smooth function.  Then the antiderivative is
 obtained by antidifferentiating term by term and so
 \begin{equation*}
 F(t) = \frac{a_0 t}{2} + C + \sum_{n=1}^\infty
-\frac{a_n L}{n \pi} \, \sin \left( \frac{n \pi}{L} \, t \right)
-+ \frac{-b_n L}{n \pi} \, \cos \left( \frac{n \pi}{L} \, t \right) ,
+\frac{a_n L}{n \pi} \sin \left( \frac{n \pi}{L} t \right)
++ \frac{-b_n L}{n \pi}  \cos \left( \frac{n \pi}{L} t \right) ,
 \end{equation*}
 where $F'(t) = f(t)$ and $C$ is an arbitrary constant.
 \end{theorem}
@@ -1657,7 +1655,7 @@ f(t) \, \sin (n\pi t) ~ dt =
 \end{align*}
 That is, the series is
 \begin{equation*}
-\sum_{\substack{n=1 \\ n \text{ odd}}}^\infty \frac{8}{\pi^3 n^3} \, \sin (n \pi t) .
+\sum_{\substack{n=1 \\ n \text{ odd}}}^\infty \frac{8}{\pi^3 n^3} \sin (n \pi t) .
 \end{equation*}
 
 This series converges very fast.
@@ -2063,34 +2061,34 @@ Let $f(t)$ be an odd $2L$-periodic function.  We write
 the Fourier series for $f(t)$.  First, we compute the coefficients $a_n$ (including
 $n=0$) and get
 \begin{equation*}
-a_n = \frac{1}{L} \int_{-L}^L f(t) \cos \left( \frac{n \pi}{L} \, t \right)
+a_n = \frac{1}{L} \int_{-L}^L f(t) \cos \left( \frac{n \pi}{L} t \right)
 ~ dt = 0 .
 \end{equation*}
 That is, there are no cosine terms in the Fourier series of an odd function.
 The integral is zero
-because $f(t) \cos \left( {n \pi}{L} \,t \right)$
+because $f(t) \cos \left( {n \pi}{L} t \right)$
 is an odd function (product of an odd and an
 even function is odd) and the integral of an odd function over a symmetric
 interval is always zero.
 The integral of an even function over a symmetric interval
 $[-L,L]$ is twice the integral of the function over the interval $[0,L]$.
-The function $f(t) \sin \left( \frac{n \pi}{L} \, t \right)$ is the product of two odd
+The function $f(t) \sin \left( \frac{n \pi}{L} t \right)$ is the product of two odd
 functions and hence is even.
 \begin{equation*}
 b_n = 
-\frac{1}{L} \int_{-L}^L f(t) \sin \left( \frac{n \pi}{L} \, t \right) ~ dt =
-\frac{2}{L} \int_{0}^L f(t) \sin \left( \frac{n \pi}{L} \, t \right) ~ dt .
+\frac{1}{L} \int_{-L}^L f(t) \sin \left( \frac{n \pi}{L} t \right) ~ dt =
+\frac{2}{L} \int_{0}^L f(t) \sin \left( \frac{n \pi}{L} t \right) ~ dt .
 \end{equation*}
 We now write the Fourier series of $f(t)$ as
 \begin{equation*}
-\sum_{n=1}^\infty b_n \sin \left( \frac{n \pi}{L} \, t \right) .
+\sum_{n=1}^\infty b_n \sin \left( \frac{n \pi}{L} t \right) .
 \end{equation*}
 
 Similarly, if $f(t)$ is an even $2L$-periodic function.  For the same exact
 reasons as above, we find that $b_n = 0$ and
 \begin{equation*}
 a_n = 
-\frac{2}{L} \int_{0}^L f(t) \cos \left( \frac{n \pi}{L} \, t \right) ~ dt .
+\frac{2}{L} \int_{0}^L f(t) \cos \left( \frac{n \pi}{L} t \right) ~ dt .
 \end{equation*}
 The formula still works for $n=0$, in which case it becomes
 \begin{equation*}
@@ -2101,7 +2099,7 @@ The Fourier series is then
 \begin{equation*}
 \frac{a_0}{2}
 +
-\sum_{n=1}^\infty a_n \cos \left( \frac{n \pi}{L} \, t \right) .
+\sum_{n=1}^\infty a_n \cos \left( \frac{n \pi}{L} t \right) .
 \end{equation*}
 
 An interesting consequence is that the coefficients of the Fourier series of
@@ -2117,7 +2115,7 @@ Then the odd periodic extension
 of $f(t)$ has the Fourier series
 \begin{equation*}
 \boxed{~~
-F_{\text{odd}}(t) = \sum_{n=1}^\infty b_n \sin \left( \frac{n \pi}{L} \, t
+F_{\text{odd}}(t) = \sum_{n=1}^\infty b_n \sin \left( \frac{n \pi}{L} t
 \right) ,
 ~~}
 \end{equation*}
@@ -2125,28 +2123,28 @@ where
 \begin{equation*}
 \boxed{~~
 b_n = 
-\frac{2}{L} \int_{0}^L f(t)\, \sin \left( \frac{n \pi}{L} \, t \right) ~ dt .
+\frac{2}{L} \int_{0}^L f(t)\, \sin \left( \frac{n \pi}{L} t \right) ~ dt .
 ~~}
 \end{equation*}
 The even periodic extension of $f(t)$ has the Fourier series
 \begin{equation*}
 \boxed{~~
 F_{\text{even}}(t) = \frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos \left(
-\frac{n \pi}{L} \, t \right) ,
+\frac{n \pi}{L} t \right) ,
 ~~}
 \end{equation*}
 where
 \begin{equation*}
 \boxed{~~
 a_n = 
-\frac{2}{L} \int_{0}^L f(t)\, \cos \left( \frac{n \pi}{L} \, t \right) ~ dt .
+\frac{2}{L} \int_{0}^L f(t)\, \cos \left( \frac{n \pi}{L} t \right) ~ dt .
 ~~}
 \end{equation*}
 \end{theorem}
 
-The series $\sum_{n=1}^\infty b_n \sin \left( \frac{n \pi}{L} \, t\right)$ is called
+The series $\sum_{n=1}^\infty b_n \sin \left( \frac{n \pi}{L} t\right)$ is called
 the \emph{\myindex{sine series}} of $f(t)$ and the series
-$\frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos \left( \frac{n \pi}{L} \, t
+$\frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos \left( \frac{n \pi}{L} t
 \right)$
 is called the \emph{\myindex{cosine series}} of $f(t)$.  
 We often do not actually care what happens outside of $[0,L]$.  In this case,
@@ -2172,9 +2170,9 @@ problem is not one of the three we covered so far, you can still do an
 eigenfunction expansion, generalizing the results of this chapter.  We will
 deal with such a generalization in \chapterref{SL:chapter}.
 
-%f(t) = \frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos \left( \frac{n \pi}{L} \,
+%f(t) = \frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos \left( \frac{n \pi}{L} 
 %t \right)
-%+ b_n \sin \left( \frac{n \pi}{L} \, t \right) ,
+%+ b_n \sin \left( \frac{n \pi}{L} t \right) ,
 
 \begin{example}
 Find the Fourier series of the even periodic extension of 
@@ -2215,7 +2213,7 @@ a Fourier series whose coefficients decay only as $\frac{1}{n}$.
 
 Explicitly, the first few terms of the series are
 \begin{equation*}
-\frac{\pi^2}{3} - 4 \cos (t) + \cos (2t) - \frac{4}{9}\, \cos (3t) + \cdots
+\frac{\pi^2}{3} - 4 \cos (t) + \cos (2t) - \frac{4}{9} \cos (3t) + \cdots
 \end{equation*}
 \end{example}
 
@@ -2293,7 +2291,7 @@ x''(t) + 2 x(t) & =
 \\
 & = f(t)
 =
-\sum_{n=1}^\infty  \frac{2\, {(-1)}^{n+1}}{n \pi} \, \sin (n \pi t) .
+\sum_{n=1}^\infty  \frac{2\, {(-1)}^{n+1}}{n \pi} \sin (n \pi t) .
 \end{split}
 \end{equation*}
 Therefore,
@@ -2312,7 +2310,7 @@ We have thus obtained a Fourier series for the solution
 \begin{equation*}
 x(t) = 
 \sum_{n=1}^\infty
-\frac{2\,{(-1)}^{n+1}}{n \pi \,(2 - n^2 \pi^2)} \,
+\frac{2\,{(-1)}^{n+1}}{n \pi \,(2 - n^2 \pi^2)}
 \sin (n \pi t) .
 \end{equation*}
 \end{example}
@@ -2365,7 +2363,7 @@ a_0 +
 =
 \frac{1}{2} +
 \sum_{\substack{n=1\\n~\text{odd}}}^\infty
-\frac{-4}{\pi^2 n^2} \, \cos (n \pi t) .
+\frac{-4}{\pi^2 n^2} \cos (n \pi t) .
 \end{split}
 \end{equation*}
 Therefore, $a_0 = \frac{1}{2}$, $a_n = 0$ for $n$ even ($n \geq 2$) and for
@@ -2386,7 +2384,7 @@ The Fourier series for the solution $x(t)$ is
 x(t) = 
 \frac{1}{4} +
 \sum_{\substack{n=1\\n~\text{odd}}}^\infty
-\frac{-4}{n^2 \pi^2 (2 - n^2 \pi^2)} \,
+\frac{-4}{n^2 \pi^2 (2 - n^2 \pi^2)} 
 \cos (n \pi t) .
 \end{equation*}
 \end{example}
@@ -2596,14 +2594,14 @@ In the spirit of the last section and the idea of undetermined coefficients
 we first write
 \begin{equation*}
 F(t) = \frac{c_0}{2} + \sum_{n=1}^\infty
-c_n \cos \left( \frac{n \pi}{L}\, t \right) +
-d_n \sin \left( \frac{n \pi}{L}\, t \right) .
+c_n \cos \left( \frac{n \pi}{L} t \right) +
+d_n \sin \left( \frac{n \pi}{L} t \right) .
 \end{equation*}
 Then we write a proposed steady periodic solution $x$ as
 \begin{equation*}
 x(t) = \frac{a_0}{2} + \sum_{n=1}^\infty
-a_n \cos \left( \frac{n \pi}{L}\, t \right) +
-b_n \sin \left( \frac{n \pi}{L}\, t \right) ,
+a_n \cos \left( \frac{n \pi}{L} t \right) +
+b_n \sin \left( \frac{n \pi}{L} t \right) ,
 \end{equation*}
 where $a_n$ and $b_n$ are unknowns.
 We plug $x$ into the differential equation and solve for $a_n$ and
@@ -2662,7 +2660,7 @@ d_n & = \int_{-1}^1 F(t) \sin (n \pi t) ~ dt
 So
 \begin{equation*}
 F(t) = \frac{1}{2} + \sum_{\substack{n=1 \\ n \text{ odd}}}^\infty
-\frac{2}{\pi n} \, \sin (n \pi t) .
+\frac{2}{\pi n} \sin (n \pi t) .
 \end{equation*}
 
 We want to try
@@ -2698,7 +2696,7 @@ b_n (2 - n^2 \pi^2 ) \sin (n \pi t)
 \\
 & =
 F(t) = \frac{1}{2} + \sum_{\substack{n=1 \\ n \text{ odd}}}^\infty
-\frac{2}{\pi n} \, \sin (n \pi t) .
+\frac{2}{\pi n} \sin (n \pi t) .
 \end{split}
 \end{equation*}
 So $a_0 = \frac{1}{2}$, $b_n = 0$ for even $n$, and for odd $n$ we
@@ -2711,7 +2709,7 @@ b_n =
 The steady periodic solution has the Fourier series
 \begin{equation*}
 x_{sp}(t) = \frac{1}{4} + \sum_{\substack{n=1 \\ n \text{ odd}}}^\infty
-\frac{2}{\pi n (2 - n^2 \pi^2 )} \,
+\frac{2}{\pi n (2 - n^2 \pi^2 )}
 \sin (n \pi t) .
 \end{equation*}
 We know this is the steady periodic solution as it contains no terms 
@@ -2748,11 +2746,11 @@ to modify our guess and try
 \begin{equation*}
 x(t) = \frac{a_0}{2} +
 t \left(
-a_N \cos \left( \frac{N \pi}{L}\, t \right) +
-b_N \sin \left( \frac{N \pi}{L}\, t \right) \right) +
+a_N \cos \left( \frac{N \pi}{L} t \right) +
+b_N \sin \left( \frac{N \pi}{L} t \right) \right) +
 \sum_{\substack{n=1\\n\not= N}}^\infty
-a_n \cos \left( \frac{n \pi}{L}\, t \right) +
-b_n \sin \left( \frac{n \pi}{L} \, t \right) .
+a_n \cos \left( \frac{n \pi}{L} t \right) +
+b_n \sin \left( \frac{n \pi}{L} t \right) .
 \end{equation*}
 In other words, we multiply the offending term by $t$.  From then on, we
 proceed as before.
@@ -2760,8 +2758,8 @@ proceed as before.
 Of course, the solution is not a Fourier series (it is not even
 periodic) since it contains these terms multiplied by $t$.  Further, the
 terms
-$t \left( a_N \cos \left( \frac{N \pi}{L}\, t \right) +
-b_N \sin \left( \frac{N \pi}{L}\, t \right) \right)$ eventually dominate and lead to
+$t \left( a_N \cos \left( \frac{N \pi}{L} t \right) +
+b_N \sin \left( \frac{N \pi}{L} t \right) \right)$ eventually dominate and lead to
 wild oscillations.  As before, this behavior is called \emph{\myindex{pure
 resonance}} or just \emph{\myindex{resonance}}.
 
@@ -2889,7 +2887,7 @@ x_p(t) =
 t \, \cos (3 \pi t)
 +
 \sum_{\substack{n=1 \\ n~\text{odd} \\ n\not= 3}}^\infty
-\frac{2}{\pi^3 n(9 - n^2)} \,
+\frac{2}{\pi^3 n(9 - n^2)}
 \sin (n \pi t) . 
 \end{equation*}
 \end{example}
@@ -2965,7 +2963,7 @@ Express your solution as a series.
 $x =
 \frac{1}{2\sqrt{3}} + 
 \sum\limits_{\substack{n=1 \\ n \text{ odd}}}^\infty \frac{-4}{n^2 \pi^2
-(\sqrt{3}-n^2 \pi^2)} \,\cos (n \pi t)$
+(\sqrt{3}-n^2 \pi^2)} \cos (n \pi t)$
 }
 
 \begin{exercise}
@@ -2978,7 +2976,7 @@ $x =
 \frac{1}{2\sqrt{3}} -
 \frac{2}{\pi^3} t \sin(\pi t) + 
 \sum\limits_{\substack{n=3 \\ n \text{ odd}}}^\infty \frac{-4}{n^2 \pi^4
-(1-n^2)} \,\cos (n \pi t)$
+(1-n^2)} \cos (n \pi t)$
 }
 
 
@@ -3165,10 +3163,10 @@ are looking for nontrivial solutions $X$ of the eigenvalue problem
 $X'' + \lambda X = 0$, $X(0) = 0$, $X(L) = 0$.  We have previously found that
 the only eigenvalues are $\lambda_n = \frac{n^2 \pi^2}{L^2}$, for integers
 $n \geq 1$,
-where eigenfunctions are $\sin \left(\frac{n \pi}{L} \, x\right)$.  Hence, let us pick
+where eigenfunctions are $\sin \left(\frac{n \pi}{L} x\right)$.  Hence, let us pick
 the solutions
 \begin{equation*}
-X_n (x) = \sin \left(\frac{n \pi}{L} \, x \right) .
+X_n (x) = \sin \left(\frac{n \pi}{L} x \right) .
 \end{equation*}
 The corresponding $T_n$ must satisfy the equation
 \begin{equation*}
@@ -3182,14 +3180,14 @@ It will be useful to note that $T_n(0) = 1$.
 Our building-block solutions are
 \begin{equation*}
 u_n(x,t) = X_n(x)T_n(t) =
-\sin \left( \frac{n \pi}{L} \, x \right)
-\, e^{\frac{-n^2 \pi^2}{L^2} k t} .
+\sin \left( \frac{n \pi}{L} x \right)
+e^{\frac{-n^2 \pi^2}{L^2} k t} .
 \end{equation*}
 
-We note that $u_n(x,0) = \sin \left( \frac{n \pi}{L} \, x \right)$.  Let us
+We note that $u_n(x,0) = \sin \left( \frac{n \pi}{L} x \right)$.  Let us
 write $f(x)$ as the sine series
 \begin{equation*}
-f(x) = \sum_{n=1}^\infty b_n \sin \left(\frac{n \pi}{L} \, x \right) .
+f(x) = \sum_{n=1}^\infty b_n \sin \left(\frac{n \pi}{L}  x \right) .
 \end{equation*}
 That is, we find the Fourier series of the odd periodic extension of $f(x)$.
 We used the sine series as it corresponds to the eigenvalue problem for
@@ -3204,8 +3202,8 @@ u_n(x,t)
 =
 \sum_{n=1}^\infty
 b_n
-\sin \left( \frac{n \pi}{L} \, x \right)
-\, e^{\frac{-n^2 \pi^2}{L^2} k t} .
+\sin \left( \frac{n \pi}{L}  x \right)
+e^{\frac{-n^2 \pi^2}{L^2} k t} .
 ~~}
 \end{equation*}
 
@@ -3221,7 +3219,7 @@ u_n(x,0)
 =
 \sum_{n=1}^\infty
 b_n
-\sin \left( \frac{n \pi}{L} \, x \right)
+\sin \left( \frac{n \pi}{L} x \right)
 =
 f(x) .
 \end{equation*}
@@ -3390,12 +3388,12 @@ are looking for nontrivial solutions $X$ of the eigenvalue problem
 $X'' + \lambda X = 0$, $X'(0) = 0$, $X'(L) = 0$.  We have previously found that
 the only eigenvalues are $\lambda_n = \frac{n^2 \pi^2}{L^2}$, for integers
 $n \geq 0$,
-where eigenfunctions are $\cos \left( \frac{n \pi}{L} \, x\right)$
+where eigenfunctions are $\cos \left( \frac{n \pi}{L} x\right)$
 (we include the constant
 eigenfunction).  Hence, let us pick
 solutions
 \begin{equation*}
-X_n (x) = \cos \left( \frac{n \pi}{L} \, x \right)
+X_n (x) = \cos \left( \frac{n \pi}{L} x \right)
 \qquad \text{and} \qquad
 X_0 (x) = 1.
 \end{equation*}
@@ -3411,18 +3409,18 @@ For $n = 0$, we have $T_0'(t) = 0$ and hence $T_0(t) = 1$.
 Our building-block solutions will be
 \begin{equation*}
 u_n(x,t) = X_n(x)T_n(t) =
-\cos \left( \frac{n \pi}{L} \, x \right)
-\, e^{\frac{-n^2 \pi^2}{L^2} k t} ,
+\cos \left( \frac{n \pi}{L} x \right)
+e^{\frac{-n^2 \pi^2}{L^2} k t} ,
 \end{equation*}
 and
 \begin{equation*}
 u_0(x,t) = 1 .
 \end{equation*}
 
-We note that $u_n(x,0) = \cos \left( \frac{n \pi}{L} \, x \right)$.  Let us
+We note that $u_n(x,0) = \cos \left( \frac{n \pi}{L} x \right)$.  Let us
 write $f$ using the cosine series
 \begin{equation*}
-f(x) = \frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos \left( \frac{n \pi}{L} \, x
+f(x) = \frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos \left( \frac{n \pi}{L} x
 \right) .
 \end{equation*}
 That is, we find the Fourier series of the even periodic extension of $f(x)$.
@@ -3439,8 +3437,8 @@ u_n(x,t)
 \frac{a_0}{2} + 
 \sum_{n=1}^\infty
 a_n
-\cos \left( \frac{n \pi}{L} \, x \right)
-\, e^{\frac{-n^2 \pi^2}{L^2} k t} .
+\cos \left( \frac{n \pi}{L} x \right)
+e^{\frac{-n^2 \pi^2}{L^2} k t} .
 ~~}
 \end{equation*}
 
@@ -3460,7 +3458,7 @@ For $0 < x < 1$ we have
 =
 \frac{25}{3} +
 \sum_{\substack{n=2 \\ n \text{ even}}}^\infty
-\left( \frac{-200}{\pi^2 n^2} \right) \,
+\left( \frac{-200}{\pi^2 n^2} \right)
 \cos (n \pi x) .
 \end{equation*}
 The calculation is left to the reader.
@@ -3471,7 +3469,7 @@ u(x,t)
 =
 \frac{25}{3} +
 \sum_{\substack{n=2 \\ n \text{ even}}}^\infty
-\left( \frac{-200}{\pi^2 n^2} \right) \,
+\left( \frac{-200}{\pi^2 n^2} \right)
 \cos ( n \pi x)
 \, e^{-n^2 \pi^2 \, 0.003 \, t} .
 \end{equation*}
@@ -3484,7 +3482,7 @@ at time $t$.\label{heat:wireisolexfig}}
 \end{myfig}
 
 Note in the graph
-that the temperature evens out across the wire.  Eventually, all the
+that as time goes on, the temperature evens out across the wire.  Eventually, all the
 terms except the constant
 die out, and you will be left with a uniform temperature
 of $\frac{25}{3} \approx 8.33$ along the entire length of the wire.
@@ -3498,11 +3496,13 @@ of $\frac{25}{3} \approx 8.33$ along the entire length of the wire.
 
 \subsection{Exercises}
 
+\begin{samepage}
 \begin{exercise}
 Imagine you have a wire of length 2, with $k=0.001$ and an initial
 temperature distribution of $u(x,0) = 50 x$.  Suppose that both the ends
 are embedded in ice (temperature 0).  Find the solution as a series.
 \end{exercise}
+\end{samepage}
 
 \begin{exercise}
 Find a series solution of
@@ -3525,7 +3525,7 @@ Find a series solution of
 \begin{exercise} \label{heat:cosexr}
 Find a series solution of
 \begin{align*}
-& u_t = \frac{1}{3} \, u_{xx} , \\
+& u_t = \frac{1}{3} u_{xx} , \\
 & u_x(0,t) = u_x(\pi,t) = 0 , \\
 & u(x,0) = \frac{10x}{\pi} \qquad \text{for } \; 0 < x < \pi .
 \end{align*}
@@ -3592,8 +3592,8 @@ Express any coefficients in the series by integrals of $f(x)$.
 %=
 %\sum_{n=1}^\infty
 %b_n
-%\sin \left( \frac{n \pi}{L} \, x \right)
-%\, e^{\frac{-n^2 \pi^2}{L^2} k t} .
+%\sin \left( \frac{n \pi}{L} x \right)
+%e^{\frac{-n^2 \pi^2}{L^2} k t} .
 
 \begin{exercise}
 Find a series solution of
@@ -3623,7 +3623,7 @@ $u(x,t) =
 %\frac{a_0}{2} + 
 %\sum_{n=1}^\infty
 %a_n
-%\cos \left( \frac{n \pi}{L} \, x \right)
+%\cos \left( \frac{n \pi}{L} x \right)
 %\, e^{\frac{-n^2 \pi^2}{L^2} k t} .
 
 \begin{exercise}
@@ -3778,42 +3778,42 @@ $w(L,t) = 0$ implies that $X(L) = 0$.  Therefore, the only nontrivial
 solutions for the first equation are when
 $\lambda = \lambda_n = \frac{n^2 \pi^2}{L^2}$ and they are
 \begin{equation*}
-X_n(x) = \sin \left( \frac{n \pi}{L} \, x \right) .
+X_n(x) = \sin \left( \frac{n \pi}{L} x \right) .
 \end{equation*}
 The general solution for $T$ for this particular $\lambda_n$ is
 \begin{equation*}
-T_n(t) = A \cos \left( \frac{n \pi a}{L} \, t \right)
-+ B \sin \left( \frac{n \pi a}{L} \, t \right).
+T_n(t) = A \cos \left( \frac{n \pi a}{L} t \right)
++ B \sin \left( \frac{n \pi a}{L} t \right).
 \end{equation*}
 We also have the condition that $w(x,0) = 0$ or $X(x)T(0) = 0$.  This
 implies that $T(0) = 0$, which in turn forces $A = 0$.  It is
 convenient to pick $B=\frac{L}{n \pi a}$ (you will see why in a moment)
 and hence
 \begin{equation*}
-T_n(t) = \frac{L}{n \pi a} \sin \left( \frac{n \pi a}{L} \, t \right).
+T_n(t) = \frac{L}{n \pi a} \sin \left( \frac{n \pi a}{L} t \right).
 \end{equation*}
 Our building-block solutions are
 \begin{equation*}
 w_n(x,t) = 
-\frac{L}{n \pi a} \,
-\sin \left( \frac{n \pi}{L} \, x \right) \,
-\sin \left( \frac{n \pi a}{L} \, t \right) .
+\frac{L}{n \pi a} 
+\sin \left( \frac{n \pi}{L} x \right)
+\sin \left( \frac{n \pi a}{L} t \right) .
 \end{equation*}
 We differentiate in $t$, that is
 \begin{equation*}
 \frac{\partial w_n}{\partial t}(x,t) = 
-\sin \left( \frac{n \pi}{L} \, x \right) \,
-\cos \left( \frac{n \pi a}{L} \, t \right) .
+\sin \left( \frac{n \pi}{L} x \right)
+\cos \left( \frac{n \pi a}{L} t \right) .
 \end{equation*}
 Hence,
 \begin{equation*}
 \frac{\partial w_n}{\partial t}(x,0) =
-\sin \left( \frac{n \pi}{L} \, x \right) .
+\sin \left( \frac{n \pi}{L} x \right) .
 \end{equation*}
 We expand $g(x)$ in terms of these sines as
 \begin{equation*}
 g(x) =
-\sum_{n=1}^\infty b_n \sin \left( \frac{n \pi}{L} \, x \right) .
+\sum_{n=1}^\infty b_n \sin \left( \frac{n \pi}{L} x \right) .
 \end{equation*}
 Using superposition
 we can just write down the solution to \eqref{wave:weq} as a series
@@ -3824,10 +3824,10 @@ b_n
 w_n(x,t)
 =
 \sum_{n=1}^\infty
-b_n \,
-\frac{L}{n \pi a} \,
-\sin \left( \frac{n \pi}{L} \, x \right) \,
-\sin \left( \frac{n \pi a}{L} \, t \right) .
+b_n
+\frac{L}{n \pi a}
+\sin \left( \frac{n \pi}{L} x \right)
+\sin \left( \frac{n \pi a}{L} t \right) .
 \end{equation*}
 
 \begin{exercise}
@@ -3845,25 +3845,25 @@ T''(t) + \lambda a^2 T(t) &= 0 .
 and the conditions $X(0) = 0$, $X(L) = 0$.  So again
 $\lambda = \lambda_n = \frac{n^2 \pi^2}{L^2}$ and
 \begin{equation*}
-X_n(x) = \sin \left( \frac{n \pi}{L} \, x \right) .
+X_n(x) = \sin \left( \frac{n \pi}{L} x \right) .
 \end{equation*}
 This time
 the condition on $T$ is $T'(0) = 0$.  Thus 
 we get that $B = 0$ and we take
 \begin{equation*}
-T_n(t) = \cos \left( \frac{n \pi a}{L} \, t \right).
+T_n(t) = \cos \left( \frac{n \pi a}{L} t \right).
 \end{equation*}
 Our building-block solution will be
 \begin{equation*}
 z_n(x,t) = 
-\sin \left( \frac{n \pi}{L} \, x \right) \,
-\cos \left( \frac{n \pi a}{L} \, t \right) .
+\sin \left( \frac{n \pi}{L} x \right)
+\cos \left( \frac{n \pi a}{L} t \right) .
 \end{equation*}
-As $z_n(x,0) = \sin \left( \frac{n \pi}{L} \, x \right)$,
+As $z_n(x,0) = \sin \left( \frac{n \pi}{L} x \right)$,
 we expand $f(x)$ in terms of these sines as
 \begin{equation*}
 f(x) =
-\sum_{n=1}^\infty c_n \sin \left( \frac{n \pi}{L} \, x \right) .
+\sum_{n=1}^\infty c_n \sin \left( \frac{n \pi}{L} x \right) .
 \end{equation*}
 And we
 write down the solution to \eqref{wave:zeq} as a series
@@ -3874,9 +3874,9 @@ c_n
 z_n(x,t)
 =
 \sum_{n=1}^\infty
-c_n \,
-\sin \left( \frac{n \pi}{L} \, x \right) \,
-\cos \left( \frac{n \pi a}{L} \, t \right) .
+c_n
+\sin \left( \frac{n \pi}{L} x \right)
+\cos \left( \frac{n \pi a}{L} t \right) .
 \end{equation*}
 
 \begin{exercise}
@@ -3898,12 +3898,12 @@ y_t(x,0) = g(x) & \qquad \text{for } \; 0 < x < L ,
 where
 \begin{equation*}
 f(x) =
-\sum_{n=1}^\infty c_n \sin \left( \frac{n \pi}{L} \, x \right) ,
+\sum_{n=1}^\infty c_n \sin \left( \frac{n \pi}{L} x \right) ,
 \end{equation*}
 and
 \begin{equation*}
 g(x) =
-\sum_{n=1}^\infty b_n \sin \left( \frac{n \pi}{L} \, x \right) .
+\sum_{n=1}^\infty b_n \sin \left( \frac{n \pi}{L} x \right) .
 \end{equation*}
 Then the solution $y(x,t)$ can be written as a sum of the solutions
 of \eqref{wave:weq} and \eqref{wave:zeq}.  In other words,
@@ -3913,25 +3913,25 @@ of \eqref{wave:weq} and \eqref{wave:zeq}.  In other words,
 y(x,t)
 & =
 \sum_{n=1}^\infty
-b_n \,
-\frac{L}{n \pi a} \,
-\sin \left( \frac{n \pi}{L} \, x \right) \,
-\sin \left( \frac{n \pi a}{L} \, t \right) 
+b_n
+\frac{L}{n \pi a}
+\sin \left( \frac{n \pi}{L} x \right)
+\sin \left( \frac{n \pi a}{L} t \right) 
 +
-c_n \,
-\sin \left( \frac{n \pi}{L} \, x \right) \,
-\cos \left( \frac{n \pi a}{L} \, t \right) 
+c_n
+\sin \left( \frac{n \pi}{L} x \right)
+\cos \left( \frac{n \pi a}{L} t \right) 
 \\
 & =
 \sum_{n=1}^\infty
-\sin \left( \frac{n \pi}{L} \, x \right) \,
+\sin \left( \frac{n \pi}{L} x \right)
 \left[
-b_n \,
-\frac{L}{n \pi a} \,
-\sin \left( \frac{n \pi a}{L} \, t \right) 
+b_n
+\frac{L}{n \pi a}
+\sin \left( \frac{n \pi a}{L} t \right) 
 +
-c_n \,
-\cos \left( \frac{n \pi a}{L} \, t \right) 
+c_n
+\cos \left( \frac{n \pi a}{L} t \right) 
 \right] .
 \end{aligned}
 ~~}
@@ -3964,8 +3964,8 @@ will be
 \begin{equation*}
 f(x) = \sum_{n=1}^\infty
 \frac{0.8}{n^2 \pi^2}
-\sin \left( \frac{n \pi}{2} \right) \,
-\sin \left( \frac{n \pi}{2} \, x \right) .
+\sin \left( \frac{n \pi}{2} \right)
+\sin \left( \frac{n \pi}{2} x \right) .
 \end{equation*}
 Note that 
 $\sin \left( \frac{n \pi}{2} \right)$
@@ -3974,13 +3974,13 @@ for $n = 1,2,3,4,\ldots$.  Therefore,
 \begin{equation*}
 f(x) = 
 \frac{0.8}{\pi^2}
-\sin \left( \frac{\pi}{2} \, x \right)
+\sin \left( \frac{\pi}{2} x \right)
 -
 \frac{0.8}{9 \pi^2}
-\sin \left( \frac{3 \pi}{2} \, x \right)
+\sin \left( \frac{3 \pi}{2} x \right)
 +
 \frac{0.8}{25 \pi^2}
-\sin \left( \frac{5 \pi}{2} \, x \right)
+\sin \left( \frac{5 \pi}{2} x \right)
 - \cdots
 \end{equation*}
 The solution $y(x,t)$ is given by
@@ -3988,29 +3988,29 @@ The solution $y(x,t)$ is given by
 \begin{split}
 y(x,t) & = 
 \sum_{n=1}^\infty
-\frac{0.8}{n^2 \pi^2} \,
-\sin \left( \frac{n \pi}{2} \right) \,
-\sin \left( \frac{n \pi}{2} \, x \right) \,
-\cos \left( \frac{n \pi}{2} \, t \right)
+\frac{0.8}{n^2 \pi^2}
+\sin \left( \frac{n \pi}{2} \right)
+\sin \left( \frac{n \pi}{2} x \right)
+\cos \left( \frac{n \pi}{2} t \right)
 \\
 & = 
 \sum_{m=1}^\infty
-\frac{0.8 {(-1)}^{m+1}}{{(2m-1)}^2 \pi^2} \,
-\sin \left( \frac{(2m-1) \pi}{2} \, x \right) \,
-\cos \left( \frac{(2m-1) \pi}{2} \, t \right)
+\frac{0.8 {(-1)}^{m+1}}{{(2m-1)}^2 \pi^2}
+\sin \left( \frac{(2m-1) \pi}{2} x \right)
+\cos \left( \frac{(2m-1) \pi}{2} t \right)
 \\
 & =
-\frac{0.8}{\pi^2} \,
-\sin \left( \frac{\pi}{2} \, x \right) \,
-\cos \left( \frac{\pi}{2} \, t \right)
+\frac{0.8}{\pi^2} 
+\sin \left( \frac{\pi}{2}  x \right)
+\cos \left( \frac{\pi}{2}  t \right)
 -
-\frac{0.8}{9 \pi^2} \,
-\sin \left( \frac{3 \pi}{2} \, x \right) \,
-\cos \left( \frac{3 \pi}{2} \, t \right)
+\frac{0.8}{9 \pi^2} 
+\sin \left( \frac{3 \pi}{2}  x \right)
+\cos \left( \frac{3 \pi}{2}  t \right)
 +
-\frac{0.8}{25 \pi^2} \,
-\sin \left( \frac{5 \pi}{2} \, x \right) \,
-\cos \left( \frac{5 \pi}{2} \, t \right) 
+\frac{0.8}{25 \pi^2}
+\sin \left( \frac{5 \pi}{2}  x \right)
+\cos \left( \frac{5 \pi}{2}  t \right) 
 - \cdots
 \end{split}
 \end{equation*}
@@ -4109,7 +4109,7 @@ y_t(x,0) = \sin(x) & \qquad \text{for } \; 0 < x < \pi .
 $
 y(x,t)
 =
-\sin(x) \,
+\sin(x)
 \bigl(\sin(t) + \cos(t)\bigr)
 $
 }
@@ -4128,26 +4128,26 @@ y_t(x,0) = \sin(\pi t) + 0.1 \sin(2\pi t) & \qquad \text{for } \; 0 < x < 2 .
 \exsol{%
 $y(x,t)
 =
-\frac{1}{5 \pi} \,
-\sin (\pi x) \,
+\frac{1}{5 \pi}
+\sin (\pi x)
 \sin (5 \pi t)
 +
-\frac{1}{100 \pi} \,
-\sin(2\pi x) \,
+\frac{1}{100 \pi}
+\sin(2\pi x)
 \sin(10\pi t)$
 }
 %$
 %y(x,t)
 %=
 %\sum\limits_{n=1}^\infty
-%\sin \left( \frac{n \pi}{L} \, x \right) \,
+%\sin \left( \frac{n \pi}{L} x \right)
 %\left[
-%b_n \,
-%\frac{L}{n \pi a} \,
-%\sin \left( \frac{n \pi a}{L} \, t \right) 
+%b_n
+%\frac{L}{n \pi a}
+%\sin \left( \frac{n \pi a}{L} t \right) 
 %+
-%c_n \,
-%\cos \left( \frac{n \pi a}{L} \, t \right) 
+%c_n
+%\cos \left( \frac{n \pi a}{L} t \right) 
 %\right] .
 
 \begin{exercise}
@@ -4166,22 +4166,22 @@ $
 y(x,t)
 =
 \sum\limits_{n=1}^\infty
-\frac{2{(-1)}^{n+1}}{n} \,
-\sin(nx) \,
+\frac{2{(-1)}^{n+1}}{n}
+\sin(nx)
 \cos( n \sqrt{2}\,t ) 
 $
 %$
 %y(x,t)
 %=
 %\sum\limits_{n=1}^\infty
-%\sin \left( \frac{n \pi}{L} \, x \right) \,
+%\sin \left( \frac{n \pi}{L} x \right)
 %\left[
-%b_n \,
-%\frac{L}{n \pi a} \,
-%\sin \left( \frac{n \pi a}{L} \, t \right) 
+%b_n
+%\frac{L}{n \pi a}
+%\sin \left( \frac{n \pi a}{L} t \right) 
 %+
-%c_n \,
-%\cos \left( \frac{n \pi a}{L} \, t \right) 
+%c_n
+%\cos \left( \frac{n \pi a}{L} t \right) 
 %$
 }
 
@@ -4895,7 +4895,7 @@ b_n u_n(x,y)
 \sum_{n=1}^\infty
 b_n 
 \sin \left( \frac{n \pi}{w} x \right)
-\, \left( \frac{\sinh \left( \frac{n \pi (h-y) }{w} \right)}%
+\left( \frac{\sinh \left( \frac{n \pi (h-y) }{w} \right)}%
 {\sinh \left( \frac{n \pi h }{w} \right)} \right)
 .
 ~~
@@ -4927,7 +4927,7 @@ u(x,y) =
 \sum_{\substack{n=1 \\ n \text{ odd}}}^\infty
 \frac{4}{n}
 \sin (n x)
-\,\left( \frac{\sinh \bigl( n (\pi-y) \bigr) }{\sinh (n \pi)} \right)
+\left( \frac{\sinh \bigl( n (\pi-y) \bigr) }{\sinh (n \pi)} \right)
 .
 \end{equation*}
 
@@ -5097,7 +5097,7 @@ $u(x,y) =
 \sum\limits_{n=1}^\infty
 \frac{1}{n^2}
 \sin ( n \pi x )
-\, \left( \frac{\sinh ( n \pi (1-y) )}{\sinh ( n \pi )} \right)
+\left( \frac{\sinh ( n \pi (1-y) )}{\sinh ( n \pi )} \right)
 $
 }
 
@@ -5115,7 +5115,7 @@ Solve the problem
 $u(x,y) =
 0.1
 \sin ( \pi x )
-\, \left( \frac{\sinh ( \pi (2-y)  )}%
+\left( \frac{\sinh ( \pi (2-y)  )}%
 {\sinh ( 2 \pi )} \right)$
 }
 
@@ -5135,7 +5135,7 @@ $u(x,y) =
 %\sum_{n=1}^\infty
 %b_n 
 %\sin \left( \frac{n \pi}{w} x \right)
-%\, \left( \frac{\sinh \left( \frac{n \pi (h-y) }{w} \right)}%
+%\left( \frac{\sinh \left( \frac{n \pi (h-y) }{w} \right)}%
 %{\sinh \left( \frac{n \pi h }{w} \right)} \right)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -5207,6 +5207,8 @@ u_r & = u_x x_r + u_y y_r = \cos(\theta) u_x + \sin(\theta) u_y ,
 u_{rr} & =
 \cos(\theta) ( u_{xx} x_r +u_{xy} y_r )
 + \sin(\theta) ( u_{yx} x_r +u_{yy} y_r )
+\\
+&
 =
 \cos^2(\theta) u_{xx} +
 2 \cos(\theta)\sin(\theta) u_{xy} +
@@ -5424,8 +5426,9 @@ studying---a circle of radius 1.  For the boundary conditions, suppose in
 Cartesian coordinates $x$ and
 $y$, the temperature on the boundary is 0 when $y < 0$, and it is $2y$ when $y > 0$.
 
-Let us set up the problem.  As $y = r\sin(\theta)$, then on the
-circle of radius 1 we have $2y = 2\sin(\theta)$.  So
+Let us set the problem up.
+As $y = r\sin(\theta)$, then on the
+circle of radius 1, that is, where $r=1$, we have $2y = 2\sin(\theta)$.  So
 %The problem becomes
 \begin{align*}
 & \Delta u = 0 , \qquad 0 \leq r < 1, \quad -\pi < \theta \leq \pi,\\
@@ -5445,7 +5448,7 @@ u(1,\theta) =
 +
 \sin(\theta)
 +
-\sum_{n=1}^\infty \frac{-4}{\pi(4n^2-1)}\, \cos(2n\theta) .
+\sum_{n=1}^\infty \frac{-4}{\pi(4n^2-1)} \cos(2n\theta) .
 \end{equation*}
 
 \begin{exercise}
@@ -5460,7 +5463,7 @@ u(r,\theta) =
 +
 r\sin(\theta)
 +
-\sum_{n=1}^\infty \frac{-4r^{2n}}{\pi(4n^2-1)}\, \cos(2n\theta) .
+\sum_{n=1}^\infty \frac{-4r^{2n}}{\pi(4n^2-1)} \cos(2n\theta) .
 \end{equation*}
 \begin{myfig}
 \capstart
@@ -5553,9 +5556,9 @@ r^n \sin(n \theta)
 2
 \sum_{n=1}^\infty
 g(\alpha) \cos (n\alpha) 
-r^n \cos(n \theta) +
+\, r^n \cos(n \theta) +
 g(\alpha) \sin (n\alpha)
-r^n \sin(n \theta)
+\, r^n \sin(n \theta)
 \right) ~d\alpha
 \\
 & =
@@ -5571,7 +5574,7 @@ r^n
 \cos(n \theta) +
 \sin (n\alpha)
 \sin(n \theta) \bigr)
-\right) \, g(\alpha) ~d\alpha
+\right) g(\alpha) ~d\alpha
 %\\
 %& =
 %\frac{1}{2\pi}
@@ -5582,7 +5585,7 @@ r^n
 %\sum_{n=1}^\infty
 %r^n 
 %\cos \bigl(n(\theta-\alpha)\bigr)
-%\right) \, g(\alpha) ~d\alpha .
+%\right) g(\alpha) ~d\alpha .
 \end{split}
 \end{equation*}
 OK\@, so we have what we wanted, the expression in the parentheses is the
@@ -5683,13 +5686,13 @@ re^{-i(\theta-\alpha)}\bigr)}^{n}
 \frac{1 -r^2}{1 - 2r\cos(\theta-\alpha) +r^2} .
 \end{split}
 \end{equation*}
-Now that's a formula we can live with.  The
+That's a formula we can live with.  The
 solution to the Dirichlet problem using the Poisson kernel is
 \begin{equation*}
 \boxed{~~
 u(r,\theta) = 
 \frac{1}{2\pi} \int_{-\pi}^{\pi}
-\frac{1 -r^2}{1 - 2r\cos(\theta-\alpha) +r^2} \, g(\alpha) ~ d\alpha .
+\frac{1 -r^2}{1 - 2r\cos(\theta-\alpha) +r^2} g(\alpha) ~ d\alpha .
 ~~}
 \end{equation*}
 Sometimes the formula for the Poisson kernel is
@@ -5724,7 +5727,7 @@ that is when $r=0$. %(and then $\theta$ can be anything at all)
 \begin{split}
 u(0,0) &= 
 \frac{1}{2\pi} \int_{-\pi}^{\pi}
-\frac{1 -0^2}{1 - 2(0)\cos(\theta-\alpha) +0^2} \, g(\alpha) ~ d\alpha
+\frac{1 -0^2}{1 - 2(0)\cos(\theta-\alpha) +0^2} g(\alpha) ~ d\alpha
 \\
 & =
 \frac{1}{2\pi} \int_{-\pi}^{\pi}
@@ -5874,5 +5877,5 @@ than 1.  That is, solve $\Delta u = 0$, $u(\rho,\theta) = g(\theta)$.
 $\displaystyle
 u(r,\theta) = 
 \frac{1}{2\pi} \int_{-\pi}^{\pi}
-\frac{\rho^2 -r^2}{\rho - 2r\rho\cos(\theta-\alpha) +r^2} \, g(\alpha) ~ d\alpha$
+\frac{\rho^2 -r^2}{\rho - 2r\rho\cos(\theta-\alpha) +r^2} g(\alpha) ~ d\alpha$
 }
