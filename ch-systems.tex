@@ -1373,7 +1373,7 @@ a & 0 & 0 \\
 0 & b & 0 \\
 0 & 0 & c
 \end{smallmatrix}\right]$.
-\begin{tasks}
+\begin{tasks}(2)
 \task Compute $M^{-1}$.
 \task Compute $N^{-1}$.
 \end{tasks}
@@ -4544,7 +4544,7 @@ $A = \left[ \begin{smallmatrix}
 0 & 3 & 0 \\
 -2 & 4 & -1
 \end{smallmatrix} \right]$.
-\begin{tasks}
+\begin{tasks}(2)
 \task What are the eigenvalues?
 \task What is/are the defect(s) of the eigenvalue(s)?
 \task Find the general solution of ${\vec{x}}' = A \vec{x}$.
@@ -4556,10 +4556,10 @@ $A = \left[ \begin{smallmatrix}
 \begin{exercise}
 Let
 $A = \left[ \begin{smallmatrix} 2 & 1 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 2 \end{smallmatrix} \right]$.
-\begin{tasks}
+\begin{tasks}(2)
 \task What are the eigenvalues?
 \task What is/are the defect(s) of the eigenvalue(s)?
-\task Find the general solution of ${\vec{x}}' = A \vec{x}$ in two different
+\task* Find the general solution of ${\vec{x}}' = A \vec{x}$ in two different
 ways and verify you get the same answer.
 \end{tasks}
 \end{exercise}
@@ -4571,7 +4571,7 @@ $A = \left[ \begin{smallmatrix}
 -1 & -2 & -2 \\
 -4 & 4 & 7
 \end{smallmatrix} \right]$.
-\begin{tasks}
+\begin{tasks}(2)
 \task What are the eigenvalues?
 \task What is/are the defect(s) of the eigenvalue(s)?
 \task Find the general solution of ${\vec{x}}' = A \vec{x}$.
@@ -4585,7 +4585,7 @@ $A = \left[ \begin{smallmatrix}
 -1 & -4 & 1 \\
 0 & 0 & -2
 \end{smallmatrix} \right]$.
-\begin{tasks}
+\begin{tasks}(2)
 \task What are the eigenvalues?
 \task What is/are the defect(s) of the eigenvalue(s)?
 \task Find the general solution of ${\vec{x}}' = A \vec{x}$.
@@ -4599,7 +4599,7 @@ $A = \left[ \begin{smallmatrix}
 -1 & 0 & 2 \\
 -1 & -2 & 4
 \end{smallmatrix} \right]$.
-\begin{tasks}
+\begin{tasks}(2)
 \task What are the eigenvalues?
 \task What is/are the defect(s) of the eigenvalue(s)?
 \task Find the general solution of ${\vec{x}}' = A \vec{x}$.
@@ -4622,7 +4622,7 @@ Let $A =
 1 & 1 & 1 \\
 1 & 1 & 1 
 \end{smallmatrix}\right]$.  
-\begin{tasks}
+\begin{tasks}(2)
 \task What are the eigenvalues?
 \task What is/are the defect(s) of the eigenvalue(s)?
 \task Find the general solution of $\vec{x}\,' = A\vec{x}$.
@@ -4659,7 +4659,7 @@ Let $A =
 1 & 1 & 0 \\
 -1 & 1 & 2 \\
 \end{smallmatrix}\right]$.  
-\begin{tasks}
+\begin{tasks}(2)
 \task What are the eigenvalues?
 \task What is/are the defect(s) of the eigenvalue(s)?
 \task Find the general solution of $\vec{x}\,' = A\vec{x}$.
@@ -4706,7 +4706,7 @@ Let $A =
 -1 & -1 & 9 \\
 0 & -1 & 5
 \end{smallmatrix}\right]$.  
-\begin{tasks}
+\begin{tasks}(2)
 \task What are the eigenvalues?
 \task What is/are the defect(s) of the eigenvalue(s)?
 \task Find the general solution of $\vec{x}\,' = A\vec{x}$.
@@ -6010,6 +6010,13 @@ $\vec{x}(t) =
 \vec{v}_n \xi_n(t)$ satisfying $\vec{x}(0) = \vec{b}$,
 because $\xi_k(0) = a_k$.
 
+Let us remark that the technique we just outlined is the eigenvalue
+method applied to nonhomogeneous systems.  If a system is homogeneous, that
+is, if $\vec{f}=\vec{0}$, then the equations we get are
+$\xi_k' = \lambda_k \xi_k$, and so $\xi_k = C_k e^{\lambda_k t}$ are the
+solutions and that's precisely what we got in
+\sectionref{eigenmethod:section}.
+
 \begin{example}
 Let $A = \left[
 \begin{smallmatrix}
@@ -6907,10 +6914,10 @@ E^{-1} \vec{f}(t)
 \frac{-2}{3}\cos (3t) \end{bmatrix} .
 \end{equation*}
 So after the whole song and dance of plugging in, the equations we get are
-\begin{align*}
-\xi_1'' & = - \xi_1 + \frac{2}{3} \cos (3t) , \\
-\xi_2'' & = -4 \, \xi_2 - \frac{2}{3} \cos (3t) .
-\end{align*}
+\begin{equation*}
+\xi_1'' = - \xi_1 + \frac{2}{3} \cos (3t) , \qquad
+\xi_2'' = -4 \, \xi_2 - \frac{2}{3} \cos (3t) .
+\end{equation*}
 For each equation we use the method of undetermined coefficients.
 We 
 try $C_1 \cos (3t)$ for the first equation and $C_2 \cos (3t)$ for the second
@@ -6948,7 +6955,7 @@ This solution matches what we got previously in \sectionref{sol:section}.
 Find a particular solution to
 $x' = x+ 2y +2t$, 
 $y' = 3x + 2y -4$,
-\begin{tasks}
+\begin{tasks}(2)
 \task using integrating factor method,
 \task using eigenvector decomposition,
 \task using undetermined coefficients.
@@ -6959,7 +6966,7 @@ $y' = 3x + 2y -4$,
 Find the general solution to
 $x' = 4x+ y -1$, 
 $y' = x + 4y -e^t$,
-\begin{tasks}
+\begin{tasks}(2)
 \task using integrating factor method,
 \task using eigenvector decomposition,
 \task using undetermined coefficients.
@@ -6970,27 +6977,26 @@ $y' = x + 4y -e^t$,
 Find the general solution to
 $x_1'' = -6x_1+ 3x_2 + \cos (t)$, 
 $x_2'' = 2x_1 -7x_2 + 3\cos (t)$,
-\begin{tasks}
+\begin{tasks}(2)
 \task using eigenvector decomposition,
 \task using undetermined coefficients.
 \end{tasks}
 \end{exercise}
 
-\begin{samepage}
 \begin{exercise}
 Find the general solution to
 $x_1'' = -6x_1+ 3x_2 + \cos (2t)$, 
 $x_2'' = 2x_1 -7x_2 + 3\cos (2t)$,
-\begin{tasks}
+\begin{tasks}(2)
 \task using eigenvector decomposition,
 \task using undetermined coefficients.
 \end{tasks}
 \end{exercise}
-\end{samepage}
 
+\begin{mysamepage}
 \begin{exercise}
 Take the equation
-\begin{equation*}
+$\displaystyle
 {\vec{x}}'
 =
 \begin{bmatrix}
@@ -6999,11 +7005,11 @@ Take the equation
 \end{bmatrix}
 \vec{x}
 + \begin{bmatrix} t^2 \\ -t \end{bmatrix} .
-\end{equation*}
+$
 \begin{tasks}
 \task
 Check that
-\begin{equation*}
+$\displaystyle
 \vec{x}_c =
 c_1
 \begin{bmatrix}
@@ -7016,20 +7022,21 @@ c_2
 t\, \cos t \\
 t \, \sin t
 \end{bmatrix}
-\end{equation*}
+$
 is the complementary solution.
 \task
 Use variation of parameters to
 find a particular solution.
 \end{tasks}
 \end{exercise}
+\end{mysamepage}
 
 \setcounter{exercise}{100}
 
 \begin{samepage}
 \begin{exercise}
 Find a particular solution to $x' = 5x + 4y + t$, $y' = x + 8y - t$,
-\begin{tasks}
+\begin{tasks}(2)
 \task using integrating factor method,
 \task using eigenvector decomposition,
 \task using undetermined coefficients.
@@ -7046,7 +7053,7 @@ e^{4t})+\frac{t}{6}+\frac{7}{216}$
 
 \begin{exercise}
 Find a particular solution to $x' = y + e^t$, $y' = x +e^t$,
-\begin{tasks}
+\begin{tasks}(2)
 \task using integrating factor method,
 \task using eigenvector decomposition,
 \task using undetermined coefficients.

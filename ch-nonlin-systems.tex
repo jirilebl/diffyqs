@@ -263,47 +263,50 @@ behavior near the critical points.
 
 \begin{exercise}
 Sketch the phase plane vector field for:
-\begin{enumerate}[a)]
-\item $x'=x^2$, $y'=y^2$,
-\item $x'=(x-y)^2$, $y'=-x$,
-\item $x'=e^y$, $y'=e^x$.
-\end{enumerate}
+\begin{tasks}(3)
+\task $x'=x^2$, $y'=y^2$,
+\task $x'=(x-y)^2$, $y'=-x$,
+\task $x'=e^y$, $y'=e^x$.
+\end{tasks}
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}
 Match systems
-\begin{enumerate}[1)]
-\item $x'=x^2$, $y'=y^2$,
-\item $x'=xy$, $y'=1+y^2$,
-\item $x'=\sin(\pi y)$, $y'=x$,
-\end{enumerate}
+\begin{tasks}[counter-format=tsk[1])](3)
+\task $x'=x^2$, $y'=y^2$,
+\task $x'=xy$, $y'=1+y^2$,
+\task $x'=\sin(\pi y)$, $y'=x$,
+\end{tasks}
 to the vector fields below.  Justify.
-\\
-a)
+\begin{tasks}(3)
+\task
 \parbox[c]{1.6in}{\includegraphics[width=1.5in]{figures/nlin-exer-xy-1py2}}
-b)
+\task
 \parbox[c]{1.6in}{\includegraphics[width=1.5in]{figures/nlin-exer-x2-y2}}
-c)
+\task
 \parbox[c]{1.6in}{\includegraphics[width=1.5in]{figures/nlin-exer-sinpiy-x}}
+\end{tasks}
 \end{exercise}
+\end{samepage}
 
 
 \begin{exercise}
 Find the critical points and linearizations of the following systems.
-\begin{enumerate}[a)]
-\item $x'=x^2-y^2$, $y'=x^2+y^2-1$,
-\item $x'=-y$, $y'=3x+yx^2$,
-\item $x'=x^2+y$, $y'=y^2+x$.
-\end{enumerate}
+\begin{tasks}(2)
+\task $x'=x^2-y^2$, $y'=x^2+y^2-1$,
+\task $x'=-y$, $y'=3x+yx^2$,
+\task $x'=x^2+y$, $y'=y^2+x$.
+\end{tasks}
 \end{exercise}
 
 \begin{exercise}
 For the following systems, verify they have critical point at $(0,0)$,
 and find the linearization at $(0,0)$.
-\begin{enumerate}[a)]
-\item $x'=x+2y+x^2-y^2$, $y'=2y-x^2$
-\item $x'=-y$, $y'=x-y^3$
-\item $x'=ax+by+f(x,y)$, $y'=cx+dy+g(x,y)$, where
+\begin{tasks}(2)
+\task $x'=x+2y+x^2-y^2$, $y'=2y-x^2$
+\task $x'=-y$, $y'=x-y^3$
+\task* $x'=ax+by+f(x,y)$, $y'=cx+dy+g(x,y)$, where
 $f(0,0) = 0$,
 $g(0,0) = 0$, and all first partial derivatives of $f$ and $g$ are
 also zero at $(0,0)$, that is,
@@ -311,27 +314,27 @@ $\frac{\partial f}{\partial x}(0,0) =
 \frac{\partial f}{\partial y}(0,0) = 
 \frac{\partial g}{\partial x}(0,0) = 
 \frac{\partial g}{\partial y}(0,0) = 0$.
-\end{enumerate}
+\end{tasks}
 \end{exercise}
 
 \begin{exercise}
 Take $x'=(x-y)^2$, $y'=(x+y)^2$. 
-\begin{enumerate}[a)]
-\item Find the set of critical points.
-\item Sketch a phase diagram and describe the behavior near the critical
+\begin{tasks}
+\task Find the set of critical points.
+\task Sketch a phase diagram and describe the behavior near the critical
 point(s).
-\item Find the linearization.  Is it helpful in understanding the system?
-\end{enumerate}
+\task Find the linearization.  Is it helpful in understanding the system?
+\end{tasks}
 \end{exercise}
 
 \begin{exercise}
 Take $x'=x^2$, $y'=x^3$.
-\begin{enumerate}[a)]
-\item Find the set of critical points.
-\item Sketch a phase diagram and describe the behavior near the critical
+\begin{tasks}
+\task Find the set of critical points.
+\task Sketch a phase diagram and describe the behavior near the critical
 point(s).
-\item Find the linearization.  Is it helpful in understanding the system?
-\end{enumerate}
+\task Find the linearization.  Is it helpful in understanding the system?
+\end{tasks}
 \end{exercise}
 
 \setcounter{exercise}{100}
@@ -339,11 +342,11 @@ point(s).
 \pagebreak[2]
 \begin{exercise}
 Find the critical points and linearizations of the following systems.
-\begin{enumerate}[a)]
-\item $x'=\sin(\pi y)+(x-1)^2$, $y'=y^2-y$,
-\item $x'=x+y+y^2$, $y'=x$,
-\item $x'=(x-1)^2+y$, $y'=x^2+y$.
-\end{enumerate}
+\begin{tasks}(2)
+\task $x'=\sin(\pi y)+(x-1)^2$, $y'=y^2-y$,
+\task $x'=x+y+y^2$, $y'=x$,
+\task $x'=(x-1)^2+y$, $y'=x^2+y$.
+\end{tasks}
 \end{exercise}
 \exsol{%
 a) Critical points $(0,0)$ and $(0,1)$.  At $(0,0)$ using $u=x$, $v=y$ the linearization is $u'=-2u-(\nicefrac{1}{\pi})v$, $v'=-v$.
@@ -358,19 +361,20 @@ $u'=-u+v$, $v'=u+v$.
 
 \begin{exercise}
 Match systems
-\begin{enumerate}[1)]
-\item $x'=y^2$, $y'=-x^2$,
-\item $x'=y$, $y'=(x-1)(x+1)$,
-\item $x'=y+x^2$, $y'=-x$,
-\end{enumerate}
+\begin{tasks}[counter-format=tsk[1])](2)
+\task $x'=y^2$, $y'=-x^2$,
+\task $x'=y$, $y'=(x-1)(x+1)$,
+\task $x'=y+x^2$, $y'=-x$,
+\end{tasks}
 to the vector fields below.  Justify.
-\\
-a)
+\begin{tasks}(3)
+\task
 \parbox[c]{1.6in}{\includegraphics[width=1.5in]{figures/nlin-exer-y-xm1xp1}}
-b)
+\task
 \parbox[c]{1.6in}{\includegraphics[width=1.5in]{figures/nlin-exer-ypx2-mx}}
-c)
+\task
 \parbox[c]{1.6in}{\includegraphics[width=1.5in]{figures/nlin-exer-y2-mx2}}
+\end{tasks}
 \end{exercise}
 \exsol{%
 1) is c), 2) is a), 3) is b)
@@ -788,41 +792,43 @@ There are never any sinks or sources.
 \begin{exercise}
 For the systems below, find and classify the critical points, also indicate
 if the equilibria are stable, asymptotically stable, or unstable.
-\begin{enumerate}[a)]
-\item $x'=-x+3x^2, y'=-y$
-\item $x'=x^2+y^2-1$, $y'=x$
-\item $x'=ye^x$, $y'=y-x+y^2$
-\end{enumerate}
+\begin{tasks}(2)
+\task $x'=-x+3x^2, y'=-y$
+\task $x'=x^2+y^2-1$, $y'=x$
+\task $x'=ye^x$, $y'=y-x+y^2$
+\end{tasks}
 \end{exercise}
 
 \begin{exercise}
 Find the implicit equations of the trajectories of the following
 conservative systems.  Next find their critical points (if any) and classify them.
-\begin{enumerate}[a)]
-\item $x''+ x+x^3 = 0$
-\item $\theta''+\sin \theta = 0$
-\item $z''+ (z-1)(z+1) = 0$
-\item $x''+ x^2+1 = 0$
-\end{enumerate}
+\begin{tasks}(2)
+\task $x''+ x+x^3 = 0$
+\task $\theta''+\sin \theta = 0$
+\task $z''+ (z-1)(z+1) = 0$
+\task $x''+ x^2+1 = 0$
+\end{tasks}
 \end{exercise}
 
 \begin{exercise}
 Find and classify the critical point(s) of $x' = -x^2$, $y' = -y^2$.
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}
 Suppose $x'=-xy$, $y'=x^2-1-y$.
-\begin{enumerate}[a)]
-\item
+\begin{tasks}
+\task
 Show there are two spiral sinks at
 $(-1,0)$ and $(1,0)$.
-\item
+\task
 For any initial point of the form $(0,y_0)$, find what is the trajectory.
-\item
+\task
 Can a trajectory starting at $(x_0,y_0)$ where $x_0 > 0$ spiral into 
 the critical point at $(-1,0)$?  Why or why not?
-\end{enumerate}
+\end{tasks}
 \end{exercise}
+\end{samepage}
 
 \begin{exercise} \label{exercise:increasing}
 In the example $x'=y$, $y'=y^3-x$ show that for any trajectory, the distance
@@ -851,11 +857,11 @@ trajectories at $t$ goes to infinity?
 
 \begin{exercise}
 For the systems below, find and classify the critical points.
-\begin{enumerate}[a)]
-\item $x'=-x+x^2$, $y'=y$
-\item $x'=y-y^2-x$, $y'=-x$
-\item $x'=xy$, $y'=x+y-1$
-\end{enumerate}
+\begin{tasks}(3)
+\task $x'=-x+x^2$, $y'=y$
+\task $x'=y-y^2-x$, $y'=-x$
+\task $x'=xy$, $y'=x+y-1$
+\end{tasks}
 \end{exercise}
 \exsol{%
 a) $(0,0)$: saddle (unstable), $(1,0)$: source (unstable), \qquad
@@ -866,11 +872,11 @@ c) $(1,0)$: saddle (unstable), $(0,1)$: saddle (unstable)
 \begin{exercise}
 Find the implicit equations of the trajectories of the following
 conservative systems.  Next find their critical points (if any) and classify them.
-\begin{enumerate}[a)]
-\item $x''+ x^2 = 4$
-\item $x''+ e^x = 0$
-\item $x''+ (x+1)e^x = 0$
-\end{enumerate}
+\begin{tasks}(3)
+\task $x''+ x^2 = 4$
+\task $x''+ e^x = 0$
+\task $x''+ (x+1)e^x = 0$
+\end{tasks}
 \end{exercise}
 \exsol{%
 a) $\frac{1}{2}y^2 + \frac{1}{3}x^3 -4x = C$, critical points
@@ -1351,12 +1357,18 @@ But we do not know what happens beyond that.
 Take the \emph{\myindex{damped nonlinear pendulum equation}} $\theta '' + \mu \theta' +
 (\nicefrac{g}{L})
 \sin \theta = 0$ for some $\mu > 0$ (that is, there is some friction).
-a) Suppose $\mu = 1$ and $\nicefrac{g}{L} = 1$ for simplicity, find and
-classify the critical points.  b) Do the same for any $\mu > 0$ and any $g$
+\begin{tasks}
+\task
+Suppose $\mu = 1$ and $\nicefrac{g}{L} = 1$ for simplicity, find and
+classify the critical points.
+\task
+Do the same for any $\mu > 0$ and any $g$
 and $L$, but such that the damping is small, in particular, $\mu^2 <
 4(\nicefrac{g}{L})$.
-c) Explain what your findings mean, and if it agrees with what you
+\task
+Explain what your findings mean, and if it agrees with what you
 expect in reality.
+\end{tasks}
 \end{exercise}
 
 \begin{exercise}
@@ -1369,16 +1381,24 @@ For the following two values of $\gamma$,
 find and classify all the critical points in the positive quadrant, that is, for
 $x \geq 0$ and $y \geq 0$.  Then sketch the phase diagram.  Discuss the
 implication for the long term behavior of the population.
-a) $\gamma=0.001$, b) $\gamma=0.01$.
+\begin{tasks}(2)
+\task
+$\gamma=0.001$, 
+\task
+$\gamma=0.01$.
+\end{tasks}
 \end{exercise}
 
 \begin{exercise}
-a) Suppose $x$ and $y$ are
+{\ }
+\begin{tasks}
+\task Suppose $x$ and $y$ are
 positive variables.  Show $\frac{y x}{e^{x+y}}$
 attains a maximum at $(1,1)$.\\
-b) Suppose $a,b,c,d$ are positive constants, and also suppose $x$ and $y$ are
+\task Suppose $a,b,c,d$ are positive constants, and also suppose $x$ and $y$ are
 positive variables.  Show $\frac{y^a x^d}{e^{cx+by}}$
 attains a maximum at $(\nicefrac{d}{c},\nicefrac{a}{b})$.
+\end{tasks}
 \end{exercise}
 
 \begin{exercise}
@@ -1394,21 +1414,25 @@ the pendulum to go all the way around.
 %$x' = (a-by)x,$  $y' = (cx-d)y - hy$.  Find and analyze the critical points.
 
 \begin{exercise}[challenging]
-Take the pendulum, suppose the initial position is $\theta = 0$. \\
-a) Find the expression for $\omega$ giving the trajectory
+Take the pendulum, suppose the initial position is $\theta = 0$.
+\begin{tasks}
+\task
+Find the expression for $\omega$ giving the trajectory
 with initial condition $(0,\omega_0)$.  Hint: Figure out what $C$
-should be in terms of $\omega_0$.\\
-b) Find the crucial angular velocity $\omega_1$, such that
+should be in terms of $\omega_0$.
+\task
+Find the crucial angular velocity $\omega_1$, such that
 for any higher initial angular velocity,
 the pendulum will keep going around its
 axis, and for any lower initial angular velocity, the pendulum will simply
 swing back and forth.
 Hint: When the pendulum doesn't go over the top the expression for $\omega$
 will be undefined for some $\theta$s.
-\\
-c) What do you think happens if the initial condition is $(0,\omega_1)$,
+\task
+What do you think happens if the initial condition is $(0,\omega_1)$,
 that is, the initial angle is 0, and the initial angular velocity is exactly
 $\omega_1$.
+\end{tasks}
 \end{exercise}
 
 \setcounter{exercise}{100}
@@ -1418,9 +1442,13 @@ Take the damped nonlinear pendulum equation $\theta '' + \mu \theta' +
 (\nicefrac{g}{L})
 \sin \theta = 0$ for some $\mu > 0$ (that is, there is friction).
 Suppose the friction is large, in particular $\mu^2 > 4 (\nicefrac{g}{L})$.
-a) Find and classify the critical points.
-b) Explain what your findings mean, and if it agrees with what you
+\begin{tasks}
+\task
+Find and classify the critical points.
+\task
+Explain what your findings mean, and if it agrees with what you
 expect in reality.
+\end{tasks}
 \end{exercise}
 \exsol{%
 a) Critical points are $\omega=0$, $\theta=k\pi$ for any integer $k$.  When
@@ -1433,10 +1461,13 @@ oscillate, just like an overdamped mass-spring system.
 \begin{exercise}
 Suppose we have the system predator-prey system where the foxes are also
 killed at a constant rate $h$ ($h$ foxes killed per unit time):
-$x' = (a-by)x,$  $y' = (cx-d)y - h$.  a) Find the critical points and the
+$x' = (a-by)x,$  $y' = (cx-d)y - h$.
+\begin{tasks}
+\task Find the critical points and the
 Jacobian matrices of the system.
-b) Put in the constants $a=0.4$, $b=0.01$, $c=0.003$, $d=0.3$, $h=10$.
+\task Put in the constants $a=0.4$, $b=0.01$, $c=0.003$, $d=0.3$, $h=10$.
 Analyze the critical points.  What do you think it says about the forest?
+\end{tasks}
 \end{exercise}
 \exsol{%
 a) Solving for the critical points we get
@@ -1730,7 +1761,7 @@ set where $-x+y \geq 0$
 and go into the set where $-x+y \leq 0$.  Once we are in
 the set where $-x+y \geq 0$, we stay there.  So no closed trajectory can
 have points in both sets.
-
+%
 %The key is to look at the set $x+y=0$, or $x=-y$.  Let us
 %make a substitution $x=z$ and $y=-z$ (so that $x=-y$).  
 %Both equations become
@@ -1745,10 +1776,12 @@ have points in both sets.
 \subsection{Exercises}
 
 \begin{exercise}
-Show that the following systems have no closed trajectories. \\
-a) $x'=x^3+y,\quad y'=y^3+x^2$, \\
-b) $x'=e^{x-y},\quad y'=e^{x+y}$, \\
-c) $x'=x+3y^2-y^3,\quad y'=y^3+x^2$.
+Show that the following systems have no closed trajectories.
+\begin{tasks}(2)
+\task $x'=x^3+y,\quad y'=y^3+x^2$,
+\task $x'=e^{x-y},\quad y'=e^{x+y}$,
+\task $x'=x+3y^2-y^3,\quad y'=y^3+x^2$.
+\end{tasks}
 \end{exercise}
 
 \begin{exercise}
@@ -1779,10 +1812,12 @@ are limit cycles and if so, if they are asymptotically stable or not.
 \setcounter{exercise}{100}
 
 \begin{exercise}
-Show that the following systems have no closed trajectories. \\
-a) $x'=x+y^2,\quad y'=y+x^2$, \qquad
-b) $x'=-x\sin^2(y),\quad y'=e^x$, \qquad
-c) $x'=xy,\quad y'=x+x^2$.
+Show that the following systems have no closed trajectories.
+\begin{tasks}(2)
+\task $x'=x+y^2,\quad y'=y+x^2$,
+\task $x'=-x\sin^2(y),\quad y'=e^x$,
+\task $x'=xy,\quad y'=x+x^2$.
+\end{tasks}
 \end{exercise}
 \exsol{%
 Use Bendixson-Dulac Theorem.

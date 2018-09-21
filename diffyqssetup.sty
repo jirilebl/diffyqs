@@ -8,6 +8,8 @@
 
 
 \usepackage{tasks}
+\usepackage{footnote}
+\makesavenoteenv{tasks}
 \usepackage[shortlabels]{enumitem}
 \usepackage{ifpdf}
 \usepackage{amsmath}
@@ -71,7 +73,7 @@
 % to txfonts, these would need to be stuck back in.  One disadvantage
 % is that newtx fonts seem to be changing from time to time leading
 % to possible changes in pagination ...
-\usepackage[tighter]{newtxtext}
+\usepackage[tighter,defaultsups]{newtxtext}
 \usepackage[vvarbb]{newtxmath}
 %STIX
 %\usepackage{stix}
@@ -310,6 +312,9 @@ Remark
 % Note that floating (inset) figures work badly in theorem like environments
 % as those are implemented as lists.  That's why example and remark are
 % reimplemented instead of using amsthm
+
+% Do vbox 
+\newenvironment{mysamepage}{\vbox\bgroup}{\egroup}
 
 %Do the Index
 \newcommand{\diffyindex}{
