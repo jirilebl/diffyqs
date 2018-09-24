@@ -11,6 +11,7 @@ A free online textbook.  See http://www.jirka.org/diffyqs/
 
 * ``diffyqs.tex`` is the main file, no real content here, that's in the chapter files
 * ``ch-*.tex`` are the files with the content of the various chapters
+* ``ap-*.tex`` are the files with the content of the various apendices (only one right now)
 * ``diffyqssetup.sty`` is the preamble for the PDF version
 
 * Figures are in ``figures/``
