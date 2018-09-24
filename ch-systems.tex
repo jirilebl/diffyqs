@@ -4230,7 +4230,7 @@ Suppose that $5$ is a doubled eigenvalue of defect 1, and suppose that
 $\left[ \begin{smallmatrix}
 1 \\ 0
 \end{smallmatrix}\right]$ is a corresponding eigenvector.  Find $A$ and show that
-there is only one solution.
+there is only one such matrix $A$.
 \end{exercise}
 \exsol{%
 $A = \left[ \begin{smallmatrix}
@@ -4485,7 +4485,7 @@ I + A + \frac{1}{2} A^2 +
 \end{equation*}
 
 Given a square matrix $A$, 
-we can sometimes write $A = E D E^{-1}$, where $D$ is
+we can usually write $A = E D E^{-1}$, where $D$ is
 diagonal and $E$ invertible.
 This procedure is called \emph{\myindex{diagonalization}}.
 If we can do
@@ -4572,7 +4572,7 @@ result.  If simplified properly the final matrix will not have any complex
 numbers in it.
 
 \begin{example}
-Compute a fundamental matrix solution using the matrix exponentials
+Compute a fundamental matrix solution using the matrix exponential
 for the system
 \begin{equation*}
 \begin{bmatrix}
@@ -4848,7 +4848,7 @@ this means that $e^A$ is invertible even if $A$ is not.
 \end{exercise}
 
 \begin{exercise}
-Suppose $A$ is a matrix with eigenvalues $-1$, $1$, and
+Let $A$ be a $2 \times 2$ matrix with eigenvalues $-1$, $1$, and
 corresponding eigenvectors
 $\left[ \begin{smallmatrix}
 1 \\
@@ -5094,11 +5094,12 @@ Let us write the system as
 \vec{x}(0) = 
 \begin{bmatrix} 1 \\ 0 \end{bmatrix} .
 \end{equation*}
-We have previously computed $e^{tP}$ for
+The matrix
 $P = \left[
-\begin{smallmatrix} 5 & -3 \\ 3 & -1 \end{smallmatrix} \right]$.  We 
-find
-$e^{-tP}$, simply by negating $t$.
+\begin{smallmatrix} 5 & -3 \\ 3 & -1 \end{smallmatrix} \right]$
+has a doubled eigenvalue 2 with defect 1, and we leave it as an exercise
+to double check we computed $e^{tP}$ correctly.  Once we have
+$e^{tP}$, we find $e^{-tP}$, simply by negating $t$.
 \begin{equation*}
 e^{tP} = 
 \begin{bmatrix}
@@ -5251,7 +5252,7 @@ Hence it is always possible to find $\vec{g}$ when there
 are $n$ linearly independent eigenvectors.
 
 We plug \eqref{nhsys:decompx} into \eqref{nhsys:ednhsys}, and note that
-$A \vec{v}_k = \lambda_k \vec{v}_k$.
+$A \vec{v}_k = \lambda_k \vec{v}_k$:
 \begin{equation*}
 \begin{split}
 %{\vec{x}\,}' & =
