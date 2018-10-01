@@ -6278,7 +6278,8 @@ say 4 unknown vectors (this would not be uncommon), then we already have 12
 unknown numbers that we need to solve for.
 The method can turn into a lot of
 \myindex{tedious} % a bit of fun
-work.  As this method is essentially the same as it is for single equations,
+work if done by hand.
+As this method is essentially the same as it is for single equations,
 let us just do an example.
 
 \begin{example}
@@ -6346,7 +6347,7 @@ arises.  It is possible that there is no conflict,
 but to be safe we should also try
 $\vec{b} t e^t$.
 Here we find
-the crux of the difference for systems.  We try
+the crux of the difference between a single equation and systems.  We try
 \emph{both} terms $\vec{a} e^t$ and $\vec{b} t e^t$ in the solution,
 not just the term $\vec{b} t e^t$.
 Therefore, we try
@@ -6400,8 +6401,9 @@ c_1 \\ c_2
 \end{bmatrix} .
 \end{equation*}
 Now ${\vec{x}}'$ must equal $A\vec{x} + \vec{f}$, which is
-\begin{multline*}
-A \vec{x} + \vec{f} =
+\begin{equation*}
+\begin{split}
+A \vec{x} + \vec{f} &=
 A \vec{a}
 e^{t}
 +
@@ -6413,9 +6415,8 @@ t
 +
 A \vec{d}
 + \vec{f}
-=
 \\
-=
+& =
 \begin{bmatrix}
 -a_1 \\ -2a_1+a_2
 \end{bmatrix}
@@ -6443,10 +6444,31 @@ e^t
 \begin{bmatrix}
 0 \\ 1
 \end{bmatrix} 
-t .
-\end{multline*}
+t 
+\\
+&=
+\begin{bmatrix}
+-a_1+1 \\ -2a_1+a_2
+\end{bmatrix}
+e^{t}
++
+\begin{bmatrix}
+-b_1 \\ -2b_1+b_2
+\end{bmatrix}
+t e^{t}
++
+\begin{bmatrix}
+-c_1 \\ -2c_1+c_2+1
+\end{bmatrix}
+t
++
+\begin{bmatrix}
+-d_1 \\ -2d_1+d_2
+\end{bmatrix} .
+\end{split}
+\end{equation*}
 We identify the coefficients of $e^t$, $te^t$, $t$ and any constant
-vectors.
+vectors in $\vec{x}'$ and in $A\vec{x}+\vec{f}$ to find the equations:
 \begin{align*}
 a_1+b_1 & = -a_1+1 , \\
 a_2+b_2 & = -2a_1+a_2 , \\
@@ -6516,9 +6538,9 @@ and $\vec{b} te^t$ were really needed.
 \end{example}
 
 \begin{exercise}
-Check that $x_1$ and $x_2$ solve the problem.  Also try setting $a_2 = 1$
-and again check these solutions.  What is the difference between the two
-solutions we can obtain in this way?
+Check that $x_1$ and $x_2$ solve the problem.  Try setting $a_2 = 1$
+and check we get a solution as well.  What is the difference between the two
+solutions we obtained (one with $a_2=0$ and one with $a_2=1$)?
 \end{exercise}
 
 As you can see, other than the handling of conflicts, undetermined

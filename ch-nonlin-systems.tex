@@ -243,6 +243,12 @@ At the point $(1,0)$, we have $u=x-1$ and $v=y$, and the linearization is
 \begin{bmatrix} u \\ v \end{bmatrix} .
 \end{equation*}
 
+The phase diagrams of the two linearizations at the
+point $(0,0)$ and $(1,0)$ are given in \figurevref{fig:nlin-1b-lin}.  Note
+that the variables are now $u$ and $v$.  Compare
+\figureref{fig:nlin-1b-lin} with \figurevref{fig:nlin-1b}, and look especially at the
+behavior near the critical points.
+
 \begin{myfig}
 \capstart
 %original files nlin-1b-lin-00 nlin-1b-lin-01
@@ -251,12 +257,6 @@ At the point $(1,0)$, we have $u=x-1$ and $v=y$, and the linearization is
 linearizations at the critical points $(0,0)$ (left) and $(1,0)$ (right) of
 $x' = y$, $y' = -x+x^2$. \label{fig:nlin-1b-lin}}
 \end{myfig}
-
-The phase diagrams of the two linearizations at the
-point $(0,0)$ and $(1,0)$ are given in \figurevref{fig:nlin-1b-lin}.  Note
-that the variables are now $u$ and $v$.  Compare
-\figureref{fig:nlin-1b-lin} with \figurevref{fig:nlin-1b}, and look especially at the
-behavior near the critical points.
 \end{example}
 
 \subsection{Exercises}
@@ -264,9 +264,9 @@ behavior near the critical points.
 \begin{exercise}
 Sketch the phase plane vector field for:
 \begin{tasks}(3)
-\task $x'=x^2$, $y'=y^2$,
-\task $x'=(x-y)^2$, $y'=-x$,
-\task $x'=e^y$, $y'=e^x$.
+\task $x'=x^2$, \enspace $y'=y^2$,
+\task $x'=(x-y)^2$, \enspace $y'=-x$,
+\task $x'=e^y$, \enspace $y'=e^x$.
 \end{tasks}
 \end{exercise}
 
@@ -274,9 +274,9 @@ Sketch the phase plane vector field for:
 \begin{exercise}
 Match systems
 \begin{tasks}[counter-format=tsk[1])](3)
-\task $x'=x^2$, $y'=y^2$,
-\task $x'=xy$, $y'=1+y^2$,
-\task $x'=\sin(\pi y)$, $y'=x$,
+\task $x'=x^2$, \enspace $y'=y^2$,
+\task $x'=xy$, \enspace $y'=1+y^2$,
+\task $x'=\sin(\pi y)$, \enspace $y'=x$,
 \end{tasks}
 to the vector fields below.  Justify.
 \begin{tasks}(3)
@@ -294,9 +294,9 @@ to the vector fields below.  Justify.
 \begin{exercise}
 Find the critical points and linearizations of the following systems.
 \begin{tasks}(2)
-\task $x'=x^2-y^2$, $y'=x^2+y^2-1$,
-\task $x'=-y$, $y'=3x+yx^2$,
-\task $x'=x^2+y$, $y'=y^2+x$.
+\task $x'=x^2-y^2$, \enspace $y'=x^2+y^2-1$,
+\task $x'=-y$, \enspace $y'=3x+yx^2$,
+\task $x'=x^2+y$, \enspace $y'=y^2+x$.
 \end{tasks}
 \end{exercise}
 
@@ -304,8 +304,8 @@ Find the critical points and linearizations of the following systems.
 For the following systems, verify they have critical point at $(0,0)$,
 and find the linearization at $(0,0)$.
 \begin{tasks}(2)
-\task $x'=x+2y+x^2-y^2$, $y'=2y-x^2$
-\task $x'=-y$, $y'=x-y^3$
+\task $x'=x+2y+x^2-y^2$, \enspace $y'=2y-x^2$
+\task $x'=-y$, \enspace $y'=x-y^3$
 \task* $x'=ax+by+f(x,y)$, $y'=cx+dy+g(x,y)$, where
 $f(0,0) = 0$,
 $g(0,0) = 0$, and all first partial derivatives of $f$ and $g$ are
@@ -318,7 +318,7 @@ $\frac{\partial f}{\partial x}(0,0) =
 \end{exercise}
 
 \begin{exercise}
-Take $x'=(x-y)^2$, $y'=(x+y)^2$. 
+Take $x'=(x-y)^2$, \enspace $y'=(x+y)^2$. 
 \begin{tasks}
 \task Find the set of critical points.
 \task Sketch a phase diagram and describe the behavior near the critical
@@ -328,7 +328,7 @@ point(s).
 \end{exercise}
 
 \begin{exercise}
-Take $x'=x^2$, $y'=x^3$.
+Take $x'=x^2$, \enspace $y'=x^3$.
 \begin{tasks}
 \task Find the set of critical points.
 \task Sketch a phase diagram and describe the behavior near the critical
@@ -343,9 +343,9 @@ point(s).
 \begin{exercise}
 Find the critical points and linearizations of the following systems.
 \begin{tasks}(2)
-\task $x'=\sin(\pi y)+(x-1)^2$, $y'=y^2-y$,
-\task $x'=x+y+y^2$, $y'=x$,
-\task $x'=(x-1)^2+y$, $y'=x^2+y$.
+\task $x'=\sin(\pi y)+(x-1)^2$, \enspace $y'=y^2-y$,
+\task $x'=x+y+y^2$, \enspace $y'=x$,
+\task $x'=(x-1)^2+y$, \enspace $y'=x^2+y$.
 \end{tasks}
 \end{exercise}
 \exsol{%
@@ -362,9 +362,9 @@ $u'=-u+v$, $v'=u+v$.
 \begin{exercise}
 Match systems
 \begin{tasks}[counter-format=tsk[1])](2)
-\task $x'=y^2$, $y'=-x^2$,
-\task $x'=y$, $y'=(x-1)(x+1)$,
-\task $x'=y+x^2$, $y'=-x$,
+\task $x'=y^2$, \enspace $y'=-x^2$,
+\task $x'=y$, \enspace $y'=(x-1)(x+1)$,
+\task $x'=y+x^2$, \enspace $y'=-x$,
 \end{tasks}
 to the vector fields below.  Justify.
 \begin{tasks}(3)
