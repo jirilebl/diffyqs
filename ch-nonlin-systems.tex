@@ -116,6 +116,13 @@ origin, and some go off towards infinity.  We will return to this example
 often, and analyze it completely in this (and the next) section.
 \end{example}
 
+If we zoom into the diagram near a point where 
+$\left[ \begin{smallmatrix} f(x,y) \\ g(x,y) \end{smallmatrix} \right]$ is
+not zero, then nearby the arrows point generally in essentially that same
+direction and have essentially the same magnitude.
+In other words the behavior is not that interesting near such a point.
+We are of course assuming that $f(x,y)$ and $g(x,y)$ are continuous.
+
 Let us concentrate on those points in the phase diagram
 above where the trajectories
 seem to start, end, or go around.  We see two such points:
@@ -135,8 +142,8 @@ in some sense the most complicated.  If
 $\left[ \begin{smallmatrix} f(x,y) \\ g(x,y) \end{smallmatrix} \right]$
 is zero, then nearby, the vector can point in any direction whatsoever.
 Also, the trajectories are either going towards, away from, or around these
-points, so if we are looking for long term behavior of the system, we
-should look at what happens there.
+points, so if we are looking for long-term qualitative behavior of the system, we
+should look at what is happening near the critical points.
 
 Critical points are also sometimes called
 \emph{equilibria}\index{equilibrium}, since we have so-called
@@ -160,7 +167,8 @@ exactly the same.
 
 In \sectionref{sec:twodimaut} we studied the behavior of a homogeneous
 linear system of two equations near a critical point.  For a linear system
-of two variables the only critical point is generally the origin $(0,0)$.
+of two variables given by an invertible matrix, the only critical point is
+the origin $(0,0)$.
 Let us put the understanding we gained in that section to good use
 understanding what happens near critical points of nonlinear systems.
 
@@ -222,16 +230,15 @@ and $(1,0)$.  The Jacobian matrix at any point is
 -1+2x & 0
 \end{bmatrix}.
 \end{equation*}
-Therefore at $(0,0)$ the linearization is
+Therefore at $(0,0)$, we have $u=x$ and $v=y$, and the linearization is
 \begin{equation*}
 \begin{bmatrix} u \\ v \end{bmatrix} ' =
 \begin{bmatrix}
 0 & 1 \\
 -1 & 0
 \end{bmatrix}
-\begin{bmatrix} u \\ v \end{bmatrix} ,
+\begin{bmatrix} u \\ v \end{bmatrix} .
 \end{equation*}
-where $u=x$ and $v=y$.
 
 At the point $(1,0)$, we have $u=x-1$ and $v=y$, and the linearization is
 \begin{equation*}
@@ -435,32 +442,31 @@ only critical point we see.  In the above example, the critical point was
 isolated.  If on the other hand there would be a whole curve of critical
 points, then it would not be isolated.
 
-A  system is called \emph{\myindex{almost linear}} (at a critical point
-$(x_0,y_0)$) if the critical point is isolated and the Jacobian matrix at the point
+A system is called \emph{\myindex{almost linear}} at a critical point
+$(x_0,y_0)$, if the critical point is isolated and the Jacobian matrix at the point
 is invertible, or equivalently if the linearized system has an isolated
 critical point.  In such a case, the nonlinear terms are very small
 and the system behaves like its linearization, at least if we are close
 to the critical point.
 
-In particular the system we have just seen in
+For example, the system in
 Examples~\ref{example:nlin-1b-example} and \ref{example:nlin-1b-examplelin}
 has two isolated critical points $(0,0)$ and $(0,1)$, and
 is almost linear at both critical points as 
-both of
-the Jacobian matrices
+the Jacobian matrices at both points,
 $\left[ \begin{smallmatrix} 0 & 1 \\ -1 & 0 \end{smallmatrix} \right]$ and
-$\left[ \begin{smallmatrix} 0 & 1 \\ 1 & 0 \end{smallmatrix} \right]$ are
-invertible.
+$\left[ \begin{smallmatrix} 0 & 1 \\ 1 & 0 \end{smallmatrix} \right]$,
+are invertible.
 
-On the other hand a system such as $x' = x^2$, $y' = y^2$ has an isolated
+On the other hand, the system $x' = x^2$, $y' = y^2$ has an isolated
 critical point at $(0,0)$, however the Jacobian matrix
 \begin{equation*}
 \begin{bmatrix} 2x & 0 \\ 0 & 2y \end{bmatrix}
 \end{equation*}
-is zero when $(x,y) = (0,0)$.  Therefore the system is not almost
+is zero when $(x,y) = (0,0)$.  So the system is not almost
 linear.
 Even a worse example is the system $x' = x$, $y' = x^2$, which does not have 
-isolated critical points, as $x'$ and $y'$ are both zero
+isolated critical points; $x'$ and $y'$ are both zero
 whenever $x=0$, that is, the entire $y$ axis.
 
 Fortunately, most often critical
@@ -507,8 +513,8 @@ point.  \label{pln:behtab2}}
 \myendframe
 \end{table}
 
-In the new third column,
-we have marked points as \emph{asymptotically stable} or \emph{unstable}.  Formally, a
+In the third column,
+we mark points as \emph{asymptotically stable} or \emph{unstable}.  Formally, a
 \emph{\myindex{stable critical point}} $(x_0,y_0)$ is one where given any small distance $\epsilon$ to
 $(x_0,y_0)$, and any initial condition within a perhaps smaller radius
 around $(x_0,y_0)$, the trajectory
@@ -541,20 +547,6 @@ $-x+x^4 = 0$.  Factoring we obtain $x(1-x^3)=0$.  Since we are looking only
 for real solutions we get either $x=0$ or $x=1$.  Solving for the
 corresponding $y$ using $y = -x^2$, we get two critical points, one being $(0,0)$
 and the other being $(1,-1)$.  Clearly the critical points are isolated.
-Let us compute the Jacobian matrix:
-\begin{equation*}
-\begin{bmatrix}
--2x & -1 \\
--1 & 2y
-\end{bmatrix} .
-\end{equation*}
-
-At the point $(0,0)$ we get the matrix
-$\left[ \begin{smallmatrix} 0 & -1 \\ -1 & 0 \end{smallmatrix} \right]$ and
-so the two eigenvalues are $1$ and $-1$.  As the matrix is invertible, the system is almost linear
-at $(0,0)$.  As the eigenvalues are real
-and of opposite signs, we get a saddle point, which is an unstable
-equilibrium point.
 
 \begin{myfig}
 \capstart
@@ -562,6 +554,22 @@ equilibrium point.
 \caption{The phase portrait with few sample trajectories of 
 $x'=-y-x^2$, $y'=-x+y^2$.  \label{fig:nlin-ex813-new}}
 \end{myfig}
+
+
+Let us compute the Jacobian matrix:
+\begin{equation*}
+\begin{bmatrix}
+-2x & -1 \\
+-1 & 2y
+\end{bmatrix} .
+\end{equation*}
+At the point $(0,0)$ we get the matrix
+$\left[ \begin{smallmatrix} 0 & -1 \\ -1 & 0 \end{smallmatrix} \right]$ and
+so the two eigenvalues are $1$ and $-1$.  As the matrix is invertible, the system is almost linear
+at $(0,0)$.  As the eigenvalues are real
+and of opposite signs, we get a saddle point, which is an unstable
+equilibrium point.
+
 At the point $(1,-1)$ we get the matrix
 $\left[ \begin{smallmatrix} -2 & -1 \\ -1 & -2 \end{smallmatrix} \right]$ and
 computing the eigenvalues we get $-1$, $-3$.
@@ -644,7 +652,7 @@ meaning the trajectory could be pulled towards or away from the critical
 point.
 
 \begin{example}
-An easy example where such a problematic behavior is exhibited is the system
+An example of such a problematic behavior is the system
 $x'=y, y' = -x+y^3$.  The only critical point
 is the origin $(0,0)$.  The Jacobian matrix is 
 \begin{equation*}
@@ -658,7 +666,7 @@ $(0,0)$ the Jacobian matrix is
 $\left[ \begin{smallmatrix}
 0 & 1 \\
 -1 & 0 \\
-\end{smallmatrix} \right]$, which has eigenvalues $\pm i$.  Therefore, the
+\end{smallmatrix} \right]$, which has eigenvalues $\pm i$.  So the
 linearization has a center.
 
 Using the quadratic equation, the eigenvalues of the
@@ -935,7 +943,7 @@ about an idealized pendulum.
 \noindent
 \inputpdft{mv-pend}
 \end{mywrapfigsimp}
-As we mentioned before, this equation is a conservative
+This equation is a conservative
 equation, so we can use our analysis of conservative equations
 from the previous section.
 Let us change the equation to a two-dimensional
@@ -994,9 +1002,9 @@ where for simplicity we let $\frac{g}{L} = 1$.
 the nonlinear pendulum equation. \label{fig:nlin-pend-phasediag}}
 \end{myfig}
 
-In the linearized equation we only had a single critical point, the center
-at $(0,0)$.  We can now see more clearly what we meant when we said the
-linearization was good for small angles.  The horizontal axis is the
+In the linearized equation we have only a single critical point, the center
+at $(0,0)$.  Now we see more clearly what we meant when we said the
+linearization is good for small angles.  The horizontal axis is the
 deflection angle.  The vertical axis is the angular velocity of the
 pendulum.  Suppose we start at $\theta = 0$ (no deflection), and
 we start with a small angular velocity $\omega$.  Then the trajectory keeps going
@@ -1016,9 +1024,10 @@ be large when the pendulum is near the bottom, and the velocity is the
 smallest when the pendulum
 is close to the top of its loop.
 
-At each critical point, there is an equilibrium solution.  The solution
-$\theta = 0$ is a stable solution.  That is when the pendulum is not moving
-and is hanging straight down.  Clearly this is a stable place for the
+At each critical point, there is an equilibrium solution.  Consider
+the solution
+$\theta = 0$;  the pendulum is not moving
+and is hanging straight down.  This is a stable place for the
 pendulum to be, hence this is a \emph{stable} equilibrium.
 
 The other type of equilibrium solution is at the unstable point, for example
@@ -1146,8 +1155,8 @@ In biology, this system of equations explains the natural periodic variations of
 different species in nature.  Before the application of differential
 equations, these periodic variations in the population baffled biologists.
 
-Let us keep
-with the classical example of hares and foxes in a forest, as it is the
+We keep
+with the classical example of hares and foxes in a forest, it is the
 easiest to understand.
 \begin{equation*}
 \begin{aligned}
@@ -1222,11 +1231,10 @@ second equation implies $y=0$.  If $y= \nicefrac{a}{b}$, the second equation imp
 $x=\nicefrac{d}{c}$.
 There are two equilibria: at $(0,0)$ when there are no animals at all, and at
 $(\nicefrac{d}{c},\nicefrac{a}{b})$.  
-
 In our specific example $x = \nicefrac{d}{c} = 100$, and $y = \nicefrac{a}{b} = 40$.
 This is the point where there are 100 hares and 40 foxes.
 
-Let us compute the Jacobian matrix:
+We compute the Jacobian matrix:
 \begin{equation*}
 \begin{bmatrix}
 a-by & -bx \\
@@ -1252,7 +1260,7 @@ the Jacobian matrix becomes
 \frac{ac}{b} & 0
 \end{bmatrix} .
 \end{equation*}
-Computing the eigenvalues we get the equation $\lambda^2 + ad = 0$.  In
+The eigenvalues satisfy $\lambda^2 + ad = 0$.  In
 other words, $\lambda = \pm i \sqrt{ad}$.  The eigenvalues being
 purely imaginary, we are in the case where we cannot quite decide using only
 linearization.  We could
@@ -1394,7 +1402,7 @@ $\gamma=0.01$.
 \begin{tasks}
 \task Suppose $x$ and $y$ are
 positive variables.  Show $\frac{y x}{e^{x+y}}$
-attains a maximum at $(1,1)$.\\
+attains a maximum at $(1,1)$.
 \task Suppose $a,b,c,d$ are positive constants, and also suppose $x$ and $y$ are
 positive variables.  Show $\frac{y^a x^d}{e^{cx+by}}$
 attains a maximum at $(\nicefrac{d}{c},\nicefrac{a}{b})$.
@@ -2189,23 +2197,22 @@ for the Poincar\`e section.
 \end{exercise}
 \end{samepage}
 
-\begin{samepage}
 \begin{exercise}[project]
-A simple fractal attractor can be drawn via the following chaos game.  Draw three
-points of a triangle (just the vertices) and number them, say $p_1$, $p_2$
-and $p_3$.  Start with some
-random point $p$ (does not have to be one of the three points above) and
-draw it.  Roll a die, and use it to pick of the $p_1$, $p_2$, or $p_3$
+A simple fractal attractor can be drawn via the following chaos game.  Draw
+the three
+vertices of a triangle and label them, say $p_1$, $p_2$
+and $p_3$.  Draw some
+random point $p$ (it does not have to be one of the three points above).
+Roll a die to pick of the $p_1$, $p_2$, or $p_3$
 randomly (for example 1 and 4 mean $p_1$, 2 and 5 mean $p_2$, and 3 and 6
 mean $p_3$).  Suppose we picked $p_2$, then let $p_{\text{new}}$ be the
 point exactly halfway between $p$ and $p_2$.  Draw this point and let $p$
 now refer to this new point $p_{\text{new}}$.  Rinse, repeat.  Try to be
-precise and draw as many iterations as possible.  Your points should be
+precise and draw as many iterations as possible.  Your points will be
 attracted to the so-called \emph{\myindex{Sierpinski triangle}}.  A computer
 was used to run the game for 10,000 iterations to obtain the picture in
 \figurevref{nlin:sierpinski}.
 \end{exercise}
-\end{samepage}
 
 \begin{myfig}
 \capstart

@@ -43,6 +43,9 @@
 
 * 7.1: Add root test and an example for it.
 
+* 8.1: Add a short paragraph on what happens near noncritical points to
+  really justify why we are looking at the critical ones
+
 * Add Section 6.5 on solving PDEs with Laplace (FIXME: still work in progress).
 
 * Add appendix A on linear algebra (FIXME: still work in progress)
