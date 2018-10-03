@@ -313,7 +313,9 @@ Remark
 % as those are implemented as lists.  That's why example and remark are
 % reimplemented instead of using amsthm
 
-% Do vbox 
+% Do vbox.  It really forces things to be on the same page but it's
+% really a last ditch thing as it will also add some extra spacing, it
+% should definitely not be applied if not needed.
 \newenvironment{mysamepage}{\vbox\bgroup}{\egroup}
 
 %Do the Index

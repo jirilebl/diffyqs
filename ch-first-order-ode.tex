@@ -886,11 +886,11 @@ $\frac{dy}{dx}$!
 \begin{equation*}
 \frac{1}{g(y)}~\frac{dy}{dx} = f(x) .
 \end{equation*}
-We integrate both sides with respect to $x$.
+We integrate both sides with respect to $x$:
 \begin{equation*}
 \int \frac{1}{g(y)}~\frac{dy}{dx} ~dx = \int f(x) ~dx + C .
 \end{equation*}
-We use the change of variables formula.
+We use the change of variables formula:
 \begin{equation*}
 \int \frac{1}{g(y)}~dy = \int f(x) ~dx + C .
 \end{equation*}
@@ -898,7 +898,7 @@ And we are done.
 
 \subsection{Implicit solutions}
 
-It is clear that we might sometimes get stuck even if we can do the
+We might sometimes get stuck even if we can do the
 integration.  For example, take the separable equation
 \begin{equation*}
 y' = \frac{xy}{y^2+1} .
@@ -932,7 +932,7 @@ for $y$, you might have to be tricky.  For example, you can graph
 $x$ as a function of $y$, and then flip your paper.  Computers are also good
 at some of these tricks.
 
-We note that the above equation also has the solution $y=0$.
+The above equation also has the solution $y=0$.
 The general solution is 
 $y^2 + 2 \ln \, \lvert y \rvert = x^2 + C$ together with $y=0$.  These outlying solutions
 such as $y=0$
@@ -947,7 +947,7 @@ First factor the right hand side to obtain
 \begin{equation*}
 x^2y' = (1 - x^2)(1+y^2) .
 \end{equation*}
-Separate variables, integrate, and solve for $y$.
+Separate variables, integrate, and solve for $y$:
 \begin{align*}
 \frac{y'}{1+y^2} & = \frac{1 - x^2}{x^2} , \\
 \frac{y'}{1+y^2} & = \frac{1}{x^2} - 1 , \\
@@ -982,7 +982,7 @@ ambient temperature and the temperature of the coffee.  That is,
 for some constant $k$.
 For our setup $A=22$, $T(0) = 89$, $T(1) = 85$.
 We separate variables and integrate (let $C$ and $D$ denote arbitrary
-constants)
+constants):
 \begin{align*}
 \frac{1}{T-A} \, \frac{dT}{dt} & = -k , \\
 \ln (T-A) &= -kt + C , \qquad \text{(note that } T-A > 0 \text{)} \\
@@ -1001,7 +1001,20 @@ $60 = 22 + 67 e^{-0.0616t}$ to get
 $t = - \frac{\ln \frac{60-22}{67}}{0.0616} \approx 9.21$ minutes.  So Bob can
 begin to drink the coffee at just over 9 minutes from the time Bob made
 it.  That is probably about the amount of time it took us to calculate how long
-it would take.
+it would take.  See \figureref{sintro:coffeefig}.
+
+\begin{myfig}
+\capstart
+%original files coffeefig-1 coffeefig-2
+\diffyincludegraphics{width=6.24in}{width=9in}{coffeefig-1-2}
+\caption{Graphs of the coffee temperature function $T(t)$.
+On the left, horizontal
+lines are drawn at temperatures 60, 85, and 89.  Vertical lines
+are drawn at $t=1$ and $t=9.21$.  Notice that the
+temperature of the coffee hits 85 at $t=1$, and 60 at
+$t \approx 9.21$.  On the right, the graph is over a longer period of time,
+with a horizontal line at the ambient temperature 22.\label{sintro:coffeefig}}
+\end{myfig}
 \end{example}
 
 \begin{example}

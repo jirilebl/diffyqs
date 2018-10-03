@@ -333,9 +333,9 @@ need to compute $\frac{dx}{dt}$.  We find that $\frac{dx}{dt} =
 of \eqref{eq1}.
 \begin{equation*}
 \frac{dx}{dt} + x = 
-(-\sin t + \cos t)
+\underbrace{(-\sin t + \cos t)}_{\frac{dx}{dt}}
 +
-(\cos t + \sin t)
+\underbrace{(\cos t + \sin t)}_{x}
 =
 2\cos t .
 \end{equation*}
@@ -356,10 +356,10 @@ Again plugging into the left hand side of \eqref{eq1}
 \end{equation*}
 And it works yet again!
 
-So there can be many different solutions.  In fact, for this equation all
+So there can be many different solutions.  For this equation all
 solutions can be written in the form
 \begin{equation*}
-x = \cos t + \sin t + C e^{-t}
+x = \cos t + \sin t + C e^{-t} ,
 \end{equation*}
 for some constant $C$.  See \figurevref{intro:plotsfig} for the graph of a
 few of these solutions. 
