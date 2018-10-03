@@ -18,6 +18,9 @@
 
 * 2.4: Improve the illustration of the pendulum including the forces
 
+* 2.6: Add short note about what happens when the forcing frequency $\omega$
+  goes to infinity.
+
 * 3.1: Add linked tanks example
 * 3.1: Add example for changing a second order system to first order system.
 * 3.1: number all the examples
@@ -53,4 +56,4 @@
 * Renumberings: Figures in chapter 3, examples in 3.1, examples in 7.1 past
   the root test.
 
-* Add exercises 3.1.6, 3.1.7, 3.1.106, 3.5.5, 3.8.12, 3.8.105
+* Add exercises 1.2.12, 1.2.106, 3.1.6, 3.1.7, 3.1.106, 3.5.5, 3.8.12, 3.8.105

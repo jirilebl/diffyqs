@@ -9,22 +9,22 @@
 
 In real life, there is most often more than one variable.
 So we wish to organize dealing with multiple variables in a consistent
-manner, and in particular organize dealing with linear mappings and linear
-equations, as those are rather easy to handle if done properly.
+manner, and in particular organize dealing with linear equations and linear
+mappings, as those are rather easy to handle if done properly.
 There is a joke running among some mathematicians:
 ``to an engineer every problem is linear, and everything is a matrix.''
-And well, I would say they are not wrong. 
+And well, they (the engineers) are not wrong. 
 Quite often, solving an engineering problem really is figuring out the
 right linear problem to solve.
 Most importantly linear problems are the ones which we know how to solve
 and we have lots and lots of tools to solve them.
-So as engineers, as mathematicians, as physicists, or as any other
+So for engineers, mathematicians, physicists, or any other
 scientists it is absolutely vital to learn linear algebra.
 
 As motivation, suppose we have to solve
 \begin{equation*}
 \begin{aligned}
-& x-y = 2 \\
+& x-y = 2 , \\
 & 2x+y = 4 ,
 \end{aligned}
 \end{equation*}
@@ -35,41 +35,44 @@ x+2x-y+y = 2+4, \qquad \text{or} \qquad 3x = 6 .
 \end{equation*}
 And now we find $x=3$.  Once we have that, we can plug in $x=2$ into the
 first equation to find $2-y=2$, so $y=0$.  OK\@, that was easy.  What is all
-this fuss about linear equations.  Well, now try doing this if you have
+this fuss about linear equations.  Well, try doing this if you have
 5000 unknowns\footnote{One of the downsides of making everything look like a
 linear problem is that the number of variables tends to become huge.}.
-Also, we will have such equations not of just numbers,
+Also, we have such equations not of just numbers,
 but of functions and derivatives of functions in differential equations.
 Clearly we need a more systematic way of doing things.
 A consequence of making things systematic and simpler to write down
-is that it also becomes much easier to have computers do the work for us;
+is that it also becomes much easier to have computers do the work for us.
 Computers are rather stupid, they do not think,
 but are very good at doing lots of repetitive
 tasks precisely, as long as we figure out a systematic way for them to
-perform the tasks.  This is where linear algebra comes in.
+perform the tasks.
 
 \medskip
 
-Let us start with vectors.  We usually consider $n$ real numbers as an
+Let us start with vectors.  Consider $n$ real numbers as an
 $n$-tuple
 \begin{equation*}
 (x_1,x_2,\ldots,x_n). 
 \end{equation*}
 These points span the so-called
-\emph{$n$-dimensional space}\index{n-dimensional space@$n$-dimensional
-space},
+\emph{$n$-dimensional space}\index{n-dimensional space@$n$-dimensional space},
 often denoted by ${\mathbb R}^n$.
-For example in two dimensions, ${\mathbb R}^2$ is the cartesian plane.
+Sometimes we call this the $n$-dimensional
+\emph{\myindex{euclidean space}}\footnote{FIXME: Named after Euclid}.
+For example in two dimensions, ${\mathbb R}^2$ is the
+\emph{\myindex{cartesian plane}}\footnote{FIXME: Named after Descartes}.
 So we have say
 the point $(1,2)$, which is one unit to the right and two units up from the
 origin.
 
-Now to do algebra we say these $n$-tuples of numbers are so-called 
+When we do algebra with these $n$-tuples of numbers we call them
 \emph{vectors}\index{vector}.  Mathematicians are keen on separating
-what is a vector and what is a point of a plane, and it turns out
+what is a vector and what is a point of the space or in the plane,
+and it turns out
 to be an important distinction, however, for the purposes of linear algebra
 we can think of everything being represented by a vector.
-A way to think of a vector, that's especially useful in calculus
+A way to think of a vector, which is especially useful in calculus
 and differential equations, is an arrow.  It is an object that has
 a direction and a magnitude.  For example, the vector $(1,2)$
 is the arrow from the origin to the point $(1,2)$ in the plane.
@@ -85,8 +88,8 @@ useful to write vectors as so-called
 x_{1} \\ x_2 \\ \vdots \\ x_n
 \end{bmatrix} .
 \end{equation*}
-Don't worry, it is just a different way of writing the same thing that will
-be useful later.  For example the vector $(1,2)$ can be written as
+Don't worry, it is just a different way of writing the same thing, and
+it will be useful later.  For example, the vector $(1,2)$ can be written as
 \begin{equation*}
 \begin{bmatrix}
 1 \\ 2
@@ -109,8 +112,69 @@ always works:
 \begin{equation*}
 \begin{bmatrix}
 x_{1} \\ x_2 \\ \vdots \\ x_n
+\end{bmatrix} +
+\begin{bmatrix}
+y_{1} \\ y_2 \\ \vdots \\ y_n
+\end{bmatrix} =
+\begin{bmatrix}
+x_1 + y_{1} \\ x_2+ y_2 \\ \vdots \\ x_n + y_n
 \end{bmatrix} .
 \end{equation*}
+
+Another intuitive thing to do to a vector is to scale it.
+We represent this by multiplication of a number with a vector.
+Because of this, when we wish to distinguish between vectors and numbers, we
+call the numbers \emph{scalars}\index{scalar}.
+For example,
+suppose we want to travel three times further.  If the vector is $(1,2)$,
+travelling 3 times further means going 3 units to the right and 6 units up,
+so we get the vector $(3,6)$.
+That is, we just multiply each number in the vector by 3.  So if $\alpha$
+is a number we say
+\begin{equation*}
+\alpha
+\begin{bmatrix}
+x_{1} \\ x_2 \\ \vdots \\ x_n
+\end{bmatrix} =
+\begin{bmatrix}
+\alpha x_{1} \\ \alpha x_2 \\ \vdots \\ \alpha x_n
+\end{bmatrix} .
+\end{equation*}
+When the scalar is negative, then when we multiply a vector by it, the
+vector is not only scaled, but it also changes orientation.  So for example
+multiplying $(1,2)$ by $-3$ means we should go 3 times further but in the
+opposite direction, so 3 units to the left and 6 units down, or in other
+words, $(-3,-6)$.
+
+Let's compute a small example:
+\begin{equation*}
+3
+\begin{bmatrix}
+1 \\ 2
+\end{bmatrix}
++
+2
+\begin{bmatrix}
+-4 \\ -1
+\end{bmatrix} 
+-
+3
+\begin{bmatrix}
+-2 \\ 2
+\end{bmatrix} 
+=
+\begin{bmatrix}
+3(1)+2(-4)-3(-2) \\ 3(2)+2(-1)-3(2)
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 \\ -2
+\end{bmatrix}
+.
+\end{equation*}
+
+
+
 
 
 

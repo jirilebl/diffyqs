@@ -641,6 +641,7 @@ $y(0) = 0$?  Is the solution unique?
 Justify.
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}
 Match equations $y'=1-x$, $y'=x-2y$, $y' = x(1-y)$ to slope fields.
 Justify.
@@ -653,6 +654,7 @@ Justify.
 \parbox[c]{1.6in}{\includegraphics[width=1.5in]{figures/yprimexminus2yslope}}
 \end{tasks}
 \end{exercise}
+\end{samepage}
 
 \begin{exercise}[challenging]
 Take $y' = f(x,y)$, $y(0) = 0$, where $f(x,y) > 1$
@@ -672,7 +674,7 @@ Take $(y-x)y' = 0$, $y(0) = 0$.
 \begin{exercise}
 Suppose $y' = f(x,y)$.  What will the slope field look like, explain and
 sketch an example, if you know the following about $f(x,y)$:
-\begin{tasks}
+\begin{tasks}(2)
 \task $f$ does
 not depend on $y$.
 \task $f$ does not depend on $x$.
@@ -691,6 +693,23 @@ Take an equation $y' = (y-2x) g(x,y) + 2$ for some function $g(x,y)$.
 Can you solve the problem for the
 initial condition $y(0) = 0$,
 and if so what is the solution?
+\end{exercise}
+
+\begin{exercise}[challenging]
+Suppose $y' = f(x,y)$ is such that $f(x,1) = 0$ for every $x$,
+$f$ is continuous and $\frac{\partial f}{\partial y}$ exists and
+is continuous for every $x$ and $y$.
+\begin{tasks}
+\task
+Guess a solution given the initial condition
+$y(0) = 1$.
+\task
+Can graphs of two solutions of the equation for different initial conditions
+ever intersect?
+\task
+Given $y(0) = 0$, what can you say about the solution.  In particular,
+can $y(x) > 1$ for any $x$?  Can $y(x) = 1$ for any $x$?  Why or why not?
+\end{tasks}
 \end{exercise}
 
 \setcounter{exercise}{100}
@@ -723,6 +742,7 @@ Is it possible to solve $y' = \frac{x}{x^2-1}$ for $y(1) = 0$?
 No, the equation is not defined at $(x,y) = (1,0)$.
 }
 
+\begin{samepage}
 \begin{exercise}
 Match equations $y'=\sin x$, $y'=\cos y$, $y' = y\cos(x)$ to slope fields.
 Justify.
@@ -735,6 +755,7 @@ Justify.
 \parbox[c]{1.6in}{\includegraphics[width=1.5in]{figures/yprimesinxslope}}
 \end{tasks}
 \end{exercise}
+\end{samepage}
 \exsol{%
 a) $y'=\cos y$,
 b) $y' = y\cos(x)$,
@@ -759,6 +780,16 @@ The equation does not have a continuously solution.  If it did notice that
 $y'(0) = 1$, by first derivative test, $y(x) > 0$ for small positive $x$,
 but then for those $x$ we would have $y'(x) = 0$, so clearly the derivative
 cannot be continuous.
+}
+
+\begin{exercise}
+Consider an equation of the form $y' = f(x)$ for some continuous function
+$f$, and an initial condition $y(x_0) = y_0$.  Does a
+solution exist for all $x$?  Why or why not?
+\end{exercise}
+\exsol{%
+The solution is $y(x) = \int_{x_0}^x f(s) ~ds + y_0$, and this does indeed
+exist for every $x$.
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1532,7 +1563,7 @@ $250$ grams
 \begin{exercise}
 Suppose we have bacteria on a plate and suppose that we are slowly adding
 a toxic substance such that the rate of growth is slowing down.  That is,
-suppose that $\frac{dP}{dt} = (2-0.1t)P$.  If $P(0) = 1000$, find
+suppose that $\frac{dP}{dt} = (2-0.1\,t)P$.  If $P(0) = 1000$, find
 the population at $t=5$.
 \end{exercise}
 \exsol{%
