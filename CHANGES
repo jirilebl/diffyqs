@@ -50,12 +50,13 @@
 
 * 8.1: Add a short paragraph on what happens near noncritical points to
   really justify why we are looking at the critical ones
+* 8.4: Add another example and a figure for a limit cycle.
 
 * Add Section 6.5 on solving PDEs with Laplace (FIXME: still work in progress).
 
 * Add appendix A on linear algebra (FIXME: still work in progress)
 
-* Renumberings: Figures in chapters 1 and 3, examples in 3.1, examples in 7.1 past
-  the root test.
+* Renumberings: Figures in chapters 1, 3, and 8, examples in 3.1,
+  examples in 7.1 past the root test, examples in 8.4
 
 * Add exercises 1.2.12, 1.2.106, 3.1.6, 3.1.7, 3.1.106, 3.5.5, 3.8.12, 3.8.105
