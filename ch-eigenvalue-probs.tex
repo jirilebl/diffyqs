@@ -2,7 +2,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Sturm-Liouville problems}
+\section{Sturm--Liouville problems}
 \label{slproblems:section}
 
 \sectionnotes{2 lectures\EPref{, \S10.1 in \cite{EP}}\BDref{,
@@ -91,7 +91,7 @@ x y'' + y' + \left(\lambda x - \frac{n^2}{x}\right)y
 \end{example}
 
 The so-called 
-\emph{\myindex{Sturm-Liouville problem}}%
+\emph{\myindex{Sturm--Liouville problem}}%
 \footnote{Named after the French mathematicians
 \href{https://en.wikipedia.org/wiki/Jacques_Charles_Fran\%C3\%A7ois_Sturm}{Jacques Charles Fran\c{c}ois Sturm}
 (1803--1855) and
@@ -120,7 +120,7 @@ $\beta_1$ and $\beta_2$.
 \begin{theorem} \label{sl:slregthm}
 Suppose $p(x)$, $p'(x)$, $q(x)$ and $r(x)$ are continuous on $[a,b]$
 and suppose $p(x) > 0$ and $r(x) > 0$ for all $x$ in $[a,b]$.
-Then the Sturm-Liouville problem \eqref{sl:slprob}
+Then the Sturm--Liouville problem \eqref{sl:slprob}
 has an increasing sequence of eigenvalues
 \begin{equation*}
 \lambda_1 < \lambda_2 < \lambda_3 < \cdots 
@@ -138,8 +138,8 @@ then $\lambda_n \geq 0$ for all $n$.
 
 Problems satisfying the hypothesis of the
 theorem are called
-\emph{regular Sturm-Liouville problems\index{regular Sturm-Liouville problem}}%
-\index{Sturm-Liouville problem!regular}
+\emph{regular Sturm--Liouville problems\index{regular Sturm--Liouville problem}}%
+\index{Sturm--Liouville problem!regular}
 and we will only consider such problems here.
 That is, a regular problem is one where
 $p(x)$, $p'(x)$, $q(x)$ and $r(x)$ are continuous, $p(x) > 0$, $r(x) > 0$,
@@ -154,7 +154,7 @@ start labeling the eigenvalues at 0 rather than at 1 for convenience.
 
 \begin{example}
 The problem $y''+\lambda y$, $0 < x < L$, $y(0) = 0$, and $y(L) = 0$
-is a regular Sturm-Liouville problem.  $p(x) = 1$, $q(x) = 0$, $r(x) = 1$,
+is a regular Sturm--Liouville problem.  $p(x) = 1$, $q(x) = 0$, $r(x) = 1$,
 and we have $p(x) = 1 > 0$ and $r(x) = 1 > 0$.
 The eigenvalues are $\lambda_n = \frac{n^2 \pi^2}{L^2}$ and eigenfunctions
 are $y_n(x) = \sin(\frac{n\pi}{L} x)$.  All eigenvalues are nonnegative as
@@ -179,7 +179,7 @@ Find eigenvalues and eigenfunctions of the problem
 & hy(0)- y'(0) = 0, \quad y'(1)  = 0, \quad h > 0.
 \end{align*}
 
-These equations give a regular Sturm-Liouville problem.
+These equations give a regular Sturm--Liouville problem.
 
 \begin{exercise}
 Identify $p, q, r, \alpha_j, \beta_j$ in the example above.
@@ -260,7 +260,7 @@ y_2(x) \approx \cos (3.43\, x ) + \frac{1}{3.43}
 
 We have seen the notion of orthogonality before.  For example,
 we have shown that $\sin (nx)$ are orthogonal for distinct $n$ on $[0,\pi]$.
-For general Sturm-Liouville problems we will need a more general setup.
+For general Sturm--Liouville problems we will need a more general setup.
 Let $r(x)$
 be a \emph{\myindex{weight function}} (any function, though generally we will
 assume it is positive) on $[a,b]$.  Two functions $f(x)$, $g(x)$
@@ -288,10 +288,10 @@ Hence, you could
 think of a change of variables such that $d\xi = r(x)~ dx$.
 
 We have the following orthogonality property of eigenfunctions of a
-regular Sturm-Liouville problem.
+regular Sturm--Liouville problem.
 
 \begin{theorem}
-Suppose we have a regular Sturm-Liouville problem
+Suppose we have a regular Sturm--Liouville problem
 \begin{align*}
 &\frac{d}{dx} \left( p(x) \frac{dy}{dx} \right)
 - q(x) y + \lambda r(x) y = 0 , \\
@@ -314,12 +314,12 @@ The proof is very similar to the analogous theorem from \sectionref{bvp:section}
 \subsection{Fredholm alternative}
 
 The \emph{Fredholm alternative} theorem we talked about before
-holds for all regular Sturm-Liouville problems.
+holds for all regular Sturm--Liouville problems.
 We state it here for completeness.
 
 \begin{theorem}[Fredholm alternative]%
-\index{Fredholm alternative!Sturm-Liouville problems}
-Suppose that we have a regular Sturm-Liouville problem.
+\index{Fredholm alternative!Sturm--Liouville problems}
+Suppose that we have a regular Sturm--Liouville problem.
 Then either
 \begin{align*}
 &\frac{d}{dx} \left( p(x) \frac{dy}{dx} \right)
@@ -395,7 +395,7 @@ more generally, but the statement given is enough for our purposes.
 
 \begin{theorem}
 Suppose $f$ is a piecewise smooth continuous function on $[a,b]$.  If $y_1,
-y_2, \ldots$ are eigenfunctions of a regular Sturm-Liouville problem,
+y_2, \ldots$ are eigenfunctions of a regular Sturm--Liouville problem,
 one for each eigenvalue,
 then there exist real constants $c_1, c_2, \ldots$ given by \eqref{sl:cm}
 such that
@@ -403,7 +403,7 @@ such that
 \end{theorem}
 
 \begin{example}
-Take the simple Sturm-Liouville problem
+Take the simple Sturm--Liouville problem
 \begin{align*}
 & y'' + \lambda y = 0, \quad 0 < x < \frac{\pi}{2} , \\
 & y(0) =0, \quad y'\left(\frac{\pi}{2}\right) = 0 .
@@ -483,7 +483,7 @@ y'' + \lambda y = 0, \quad y'(0) = 0, \quad y(1) = 0 .
 \end{exercise}
 
 \begin{exercise}
-Suppose that you had a Sturm-Liouville problem on the interval
+Suppose that you had a Sturm--Liouville problem on the interval
 $[0,1]$ and came up with
 $y_n(x) = \sin (\gamma n x)$, where $\gamma > 0$ is some constant.
 Decompose $f(x) = x$, $0 < x < 1$ in terms of these eigenfunctions.
@@ -495,7 +495,7 @@ Find eigenvalues and eigenfunctions of
 y^{(4)}+\lambda y = 0, \quad y(0) = 0, \quad y'(0) = 0, \quad y(1) = 0, \quad
 y'(1) = 0 .
 \end{equation*}
-This problem is not a Sturm-Liouville problem, but the idea is the same.
+This problem is not a Sturm--Liouville problem, but the idea is the same.
 \end{exercise}
 
 \begin{exercise}[more challenging]
@@ -522,7 +522,7 @@ $y_n = \cos\left(\frac{(2n-1)\pi}{2} x\right)$
 }
 
 \begin{exercise}
-Put the following problems into the standard form for Sturm-Liouville
+Put the following problems into the standard form for Sturm--Liouville
 problems, that is, find $p(x)$, $q(x)$, $r(x)$,
 $\alpha_1$,
 $\alpha_2$,

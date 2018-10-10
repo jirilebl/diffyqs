@@ -1137,11 +1137,11 @@ may take a very long time before it gets down.  This is consistent with the
 limiting behavior, where the exactly upside down pendulum never makes an
 oscillation, so we could think of that as infinite period.
 
-\subsection{Predator-prey or Lotka-Volterra systems}
+\subsection{Predator-prey or Lotka--Volterra systems}
 
 One of the most common simple applications of nonlinear systems are the
 so-called \emph{\myindex{predator-prey}} or
-\emph{\myindex{Lotka-Volterra}}%
+\emph{\myindex{Lotka--Volterra}}%
 \footnote{Named for the American mathematician, chemist, and statistician
 \href{https://en.wikipedia.org/wiki/Alfred_J._Lotka}{Alfred James Lotka}
 (1880--1949) and the Italian mathematician and physicist
@@ -1168,7 +1168,7 @@ When there are a lot of hares, there is plenty of food for the foxes, so
 the fox population grows.  However, when the fox population grows, the foxes
 eat more hares, so when there are lots of foxes, the hare population
 should go down, and vice versa.
-The Lotka-Volterra model proposes that this 
+The Lotka--Volterra model proposes that this 
 behavior is described by the system of equations
 \begin{equation*}
 \begin{aligned}
@@ -1659,10 +1659,10 @@ x' = f(x,y), \qquad y' = g(x,y) ,
 where the functions $f$ and $g$ have continuous derivatives in some region
 $R$ in the plane.
 
-\begin{theorem}[Poincar\`e-Bendixson\footnote{%
+\begin{theorem}[Poincar\`e--Bendixson\footnote{%
 \href{https://en.wikipedia.org/wiki/Ivar_Otto_Bendixson}{Ivar Otto Bendixson}
 (1861--1935) was a Swedish mathematician.}]%
-\index{Poincar\`e-Bendixson Theorem}
+\index{Poincar\`e--Bendixson Theorem}
 Suppose $R$ is a closed bounded region (a region in the plane that includes
 its boundary and does not have points arbitrarily far from the origin).
 Suppose $\bigl(x(t), y(t)\bigr)$ is a solution of
@@ -1689,7 +1689,61 @@ large time to approximate the limit cycle.
 Another caveat is that the theorem only works in two
 dimensions.  In three dimensions and higher, there is simply too much room.
 
-Let us next look when limit cycles (or periodic orbits) do not exist.
+The theorem applies to all solutions in the Van der Pol oscillator.
+Solutions that start at any point except the origin $(0,0)$ will tend to the
+periodic solution around the limit cycle, and if the initial condition
+of $(0,0)$ will lead to the constant solution $x=0$, $y=0$.
+
+\begin{example}
+Consider
+\begin{equation*}
+x' = y + {(x^2+y^2-1)}^2 x, \qquad
+y' = -x + {(x^2+y^2-1)}^2 y.
+\end{equation*}
+A vector field along with solutions with initial conditions
+$(1.02,0)$, $(0.9,0)$, and $(0.1,0)$ are drawn in
+\figurevref{fig:nlin-unstable-limit-cycle}.
+
+%\begin{mywrapfig}{3.25in}
+\begin{myfig}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{nlin-unstable-limit-cycle}
+\caption{Unstable limit cycle example.\label{fig:nlin-unstable-limit-cycle}}
+\end{myfig}
+%\end{mywrapfig}
+
+Notice that points on the unit circle (distance one from the origin)
+satisfy $x^2+y^2-1=0$.  And $x(t) = \sin(t)$, $y = \cos(t)$ is a solution
+of the system.  Therefore we have a closed trajectory.
+For points off the unit circle, the second term in
+$x'$ pushes the solution further
+away from the $y$-axis than the system $x' = y$, $y' = -x$,
+and $y'$ pushes the solution further away from the $x$-axis
+than the linear system $x'=y$, $y' = -x$.  In other words for all
+other initial conditions the trajectory will spiral out.
+
+This means that for initial conditions inside the unit circle, the solution
+spirals out towards the periodic solution on the unit circle, and
+for initial conditions outside the unit circle the solutions spiral off
+towards infinity.  Therefore the unit circle is a limit cycle, but
+not an asymptotically stable one.
+The Poincar\`e--Bendixson Theorem applies to the initial points inside
+the unit circle, as those solutions stay bounded, but not to those outside,
+as those solutions go off to infinity.
+\end{example}
+
+A very similar analysis applies to the system
+\begin{equation*}
+x' = y + {(x^2+y^2-1)} x, \qquad
+y' = -x + {(x^2+y^2-1)} y.
+\end{equation*}
+We still obtain a closed trajectory on the unit circle, and
+points outside the unit circle spiral out to infinity, but now points
+inside the unit circle spiral towards the critical point at the origin.
+So this system does not have a limit cycle, even though it has a closed
+trajectory.
+
+Let us next look for conditions when limit cycles (or periodic orbits) do not exist.
 We assume
 the equation \eqref{nlin:gensys} is defined on a
 \emph{\myindex{simply connected region}}, that is, a region with no holes
@@ -1698,17 +1752,17 @@ connected region, and so is the inside of the unit disc.  However,
 the entire plane minus a point is not a simply connected domain as it has a
 \myquote{hole} at the origin.
 
-\begin{theorem}[Bendixson-Dulac%
+\begin{theorem}[Bendixson--Dulac%
 \footnote{%
 \href{https://en.wikipedia.org/wiki/Henri_Dulac}{Henri Dulac} (1870--1955)
 was a French mathematician.}]%
-\index{Bendixson-Dulac Theorem}
+\index{Bendixson--Dulac Theorem}
 Suppose $R$ is a simply connected region,
 and the expression%
 %Suppose $f$ and $g$ are functions with continuous derivatives in
 %a simply connected region $R$, and
 %If the expression%
-\footnote{Usually the expression in the Bendixson-Dulac Theorem is
+\footnote{Usually the expression in the Bendixson--Dulac Theorem is
 $\frac{\partial (\varphi f)}{\partial x} + \frac{\partial (\varphi
 g)}{\partial y}$
 for some continuously differentiable function $\varphi$.  For simplicity
@@ -1794,19 +1848,19 @@ Show that the following systems have no closed trajectories.
 
 \begin{exercise}
 Formulate a condition for a 2-by-2 linear system
-${\vec{x}}' = A \vec{x}$ to not be a center using the Bendixson-Dulac theorem.
+${\vec{x}}' = A \vec{x}$ to not be a center using the Bendixson--Dulac theorem.
 That is, the theorem says something about certain elements of $A$.
 \end{exercise}
 
 \begin{exercise}
-Explain why the Bendixson-Dulac Theorem does not apply for any conservative
+Explain why the Bendixson--Dulac Theorem does not apply for any conservative
 system $x''+h(x) = 0$.
 \end{exercise}
 
 \begin{exercise}
 A system such as $x'=x, y'=y$ has solutions that exist for all time $t$,
 yet there are no closed trajectories.  Explain
-why the Poincar\`e-Bendixson Theorem does not apply.
+why the Poincar\`e--Bendixson Theorem does not apply.
 \end{exercise}
 
 \begin{exercise}
@@ -1828,7 +1882,7 @@ Show that the following systems have no closed trajectories.
 \end{tasks}
 \end{exercise}
 \exsol{%
-Use Bendixson-Dulac Theorem.
+Use Bendixson--Dulac Theorem.
 a) $f_x+g_y = 1+1 > 0$, so no closed trajectories.
 b) $f_x+g_y = -\sin^2(y)+0 < 0$ for all $x,y$ except the lines
 given by $y=k\pi$ (where we get zero), so no closed trajectories.
@@ -1842,7 +1896,7 @@ $x=\cos(t)+e^{-t}$, $y=\sin(t)+e^{-t}$.  What can you say
 about the system (in particular about limit cycles and periodic solutions)?
 \end{exercise}
 \exsol{%
-Using Poincar\`e-Bendixson Theorem,
+Using Poincar\`e--Bendixson Theorem,
 the system has a limit cycle, which is the unit circle centered at the origin as
 $x=\cos(t)+e^{-t}$, $y=\sin(t)+e^{-t}$ gets closer and closer to the unit
 circle.  Thus we also have that $x=\cos(t)$, $y=\sin(t)$ is the periodic
@@ -1859,7 +1913,7 @@ Compare with \figureref{fig:nlin-van-der-fig}.
 \end{exercise}
 \exsol{%
 $f(x,y) = y$, $g(x,y) = \mu(1-x^2)y-x$.  So
-$f_x+g_y = \mu(1-x^2)$.  The Bendixson-Dulac Theorem
+$f_x+g_y = \mu(1-x^2)$.  The Bendixson--Dulac Theorem
 says there is no closed trajectory lying entirely in the set $x^2 < 1$.
 }
 
@@ -1893,10 +1947,10 @@ scenes.  Everything is still deterministic.  However a chaotic system is extreme
 sensitive to initial conditions.  This also means even small errors induced 
 via numerical approximation create large errors very quickly, so it is
 almost impossible to numerically approximate for long times.
-This is large part of
-the trouble as chaotic systems cannot be in general solved analytically.
+This is a large part of
+the trouble, as chaotic systems cannot be in general solved analytically.
 
-Take the weather, the most well known chaotic system.
+Take the weather, the most well-known chaotic system.
 A small change in the initial conditions
 (the temperature at every point of the atmosphere for example) produces
 drastically different predictions in relatively short time, and so we cannot
@@ -1994,7 +2048,7 @@ oscillation appears quite unique.  The oscillation
 is expected due to the forcing term.
 We mention that to produce the picture accurately,
 a ridiculously large number of steps\footnote{In
-fact for reference, 30,000 steps were used with the Runge-Kutta
+fact for reference, 30,000 steps were used with the Runge--Kutta
 algorithm, see exercises in \sectionref{numer:section}.}
 had to be used in the numerical
 algorithm,
@@ -2124,7 +2178,7 @@ quickly, and we settle into always the same steady periodic motion.
 In two dimensions to find chaotic behavior,
 we must study forced, or non-autonomous, systems such as the Duffing
 equation.
-The Poincar\`e-Bendixson Theorem says that
+The Poincar\`e--Bendixson Theorem says that
 a solution to an autonomous
 two-dimensional system that exists for all time in the future
 and does not go towards infinity
