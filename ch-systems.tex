@@ -390,6 +390,49 @@ even if the system is not autonomous.  In this case however we cannot draw
 the direction field, since the field changes as $t$ changes.  For
 each $t$ we would get a different direction field.
 
+\subsection{Picard's theorem}
+
+Perhaps before going further, let us mention that Picard's theorem on
+existence and uniqueness still holds for systems of ODE.  Let us restate
+this theorem in the setting of systems.  A general first order
+system is of the form
+\begin{equation} \label{eq:general-system}
+\begin{aligned}
+x_1' & = F_1(x_1,x_2,\ldots,x_n,t) , \\
+x_2' & = F_2(x_1,x_2,\ldots,x_n,t) , \\
+& \vdots \\
+x_n' & = F_n(x_1,x_2,\ldots,x_n,t) .
+\end{aligned}
+\end{equation}
+
+\begin{theorem}[Picard's theorem on existence and uniqueness for systems]%
+\label{sys:picardthm}%
+\index{existence and uniqueness for systems}\index{Picard's theorem}
+If for every $j=1,2,\ldots,n$ and every
+$k = 1,2,\ldots,n$
+each $F_j$ is continuous
+and the derivative
+$\frac{\partial F_j}{\partial x_k}$ exists and is
+continuous near some $(x_1^0,x_2^0,\ldots,x_n^0,t^0)$, then a solution to
+\eqref{eq:general-system}
+subject to the initial condition
+$x_1(t^0) = x_1^0$,
+$x_2(t^0) = x_2^0$, \ldots,
+$x_n(t^0) = x_n^0$,
+exists (at least for some small interval of $t$'s) and is unique.
+\end{theorem}
+
+That is, a unique solution exists for any initial condition
+given that the system is reasonable ($F_j$ and its partial derivatives
+in the $x$ variables are continuous).  Again as for single equations
+we may not have a solution for all time $t$, but at least for some 
+short period of time.
+
+As we can change any $n$th order ODE into a first order system,
+then we notice that this theorem provides also the
+existence and uniqueness of solutions for higher order equations
+that we have until now not stated explicitly.
+
 \subsection{Exercises}
 
 \begin{exercise}

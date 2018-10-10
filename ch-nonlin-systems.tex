@@ -59,6 +59,7 @@ what happens as time goes to infinity?
 %In other words, why do more work, when we can do less.
 %The exact solution, even if found, might be harder to analyze.
 
+
 \subsection{Autonomous systems and phase plane analysis}
 
 We restrict our attention to a two dimensional autonomous system
@@ -135,7 +136,7 @@ as the points $(x,y)$ such that
 \begin{equation*} 
 \begin{bmatrix} f(x,y) \\ g(x,y) \end{bmatrix} = \vec{0} .
 \end{equation*}
-In other words, the points where both $f(x,y)=0$ and $g(x,y)=0$.
+In other words, these are the points where both $f(x,y)=0$ and $g(x,y)=0$.
 
 The critical points are where the behavior of the system is
 in some sense the most complicated.  If
@@ -1742,6 +1743,20 @@ points outside the unit circle spiral out to infinity, but now points
 inside the unit circle spiral towards the critical point at the origin.
 So this system does not have a limit cycle, even though it has a closed
 trajectory.
+
+Due to the Picard theorem (\thmvref{sys:picardthm}) we find that no matter
+where we are in the plane we can always find a solution a little bit
+further in time,
+as long as $f$ and $g$ have continuous derivatives.  So 
+if we find a closed trajectory in an autonomous system,
+then for every initial point inside
+the closed trajectory, the solution will exist for all time and it will stay
+bounded (it will stay inside the closed trajectory).  So the moment
+we found the solution above going around the unit circle, we knew that for
+every initial point inside the circle, the solution exists for all time and
+the Poincar\`e--Bendixson theorem applies.
+
+\medskip
 
 Let us next look for conditions when limit cycles (or periodic orbits) do not exist.
 We assume
