@@ -1,4 +1,5 @@
-%FIXME: for PRINT run for lulu or createspace, search for %PRINT
+%FIXME: for PRINT run for lulu or createspace, search for %PRINT  (also
+%search diffyqs.tex)
 
 \usepackage[T1]{fontenc}
 
@@ -33,6 +34,7 @@
 
 %PRINT
 %First offset even/odd pages a bit
+% not for the coil bound version, we want large margins there
 %\addtolength{\oddsidemargin}{0.2in}
 %\addtolength{\evensidemargin}{-0.2in}
 
@@ -89,7 +91,8 @@
 
 \hypersetup{
     pdfborderstyle={/S/U/W 0.5},
-    %colorlinks,
+    %PRINT do this (and comment out the above):
+    %pdfborder={0 0 0},
     citecolor=mypersianblue,
     filecolor=mypersianblue,
     linkcolor=mypersianblue,
