@@ -7,6 +7,8 @@
 #
 print "running ...\n"; 
 
+$num_errors = 0;
+
 my @ins;
  
 open(my $in,'<', "diffyqs.tex") or die $!; 
@@ -417,6 +419,8 @@ sub read_paragraph {
 			 if ( ! open($in,'<', $thefile)) {
 				 print "\n\nHUH???\n\nThere is an \\input $thefile ... but I can't open \"$thefile\"\n\n))))\n\n";
 
+				 $num_errors++;
+
 				 $in = pop @ins;
 			 }
 
@@ -731,6 +735,7 @@ while(1)
 			print $out "</me>\n";
 		} else {
 			print "\n\n\nHUH?\n\n\nNo end align*!\n\n$para\n\n";
+			$num_errors++;
 		}
 	} elsif ($para =~ s/^\\begin\{align\}[ \n]*//) {
 		print "(ALIGN)\n";
@@ -764,6 +769,7 @@ while(1)
 			print $out "</md>\n";
 		} else {
 			print "\n\n\nHUH?\n\n\nNo end align!\n\n$para\n\n";
+			$num_errors++;
 		}
 
 	} elsif ($para =~ s/^\\begin\{multline\*\}[ \n]*//) {
@@ -785,6 +791,7 @@ while(1)
 			print $out "</me>\n";
 		} else {
 			print "\n\n\nHUH?\n\n\nNo end multline*!\n\n$para\n\n";
+			$num_errors++;
 		}
 	} elsif ($para =~ s/^\\begin\{multline\}[ \n]*//) {
 		print "(MULTLINE)\n";
@@ -816,6 +823,7 @@ while(1)
 			print $out "</men>\n";
 		} else {
 			print "\n\n\nHUH?\n\n\nNo end multline!\n\n$para\n\n";
+			$num_errors++;
 		}
 
 	} elsif ($para =~ s/^\\begin\{equation\*\}[ \n]*//) {
@@ -836,6 +844,7 @@ while(1)
 			print $out "$eqn</me>\n";
 		} else {
 			print "\n\n\nHUH?\n\n\nNo end equation*!\n\n$para\n\n";
+			$num_errors++;
 		}
 	} elsif ($para =~ s/^\\begin\{equation\}[ \n]*//) {
 		print "(EQUATION)\n";
@@ -866,6 +875,7 @@ while(1)
 			print $out "$eqn</men>\n";
 		} else {
 			print "\n\n\nHUH?\n\n\nNo end equation!\n\n$para\n\n";
+			$num_errors++;
 		}
 
 	#FIXME: not all substitutions are made, so check if more processing needs to be done
@@ -886,6 +896,7 @@ while(1)
 				$caption =~ s|\$(.*?)\$|<m>$1</m>|sg;
 			} else {
 				print "\n\n\nHUH?\n\n\nNo caption/label!\n\n$para\n\n";
+				$num_errors++;
 			}
 			# kill centering and the rules and the tabular 
 			$table =~ s/\\begin\{center\}[ \n]*//;
@@ -910,6 +921,7 @@ while(1)
 				print $out "    <row bottom=\"minor\"><cell>$fline</cell></row>\n";
 			} else {
 				print "\n\n\nHUH?\n\n\nNo first line!\n\n$para\n\n";
+				$num_errors++;
 			}
 			print $out "    <row><cell>";
 
@@ -928,6 +940,7 @@ while(1)
 			print $out "$table</cell></row>\n  </tabular>\n</table>\n";
 		} else {
 			print "\n\n\nHUH?\n\n\nNo end table!\n\n$para\n\n";
+			$num_errors++;
 		}
 		#
 	#FIXME: not all substitutions are made, so check if more processing needs to be done
@@ -971,6 +984,7 @@ while(1)
 					print $out "  <row bottom=\"minor\"><cell>$fline</cell></row>\n";
 				} else {
 					print "\n\n\nHUH?\n\n\nNo first line!\n\n$para\n\n";
+					$num_errors++;
 				}
 			}
 			print $out "  <row><cell>";
@@ -995,6 +1009,7 @@ while(1)
 			}
 		} else {
 			print "\n\n\nHUH?\n\n\nNo end tabular/center!\n\n$para\n\n";
+			$num_errors++;
 		}
 		
 	#FIXME:Assuming that mywrapfigsimp never has a caption
@@ -1025,9 +1040,11 @@ while(1)
 				close_paragraph ();
 			} else {
 				print "\n\n\nHUH?\n\n\nmywrapfigsimp not just an inputpdft!\n\nFIG=>$fig<\n\n";
+				$num_errors++;
 			}
 		} else {
 			print "\n\n\nHUH?\n\n\nNo end mywrapfigsimp\n\n$para\n\n";
+			$num_errors++;
 		}
 
 	#FIXME: this is based entirely too much on my usage :)
@@ -1042,6 +1059,7 @@ while(1)
 		} else {
 			#FIXME
 			print "\n\n\nHUH?\n\n\nCan't figure out the size of $thefile\n\n";
+			$num_errors++;
 			print $out "<diffyqsimage source=\"$thefile-tex4ht\" height=\"1in\" />\n";
 		}
 		close_paragraph ();
@@ -1101,9 +1119,11 @@ while(1)
 				}
 				if (not $foundsome) {
 					print "\n\n\nHUH?\n\n\nNo figure parboxes!\n\nFIG=$figure";
+					$num_errors++;
 				}
 				if ($figure =~ m/\\parbox/) {
 					print "\n\n\nHUH?\n\n\nFigure parboxes left over!\n\nFIG=$figure";
+					$num_errors++;
 				}
 			} else {
 				@figs = ($figure);
@@ -1130,6 +1150,7 @@ while(1)
 					$caption =~ s|\$(.*?)\$|<m>$1</m>|sg;
 				} else {
 					print "\n\n\nHUH?\n\n\nNo caption/label!\n\nFIG=>$fig<\n\n";
+					$num_errors++;
 				}
 
 				close_paragraph ();
@@ -1229,19 +1250,30 @@ while(1)
 					print $out "<diffyqsimage source=\"$thefile-tex4ht\" $thesizestr />\n";
 				} else {
 					print "\n\n\nHUH?\n\n\nFigure too complicated!\n\nFIG=>$fig<\n\n";
+					$num_errors++;
 				}
 				print $out "</figure>\n";
 
 			}
 		} else {
 			print "\n\n\nHUH?\n\n\nNo end figure!\n\n$para\n\n";
+			$num_errors++;
 		}
 
 	} elsif ($para =~ s/^\\begin\{theorem\}[ \n]*//) {
 		close_paragraph();
 		my $title = "";
+		my $footnote = "";
 		if ($para =~ s/^\[(.*?)\][ \n]*//s) {
 			$title = do_thmtitle_subs($1);
+			# FIXME: Assuming only one footnote in title!
+			if ($title =~ s|(\<fn\>.*?\</fn\>)||s) {
+				$footnote = $1;
+			}
+			if ($title =~ m|(\<fn\>.*?\</fn\>)|s) {
+				print "\n\n\nHUH?\n\n\nMore than one footnote in theorem title!\n\n$title --- $footnote\n\n";
+				$num_errors++;
+			}
 		}
 
 		$thm_num = $thm_num+1;
@@ -1273,6 +1305,9 @@ while(1)
 		}
 		if ($title ne "") {
 			print $out "<title>$title</title>\n";
+		}
+		if ($footnote ne "") {
+			print $out "$footnote\n";
 		}
 		if ($indexo ne "") {
 			print $out "$indexo\n";
@@ -1439,6 +1474,7 @@ while(1)
 			print $out "</fn>";
 		} else {
 			print "\n\nHUH???\n\nNo (or unknown =\"$tagtoclose\") tag to close\n\n";
+			$num_errors++;
 		}
 
 
@@ -1516,6 +1552,9 @@ while(1)
 	} elsif ($para =~ s/^\\end\{samepage\}//) {
 		print "(end{samepage} do nothing)\n";
 
+	} elsif ($para =~ s/^\\@//) {
+		print "(\\@ do nothing)\n";
+
 	} elsif ($para =~ s/^([^\\]+?)\$/\$/) {
 		my $line = $1;
 		print_line($line);
@@ -1526,6 +1565,7 @@ while(1)
 		print "\n\nHUH???\n\nUNHANDLED escape $1!\n$para\n\n";
 		print_line($1);
 		#$para = "";
+		$num_errors++;
 	} else {
 		print_line($para);
 		$para = "";
@@ -1545,4 +1585,4 @@ END
 close ($in); 
 close ($out); 
  
-print "\nDone!\n"; 
+print "\nDone! (number of errors $num_errors)\n"; 
