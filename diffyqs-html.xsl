@@ -46,6 +46,16 @@
     </xsl:choose>
   </xsl:template>
 
+  <!-- EEEK, this seems a hack, this will add a start attribute if given -->
+  <xsl:template match="ol" mode="insert-paragraph-id">
+    <xsl:apply-imports/>
+    <xsl:if test="@start">
+      <xsl:attribute name="start">
+        <xsl:value-of select="@start"/>
+      </xsl:attribute>
+    </xsl:if>
+  </xsl:template>
+
   <!-- need break, so nonstandard mathbookxml -->
   <xsl:template match="diffyqsbr">
     <br/>

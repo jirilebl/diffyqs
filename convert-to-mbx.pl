@@ -31,8 +31,8 @@ while($line = <$in>)
 {
 	chomp($line);
 	if ($line =~ m/^%mbxFIXME/) {
-		printf("FOUND mbxFIXME!\n");
-		exit 1;
+		printf("\n\n\nFOUND mbxFIXME!\n\n\n");
+		$num_errors++;
 	} elsif ($line =~ m/^%mbxSTARTIGNORE/) {
 		$mbxignore = 1;
 	} elsif ($line =~ m/^%mbxENDIGNORE/) {
@@ -296,8 +296,10 @@ sub do_thmtitle_subs {
 
 	$title =~ s|\\href\{(.*?)\}\{(.*?)\}|<url href=\"$1\">$2</url>|s;
 
-	#Assuming single footnote in title
-	$title =~ s|\\footnote\{(.*)\}|<fn>$1</fn>|s;
+	#FIXME: should check if multiple footnotes work
+	while ($title =~ s|\\footnote\{(.*?)\}|<fn>$1</fn>|s) {
+		;
+	}
 
 	$title = do_line_subs($title);
 
@@ -392,6 +394,7 @@ sub read_paragraph {
 				# This shouldsn't happen, we should have found and end of document
 				print "END OF MAIN FILE\n))))\n\n";
 				print "ERROR: no \\end{document} found so faking it\n\n";
+				$num_errors++;
 				$para = $para .  "\n\\end{document}";
 			}
 		}
@@ -403,9 +406,9 @@ sub read_paragraph {
 		$line =~ s/^%mbxlatex //;
 
 		if ($line =~ m/^%mbxFIXME/) {
-			printf("FOUND mbxFIXME!\n");
-			exit 1;
-		} eliif ($line =~ m/^%mbxSTARTIGNORE/) {
+			printf("\n\n\nFOUND mbxFIXME!\n\n\n");
+			$num_errors++;
+		} elsif ($line =~ m/^%mbxSTARTIGNORE/) {
 			$mbxignore = 1;
 		} elsif ($line =~ m/^%mbxENDIGNORE/) {
 			$mbxignore = 0;
@@ -1266,13 +1269,13 @@ while(1)
 		my $footnote = "";
 		if ($para =~ s/^\[(.*?)\][ \n]*//s) {
 			$title = do_thmtitle_subs($1);
-			# FIXME: Assuming only one footnote in title!
-			if ($title =~ s|(\<fn\>.*?\</fn\>)||s) {
-				$footnote = $1;
-			}
-			if ($title =~ m|(\<fn\>.*?\</fn\>)|s) {
-				print "\n\n\nHUH?\n\n\nMore than one footnote in theorem title!\n\n$title --- $footnote\n\n";
-				$num_errors++;
+			# FIXME: hack, this is only because pretext html
+			# backend does not deal well with footnotes in
+			# theorem titles.
+			# FIXME: should check if it really works with
+			# multiple footnotes
+			while ($title =~ s|(\<fn\>.*?\</fn\>)||s) {
+				$footnote = $footnote . $1;
 			}
 		}
 
@@ -1456,6 +1459,39 @@ while(1)
 		open_item();
 		open_paragraph();
 
+	} elsif ($para =~ s/^\\begin\{tasks\}\[counter-format=tsk\[1\])\][ \n]*//) {
+		close_paragraph();
+		print "(begin tasks enumerate label 1)<)\n";
+		print $out "<ol label=\"1)\">\n";
+	} elsif ($para =~ s/^\\begin\{tasks\}\[counter-format=tsk\[1\])\]\((.*?)\)[ \n]*//) {
+		close_paragraph();
+		print "(begin tasks enumerate label 1) cols=$1<)\n";
+		print $out "<ol label=\"1)\" cols=\"$1\">\n";
+	} elsif ($para =~ s/^\\begin\{tasks\}\[resume\]\((.*?)\)[ \n]*//) {
+		close_paragraph();
+		print "\n\n\nHUH? Don't understand resume on tasks yet!\n\n\n";
+		$num_errors++;
+		print "(begin resmume tasks enumerate cols=$1<)\n";
+		print $out "<ol label=\"a)\" cols=\"$1\">\n";
+	} elsif ($para =~ s/^\\begin\{tasks\}\[resume\][ \n]*//) {
+		close_paragraph();
+		print "\n\n\nHUH? Don't understand resume on tasks yet!\n\n\n";
+		$num_errors++;
+		print "(begin resmume tasks enumerate<)\n";
+		print $out "<ol label=\"a)\">\n";
+	} elsif ($para =~ s/^\\begin\{tasks\}[ \n]*//) {
+		close_paragraph();
+		print "(begin tasks enumerate)\n";
+		print $out "<ol label=\"a)\">\n";
+	} elsif ($para =~ s/^\\end\{tasks\}[ \n]*//) {
+		close_item();
+		print $out "</ol>\n";
+
+	} elsif ($para =~ s/^\\task[ \n]*//) {
+		print "(task)\n";
+		open_item();
+		open_paragraph();
+
 	} elsif ($para =~ s/^([^\$\\{]*?)\}//) {
 		my $line = $1;
 		print "closing tag after >$line<\n\n";
@@ -1551,6 +1587,12 @@ while(1)
 
 	} elsif ($para =~ s/^\\end\{samepage\}//) {
 		print "(end{samepage} do nothing)\n";
+
+	} elsif ($para =~ s/^\\begin\{mysamepage\}//) {
+		print "(begin mysamepage} do nothing)\n";
+
+	} elsif ($para =~ s/^\\end\{mysamepage\}//) {
+		print "(end{mysamepage} do nothing)\n";
 
 	} elsif ($para =~ s/^\\@//) {
 		print "(\\@ do nothing)\n";
