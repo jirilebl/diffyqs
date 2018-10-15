@@ -603,7 +603,7 @@ while(1)
 		$secnotes =~ s|\\EPref\{([^}]*)\}|$1|g;
 		print "(secnotes $secnotes)\n";
 		print "(cite $secnotes)\n";
-		print $out "<p><em>$secnotes</em></p>\n"; 
+		print $out "<p><em>Note: $secnotes</em></p>\n"; 
 
 	} elsif ($para =~ s/^\\setcounter\{exercise\}\{(.*?)\}[ \n\t]*//s) {
 		$exercise_num=$1;
