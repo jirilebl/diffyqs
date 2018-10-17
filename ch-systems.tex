@@ -3499,7 +3499,7 @@ Again solve (exercise) to find  $b_1 = 2$, $b_2 = -1$.  So our solution is
 \end{bmatrix} .
 \end{equation*}
 The graphs of the two displacements, $x_1$ and $x_2$ of the two carts is in
-\figureref{sosa:superposfig}.
+\figurevref{sosa:superposfig}.
 \begin{myfig}
 \capstart
 \diffyincludegraphics{width=3in}{width=4.5in}{sosa-superpos}
@@ -4405,12 +4405,13 @@ Compute the eigenvalues,
 \right)
 = (2-\lambda)^2(1-\lambda) .
 \end{equation*}
-So the eigenvalues are 1 and 2, where 2 has multiplicity 2.
-For the eigenvalue $\lambda = 1$ we leave it to the reader to find that
+The eigenvalues are 1 and 2, where 2 has multiplicity 2.
+We leave it to the reader to find that
 $\left[ \begin{smallmatrix} 0 \\ 0 \\ 1 \end{smallmatrix} \right]$
-is an eigenvector.
+is an eigenvector
+for the eigenvalue $\lambda = 1$.
 
-Let's focus on $\lambda = 2$.  Let's compute eigenvectors,
+Let's focus on $\lambda = 2$.  We compute eigenvectors:
 \begin{equation*}
 \vec{0} =
 (A - 2 I) \vec{v}
@@ -4432,11 +4433,11 @@ $\left[ \begin{smallmatrix} 1 \\ 0 \\ -1 \end{smallmatrix} \right]$.
 Problem is that setting $v_3$ to anything else just gets multiples
 of this vector and so we have a defect of 1.
 Let $\vec{v}_1$ be the eigenvector and let's look for
-a generalized eigenvector $\vec{v}_2$.
+a generalized eigenvector $\vec{v}_2$:
 \begin{equation*}
 (A - 2 I) \vec{v}_2 = \vec{v}_1 . 
 \end{equation*}
-or
+Or
 \begin{equation*}
 \begin{bmatrix}
 0 & -5 & 0 \\
@@ -4454,9 +4455,9 @@ a \\ b \\ c
 where we used $a$, $b$, $c$ as components of $\vec{v}_2$ for simplicity.
 The first equation says $-5b = 1$ so $b = \nicefrac{-1}{5}$.  The
 second equation says nothing.
-The last equation is $-a + 4b - c = -1$ or
-$a + \nicefrac{4}{5} + c = 1$ or
-$a + c = \nicefrac{1}{5}$.  We can let $c$ be the free variable, so let's
+The last equation is $-a + 4b - c = -1$, or
+$a + \nicefrac{4}{5} + c = 1$, or
+$a + c = \nicefrac{1}{5}$.  We let $c$ be the free variable and we
 choose $c=0$.  We find
 $\vec{v}_2 = \left[ \begin{smallmatrix} \nicefrac{1}{5} \\ \nicefrac{-1}{5}
 \\ 0 \end{smallmatrix} \right]$.

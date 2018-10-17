@@ -47,6 +47,13 @@
   3 defective eigenvalues, and improve exposition on the higher
   multiplicity.
 
+* 4.1: Expand slightly more on the linear algebra connection for
+  eigenvalues/eigenvectors
+* 4.1: Add footnote with the definition of sinh, cosh, as some students
+  might be coming to this sections not having seen these (or not having
+  seen them recently), and may have seen the solution in terms of
+  exponentials.
+
 * 7.1: Add root test and an example for it.
 
 * 8.1: Add a short paragraph on what happens near noncritical points to

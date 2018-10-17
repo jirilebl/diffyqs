@@ -91,11 +91,17 @@ nonzero solution is called a corresponding
 
 Note the similarity to eigenvalues and eigenvectors of matrices.  The
 similarity is not just coincidental.  If we think of the equations as
-differential operators, then we are doing the same exact thing.  For example, 
-let $L = -\frac{d^2}{{dt}^2}$.  We are looking for nonzero functions $f$
+differential operators, then we are doing the same exact thing.
+Think of a function $x(t)$
+as a vector with infinitely many components (one for each $t$).
+Let $L = -\frac{d^2}{{dt}^2}$ be the linear operator.
+Then the eigenvalue/eigenfunction pair should be $\lambda$ and
+nonzero $x$ such that $Lx = \lambda x$.
+In other words,
+we are looking for nonzero functions $x$
 satisfying certain endpoint conditions that solve
-$(L- \lambda)f = 0$.  A lot of the formalism from linear algebra can still
-apply here, though we will not pursue this line of reasoning too far.
+$(L- \lambda)x = 0$.  A lot of the formalism from linear algebra still
+applies here, though we will not pursue this line of reasoning too far.
 
 \begin{example} \label{bvp:eig1ex}
 Let us find the eigenvalues and eigenfunctions of
@@ -122,15 +128,23 @@ $\sqrt{\lambda}\, \pi$ must be an integer multiple of $\pi$.  In other words,
  $\sqrt{\lambda} = k$ for a positive integer $k$.
 Hence the positive eigenvalues are
 $k^2$ for all integers $k \geq 1$.  Corresponding eigenfunctions
-can be taken as $x=\sin (k t)$.  Just like for eigenvectors, we get all the
-multiples of an eigenfunction, so we only need to pick one.
+can be taken as $x=\sin (k t)$.  Just like for eigenvectors, constant
+multiples of an eigenfunction are also eigenfunctions,
+so we only need to pick one.
 
 Now suppose that $\lambda = 0$.  In this case the equation is $x'' = 0$,
 and its general solution is $x = At + B$.  The condition $x(0) = 0$ implies
 that $B=0$, and $x(\pi) = 0$ implies that $A = 0$.  This means that $\lambda
 = 0$ is \emph{not} an eigenvalue.
 
-Finally, suppose that $\lambda < 0$.  In this case we have the general solution
+Finally, suppose that $\lambda < 0$.  In this case we have the general
+solution\footnote{Recall that
+$\cosh s = \frac{1}{2}(e^s+e^{-s})$
+and
+$\sinh s = \frac{1}{2}(e^s-e^{-s})$.  As an exercise
+try the computation with the general solution written as
+$x = A e^{\sqrt{-\lambda}\, t} + B e^{-\sqrt{-\lambda}\, t}$ (for
+different $A$ and $B$ of course).}
 \begin{equation*}
 x = A \cosh ( \sqrt{-\lambda}\, t) + B \sinh ( \sqrt{-\lambda}\, t ) .
 \end{equation*}
@@ -367,7 +381,7 @@ integers $n$ and $m$ we have the integrals
 \quad
 \text{when } m \not = n.
 \end{equation*}
-Similarly
+Similarly,
 \begin{equation*}
 \int_{0}^\pi \cos (mt) \cos (nt) ~dt = 0 ,
 \quad
@@ -496,7 +510,7 @@ in terms of $x$.
 Let $L$ be the length of the string (in meters) and the string
 is fixed at the beginning and end
 points.  Hence, $y(0) = 0$ and $y(L) = 0$.  See
-\figureref{bvp:whirstringfig}.
+\figurevref{bvp:whirstringfig}.
 
 \begin{myfig}
 \capstart
