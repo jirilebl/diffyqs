@@ -468,7 +468,7 @@ is zero when $(x,y) = (0,0)$.  So the system is not almost
 linear.
 Even a worse example is the system $x' = x$, $y' = x^2$, which does not have 
 isolated critical points; $x'$ and $y'$ are both zero
-whenever $x=0$, that is, the entire $y$ axis.
+whenever $x=0$, that is, the entire $y$-axis.
 
 Fortunately, most often critical
 points are isolated, and the system is almost linear at the critical
@@ -1078,7 +1078,7 @@ Let us figure out the period.  That is, the time it takes for the pendulum
 to swing back and forth.
 We notice that the trajectory about the
 origin in the phase plane is symmetric about both the $\theta$ and the
-$\omega$ axis.  That is, in terms of $\theta$,
+$\omega$-axis.  That is, in terms of $\theta$,
 the time it takes from $\theta_0$ to $-\theta_0$
 is the same as it takes from $-\theta_0$ back to $\theta_0$.  Furthermore,
 the time it takes from $-\theta_0$ to $0$ is the same as to go from $0$ to
@@ -1510,7 +1510,7 @@ $\left[
 \end{smallmatrix}
 \right]$, which has eigenvalues $\frac{5\pm i \sqrt{327}}{40}$.  Therefore
 there is a spiral source.  This means the solution spirals
-outwards.  The solution will eventually hit one of the axis, $x=0$ or $y=0$,
+outwards.  The solution will eventually hit one of the axes, $x=0$ or $y=0$,
 so something will die out in the forest.
 }
 
@@ -1524,7 +1524,7 @@ positive numbers.  Hint: Think of the constant of motion.
 The critical points are on the line $x=0$.  In the positive
 quadrant the $y'$ is always positive and so the fox population always grows.
 The constant of motion is $C = y^ae^{-cx-by}$, for any $C$ this curve must
-hit the $y$ axis (why?), so the trajectory will simply approach a point on the $y$
+hit the $y$-axis (why?), so the trajectory will simply approach a point on the $y$
 axis somewhere and the number of hares will go to zero.
 }
 
@@ -1780,7 +1780,7 @@ and the expression%
 \footnote{Usually the expression in the Bendixson--Dulac Theorem is
 $\frac{\partial (\varphi f)}{\partial x} + \frac{\partial (\varphi
 g)}{\partial y}$
-for some continuously differentiable function $\varphi$.  For simplicity
+for some continuously differentiable function $\varphi$.  For simplicity,
 let us just consider the case $\varphi = 1$.}
 \begin{equation*}
 \frac{\partial f}{\partial x} + \frac{\partial g}{\partial y}
@@ -1848,6 +1848,23 @@ have points in both sets.
 %there cannot be a closed trajectory that starts on the set where $x+y > 0$
 %and goes through the set where $x+y < 0$, as it would have to pass through
 %$x+y = 0$.
+\end{example}
+
+\begin{example}
+Consider
+$x' = y+(x^2+y^2-1)x$, 
+$y' = -x +(x^2+y^2-1)y$, and consider the region $R$ given by $x^2+y^2 >
+\frac{1}{2}$.  That is, $R$ is the region outside a circle of radius
+$\frac{1}{\sqrt{2}}$ centered at the origin.  Then
+there is a closed trajectory in $R$, namely $x=\cos(t)$, $y=\sin(t)$.
+Furthermore 
+\begin{equation*}
+\frac{\partial f}{\partial x} + 
+\frac{\partial g}{\partial x} = 4x^2+4y^2-2 ,
+\end{equation*}
+which is always positive on $R$.  So what is going on?  The Bendixson--Dulac theorem does not
+apply since the region $R$ is not simply connected---it has a hole, the
+circle we cut out!
 \end{example}
 
 \subsection{Exercises}

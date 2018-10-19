@@ -15,8 +15,6 @@ SMALLER THINGS:
   the units.
 * In 3.4 (or earlier?) Add some exercises on constant nonhomogeneity for
   an invertible A, that just translates the point.
-* In whirling string, plot several of the eigenfunctions to show how it crosses
-  the axis k-1 times
 * exponential order / type, need to use one term only.  Order at infinity
   also should be emphasized at more places.
 * Include annihilator method at least in exercises of section of 2.5 

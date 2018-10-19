@@ -484,12 +484,12 @@ Suppose we have a tightly stretched quickly spinning elastic
 string or rope of uniform linear density $\rho$, for example in
 $\unitfrac{kg}{m}$.
 Let us put this problem into the $xy$-plane and both $x$ and $y$
-are in meters.  The $x$ axis represents the
+are in meters.  The $x$-axis represents the
 position on the string.  The string rotates at angular velocity $\omega$,
 in $\unitfrac{radians}{s}$.
 Imagine that the whole $xy$-plane rotates at angular velocity $\omega$.
 This way, the string stays in this $xy$-plane and $y$ 
-measures its deflection from the equilibrium position, $y=0$, on the $x$ axis.
+measures its deflection from the equilibrium position, $y=0$, on the $x$-axis.
 Hence the graph of $y$ gives the shape of the string.
 We consider an ideal string with
 no volume, just a mathematical curve.
@@ -546,9 +546,20 @@ For most values of $\omega$ the string is in the equilibrium state.  When
 the angular velocity $\omega$ hits a value
 $\omega = \frac{k \pi \sqrt{T}}{L\sqrt{\rho}}$, then the string 
 pops out and has the shape of a sin wave crossing the
-$x$ axis $k-1$ times between the end points.  When $\omega$ changes again, the string returns to
+$x$-axis $k-1$ times between the end points.
+For example, at $k=1$, the string does not cross the $x$-axis
+and the shape looks like in \figurevref{bvp:whirstringfig}.
+On the other hand, when $k=3$ the string crosses the $x$-axis
+2 times, see \figurevref{bvp:whirstring2fig}.
+When $\omega$ changes again, the string returns to
 the equilibrium position.  The higher the angular velocity,
-the more times it crosses the $x$ axis when it is popped out.
+the more times it crosses the $x$-axis when it is popped out.
+
+\begin{myfig}
+\capstart
+\inputpdft{bvp-whirstring2}
+\caption{Whirling string at the third eigenvalue ($k=3$).\label{bvp:whirstring2fig}}
+\end{myfig}
 
 For another example, if you have a spinning jump rope (then $k=1$ as it is
 completely \myquote{popped out}) and you
@@ -3087,7 +3098,7 @@ u_x(0,t) = 0 \qquad \text{and} \qquad
 u_x(L,t) = 0 .
 \end{equation*}
 In other words, heat is not flowing in nor out of the wire at the ends.
-We always have two conditions along the $x$ axis as there are
+We always have two conditions along the $x$-axis as there are
 two derivatives in the $x$ direction.
 These side conditions are said to be
 \emph{homogeneous\index{homogeneous side conditions}}
@@ -3707,7 +3718,7 @@ Assume that the ends of the string are fixed in place:
 \begin{equation*}
 y(0,t) = 0 \qquad \text{and} \qquad y(L,t) = 0.
 \end{equation*}
-Note that we have two conditions along the $x$ axis as there are
+Note that we have two conditions along the $x$-axis as there are
 two derivatives in the $x$ direction.
 
 There are also two derivatives along the $t$ direction and hence we need
