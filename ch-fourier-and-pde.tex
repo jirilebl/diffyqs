@@ -9,22 +9,24 @@
 
 \subsection{Boundary value problems}
 
-Before we tackle the Fourier series, we need to study
+Before we tackle the Fourier series, we study
 the so-called 
 \emph{boundary value problems\index{boundary value problem}}
-(or \emph{endpoint problems\index{endpoint problem}}).  For example,
-suppose we have
+(or \emph{endpoint problems\index{endpoint problem}}).  Consider
 \begin{equation*}
 x'' + \lambda x = 0, \quad x(a) = 0, \quad x(b) = 0,
 \end{equation*}
 for some constant $\lambda$, where $x(t)$ is defined for $t$ in the interval
 $[a,b]$.
-Unlike before, when we specified the value of the solution and its derivative
-at a single point, we now specify the value of the solution at two different
-points.  Note that $x=0$ is a solution to this equation, so existence of
-solutions is not a problem here.  Uniqueness of solutions is another issue.
+Previously we specified the value of the solution and its derivative
+at a single point.  Now we specify the value of the solution at two different
+points.  As $x=0$ is a solution, existence of
+solutions is not a problem.  Uniqueness of solutions is another issue.
 The general solution to $x'' + \lambda x = 0$ has two
-arbitrary constants present.  It is, therefore,
+arbitrary constants\footnote{%
+See \examplevref{example:expsecondorder} and
+\examplevref{example:sincossecondorder}.}.
+It is, therefore,
 natural (but wrong) to believe that requiring two
 conditions guarantees a unique solution.
 

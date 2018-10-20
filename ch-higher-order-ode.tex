@@ -354,7 +354,12 @@ To guess a solution, think of a function that you know stays essentially the
 same when we differentiate it, so that we can take the function and its
 derivatives, add some multiples of these together, and end up with zero.
 
-Let us try a solution of the form $y = e^{rx}$.  Then $y' = r e^{rx}$ and
+Let us try\footnote{%
+Making an educated guess with some parameters to solve for 
+is such a central technique in differential equations, that people use
+a fancy name for such a guess: \emph{\myindex{ansatz}}, German for ``initial
+placement of a tool at a work piece.''  Yes, Germans have a word for that.}
+a solution of the form $y = e^{rx}$.  Then $y' = r e^{rx}$ and
 $y'' = r^2 e^{rx}$.  Plug in to get
 \begin{align*}
 y''-6y'+8y & = 0 , \\
@@ -410,13 +415,13 @@ a r^2 +
 b r + 
 c & = 0 .
 \end{align*}
-The equation $a r^2 + b r + c = 0$ is called the \emph{\myindex{characteristic
-equation}} of the ODE\@.
+The equation $a r^2 + b r + c = 0$ is called the
+\emph{\myindex{characteristic equation}} of the ODE\@.
 Solve for the $r$ by using the \myindex{quadratic formula}.
 \begin{equation*}
 r_1, r_2 = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} .
 \end{equation*}
-Therefore, we have $e^{r_1 x}$ and $e^{r_2 x}$ as solutions.  There is
+So $e^{r_1 x}$ and $e^{r_2 x}$ are solutions.  There is
 still a difficulty if $r_1 = r_2$, but it is not hard to overcome.
 
 \begin{theorem}
@@ -435,11 +440,27 @@ y = (C_1 + C_2 x)\, e^{r_1 x} .
 \end{enumerate}
 \end{theorem}
 
-For another example of the
-first case, take the equation $y'' - k^2 y = 0$.  Here the
-characteristic equation is $r^2 - k^2 = 0$ or 
+\begin{example} \label{example:expsecondorder}
+Solve
+\begin{equation*}
+y'' - k^2 y = 0 .
+\end{equation*}
+The characteristic equation is $r^2 - k^2 = 0$ or 
 $(r-k)(r+k) = 0$.  Consequently, $e^{-k x}$ and $e^{kx}$ are the two
-linearly independent solutions.
+linearly independent solutions, and the general solution is
+\begin{equation*}
+y = C_1 e^{kx} + C_2e^{-kx} .
+\end{equation*}
+Since
+$\cosh s = \frac{e^s+e^{-s}}{2}$
+and
+$\sinh s = \frac{e^s-e^{-s}}{2}$,
+we can also write the general solution
+as
+\begin{equation*}
+y = D_1 \cosh(kx) + D_2 \sinh(kx) .
+\end{equation*}
+\end{example}
 
 \begin{example}
 Find the general solution of
@@ -469,11 +490,12 @@ y'' - 8 y' + 16 y =
 \end{equation*}
 \end{example}
 
-We should note that in practice, doubled root rarely happens.  If
-coefficients are 
-picked truly randomly we are very unlikely to get a doubled root.
+In some sense, a doubled root rarely happens.  If coefficients are 
+picked truly randomly we are unlikely to get a doubled root.
+There are however some natural phenomena (such as resonance as we will see)
+where a doubled root does happen, so we cannot just dismiss this case.
 
-Let us give a short proof for why the solution $x e^{r x}$ works when the
+Let us give a short argument for why the solution $x e^{r x}$ works when the
 root is doubled.  This case is really a limiting case of when
 the two roots are distinct and very close.  Note that 
 $\frac{e^{r_2 x} - e^{r_1 x}}{r_2 - r_1}$ is a solution when the roots are
@@ -484,7 +506,7 @@ $x e^{rx}$, and hence this is a solution in the doubled root case.
 
 \subsection{Complex numbers and Euler's formula}
 
-It may happen that a polynomial has some complex roots.  For example, the
+It may happen that a polynomial has some complex roots.  The
 equation $r^2 + 1 = 0$ has no real roots, but it does have two complex roots.
 Here we review some properties of complex numbers\index{complex number}.
 
@@ -493,8 +515,8 @@ Here we review some properties of complex numbers\index{complex number}.
 Complex numbers may seem a strange concept, especially because of the
 terminology.  There is nothing imaginary or really complicated about complex
 numbers.
-A complex number is simply a pair of real numbers, $(a,b)$.  We can
-think of a complex number as a point in the plane.  We add complex numbers
+A complex number is simply a pair of real numbers, $(a,b)$.  
+Think of a complex number as a point in the plane.  We add complex numbers
 in the straightforward way: $(a,b)+(c,d)=(a+c,b+d)$.  We define
 multiplication\index{multiplication of complex numbers} by
 \begin{equation*}
@@ -528,7 +550,7 @@ root of $-1$.  We will use the mathematicians' convention and use $i$.
 \begin{exercise}
 Make sure you understand (that you can justify)
 the following identities:
-\begin{tasks}
+\begin{tasks}(2)
 \task $i^2 = -1$, $i^3 = -i$, $i^4 = 1$,
 \task $\dfrac{1}{i} = -i$,
 \task $(3-7i)(-2-9i) = \cdots = -69-13i$,
@@ -647,7 +669,7 @@ y = C_1 e^{\alpha x} \cos (\beta x) + C_2 e^{\alpha x} \sin (\beta x) .
 \end{equation*}
 \end{theorem}
 
-\begin{example}
+\begin{example} \label{example:sincossecondorder}
 Find the general solution of $y'' + k^2 y = 0$, for a constant
 $k > 0$.
 

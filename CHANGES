@@ -15,6 +15,11 @@
 
 * 1.3: Add figure with a graph for the coffee example.
 
+* 2.2: Add a short footnote on the word ``ansatz'' and add it to index.
+* 2.2: Make the $y''+k^2 y= 0$ an explicit example, so that we can refer to
+  it, and give the version of the solution with sinh and cosh.
+* 2.2: Reword the paragraph on why doubled roots rarely happen, so that
+  the reader doesn't think it can just be dismissed.  
 * 2.2: Add example of complex arithmetic
 * 2.2: In Exercise 2.2.3 label the parts abc... rather than just bullet points
 
@@ -54,6 +59,9 @@
   seen them recently), and may have seen the solution in terms of
   exponentials.
 * 4.1: Add another picture of whirling string for a higher eigenvalue.
+
+* 4.2: Add footnote with reference to the examples where $x''+\lambda x=0$
+  is solved.
 
 * 7.1: Add root test and an example for it.
 
