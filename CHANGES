@@ -13,6 +13,9 @@
 
 * Make bottom margin smaller to save paper
 
+* 0.2: Make the four fundamental equations a separate subsection, to
+  emphasize and to make it possible to refer to it
+
 * 1.3: Add figure with a graph for the coffee example.
 
 * 2.2: Add a short footnote on the word ``ansatz'' and add it to index.

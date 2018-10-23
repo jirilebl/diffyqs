@@ -197,7 +197,7 @@ Laplace transform (\chapterref{LT:chapter}),
 the chapter on Sturm--Liouville (\chapterref{SL:chapter}),
 the chapter on power series (\chapterref{ps:chapter}),
 and the chapter on nonlinear systems (\chapterref{nlin:chapter}),
-are more or less interchangeable, and can be treated as ``topics''.
+are more or less interchangeable, and can be treated as \myquote{topics}.
 If \chapterref{nlin:chapter} is covered it may be best to place it right 
 after \chapterref{sys:chapter},
 and \chapterref{SL:chapter} is best covered right after
@@ -381,15 +381,16 @@ differential
 equations, but we will also spend a little bit of time
 on getting approximate solutions.
 
-For most of the course we will look at
-\emph{ordinary differential equations\index{ordinary differential equation}} or ODEs\index{ODE}, by which we mean that there
+Most of this book is dedicated to
+\emph{ordinary differential equations\index{ordinary differential equation}}
+or ODEs\index{ODE}, by which we mean that there
 is only one independent variable and derivatives are only with respect to
 this one variable.
-If there are several independent variables, we will get
+If there are several independent variables, we get
 \emph{partial differential equations\index{partial differential equation}}
 or PDEs\index{PDE}.
-We will briefly see these near the
-end of the course.
+%We will briefly see these near the
+%end of the course.
 
 Even for ODEs, which are very well understood, it is not a simple question
 of turning a crank to get answers.  
@@ -525,12 +526,12 @@ P(t) = 1000 \, e^t .
 
 We call $P(t) = C e^t$ \emph{the \myindex{general solution}},
 as every solution
-of the equation can be written in this form for some constant $C$.  You
-will need an initial condition to find out what $C$ is, in order to find the
+of the equation can be written in this form for some constant $C$.  We
+need an initial condition to find out what $C$ is, in order to find the
 \emph{\myindex{particular solution}} we are looking for.  Generally, when we say
 \myquote{particular solution,} we just mean some solution.
 
-\medskip
+\subsection{Four fundamental equations} \label{subsection:fourfundamental}
 
 Let us get to what we will call the four fundamental equations.
 These equations appear very often and it is useful to just memorize what
@@ -768,7 +769,7 @@ That is, there are several independent variables.
 
 Let us see some examples of ordinary differential equations:
 \begin{align*}
-& \frac{d y}{dt} = ky , & & \text{(\myindex{Newton's law of cooling})} \\
+& \frac{d y}{dt} = -ky , & & \text{(\myindex{Newton's law of cooling})} \\
 & m \frac{d^2 x}{dt^2} + c \frac{dx}{dt} + kx = f(t) . & &
 \text{(Mechanical vibrations\index{mechanical vibrations})}
 \end{align*}
@@ -852,7 +853,7 @@ a_{0}(x) y = b(x) .
 \end{equation}
 The functions $a_0$, $a_1$, \ldots, $a_n$ are called the
 \emph{\myindex{coefficients}}.
-The equation is allowed to depend arbitrarily on the independent variables.
+The equation is allowed to depend arbitrarily on the independent variable.
 So 
 \begin{equation} \label{classification:eqlinex}
 e^x \frac{d^2 y}{dx^2} + 
@@ -921,7 +922,7 @@ a_{0} y = b(x) ,
 \end{equation*}
 where $a_0, a_1, \ldots, a_n$ are all constants, but $b$ may depend on 
 the independent variable $x$.  The Mechanical vibrations equation
-above is constant coefficient nonhomogeneous second order ODE\@.
+above is a constant coefficient nonhomogeneous second order ODE\@.
 Same nomenclature applies to PDEs, so the Transport equation,
 Heat equation and Wave equation are all examples of constant coefficient
 linear PDEs.
