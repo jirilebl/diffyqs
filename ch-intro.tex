@@ -374,17 +374,19 @@ a few lectures from now.
 
 \medskip
 
-It turns out that solving differential equations can be quite hard.  
+Solving differential equations can be quite hard.  
 There is no general method that solves every differential equation.  We will
 generally focus on how to get exact formulas for solutions of certain
 differential
 equations, but we will also spend a little bit of time
 on getting approximate solutions.
+And we will spend some time on understanding the equations without solving
+them.
 
 Most of this book is dedicated to
 \emph{ordinary differential equations\index{ordinary differential equation}}
-or ODEs\index{ODE}, by which we mean that there
-is only one independent variable and derivatives are only with respect to
+or ODEs\index{ODE}, that is, equations with
+only one independent variable, where derivatives are only with respect to
 this one variable.
 If there are several independent variables, we get
 \emph{partial differential equations\index{partial differential equation}}
@@ -533,10 +535,11 @@ need an initial condition to find out what $C$ is, in order to find the
 
 \subsection{Four fundamental equations} \label{subsection:fourfundamental}
 
-Let us get to what we will call the four fundamental equations.
-These equations appear very often and it is useful to just memorize what
+There are a few equations that appear often and
+it is useful to just memorize what
 their solutions are.
-These solutions
+Let us call them the \myindex{four fundamental equations}.
+Their solutions
 are reasonably easy
 to guess by recalling properties of exponentials, sines, and cosines.
 They are also simple to check, which is something that you should always do.
@@ -583,9 +586,7 @@ The general solution for this equation is
 \begin{equation*}
 y(x) = C_1 \cos(kx) + C_2 \sin(kx) .
 \end{equation*}
-Note that
-because
-we have a second order differential equation,
+Since the equation is a second order differential equation,
 we have two constants in our general solution.
 
 \begin{exercise}
@@ -607,10 +608,14 @@ y(x) = D_1 \cosh(kx) + D_2 \sinh(kx) .
 \end{equation*}
 
 For those that do not know, $\cosh$ and $\sinh$ are defined by
-\begin{align*}
-\cosh x &= \frac{e^{x} + e^{-x}}{2} , \\
-\sinh x &= \frac{e^{x} - e^{-x}}{2} .
-\end{align*}
+\begin{equation*}
+\cosh x = \frac{e^{x} + e^{-x}}{2} , \qquad
+\sinh x = \frac{e^{x} - e^{-x}}{2} .
+\end{equation*}
+They are called the
+\emph{\myindex{hyperbolic cosine}}
+and
+\emph{\myindex{hyperbolic sine}}.
 These functions are sometimes easier to
 work with than exponentials.  They have some nice familiar
 properties such as

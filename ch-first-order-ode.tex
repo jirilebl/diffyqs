@@ -1604,7 +1604,7 @@ $Ah' = I - kh$, where $k$ is a constant with units $\unit{m^2}{s}$.
 \section{Substitution}
 \label{substitution:section}
 
-\sectionnotes{1 lecture\EPref{, \S1.6 in \cite{EP}}\BDref{, not in
+\sectionnotes{1 lecture, can safely be skipped\EPref{, \S1.6 in \cite{EP}}\BDref{, not in
 \cite{BD}}}
 
 Just as when solving integrals, one method to try is to change variables to
@@ -2270,7 +2270,7 @@ b) $\alpha$, \quad c) $\alpha$, \quad d) $\infty$ or DNE\@.
 %You worked with Euler's method in the IODE lab, let us now go over this method
 %to see what we've done.
 
-As we mentioned before, unless $f(x,y)$ is of a special form,
+Unless $f(x,y)$ is of a special form,
 it is generally very hard
 if not impossible to get a nice formula for the solution of the problem
 \begin{equation*}
@@ -2290,13 +2290,29 @@ The simplest method for approximating a solution is
 \href{https://en.wikipedia.org/wiki/Euler}{Leonhard Paul Euler}
 (1707--1783).  Do note the correct pronunciation of the name sounds more
 like \myquote{oiler.}}}.  It works as follows:
-We take $x_0$ and compute the slope $k = f(x_0,y_0)$.  The slope is the
-change in $y$ per unit change in $x$.  We follow the line for an interval of
-length $h$ on the $x$-axis.  Hence if $y = y_0$ at $x_0$, then we will say that
-$y_1$ (the approximate value of $y$ at $x_1 = x_0 + h$) will be
+Take $x_0$ and compute the slope $k = f(x_0,y_0)$.  The slope is the
+change in $y$ per unit change in $x$.  Follow the line for an interval of
+length $h$ on the $x$-axis.  Hence if $y = y_0$ at $x_0$, then we say that
+$y_1$ (the approximate value of $y$ at $x_1 = x_0 + h$) is
 $y_1 = y_0 + h k$.
-Rinse, repeat!  That is, compute $x_2$ and $y_2$ using $x_1$ and $y_1$.
-For an example of the first two steps of the method see
+Rinse, repeat!  Let $k = f(x_1,y_1)$, and then compute
+$x_2 = x_1 + h$, and $y_2 = y_1 + h k$.
+Now compute $x_3$ and $y_3$ using $x_2$ and $y_2$, etc.
+Consider the equation $y' = \nicefrac{y^2}{3}$, $y(0)=1$, and $h=1$.
+Then $x_0=0$ and $y_0 = 1$.  We compute
+\begin{align*}
+& x_1 = x_0 + h = 0 + 1 = 1, & & y_1 = y_0 + h \, f(x_0,y_0) = 1 + 1 \cdot
+\nicefrac{1}{3} = \nicefrac{4}{3} \approx 1.333,\\
+& x_2 = x_1 + h = 1 + 1 = 2, & & y_2 = y_1 + h \, f(x_1,y_1) =
+\nicefrac{4}{3} + 1 \cdot \frac{{(\nicefrac{4}{3})}^2}{3} =
+\nicefrac{52}{27} \approx 1.926.
+\end{align*}
+We then draw an approximate graph of the solution by
+connecting the points
+$(x_0,y_0)$,
+$(x_1,y_1)$,
+$(x_2,y_2)$,\dots.
+For the first two steps of the method see
 \figurevref{euler-step12:fig}.
 
 \begin{myfig}
@@ -2327,7 +2343,7 @@ the equation $y' = \frac{y^2}{3}$ with initial conditions $y(0)=1$.
 \label{euler-step12-sol:fig}}
 \end{myfig}
 
-Let us see what happens with the equation $y' = \nicefrac{y^2}{3}$, $y(0)=1$.
+We continue with the equation $y' = \nicefrac{y^2}{3}$, $y(0)=1$.
 Let us try
 to approximate $y(2)$ using Euler's method.  In
 Figures~\ref{euler-step12:fig}
@@ -2335,7 +2351,17 @@ and~\ref{euler-step12-sol:fig} we have
 graphically approximated $y(2)$ with step size 1.  With step
 size 1 we have $y(2) \approx 1.926$.  The real
 answer is 3.  So we are approximately 1.074
-off.  Let us halve the step size.  Computing $y_4$ with $h=0.5$,
+off.  Let us halve the step size.
+%\begin{align*}
+%& x_1 = x_0 + h = 0 + \nicefrac{1}{2} = \nicefrac{1}{2},
+%  & & y_1 = y_0 + h \, f(x_0,y_0)
+%          = 1 + \nicefrac{1}{2} \cdot \nicefrac{1^3}{3} = \nicefrac{7}{6} \approx 1.167,\\
+%& x_2 = x_1 + h = \nicefrac{1}{2} + \nicefrac{1}{2} = 1,
+%  & & y_2 = y_1 + h \, f(x_1,y_1) =
+%  \nicefrac{7}{6} + \nicefrac{1}{2} \cdot \frac{{(\nicefrac{7}{6})}^2}{3} =
+%  FIXME
+%\end{align*}
+Computing $y_4$ with $h=0.5$,
 we find that $y(2) \approx 2.209$, so an error of about 0.791.
 \tablevref{euler-table:table} gives the values computed
 for various parameters.
@@ -2375,14 +2401,15 @@ of $y'=\nicefrac{y^2}{3}$, $y(0)=1$.\label{euler-table:table}}
 \myendframe
 \end{table}
 
-We notice that except for the first few times, every time we halved 
+Notice that except for the first few times, every time we halved 
 the interval the error approximately halved.
 This halving of the error is a general feature of Euler's method as it is a
 \emph{\myindex{first order method}}.
 %  In the IODE Project II you are
 %asked to implement a \myindex{second order method}.
 There exists an improved Euler method, see the exercises,
-that is a \myindex{second order method}
+which is a \myindex{second order method}.
+A second order method
 reduces the error to approximately one
 quarter every time we halve the interval.  The meaning of
 \myquote{second} order is the squaring in $\nicefrac{1}{4} = \nicefrac{1}{2} \times
@@ -2608,6 +2635,7 @@ b) $x(4) = 16$, so errors are: 16, 8, 4.
 c) Factors are 0.5, 0.5, 0.5.
 }
 
+\begin{samepage}
 \begin{exercise}
 Let $x' = x e^{xt+1}$, and $x(0)=0$.
 \begin{tasks}
@@ -2615,6 +2643,7 @@ Let $x' = x e^{xt+1}$, and $x(0)=0$.
 \task Guess an exact solution based on part a) and compute the errors.
 \end{tasks}
 \end{exercise}
+\end{samepage}
 \exsol{%
 a) 0, 0, 0
 \quad
