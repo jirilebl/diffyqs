@@ -13,6 +13,7 @@ A free online textbook.  See http://www.jirka.org/diffyqs/
 * ``ch-*.tex`` are the files with the content of the various chapters
 * ``ap-*.tex`` are the files with the content of the various apendices (only one right now)
 * ``diffyqssetup.sty`` is the preamble for the PDF version
+* ``mywrapfig.sty`` is a slightly modified wrapfig.sty (fixing intextsep nonsense)
 
 * Figures are in ``figures/``
 

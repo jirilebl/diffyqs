@@ -65,7 +65,8 @@
 \usepackage{booktabs}
 \usepackage{microtype}
 \usepackage{cancel}
-\usepackage{wrapfig}
+% This is my modified wrapfig that doesn't use intextsep
+\usepackage{mywrapfig}
 \usepackage{import}
 
 % Times
@@ -274,34 +275,25 @@ Remark
 \end{tcolorbox}%
 }
 
-% to keep track of old inttextsep
-\newlength\myoldintextsep
-
 % floaty inset figures
 
 % this one should have a caption, first argument is the size
-\newenvironment{mywrapfig}[1]{%
-\setlength{\myoldintextsep}{\intextsep}%
-\setlength{\intextsep}{0.5\intextsep}%
-\wrapfigure{r}{#1}%
-\mybeginframe%
-\centering%
+\newenvironment{mywrapfig}[2][]{
+ \wrapfigure[#1]{r}{#2}
+ \mybeginframe
+ \centering
 }{%
-\myendframe%
-\endwrapfigure%
-\setlength{\intextsep}{\myoldintextsep}%
+ \myendframe
+ \endwrapfigure
 }
 
 % this one has no caption, first argument is size,
 % the second argument is a larger size used for HTML (ignored by latex)
-\newenvironment{mywrapfigsimp}[2]{%
-\setlength{\myoldintextsep}{\intextsep}%
-\setlength{\intextsep}{0.5\intextsep}%
-\wrapfigure{r}{#1}%
-\centering%
+\newenvironment{mywrapfigsimp}[3][]{%
+ \wrapfigure[#1]{r}{#2}%
+ \centering%
 }{%
-\setlength{\intextsep}{\myoldintextsep}%
-\endwrapfigure%
+ \endwrapfigure%
 }
 
 % this is just my figure style

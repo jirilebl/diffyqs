@@ -366,13 +366,14 @@ few of these solutions.
 We will see how we find these solutions
 a few lectures from now.
 
+\medskip
+
 \begin{mywrapfig}{3.25in}
 \capstart
 \diffyincludegraphics{width=3in}{width=4.5in}{intro-plots-alt}
 \caption{Few solutions of $\frac{dx}{dt} + x = 2 \cos t$.\label{intro:plotsfig}}
 \end{mywrapfig}%
 
-\medskip
 
 Solving differential equations can be quite hard.  
 There is no general method that solves every differential equation.  We will
@@ -458,16 +459,6 @@ for some positive constant $k > 0$.
 Suppose there are 100 bacteria at time 0 and 200 bacteria 10 seconds later.
 How many bacteria will there be 1 minute from time 0 (in 60 seconds)?
 
-First we have to solve the equation.  We claim that a solution is given by
-\begin{equation*}
-P(t) = C e^{kt} ,
-\end{equation*}
-where $C$ is a constant.  Let us try:
-\begin{equation*}
-\frac{dP}{dt} = C k e^{kt} = k P .
-\end{equation*}
-And it really is a solution.
-
 %mbxSTARTIGNORE
 \begin{mywrapfig}{3.25in}
 \capstart
@@ -478,15 +469,25 @@ And it really is a solution.
 %
 % Make sure to keep the above and the the mbx figure below in sync!
 %
-OK\@, so what now?  We do not know $C$ and we do not know $k$.  But we know
-something.  We know $P(0) = 100$, and we also know 
+First we need to solve the equation.  We claim that a solution is given by
+\begin{equation*}
+P(t) = C e^{kt} ,
+\end{equation*}
+where $C$ is a constant.  Let us try:
+\begin{equation*}
+\frac{dP}{dt} = C k e^{kt} = k P .
+\end{equation*}
+And it really is a solution.
+
+OK\@, now what?  We do not know $C$ and we do not know $k$.  But we know
+something.  We know $P(0) = 100$, and we know 
 $P(10) = 200$.  Let us plug these conditions in and see what happens.
 \begin{align*}
 & 100 = P(0) = C e^{k0} = C ,\\
 & 200 = P(10) = 100 \, e^{k10} .
 \end{align*}
 Therefore, $2 = e^{10k}$ or $\frac{\ln 2}{10} = k \approx 0.069$.
-So we know that
+So 
 \begin{equation*}
 P(t) = 100 \, e^{(\ln 2) t / 10} \approx 100 \, e^{0.069 t} .
 \end{equation*}

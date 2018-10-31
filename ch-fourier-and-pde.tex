@@ -3726,7 +3726,7 @@ See
 \begin{myfig}
 \capstart
 \inputpdft{sps-vibstr}
-\caption{Vibrating string.\label{we:vibstrfig}}
+\caption{Vibrating string of length $L$, $x$ is position, $y$ is displacement.\label{we:vibstrfig}}
 \end{myfig}
 
 The equation that governs this setup is the so-called
@@ -3987,7 +3987,7 @@ c_n
 \end{equation*}
 \end{theorem}
 
-\begin{example}
+\begin{example} \label{example:pluckedstring}
 Let us try a simple example of a plucked string.  Suppose that
 a string of length 2
 is plucked in the middle such that it has the initial shape given
@@ -4005,7 +4005,8 @@ equation for simplicity.
 \begin{myfig}
 \capstart
 \inputpdft{wave-pluckedstr}
-\caption{Plucked string.\label{wave:pluckedstrfig}}
+\caption{Initial shape of a plucked string from
+\exampleref{example:pluckedstring}.\label{wave:pluckedstrfig}}
 \end{myfig}
 
 We leave it to the reader to compute the sine series of $f(x)$.  The series
@@ -5203,16 +5204,18 @@ is the circle rather than the square.  On the other hand, what makes the
 problem somewhat more difficult is that we need polar coordinates.
 
 \begin{mywrapfigsimp}{1.3in}{1.5in}
+\diffypdfversion{\vspace*{5pt}}
 \noindent
 \inputpdft{polarcoords}
-\diffypdfversion{\vspace*{10pt}}
+\diffypdfversion{\vspace*{5pt}}
 \end{mywrapfigsimp}
 Recall that the polar coordinates for the $(x,y)$-plane are $(r,\theta)$: 
 \begin{equation*}
 x = r \cos \theta , \quad y = r \sin \theta ,
 \end{equation*}
-where $r \geq 0$ and $-\pi < \theta \leq \pi$.  So $(x,y)$ is
-distance $r$ from the origin at angle $\theta$.
+where $r \geq 0$ and $-\pi < \theta \leq \pi$.  So the point $(x,y)$ is
+distance $r$ from the origin at an angle $\theta$ from the positive
+$x$-axis.
 
 Now that we know our coordinates, let us give the problem we wish
 to solve.  We have a circular region of radius 1, and we are interested
@@ -5752,6 +5755,7 @@ of the integral are given as 0 to $2\pi$; everything inside is
 $2\pi$-periodic in $\alpha$, so this does not change the integral.
 
 \begin{mywrapfigsimp}{2.1in}{2.4in}
+\diffypdfversion{\vspace*{5pt}}
 \noindent
 \inputpdft{poisson}
 \end{mywrapfigsimp}

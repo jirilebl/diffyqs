@@ -1479,26 +1479,31 @@ M & \text{if } \; a \leq t < b , \\
 \end{cases}
 \end{equation*}
 See \figurevref{lt:sqpulse} for a graph.
+
+%15 is number of lines, must be adjusted
+\begin{mywrapfig}[15]{3.25in}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{lt-sqpulse}
+\caption{Sample square pulse with $a=0.5$, $b=1$ and $M = 2$.\label{lt:sqpulse}}
+\end{mywrapfig}
+
 Notice that
 \begin{equation*}
 \varphi(t) = M \bigl( u(t-a) - u(t-b) \bigr) ,
 \end{equation*}
 where $u(t)$ is the unit step function.
 
-\begin{myfig}
-\capstart
-\diffyincludegraphics{width=3in}{width=4.5in}{lt-sqpulse}
-\caption{Sample square pulse with $a=0.5$, $b=1$ and $M = 2$.\label{lt:sqpulse}}
-\end{myfig}
-
 Let us take the Laplace transform of a square pulse,
 \begin{equation*}
+\begin{split}
 {\mathcal{L}} \bigl\{ \varphi(t) \bigr\}
-=
+& =
 {\mathcal{L}} \bigl\{ M \bigl( u(t-a) - u(t-b) \bigr)  \bigr\}
-=
+\\
+& =
 M
 \frac{e^{-as} - e^{-bs}}{s} .
+\end{split}
 \end{equation*}
 
 For simplicity we let $a=0$, and it is convenient

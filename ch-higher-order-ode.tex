@@ -1343,8 +1343,8 @@ before you jump off the bridge, right?  Let us give two other examples.
 
 \medskip
 
-\begin{mywrapfigsimp}{1.35in}{1.65in}
-\diffypdfversion{\vspace*{-10pt}}
+%5 is the number of lines, must be adjusted
+\begin{mywrapfigsimp}[5]{1.35in}{1.65in}
 \noindent
 \inputpdft{mv-rlc}
 \end{mywrapfigsimp}
@@ -1372,11 +1372,10 @@ unforced motion.
 
 \medskip
 
-\begin{mywrapfigsimp}{1.8in}{2.16in}
-\diffypdfversion{\vspace*{-15pt}}
+%10 is the number of lines, must be adjusted
+\begin{mywrapfigsimp}[10]{1.8in}{2.16in}
 \noindent
 \inputpdft{mv-pend-deriv}
-%\diffypdfversion{\vspace*{24pt}}
 \end{mywrapfigsimp}
 Our next example behaves like a mass and spring system only
 approximately. Suppose a
@@ -1602,8 +1601,9 @@ nonnegative, or in other words if $c^2 \geq 4km$.
 
 \subsubsection{Overdamping}
 
+%15 is the number of lines, must be adjusted
 %mbxSTARTIGNORE
-\begin{mywrapfig}{3.25in}
+\begin{mywrapfig}[15]{3.25in}
 \capstart
 \diffyincludegraphics{width=3in}{width=4.5in}{mv-overdamped}
 \caption{Overdamped motion for several different initial conditions.\label{mv:overdampedfig}}
@@ -1635,7 +1635,7 @@ conditions, see \figurevref{mv:overdampedfig}.
 %mbxlatex \caption{Overdamped motion for several different initial conditions.\label{mv:overdampedfig}}
 %mbxlatex \end{myfig}
 
-Do note that no oscillation happens.  In fact, the graph will cross the
+Do note that no oscillation happens.  In fact, the graph crosses the
 $x$-axis at most once.  To see why, we try to solve
 $0 = C_1 e^{r_1 t} + C_2 e^{r_2 t}$.
 Therefore, $C_1 e^{r_1 t} = - C_2 e^{r_2 t}$ and using laws of exponents we
@@ -1644,7 +1644,7 @@ obtain
 \frac{-C_1}{C_2} = e^{(r_2-r_1) t} .
 \end{equation*}
 This equation has at most one solution $t \geq 0$.
-For some initial conditions the graph will never cross the $x$-axis, as is
+For some initial conditions the graph never crosses the $x$-axis, as is
 evident from the sample graphs.
 
 \begin{example}
@@ -2393,7 +2393,6 @@ $y=\frac{-\sin(x+c)}{3}+C_1 e^{\sqrt{2}\,x}+C_2 e^{-\sqrt{2}\,x}$
 \S3.8 in \cite{BD}}}
 
 \begin{mywrapfigsimp}{2.0in}{2.3in}
-\diffypdfversion{\vspace*{-10pt}}
 \noindent
 \inputpdft{massfigforce}
 \end{mywrapfigsimp}

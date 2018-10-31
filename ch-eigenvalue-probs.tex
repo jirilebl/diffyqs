@@ -533,7 +533,7 @@ and decide if the problems are regular or not.
 \task $x y'' + \lambda y = 0$ for $0 < x < 1$, $y(0) = 0$, $y(1) = 0$,
 \task
 $(1+x^2) y'' + 2xy' + (\lambda-x^2) y = 0$ for $-1 < x < 1$, $y(-1) = 0$, $y(1)+y'(1) =
-0$.\footnote{In a previous version of the book, a typo rendered the equation
+0$.\footnote{In an earlier version of this book, a typo rendered the equation
 as $(1+x^2) y'' - 2xy' + (\lambda-x^2) y = 0$ ending up with something
 harder than intended.  Try this equation for a further challenge.}
 \end{tasks}
@@ -995,6 +995,11 @@ y(x,t) =
 \cos (t) .
 \end{equation}
 
+It is not hard to compute specific values
+for an odd periodic extension of a function and
+hence \eqref{natfreq:exsol} is a wonderful solution to the problem.
+For example it is very easy to have a computer do it, unlike a series solution.
+A plot is given in \figurevref{natfreq:forcedvibfig}.
 \begin{myfig}
 \capstart
 \diffyincludegraphics{width=5in}{width=7.5in}{natfreq-forcedvib}
@@ -1002,12 +1007,6 @@ y(x,t) =
 \frac{\cos (1) - 1}{\sin (1)} \sin (x) -1 \right) \cos (t)$.%
 \label{natfreq:forcedvibfig}}
 \end{myfig}
-
-It is not hard to compute specific values
-for an odd periodic extension of a function and
-hence \eqref{natfreq:exsol} is a wonderful solution to the problem.
-For example it is very easy to have a computer do it, unlike a series solution.
-A plot is given in \figurevref{natfreq:forcedvibfig}.
 \end{example}
 
 \subsection{Underground temperature oscillations}
