@@ -2016,7 +2016,7 @@ Similarly the function $t^k$ is even if $k$ is even and odd when $k$ is odd.
 Take two functions $f(t)$ and $g(t)$ and define their product $h(t) =
 f(t)g(t)$.
 \begin{tasks}
-\task Suppose both are odd, is $h(t)$ odd or even?
+\task Suppose both $f(t)$ and $g(t)$ are odd, is $h(t)$ odd or even?
 \task Suppose one is even and one is odd, is $h(t)$ odd or even?
 \task Suppose both are even, is $h(t)$ odd or even?
 \end{tasks}
@@ -2258,15 +2258,16 @@ odd periodic extension of $f'(t)$?
 \subsection{Application}
 
 Fourier series ties in to the boundary value problems
-we studied earlier.  Let us see this connection in more detail.
+we studied earlier.  Let us see this connection in an application.
 
-Suppose we have the boundary value problem for $0 < t < L$,
+Consider the boundary value problem for $0 < t < L$,
 \begin{equation*}
 x''(t) + \lambda\, x(t) = f(t) ,
 \end{equation*}
 for the \emph{\myindex{Dirichlet boundary conditions}}
 $x(0) = 0$, $x(L) = 0$.
-By using the Fredholm alternative (\thmvref{thm:fredholmsimple}),
+The Fredholm alternative (\thmvref{thm:fredholmsimple})
+says that
 as long as $\lambda$ is not an eigenvalue of the underlying homogeneous
 problem, there exists a unique solution.
 Eigenfunctions of this eigenvalue problem are the functions
@@ -2294,9 +2295,9 @@ satisfying the Dirichlet boundary conditions
 $x(0) = 0$, $x(1)=0$.
 We write $f(t)$ as a sine series
 \begin{equation*}
-f(t) = \sum_{n=1}^\infty c_n \sin (n \pi t) ,
+f(t) = \sum_{n=1}^\infty c_n \sin (n \pi t) .
 \end{equation*}
-where
+Compute
 \begin{equation*}
 c_n = 2 \int_0^1 t \sin (n \pi t) ~dt = \frac{2 \, {(-1)}^{n+1}}{n \pi} .
 \end{equation*}
@@ -2308,10 +2309,16 @@ We plug in to obtain
 \begin{equation*}
 \begin{split}
 x''(t) + 2 x(t) & =
-\sum_{n=1}^\infty - b_n n^2 \pi^2 \sin (n \pi t) 
+\underbrace{
+\sum_{n=1}^\infty - b_n n^2 \pi^2 \sin (n \pi t)
+}_{x''}
+\,
 +
+\,
 2
+\underbrace{
 \sum_{n=1}^\infty b_n \sin (n \pi t)
+}_{x}
 \\
 & =
 \sum_{n=1}^\infty b_n (2 - n^2 \pi^2 ) \sin (n \pi t)
@@ -2333,6 +2340,9 @@ b_n
 =
 \frac{2\,{(-1)}^{n+1}}{n \pi (2 - n^2 \pi^2)} .
 \end{equation*}
+That $2-n^2\pi^2$ is not zero for any $n$, and that we can
+solve for $b_n$, is precisely because
+$2$ is not an eigenvalue of the problem.
 We have thus obtained a Fourier series for the solution
 \begin{equation*}
 x(t) = 
@@ -2340,8 +2350,19 @@ x(t) =
 \frac{2\,{(-1)}^{n+1}}{n \pi \,(2 - n^2 \pi^2)}
 \sin (n \pi t) .
 \end{equation*}
+See \figurevref{bnd-dirich-graph:fig} for a graph of the solution.
+Notice that because the eigenfunctions satisfy the boundary conditions, 
+and $x$ is written in terms of the boundary conditions, then $x$
+satisfies the boundary conditions.
+\begin{myfig}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{bnd-dirich-graph}
+\caption{Plot of the solution of $x''+2x=t$, $x(0)=0$, $x(1)=0$.%
+\label{bnd-dirich-graph:fig}}
+\end{myfig}
 \end{example}
 
+\pagebreak[2]
 \begin{example}
 Similarly we handle the Neumann conditions.
 Take the boundary value problem for $0 < t < 1$,
