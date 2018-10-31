@@ -1017,7 +1017,8 @@ while(1)
 		
 	#FIXME:Assuming that mywrapfigsimp never has a caption
 	#FIXME:Assuming that mywrapfigsimp is always just an inputpdft
-	} elsif ($para =~ s/^\\begin\{mywrapfigsimp\}\{.*?\}\{(.*?)\}[ \n]*//) {
+	} elsif ($para =~ s/^\\begin\{mywrapfigsimp\}\{.*?\}\{(.*?)\}[ \n]*// ||
+		 $para =~ s/^\\begin\{mywrapfigsimp\}\[.*?\]\{.*?\}\{(.*?)\}[ \n]*//) {
 		$float = "right";
 		my $thesize = $1;
 		print "(DIFFYFLOATINGFIGURE)\n";
@@ -1090,7 +1091,7 @@ while(1)
 	#FIXME: not all substitutions are made, so check if more processing needs to be done
 	#on caption
 	} elsif ($para =~ s/^\\begin\{figure\}(\[.*?\])?[ \n]*// ||
-	         $para =~ s/^\\begin\{mywrapfig\}\{.*?\}[ \n]*// ||
+	         $para =~ s/^\\begin\{mywrapfig\}(\[.*?\])?\{.*?\}[ \n]*// ||
 	         $para =~ s/^\\begin\{myfig\}[ \n]*//) {
 		print "(FIGURE)\n";
 		if ($para =~ s/^(.*?)\\end\{figure\}[ \n]*//s ||

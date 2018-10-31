@@ -767,11 +767,11 @@ $y(x,0) = \sin(\pi x), \quad y_{t}(x,0) = x(10-x)$.
 \sectionnotes{1--2 lectures\EPref{, \S10.3 in \cite{EP}}\BDref{,
 not in \cite{BD}}}
 
-\subsection{Forced vibrating string.}
+\subsection{Forced vibrating string}
 
-Suppose that we have a guitar string of length $L$.  We have studied the
-wave equation problem in this case, where $x$ was the position on the string,
-$t$ was time and $y$ was the displacement of the string.  See
+Consider a guitar string of length $L$.  We studied this 
+setup in \sectionref{we:section}.
+Let where $x$ was the position on the string, $t$ the time, and $y$ the displacement of the string.  See
 \figurevref{sps:vibstrfig}.
 
 \begin{myfig}
@@ -780,7 +780,7 @@ $t$ was time and $y$ was the displacement of the string.  See
 \caption{Vibrating string.\label{sps:vibstrfig}}
 \end{myfig}
 
-The problem is governed by the equations
+The problem is governed by the wave equation
 \begin{equation} \label{sps:freevib}
 \begin{array}{ll}
 y_{tt} = a^2 y_{xx} , & \\
@@ -789,15 +789,14 @@ y(0,t) = 0 , & y(L,t) = 0 , \\
 y(x,0) = f(x) , & y_t(x,0) = g(x) .
 \end{array}
 \end{equation}
-We saw previously that 
-the solution is of the form
+We found that the solution is of the form
 \begin{equation*}
 y = 
 \sum_{n=1}^\infty \left( A_n \cos \left( \frac{n\pi a}{L} t \right) +
 B_n \sin \left( \frac{n\pi a}{L} t \right) \right)
 \sin \left( \frac{n\pi}{L} x \right) ,
 \end{equation*}
-where $A_n$ and $B_n$ were determined by the initial conditions.  The natural
+where $A_n$ and $B_n$ are determined by the initial conditions.  The natural
 frequencies of the system are the (angular) frequencies $\frac{n \pi a}{L}$
 for integers $n \geq 1$.
 
