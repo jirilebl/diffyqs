@@ -16,7 +16,8 @@ Mathematicians joke that
 matrix.}
 And well, they (the engineers) are not wrong. 
 Quite often, solving an engineering problem really is figuring out the
-right linear problem to solve.
+right finite dimensional linear problem to solve, which can be then
+solved with some matrix manipulation.
 Most importantly linear problems are the ones that we know how to solve
 and we have lots of tools to solve them.
 For engineers, mathematicians, physicists, and anybody in a technical
@@ -372,12 +373,226 @@ For example, in ${\mathbb R}^3$ the vector $(4,5,6)$ can be written as
 \end{equation*}
 
 So how does a matrix represent a linear mapping?
+Well, the columns of the matrix are the vectors where $A$ as a linear
+mapping takes $\vec{e}_1$, $\vec{e}_2$, etc.
+For example, 
+\begin{equation*}
+M = 
+\begin{bmatrix}
+1 & 2 \\ 3 & 4
+\end{bmatrix} .
+\end{equation*}
+Then as a linear mapping $M \colon {\mathbb R}^2 \to {\mathbb R}^2$ takes
+$\vec{e}_1 = \left[ \begin{smallmatrix} 1 \\ 0 \end{smallmatrix} \right]$ to
+$\left[ \begin{smallmatrix} 1 \\ 3 \end{smallmatrix} \right]$
+and
+$\vec{e}_2 = \left[ \begin{smallmatrix} 0 \\ 1 \end{smallmatrix} \right]$ to
+$\left[ \begin{smallmatrix} 2 \\ 4 \end{smallmatrix} \right]$.  In other
+words
+\begin{equation*}
+M \vec{e}_1 =
+\begin{bmatrix}
+1 & 2 \\ 3 & 4
+\end{bmatrix}
+\begin{bmatrix}
+1 \\ 0
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 \\ 3
+\end{bmatrix},
+\qquad
+\text{and}
+\qquad
+M \vec{e}_2 =
+\begin{bmatrix}
+1 & 2 \\ 3 & 4
+\end{bmatrix}
+\begin{bmatrix}
+0 \\ 1
+\end{bmatrix}
+=
+\begin{bmatrix}
+2 \\ 4
+\end{bmatrix}.
+\end{equation*}
 
-FIXME:
+More generally, if we have an $n \times m$ matrix $A$, that is we have $n$ rows
+and $m$ columns, then the mapping $A \colon {\mathbb R}^m \to {\mathbb R}^n$
+and it takes $\vec{e}_j$ to the $j^{\text{th}}$ column of $A$.
+For example,
+\begin{equation*}
+A = 
+\begin{bmatrix}
+a_{11} & a_{12} & a_{13} & a_{14} & a_{15} \\
+a_{21} & a_{22} & a_{23} & a_{24} & a_{25} \\
+a_{31} & a_{32} & a_{33} & a_{34} & a_{35}
+\end{bmatrix}
+\end{equation*}
+represents a mapping from ${\mathbb R}^5$ to ${\mathbb R}^3$ that does
+\begin{equation*}
+A \vec{e}_1 =
+\begin{bmatrix}
+a_{11} \\ a_{21} \\ a_{31}
+\end{bmatrix} ,
+\qquad
+A \vec{e}_2 =
+\begin{bmatrix}
+a_{12} \\ a_{22} \\ a_{32}
+\end{bmatrix} ,
+\qquad
+A \vec{e}_3 =
+\begin{bmatrix}
+a_{13} \\ a_{23} \\ a_{33}
+\end{bmatrix} ,
+\qquad
+A \vec{e}_4 =
+\begin{bmatrix}
+a_{14} \\ a_{24} \\ a_{34}
+\end{bmatrix} ,
+\qquad
+A \vec{e}_5 =
+\begin{bmatrix}
+a_{15} \\ a_{25} \\ a_{35}
+\end{bmatrix} .
+\end{equation*}
+
+But what if I have another vector $\vec{x}$?  Where does it go?  Well we use
+linearity.  First write the vector as a linear combination of the standard
+basis vectors:
+\begin{equation*}
+\vec{x} =
+\begin{bmatrix}
+x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5
+\end{bmatrix}
+=
+x_1
+\begin{bmatrix}
+1 \\ 0 \\ 0 \\ 0 \\ 0
+\end{bmatrix}
++
+x_2
+\begin{bmatrix}
+0 \\ 1 \\ 0 \\ 0 \\ 0
+\end{bmatrix}
++
+x_3
+\begin{bmatrix}
+0 \\ 0 \\ 1 \\ 0 \\ 0
+\end{bmatrix}
++
+x_4
+\begin{bmatrix}
+0 \\ 0 \\ 0 \\ 1 \\ 0
+\end{bmatrix}
++
+x_5
+\begin{bmatrix}
+0 \\ 0 \\ 0 \\ 0 \\ 1
+\end{bmatrix}
+=
+x_1 \vec{e}_1 + 
+x_2 \vec{e}_2 + 
+x_3 \vec{e}_3 + 
+x_4 \vec{e}_4 + 
+x_5 \vec{e}_5 .
+\end{equation*}
+Then
+\begin{equation*}
+A \vec{x}
+=
+A ( 
+x_1 \vec{e}_1 + 
+x_2 \vec{e}_2 + 
+x_3 \vec{e}_3 + 
+x_4 \vec{e}_4 + 
+x_5 \vec{e}_5 
+)
+=
+x_1 A\vec{e}_1 + 
+x_2 A\vec{e}_2 + 
+x_3 A\vec{e}_3 + 
+x_4 A\vec{e}_4 + 
+x_5 A\vec{e}_5 .
+\end{equation*}
+So if I know where $A$ takes all the basis vectors, I know where it takes
+all vectors.
+
+As an example, suppose $M$ is the $2 \times 2$ matrix from above, and
+suppose we wish to find
+\begin{equation*}
+M
+\begin{bmatrix}
+-2 \\ 0.1
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 2 \\
+3 & 4
+\end{bmatrix}
+\begin{bmatrix}
+-2 \\ 0.1
+\end{bmatrix}
+=
+-2
+\begin{bmatrix}
+1 \\ 3
+\end{bmatrix}
++
+0.1
+\begin{bmatrix}
+2 \\ 4
+\end{bmatrix}
+=
+\begin{bmatrix}
+-1.8 \\ -5.6
+\end{bmatrix} .
+\end{equation*}
+
+Every linear mapping from ${\mathbb R}^m$ to ${\mathbb R}^n$ can be
+represented by an $n \times m$ matrix.  You just figure out where does it
+take the standard basis vectors.  Conversely, every $n \times m$ matrix
+represents a linear mapping.  Hence, we can just think of matrices being
+linear mappings, and linear mappings being matrices.
+
+Or can we?  Well in this book we study mostly linear differential operators,
+and linear differential operators are linear mappings, just acting on
+an infinite dimensional space of functions:
+\begin{equation*}
+L f = g
+\end{equation*}
+for a function $f$ we get a function $g$, and it is linear in the sense that
+\begin{equation*}
+L (\alpha f + \beta h) = \alpha Lf + \beta Lh
+\end{equation*}
+for any numbers (scalars) $\alpha$ and $\beta$.
+
+So the answer is not really.  But if we consider vectors in finite
+dimensional spaces ${\mathbb R}^n$ then yes, every linear mapping is a
+matrix.
+And as we have mentioned at the beginning of this section, that we can
+\myquote{make everything a vector}, well that's not strictly true, but
+approximately.  Those \myquote{infinite dimensional} spaces of functions can
+be approximated by a finite dimensional space, and then linear operators
+are just matrices.  So approximately, this is true.  And as far as actual
+computations that we can do on a computer, we have to work only with
+finitely many dimensions anyway.  If you ask a computer to plot a function,
+what it does is it samples the function at finitely many points and then
+connects the dots\footnote{If you have every used Matlab, you may have
+noticed that to plot a function, we take a vector of inputs, ask Matlab
+to compute the corresponding vector of values of the function, and then we ask
+it to plot the result.}.
+It doesn't actually give you infinitely many values.
+So the way that you have been using the computer so far has in fact
+already been a certain approximation of the space of functions by a finite
+dimensional space.
 
 
-FIXME: define linear systems in terms of matrices, matrix multiplication
-will be in the next section.
+\subsection{Exercises}
+
+FIXME
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -579,6 +794,10 @@ that $B = C$ (in particular the inverse of $A$ is unique).
 We just multiply both sides by $A^{-1}$ (on the left) to get
 $A^{-1}AB = A^{-1}AC$ or $IB=IC$ or $B=C$.
 It is also not hard to see that ${(A^{-1})}^{-1} = A$.
+
+\subsection{Exercises}
+
+FIXME:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -828,6 +1047,10 @@ We then perform row reduction.
 The reduced row echelon form of $[ \,A ~|~ I\, ]$ 
 will be of the form $[ \,I ~|~ A^{-1}\, ]$ if and only if
 $A$ is invertible.  We then just read off the inverse $A^{-1}$.
+
+\subsection{Exercises}
+
+FIXME
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1093,3 +1316,6 @@ FIXME
 
 FIXME
 
+\subsection{Exercises}
+
+FIXME

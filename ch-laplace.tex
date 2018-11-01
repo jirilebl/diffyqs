@@ -1757,8 +1757,8 @@ the vertical direction.  The deflection $y(x)$ satisfies the
 \href{https://en.wikipedia.org/wiki/Jacob_Bernoulli}{Jacob Bernoulli}
 (1654--1705),
 \href{https://en.wikipedia.org/wiki/Daniel_Bernoulli}{Daniel Bernoulli}
----nephew of Jacob---
-(1700--1782), and
+(1700--1782), the nephew of Jacob,
+and
 \href{https://en.wikipedia.org/wiki/Euler}{Leonhard Paul Euler}
 (1707--1783).},
 \begin{equation*}
@@ -1978,10 +1978,10 @@ the \emph{\myindex{transport equation}}, and it already made
 an appearance in \sectionref{fopde:section}, with different conditions.
 
 A physical setup of this equation is a river of goo (we are assuming no
-diffusion, or at least very little diffusion).  The function
+diffusion).  The function
 $y$ is the concentration of
-some toxic substance (it's a goo already, we're not hurting the environment
-much more).  The variable $x$ denotes position where $x=0$
+some toxic substance\footnote{It's a river of goo already, we're not hurting the environment
+much more}.  The variable $x$ denotes position where $x=0$
 is the location of a factory spewing the toxic substance into the
 river.  The toxic substance is poured into the river so that at $x=0$ the
 concentration is always $C$.  We wish to see what happens past the factory,
@@ -2106,60 +2106,65 @@ C  u\bigl(t-\nicefrac{x}{\alpha}\bigr)
 So $y_t = - \alpha y_x$.
 \end{example}
 
-FIXME: Just a dump from my draft notes:
+FIXME: the following needs work:
 
-Maybe a simpler example (variable side conditions on a finite rod? perhaps)  Maybe the first order one first?  What about
+FIXME: Maybe a simpler example (variable side conditions on a finite rod? perhaps)
+Maybe the first order one first?  What about
 infinite $x$ on both sides.
 
-Let us use Laplace for the following problem
+\begin{example}
+Let us use Laplace for the following problem:
+\begin{align*}
+& y_t = y_{xx}, \qquad 0 < x < \infty, \\
+& y_x(0,t) = f(t), \\
+& \text{for every $t$, $y(x,t)$ is bounded: } \lvert y(x,t) \rvert < M \\
+%FIXME: perhaps limit as $x \to \infty$?
+& y(x,0) = 0 ,
+\end{align*}
 
-$y_t = y_{xx}$, $0 < x < \infty$,
+Transform the equation in the $t$ variable to find
+\begin{equation*}
+sY(x) = Y''(x) .
+\end{equation*}
 
-$y_x(0,t) = f(t)$,
 
-$y(x,0) = 0$
-
-Transform the equation
-
-$sY(x) = Y''(x)$
-
-The general solution here is
-$$
+The general solution to this ODE is
+\begin{equation*}
 Y(x) = A e^{\sqrt{s}x} + B e^{-\sqrt{s} x}
-$$
+\end{equation*}
 
-Now how about the boundary conditions.  Firstly $A=0$ since otherwise
-unbounded.
- We transform $Y'(0) = F(s)$ and
-so
-$-\sqrt{s}B = F(s)$, and
-$$
-Y(x) = - F(s) \frac{1}{\sqrt{s}} e^{-\sqrt{s} x}
-$$
+Now consider the boundary conditions.  Firstly $A=0$ since otherwise
+$Y$ is unbounded in $x$, so FIXME
+
+Transform $Y'(0) = F(s)$ and so $-\sqrt{s}B = F(s)$.
+In other words
+\begin{equation*}
+Y(x) = - F(s) \frac{1}{\sqrt{s}} e^{-\sqrt{s} x} .
+\end{equation*}
 
 If we look up the inverse transform in a table (or we spend the afternoon
 doing calculus) we find 
-$$
-{\mathcal L}^{-1}[e^{-\sqrt{s} x}] =
-\frac{x}{\sqrt{4\pi t^3}} e^{\frac{-x^2}{4t}}
-$$
-$$
-{\mathcal L}^{-1}[\frac{1}{\sqrt{s}} e^{-\sqrt{s} x}] =
-\frac{1}{\sqrt{\pi t}} e^{\frac{-x^2}{4t}}
-$$
+\begin{equation*}
+{\mathcal L}^{-1}\left[e^{-\sqrt{s} x}\right] =
+\frac{x}{\sqrt{4\pi t^3}} e^{\frac{-x^2}{4t}} ,
+\end{equation*}
+or
+\begin{equation*}
+{\mathcal L}^{-1}\left[\frac{1}{\sqrt{s}} e^{-\sqrt{s} x}\right] =
+\frac{1}{\sqrt{\pi t}} e^{\frac{-x^2}{4t}} .
+\end{equation*}
 So
-$$
+\begin{equation*}
 y(x,t) =
 {\mathcal L}^{-1} \left[
 F(s) e^{-\sqrt{s} x}\right]
 =
 \int_0^t
 f(\tau) 
-\frac{1}{\sqrt{\pi {(t-\tau)}}} e^{\frac{-x^2}{4(t-\tau)}} \, d\tau
-$$
+\frac{1}{\sqrt{\pi {(t-\tau)}}} e^{\frac{-x^2}{4(t-\tau)}} \, d\tau .
+\end{equation*}
+\end{example}
 
-\medskip
-\hrule
 \medskip
 
 Laplace is often useful in places where separation of variables fails.
@@ -2167,8 +2172,8 @@ Laplace does not mind nonhomogeneity, but it is essentially only useful for
 constant coefficient equations.
 
 \medskip
-\hrule
-\medskip
+
+FIXME:
 
 $$
 \mathcal{L} \{ e^{-at} f(t) \} = F(s+a) ,
