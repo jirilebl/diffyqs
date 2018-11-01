@@ -122,6 +122,12 @@
     </xsl:element>
   </xsl:template>
 
+  <!-- we almost never reference figures/tables from afar, so knowlizing the 
+       xref seems unnecessary and it just makes things a bit confusing -->
+  <xsl:template match="figure|table" mode="xref-as-knowl">
+    <xsl:value-of select="false()" />
+  </xsl:template>
+
   <xsl:param name="html.knowl.theorem" select="'no'"/>
   <xsl:param name="html.knowl.proof" select="'yes'"/>
   <xsl:param name="html.knowl.definition" select="'no'"/>
