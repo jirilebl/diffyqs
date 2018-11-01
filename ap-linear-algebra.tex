@@ -49,7 +49,7 @@ but are very good at doing lots of repetitive
 tasks precisely, as long as we figure out a systematic way for them to
 perform the tasks.
 
-\medskip
+\subsection{Vectors and operations on vectors}
 
 Let us start with vectors.  Consider $n$ real numbers as an
 $n$-tuple
@@ -81,10 +81,23 @@ See figure FIXME.
 
 FIXME: figure.
 
+Since vectors are arrows, when we want to talk about a vector and we give it
+a name, we will write a little arrow above it:
+\begin{equation*}
+\vec{x}
+\end{equation*}
+Another popular notations is $\mathbf{x}$, although we will use the arrows.
+Mathematicians often don't even write the arrows.  A mathematician would
+write $x$ and just remember that $x$ is a vector and not a number.
+Just like you remember that Bob is your uncle, and you don't have to
+keep repeating \myquote{Uncle Bob.}  In this book, however, we will call Bob
+uncle, and write vectors with arrows above them.
+
 For reasons that will become clear in the next section, it will often be
 useful to write vectors as so-called
 \emph{column vectors}\index{column vector}:
 \begin{equation*}
+\vec{x} = 
 \begin{bmatrix}
 x_{1} \\ x_2 \\ \vdots \\ x_n
 \end{bmatrix} .
@@ -96,6 +109,11 @@ it will be useful later.  For example, the vector $(1,2)$ can be written as
 1 \\ 2
 \end{bmatrix} .
 \end{equation*}
+
+The fact that we write arrows above vectors will allow us to write several
+vectors $\vec{x}_1$, $\vec{x}_2$, etc., without confusing these with the
+components of some other vector $\vec{x}$.
+
 
 Now where does the algebra come in?  Well, arrows are easy to add, subtract
 and multiply by numbers.  First adding.  If we have two arrows, we simply
@@ -174,14 +192,91 @@ Let's compute a small example:
 .
 \end{equation*}
 
+\subsection{Linear mappings and matrices}
 
+We begin with vector-valued functions.  That is a vector valued function
+$F$ is a rule that takes a vector $\vec{x}$ and assigns it another vector
+$\vec{y}$.  For example, $F$ could be a scaling that doubles the size of
+vectors.  So
+\begin{equation*}
+F(\vec{x}) = 2 \vec{x} ,
+\end{equation*}
+or
+\begin{equation*}
+F
+\left( \begin{bmatrix} 1 \\ 3 \end{bmatrix} \right)
+=
+2
+\begin{bmatrix} 1 \\ 3 \end{bmatrix}
+=
+\begin{bmatrix} 2 \\ 6 \end{bmatrix} .
+\end{equation*}
+If $F$ is a mapping that takes vectors in
+${\mathbb R}^2$ to 
+${\mathbb R}^2$ (such as the above), we write
+\begin{equation*}
+F \colon {\mathbb R}^2 \to {\mathbb R}^2 .
+\end{equation*}
+The words \emph{function} and \emph{mapping} are used rather interchangeably,
+although more often than not, \emph{mapping} is used when talking about a
+vector-valued function, and the word \emph{function} is often used when the
+function is scalar-valued.
 
+Any beginning student of mathematics (and many a seasoned mathematician),
+when they see an expression such as
+\begin{equation*}
+f(3x+8y)
+\end{equation*}
+yearns to write
+\begin{equation*}
+3f(x)+8f(y) .
+\end{equation*}
+After all, who hasn't wanted to write $\sqrt{x+y} = \sqrt{x} + \sqrt{y}$ or
+something like that at some point in their mathematical lives.
+Of course we can't always do that (for example with the square roots!)
+It turns out there are many functions where
+we can do exactly the above.  Such functions are called \emph{linear}.
 
+More explicitly a mapping $F \colon {\mathbb R}^n \to {\mathbb R}^m$
+is called \emph{linear}\index{linear mapping} if
+\begin{equation*}
+F(\vec{x}+\vec{y}) = F(\vec{x})+F(\vec{y})
+\end{equation*}
+and also
+\begin{equation*}
+F(\alpha \vec{x}) = \alpha F(\vec{x}) .
+\end{equation*}
+The example $F$ above that doubles the size of all vectors is linear.  Let
+us check
+\begin{equation*}
+F(\vec{x}+\vec{y})
+=
+2(\vec{x}+\vec{y})
+=
+2\vec{x}+2\vec{y}
+=
+F(\vec{x})+F(\vec{y})
+\end{equation*}
+and also
+\begin{equation*}
+F(\alpha \vec{x}) = 2 \alpha \vec{x} = \alpha 2 \vec{x} = \alpha F(\vec{x}) .
+\end{equation*}
 
+When a mapping is linear we often do not write the parentheses.  So we write
+just
+\begin{equation*}
+F \vec{x}
+\end{equation*}
+instead of $F(\vec{x})$.  That is because the linearity means that $F$
+behaves sort of like a multiplication by something.
+We also call a linear function a
+\emph{linear transformation}\index{transformation}.
+If you want to be really fancy and impress your friends, you can call it a
+\emph{linear operator}\index{operator}.
 
-
-
-FIXME: just a dump of stuff from chapter 3
+There are lots of linear mappings, a lot more complicated than the scaling
+example above.  They really are a multiplication by \myquote{something.}
+That something is a matrix.
 
 A \emph{\myindex{matrix}}
 is an $m
@@ -198,13 +293,88 @@ a_{31} & a_{32} & a_{33} & a_{34} & a_{35}
 The numbers $a_{ij}$ are called \emph{elements}\index{element of a matrix}
 or \emph{entries}\index{entry of a matrix}.
 
-By a \emph{\myindex{vector}} we usually mean a \emph{\myindex{column
-vector}}, that is an $m \times 1$ matrix.  If we mean a \emph{\myindex{row
-vector}} we will explicitly say so (a row vector is a $1 \times n$ matrix).
-We usually denote
-matrices by upper case letters and vectors by lower case letters with an
-arrow such as $\vec{x}$ or $\vec{b}$.  By $\vec{0}$ we mean the vector
-of all zeros.
+Notice that a column vector is simply an $m \times 1$ matrix.  Similarly to
+a column vector there is also a 
+\emph{\myindex{row vector}}, which would be a $1 \times n$ matrix.
+
+Now how does $A$ relate to a linear mapping?  Well a matrix tells you where
+certain vectors go.  Let's give a name to certain special vectors.
+The \emph{\myindex{standard basis vectors}} of ${\mathbb R}^n$ are vectors
+\begin{equation*}
+\vec{e}_1 =
+\begin{bmatrix}
+1 \\ 0 \\ 0 \\ \vdots \\ 0
+\end{bmatrix} ,
+\qquad
+\vec{e}_2 =
+\begin{bmatrix}
+0 \\ 1 \\ 0 \\ \vdots \\ 0
+\end{bmatrix} ,
+\qquad
+\vec{e}_3 =
+\begin{bmatrix}
+0 \\ 0 \\ 1 \\ \vdots \\ 0
+\end{bmatrix} ,
+\qquad
+\cdots ,
+\qquad
+\vec{e}_n =
+\begin{bmatrix}
+0 \\ 0 \\ 0 \\ \vdots \\ 1
+\end{bmatrix} .
+\end{equation*}
+For example, in ${\mathbb R}^3$ these vectors are
+\begin{equation*}
+\vec{e}_1 =
+\begin{bmatrix}
+1 \\ 0 \\ 0
+\end{bmatrix} ,
+\qquad
+\vec{e}_2 =
+\begin{bmatrix}
+0 \\ 1 \\ 0
+\end{bmatrix} ,
+\qquad
+\vec{e}_3 =
+\begin{bmatrix}
+0 \\ 0 \\ 1
+\end{bmatrix} .
+\end{equation*}
+You may recall from calculus of several variables that these are
+sometimes called $\vec{\imath}$, $\vec{\jmath}$, $\vec{k}$.
+
+The reason these are called a \emph{\myindex{basis}} is that every other
+vector can be written as a \emph{\myindex{linear combination}} of them.
+For example, in ${\mathbb R}^3$ the vector $(4,5,6)$ can be written as
+\begin{equation*}
+4 \vec{e}_1 + 
+5 \vec{e}_2 + 
+6 \vec{e}_3
+=
+4
+\begin{bmatrix}
+1 \\ 0 \\ 0
+\end{bmatrix}
++
+5
+\begin{bmatrix}
+0 \\ 1 \\ 0
+\end{bmatrix}
++
+6
+\begin{bmatrix}
+0 \\ 0 \\ 1
+\end{bmatrix}
+=
+\begin{bmatrix}
+4 \\ 5 \\ 6
+\end{bmatrix} .
+\end{equation*}
+
+So how does a matrix represent a linear mapping?
+
+FIXME:
+
 
 FIXME: define linear systems in terms of matrices, matrix multiplication
 will be in the next section.
