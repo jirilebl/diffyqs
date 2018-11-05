@@ -587,6 +587,61 @@ So the way that you have been using the computer so far has in fact
 already been a certain approximation of the space of functions by a finite
 dimensional space.
 
+\medskip
+
+To end the section, we notice how $A \vec{x}$ can be written more succintly.
+Suppose
+\begin{equation*}
+A = 
+\begin{bmatrix}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23}
+\end{bmatrix}
+\qquad \text{and} \qquad
+\vec{x} = 
+\begin{bmatrix}
+x_1 \\ x_2 \\ x_3 
+\end{bmatrix} .
+\end{equation*}
+Then
+\begin{equation*}
+A \vec{x} = 
+\begin{bmatrix}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23}
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\ x_2 \\ x_3 
+\end{bmatrix} 
+=
+\begin{bmatrix}
+x_1 a_{11} + x_2 a_{12} + x_3 a_{13} \\
+x_1 a_{21} + x_2 a_{22} + x_3 a_{23}
+\end{bmatrix}  .
+\end{equation*}
+For example,
+\begin{equation*}
+\begin{bmatrix}
+1 & 2 \\ 3 & 4
+\end{bmatrix}
+\begin{bmatrix}
+2 \\ -1
+\end{bmatrix} 
+=
+\begin{bmatrix}
+2(1) + (-1)2 \\
+2(3) + (-1)4
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 \\ 2
+\end{bmatrix}  .
+\end{equation*}
+
+In other words, you take a row of the matrix, you multiply them by the
+entries in your vector, you add things up, and that's the corresponding
+entry in the resulting vector.
+
 
 \subsection{Exercises}
 
@@ -602,16 +657,293 @@ FIXME
 
 \sectionnotes{? lectures}
 
-FIXME  Below is just a dump of the section in chapter 3
+\subsection{One-by-one matrices}
 
+Let us motivate what we want to achieve with matrices.
+Real valued linear mappings of the real line, that is linear functions
+which eat numbers and spit out numbers, are just multiplications by a
+number.  Consider a mapping defined by multiplying by a
+number, call that $\alpha$, it takes $x$ to $\alpha x$.  What we could do is
+to \emph{add} such mappings and we could \emph{multiply} them.
+If we have another mapping $\beta$, then
+\begin{equation*}
+\alpha x + \beta x = (\alpha + \beta) x .
+\end{equation*}
+So we get a new mapping $\alpha+\beta$ that multiplies $x$ by, well,
+$\alpha+\beta$.  So if $D$ is a mapping that doubles things, 
+$Dx = 2x$, and $T$ is a mapping that triples, $Tx = 3x$, then
+$D+T$ is a mapping that multiplies by $5$, $(D+T)x = 5x$.
 
-We define some operations on matrices.  We 
-want $1 \times 1$ matrices to really act like numbers, so our operations
-have to be compatible with this viewpoint.
+Similarly we could \emph{compose} such mappings, that
+is, we could apply one and then the other.  We take $x$ we run it through
+the first mapping $\alpha$ to get $\alpha$ times $x$, then we can run
+$\alpha x$ through the second mapping $\beta$.  In other words,
+\begin{equation*}
+\beta ( \alpha x ) = (\beta \alpha) x .
+\end{equation*}
+So we just multiply those two numbers.  So four example our doubling
+and tripling mapping, if we double and then triple, that is $T(Dx)$ then
+we obtain $6x$.  So we say that $TD$ is the mapping that multiplies by $6$.
 
-First, we can multiply\index{scalar multiplication} a matrix by
-a \emph{\myindex{scalar}} (a number).
-We simply multiply each entry in the matrix by the scalar.  For example,
+\subsection{Matrix addition and scalar multiplication}
+
+The mappings that multiply by numbers are just $1 \times 1$ matrices.  The
+number $\alpha$ above could be written as a matrix $[\alpha]$.
+Well, so perhaps we would want to do the same things to all matrices that we
+did to those $1 \times 1$ matrices above.  First, let us add matrices.
+If we have a matrix $A$ and a matrix $B$ that are of the same size,
+say $m \times n$, then they are mappings from
+${\mathbb{R}}^n$ to ${\mathbb{R}}^m$.  The mapping $A+B$ should also be a mapping from
+${\mathbb{R}}^n$ to ${\mathbb{R}}^m$, and it should do the following to
+vectors:
+\begin{equation*}
+(A+B) \vec{x} = A\vec{x} + B \vec{x} .
+\end{equation*}
+It turns out you just add the matrices element-wise:  If the
+$ij^{\text{th}}$ entry of $A$ is $a_{ij}$, and the
+$ij^{\text{th}}$ entry of $B$ is $b_{ij}$, then the
+$ij^{\text{th}}$ entry of $A+B$ is $a_{ij} + b_{ij}$.  If
+\begin{equation*}
+A = 
+\begin{bmatrix}
+a_{11} & a_{12} & a_{13}  \\
+a_{21} & a_{22} & a_{23}
+\end{bmatrix}
+\qquad \text{and} \qquad
+B = 
+\begin{bmatrix}
+b_{11} & b_{12} & b_{13}  \\
+b_{21} & b_{22} & b_{23}
+\end{bmatrix} ,
+\end{equation*}
+then
+\begin{equation*}
+A+B = 
+\begin{bmatrix}
+a_{11} + b_{11} & a_{12} + b_{12} & a_{13} + b_{13}  \\
+a_{21} + b_{21} & a_{22} + b_{22} & a_{23} + b_{23}
+\end{bmatrix} .
+\end{equation*}
+Or a more concrete example:
+\begin{equation*}
+\begin{bmatrix}
+1 & 2 \\
+3 & 4 \\
+5 & 6
+\end{bmatrix}
++
+\begin{bmatrix}
+7 & 8 \\
+9 & 10 \\
+11 & -1
+\end{bmatrix}
+=
+\begin{bmatrix}
+1+7 & 2+8 \\
+3+9 & 4+10 \\
+5+11 & 6-1
+\end{bmatrix}
+=
+\begin{bmatrix}
+8 & 10 \\
+12 & 14 \\
+16 & 5
+\end{bmatrix} .
+\end{equation*}
+Let's check that this does the right thing to a vector.  Let's use some
+of the vector algebra that we already know, and
+regroup things:
+\begin{equation*}
+\begin{split}
+\begin{bmatrix}
+1 & 2 \\
+3 & 4 \\
+5 & 6
+\end{bmatrix}
+\begin{bmatrix}
+2 \\ -1
+\end{bmatrix}
++
+\begin{bmatrix}
+7 & 8 \\
+9 & 10 \\
+11 & -1
+\end{bmatrix}
+\begin{bmatrix}
+2 \\ -1
+\end{bmatrix}
+& =
+\left(
+2
+\begin{bmatrix}
+1 \\
+3 \\
+5
+\end{bmatrix}
+-
+\begin{bmatrix}
+2 \\
+4 \\
+6
+\end{bmatrix}
+\right)
++
+\left(
+2
+\begin{bmatrix}
+7 \\
+9 \\
+11
+\end{bmatrix}
+-
+\begin{bmatrix}
+8 \\
+10 \\
+-1
+\end{bmatrix}
+\right)
+\\
+& = 
+2
+\left(
+\begin{bmatrix}
+1 \\
+3 \\
+5
+\end{bmatrix}
++
+\begin{bmatrix}
+7 \\
+9 \\
+11
+\end{bmatrix}
+\right)
+-
+\left(
+\begin{bmatrix}
+2 \\
+4 \\
+6
+\end{bmatrix}
++
+\begin{bmatrix}
+8 \\
+10 \\
+-1
+\end{bmatrix}
+\right)
+\\
+& = 
+2
+\begin{bmatrix}
+1+7 \\
+3+9 \\
+5+11
+\end{bmatrix}
+-
+\begin{bmatrix}
+2+8 \\
+4+10 \\
+6-1
+\end{bmatrix}
+=
+2
+\begin{bmatrix}
+8 \\
+12 \\
+16
+\end{bmatrix}
+-
+\begin{bmatrix}
+10 \\
+14 \\
+5
+\end{bmatrix}
+\\
+& =
+\begin{bmatrix}
+8 & 10 \\
+12 & 14 \\
+16 & 5
+\end{bmatrix}
+\begin{bmatrix}
+2 \\
+-1
+\end{bmatrix} 
+\quad
+\left(
+=
+\begin{bmatrix}
+2(8)- 10 \\
+2(12) - 14 \\
+2(16) - 5
+\end{bmatrix}
+=
+\begin{bmatrix}
+6 \\
+10 \\
+27
+\end{bmatrix}
+\right) .
+\end{split}
+\end{equation*}
+If we replaced the numbers by letters that would constitute a proof!
+You'll notice that we didn't really have to even compute what the
+result is to convince ourselves that the two expressions were equal.
+
+If the sizes of the matrices do not match, then addition is not defined.
+So if $A$ is $3 \times 2$ and $B$ is $2 \times 5$, then we just cannot add
+these matrices.  We don't know what that could possibly mean.
+
+It is also useful to have a matrix that if we add it to any other matrix
+nothing happens.  This is the zero matrix, the matrix of all zeros:
+\begin{equation*}
+\begin{bmatrix}
+1 & 2 \\
+3 & 4
+\end{bmatrix}
++
+\begin{bmatrix}
+0 & 0 \\
+0 & 0
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 2 \\
+3 & 4
+\end{bmatrix} .
+\end{equation*}
+We often denote the zero matrix
+by $0$ without specifying size.  We would then just write $A + 0$, where we
+just assume that $0$ is the matrix of the same size as $A$.
+
+\medskip
+
+There are really two things we can multiply matrices by.  We could multiply
+matrices by scalars or we could multiply by other matrices.  Let's first
+consider multiplication by scalars.
+For a matrix $A$ and a scalar $\alpha$ we want $\alpha A$ to be the matrix
+that accomplishes
+\begin{equation*}
+(\alpha A) \vec{x} = \alpha (A \vec{x}) .
+\end{equation*}
+That is just scaling the result by $\alpha$.  If you think about it,
+scaling every term in $A$ by $\alpha$ will accomplish just that:
+If
+\begin{equation*}
+A = 
+\begin{bmatrix}
+a_{11} & a_{12} & a_{13}  \\
+a_{21} & a_{22} & a_{23}
+\end{bmatrix},
+\qquad\text{then} \qquad
+\alpha A = 
+\begin{bmatrix}
+\alpha a_{11} & \alpha a_{12} & \alpha a_{13}  \\
+\alpha a_{21} & \alpha a_{22} & \alpha a_{23}
+\end{bmatrix} .
+\end{equation*}
+For example,
 \begin{equation*}
 2
 \begin{bmatrix}
@@ -623,52 +955,20 @@ We simply multiply each entry in the matrix by the scalar.  For example,
 8 & 10 & 12
 \end{bmatrix} .
 \end{equation*}
-Matrix addition\index{addition of matrices} is also easy.
-We add matrices element by element.
-For example,
-\begin{equation*}
-\begin{bmatrix}
-1 & 2 & 3 \\
-4 & 5 & 6
-\end{bmatrix} +
-\begin{bmatrix}
-1 & 1 & -1 \\
-0 & 2 & 4
-\end{bmatrix}
-=
-\begin{bmatrix}
-2 & 3 & 2 \\
-4 & 7 & 10
-\end{bmatrix} .
-\end{equation*}
-If the sizes do not match, then addition is not defined.
 
-If we denote by 0 the matrix with all zero entries, by
-$c$, $d$ scalars, and by $A$, $B$, $C$ matrices, we
-have the following familiar rules:
+Let us list some properties of matrix addition and scalar multiplication.
+Denote by $0$ the zero matrix, by
+$\alpha$, $\beta$ scalars, and by $A$, $B$, $C$ matrices.  Then:
 \begin{align*}
 A + 0 & = A = 0 + A , \\
 A + B & = B + A , \\
 (A + B) + C & = A + (B + C) , \\
-c(A+B) & = cA+cB, \\
-(c+d)A & = cA + dA.
+\alpha(A+B) & = \alpha A+\alpha B, \\
+(\alpha+\beta)A & = \alpha A + \beta A.
 \end{align*}
+These rules should look very familiar.
 
-Another useful operation for matrices is the so-called
-\emph{\myindex{transpose}}.  This operation just swaps rows and columns of a
-matrix.
-The transpose of $A$ is denoted by $A^T$.  Example:
-\begin{equation*}
-\begin{bmatrix}
-1 & 2 & 3 \\
-4 & 5 & 6
-\end{bmatrix}^T =
-\begin{bmatrix}
-1 & 4 \\
-2 & 5 \\
-3 & 6 
-\end{bmatrix}
-\end{equation*}
+FIXME  Below is just a dump of the section in chapter 3
 
 \subsection{Matrix multiplication}
 
@@ -794,6 +1094,26 @@ that $B = C$ (in particular the inverse of $A$ is unique).
 We just multiply both sides by $A^{-1}$ (on the left) to get
 $A^{-1}AB = A^{-1}AC$ or $IB=IC$ or $B=C$.
 It is also not hard to see that ${(A^{-1})}^{-1} = A$.
+
+
+FIXME: 
+
+Another useful operation for matrices is the so-called
+\emph{\myindex{transpose}}.  This operation just swaps rows and columns of a
+matrix.
+The transpose of $A$ is denoted by $A^T$.  Example:
+\begin{equation*}
+\begin{bmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6
+\end{bmatrix}^T =
+\begin{bmatrix}
+1 & 4 \\
+2 & 5 \\
+3 & 6 
+\end{bmatrix}
+\end{equation*}
+
 
 \subsection{Exercises}
 
