@@ -1564,6 +1564,10 @@ while(1)
 			print $out "<diffyqsbr/>";
 		}
 		#FIXME: What to do if not in paragraph?  Is that even reasonable?
+	} elsif ($para =~ s/^\\enspace//) {
+		print "(enspace)\n";
+		open_paragraph_if_not_open ();
+		print $out "<nbsp/><nbsp/>"; 
 	} elsif ($para =~ s/^\\quad//) {
 		print "(quad)\n";
 		open_paragraph_if_not_open ();
