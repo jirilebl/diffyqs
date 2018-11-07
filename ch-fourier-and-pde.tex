@@ -1862,6 +1862,28 @@ evaluate $\displaystyle \sum_{n=1}^\infty \frac{{(-1)}^n}{n^2} = 1 - \frac{1}{4}
 \end{tasks}
 \end{exercise}
 
+\begin{exercise}
+Let
+\begin{equation*}
+f(t) =
+\begin{cases}
+0 & \text{if } \; {-3} < t \leq 0, \\
+t & \text{if } \; \phantom{-}0 < t \leq 3,
+\end{cases}
+\end{equation*}
+extended periodically.  Suppose $F(t)$ is the function given
+by the Fourier series of $f$.  Without computing the Fourier series
+evaluate
+\begin{tasks}(3)
+\task $F(2)$
+\task $F(-2)$
+\task $F(4)$
+\task $F(-4)$
+\task $F(3)$
+\task $F(-9)$
+\end{tasks}
+\end{exercise}
+
 \setcounter{exercise}{100}
 
 \begin{exercise}
@@ -1990,6 +2012,35 @@ approximation, you would have to take about 50 terms to start to get to
 within $0.01$ of $\nicefrac{\pi}{4}$).
 }
 
+\begin{exercise}
+Let
+\begin{equation*}
+f(t) = 
+\begin{cases}
+0 & \text{if } \; {-2} < t \leq 0, \\
+2 & \text{if } \; \phantom{-}0 < t \leq 2,
+\end{cases}
+\end{equation*}
+extended periodically.  Suppose $F(t)$ is the function given
+by the Fourier series of $f$.  Without computing the Fourier series
+evaluate
+\begin{tasks}(3)
+\task $F(0)$
+\task $F(-1)$
+\task $F(1)$
+\task $F(-2)$
+\task $F(4)$
+\task $F(-8)$
+\end{tasks}
+\end{exercise}
+\exsol{%
+a) $F(0) = 1$, 
+b) $F(-1) = 0$, 
+c) $F(1) = 2$, 
+d) $F(-2) = 1$, 
+e) $F(4) = 1$, 
+f) $F(-9) = 0$, 
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -2823,9 +2874,9 @@ few resonance frequencies matter in real life.
 
 \begin{example}
 We want to solve the equation
-\begin{equation*}
+\begin{equation} \label{afs:eq-resonance}
 2 x'' + 18 \pi^2 x = F(t) ,
-\end{equation*}
+\end{equation}
 where
 \begin{equation*}
 F(t) =
@@ -2846,16 +2897,17 @@ F(t) =
 Compute the Fourier series of $F$ to verify the above equation.
 \end{exercise}
 
-The solution must look like
+As $\sqrt{\frac{k}{m}} = \sqrt{\frac{18\pi^2}{2}} = 3\pi$,
+the solution to \eqref{afs:eq-resonance} is
 \begin{equation*}
 x(t) = c_1 \cos  (3\pi t) + c_2 \sin (3\pi t) + x_p (t)
 \end{equation*}
 for some particular solution $x_p$.
 
-If we just try a Fourier series with $\sin (n\pi t)$ as usual,
-the complementary equation eats our 3rd harmonic, that is, the term
+If we just try an $x_p$ given as a Fourier series with $\sin (n\pi t)$ as usual,
+the complementary equation, $2x''+18\pi^2x=0$, eats our $3^\text{rd}$ harmonic.  That is, the term
 with $\sin(3 \pi t)$
-is in
+is already in
 in our complementary solution.
 Therefore, we pull that term out and
 multiply it by $t$.  We also add a cosine term to get everything right.
@@ -4740,9 +4792,9 @@ function of $x$ alone that satisfies $u_{xx} = 0$.  It is easy to solve this
 equation by integration and we see that $u = Ax+B$ for some constants $A$ and
 $B$.
 
-Suppose we have an insulated wire, and we apply constant temperature $T_1$
+Consider an insulated wire where we apply constant temperature $T_1$
 at one end (say where $x=0$) and $T_2$ on the other end (at $x=L$ where $L$
-is the length of the wire).  Then our steady state solution is
+is the length of the wire).  Our steady state solution is
 \begin{equation*}
 u(x) = \frac{T_2-T_1}{L} x + T_1 .
 \end{equation*}
@@ -5392,8 +5444,8 @@ r^2 R'' + r R' - n^2 R = 0.
 This equation appeared in exercises before---we
 solved it in \exerciseref{sol:eulerex}
 and \exercisevref{sol:eulerexln}.  The idea is to try a solution
-$r^s$ and if that does not work out try a solution of the form
-$r^s \ln r$.  When $n=0$ we obtain
+$r^s$ and if that does not give us two solutions, also try a solution of the form
+$r^s \ln r$.  Let us name the solution for $R_n$.  When $n=0$ we obtain
 \begin{equation*}
 R_0 = A r^0 + B r^0 \ln r = A + B \ln r ,
 \end{equation*}
