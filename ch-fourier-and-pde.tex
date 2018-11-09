@@ -3236,7 +3236,14 @@ u_t = k u_{xx}
 u(0,t) = 0 ,\quad \quad u(L,t) = 0,
 \quad \text{and} \quad u(x,0) = f(x) .
 \end{equation*}
-Let us guess $u(x,t) = X(x)T(t)$.  We plug into the heat equation to
+We guess $u(x,t) = X(x)T(t)$.  We will try to make this guess satisfy the
+differential equation, $u_t = k u_{xx}$, and the homogeneous side conditions,
+$u(0,t) = 0$ and $u(L,t) = 0$.  Then, as superposition works preserves the
+differential equation and the homogeneous side conditions, we will try to
+build up a solution from these building blocks to solve the
+nonhomogeneous initial condition $u(x,0) = f(x)$.
+
+First we plug $u(x,t) = X(x)T(t)$ into the heat equation to
 obtain
 \begin{equation*}
 X(x)T'(t) = k X''(x)T(t) .
@@ -3276,7 +3283,10 @@ The corresponding $T_n$ must satisfy the equation
 \begin{equation*}
 T_n'(t) + \frac{n^2 \pi^2}{L^2} k T_n(t) = 0 .
 \end{equation*}
-By the method of integrating factor, the solution of this problem is
+This is one of our
+\hyperref[subsection:fourfundamental]{fundamental equations},
+and the solution is just
+an exponential:
 \begin{equation*}
 T_n(t) = e^{\frac{-n^2 \pi^2}{L^2} k t} .
 \end{equation*}
@@ -3771,8 +3781,8 @@ $u(x,t) = Ae^x + Be^t$
 \sectionnotes{1 lecture\EPref{, \S9.6 in \cite{EP}}\BDref{,
 \S10.7 in \cite{BD}}}
 
-Imagine we have a tensioned guitar string of length $L$.  Suppose we
-only consider vibrations in one direction.  That is, let
+Imagine we have a tensioned guitar string of length $L$.  Let us 
+only consider vibrations in one direction.  Let
 $x$ denote the position along the string, let $t$ denote time, and let $y$
 denote the displacement of the string from the rest position.
 See
@@ -3803,13 +3813,13 @@ two derivatives in the $x$ direction.
 There are also two derivatives along the $t$ direction and hence we need
 two further conditions here.  We need to know the initial position
 and the initial velocity of the string.  That is,
+for some known functions $f(x)$ and $g(x)$, we impose
 \begin{equation*}
 y(x,0) = f(x)  \qquad \text{and} \qquad y_t (x,0) =
-g(x) ,
+g(x) .
 \end{equation*}
-for some known functions $f(x)$ and $g(x)$.
 
-As the equation is again linear, superposition works just as it did for the
+The equation is linear, so superposition works just as it did for the
 heat equation.  And again we will use separation of variables to find
 enough building-block solutions to get the overall solution.  There is
 one change however.  It will be easier to solve two separate problems
@@ -3867,8 +3877,8 @@ Rewriting we get
 \frac{T''(t)}{a^2 T(t)} = \frac{X''(x)}{X(x)} .
 \end{equation*}
 Again, left hand side depends only on $t$ and the right hand side depends
-only on $x$.  Therefore, both equal a constant, which we will denote by
-$-\lambda$.
+only on $x$.  So both sides equal a constant, which we denote by
+$-\lambda$:
 \begin{equation*}
 \frac{T''(t)}{a^2 T(t)} = -\lambda = \frac{X''(x)}{X(x)} .
 \end{equation*}
@@ -3903,7 +3913,7 @@ w_n(x,t) =
 \sin \left( \frac{n \pi}{L} x \right)
 \sin \left( \frac{n \pi a}{L} t \right) .
 \end{equation*}
-We differentiate in $t$, that is
+We differentiate in $t$:
 \begin{equation*}
 \frac{\partial w_n}{\partial t}(x,t) = 
 \sin \left( \frac{n \pi}{L} x \right)
@@ -3920,7 +3930,7 @@ g(x) =
 \sum_{n=1}^\infty b_n \sin \left( \frac{n \pi}{L} x \right) .
 \end{equation*}
 Using superposition
-we can just write down the solution to \eqref{wave:weq} as a series
+we write the solution to \eqref{wave:weq} as a series
 \begin{equation*}
 w(x,t) =
 \sum_{n=1}^\infty
@@ -3939,12 +3949,12 @@ Check that $w(x,0) = 0$ and
 $w_t(x,0) = g(x)$.
 \end{exercise}
 
-Similarly we proceed to solve \eqref{wave:zeq}.  We again try
+We solve \eqref{wave:zeq} similarly.  We again try
 $z(x,y) = X(x)T(t)$.  The procedure works exactly the same at first.
 We obtain
 \begin{align*}
 X''(x) + \lambda X(x) &= 0 , \\
-T''(t) + \lambda a^2 T(t) &= 0 .
+T''(t) + \lambda a^2 T(t) &= 0 ,
 \end{align*}
 and the conditions $X(0) = 0$, $X(L) = 0$.  So again
 $\lambda = \lambda_n = \frac{n^2 \pi^2}{L^2}$ and
@@ -3957,7 +3967,7 @@ we get that $B = 0$ and we take
 \begin{equation*}
 T_n(t) = \cos \left( \frac{n \pi a}{L} t \right).
 \end{equation*}
-Our building-block solution will be
+Our building-block solution is
 \begin{equation*}
 z_n(x,t) = 
 \sin \left( \frac{n \pi}{L} x \right)
@@ -4002,15 +4012,13 @@ y_t(x,0) = g(x) & \qquad \text{for } \; 0 < x < L ,
 where
 \begin{equation*}
 f(x) =
-\sum_{n=1}^\infty c_n \sin \left( \frac{n \pi}{L} x \right) ,
-\end{equation*}
-and
-\begin{equation*}
+\sum_{n=1}^\infty c_n \sin \left( \frac{n \pi}{L} x \right)
+\qquad \text{and} \qquad
 g(x) =
 \sum_{n=1}^\infty b_n \sin \left( \frac{n \pi}{L} x \right) .
 \end{equation*}
 Then the solution $y(x,t)$ can be written as a sum of the solutions
-of \eqref{wave:weq} and \eqref{wave:zeq}.  In other words,
+of \eqref{wave:weq} and \eqref{wave:zeq}:
 \begin{equation*}
 \boxed{~~
 \begin{aligned}
@@ -4043,19 +4051,15 @@ c_n
 \end{theorem}
 
 \begin{example} \label{example:pluckedstring}
-Let us try a simple example of a plucked string.  Suppose that
-a string of length 2
-is plucked in the middle such that it has the initial shape given
-in \figurevref{wave:pluckedstrfig}.  That is
+Consider a string of length 2 plucked in the middle,
+it has an initial shape given in \figurevref{wave:pluckedstrfig}.
+That is,
 \begin{equation*}
 f(x) = \begin{cases}
 0.1\, x & \text{if } \; 0 \leq x \leq 1 , \\
 0.1\, (2-x) & \text{if } \; 1 < x \leq 2 .
 \end{cases}
 \end{equation*}
-The string starts at rest ($g(x) =
-0$).  Suppose that $a=1$ in the wave
-equation for simplicity.
 
 \begin{myfig}
 \capstart
@@ -4063,6 +4067,15 @@ equation for simplicity.
 \caption{Initial shape of a plucked string from
 \exampleref{example:pluckedstring}.\label{wave:pluckedstrfig}}
 \end{myfig}
+
+Let the string start at rest ($g(x) =
+0$), and let $a=1$ for simplicity.  In other words, we wish to
+solve the problem:
+\begin{align*}
+& y_{tt} = y_{xx}, \\
+& y(0,t) = y(2,t)= 0 , \\
+& y(x,0) = f(x) \quad \text{and} \quad y_t(x,0)= 0 .
+\end{align*}
 
 We leave it to the reader to compute the sine series of $f(x)$.  The series
 will be
@@ -4120,24 +4133,70 @@ y(x,t) & =
 \end{split}
 \end{equation*}
 
-\begin{myfig}
-\capstart
-\diffyincludegraphics{width=5in}{width=7.5in}{wave-pluckedex}
-\caption{Shape of the plucked string for $0 < t < 3$.\label{wave:pluckedexfig}}
-\end{myfig}
-
-A plot for $0 < t < 3$ is given in \figurevref{wave:pluckedexfig}.  Notice
+See 
+\figurevref{wave:pluckedexfig} for a plot
+for $0 < t < 3$.  Notice
 that unlike the heat equation, the solution does not become
 \myquote{smoother,}
 the \myquote{sharp edges} remain.  We will see the reason for this behavior in the
 next section where we derive the solution to the wave equation in a different
 way.
 
+\begin{myfig}
+\capstart
+\diffyincludegraphics{width=5in}{width=7.5in}{wave-pluckedex}
+\caption{Shape of the plucked string for $0 < t < 3$.\label{wave:pluckedexfig}}
+\end{myfig}
+
 Make sure you understand what the plot, such as the one in the figure, is
 telling you.  For each fixed $t$, you can think of the function 
 $y(x,t)$ as just a function of $x$.  This function gives you the shape of the
-string at time $t$.
+string at time $t$.  See \figurevref{wave:pluckedtsfig} for plots of
+at $y$ as a function of $x$ at several different values of $t$.
+On this plot you can see the sharp edges remaining much better.
+
+\begin{myfig}
+\capstart
+%original files wave-pluckedt0 wave-pluckedt0p4 wave-pluckedt0p8 wave-pluckedt1p2
+\diffyincludegraphics{width=6.24in}{width=9in}{wave-plucked-t0-t0p4}
+\\[5pt]
+\diffyincludegraphics{width=6.24in}{width=9in}{wave-plucked-t0p8-t1p2}
+\caption{Plucked string for $t=0$, $t=0.4$, $t=0.8$, and
+$t=1.2$.%
+\label{wave:pluckedtsfig}}
+\end{myfig}
 \end{example}
+
+One thing to take away from all this is how a guitar sounds.  Notice that
+the (angular) frequencies that come up in the solution are
+$n \frac{\pi a}{L}$.  That is, there is a certain base
+\emph{\myindex{fundamental frequency}} $\frac{\pi a}{L}$, and then we also
+get all the multiples of this frequency, which in music are called
+the \emph{\myindex{overtones}}.  Which overtones appear and with what amplitude
+is what musicians call the \emph{\myindex{timbre}} of the note.
+Mathematicians usually call this the \emph{\myindex{spectrum}}.
+
+We see that the fundamental frequency increases as we decrease length $L$.  That is, if
+we place a finger on the fingerboard and then pluck a string we get a higher
+note.  The constant $a$ is given by
+\begin{equation*}
+a^2 = \frac{T}{\rho} ,
+\end{equation*}
+where $T$ is tension and $\rho$ is the linear density of the string.
+Tightening the string (turning the tuners) will produce a bigger $a$ and
+hence a higher fundamental frequency (a higher note).  On the other hand using a heavier string will
+reduce $a$ and produce a lower fundamental frequency (a lower note).
+
+Something rather interesting is the almost symmetry between space and time.
+If the shape $f(x)$ or the initial velocity have lots of corners, then
+the sound wave will have lots of corners.  Because the Fourier coefficients
+of the initial shape decay to zero at the same rate as the Fourier coefficients
+of the wave in time (for some fixed $x$).  So if you use a sharp object to
+pick the string, you will get a sharper sound with lots of high frequency
+components, while if you use your thumb, you will get a softer sound without
+so many high overtones.  Similarly if you pluck close to the bridge, you are
+getting a pluck that looks more like the sawtooth, and you will get an even
+sharper sound.
 
 \subsection{Exercises}
 

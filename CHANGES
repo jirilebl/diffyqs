@@ -63,9 +63,12 @@
   seen them recently), and may have seen the solution in terms of
   exponentials.
 * 4.1: Add another picture of whirling string for a higher eigenvalue.
-
 * 4.2: Add footnote with reference to the examples where $x''+\lambda x=0$
   is solved.
+* 4.7: Update figure of the plucked string
+* 4.7: Add some discussion on what the solution says about the sound 
+  of a guitar.  Also add some plots for fixed time of the shape of a plucked
+  string.
 
 * 7.1: Add root test and an example for it.
 
@@ -79,7 +82,7 @@
 * Add appendix A on linear algebra (FIXME: still work in progress)
 
 * Renumberings:
-  Figures in chapters 1, 3, and 8,
+  Figures in chapters 1, 3, 4, and 8,
   Examples in 2.2, 3.1, 7.1 (past the root test), 8.4
   Equations in chapter 4
 
