@@ -3831,7 +3831,7 @@ The two problems we will solve are
 w_{tt} = a^2 w_{xx} , &  \\
 w(0,t) = w(L,t) = 0 , &  \\
 w(x,0) = 0 & \qquad \text{for } \; 0 < x < L , \\
-w_t(x,0) = g(x) & \qquad \text{for } \; 0 < x < L .
+w_t(x,0) = g(x) & \qquad \text{for } \; 0 < x < L ,
 \end{array}
 \end{equation}
 and
@@ -4176,11 +4176,11 @@ the \emph{\myindex{overtones}}.  Which overtones appear and with what amplitude
 is what musicians call the \emph{\myindex{timbre}} of the note.
 Mathematicians usually call this the \emph{\myindex{spectrum}}.
 
-We see that the fundamental frequency increases as we decrease length $L$.  That is, if
+The fundamental frequency $\frac{\pi a}{L}$ increases as we decrease length $L$.  That is, if
 we place a finger on the fingerboard and then pluck a string we get a higher
 note.  The constant $a$ is given by
 \begin{equation*}
-a^2 = \frac{T}{\rho} ,
+a = \sqrt{\frac{T}{\rho}} ,
 \end{equation*}
 where $T$ is tension and $\rho$ is the linear density of the string.
 Tightening the string (turning the tuners) will produce a bigger $a$ and
@@ -4225,11 +4225,12 @@ y_t(x,0) = \sin (9 \pi x) & \qquad \text{for } \; 0 < x < 1 .
 \end{exercise}
 
 \begin{exercise}
-Derive the solution for a general plucked string of length $L$, where we
-raise the string some distance $b$ at the midpoint and let go, and for any
-constant $a$ (in the equation $y_{tt} = a^2 y_{xx}$).
+Derive the solution for a general plucked string of length $L$ and
+any constant $a$ (in the equation $y_{tt} = a^2 y_{xx}$), where we
+raise the string some distance $b$ at the midpoint and let go.
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}
 Imagine that a stringed musical instrument falls on the floor.  Suppose that
 the length of the string is 1 and $a=1$.  When the musical instrument hits
@@ -4239,6 +4240,7 @@ say $y_t(x,0) = -1$.  Find the
 solution
 $y(x,t)$ for the shape of the string at time $t$.
 \end{exercise}
+\end{samepage}
 
 \begin{exercise}[challenging]
 Suppose that you have a vibrating string and that
@@ -4380,11 +4382,11 @@ instructive to derive this
 solution by making a correct change of variables to get an equation that
 can be solved by simple integration.
 
-Suppose we have the \myindex{wave equation}
+Suppose we wish to solve the \myindex{wave equation}
 \begin{equation} \label{dalemb:weq}
-y_{tt} = a^2 y_{xx} .
+y_{tt} = a^2 y_{xx}
 \end{equation}
-We wish to solve the equation \eqref{dalemb:weq} given the conditions
+subject to the side conditions
 \begin{equation} \label{dalemb:weqside}
 \begin{aligned}
 y(0,t) &=  y(L,t) = 0 &
@@ -4618,9 +4620,9 @@ f(x) =
 The graph of this impulse is the top left plot in
 \figurevref{dalemb:impulsfig}.
 
-Let $F(x)$ be the odd periodic extension of $f(x)$.  Then from
-\eqref{dalemb:form} we know that
-the solution is given as
+Let $F(x)$ be the odd periodic extension of $f(x)$.  Then
+\eqref{dalemb:form} says that
+the solution is
 \begin{equation*}
 y(x,t) = \frac{F(x-t) + F(x+t)}{2} .
 \end{equation*}
@@ -4656,9 +4658,9 @@ y(x,t) = A(x-at) + B(x+at) .
 \end{equation*}
 If you think about it, the exact formulas for $A$ and $B$ are not hard
 to guess once you realize what kind of side conditions $y(x,t)$ is supposed to
-satisfy.  Let us give the formula again, but slightly differently.
-Best approach is to do this in stages.  When $g(x) = 0$ (and hence
-$G(x) = 0$) we have the solution
+satisfy.  Let us find the formula again, but slightly differently.
+Best approach is to do it in stages.  When $g(x) = 0$ (and hence
+$G(x) = 0$) the solution is
 \begin{equation*}
 \frac{ F(x-at) + F(x+at) }{2} .
 \end{equation*}
@@ -5349,14 +5351,14 @@ We have the problem:
 \end{aligned}
 \end{equation}
 
-The first issue we face is that we do not know what the Laplacian
-is in polar coordinates.
+The first issue we face is that we do not know the Laplacian
+in polar coordinates.
 Normally we would find $u_{xx}$ and $u_{yy}$ in terms of
 the derivatives in $r$ and $\theta$.  We would need to solve
-for $r$ and $\theta$ in terms of $x$ and $y$.  While this is certainly
-possible, it happens to be more convenient to work in
-reverse.  Let us instead compute derivatives in $r$ and $\theta$ in terms
-of derivatives in $x$ and $y$ and then solve.  The
+for $r$ and $\theta$ in terms of $x$ and $y$.  In this case
+it is more convenient to work in
+reverse.  We compute derivatives in $r$ and $\theta$ in terms
+of derivatives in $x$ and $y$ and then we solve.  The
 computations are easier this way.  First
 \begin{equation*}
 \begin{aligned}
@@ -5483,7 +5485,7 @@ $\Theta'' + n^2 \Theta = 0$.  When $n=0$ the equation is just
 $\Theta'' = 0$, so we have the general solution $A \theta + B$.  As
 $\Theta$ is periodic,
 $A=0$.
-For convenience let us write this solution as
+For convenience we write this solution as
 \begin{equation*}
 \Theta_0 = \frac{a_0}{2}
 \end{equation*}
@@ -5513,9 +5515,9 @@ and if $n > 0$, we get
 R_n = A r^n + B r^{-n} .
 \end{equation*}
 The function $u(r,\theta)$ must be finite at the origin, that is, when $r=0$.
-Therefore, $B=0$ in both
-cases.  Let us set $A=1$ in both cases as well, the constants in $\Theta_n$
-will pick up the slack so we do not lose anything.  Therefore let
+So $B=0$ in both
+cases.  Set $A=1$ in both cases as well; the constants in $\Theta_n$
+will pick up the slack so nothing is lost.  Let
 \begin{equation*}
 R_0 = 1 , \qquad \text{and} \qquad
 R_n = r^n .
@@ -5544,11 +5546,11 @@ g(\theta) = u(1,\theta)
 \sum_{n=1}^\infty
 a_n \cos(n \theta) + b_n \sin(n \theta) .
 \end{equation*}
-Therefore, the solution to \eqref{dirichdisc:theprobeq}
-is to expand $g(\theta)$, which is 
+Therefore, to solve \eqref{dirichdisc:theprobeq}
+we expand $g(\theta)$, which is 
 a $2\pi$-periodic function, as a Fourier series, and then 
-the $n^{\text{th}}$ coordinate is multiplied by $r^n$.  In other words, to
-compute $a_n$ and $b_n$ from the formula we can, as usual, compute
+multiply the $n^{\text{th}}$ term by $r^n$.  To
+find the $a_n$ and the $b_n$ we compute
 \begin{equation*}
 a_n =
 \frac{1}{\pi} \int_{-\pi}^\pi g(\theta) \cos (n\theta) ~ d\theta , \qquad
@@ -5583,9 +5585,10 @@ $\cos(10\,\theta)$ as boundary data.\label{dirichdisc:tenspeedfig}}
 \end{example}
 
 \begin{example}
-Let us solve a more difficult problem.  Suppose we have a long
-rod with circular cross section of radius 1 and we wish to solve the
-steady state heat problem.  If the rod is long enough we simply need to solve
+Let us solve a more difficult problem.  Consider a long
+rod with circular cross section of radius 1.  Suppose we wish to solve the
+steady state heat problem in the rod.
+If the rod is long enough we simply need to solve
 the Laplace equation in two dimensions.  Let us put the center of the rod at
 the origin and we have exactly the region we are currently
 studying---a circle of radius 1.  For the boundary conditions, suppose in

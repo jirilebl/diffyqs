@@ -157,7 +157,7 @@ The problem $y''+\lambda y$, $0 < x < L$, $y(0) = 0$, and $y(L) = 0$
 is a regular Sturm--Liouville problem.  $p(x) = 1$, $q(x) = 0$, $r(x) = 1$,
 and we have $p(x) = 1 > 0$ and $r(x) = 1 > 0$.
 The eigenvalues are $\lambda_n = \frac{n^2 \pi^2}{L^2}$ and eigenfunctions
-are $y_n(x) = \sin(\frac{n\pi}{L} x)$.  All eigenvalues are nonnegative as
+are $y_n(x) = \sin\bigl(\frac{n\pi}{L} x\bigr)$.  All eigenvalues are nonnegative as
 predicted by the theorem.
 \end{example}
 
@@ -389,8 +389,9 @@ by $\sqrt{\langle \tilde{y}_m , \tilde{y}_m \rangle}$).
 When
 $\langle y_m , y_m \rangle = 1$
 we have the
-simpler form $c_m = \langle f, y_m \rangle$ as we did for the
-Fourier series.  The following theorem holds
+simpler form $c_m = \langle f, y_m \rangle$.
+% as we did for the Fourier series.
+The following theorem holds
 more generally, but the statement given is enough for our purposes.
 
 \begin{theorem}
@@ -530,10 +531,16 @@ $\beta_1$, and
 $\beta_2$,
 and decide if the problems are regular or not.
 \begin{tasks}
-\task $x y'' + \lambda y = 0$ for $0 < x < 1$, $y(0) = 0$, $y(1) = 0$,
+\task $x y'' + \lambda y = 0$
+\enspace for $0 < x < 1$,
+\enspace $y(0) = 0$,
+\enspace $y(1) = 0$.
 \task
-$(1+x^2) y'' + 2xy' + (\lambda-x^2) y = 0$ for $-1 < x < 1$, $y(-1) = 0$, $y(1)+y'(1) =
-0$.\footnote{In an earlier version of this book, a typo rendered the equation
+$(1+x^2) y'' + 2xy' + (\lambda-x^2) y = 0$
+\enspace for $-1 < x < 1$,
+\enspace $y(-1) = 0$,
+\enspace $y(1)+y'(1) = 0$.\footnote{%
+In an earlier version of this book, a typo rendered the equation
 as $(1+x^2) y'' - 2xy' + (\lambda-x^2) y = 0$ ending up with something
 harder than intended.  Try this equation for a further challenge.}
 \end{tasks}
@@ -555,7 +562,7 @@ b)~$p(x) = 1+x^2$, $q(x) = x^2$, $r(x) = 1$, $\alpha_1 = 1$, $\alpha_2 =
 exercises in \S11.2 in \cite{BD}}}
 
 The eigenfunction series can arise even from higher order equations.
-Suppose we have an elastic beam (say made of steel).  We will study the
+Consider an elastic beam (say made of steel).  We will study the
 transversal vibrations of the beam.  That is, assume the beam lies along
 the $x$-axis and let $y(x,t)$ measure the displacement of the point $x$
 on the beam at time $t$.  See \figurevref{appeig:transbeamfig}.
