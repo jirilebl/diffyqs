@@ -775,7 +775,8 @@ That is, there are several independent variables.
 
 Let us see some examples of ordinary differential equations:
 \begin{align*}
-& \frac{d y}{dt} = -ky , & & \text{(\myindex{Newton's law of cooling})} \\
+& \frac{d y}{dt} = ky , & & \text{(Exponential growth\index{exponential growth})} \\
+& \frac{d y}{dt} = k(A-y) , & & \text{(\myindex{Newton's law of cooling})} \\
 & m \frac{d^2 x}{dt^2} + c \frac{dx}{dt} + kx = f(t) . & &
 \text{(Mechanical vibrations\index{mechanical vibrations})}
 \end{align*}
@@ -815,7 +816,7 @@ derivative that appears.  If the highest derivative that appears is
 the first derivative, the equation is of first order.  If the highest
 derivative that appears is the second derivative, then the equation is of second
 order.  For example, Newton's law of cooling above is a first order
-equation, while the Mechanical vibrations equation is a second order equation.
+equation, while the mechanical vibrations equation is a second order equation.
 The equation governing transversal vibrations in a beam,
 \begin{equation*}
 a^4 \frac{\partial^4 y}{\partial x^4} + \frac{\partial^2 y}{\partial t^2} = 0,
@@ -895,8 +896,10 @@ all terms depend on the dependent variable.  That is, if there is no
 term that is a function of the independent variables alone.  Otherwise the
 equation is called \emph{\myindex{nonhomogeneous}} or
 \emph{\myindex{inhomogeneous}}.  For example,
-Newton's law of cooling, Transport equation, Wave equation, above are homogeneous,
-while Mechanical vibrations equation above is nonhomogeneous.
+the exponential growth equation, the wave equation, or the transport equation above
+are homogeneous. The mechanical vibrations equation above is nonhomogeneous
+as long as $f(t)$ is not the zero function.  Similarly, if the ambient temperature $A$ is nonzero,
+Newton's law of cooling is nonhomogeneous.
 A homogeneous linear ODE can be put into the form
 \begin{equation*}
 a_n(x) \frac{d^n y}{dx^n} + 
@@ -915,8 +918,8 @@ function $b(x)$.
 If the coefficients of a linear equation are actually constant functions,
 then the equation is said to have \emph{\myindex{constant coefficients}}.
 The coefficients are the functions multiplying the dependent
-variable(s) or one of its derivatives, not the function standing alone.
-That is, a constant coefficient ODE is
+variable(s) or one of its derivatives, not the function $b(x)$ standing alone.
+That is,
 \begin{equation*}
 a_n \frac{d^n y}{dx^n} + 
 a_{n-1} \frac{d^{n-1} y}{dx^{n-1}} + 
@@ -926,11 +929,14 @@ a_{1} \frac{dy}{dx}
 +
 a_{0} y = b(x) ,
 \end{equation*}
-where $a_0, a_1, \ldots, a_n$ are all constants, but $b$ may depend on 
-the independent variable $x$.  The Mechanical vibrations equation
+where $a_0, a_1, \ldots, a_n$ are all constants,
+but $b$ may depend on 
+the independent variable $x$,
+is a constant coefficient nonhomogeneous ODE.
+The mechanical vibrations equation
 above is a constant coefficient nonhomogeneous second order ODE\@.
-Same nomenclature applies to PDEs, so the Transport equation,
-Heat equation and Wave equation are all examples of constant coefficient
+Same nomenclature applies to PDEs, so the transport equation,
+heat equation and wave equation are all examples of constant coefficient
 linear PDEs.
 
 \medskip
@@ -941,7 +947,7 @@ Usually here we only consider ordinary differential equations and the
 independent variable is then thought of as time.  Autonomous equation
 means an equation that does not change with time.
 For example, Newton's law of cooling is autonomous, so is equation
-\eqref{classification:eqnonlinode}.  On the other hand, Mechanical
+\eqref{classification:eqnonlinode}.  On the other hand, mechanical
 vibrations or 
 \eqref{classification:eqlinex} are not autonomous.
 
