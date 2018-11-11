@@ -1659,12 +1659,14 @@ separating variables:
 \frac{1}{1-v^2} ~dv = dx .
 \end{equation*}
 So
-\begin{align*}
-\frac{1}{2} \ln \left\lvert  \frac{v+1}{v-1} \right\rvert & = x + C , \\
-\left\lvert \frac{v+1}{v-1} \right\rvert & = e^{2x + 2C} ,
-\end{align*}
-or
-$\frac{v+1}{v-1} = D e^{2x}$ for some constant $D$.
+\begin{equation*}
+\frac{1}{2} \ln \left\lvert  \frac{v+1}{v-1} \right\rvert = x + C ,
+\qquad \text{or} \qquad
+\left\lvert \frac{v+1}{v-1} \right\rvert = e^{2x + 2C} ,
+\qquad \text{or} \qquad
+\frac{v+1}{v-1} = D e^{2x} ,
+\end{equation*}
+for some constant $D$.
 Note that $v=1$ and $v=-1$ are also solutions.
 
 Now we need to \myquote{unsubstitute} to obtain
@@ -1928,9 +1930,10 @@ Let us return to the cooling coffee problem
 \myindex{Newton's law of cooling}
 says
 \begin{equation*}
-\frac{dx}{dt} = -k (x-A) ,
+\frac{dx}{dt} = k (A-x) ,
 \end{equation*}
-where $x$ is the temperature, $t$ is time, $k$ is some constant, and $A$ is
+where $x$ is the temperature, $t$ is time, $k$ is some positive constant,
+and $A$ is
 the ambient temperature.  See \figurevref{2.2:coffeefig} for an example
 with $k=0.3$ and $A=5$.
 
@@ -1957,7 +1960,7 @@ as $t \to \infty$.  If a critical point is not stable we would say it is
  \capstart
  \diffyincludegraphics{width=2.93in}{width=4.5in}{2-2-coffee}
  \caption{The slope field and some solutions of
- $x' = -0.3\,(x-5)$.\label{2.2:coffeefig}}
+ $x' = 0.3\,(5-x)$.\label{2.2:coffeefig}}
  %$dx/dt = -0.3*(x-5)$, $t: [0,20], x: [-10,10]$, plot solutions for
  %$t=0$, $x=10$, $x=5$, $x=0$, $x=-5$, $x=-10$.
 }
