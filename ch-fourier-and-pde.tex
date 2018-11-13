@@ -3176,7 +3176,16 @@ If, on the other hand, the ends are also insulated, the conditions are
 u_x(0,t) = 0 \qquad \text{and} \qquad
 u_x(L,t) = 0 .
 \end{equation*}
-In other words, heat is not flowing in nor out of the wire at the ends.
+Let us see why that is so.
+If $u_x$ is positive at some point $x_0$, then at a particular time,
+$u$ is smaller to the left of $x_0$, and higher to the right of $x_0$.
+Heat is flowing from high heat to low heat, that is to the left.
+On the other hand if $u_x$ is negative then heat is again flowing
+from high heat to low
+heat, that is to the right.  So when $u_x$ is zero, that is a point through
+which heat is not flowing.  In other words, $u_x(0,t) = 0$ means
+no heat is flowing in or out of the wire at the point $x=0$.
+
 We always have two conditions along the $x$-axis as there are
 two derivatives in the $x$ direction.
 These side conditions are said to be
@@ -3379,14 +3388,6 @@ b_n = 2 \int_0^1 50\,x\,(1-x) \sin (n \pi x) ~dx
 \end{cases}
 \end{equation*}
 
-\begin{myfig}
-\capstart
-\diffyincludegraphics{width=5in}{width=7.5in}{heat-wireex}
-\caption{Plot of the temperature of the wire at position $x$
-at time $t$.\label{heat:wireexfig}}
-\end{myfig}
-
-
 The solution $u(x,t)$, plotted in
 \figurevref{heat:wireexfig} for $0 \leq t \leq 100$,
 is given by the series:
@@ -3398,6 +3399,12 @@ u(x,t) =
 \, e^{-n^2 \pi^2 \, 0.003 \, t} .
 \end{equation*}
 
+\begin{myfig}
+\capstart
+\diffyincludegraphics{width=5in}{width=7.5in}{heat-wireex}
+\caption{Plot of the temperature of the wire at position $x$
+at time $t$.\label{heat:wireexfig}}
+\end{myfig}
 
 Finally, let us answer the question about the maximum temperature.  It is
 relatively easy to see
@@ -3476,6 +3483,22 @@ Thus even if the function $f(x)$ has jumps and corners, then for
 a fixed $t > 0$, the solution
 $u(x,t)$ as a function of $x$ is as smooth as we want it
 to be.
+
+\begin{example}
+When the initial condition is already a sine series, then there is no need
+to compute anything, you just need to plug in.  Consider
+\begin{equation*}
+u_t = 0.3 \, u_{xx}, \qquad u(0,t)=u(1,t)=0, \qquad u(x,0) = 0.1 \sin(\pi t) +
+\sin(2\pi t) .
+\end{equation*}
+The solution is then
+\begin{equation*}
+u(x,t) =
+0.1 \sin(\pi t) e^{- 0.3 \pi^2 t}
++ 
+\sin(2 \pi t) e^{- 1.2 \pi^2 t} .
+\end{equation*}
+\end{example}
 
 \subsection{Insulated ends}
 
@@ -3602,21 +3625,24 @@ die out, and you will be left with a uniform temperature
 of $\frac{25}{3} \approx 8.33$ along the entire length of the wire.
 \end{example}
 
-% This is totally out of place here
-%Note:
-%While we have used the form $X(x)T(t)$, it is in some cases it is possible
-%and/or necessary to
-%use the form $X(x) + T(t)$.
+Let us expand on the last point.  The constant term in the series is
+\begin{equation*}
+\frac{a_0}{2} = \frac{1}{L} \int_0^L f(x) ~ dx .
+\end{equation*}
+In other words, $\frac{a_0}{2}$ is the average value of $f(x)$, that is
+the average of the initial temperature.  As the wire is insulated
+everywhere, no heat can get out, no heat can get in.  So the temperature
+tries to distribute evenly over time, and the average temperature must always be the
+same, in particular it is always $\frac{a_0}{2}$.  As time goes to
+infinity, the temperature goes to the constant $\frac{a_0}{2}$ everywhere.
 
 \subsection{Exercises}
 
-\begin{samepage}
 \begin{exercise}
 Imagine you have a wire of length 2, with $k=0.001$ and an initial
 temperature distribution of $u(x,0) = 50 x$.  Suppose that both the ends
 are embedded in ice (temperature 0).  Find the solution as a series.
 \end{exercise}
-\end{samepage}
 
 \begin{exercise}
 Find a series solution of
@@ -3671,6 +3697,7 @@ solution to $u_{xx} + u_{yy} = 0$, where $u(x,0) = 0$ and $u(0,y) = 0$.
 Hint: Try $u(x,y) = X(x)Y(y)$.
 \end{exercise}
 
+\begin{samepage}
 \begin{exercise}[challenging]
 Suppose that one end of the wire is insulated (say at $x=0$) and
 the other end is kept at zero temperature.  That is,
@@ -3682,6 +3709,7 @@ find a series solution of
 \end{align*}
 Express any coefficients in the series by integrals of $f(x)$.
 \end{exercise}
+\end{samepage}
 
 \begin{exercise}[challenging]
 Suppose that the wire is circular and insulated, so there are no ends. 
@@ -3695,6 +3723,20 @@ u_x(0,t) = u_x(L,t) , \\
 & u(x,0) = f(x) \qquad \text{for } \; 0 < x < L .
 \end{align*}
 Express any coefficients in the series by integrals of $f(x)$.
+\end{exercise}
+
+\begin{exercise}
+Consider a wire insulated on both ends, $L=1$, $k=1$,
+and $u(x,0) = \cos^2(\pi x)$.
+\begin{tasks}
+\task
+Find the solution $u(x,t)$.  Hint: a trig identity.
+\task
+Find the average temperature.
+\task
+Initially the temperature variation is 1 (maximum minus the minimum).
+Find the time when the variation is $\nicefrac{1}{2}$.
+\end{tasks}
 \end{exercise}
 
 \setcounter{exercise}{100}
@@ -3771,6 +3813,26 @@ $u_{x} + u_{t} = u$.
 \end{exercise}
 \exsol{%
 $u(x,t) = Ae^x + Be^t$
+}
+
+\begin{exercise}
+Suppose that the temperature on the wire is fixed at $0$
+at the ends, $L=1$, $k=1$, and $u(x,0) = 100\sin(2 \pi x)$.
+\begin{tasks}
+\task
+What is the temperature at $x = \nicefrac{1}{2}$ at any time.
+\task
+What is the maximum and the minimum temperature on the wire
+at $t=0$.
+\task
+At what time is the maximum temperature on the wire exactly
+one half of the initial maximum at $t=0$.
+\end{tasks}
+\end{exercise}
+\exsol{%
+a) $0$,
+\quad b) minimum $-100$, maximum $100$,
+\quad c) $t = \frac{\ln 2}{4 \pi^2}$.
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -4175,6 +4237,8 @@ get all the multiples of this frequency, which in music are called
 the \emph{\myindex{overtones}}.  Which overtones appear and with what amplitude
 is what musicians call the \emph{\myindex{timbre}} of the note.
 Mathematicians usually call this the \emph{\myindex{spectrum}}.
+Because al the frequencies are multiples of one frequency (the fundamental)
+we get a nice pleasing sound.
 
 The fundamental frequency $\frac{\pi a}{L}$ increases as we decrease length $L$.  That is, if
 we place a finger on the fingerboard and then pluck a string we get a higher
@@ -4183,20 +4247,40 @@ note.  The constant $a$ is given by
 a = \sqrt{\frac{T}{\rho}} ,
 \end{equation*}
 where $T$ is tension and $\rho$ is the linear density of the string.
-Tightening the string (turning the tuners) will produce a bigger $a$ and
-hence a higher fundamental frequency (a higher note).  On the other hand using a heavier string will
-reduce $a$ and produce a lower fundamental frequency (a lower note).
+Tightening the string (turning the tuning peg on a guitar) increases $a$ and
+hence produces a higher fundamental frequency (a higher note).
+On the other hand using a heavier string 
+reduces $a$ and produces a lower fundamental frequency (a lower note).
+A bass guitar has longer thicker strings, while a ukulele has short strings
+made of lighter material.
 
+\pagebreak[2]
 Something rather interesting is the almost symmetry between space and time.
+In its simplest form we see this symmetry in the solutions
+\begin{equation*}
+\sin \left( \frac{n \pi}{L} x \right)
+\sin \left( \frac{n \pi a}{L} t \right)  .
+\end{equation*}
+Except for the $a$, time and space are just the same.
+
+In general, the solution for a fixed $x$ is a Fourier series in $t$, and for
+a fixed $t$ it is a Fourier series in $x$, and the coefficients are related.
 If the shape $f(x)$ or the initial velocity have lots of corners, then
-the sound wave will have lots of corners.  Because the Fourier coefficients
-of the initial shape decay to zero at the same rate as the Fourier coefficients
+the sound wave will have lots of corners.  That is because the Fourier coefficients
+of the initial shape decay to zero (as $n \to \infty$) at the same rate as the Fourier coefficients
 of the wave in time (for some fixed $x$).  So if you use a sharp object to
-pick the string, you will get a sharper sound with lots of high frequency
-components, while if you use your thumb, you will get a softer sound without
+pick the string, you get a sharper sound with lots of high frequency
+components, while if you use your thumb, you get a softer sound without
 so many high overtones.  Similarly if you pluck close to the bridge, you are
-getting a pluck that looks more like the sawtooth, and you will get an even
+getting a pluck that looks more like the sawtooth, and you get an even
 sharper sound.
+
+In fact, if you look at the formula for the solution, you see that for any
+fixed $x$ we get an almost arbitrary Fourier series in $t$, everything
+except the constant term.  You can essentially obtain any sound you want
+by plucking the string at just the right way.
+Of course we are considering an ideal string of no stiffness and no air
+resistance.  Those variables clearly impact the sound as well.
 
 \subsection{Exercises}
 
@@ -4256,6 +4340,13 @@ y_t(x,0) = 0 & \qquad \text{for } \; 0 < x < 1 .
 Suppose that $0 < k < 2 \pi a$.
 Derive a series solution to the problem.  Any coefficients in the series
 should be expressed as integrals of $f(x)$.
+\end{exercise}
+
+\begin{exercise}
+Suppose you touch the guitar string exactly in the middle to
+ensure another condition $u(\nicefrac{L}{2},t) = 0$ for all time.
+Which multiples of the fundamental frequency $\frac{\pi a}{L}$
+show up in the solution?
 \end{exercise}
 
 \setcounter{exercise}{100}
