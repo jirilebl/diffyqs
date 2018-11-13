@@ -667,20 +667,20 @@ Let us motivate what we want to achieve with matrices.
 Real valued linear mappings of the real line, that is linear functions
 which eat numbers and spit out numbers, are just multiplications by a
 number.  Consider a mapping defined by multiplying by a
-number, call that $\alpha$, it takes $x$ to $\alpha x$.  What we could do is
-to \emph{add} such mappings and we could \emph{multiply} them.
+number, call that $\alpha$, it takes $x$ to $\alpha x$.  What we can do is
+to \emph{add} such mappings and we can \emph{multiply} them.
 If we have another mapping $\beta$, then
 \begin{equation*}
 \alpha x + \beta x = (\alpha + \beta) x .
 \end{equation*}
 So we get a new mapping $\alpha+\beta$ that multiplies $x$ by, well,
-$\alpha+\beta$.  So if $D$ is a mapping that doubles things, 
+$\alpha+\beta$.  If $D$ is a mapping that doubles things, 
 $Dx = 2x$, and $T$ is a mapping that triples, $Tx = 3x$, then
 $D+T$ is a mapping that multiplies by $5$, $(D+T)x = 5x$.
 
-Similarly we could \emph{compose} such mappings, that
-is, we could apply one and then the other.  We take $x$ we run it through
-the first mapping $\alpha$ to get $\alpha$ times $x$, then we can run
+Similarly we can \emph{compose} such mappings, that
+is, we could apply one and then the other.  We take $x$, we run it through
+the first mapping $\alpha$ to get $\alpha$ times $x$, then we run
 $\alpha x$ through the second mapping $\beta$.  In other words,
 \begin{equation*}
 \beta ( \alpha x ) = (\beta \alpha) x .
@@ -1266,11 +1266,6 @@ AB =
 BA .
 \end{equation*}
 
-\subsection{Diagonal matrices}
-
-FIXME
-
-
 \subsection{Inverse}
 
 There are a few other rules you know from primary school that do not quite
@@ -1298,18 +1293,39 @@ Suppose that $A$ and $B$ are $n \times n$ matrices such that
 AB = I = BA .
 \end{equation*}
 Then we call $B$ the inverse of $A$ and we denote $B$ by $A^{-1}$.
+Perhaps not surprisingly, ${(A^{-1})}^{-1} = A$, since if the inverse of $A$ 
+is $B$, then the inverse of $B$ is $A$.
+
 If the inverse of $A$ exists, then we call $A$
 \emph{invertible\index{invertible matrix}}.
 If $A$ is not invertible we sometimes say $A$ is
 \emph{singular\index{singular matrix}}.
 
-If $A$ is invertible, then $AB = AC$ does imply
-that $B = C$ (in particular the inverse of $A$ is unique).
-We just multiply both sides by $A^{-1}$ (on the left) to get
-$A^{-1}AB = A^{-1}AC$ or $IB=IC$ or $B=C$.
-It is also not hard to see that ${(A^{-1})}^{-1} = A$.
+The proper formulation of the cancellation rule is:
+\emph{If $A$ is invertible,
+then
+$AB = AC$ implies $B=C$.}
+Similarly:
+\emph{If $A$ is invertible,
+then
+$BA = CA$ implies $B=C$.}
+The computation is what you would do in regular algebra with numbers,
+but you have to
+be careful never to commute matrices:
+\begin{align*}
+AB & = AC \\
+A^{-1}AB & = A^{-1}AC \\
+IB & = IC \\
+B & = C
+\end{align*}
+And similarly for cancellation on the right.
 
-We will see later how to compute an inverse in general.  For now,
+Notice that the rule says, among other things, that the
+inverse of a matrix is unique if it exists:  If $AB = I = AC$ then $A$ is
+invertible and $B=C$.
+
+We will see later how to compute an inverse of a matrix
+in general.  For now,
 let us note that there is a simple formula for the inverse of
 a $2 \times 2$ matrix
 \begin{equation*}
@@ -1325,9 +1341,249 @@ d & -b \\
 \end{bmatrix} .
 \end{equation*}
 
-FIXME: example
+For example:
+\begin{equation*}
+\begin{bmatrix}
+1 & 1 \\
+2 & 4
+\end{bmatrix}^{-1}
+=
+\frac{1}{1\cdot 4-1 \cdot 2}
+\begin{bmatrix}
+4 & -1 \\
+-2 & 1
+\end{bmatrix}
+\begin{bmatrix}
+2 & \nicefrac{-1}{2} \\
+-1 & \nicefrac{1}{2}
+\end{bmatrix} .
+\end{equation*}
+Let's try it:
+\begin{equation*}
+\begin{bmatrix}
+1 & 1 \\
+2 & 4
+\end{bmatrix}
+\begin{bmatrix}
+2 & \nicefrac{-1}{2} \\
+-1 & \nicefrac{1}{2}
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 0 \\
+0 & 1
+\end{bmatrix}
+\qquad
+\text{and}
+\qquad
+\begin{bmatrix}
+2 & \nicefrac{-1}{2} \\
+-1 & \nicefrac{1}{2}
+\end{bmatrix}
+\begin{bmatrix}
+1 & 1 \\
+2 & 4
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 0 \\
+0 & 1
+\end{bmatrix} .
+\end{equation*}
+Of course, just as we cannot divide by every number, not every matrix is
+invertible.  In the case of matrices however we may have singular
+matrices that are not zero.  For example,
+\begin{equation*}
+\begin{bmatrix}
+1 & 1 \\
+2 & 2
+\end{bmatrix}
+\end{equation*}
+is a singular matrix.  But didn't we just give a formula for an inverse?
+Let us try it:
+\begin{equation*}
+\begin{bmatrix}
+1 & 1 \\
+2 & 2
+\end{bmatrix}^{-1}
+=
+\frac{1}{1\cdot 2-1 \cdot 2}
+\begin{bmatrix}
+2 & -1 \\
+-2 & 1
+\end{bmatrix}
+=
+%mbxSTARTIGNORE
+\text{\Huge ?}
+%mbxENDIGNORE
+%mbx \text{???}
+\end{equation*}
+We get into a bit of trouble, we are trying to divide by zero.
+The matrix is not invertible, it is singular.
 
-FIXME: inverse of diagonal matrices
+So a $2 \times 2$ matrix $A$ is invertible whenever
+\begin{equation*}
+ad - bc \not= 0
+\end{equation*}
+and otherwise it is singular.  The expression $ad-bc$ is called
+the \emph{determinant} and we will study it in a later section
+more carefully.  There is a similar expression for a square
+matrix of any size.
+
+\subsection{Diagonal matrices}
+
+A simple (and surprisingly useful) type of a square matrix is a so-called
+\emph{\myindex{diagonal matrix}}.  It is a matrix whose entries are all zero
+except those on the main diagonal from top left to bottom right.  For
+example a $4 \times 4$ diagonal matrix is of the form
+\begin{equation*}
+\begin{bmatrix}
+d_1 & 0 & 0 & 0 \\
+0 & d_2 & 0 & 0 \\
+0 & 0 & d_3 & 0 \\
+0 & 0 & 0 & d_4
+\end{bmatrix}
+\end{equation*}
+Such matrices have nice properties when we multiply by them.  If we multiply
+them by a vector, they multiply the $k^{\text{th}}$ entry by $d_k$.  For
+example,
+\begin{equation*}
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 2 & 0 \\
+0 & 0 & 3
+\end{bmatrix}
+\begin{bmatrix}
+2 \\ 2 \\ 2
+\end{bmatrix}
+=
+\begin{bmatrix}
+2 \\ 4 \\ 6
+\end{bmatrix} .
+\end{equation*}
+Similarly, when they multiply another matrix from the left, they multiply
+the $k^{\text{th}}$ row by $d_k$.  For example,
+\begin{equation*}
+\begin{bmatrix}
+2 & 0 & 0 \\
+0 & 3 & 0 \\
+0 & 0 & -1
+\end{bmatrix}
+\begin{bmatrix}
+1 & 1 & 1 \\
+1 & 1 & 1 \\
+1 & 1 & 1 
+\end{bmatrix}
+=
+\begin{bmatrix}
+2 & 2 & 2 \\
+3 & 3 & 3 \\
+-1 & -1 & -1 
+\end{bmatrix} .
+\end{equation*}
+On the other hand, multiplying on the right, they multiply the columns:
+\begin{equation*}
+\begin{bmatrix}
+1 & 1 & 1 \\
+1 & 1 & 1 \\
+1 & 1 & 1 
+\end{bmatrix}
+\begin{bmatrix}
+2 & 0 & 0 \\
+0 & 3 & 0 \\
+0 & 0 & -1
+\end{bmatrix}
+=
+\begin{bmatrix}
+2 & 3 & -1 \\
+2 & 3 & -1 \\
+2 & 3 & -1 
+\end{bmatrix} .
+\end{equation*}
+And it is really easy to multiply two diagonal matrices together:
+\begin{equation*}
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 2 & 0 \\
+0 & 0 & 3 
+\end{bmatrix}
+\begin{bmatrix}
+2 & 0 & 0 \\
+0 & 3 & 0 \\
+0 & 0 & -1
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 \cdot 2 & 0 & 0 \\
+0 & 2 \cdot 3 & 0 \\
+0 & 0 & 3 \cdot (-1) 
+\end{bmatrix}
+=
+\begin{bmatrix}
+2 & 0 & 0 \\
+0 & 6 & 0 \\
+0 & 0 & -3 
+\end{bmatrix} .
+\end{equation*}
+
+For this last reason, they are easy to invert, you simply invert
+each diagonal element:
+\begin{equation*}
+\begin{bmatrix}
+d_1 & 0 & 0 \\
+0 & d_2 & 0 \\
+0 & 0 & d_3 
+\end{bmatrix}^{-1}
+=
+\begin{bmatrix}
+d_1^{-1} & 0 & 0 \\
+0 & d_2^{-1} & 0 \\
+0 & 0 & d_3^{-1} 
+\end{bmatrix} .
+\end{equation*}
+Let us check an example
+\begin{equation*}
+\underbrace{
+\begin{bmatrix}
+2 & 0 & 0 \\
+0 & 3 & 0 \\
+0 & 0 & 4 
+\end{bmatrix}^{-1}
+}_{A^{-1}}
+\underbrace{
+\begin{bmatrix}
+2 & 0 & 0 \\
+0 & 3 & 0 \\
+0 & 0 & 4 
+\end{bmatrix}
+}_{A}
+=
+\underbrace{
+\begin{bmatrix}
+\frac{1}{2} & 0 & 0 \\
+0 & \frac{1}{3} & 0 \\
+0 & 0 & \frac{1}{4} 
+\end{bmatrix}
+}_{A^{-1}}
+\underbrace{
+\begin{bmatrix}
+2 & 0 & 0 \\
+0 & 3 & 0 \\
+0 & 0 & 4 
+\end{bmatrix}
+}_{A}
+=
+\underbrace{
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 
+\end{bmatrix}
+}_{I} .
+\end{equation*}
+It is no wonder that the way we solve many problems in linear algebra
+(and in differential equations) is to try to reduce the problem to the
+case of diagonal matrices.
 
 \subsection{Transpose}
 
@@ -1358,8 +1614,32 @@ In fact, we get precisely the transpose of $AB$.  That is:
 \begin{equation*}
 {(AB)}^T = B^TA^T .
 \end{equation*}
-
-FIXME: example
+For example,
+\begin{equation*}
+{\left(
+\begin{bmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6
+\end{bmatrix}
+\begin{bmatrix}
+0 & 1 \\
+1 & 0 \\
+2 & -2
+\end{bmatrix}
+\right)}^T =
+\begin{bmatrix}
+0 & 1 & 2 \\
+1 & 0 & -2
+\end{bmatrix}
+\begin{bmatrix}
+1 & 4 \\
+2 & 5 \\
+3 & 6 
+\end{bmatrix} .
+\end{equation*}
+It is left to the reader to verify that computing the matrix product on the
+left and then transposing is the same as computing the matrix product on the
+right.
 
 If we have a column vector $\vec{x}$ which to which we apply a matrix $A$,
 then the row vector $\vec{x}^T$ applies to $A^T$ from the left:
@@ -1405,11 +1685,12 @@ FIXME:
 
 \sectionnotes{? lectures}
 
-FIXME: just a dump of stuff from chapter 3
 
-One application of matrices we will need is to solve systems of
-linear equations.  This is best shown by example.
-Suppose that we have the following system of linear equations
+One application of matrices is to solve systems of
+linear equations\footnote{Although perhaps we have this backwards,
+quite often we solve a linear system of equations
+to find out something about matrices, rather than vice versa.}.
+Consider the following system of linear equations
 \begin{align*}
           2 x_1 +           2 x_2 +           2 x_3 & = 2 , \\
 \phantom{9} x_1 + \phantom{9} x_2 +           3 x_3 & = 5 , \\
@@ -1417,32 +1698,56 @@ Suppose that we have the following system of linear equations
 \end{align*}
 
 Without changing the solution,
-we could swap equations in this system,
-we could multiply any of the equations by a nonzero number, and
-we could add a multiple of one equation to another equation.
-It turns out these operations always suffice to find a solution.
+we can swap equations in this system,
+we can multiply any of the equations by a nonzero number, and
+we can add a multiple of one equation to another equation.
+These operations always suffice to find a solution.
+The procedure is called \emph{\myindex{elimination}}, since
+we will be eliminating the variables from the system
+one by one until we end with a single equation in one unknown, or
+in fact 3 equations each depending only one unknown.
 
-It is easier to write the system as a matrix equation.
-The system above can be
-written as
+A system of linear equations can be written as a matrix equation:
 \begin{equation*}
+A \vec{x} = \vec{b} .
+\end{equation*}
+For the example system above, we find
+\begin{equation*}
+\underbrace{
 \begin{bmatrix}
 2 & 2 & 2 \\
 1 & 1 & 3 \\
 1 & 4 & 1 
 \end{bmatrix}
+}_{A}
+\underbrace{
 \begin{bmatrix}
 x_1 \\
 x_2 \\
 x_3
 \end{bmatrix} 
+}_{\vec{x}}
 =
+\underbrace{
 \begin{bmatrix}
 2 \\
 5 \\
 10
-\end{bmatrix} .
+\end{bmatrix}
+}_{\vec{b}} .
 \end{equation*}
+If we know the inverse of $A$, then we would be done.  We could
+just solve:
+\begin{equation*}
+\vec{x} = A^{-1} A \vec{x} = A^{-1} \vec{b} .
+\end{equation*}
+Well, but that is the problem, we do not know how to compute the
+inverse.  We will see later that to compute the inverse we need
+to do elimination.
+
+FIXME FIXME FIXME FIXME FIXME
+
+
 To solve the system we put the coefficient matrix (the matrix on the left
 hand side of the equation) together with the vector on the right and side
 and get the
