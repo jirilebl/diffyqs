@@ -3420,7 +3420,7 @@ In these problems it is useful to think of $x$ as position and $t$ as time.
 The equation describes the evolution of a function of $x$ as
 time goes on.
 Below, the coefficients $a$, $b$, $c$, and the function $g$
-are mostly going to be constant or zero.
+are mostly going to be constant or zero.  
 The method we describe works with nonconstant coefficients,
 although the computations may get difficult quickly.
 
@@ -3601,7 +3601,7 @@ we are solving along the characteristic is
 The general solution of this ODE\@, treating $\xi$ as just a parameter, is 
 $u = C e^{-s}+s+\xi-1$, for some constant $C$.
 At $s=0$, our initial condition is that $u$ is
-$e^{-\xi^2}$ as at $s=0$ we have that $x=\xi$.
+$e^{-\xi^2}$ since at $s=0$ we have $x=\xi$.
 Given this initial condition, we find $C=e^{-\xi^2} - \xi +1$, and so
 \begin{equation*}
 u =
@@ -3695,6 +3695,15 @@ to solve, see \chapterref{sys:chapter} or \chapterref{nlin:chapter}.  In
 general, if $a$ and $b$ are not linear functions or constants, finding closed
 form expressions for the characteristic coordinates may be impossible.
 
+Finally, the method of characteristics applies to nonlinear first order PDE
+as well.  In the nonlinear case, the characteristics depend not only
+on the differential equation, but also on the initial data.  This leads to
+not only more difficult computations, but also the formation of
+singularities where the solution breaks down at a certain point in time.
+An example application where first order nonlinear PDE come
+up is traffic flow theory, and you have probably experienced the
+formation of singularities: traffic jams.  But we digress.
+
 \subsection{Exercises}
 
 %FIXME: need more
@@ -3702,9 +3711,10 @@ form expressions for the characteristic coordinates may be impossible.
 \begin{exercise}
 Solve
 \begin{tasks}(2)
-\task $u_t +9u_x = 0$, $u(x,0) = \sin(x)$,
-\task $u_t -8u_x = 0$, $u(x,0) = \sin(x)$,
-\task $u_t +\pi u_x = 0$, $u(x,0) = \sin(x)$.
+\task $u_t +9u_x = 0$, \enspace $u(x,0) = \sin(x)$,
+\task $u_t -8u_x = 0$, \enspace $u(x,0) = \sin(x)$,
+\task $u_t +\pi u_x = 0$, \enspace $u(x,0) = \sin(x)$,
+\task $u_t + \pi u_x + u = 0$, \enspace $u(x,0) = \sin(x)$.
 \end{tasks}
 \end{exercise}
 
@@ -3734,6 +3744,11 @@ following equations:
 you got the same solution, although the characteristic coordinates
 you found were different.
 \end{tasks}
+\end{exercise}
+
+\begin{exercise}
+Solve $(1+x^2) u_t + x^2 u_x + e^x u = 0$, $u(x,0) = 0$.
+Hint: Think a little out of the box.
 \end{exercise}
 
 \setcounter{exercise}{100}

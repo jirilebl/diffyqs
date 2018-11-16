@@ -4576,7 +4576,8 @@ Therefore, the wave equation \eqref{dalemb:weq} transforms into
 $y_{\xi\eta} = 0$.
 It is easy to find the general solution to this equation by integrating
 twice.  Keeping $\xi$ constant, we integrate with respect to $\eta$
-first\footnote{We can just as well integrate with $\xi$ first, if we wish.}
+first\footnote{There is nothing special about $\eta$, you can integrate with
+$\xi$ first, if you wish.}
 and notice that
 the constant of integration depends on $\xi$; for each $\xi$ we might get a
 different constant of integration.  We get
@@ -4595,6 +4596,8 @@ $a$
 in opposite directions.  The coordinates $\xi$ and $\eta$ are called the
 \emph{\myindex{characteristic coordinates}}, and a similar technique can
 be applied to more complicated hyperbolic PDE\@.
+And in fact, in \sectionref{fopde:section} it is used to solve first
+order linear PDE.
 
 \subsection{D'Alembert's formula}
 
@@ -4821,6 +4824,9 @@ Derive the d'Alembert solution for $y_{tt} = a^2 y_{xx}$, $0 < x < \pi$, $t >
 $y(0,t) = y(\pi, t) = 0$, $y(x,0) = f(x)$, and
 $y_t(x,0) = 0$, using the Fourier series solution of the wave equation,
 by applying an appropriate trigonometric identity.
+Hint: Do it first for a single term of the Fourier series solution,
+in particular do it when $y$ is
+$\sin\left(\frac{n \pi}{L} x \right)\sin\left(\frac{n \pi a}{L} t \right)$.
 \end{exercise}
 
 \begin{exercise}
@@ -4926,7 +4932,7 @@ c) $y(3,9) = \nicefrac{1}{2}$
 \sectionnotes{1 lecture\EPref{, \S9.7 in \cite{EP}}\BDref{,
 \S10.8 in \cite{BD}}}
 
-Suppose we have an insulated wire, a plate, or a 3-dimensional object.
+Consider an insulated wire, a plate, or a 3-dimensional object.
 We apply
 certain fixed temperatures on the ends of the wire, the edges of the plate,
 or on all sides of the 3-dimensional object.  We wish to find out what is the
@@ -4992,10 +4998,9 @@ applications far beyond the steady state heat problem.
 
 Harmonic functions in two variables are no longer just linear (plane
 graphs).  For example, you can check that the functions
-$x^2-y^2$ and $xy$ are harmonic.  However, if you remember your
-multi-variable calculus we note that if $u_{xx}$ is positive, $u$ is concave
+$x^2-y^2$ and $xy$ are harmonic.  However, note that if $u_{xx}$ is positive, $u$ is concave
 up in the $x$ direction, then $u_{yy}$ must be negative and $u$ must be
-concave down in the $y$ direction.  Therefore, a harmonic function can never
+concave down in the $y$ direction.  A harmonic function can never
 have any \myquote{hilltop} or \myquote{valley} on the graph.  This observation is
 consistent with our intuitive idea of steady state heat distribution;
 the hottest or coldest spot will not be inside.
