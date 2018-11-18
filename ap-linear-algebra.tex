@@ -1229,17 +1229,188 @@ We have the following rules for matrix multiplication.  Suppose that
 $A$, $B$, $C$ are matrices of the correct sizes so that the following
 make sense.  Let $\alpha$ denote a scalar (number).
 \begin{align*}
-A(BC) & = (AB)C, \\
-A(B+C) & = AB + AC, \\
-(B+C)A & = BA + CA, \\
-\alpha(AB) & = (\alpha A)B = A(\alpha B), \\
-IA & = A = AI .
+A(BC) & = (AB)C & & \text{(\myindex{associative law})} , \\
+A(B+C) & = AB + AC & & \text{(\myindex{distributive law})} , \\
+(B+C)A & = BA + CA & & \text{(distributive law)} , \\
+\alpha(AB) & = (\alpha A)B = A(\alpha B) , & &  \\
+IA & = A = AI & & \text{(identity)}.
 \end{align*}
 
-FIXME: examples?
+\begin{example}
+Let us demonstrate a couple of these rules.  For example, the associative
+law:
+\begin{equation*}
+\underbrace{
+\begin{bmatrix}
+-3 & 3 \\ 2 & -2
+\end{bmatrix}
+}_A
+\biggl(
+\underbrace{
+\begin{bmatrix}
+4 & 4 \\ 1 & -3
+\end{bmatrix}
+}_B
+\underbrace{
+\begin{bmatrix}
+-1 & 4 \\ 5 & 2
+\end{bmatrix}
+}_C
+\biggr)
+=
+\underbrace{
+\begin{bmatrix}
+-3 & 3 \\ 2 & -2
+\end{bmatrix}
+}_A
+\underbrace{
+\begin{bmatrix}
+16 & 24 \\ -16 & -2
+\end{bmatrix}
+}_{BC}
+=
+\underbrace{
+\begin{bmatrix}
+-96 & -78 \\ 64 & 52
+\end{bmatrix}
+}_{A(BC)} ,
+\end{equation*}
+and
+\begin{equation*}
+\biggl(
+\underbrace{
+\begin{bmatrix}
+-3 & 3 \\ 2 & -2
+\end{bmatrix}
+}_A
+\underbrace{
+\begin{bmatrix}
+4 & 4 \\ 1 & -3
+\end{bmatrix}
+}_B
+\biggr)
+\underbrace{
+\begin{bmatrix}
+-1 & 4 \\ 5 & 2
+\end{bmatrix}
+}_C
+=
+\underbrace{
+\begin{bmatrix}
+-9 & -21 \\ 6 & 14
+\end{bmatrix}
+}_{AB}
+\underbrace{
+\begin{bmatrix}
+-1 & 4 \\ 5 & 2
+\end{bmatrix}
+}_C
+=
+\underbrace{
+\begin{bmatrix}
+-96 & -78 \\ 64 & 52
+\end{bmatrix}
+}_{(AB)C} .
+\end{equation*}
+Or how about multiplication by scalars:
+\begin{equation*}
+10
+\biggl(
+\underbrace{
+\begin{bmatrix}
+-3 & 3 \\ 2 & -2
+\end{bmatrix}
+}_A
+\underbrace{
+\begin{bmatrix}
+4 & 4 \\ 1 & -3
+\end{bmatrix}
+}_B
+\biggr)
+=
+10
+\underbrace{
+\begin{bmatrix}
+-9 & -21 \\ 6 & 14
+\end{bmatrix}
+}_{A B} 
+=
+\underbrace{
+\begin{bmatrix}
+-90 & -210 \\ 60 & 140
+\end{bmatrix}
+}_{10 (AB)} ,
+\end{equation*}
+\begin{equation*}
+\biggl(
+10
+\underbrace{
+\begin{bmatrix}
+-3 & 3 \\ 2 & -2
+\end{bmatrix}
+}_A
+\biggr)
+\underbrace{
+\begin{bmatrix}
+4 & 4 \\ 1 & -3
+\end{bmatrix}
+}_B
+=
+\underbrace{
+\begin{bmatrix}
+-30 & 30 \\ 20 & -20
+\end{bmatrix}
+}_{10 A}
+\underbrace{
+\begin{bmatrix}
+4 & 4 \\ 1 & -3
+\end{bmatrix}
+}_B
+=
+\underbrace{
+\begin{bmatrix}
+-90 & -210 \\ 60 & 140
+\end{bmatrix}
+}_{(10 A)B} ,
+\end{equation*}
+and
+\begin{equation*}
+\underbrace{
+\begin{bmatrix}
+-3 & 3 \\ 2 & -2
+\end{bmatrix}
+}_A
+\biggl(
+10
+\underbrace{
+\begin{bmatrix}
+4 & 4 \\ 1 & -3
+\end{bmatrix}
+}_B
+\biggr)
+=
+\underbrace{
+\begin{bmatrix}
+-3 & 3 \\ 2 & -2
+\end{bmatrix}
+}_{A}
+\underbrace{
+\begin{bmatrix}
+40 & 40 \\ 10 & -30
+\end{bmatrix}
+}_{10B}
+=
+\underbrace{
+\begin{bmatrix}
+-90 & -210 \\ 60 & 140
+\end{bmatrix}
+}_{A(10B)} .
+\end{equation*}
+\end{example}
 
-There is one rule you have seen in primary school
-that is quite conspicuously missing.  That is, matrix multiplication is
+There is one rule you have used since primary school on numbers
+that is quite conspicuously missing for matrices.
+That is, matrix multiplication is
 not commutative.  Firstly, just because $AB$ makes sense, it may be
 that $BA$ is not even defined.  For example, if $A$ is $2 \times 3$, and
 $B$ is $3 \times 4$, the we can multiply $AB$ but not $BA$.
@@ -1296,10 +1467,13 @@ Then we call $B$ the inverse of $A$ and we denote $B$ by $A^{-1}$.
 Perhaps not surprisingly, ${(A^{-1})}^{-1} = A$, since if the inverse of $A$ 
 is $B$, then the inverse of $B$ is $A$.
 
-If the inverse of $A$ exists, then we call $A$
+If the inverse of $A$ exists, then we say $A$ is
 \emph{invertible\index{invertible matrix}}.
 If $A$ is not invertible we sometimes say $A$ is
 \emph{singular\index{singular matrix}}.
+%Singular matrices are those you cannot \myquote{divide by.}
+%So the mistake of \myquote{division by zero} is replaced by the mistake
+%\myquote{inverting a singular matrix.}
 
 The proper formulation of the cancellation rule is:
 \emph{If $A$ is invertible,
@@ -1313,10 +1487,10 @@ The computation is what you would do in regular algebra with numbers,
 but you have to
 be careful never to commute matrices:
 \begin{align*}
-AB & = AC \\
-A^{-1}AB & = A^{-1}AC \\
-IB & = IC \\
-B & = C
+AB & = AC , \\
+A^{-1}AB & = A^{-1}AC , \\
+IB & = IC , \\
+B & = C .
 \end{align*}
 And similarly for cancellation on the right.
 
@@ -1442,7 +1616,7 @@ d_1 & 0 & 0 & 0 \\
 0 & d_2 & 0 & 0 \\
 0 & 0 & d_3 & 0 \\
 0 & 0 & 0 & d_4
-\end{bmatrix}
+\end{bmatrix} .
 \end{equation*}
 Such matrices have nice properties when we multiply by them.  If we multiply
 them by a vector, they multiply the $k^{\text{th}}$ entry by $d_k$.  For
@@ -1604,7 +1778,7 @@ The transpose of $A$ is denoted by $A^T$.  Example:
 1 & 4 \\
 2 & 5 \\
 3 & 6 
-\end{bmatrix}
+\end{bmatrix} .
 \end{equation*}
 So transpose takes an $m \times n$ matrix to an $n \times m$ matrix.
 
@@ -1685,17 +1859,20 @@ FIXME:
 
 \sectionnotes{? lectures}
 
+\subsection{Linear systems of equations}
 
 One application of matrices is to solve systems of
 linear equations\footnote{Although perhaps we have this backwards,
 quite often we solve a linear system of equations
 to find out something about matrices, rather than vice versa.}.
 Consider the following system of linear equations
-\begin{align*}
+\begin{equation} \label{linalg:elim:eq}
+\begin{aligned}
           2 x_1 +           2 x_2 +           2 x_3 & = 2 , \\
 \phantom{9} x_1 + \phantom{9} x_2 +           3 x_3 & = 5 , \\
 \phantom{9} x_1 +           4 x_2 + \phantom{9} x_3 & = 10 .
-\end{align*}
+\end{aligned}
+\end{equation}
 
 Without changing the solution,
 we can swap equations in this system,
@@ -1742,17 +1919,56 @@ just solve:
 \vec{x} = A^{-1} A \vec{x} = A^{-1} \vec{b} .
 \end{equation*}
 Well, but that is the problem, we do not know how to compute the
-inverse.  We will see later that to compute the inverse we need
+inverse for matrices bigger than $2 \times 2$.
+We will see later that to compute the inverse we need
 to do elimination.
 
-FIXME FIXME FIXME FIXME FIXME
+There is a few operations we can perform on the equations that don't change
+the solution.  First, perhaps a stupid seeming rule, we can swap 
+two equations in \eqref{linalg:elim:eq}:
+\begin{equation*}
+\begin{aligned}
+\phantom{9} x_1 + \phantom{9} x_2 +           3 x_3 & = 5 , \\
+          2 x_1 +           2 x_2 +           2 x_3 & = 2 , \\
+\phantom{9} x_1 +           4 x_2 + \phantom{9} x_3 & = 10 .
+\end{aligned}
+\end{equation*}
+Clearly that has the same solutions $x_1,x_2,x_3$.
+A second rule is that we could multiply a row by a nonzero number.  For
+example suppose we multiply the third equation in \eqref{linalg:elim:eq}
+by 3:
+\begin{equation*}
+\begin{aligned}
+          2 x_1 + \phantom{9}  2 x_2 + 2 x_3 & = 2 , \\
+\phantom{9} x_1 + \phantom{99}   x_2 + 3 x_3 & = 5 , \\
+          3 x_1 +             12 x_2 + 3 x_3 & = 30 .
+\end{aligned}
+\end{equation*}
+Finally we could add a multiple of one equation to another equation.
+For example, we could add 3 times the third equation to the second equation.
+\begin{equation*}
+\begin{aligned}
+\phantom{(1+3)} 2 x_1 + \phantom{(1+12)}  2 x_2 + \phantom{(3+3)} 2 x_3 & = 2 , \\
+\phantom{2} (1+3) x_1 + \phantom{2}(1+12)   x_2 + \phantom{2} (3+3) x_3 & = 5+30 , \\
+\phantom{2 (1+3)} x_1 + \phantom{(1+12)}  4 x_2 + \phantom{(3+3) 2} x_3 & = 10 .
+\end{aligned}
+\end{equation*}
+We still get that clearly the same $x_1,x_2,x_3$ should be solutions
+to these new equations.
+These were just examples, we did not get any closer to the solution, we will
+have to do these operations in some more logical manner.
 
-
-To solve the system we put the coefficient matrix (the matrix on the left
-hand side of the equation) together with the vector on the right and side
-and get the
-so-called
-\emph{\myindex{augmented matrix}}
+The first thing is to write the equations in a more compact manner.  Given
+\begin{equation*}
+A \vec{x} = \vec{b} ,
+\end{equation*}
+we write down the so-called \emph{\myindex{augmented matrix}}
+\begin{equation*}
+[ A ~|~ \vec{b} ] ,
+\end{equation*}
+where the vertical line is just a marker for us to know where the
+\myquote{right-hand side} of the equation starts.  For example,
+for the system \eqref{linalg:elim:eq} the augmented matrix is
 \begin{equation*}
 \left[
 \begin{array}{ccc|c}
@@ -1761,38 +1977,122 @@ so-called
 1 & 4 & 1 & 10
 \end{array}
 \right] .
-%\qquad
-%\text{or just}
-%\qquad
-%\begin{bmatrix}
-%2 & 2 & 2 & 2 \\
-%1 & 1 & 3 & 5 \\
-%1 & 4 & 1 & 10
-%\end{bmatrix} .
 \end{equation*}
-We apply the following three elementary operations.
-%\pagebreak[2]%
+The entire process of elimination which we will describle
+is often applied to any sort of matrix,
+not just an
+augmented matrix.  Perhaps just think of the matrix as the $3 \times 4$
+matrix
+\begin{equation*}
+\begin{bmatrix}
+2 & 2 & 2 & 2 \\
+1 & 1 & 3 & 5 \\
+1 & 4 & 1 & 10
+\end{bmatrix} .
+\end{equation*}
+
+\subsection{Row echelon form and elementary operations}
+
+We now apply the three operations above to the matrix.  We call these
+the \emph{\myindex{elementary operations}}.  In terms of the matrix,
+the operations become:
 \begin{enumerate}[(i)]
 \item Swap two rows.
 \item Multiply a row by a nonzero number.
 \item Add a multiple of one row to another row.
 \end{enumerate}
-We keep doing these operations until we get into a state where it is
-easy to read off the answer, or until we get into a contradiction indicating
-no solution, for example if we come up with an equation such as $0=1$.
+We will run these operations until we 
+get into a state where it is easy to read off the answer,
+or until we get into a contradiction indicating no solution.
 
-Let us work through the example.  First multiply the first row by
-$\nicefrac{1}{2}$ to obtain
+More abstractly, we will first obtain the so-called
+\emph{\myindex{row echelon form}}.
+We call the first nonzero entry in each row is called the
+\emph{\myindex{leading entry}}.  Then
+a matrix is in \emph{row echelon form} if
+the following conditions are satisfied:
+\begin{enumerate}[(i)]
+\item There is only one leading entry in each column.
+\item All the entries below a leading entry are zero.
+\item All leading entries are 1.
+\end{enumerate}
+If furthermore
+%mbxFIXME
+\begin{enumerate}[(i),resume]
+\item All the entries above a leading entry are zero,
+\end{enumerate}
+then a matrix is in \emph{\myindex{reduced row echelon form}}.
+
+\begin{example}
+The following matrix is in row echelon form.  The leading
+entries are marked:
+\begin{equation*}
+\begin{bmatrix}
+\boxed{1} & 2 & 9 & 3 \\
+0 & 0 & \boxed{1} & 1 \\
+0 & 0 & 0 & \boxed{1}
+\end{bmatrix}
+\end{equation*}
+The following matrix is in reduced row echelon form.  The leading
+entries are marked:
+\begin{equation*}
+\begin{bmatrix}
+\boxed{1} & 2 & 0 & 3 \\
+0 & 0 & \boxed{1} & 1 \\
+0 & 0 & 0 & 0
+\end{bmatrix}
+\end{equation*}
+\end{example}
+
+The procedure we will describe to obtain a reduced row echelon form
+is called the \emph{\myindex{Gauss--Jordan elimination}}.
+The first part of it, which obtains a row echelon form is called 
+\emph{\myindex{Gaussian elimination}} or
+\emph{\myindex{row reduction}}.  For some problems, a row echelon
+form is sufficient.
+
+To attain the row echelon form we work systematically.
+We go column by column, starting at the first column.  We find topmost
+entry in the first column that is not zero, and we call it the
+\emph{\myindex{pivot}}.  If there is no nonzero entry
+we move to the next column.  We swap rows to put the row with
+the pivot as the first row.  We divide the first row
+by the pivot to make the pivot entry be a 1.  Now look at all the rows below
+and subtract the right multiple of the pivot row so that all the entries
+below the pivot become zero.
+
+After this procedure we forget that we had a first row (it is now fixed),
+and we forget about the column with the pivot and all the preceding ones.
+You will notice that except for the pivot all the entries there are just
+zero.  Then we just focus on the smaller matrix and we repeat the steps
+above.
+
+It is best shown by example.  Let us keep the vertical line in the matrix,
+even though it really does not need to be an augmented matrix.
+We start with the first column and we locate the pivot, in this
+case the first entry of the first column:
 \begin{equation*}
 \left[
 \begin{array}{ccc|c}
-1 & 1 & 1 & 1 \\
+\boxed{2} & 2 & 2 & 2 \\
 1 & 1 & 3 & 5 \\
 1 & 4 & 1 & 10
 \end{array}
 \right] .
 \end{equation*}
-Now subtract the first row from the second and third row.
+We multiply the first row by
+$\nicefrac{1}{2}$ to obtain
+\begin{equation*}
+\left[
+\begin{array}{ccc|c}
+\boxed{1} & 1 & 1 & 1 \\
+1 & 1 & 3 & 5 \\
+1 & 4 & 1 & 10
+\end{array}
+\right] .
+\end{equation*}
+Now we subtract the first row from the second and third row (two elementary
+operations).
 \begin{equation*}
 \left[
 \begin{array}{ccc|c}
@@ -1800,132 +2100,211 @@ Now subtract the first row from the second and third row.
 0 & 0 & 2 & 4 \\
 0 & 3 & 0 & 9
 \end{array}
-\right]
+\right] .
 \end{equation*}
-Multiply the last row by $\nicefrac{1}{3}$ and the second row by $\nicefrac{1}{2}$.
+We are done with the first column and the first row for now.  We now almost
+pretend the matrix doesn't have the first column and the first row:
+\begin{equation*}
+\left[
+\begin{array}{ccc|c}
+* & * & * & * \\
+* & 0 & 2 & 4 \\
+* & 3 & 0 & 9
+\end{array}
+\right] .
+\end{equation*}
+
+OK, so now look at the second column, and notice that now the pivot is in the
+third row.
 \begin{equation*}
 \left[
 \begin{array}{ccc|c}
 1 & 1 & 1 & 1 \\
-0 & 0 & 1 & 2 \\
-0 & 1 & 0 & 3
+0 & 0 & 2 & 4 \\
+0 & \boxed{3} & 0 & 9
 \end{array}
-\right]
+\right] .
 \end{equation*}
-Swap rows 2 and 3.
+So we swap rows
 \begin{equation*}
+\left[
+\begin{array}{ccc|c}
+1 & 1 & 1 & 1 \\
+0 & \boxed{3} & 0 & 9 \\
+0 & 0 & 2 & 4
+\end{array}
+\right] 
+\end{equation*}
+and divide the pivot row by 3
+\begin{equation*}
+\left[
+\begin{array}{ccc|c}
+1 & 1 & 1 & 1 \\
+0 & \boxed{1} & 0 & 3 \\
+0 & 0 & 2 & 4
+\end{array}
+\right] 
+\end{equation*}
+We do not need to subtract anything as everything below the pivot is already
+zero.  So we move on, we again start ignoring the second row and second
+column and focus on 
+\begin{equation*}
+\left[
+\begin{array}{ccc|c}
+* & * & * & * \\
+* & * & * & * \\
+* & * & 2 & 4
+\end{array}
+\right] 
+\end{equation*}
+We find the pivot, then divide that row by 2
+\begin{equation*}
+\left[
+\begin{array}{ccc|c}
+1 & 1 & 1 & 1 \\
+0 & 1 & 0 & 3 \\
+0 & 0 & \boxed{2} & 4
+\end{array}
+\right] 
+\qquad \Rightarrow \qquad
 \left[
 \begin{array}{ccc|c}
 1 & 1 & 1 & 1 \\
 0 & 1 & 0 & 3 \\
 0 & 0 & 1 & 2
 \end{array}
+\right] .
+\end{equation*}
+The matrix is now in row echelon form.
+
+If we write down the last equation we find $x_3 = 2$.  We know $x_3$ and we
+could substitute it into the first two equations to get equations for
+$x_1$ and $x_2$.  Then we could do the same thing with $x_2$, until we solve
+for all 3 variables.  This procedure is called
+\emph{\myindex{backsubstitution}} and we can achieve it via elementary
+operations.
+Basically start from the lowest pivot (leading entry in the row
+echelon form) and subtract the right multiple from the row above to
+make all the entries above this pivot zero.  Then move to the next pivot and
+so no.
+After we are done, we will have a matrix in reduced row echelon form.
+
+So let us continue our example.
+First subtract the last row from the first to get
+\begin{equation*}
+\left[
+\begin{array}{ccc|c}
+1 & 1 & 0 & -1 \\
+0 & 1 & 0 & 3 \\
+0 & 0 & 1 & 2 
+\end{array}
 \right]
 \end{equation*}
-Subtract the last row from the first, then subtract the second row
-from the first.
+Now notice that the entry above the pivot in the second row is already zero.
+So we move onto the next pivot, the one in the second row.  We subtract
+this row from the top row to get
 \begin{equation*}
 \left[
 \begin{array}{ccc|c}
 1 & 0 & 0 & -4 \\
 0 & 1 & 0 & 3 \\
-0 & 0 & 1 & 2
+0 & 0 & 1 & 2 
 \end{array}
-\right]
+\right] .
 \end{equation*}
-If we think about what equations this augmented matrix represents, we see that
-$x_1 = -4$, $x_2 = 3$, and $x_3 = 2$.  We try this solution in the original
-system and, voil\`a, it works!
+The matrix is in reduced row echelon form.
 
-\begin{exercise}
-Check that the solution above really solves the given equations.
-\end{exercise}
-
-We write this equation in matrix notation as
+If we now write down the equations for $x_1,x_2,x_3$ we find
 \begin{equation*}
-A \vec{x} = \vec{b} ,
+x_1 = -4, \qquad x_2 = 3, \qquad x_3 = 2 .
 \end{equation*}
-where $A$ is the matrix
-$\left[ \begin{smallmatrix}
-2 & 2 & 2 \\
-1 & 1 & 3 \\
-1 & 4 & 1 
-\end{smallmatrix} \right]$ and $\vec{b}$ is the vector
-$\left[ \begin{smallmatrix}
-2 \\
-5 \\
-10
-\end{smallmatrix} \right]$.  The solution can also be computed via the
-inverse,
-\begin{equation*}
-\vec{x} = A^{-1} A \vec{x} = A^{-1} \vec{b} .
-\end{equation*}
+In other words, we have solved the system.
 
-\medskip
+\subsection{Non-unique solutions and inconsistent systems}
 
 It is
-possible that the solution is not unique, or that no solution exists.
-It is easy to tell if a solution does not exist.  If during the row
-reduction you come up with a row where all the entries except the last one
-are zero (the last entry in a row corresponds to the right hand side of the
-equation) the system is \emph{inconsistent\index{inconsistent system}} and
-has no solution.  For
-example, for a system of 3 equations and 3 unknowns, if you find a row
-such as $[\,0 \quad 0 \quad 0 ~\,|\,~ 1\,]$ in the augmented matrix,
-you know the system is inconsistent.  That row corresponds to $0=1$.
+possible that the solution of a linear system of equations
+is not unique, or that no solution exists.  Suppose for a moment
+that the row echelon form we found was
+\begin{equation*}
+\left[
+\begin{array}{ccc|c}
+1 & 2 & 3 & 4 \\
+0 & 0 & 1 & 3 \\
+0 & 0 & 0 & 1 
+\end{array}
+\right] .
+\end{equation*}
+Then we have an equation $0=1$ coming from the last row.  That is impossible
+and the equations are \emph{\myindex{inconsistent}}.  There is no solution
+to $A \vec{x} = \vec{b}$.
+
+
+On the other hand, if we find a row echelon form
+\begin{equation*}
+\left[
+\begin{array}{ccc|c}
+1 & 2 & 3 & 4 \\
+0 & 0 & 1 & 3 \\
+0 & 0 & 0 & 0 
+\end{array}
+\right] ,
+\end{equation*}
+Then there is no issue with finding solutions.  In fact we will find way too
+many.  Let us continue with backsubstitution (subtracting 3 times the third
+row from the first) to find the reduced row echelon form and let's mark the
+pivots.
+\begin{equation*}
+\left[
+\begin{array}{ccc|c}
+\boxed{1} & 2 & 0 & -5 \\
+0 & 0 & \boxed{1} & 3 \\
+0 & 0 & 0 & 0 
+\end{array}
+\right] ,
+\end{equation*}
+The last row is just all zeros; it just says $0=0$ and we can ignore it.
+The two remaining equations are 
+\begin{equation*}
+x_1 + 2 x_2 = -5 , \qquad
+x_3 = 3 .
+\end{equation*}
+Let us solve for the variables that corresponded to the
+pivots, that is $x_1$ and $x_3$ as there was a pivot in the first column
+and in the third column:
+\begin{align*}
+& x_1 = - 2 x_2 -5 , \\
+& x_3 = 3 .
+\end{align*}
+The variable $x_2$ can be anything you wish and we still get a solution.
+The $x_2$ is called a \emph{\myindex{free variable}}.
+So there are infinitely many solutions.  For example, if we pick $x_2=0$,
+then $x_1 = -5$, and $x_3 = 3$ give a solution.  But we also get a solution
+by say picking $x_2 = 1$, in which case $x_1 = -9$ and $x_3 = 3$.
 
 \medskip
 
-You generally try to use row operations until the following conditions
-are satisfied.  The first nonzero entry in each row is called the
-\emph{\myindex{leading entry}}.
+The general idea is that
+if any row has all zeros in the columns corresponding to the
+variables, but a nonzero entry in the column corresponding to the right
+hand side $\vec{b}$, then the system is inconsistent and has no solutions.
+
+If the system is consistent:
 \begin{enumerate}[(i)]
-\item There is only one leading entry in each column.
-\item All the entries above and below a leading entry are zero.
-\item All leading entries are 1.
+\item If every column corresponding to a variable has a pivot element,
+then the solution is unique.
+\item If there are columns corresponding to variables with no pivot,
+then those are \emph{free variables} and can be chosen
+arbitrarily, and there are infinitely many solutions.
 \end{enumerate}
-Such a matrix is said to be in
-\emph{\myindex{reduced row echelon form}}.  The variables
-corresponding to columns with no leading entries are said to be
-\emph{free variables\index{free variable}}.
-Free variables mean that we can pick those variables
-to be anything we want and then solve for the rest of the unknowns.
 
-\begin{example}
-The following augmented matrix is in reduced row echelon form.
-\begin{equation*}
-\left[
-\begin{array}{ccc|c}
-1 & 2 & 0 & 3 \\
-0 & 0 & 1 & 1 \\
-0 & 0 & 0 & 0
-\end{array}
-\right]
-\end{equation*}
-Suppose
-the variables are $x_1$, $x_2$, and $x_3$.  Then $x_2$ is the
-free variable, $x_1 = 3 - 2x_2$, and $x_3 = 1$.
+\subsection{Rank}
 
-\medskip
-
-On the other hand if during the row reduction process you come up with the
-matrix
-\begin{equation*}
-\left[
-\begin{array}{ccc|c}
-1 & 2 & 13 & 3 \\
-0 & 0 & 1 & 1 \\
-0 & 0 & 0 & 3
-\end{array}
-\right]
-,
-\end{equation*}
-there is no need to go further.  The last row corresponds to
-the equation $0 x_1 + 0 x_2 + 0 x_3 = 3$, which is preposterous.  Hence, no
-solution exists.
-\end{example}
+FIXME FIXME FIXME
 
 \subsection{Computing the inverse}
+
+FIXME FIXME FIXME
 
 If the matrix $A$ is square and there exists a unique solution
 $\vec{x}$ to $A \vec{x} = \vec{b}$ for any $\vec{b}$ (there are no free
