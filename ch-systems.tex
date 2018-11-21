@@ -2781,13 +2781,6 @@ eigenvectors.
 
 \medskip
 
-%FIXME: for some reason does not seem to work as a wrapfig
-%14 is the number of lines, must be adjusted
-%\begin{mywrapfig}[14]{3.25in}
-%\capstart
-%\diffyincludegraphics{width=3in}{width=4.5in}{pln-source-eig}
-%\caption{Eigenvectors of $P$.\label{pln:source-eigfig}}
-%\end{mywrapfig}
 \emph{Case 1.}  Suppose that the eigenvalues of $P$ are real and positive.
 We find two corresponding eigenvectors and plot them in the plane.  For
 example, take the
@@ -2798,12 +2791,11 @@ $\left[ \begin{smallmatrix} 1 \\ 0 \end{smallmatrix} \right]$ and
 $\left[ \begin{smallmatrix} 1 \\ 1 \end{smallmatrix} \right]$.  See
 \figurevref{pln:source-eigfig}.
 
-\begin{myfig}
+\begin{mywrapfig}{3.25in}
 \capstart
 \diffyincludegraphics{width=3in}{width=4.5in}{pln-source-eig}
-\caption{Eigenvectors of $P$ drawn as just straight lines starting at the
-origin.\label{pln:source-eigfig}}
-\end{myfig}
+\caption{Eigenvectors of $P$.\label{pln:source-eigfig}}
+\end{mywrapfig}
 
 Suppose the point $(x,y)$ is on the line determined by an eigenvector
 $\vec{v}$ for an eigenvalue $\lambda$.
@@ -3016,7 +3008,12 @@ See \figurevref{pln:spiral-sinkfig}.
 \medskip
 
 We summarize the behavior of linear homogeneous two dimensional systems
+given by a nonsingular matrix
 in \tableref{pln:behtab}.
+Systems where one of the eigenvalues is zero (the matrix is singular)
+come up in practice from time to time, see
+\examplevref{sintro:closedbrine-example}, and the pictures are somewhat
+different (simpler in a way).  See the exercises.
 
 \begin{table}[h!t]
 \mybeginframe
@@ -3038,10 +3035,6 @@ complex with negative real part & spiral sink \\
 \caption{Summary of behavior of linear homogeneous two dimensional systems.\label{pln:behtab}}
 \myendframe
 \end{table}
-
-Systems where one of the eigenvalues is zero also come up in practice, see
-\examplevref{sintro:closedbrine-example}, and the pictures are somewhat
-different (simpler in a way).  See the exercises.
 
 \subsection{Exercises}
 
