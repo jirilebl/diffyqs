@@ -18,6 +18,8 @@
 * 0.3: Use a general form for the Newton's law of cooling, and
   name the old version exponential growth equation, which is more correct.
 
+* 1.1: Add plot of 1/(1-x) to show the singularity
+* 1.3: Add plot of an implicit solution
 * 1.3: Add figure with a graph for the coffee example.
 * 1.7: Compute the first two steps in the example with $h=1$ explicitly
 

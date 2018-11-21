@@ -191,12 +191,22 @@ So the general solution is
 y = \frac{1}{C-x} \qquad \text{or} \qquad y = 0.
 \end{equation*}
 Note the singularities of the solution.  If for example $C=1$, then the
-solution \myquote{blows up} as we approach $x=1$.  Generally,
+solution \myquote{blows up} as we approach $x=1$.  See
+\figurevref{1over1mx:fig}.  Generally,
 it is hard to tell
 from just looking at the equation itself how the solution is going to behave.
 The equation $y' = y^2$ is very nice and defined everywhere, but
 the solution is only defined on some interval $(-\infty, C)$ or
-$(C, \infty)$.
+$(C, \infty)$.  Usually when this happens we only consider one of these
+the solution.  For example if we impose a condition $y(0) = 1$, then
+the solution is $y=\frac{1}{1-x}$, and we would consider this solution only
+for $x$ on the interval $(-\infty,1)$.  In the figure, it is the left hand
+part of the graph.
+\begin{myfig}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{1over1mx}
+\caption{Plot of $y=\frac{1}{1-x}$.\label{1over1mx:fig}}
+\end{myfig}
 \end{example}
 
 Classical problems leading to differential equations solvable by integration
@@ -840,9 +850,9 @@ Notice the dependence on $y$ in the integral.
 
 \subsection{Separable equations}
 
-Let us suppose that the equation is
-\emph{\myindex{separable}}.
-That is, let us consider
+We say a differential equation is
+\emph{\myindex{separable}}
+if we can write it as
 \begin{equation*}
 y' = f(x)g(y) ,
 \end{equation*}
@@ -922,7 +932,7 @@ And we are done.
 
 \subsection{Implicit solutions}
 
-We might sometimes get stuck even if we can do the
+We sometimes get stuck even if we can do the
 integration.  For example, take the separable equation
 \begin{equation*}
 y' = \frac{xy}{y^2+1} .
@@ -953,8 +963,28 @@ y'\left(2y + \frac{2}{y}\right) = 2x .
 It is simple to see that the differential equation holds.
 If you want to compute values
 for $y$, you might have to be tricky.  For example, you can graph
-$x$ as a function of $y$, and then flip your paper.  Computers are also good
-at some of these tricks.
+$x$ as a function of $y$, and then flip your paper.
+
+Computers are also good at some of these tricks.
+More advanced mathematical software usually has some
+way of plotting solutions to implicit equations.
+For example, for $C=0$ if you plot all the points $(x,y)$ that
+are solutions to $y^2+2\ln|y|=x^2$,
+you find the two curves in \figurevref{implicitsols:fig}.  This is not quite
+a graph of a function, for each $x$ there are two choices of $y$.
+To find a function you would have to pick one of these two curves.
+You pick the one that satisfies your initial condition if you have one.
+For example, the top curve satisfies the condition $y(1)=1$.
+So for each $C$ we really got two solutions.
+As you can see, computing values from an implicit solution can be somewhat
+tricky.  But sometimes, an implicit solution is the best we can do.
+
+\begin{myfig}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{implicitsols}
+\caption{The implicit solution $y^2+2\ln|y|=x^2$ to $y'=\frac{xy}{y^2+1}$.\label{implicitsols:fig}}
+\end{myfig}
+
 
 The above equation also has the solution $y=0$.
 The general solution is 
