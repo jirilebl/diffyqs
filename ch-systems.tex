@@ -2781,12 +2781,13 @@ eigenvectors.
 
 \medskip
 
+%FIXME: for some reason does not seem to work as a wrapfig
 %14 is the number of lines, must be adjusted
-\begin{mywrapfig}[14]{3.25in}
-\capstart
-\diffyincludegraphics{width=3in}{width=4.5in}{pln-source-eig}
-\caption{Eigenvectors of $P$.\label{pln:source-eigfig}}
-\end{mywrapfig}
+%\begin{mywrapfig}[14]{3.25in}
+%\capstart
+%\diffyincludegraphics{width=3in}{width=4.5in}{pln-source-eig}
+%\caption{Eigenvectors of $P$.\label{pln:source-eigfig}}
+%\end{mywrapfig}
 \emph{Case 1.}  Suppose that the eigenvalues of $P$ are real and positive.
 We find two corresponding eigenvectors and plot them in the plane.  For
 example, take the
@@ -2796,6 +2797,13 @@ The eigenvalues are 1 and 2 and corresponding eigenvectors are
 $\left[ \begin{smallmatrix} 1 \\ 0 \end{smallmatrix} \right]$ and
 $\left[ \begin{smallmatrix} 1 \\ 1 \end{smallmatrix} \right]$.  See
 \figurevref{pln:source-eigfig}.
+
+\begin{myfig}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{pln-source-eig}
+\caption{Eigenvectors of $P$ drawn as just straight lines starting at the
+origin.\label{pln:source-eigfig}}
+\end{myfig}
 
 Suppose the point $(x,y)$ is on the line determined by an eigenvector
 $\vec{v}$ for an eigenvalue $\lambda$.
@@ -2886,11 +2894,13 @@ obtain the picture in \figurevref{pln:saddle-fullfig}.  We call this picture a
 \emph{\myindex{saddle point}}.
 
 \medskip
+\pagebreak[2]
 
 For the next three cases we will assume the eigenvalues are complex.  In this
 case the eigenvectors are also complex and we cannot just plot them in the
 plane.
 
+\pagebreak[2]
 \medskip
 
 \emph{Case 4.} Suppose the eigenvalues are purely imaginary.

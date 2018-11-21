@@ -327,9 +327,9 @@
 
 \@ifundefined{DeclareOption}{\endinput}{}
 
-\def\WF@warning{\PackageWarning{wrapfig}}
-\ProvidesPackage{wrapfig}[2003/01/31 \space  v 3.6]
-\DeclareOption{verbose}{\def\WF@info{\PackageInfo{wrapfig}}}
+\def\WF@warning{\PackageWarning{mywrapfig}}
+\ProvidesPackage{mywrapfig}[2003/01/31 \space  v 3.6]
+\DeclareOption{verbose}{\def\WF@info{\PackageInfo{mywrapfig}}}
 \ProcessOptions
 \AtEndDocument{\WFclear}
 
@@ -382,7 +382,7 @@ New wrapping environments may be added when new float types are defined
 "wrapfigure", "wraptable", or something else may be invoked using the
 "wrapfloat" environment, as in "\begin{wrapfloat}{figure}{O}{5cm}".
 
-To use float.sty properly, load package "float" before "wrapfig", 
+To use float.sty properly, load package "float" before "mywrapfig", 
 and declare any new float types after loading both.  Likewise for
 ccaption.sty and "\newfloatlist" and memoir.cls and its "\newfloat".
 
@@ -439,7 +439,7 @@ a floated wrapping environment will only begin...
 It is possible that a non-floating wrapfigure will be forced to float
 when an earlier one is still being processed.  A warning will be written
 in that case.  You can have more information about the floating process
-written to the log file by specifying "\usepackage[verbose]{wrapfig}".
+written to the log file by specifying "\usepackage[verbose]{mywrapfig}".
 
 If there is a lot of flexibility on a page, a floating wrapfigure may
 be placed badly; you must turn to manual placement.  A rare problem is
