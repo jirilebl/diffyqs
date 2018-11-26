@@ -68,7 +68,7 @@ eigenvalues and eigenvectors of matrices.
 
 For basic Fourier series theory we will need
 the following three eigenvalue problems.
-We will consider more general equations,
+We will consider more general equations and boundary conditions,
 but we will postpone this until
 \chapterref{SL:chapter}.
 \begin{equation} \label{bv:eq1}
@@ -2067,9 +2067,9 @@ Similarly the function $t^k$ is even if $k$ is even and odd when $k$ is odd.
 Take two functions $f(t)$ and $g(t)$ and define their product $h(t) =
 f(t)g(t)$.
 \begin{tasks}
-\task Suppose both $f(t)$ and $g(t)$ are odd, is $h(t)$ odd or even?
-\task Suppose one is even and one is odd, is $h(t)$ odd or even?
-\task Suppose both are even, is $h(t)$ odd or even?
+\task Suppose both $f(t)$ and $g(t)$ are odd.  Is $h(t)$ odd or even?
+\task Suppose one is even and one is odd.  Is $h(t)$ odd or even?
+\task Suppose both are even.  Is $h(t)$ odd or even?
 \end{tasks}
 \end{exercise}
 
@@ -5012,7 +5012,8 @@ Commonly the Laplace equation is part of a so-called
 (1805--1859).}.
 That
 is, we have a region in the $xy$-plane and we specify certain values along
-the boundaries of the region.  We then try to find a solution $u$ defined on
+the boundaries of the region.  We then try to find a solution $u$ to the
+Laplace equation defined on
 this region such that $u$ agrees with the values we specified on the
 boundary.
 
@@ -5053,11 +5054,11 @@ lying in the first quadrant.
 \begin{minipage}[b]{2.7in}
 \vspace{\fill}
 \begin{align}
-& \Delta u = 0 , \label{dirich:eq1} \\
-& u(0,y) = 0 \quad \text{for }  0 < y < h,\label{dirich:eq2} \\
-& u(x,h) = 0 \quad \text{for }  0 < x < w,\label{dirich:eq3} \\
-& u(w,y) = 0 \quad \text{for }  0 < y < h,\label{dirich:eq4} \\
-& u(x,0) = f(x) \quad \text{for }  0 < x < w.\label{dirich:eq5}
+& \Delta u = 0 , & &  \label{dirich:eq1} \\
+& u(0,y) = 0 & & \text{for }  0 < y < h,\label{dirich:eq2} \\
+& u(x,h) = 0 & & \text{for }  0 < x < w,\label{dirich:eq3} \\
+& u(w,y) = 0 & & \text{for }  0 < y < h,\label{dirich:eq4} \\
+& u(x,0) = f(x) & & \text{for }  0 < x < w.\label{dirich:eq5}
 \end{align}
 \vspace{\fill}
 \end{minipage}
