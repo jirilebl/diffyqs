@@ -1,8 +1,8 @@
-#FIG 3.2  Produced by xfig version 3.2.5b
+#FIG 3.2  Produced by xfig version 3.2.7a
 Landscape
 Center
 Inches
-Letter  
+Letter
 100.00
 Single
 -2
@@ -17,7 +17,7 @@ Single
 2 1 0 1 0 7 50 -1 -1 0.000 0 0 -1 1 1 2
 	0 0 1.00 60.00 120.00
 	0 0 1.00 60.00 120.00
-	 1425 1575 2475 2175
+	 1425 1575 2454 2165
 4 0 0 50 -1 0 12 0.0000 2 195 1845 1712 410 $u(1,\\theta)=g(\\theta)$\001
 4 0 0 50 -1 0 12 0.0000 2 135 645 1521 2179 radius 1\001
 4 0 0 50 -1 0 12 0.0000 2 165 1155 1619 1217 $\\Delta u = 0$\001

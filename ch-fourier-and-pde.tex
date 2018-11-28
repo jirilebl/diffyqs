@@ -228,7 +228,7 @@ and there is another eigenvalue
 The following problem is the one that leads to the general Fourier
 series.
 
-\begin{example}
+\begin{example} \label{bvp-periodic:example}
 Let us compute the 
 eigenvalues and eigenfunctions of
 \begin{equation*}
@@ -5523,14 +5523,14 @@ $\frac{1}{r} u_r$.  Adding it we obtain the
 \emph{\myindex{Laplacian in polar coordinates}}:
 \begin{equation*}
 \boxed{~~
+\Delta u 
+=
+u_{xx} + u_{yy} =
 \frac{1}{r^2} u_{\theta\theta}
 +
 \frac{1}{r} u_{r}
 +
-u_{rr}
-=
-u_{xx} + u_{yy} =
-\Delta u .
+u_{rr} .
 ~~}
 \end{equation*}
 
@@ -5557,12 +5557,12 @@ that both sides must be constant.
 \frac{1}{r^2} R \Theta''
 & =
 -
-\left(\frac{1}{r} R' + R''\right) \Theta .
+\left(\frac{1}{r} R' + R''\right) \Theta 
 \\
 \frac{\Theta''}{\Theta}
 & =
 -
-\frac{r R' + r^2 R''}{R} = -\lambda.
+\frac{r R' + r^2 R''}{R} = -\lambda
 \end{align*}
 We get two equations:
 \begin{align*}
@@ -5573,7 +5573,9 @@ We get two equations:
 Let us first focus on $\Theta$.  We know that $u(r,\theta)$ ought to be
 $2\pi$-periodic in $\theta$, that is,
 $u(r,\theta) = u(r,\theta+2\pi)$.  Therefore, the solution to
-$\Theta'' + \lambda \Theta = 0$ must be $2\pi$-periodic.  We conclude
+$\Theta'' + \lambda \Theta = 0$ must be $2\pi$-periodic.
+We have seen such a problem in \exampleref{bvp-periodic:example}.
+We conclude
 that
 %$\lambda = 0,1,4,9,\ldots$.  That is,
 $\lambda = n^2$ for a
