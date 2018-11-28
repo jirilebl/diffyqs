@@ -5,7 +5,7 @@
 \section{Vectors, mappings, and linear systems}
 \label{vecsandmaps:section}
 
-\sectionnotes{? lectures}
+\sectionnotes{more than 1 lecture}
 
 In real life, there is most often more than one variable.
 So we wish to organize dealing with multiple variables in a consistent
@@ -659,7 +659,7 @@ FIXME
 \section{Matrix algebra}
 \label{matalg:section}
 
-\sectionnotes{? lectures}
+\sectionnotes{2--3 lectures}
 
 \subsection{One-by-one matrices}
 
@@ -1439,7 +1439,7 @@ BA .
 
 \subsection{Inverse}
 
-There are a few other rules you know from primary school that do not quite
+There are a couple of other algebra rules you know for numbers that do not quite
 generalize easily to matrices:
 \begin{enumerate}[(i)]
 \item $AB = AC$ does not necessarily imply $B=C$, even if $A$ is not 0.
@@ -1527,6 +1527,7 @@ For example:
 4 & -1 \\
 -2 & 1
 \end{bmatrix}
+=
 \begin{bmatrix}
 2 & \nicefrac{-1}{2} \\
 -1 & \nicefrac{1}{2}
@@ -1600,8 +1601,9 @@ So a $2 \times 2$ matrix $A$ is invertible whenever
 ad - bc \not= 0
 \end{equation*}
 and otherwise it is singular.  The expression $ad-bc$ is called
-the \emph{determinant} and we will study it in a later section
-more carefully.  There is a similar expression for a square
+the \emph{determinant} and we will look at it 
+more carefully in a later section.
+There is a similar expression for a square
 matrix of any size.
 
 \subsection{Diagonal matrices}
@@ -1857,7 +1859,7 @@ FIXME:
 \section{Elimination}
 \label{elim:section}
 
-\sectionnotes{? lectures}
+\sectionnotes{2--3 lectures}
 
 \subsection{Linear systems of equations}
 
@@ -2169,7 +2171,7 @@ We find the pivot, then divide that row by 2
 0 & 0 & \boxed{2} & 4
 \end{array}
 \right] 
-\qquad \Rightarrow \qquad
+\qquad \to \qquad
 \left[
 \begin{array}{ccc|c}
 1 & 1 & 1 & 1 \\
@@ -2513,7 +2515,7 @@ row are multiples of the first one.   But what is
 1 & 2 & 3 \\
 4 & 5 & 6 \\
 7 & 8 & 9
-\end{bmatrix} = ?
+\end{bmatrix} \quad = \quad ?
 \end{equation*}
 That seems to be a tougher question to answer.  It turns out that for
 example the first two rows are linearly independent, but if you
@@ -2859,7 +2861,7 @@ FIXME
 \section{Determinant}
 \label{det:section}
 
-\sectionnotes{? lectures}
+\sectionnotes{1 lecture}
 
 For square matrices we define a useful quantity called the
 \emph{\myindex{determinant}}.  We define
@@ -2885,21 +2887,18 @@ c & d
 ad-bc .
 \end{equation*}
 
-FIXME: below is just a dump of the stuff from chapter 3
-
-
-Before trying to define the
-determinant for larger matrices, let us note
-the meaning of the determinant.  Consider an $n \times n$ matrix
-as a mapping of the $n$ dimensional euclidean space ${\mathbb{R}}^n$ to 
-itself, where $\vec{x}$ gets sent to $A \vec{x}$.
+Before defining the
+determinant for larger matrices, we note
+the meaning of the determinant.
+An $n \times n$ matrix
+gives a mapping of the $n$-dimensional euclidean space ${\mathbb{R}}^n$ to 
+itself.
 In particular, a $2 \times 2$ matrix $A$ is a mapping of
-the plane to itself.  The
-determinant of 
+the plane to itself.  The determinant of 
 $A$ is the factor by which the area of objects changes. 
 If we take the unit square (square of side 1) in the plane, then
 $A$ takes the square to a parallelogram of area $\lvert\det(A)\rvert$.  The sign
-of $\det(A)$ denotes changing of orientation (negative if the axes get flipped).  For
+of $\det(A)$ denotes a change of orientation (negative if the axes get flipped).  For
 example, let
 \begin{equation*}
 A =
@@ -2908,8 +2907,10 @@ A =
 -1 & 1
 \end{bmatrix} .
 \end{equation*}
-Then $\det(A) = 1+1 = 2$.  Let us see where the (unit) square with vertices
-$(0,0)$, $(1,0)$, $(0,1)$, and $(1,1)$ gets sent.  Clearly $(0,0)$ gets sent
+Then $\det(A) = 1+1 = 2$.
+Let us see where $A$ sends the unit square with vertices
+$(0,0)$, $(1,0)$, $(0,1)$, and $(1,1)$.
+The point $(0,0)$ gets sent
 to $(0,0)$.  
 \begin{equation*}
 \begin{bmatrix}
@@ -2956,14 +2957,22 @@ $(1,1)$, and $(2,0)$.  The
 image square has
 a side of length $\sqrt{2}$ and is therefore of area 2.
 
-If you think back to high school geometry, you may have seen a formula for
+FIXME: picture.
+
+In general the image of a square is going to be a \myindex{parallelogram}.
+In high school geometry, you may have seen a formula for
 computing the area of a \myindex{parallelogram}
 with vertices $(0,0)$, $(a,c)$, $(b,d)$
-and $(a+b,c+d)$.  And it is precisely
+and $(a+b,c+d)$.  The area is
 \begin{equation*}
 \left\lvert \, \det \left(
 \begin{bmatrix} a & b \\ c & d \end{bmatrix}
-\right) \, \right\lvert.
+\right) \, \right\lvert
+=
+\lvert
+a d - b c
+\rvert
+.
 \end{equation*}
 The vertical lines above mean absolute value.
 The matrix $\left[ \begin{smallmatrix} a & b \\ c & d \end{smallmatrix}
@@ -2972,19 +2981,45 @@ carries the unit square to the given parallelogram.
 
 \medskip
 
-Let us look at the determinant for larger matrices.  We define $A_{ij}$ as
+There are a number of ways to define the determinant for an $n \times n$
+matrix.  Let us use the so-called \emph{\myindex{cofactor expansion}}
+We define $A_{ij}$ as
 the matrix $A$ with the $i^{\text{th}}$ row and the $j^{\text{th}}$ column
-deleted.  To compute the determinant of a matrix, pick one row, say the
-$i^{\text{th}}$ row and compute:
+deleted.  For example, if
 \begin{equation*}
-\boxed{~~
-\det (A) =
-\sum_{j=1}^n
-{(-1)}^{i+j}
-a_{ij} \det (A_{ij}) .
-~~}
+\text{If} \qquad
+A = 
+\begin{bmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{bmatrix} ,
+\qquad
+\text{then}
+\qquad
+A_{12} = 
+\begin{bmatrix}
+4 & 6 \\
+7 & 9
+\end{bmatrix}
+\qquad
+\text{or}
+\qquad
+A_{23} = 
+\begin{bmatrix}
+1 & 2 \\
+7 & 8
+\end{bmatrix} .
 \end{equation*}
-For the first row we get
+We now define the determinant recursively
+\begin{equation*}
+\det (A)
+\overset{\text{def}}{=}
+\sum_{j=1}^n
+{(-1)}^{1+j}
+a_{1j} \det (A_{1j}) ,
+\end{equation*}
+or in other words
 \begin{equation*}
 \det (A) =
 a_{11} \det (A_{11}) - 
@@ -2996,10 +3031,8 @@ a_{13} \det (A_{13}) -
 - a_{1n} \det (A_{1n}) & \text{if } n \text{ even.}
 \end{cases}
 \end{equation*}
-We alternately add and subtract the determinants of the submatrices
-$A_{ij}$ multiplied by $a_{ij}$ for a fixed $i$ and all $j$.
 For a $3 \times 3$ matrix,
-picking the first row, we get $\det (A) = a_{11} \det (A_{11}) -
+we get $\det (A) = a_{11} \det (A_{11}) -
 a_{12} \det (A_{12}) + a_{13} \det (A_{13})$.  For example,
 \begin{equation*}
 \begin{split}
@@ -3044,46 +3077,170 @@ a_{12} \det (A_{12}) + a_{13} \det (A_{13})$.  For example,
 \end{split}
 \end{equation*}
 
-The numbers ${(-1)}^{i+j}\det(A_{ij})$ are called
-\emph{cofactors\index{cofactor}}
-of the matrix and
-this way of computing the determinant is called the
-\emph{\myindex{cofactor expansion}}.
-No matter which row you pick, you always get the same number.
-It is also possible to compute the
-determinant by expanding
-along columns (picking a column instead of a row above).
-It is true that $\det(A) = \det(A^T)$.
-
-A common notation for the determinant is a pair of vertical
-lines:
+It turns out that we did not have to necessarily use the first row.  That is
+for any $i$,
 \begin{equation*}
-\begin{vmatrix}
-a & b \\
-c & d
-\end{vmatrix}
+\det (A)
 =
+\sum_{j=1}^n
+{(-1)}^{i+j}
+a_{ij} \det (A_{ij}) .
+\end{equation*}
+It is sometimes useful to use a row other than the first.  In the following
+example it is useful to expand along the second row
+\begin{equation*}
+\begin{split}
 \det \left(
 \begin{bmatrix}
-a & b \\
-c & d
+1 & 2 & 3 \\
+0 & 5 & 0 \\
+7 & 8 & 9
 \end{bmatrix}
-\right) .
+\right)
+& =
+- 0 \cdot
+\det \left(
+\begin{bmatrix}
+2 & 3 \\
+8 & 9
+\end{bmatrix}
+\right)
++
+5 \cdot
+\det \left(
+\begin{bmatrix}
+1 & 3 \\
+7 & 9
+\end{bmatrix}
+\right)
+-
+0 \cdot
+\det \left(
+\begin{bmatrix}
+1 & 2 \\
+7 & 8
+\end{bmatrix}
+\right) \\
+& =
+0
++
+5 (1 \cdot 9 - 3 \cdot 7)
++
+0
+= -60 .
+\end{split}
 \end{equation*}
-I personally find this notation confusing as vertical lines usually
-mean a positive quantity, while determinants can be negative.  Also
-think about how to write the absolute value of a determinant.  I will not
-use this notation in this book.
+
+We alternately add and subtract the determinants of the submatrices
+$A_{ij}$ multiplied by $a_{ij}$ for a fixed $i$ and all $j$.
+The numbers ${(-1)}^{i+j}\det(A_{ij})$ are called
+\emph{cofactors\index{cofactor}}
+of the matrix.  And that is why
+this method of computing the determinant is called the
+\emph{cofactor expansion}.
+
+Similarly we do not need to expand along a row, we could expand
+along a column.  For any $j$
+\begin{equation*}
+\det (A)
+=
+\sum_{i=1}^n
+{(-1)}^{i+j}
+a_{ij} \det (A_{ij}) .
+\end{equation*}
+A related fact is that
+\begin{equation*}
+\det (A) = \det (A^T) .
+\end{equation*}
 
 \medskip
 
-Think of the determinants telling you the scaling of a mapping.  
-If $B$ doubles the sizes of geometric objects and $A$ tripples them,
+A matrix is \emph{\myindex{upper triangular}} if all elements below
+the main diagonal are 0.  For example,
+\begin{equation*}
+\begin{bmatrix}
+1 & 2 & 3 \\
+0 & 5 & 6 \\
+0 & 0 & 9
+\end{bmatrix}
+\end{equation*}
+is upper triangular.  Similarly a \emph{\myindex{lower triangular}}
+matrix is one where everything above the diagonal is zero.  For example,
+\begin{equation*}
+\begin{bmatrix}
+1 & 0 & 0 \\
+4 & 5 & 0 \\
+7 & 8 & 9
+\end{bmatrix} .
+\end{equation*}
+
+The determinant for triangular matrices is very simple to compute.  For
+example think about the lower triangular matrix.  If you expand along the
+first row, you find that the determinant is 1 times the determinant
+of the lower triangular matrix $\left[ \begin{smallmatrix} 5 & 0 \\ 8 & 9
+\end{smallmatrix} \right]$.  So the deteriminant is just the
+product of the diagonal entries.
+\begin{equation*}
+\det \left(
+\begin{bmatrix}
+1 & 0 & 0 \\
+4 & 5 & 0 \\
+7 & 8 & 9
+\end{bmatrix} 
+\right)
+=
+1 \cdot 5 \cdot 9 = 45 .
+\end{equation*}
+Similarly for upper triangular matrices
+\begin{equation*}
+\det \left(
+\begin{bmatrix}
+1 & 2 & 3 \\
+0 & 5 & 6 \\
+0 & 0 & 9
+\end{bmatrix}
+\right)
+=
+1 \cdot 5 \cdot 9 = 45 .
+\end{equation*}
+So in general if $A$ is triangular then
+\begin{equation*}
+\det (A) = a_{11} a_{22} \cdots a_{nn} .
+\end{equation*}
+
+If $A$ is diagonal, then it is also triangular (upper and lower), so
+same formula applies.  For example,
+\begin{equation*}
+\det \left(
+\begin{bmatrix}
+2 & 0 & 0 \\
+0 & 3 & 0 \\
+0 & 0 & 5
+\end{bmatrix}
+\right)
+=
+2 \cdot 3 \cdot 5 = 30 .
+\end{equation*}
+
+In particular, the identity matrix $I$ is diagonal, and the diagonal entries
+are all 1.  Thus,
+\begin{equation*}
+\det(I) = 1 .
+\end{equation*}
+
+\medskip
+
+The determinant is telling you how geometric objects scale.
+So if $B$ doubles the sizes of geometric objects and $A$ tripples them,
 then $AB$ (which applies $B$ to an object and then $A$) should make size
 go up by a factor of $6$.  This is true in general:
+
+\begin{theorem}
 \begin{equation*}
 \det(AB) = \det(A)\det(B) .
 \end{equation*}
+\end{theorem}
+
 This property is one of the most useful, and it is employed often to 
 actually compute determinants.  A particularly interesting consequence is to
 note what it means for existence of inverses.
@@ -3092,18 +3249,22 @@ Take $A$ and $B$ to be inverses, that is $AB=I$.  Then
 \det(A)\det(B) = \det(AB) = \det(I) = 1 .
 \end{equation*}
 Neither $\det(A)$ nor $\det(B)$ can be zero.
-Let us state this as a theorem
-as it will be very important in the context of this course.
+This fact is an extremely useful property of the determinant, and one
+which is used often in this book:
 
 \begin{theorem}
 An $n \times n$ matrix $A$ is invertible if and only if $\det (A) \not= 0$.
 \end{theorem}
 
-In fact, $\det(A^{-1}) \det(A) = 1$ says that $\det(A^{-1}) =
-\frac{1}{\det(A)}$.  So we even know what the determinant of $A^{-1}$ is
-before we know how to compute $A^{-1}$.
+In fact, $\det(A^{-1}) \det(A) = 1$ says that
+\begin{equation*}
+\det(A^{-1}) =
+\frac{1}{\det(A)}.
+\end{equation*}
+So we know what the determinant of $A^{-1}$ is
+without computing $A^{-1}$.
 
-There is a simple formula for the inverse of a $2 \times 2$ matrix
+Let us return to the formula for the inverse of a $2 \times 2$ matrix:
 \begin{equation*}
 \begin{bmatrix}
 a & b \\
@@ -3122,10 +3283,32 @@ in the denominator of the fraction.
 The formula only works if the determinant is nonzero, otherwise we are
 dividing by zero.
 
-FIXME
+%\medskip
+%
+%FIXME: perhaps computing using elimination
+
+\medskip
 
 
-FIXME
+A common notation for the determinant is a pair of vertical
+lines:
+\begin{equation*}
+\begin{vmatrix}
+a & b \\
+c & d
+\end{vmatrix}
+=
+\det \left(
+\begin{bmatrix}
+a & b \\
+c & d
+\end{bmatrix}
+\right) .
+\end{equation*}
+Personally, I find this notation confusing as vertical lines usually
+mean a positive quantity, while determinants can be negative.  Also
+think about how to write the absolute value of a determinant.
+This notation is not used in this book.
 
 \subsection{Exercises}
 
