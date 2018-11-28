@@ -1978,7 +1978,7 @@ for the system \eqref{linalg:elim:eq} the augmented matrix is
 \end{array}
 \right] .
 \end{equation*}
-The entire process of elimination which we will describle
+The entire process of elimination, which we will describe,
 is often applied to any sort of matrix,
 not just an
 augmented matrix.  Perhaps just think of the matrix as the $3 \times 4$
@@ -1993,15 +1993,18 @@ matrix
 
 \subsection{Row echelon form and elementary operations}
 
-We now apply the three operations above to the matrix.  We call these
-the \emph{\myindex{elementary operations}}.  In terms of the matrix,
+We apply the three operations above to the matrix.  We call these
+the \emph{\myindex{elementary operations}} or
+\emph{\myindex{elementary row operations}}.
+In terms of the matrix,
 the operations become:
 \begin{enumerate}[(i)]
 \item Swap two rows.
 \item Multiply a row by a nonzero number.
 \item Add a multiple of one row to another row.
 \end{enumerate}
-We will run these operations until we 
+\pagebreak[2]
+We run these operations until we 
 get into a state where it is easy to read off the answer,
 or until we get into a contradiction indicating no solution.
 
@@ -2016,7 +2019,7 @@ the following conditions are satisfied:
 \item All the entries below a leading entry are zero.
 \item All leading entries are 1.
 \end{enumerate}
-If furthermore
+If furthermore,
 %mbxFIXME
 \begin{enumerate}[(i),resume]
 \item All the entries above a leading entry are zero,
@@ -2294,7 +2297,7 @@ If the system is consistent:
 \item If every column corresponding to a variable has a pivot element,
 then the solution is unique.
 \item If there are columns corresponding to variables with no pivot,
-then those are \emph{free variables} and can be chosen
+then those are \emph{free variables} that can be chosen
 arbitrarily, and there are infinitely many solutions.
 \end{enumerate}
 
@@ -2842,7 +2845,7 @@ So
 \nicefrac{2}{11} & \nicefrac{5}{11} & \nicefrac{-4}{11}
 \end{bmatrix} .
 \end{equation*}
-Not too terrible no?  Perhaps harder than inverting a $2 \times 2$ matrix
+Not too terrible, no?  Perhaps harder than inverting a $2 \times 2$ matrix
 for which we had a formula, but not too bad.  Really in practice this 
 is done efficiently by a computer.
 
@@ -2858,11 +2861,18 @@ FIXME
 
 \sectionnotes{? lectures}
 
-FIXME: below is just a dump of the stuff from chapter 3
-
 For square matrices we define a useful quantity called the
 \emph{\myindex{determinant}}.  We define
-the determinant of a $1 \times 1$ matrix as the value of its only entry.
+the determinant of a $1 \times 1$ matrix as the value of its only entry
+\begin{equation*}
+\det \left(
+\begin{bmatrix}
+a 
+\end{bmatrix}
+\right)
+\overset{\text{def}}{=}
+a .
+\end{equation*}
 For a $2 \times 2$ matrix we define
 \begin{equation*}
 \det \left(
@@ -2874,6 +2884,9 @@ c & d
 \overset{\text{def}}{=}
 ad-bc .
 \end{equation*}
+
+FIXME: below is just a dump of the stuff from chapter 3
+
 
 Before trying to define the
 determinant for larger matrices, let us note
