@@ -326,7 +326,7 @@ We, therefore, get the following theorem.
 %(\lambda_1 - \lambda_2 ) \langle \vec{v}_1 , \vec{v}_2 \rangle
 %\end{equation*}
 
-\begin{theorem}
+\begin{theorem} \label{bvp:orthogonaleigen}
 Suppose that $x_1(t)$ and $x_2(t)$ are two eigenfunctions of the problem
 \eqref{bv:eq1}, \eqref{bv:eq2} or \eqref{bv:eq3}
 for two different
@@ -5724,6 +5724,7 @@ Compute the series for $u(1,\theta)$ and verify that it really is what
 we have just claimed.  Hint: Be careful, make sure not to divide by zero.
 \end{exercise}
 
+\pagebreak[2]
 We now simply write the solution (see \figurevref{dirichdisc:zero2yfig}) by multiplying by $r^n$ in the right places.
 \begin{equation*}
 u(r,\theta) = 
@@ -5805,15 +5806,28 @@ u(r,\theta)
 a_n r^n \cos(n \theta) + b_n r^n \sin(n \theta)
 \\
 & =
-\frac{1}{2\pi} \int_{-\pi}^\pi g(\alpha) ~ d\alpha
+\underbrace{
+ \left(
+  \frac{1}{2\pi} \int_{-\pi}^\pi g(\alpha) ~ d\alpha
+ \right)
+}_{\frac{a_0}{2}}
++
+%\\
+%& ~~~~~~~~ +
+\sum_{n=1}^\infty
+\underbrace{
+ \left(
+  \frac{1}{\pi} \int_{-\pi}^\pi g(\alpha) \cos (n\alpha) ~ d\alpha
+ \right)
+}_{a_n}
+r^n \cos(n \theta) +
 \\
 & ~~~~~~~~ +
-\sum_{n=1}^\infty
-\left( \frac{1}{\pi} \int_{-\pi}^\pi g(\alpha) \cos (n\alpha) ~ d\alpha
-\right)
-r^n \cos(n \theta) +
-\left( \frac{1}{\pi} \int_{-\pi}^\pi g(\alpha) \sin (n\alpha) ~ d\alpha
-\right)
+\underbrace{
+ \left(
+  \frac{1}{\pi} \int_{-\pi}^\pi g(\alpha) \sin (n\alpha) ~ d\alpha
+ \right)
+}_{b_n}
 r^n \sin(n \theta)
 \\
 & =
@@ -5832,17 +5846,20 @@ g(\alpha) \sin (n\alpha)
 & =
 \frac{1}{2\pi}
 \int_{-\pi}^\pi
-\left( 1
-+
-2
-\sum_{n=1}^\infty
-r^n 
-\bigl(
-\cos (n\alpha) 
-\cos(n \theta) +
-\sin (n\alpha)
-\sin(n \theta) \bigr)
-\right) g(\alpha) ~d\alpha
+\underbrace{
+ \left( 1
+ +
+ 2
+ \sum_{n=1}^\infty
+ r^n 
+ \bigl(
+ \cos (n\alpha) 
+ \cos(n \theta) +
+ \sin (n\alpha)
+ \sin(n \theta) \bigr)
+ \right)
+}_{P(r,\theta,\alpha)}
+g(\alpha) ~d\alpha
 %\\
 %& =
 %\frac{1}{2\pi}
@@ -6103,6 +6120,7 @@ See also \exerciseref{exercise:dirichproblemxy}.
 
 \setcounter{exercise}{100}
 
+\pagebreak[2]
 \begin{exercise}
 Using series solve
 $\Delta u = 0$, $u(1,\theta) = 1+ \sum\limits_{n=1}^\infty \frac{1}{n^2}\sin(n\theta)$.
