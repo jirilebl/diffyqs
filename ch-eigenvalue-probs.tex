@@ -76,8 +76,7 @@ can be written as \eqref{SL:eq}
 after multiplying by a proper factor.
 
 \begin{example}[Bessel]
-Put the following equation (which turns up for example in the solution of
-the two dimensional wave equation) into the form \eqref{SL:eq}:
+Put the following equation into the form \eqref{SL:eq}:
 \begin{equation*}
 x^2 y'' + xy' + \left(\lambda x^2 - n^2\right)y = 0 .
 \end{equation*}
@@ -90,6 +89,10 @@ x y'' + y' + \left(\lambda x - \frac{n^2}{x}\right)y
 \frac{d}{dx} \left( x \frac{dy}{dx} \right)
 - \frac{n^2}{x} y + \lambda x y  = 0.
 \end{equation*}
+The Bessel equation turns up for example in the solution of
+the two-dimensional wave equation.
+If you want to see how one solves the equation
+you can look at \subsectionref{bessel:subsection}.
 \end{example}
 
 The so-called 
@@ -592,10 +595,10 @@ The beam is displaced by some function $f(x)$ at time $t=0$ and then
 let go (initial velocity is 0).  Then $y$ satisfies:
 \begin{equation} \label{appeig:beameq}
 \begin{aligned}
-& a^4 y_{xxxx} + y_{tt} = 0 \quad (0 < x < 1, t > 0), \\
+& a^4 y_{xxxx} + y_{tt} = 0 \qquad (0 < x < 1, \enspace t > 0), \\
 & y(0,t) = y_{xx}(0,t) = 0 , \\
 & y(1,t) = y_{xx}(1,t) = 0 , \\
-& y(x,0) = f(x), \quad y_{t}(x,0) = 0 .
+& y(x,0) = f(x), \qquad y_{t}(x,0) = 0 .
 \end{aligned}
 \end{equation}
 
@@ -604,10 +607,11 @@ $a^4 X^{(4)}T + XT'' = 0$ or
 \begin{equation*}
 \frac{X^{(4)}}{X} = \frac{- T''}{a^4T} = \lambda .
 \end{equation*}
-We note that we want $T'' + \lambda a^4T = 0$.  Let us assume that $\lambda >
-0$.  We can argue that we expect vibration and not exponential growth nor
+The equation for $T$ is therefore
+$T'' + \lambda a^4 T = 0$.  Let us assume that $\lambda >
+0$:  we expect vibration and not exponential growth nor
 decay in the $t$ direction (there is no friction in our model for instance).
-Similarly $\lambda = 0$ will not occur.
+Similarly $\lambda = 0$ is not an eigenvalue.
 
 \begin{exercise}
 Try to justify $\lambda > 0$ just from the equations.
