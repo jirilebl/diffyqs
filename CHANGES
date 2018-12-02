@@ -79,6 +79,9 @@
   what about corners if we have to take second derivatives, and
   what D'Alembert says about influence of initial conditions.
 * 4.8: Add hint to exercise 4.8.5
+* 4.10: A few clarifications.
+
+* 5.2: Rename the section to "Higher order eigenvalue problems"
 
 * 7.1: Add root test and an example for it.
 

@@ -10,7 +10,8 @@
 
 \subsection{Boundary value problems}
 
-We have encountered several different eigenvalue problems such as:
+In \chapterref{FS:chapter}
+we encountered several different eigenvalue problems such as:
 \begin{equation*}
 X''(x) + \lambda X(x) = 0 ,
 \end{equation*}
@@ -26,7 +27,10 @@ X'(0) = 0 & ~~X(L) = 0 & ~~\text{(Mixed), or} \\
 X(0) = 0 & ~~X'(L) = 0 & ~~\text{(Mixed)}, \ldots
 \end{array}
 \end{equation*}
-For example for the insulated wire,
+For example,
+these boundary problems came up in the study of the heat equation $u_t =
+k u_{xx}$ when we were trying to solve the equation by the method of
+separation of variables in \sectionref{heateq:section}.
 Dirichlet conditions correspond to applying a
 zero temperature at the ends, Neumann means insulating the ends, etc.
 Other types of endpoint conditions also arise naturally, such as
@@ -37,11 +41,8 @@ hX(0) - X'(0) = 0, \qquad hX(L) + X'(L) = 0 ,
 for some constant $h$.  These conditions come up when the ends are immersed
 in some medium.
 
-Boundary problems came up in the study of the heat equation $u_t =
-k u_{xx}$ when we were trying to solve the equation by the method of
-separation of
-variables.  In the computation
-we encountered a certain eigenvalue problem and found the
+In the separation of variables computation
+we encountered an eigenvalue problem and found the
 eigenfunctions
 $X_n(x)$.  We then found the \emph{\myindex{eigenfunction decomposition}} of
 the initial
@@ -51,18 +52,18 @@ f(x) = \sum_{n=1}^\infty c_n X_n(x) .
 \end{equation*}
 Once we had this decomposition
 and found suitable $T_n(t)$ such that $T_n(0) = 1$
-and $T_n(t)X(x)$ were solutions,
-the solution to the original problem including the initial
-condition could be written as
+and such that $T_n(t)X_n(x)$ were solutions to the heat equation,
+we wrote the solution to the original problem, including the initial
+condition, as
 \begin{equation*}
 u(x,t) = \sum_{n=1}^\infty c_n T_n(t) X_n(x) .
 \end{equation*}
 
 \medskip
 
-We will try to solve more general problems using this method.
-First,
-we will study 
+To study more general problems with this method, we must study
+more general eigenvalue problems.
+First, we study 
 second order linear equations of the form
 \begin{equation} \label{SL:eq}
 \frac{d}{dx} \left( p(x) \frac{dy}{dx} \right)
@@ -88,6 +89,10 @@ x y'' + y' + \left(\lambda x - \frac{n^2}{x}\right)y
 \frac{d}{dx} \left( x \frac{dy}{dx} \right)
 - \frac{n^2}{x} y + \lambda x y  = 0.
 \end{equation*}
+The Bessel equation turns up for example in the solution of
+the two-dimensional wave equation.
+If you want to see how one solves the equation
+you can look at \subsectionref{bessel:subsection}.
 \end{example}
 
 The so-called 
@@ -139,23 +144,28 @@ then $\lambda_n \geq 0$ for all $n$.
 Problems satisfying the hypothesis of the
 theorem are called
 \emph{regular Sturm--Liouville problems\index{regular Sturm--Liouville problem}}%
-\index{Sturm--Liouville problem!regular}
+\index{Sturm--Liouville problem!regular},
 and we will only consider such problems here.
 That is, a regular problem is one where
 $p(x)$, $p'(x)$, $q(x)$ and $r(x)$ are continuous, $p(x) > 0$, $r(x) > 0$,
-$q(x) \geq 0$, and $\alpha_1, \alpha_2, \beta_1, \beta_2 \geq 0$.
+$q(x) \geq 0$, and $\alpha_1, \alpha_2, \beta_1, \beta_2 \geq 0$,
+where neither $\alpha_1$ and $\alpha_2$ are both zero,
+nor
+$\beta_1$ and $\beta_2$ are both zero.
 Note: Be careful about the signs.  Also be careful about the inequalities
 for $r$ and $p$, they
-must be strict for all $x$!
+must be strict for all $x$ in the interval $[a,b]$, including the endpoints!
 
 When zero
 is an eigenvalue, we usually
 start labeling the eigenvalues at 0 rather than at 1 for convenience.
+That is we label the eigenvalues $\lambda_0 < \lambda_1 < \lambda_2 < \cdots$.
 
 \begin{example}
 The problem $y''+\lambda y$, $0 < x < L$, $y(0) = 0$, and $y(L) = 0$
-is a regular Sturm--Liouville problem.  $p(x) = 1$, $q(x) = 0$, $r(x) = 1$,
-and we have $p(x) = 1 > 0$ and $r(x) = 1 > 0$.
+is a regular Sturm--Liouville problem:  $p(x) = 1$, $q(x) = 0$, $r(x) = 1$,
+and we have $p(x) = 1 > 0$ and $r(x) = 1 > 0$.  We also have
+$a=0$, $b=L$, $\alpha_1 = \beta_1 = 1$, $\alpha_2 = \beta_2 = 0$.
 The eigenvalues are $\lambda_n = \frac{n^2 \pi^2}{L^2}$ and eigenfunctions
 are $y_n(x) = \sin\bigl(\frac{n\pi}{L} x\bigr)$.  All eigenvalues are nonnegative as
 predicted by the theorem.
@@ -185,9 +195,9 @@ These equations give a regular Sturm--Liouville problem.
 Identify $p, q, r, \alpha_j, \beta_j$ in the example above.
 \end{exercise}
 
-First note that
-$\lambda \geq 0$ by \thmref{sl:slregthm}.
-Therefore, the general solution (without boundary conditions) is
+By \thmref{sl:slregthm},
+$\lambda \geq 0$.
+So the general solution (without boundary conditions) is
 \begin{equation*}
 \begin{aligned}
  & y(x) = A \cos ( \sqrt{\lambda}\, x) + B \sin (
@@ -201,7 +211,7 @@ We must satisfy $0 = hB - A$ and $A = 0$, hence $B=0$ (as $h > 0$).
 Therefore, 0 is not an eigenvalue (no nonzero solution, so no eigenfunction).
 
 Now let us
-try $\lambda > 0$.  We plug in the boundary conditions.
+try $\lambda > 0$.  We plug in the boundary conditions:
 \begin{align*}
 & 0 = h A - \sqrt{\lambda}\, B , \\
 & 0 = -A \sqrt{\lambda}\, \sin (\sqrt{\lambda}) +B \sqrt{\lambda}\,
@@ -287,8 +297,11 @@ $r(x)$ arise naturally, for example from a change of variables.
 Hence, you could
 think of a change of variables such that $d\xi = r(x)~ dx$.
 
-We have the following orthogonality property of eigenfunctions of a
-regular Sturm--Liouville problem.
+Eigenfunctions of a
+regular Sturm--Liouville problem satisfy an orthogonality property, just
+like the eigenfunctions in \sectionref{bvp:section}.
+Its proof is very similar to the analogous 
+\thmvref{bvp:orthogonaleigen}.
 
 \begin{theorem}
 Suppose we have a regular Sturm--Liouville problem
@@ -307,13 +320,11 @@ that is, $y_j$ and $y_k$ are orthogonal with respect to the weight function
 $r$.
 \end{theorem}
 
-The proof is very similar to the analogous theorem from \sectionref{bvp:section}.
-%It can also be found in many books including, for example,
-%Edwards and Penney \cite{EP}.
 
 \subsection{Fredholm alternative}
 
 The \emph{Fredholm alternative} theorem we talked about before
+(\thmvref{thm:fredholmsimple})
 holds for all regular Sturm--Liouville problems.
 We state it here for completeness.
 
@@ -327,7 +338,7 @@ Then either
 &\alpha_1 y(a) - \alpha_2 y'(a) = 0 , \\
 &\beta_1 y(b) + \beta_2 y'(b) = 0 ,
 \end{align*}
-has a nonzero solution, or
+has a nonzero solution ($\lambda$ is an eigenvalue), or
 \begin{align*}
 &\frac{d}{dx} \left( p(x) \frac{dy}{dx} \right)
 - q(x) y + \lambda r(x) y = f(x) , \\
@@ -555,7 +566,7 @@ b)~$p(x) = 1+x^2$, $q(x) = x^2$, $r(x) = 1$, $\alpha_1 = 1$, $\alpha_2 =
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Application of eigenfunction series}
+\section{Higher order eigenvalue problems}
 \label{sec:appeig}
 
 \sectionnotes{1 lecture\EPref{, \S10.2 in \cite{EP}}\BDref{,
@@ -584,10 +595,10 @@ The beam is displaced by some function $f(x)$ at time $t=0$ and then
 let go (initial velocity is 0).  Then $y$ satisfies:
 \begin{equation} \label{appeig:beameq}
 \begin{aligned}
-& a^4 y_{xxxx} + y_{tt} = 0 \quad (0 < x < 1, t > 0), \\
+& a^4 y_{xxxx} + y_{tt} = 0 \qquad (0 < x < 1, \enspace t > 0), \\
 & y(0,t) = y_{xx}(0,t) = 0 , \\
 & y(1,t) = y_{xx}(1,t) = 0 , \\
-& y(x,0) = f(x), \quad y_{t}(x,0) = 0 .
+& y(x,0) = f(x), \qquad y_{t}(x,0) = 0 .
 \end{aligned}
 \end{equation}
 
@@ -596,10 +607,11 @@ $a^4 X^{(4)}T + XT'' = 0$ or
 \begin{equation*}
 \frac{X^{(4)}}{X} = \frac{- T''}{a^4T} = \lambda .
 \end{equation*}
-We note that we want $T'' + \lambda a^4T = 0$.  Let us assume that $\lambda >
-0$.  We can argue that we expect vibration and not exponential growth nor
+The equation for $T$ is therefore
+$T'' + \lambda a^4 T = 0$.  Let us assume that $\lambda >
+0$:  we expect vibration and not exponential growth nor
 decay in the $t$ direction (there is no friction in our model for instance).
-Similarly $\lambda = 0$ will not occur.
+Similarly $\lambda = 0$ is not an eigenvalue.
 
 \begin{exercise}
 Try to justify $\lambda > 0$ just from the equations.
