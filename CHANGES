@@ -70,10 +70,14 @@
 * 4.2: Add footnote with reference to the examples where $x''+\lambda x=0$
   is solved.
 * 4.6: Add small example where no series is computed
+* 4.7: Add a little bit of intuition for the wave equation
 * 4.7: Update figure of the plucked string
 * 4.7: Add some discussion on what the solution says about the sound 
   of a guitar.  Also add some plots for fixed time of the shape of a plucked
   string.
+* 4.8: Add more comments on D'Alembert, why do corners persist,
+  what about corners if we have to take second derivatives, and
+  what D'Alembert says about influence of initial conditions.
 * 4.8: Add hint to exercise 4.8.5
 
 * 7.1: Add root test and an example for it.

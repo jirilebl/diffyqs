@@ -1915,7 +1915,6 @@ b) $\frac{8}{6}
 \cos\bigl(\frac{3\pi}{2} t\bigr) + \cdots$
 }
 
-\begin{samepage}
 \begin{exercise}
 Let
 \begin{equation*}
@@ -1927,7 +1926,6 @@ extended periodically.
 \task Write out the series explicitly up to the $3^{\text{rd}}$ harmonic.
 \end{tasks}
 \end{exercise}
-\end{samepage}
 \exsol{%
 a)
 $\sum\limits_{n=1}^\infty
@@ -2578,7 +2576,6 @@ $\sum\limits_{n=1}^\infty
 \sin\bigl(\frac{n\pi}{3} t \bigr)$
 }
 
-\begin{samepage}
 \begin{exercise}
 Let $f(t) = \cos(2t)$ on $0 \leq t < \pi$.
 \begin{tasks}
@@ -2586,7 +2583,6 @@ Let $f(t) = \cos(2t)$ on $0 \leq t < \pi$.
 \task Find the Fourier series of the odd periodic extension.
 \end{tasks}
 \end{exercise}
-\end{samepage}
 \exsol{%
 a)
 $\cos(2t)$
@@ -3125,8 +3121,8 @@ behavior that is typical for the whole class.
 
 \subsection{Heat on an insulated wire}
 
-Let us first study the heat equation.
-Suppose that we have a wire (or a thin metal rod) of length $L$
+Let us start with the heat equation.
+Consider a wire (or a thin metal rod) of length $L$
 that is insulated
 except at the
 endpoints.  Let $x$ denote the position along the wire and let $t$ denote
@@ -3697,7 +3693,6 @@ solution to $u_{xx} + u_{yy} = 0$, where $u(x,0) = 0$ and $u(0,y) = 0$.
 Hint: Try $u(x,y) = X(x)Y(y)$.
 \end{exercise}
 
-\begin{samepage}
 \begin{exercise}[challenging]
 Suppose that one end of the wire is insulated (say at $x=0$) and
 the other end is kept at zero temperature.  That is,
@@ -3709,7 +3704,6 @@ find a series solution of
 \end{align*}
 Express any coefficients in the series by integrals of $f(x)$.
 \end{exercise}
-\end{samepage}
 
 \begin{exercise}[challenging]
 Suppose that the wire is circular and insulated, so there are no ends. 
@@ -3865,7 +3859,15 @@ a^2 y_{xx} ,
 ~~}
 \end{equation*}
 for some constant $a > 0$.
-Assume that the ends of the string are fixed in place:
+The intuition is similar to the heat equation, replacing velocity with
+acceleration: the acceleration at a specific point is proportional to the second
+derivative of the shape of the string.  In other words
+when the string is
+concave down then $u_{xx}$ is negative and the string wants to accelerate
+downwards, so $u_{tt}$ should be negative.  And vice-versa.
+The wave equation is an example of a hyperbolic PDE.
+
+Assume that the ends of the string are fixed in place as on the guitar:
 \begin{equation*}
 y(0,t) = 0 \qquad \text{and} \qquad y(L,t) = 0.
 \end{equation*}
@@ -4597,7 +4599,10 @@ in opposite directions.  The coordinates $\xi$ and $\eta$ are called the
 \emph{\myindex{characteristic coordinates}}, and a similar technique can
 be applied to more complicated hyperbolic PDE\@.
 And in fact, in \sectionref{fopde:section} it is used to solve first
-order linear PDE.
+order linear PDE.  Basically, to solve the wave equation (or more general
+hyperbolic equations) we find certain characteristic curves along which
+the equation is really just an ODE, or a pair of ODEs.  In this case
+these are the curves where $\xi$ and $\eta$ are constant.
 
 \subsection{D'Alembert's formula}
 
@@ -4690,7 +4695,7 @@ y(L,t) & =
 \end{equation*}
 And voil\`a, it works.
 
-\begin{example}
+\begin{example} \label{dalemb:implusexample}
 D'Alembert says that the solution is a superposition of
 two functions (waves) moving in the opposite direction at \myquote{speed} $a$.
 To get an idea of
@@ -4783,11 +4788,53 @@ the side conditions
 \eqref{dalemb:weqside}.
 \end{exercise}
 
-\textbf{Warning:}  Make sure you use the odd periodic extensions $F(x)$ and $G(x)$,
+\textbf{Warning:}
+Make sure you use the odd periodic extensions $F(x)$ and $G(x)$,
 when you have formulas for $f(x)$ and $g(x)$.
 The thing is, those formulas in general hold
 only for $0 < x < L$, and are not usually equal to $F(x)$ and $G(x)$
 for other $x$.
+
+\subsection{Some remarks}
+
+Let us remark that the formula $y(x,t) = A(x-at) + B(x+at)$ is the reason
+why the solution of the wave equation doesn't get \myquote{nicer} as time
+goes on, that is, why in the examples where the initial conditions
+had corners, the solution also has corners at every time $t$.
+
+\medskip
+
+The corners bring us to another interesting remark.  Nobody ever notices at first
+that our example solutions are not even differentiable (they have corners):
+In \exampleref{dalemb:implusexample} above, the solution is not
+differentiable whenever $x=t+0.5$ or $x=-t+0.5$ for example.
+Really to be able to compute $u_{xx}$ or $u_{tt}$, you need not one, but two
+derivatives.  Fear not, we could think of a shape that is very nearly
+$F(x)$ but does have two derivatives by rounding the corners a little bit,
+and then the solution would be very nearly
+$\frac{F(x-t)+F(x+t)}{2}$ and nobody would notice the switch.
+
+\medskip
+
+One final remark is what the D'Alembert solution tells us about what
+part of the initial conditions influence the solution at a certain point.
+We can figure this out by \myquote{travelling backwards along the
+characteristics.}  Let us suppose that the string is very long (perhaps
+infinite) for simplicity.  Since the solution at time $t$ is
+\begin{equation*}
+y(x,t) =
+\frac{F(x-at) + F(x+at)}{2} + \frac{1}{2a} \int_{x-at}^{x+at} G(s) ~ds ,
+\end{equation*}
+we notice that we have only used the initial conditions in the interval
+$[x-at,x+at]$.  These two endpoints are called the
+\emph{\myindex{wavefronts}}, as that is where the wave front is given an
+initial ($t=0$) disturbance at $x$.
+So if $a=1$, an observer sitting at $x=0$ at time $t=1$ has only seen the
+initial conditions for $x$ in the range $[-1,1]$
+and is blissfully unaware of anything else.
+This is why for example we do not know that a supernova has occurred in the
+universe until we see its light, millions of years from the time
+when it did in fact happen.
 
 \subsection{Exercises}
 
@@ -4805,6 +4852,7 @@ $y(0,t) = y(1, t) = 0$, $y(x,0) = \sin^5 (\pi x)$, and
 $y_t(x,0) = \sin^3 (\pi x)$.
 \end{exercise}
 
+\pagebreak[2]
 \begin{exercise}
 Take
 $y_{tt} = 4y_{xx}$, $0 < x < \pi$, $t > 0$,
@@ -4864,7 +4912,6 @@ $y(x,t)=
 \frac{\cos(3 \pi (x-3 t))-\cos(3 \pi (3 t+x))}{18\pi}$
 }
 
-\begin{samepage}
 \begin{exercise}
 Take $y_{tt} = 4y_{xx}$, $0 < x < 1$, $t > 0$,
 $y(0,t) = y(1, t) = 0$, $y(x,0) = x-x^2$, and
@@ -4877,7 +4924,6 @@ the solution at
 \end{tasks}
 You may have to split your answer up by cases.
 \end{exercise}
-\end{samepage}
 \exsol{%
 a)
 $y(x,0.1) =
@@ -4990,7 +5036,7 @@ u_{xx} + u_{yy} = 0 .
 This equation is called the \emph{\myindex{Laplace equation}}%
 \footnote{Named after the French mathematician
 \href{https://en.wikipedia.org/wiki/Laplace}{Pierre-Simon, marquis de Laplace}
-(1749--1827).}.
+(1749--1827).}, and is an example of an elliptic equation.
 Solutions to the Laplace equation
 are called \emph{harmonic functions\index{harmonic function}}
 and have many nice properties and
