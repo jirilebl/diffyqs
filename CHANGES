@@ -81,7 +81,11 @@
 * 4.8: Add hint to exercise 4.8.5
 * 4.10: A few clarifications.
 
-* 5.2: Rename the section to "Higher order eigenvalue problems"
+* 5.1: Add explicit expansion of x to the example at the end
+* 5.2: Rename the section to "Higher order eigenvalue problems",
+* 5.2: Add a footnote on the constant, and more detail to
+  the derivation
+* 5.2: Add missing discussion of free/fixed ends
 
 * 7.1: Add root test and an example for it.
 

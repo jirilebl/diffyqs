@@ -141,8 +141,9 @@ Moreover, if $q(x) \geq 0$ and $\alpha_1, \alpha_2, \beta_1, \beta_2 \geq 0$,
 then $\lambda_n \geq 0$ for all $n$.
 \end{theorem}
 
-Problems satisfying the hypothesis of the
-theorem are called
+Problems satisfying the hypothesis of the theorem
+(including the \myquote{Moreover})
+are called
 \emph{regular Sturm--Liouville problems\index{regular Sturm--Liouville problem}}%
 \index{Sturm--Liouville problem!regular},
 and we will only consider such problems here.
@@ -375,8 +376,9 @@ the ability to integrate the series term by term.
 Because of orthogonality we have
 \begin{equation*}
 \begin{split}
-\langle f , y_m \rangle & =
-\int_a^b f(x) \, y_m (x) \, r(x) ~ dx\\
+\langle f , y_m \rangle
+ = \int_a^b f(x) \, y_m (x) \, r(x) ~ dx
+& = \int_a^b \left( \sum_{n=1}^\infty c_n y_n(x) \right) \, y_m (x) \, r(x) ~ dx\\
 &= \sum_{n=1}^\infty c_n \int_a^b y_n(x) \, y_m (x) \, r(x) ~ dx\\
 &= c_m \int_a^b y_m(x) \, y_m (x) \, r(x) ~ dx = c_m \langle y_m , y_m \rangle
 .
@@ -415,47 +417,51 @@ such that
 \end{theorem}
 
 \begin{example}
-Take the simple Sturm--Liouville problem
+Consider
 \begin{align*}
-& y'' + \lambda y = 0, \quad 0 < x < \frac{\pi}{2} , \\
-& y(0) =0, \quad y'\left(\frac{\pi}{2}\right) = 0 .
+& y'' + \lambda y = 0, \quad 0 < x < \nicefrac{\pi}{2} , \\
+& y(0) =0, \quad y'(\nicefrac{\pi}{2}) = 0 .
 \end{align*}
-The above is a regular problem and furthermore we know by
+The above is a regular Sturm--Liouville problem, and
 \thmvref{sl:slregthm}
-that $\lambda \geq 0$.
+says that if $\lambda$ is an eigenvalue then
+$\lambda \geq 0$.
 
-Suppose $\lambda = 0$, then the general solution is $y(x) = Ax + B$,
-we plug in the
-initial conditions to get $0=y(0) = B$, and $0 = y'(\frac{\pi}{2}) = A$, hence
-$\lambda = 0$ is not an eigenvalue.
-The general solution, therefore, is
+Suppose $\lambda = 0$.  The general solution is $y(x) = Ax + B$.
+We plug in the
+initial conditions to get $0=y(0) = B$, and $0 = y'(\nicefrac{\pi}{2}) = A$.
+Hence $\lambda = 0$ is not an eigenvalue.
+
+So let us consider $\lambda > 0$, where
+the general solution is
 \begin{equation*}
 y(x) = A \cos ( \sqrt{\lambda} \, x ) + B \sin ( \sqrt{\lambda} \, x) .
 \end{equation*}
 Plugging in the boundary conditions we get
-$0 = y(0) = A$ and $0 = y'\bigl(\frac{\pi}{2}\bigr)
+$0 = y(0) = A$ and $0 = y'(\nicefrac{\pi}{2})
 = \sqrt{\lambda} \, B \cos \bigl(\sqrt{\lambda} \, \frac{\pi}{2}\bigr)$.
-$B$ cannot be zero and hence $\cos \bigl( \sqrt{\lambda} \,
+Since $A$ is zero, then
+$B$ cannot be zero.  Hence $\cos \bigl( \sqrt{\lambda} \,
 \frac{\pi}{2}\bigr) = 0$.
 This means that
-$\sqrt{\lambda} \,\frac{\pi}{2}$ must be an odd integral multiple of
-$\frac{\pi}{2}$,
+$\sqrt{\lambda} \,\frac{\pi}{2}$ is an odd integral multiple of
+$\nicefrac{\pi}{2}$,
 i.e.\ $(2n-1)\frac{\pi}{2} = \sqrt{\lambda_n} \,\frac{\pi}{2}$.
-Hence
+Solving for $\lambda_n$ we get
 \begin{equation*}
 \lambda_n = {(2n-1)}^2 .
 \end{equation*}
-We can take $B = 1$.  Hence our eigenfunctions are
+We can take $B = 1$.  Our eigenfunctions are
 \begin{equation*}
 y_n(x) = \sin \bigl( (2n-1)x \bigr) .
 \end{equation*}
-Finally we compute
+A little bit of calculus shows
 \begin{equation*}
 \int_0^{\frac{\pi}{2}} {\Bigl( \sin \bigl( (2n-1)x \bigr) \Bigr)}^2 ~ dx
 = \frac{\pi}{4} .
 \end{equation*}
 
-So any piecewise smooth function on $[0,\frac{\pi}{2}]$ can be written as
+So any piecewise smooth function $f(x)$ on $[0,\nicefrac{\pi}{2}]$ can be written as
 \begin{equation*}
 f(x) = \sum_{n=1}^\infty c_n \sin \bigl( (2n-1)x \bigr) ,
 \end{equation*}
@@ -467,15 +473,39 @@ c_n = \frac{\langle f , y_n \rangle}{\langle y_n , y_n \rangle}
 = \frac{4}{\pi} \int_0^{\frac{\pi}{2}} f(x) \,\sin \bigl( (2n-1)x \bigr) ~ dx .
 \end{equation*}
 
-Note that the series converges to an odd $2\pi$-periodic (not
-$\pi$-periodic!) extension of $f(x)$.
-\end{example}
+Note that the series converges to an odd $2\pi$-periodic
+extension of $f(x)$.  With the regular sine series we would expect
+a function with period $2 \, \frac{\pi}{2} = \pi$.
 
 \begin{exercise}[challenging]
-In the above example, the function is defined on $0 < x < \frac{\pi}{2}$,
-yet the series converges to an odd $2\pi$-periodic extension of $f(x)$.
-Find out how is the extension defined for $\frac{\pi}{2} < x < \pi$.
+In the above example, the function is defined on $0 < x < \nicefrac{\pi}{2}$,
+yet the series with respect to the eigenfunctions
+$\sin \bigl( (2n-1)x \bigr)$ converges to an odd $2\pi$-periodic extension of $f(x)$.
+Find out how is the extension defined for $\nicefrac{\pi}{2} < x < \pi$.
 \end{exercise}
+
+Let us compute an example.
+Consider $f(x) = x$ for $0 < x <  \nicefrac{\pi}{2}$.  Some
+calculus later we find
+\begin{equation*}
+c_n = 
+\frac{4}{\pi} \int_0^{\frac{\pi}{2}} f(x) \,\sin \bigl( (2n-1)x \bigr) ~ dx 
+=
+\frac{4{(-1)}^{n+1}}{\pi {(2n-1)}^2} ,
+\end{equation*}
+and so for $x$ in $[0,\nicefrac{\pi}{2}]$,
+\begin{equation*}
+f(x) = \sum_{n=1}^\infty \frac{4{(-1)}^{n+1}}{\pi {(2n-1)}^2}
+\sin \bigl( (2n-1)x \bigr) .
+\end{equation*}
+This is different from the $\pi$-periodic regular sine series which can
+be computed to be
+\begin{equation*}
+f(x) = \sum_{n=1}^\infty \frac{{(-1)}^{n+1}}{n}  \sin ( 2nx ) .
+\end{equation*}
+Both sums converge are equal to $f(x)$ for $0 < x < \nicefrac{\pi}{2}$, but
+the eigenfunctions involved come from different eigenvalue problems.
+\end{example}
 
 \subsection{Exercises}
 
@@ -588,7 +618,10 @@ The equation that governs this setup is
 \begin{equation*}
 a^4 \frac{\partial^4 y}{\partial x^4} + \frac{\partial^2 y}{\partial t^2} = 0,
 \end{equation*}
-for some constant $a > 0$.%\EPref{ ($a^4 = \nicefrac{EI}{\rho}$ in \cite{EP})}.
+for some constant $a > 0$, let us not worry about the physics\footnote{If
+you are interested, $a^4 = \frac{EI}{\rho}$ where $E$ is the elastic
+modulus, $I$ is the second moment of area of the cross section,
+and $\rho$ is linear density.}.
 
 Suppose the beam is of length 1 simply supported (hinged) at the ends.
 The beam is displaced by some function $f(x)$ at time $t=0$ and then
@@ -607,18 +640,40 @@ $a^4 X^{(4)}T + XT'' = 0$ or
 \begin{equation*}
 \frac{X^{(4)}}{X} = \frac{- T''}{a^4T} = \lambda .
 \end{equation*}
-The equation for $T$ is therefore
-$T'' + \lambda a^4 T = 0$.  Let us assume that $\lambda >
-0$:  we expect vibration and not exponential growth nor
+The equations are
+\begin{equation*}
+T'' + \lambda a^4 T = 0, \qquad
+X^{(4)} - \lambda X = 0 .
+\end{equation*}
+The boundary conditions
+$y(0,t) = y_{xx}(0,t) = 0$ and $y(1,t) = y_{xx}(1,t) = 0$ imply
+\begin{equation*}
+X(0) =  X''(0) = 0, \qquad \text{and} \qquad
+X(1) =  X''(1) = 0 .
+\end{equation*}
+and the initial homogeneous condition $y_t(x,0) = 0$ implies
+\begin{equation*}
+T'(0) = 0 .
+\end{equation*}
+As usual, we leave the nonhomogeneous $y(x,0) = f(x)$ for later.
+
+Considering the equation for $T$, that is,
+$T'' + \lambda a^4 T = 0$, and physical intuition leads us
+to the fact that if $\lambda$ is an eigenvalue then $\lambda > 0$.
+This is because we expect vibration and not exponential growth nor
 decay in the $t$ direction (there is no friction in our model for instance).
+So there are no negative eigenvalues.
 Similarly $\lambda = 0$ is not an eigenvalue.
 
 \begin{exercise}
-Try to justify $\lambda > 0$ just from the equations.
+Justify $\lambda > 0$ just from the equation for $X$ and the boundary
+conditions.
 \end{exercise}
 
-Write $\omega^4 = \lambda$, so that we do not need to write the fourth root
-all the time.  For $X$ we get the equation $X^{(4)} - \omega^4 X = 0$.  The
+Let $\omega = \sqrt[4]{\lambda}$, that is $\omega^4 = \lambda$,
+so that we do not need to write the fourth root
+all the time.  Notice $\omega > 0$.
+The equation $X^{(4)} - \omega^4 X = 0$ has the
 general solution is
 \begin{equation*}
 X(x) = A e^{\omega x} + B e^{-\omega x} + C \sin (\omega x) +
@@ -642,10 +697,10 @@ are $\sin (n \pi x)$.
 Now 
 $T'' + n^4 \pi^4 a^4 T = 0$.  The general solution is $T(t) =
 A \sin (n^2 \pi^2 a^2 t) + B \cos (n^2 \pi^2 a^2 t)$.  But $T'(0) = 0$ and hence
-we must have $A=0$ and we can take $B=1$ to make $T(0) = 1$ for convenience.
+we must have $A=0$.  We can take $B=1$ to make $T(0) = 1$ for convenience.
 So our solutions are $T_n(t) = \cos (n^2 \pi^2 a^2 t)$.
 
-As eigenfunctions are just sines again, we can decompose the function
+As eigenfunctions are just sines again, we decompose the function
 $f(x)$ on $0 < x < 1$ using the sine series.
 We find numbers $b_n$ such that for
 $0 < x < 1$ we have
@@ -661,7 +716,7 @@ X_n(x) T_n(t)
 \end{equation*}
 The point is that $X_nT_n$ is a solution that satisfies all the homogeneous
 conditions (that is, all conditions except the initial position).  And since
-and $T_n(0) = 1$, we have
+$T_n(0) = 1$, we have
 \begin{equation*}
 y(x,0) = \sum_{n=1}^\infty b_n X_n(x) T_n(0) = 
 \sum_{n=1}^\infty b_n X_n(x) =
@@ -699,6 +754,28 @@ y(x,t) = \sum_{\substack{n=1\\n \text{~odd}}}^\infty \frac{4}{5\pi^3 n^3}
 \sin (n \pi x) \cos ( n^2 \pi^2 a^2 t ) .
 \end{equation*}
 \end{example}
+
+There are other boundary conditions than just hinged ends.  There are
+three basic possibilities: hinged, fixed, and free.  Let us consider
+the end at $x=0$, and for the other end, we find the same conditions.
+If the end is \emph{hinged}\index{hinged end of beam} then
+\begin{equation*}
+u(0,t) = u_{xx}(0,t) = 0 .
+\end{equation*}
+If the end is \emph{free}\index{free end of beam}, that is, it is just
+floating in air, then
+\begin{equation*}
+u_{xx}(0,t) = u_{xxx}(0,t) = 0 .
+\end{equation*}
+And finally, if the end is
+\emph{clamped}\index{clamped end of beam}
+or  
+\emph{fixed}\index{fixed end of beam},
+then
+\begin{equation*}
+u(0,t) = u_{x}(0,t) = 0 .
+\end{equation*}
+
 
 \subsection{Exercises}
 
@@ -757,7 +834,7 @@ constants are such that this satisfies the equation $y_{tt} + 4 y_{xxxx} =
 $\sin (\pi x)$, and the initial velocity is 0.  Solve for $y$.
 \end{exercise}
 \exsol{%
-$y(x,t) = \sin(\pi x) \cos (4 \pi^2 t)$
+$y(x,t) = \sin(\pi x) \cos (2 \pi^2 t)$
 }
 
 \begin{exercise}
