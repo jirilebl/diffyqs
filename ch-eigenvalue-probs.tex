@@ -682,6 +682,28 @@ y(x,t) = \sum_{\substack{n=1\\n \text{~odd}}}^\infty \frac{4}{5\pi^3 n^3}
 \end{equation*}
 \end{example}
 
+There are other boundary conditions than just hinged ends.  There are
+three basic possibilities: hinged, fixed, and free.  Let us consider
+the end at $x=0$, and for the other end, we find the same conditions.
+If the end is \emph{hinged}\index{hinged end of beam} then
+\begin{equation*}
+u(0,t) = u_{xx}(0,t) = 0 .
+\end{equation*}
+If the end is \emph{free}\index{free end of beam}, that is, it is just
+floating in air, then
+\begin{equation*}
+u_{xx}(0,t) = u_{xxx}(0,t) = 0 .
+\end{equation*}
+And finally, if the end is
+\emph{clamped}\index{clamped end of beam}
+or  
+\emph{fixed}\index{fixed end of beam},
+then
+\begin{equation*}
+u(0,t) = u_{x}(0,t) = 0 .
+\end{equation*}
+
+
 \subsection{Exercises}
 
 \begin{exercise}
@@ -739,7 +761,7 @@ constants are such that this satisfies the equation $y_{tt} + 4 y_{xxxx} =
 $\sin (\pi x)$, and the initial velocity is 0.  Solve for $y$.
 \end{exercise}
 \exsol{%
-$y(x,t) = \sin(\pi x) \cos (4 \pi^2 t)$
+$y(x,t) = \sin(\pi x) \cos (2 \pi^2 t)$
 }
 
 \begin{exercise}
