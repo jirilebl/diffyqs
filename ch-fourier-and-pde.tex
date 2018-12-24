@@ -4634,11 +4634,13 @@ y(x,t) & =
 Let us check that the d'Alembert formula really works.
 \begin{equation*}
 y(x,0) =
-\frac{1}{2} F(x) - \frac{1}{2a} \int_0^{x} G(s) ~ds
-+
-\frac{1}{2} F(x) + \frac{1}{2a} \int_0^{x} G(s) ~ds =  F(x) .
+\frac{F(x) + F(x)}{2} + \frac{1}{2a} \int_{x}^{x} G(s) ~ds 
+=
+F(x) .
 \end{equation*}
 So far so good.  Assume for simplicity $F$ is differentiable.
+And we use the first form of \eqref{dalemb:form} as it is
+easier to differentiate.
 By the fundamental theorem of calculus we have
 \begin{equation*}
 y_t(x,t) =
@@ -4654,44 +4656,43 @@ y_t(x,0) =
 \frac{a}{2} F'(x) + \frac{1}{2} G(x) = G(x) .
 \end{equation*}
 Yay!  We're smoking now.  OK\@, now the boundary conditions.  Note
-that $F(x)$ and $G(x)$ are odd.  Also $\int_0^x G(s) ~ds$ is an even function
-of $x$ because $G(x)$ is odd (to see this fact, do the substitution $s=-v$).
-So
+that $F(x)$ and $G(x)$ are odd.  So
 \begin{equation*}
-\begin{split}
-y(0,t) & =
-\frac{1}{2} F(-at) - \frac{1}{2a} \int_0^{-at} G(s) ~ds
-+
-\frac{1}{2} F(at) + \frac{1}{2a} \int_0^{at} G(s) ~ds \\
-& = 
-\frac{-1}{2} F(at) - \frac{1}{2a} \int_0^{at} G(s) ~ds
-+
-\frac{1}{2} F(at) + \frac{1}{2a} \int_0^{at} G(s) ~ds = 0 .
-\end{split}
+y(0,t) =
+\frac{F(-at) + F(at)}{2} + \frac{1}{2a} \int_{-at}^{at} G(s) ~ds 
+=
+\frac{-F(at) + F(at)}{2} + \frac{1}{2a} \int_{-at}^{at} G(s) ~ds 
+= 0 + 0 = 0.
 \end{equation*}
-Note that $F(x)$ and $G(x)$ are $2L$ periodic.  We compute
+Now $F(x)$ is odd and $2L$-periodic, so
 \begin{equation*}
-\begin{split}
-y(L,t) & =
-\frac{1}{2} F(L-at) - \frac{1}{2a} \int_0^{L-at} G(s) ~ds
-+
-\frac{1}{2} F(L+at) + \frac{1}{2a} \int_0^{L+at} G(s) ~ds \\
-& = 
-\frac{1}{2} F(-L-at)
-- \frac{1}{2a} \int_0^{L} G(s) ~ds
-- \frac{1}{2a} \int_0^{-at} G(s) ~ds ~+ \\
-& \qquad
-+
-\frac{1}{2} F(L+at)
-+ \frac{1}{2a} \int_0^{L} G(s) ~ds
-+ \frac{1}{2a} \int_0^{at} G(s) ~ds \\
-& = 
-\frac{-1}{2} F(L+at)
-- \frac{1}{2a} \int_0^{at} G(s) ~ds
-+ \frac{1}{2} F(L+at)
-+ \frac{1}{2a} \int_0^{at} G(s) ~ds
-=0 .
-\end{split}
+F(L-at)+F(L+at)
+= 
+F(-L-at)+F(L+at)
+=
+-F(L+at)+F(L+at)
+= 0 .
+\end{equation*}
+Next, $G(s)$ is odd and $2L$-periodic, so we change
+variables $v = s-L$:
+\begin{equation*}
+\int_{L-at}^{L+at}
+G(s)~ds
+=
+\int_{-at}^{at}
+G(v+L)~dv
+=
+\int_{-at}^{at}
+-G(v)~dv
+=
+0 .
+\end{equation*}
+Hence
+\begin{equation*}
+y(L,t) =
+\frac{F(L-at) + F(L+at)}{2} + \frac{1}{2a} \int_{L-at}^{L+at} G(s) ~ds 
+=
+0 + 0  = 0.
 \end{equation*}
 And voil\`a, it works.
 

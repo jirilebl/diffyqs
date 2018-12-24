@@ -75,6 +75,7 @@
 * 4.7: Add some discussion on what the solution says about the sound 
   of a guitar.  Also add some plots for fixed time of the shape of a plucked
   string.
+* 4.8: make the verification computation easier by using the second form.
 * 4.8: Add more comments on D'Alembert, why do corners persist,
   what about corners if we have to take second derivatives, and
   what D'Alembert says about influence of initial conditions.
