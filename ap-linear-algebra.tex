@@ -61,9 +61,16 @@ These points span the so-called
 \emph{$n$-dimensional space}\index{n-dimensional space@$n$-dimensional space},
 often denoted by ${\mathbb R}^n$.
 Sometimes we call this the $n$-dimensional
-\emph{\myindex{euclidean space}}\footnote{FIXME: Named after Euclid}.
+\emph{\myindex{euclidean space}}%
+\footnote{Named after the ancient Greek mathematician
+\href{https://en.wikipedia.org/wiki/Euclid}{Euclid of Alexandria}
+(around 300 BC), possibly the most famous of mathematicians.}. 
 For example in two dimensions, ${\mathbb R}^2$ is the
-\emph{\myindex{cartesian plane}}\footnote{FIXME: Named after Descartes}.
+\emph{\myindex{cartesian plane}}%
+\footnote{Named after the French mathematician
+\href{https://en.wikipedia.org/wiki/Descartes}{Ren{\'e} Descartes}
+(1596--1650).  It is \myquote{cartesian} as his name in Latin is Renatus
+Cartesius.}. 
 So we have say
 the point $(1,2)$, which is one unit to the right and two units up from the
 origin.
@@ -76,8 +83,10 @@ to be an important distinction, however, for the purposes of linear algebra
 we can think of everything being represented by a vector.
 A way to think of a vector, which is especially useful in calculus
 and differential equations, is an arrow.  It is an object that has
-a direction and a magnitude.  For example, the vector $(1,2)$
+a \emph{\myindex{direction}} and a \emph{\myindex{magnitude}}.
+For example, the vector $(1,2)$
 is the arrow from the origin to the point $(1,2)$ in the plane.
+The magnitude is the length of the vector.
 See \figurevref{linalg-vecarrow:fig}.
 
 \begin{myfig}
@@ -99,8 +108,20 @@ Just like you remember that Bob is your uncle, and you don't have to
 keep repeating \myquote{Uncle Bob.}  In this book, however, we will call Bob
 uncle, and write vectors with arrows above them.
 
-For reasons that will become clear in the next section, it will often be
-useful to write vectors as so-called
+The \emph{magnitude} can be computed using Pythagorean theorem.  So for example,
+the vector $(1,2)$ drawn in the figure has magnitude $\sqrt{1^2+2^2} =
+\sqrt{5}$.  The magnitude is denoted by $\lVert \vec{x} \rVert$,
+and, in any number of dimensions, it can be computed in the same way:
+\begin{equation*}
+\lVert \vec{x} \rVert
+=
+\lVert (x_1,x_2,\ldots,x_n) \rVert
+=
+\sqrt{x_1^2+x_2^2+\cdots+x_n^2} .
+\end{equation*}
+
+For reasons that will become clear in the next section, we will often
+write vectors as so-called
 \emph{column vectors}\index{column vector}:
 \begin{equation*}
 \vec{x} = 
@@ -121,19 +142,26 @@ vectors $\vec{x}_1$, $\vec{x}_2$, etc., without confusing these with the
 components of some other vector $\vec{x}$.
 
 
-Now where does the algebra come in?  Well, arrows are easy to add, subtract
-and multiply by numbers.  First adding.  If we have two arrows, we simply
-move along one, and then along the other.  See Figure FIXME.
+Where does the algebra come in?  Well, arrows can be added, subtracted,
+and multiplied by numbers.
+First adding.  If we have two arrows, we simply
+move along one, and then along the other.  See
+\figurevref{linalg-vecadd:fig}.
 
-FIXME: figure.
+\begin{myfig}
+\capstart
+\inputpdft{linalg-vecadd}
+\caption{Adding the vectors $(1,2)$ (dotted) and $(2,-3)$ (dashed).  The
+result, $(3,-1)$, is drawn as a solid arrow.\label{linalg-vecadd:fig}}
+\end{myfig}
 
 It is rather easy to see what it does to the numbers that represent the
-vectors.  Suppose I want to add $(1,2)$ to $(-1,3)$.  So I travel along $(1,2)$
-and then travel along $(-1,3)$.
-What I did was travel one unit right, two units up, and then
-I travelled one unit left (the negative one), and three units up.  That
-means that I added up at $(1-1,2+3) = (0,5)$.  And that's how addition
-always works:
+vectors.  Suppose we want to add $(1,2)$ to $(2,-3)$.  So we travel along $(1,2)$
+and then we travel along $(2,-3)$.
+What we did was travel one unit right, two units up, and then
+we travelled two units right, and three units down (the negative three).  That
+means that I added up at $\bigl(1+2,2+(-3)\bigr) = (3,-1)$.
+And that's how addition always works:
 \begin{equation*}
 \begin{bmatrix}
 x_{1} \\ x_2 \\ \vdots \\ x_n
@@ -146,6 +174,25 @@ x_1 + y_{1} \\ x_2+ y_2 \\ \vdots \\ x_n + y_n
 \end{bmatrix} .
 \end{equation*}
 
+Subtracting is very similar.  What it means visually is that if we perform
+$\vec{x}- \vec{y}$, then we first travel along $\vec{x}$, and then we travel
+backwards along $\vec{y}$.
+See \figurevref{linalg-vecsub:fig}.
+In fact, it is like adding
+$\vec{x}+ (- \vec{y})$ where $-\vec{y}$
+is the arrow we obtain by erasing the arrow head
+from one side and drawing it on the other side, that is, we reverse the
+direction.  In terms of the numbers we just go backwards in both directions,
+so we just negate both numbers.  So for example, if $\vec{y}$ is $(-2,1)$,
+then $-\vec{y}$ is $(2,-1)$.
+
+\begin{myfig}
+\capstart
+\inputpdft{linalg-vecsub}
+\caption{Subtraction, the vector $(1,2)$ (dotted) minus $(-2,1)$ (dashed).  The
+result, $(3,1)$, is drawn as a solid arrow.\label{linalg-vecsub:fig}}
+\end{myfig}
+
 Another intuitive thing to do to a vector is to scale it.
 We represent this by multiplication of a number with a vector.
 Because of this, when we wish to distinguish between vectors and numbers, we
@@ -154,8 +201,8 @@ For example,
 suppose we want to travel three times further.  If the vector is $(1,2)$,
 travelling 3 times further means going 3 units to the right and 6 units up,
 so we get the vector $(3,6)$.
-That is, we just multiply each number in the vector by 3.  So if $\alpha$
-is a number we say
+That is, we just multiply each number in the vector by 3.
+So if $\alpha$ is a number we say
 \begin{equation*}
 \alpha
 \begin{bmatrix}
@@ -165,13 +212,31 @@ x_{1} \\ x_2 \\ \vdots \\ x_n
 \alpha x_{1} \\ \alpha x_2 \\ \vdots \\ \alpha x_n
 \end{bmatrix} .
 \end{equation*}
+Scaling just multiplies the magnitude.  So as the magnitude of $(1,2)$
+was $\sqrt{5}$, the magnitude of 3 times $(1,2)$, that is, $(3,6)$, is
+$3\sqrt{5}$.
+
 When the scalar is negative, then when we multiply a vector by it, the
-vector is not only scaled, but it also changes orientation.  So for example
+vector is not only scaled, but it also switches direction.
+So for example
 multiplying $(1,2)$ by $-3$ means we should go 3 times further but in the
 opposite direction, so 3 units to the left and 6 units down, or in other
-words, $(-3,-6)$.
+words, $(-3,-6)$.  As we mentioned above $-\vec{y}$ was a reverse of
+$\vec{y}$, and this is the same as $(-1)\vec{y}$.
 
-Let's compute a small example:
+For examples of what scaling means,
+see \figurevref{linalg-vecscale:fig}.
+
+\begin{myfig}
+\capstart
+\inputpdft{linalg-vecscale}
+\caption{A vector $\vec{x}$, twice the vector $2\vec{x}$ (same direction,
+double the magnitude), and the vector $-1.5\vec{x}$ (opposite direction,
+1.5 times the magnitude).\label{linalg-vecscale:fig}}
+\end{myfig}
+
+We can put all of these together to compute more complicated expressions.
+Let us compute a small example:
 \begin{equation*}
 3
 \begin{bmatrix}
