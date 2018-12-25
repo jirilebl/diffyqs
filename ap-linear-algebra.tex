@@ -71,8 +71,8 @@ For example in two dimensions, ${\mathbb R}^2$ is the
 \href{https://en.wikipedia.org/wiki/Descartes}{Ren{\'e} Descartes}
 (1596--1650).  It is \myquote{cartesian} as his name in Latin is Renatus
 Cartesius.}. 
-So we have say
-the point $(1,2)$, which is one unit to the right and two units up from the
+For example,
+the point $(1,2)$ is one unit to the right and two units up from the
 origin.
 
 When we do algebra with these $n$-tuples of numbers we call them
@@ -83,11 +83,14 @@ to be an important distinction, however, for the purposes of linear algebra
 we can think of everything being represented by a vector.
 A way to think of a vector, which is especially useful in calculus
 and differential equations, is an arrow.  It is an object that has
-a \emph{\myindex{direction}} and a \emph{\myindex{magnitude}}.
+a \emph{\myindex{direction}} and a \emph{magnitude}.
 For example, the vector $(1,2)$
 is the arrow from the origin to the point $(1,2)$ in the plane.
-The magnitude is the length of the vector.
+The magnitude is the length of the arrow.
 See \figurevref{linalg-vecarrow:fig}.
+If we think of vectors as arrows,
+the arrow doesn't always have to start at the origin.  If we move it
+around it should always keep the same direction and the same magnitude.
 
 \begin{myfig}
 \capstart
@@ -101,14 +104,15 @@ a name, we will write a little arrow above it:
 \begin{equation*}
 \vec{x}
 \end{equation*}
-Another popular notations is $\mathbf{x}$, although we will use the arrows.
+Another popular notation is $\mathbf{x}$, although we will use the little
+arrows.
 Mathematicians often don't even write the arrows.  A mathematician would
 write $x$ and just remember that $x$ is a vector and not a number.
 Just like you remember that Bob is your uncle, and you don't have to
 keep repeating \myquote{Uncle Bob.}  In this book, however, we will call Bob
-uncle, and write vectors with arrows above them.
+uncle, and write vectors with little arrows above them.
 
-The \emph{magnitude} can be computed using Pythagorean theorem.  So for example,
+The \emph{\myindex{magnitude}} can be computed using Pythagorean theorem.  So for example,
 the vector $(1,2)$ drawn in the figure has magnitude $\sqrt{1^2+2^2} =
 \sqrt{5}$.  The magnitude is denoted by $\lVert \vec{x} \rVert$,
 and, in any number of dimensions, it can be computed in the same way:
@@ -183,7 +187,7 @@ $\vec{x}+ (- \vec{y})$ where $-\vec{y}$
 is the arrow we obtain by erasing the arrow head
 from one side and drawing it on the other side, that is, we reverse the
 direction.  In terms of the numbers we just go backwards in both directions,
-so we just negate both numbers.  So for example, if $\vec{y}$ is $(-2,1)$,
+so we just negate both numbers.  For example, if $\vec{y}$ is $(-2,1)$,
 then $-\vec{y}$ is $(2,-1)$.
 
 \begin{myfig}
@@ -201,8 +205,8 @@ For example,
 suppose we want to travel three times further.  If the vector is $(1,2)$,
 travelling 3 times further means going 3 units to the right and 6 units up,
 so we get the vector $(3,6)$.
-That is, we just multiply each number in the vector by 3.
-So if $\alpha$ is a number we say
+We just multiply each number in the vector by 3.
+If $\alpha$ is a number, then
 \begin{equation*}
 \alpha
 \begin{bmatrix}
@@ -212,13 +216,15 @@ x_{1} \\ x_2 \\ \vdots \\ x_n
 \alpha x_{1} \\ \alpha x_2 \\ \vdots \\ \alpha x_n
 \end{bmatrix} .
 \end{equation*}
-Scaling just multiplies the magnitude.  So as the magnitude of $(1,2)$
+Scaling (by a positive number) multiplies the magnitude
+and leaves direction untouched.
+So as the magnitude of $(1,2)$
 was $\sqrt{5}$, the magnitude of 3 times $(1,2)$, that is, $(3,6)$, is
 $3\sqrt{5}$.
 
 When the scalar is negative, then when we multiply a vector by it, the
 vector is not only scaled, but it also switches direction.
-So for example
+So
 multiplying $(1,2)$ by $-3$ means we should go 3 times further but in the
 opposite direction, so 3 units to the left and 6 units down, or in other
 words, $(-3,-6)$.  As we mentioned above $-\vec{y}$ was a reverse of
@@ -235,7 +241,7 @@ double the magnitude), and the vector $-1.5\vec{x}$ (opposite direction,
 1.5 times the magnitude).\label{linalg-vecscale:fig}}
 \end{myfig}
 
-We can put all of these together to compute more complicated expressions.
+We put all of these operations together to work out more complicated expressions.
 Let us compute a small example:
 \begin{equation*}
 3
@@ -265,10 +271,10 @@ Let us compute a small example:
 
 \subsection{Linear mappings and matrices}
 
-We begin with vector-valued functions.  That is a vector valued function
+A \emph{\myindex{vector-valued function}}
 $F$ is a rule that takes a vector $\vec{x}$ and assigns it another vector
 $\vec{y}$.  For example, $F$ could be a scaling that doubles the size of
-vectors.  So
+vectors:
 \begin{equation*}
 F(\vec{x}) = 2 \vec{x} ,
 \end{equation*}
@@ -734,7 +740,7 @@ FIXME
 \subsection{One-by-one matrices}
 
 Let us motivate what we want to achieve with matrices.
-Real valued linear mappings of the real line, that is linear functions
+Real-valued linear mappings of the real line, that is linear functions
 which eat numbers and spit out numbers, are just multiplications by a
 number.  Consider a mapping defined by multiplying by a
 number, call that $\alpha$, it takes $x$ to $\alpha x$.  What we can do is
