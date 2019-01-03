@@ -155,7 +155,7 @@ move along one, and then along the other.  See
 \begin{myfig}
 \capstart
 \inputpdft{linalg-vecadd}
-\caption{Adding the vectors $(1,2)$ (dotted) and $(2,-3)$ (dashed).  The
+\caption{Adding the vectors $(1,2)$, drawn dotted, and $(2,-3)$, drawn dashed.  The
 result, $(3,-1)$, is drawn as a solid arrow.\label{linalg-vecadd:fig}}
 \end{myfig}
 
@@ -193,7 +193,8 @@ then $-\vec{y}$ is $(2,-1)$.
 \begin{myfig}
 \capstart
 \inputpdft{linalg-vecsub}
-\caption{Subtraction, the vector $(1,2)$ (dotted) minus $(-2,1)$ (dashed).  The
+\caption{Subtraction, the vector $(1,2)$, drawn dotted, minus $(-2,1)$,
+drawn dashed.  The
 result, $(3,1)$, is drawn as a solid arrow.\label{linalg-vecsub:fig}}
 \end{myfig}
 
@@ -2934,10 +2935,40 @@ FIXME
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Subspaces, inner product, projections, and dimension}
+\section{Subspaces, dimension, inner product, and projections}
 \label{subspaces:section}
 
-\sectionnotes{1 lecture, can safely be skipped}
+\sectionnotes{1 lecture, can be skipped if time is short}
+
+\subsection{Subspaces, basis, and dimension}
+
+When using linear algebra, one often finds oneself looking at
+solutions of a linear equation $L\vec{x} = \vec{0}$ for some matrix $L$,
+that is, the kernel of $L$.
+Unless this equation has a unique solution we find that 
+the set of all such solutions has a nice structure.  In fact, it looks and
+acts a lot like some euclidean ${\mathbb R}^k$.
+
+We say that a set $S$ of vectors in ${\mathbb R}^n$ is a
+\emph{\myindex{subspace}} if
+whenever $\vec{x}$ and $\vec{y}$ are members of $S$ and
+$\alpha$ is a scalar, then
+\begin{equation*}
+\vec{x} + \vec{y}, \qquad \text{and} \qquad \alpha \vec{x}
+\end{equation*}
+are also members of $S$.  Since we can multiply by scalars and add,
+any linear combination of members of $S$ is again a member of $S$.
+
+If a subspace $S$ can be written as linear combination 
+
+FIXME
+
+\subsection{Inner product and orthogonality}
+
+To do basic geometry, we need length, and we need angles.
+We have already seen the euclidean length, so let us figure out how to
+compute angles.  In particular, we will mostly be concerned
+with the right angle.
 
 FIXME
 
