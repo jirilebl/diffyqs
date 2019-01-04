@@ -2040,7 +2040,7 @@ sY(x) = -\alpha Y'(x) .
 \end{equation*}
 This ODE needs an initial condition.  The initial condition is the
 other side condition of the PDE\@, the one that depends on $x$.  Everything
-is transform, so we must also transform this condition
+is transformed, so we must also transform this condition
 \begin{equation*}
 Y(0) = 
 {\mathcal L} \bigl\{ y(0,t) \bigr\} 
@@ -2087,7 +2087,7 @@ y(x,t) =
 C & \text{otherwise.}
 \end{cases}
 \end{equation*}
-See \figrevref{lt:half-infinite-goo-river-wavefront} for a diagram of this
+See \figurevref{lt:half-infinite-goo-river-wavefront} for a diagram of this
 solution.  Notice the line of slope $\nicefrac{1}{\alpha}$ indicates
 the wavefront of the toxic substance in the picture as it is leaving the
 factory.
@@ -2101,8 +2101,9 @@ $\nicefrac{1}{\alpha}$.\label{lt:half-infinite-goo-river-wavefront}}
 
 What the equation does is simply move the initial condition to the right at
 speed $\alpha$.
-Shhh ... $y$ is not differentiable, it is not even continuous
-(nobody ever seems to notice this).
+Shhh\ldots $y$ is not differentiable, it is not even continuous
+(nobody ever seems to notice this).  How could we plug something that's not
+differentiable into the equation?
 Well, just think of a function very very close to $y$ that is differentiable.
 Or, if you recognize the derivative of the Heaviside function as the delta
 function, then all is well too:
@@ -2128,119 +2129,122 @@ C  u\bigl(t-\nicefrac{x}{\alpha}\bigr)
 So $y_t = - \alpha y_x$.
 \end{example}
 
-
-FIXME: the following needs lots of work:
-
-FIXME
-
-\begin{example}
-Let us use the Laplace to find the D'Alembert solution for the 
-the following problem:
-\begin{align*}
-& y_{tt} = y_{xx}, \qquad -\infty < x < \infty, \enspace t > 0,\\
-& y(x,0) = f(x) , \qquad y_t(x,0) = 0
-\end{align*}
-
-FIXME: draw
-
-FIXME: not quite right
-Transform the equation in the $t$ variable to find
-\begin{equation*}
-s^2Y(x) = Y''(x).
-\end{equation*}
-
-The general solution to this ODE is
-\begin{equation*}
-Y(x) = A e^{s x} + B e^{-s x} .
-\end{equation*}
-
-FIXME
-
-\end{example}
+Laplace equation is very good with constant coefficient equations.  One
+advantage of Laplace is that it easily handles
+nonhomogeneous side conditions.
+Let us try a more complicated example.
 
 \begin{example}
-Let us use Laplace for the following problem:
+Consider
 \begin{align*}
-& y_t = y_{xx}, \qquad 0 < x < 1, \enspace t > 0,\\
-& y_x(0,t) = f(t), \\
-& y(1,t) = 0, \\
-& y(x,0) = 0 ,
+& y_t + y_x + y = 0, \qquad \text{for } x > 0, \enspace t > 0,
+\\
+& y(0,t) = \sin(t), \qquad y(x,0) = 0 .
 \end{align*}
 
-FIXME
-
-Transform the equation in the $t$ variable to find
+Let us again transform the $t$ variable.  We again write $Y(x)$ for the
+transformed function.  The equation becomes (using that $y(x,0) = 0$)
 \begin{equation*}
-sY(x) = Y''(x) .
+sY(x) + Y'(x) + Y(x) = 0, \qquad 
+Y(0) = \frac{1}{s^2+1} .
 \end{equation*}
-
-
-The general solution to this ODE is
+The solution of the transformed equation is
 \begin{equation*}
-Y(x) = A e^{\sqrt{s}x} + B e^{-\sqrt{s} x}
-\end{equation*}
-
-Now consider the boundary conditions.  Firstly $A=0$ since otherwise
-$Y$ is unbounded in $x$, so FIXME
-
-Transform $Y'(0) = F(s)$ and so $-\sqrt{s}B = F(s)$.
-In other words
-\begin{equation*}
-Y(x) = - F(s) \frac{1}{\sqrt{s}} e^{-\sqrt{s} x} .
-\end{equation*}
-
-If we look up the inverse transform in a table (or we spend the afternoon
-doing calculus) we find 
-\begin{equation*}
-{\mathcal L}^{-1}\left[e^{-\sqrt{s} x}\right] =
-\frac{x}{\sqrt{4\pi t^3}} e^{\frac{-x^2}{4t}} ,
-\end{equation*}
-or
-\begin{equation*}
-{\mathcal L}^{-1}\left[\frac{1}{\sqrt{s}} e^{-\sqrt{s} x}\right] =
-\frac{1}{\sqrt{\pi t}} e^{\frac{-x^2}{4t}} .
-\end{equation*}
-So
-\begin{equation*}
-y(x,t) =
-{\mathcal L}^{-1} \left[
-F(s) e^{-\sqrt{s} x}\right]
+Y(x) =
+\frac{1}{s^2+1} e^{-(s+1) x}
 =
-\int_0^t
-f(\tau) 
-\frac{1}{\sqrt{\pi {(t-\tau)}}} e^{\frac{-x^2}{4(t-\tau)}} \, d\tau .
+\frac{1}{s^2+1} e^{-xs}
+e^{-x}
+.
+\end{equation*}
+Using the second shifting property \eqref{ltd:sseq},
+and linearity of the transform,
+we find
+\begin{equation*}
+y(x,t) 
+=
+e^{-x}
+\sin(t-x)
+u(t-x) .
 \end{equation*}
 \end{example}
 
+In the above example, we can also detect when the problem is
+\emph{\myindex{ill-posed}}
+in the sense that it has no solution.
+For example, if in the above example we change the equation to the simpler
+\begin{align*}
+& -y_t + y_x = 0, \qquad \text{for } x > 0, \enspace t > 0,
+\\
+& y(0,t) = \sin(t), \qquad y(x,0) = 0 ,
+\end{align*}
+then the problem
+has no solution.  First let us see this in the language of
+\sectionref{fopde:section}.
+The characteristic curves are $t=-x+C$.  If $\tau$ is the
+the characteristic coordinate, then we find the equation $y_\tau = 0$
+along the curve,
+meaning a solution is constant along charactersitic curves.
+But these curves intersect both the $x$-axis and the $t$-axis.
+So for example
+the curve $t=-x+1$ intersects at $(1,0)$ and $(0,1)$.  Then
+$y(1,0) = 0$, but $y(0,1) = \sin(1) \not= 0$.
+See \figurevref{lt:half-infinite-ill-posed}.
 
-FIXME: Maybe a simpler example (variable side conditions on a finite rod? perhaps)
-Maybe the first order one first?  What about
-infinite $x$ on both sides.
+\begin{myfig}
+\capstart
+\inputpdft{half-infinite-ill-posed}
+\caption{Ill-posed problem.\label{lt:half-infinite-ill-posed}}
+\end{myfig}
+
+Now consider the transform.  The transformed problem is
+\begin{equation*}
+-sY(x) + Y'(x) = 0, \enspace Y(0) = \frac{1}{s^2+1} ,
+\end{equation*}
+and the solution ought to be
+\begin{equation*}
+Y(x) = \frac{1}{s^2+1} e^{sx} .
+\end{equation*}
+Importantly, this Laplace transform does not decay to zero at infinity!  That is,
+since $x > 0$ in the region of interest, then
+\begin{equation*}
+\lim_{s \to \infty}
+\frac{1}{s^2+1} e^{sx}
+= \infty \not= 0 .
+\end{equation*}
+It almost
+looks as if we could use the shifting property, but notice that the shift
+is in the wrong direction.
+
+\medskip
+
+Of course, we need not restrict ourselves to first order equations, although
+the computations become more involved for higher order equations.
 
 \begin{example}
 Let us use Laplace for the following problem:
 \begin{align*}
 & y_t = y_{xx}, \qquad 0 < x < \infty, \enspace t > 0,\\
 & y_x(0,t) = f(t), \\
-& \text{for every $t$, $y(x,t)$ is bounded: } \lvert y(x,t) \rvert < M \\
+%& \text{for every $t$, $y(x,t)$ is bounded: } \lvert y(x,t) \rvert < M \\
 %FIXME: perhaps limit as $x \to \infty$?
-& y(x,0) = 0 ,
+& y(x,0) = 0 .
 \end{align*}
+Really we also impose other conditions on the solution so that for example
+the Laplace transform exists.  For example we might impose that $y$ is
+bounded for each fixed time $t$.
 
 Transform the equation in the $t$ variable to find
 \begin{equation*}
 sY(x) = Y''(x) .
 \end{equation*}
-
-
 The general solution to this ODE is
 \begin{equation*}
 Y(x) = A e^{\sqrt{s}x} + B e^{-\sqrt{s} x}
 \end{equation*}
+Firstly $A=0$ since otherwise $Y$ does not decay to zero again as $s \to \infty$.
 
-Now consider the boundary conditions.  Firstly $A=0$ since otherwise
-$Y$ is unbounded in $x$, so FIXME
-
+Now consider the boundary conditions
 Transform $Y'(0) = F(s)$ and so $-\sqrt{s}B = F(s)$.
 In other words
 \begin{equation*}
@@ -2270,40 +2274,40 @@ f(\tau)
 \end{equation*}
 \end{example}
 
-\medskip
-
-Laplace is often useful in places where separation of variables fails.
-Laplace does not mind nonhomogeneity, but it is essentially only useful for
-constant coefficient equations.
-
-\medskip
-
-FIXME:
-
-$$
-\mathcal{L} \{ e^{-at} f(t) \} = F(s+a) ,
-$$
-
-$$
-\mathcal{L} \{
-\int_0^t f(\tau)\,d\tau
-\}
-=
-\frac{1}{s}F(s)
-$$
-
-$$
-\mathcal{L} \{ - t f(t) \} = F'(s) ,
-$$
-
-So e.g.
-
-$$
-\mathcal{L} \{ t \sin(t) \} = \frac{2s}{(s^2+1)^2} ,
-$$
-
-
-FIXME
+%\medskip
+%
+%Laplace is often useful in places where separation of variables fails.
+%Laplace does not mind nonhomogeneity, but it is essentially only useful for
+%constant coefficient equations.
+%
+%\medskip
+%
+%FIXME:
+%
+%$$
+%\mathcal{L} \{ e^{-at} f(t) \} = F(s+a) ,
+%$$
+%
+%$$
+%\mathcal{L} \{
+%\int_0^t f(\tau)\,d\tau
+%\}
+%=
+%\frac{1}{s}F(s)
+%$$
+%
+%$$
+%\mathcal{L} \{ - t f(t) \} = F'(s) ,
+%$$
+%
+%So e.g.
+%
+%$$
+%\mathcal{L} \{ t \sin(t) \} = \frac{2s}{(s^2+1)^2} ,
+%$$
+%
+%
+%FIXME
 
 \subsection{Exercises}
 
