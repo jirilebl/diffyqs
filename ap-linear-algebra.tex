@@ -2609,7 +2609,7 @@ try to solve you find that
 \end{bmatrix} =
 \begin{bmatrix}
 0 & 0 & 0
-\end{bmatrix}
+\end{bmatrix} ,
 \end{equation*}
 so taking all the rows we find that they are linearly dependent.
 Therefore the rank is 2.
@@ -3076,7 +3076,7 @@ a)~$\begin{bmatrix}
 \section{Subspaces, dimension, inner product, and projections}
 \label{subspaces:section}
 
-\sectionnotes{1 lecture, can be skipped if time is short}
+\sectionnotes{1 lecture}
 
 \subsection{Subspaces, basis, and dimension}
 
@@ -3097,9 +3097,105 @@ $\alpha$ is a scalar, then
 are also members of $S$.  Since we can multiply by scalars and add,
 any linear combination of members of $S$ is again a member of $S$.
 
-If a subspace $S$ can be written as linear combination 
+\begin{example} \label{example:simplesubspaces}
+If we let $S = {\mathbb R}^n$, then this $S$ is a subspace of
+${\mathbb R}^n$.  On the other hand the set $S' = \{ \vec{0} \}$ is 
+also a subspace of ${\mathbb R}^n$.
 
+A little more complicated, the set $S''$ of all the vectors of the form
+$(a,a)$ for any real number $a$, such as $(1,1)$, $(3,3)$, or $(-0.5,-0.5)$
+is a subspace of ${\mathbb R}^2$.
+\end{example}
+
+If $S$ is a subspace and every element of $S$ can be written
+as a linear combination of $k$ linearly independent nonzero vectors
+\begin{equation*}
+\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k
+\end{equation*}
+then the set 
+$\{ \vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k \}$ is called a
+\emph{\myindex{basis}} of $S$.  In other words, $S$
+is the span of 
+$\{ \vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k \}$.
+We say then that $S$ has dimension $k$,
+and we usually write this as
+\begin{equation*}
+\dim S = k .
+\end{equation*}
+
+\begin{theorem}
+If $S \subset {\mathbb R}^n$ is a subspace and $S$ is not the trivial
+subspace $\{ \vec{0} \}$, then there exists a
+basis
+$\{ \vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k \}$, such that every
+$\vec{w}$ can be uniquely represented by
+\begin{equation*}
+\vec{w} = 
+\alpha_1 \vec{v}_1 + 
+\alpha_2 \vec{v}_2 + 
+\cdots
++
+\alpha_k \vec{v}_k ,
+\end{equation*}
+for some scalars $\alpha_1$, $\alpha_2$, \ldots, $\alpha_k$.
+\end{theorem}
+
+So just like a point ${\mathbb R}^k$ is represented by a $k$-tuple of
+numbers, so is a point in a $k$-dimensional subspace of ${\mathbb R}^n$
+represented by a $k$-tuple of numbers.  At least once we have fixed a basis.
+
+\begin{example}
+For example, a basis of ${\mathbb R}^n$ is
+the standard basis
+\begin{equation*}
+\vec{e}_1, \vec{e}_2, \ldots, \vec{e}_n .
+\end{equation*}
+So as expected
+\begin{equation*}
+\dim {\mathbb R}^n = n .
+\end{equation*}
+
+On the other hand the subspace $\{ \vec{0} \}$ is of dimension $0$.
+
+Finally the subspace $S''$ from the example above, that is the set of
+vectors $(a,a)$ is of dimension 1, and a basis is simply the single
+vector $(1,1)$, as every vector in $S''$ can be represented by $a (1,1) =
+(a,a)$.
+\end{example}
+
+Now a set of solutions of a linear equation $L\vec{x} = \vec{0}$, that is,
+the kernel of $L$ is a subspace:  If $\vec{x}$ and $\vec{y}$ are solutions,
+then
+\begin{equation*}
+L(\vec{x}+\vec{y}) = 
+L\vec{x}+L\vec{y} = 
+\vec{0}+\vec{0} = \vec{0} ,
+\qquad \text{and} \qquad
+L(\alpha \vec{x}) = 
+\alpha L \vec{x} = 
+\alpha \vec{0} = \vec{0}.
+\end{equation*}
+So $\vec{x}+\vec{y}$ and $\alpha \vec{x}$ are solutions.  In other words,
+the kernel of $L$ is a subspace.
+
+The same sort of idea governs the solutions of linear differential
+equations.  We will be looking for a kernel of a differential linear
+operator, and as it is a subspace, we will be looking for a basis of this
+kernel.  Majority of this book is essentially dedicated to trying to find
+such bases.
+
+\begin{example}
 FIXME
+\end{example}
+
+Another place where subspaces arise are row and column spaces of matrices,
+as those are given as the span of a certain number of vectors.  We can use
+what we know about rank, row space and column space
+from the previous section to find a basis.
+
+\begin{example}
+FIXME
+\end{example}
 
 \subsection{Inner product and orthogonality}
 
