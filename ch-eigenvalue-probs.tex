@@ -231,7 +231,7 @@ or
 \frac{h}{\sqrt{\lambda}} = \tan \sqrt{\lambda} .
 \end{equation*}
 
-Now use a computer to find $\lambda_n$.  There are tables available,
+We use a computer to find $\lambda_n$.  There are tables available,
 though using a computer or a graphing calculator
 is far more convenient nowadays.
 Easiest method is to plot the functions 
@@ -271,9 +271,9 @@ y_2(x) \approx \cos (3.43\, x ) + \frac{1}{3.43}
 
 We have seen the notion of orthogonality before.  For example,
 we have shown that $\sin (nx)$ are orthogonal for distinct $n$ on $[0,\pi]$.
-For general Sturm--Liouville problems we will need a more general setup.
+For general Sturm--Liouville problems we need a more general setup.
 Let $r(x)$
-be a \emph{\myindex{weight function}} (any function, though generally we will
+be a \emph{\myindex{weight function}} (any function, though generally we
 assume it is positive) on $[a,b]$.  Two functions $f(x)$, $g(x)$
 are said to be
 \emph{orthogonal\index{orthogonal!with respect to a weight}} 
@@ -604,7 +604,7 @@ exercises in \S11.2 in \cite{BD}}}
 
 The eigenfunction series can arise even from higher order equations.
 Consider an elastic beam (say made of steel).  We will study the
-transversal vibrations of the beam.  That is, assume the beam lies along
+transversal vibrations of the beam.  That is, suppose the beam lies along
 the $x$-axis and let $y(x,t)$ measure the displacement of the point $x$
 on the beam at time $t$.  See \figurevref{appeig:transbeamfig}.
 
@@ -897,7 +897,7 @@ frequencies of the system are the (angular) frequencies $\frac{n \pi a}{L}$
 for integers $n \geq 1$.
 
 But these are free vibrations.  What if there is an external force acting on
-the string.  Let us assume say air vibrations (noise), for example a second
+the string.  Let us assume say air vibrations (noise), for example from a second
 string.  Or perhaps a jet engine.  For simplicity, assume nice pure
 sound and assume the force is uniform at every position on the string.
 Let us say $F(t) = F_0 \cos (\omega t)$ as force per unit mass.  Then our wave
@@ -1016,13 +1016,13 @@ In real life, pure resonance never occurs anyway.
 %such as $t \cos (\omega t)$ in it (though it would be harder (but possible)
 %to find the solution using the above method).
 
-The above calculation explains why a string will begin to vibrate if the
+The above calculation explains why a string begins to vibrate if the
 identical string is plucked close by.  In the absence of friction this vibration
 would get louder and louder as time goes on.
 On the other hand, you are unlikely to get large vibration if the forcing 
 frequency is not close to a resonance frequency even if you have a jet engine
 running close to
-the string.  That is, the amplitude will not keep
+the string.  That is, the amplitude does not keep
 increasing unless you tune to just the right frequency.
 
 Similar resonance phenomena occur when you break a wine glass using human
@@ -1128,14 +1128,14 @@ $t=0$ is midsummer (you can put
 negative sign above to make it midwinter if you wish).  $A_0$ gives 
 the typical variation for the year.  That is,
 the hottest temperature is $T_0 + A_0$ and the coldest is $T_0 - A_0$.
-For simplicity, we will assume that $T_0 = 0$.
+For simplicity, we assume that $T_0 = 0$.
 The frequency $\omega$ is picked depending on the units of $t$, such that
 when $t=\unit[1]{year}$, then $\omega t = 2 \pi$.  For example if $t$ is
 in years, then $\omega = 2\pi$.
 
-It seems reasonable that the temperature at depth $x$ will also oscillate
-with the same frequency.  This, in fact, will be the steady periodic
-solution, independent of the initial conditions.
+It seems reasonable that the temperature at depth $x$ also oscillates
+with the same frequency.  This, in fact, is the steady periodic
+solution, a solution independent of the initial conditions.
 So we are looking for a solution of the form
 \begin{equation*}
 u(x,t) = V(x) \cos (\omega t) + W (x) \sin ( \omega t)
@@ -1145,12 +1145,12 @@ for the problem
 u_t = k u_{xx}, \qquad u(0,t) = A_0 \cos ( \omega t) .
 \end{equation}
 
-We will employ the complex exponential here to make calculations simpler.
+We employ the complex exponential here to make calculations simpler.
 Suppose we have a complex-valued function
 \begin{equation*}
 h(x,t) = X(x)\, e^{i\omega t} .
 \end{equation*}
-We will look for an $h$ such that $\operatorname{Re} h = u$.
+We look for an $h$ such that $\operatorname{Re} h = u$.
 To find an $h$, whose real part satisfies \eqref{sps:ueq}, we look for
 an $h$ such that
 \begin{equation} \label{sps:heq}
@@ -1186,8 +1186,8 @@ X(x) = A e^{-(1+i)\sqrt{\frac{\omega}{2k}} \, x}
 We assume that an $X(x)$ that solves the problem must be bounded as $x \to
 \infty$ since $u(x,t)$ should be bounded (we are not worrying about the earth
 core!).
-If you use \hyperref[eulersformula]{Euler's formula} to expand the complex exponentials, you will
-note that the second term will be unbounded (if $B \not = 0$),
+If you use \hyperref[eulersformula]{Euler's formula} to expand the complex exponentials, 
+note that the second term is unbounded (if $B \not = 0$),
 while the first term is always bounded.  Hence $B=0$.
 
 \begin{exercise}
@@ -1207,7 +1207,7 @@ A_0 e^{-(1+i)\sqrt{\frac{\omega}{2k}} \, x + i \omega t}
 A_0 e^{-\sqrt{\frac{\omega}{2k}} \, x}
 e^{i(\omega t - \sqrt{\frac{\omega}{2k}} \, x)} .
 \end{equation*}
-We will need to get the real part of $h$, so
+We need to get the real part of $h$, so
 we apply \hyperref[eulersformula]{Euler's formula} to get
 \begin{equation*}
 h(x,t) =
@@ -1240,7 +1240,7 @@ amplitude of the temperature swings is
 $A_0 e^{-\sqrt{\frac{\omega}{2k}} x}$.  This function decays \emph{very}
 quickly as $x$ (the depth) grows.
 Let us again take
-typical parameters as above.  We will also assume that
+typical parameters as above.  We also assume that
 our surface temperature swing is $\pm {15}^\circ$ Celsius, that is,
 $A_0 = 15$.  Then the maximum temperature variation at 700 centimeters
 is only $\pm {0.66}^\circ$ Celsius.
