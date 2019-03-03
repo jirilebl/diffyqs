@@ -142,6 +142,6 @@ done
 echo
 echo DONE ...
 echo
-echo Perhaps now do: rsync -av -e ssh html zinc.5z.com:/var/www/jirka/diffyqs/
-echo Make sure you have run the script with --full before ...
+echo 'Perhaps now do (if you are me): rsync -av -e ssh html zinc.5z.com:/var/www/jirka/diffyqs/'
+echo 'Make sure you have run the script with --full before ...'
 echo
