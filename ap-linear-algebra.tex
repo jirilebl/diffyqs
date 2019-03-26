@@ -1571,7 +1571,8 @@ A^{-1}AB & = A^{-1}AC , \\
 IB & = IC , \\
 B & = C .
 \end{align*}
-And similarly for cancellation on the right.
+And similarly for cancellation on the right: \emph{If $A$ is invertible,
+then $BA = CA$ implies $B=C$}.
 
 Notice that the rule says, among other things, that the
 inverse of a matrix is unique if it exists:  If $AB = I = AC$ then $A$ is
@@ -2089,23 +2090,23 @@ We run these operations until we
 get into a state where it is easy to read off the answer,
 or until we get into a contradiction indicating no solution.
 
-More abstractly, we will first obtain the so-called
+More specifically, we run the operations until we obtain the so-called
 \emph{\myindex{row echelon form}}.
-We call the first nonzero entry in each row is called the
-\emph{\myindex{leading entry}}.  Then
-a matrix is in \emph{row echelon form} if
+The first nonzero entry in each row is called the
+\emph{\myindex{leading entry}}.  
+A matrix is in \emph{row echelon form} if
 the following conditions are satisfied:
 \begin{enumerate}[(i)]
 \item There is only one leading entry in each column.
 \item All the entries below a leading entry are zero.
 \item All leading entries are 1.
 \end{enumerate}
-If furthermore,
 %mbxFIXME
+A matrix is in \emph{\myindex{reduced row echelon form}}
+if furthermore the following condition is satisfied.
 \begin{enumerate}[(i),resume]
-\item All the entries above a leading entry are zero,
+\item All the entries above a leading entry are zero.
 \end{enumerate}
-then a matrix is in \emph{\myindex{reduced row echelon form}}.
 
 \begin{example}
 The following matrix is in row echelon form.  The leading
@@ -2568,17 +2569,17 @@ column vectors we consider them columns of a matrix.
 It is useful to talk about the so called \emph{\myindex{span}} of a
 set of vectors.
 \begin{equation*}
-\operatorname{span} \{ \vec{x}_1, \vec{x}_2 , \cdots , \vec{x}_n \}
+\operatorname{span} \bigl\{ \vec{x}_1, \vec{x}_2 , \cdots , \vec{x}_n \bigr\}
 =
-\{
+\bigl\{
 \text{Set of all linear combinations of
 $\vec{x}_1, \vec{x}_2 , \cdots , \vec{x}_n$}
-\} .
+\bigr\} .
 \end{equation*}
 
 
 Given a matrix $A$, the maximal number of linearly independent rows is called
-the \emph{\myindex{rank}} of $A$.  For example the matrix
+the \emph{\myindex{rank}} of $A$.  The matrix
 \begin{equation*}
 \begin{bmatrix}
 1 & 1 & 1 \\
@@ -2586,8 +2587,10 @@ the \emph{\myindex{rank}} of $A$.  For example the matrix
 -1 & -1 & -1
 \end{bmatrix}
 \end{equation*}
-has rank 1, as rows are linearly dependent:  The second and third
-row are multiples of the first one.   But what is
+has rank 1.  
+The second and third
+row are multiples of the first one, so we cannot choose more than one row and
+still have a linearly independent set.   But what is
 \begin{equation*}
 \operatorname{rank}
 \begin{bmatrix}
@@ -2596,9 +2599,10 @@ row are multiples of the first one.   But what is
 7 & 8 & 9
 \end{bmatrix} \quad = \quad ?
 \end{equation*}
-That seems to be a tougher question to answer.  It turns out that for
-example the first two rows are linearly independent, but if you
-try to solve you find that
+That seems to be a tougher question to answer.  The
+first two rows are linearly independent, so the rank is at least
+two.  If we set up the equations for the $\alpha_1$, $\alpha_2$, and
+$\alpha_3$, we would find a system with infinitely many solutions, for example,
 \begin{equation*}
 \begin{bmatrix}
 1 & 2 & 3
@@ -2611,10 +2615,10 @@ try to solve you find that
 \end{bmatrix} =
 \begin{bmatrix}
 0 & 0 & 0
-\end{bmatrix} ,
+\end{bmatrix} .
 \end{equation*}
-so taking all the rows we find that they are linearly dependent.
-Therefore the rank is 2.
+So the set of all three rows is linearly dependent, the rank cannot be
+3.  Therefore the rank is 2.
 
 But how can we do this in a more systematic way?  We find the row echelon
 form:
@@ -2631,23 +2635,41 @@ form:
 \quad
 \begin{bmatrix}
 1 & 2 & 3 \\
-0 & 1 & 6  \\
+0 & 1 & 2  \\
 0 & 0 & 0
 \end{bmatrix} .
 \end{equation*}
-The elementary row operations do not change the linear combinations of
+The elementary row operations do not change the set of linear combinations of
 the rows (that was one of the main reasons for defining them as they were).
 In other words, the span of the rows of the $A$ is the same
 as the span of the rows of the row echelon form of $A$.
 
 In particular, the number of linearly independent rows is the same.
 And in the row echelon form, all nonzero rows are linearly independent.
-This is not hard to see.  For example, above the fact that the first column
+This is not hard to see.
+Consider the two nonzero rows in the above example.
+Suppose we 
+tried to solve for the $\alpha_1$ and $\alpha_2$
+in
+\begin{equation*}
+\alpha_1
+\begin{bmatrix}
+1 & 2 & 3
+\end{bmatrix} 
++
+\alpha_2
+\begin{bmatrix}
+0 & 1 & 2 
+\end{bmatrix} =
+\begin{bmatrix}
+0 & 0 & 0
+\end{bmatrix} .
+\end{equation*}
+Since the first column
 of the row echelon matrix has zeros except in the first row means that
-the $\alpha_1 = 0$.  Then for the same reason, $\alpha_2$ will be zero.
-And here we only have two nonzero rows.
-So since the row echelon form of the matrix above has two nonzero rows
-the rank is 2.
+$\alpha_1 = 0$.  For the same reason, $\alpha_2$ is zero.
+We only have two nonzero rows,
+and they are linearly independent, so the rank of the matrix is 2.
 
 The span of the rows is called the \emph{\myindex{row space}}.  The
 row space of $A$ and the row echelon form of $A$ are the same.  In the
@@ -2675,7 +2697,7 @@ example
 \end{bmatrix}
 ,
 \begin{bmatrix}
-0 & 1 & 6
+0 & 1 & 2
 \end{bmatrix}
 \right\} .
 \end{equation*}
@@ -2684,8 +2706,9 @@ example
 
 It may also be good to find the number of linearly independent columns
 of $A$.  One way to do that is to find the number of linearly independent
-rows of $A^T$.  It is a useful fact that the number of linearly independent
-columns is the same as the number of linearly independent rows:
+rows of $A^T$.  It is a tremendously useful fact that the number of
+linearly independent
+columns is always the same as the number of linearly independent rows:
 
 \begin{theorem}
 $\operatorname{rank} A = \operatorname{rank} A^T$
@@ -2694,8 +2717,8 @@ $\operatorname{rank} A = \operatorname{rank} A^T$
 In particular, to find a set of linearly independent columns we need to
 look at where the pivots were.  If you recall above, when solving $A \vec{x}
 = \vec{0}$ the key was finding the pivots, any non-pivot columns corresponded to
-free variables.  Meaning, you can solve for the non-pivot columns in terms
-of the pivot columns.  Let's see an example.  First let us reduce some
+free variables.  That means we can solve for the non-pivot columns in terms
+of the pivot columns.  Let's see an example.  First we reduce some
 random matrix:
 \begin{equation*}
 \begin{bmatrix}
@@ -2704,7 +2727,7 @@ random matrix:
 3 & 6 & 7 & 8
 \end{bmatrix} .
 \end{equation*}
-First we find a pivot and reduce the rows below:
+We find a pivot and reduce the rows below:
 \begin{equation*}
 \begin{bmatrix}
 \boxed{1} & 2 & 3 & 4 \\
@@ -2744,7 +2767,7 @@ We find the next pivot, make it one, and rinse and repeat:
 0 & 0 & 0 & 0
 \end{bmatrix} . 
 \end{equation*}
-The final matrix being the row echelon form of the matrix.
+The final matrix is the row echelon form of the matrix.
 Consider the pivots that we marked.
 The pivot columns are the first and the third
 column.  All other columns correspond to free variables when solving
@@ -2796,7 +2819,8 @@ the third column.  In other words
 We could perhaps use another pair of columns to get the same span, but the
 first and the third are guaranteed to work because they are pivot columns.
 
-In particular from the above discussion, the theorem would follow.
+The above discussion could be expanded into a proof of the theorem if
+we wanted.
 As each nonzero row
 in the row echelon form contains a pivot, then the rank is the number of
 pivots, which is the same as the maximal number of linearly independent
@@ -3104,23 +3128,24 @@ If we let $S = {\mathbb R}^n$, then this $S$ is a subspace of
 ${\mathbb R}^n$.  On the other hand the set $S' = \{ \vec{0} \}$ is 
 also a subspace of ${\mathbb R}^n$.
 
-A little more complicated, the set $S''$ of all the vectors of the form
+As a little more complicated example, the set $S''$ of all the vectors of the form
 $(a,a)$ for any real number $a$, such as $(1,1)$, $(3,3)$, or $(-0.5,-0.5)$
 is a subspace of ${\mathbb R}^2$.
 \end{example}
 
-If $S$ is a subspace and every element of $S$ can be written
+If $S$ is a subspace and every vector in $S$ can be written
 as a linear combination of $k$ linearly independent nonzero vectors
 \begin{equation*}
 \vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k
 \end{equation*}
+that are also in $SS$,
 then the set 
 $\{ \vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k \}$ is called a
 \emph{\myindex{basis}} of $S$.  In other words, $S$
 is the span of 
 $\{ \vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k \}$.
-We say then that $S$ has dimension $k$,
-and we usually write this as
+We say that $S$ has dimension $k$,
+and we write 
 \begin{equation*}
 \dim S = k .
 \end{equation*}
@@ -3147,11 +3172,11 @@ numbers, so is a point in a $k$-dimensional subspace of ${\mathbb R}^n$
 represented by a $k$-tuple of numbers.  At least once we have fixed a basis.
 
 \begin{example}
-For example, a basis of ${\mathbb R}^n$ is
-the standard basis
+The standard basis
 \begin{equation*}
-\vec{e}_1, \vec{e}_2, \ldots, \vec{e}_n .
+\vec{e}_1, \vec{e}_2, \ldots, \vec{e}_n ,
 \end{equation*}
+is a basis of ${\mathbb R}^n$, (hence the name).
 So as expected
 \begin{equation*}
 \dim {\mathbb R}^n = n .
@@ -3180,31 +3205,362 @@ L(\alpha \vec{x}) =
 So $\vec{x}+\vec{y}$ and $\alpha \vec{x}$ are solutions.  In other words,
 the kernel of $L$ is a subspace.
 
+The dimension of the kernel is called the \emph{\myindex{nullity}} of the
+matrix.
+
 The same sort of idea governs the solutions of linear differential
-equations.  We will be looking for a kernel of a differential linear
+equations.  We will be looking for a kernel of a linear differential 
 operator, and as it is a subspace, we will be looking for a basis of this
 kernel.  Majority of this book is essentially dedicated to trying to find
 such bases.
 
+The kernel of a matrix is the same as the kernel of its reduced echelon
+form.  And for a matrix in reduced row echelon form, it is rather easy to
+find.  For each non-pivot column find a vector which has a $-1$ in the entry
+corresponding to the non-pivot column.  Then for all the entries
+corresponding to pivot columns make it precisely the value in the
+corresponding row of the non-pivot column to make the vector be a
+solution to $L \vec{x} = \vec{0}$, all the other entries can be zero.
+This procedure is perhaps best understood by example.
+
 \begin{example}
-FIXME
+Consider the matrix
+\begin{equation*}
+\begin{bmatrix}
+\boxed{1} & 2 & 0 & 0 & 3 \\
+0 & 0 & \boxed{1} & 0 & 4 \\
+0 & 0 & 0 & \boxed{1} & 5
+\end{bmatrix} .
+\end{equation*}
+This matrix is in reduced row echelon form, the pivots are marked.
+There are two non-pivot columns, so the kernel has dimension 2, that
+is, it is the span of 2 vectors.  Let us find the first vector.
+As we said, we look at the first non-pivot column, we put a $-1$ in the
+second entry, and $0$ in the $5^{\text{th}}$
+entry:
+\begin{equation*}
+\begin{bmatrix}
+? \\ -1 \\ ? \\ ? \\ 0
+\end{bmatrix} .
+\end{equation*}
+Let us now fill the rest.  When this vector hits the first row, we get a
+$-2$ and $1$ times whatever the first question mark is.  So make the first
+question mark $2$.  For the second and third rows, it is sufficient to make
+it the question marks zero.  Let us check 
+\begin{equation*}
+\begin{bmatrix}
+{1} & 2 & 0 & 0 & 3 \\
+0 & 0 & {1} & 0 & 4 \\
+0 & 0 & 0 & {1} & 5
+\end{bmatrix} 
+\begin{bmatrix}
+2 \\ -1 \\ 0 \\ 0 \\ 0
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 \\ 0 \\ 0
+\end{bmatrix}
+.
+\end{equation*}
+Yay!  How about the second vector.  We start with
+\begin{equation*}
+\begin{bmatrix}
+? \\ 0 \\ ? \\ ? \\ -1 .
+\end{bmatrix}
+\end{equation*}
+Now we have to set the first question mark to 3, the second to 4 and the
+third to 5.  Let us check,
+\begin{equation*}
+\begin{bmatrix}
+{1} & 2 & 0 & 0 & 3 \\
+0 & 0 & {1} & 0 & 4 \\
+0 & 0 & 0 & {1} & 5
+\end{bmatrix} 
+\begin{bmatrix}
+3 \\ 0 \\ 4 \\ 5 \\ -1
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 \\ 0 \\ 0
+\end{bmatrix}
+.
+\end{equation*}
+We have now found the entire kernel.  The kernel of the matrix is
+\begin{equation*}
+\operatorname{span} \left\{
+\begin{bmatrix}
+2 \\ -1 \\ 0 \\ 0 \\ 0
+\end{bmatrix}
+,
+\begin{bmatrix}
+3 \\ 0 \\ 4 \\ 5 \\ -1
+\end{bmatrix}
+\right\}
+\end{equation*}
 \end{example}
 
-Another place where subspaces arise are row and column spaces of matrices,
-as those are given as the span of a certain number of vectors.  We can use
+The procedure to find the basis of the kernel:
+\begin{enumerate}[(i)]
+\item Find the reduced row echelon form.
+\item Write down the basis of the kernel as above, one vector for each
+non-pivot column.
+\end{enumerate}
+
+What we did in finding a basis of the kernel is we expressed all
+solutions of
+$L \vec{x} = \vec{0}$ as a linear combination of some given vectors.
+
+\medskip
+
+Another example of subspaces are row and column spaces of matrices,
+as those are given as the span of vectors.
+We can use
 what we know about rank, row space and column space
 from the previous section to find a basis.
 
 \begin{example}
-FIXME
+We have seen these before, so let us just consider the example from above,
+that is, the matrix
+\begin{equation*}
+L =
+\begin{bmatrix}
+{1} & 2 & 0 & 0 & 3 \\
+0 & 0 & {1} & 0 & 4 \\
+0 & 0 & 0 & {1} & 5
+\end{bmatrix} 
+\end{equation*}
+We saw that.  We saw before that the column space is the span of
+the pivot columns, so this is
+the 3-dimensional space
+\begin{equation*}
+\text{column space of $L$} =
+\operatorname{span} \left\{
+\begin{bmatrix}
+{1} \\
+0 \\
+0
+\end{bmatrix} 
+,
+\begin{bmatrix}
+ 0 \\
+ {1} \\
+ 0 
+\end{bmatrix} 
+,
+\begin{bmatrix}
+0 \\
+0 \\
+{1} 
+\end{bmatrix} 
+\right\}
+= {\mathbb{R}}^3 .
+\end{equation*}
+The row space is the 3 dimensional space
+\begin{equation*}
+\text{row space of $L$} =
+\operatorname{span} \left\{
+\begin{bmatrix}
+{1} & 2 & 0 & 0 & 3
+\end{bmatrix} 
+,
+\begin{bmatrix}
+0 & 0 & {1} & 0 & 4
+\end{bmatrix} 
+,
+\begin{bmatrix}
+0 & 0 & 0 & {1} & 5
+\end{bmatrix} 
+\right\} .
+\end{equation*}
 \end{example}
+
+The dimensions of the various spaces are related.  First, the rank
+is the dimension of the column space and the row space.
+
+\begin{theorem}[Rank]
+The dimension of the column space and the dimension of the row space 
+are both equal to $r$.
+\end{theorem}
+
+Second, the rank is the dimension of the column space, and that is
+the span on the pivot columns, while the kernel is the span of vectors
+one for each non-pivot column.  So the two numbers must add to the number of
+columns.
+
+\begin{theorem}[Rank--Nullity]
+If a matrix $A$ has $n$ columns, rank $r$, and nullity $k$ (dimension of the
+kernel), then
+\begin{equation*}
+n = r+k .
+\end{equation*}
+\end{theorem}
+
+The theorem is immensely useful in applications.  It allows one to compute
+the rank $r$ if one knows the nullity $k$ and vice-versa, without doing any
+extra work.
 
 \subsection{Inner product and orthogonality}
 
 To do basic geometry, we need length, and we need angles.
 We have already seen the euclidean length, so let us figure out how to
-compute angles.  In particular, we will mostly be concerned
-with the right angle.
+compute angles.  We will mostly be concerned
+about the right angle\footnote{When Euclid defined angles in his
+\emph{Elements}, the only angle he ever really defined was the right angle.}.
+
+Given two (column) vectors in ${\mathbb{R}}^n$,
+we define the inner product as
+\begin{equation*}
+\langle \vec{x} , \vec{y} \rangle =
+\vec{x} \cdot \vec{y}
+=
+\vec{y}^T \vec{x}
+=
+\sum_{i=1}^n x_i y_i .
+\end{equation*}
+Why do we seemingly give a new notation for the dot product?  Well that's
+because there are other possible inner products, which are not dot products.
+For example, in \chapterref{FS:chapter} we use the  inner product on
+functions 
+\begin{equation*}
+\langle f(t) , g(t) \rangle =
+\int_{a}^{b}
+f(t) g(t) \, dt .
+\end{equation*}
+But we digress.
+
+The standard inner product already gives length:
+\begin{equation*}
+\lVert{\vec{x}}\rVert = \sqrt{\langle \vec{x}, \vec{x} \rangle} .
+\end{equation*}
+How does it give angles?
+
+In multivariable calculus, you have seen the 
+formula in two or three dimensions
+\begin{equation*}
+\langle \vec{x}, \vec{y} \rangle
+=
+\lVert{\vec{x}}\rVert \lVert{\vec{y}}\rVert \cos \theta,
+\end{equation*}
+where $\theta$ is the angle between the angles $\vec{x}$ and $\vec{y}$.  To
+compute the angle we compute
+\begin{equation*}
+\cos \theta
+=
+\frac{\langle \vec{x}, \vec{y} \rangle}{\lVert{\vec{x}}\rVert
+\lVert{\vec{y}}\rVert} .
+\end{equation*}
+First our angles will always be in radians.
+Second, note that we are computing the cosine of the angle,
+which is really the best
+we can do.  The angle $\theta$, $-\theta$, $2\pi-\theta$, etc., should really be
+the same, and $\cos \theta = \cos (-\theta) = \cos(2\pi - \theta)$.
+If we solve for $\theta$ using the inverse cosine $\cos^{-1}$,
+we can just decree that $0 \leq \theta \leq \pi$.  See
+\figurevref{vec-angle:fig}.
+
+\begin{myfig}
+\capstart
+\inputpdft{vec-angle}
+\caption{Angle between vectors.\label{vec-angle:fig}}
+\end{myfig}
+
+\begin{example}
+Let us compute the angle between the vectors $(3,0)$ and $(1,1)$ in the
+plane.
+Compute
+\begin{equation*}
+\cos \theta =
+\frac{\bigl\langle (3,0) , (1,1) \bigr\rangle}{\lVert(3,0)\rVert \lVert(1,1)\rVert}
+=
+\frac{3 + 0}{3 \sqrt{2}} = \frac{1}{\sqrt{2}} .
+\end{equation*}
+Therefore $\theta = \nicefrac{\pi}{4}$.
+\end{example}
+
+While we do not have any real model for ${\mathbb{R}}^n$ to base angles on,
+we simply define the angle between two vectors using the formula above.
+
+\medskip
+
+As we said, the most important angle is the right angle.  A right angle
+is $\nicefrac{\pi}{2}$ radians, and $\cos \nicefrac{\pi}{2} = 0$, so the
+formula is particularly easy in this case.
+We say
+vectors $\vec{x}$ and $\vec{y}$
+are \emph{\myindex{orthogonal}} if they are at right
+angles, that is if
+\begin{equation*}
+\langle \vec{x} , \vec{y} \rangle
+=
+0 .
+\end{equation*}
+For example, the vectors $(1,0,0,1)$ and $(1,2,3,-1)$ are orthogonal.
+
+\subsection{Orthogonal projection, orthogonal bases}
+
+A typical application of linear algebra is to take a difficult problem,
+write everything in the right basis, and in this new basis the problem
+becomes simple.  A particularly useful basis is an orthogonal basis, that is
+a basis where all the basis vectors are orthogonal.  When we draw a
+coordinate system in two or three dimensions, we almost always draw our axes
+as orthogonal to each other.
+
+Generalizing this concept to functions,
+it will be particularly useful in \chapterref{FS:chapter} to express a
+function using a particular orthogonal basis.
+
+To express one vector in terms of an orthogonal basis, we need to first
+\emph{project} one vector onto another.
+Given a nonzero vector $\vec{v}$, we define the
+\emph{\myindex{orthogonal projection}}\index{projection!orthogonal}
+of $\vec{w}$ onto $\vec{v}$ as
+\begin{equation*}
+\operatorname{proj}_{\vec{v}}(\vec{w})
+=
+\left(
+\frac{\langle \vec{w} , \vec{v} \rangle}{ \langle \vec{v} , \vec{v} \rangle}
+\right)
+\vec{v} .
+\end{equation*}
+For the geometric idea, see \figurevref{vec-orthoproj:fig}.  That is, we
+find the \emph{shadow} of $\vec{w}$ on the line spanned by $\vec{v}$ if the
+direction of the suns rays
+were exactly perpendicular to the line. 
+
+\begin{myfig}
+\capstart
+\inputpdft{vec-orthoproj}
+\caption{Orthogonal projection.\label{vec-orthoproj:fig}}
+\end{myfig}
+
+The formula follows from basic trigonometry.  The length of
+$\operatorname{proj}_{\vec{v}}(\vec{w})$ should be
+$\cos \theta$ times the length of $\vec{w}$, that is $\lVert\vec{w}\rVert$.
+Then we take the unit vector in the direction of $\vec{v}$, that is,
+$\frac{\vec{v}}{\lVert \vec{v} \rVert}$ and we multiply it by the length of
+the projection.  In other words,
+\begin{equation*}
+\operatorname{proj}_{\vec{v}}(\vec{w})
+=
+(\cos \theta) \lVert \vec{w} \rVert
+\frac{\vec{v}}{\lVert \vec{v} \rVert}
+=
+\frac{(\cos \theta) \lVert \vec{w} \rVert \lVert \vec{v} \rVert}{
+{\lVert \vec{v} \rVert}^2
+}
+\vec{v}
+=
+\frac{\langle \vec{w}, \vec{v} \rangle}{
+\langle \vec{v}, \vec{v} \rangle
+}
+\vec{v} .
+\end{equation*}
+
+\begin{example}
+FIXME
+\end{example}
+
+FIXME: bases.
 
 FIXME
 
