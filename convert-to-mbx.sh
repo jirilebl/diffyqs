@@ -4,21 +4,21 @@ echo progress.  The diffyqs-html.xsl assumes a fixed location for the PreTeXt
 echo xsl file.  You need to edit this first.
 echo Do ^C to get out.
 echo 
-echo You should first run with --runpdft --optimize-svg --optmize-png which
-echo runs the pdft figures and then also optimizes pngs and svgs.  Without
+echo You should first run with --runpdft --optimize-svg which
+echo runs the pdft figures and then also optimizes svgs.  Without
 echo --runpdft some figures will be missing.  You can also use --full
 echo which does all three arguments.
-echo Optimizations are the optimize-pngs.sh and optimize-svgs.sh in figures/
+echo Optimizations are in optimize-svgs.sh in figures/
 echo
 echo The option --add-track will add my google tracking, this is probably
 echo only for me.
 echo
 echo To rerun all figures first do \"rm "*-mbx.*" "*-tex4ht.*"\", or run
-echo this script with --kill-generated
+echo this script with --kill-generated.
 echo
 
 PDFT=no
-OPTPNG=no
+#OPTPNG=no
 OPTSVG=no
 ADDTRACK=no
 
@@ -32,10 +32,10 @@ while [ "$1" != "" ]; do
 	    echo "OPTION (runpdft) Will run pdf_t figures"
 	    PDFT=yes
             ;;
-        --optimize-png)
-	    echo "OPTION (optimize-png) Will run optimize-pngs.sh"
-	    OPTPNG=yes
-            ;;
+#        --optimize-png)
+#	    echo "OPTION (optimize-png) Will run optimize-pngs.sh"
+#	    OPTPNG=yes
+#            ;;
         --optimize-svg)
 	    echo "OPTION (optimize-svg) Will run optimize-svgs.sh"
 	    OPTSVG=yes
@@ -45,18 +45,16 @@ while [ "$1" != "" ]; do
 	    ADDTRACK=yes
 	    ;;
         --full)
-	    echo "OPTION (full) Will run pdf_t optimize pngs and svgs"
+	    echo "OPTION (full) Will run pdf_t optimize svgs"
 	    PDFT=yes
-	    OPTPNG=yes
+	    #OPTPNG=yes
 	    OPTSVG=yes
             ;;
         --kill-generated)
 	    echo "OPTION (kill-generated) Killing generated figures and exiting."
 	    cd figures
-	    rm *-mbx.svg
-	    rm *-mbx.png
-	    rm *-tex4ht.svg
-	    rm *-tex4ht.png
+	    rm *-mbx.(svg|png)
+	    rm *-tex4ht.(svg|png)
 	    cd ..
 	    exit
 	    ;;
@@ -91,15 +89,15 @@ perl convert-to-mbx.pl
 
 #xmllint --format -o diffyqs-out2.xml diffyqs-out.xml
 
-if [ "$OPTPNG" = "yes" ] ; then
-	echo
-	echo OPTIMIZING PNG...
-	echo
-
-	cd figures
-	./optimize-pngs.sh
-	cd ..
-fi
+#if [ "$OPTPNG" = "yes" ] ; then
+#	echo
+#	echo OPTIMIZING PNG...
+#	echo
+#
+#	cd figures
+#	./optimize-pngs.sh
+#	cd ..
+#fi
 
 if [ "$OPTSVG" = "yes" ] ; then
 	echo

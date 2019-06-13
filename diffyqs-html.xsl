@@ -52,11 +52,22 @@
   </xsl:template>
 
   <!-- need inline image, custom width, maxwidth, etc.., so nonstandard -->
-  <!-- the image should be without extension, .svg is used unless srcset
-       is not supported (older browser) when .png is used. So both should
-       be supplied -->
+  <!-- the image should be without extension .svg is appended -->
   <xsl:template match="diffyqsimage">
     <xsl:element name="img">
+      <xsl:attribute name="class">
+        <xsl:text>diffyimg</xsl:text>
+        <xsl:if test="@float">
+          <xsl:choose>
+            <xsl:when test="@float = 'left'">
+              <xsl:text> diffyfloatleft</xsl:text>
+            </xsl:when>
+            <xsl:when test="@float = 'right'">
+              <xsl:text> diffyfloatright</xsl:text>
+            </xsl:when>
+          </xsl:choose>
+        </xsl:if>
+      </xsl:attribute>
       <xsl:attribute name="style">
         <xsl:if test="@width">
           <xsl:text>width:</xsl:text>
@@ -78,7 +89,7 @@
           <xsl:value-of select="@background-color"/>
           <xsl:text>; </xsl:text>
         </xsl:if>
-        <xsl:text>margin:auto; vertical-align:middle;</xsl:text>
+		<!--<xsl:text>margin:auto; vertical-align:middle;</xsl:text>-->
         <xsl:choose>
           <xsl:when test="@inline = 'yes'">
 				</xsl:when>
@@ -86,24 +97,10 @@
             <xsl:text>display:block;</xsl:text>
           </xsl:otherwise>
         </xsl:choose>
-        <xsl:if test="@float">
-          <xsl:choose>
-            <xsl:when test="@float = 'left'">
-              <xsl:text>float:left; margin-right:15px;</xsl:text>
-            </xsl:when>
-            <xsl:when test="@float = 'right'">
-              <xsl:text>float:right; margin-left:15px;</xsl:text>
-            </xsl:when>
-          </xsl:choose>
-        </xsl:if>
-      </xsl:attribute>
-      <xsl:attribute name="srcset">
-        <xsl:value-of select="@source"/>
-        <xsl:text>.svg</xsl:text>
       </xsl:attribute>
       <xsl:attribute name="src">
         <xsl:value-of select="@source"/>
-        <xsl:text>.png</xsl:text>
+        <xsl:text>.svg</xsl:text>
       </xsl:attribute>
       <!-- alt attribute for accessibility -->
       <xsl:attribute name="alt">
