@@ -353,6 +353,11 @@ sub get_equation_number {
 sub get_size_of_svg {
 	my $thefile = shift;
 	$thesizestr = qx!cat $thefile | grep '^<svg ' | sed 's/^.*\\(width="[^"]*"\\) *\\(height="[^"]*"\\).*\$/\\1 \\2/'!;
+	
+	# If units missing, add them
+	$thesizestr =~ s/"([0-9.]*)"/"\1px"/;
+	$thesizestr =~ s/"([0-9.]*)"/"\1px"/;
+
 	chomp($thesizestr);
 	print "the size string of $thefile >$thesizestr<\n";
 	return $thesizestr
@@ -368,15 +373,15 @@ sub ensure_mbx_svg_version {
 	}
 }
 
-sub ensure_mbx_png_version {
-	my $thefile = shift;
-
-	print "ENSURE $thefile-mbx.png\n";
-	if ((not -e "$thefile-mbx.png") and (-e "$thefile.pdf")) {
-		print "MAKING $thefile-mbx.png from PDF\n";
-		system("./pdftopng.sh $thefile.pdf $thefile-mbx.png 192");
-	}
-}
+#sub ensure_mbx_png_version {
+#	my $thefile = shift;
+#
+#	print "ENSURE $thefile-mbx.png\n";
+#	if ((not -e "$thefile-mbx.png") and (-e "$thefile.pdf")) {
+#		print "MAKING $thefile-mbx.png from PDF\n";
+#		system("./pdftopng.sh $thefile.pdf $thefile-mbx.png 192");
+#	}
+#}
 
 sub read_paragraph {
 	my $para = "";
@@ -1074,7 +1079,7 @@ while(1)
 		my $thefile = $2;
 		print "(BRed image >$width< >$thefile<\n)";
 		ensure_mbx_svg_version ($thefile);
-		ensure_mbx_png_version ($thefile);
+		#ensure_mbx_png_version ($thefile);
 		open_paragraph ();
 		print $out "<diffyqsimage source=\"$thefile-mbx\" width=\"$width\" background-color=\"white\" inline=\"yes\" />\n";
 		close_paragraph ();
@@ -1085,7 +1090,7 @@ while(1)
 		my $thefile = $2;
 		print "(PARBOXED image >$width< >$thefile<\n)";
 		ensure_mbx_svg_version ($thefile);
-		ensure_mbx_png_version ($thefile);
+		#ensure_mbx_png_version ($thefile);
 		print $out "<diffyqsimage source=\"$thefile-mbx\" width=\"$width\" background-color=\"white\" inline=\"yes\" />\n";
 
 	#FIXME: not all substitutions are made, so check if more processing needs to be done
@@ -1171,7 +1176,7 @@ while(1)
 					my $thefile = "figures/$2";
 					$thesize =~ s/width=//g;
 					ensure_mbx_svg_version ($thefile);
-					ensure_mbx_png_version ($thefile);
+					#ensure_mbx_png_version ($thefile);
 					print $out "  <diffyqsimage source=\"$thefile-mbx\" width=\"100\%\" background-color=\"white\" maxwidth=\"$thesize\" />\n";
 					#if ($thesize ne "") {
 					#print $out "  <diffyqsimage source=\"$thefile-mbx\" width=\"$thesize\" />\n";
@@ -1188,8 +1193,8 @@ while(1)
 					$thesize2 =~ s/width=//g;
 					ensure_mbx_svg_version ($thefile1);
 					ensure_mbx_svg_version ($thefile2);
-					ensure_mbx_png_version ($thefile1);
-					ensure_mbx_png_version ($thefile2);
+					#ensure_mbx_png_version ($thefile1);
+					#ensure_mbx_png_version ($thefile2);
 					#FIXME: what about maxwidth?
 					print $out "  <diffyqsimage source=\"$thefile1-mbx\" width=\"100\%\" background-color=\"white\" maxwidth=\"$thesize1\" />\n";
 					print $out "  <diffyqsimage source=\"$thefile2-mbx\" width=\"100\%\" background-color=\"white\" maxwidth=\"$thesize2\" />\n";

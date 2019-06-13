@@ -38,11 +38,17 @@
  background-attachment: local, local, scroll, scroll;
 }
 
-/* in mainline now
+.diffyimg { margin:auto; vertical-align:middle; }
+
+@media (min-width: 600px) {
+  .diffyfloatright { float:right; margin-left:15px!important;}
+  .diffyfloatleft { float:left; margin-right:15px!important;}
+}
+
+/* in mainline now, but doesn't seem to work */
 @media print {
 	.navbar { display:none; }
 	.sidebar { display:none; }
 	.searchwrapper { display:none; }
-	.has-sidebar-left.mathbook-loaded.sidebar-left-open .main { margin-left:0px; left:auto; }
+	.has-sidebar-left.mathbook-loaded.sidebar-left-open .main { margin-left:0px!important; left:auto!important; }
 }
-*/
