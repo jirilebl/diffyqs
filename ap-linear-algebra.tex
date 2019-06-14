@@ -8,18 +8,18 @@
 \sectionnotes{more than 1 lecture}
 
 In real life, there is most often more than one variable.
-So we wish to organize dealing with multiple variables in a consistent
+We wish to organize dealing with multiple variables in a consistent
 manner, and in particular organize dealing with linear equations and linear
-mappings, as those are rather easy to handle if done properly.
+mappings, as those both rather useful and rather easy to handle.
 Mathematicians joke that
 \myquote{to an engineer every problem is linear, and everything is a
 matrix.}
 And well, they (the engineers) are not wrong. 
-Quite often, solving an engineering problem really is figuring out the
-right finite-dimensional linear problem to solve, which can be then
+Quite often, solving an engineering problem is figuring out the
+right finite-dimensional linear problem to solve, which is then
 solved with some matrix manipulation.
-Most importantly linear problems are the ones that we know how to solve
-and we have lots of tools to solve them.
+Most importantly, linear problems are the ones that we know how to solve,
+and we have many tools to solve them.
 For engineers, mathematicians, physicists, and anybody in a technical
 field it is absolutely vital to learn linear algebra.
 
@@ -30,21 +30,22 @@ As motivation, suppose we wish to solve
 & 2x+y = 4 ,
 \end{aligned}
 \end{equation*}
-for $x$ and $y$.
-What you could do is add the equations together to find
+for $x$ and $y$, that is, find numbers $x$ and $y$ such that the two
+equations are satisfied.
+Let us perhaps start by adding the equations together to find
 \begin{equation*}
 x+2x-y+y = 2+4, \qquad \text{or} \qquad 3x = 6 .
 \end{equation*}
-And now we find $x=3$.  Once we have that, we can plug in $x=2$ into the
+In other words, $x=2$.  Once we have that, we plug in $x=2$ into the
 first equation to find $2-y=2$, so $y=0$.  OK\@, that was easy.  What is all
 this fuss about linear equations.  Well, try doing this if you have
 5000 unknowns\footnote{One of the downsides of making everything look like a
 linear problem is that the number of variables tends to become huge.}.
-Also, we have such equations not of just numbers,
+Also, we may have such equations not of just numbers,
 but of functions and derivatives of functions in differential equations.
 Clearly we need a more systematic way of doing things.
-A consequence of making things systematic and simpler to write down
-is that it also becomes much easier to have computers do the work for us.
+A nice consequence of making things systematic and simpler to write down
+is that it becomes easier to have computers do the work for us.
 Computers are rather stupid, they do not think,
 but are very good at doing lots of repetitive
 tasks precisely, as long as we figure out a systematic way for them to
@@ -90,8 +91,8 @@ is the arrow from the origin to the point $(1,2)$ in the plane.
 The magnitude is the length of the arrow.
 See \figurevref{linalg-vecarrow:fig}.
 If we think of vectors as arrows,
-the arrow doesn't always have to start at the origin.  If we move it
-around it should always keep the same direction and the same magnitude.
+the arrow doesn't always have to start at the origin.  If we do move it
+around, however, it should always keep the same direction and the same magnitude.
 
 \begin{myfig}
 \capstart
@@ -100,21 +101,23 @@ around it should always keep the same direction and the same magnitude.
 $(1,2)$.\label{linalg-vecarrow:fig}}
 \end{myfig}
 
-Since vectors are arrows, when we want to talk about a vector and we give it
-a name, we will write a little arrow above it:
+As vectors are arrows, when we want to give a name to a vector,
+we draw a little arrow above it:
 \begin{equation*}
 \vec{x}
 \end{equation*}
 Another popular notation is $\mathbf{x}$, although we will use the little
-arrows.
+arrows.  It may be easy to write a bold letter in a book, but it is not so
+easy to write it by hand on paper or on the board.
 Mathematicians often don't even write the arrows.  A mathematician would
 write $x$ and just remember that $x$ is a vector and not a number.
 Just like you remember that Bob is your uncle, and you don't have to
 keep repeating \myquote{Uncle Bob} and you can just say \myquote{Bob.}
-In this book, however, we will call Bob
-uncle, and write vectors with little arrows above them.
+In this book, however, we will call Bob \myquote{Uncle Bob}
+and write vectors with the little arrows.
 
-The \emph{\myindex{magnitude}} can be computed using Pythagorean theorem.  So for example,
+The \emph{\myindex{magnitude}} can be computed using Pythagorean theorem.
+For example,
 the vector $(1,2)$ drawn in the figure has magnitude $\sqrt{1^2+2^2} =
 \sqrt{5}$.  The magnitude is denoted by $\lVert \vec{x} \rVert$,
 and, in any number of dimensions, it can be computed in the same way:
@@ -126,7 +129,7 @@ and, in any number of dimensions, it can be computed in the same way:
 \sqrt{x_1^2+x_2^2+\cdots+x_n^2} .
 \end{equation*}
 
-For reasons that will become clear in the next section, we will often
+For reasons that will become clear in the next section, we often
 write vectors as so-called
 \emph{column vectors}\index{column vector}:
 \begin{equation*}
@@ -135,7 +138,7 @@ write vectors as so-called
 x_{1} \\ x_2 \\ \vdots \\ x_n
 \end{bmatrix} .
 \end{equation*}
-Don't worry, it is just a different way of writing the same thing, and
+Don't worry.  It is just a different way of writing the same thing, and
 it will be useful later.  For example, the vector $(1,2)$ can be written as
 \begin{equation*}
 \begin{bmatrix}
@@ -147,10 +150,11 @@ The fact that we write arrows above vectors will allow us to write several
 vectors $\vec{x}_1$, $\vec{x}_2$, etc., without confusing these with the
 components of some other vector $\vec{x}$.
 
-
-Where does the algebra come in?  Well, arrows can be added, subtracted,
+So where is the \emph{algebra} from \emph{linear algebra}?
+Well, arrows can be added, subtracted,
 and multiplied by numbers.
-First adding.  If we have two arrows, we simply
+First we consider \emph{addition}\index{adding vectors}.
+If we have two arrows, we simply
 move along one, and then along the other.  See
 \figurevref{linalg-vecadd:fig}.
 
@@ -162,11 +166,12 @@ result, $(3,-1)$, is drawn as a solid arrow.\label{linalg-vecadd:fig}}
 \end{myfig}
 
 It is rather easy to see what it does to the numbers that represent the
-vectors.  Suppose we want to add $(1,2)$ to $(2,-3)$.  So we travel along $(1,2)$
+vectors.  Suppose we want to add $(1,2)$ to $(2,-3)$ as in the figure.
+So we travel along $(1,2)$
 and then we travel along $(2,-3)$.
 What we did was travel one unit right, two units up, and then
 we travelled two units right, and three units down (the negative three).  That
-means that I added up at $\bigl(1+2,2+(-3)\bigr) = (3,-1)$.
+means that we ended up at $\bigl(1+2,2+(-3)\bigr) = (3,-1)$.
 And that's how addition always works:
 \begin{equation*}
 \begin{bmatrix}
@@ -180,16 +185,17 @@ x_1 + y_{1} \\ x_2+ y_2 \\ \vdots \\ x_n + y_n
 \end{bmatrix} .
 \end{equation*}
 
-Subtracting is very similar.  What it means visually is that if we perform
-$\vec{x}- \vec{y}$, then we first travel along $\vec{x}$, and then we travel
+\emph{Subtracting}\index{subtracting vectors} is similar.
+What $\vec{x}- \vec{y}$ means visually is that
+we first travel along $\vec{x}$, and then we travel
 backwards along $\vec{y}$.
 See \figurevref{linalg-vecsub:fig}.
-In fact, it is like adding
+It is like adding
 $\vec{x}+ (- \vec{y})$ where $-\vec{y}$
 is the arrow we obtain by erasing the arrow head
 from one side and drawing it on the other side, that is, we reverse the
-direction.  In terms of the numbers we just go backwards in both directions,
-so we just negate both numbers.  For example, if $\vec{y}$ is $(-2,1)$,
+direction.  In terms of the numbers, we simply go backwards in both directions,
+so we negate both numbers.  For example, if $\vec{y}$ is $(-2,1)$,
 then $-\vec{y}$ is $(2,-1)$.
 
 \begin{myfig}
@@ -200,7 +206,8 @@ drawn dashed.  The
 result, $(3,1)$, is drawn as a solid arrow.\label{linalg-vecsub:fig}}
 \end{myfig}
 
-Another intuitive thing to do to a vector is to scale it.
+Another intuitive thing to do to a vector is to
+\emph{scale}\index{scale a vector} it.
 We represent this by multiplication of a number with a vector.
 Because of this, when we wish to distinguish between vectors and numbers, we
 call the numbers \emph{scalars}\index{scalar}.
@@ -233,13 +240,13 @@ opposite direction, so 3 units to the left and 6 units down, or in other
 words, $(-3,-6)$.  As we mentioned above $-\vec{y}$ was a reverse of
 $\vec{y}$, and this is the same as $(-1)\vec{y}$.
 
-For examples of what scaling means,
-see \figurevref{linalg-vecscale:fig}.
+In \figurevref{linalg-vecscale:fig}, you can see a couple of examples of
+what scaling a vector means visually.
 
 \begin{myfig}
 \capstart
 \inputpdft{linalg-vecscale}
-\caption{A vector $\vec{x}$, twice the vector $2\vec{x}$ (same direction,
+\caption{A vector $\vec{x}$, the vector $2\vec{x}$ (same direction,
 double the magnitude), and the vector $-1.5\vec{x}$ (opposite direction,
 1.5 times the magnitude).\label{linalg-vecscale:fig}}
 \end{myfig}
@@ -275,13 +282,13 @@ Let us compute a small example:
 \subsection{Linear mappings and matrices}
 
 A \emph{\myindex{vector-valued function}}
-$F$ is a rule that takes a vector $\vec{x}$ and assigns it another vector
+$F$ is a rule that takes a vector $\vec{x}$ and returns another vector
 $\vec{y}$.  For example, $F$ could be a scaling that doubles the size of
 vectors:
 \begin{equation*}
-F(\vec{x}) = 2 \vec{x} ,
+F(\vec{x}) = 2 \vec{x} .
 \end{equation*}
-or
+For example,
 \begin{equation*}
 F
 \left( \begin{bmatrix} 1 \\ 3 \end{bmatrix} \right)
@@ -302,8 +309,9 @@ although more often than not, \emph{mapping} is used when talking about a
 vector-valued function, and the word \emph{function} is often used when the
 function is scalar-valued.
 
-Any beginning student of mathematics (and many a seasoned mathematician),
-when they see an expression such as
+A beginning student of mathematics (and many a seasoned mathematician),
+that
+sees an expression such as
 \begin{equation*}
 f(3x+8y)
 \end{equation*}
@@ -318,17 +326,19 @@ Of course we can't always do that (for example, not with the square roots!)
 It turns out there are many functions where
 we can do exactly the above.  Such functions are called \emph{linear}.
 
-More explicitly a mapping $F \colon {\mathbb R}^n \to {\mathbb R}^m$
+A mapping $F \colon {\mathbb R}^n \to {\mathbb R}^m$
 is called \emph{linear}\index{linear mapping} if
 \begin{equation*}
-F(\vec{x}+\vec{y}) = F(\vec{x})+F(\vec{y})
+F(\vec{x}+\vec{y}) = F(\vec{x})+F(\vec{y}),
 \end{equation*}
+for any vectors $\vec{x}$ and $\vec{y}$,
 and also
 \begin{equation*}
-F(\alpha \vec{x}) = \alpha F(\vec{x}) .
+F(\alpha \vec{x}) = \alpha F(\vec{x}) ,
 \end{equation*}
-The example $F$ above that doubles the size of all vectors is linear.  Let
-us check
+for any scalar $\alpha$.
+The $F$ we defined above that doubles the size of all vectors is linear.  Let
+us check:
 \begin{equation*}
 F(\vec{x}+\vec{y})
 =
@@ -336,33 +346,32 @@ F(\vec{x}+\vec{y})
 =
 2\vec{x}+2\vec{y}
 =
-F(\vec{x})+F(\vec{y})
+F(\vec{x})+F(\vec{y}) ,
 \end{equation*}
 and also
 \begin{equation*}
 F(\alpha \vec{x}) = 2 \alpha \vec{x} = \alpha 2 \vec{x} = \alpha F(\vec{x}) .
 \end{equation*}
 
-When a mapping is linear we often do not write the parentheses.  So we write
-just
-\begin{equation*}
-F \vec{x}
-\end{equation*}
-instead of $F(\vec{x})$.  That is because the linearity means that $F$
-behaves sort of like a multiplication by something.
 We also call a linear function a
 \emph{linear transformation}\index{transformation}.
 If you want to be really fancy and impress your friends, you can call it a
 \emph{linear operator}\index{operator}.
 
-There are lots of linear mappings, a lot more complicated than the scaling
-example above.  They really are a multiplication by \myquote{something.}
+When a mapping is linear we often do not write the parentheses.  We write
+simply
+\begin{equation*}
+F \vec{x}
+\end{equation*}
+instead of $F(\vec{x})$.  We do this because linearity means that the
+mapping $F$
+behaves like multiplying $\vec{x}$ by \myquote{something.}
 That something is a matrix.
 
 A \emph{\myindex{matrix}}
 is an $m
-\times n$ array of numbers ($m$ rows and $n$ columns).  For example, we denote
-a $3 \times 5$ matrix as follows
+\times n$ array of numbers ($m$ rows and $n$ columns).  A
+$3 \times 5$ matrix is
 \begin{equation*}
 A = 
 \begin{bmatrix}
@@ -374,16 +383,16 @@ a_{31} & a_{32} & a_{33} & a_{34} & a_{35}
 The numbers $a_{ij}$ are called \emph{elements}\index{element of a matrix}
 or \emph{entries}\index{entry of a matrix}.
 
-Notice that a column vector is simply an $m \times 1$ matrix.  Similarly to
+A column vector is simply an $m \times 1$ matrix.  Similarly to
 a column vector there is also a 
-\emph{\myindex{row vector}}, which would be a $1 \times n$ matrix.
-If we have an $n \times n$ matrix, then we will say that it is a
+\emph{\myindex{row vector}}, which is a $1 \times n$ matrix.
+If we have an $n \times n$ matrix, then we say that it is a
 \emph{\myindex{square matrix}}.
 
 Now how does a matrix $A$ relate to a linear mapping?
 Well a matrix tells you where
-certain vectors go.  Let's give a name to certain special vectors.
-The \emph{\myindex{standard basis vectors}} of ${\mathbb R}^n$ are vectors
+certain special vectors go.  Let's give a name to those certain vectors.
+The \emph{\myindex{standard basis vectors}} of ${\mathbb R}^n$ are
 \begin{equation*}
 \vec{e}_1 =
 \begin{bmatrix}
@@ -458,20 +467,20 @@ For example, in ${\mathbb R}^3$ the vector $(4,5,6)$ can be written as
 So how does a matrix represent a linear mapping?
 Well, the columns of the matrix are the vectors where $A$ as a linear
 mapping takes $\vec{e}_1$, $\vec{e}_2$, etc.
-For example, 
+For example, consider
 \begin{equation*}
 M = 
 \begin{bmatrix}
 1 & 2 \\ 3 & 4
 \end{bmatrix} .
 \end{equation*}
-Then as a linear mapping $M \colon {\mathbb R}^2 \to {\mathbb R}^2$ takes
+As a linear mapping $M \colon {\mathbb R}^2 \to {\mathbb R}^2$ takes
 $\vec{e}_1 = \left[ \begin{smallmatrix} 1 \\ 0 \end{smallmatrix} \right]$ to
 $\left[ \begin{smallmatrix} 1 \\ 3 \end{smallmatrix} \right]$
 and
 $\vec{e}_2 = \left[ \begin{smallmatrix} 0 \\ 1 \end{smallmatrix} \right]$ to
 $\left[ \begin{smallmatrix} 2 \\ 4 \end{smallmatrix} \right]$.  In other
-words
+words,
 \begin{equation*}
 M \vec{e}_1 =
 \begin{bmatrix}
@@ -502,7 +511,7 @@ M \vec{e}_2 =
 
 More generally, if we have an $n \times m$ matrix $A$, that is we have $n$ rows
 and $m$ columns, then the mapping $A \colon {\mathbb R}^m \to {\mathbb R}^n$
-and it takes $\vec{e}_j$ to the $j^{\text{th}}$ column of $A$.
+takes $\vec{e}_j$ to the $j^{\text{th}}$ column of $A$.
 For example,
 \begin{equation*}
 A = 
@@ -598,7 +607,7 @@ x_3 A\vec{e}_3 +
 x_4 A\vec{e}_4 + 
 x_5 A\vec{e}_5 .
 \end{equation*}
-So if I know where $A$ takes all the basis vectors, I know where it takes
+If we know where $A$ takes all the basis vectors, we know where it takes
 all vectors.
 
 As an example, suppose $M$ is the $2 \times 2$ matrix from above, and
@@ -633,40 +642,43 @@ M
 \end{equation*}
 
 Every linear mapping from ${\mathbb R}^m$ to ${\mathbb R}^n$ can be
-represented by an $n \times m$ matrix.  You just figure out where does it
-take the standard basis vectors.  Conversely, every $n \times m$ matrix
-represents a linear mapping.  Hence, we can just think of matrices being
+represented by an $n \times m$ matrix.  You just figure out where it
+takes the standard basis vectors.  Conversely, every $n \times m$ matrix
+represents a linear mapping.  Hence, we may think of matrices being
 linear mappings, and linear mappings being matrices.
 
-Or can we?  Well in this book we study mostly linear differential operators,
-and linear differential operators are linear mappings, just acting on
+Or can we?  In this book we study mostly linear differential operators,
+and linear differential operators are linear mappings, although they are
+not acting on ${\mathbb R}^n$, but on 
 an infinite-dimensional space of functions:
 \begin{equation*}
 L f = g
 \end{equation*}
-for a function $f$ we get a function $g$, and it is linear in the sense that
+for a function $f$ we get a function $g$, and $L$ is linear in the sense that
 \begin{equation*}
-L (\alpha f + \beta h) = \alpha Lf + \beta Lh
+L ( f + h) = Lf + Lh, \qquad \text{and} \qquad
+L (\alpha f) = \alpha Lf .
 \end{equation*}
-for any numbers (scalars) $\alpha$ and $\beta$.
+for any number (scalars) $\alpha$ and all functions $f$ and $h$.
 
 So the answer is not really.  But if we consider vectors in
 finite-dimensional spaces ${\mathbb R}^n$ then yes, every linear mapping is a
 matrix.
-And as we have mentioned at the beginning of this section, that we can
-\myquote{make everything a vector}, well that's not strictly true, but
+We have mentioned at the beginning of this section, that we can
+\myquote{make everything a vector.}  That's not strictly true, but
+it is true
 approximately.  Those \myquote{infinite-dimensional} spaces of functions can
 be approximated by a finite-dimensional space, and then linear operators
 are just matrices.  So approximately, this is true.  And as far as actual
-computations that we can do on a computer, we have to work only with
+computations that we can do on a computer, we can work only with
 finitely many dimensions anyway.  If you ask a computer to plot a function,
-what it does is it samples the function at finitely many points and then
+it samples the function at finitely many points and then
 connects the dots\footnote{If you have every used Matlab, you may have
 noticed that to plot a function, we take a vector of inputs, ask Matlab
 to compute the corresponding vector of values of the function, and then we ask
 it to plot the result.}.
 It doesn't actually give you infinitely many values.
-So the way that you have been using the computer so far has in fact
+So the way that you have been using the computer so far has
 already been a certain approximation of the space of functions by a
 finite-dimensional space.
 
@@ -728,9 +740,348 @@ entry in the resulting vector.
 
 \subsection{Exercises}
 
-FIXME
+\begin{exercise}
+On a piece of graph paper draw the vectors:
+\begin{tasks}(3)
+\task
+$\begin{bmatrix}
+2 \\
+5 
+\end{bmatrix}
+$
+\task
+$\begin{bmatrix}
+-2 \\
+-4
+\end{bmatrix}
+$
+\task
+$(3,-4)$
+\end{tasks}
+\end{exercise}
 
+\begin{exercise}
+On a piece of graph paper draw the vector $(1,2)$ starting at (based at) the
+given point:
+\begin{tasks}(3)
+\task
+based at $(0,0)$
+\task
+based at $(1,2)$
+\task
+based at $(0,-1)$
+\end{tasks}
+\end{exercise}
 
+\begin{exercise}
+Compute the magnitude of
+\begin{tasks}(3)
+\task
+$\begin{bmatrix}
+7 \\
+2 
+\end{bmatrix}
+$
+\task
+$\begin{bmatrix}
+-2 \\
+3 \\
+1
+\end{bmatrix}
+$
+\task
+$(1,3,-4)$
+\end{tasks}
+\end{exercise}
+
+\begin{exercise}
+Compute
+\begin{tasks}(3)
+\task
+$\begin{bmatrix}
+2 \\
+3 
+\end{bmatrix}
++
+\begin{bmatrix}
+7 \\
+-8
+\end{bmatrix}
+$
+\task
+$\begin{bmatrix}
+-2 \\
+3 
+\end{bmatrix}
+-
+\begin{bmatrix}
+6 \\
+-4
+\end{bmatrix}
+$
+\task
+$
+-\begin{bmatrix}
+-3 \\
+2 
+\end{bmatrix}
+$
+\task
+$
+4\begin{bmatrix}
+-1 \\
+5 
+\end{bmatrix}
+$
+\task
+$
+5\begin{bmatrix}
+1 \\
+0 
+\end{bmatrix}
++
+9
+\begin{bmatrix}
+0 \\
+1
+\end{bmatrix}
+$
+\task
+$
+3\begin{bmatrix}
+1 \\
+-8 
+\end{bmatrix}
+-
+2
+\begin{bmatrix}
+3 \\
+-1
+\end{bmatrix}
+$
+\end{tasks}
+\end{exercise}
+
+\begin{exercise}
+If $\vec{x} = (1,2)$ and $\vec{y}$ are added together we find
+$\vec{x}+\vec{y} = (0,2)$.  What is $\vec{y}$?
+\end{exercise}
+
+\begin{exercise}
+Write $(1,2,3)$ as a linear combination of the standard basis vectors
+$\vec{e}_1$, $\vec{e}_2$, and $\vec{e}_3$.
+\end{exercise}
+
+\begin{exercise}
+If the magnitude of $\vec{x}$ is 4, what is the magnitude of
+\begin{tasks}(6)
+\task
+$0\vec{x}$
+\task
+$3\vec{x}$
+\task
+$-\vec{x}$
+\task
+$-4\vec{x}$
+\task
+$\vec{x}+\vec{x}$
+\task
+$\vec{x}-\vec{x}$
+\end{tasks}
+\end{exercise}
+
+\begin{exercise}
+Suppose a linear mapping $F \colon {\mathbb R}^2 \to {\mathbb R}^2$
+takes $(1,0)$ to $(2,-1)$ and it takes $(0,1)$ to $(3,3)$. 
+Where does it take
+\begin{tasks}(3)
+\task
+$(1,1)$
+\task
+$(2,0)$
+\task
+$(2,-1)$
+\end{tasks}
+\end{exercise}
+
+\begin{exercise}
+Suppose a linear mapping $F \colon {\mathbb R}^3 \to {\mathbb R}^2$
+takes $(1,0,0)$ to $(2,1)$ and it takes $(0,1,0)$ to $(3,4)$ and
+it takes $(0,0,1)$ to $(5,6)$.  Write down the matrix representing
+the mapping $F$.
+\end{exercise}
+
+\begin{exercise}
+Suppose that a mapping $F \colon {\mathbb R}^2 \to \mathbb{R}^2$ takes
+$(1,0)$ to $(1,2)$, $(0,1)$ to $(3,4)$, and it takes $(1,1)$ to $(0,-1)$.
+Explain why $F$ is not linear.
+\end{exercise}
+
+\begin{exercise}[Challenging]
+Let ${\mathbb R}^3$ represent the space of quadratic polynomials
+in $t$: a point $(a_0,a_1,a_2)$ in ${\mathbb R}^3$ represents
+the polynomial $a_0 + a_1 t + a_2 t^2$.
+Consider the derivative $\frac{d}{dt}$ as a mapping of ${\mathbb R}^3$ to
+${\mathbb R}^3$,
+and note that $\frac{d}{dt}$ is linear.
+Write down $\frac{d}{dt}$ as a $3 \times 3$ matrix.
+\end{exercise}
+
+\setcounter{exercise}{100}
+
+\begin{exercise}
+Compute the magnitude of
+\begin{tasks}(3)
+\task
+$\begin{bmatrix}
+1 \\
+3
+\end{bmatrix}
+$
+\task
+$\begin{bmatrix}
+2 \\
+3 \\
+-1
+\end{bmatrix}
+$
+\task
+$(-2,1,-2)$
+\end{tasks}
+\end{exercise}
+\exsol{%
+a)~$\sqrt{10}$,
+\quad b)~$\sqrt{14}$,
+\quad c)~$3$
+}
+
+\begin{exercise}
+Compute
+\begin{tasks}(3)
+\task
+$\begin{bmatrix}
+3 \\
+1 
+\end{bmatrix}
++
+\begin{bmatrix}
+6 \\
+-3
+\end{bmatrix}
+$
+\task
+$\begin{bmatrix}
+-1 \\
+2 
+\end{bmatrix}
+-
+\begin{bmatrix}
+2 \\
+-1
+\end{bmatrix}
+$
+\task
+$
+-\begin{bmatrix}
+-5 \\
+3 
+\end{bmatrix}
+$
+\task
+$
+2\begin{bmatrix}
+-2 \\
+4 
+\end{bmatrix}
+$
+\task
+$
+3\begin{bmatrix}
+1 \\
+0 
+\end{bmatrix}
++
+7
+\begin{bmatrix}
+0 \\
+1
+\end{bmatrix}
+$
+\task
+$
+2\begin{bmatrix}
+2 \\
+-3 
+\end{bmatrix}
+-
+6
+\begin{bmatrix}
+2 \\
+-1
+\end{bmatrix}
+$
+\end{tasks}
+\end{exercise}
+\exsol{%
+a)~$\begin{bmatrix}
+9 \\
+-2
+\end{bmatrix}$
+\quad b)~$\begin{bmatrix}
+-3 \\
+3
+\end{bmatrix}$
+\quad c)~$\begin{bmatrix}
+5 \\
+-3
+\end{bmatrix}$
+\quad d)~$\begin{bmatrix}
+-4 \\
+8
+\end{bmatrix}$
+\quad e)~$\begin{bmatrix}
+3 \\
+7
+\end{bmatrix}$
+\quad f)~$\begin{bmatrix}
+-8 \\
+3
+\end{bmatrix}$
+}
+
+\begin{exercise}
+If the magnitude of $\vec{x}$ is 5, what is the magnitude of
+\begin{tasks}(3)
+\task
+$4\vec{x}$
+\task
+$-2\vec{x}$
+\task
+$-4\vec{x}$
+\end{tasks}
+\end{exercise}
+\exsol{%
+a)~$20$,
+\quad b)~$10$,
+\quad c)~$20$
+}
+
+\begin{exercise}
+Suppose a linear mapping $F \colon {\mathbb R}^2 \to {\mathbb R}^2$
+takes $(1,0)$ to $(1,-1)$ and it takes $(0,1)$ to $(2,0)$. 
+Where does it take
+\begin{tasks}(3)
+\task
+$(1,1)$
+\task
+$(0,2)$
+\task
+$(1,-1)$
+\end{tasks}
+\end{exercise}
+\exsol{%
+a)~$(3,-1)$, \qquad b)~$(4,0)$, \qquad c)~$(-1,-1)$.
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1931,7 +2282,149 @@ and come up quite often in applications.
 
 \subsection{Exercises}
 
+\begin{exercise}
+Compute the inverse of the given matrices
+\begin{tasks}(4)
+\task
+$\begin{bmatrix}
+-3
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+0 & -1 \\
+1 & 0
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+1 & 4 \\
+1 & 3
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+2 & 2 \\
+1 & 4
+\end{bmatrix}$
+\end{tasks}
+\end{exercise}
+
+\begin{exercise}
+Compute the inverse of the given matrices
+\begin{tasks}(3)
+\task
+$\begin{bmatrix}
+-2 & 0 \\
+0 & 1 
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+3 & 0 & 0 \\
+0 & -2 & 0 \\ 
+0 & 0 & 1
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+1 & 0 & 0 & 0 \\
+0 & -1 & 0 & 0 \\ 
+0 & 0 & 0.01 & 0 \\
+0 & 0 & 0 & -5
+\end{bmatrix}$
+\end{tasks}
+\end{exercise}
+
 FIXME:
+
+\setcounter{exercise}{100}
+
+\begin{exercise}
+Compute the inverse of the given matrices
+\begin{tasks}(4)
+\task
+$\begin{bmatrix}
+2
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+0 & 1 \\
+1 & 0
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+1 & 2 \\
+3 & 5
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+4 & 2 \\
+4 & 4
+\end{bmatrix}$
+\end{tasks}
+\end{exercise}
+\exsol{%
+a)
+$\begin{bmatrix}
+\nicefrac{1}{2}
+\end{bmatrix}$,
+\qquad b)
+$\begin{bmatrix}
+0 & 1 \\
+1 & 0
+\end{bmatrix}$,
+\qquad c)
+$\begin{bmatrix}
+-5 & 2 \\
+3 & -1
+\end{bmatrix}$,
+\qquad d)
+$\begin{bmatrix}
+\nicefrac{1}{2} & \nicefrac{-1}{4} \\
+\nicefrac{-1}{2} & \nicefrac{1}{2}
+\end{bmatrix}$
+}
+
+\begin{exercise}
+Compute the inverse of the given matrices
+\begin{tasks}(3)
+\task
+$\begin{bmatrix}
+2 & 0 \\
+0 & 3 
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+4 & 0 & 0 \\
+0 & 5 & 0 \\ 
+0 & 0 & -1
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+-1 & 0 & 0 & 0 \\
+0 & 2 & 0 & 0 \\ 
+0 & 0 & 3 & 0 \\
+0 & 0 & 0 & 0.1
+\end{bmatrix}$
+\end{tasks}
+\end{exercise}
+\exsol{%
+a)~$\begin{bmatrix}
+\nicefrac{1}{2} & 0 \\
+0 & \nicefrac{1}{3} 
+\end{bmatrix}$,
+\qquad
+b)~$\begin{bmatrix}
+\nicefrac{1}{4} & 0 & 0 \\
+0 & \nicefrac{1}{5} & 0 \\ 
+0 & 0 & -1
+\end{bmatrix}$,
+\qquad
+c)~$\begin{bmatrix}
+-1 & 0 & 0 & 0 \\
+0 & \nicefrac{1}{2} & 0 & 0 \\ 
+0 & 0 & \nicefrac{1}{3} & 0 \\
+0 & 0 & 0 & 10
+\end{bmatrix}$
+}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -3006,6 +3499,30 @@ $\begin{bmatrix}
 \end{tasks}
 \end{exercise}
 
+\begin{exercise}
+Compute the inverse of the given matrices
+\begin{tasks}(3)
+\task
+$\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+0 & 1 & 0
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+1 & 1 & 1 \\
+0 & 2 & 1 \\
+0 & 0 & 1
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+1 & 2 & 3 \\
+2 & 0 & 1 \\
+0 & 2 & 1
+\end{bmatrix}$
+\end{tasks}
+\end{exercise}
+
 FIXME
 
 \setcounter{exercise}{100}
@@ -3093,6 +3610,49 @@ a)~$\begin{bmatrix}
 \quad h)~$\begin{bmatrix}
 1 & 2 & 3 & 0 \\
 0 & 0 & 0 & 1
+\end{bmatrix}$
+}
+
+\begin{exercise}
+Compute the inverse of the given matrices
+\begin{tasks}(3)
+\task
+$\begin{bmatrix}
+0 & 1 & 0 \\
+-1 & 0 & 0 \\
+0 & 0 & 1
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+1 & 1 & 1 \\
+1 & 1 & 0 \\
+1 & 0 & 0
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+2 & 4 & 0 \\
+2 & 2 & 3 \\
+2 & 4 & 1
+\end{bmatrix}$
+\end{tasks}
+\end{exercise}
+\exsol{%
+a)~$\begin{bmatrix}
+0 & -1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 1
+\end{bmatrix}$,
+\qquad
+b)~$\begin{bmatrix}
+0 & 0 & 1 \\
+0 & 1 & -1 \\
+1 & -1 & 0
+\end{bmatrix}$,
+\qquad
+c)~$\begin{bmatrix}
+\nicefrac{5}{2} & 1 & -3 \\
+-1 & \nicefrac{-1}{2} & \nicefrac{3}{2} \\
+-1 & 0 & 1
 \end{bmatrix}$
 }
 
