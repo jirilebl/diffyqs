@@ -671,14 +671,15 @@ approximately.  Those \myquote{infinite-dimensional} spaces of functions can
 be approximated by a finite-dimensional space, and then linear operators
 are just matrices.  So approximately, this is true.  And as far as actual
 computations that we can do on a computer, we can work only with
-finitely many dimensions anyway.  If you ask a computer to plot a function,
+finitely many dimensions anyway.  If you ask a computer or your calculator
+to plot a function,
 it samples the function at finitely many points and then
-connects the dots\footnote{If you have every used Matlab, you may have
+connects the dots\footnote{If you have ever used Matlab, you may have
 noticed that to plot a function, we take a vector of inputs, ask Matlab
 to compute the corresponding vector of values of the function, and then we ask
 it to plot the result.}.
-It doesn't actually give you infinitely many values.
-So the way that you have been using the computer so far has
+It does not actually give you infinitely many values.
+So the way that you have been using the computer or your calculator so far has
 already been a certain approximation of the space of functions by a
 finite-dimensional space.
 
@@ -770,6 +771,39 @@ based at $(0,0)$
 based at $(1,2)$
 \task
 based at $(0,-1)$
+\end{tasks}
+\end{exercise}
+
+\begin{exercise}
+On a piece of graph paper draw the following
+operations.  Draw and label the vectors involved in the operations
+as well as the result:
+\begin{tasks}(3)
+\task
+$\begin{bmatrix}
+1 \\
+-4
+\end{bmatrix}
++
+\begin{bmatrix}
+2 \\
+3
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+-3 \\
+2
+\end{bmatrix}
+-
+\begin{bmatrix}
+1 \\
+3
+\end{bmatrix}$
+\task
+$3\begin{bmatrix}
+2 \\
+1
+\end{bmatrix}$
 \end{tasks}
 \end{exercise}
 
@@ -1097,8 +1131,9 @@ Let us motivate what we want to achieve with matrices.
 Real-valued linear mappings of the real line, that is linear functions
 which eat numbers and spit out numbers, are just multiplications by a
 number.  Consider a mapping defined by multiplying by a
-number, call that $\alpha$, it takes $x$ to $\alpha x$.  What we can do is
-to \emph{add} such mappings and we can \emph{multiply} them.
+number.  Let's call this number $\alpha$.   The mapping then takes $x$ to
+$\alpha x$.  What we can do is
+to \emph{add} such mappings.
 If we have another mapping $\beta$, then
 \begin{equation*}
 \alpha x + \beta x = (\alpha + \beta) x .
@@ -1117,16 +1152,17 @@ $\alpha x$ through the second mapping $\beta$.  In other words,
 \end{equation*}
 So we just multiply those two numbers.  For example, using our doubling
 and tripling mappings, if we double and then triple, that is $T(Dx)$ then
-we obtain $6x$.  Then the composition $TD$ is the mapping that multiplies
+we obtain $3(2x) = 6x$.  The composition $TD$ is the mapping that multiplies
 by $6$.  For larger matrices, composition also ends up being a kind of
 multiplication, and that is why we write it as $TD$.
 
 \subsection{Matrix addition and scalar multiplication}
 
-The mappings that multiply by numbers are just $1 \times 1$ matrices.  The
+The mappings that multiply numbers by numbers are just $1 \times 1$ matrices.  The
 number $\alpha$ above could be written as a matrix $[\alpha]$.
-Well, so perhaps we would want to do the same things to all matrices that we
-did to those $1 \times 1$ matrices above.  First, let us add matrices.
+So perhaps we would want to do the same things to all matrices that we
+did to those $1 \times 1$ matrices at the start of this section above.
+First, let us add matrices.
 If we have a matrix $A$ and a matrix $B$ that are of the same size,
 say $m \times n$, then they are mappings from
 ${\mathbb{R}}^n$ to ${\mathbb{R}}^m$.  The mapping $A+B$ should also be a mapping from
@@ -1328,13 +1364,13 @@ You'll notice that we didn't really have to even compute what the
 result is to convince ourselves that the two expressions were equal.
 
 If the sizes of the matrices do not match, then addition is not defined.
-So if $A$ is $3 \times 2$ and $B$ is $2 \times 5$, then we just cannot add
+If $A$ is $3 \times 2$ and $B$ is $2 \times 5$, then we cannot add
 these matrices.  We don't know what that could possibly mean.
 
 \medskip
 
-It is also useful to have a matrix that if we add it to any other matrix
-nothing happens.  This is the zero matrix, the matrix of all zeros:
+It is also useful to have a matrix which added to any other matrix
+does nothing.  This is the zero matrix, the matrix of all zeros:
 \begin{equation*}
 \begin{bmatrix}
 1 & 2 \\
@@ -1353,12 +1389,12 @@ nothing happens.  This is the zero matrix, the matrix of all zeros:
 \end{equation*}
 We often denote the zero matrix
 by $0$ without specifying size.  We would then just write $A + 0$, where we
-just assume that $0$ is the matrix of the same size as $A$.
+just assume that $0$ is the zero matrix of the same size as $A$.
 
 \medskip
 
 There are really two things we can multiply matrices by.  We could multiply
-matrices by scalars or we could multiply by other matrices.  Let's first
+matrices by scalars or we could multiply by other matrices.  Let us first
 consider multiplication by scalars.
 For a matrix $A$ and a scalar $\alpha$ we want $\alpha A$ to be the matrix
 that accomplishes
@@ -1410,20 +1446,20 @@ These rules should look very familiar.
 
 As we mentioned above, composition of linear mappings is also a
 multiplication of matrices.  Suppose $A$ is an $m \times n$ matrix,
-that is it takes
+that is, $A$ takes
 ${\mathbb R}^n$ to
 ${\mathbb R}^m$,
-and $B$ is an $n \times p$ matrix, that is it takes
+and $B$ is an $n \times p$ matrix, that is, $B$ takes
 ${\mathbb R}^p$ to
 ${\mathbb R}^n$.  The composition $AB$ should work as follows
 \begin{equation*}
 AB\vec{x} = A(B\vec{x}) .
 \end{equation*}
-That is, a vector $\vec{x}$ in ${\mathbb R}^p$ gets taken to 
+First, a vector $\vec{x}$ in ${\mathbb R}^p$ gets taken to 
 the vector $B\vec{x}$ in
 ${\mathbb R}^n$.  Then the mapping $A$ takes it to the vector $A(B\vec{x})$
 in ${\mathbb R}^m$.  In other words, the composition $AB$ should be an $m
-\times p$ matrix.  So in terms of sizes we should have
+\times p$ matrix.  In terms of sizes we should have
 \begin{equation*}
 \text{``} \quad
 [ m \times n ]
@@ -1434,12 +1470,14 @@ in ${\mathbb R}^m$.  In other words, the composition $AB$ should be an $m
 \end{equation*}
 Notice how the middle size must match.
 
-OK, so now we know what sizes of matrices we should be able to multiply.
-Let us now define matrix multiplication.  We start with the so-called
+OK, now we know what sizes of matrices we should be able to multiply,
+and what the product should be.
+Let us see how to actually compute matrix multiplication.
+We start with the so-called
 \emph{\myindex{dot product}} (or \emph{\myindex{inner product}}) of two vectors.
 Usually this will be a row vector multiplied
-with a column vector of the same size.  For the dot product we multiply
-each pair of entries from the first and the second vector and we sum these
+with a column vector of the same size.  Dot product multiplies
+each pair of entries from the first and the second vector and sums these
 products.  The result is a single number.
 For example,
 \begin{equation*}
@@ -1465,7 +1503,7 @@ First let us denote by $\operatorname{row}_i(A)$ the $i^{\text{th}}$ row
 of $A$ and by
 $\operatorname{column}_j(A)$ the $j^{\text{th}}$ column of $A$.
 For an $m \times n$ matrix $A$ and an $n \times p$ matrix $B$
-we can define the product $AB$.  We let $AB$ be an $m \times p$
+we can compute the product $AB$.  The matrix $AB$ is an $m \times p$
 matrix whose $ij^{\text{th}}$ entry is the dot product
 \begin{equation*}
 \operatorname{row}_i(A) \cdot
@@ -1524,8 +1562,10 @@ or with some numbers:
 \end{bmatrix} .
 \end{equation*}
 
-An useful consequence of the definition is that $A \vec{x}$ for a matrix
-and a vector is also matrix multiplication.  That is really why we think of
+A useful consequence of the definition is that the evaluation
+$A \vec{x}$ for a matrix $A$
+and a (column) vector $\vec{x}$ is also matrix multiplication.
+That is really why we think of
 vectors as column vectors, or $n \times 1$ matrices.
 For example,
 \begin{equation*}
@@ -1548,15 +1588,16 @@ For example,
 If you look at the last section, that is precisely the last
 example we gave.
 
-You should stare at the definition of multiplication and
-the previous definition of $A\vec{x}$ as a mapping
+You should stare at the computation of multiplication of matrices $AB$
+and
+the previous definition of $A\vec{y}$ as a mapping
 for a moment.
-Essentially what we are doing with matrix multiplication is applying
+What we are doing with matrix multiplication is applying
 the mapping $A$ to the columns of $B$.  This is usually written as follows.
 Suppose we write the $n \times p$ matrix
 $B = [ \vec{b}_1 ~ \vec{b}_2 ~ \cdots ~ \vec{b}_p ]$, where
 $\vec{b}_1, \vec{b}_2, \ldots, \vec{b}_p$ are the columns of $B$.  Then
-with a $m \times n$ matrix $A$ we have
+for an $m \times n$ matrix $A$,
 \begin{equation*}
 AB = 
 A [ \vec{b}_1 ~ \vec{b}_2 ~ \cdots ~ \vec{b}_p ]
@@ -1657,7 +1698,7 @@ does not touch anything.
 
 We have the following rules for matrix multiplication.  Suppose that
 $A$, $B$, $C$ are matrices of the correct sizes so that the following
-make sense.  Let $\alpha$ denote a scalar (number).
+make sense.  Let $\alpha$ denote a scalar (number).  Then
 \begin{align*}
 A(BC) & = (AB)C & & \text{(\myindex{associative law})} , \\
 A(B+C) & = AB + AC & & \text{(\myindex{distributive law})} , \\
@@ -1838,7 +1879,7 @@ and
 \end{equation*}
 \end{example}
 
-There is one rule you have used since primary school on numbers
+There is one multiplication rule you have used since primary school on numbers
 that is quite conspicuously missing for matrices.
 That is, matrix multiplication is
 not commutative.  Firstly, just because $AB$ makes sense, it may be
@@ -1896,23 +1937,29 @@ AB = I = BA .
 Then we call $B$ the inverse of $A$ and we denote $B$ by $A^{-1}$.
 Perhaps not surprisingly, ${(A^{-1})}^{-1} = A$, since if the inverse of $A$ 
 is $B$, then the inverse of $B$ is $A$.
-
 If the inverse of $A$ exists, then we say $A$ is
 \emph{invertible\index{invertible matrix}}.
-If $A$ is not invertible we sometimes say $A$ is
+If $A$ is not invertible we say $A$ is
 \emph{singular\index{singular matrix}}.
+
+If $A = [a]$ is a $1 \times 1$ matrix, then $A^{-1}$ is $a^{-1} =
+\frac{1}{a}$.  That is where the notation comes from.  The computation is not nearly as simple when $A$ is
+larger.
+
 %Singular matrices are those you cannot \myquote{divide by.}
 %So the mistake of \myquote{division by zero} is replaced by the mistake
 %\myquote{inverting a singular matrix.}
 
 The proper formulation of the cancellation rule is:
+\begin{center}
 \emph{If $A$ is invertible,
 then
 $AB = AC$ implies $B=C$.}
-Similarly:
-\emph{If $A$ is invertible,
-then
-$BA = CA$ implies $B=C$.}
+\end{center}
+%Similarly:
+%\emph{If $A$ is invertible,
+%then
+%$BA = CA$ implies $B=C$.}
 The computation is what you would do in regular algebra with numbers,
 but you have to
 be careful never to commute matrices:
@@ -1922,8 +1969,11 @@ A^{-1}AB & = A^{-1}AC , \\
 IB & = IC , \\
 B & = C .
 \end{align*}
-And similarly for cancellation on the right: \emph{If $A$ is invertible,
-then $BA = CA$ implies $B=C$}.
+And similarly for cancellation on the right:
+\begin{center}
+\emph{If $A$ is invertible,
+then $BA = CA$ implies $B=C$.}
+\end{center}
 
 Notice that the rule says, among other things, that the
 inverse of a matrix is unique if it exists:  If $AB = I = AC$ then $A$ is
@@ -1996,7 +2046,7 @@ Let's try it:
 0 & 1
 \end{bmatrix} .
 \end{equation*}
-Of course, just as we cannot divide by every number, not every matrix is
+Just as we cannot divide by every number, not every matrix is
 invertible.  In the case of matrices however we may have singular
 matrices that are not zero.  For example,
 \begin{equation*}
@@ -2024,7 +2074,7 @@ Let us try it:
 %mbxENDIGNORE
 %mbx \text{???}
 \end{equation*}
-We get into a bit of trouble, we are trying to divide by zero.
+We get into a bit of trouble; we are trying to divide by zero.
 The matrix is not invertible, it is singular.
 
 So a $2 \times 2$ matrix $A$ is invertible whenever
@@ -2061,11 +2111,15 @@ example,
 0 & 0 & 3
 \end{bmatrix}
 \begin{bmatrix}
-2 \\ 2 \\ 2
+4 \\ 5 \\ 6
 \end{bmatrix}
 =
 \begin{bmatrix}
-2 \\ 4 \\ 6
+1 \cdot 4 \\ 2 \cdot 5 \\ 3 \cdot 6
+\end{bmatrix}
+=
+\begin{bmatrix}
+4 \\ 10 \\ 18
 \end{bmatrix} .
 \end{equation*}
 Similarly, when they multiply another matrix from the left, they multiply
@@ -2248,7 +2302,8 @@ It is left to the reader to verify that computing the matrix product on the
 left and then transposing is the same as computing the matrix product on the
 right.
 
-If we have a column vector $\vec{x}$ which to which we apply a matrix $A$,
+If we have a column vector $\vec{x}$ to which we apply a matrix $A$
+and we transpose the result,
 then the row vector $\vec{x}^T$ applies to $A^T$ from the left:
 \begin{equation*}
 {(A\vec{x})}^T = \vec{x}^TA^T .
