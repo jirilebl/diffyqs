@@ -3482,7 +3482,7 @@ We write the augmented matrix and we start reducing:
 0 & \boxed{1} & 0 & \nicefrac{3}{11} & \nicefrac{-9}{11} & \nicefrac{5}{11} \\
 0 & 0 & \boxed{1} & \nicefrac{2}{11} & \nicefrac{5}{11} & \nicefrac{-4}{11}
 \end{array}
-\right]
+\right] .
 \end{equation*}
 So
 \begin{equation*}
@@ -3724,9 +3724,9 @@ c)~$\begin{bmatrix}
 When using linear algebra, one often finds oneself looking at
 solutions of a linear equation $L\vec{x} = \vec{0}$ for some matrix $L$,
 that is, the kernel of $L$.
-Unless this equation has a unique solution we find that 
-the set of all such solutions has a nice structure.  In fact, it looks and
-acts a lot like some euclidean ${\mathbb R}^k$.
+Unless this equation has a unique solution zero,
+the set of all such solutions has a nice structure:  It looks and
+acts a lot like some euclidean space ${\mathbb R}^k$.
 
 We say that a set $S$ of vectors in ${\mathbb R}^n$ is a
 \emph{\myindex{subspace}} if
@@ -3736,24 +3736,35 @@ $\alpha$ is a scalar, then
 \vec{x} + \vec{y}, \qquad \text{and} \qquad \alpha \vec{x}
 \end{equation*}
 are also members of $S$.  Since we can multiply by scalars and add,
-any linear combination of members of $S$ is again a member of $S$.
+any linear combination of members of $S$ is again a member of $S$.  Another
+way of saying that $S$ is a subspace is that it is a set of vectors such
+that every linear combination of vectors in $S$ is in $S$.
 
 \begin{example} \label{example:simplesubspaces}
 If we let $S = {\mathbb R}^n$, then this $S$ is a subspace of
-${\mathbb R}^n$.  On the other hand the set $S' = \{ \vec{0} \}$ is 
-also a subspace of ${\mathbb R}^n$.
+${\mathbb R}^n$.  Adding any two vectors in ${\mathbb R}^n$ gets a vector in
+${\mathbb R}^n$, and so does multiplying by scalars.
+
+On the other hand the set $S' = \{ \vec{0} \}$, that is,
+the set of the zero vector by itself, is 
+also a subspace of ${\mathbb R}^n$.  There's only one vector in this
+subspace so we only need to check for that one vector, and everything checks
+out: $\vec{0}+\vec{0} = \vec{0}$ and $\alpha \vec{0} = \vec{0}$.
 
 As a little more complicated example, the set $S''$ of all the vectors of the form
 $(a,a)$ for any real number $a$, such as $(1,1)$, $(3,3)$, or $(-0.5,-0.5)$
-is a subspace of ${\mathbb R}^2$.
+is a subspace of ${\mathbb R}^2$.  Adding two such vectors, say
+$(1,1)+(3,3) = (4,4)$ again gets a vector of the same form, and so does
+multiplying by a scalar, say $8(1,1) = (8,8)$.
 \end{example}
 
 If $S$ is a subspace and every vector in $S$ can be written
-as a linear combination of $k$ linearly independent nonzero vectors
+as a linear combination of a certain fixed set of $k$ linearly independent
+nonzero vectors
 \begin{equation*}
 \vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k
 \end{equation*}
-that are also in $SS$,
+that are also in $S$,
 then the set 
 $\{ \vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k \}$ is called a
 \emph{\myindex{basis}} of $S$.  In other words, $S$
@@ -3768,9 +3779,10 @@ and we write
 \begin{theorem}
 If $S \subset {\mathbb R}^n$ is a subspace and $S$ is not the trivial
 subspace $\{ \vec{0} \}$, then there exists a
+unique number $k$ (the dimension) and a (not unique)
 basis
 $\{ \vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k \}$, such that every
-$\vec{w}$ can be uniquely represented by
+$\vec{w}$ in $S$ can be uniquely represented by
 \begin{equation*}
 \vec{w} = 
 \alpha_1 \vec{v}_1 + 
@@ -3782,9 +3794,18 @@ $\vec{w}$ can be uniquely represented by
 for some scalars $\alpha_1$, $\alpha_2$, \ldots, $\alpha_k$.
 \end{theorem}
 
-So just like a point ${\mathbb R}^k$ is represented by a $k$-tuple of
+Just like a point ${\mathbb R}^k$ is represented by a $k$-tuple of
 numbers, so is a point in a $k$-dimensional subspace of ${\mathbb R}^n$
 represented by a $k$-tuple of numbers.  At least once we have fixed a basis.
+A different basis would give a different $k$-tuple of numbers for the same
+point.
+
+We should reiterate that while $k$ is unique (a subspace cannot have two different
+dimensions), the set of basis vectors is not at all unique.  There are lots
+of different bases for any given subspace.  Finding just the right basis for
+a subspace is what is a large part of what one does in linear algebra and in
+fact in linear differential equations, although at first glance
+sometimes it may not seem like that is what we are doing.
 
 \begin{example}
 The standard basis
@@ -3799,14 +3820,17 @@ So as expected
 
 On the other hand the subspace $\{ \vec{0} \}$ is of dimension $0$.
 
-Finally the subspace $S''$ from the example above, that is the set of
-vectors $(a,a)$ is of dimension 1, and a basis is simply the single
-vector $(1,1)$, as every vector in $S''$ can be represented by $a (1,1) =
-(a,a)$.
+Consider the subspace $S''$ from the example above, that is, the set of
+vectors $(a,a)$ is of dimension 1.  One possible basis is simply
+$\{ (1,1) \}$, that is the single
+vector $(1,1)$: every vector in $S''$ can be represented by $a (1,1) =
+(a,a)$.  Similarly another possible basis would be $\{ (-1,-1) \}$.  Then
+the point $(a,a)$ would be represented as $(-a) (1,1)$.
 \end{example}
 
-Now a set of solutions of a linear equation $L\vec{x} = \vec{0}$, that is,
-the kernel of $L$ is a subspace:  If $\vec{x}$ and $\vec{y}$ are solutions,
+A set of solutions of a linear equation $L\vec{x} = \vec{0}$, 
+the kernel of $L$, is a subspace:
+If $\vec{x}$ and $\vec{y}$ are solutions,
 then
 \begin{equation*}
 L(\vec{x}+\vec{y}) = 
@@ -3826,16 +3850,23 @@ matrix.
 The same sort of idea governs the solutions of linear differential
 equations.  We will be looking for a kernel of a linear differential 
 operator, and as it is a subspace, we will be looking for a basis of this
-kernel.  Majority of this book is essentially dedicated to trying to find
+kernel.  Majority of this book is essentially dedicated to finding
 such bases.
 
 The kernel of a matrix is the same as the kernel of its reduced echelon
-form.  And for a matrix in reduced row echelon form, it is rather easy to
-find.  For each non-pivot column find a vector which has a $-1$ in the entry
-corresponding to the non-pivot column.  Then for all the entries
+form.  For a matrix in reduced row echelon form, the kernel is rather easy to
+find.  If a vector $\vec{x}$ is applied to a matrix $L$, then each entry in
+$\vec{x}$ corresponds to a column of $L$, the column that the entry
+multiplies.
+To find the kernel,
+pick a 
+non-pivot column make a vector which has a $-1$ in the entry
+corresponding to this non-pivot column, and zeros at all the other entries
+corresponding to the other non-pivot columns.
+Then for all the entries
 corresponding to pivot columns make it precisely the value in the
 corresponding row of the non-pivot column to make the vector be a
-solution to $L \vec{x} = \vec{0}$, all the other entries can be zero.
+solution to $L \vec{x} = \vec{0}$.
 This procedure is perhaps best understood by example.
 
 \begin{example}
@@ -3850,9 +3881,10 @@ Consider the matrix
 This matrix is in reduced row echelon form, the pivots are marked.
 There are two non-pivot columns, so the kernel has dimension 2, that
 is, it is the span of 2 vectors.  Let us find the first vector.
-As we said, we look at the first non-pivot column, we put a $-1$ in the
-second entry, and $0$ in the $5^{\text{th}}$
-entry:
+As we said, we look at the first non-pivot column, the $2^{\text{nd}}$ column, 
+and we put a $-1$ in the
+$2^{\text{nd}}$ entry of our vector.  We put a $0$ in the $5^{\text{th}}$
+entry as the $5^{\text{th}}$ column is also a non-pivot column.
 \begin{equation*}
 \begin{bmatrix}
 ? \\ -1 \\ ? \\ ? \\ 0
@@ -3861,15 +3893,17 @@ entry:
 Let us now fill the rest.  When this vector hits the first row, we get a
 $-2$ and $1$ times whatever the first question mark is.  So make the first
 question mark $2$.  For the second and third rows, it is sufficient to make
-it the question marks zero.  Let us check 
+it the question marks zero.  We are really filling in the non-pivot column
+into the remaining entries. Let us check while marking which numbers went
+where:
 \begin{equation*}
 \begin{bmatrix}
-{1} & 2 & 0 & 0 & 3 \\
-0 & 0 & {1} & 0 & 4 \\
-0 & 0 & 0 & {1} & 5
+1 & \boxed{2} & 0 & 0 & 3 \\
+0 & \boxed{0} & 1 & 0 & 4 \\
+0 & \boxed{0} & 0 & 1 & 5
 \end{bmatrix} 
 \begin{bmatrix}
-2 \\ -1 \\ 0 \\ 0 \\ 0
+\boxed{2} \\ -1 \\ \boxed{0} \\ \boxed{0} \\ 0
 \end{bmatrix}
 =
 \begin{bmatrix}
@@ -3884,15 +3918,15 @@ Yay!  How about the second vector.  We start with
 \end{bmatrix}
 \end{equation*}
 Now we have to set the first question mark to 3, the second to 4 and the
-third to 5.  Let us check,
+third to 5.  Let us check, marking things as previously,
 \begin{equation*}
 \begin{bmatrix}
-{1} & 2 & 0 & 0 & 3 \\
-0 & 0 & {1} & 0 & 4 \\
-0 & 0 & 0 & {1} & 5
+1 & 2 & 0 & 0 & \boxed{3} \\
+0 & 0 & 1 & 0 & \boxed{4} \\
+0 & 0 & 0 & 1 & \boxed{5}
 \end{bmatrix} 
 \begin{bmatrix}
-3 \\ 0 \\ 4 \\ 5 \\ -1
+\boxed{3} \\ 0 \\ \boxed{4} \\ \boxed{5} \\ -1
 \end{bmatrix}
 =
 \begin{bmatrix}
@@ -3900,7 +3934,7 @@ third to 5.  Let us check,
 \end{bmatrix}
 .
 \end{equation*}
-We have now found the entire kernel.  The kernel of the matrix is
+We have found the basis of the kernel.  The kernel of the matrix is
 \begin{equation*}
 \operatorname{span} \left\{
 \begin{bmatrix}
@@ -3914,18 +3948,17 @@ We have now found the entire kernel.  The kernel of the matrix is
 \end{equation*}
 \end{example}
 
-The procedure to find the basis of the kernel:
-\begin{enumerate}[(i)]
-\item Find the reduced row echelon form.
-\item Write down the basis of the kernel as above, one vector for each
-non-pivot column.
-\end{enumerate}
-
 What we did in finding a basis of the kernel is we expressed all
 solutions of
 $L \vec{x} = \vec{0}$ as a linear combination of some given vectors.
 
-\medskip
+\pagebreak[2]
+The procedure to find the basis of the kernel of a matrix $L$:
+\begin{enumerate}[(i)]
+\item Find the reduced row echelon form of $L$.
+\item Write down the basis of the kernel as above, one vector for each
+non-pivot column.
+\end{enumerate}
 
 Another example of subspaces are row and column spaces of matrices,
 as those are given as the span of vectors.
@@ -4174,8 +4207,6 @@ the projection.  In other words,
 \begin{example}
 FIXME
 \end{example}
-
-FIXME: bases.
 
 FIXME
 
@@ -4641,5 +4672,247 @@ think about how to write the absolute value of a determinant.
 This notation is not used in this book.
 
 \subsection{Exercises}
+
+\begin{exercise}
+Compute the determinant of the following matrices:
+\begin{tasks}(4)
+\task
+$\begin{bmatrix}
+3
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+1 & 3 \\
+2 & 1
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+2 & 1 \\
+4 & 2
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+1 & 2 & 3 \\
+0 & 4 & 5 \\
+0 & 0 & 6
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+2 & 1 & 0 \\
+-2 & 7 & -3 \\
+0 & 2 & 0
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+2 & 1 & 3 \\
+8 & 6 & 3 \\
+7 & 9 & 7
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+0 & 2 & 5 & 7 \\
+0 & 0 & 2 & -3 \\
+3 & 4 & 5 & 7 \\
+0 & 0 & 2 & 4
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+0 &  1 &  2 &  0 \\
+1 &  1 & -1 & -2 \\
+1 &  1 &  2 & -1 \\
+2 & -1 & -2 & -3
+\end{bmatrix}$
+\end{tasks}
+\end{exercise}
+
+\begin{exercise}
+For which $x$ are the following matrices singular (not invertible)
+\begin{tasks}(4)
+\task
+$\begin{bmatrix}
+2 & 3 \\
+2 & x
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+2 & x \\
+1 & 2
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+x & 1 \\
+4 & x
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+x & 0 & 1 \\
+1 & 4 & 2 \\
+1 & 6 & 2
+\end{bmatrix}$
+\end{tasks}
+\end{exercise}
+
+\begin{exercise}
+Compute
+\begin{equation*}
+\det \left( \begin{bmatrix}
+2 & 1 & 2 & 3 \\
+0 & 8 & 6 & 5 \\
+0 & 0 & 3 & 9 \\
+0 & 0 & 0 & 1
+\end{bmatrix}^{-1}
+\right)
+\end{equation*}
+without computing the inverse.
+\end{exercise}
+
+\begin{exercise}
+Suppose
+\begin{equation*}
+L = \begin{bmatrix}
+1 & 0 & 0 & 0 \\
+2 & 1 & 0 & 0 \\
+7 & \pi & 1 & 0 \\
+2^8 & 5 & -99 & 1
+\end{bmatrix}
+\qquad \text{and} \qquad
+U = \begin{bmatrix}
+5 & 9 & 1 & -\sin(1) \\
+0 & 1 & 88 & -1 \\
+0 & 0 & 1 & 3 \\
+0 & 0 & 0 & 1
+\end{bmatrix} .
+\end{equation*}
+Let $A = LU$.  Compute $\det(A)$ in a simple way, without computing what is $A$.
+Hint: First read off $\det(L)$ and $\det(U)$.
+\end{exercise}
+
+\begin{exercise}
+Consider the linear mapping from ${\mathbb R}^2$ to ${\mathbb R}^2$
+given by the  matrix
+$A = \begin{bmatrix}
+1 & x \\
+2 & 1
+\end{bmatrix}$
+for some number $x$.  You wish to make $A$ such that it doubles the area of
+every geometric figure.  What are the possibilities for $x$ (there are two
+answers).
+\end{exercise}
+
+FIXME
+
+\setcounter{exercise}{100}
+
+\begin{exercise}
+Compute the determinant of the following matrices:
+\begin{tasks}(4)
+\task
+$\begin{bmatrix}
+-2
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+2 & -2 \\
+1 & 3
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+2 & 2 \\
+2 & 2
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+2 & 9 & -11 \\
+0 & -1 & 5 \\
+0 & 0 & 3
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+2 & 1 & 0 \\
+-2 & 7 & 3 \\
+1 & 1 & 0
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+5 & 1 & 3 \\
+4 & 1 & 1 \\
+4 & 5 & 1
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+3 & 2 & 5 & 7 \\
+0 & 0 & 2 & 0 \\
+0 & 4 & 5 & 0 \\
+2 & 1 & 2 & 4
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+ 0 &  2 &  1 & 0 \\
+ 1 &  2 &  3 & 4 \\
+ 5 &  6 &  7 & 8 \\
+-1 & -2 & -3 & 2
+\end{bmatrix}$
+\end{tasks}
+\end{exercise}
+\exsol{%
+a)~$-2$
+\quad b)~$8$
+\quad c)~$0$
+\quad d)~$-6$
+\quad e)~$-3$
+\quad f)~$28$
+\quad g)~$16$
+\quad h)~$72$
+}
+
+\begin{exercise}
+For which $x$ are the following matrices singular (not invertible)
+\begin{tasks}(4)
+\task
+$\begin{bmatrix}
+1 & 3 \\
+1 & x
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+3 & x \\
+1 & 3
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+x & 3 \\
+3 & x
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+x & 1 & 0 \\
+1 & 4 & 0 \\
+1 & 6 & 2
+\end{bmatrix}$
+\end{tasks}
+\end{exercise}
+\exsol{%
+a)~$3$
+\quad b)~$9$
+\quad c)~$3$
+\quad d)~$\nicefrac{1}{4}$
+}
+
+\begin{exercise}
+Compute
+\begin{equation*}
+\det \left( \begin{bmatrix}
+3 & 4 & 7 & 12 \\
+0 & -1 & 9 & -8 \\
+0 & 0 & -2 & 4 \\
+0 & 0 & 0 & 2
+\end{bmatrix}^{-1}
+\right)
+\end{equation*}
+without computing the inverse.
+\end{exercise}
+\exsol{%
+$12$
+}
 
 FIXME
