@@ -2504,21 +2504,18 @@ Consider the following system of linear equations
 \end{aligned}
 \end{equation}
 
-Without changing the solution,
-we can swap equations in this system,
-we can multiply any of the equations by a nonzero number, and
-we can add a multiple of one equation to another equation.
-These operations always suffice to find a solution.
-The procedure is called \emph{\myindex{elimination}}, since
-we will be eliminating the variables from the system
-one by one until we end with a single equation in one unknown, or
-in fact 3 equations each depending only one unknown.
+There is a systematic procedure
+called \emph{\myindex{elimination}} to solve such a system.
+In this procedure,
+we will eliminate the variables from the equations until we completely
+disentangle how they depend on each other.  We want to end up with equations
+such as $x_3 = 2$, where we can just read off the answer.
 
 A system of linear equations can be written as a matrix equation:
 \begin{equation*}
 A \vec{x} = \vec{b} .
 \end{equation*}
-For the example system above, we find
+The system \eqref{linalg:elim:eq} is written as
 \begin{equation*}
 \underbrace{
 \begin{bmatrix}
@@ -2543,17 +2540,18 @@ x_3
 \end{bmatrix}
 }_{\vec{b}} .
 \end{equation*}
-If we know the inverse of $A$, then we would be done.  We could
-just solve:
+If we knew the inverse of $A$, then we would be done; we would simply solve
+the equation:
 \begin{equation*}
 \vec{x} = A^{-1} A \vec{x} = A^{-1} \vec{b} .
 \end{equation*}
-Well, but that is the problem, we do not know how to compute the
+Well, but that is part of the problem, we do not know how to compute the
 inverse for matrices bigger than $2 \times 2$.
 We will see later that to compute the inverse we need
-to do elimination.
+to do elimination.  In addition, we may wish to solve $A \vec{x} = \vec{b}$
+even if $A$ is not invertible, or perhaps not even square.
 
-There is a few operations we can perform on the equations that don't change
+There are a few operations we can perform on the equations that don't change
 the solution.  First, perhaps a stupid seeming rule, we can swap 
 two equations in \eqref{linalg:elim:eq}:
 \begin{equation*}
@@ -2564,8 +2562,8 @@ two equations in \eqref{linalg:elim:eq}:
 \end{aligned}
 \end{equation*}
 Clearly that has the same solutions $x_1,x_2,x_3$.
-A second rule is that we could multiply a row by a nonzero number.  For
-example suppose we multiply the third equation in \eqref{linalg:elim:eq}
+A second rule is that we can multiply an equation by a nonzero number.  For
+example, we multiply the third equation in \eqref{linalg:elim:eq}
 by 3:
 \begin{equation*}
 \begin{aligned}
@@ -2574,8 +2572,9 @@ by 3:
           3 x_1 +             12 x_2 + 3 x_3 & = 30 .
 \end{aligned}
 \end{equation*}
-Finally we could add a multiple of one equation to another equation.
-For example, we could add 3 times the third equation to the second equation.
+Finally we can add a multiple of one equation to another equation.
+For example, we could add 3 times the third equation in \eqref{linalg:elim:eq}
+to the second equation:
 \begin{equation*}
 \begin{aligned}
 \phantom{(1+3)} 2 x_1 + \phantom{(1+12)}  2 x_2 + \phantom{(3+3)} 2 x_3 & = 2 , \\
@@ -2583,10 +2582,11 @@ For example, we could add 3 times the third equation to the second equation.
 \phantom{2 (1+3)} x_1 + \phantom{(1+12)}  4 x_2 + \phantom{(3+3) 2} x_3 & = 10 .
 \end{aligned}
 \end{equation*}
-We still get that clearly the same $x_1,x_2,x_3$ should be solutions
-to these new equations.
-These were just examples, we did not get any closer to the solution, we will
-have to do these operations in some more logical manner.
+The same $x_1,x_2,x_3$ should still be solutions
+to the new equations.
+These were just examples; we did not get any closer to the solution.  We will
+have to do these operations in some more logical manner, but it turns out
+these three operations will suffice to solve every linear equation.
 
 The first thing is to write the equations in a more compact manner.  Given
 \begin{equation*}
@@ -2640,14 +2640,16 @@ or until we get into a contradiction indicating no solution.
 
 More specifically, we run the operations until we obtain the so-called
 \emph{\myindex{row echelon form}}.
-The first nonzero entry in each row is called the
+Let us call
+the first (from the left) nonzero entry in each row the
 \emph{\myindex{leading entry}}.  
 A matrix is in \emph{row echelon form} if
 the following conditions are satisfied:
 \begin{enumerate}[(i)]
-\item There is only one leading entry in each column.
-\item All the entries below a leading entry are zero.
+\item The leading entry in any row is strictly to the right of
+the leading entry of the row above.
 \item All leading entries are 1.
+\item Any zero rows are below all the nonzero rows.
 \end{enumerate}
 %mbxFIXME
 A matrix is in \emph{\myindex{reduced row echelon form}}
@@ -2666,23 +2668,28 @@ entries are marked:
 0 & 0 & 0 & \boxed{1}
 \end{bmatrix}
 \end{equation*}
+The matrix is not in reduced row echelon form because of the 9 above the
+leading entry in the second row.
+
+
+
 The following matrix is in reduced row echelon form.  The leading
 entries are marked:
 \begin{equation*}
 \begin{bmatrix}
-\boxed{1} & 2 & 0 & 3 \\
-0 & 0 & \boxed{1} & 1 \\
+\boxed{1} & 3 & 0 & 8 \\
+0 & 0 & \boxed{1} & 6 \\
 0 & 0 & 0 & 0
 \end{bmatrix}
 \end{equation*}
 \end{example}
 
-The procedure we will describe to obtain a reduced row echelon form
-is called the \emph{\myindex{Gauss--Jordan elimination}}.
+The procedure we will describe to find a reduced row echelon form
+is called \emph{\myindex{Gauss--Jordan elimination}}.
 The first part of it, which obtains a row echelon form is called 
 \emph{\myindex{Gaussian elimination}} or
 \emph{\myindex{row reduction}}.  For some problems, a row echelon
-form is sufficient.
+form is sufficient, and it is a bit less work.
 
 To attain the row echelon form we work systematically.
 We go column by column, starting at the first column.  We find topmost
@@ -2695,9 +2702,10 @@ and subtract the right multiple of the pivot row so that all the entries
 below the pivot become zero.
 
 After this procedure we forget that we had a first row (it is now fixed),
-and we forget about the column with the pivot and all the preceding ones.
-You will notice that except for the pivot all the entries there are just
-zero.  Then we just focus on the smaller matrix and we repeat the steps
+and we forget about the column with the pivot and all the preceding zero
+columns.
+Except for the pivot, all the entries in these columns are just
+zero.  Then we focus on the smaller matrix and we repeat the steps
 above.
 
 It is best shown by example.  Let us keep the vertical line in the matrix,

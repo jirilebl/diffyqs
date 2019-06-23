@@ -43,6 +43,8 @@
 * 3.1: Split into subsections
 * 3.1: Add the Picard theorem
 
+* 3.2: Fix/standardize reduced row echelon form definition what we had allowed
+  swapped rows.
 * 3.2: mention det(A)det(B) = det(AB) since it makes sense when talking
   about invertible matrices, and is generally a useful thing anyway.
 
