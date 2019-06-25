@@ -941,12 +941,14 @@ you know the system is inconsistent.
 \medskip
 
 You generally try to use row operations until the following conditions
-are satisfied.  The first nonzero entry in each row is called the
+are satisfied.  The first (from the left) nonzero entry in each row is called the
 \emph{\myindex{leading entry}}.
 \begin{enumerate}[(i)]
-\item There is only one leading entry in each column.
-\item All the entries above and below a leading entry are zero.
+\item The leading entry in any row is strictly to the right of
+the leading entry of the row above.
+\item Any zero rows are below all the nonzero rows.
 \item All leading entries are 1.
+\item All the entries above and below a leading entry are zero.
 \end{enumerate}
 Such a matrix is said to be in
 \emph{\myindex{reduced row echelon form}}.  The variables
