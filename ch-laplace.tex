@@ -1948,7 +1948,8 @@ $3 \delta(t-1) + 2 t$
 \section{Solving PDEs with the Laplace transform}
 \label{laplacepde:section}
 
-\sectionnotes{? lecture\EPref{, \S?.? in \cite{EP}}\BDref{,
+%FIXME
+\sectionnotes{1--1.5 lecture\EPref{, \S?.? in \cite{EP}}\BDref{,
 \S?.? in \cite{BD}}}
 
 The Laplace transform comes from the same family of transforms as does the
@@ -1959,11 +1960,11 @@ equations (PDEs).
 It is therefore not surprising that we can also solve PDEs with the Laplace
 transform.
 
-Consider a PDE in two independent variables.  The idea is to use the
-Laplace transform to transform one of the variables (taking the transform
+Given a PDE in two independent variables $x$ and $t$,  we use the
+Laplace transform on one of the variables (taking the transform
 of everything in sight), and derivatives in that variable become
-multiplications by $s$.
-The PDE becomes an ODE that we know how to solve.
+multiplications by the transformed variable $s$.
+The PDE becomes an ODE, which we solve.
 Afterwards we invert the transform to find a solution to the original
 problem.
 It is best to see the procedure on an example.
@@ -1986,7 +1987,7 @@ See \figureref{lt:half-infinite-goo-river} for a diagram of the setup.
 \begin{mywrapfig}{3.1in}
 \capstart
 \inputpdft{half-infinite-goo-river}
-\caption{Transport equation on a half infinite line.\label{lt:half-infinite-goo-river}}
+\caption{Transport equation on a half line.\label{lt:half-infinite-goo-river}}
 \end{mywrapfig}
 
 A physical setup of this equation is a river of solid goo,
@@ -2002,13 +2003,12 @@ that is at $x > 0$.  Let $t$ be the time, and assume
 the factory started operations at $t=0$, so that at $t=0$ the river is just
 pure goo.
 
-We have a function of two variables, $y(x,t)$, that we wish to transform. 
-We fix one variable and transform the other.
-Let us transform the $t$ variable.
+Consider a function of two variables $y(x,t)$.
+Let us fix $x$ and transform the $t$ variable.
 For convenience, we treat the transformed $s$
-variable as a parameter, as there will be no derivatives in $s$.
+variable as a parameter, since there are no derivatives in $s$.
 That is, we write $Y(x)$ for the transformed function,
-and treat it as a function of $x$, with $s$ being a parameter.
+and treat it as a function of $x$, leaving $s$ as a parameter.
 \begin{equation*}
 Y(x)
 = {\mathcal L} \bigl\{ y(x,t) \bigr\}
@@ -2024,15 +2024,16 @@ the transformed function:
 =
 Y'(x) .
 \end{equation*}
-The derivative in $t$ is the derivative of the transformed variable,
-and so we use the rules for transforming derivatives:
+To transform the derivative in $t$ (the variable being transformed),
+we use the rules from \sectionref{transformsofders:section}:
 \begin{equation*}
 {\mathcal L} \bigl\{ y_t(x,t) \bigr\} 
 =
 sY(x) - y(x,0) .
 \end{equation*}
 
-As $y(x,0)=0$, then in our specific case,
+In our specific case,
+$y(x,0)=0$, and so
 ${\mathcal L} \bigl\{ y_t(x,t) \bigr\} = sY(x)$.  We transform the equation
 to find
 \begin{equation*}
@@ -2050,18 +2051,18 @@ Y(0) =
 \frac{C}{s} .
 \end{equation*}
 
-We solve the ODE $sY(x) = -\alpha Y'(x)$, $Y(0) = \frac{C}{s}$ to find
+We solve the ODE problem $sY(x) = -\alpha Y'(x)$, $Y(0) = \frac{C}{s}$, to find
 \begin{equation*}
 Y(x) = \frac{C}{s} e^{-\frac{s}{\alpha} x} .
 \end{equation*}
-We are not done, we have $Y(x)$, but we really want $y(x,t)$.  We need
-to transform the $s$ variable back to $t$.
+We are not done, we have $Y(x)$, but we really want $y(x,t)$.  We 
+transform the $s$ variable back to $t$.
 Let 
 \begin{equation*}
 u(t) = \begin{cases} 0 & \text{if $t < 0$}, \\ 1 & \text{otherwise}
 \end{cases}
 \end{equation*}
-be the Heaviside function as before.
+be the Heaviside function.
 As
 \begin{equation*}
 {\mathcal L} \bigl\{ u(t-a) \bigr\} =
@@ -2069,9 +2070,9 @@ As
 =
 \int_a^\infty e^{-st} ~dt
 =
-\frac{e^{-as}}{s} .
+\frac{e^{-as}}{s} ,
 \end{equation*}
-Then
+then
 \begin{equation*}
 y(x,t) = {\mathcal L}^{-1} \left\{
 \frac{C}{s} e^{-\frac{s}{\alpha} x}
@@ -2079,7 +2080,7 @@ y(x,t) = {\mathcal L}^{-1} \left\{
 =
 C u\bigl(t-\nicefrac{x}{\alpha}\bigr) .
 \end{equation*}
-In other words
+In other words,
 \begin{equation*}
 y(x,t) =
 \begin{cases}
@@ -2088,9 +2089,11 @@ C & \text{otherwise.}
 \end{cases}
 \end{equation*}
 See \figurevref{lt:half-infinite-goo-river-wavefront} for a diagram of this
-solution.  Notice the line of slope $\nicefrac{1}{\alpha}$ indicates
+solution.  The line of slope $\nicefrac{1}{\alpha}$ indicates
 the wavefront of the toxic substance in the picture as it is leaving the
 factory.
+What the equation does is simply move the initial condition to the right at
+speed $\alpha$.
 
 \begin{myfig}
 \capstart
@@ -2099,12 +2102,11 @@ factory.
 $\nicefrac{1}{\alpha}$.\label{lt:half-infinite-goo-river-wavefront}}
 \end{myfig}
 
-What the equation does is simply move the initial condition to the right at
-speed $\alpha$.
+
 Shhh\ldots $y$ is not differentiable, it is not even continuous
-(nobody ever seems to notice this).  How could we plug something that's not
+(nobody ever seems to notice).  How could we plug something that's not
 differentiable into the equation?
-Well, just think of a function very very close to $y$ that is differentiable.
+Well, just think of a differentiable function very very close to $y$.
 Or, if you recognize the derivative of the Heaviside function as the delta
 function, then all is well too:
 \begin{equation*}
@@ -2142,8 +2144,8 @@ Consider
 & y(0,t) = \sin(t), \qquad y(x,0) = 0 .
 \end{align*}
 
-Let us again transform the $t$ variable.  We again write $Y(x)$ for the
-transformed function.  The equation becomes (using that $y(x,0) = 0$)
+Again, we transform $t$, and we write $Y(x)$ for the
+transformed function.  As $y(x,0) = 0$, we find
 \begin{equation*}
 sY(x) + Y'(x) + Y(x) = 0, \qquad 
 Y(0) = \frac{1}{s^2+1} .
@@ -2157,9 +2159,9 @@ Y(x) =
 e^{-x}
 .
 \end{equation*}
-Using the second shifting property \eqref{ltd:sseq},
+Using the second shifting property \eqref{ltd:sseq}
 and linearity of the transform,
-we find
+we obtain the solution
 \begin{equation*}
 y(x,t) 
 =
@@ -2169,26 +2171,27 @@ u(t-x) .
 \end{equation*}
 \end{example}
 
-In the above example, we can also detect when the problem is
+We can also detect when the problem is
 \emph{\myindex{ill-posed}}
 in the sense that it has no solution.
-For example, if in the above example we change the equation to the simpler
+Let us change the equation to
 \begin{align*}
 & -y_t + y_x = 0, \qquad \text{for } x > 0, \enspace t > 0,
 \\
-& y(0,t) = \sin(t), \qquad y(x,0) = 0 ,
+& y(0,t) = \sin(t), \qquad y(x,0) = 0 .
 \end{align*}
-then the problem
-has no solution.  First let us see this in the language of
+Then the problem
+has no solution.  First, let us see this in the language of
 \sectionref{fopde:section}.
 The characteristic curves are $t=-x+C$.  If $\tau$ is the
 the characteristic coordinate, then we find the equation $y_\tau = 0$
 along the curve,
 meaning a solution is constant along characteristic curves.
 But these curves intersect both the $x$-axis and the $t$-axis.
-So for example
-the curve $t=-x+1$ intersects at $(1,0)$ and $(0,1)$.  Then
-$y(1,0) = 0$, but $y(0,1) = \sin(1) \not= 0$.
+For example,
+the curve $t=-x+1$ intersects at $(1,0)$ and $(0,1)$.  The solution is
+constant along the curve so $y(1,0)$ should equal $y(0,1)$.  But
+$y(1,0) = 0$ and $y(0,1) = \sin(1) \not= 0$.
 See \figurevref{lt:half-infinite-ill-posed}.
 
 \begin{myfig}
@@ -2244,9 +2247,9 @@ Y(x) = A e^{\sqrt{s}x} + B e^{-\sqrt{s} x}
 \end{equation*}
 Firstly $A=0$ since otherwise $Y$ does not decay to zero again as $s \to \infty$.
 
-Now consider the boundary conditions
+Now consider the boundary conditions.
 Transform $Y'(0) = F(s)$ and so $-\sqrt{s}B = F(s)$.
-In other words
+In other words,
 \begin{equation*}
 Y(x) = - F(s) \frac{1}{\sqrt{s}} e^{-\sqrt{s} x} .
 \end{equation*}
@@ -2310,8 +2313,6 @@ f(\tau)
 %FIXME
 
 \subsection{Exercises}
-
-FIXME
 
 \begin{exercise}
 FIXME
