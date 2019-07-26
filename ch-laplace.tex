@@ -2312,17 +2312,103 @@ f(\tau)
 %
 %FIXME
 
+
 \subsection{Exercises}
 
 \begin{exercise}
-FIXME
+Solve
+\begin{align*}
+& y_t + y_x = 1, \qquad 0 < x < \infty, \enspace t > 0,
+\\
+& y(0,t) = 1, \qquad y(x,0) = 0 .
+\end{align*}
+\end{exercise}
+
+\begin{exercise}
+Solve
+\begin{align*}
+& y_t + \alpha y_x = 0, \qquad 0 < x < \infty, \enspace t > 0,
+\\
+& y(0,t) = t, \qquad y(x,0) = 0 .
+\end{align*}
+\end{exercise}
+
+\begin{exercise}
+Solve
+\begin{align*}
+& y_t + 2 y_x = x+t, \qquad 0 < x < \infty, \enspace t > 0,
+\\
+& y(0,t) = 0, \qquad y(x,0) = 0 .
+\end{align*}
+\end{exercise}
+
+\begin{exercise}
+For an $\alpha > 0$, solve
+\begin{align*}
+& y_t + \alpha y_x + y = 0, \qquad 0 < x < \infty, \enspace t > 0,
+\\
+& y(0,t) = \sin(t), \qquad y(x,0) = 0 .
+\end{align*}
+\end{exercise}
+
+\begin{exercise}
+Write down a solution to
+\begin{align*}
+& y_t = y_{xx}, \qquad 0 < x < \infty, \enspace t > 0,\\
+& y_x(0,t) = e^{-t}, \qquad y(x,0) = 0 ,
+\end{align*}
+as an definite integral (convolution).
+\end{exercise}
+
+\begin{exercise}
+Use the Laplace transform in $t$ to solve
+\begin{align*}
+& y_{tt} = y_{xx}, \qquad -\infty < x < \infty, \enspace t > 0,\\
+& y_t(x,0) = \sin(x), \qquad  y(x,0) = 0 .
+\end{align*}
+Hint: Note that
+$e^{sx}$ does not go to zero as $s \to \infty$ for positive
+$x$, and 
+$e^{-sx}$ does not go to zero as $s \to \infty$ for negative $x$.
 \end{exercise}
 
 \setcounter{exercise}{100}
 
 \begin{exercise}
-FIXME
+Solve
+\begin{align*}
+& y_t + y_x = 1, \qquad 0 < x < \infty, \enspace t > 0,
+\\
+& y(0,t) = 0, \qquad y(x,0) = 0 .
+\end{align*}
 \end{exercise}
 \exsol{%
-FIXME
+$y=(x-t)u(t-x)+t$
+}
+
+\begin{exercise}
+For a $c > 0$, solve
+\begin{align*}
+& y_t + y_x + c y = 0, \qquad 0 < x < \infty, \enspace t > 0,
+\\
+& y(0,t) = \sin(t), \qquad y(x,0) = 0 .
+\end{align*}
+\end{exercise}
+\exsol{%
+$y=e^{-cx}\sin(t-x)u(t-x)$
+}
+
+\begin{exercise}
+Use the Laplace transform in $t$ to solve
+\begin{align*}
+& y_{tt} = y_{xx}, \qquad -\infty < x < \infty, \enspace t > 0,\\
+& y_t(x,0) = x^2, \qquad  y(x,0) = 0 .
+\end{align*}
+Hint: Note that
+$e^{sx}$ does not go to zero as $s \to \infty$ for positive
+$x$, and 
+$e^{-sx}$ does not go to zero as $s \to \infty$ for negative $x$.
+\end{exercise}
+\exsol{%
+$y=tx^2+\frac{t^3}{3}$
 }
