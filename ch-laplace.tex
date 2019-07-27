@@ -1948,9 +1948,7 @@ $3 \delta(t-1) + 2 t$
 \section{Solving PDEs with the Laplace transform}
 \label{laplacepde:section}
 
-%FIXME
-\sectionnotes{1--1.5 lecture\EPref{, \S?.? in \cite{EP}}\BDref{,
-\S?.? in \cite{BD}}}
+\sectionnotes{1--1.5 lecture, can be skipped}
 
 The Laplace transform comes from the same family of transforms as does the
 Fourier series\footnote{There is a corresponding Fourier transform
@@ -2234,7 +2232,7 @@ Let us use Laplace for the following problem:
 & y(x,0) = 0 .
 \end{align*}
 Really we also impose other conditions on the solution so that for example
-the Laplace transform exists.  For example we might impose that $y$ is
+the Laplace transform exists.  For example, we might impose that $y$ is
 bounded for each fixed time $t$.
 
 Transform the equation in the $t$ variable to find
@@ -2245,9 +2243,9 @@ The general solution to this ODE is
 \begin{equation*}
 Y(x) = A e^{\sqrt{s}x} + B e^{-\sqrt{s} x}
 \end{equation*}
-Firstly $A=0$ since otherwise $Y$ does not decay to zero again as $s \to \infty$.
+First $A=0$, since otherwise $Y$ does not decay to zero as $s \to \infty$.
 
-Now consider the boundary conditions.
+Now consider the boundary condition.
 Transform $Y'(0) = F(s)$ and so $-\sqrt{s}B = F(s)$.
 In other words,
 \begin{equation*}
@@ -2277,41 +2275,9 @@ f(\tau)
 \end{equation*}
 \end{example}
 
-%\medskip
-%
-%Laplace is often useful in places where separation of variables fails.
-%Laplace does not mind nonhomogeneity, but it is essentially only useful for
-%constant coefficient equations.
-%
-%\medskip
-%
-%FIXME:
-%
-%$$
-%\mathcal{L} \{ e^{-at} f(t) \} = F(s+a) ,
-%$$
-%
-%$$
-%\mathcal{L} \{
-%\int_0^t f(\tau)\,d\tau
-%\}
-%=
-%\frac{1}{s}F(s)
-%$$
-%
-%$$
-%\mathcal{L} \{ - t f(t) \} = F'(s) ,
-%$$
-%
-%So e.g.
-%
-%$$
-%\mathcal{L} \{ t \sin(t) \} = \frac{2s}{(s^2+1)^2} ,
-%$$
-%
-%
-%FIXME
-
+Laplace can solve problems where separation of variables fails.
+Laplace does not mind nonhomogeneity, but it is essentially only useful for
+constant coefficient equations.
 
 \subsection{Exercises}
 
@@ -2320,7 +2286,7 @@ Solve
 \begin{align*}
 & y_t + y_x = 1, \qquad 0 < x < \infty, \enspace t > 0,
 \\
-& y(0,t) = 1, \qquad y(x,0) = 0 .
+& y(0,t) = 1, \quad y(x,0) = 0 .
 \end{align*}
 \end{exercise}
 
@@ -2329,7 +2295,7 @@ Solve
 \begin{align*}
 & y_t + \alpha y_x = 0, \qquad 0 < x < \infty, \enspace t > 0,
 \\
-& y(0,t) = t, \qquad y(x,0) = 0 .
+& y(0,t) = t, \quad y(x,0) = 0 .
 \end{align*}
 \end{exercise}
 
@@ -2338,7 +2304,7 @@ Solve
 \begin{align*}
 & y_t + 2 y_x = x+t, \qquad 0 < x < \infty, \enspace t > 0,
 \\
-& y(0,t) = 0, \qquad y(x,0) = 0 .
+& y(0,t) = 0, \quad y(x,0) = 0 .
 \end{align*}
 \end{exercise}
 
@@ -2347,15 +2313,26 @@ For an $\alpha > 0$, solve
 \begin{align*}
 & y_t + \alpha y_x + y = 0, \qquad 0 < x < \infty, \enspace t > 0,
 \\
-& y(0,t) = \sin(t), \qquad y(x,0) = 0 .
+& y(0,t) = \sin(t), \quad y(x,0) = 0 .
 \end{align*}
+\end{exercise}
+
+\begin{exercise}
+Find the corresponding ODE problem for $Y(x)$, after transforming the $t$
+variable
+\begin{align*}
+& y_{tt} + 3y_{xx} + y_{xt} + 3 y_x + y = \sin(x) + t, \qquad 0 < x < 1, \enspace t > 0,
+\\
+& y(0,t) = 1, \quad y(1,t) =  t, \quad y(x,0) = 1-x, \quad y_t(x,0) = 1 .
+\end{align*}
+Do not solve the problem.
 \end{exercise}
 
 \begin{exercise}
 Write down a solution to
 \begin{align*}
 & y_t = y_{xx}, \qquad 0 < x < \infty, \enspace t > 0,\\
-& y_x(0,t) = e^{-t}, \qquad y(x,0) = 0 ,
+& y_x(0,t) = e^{-t}, \quad y(x,0) = 0 ,
 \end{align*}
 as an definite integral (convolution).
 \end{exercise}
@@ -2364,7 +2341,7 @@ as an definite integral (convolution).
 Use the Laplace transform in $t$ to solve
 \begin{align*}
 & y_{tt} = y_{xx}, \qquad -\infty < x < \infty, \enspace t > 0,\\
-& y_t(x,0) = \sin(x), \qquad  y(x,0) = 0 .
+& y_t(x,0) = \sin(x), \quad  y(x,0) = 0 .
 \end{align*}
 Hint: Note that
 $e^{sx}$ does not go to zero as $s \to \infty$ for positive
@@ -2379,7 +2356,7 @@ Solve
 \begin{align*}
 & y_t + y_x = 1, \qquad 0 < x < \infty, \enspace t > 0,
 \\
-& y(0,t) = 0, \qquad y(x,0) = 0 .
+& y(0,t) = 0, \quad y(x,0) = 0 .
 \end{align*}
 \end{exercise}
 \exsol{%
@@ -2391,7 +2368,7 @@ For a $c > 0$, solve
 \begin{align*}
 & y_t + y_x + c y = 0, \qquad 0 < x < \infty, \enspace t > 0,
 \\
-& y(0,t) = \sin(t), \qquad y(x,0) = 0 .
+& y(0,t) = \sin(t), \quad y(x,0) = 0 .
 \end{align*}
 \end{exercise}
 \exsol{%
@@ -2399,10 +2376,25 @@ $y=e^{-cx}\sin(t-x)u(t-x)$
 }
 
 \begin{exercise}
+Find the corresponding ODE problem for $Y(x)$, after transforming the $t$
+variable
+\begin{align*}
+& y_{tt} + 3y_{xx} + y = x+t, \qquad -1 < x < 1, \enspace t > 0,
+\\
+& y(-1,t) = 0, \quad y(1,t) = 0, \quad y(x,0) = (1-x^2) , \quad y_t(x,0) = 0.
+\end{align*}
+Do not solve the problem.
+\end{exercise}
+\exsol{%
+$s^2Y(x) - s(1-x^2) + 3Y''(x) + Y(x) = \frac{x}{s} + \frac{1}{s^2}, \quad
+Y(-1) = 0, \quad Y(1)=0$.
+}
+
+\begin{exercise}
 Use the Laplace transform in $t$ to solve
 \begin{align*}
 & y_{tt} = y_{xx}, \qquad -\infty < x < \infty, \enspace t > 0,\\
-& y_t(x,0) = x^2, \qquad  y(x,0) = 0 .
+& y_t(x,0) = x^2, \quad  y(x,0) = 0 .
 \end{align*}
 Hint: Note that
 $e^{sx}$ does not go to zero as $s \to \infty$ for positive
