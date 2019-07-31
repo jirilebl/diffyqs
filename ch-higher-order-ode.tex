@@ -939,7 +939,7 @@ and $z^3 = e^{3x}$.  Then we have
 \begin{equation*}
 c_1 z + c_2 z^2 + c_3 z^3 = 0.
 \end{equation*}
-The left hand side is a third degree polynomial in $z$.
+The left-hand side is a third degree polynomial in $z$.
 It is either identically zero,
 or it has at most 3 zeros.  Therefore, it is identically zero,
 $c_1 = c_2 = c_3 = 0$, and the functions are linearly independent.
@@ -1635,7 +1635,7 @@ conditions, see \figurevref{mv:overdampedfig}.
 %mbxlatex \caption{Overdamped motion for several different initial conditions.\label{mv:overdampedfig}}
 %mbxlatex \end{myfig}
 
-Do note that no oscillation happens.  In fact, the graph crosses the
+Note that no oscillation happens.  In fact, the graph crosses the
 $x$-axis at most once.  To see why, we try to solve
 $0 = C_1 e^{r_1 t} + C_2 e^{r_2 t}$.
 Therefore, $C_1 e^{r_1 t} = - C_2 e^{r_2 t}$ and using laws of exponents we
@@ -1915,7 +1915,7 @@ particular solutions
 to \eqref{eq3.5:nh}.
 Write the difference as
 $w = y_p - \tilde{y}_p$.  Then plug $w$
-into the left hand side of the equation to get
+into the left-hand side of the equation to get
 \begin{equation*}
 w'' + 5w'+ 6w =
 (y_p'' + 5y_p'+ 6y_p) -
@@ -1962,7 +1962,7 @@ the initial conditions may be different, but it is the same solution.
 \index{undetermined coefficients}
 
 The trick is to somehow, in a smart way, guess one particular solution to
-\eqref{eq3.5:nh}.  Note that $2x+1$ is a polynomial, and the left hand 
+\eqref{eq3.5:nh}.  Note that $2x+1$ is a polynomial, and the left-hand 
 side of the equation will be a polynomial if we let $y$ be a polynomial of
 the same degree.  Let us try
 \begin{equation*}
@@ -2013,7 +2013,7 @@ That will \emph{not} work.  You need to first compute $y = y_c + y_p$ and
 
 \medskip
 
-A right hand side consisting of exponentials, sines, and cosines
+A right-hand side consisting of exponentials, sines, and cosines
 can be handled similarly.  For example,
 \begin{equation*}
 y''+2y'+2y = \cos (2x) .
@@ -2033,7 +2033,7 @@ We plug $y_p$ into the equation and we get
 + 2A \cos (2x) + 2B \sin (2x)
 = \cos (2x) .
 \end{equation*}
-The left hand side must equal to right hand side.  We group terms and
+The left-hand side must equal to right-hand side.  We group terms and
 we get that $-4A + 4B + 2A = 1$ and
 $-4B - 4A + 2B = 0$.  So $-2A+4B =1$ and $2A+B=0$ and hence
 $A=\nicefrac{-1}{10}$ and $B=\nicefrac{1}{5}$.  So
@@ -2041,7 +2041,7 @@ $A=\nicefrac{-1}{10}$ and $B=\nicefrac{1}{5}$.  So
 y_p = A \cos (2x) + B \sin (2x) = \frac{-\cos (2x) + 2 \sin (2x)}{10} .
 \end{equation*}
 
-Similarly, if the right hand side contains exponentials we try
+Similarly, if the right-hand side contains exponentials we try
 exponentials.  For example, for
 %if the equation is (where $L$ is a linear constant coefficient operator)
 \begin{equation*}
@@ -2051,13 +2051,13 @@ we will try $y = A e^{3x}$ as our guess and try to solve for $A$.
 
 \medskip
 
-When the right hand side is a multiple of sines, cosines, exponentials,
+When the right-hand side is a multiple of sines, cosines, exponentials,
 and polynomials, we can use the product rule
 for differentiation to come up with a guess.  We
 need to guess a
 form for $y_p$ such that $Ly_p$ is of the same form, and 
 has all the terms needed to for 
-the right hand side.
+the right-hand side.
 For example,
 \begin{equation*}
 Ly = (1+3x^2)\,e^{-x}\cos (\pi x) .
@@ -2080,12 +2080,12 @@ solves the associated homogeneous equation.  That is, suppose we have
 \begin{equation*}
 y'' - 9y = e^{3x} .
 \end{equation*}
-We would love to guess $y = Ae^{3x}$, but if we plug this into the left
-hand side of the equation we get
+We would love to guess $y = Ae^{3x}$, but if we plug this into the
+left-hand side of the equation we get
 \begin{equation*}
 y''-9y = 9Ae^{3x} - 9Ae^{3x} = 0 \not= e^{3x} .
 \end{equation*}
-There is no way we can choose $A$ to make the left hand side be $e^{3x}$.
+There is no way we can choose $A$ to make the left-hand side be $e^{3x}$.
 The trick in
 this case
 is to multiply our guess by $x$ to get rid of duplication with the
@@ -2128,7 +2128,7 @@ times will not work.
 
 \medskip
 
-Finally, what if the right hand side has several terms, such as
+Finally, what if the right-hand side has several terms, such as
 \begin{equation*}
 Ly = e^{2x} + \cos x .
 \end{equation*}
@@ -2142,7 +2142,7 @@ $Ly = L(u+v) = Lu + Lv = e^{2x} + \cos x$.
 
 The method of undetermined coefficients works for many basic
 problems that crop up.  But it does not work all the time.  It only works
-when the right hand side of the equation $Ly = f(x)$ has finitely many
+when the right-hand side of the equation $Ly = f(x)$ has finitely many
 linearly independent derivatives, so that we can write a guess that consists
 of them all.  Some equations are a bit tougher.  Consider
 \begin{equation*}
@@ -2528,7 +2528,7 @@ We write the equation
 \begin{equation*}
 x'' + \omega^2 x = \frac{F_0}{m} \cos ( \omega t) .
 \end{equation*}
-Plugging $x_p$ into the left hand side we get
+Plugging $x_p$ into the left-hand side we get
 \begin{equation*}
 2 B \omega \cos (\omega t) - 2 A \omega \sin (\omega t) = 
 \frac{F_0}{m} \cos (\omega t) .
