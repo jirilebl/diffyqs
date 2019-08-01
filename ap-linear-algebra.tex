@@ -2659,21 +2659,39 @@ if furthermore the following condition is satisfied.
 \end{enumerate}
 
 \begin{example}
-The following matrix is in row echelon form.  The leading
+The following matrices are in row echelon form.  The leading
 entries are marked:
 \begin{equation*}
 \begin{bmatrix}
 \boxed{1} & 2 & 9 & 3 \\
-0 & 0 & \boxed{1} & 1 \\
+0 & 0 & \boxed{1} & 5 \\
 0 & 0 & 0 & \boxed{1}
 \end{bmatrix}
+\qquad
+\begin{bmatrix}
+\boxed{1} & -1 & -3  \\
+0 & \boxed{1} & 5  \\
+0 & 0 & \boxed{1}
+\end{bmatrix}
+\qquad
+\begin{bmatrix}
+\boxed{1} & 2 & 1 \\
+0 & \boxed{1} & 2 \\
+0 & 0 & 0
+\end{bmatrix}
+\qquad
+\begin{bmatrix}
+0 & \boxed{1} & -5 & 2 \\
+0 & 0 & 0 & \boxed{1} \\
+0 & 0 & 0 & 0
+\end{bmatrix}
 \end{equation*}
-The matrix is not in reduced row echelon form because of the 9 above the
-leading entry in the second row.
+Note that the definition applies to matrices of any size.
+None of the matrices above are in \emph{reduced} row echelon form.  For
+example notice that none of the entries above the second and third leading
+entries are zero, that is the 9, 3, and 5.
 
-
-
-The following matrix is in reduced row echelon form.  The leading
+The following matrices are in reduced row echelon form.  The leading
 entries are marked:
 \begin{equation*}
 \begin{bmatrix}
@@ -2681,10 +2699,29 @@ entries are marked:
 0 & 0 & \boxed{1} & 6 \\
 0 & 0 & 0 & 0
 \end{bmatrix}
+\qquad
+\begin{bmatrix}
+\boxed{1} & 0 & 2 &  0  \\
+0 & \boxed{1} & 3 & 0  \\
+0 & 0 & 0 & \boxed{1}
+\end{bmatrix}
+\qquad
+\begin{bmatrix}
+\boxed{1} & 0 & 3 \\
+0 & \boxed{1} & -2 \\
+0 & 0 & 0
+\end{bmatrix}
+\qquad
+\begin{bmatrix}
+0 & \boxed{1} & 2 & 0 \\
+0 & 0 & 0 & \boxed{1} \\
+0 & 0 & 0 & 0
+\end{bmatrix}
 \end{equation*}
 \end{example}
 
 The procedure we will describe to find a reduced row echelon form
+of a matrix
 is called \emph{\myindex{Gauss--Jordan elimination}}.
 The first part of it, which obtains a row echelon form is called 
 \emph{\myindex{Gaussian elimination}} or
@@ -2708,8 +2745,11 @@ Except for the pivot, all the entries in these columns are just
 zero.  Then we focus on the smaller matrix and we repeat the steps
 above.
 
-It is best shown by example.  Let us keep the vertical line in the matrix,
-even though it really does not need to be an augmented matrix.
+It is best shown by example, so let us go back to the 
+example from the beginning of the section.
+Let us keep the vertical line in the matrix,
+even though the procedure works on any matrix, not just
+an augmented matrix.
 We start with the first column and we locate the pivot, in this
 case the first entry of the first column:
 \begin{equation*}
@@ -3385,6 +3425,73 @@ in the row echelon form contains a pivot, then the rank is the number of
 pivots, which is the same as the maximal number of linearly independent
 columns.
 
+\medskip
+
+The idea also works in reverse.  Suppose we have a bunch of column vectors
+and we just need to find a linearly independent set.  For example, suppose
+we started with the vectors
+\begin{equation*}
+\vec{v}_1 =
+\begin{bmatrix}
+1 \\
+2 \\
+3 
+\end{bmatrix}
+,
+\quad
+\vec{v}_2 =
+\begin{bmatrix}
+2 \\
+4 \\
+6
+\end{bmatrix}
+,
+\quad
+\vec{v}_3 =
+\begin{bmatrix}
+3 \\
+5 \\
+7
+\end{bmatrix}
+,
+\quad
+\vec{v}_4 =
+\begin{bmatrix}
+4 \\
+6 \\
+8
+\end{bmatrix} .
+\end{equation*}
+These vectors are not linearly independent as we saw above.  In particular,
+the span $\vec{v}_1$ and $\vec{v}_3$ is the same as
+the spen of all four of the vectors.  So $\vec{v}_2$ and $\vec{v}_4$
+can both be written as linear combinations of of $\vec{v}_1$ and $\vec{v}_3$.
+A common thing that comes up in practice is that one gets a set of vectors
+whose span is the set of solutions of some problem.  But perhaps we get way
+too many vectors, we want to simplify.  For example above, all vectors in
+the span of
+$\vec{v}_1, \vec{v}_2, \vec{v}_3, \vec{v}_4$ can be written
+$\alpha_1 \vec{v}_1 + \alpha_2 \vec{v}_2 + \alpha_3 \vec{v}_3 + \alpha_4
+\vec{v}_4$ for some numbers $\alpha_1,\alpha_2,\alpha_3,\alpha_4$.  But
+it is also true that every such vector can be written as
+$a \vec{v}_1 + b \vec{v}_3$ for two numbers $a$ and $b$.  And one has to
+admit, that looks much simpler.  Moreover, these numbers $a$ and $b$ are
+unique.  More on that in the next section.
+
+To find this linearly independent set we simply take our vectors
+and form the matrix $[ \vec{v}_1 ~ \vec{v}_2 ~ \vec{v}_3 ~ \vec{v}_4 ]$,
+that is, the matrix
+\begin{equation*}
+\begin{bmatrix}
+1 & 2 & 3 & 4 \\
+2 & 4 & 5 & 6 \\
+3 & 6 & 7 & 8
+\end{bmatrix} .
+\end{equation*}
+We crank up the row reduction machine, feed this matrix into it, and find
+the pivot columns and pick those.  In this case, $\vec{v}_1$ and
+$\vec{v}_3$.
+
 \subsection{Computing the inverse}
 
 If the matrix $A$ is square and there exists a unique solution
@@ -3590,6 +3697,7 @@ $\begin{bmatrix}
 \end{exercise}
 
 \begin{exercise}
+\pagebreak[2]
 Solve (find all solutions), or show no solution exists
 \begin{tasks}(2)
 \task
@@ -3654,6 +3762,28 @@ a linearly independent set of row vectors that span the row space
 For the matrices in \exerciseref{exercise:rankmatrix}, find
 a linearly independent set of columns that span the column space.
 That is, find the pivot columns of the matrices.
+\end{exercise}
+
+\begin{exercise}
+Find a linearly independent subset of the following vectors which has
+the same span.
+\begin{equation*}
+\begin{bmatrix}
+-1 \\ 1 \\ 2
+\end{bmatrix}
+, \quad
+\begin{bmatrix}
+2 \\ -2 \\ -4
+\end{bmatrix}
+, \quad
+\begin{bmatrix}
+-2 \\ 4 \\ 1
+\end{bmatrix}
+, \quad
+\begin{bmatrix}
+-1 \\ 3 \\ -2
+\end{bmatrix}
+\end{equation*}
 \end{exercise}
 
 \setcounter{exercise}{100}
@@ -3827,6 +3957,7 @@ d)~$x_3$ is free, $x_1 = -1+3x_3$, $x_2 = 2-x_3$
 }
 
 \begin{exercise} \label{exercise:rankmatrixans}
+\pagebreak[2]
 Compute the rank of the given matrices
 \begin{tasks}(3)
 \task
@@ -3885,12 +4016,43 @@ c)~$\begin{bmatrix} 0 \\ 6 \\ 4\end{bmatrix}$,
 $\begin{bmatrix} 3 \\ 3 \\ 7\end{bmatrix}$
 }
 
+\begin{exercise}
+Find a linearly independent subset of the following vectors which has
+the same span.
+\begin{equation*}
+\begin{bmatrix}
+0 \\ 0 \\ 0
+\end{bmatrix}
+, \quad
+\begin{bmatrix}
+3 \\ 1 \\ -5
+\end{bmatrix}
+, \quad
+\begin{bmatrix}
+0 \\ 3 \\ -1
+\end{bmatrix}
+, \quad
+\begin{bmatrix}
+-3 \\ 2 \\ 4
+\end{bmatrix}
+\end{equation*}
+\end{exercise}
+\exsol{%
+$\begin{bmatrix}
+3 \\ 1 \\ -5
+\end{bmatrix}
+, \quad
+\begin{bmatrix}
+0 \\ 3 \\ -1
+\end{bmatrix}$
+}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Subspaces, dimension, inner product, and projections}
+\section{Subspaces, dimension, and the kernel}
 \label{subspaces:section}
 
 \sectionnotes{1 lecture}
@@ -4003,6 +4165,124 @@ vector $(1,1)$: every vector in $S''$ can be represented by $a (1,1) =
 (a,a)$.  Similarly another possible basis would be $\{ (-1,-1) \}$.  Then
 the point $(a,a)$ would be represented as $(-a) (1,1)$.
 \end{example}
+
+Row and column spaces of a matrix are also examples of
+subspaces,
+as they are given as the span of vectors.
+We can use
+what we know about rank, row space and column space
+from the previous section to find a basis.
+
+\begin{example}
+In the last section we considered the matrix
+\begin{equation*}
+A =
+\begin{bmatrix}
+1 & 2 & 3 & 4 \\
+2 & 4 & 5 & 6 \\
+3 & 6 & 7 & 8
+\end{bmatrix} ,
+\end{equation*}
+and we found that using row reduction to find the pivot columns, we found
+\begin{equation*}
+\text{column space of $A$} \left(
+\begin{bmatrix}
+1 & 2 & 3 & 4 \\
+2 & 4 & 5 & 6 \\
+3 & 6 & 7 & 8
+\end{bmatrix} 
+\right)
+=
+\operatorname{span}
+\left\{
+\begin{bmatrix}
+1 \\
+2 \\
+3 
+\end{bmatrix} 
+,
+\begin{bmatrix}
+3 \\
+5 \\
+7 
+\end{bmatrix} 
+\right\} .
+\end{equation*}
+What we did was we found the basis of the column space.
+The basis has two elements, and so the column space of $A$ is two dimensional.
+Notice that the rank of $A$ is two.
+\end{example}
+
+\begin{example}
+For another example, let us consider the matrix 
+\begin{equation*}
+L =
+\begin{bmatrix}
+{1} & 2 & 0 & 0 & 3 \\
+0 & 0 & {1} & 0 & 4 \\
+0 & 0 & 0 & {1} & 5
+\end{bmatrix} 
+\end{equation*}
+Conveniently the matrix is in reduced row echelon form.  The matrix
+is of rank 3.
+The column space is the span of
+the pivot columns, so this is
+the 3-dimensional space
+\begin{equation*}
+\text{column space of $L$} =
+\operatorname{span} \left\{
+\begin{bmatrix}
+{1} \\
+0 \\
+0
+\end{bmatrix} 
+,
+\begin{bmatrix}
+ 0 \\
+ {1} \\
+ 0 
+\end{bmatrix} 
+,
+\begin{bmatrix}
+0 \\
+0 \\
+{1} 
+\end{bmatrix} 
+\right\}
+= {\mathbb{R}}^3 .
+\end{equation*}
+The row space is the 3-dimensional space
+\begin{equation*}
+\text{row space of $L$} =
+\operatorname{span} \left\{
+\begin{bmatrix}
+{1} & 2 & 0 & 0 & 3
+\end{bmatrix} 
+,
+\begin{bmatrix}
+0 & 0 & {1} & 0 & 4
+\end{bmatrix} 
+,
+\begin{bmatrix}
+0 & 0 & 0 & {1} & 5
+\end{bmatrix} 
+\right\} .
+\end{equation*}
+As these vectors have 5 components, we can think of the row space of $L$
+as a subspace of ${\mathbb{R}}^5$.
+\end{example}
+
+The way the dimensions worked out in the examples is not 
+an accident.  Since the number of vectors that we needed to take
+was always the same as the number of pivots, and the number of pivots
+is the rank, we get the following result.
+
+\begin{theorem}[Rank]
+The dimension of the column space and the dimension of the row space 
+of a matrix $A$ are both equal to the rank of $A$.
+\end{theorem}
+
+\subsection{Kernel}
 
 A set of solutions of a linear equation $L\vec{x} = \vec{0}$, 
 the kernel of $L$, is a subspace:
@@ -4136,77 +4416,8 @@ The procedure to find the basis of the kernel of a matrix $L$:
 non-pivot column.
 \end{enumerate}
 
-Another example of subspaces are row and column spaces of matrices,
-as those are given as the span of vectors.
-We can use
-what we know about rank, row space and column space
-from the previous section to find a basis.
 
-\begin{example}
-We have seen these before, so let us just consider the example from above,
-that is, the matrix
-\begin{equation*}
-L =
-\begin{bmatrix}
-{1} & 2 & 0 & 0 & 3 \\
-0 & 0 & {1} & 0 & 4 \\
-0 & 0 & 0 & {1} & 5
-\end{bmatrix} 
-\end{equation*}
-We saw that.  We saw before that the column space is the span of
-the pivot columns, so this is
-the 3-dimensional space
-\begin{equation*}
-\text{column space of $L$} =
-\operatorname{span} \left\{
-\begin{bmatrix}
-{1} \\
-0 \\
-0
-\end{bmatrix} 
-,
-\begin{bmatrix}
- 0 \\
- {1} \\
- 0 
-\end{bmatrix} 
-,
-\begin{bmatrix}
-0 \\
-0 \\
-{1} 
-\end{bmatrix} 
-\right\}
-= {\mathbb{R}}^3 .
-\end{equation*}
-The row space is the 3 dimensional space
-\begin{equation*}
-\text{row space of $L$} =
-\operatorname{span} \left\{
-\begin{bmatrix}
-{1} & 2 & 0 & 0 & 3
-\end{bmatrix} 
-,
-\begin{bmatrix}
-0 & 0 & {1} & 0 & 4
-\end{bmatrix} 
-,
-\begin{bmatrix}
-0 & 0 & 0 & {1} & 5
-\end{bmatrix} 
-\right\} .
-\end{equation*}
-\end{example}
-
-The dimensions of the various spaces are related.  First, the rank
-is the dimension of the column space and the row space.
-
-\begin{theorem}[Rank]
-The dimension of the column space and the dimension of the row space 
-are both equal to $r$.
-\end{theorem}
-
-Second, the rank is the dimension of the column space, and that is
+The rank of a matrix is the dimension of the column space, and that is
 the span on the pivot columns, while the kernel is the span of vectors
 one for each non-pivot column.  So the two numbers must add to the number of
 columns.
@@ -4222,6 +4433,18 @@ n = r+k .
 The theorem is immensely useful in applications.  It allows one to compute
 the rank $r$ if one knows the nullity $k$ and vice-versa, without doing any
 extra work.
+
+\subsection{Exercises}
+
+FIXME
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sectionnewpage
+\section{Inner product and projections}
+\label{innerproduct:section}
+
+\sectionnotes{0.5 lectures}
 
 \subsection{Inner product and orthogonality}
 
