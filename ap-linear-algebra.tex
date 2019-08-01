@@ -984,8 +984,8 @@ $(-2,1,-2)$
 \end{tasks}
 \end{exercise}
 \exsol{%
-a)~$\sqrt{10}$,
-\quad b)~$\sqrt{14}$,
+a)~$\sqrt{10}$
+\quad b)~$\sqrt{14}$
 \quad c)~$3$
 }
 
@@ -1095,8 +1095,8 @@ $-4\vec{x}$
 \end{tasks}
 \end{exercise}
 \exsol{%
-a)~$20$,
-\quad b)~$10$,
+a)~$20$
+\quad b)~$10$
 \quad c)~$20$
 }
 
@@ -1114,7 +1114,7 @@ $(1,-1)$
 \end{tasks}
 \end{exercise}
 \exsol{%
-a)~$(3,-1)$, \qquad b)~$(4,0)$, \qquad c)~$(-1,-1)$.
+a)~$(3,-1)$ \quad b)~$(4,0)$ \quad c)~$(-1,-1)$
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2418,18 +2418,18 @@ $\begin{bmatrix}
 a)
 $\begin{bmatrix}
 \nicefrac{1}{2}
-\end{bmatrix}$,
-\qquad b)
+\end{bmatrix}$
+\quad b)
 $\begin{bmatrix}
 0 & 1 \\
 1 & 0
-\end{bmatrix}$,
-\qquad c)
+\end{bmatrix}$
+\quad c)
 $\begin{bmatrix}
 -5 & 2 \\
 3 & -1
-\end{bmatrix}$,
-\qquad d)
+\end{bmatrix}$
+\quad d)
 $\begin{bmatrix}
 \nicefrac{1}{2} & \nicefrac{-1}{4} \\
 \nicefrac{-1}{2} & \nicefrac{1}{2}
@@ -2463,14 +2463,14 @@ $\begin{bmatrix}
 a)~$\begin{bmatrix}
 \nicefrac{1}{2} & 0 \\
 0 & \nicefrac{1}{3} 
-\end{bmatrix}$,
-\qquad
+\end{bmatrix}$
+\quad
 b)~$\begin{bmatrix}
 \nicefrac{1}{4} & 0 & 0 \\
 0 & \nicefrac{1}{5} & 0 \\ 
 0 & 0 & -1
-\end{bmatrix}$,
-\qquad
+\end{bmatrix}$
+\quad
 c)~$\begin{bmatrix}
 -1 & 0 & 0 & 0 \\
 0 & \nicefrac{1}{2} & 0 & 0 \\ 
@@ -3260,7 +3260,10 @@ example
 
 \medskip
 
-It may also be good to find the number of linearly independent columns
+Similarly to row space, the span of columns is called the
+\emph{\myindex{column space}}.
+
+So it may also be good to find the number of linearly independent columns
 of $A$.  One way to do that is to find the number of linearly independent
 rows of $A^T$.  It is a tremendously useful fact that the number of
 linearly independent
@@ -3586,7 +3589,72 @@ $\begin{bmatrix}
 \end{tasks}
 \end{exercise}
 
-FIXME
+\begin{exercise}
+Solve (find all solutions), or show no solution exists
+\begin{tasks}(2)
+\task
+$\begin{aligned}
+ 4x_1+3x_2 & = -2 \\
+ -x_1+\phantom{3} x_2 & = 4
+\end{aligned}$
+\task
+$\begin{aligned}
+  x_1+5x_2+3x_3 & = 7 \\
+ 8x_1+7x_2+8x_3 & = 8 \\
+ 4x_1+8x_2+6x_3 & = 4
+\end{aligned}$
+\task
+$\begin{aligned}
+ 4x_1+8x_2+2x_3 & = 3 \\
+ -x_1-2x_2+3x_3 & = 1 \\
+ 4x_1+8x_2 \phantom{{}+3x_3} & = 2
+\end{aligned}$
+\task
+$\begin{aligned}
+  x+2y+3z & = 4 \\
+2  x-\phantom{2} y+3z & = 1 \\
+3  x+\phantom{2} y+6z & = 6
+\end{aligned}$
+\end{tasks}
+\end{exercise}
+
+\begin{exercise} \label{exercise:rankmatrix}
+Compute the rank of the given matrices
+\begin{tasks}(3)
+\task
+$\begin{bmatrix}
+6 & 3 & 5 \\
+1 & 4 & 1 \\
+7 & 7 & 6
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+5 & -2 & -1 \\
+3 & 0 & 6 \\
+2 & 4 & 5
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+1 & 2 & 3 \\
+-1 & -2 & -3 \\
+2 & 4 & 6
+\end{bmatrix}$
+\end{tasks}
+\end{exercise}
+
+\begin{exercise}
+For the matrices in \exerciseref{exercise:rankmatrix}, find
+a linearly independent set of row vectors that span the row space
+(they don't need to be rows of the matrix).
+\end{exercise}
+\exsol{%
+}
+
+\begin{exercise}
+For the matrices in \exerciseref{exercise:rankmatrix}, find
+a linearly independent set of columns that span the column space.
+That is, find the pivot columns of the matrices.
+\end{exercise}
 
 \setcounter{exercise}{100}
 
@@ -3677,6 +3745,7 @@ a)~$\begin{bmatrix}
 }
 
 \begin{exercise}
+\pagebreak[2]
 Compute the inverse of the given matrices
 \begin{tasks}(3)
 \task
@@ -3704,20 +3773,119 @@ a)~$\begin{bmatrix}
 0 & -1 & 0 \\
 1 & 0 & 0 \\
 0 & 0 & 1
-\end{bmatrix}$,
-\qquad
+\end{bmatrix}$
+\quad
 b)~$\begin{bmatrix}
 0 & 0 & 1 \\
 0 & 1 & -1 \\
 1 & -1 & 0
-\end{bmatrix}$,
-\qquad
+\end{bmatrix}$
+\quad
 c)~$\begin{bmatrix}
 \nicefrac{5}{2} & 1 & -3 \\
 -1 & \nicefrac{-1}{2} & \nicefrac{3}{2} \\
 -1 & 0 & 1
 \end{bmatrix}$
 }
+
+\begin{exercise}
+Solve (find all solutions), or show no solution exists
+\begin{tasks}(2)
+\task
+$\begin{aligned}
+4x_1+3x_2 & = -1 \\
+5x_1+6x_2 & = 4
+\end{aligned}$
+\task
+$\begin{aligned}
+ 5x+6y+5z & = 7 \\
+ 6x+8y+6z & = -1 \\
+ 5x+2y+5z & = 2
+\end{aligned}$
+\task
+$\begin{aligned}
+a+\phantom{5}b+\phantom{6}c & = -1 \\
+a+5b+6c & = -1 \\
+-2a+5b+6c & = 8
+\end{aligned}$
+\task
+$\begin{aligned}
+-2 x_1+2x_2+8x_3 & = 6 \\
+x_2+\phantom{8}x_3 & = 2 \\
+x_1+4x_2+\phantom{8}x_3 & = 7
+\end{aligned}$
+\end{tasks}
+\end{exercise}
+\exsol{%
+a) $x_1=-2$, $x_2 = \nicefrac{7}{3}$
+\quad
+b)~no solution
+\quad
+c)~$a = -3$, $b=10$, $c=-8$.
+\quad
+d)~$x_3$ is free, $x_1 = -1+3x_3$, $x_2 = 2-x_3$
+}
+
+\begin{exercise} \label{exercise:rankmatrixans}
+Compute the rank of the given matrices
+\begin{tasks}(3)
+\task
+$\begin{bmatrix}
+7 & -1 & 6 \\
+7 & 7 & 7 \\
+7 & 6 & 2
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+1 & 1 & 1 \\
+1 & 1 & 1 \\
+2 & 2 & 2
+\end{bmatrix}$
+\task
+$\begin{bmatrix}
+0 & 3 & -1 \\
+6 & 3 & 1 \\
+4 & 7 & -1
+\end{bmatrix}$
+\end{tasks}
+\end{exercise}
+\exsol{%
+a) 3 \quad b) 1 \quad c) 2
+}
+
+\begin{exercise}
+For the matrices in \exerciseref{exercise:rankmatrixans}, find
+a linearly independent set of row vectors that span the row space
+(they don't need to be rows of the matrix).
+\end{exercise}
+\exsol{%
+a)~$\begin{bmatrix} 1 & 0 & 0\end{bmatrix}$,
+$\begin{bmatrix} 0 & 1 & 0\end{bmatrix}$,
+$\begin{bmatrix} 0 & 0 & 1\end{bmatrix}$
+\quad
+b)~$\begin{bmatrix} 1 & 1 & 1\end{bmatrix}$
+\quad
+c)~$\begin{bmatrix} 1 & 0 & \nicefrac{1}{3}\end{bmatrix}$,
+$\begin{bmatrix} 0 & 1 & \nicefrac{-1}{3}\end{bmatrix}$
+}
+
+\begin{exercise}
+For the matrices in \exerciseref{exercise:rankmatrixans}, find
+a linearly independent set of columns that span the column space.
+That is, find the pivot columns of the matrices.
+\end{exercise}
+\exsol{%
+a)~$\begin{bmatrix} 7 \\ 7 \\ 7\end{bmatrix}$,
+$\begin{bmatrix} -1 \\ 7 \\ 6\end{bmatrix}$,
+$\begin{bmatrix} 7 \\ 6 \\ 2\end{bmatrix}$
+\quad
+b)~$\begin{bmatrix} 1 \\ 1 \\ 2\end{bmatrix}$
+\quad
+c)~$\begin{bmatrix} 0 \\ 6 \\ 4\end{bmatrix}$,
+$\begin{bmatrix} 3 \\ 3 \\ 7\end{bmatrix}$
+}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -4222,7 +4390,9 @@ FIXME
 
 FIXME
 
+\setcounter{exercise}{100}
 
+FIXME
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -4818,6 +4988,12 @@ answers).
 Suppose $A$ and $S$ are $n \times n$ matrices, and $S$ is invertible.
 Suppose that $\det(A) = 3$.  Compute $\det(S^{-1}AS)$ and 
 $\det(SAS^{-1})$.  Justify your answer using the theorems in this section.
+\end{exercise}
+
+\begin{exercise}
+Let $A$ be an $n$-by-$n$ matrix such that $\det(A)=1$.
+Compute $\det(x A)$ given a number $x$.  Hint: First try computing
+$\det(xI)$, then note that $xA = (xI)A$.
 \end{exercise}
 
 \setcounter{exercise}{100}
