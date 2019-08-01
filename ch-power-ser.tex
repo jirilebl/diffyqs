@@ -1580,7 +1580,7 @@ the German astronomer and mathematician
 \href{http://en.wikipedia.org/wiki/Friedrich_Bessel}{Friedrich Wilhelm
 Bessel} (1784--1846).}.
 For example, these functions appear when solving the
-wave equation in two and three dimensions.  First we have 
+wave equation in two and three dimensions.  First consider
 \emph{\myindex{Bessel's equation}} of order $p$:
 \begin{equation*}
 x^2 y'' + xy' + \left(x^2 - p^2\right)y = 0 .
@@ -1592,12 +1592,12 @@ When we plug
 \begin{equation*}
 y = \sum_{k=0}^\infty a_k x^{k+r}
 \end{equation*}
-into Bessel's equation of order $p$ we obtain the indicial equation
+into Bessel's equation of order $p$, we obtain the indicial equation
 \begin{equation*}
 r(r-1)+r-p^2 = (r-p)(r+p) = 0 .
 \end{equation*}
 Therefore we obtain two roots $r_1 = p$ and $r_2 = -p$.
-If $p$ is not an integer following the method of Frobenius and
+If $p$ is not an integer, then following the method of Frobenius and
 setting $a_0 = 1$, we obtain
 linearly independent solutions of the form
 \begin{align*}
@@ -1615,12 +1615,12 @@ linearly independent solutions of the form
 Verify that the indicial equation of Bessel's equation of order $p$ is
 $(r-p)(r+p)=0$.
 \task
-Suppose that $p$ is not an integer.  Carry out the computation
+Suppose $p$ is not an integer.  Carry out the computation
 to obtain the solutions $y_1$ and $y_2$ above.
 \end{tasks}
 \end{exercise}
 
-Bessel functions will be convenient constant multiples of $y_1$ and $y_2$.
+Bessel functions are convenient constant multiples of $y_1$ and $y_2$.
 First we must define the \emph{gamma function}
 \begin{equation*}
 \Gamma(x) = \int_0^\infty t^{x-1} e^{-t} \, dt .
@@ -1630,8 +1630,8 @@ The gamma function also has a wonderful property
 \begin{equation*}
 \Gamma(x+1) = x \Gamma(x) .
 \end{equation*}
-From this property, one can show that $\Gamma(n) = (n-1)!$ when $n$ is an
-integer, so the gamma function is a continuous version of the factorial.  We
+From this property, it follows that $\Gamma(n) = (n-1)!$ when $n$ is an
+integer.  So the gamma function is a continuous version of the factorial.  We
 compute:
 \begin{align*}
 & \Gamma(k+p+1)=(k+p)(k-1+p)\cdots (2+p)(1+p) \Gamma(1+p) ,
@@ -1673,26 +1673,26 @@ J_n(x) =
 \frac{{(-1)}^k}{k! (k+n)!}
 {\left(\frac{x}{2}\right)}^{2k+n} .
 \end{equation*}
-In this case it turns out that
+In this case
 \begin{equation*}
 J_n(x) = {(-1)}^nJ_{-n}(x) ,
 \end{equation*}
-and so we do not obtain a second linearly independent
+and so $J_{-n}$ is not a second linearly independent
 solution.  The other solution is the
 so-called \emph{\myindex{Bessel function of second kind}}.  These make
 sense only for integer orders $n$ and
-are defined as limits of linear combinations of $J_p(x)$ and $J_{-p}(x)$ as
+are defined as limits of linear combinations of $J_p(x)$ and $J_{-p}(x)$, as
 $p$ approaches $n$ in the
 following way:
 \begin{equation*}
 Y_n(x) = \lim_{p\to n} \frac{\cos(p \pi) J_p(x) - J_{-p}(x)}{\sin(p \pi)} .
 \end{equation*}
-As each linear combination of $J_p(x)$ and $J_{-p}(x)$ is a solution
-to Bessel's equation of order $p$, then as we take the limit as $p$
-goes to $n$, $Y_n(x)$ is a solution to Bessel's equation of
+Each linear combination of $J_p(x)$ and $J_{-p}(x)$ is a solution
+to Bessel's equation of order $p$.  Then as we take the limit as $p$
+goes to $n$, we see that $Y_n(x)$ is a solution to Bessel's equation of
 order $n$.  It also turns out that $Y_n(x)$ and $J_n(x)$ are linearly
 independent.  Therefore when $n$ is an integer, we have the
-general solution to Bessel's equation of order $n$
+general solution to Bessel's equation of order $n$:
 \begin{equation*}
 y = A J_n(x) + B Y_n(x) ,
 \end{equation*}
@@ -1700,7 +1700,8 @@ for arbitrary constants $A$ and $B$.  Note that
 $Y_n(x)$ goes to negative infinity at $x=0$.   Many mathematical software
 packages have
 these functions $J_n(x)$ and $Y_n(x)$ defined, so they can be used
-just like say $\sin(x)$ and $\cos(x)$.  In fact, they have some similar 
+just like say $\sin(x)$ and $\cos(x)$.  In fact, Bessel functions
+have some similar 
 properties.  For example, $-J_1(x)$ is a derivative of $J_0(x)$, and
 in general the derivative of $J_n(x)$ can be written as a linear
 combination of $J_{n-1}(x)$ and $J_{n+1}(x)$.  Furthermore, these
@@ -1722,16 +1723,16 @@ x y'' + y' + \lambda^2 x y = 0 ,
 \end{equation*}
 can be changed to 
 $x^2 y'' + x y' + \lambda^2 x^2 y = 0$.  Then changing variables
-$t = \lambda x$ we obtain via chain rule the equation in $y$ and $t$:
+$t = \lambda x$, we obtain via chain rule the equation in $y$ and $t$:
 \begin{equation*}
 t^2 y'' + t y' + t^2 y = 0 ,
 \end{equation*}
-which can be recognized as Bessel's equation of order 0.  Therefore the
+which we recognize as Bessel's equation of order 0.  Therefore the
 general solution is $y(t) = A J_0(t) + B Y_0(t)$, or in terms of $x$:
 \begin{equation*}
 y = A J_0(\lambda x) + B Y_0(\lambda x) .
 \end{equation*}
-This equation comes up for example when finding fundamental modes of
+This equation comes up, for example, when finding the fundamental modes of
 vibration of a circular drum, but we digress.
 \end{example}
 

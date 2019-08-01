@@ -10,6 +10,7 @@
   from surrounding text, and all insets are on the right
 
 * Add section 1.9 on first order linear PDE and characteristics
+* Add section 6.5 on solving PDE with Laplace transform
 
 * Make bottom margin smaller to save paper
 
