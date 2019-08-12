@@ -4213,6 +4213,38 @@ The basis has two elements, and so the column space of $A$ is two dimensional.
 Notice that the rank of $A$ is two.
 \end{example}
 
+We would have followed the same procedure if we wanted to find the basis of
+the subspace $X$ spanned by
+\begin{equation*}
+\begin{bmatrix}
+1 \\
+2 \\
+3 
+\end{bmatrix} 
+,
+\begin{bmatrix}
+2 \\
+4 \\
+6 
+\end{bmatrix} 
+,
+\begin{bmatrix}
+3 \\
+5 \\
+7 
+\end{bmatrix} 
+,
+\begin{bmatrix}
+4 \\
+6 \\
+8 
+\end{bmatrix}
+.
+\end{equation*}
+We would have simply formed the matrix $A$ with these vectors as columns
+and repeated the computation above.  The subspace $X$ is then the columnspace of
+$A$.
+
 \begin{example}
 For another example, let us consider the matrix 
 \begin{equation*}
@@ -4434,7 +4466,273 @@ The theorem is immensely useful in applications.  It allows one to compute
 the rank $r$ if one knows the nullity $k$ and vice-versa, without doing any
 extra work.
 
+Let us consider an example application, the so-called
+\emph{\myindex{Fredholm alternative}}.  A similar result is true for
+differential equations.  Suppose we have the equation
+\begin{equation*}
+A \vec{x} = \vec{b} ,
+\end{equation*}
+where $A$ is a square $n \times n$ matrix.
+There are then two mutually exclusive possibilities:
+\begin{enumerate}[(i)]
+\item
+There exists a nonzero solution $\vec{x}$ to $A \vec{x} = \vec{0}$.
+\item
+The equation $A \vec{x} = \vec{b}$ has a unique solution for every
+$\vec{b}$.
+\end{enumerate}
+How does the Rank--Nullity theorem come into the picture?  Well, if $A$ has
+a nonzero solution $\vec{x}$ to $A \vec{x} = \vec{0}$, then the nullity $k$ is
+positive.  But then the rank $r = n-k$ must be less than $n$.  In particular
+it means that the columnspace of $A$ is of dimension less than $n$, so it is
+a subspace which does not include everything.  So ${\mathbb{R}}^n$ has to
+contain some vector $\vec{b}$ not in the columnspace of $A$.  In fact, most
+vectors in ${\mathbb{R}}^n$ are not in the columnspace of $A$.
+
+
+
 \subsection{Exercises}
+
+\begin{exercise}
+For the following sets of vectors, find a basis for the subspace spanned by
+the vectors, and find the dimension of the subspace.
+\begin{tasks}(3)
+\task
+$
+\begin{bmatrix}
+1 \\ 1 \\ 1
+\end{bmatrix}
+, \quad
+\begin{bmatrix}
+-1 \\ -1 \\ -1
+\end{bmatrix}
+$
+\task
+$
+\begin{bmatrix}
+1 \\ 0 \\ 5
+\end{bmatrix}
+, \quad
+\begin{bmatrix}
+0 \\ 1 \\ 0
+\end{bmatrix}
+, \quad
+\begin{bmatrix}
+0 \\ -1 \\ 0
+\end{bmatrix}
+$
+\task
+$
+\begin{bmatrix}
+-4 \\ -3 \\ 5
+\end{bmatrix}
+, \quad
+\begin{bmatrix}
+2 \\ 3 \\ 3
+\end{bmatrix}
+, \quad
+\begin{bmatrix}
+2 \\ 0 \\ 2
+\end{bmatrix}
+$
+\task
+$
+\begin{bmatrix}
+1 \\ 3 \\ 0
+\end{bmatrix}
+, \quad
+\begin{bmatrix}
+0 \\ 2 \\ 2
+\end{bmatrix}
+, \quad
+\begin{bmatrix}
+-1 \\ -1 \\ 2
+\end{bmatrix}
+$
+\task
+$
+\begin{bmatrix}
+1 \\ 3
+\end{bmatrix}
+, \quad
+\begin{bmatrix}
+0 \\ 2
+\end{bmatrix}
+, \quad
+\begin{bmatrix}
+-1 \\ -1
+\end{bmatrix}
+$
+\task
+$
+\begin{bmatrix}
+3 \\ 1 \\ 3
+\end{bmatrix}
+, \quad
+\begin{bmatrix}
+2 \\ 4 \\ -4
+\end{bmatrix}
+, \quad
+\begin{bmatrix}
+-5 \\ -5 \\ -2
+\end{bmatrix}
+$
+\end{tasks}
+\end{exercise}
+
+\begin{exercise}
+Suppose a $5 \times 5$ matrix $A$ has rank 3.  What is the nullity?
+\end{exercise}
+
+\begin{exercise}
+Suppose that $X$ is the set of all the vectors of ${\mathbb{R}}^3$ whose
+third component is zero.  Is $X$ a subspace?  And if so, find a basis
+and the dimension.
+\end{exercise}
+
+\setcounter{exercise}{100}
+
+\begin{exercise}
+For the following sets of vectors, find a basis for the subspace spanned by
+the vectors, and find the dimension of the subspace.
+\begin{tasks}(3)
+\task
+$
+\begin{bmatrix}
+1 \\ 2
+\end{bmatrix}
+, \quad
+\begin{bmatrix}
+1 \\ 1
+\end{bmatrix}
+$
+\task
+$
+\begin{bmatrix}
+1 \\ 1 \\ 1
+\end{bmatrix}
+, \quad
+\begin{bmatrix}
+2 \\ 2 \\ 2
+\end{bmatrix}
+, \quad
+\begin{bmatrix}
+1 \\ 1 \\ 2
+\end{bmatrix}
+$
+\task
+$
+\begin{bmatrix}
+5 \\ 3 \\ 1
+\end{bmatrix}
+, \quad
+\begin{bmatrix}
+5 \\ -1 \\ 5
+\end{bmatrix}
+, \quad
+\begin{bmatrix}
+-1 \\ 3 \\ -4
+\end{bmatrix}
+$
+\task
+$
+\begin{bmatrix}
+2 \\ 2 \\ 4
+\end{bmatrix}
+, \quad
+\begin{bmatrix}
+2 \\ 2 \\ 3
+\end{bmatrix}
+, \quad
+\begin{bmatrix}
+4 \\ 4 \\ -3
+\end{bmatrix}
+$
+\task
+$
+\begin{bmatrix}
+1 \\ 0
+\end{bmatrix}
+, \quad
+\begin{bmatrix}
+2 \\ 0
+\end{bmatrix}
+, \quad
+\begin{bmatrix}
+3 \\ 0
+\end{bmatrix}
+$
+\task
+$
+\begin{bmatrix}
+1 \\ 0 \\ 0
+\end{bmatrix}
+, \quad
+\begin{bmatrix}
+2 \\ 0 \\ 0
+\end{bmatrix}
+, \quad
+\begin{bmatrix}
+0 \\ 1 \\ 2
+\end{bmatrix}
+$
+\end{tasks}
+\end{exercise}
+\exsol{%
+a)~$\begin{bmatrix}
+1 \\ 2
+\end{bmatrix}
+, 
+\begin{bmatrix}
+1 \\ 1
+\end{bmatrix}$ dimension 2,
+\quad
+b)~$
+\begin{bmatrix}
+1 \\ 1 \\ 1
+\end{bmatrix}
+,
+\begin{bmatrix}
+1 \\ 1 \\ 2
+\end{bmatrix}$ dimension 2,
+\quad
+c)~$
+\begin{bmatrix}
+5 \\ 3 \\ 1
+\end{bmatrix}
+,
+\begin{bmatrix}
+5 \\ -1 \\ 5
+\end{bmatrix}
+,
+\begin{bmatrix}
+-1 \\ 3 \\ -4
+\end{bmatrix}
+$ dimension 3,
+\quad
+d)~$
+\begin{bmatrix}
+2 \\ 2 \\ 4
+\end{bmatrix}
+,
+\begin{bmatrix}
+2 \\ 2 \\ 3
+\end{bmatrix}
+$ dimension 2,
+\quad
+e)~$\begin{bmatrix}
+1 \\ 1
+\end{bmatrix}$ dimension 1,
+\quad
+f)~$\begin{bmatrix}
+1 \\ 0 \\ 0
+\end{bmatrix}
+,
+\begin{bmatrix}
+0 \\ 1 \\ 2
+\end{bmatrix}
+$ dimension 2
+}
 
 FIXME
 
@@ -5214,7 +5512,7 @@ $\det(SAS^{-1})$.  Justify your answer using the theorems in this section.
 \end{exercise}
 
 \begin{exercise}
-Let $A$ be an $n$-by-$n$ matrix such that $\det(A)=1$.
+Let $A$ be an $n \times n$ matrix such that $\det(A)=1$.
 Compute $\det(x A)$ given a number $x$.  Hint: First try computing
 $\det(xI)$, then note that $xA = (xI)A$.
 \end{exercise}
