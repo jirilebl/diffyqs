@@ -279,6 +279,29 @@ Let us compute a small example:
 .
 \end{equation*}
 
+\medskip
+
+As we said a vector is a direction and a magnitude.  Magnitude is easy to
+represent, it is just a number.  The \emph{\myindex{direction}} is usually
+given by a vector with magnitude one.  We call such a vector a
+\emph{\myindex{unit vector}}.  That is, $\vec{u}$ is a unit vector when
+$\lVert \vec{u} \rVert = 1$.  For example the vectors $(1,0)$,
+$(\nicefrac{1}{\sqrt{2}},\nicefrac{1}{\sqrt{2}})$, and $(0,-1)$ are all
+unit vectors.
+
+To represent the direction of a vector $\vec{x}$, we need to find the 
+unit vector in the same direction.  To do so, we simply rescale
+$\vec{x}$ by the reciprocal of the magnitude, that is
+$\frac{1}{\lVert \vec{x} \rVert} \vec{x}$, or more concisely
+$\frac{\vec{x}}{\lVert \vec{x} \rVert}$.
+
+For example, the unit vector in the direction of $(1,2)$ is the vector
+\begin{equation*}
+\frac{1}{\sqrt{1^2+2^2}} (1,2)
+=
+\left( \frac{1}{\sqrt{5}}, \frac{2}{\sqrt{5}} \right) .
+\end{equation*}
+
 \subsection{Linear mappings and matrices}
 
 A \emph{\myindex{vector-valued function}}
@@ -897,6 +920,27 @@ $
 \end{exercise}
 
 \begin{exercise}
+Find the unit vector in the direction of the given vector
+\begin{tasks}(3)
+\task
+$\begin{bmatrix}
+1 \\
+-3 
+\end{bmatrix}
+$
+\task
+$\begin{bmatrix}
+2 \\
+1 \\
+-1
+\end{bmatrix}
+$
+\task
+$(3,1,-2)$
+\end{tasks}
+\end{exercise}
+
+\begin{exercise}
 If $\vec{x} = (1,2)$ and $\vec{y}$ are added together we find
 $\vec{x}+\vec{y} = (0,2)$.  What is $\vec{y}$?
 \end{exercise}
@@ -987,6 +1031,42 @@ $(-2,1,-2)$
 a)~$\sqrt{10}$
 \quad b)~$\sqrt{14}$
 \quad c)~$3$
+}
+
+\begin{exercise}
+Find the unit vector in the direction of the given vector
+\begin{tasks}(3)
+\task
+$\begin{bmatrix}
+-1 \\
+1 
+\end{bmatrix}
+$
+\task
+$\begin{bmatrix}
+1 \\
+-1 \\
+2
+\end{bmatrix}
+$
+\task
+$(2,-5,2)$
+\end{tasks}
+\end{exercise}
+\exsol{%
+a)~
+$\begin{bmatrix}
+\frac{-1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}}
+\end{bmatrix}$
+\quad
+b)~$\begin{bmatrix}
+\frac{1}{\sqrt{6}} \\
+\frac{-1}{\sqrt{6}} \\
+\frac{2}{\sqrt{6}}
+\end{bmatrix}$
+\quad
+c)~$\left( \frac{2}{\sqrt{33}},\frac{-5}{\sqrt{33}},\frac{2}{\sqrt{33}} \right)$
 }
 
 \begin{exercise}
@@ -5167,7 +5247,29 @@ f(t) g(t) \, dt .
 \end{equation*}
 But we digress.
 
-The standard inner product gives length:
+Inner product satisfies the following rules
+\begin{enumerate}[(i)]
+\item $\langle \vec{x} , \vec{x} \rangle \geq 0$, and
+$\langle \vec{x} , \vec{x} \rangle = 0$ if and only if $\vec{x} = 0$,
+\item $\langle \vec{x} , \vec{y} \rangle = \langle \vec{y} , \vec{x}
+\rangle$,
+\item $\langle a\vec{x} , \vec{y} \rangle =
+\langle \vec{x} , a\vec{y} \rangle =
+a \langle \vec{x} , \vec{y} \rangle$,
+\item $\langle \vec{x} +  \vec{y} , \vec{z} \rangle =
+\langle \vec{x} , \vec{z} \rangle +
+\langle \vec{y} , \vec{z} \rangle$ and
+$\langle \vec{x}, \vec{y} + \vec{z} \rangle =
+\langle \vec{x} , \vec{y} \rangle +
+\langle \vec{x} , \vec{z} \rangle$.
+\end{enumerate}
+In fact, anything that satisfies the above properties can be called an inner
+product, although in this section we will be concerned with the
+standard inner product in ${\mathbb{R}}^n$.
+
+\medskip
+
+The standard inner product gives the euclidean length:
 \begin{equation*}
 \lVert{\vec{x}}\rVert = \sqrt{\langle \vec{x}, \vec{x} \rangle}
 = \sqrt{x_1^2 + x_2^2 + \cdots + x_n^2} .
@@ -5199,7 +5301,6 @@ Fortunately,
 $\cos \theta = \cos (-\theta) = \cos(2\pi - \theta)$.
 If we solve for $\theta$ using the inverse cosine $\cos^{-1}$,
 we can just decree that $0 \leq \theta \leq \pi$.
-
 \begin{myfig}
 \capstart
 \inputpdft{vec-angle}
@@ -5240,9 +5341,11 @@ angles, that is if
 =
 0 .
 \end{equation*}
-For example, the vectors $(1,0,0,1)$ and $(1,2,3,-1)$ are orthogonal.
+For example, the vectors $(1,0,0,1)$ and $(1,2,3,-1)$ are orthogonal.  So
+are $(1,1)$ and $(1,-1)$.  However, $(1,1)$ and $(1,2)$ are not orthogonal as
+their inner product is $3$ and not 0.
 
-\subsection{Orthogonal projection, orthogonal bases}
+\subsection{Orthogonal projection}
 
 A typical application of linear algebra is to take a difficult problem,
 write everything in the right basis, and in this new basis the problem
@@ -5252,7 +5355,7 @@ coordinate system in two or three dimensions, we almost always draw our axes
 as orthogonal to each other.
 
 Generalizing this concept to functions,
-it will be particularly useful in \chapterref{FS:chapter} to express a
+it is particularly useful in \chapterref{FS:chapter} to express a
 function using a particular orthogonal basis.
 
 To express one vector in terms of an orthogonal basis, we need to first
@@ -5303,8 +5406,187 @@ the projection.  In other words,
 \end{equation*}
 
 \begin{example}
-FIXME
+Suppose we wish to project the vector $(1,2,3)$ onto the vector $(3,2,1)$.
+Compute
+\begin{equation*}
+\begin{split}
+\operatorname{proj}_{(1,2,3)} \bigl( (3,2,1) \bigr)
+=
+\frac{\langle (3,2,1) , (1,2,3) \rangle}{\langle (1,2,3) , (1,2,3) \rangle}
+(1,2,3)
+& =
+\frac{3 \cdot 1 + 2 \cdot 2 + 1 \cdot 3}{ 1 \cdot 1 + 2 \cdot 2 + 3 \cdot 3}
+(1,2,3)
+\\
+& =
+\frac{10}{14}
+(1,2,3)
+=
+\left(\frac{5}{7},\frac{10}{7},\frac{15}{7}\right) .
+\end{split}
+\end{equation*}
+
+Let us double check that the projection is orthogonal.  That is
+$\vec{w}-\operatorname{proj}_{\vec{v}}(\vec{w})$ ought to be orthogonal to
+$\vec{v}$, see the right angle in \figurevref{vec-orthoproj:fig}.  That is,
+\begin{equation*}
+(3,2,1) - \operatorname{proj}_{(1,2,3)} \bigl( (3,2,1) \bigr)
+=
+\left(3-\frac{5}{7},2-\frac{10}{7},1-\frac{15}{7}\right)
+=
+\left(\frac{16}{7},\frac{4}{7},\frac{-8}{7}\right)
+\end{equation*}
+ought to be orthogonal to $(1,2,3)$.  We compute the inner product and we
+had better get zero:
+\begin{equation*}
+\left\langle
+\left(\frac{16}{7},\frac{4}{7},\frac{-8}{7}\right)
+,
+(1,2,3)
+\right\rangle
+=
+\frac{16}{7} \cdot 1 + \frac{4}{7} \cdot 2 -\frac{8}{7} \cdot 3
+=
+0 .
+\end{equation*}
 \end{example}
+
+\subsection{Orthogonal basis}
+
+As we said, a basis $\vec{v}_1,\vec{v}_2,\ldots,\vec{v}_n$
+is an \emph{\myindex{orthogonal basis}} if all vectors in the
+basis are orthogonal to each other, that is, if
+\begin{equation*}
+\langle \vec{v}_j , \vec{v}_k \rangle = 0
+\end{equation*}
+for all choices of $j$ and $k$ where $j \not= k$ (a nonzero vector cannot be
+orthogonal to itself).
+
+A basis is furthermore called an \emph{\myindex{orthonormal basis}} if all
+the vectors in a basis are also unit vectors, that is, if all the vectors
+have magnitude 1.
+
+The reason why we are interested in orthogonal (or orthonormal) bases is
+that they make it really simple to represent a vector (or a projection onto
+a subspace) in the basis.  The simple formula for the orthogonal projection
+onto a vector will give us the coefficients.  In 
+\chapterref{FS:chapter} we use the same idea by finding the correct 
+orthogonal basis for the set of solutions of a differential equation we
+are then able to find any particular solution by simply applying the
+orthogonal projection formula, which is just a couple of a inner products.
+
+Let us come back to linear algebra.  Suppose that we have an orthogonal
+basis $\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n$, and we wish to
+express $\vec{x}$ in terms of the basis.  If $\vec{x}$ is not in the span
+of the basis, then of course it is not possible, but the following formula
+will give us the orthogonal projection onto the subspace spanned by the
+basis.
+
+So first suppose that $\vec{x}$ is in the span.  Then it is the sum of the
+orthogonal projections:
+\begin{equation*}
+\vec{x} = 
+\operatorname{proj}_{\vec{v}_1} ( \vec{x} )
++
+\operatorname{proj}_{\vec{v}_2} ( \vec{x} )
++
+\cdots
++
+\operatorname{proj}_{\vec{v}_n} ( \vec{x} )
+=
+\frac{\langle \vec{x}, \vec{v}_1 \rangle}{
+\langle \vec{v}_1, \vec{v}_1 \rangle
+}
+\vec{v}_1
++
+\frac{\langle \vec{x}, \vec{v}_2 \rangle}{
+\langle \vec{v}_2, \vec{v}_2 \rangle
+}
+\vec{v}_2
++
+\cdots
++
+\frac{\langle \vec{x}, \vec{v}_n \rangle}{
+\langle \vec{v}_n, \vec{v}_n \rangle
+}
+\vec{v}_n .
+\end{equation*}
+In other words, we wish to write
+$\vec{x} =
+a_1 \vec{v}_1 + 
+a_2 \vec{v}_2 + \cdots +
+a_n \vec{v}_n$, and then for every $j$ we have
+\begin{equation*}
+a_j = 
+\frac{\langle \vec{x}, \vec{v}_j \rangle}{
+\langle \vec{v}_j, \vec{v}_j \rangle
+} .
+\end{equation*}
+
+Another way to derive this formula is to work in reverse.  Suppose that
+$\vec{x} =
+a_1 \vec{v}_1 + 
+a_2 \vec{v}_2 + \cdots +
+a_n \vec{v}_n$.  Then let's take an inner product with $\vec{v}_j$, and
+use the properties of the inner product:
+\begin{equation*}
+\begin{split}
+\langle \vec{x} , \vec{v}_j \rangle
+& =
+\langle a_1 \vec{v}_1 + 
+a_2 \vec{v}_2 + \cdots +
+a_n \vec{v}_n , \vec{v}_j \rangle
+\\
+& =
+a_1 \langle \vec{v}_1 , \vec{v}_j \rangle + 
+a_2 \langle \vec{v}_2 , \vec{v}_j \rangle + 
++ \cdots +
+a_n \langle \vec{v}_n , \vec{v}_j \rangle .
+\end{split}
+\end{equation*}
+Once we notice that the basis is orthogonal, then
+$\langle \vec{v}_k , \vec{v}_j \rangle = 0$ whenever
+$k \not= j$, so that means that only one of the terms on the right
+hand side is nonzero and we get.
+\begin{equation*}
+\langle \vec{x} , \vec{v}_j \rangle
+=
+a_j \langle \vec{v}_j , \vec{v}_j \rangle .
+\end{equation*}
+Solving for $a_j$ we find $a_j =
+\frac{\langle \vec{x}, \vec{v}_j \rangle}{
+\langle \vec{v}_j, \vec{v}_j \rangle
+}$ as before.
+
+\begin{example}
+First note that $(1,1)$ and $(1,-1)$ form an orthogonal basis of ${\mathbb{R}}^2$.
+Suppose we wish to represent $(3,4)$ in terms of this basis,
+that is we wish to find $a_1$ and $a_2$ such that
+\begin{equation*}
+(3,4) = a_1 (1,1) + a_2 (1,-1) .
+\end{equation*}
+We compute:
+\begin{equation*}
+a_1 = 
+\frac{\langle (3,4), (1,1) \rangle}{
+\langle (1,1), (1,1) \rangle
+}
+=
+\frac{7}{2}, \qquad
+a_2 = 
+\frac{\langle (3,4), (1,-1) \rangle}{
+\langle (1,-1), (1,-1) \rangle
+}
+=
+\frac{-1}{2} .
+\end{equation*}
+So
+\begin{equation*}
+(3,4) = \frac{7}{2} (1,1) + \frac{-1}{2} (1,-1) .
+\end{equation*}
+\end{example}
+
+FIXME: projection onto subspace same
 
 FIXME
 
@@ -5449,7 +5731,7 @@ carries the unit square to the given parallelogram.
 \medskip
 
 There are a number of ways to define the determinant for an $n \times n$
-matrix.  Let us use the so-called \emph{\myindex{cofactor expansion}}
+matrix.  Let us use the so-called \emph{\myindex{cofactor expansion}}.
 We define $A_{ij}$ as
 the matrix $A$ with the $i^{\text{th}}$ row and the $j^{\text{th}}$ column
 deleted.  For example, if
