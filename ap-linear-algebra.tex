@@ -5215,7 +5215,7 @@ a)~3 \quad b)~2 \quad c)~3 \quad d)~2 \quad e)~3
 \section{Inner product and projections}
 \label{innerproduct:section}
 
-\sectionnotes{0.5--1 lecture}
+\sectionnotes{1 lecture}
 
 \subsection{Inner product and orthogonality}
 
@@ -5301,6 +5301,7 @@ Fortunately,
 $\cos \theta = \cos (-\theta) = \cos(2\pi - \theta)$.
 If we solve for $\theta$ using the inverse cosine $\cos^{-1}$,
 we can just decree that $0 \leq \theta \leq \pi$.
+
 \begin{myfig}
 \capstart
 \inputpdft{vec-angle}
@@ -5540,7 +5541,7 @@ a_n \vec{v}_n , \vec{v}_j \rangle
 & =
 a_1 \langle \vec{v}_1 , \vec{v}_j \rangle + 
 a_2 \langle \vec{v}_2 , \vec{v}_j \rangle + 
-+ \cdots +
+\cdots +
 a_n \langle \vec{v}_n , \vec{v}_j \rangle .
 \end{split}
 \end{equation*}
@@ -5586,7 +5587,134 @@ So
 \end{equation*}
 \end{example}
 
-FIXME: projection onto subspace same
+If the basis is orthonormal rather than orthogonal, than the denominators
+are always just one.  It is easy to make a basis orthonormal, just
+by dividing all the vectors by their size.  If you will do this
+decomposition many times, it may be better to just do that.  In the above
+example, the orthonormal basis we would thus create is
+\begin{equation*}
+\left( \frac{1}{\sqrt{2}} , \frac{1}{\sqrt{2}} \right) , \quad
+\left( \frac{1}{\sqrt{2}} , \frac{-1}{\sqrt{2}} \right) .
+\end{equation*}
+
+Maybe the example is not so awe inspiring, but if you had 
+vectors in ${\mathbb{R}}^{20}$ rather than ${\mathbb{R}}^2$,
+then surely one would much rather do 20 inner products
+(assuming we have an orthonormal basis) rather than doing
+solving a system of twenty equations in twenty unknowns
+using row reduction of a $20 \times 21$ matrix.
+
+As we said above, the formula still works even if $\vec{x}$ is not in the
+span of the basis, although then it does not get us the vector $\vec{x}$
+but its projection.  More concretely, suppose that $S$ is a subspace
+that is the span of $\vec{v}_1,\vec{v}_2,\ldots,\vec{v}_n$ and $\vec{x}$
+is any vector.  Let $\operatorname{proj}_{S}(\vec{x})$ be the vector in $S$
+that is the closest to $\vec{x}$.  Then
+\begin{equation*}
+\operatorname{proj}_{S}(\vec{x}) = 
+\frac{\langle \vec{x}, \vec{v}_1 \rangle}{
+\langle \vec{v}_1, \vec{v}_1 \rangle
+}
+\vec{v}_1
++
+\frac{\langle \vec{x}, \vec{v}_2 \rangle}{
+\langle \vec{v}_2, \vec{v}_2 \rangle
+}
+\vec{v}_2
++
+\cdots
++
+\frac{\langle \vec{x}, \vec{v}_n \rangle}{
+\langle \vec{v}_n, \vec{v}_n \rangle
+}
+\vec{v}_n .
+\end{equation*}
+
+Of course, if $\vec{x}$ is in $S$, then $\operatorname{proj}_{S}(\vec{x}) =
+\vec{x}$, as the closes vector in $S$ to $\vec{x}$ is $\vec{x}$ itself of
+course.  But true utility is obtained when $\vec{x}$ is not in $S$.
+In lots of applied mathematics we cannot find an exact solution, but we try
+to find the best solution out of a small subset.  The partial sums of
+Fourier series from \chapterref{FS:chapter} are one example.  Another
+example is least square approximation to fit a curve to data.  Yet another
+example is given by
+the most commonly used numerical methods to solve partial differential
+equations, the finite element methods.
+
+\begin{example}
+The vectors $(1,2,3)$ and $(3,0,-1)$ are orthogonal, and so they are
+an orthogonal basis of a subspace $S$:
+\begin{equation*}
+S = 
+\operatorname{span} \bigl\{ (1,2,3), (3,0,-1) \bigr\} .
+\end{equation*}
+Let us find the vector in $S$ that is closest to $(2,1,0)$.  That is,
+let us find $\operatorname{proj}_{S}\bigl((2,1,0)\bigr)$.
+\begin{equation*}
+\begin{split}
+\operatorname{proj}_{S}\bigl((2,1,0)\bigr)
+& =
+\frac{\langle (2,1,0), (1,2,3) \rangle}{
+\langle (1,2,3), (1,2,3) \rangle
+}
+(1,2,3)
++
+\frac{\langle (2,1,0), (3,0,-1) \rangle}{
+\langle (3,0,-1), (3,0,-1) \rangle
+}
+(3,0,-1)
+\\
+& =
+\frac{2}{7}
+(1,2,3)
++
+\frac{3}{5}
+(3,0,-1)
+\\
+&=
+\left( \frac{73}{35} , \frac{4}{7} , \frac{9}{35} \right) .
+\end{split}
+\end{equation*}
+\end{example}
+
+\subsection{The Gram--Schmidt process}
+
+Before leaving orthogonal bases, let us note a procedure for manufacturing
+them out of any old basis.  It may not be difficult to come up with an
+orthogonal basis for a 2 dimensional space, but for a 20 dimensional space,
+it seems a daunting task.  Fortunately, the orthogonal projection can be
+used to \myquote{project away} the bits of the vectors that are making them
+not orthogonal.  It is called the \emph{\myindex{Gram--Schmidt process}}.
+
+Suppose we start with a basis of vectors $\vec{v}_1,\vec{v}_2, \ldots,
+\vec{v}_n$.  We will construct an orthogonal basis $\vec{w}_1, \vec{w}_2,
+\ldots, \vec{w}_n$ as follows.
+\begin{align*}
+\vec{w}_1 & = \vec{v}_1 \\
+\vec{w}_2 & = \vec{v}_2
+- \operatorname{proj}_{\vec{w}_1}(\vec{v}_2) \\
+\vec{w}_3 & = \vec{v}_3
+- \operatorname{proj}_{\vec{w}_1}(\vec{v}_3)
+- \operatorname{proj}_{\vec{w}_2}(\vec{v}_3) \\
+\vec{w}_4 & = \vec{v}_4
+- \operatorname{proj}_{\vec{w}_1}(\vec{v}_4)
+- \operatorname{proj}_{\vec{w}_2}(\vec{v}_4)
+- \operatorname{proj}_{\vec{w}_3}(\vec{v}_4) \\
+& \vdots \\
+\vec{w}_n & = \vec{v}_n
+- \operatorname{proj}_{\vec{w}_1}(\vec{v}_n)
+- \operatorname{proj}_{\vec{w}_2}(\vec{v}_n)
+- \cdots
+- \operatorname{proj}_{\vec{w}_{n-1}}(\vec{v}_n) .
+\end{align*}
+Notice that what we do is at the $k^{\text{th}}$ step, we take $\vec{v}_k$ and we
+subtract the projection of $\vec{v}_k$ to the subspace spanned by
+$\vec{w}_1,\vec{w}_2,\ldots,\vec{w}_{k-1}$.
+
+\begin{example}
+FIXME
+\end{example}
+
 
 FIXME
 
