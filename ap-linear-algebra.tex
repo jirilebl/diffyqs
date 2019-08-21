@@ -2,10 +2,10 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Vectors, mappings, and linear systems}
+\section{Vectors, mappings, and matrices}
 \label{vecsandmaps:section}
 
-\sectionnotes{more than 1 lecture}
+\sectionnotes{2 lectures}
 
 In real life, there is most often more than one variable.
 We wish to organize dealing with multiple variables in a consistent
@@ -3468,7 +3468,7 @@ $\alpha_1 \vec{x}_1 +
 \frac{-\alpha_n}{\alpha_1}
 \vec{x}_n .
 \end{equation*}
-For example, you can check that
+For example,
 \begin{equation*}
 \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}
 -2
@@ -3534,8 +3534,9 @@ still have a linearly independent set.   But what is
 \end{equation*}
 That seems to be a tougher question to answer.  The
 first two rows are linearly independent, so the rank is at least
-two.  If we set up the equations for the $\alpha_1$, $\alpha_2$, and
-$\alpha_3$, we would find a system with infinitely many solutions, for example,
+two.  If we would set up the equations for the $\alpha_1$, $\alpha_2$, and
+$\alpha_3$, we would find a system with infinitely many solutions.  One
+solution is
 \begin{equation*}
 \begin{bmatrix}
 1 & 2 & 3
@@ -3554,7 +3555,7 @@ So the set of all three rows is linearly dependent, the rank cannot be
 3.  Therefore the rank is 2.
 
 But how can we do this in a more systematic way?  We find the row echelon
-form:
+form!
 \begin{equation*}
 \text{Row echelon form of}
 \quad
@@ -4431,7 +4432,7 @@ $\begin{bmatrix}
 \section{Subspaces, dimension, and the kernel}
 \label{subspaces:section}
 
-\sectionnotes{0.5--1 lecture}
+\sectionnotes{1 lecture}
 
 \subsection{Subspaces, basis, and dimension}
 
@@ -5215,7 +5216,7 @@ a)~3 \quad b)~2 \quad c)~3 \quad d)~2 \quad e)~3
 \section{Inner product and projections}
 \label{innerproduct:section}
 
-\sectionnotes{1 lecture}
+\sectionnotes{1--2 lectures}
 
 \subsection{Inner product and orthogonality}
 
@@ -5690,16 +5691,16 @@ Suppose we start with a basis of vectors $\vec{v}_1,\vec{v}_2, \ldots,
 \vec{v}_n$.  We will construct an orthogonal basis $\vec{w}_1, \vec{w}_2,
 \ldots, \vec{w}_n$ as follows.
 \begin{align*}
-\vec{w}_1 & = \vec{v}_1 \\
+\vec{w}_1 & = \vec{v}_1 , \\
 \vec{w}_2 & = \vec{v}_2
-- \operatorname{proj}_{\vec{w}_1}(\vec{v}_2) \\
+- \operatorname{proj}_{\vec{w}_1}(\vec{v}_2) , \\
 \vec{w}_3 & = \vec{v}_3
 - \operatorname{proj}_{\vec{w}_1}(\vec{v}_3)
-- \operatorname{proj}_{\vec{w}_2}(\vec{v}_3) \\
+- \operatorname{proj}_{\vec{w}_2}(\vec{v}_3) , \\
 \vec{w}_4 & = \vec{v}_4
 - \operatorname{proj}_{\vec{w}_1}(\vec{v}_4)
 - \operatorname{proj}_{\vec{w}_2}(\vec{v}_4)
-- \operatorname{proj}_{\vec{w}_3}(\vec{v}_4) \\
+- \operatorname{proj}_{\vec{w}_3}(\vec{v}_4) , \\
 & \vdots \\
 \vec{w}_n & = \vec{v}_n
 - \operatorname{proj}_{\vec{w}_1}(\vec{v}_n)
@@ -5712,19 +5713,178 @@ subtract the projection of $\vec{v}_k$ to the subspace spanned by
 $\vec{w}_1,\vec{w}_2,\ldots,\vec{w}_{k-1}$.
 
 \begin{example}
-FIXME
+Consider the vectors $(1,2,-1)$, and $(0,5,-2)$ and call $S$ the span
+of the two vectors.  First let us find an orthogonal basis of $S$:
+\begin{align*}
+\vec{w}_1 & = (1,2,-1) , \\
+\vec{w}_2 & = (0,5,-2) 
+- \operatorname{proj}_{(1,2,-1)}\bigl((0,2,-2)\bigr)
+\\
+& =
+(0,1,-1) -
+\frac{\langle (0,5,-2), (1,2,-1) \rangle}{
+\langle (1,2,-1), (1,2,-1) \rangle
+}
+(1,2,-1)
+=
+(0,5,-2) -
+2
+(1,2,-1)
+=
+(-2,1,0) .
+\end{align*}
+So $(1,2,-1)$ and $(-2,1,0)$ span $S$ and are orthogonal.  Let us check:
+$(1,2,-1) \cdot (-2,1,0) = 0$.
+
+Next suppose we wish to find an orthonormal basis.  Well we simply make the
+vectors unit vectors by dividing them by their magnitude.  The two vectors
+making up the orthonormal basis of $S$ are:
+\begin{equation*}
+\frac{1}{\sqrt{6}} (1,2,-1) = \left(
+\frac{1}{\sqrt{6}},
+\frac{2}{\sqrt{6}},
+\frac{-1}{\sqrt{6}}
+\right) ,
+\qquad
+\frac{1}{\sqrt{5}} (-2,1,0) = \left(
+\frac{-2}{\sqrt{5}},
+\frac{1}{\sqrt{5}},
+0
+\right) .
+\end{equation*}
 \end{example}
-
-
-FIXME
 
 \subsection{Exercises}
 
-FIXME
+\begin{exercise}
+Find the $s$ that makes the following vectors orthogonal:
+$(1,2,3)$, $(1,1,s)$.
+\end{exercise}
+
+\begin{exercise}
+Find the angle $\theta$ between
+$(1,3,1)$, $(2,1,-1)$.
+\end{exercise}
+
+\begin{exercise}
+Given that $\langle \vec{v} , \vec{w} \rangle = 3$ and
+$\langle \vec{v} , \vec{u} \rangle = -1$ compute
+\begin{tasks}(3)
+\task $\langle \vec{u} , 2 \vec{v} \rangle$
+\task $\langle \vec{v} , 2 \vec{w} + 3 \vec{u} \rangle$
+\task $\langle \vec{w} + 3 \vec{u}, \vec{v} \rangle$
+\end{tasks}
+\end{exercise}
+
+\begin{exercise}
+Suppose $\vec{v} = (1,1,-1)$.  Find
+\begin{tasks}(3)
+\task $\operatorname{proj}_{\vec{v}}\bigl( (1,0,0) \bigr)$
+\task $\operatorname{proj}_{\vec{v}}\bigl( (1,2,3) \bigr)$
+\task $\operatorname{proj}_{\vec{v}}\bigl( (1,-1,0) \bigr)$
+\end{tasks}
+\end{exercise}
+
+\begin{exercise}
+\pagebreak[2]
+Consider the vectors $(1,2,3)$, $(-3,0,1)$, $(1,-5,3)$.
+\begin{tasks}(2)
+\task Check that the vectors are linearly independent and so form a basis.
+\task Check that the vectors are mutually orthogonal, and are therefore
+an orthogonal basis.
+\task Represent $(1,1,1)$ as a linear combination of this basis.
+\task Make the basis orthonormal.
+\end{tasks}
+\end{exercise}
+
+\begin{exercise}
+Let $S$ be the subspace spanned by
+Starting with $(1,3,-1)$, $(1,1,1)$.  Find an orthogonal basis of $S$.
+\end{exercise}
+
+\begin{exercise}
+Starting with $(1,2,3)$, $(1,1,1)$, $(2,2,0)$, follow the Gram-Schmidt
+process to find an orthogonal basis of ${\mathbb{R}}^3$.
+\end{exercise}
 
 \setcounter{exercise}{100}
 
-FIXME
+\begin{exercise}
+Find the $s$ that makes the following vectors orthogonal:
+$(1,1,1)$, $(1,s,1)$.
+\end{exercise}
+\exsol{%
+$s=-2$
+}
+
+\begin{exercise}
+Find the angle $\theta$ between
+$(1,2,3)$, $(1,1,1)$.
+\end{exercise}
+\exsol{%
+\theta \approx 0.3876
+}
+
+\begin{exercise}
+Given that $\langle \vec{v} , \vec{w} \rangle = 1$ and
+$\langle \vec{v} , \vec{u} \rangle = -1$  and
+$\lVert \vec{v} \rVert = 3$  and
+\begin{tasks}(3)
+\task $\langle 3 \vec{u} , 5 \vec{v} \rangle$
+\task $\langle \vec{v} , 2 \vec{w} + 3 \vec{u} \rangle$
+\task $\langle \vec{w} + 3 \vec{v}, \vec{v} \rangle$
+\end{tasks}
+\end{exercise}
+\exsol{%
+a)~-15 \quad
+b)~-1 \quad
+c)~28
+}
+
+\begin{exercise}
+Suppose $\vec{v} = (1,0,-1)$.  Find
+\begin{tasks}(3)
+\task $\operatorname{proj}_{\vec{v}}\bigl( (0,2,1) \bigr)$
+\task $\operatorname{proj}_{\vec{v}}\bigl( (1,0,1) \bigr)$
+\task $\operatorname{proj}_{\vec{v}}\bigl( (4,-1,0) \bigr)$
+\end{tasks}
+\end{exercise}
+\exsol{%
+a)~$(\nicefrac{-1}{2},0,\frac{1}{2})$ \quad
+b)~$(0,0,0)$ \quad
+c)~$(2,0,-2)$
+}
+
+\begin{exercise}
+The vectors $(1,1,-1)$, $(2,-1,1)$, $(1,-5,3)$ for an orthonormal basis.
+Represent the following vectors in terms of this basis.
+\begin{tasks}(3)
+\task $(1,-8,4)$
+\task $(5,-7,5)$
+\task $(0,-6,2)$
+\end{tasks}
+\end{exercise}
+\exsol{%
+a)~$(1,1,-1)-(2,-1,1)+2(1,-5,3)$ \quad
+b)~$2(2,-1,1)+(1,-5,3)$ \quad
+c)~$2(1,1,-1)-2(2,-1,1)+2(1,-5,3)$
+}
+
+\begin{exercise}
+Let $S$ be the subspace spanned by
+Starting with $(2,-1,1)$, $(2,2,2)$.  Find an orthogonal basis of $S$.
+\end{exercise}
+\exsol{%
+$(2,-1,1)$, $(\nicefrac{2}{3},\nicefrac{8}{3},\nicefrac{4}{3})$
+}
+
+\begin{exercise}
+Starting with $(1,1,-1)$, $(2,3,-1)$, $(1,-1,1)$, follow the Gram-Schmidt
+process to find an orthogonal basis of ${\mathbb{R}}^3$.
+\end{exercise}
+\exsol{%
+$(1,1,-1)$, $(0,1,1)$, $(\nicefrac{4}{3},\nicefrac{-2}{3},\nicefrac{2}{3})$
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -6440,4 +6600,18 @@ without computing the inverse.
 \end{exercise}
 \exsol{%
 $12$
+}
+
+\begin{exercise}[Challenging]
+Find all the $x$ that makes the matrix inverse
+\begin{equation*}
+\begin{bmatrix}
+1 & 2 \\ 1 & x
+\end{bmatrix}^{-1}
+\end{equation*}
+have only integer entries (no fractions).
+Note that there are two answers.
+\end{exercise}
+\exsol{%
+$1$ and $3$
 }
