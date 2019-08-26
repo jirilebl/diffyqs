@@ -53,12 +53,11 @@ perform the tasks.
 
 \subsection{Vectors and operations on vectors}
 
-Let us start with vectors.  Consider $n$ real numbers as an
-$n$-tuple
+Consider $n$ real numbers as an $n$-tuple:
 \begin{equation*}
 (x_1,x_2,\ldots,x_n). 
 \end{equation*}
-These points span the so-called
+The set of such $n$-tuples is the so-called
 \emph{$n$-dimensional space}\index{n-dimensional space@$n$-dimensional space},
 often denoted by ${\mathbb R}^n$.
 Sometimes we call this the $n$-dimensional
@@ -67,14 +66,16 @@ Sometimes we call this the $n$-dimensional
 \href{https://en.wikipedia.org/wiki/Euclid}{Euclid of Alexandria}
 (around 300 BC), possibly the most famous of mathematicians; even
 small towns often have Euclid Street or Euclid Avenue.}. 
-For example in two dimensions, ${\mathbb R}^2$ is the
+In two dimensions, ${\mathbb R}^2$ is called the
 \emph{\myindex{cartesian plane}}%
 \footnote{Named after the French mathematician
 \href{https://en.wikipedia.org/wiki/Descartes}{Ren{\'e} Descartes}
 (1596--1650).  It is \myquote{cartesian} as his name in Latin is Renatus
-Cartesius.}. 
-For example,
-the point $(1,2)$ is one unit to the right and two units up from the
+Cartesius.}.
+Each such $n$-tuple represents a point in the $n$-dimensional space.
+For example, the point
+$(1,2)$ in the plane ${\mathbb R}^2$
+is one unit to the right and two units up from the
 origin.
 
 When we do algebra with these $n$-tuples of numbers we call them
@@ -117,8 +118,7 @@ In this book, however, we will call Bob \myquote{Uncle Bob}
 and write vectors with the little arrows.
 
 The \emph{\myindex{magnitude}} can be computed using Pythagorean theorem.
-For example,
-the vector $(1,2)$ drawn in the figure has magnitude $\sqrt{1^2+2^2} =
+The vector $(1,2)$ drawn in the figure has magnitude $\sqrt{1^2+2^2} =
 \sqrt{5}$.  The magnitude is denoted by $\lVert \vec{x} \rVert$,
 and, in any number of dimensions, it can be computed in the same way:
 \begin{equation*}
@@ -4436,11 +4436,11 @@ $\begin{bmatrix}
 
 \subsection{Subspaces, basis, and dimension}
 
-When using linear algebra, one often finds oneself looking at
+We often find ourselves looking at the set of
 solutions of a linear equation $L\vec{x} = \vec{0}$ for some matrix $L$,
-that is, the kernel of $L$.
-Unless this equation has a unique solution zero,
-the set of all such solutions has a nice structure:  It looks and
+that is, we are interested in the kernel of $L$.
+%Unless the only solution to the equation is $\vec{x} = \vec{0}$,
+The set of all such solutions has a nice structure:  It looks and
 acts a lot like some euclidean space ${\mathbb R}^k$.
 
 We say that a set $S$ of vectors in ${\mathbb R}^n$ is a
@@ -4450,36 +4450,35 @@ $\alpha$ is a scalar, then
 \begin{equation*}
 \vec{x} + \vec{y}, \qquad \text{and} \qquad \alpha \vec{x}
 \end{equation*}
-are also members of $S$.  Since we can multiply by scalars and add,
-any linear combination of members of $S$ is again a member of $S$.  Another
-way of saying that $S$ is a subspace is that it is a set of vectors such
-that every linear combination of vectors in $S$ is in $S$.
+are also members of $S$.  That is, we can add and multiply by scalars
+and we still land in $S$.  So every linear combination of vectors of
+$S$ is still in $S$.  That is really what a subspace is.  It is a subset
+where we can take linear combinations and still end up being in the subset.
 
 \begin{example} \label{example:simplesubspaces}
 If we let $S = {\mathbb R}^n$, then this $S$ is a subspace of
 ${\mathbb R}^n$.  Adding any two vectors in ${\mathbb R}^n$ gets a vector in
 ${\mathbb R}^n$, and so does multiplying by scalars.
 
-On the other hand the set $S' = \{ \vec{0} \}$, that is,
+The set $S' = \{ \vec{0} \}$, that is,
 the set of the zero vector by itself, is 
 also a subspace of ${\mathbb R}^n$.  There's only one vector in this
-subspace so we only need to check for that one vector, and everything checks
+subspace, so we only need to check for that one vector, and everything checks
 out: $\vec{0}+\vec{0} = \vec{0}$ and $\alpha \vec{0} = \vec{0}$.
 
-As a little more complicated example, the set $S''$ of all the vectors of the form
+The set $S''$ of all the vectors of the form
 $(a,a)$ for any real number $a$, such as $(1,1)$, $(3,3)$, or $(-0.5,-0.5)$
 is a subspace of ${\mathbb R}^2$.  Adding two such vectors, say
 $(1,1)+(3,3) = (4,4)$ again gets a vector of the same form, and so does
 multiplying by a scalar, say $8(1,1) = (8,8)$.
 \end{example}
 
-If $S$ is a subspace and every vector in $S$ can be written
-as a linear combination of a certain fixed set of $k$ linearly independent
-nonzero vectors
+If $S$ is a subspace and we can find $k$ linearly independent vectors in $S$
 \begin{equation*}
-\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k
+\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k ,
 \end{equation*}
-that are also in $S$,
+such that every other vector in $S$ is a linear combination of $\vec{v}_1,
+\vec{v}_2,\ldots, \vec{v}_k$,
 then the set 
 $\{ \vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k \}$ is called a
 \emph{\myindex{basis}} of $S$.  In other words, $S$
@@ -4494,7 +4493,7 @@ and we write
 \begin{theorem}
 If $S \subset {\mathbb R}^n$ is a subspace and $S$ is not the trivial
 subspace $\{ \vec{0} \}$, then there exists a
-unique number $k$ (the dimension) and a (not unique)
+unique positive integer $k$ (the dimension) and a (not unique)
 basis
 $\{ \vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k \}$, such that every
 $\vec{w}$ in $S$ can be uniquely represented by
@@ -4509,18 +4508,19 @@ $\vec{w}$ in $S$ can be uniquely represented by
 for some scalars $\alpha_1$, $\alpha_2$, \ldots, $\alpha_k$.
 \end{theorem}
 
-Just like a point ${\mathbb R}^k$ is represented by a $k$-tuple of
-numbers, so is a point in a $k$-dimensional subspace of ${\mathbb R}^n$
+Just like a vector in ${\mathbb R}^k$ is represented by a $k$-tuple of
+numbers, so is a vector in a $k$-dimensional subspace of ${\mathbb R}^n$
 represented by a $k$-tuple of numbers.  At least once we have fixed a basis.
 A different basis would give a different $k$-tuple of numbers for the same
-point.
+vector.
 
 We should reiterate that while $k$ is unique (a subspace cannot have two different
 dimensions), the set of basis vectors is not at all unique.  There are lots
 of different bases for any given subspace.  Finding just the right basis for
-a subspace is what is a large part of what one does in linear algebra and in
-fact in linear differential equations, although at first glance
-sometimes it may not seem like that is what we are doing.
+a subspace is a large part of what one does in linear algebra.  In fact,
+that is what we spend a lot of time on in
+linear differential equations, although at first glance
+it may not seem like that is what we are doing.
 
 \begin{example}
 The standard basis
@@ -4535,32 +4535,32 @@ So as expected
 
 On the other hand the subspace $\{ \vec{0} \}$ is of dimension $0$.
 
-Consider the subspace $S''$ from the example above, that is, the set of
-vectors $(a,a)$ is of dimension 1.  One possible basis is simply
-$\{ (1,1) \}$, that is the single
+The subspace $S''$ from a previous example, that is, the set of
+vectors $(a,a)$ is of dimension~1.  One possible basis is simply
+$\{ (1,1) \}$, the single
 vector $(1,1)$: every vector in $S''$ can be represented by $a (1,1) =
 (a,a)$.  Similarly another possible basis would be $\{ (-1,-1) \}$.  Then
-the point $(a,a)$ would be represented as $(-a) (1,1)$.
+the vector $(a,a)$ would be represented as $(-a) (1,1)$.
 \end{example}
 
 Row and column spaces of a matrix are also examples of
 subspaces,
 as they are given as the span of vectors.
 We can use
-what we know about rank, row space and column space
+what we know about rank, row spaces, and column spaces
 from the previous section to find a basis.
 
 \begin{example}
-In the last section we considered the matrix
+In the last section, we considered the matrix
 \begin{equation*}
 A =
 \begin{bmatrix}
 1 & 2 & 3 & 4 \\
 2 & 4 & 5 & 6 \\
 3 & 6 & 7 & 8
-\end{bmatrix} ,
+\end{bmatrix} .
 \end{equation*}
-and we found that using row reduction to find the pivot columns, we found
+Using row reduction to find the pivot columns, we found
 \begin{equation*}
 \text{column space of $A$} \left(
 \begin{bmatrix}
@@ -4693,7 +4693,7 @@ of a matrix $A$ are both equal to the rank of $A$.
 
 \subsection{Kernel}
 
-A set of solutions of a linear equation $L\vec{x} = \vec{0}$, 
+The set of solutions of a linear equation $L\vec{x} = \vec{0}$, 
 the kernel of $L$, is a subspace:
 If $\vec{x}$ and $\vec{y}$ are solutions,
 then
