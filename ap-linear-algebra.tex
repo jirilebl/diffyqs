@@ -4454,6 +4454,7 @@ are also members of $S$.  That is, we can add and multiply by scalars
 and we still land in $S$.  So every linear combination of vectors of
 $S$ is still in $S$.  That is really what a subspace is.  It is a subset
 where we can take linear combinations and still end up being in the subset.
+Consequently the span of a number of vectors is automatically a subspace.
 
 \begin{example} \label{example:simplesubspaces}
 If we let $S = {\mathbb R}^n$, then this $S$ is a subspace of
@@ -4623,7 +4624,7 @@ and repeated the computation above.  The subspace $X$ is then the column space o
 $A$.
 
 \begin{example}
-For another example, let us consider the matrix 
+Consider the matrix 
 \begin{equation*}
 L =
 \begin{bmatrix}
@@ -4632,30 +4633,29 @@ L =
 0 & 0 & 0 & {1} & 5
 \end{bmatrix} 
 \end{equation*}
-Conveniently the matrix is in reduced row echelon form.  The matrix
-is of rank 3.
-The column space is the span of
-the pivot columns, so this is
-the 3-dimensional space
+Conveniently, the matrix is in reduced row echelon form.
+The matrix is of rank 3.
+The column space is the span of the pivot columns.
+It is the 3-dimensional space
 \begin{equation*}
 \text{column space of $L$} =
 \operatorname{span} \left\{
 \begin{bmatrix}
-{1} \\
+1 \\
 0 \\
 0
 \end{bmatrix} 
 ,
 \begin{bmatrix}
- 0 \\
- {1} \\
- 0 
+0 \\
+1 \\
+0
 \end{bmatrix} 
 ,
 \begin{bmatrix}
 0 \\
 0 \\
-{1} 
+1
 \end{bmatrix} 
 \right\}
 = {\mathbb{R}}^3 .
@@ -4665,19 +4665,19 @@ The row space is the 3-dimensional space
 \text{row space of $L$} =
 \operatorname{span} \left\{
 \begin{bmatrix}
-{1} & 2 & 0 & 0 & 3
+1 & 2 & 0 & 0 & 3
 \end{bmatrix} 
 ,
 \begin{bmatrix}
-0 & 0 & {1} & 0 & 4
+0 & 0 & 1 & 0 & 4
 \end{bmatrix} 
 ,
 \begin{bmatrix}
-0 & 0 & 0 & {1} & 5
+0 & 0 & 0 & 1 & 5
 \end{bmatrix} 
 \right\} .
 \end{equation*}
-As these vectors have 5 components, we can think of the row space of $L$
+As these vectors have 5 components, we think of the row space of $L$
 as a subspace of ${\mathbb{R}}^5$.
 \end{example}
 
@@ -4708,15 +4708,13 @@ L(\alpha \vec{x}) =
 \end{equation*}
 So $\vec{x}+\vec{y}$ and $\alpha \vec{x}$ are solutions.  In other words,
 the kernel of $L$ is a subspace.
-
 The dimension of the kernel is called the \emph{\myindex{nullity}} of the
 matrix.
 
 The same sort of idea governs the solutions of linear differential
-equations.  We will be looking for a kernel of a linear differential 
-operator, and as it is a subspace, we will be looking for a basis of this
-kernel.  Majority of this book is essentially dedicated to finding
-such bases.
+equations.  We try to describe the kernel of a linear differential 
+operator, and as it is a subspace, we look for a basis of this
+kernel.  Much of this book is dedicated to finding such bases.
 
 The kernel of a matrix is the same as the kernel of its reduced echelon
 form.  For a matrix in reduced row echelon form, the kernel is rather easy to
@@ -4725,18 +4723,19 @@ $\vec{x}$ corresponds to a column of $L$, the column that the entry
 multiplies.
 To find the kernel,
 pick a 
-non-pivot column make a vector which has a $-1$ in the entry
-corresponding to this non-pivot column, and zeros at all the other entries
+non-pivot column make a vector that has a $-1$ in the entry
+corresponding to this non-pivot column and zeros at all the other entries
 corresponding to the other non-pivot columns.
 Then for all the entries
 corresponding to pivot columns make it precisely the value in the
 corresponding row of the non-pivot column to make the vector be a
 solution to $L \vec{x} = \vec{0}$.
-This procedure is perhaps best understood by example.
+This procedure is best understood by example.
 
 \begin{example}
-Consider the matrix
+Consider
 \begin{equation*}
+L = 
 \begin{bmatrix}
 \boxed{1} & 2 & 0 & 0 & 3 \\
 0 & 0 & \boxed{1} & 0 & 4 \\
@@ -4746,16 +4745,16 @@ Consider the matrix
 This matrix is in reduced row echelon form, the pivots are marked.
 There are two non-pivot columns, so the kernel has dimension 2, that
 is, it is the span of 2 vectors.  Let us find the first vector.
-As we said, we look at the first non-pivot column, the $2^{\text{nd}}$ column, 
+We look at the first non-pivot column, the $2^{\text{nd}}$ column, 
 and we put a $-1$ in the
 $2^{\text{nd}}$ entry of our vector.  We put a $0$ in the $5^{\text{th}}$
-entry as the $5^{\text{th}}$ column is also a non-pivot column.
+entry as the $5^{\text{th}}$ column is also a non-pivot column:
 \begin{equation*}
 \begin{bmatrix}
 ? \\ -1 \\ ? \\ ? \\ 0
 \end{bmatrix} .
 \end{equation*}
-Let us now fill the rest.  When this vector hits the first row, we get a
+Let us fill the rest.  When this vector hits the first row, we get a
 $-2$ and $1$ times whatever the first question mark is.  So make the first
 question mark $2$.  For the second and third rows, it is sufficient to make
 it the question marks zero.  We are really filling in the non-pivot column
@@ -4782,7 +4781,7 @@ Yay!  How about the second vector.  We start with
 ? \\ 0 \\ ? \\ ? \\ -1 .
 \end{bmatrix}
 \end{equation*}
-Now we have to set the first question mark to 3, the second to 4 and the
+We set the first question mark to 3, the second to 4, and the
 third to 5.  Let us check, marking things as previously,
 \begin{equation*}
 \begin{bmatrix}
@@ -4799,8 +4798,10 @@ third to 5.  Let us check, marking things as previously,
 \end{bmatrix}
 .
 \end{equation*}
-We have found the basis of the kernel.  The kernel of the matrix is
+There are two non-pivot columns, so we only need two vectors.
+We have found the basis of the kernel.  So,
 \begin{equation*}
+\text{kernel of $L$} =
 \operatorname{span} \left\{
 \begin{bmatrix}
 2 \\ -1 \\ 0 \\ 0 \\ 0
@@ -5002,6 +5003,19 @@ and the dimension.
 Consider a square matrix $A$, and suppose that $\vec{x}$ is a nonzero
 vector such that $A \vec{x} = \vec{0}$.  What does the Fredholm alternative
 say about invertibility of $A$.
+\end{exercise}
+
+\begin{exercise}
+Consider
+\begin{equation*}
+M =
+\begin{bmatrix}
+1 & 2 & 3 \\
+2 & ? & ? \\
+-1 & ? & ?
+\end{bmatrix} .
+\end{equation*}
+If the rank of this matrix is 1, fill in the question marks.
 \end{exercise}
 
 \setcounter{exercise}{100}
