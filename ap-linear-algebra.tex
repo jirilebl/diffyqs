@@ -4706,8 +4706,8 @@ L(\alpha \vec{x}) =
 \alpha L \vec{x} = 
 \alpha \vec{0} = \vec{0}.
 \end{equation*}
-So $\vec{x}+\vec{y}$ and $\alpha \vec{x}$ are solutions.  In other words,
-the kernel of $L$ is a subspace.
+So $\vec{x}+\vec{y}$ and $\alpha \vec{x}$ are solutions.
+%In other words, the kernel of $L$ is a subspace.
 The dimension of the kernel is called the \emph{\myindex{nullity}} of the
 matrix.
 
@@ -5015,7 +5015,8 @@ M =
 -1 & ? & ?
 \end{bmatrix} .
 \end{equation*}
-If the rank of this matrix is 1, fill in the question marks.
+If the nullity of this matrix is 2, fill in the question marks.  Hint: What
+is the rank?
 \end{exercise}
 
 \setcounter{exercise}{100}
@@ -5236,13 +5237,15 @@ a)~3 \quad b)~2 \quad c)~3 \quad d)~2 \quad e)~3
 
 To do basic geometry, we need length, and we need angles.
 We have already seen the euclidean length, so let us figure out how to
-compute angles.  We will mostly be concerned
-about the right angle\footnote{When Euclid defined angles in his
+compute angles. 
+ Mostly, we are worried about 
+the right angle\footnote{When Euclid defined angles in his
 \emph{Elements}, the only angle he ever really defined was the right angle.}.
 
 Given two (column) vectors in ${\mathbb{R}}^n$,
 we define the (standard)
 \emph{\myindex{inner product}}\index{standard inner product} as
+the dot product:
 \begin{equation*}
 \langle \vec{x} , \vec{y} \rangle =
 \vec{x} \cdot \vec{y}
@@ -5252,9 +5255,11 @@ we define the (standard)
 \sum_{i=1}^n x_i y_i .
 \end{equation*}
 Why do we seemingly give a new notation for the dot product?  
-Because there are other possible inner products, which are not the dot product.
-For example in \chapterref{FS:chapter}, we define an inner product on
-functions 
+Because there are other possible inner products, which are not the dot
+product, although we will not worry about others here.
+An inner product can even be defined on spaces of functions
+as we do in
+\chapterref{FS:chapter}:
 \begin{equation*}
 \langle f(t) , g(t) \rangle =
 \int_{a}^{b}
@@ -5290,16 +5295,41 @@ The standard inner product gives the euclidean length:
 = \sqrt{x_1^2 + x_2^2 + \cdots + x_n^2} .
 \end{equation*}
 How does it give angles?
+%  If we take two vectors $\vec{x}$ and $\vec{y}$
+%and base them at the same point, they make an angle $\theta$.  How do
+%we compute $\theta$?
 
-In multivariable calculus, you have seen the 
-following formula in two or three dimensions
+You may recall from multivariable calculus, that in
+two or three dimensions, the standard inner product
+gives you the angle as you know from plane or three dimensional geometry:
 \begin{equation*}
 \langle \vec{x}, \vec{y} \rangle
 =
-\lVert{\vec{x}}\rVert \lVert{\vec{y}}\rVert \cos \theta,
+\lVert{\vec{x}}\rVert \lVert{\vec{y}}\rVert \cos \theta.
 \end{equation*}
-where $\theta$ is the angle between the angles $\vec{x}$ and $\vec{y}$.  To
-compute the angle we compute
+That is, $\theta$ is the angle that $\vec{x}$ and $\vec{y}$ make
+when they are based at the same point.
+
+In ${\mathbb{R}}^n$, we are simply going to say that $\theta$
+from the formula is what the angle is.
+This makes sense as any two vectors based at the origin
+lie in a 2-dimensional plane (subspace),
+and the formula works in 2 dimensions.
+In fact, one could even talk about angles between functions this way, and
+we do in \chapterref{FS:chapter}, where we talk about orthogonal functions
+(functions at right angle to each other).
+
+%FIXME: not sure if it makes sense to explain
+%To see why the formula should work, consider $\vec{v} = (1,0)$, a unit
+%vector in the positive $x$ direction if we think of ${\mathbb{R}}^2$
+%as the the normal $xy$-plane.
+%which points horizontally and to the right on the 
+%
+%and $\vec{y}
+%= (\cos\theta,\sin\theta)$.  The vector $\vec{x}$ points is horizontal   Both are unit vectors and $\vec{x} \cdot
+%\vec{y} = \cos \theta$.
+
+To compute the angle we compute
 \begin{equation*}
 \cos \theta
 =
@@ -5318,10 +5348,12 @@ If we solve for $\theta$ using the inverse cosine $\cos^{-1}$,
 we can just decree that $0 \leq \theta \leq \pi$.
 
 \begin{myfig}
+%\begin{mywrapfig}{3.25in}
 \capstart
 \inputpdft{vec-angle}
 \caption{Angle between vectors.\label{vec-angle:fig}}
 \end{myfig}
+%\end{mywrapfig}
 
 \begin{example}
 Let us compute the angle between the vectors $(3,0)$ and $(1,1)$ in the
@@ -5336,17 +5368,17 @@ Compute
 Therefore $\theta = \nicefrac{\pi}{4}$.
 \end{example}
 
-While we do not have any real model for ${\mathbb{R}}^n$ when $n$ is not 2
-or 3, 
-we simply define the angle between two vectors using the formula above.
-This makes sense as any two vectors based at the origin
-lie in a 2-dimensional plane (subspace),
-and the formula works in 2 dimensions.
-
-\medskip
+%While we do not have any real model for ${\mathbb{R}}^n$ when $n$ is not 2
+%or 3, 
+%we simply define the angle between two vectors using the formula above.
+%This makes sense as any two vectors based at the origin
+%lie in a 2-dimensional plane (subspace),
+%and the formula works in 2 dimensions.
+%
+%\medskip
 
 As we said, the most important angle is the right angle.  A right angle
-is $\nicefrac{\pi}{2}$ radians, and $\cos \nicefrac{\pi}{2} = 0$, so the
+is $\nicefrac{\pi}{2}$ radians, and $\cos (\nicefrac{\pi}{2}) = 0$, so the
 formula is particularly easy in this case.
 We say
 vectors $\vec{x}$ and $\vec{y}$
@@ -5357,7 +5389,7 @@ angles, that is if
 =
 0 .
 \end{equation*}
-For example, the vectors $(1,0,0,1)$ and $(1,2,3,-1)$ are orthogonal.  So
+The vectors $(1,0,0,1)$ and $(1,2,3,-1)$ are orthogonal.  So
 are $(1,1)$ and $(1,-1)$.  However, $(1,1)$ and $(1,2)$ are not orthogonal as
 their inner product is $3$ and not 0.
 
@@ -5372,7 +5404,7 @@ as orthogonal to each other.
 
 Generalizing this concept to functions,
 it is particularly useful in \chapterref{FS:chapter} to express a
-function using a particular orthogonal basis.
+function using a particular orthogonal basis, the Fourier series.
 
 To express one vector in terms of an orthogonal basis, we need to first
 \emph{project} one vector onto another.
@@ -5388,9 +5420,23 @@ of $\vec{w}$ onto $\vec{v}$ as
 \vec{v} .
 \end{equation*}
 For the geometric idea, see \figurevref{vec-orthoproj:fig}.  That is, we
-find the \emph{shadow} of $\vec{w}$ on the line spanned by $\vec{v}$ if the
-direction of the suns rays
+find the \myquote{shadow of $\vec{w}$} on the line spanned by $\vec{v}$ if the
+direction of the sun's rays
 were exactly perpendicular to the line. 
+Another way of thinking about it is that the tip of the arrow of
+$\operatorname{proj}_{\vec{v}}(\vec{w})$ is the closest point on the line
+spanned by $\vec{v}$ to the tip of the arrow of $\vec{w}$.
+In terms of euclidean distance, 
+$\vec{u} = \operatorname{proj}_{\vec{v}}(\vec{w})$ minimizes the
+distance
+$\lVert \vec{u} - \vec{w} \rVert$ among all vectors $\vec{u}$ that are
+multiples of $\vec{v}$.
+Because of this, this projection comes up often in applied
+mathematics in all sorts of contexts we we cannot solve a problem
+exactly: We can't always solve
+\myquote{Find $\vec{w}$ as a multiple of
+$\vec{v}$,}
+but $\operatorname{proj}_{\vec{v}}(\vec{w})$ is the best \myquote{solution.}
 
 \begin{myfig}
 \capstart
@@ -5400,8 +5446,8 @@ were exactly perpendicular to the line.
 
 The formula follows from basic trigonometry.  The length of
 $\operatorname{proj}_{\vec{v}}(\vec{w})$ should be
-$\cos \theta$ times the length of $\vec{w}$, that is $\lVert\vec{w}\rVert$.
-Then we take the unit vector in the direction of $\vec{v}$, that is,
+$\cos \theta$ times the length of $\vec{w}$, that is $(\cos \theta)\lVert\vec{w}\rVert$.
+We take the unit vector in the direction of $\vec{v}$, that is,
 $\frac{\vec{v}}{\lVert \vec{v} \rVert}$ and we multiply it by the length of
 the projection.  In other words,
 \begin{equation*}
@@ -5477,10 +5523,13 @@ basis are orthogonal to each other, that is, if
 \end{equation*}
 for all choices of $j$ and $k$ where $j \not= k$ (a nonzero vector cannot be
 orthogonal to itself).
-
 A basis is furthermore called an \emph{\myindex{orthonormal basis}} if all
 the vectors in a basis are also unit vectors, that is, if all the vectors
 have magnitude 1.
+For example, the standard basis $\{ (1,0,0), (0,1,0), (0,0,1) \}$ is an
+orthonormal basis of ${\mathbb{R}}^3$:
+Any pair is orthogonal, and each vector is of unit
+magnitude.
 
 The reason why we are interested in orthogonal (or orthonormal) bases is
 that they make it really simple to represent a vector (or a projection onto
@@ -5491,14 +5540,16 @@ orthogonal basis for the set of solutions of a differential equation we
 are then able to find any particular solution by simply applying the
 orthogonal projection formula, which is just a couple of a inner products.
 
-Let us come back to linear algebra.  Suppose that we have an orthogonal
-basis $\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n$, and we wish to
+Let us come back to linear algebra.  Suppose that we have a subspace
+and an orthogonal
+basis $\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n$.  We wish to
 express $\vec{x}$ in terms of the basis.  If $\vec{x}$ is not in the span
-of the basis, then of course it is not possible, but the following formula
-will give us the orthogonal projection onto the subspace spanned by the
-basis.
+of the basis (when it is not in the given subspace),
+then of course it is not possible,
+but the following formula
+will at least give us the orthogonal projection onto the subspace.
 
-So first suppose that $\vec{x}$ is in the span.  Then it is the sum of the
+First suppose that $\vec{x}$ is in the span.  Then it is the sum of the
 orthogonal projections:
 \begin{equation*}
 \vec{x} = 
@@ -5527,15 +5578,23 @@ orthogonal projections:
 }
 \vec{v}_n .
 \end{equation*}
-In other words, we wish to write
+In other words, if we want to write
 $\vec{x} =
 a_1 \vec{v}_1 + 
 a_2 \vec{v}_2 + \cdots +
-a_n \vec{v}_n$, and then for every $j$ we have
+a_n \vec{v}_n$, then
 \begin{equation*}
-a_j = 
-\frac{\langle \vec{x}, \vec{v}_j \rangle}{
-\langle \vec{v}_j, \vec{v}_j \rangle
+a_1 = 
+\frac{\langle \vec{x}, \vec{v}_1 \rangle}{
+\langle \vec{v}_1, \vec{v}_1 \rangle
+} , \quad
+a_2 = 
+\frac{\langle \vec{x}, \vec{v}_2 \rangle}{
+\langle \vec{v}_2, \vec{v}_2 \rangle
+} , \quad \ldots , \quad
+a_n = 
+\frac{\langle \vec{x}, \vec{v}_n \rangle}{
+\langle \vec{v}_n, \vec{v}_n \rangle
 } .
 \end{equation*}
 
@@ -5543,7 +5602,7 @@ Another way to derive this formula is to work in reverse.  Suppose that
 $\vec{x} =
 a_1 \vec{v}_1 + 
 a_2 \vec{v}_2 + \cdots +
-a_n \vec{v}_n$.  Then let's take an inner product with $\vec{v}_j$, and
+a_n \vec{v}_n$.  Take an inner product with $\vec{v}_j$, and
 use the properties of the inner product:
 \begin{equation*}
 \begin{split}
@@ -5560,10 +5619,10 @@ a_2 \langle \vec{v}_2 , \vec{v}_j \rangle +
 a_n \langle \vec{v}_n , \vec{v}_j \rangle .
 \end{split}
 \end{equation*}
-Once we notice that the basis is orthogonal, then
+As the basis is orthogonal, then
 $\langle \vec{v}_k , \vec{v}_j \rangle = 0$ whenever
-$k \not= j$, so that means that only one of the terms on the right
-hand side is nonzero and we get.
+$k \not= j$.  That means that only one of the terms, the $j$th one, on the right
+hand side is nonzero and we get
 \begin{equation*}
 \langle \vec{x} , \vec{v}_j \rangle
 =
@@ -5611,16 +5670,43 @@ example, the orthonormal basis we would thus create is
 \left( \frac{1}{\sqrt{2}} , \frac{1}{\sqrt{2}} \right) , \quad
 \left( \frac{1}{\sqrt{2}} , \frac{-1}{\sqrt{2}} \right) .
 \end{equation*}
+Then the computation would have been
+\begin{equation*}
+\begin{split}
+(3,4)
+& =
+\left\langle
+(3,4)
+,
+\left( \frac{1}{\sqrt{2}} , \frac{1}{\sqrt{2}} \right)
+\right\rangle
+\left( \frac{1}{\sqrt{2}} , \frac{1}{\sqrt{2}} \right)
++
+\left\langle
+(3,4)
+,
+\left( \frac{1}{\sqrt{2}} , \frac{-1}{\sqrt{2}} \right)
+\right\rangle
+\left( \frac{1}{\sqrt{2}} , \frac{-1}{\sqrt{2}} \right)
+\\
+& =
+\frac{7}{\sqrt{2}}
+\left( \frac{1}{\sqrt{2}} , \frac{1}{\sqrt{2}} \right)
++
+\frac{-1}{\sqrt{2}}
+\left( \frac{1}{\sqrt{2}} , \frac{-1}{\sqrt{2}} \right) .
+\end{split}
+\end{equation*}
 
-Maybe the example is not so awe inspiring, but if you had 
+Maybe the example is not so awe inspiring, but given
 vectors in ${\mathbb{R}}^{20}$ rather than ${\mathbb{R}}^2$,
 then surely one would much rather do 20 inner products
-(assuming we have an orthonormal basis) rather than doing
+(or 40 if we did not have an orthonormal basis) rather than
 solving a system of twenty equations in twenty unknowns
 using row reduction of a $20 \times 21$ matrix.
 
 As we said above, the formula still works even if $\vec{x}$ is not in the
-span of the basis, although then it does not get us the vector $\vec{x}$
+subspace, although then it does not get us the vector $\vec{x}$
 but its projection.  More concretely, suppose that $S$ is a subspace
 that is the span of $\vec{v}_1,\vec{v}_2,\ldots,\vec{v}_n$ and $\vec{x}$
 is any vector.  Let $\operatorname{proj}_{S}(\vec{x})$ be the vector in $S$
@@ -5649,11 +5735,11 @@ Of course, if $\vec{x}$ is in $S$, then $\operatorname{proj}_{S}(\vec{x}) =
 \vec{x}$, as the closes vector in $S$ to $\vec{x}$ is $\vec{x}$ itself of
 course.  But true utility is obtained when $\vec{x}$ is not in $S$.
 In lots of applied mathematics we cannot find an exact solution, but we try
-to find the best solution out of a small subset.  The partial sums of
+to find the best solution out of a small subset (subspace).  The partial sums of
 Fourier series from \chapterref{FS:chapter} are one example.  Another
 example is least square approximation to fit a curve to data.  Yet another
 example is given by
-the most commonly used numerical methods to solve partial differential
+the most commonly used numerical methods to solve differential
 equations, the finite element methods.
 
 \begin{example}
@@ -5750,8 +5836,9 @@ of the two vectors.  First let us find an orthogonal basis of $S$:
 So $(1,2,-1)$ and $(-2,1,0)$ span $S$ and are orthogonal.  Let us check:
 $(1,2,-1) \cdot (-2,1,0) = 0$.
 
-Next suppose we wish to find an orthonormal basis.  Well we simply make the
-vectors unit vectors by dividing them by their magnitude.  The two vectors
+Suppose we wish to find an orthonormal basis, not just an orthogonal one.
+Well, we simply make the
+vectors into unit vectors by dividing them by their magnitude.  The two vectors
 making up the orthonormal basis of $S$ are:
 \begin{equation*}
 \frac{1}{\sqrt{6}} (1,2,-1) = \left(
