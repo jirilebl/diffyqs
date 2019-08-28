@@ -79,7 +79,10 @@ is one unit to the right and two units up from the
 origin.
 
 When we do algebra with these $n$-tuples of numbers we call them
-\emph{vectors}\index{vector}.  Mathematicians are keen on separating
+\emph{vectors}\index{vector}\footnote{%
+A common notation to distinguish vectors from points is to write $(1,2)$
+for the point and $\langle 1,2 \rangle$ for the vector.  We write both as
+$(1,2)$.}.  Mathematicians are keen on separating
 what is a vector and what is a point of the space or in the plane,
 and it turns out
 to be an important distinction, however, for the purposes of linear algebra
@@ -285,7 +288,7 @@ As we said a vector is a direction and a magnitude.  Magnitude is easy to
 represent, it is just a number.  The \emph{\myindex{direction}} is usually
 given by a vector with magnitude one.  We call such a vector a
 \emph{\myindex{unit vector}}.  That is, $\vec{u}$ is a unit vector when
-$\lVert \vec{u} \rVert = 1$.  For example the vectors $(1,0)$,
+$\lVert \vec{u} \rVert = 1$.  For example, the vectors $(1,0)$,
 $(\nicefrac{1}{\sqrt{2}},\nicefrac{1}{\sqrt{2}})$, and $(0,-1)$ are all
 unit vectors.
 
@@ -1449,7 +1452,7 @@ these matrices.  We don't know what that could possibly mean.
 
 \medskip
 
-It is also useful to have a matrix that whenadded to any other matrix
+It is also useful to have a matrix that when added to any other matrix
 does nothing.  This is the zero matrix, the matrix of all zeros:
 \begin{equation*}
 \begin{bmatrix}
@@ -1473,8 +1476,8 @@ just assume that $0$ is the zero matrix of the same size as $A$.
 
 \medskip
 
-There are really two things we can multiply matrices by.  We could multiply
-matrices by scalars or we could multiply by other matrices.  Let us first
+There are really two things we can multiply matrices by.  We can multiply
+matrices by scalars or we can multiply by other matrices.  Let us first
 consider multiplication by scalars.
 For a matrix $A$ and a scalar $\alpha$ we want $\alpha A$ to be the matrix
 that accomplishes
@@ -1991,7 +1994,7 @@ BA .
 \subsection{Inverse}
 
 There are a couple of other algebra rules you know for numbers that do not quite
-generalize easily to matrices:
+work on matrices:
 \begin{enumerate}[(i)]
 \item $AB = AC$ does not necessarily imply $B=C$, even if $A$ is not 0.
 \item $AB = 0$ does not necessarily mean that $A=0$ or $B=0$.
@@ -2055,7 +2058,7 @@ And similarly for cancellation on the right:
 then $BA = CA$ implies $B=C$.}
 \end{center}
 
-Notice that the rule says, among other things, that the
+The rule says, among other things, that the
 inverse of a matrix is unique if it exists:  If $AB = I = AC$ then $A$ is
 invertible and $B=C$.
 
@@ -2155,7 +2158,7 @@ Let us try it:
 %mbx \text{???}
 \end{equation*}
 We get into a bit of trouble; we are trying to divide by zero.
-The matrix is not invertible, it is singular.
+%The matrix is not invertible, it is singular.
 
 So a $2 \times 2$ matrix $A$ is invertible whenever
 \begin{equation*}
@@ -3379,7 +3382,7 @@ is a linear combination of the columns of $A$, while
 \end{equation*}
 is a linear combination of the rows of $A$.
 
-The way linear combinations come up in the study of differential
+The way linear combinations come up in our study of differential
 equations is similar to the following computation.  Suppose that
 $\vec{x}_1$, $\vec{x}_2$, \ldots, $\vec{x}_n$ are solutions
 to $A \vec{x}_1 = \vec{0}$, 
@@ -3449,9 +3452,9 @@ are linearly independent.  Let's try:
 So $\alpha_1 = 0$, and then it is clear that $\alpha_2 = 0$ as well.  In
 other words, the vectors are linearly independent.
 
-If a set of vectors is linearly dependent, that is, some of the $\alpha$'s
+If a set of vectors is linearly dependent, that is, some of the $\alpha_j$'s
 are nonzero, then we can solve for one vector in terms of the others.
-For example suppose $\alpha_1 \not= 0$.  Since
+Suppose $\alpha_1 \not= 0$.  Since
 $\alpha_1 \vec{x}_1 + 
 \alpha_2 \vec{x}_2 + 
 \cdots +
@@ -3489,7 +3492,7 @@ and so
 \begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix} .
 \end{equation*}
 
-You may have noticed that solving for those $\alpha$'s is just solving
+You may have noticed that solving for those $\alpha_j$'s is just solving
 linear equations, and so you may not be surprised that we can figure out
 if a set of vectors is linearly independent by row reduction.
 
@@ -3804,7 +3807,7 @@ we started with the vectors
 These vectors are not linearly independent as we saw above.  In particular,
 the span $\vec{v}_1$ and $\vec{v}_3$ is the same as
 the spen of all four of the vectors.  So $\vec{v}_2$ and $\vec{v}_4$
-can both be written as linear combinations of of $\vec{v}_1$ and $\vec{v}_3$.
+can both be written as linear combinations of $\vec{v}_1$ and $\vec{v}_3$.
 A common thing that comes up in practice is that one gets a set of vectors
 whose span is the set of solutions of some problem.  But perhaps we get way
 too many vectors, we want to simplify.  For example above, all vectors in
@@ -3827,7 +3830,7 @@ that is, the matrix
 3 & 6 & 7 & 8
 \end{bmatrix} .
 \end{equation*}
-We crank up the row reduction machine, feed this matrix into it, and find
+We crank up the row-reduction machine, feed this matrix into it, and find
 the pivot columns and pick those.  In this case, $\vec{v}_1$ and
 $\vec{v}_3$.
 
@@ -3838,14 +3841,14 @@ $\vec{x}$ to $A \vec{x} = \vec{b}$ for any $\vec{b}$ (there are no free
 variables), then $A$ is invertible.
 This is equivalent of an $n \times n$ matrix $A$ being of rank $n$.
 
-In particular if $A \vec{x} = \vec{b}$ then $\vec{x} = A^{-1} \vec{b}$.
+In particular, if $A \vec{x} = \vec{b}$ then $\vec{x} = A^{-1} \vec{b}$.
 Now we just need to compute what $A^{-1}$ is.  We can surely 
 do elimination every time we want to find $A^{-1} \vec{b}$, but that
 would be ridiculous.  The mapping $A^{-1}$ is linear and
 hence given by a matrix, and we have seen that to figure out the matrix
 we just need to find where does $A$ take the standard basis vectors
 $\vec{e}_1$, 
-$\vec{e}_2$, \ldots
+$\vec{e}_2$, \ldots,
 $\vec{e}_n$.
 
 That is, to find the first column of $A^{-1}$ we solve
@@ -3862,12 +3865,14 @@ Therefore, to find the inverse of $A$ we write an $n
 \times 2n$ augmented matrix $[ \,A ~|~ I\, ]$, where $I$ is the identity
 matrix, whose columns are precisely the standard basis vectors.
 We then perform row reduction until we arrive at the reduced row echelon
-form.  If $A$ is invertible, then pivots can be found in every column,
+form.  If $A$ is invertible, then pivots can be found in every column of $A$,
 and so the 
 reduced row echelon form of $[ \,A ~|~ I\, ]$ 
-is of the form $[ \,I ~|~ A^{-1}\, ]$.  If you do not find a pivot in every
+looks like $[ \,I ~|~ A^{-1}\, ]$.
+We then just read off the inverse $A^{-1}$.
+If you do not find a pivot in every
 one of the first $n$ columns of the augmented matrix, then 
-$A$ is not invertible.  We then just read off the inverse $A^{-1}$.
+$A$ is not invertible.
 
 This is best seen by example.  Suppose we wish to invert the matrix
 \begin{equation*}
@@ -5324,7 +5329,7 @@ we do in \chapterref{FS:chapter}, where we talk about orthogonal functions
 %FIXME: not sure if it makes sense to explain
 %To see why the formula should work, consider $\vec{v} = (1,0)$, a unit
 %vector in the positive $x$ direction if we think of ${\mathbb{R}}^2$
-%as the the normal $xy$-plane.
+%as the normal $xy$-plane.
 %which points horizontally and to the right on the 
 %
 %and $\vec{y}
@@ -5434,7 +5439,7 @@ distance
 $\lVert \vec{w} - \vec{u} \rVert$ among all vectors $\vec{u}$ that are
 multiples of $\vec{v}$.
 Because of this, this projection comes up often in applied
-mathematics in all sorts of contexts we we cannot solve a problem
+mathematics in all sorts of contexts we cannot solve a problem
 exactly: We can't always solve
 \myquote{Find $\vec{w}$ as a multiple of
 $\vec{v}$,}
@@ -5904,12 +5909,25 @@ an orthogonal basis.
 
 \begin{exercise}
 Let $S$ be the subspace spanned by
-Starting with $(1,3,-1)$, $(1,1,1)$.  Find an orthogonal basis of $S$.
+$(1,3,-1)$, $(1,1,1)$.  Find an orthogonal basis of $S$.
 \end{exercise}
 
 \begin{exercise}
 Starting with $(1,2,3)$, $(1,1,1)$, $(2,2,0)$, follow the Gram-Schmidt
 process to find an orthogonal basis of ${\mathbb{R}}^3$.
+\end{exercise}
+
+\begin{exercise}
+Find an orthogonal basis of ${\mathbb{R}}^3$ such that $(3,1,-2)$
+is one of the vectors.  Hint: First find two extra vectors to make a
+linearly independent set.
+\end{exercise}
+
+\begin{exercise}
+Using cosines and sines of $\theta$, find a unit vector $\vec{u}$
+in ${\mathbb{R}}^2$ that
+makes angle $\theta$ with $\vec{\imath} = (1,0)$.  What is
+$\langle \vec{\imath} , \vec{u} \rangle$?
 \end{exercise}
 
 \setcounter{exercise}{100}
@@ -5977,7 +5995,7 @@ c)~$2(1,1,-1)-2(2,-1,1)+2(1,-5,3)$
 
 \begin{exercise}
 Let $S$ be the subspace spanned by
-Starting with $(2,-1,1)$, $(2,2,2)$.  Find an orthogonal basis of $S$.
+$(2,-1,1)$, $(2,2,2)$.  Find an orthogonal basis of $S$.
 \end{exercise}
 \exsol{%
 $(2,-1,1)$, $(\nicefrac{2}{3},\nicefrac{8}{3},\nicefrac{4}{3})$
@@ -6708,7 +6726,7 @@ $12$
 }
 
 \begin{exercise}[challenging]
-Find all the $x$ that makes the matrix inverse
+Find all the $x$ that make the matrix inverse
 \begin{equation*}
 \begin{bmatrix}
 1 & 2 \\ 1 & x
