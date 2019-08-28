@@ -146,7 +146,7 @@ it will be useful later.  For example, the vector $(1,2)$ can be written as
 \end{bmatrix} .
 \end{equation*}
 
-The fact that we write arrows above vectors will allow us to write several
+The fact that we write arrows above vectors allows us to write several
 vectors $\vec{x}_1$, $\vec{x}_2$, etc., without confusing these with the
 components of some other vector $\vec{x}$.
 
@@ -1208,8 +1208,8 @@ a)~$(3,-1)$ \quad b)~$(4,0)$ \quad c)~$(-1,-1)$
 \subsection{One-by-one matrices}
 
 Let us motivate what we want to achieve with matrices.
-Real-valued linear mappings of the real line, that is linear functions
-which eat numbers and spit out numbers, are just multiplications by a
+Real-valued linear mappings of the real line, linear functions
+that eat numbers and spit out numbers, are just multiplications by a
 number.  Consider a mapping defined by multiplying by a
 number.  Let's call this number $\alpha$.   The mapping then takes $x$ to
 $\alpha x$.  What we can do is
@@ -1218,7 +1218,7 @@ If we have another mapping $\beta$, then
 \begin{equation*}
 \alpha x + \beta x = (\alpha + \beta) x .
 \end{equation*}
-So we get a new mapping $\alpha+\beta$ that multiplies $x$ by, well,
+We get a new mapping $\alpha+\beta$ that multiplies $x$ by, well,
 $\alpha+\beta$.  If $D$ is a mapping that doubles things, 
 $Dx = 2x$, and $T$ is a mapping that triples, $Tx = 3x$, then
 $D+T$ is a mapping that multiplies by $5$, $(D+T)x = 5x$.
@@ -1230,11 +1230,11 @@ $\alpha x$ through the second mapping $\beta$.  In other words,
 \begin{equation*}
 \beta ( \alpha x ) = (\beta \alpha) x .
 \end{equation*}
-So we just multiply those two numbers.  For example, using our doubling
+We just multiply those two numbers.  Using our doubling
 and tripling mappings, if we double and then triple, that is $T(Dx)$ then
 we obtain $3(2x) = 6x$.  The composition $TD$ is the mapping that multiplies
 by $6$.  For larger matrices, composition also ends up being a kind of
-multiplication, and that is why we write it as $TD$.
+multiplication.
 
 \subsection{Matrix addition and scalar multiplication}
 
@@ -1449,7 +1449,7 @@ these matrices.  We don't know what that could possibly mean.
 
 \medskip
 
-It is also useful to have a matrix which added to any other matrix
+It is also useful to have a matrix that whenadded to any other matrix
 does nothing.  This is the zero matrix, the matrix of all zeros:
 \begin{equation*}
 \begin{bmatrix}
@@ -1482,7 +1482,7 @@ that accomplishes
 (\alpha A) \vec{x} = \alpha (A \vec{x}) .
 \end{equation*}
 That is just scaling the result by $\alpha$.  If you think about it,
-scaling every term in $A$ by $\alpha$ will accomplish just that:
+scaling every term in $A$ by $\alpha$ accomplishes just that:
 If
 \begin{equation*}
 A = 
@@ -1555,7 +1555,7 @@ and what the product should be.
 Let us see how to actually compute matrix multiplication.
 We start with the so-called
 \emph{\myindex{dot product}} (or \emph{\myindex{inner product}}) of two vectors.
-Usually this will be a row vector multiplied
+Usually this is a row vector multiplied
 with a column vector of the same size.  Dot product multiplies
 each pair of entries from the first and the second vector and sums these
 products.  The result is a single number.
@@ -1730,7 +1730,7 @@ It should also make it easier to remember how to perform matrix multiplication.
 \subsection{Some rules of matrix algebra}
 
 For multiplication we want an analogue of a 1.  That is,
-we desire a matrix which just leaves everything as it found it.
+we desire a matrix that just leaves everything as it found it.
 This analogue is the
 so-called \emph{\myindex{identity matrix}}.
 The identity matrix is a square matrix with 1s on the
@@ -2474,6 +2474,7 @@ $2\begin{bmatrix}
 \end{exercise}
 
 \begin{exercise}
+\pagebreak[2]
 Multiply the following matrices
 \begin{tasks}(2)
 \task
@@ -2844,7 +2845,7 @@ Consider the following system of linear equations
 There is a systematic procedure
 called \emph{\myindex{elimination}} to solve such a system.
 In this procedure,
-we will eliminate the variables from the equations until we completely
+we eliminate the variables from the equations until we completely
 disentangle how they depend on each other.  We want to end up with equations
 such as $x_3 = 2$, where we can just read off the answer.
 
@@ -2923,7 +2924,7 @@ The same $x_1,x_2,x_3$ should still be solutions
 to the new equations.
 These were just examples; we did not get any closer to the solution.  We will
 have to do these operations in some more logical manner, but it turns out
-these three operations will suffice to solve every linear equation.
+these three operations suffice to solve every linear equation.
 
 The first thing is to write the equations in a more compact manner.  Given
 \begin{equation*}
@@ -2948,8 +2949,8 @@ for the system \eqref{linalg:elim:eq} the augmented matrix is
 The entire process of elimination, which we will describe,
 is often applied to any sort of matrix,
 not just an
-augmented matrix.  Perhaps just think of the matrix as the $3 \times 4$
-matrix
+augmented matrix.
+Perhaps just think of the matrix as the $3 \times 4$ matrix
 \begin{equation*}
 \begin{bmatrix}
 2 & 2 & 2 & 2 \\
@@ -3060,7 +3061,7 @@ entries are marked:
 The procedure we will describe to find a reduced row echelon form
 of a matrix
 is called \emph{\myindex{Gauss--Jordan elimination}}.
-The first part of it, which obtains a row echelon form is called 
+The first part of it, which obtains a row echelon form, is called 
 \emph{\myindex{Gaussian elimination}} or
 \emph{\myindex{row reduction}}.  For some problems, a row echelon
 form is sufficient, and it is a bit less work.
@@ -3088,7 +3089,7 @@ Let us keep the vertical line in the matrix,
 even though the procedure works on any matrix, not just
 an augmented matrix.
 We start with the first column and we locate the pivot, in this
-case the first entry of the first column:
+case the first entry of the first column.
 \begin{equation*}
 \left[
 \begin{array}{ccc|c}
@@ -3096,10 +3097,10 @@ case the first entry of the first column:
 1 & 1 & 3 & 5 \\
 1 & 4 & 1 & 10
 \end{array}
-\right] .
+\right]
 \end{equation*}
 We multiply the first row by
-$\nicefrac{1}{2}$ to obtain
+$\nicefrac{1}{2}$.
 \begin{equation*}
 \left[
 \begin{array}{ccc|c}
@@ -3107,9 +3108,9 @@ $\nicefrac{1}{2}$ to obtain
 1 & 1 & 3 & 5 \\
 1 & 4 & 1 & 10
 \end{array}
-\right] .
+\right]
 \end{equation*}
-Now we subtract the first row from the second and third row (two elementary
+We subtract the first row from the second and third row (two elementary
 operations).
 \begin{equation*}
 \left[
@@ -3118,10 +3119,10 @@ operations).
 0 & 0 & 2 & 4 \\
 0 & 3 & 0 & 9
 \end{array}
-\right] .
+\right]
 \end{equation*}
-We are done with the first column and the first row for now.  We now almost
-pretend the matrix doesn't have the first column and the first row:
+We are done with the first column and the first row for now.  We almost
+pretend the matrix doesn't have the first column and the first row.
 \begin{equation*}
 \left[
 \begin{array}{ccc|c}
@@ -3129,10 +3130,10 @@ pretend the matrix doesn't have the first column and the first row:
 * & 0 & 2 & 4 \\
 * & 3 & 0 & 9
 \end{array}
-\right] .
+\right]
 \end{equation*}
 
-OK, so now look at the second column, and notice that now the pivot is in the
+OK, look at the second column, and notice that now the pivot is in the
 third row.
 \begin{equation*}
 \left[
@@ -3141,9 +3142,9 @@ third row.
 0 & 0 & 2 & 4 \\
 0 & \boxed{3} & 0 & 9
 \end{array}
-\right] .
+\right]
 \end{equation*}
-So we swap rows
+We swap rows.
 \begin{equation*}
 \left[
 \begin{array}{ccc|c}
@@ -3151,9 +3152,9 @@ So we swap rows
 0 & \boxed{3} & 0 & 9 \\
 0 & 0 & 2 & 4
 \end{array}
-\right] 
+\right]
 \end{equation*}
-and divide the pivot row by 3
+And we divide the pivot row by 3.
 \begin{equation*}
 \left[
 \begin{array}{ccc|c}
@@ -3161,10 +3162,10 @@ and divide the pivot row by 3
 0 & \boxed{1} & 0 & 3 \\
 0 & 0 & 2 & 4
 \end{array}
-\right] 
+\right]
 \end{equation*}
 We do not need to subtract anything as everything below the pivot is already
-zero.  So we move on, we again start ignoring the second row and second
+zero.  We move on, we again start ignoring the second row and second
 column and focus on 
 \begin{equation*}
 \left[
@@ -3173,9 +3174,9 @@ column and focus on
 * & * & * & * \\
 * & * & 2 & 4
 \end{array}
-\right] 
+\right] .
 \end{equation*}
-We find the pivot, then divide that row by 2
+We find the pivot, then divide that row by 2:
 \begin{equation*}
 \left[
 \begin{array}{ccc|c}
@@ -3207,8 +3208,8 @@ make all the entries above this pivot zero.  Then move to the next pivot and
 so no.
 After we are done, we will have a matrix in reduced row echelon form.
 
-So let us continue our example.
-First subtract the last row from the first to get
+We continue our example.
+Subtract the last row from the first to get
 \begin{equation*}
 \left[
 \begin{array}{ccc|c}
@@ -3216,9 +3217,9 @@ First subtract the last row from the first to get
 0 & 1 & 0 & 3 \\
 0 & 0 & 1 & 2 
 \end{array}
-\right]
+\right] .
 \end{equation*}
-Now notice that the entry above the pivot in the second row is already zero.
+The entry above the pivot in the second row is already zero.
 So we move onto the next pivot, the one in the second row.  We subtract
 this row from the top row to get
 \begin{equation*}
@@ -3268,7 +3269,7 @@ On the other hand, if we find a row echelon form
 \end{array}
 \right] ,
 \end{equation*}
-Then there is no issue with finding solutions.  In fact we will find way too
+then there is no issue with finding solutions.  In fact, we will find way too
 many.  Let us continue with backsubstitution (subtracting 3 times the third
 row from the first) to find the reduced row echelon form and let's mark the
 pivots.
@@ -3279,9 +3280,9 @@ pivots.
 0 & 0 & \boxed{1} & 3 \\
 0 & 0 & 0 & 0 
 \end{array}
-\right] ,
+\right]
 \end{equation*}
-The last row is just all zeros; it just says $0=0$ and we can ignore it.
+The last row is all zeros; it just says $0=0$ and we ignore it.
 The two remaining equations are 
 \begin{equation*}
 x_1 + 2 x_2 = -5 , \qquad
@@ -3378,7 +3379,7 @@ is a linear combination of the columns of $A$, while
 \end{equation*}
 is a linear combination of the rows of $A$.
 
-The way linear combinations will come up in the study of differential
+The way linear combinations come up in the study of differential
 equations is similar to the following computation.  Suppose that
 $\vec{x}_1$, $\vec{x}_2$, \ldots, $\vec{x}_n$ are solutions
 to $A \vec{x}_1 = \vec{0}$, 
@@ -3415,7 +3416,7 @@ A (\alpha_1 \vec{x}_1 +
 So if you have found enough solutions, you have them all.  The question is,
 when did we find enough of them?
 
-We will say the vectors $\vec{y}_1$, $\vec{y}_2$, \ldots, $\vec{y}_n$ are
+We say the vectors $\vec{y}_1$, $\vec{y}_2$, \ldots, $\vec{y}_n$ are
 \emph{\myindex{linearly independent}} if the only solution to
 \begin{equation*}
 \alpha_1 \vec{x}_1 + 
@@ -3493,14 +3494,14 @@ linear equations, and so you may not be surprised that we can figure out
 if a set of vectors is linearly independent by row reduction.
 
 Given a set of vectors, we may not be interested in just finding if they
-are linearly independent, we may be interested in finding a subset of
-them which is.  Or perhaps find some other vectors that give the same linear
-combinations and are linearly independent.
+are linearly independent or not, we may be interested in finding a linearly
+independent subset.  Or perhaps we may want to find some other vectors that
+give the same linear combinations and are linearly independent.
 The way to figure this out is to form a matrix out of our vectors.  If we
 have row vectors we consider them as rows of a matrix.  If we have
 column vectors we consider them columns of a matrix.
-It is useful to talk about the so called \emph{\myindex{span}} of a
-set of vectors.
+The set of all linear combinations of a set of vectors is called their
+\emph{\myindex{span}}.
 \begin{equation*}
 \operatorname{span} \bigl\{ \vec{x}_1, \vec{x}_2 , \cdots , \vec{x}_n \bigr\}
 =
@@ -4394,7 +4395,7 @@ $\begin{bmatrix} 3 \\ 3 \\ 7\end{bmatrix}$
 }
 
 \begin{exercise}
-Find a linearly independent subset of the following vectors which has
+Find a linearly independent subset of the following vectors that has
 the same span.
 \begin{equation*}
 \begin{bmatrix}
@@ -4863,7 +4864,8 @@ How does the Rank--Nullity theorem come into the picture?  Well, if $A$ has
 a nonzero solution $\vec{x}$ to $A \vec{x} = \vec{0}$, then the nullity $k$ is
 positive.  But then the rank $r = n-k$ must be less than $n$.  In particular
 it means that the column space of $A$ is of dimension less than $n$, so it is
-a subspace which does not include everything.  So ${\mathbb{R}}^n$ has to
+a subspace that does not include everything in ${\mathbb{R}}^n$.
+So ${\mathbb{R}}^n$ has to
 contain some vector $\vec{b}$ not in the column space of $A$.  In fact, most
 vectors in ${\mathbb{R}}^n$ are not in the column space of $A$.
 
@@ -5284,7 +5286,7 @@ $\langle \vec{x}, \vec{y} + \vec{z} \rangle =
 \langle \vec{x} , \vec{z} \rangle$.
 \end{enumerate}
 In fact, anything that satisfies the above properties can be called an inner
-product, although in this section we will be concerned with the
+product, although in this section we are concerned with the
 standard inner product in ${\mathbb{R}}^n$.
 
 \medskip
@@ -5336,7 +5338,7 @@ To compute the angle we compute
 \frac{\langle \vec{x}, \vec{y} \rangle}{\lVert{\vec{x}}\rVert
 \lVert{\vec{y}}\rVert} .
 \end{equation*}
-Our angles will always be in radians.
+Our angles are always in radians.
 We are computing the cosine of the angle,
 which is really the best
 we can do.  Given two vectors at an angle $\theta$, we can give the angle as
@@ -5429,7 +5431,7 @@ spanned by $\vec{v}$ to the tip of the arrow of $\vec{w}$.
 In terms of euclidean distance, 
 $\vec{u} = \operatorname{proj}_{\vec{v}}(\vec{w})$ minimizes the
 distance
-$\lVert \vec{u} - \vec{w} \rVert$ among all vectors $\vec{u}$ that are
+$\lVert \vec{w} - \vec{u} \rVert$ among all vectors $\vec{u}$ that are
 multiples of $\vec{v}$.
 Because of this, this projection comes up often in applied
 mathematics in all sorts of contexts we we cannot solve a problem
@@ -5534,7 +5536,7 @@ magnitude.
 The reason why we are interested in orthogonal (or orthonormal) bases is
 that they make it really simple to represent a vector (or a projection onto
 a subspace) in the basis.  The simple formula for the orthogonal projection
-onto a vector will give us the coefficients.  In 
+onto a vector gives us the coefficients.  In 
 \chapterref{FS:chapter} we use the same idea by finding the correct 
 orthogonal basis for the set of solutions of a differential equation we
 are then able to find any particular solution by simply applying the
@@ -5547,7 +5549,7 @@ express $\vec{x}$ in terms of the basis.  If $\vec{x}$ is not in the span
 of the basis (when it is not in the given subspace),
 then of course it is not possible,
 but the following formula
-will at least give us the orthogonal projection onto the subspace.
+gives us at least the orthogonal projection onto the subspace.
 
 First suppose that $\vec{x}$ is in the span.  Then it is the sum of the
 orthogonal projections:
@@ -5621,7 +5623,8 @@ a_n \langle \vec{v}_n , \vec{v}_j \rangle .
 \end{equation*}
 As the basis is orthogonal, then
 $\langle \vec{v}_k , \vec{v}_j \rangle = 0$ whenever
-$k \not= j$.  That means that only one of the terms, the $j$th one, on the right
+$k \not= j$.  That means that only one of the terms, the $j^{\text{th}}$ one,
+on the right
 hand side is nonzero and we get
 \begin{equation*}
 \langle \vec{x} , \vec{v}_j \rangle
@@ -5634,9 +5637,9 @@ Solving for $a_j$ we find $a_j =
 }$ as before.
 
 \begin{example}
-First note that $(1,1)$ and $(1,-1)$ form an orthogonal basis of ${\mathbb{R}}^2$.
+The vectors $(1,1)$ and $(1,-1)$ form an orthogonal basis of ${\mathbb{R}}^2$.
 Suppose we wish to represent $(3,4)$ in terms of this basis,
-that is we wish to find $a_1$ and $a_2$ such that
+that is, we wish to find $a_1$ and $a_2$ such that
 \begin{equation*}
 (3,4) = a_1 (1,1) + a_2 (1,-1) .
 \end{equation*}
@@ -5663,9 +5666,9 @@ So
 
 If the basis is orthonormal rather than orthogonal, than the denominators
 are always just one.  It is easy to make a basis orthonormal, just
-by dividing all the vectors by their size.  If you will do this
-decomposition many times, it may be better to just do that.  In the above
-example, the orthonormal basis we would thus create is
+by dividing all the vectors by their size.  If you want to decompose
+many vectors, it may be better to find an orthonrmal basis.
+In the above example, the orthonormal basis we would thus create is
 \begin{equation*}
 \left( \frac{1}{\sqrt{2}} , \frac{1}{\sqrt{2}} \right) , \quad
 \left( \frac{1}{\sqrt{2}} , \frac{-1}{\sqrt{2}} \right) .
@@ -5732,9 +5735,10 @@ that is the closest to $\vec{x}$.  Then
 \end{equation*}
 
 Of course, if $\vec{x}$ is in $S$, then $\operatorname{proj}_{S}(\vec{x}) =
-\vec{x}$, as the closes vector in $S$ to $\vec{x}$ is $\vec{x}$ itself of
-course.  But true utility is obtained when $\vec{x}$ is not in $S$.
-In lots of applied mathematics we cannot find an exact solution, but we try
+\vec{x}$, as the closest vector in $S$ to $\vec{x}$ is $\vec{x}$ itself.
+But true utility is obtained when $\vec{x}$ is not in $S$.
+In much of applied mathematics we cannot find an exact solution to a problem,
+but we try
 to find the best solution out of a small subset (subspace).  The partial sums of
 Fourier series from \chapterref{FS:chapter} are one example.  Another
 example is least square approximation to fit a curve to data.  Yet another
@@ -5787,8 +5791,8 @@ it seems a daunting task.  Fortunately, the orthogonal projection can be
 used to \myquote{project away} the bits of the vectors that are making them
 not orthogonal.  It is called the \emph{\myindex{Gram--Schmidt process}}.
 
-Suppose we start with a basis of vectors $\vec{v}_1,\vec{v}_2, \ldots,
-\vec{v}_n$.  We will construct an orthogonal basis $\vec{w}_1, \vec{w}_2,
+We start with a basis of vectors $\vec{v}_1,\vec{v}_2, \ldots,
+\vec{v}_n$.  We construct an orthogonal basis $\vec{w}_1, \vec{w}_2,
 \ldots, \vec{w}_n$ as follows.
 \begin{align*}
 \vec{w}_1 & = \vec{v}_1 , \\
@@ -5808,7 +5812,7 @@ Suppose we start with a basis of vectors $\vec{v}_1,\vec{v}_2, \ldots,
 - \cdots
 - \operatorname{proj}_{\vec{w}_{n-1}}(\vec{v}_n) .
 \end{align*}
-Notice that what we do is at the $k^{\text{th}}$ step, we take $\vec{v}_k$ and we
+What we do is at the $k^{\text{th}}$ step, we take $\vec{v}_k$ and we
 subtract the projection of $\vec{v}_k$ to the subspace spanned by
 $\vec{w}_1,\vec{w}_2,\ldots,\vec{w}_{k-1}$.
 
