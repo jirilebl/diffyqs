@@ -2848,11 +2848,11 @@ Consider the following system of linear equations
 There is a systematic procedure
 called \emph{\myindex{elimination}} to solve such a system.
 In this procedure,
-we eliminate the variables from the equations until we completely
-disentangle how they depend on each other.  We want to end up with equations
+we attempt to eliminate each variable from all but one equation.
+We want to end up with equations
 such as $x_3 = 2$, where we can just read off the answer.
 
-A system of linear equations can be written as a matrix equation:
+We write a system of linear equations as a matrix equation:
 \begin{equation*}
 A \vec{x} = \vec{b} .
 \end{equation*}
@@ -2888,12 +2888,18 @@ the equation:
 \end{equation*}
 Well, but that is part of the problem, we do not know how to compute the
 inverse for matrices bigger than $2 \times 2$.
-We will see later that to compute the inverse we need
-to do elimination.  In addition, we may wish to solve $A \vec{x} = \vec{b}$
+We will see later that to compute the inverse we are really solving
+$A \vec{x} = \vec{b}$ for several different $\vec{b}$.  In other words, 
+we will need to do elimination to find $A^{-1}$.
+In addition, we may wish to solve $A \vec{x} = \vec{b}$
 even if $A$ is not invertible, or perhaps not even square.
 
+\medskip
+
+Let us return to the equations themselves and see how we can manipulate
+them.
 There are a few operations we can perform on the equations that don't change
-the solution.  First, perhaps a stupid seeming rule, we can swap 
+the solution.  First, perhaps an operation that may seem stupid, we can swap 
 two equations in \eqref{linalg:elim:eq}:
 \begin{equation*}
 \begin{aligned}
@@ -2903,7 +2909,7 @@ two equations in \eqref{linalg:elim:eq}:
 \end{aligned}
 \end{equation*}
 Clearly that has the same solutions $x_1,x_2,x_3$.
-A second rule is that we can multiply an equation by a nonzero number.  For
+A second operation is that we can multiply an equation by a nonzero number.  For
 example, we multiply the third equation in \eqref{linalg:elim:eq}
 by 3:
 \begin{equation*}
@@ -2914,7 +2920,7 @@ by 3:
 \end{aligned}
 \end{equation*}
 Finally we can add a multiple of one equation to another equation.
-For example, we could add 3 times the third equation in \eqref{linalg:elim:eq}
+For example, we add 3 times the third equation in \eqref{linalg:elim:eq}
 to the second equation:
 \begin{equation*}
 \begin{aligned}
@@ -2925,8 +2931,9 @@ to the second equation:
 \end{equation*}
 The same $x_1,x_2,x_3$ should still be solutions
 to the new equations.
-These were just examples; we did not get any closer to the solution.  We will
-have to do these operations in some more logical manner, but it turns out
+These were just examples; we did not get any closer to the solution.
+We must to do these three operations in some more logical manner,
+but it turns out
 these three operations suffice to solve every linear equation.
 
 The first thing is to write the equations in a more compact manner.  Given
@@ -2953,7 +2960,7 @@ The entire process of elimination, which we will describe,
 is often applied to any sort of matrix,
 not just an
 augmented matrix.
-Perhaps just think of the matrix as the $3 \times 4$ matrix
+Simply think of the matrix as the $3 \times 4$ matrix
 \begin{equation*}
 \begin{bmatrix}
 2 & 2 & 2 & 2 \\
@@ -2967,7 +2974,7 @@ Perhaps just think of the matrix as the $3 \times 4$ matrix
 We apply the three operations above to the matrix.  We call these
 the \emph{\myindex{elementary operations}} or
 \emph{\myindex{elementary row operations}}.
-In terms of the matrix,
+When we translate the operations to the matrix setting,
 the operations become:
 \begin{enumerate}[(i)]
 \item Swap two rows.
@@ -3029,8 +3036,8 @@ entries are marked:
 \end{equation*}
 Note that the definition applies to matrices of any size.
 None of the matrices above are in \emph{reduced} row echelon form.  For
-example notice that none of the entries above the second and third leading
-entries are zero, that is the 9, 3, and 5.
+example, in the first matrix none of the entries above the second and third
+leading entries are zero; they are 9, 3, and 5.
 
 The following matrices are in reduced row echelon form.  The leading
 entries are marked:
@@ -3067,7 +3074,7 @@ is called \emph{\myindex{Gauss--Jordan elimination}}.
 The first part of it, which obtains a row echelon form, is called 
 \emph{\myindex{Gaussian elimination}} or
 \emph{\myindex{row reduction}}.  For some problems, a row echelon
-form is sufficient, and it is a bit less work.
+form is sufficient, and it is a bit less work to only do this first part.
 
 To attain the row echelon form we work systematically.
 We go column by column, starting at the first column.  We find topmost
@@ -3076,19 +3083,19 @@ entry in the first column that is not zero, and we call it the
 we move to the next column.  We swap rows to put the row with
 the pivot as the first row.  We divide the first row
 by the pivot to make the pivot entry be a 1.  Now look at all the rows below
-and subtract the right multiple of the pivot row so that all the entries
+and subtract the correct multiple of the pivot row so that all the entries
 below the pivot become zero.
 
 After this procedure we forget that we had a first row (it is now fixed),
 and we forget about the column with the pivot and all the preceding zero
 columns.
-Except for the pivot, all the entries in these columns are just
+Below the pivot row, all the entries in these columns are just
 zero.  Then we focus on the smaller matrix and we repeat the steps
 above.
 
 It is best shown by example, so let us go back to the 
 example from the beginning of the section.
-Let us keep the vertical line in the matrix,
+We keep the vertical line in the matrix,
 even though the procedure works on any matrix, not just
 an augmented matrix.
 We start with the first column and we locate the pivot, in this
@@ -3199,16 +3206,17 @@ We find the pivot, then divide that row by 2:
 \end{equation*}
 The matrix is now in row echelon form.
 
-If we write down the last equation we find $x_3 = 2$.  We know $x_3$ and we
+The equation corresponding to the last row is $x_3 = 2$.
+We know $x_3$ and we
 could substitute it into the first two equations to get equations for
 $x_1$ and $x_2$.  Then we could do the same thing with $x_2$, until we solve
 for all 3 variables.  This procedure is called
 \emph{\myindex{backsubstitution}} and we can achieve it via elementary
 operations.
-Basically start from the lowest pivot (leading entry in the row
+We start from the lowest pivot (leading entry in the row
 echelon form) and subtract the right multiple from the row above to
-make all the entries above this pivot zero.  Then move to the next pivot and
-so no.
+make all the entries above this pivot zero.
+Then we move to the next pivot and so on.
 After we are done, we will have a matrix in reduced row echelon form.
 
 We continue our example.
@@ -3236,7 +3244,7 @@ this row from the top row to get
 \end{equation*}
 The matrix is in reduced row echelon form.
 
-If we now write down the equations for $x_1,x_2,x_3$ we find
+If we now write down the equations for $x_1,x_2,x_3$, we find
 \begin{equation*}
 x_1 = -4, \qquad x_2 = 3, \qquad x_3 = 2 .
 \end{equation*}
@@ -3302,7 +3310,7 @@ The variable $x_2$ can be anything you wish and we still get a solution.
 The $x_2$ is called a \emph{\myindex{free variable}}.
 So there are infinitely many solutions.  For example, if we pick $x_2=0$,
 then $x_1 = -5$, and $x_3 = 3$ give a solution.  But we also get a solution
-by say picking $x_2 = 1$, in which case $x_1 = -9$ and $x_3 = 3$.
+by picking say $x_2 = 1$, in which case $x_1 = -9$ and $x_3 = 3$.
 
 \medskip
 
@@ -3330,7 +3338,7 @@ A \vec{x} = \vec{0} .
 If you think about it, there is no need to write an augmented matrix in this
 case, as the elementary operations do not do anything to a zero column, it
 always stays a zero column.  Moreover, $A \vec{x} = \vec{0}$ always has at
-least one solution, namely $\vec{x} = \vec{0}$.  So such a system
+least one solution, namely $\vec{x} = \vec{0}$.  Such a system
 is always consistent.  It may have other solutions:  If you find
 any free variables, then you get infinitely many solutions.
 
@@ -3339,8 +3347,8 @@ so people give it a name.  It is called the
 \emph{\myindex{nullspace}} or the 
 \emph{\myindex{kernel}} of $A$.
 One place where the kernel comes up is invertibility of a square matrix $A$.
-If $A$ has a kernel that contains a nonzero vector, then it contains
-infinitely many vectors (there was a free variable).  But then it would be
+If the kernel of $A$ contains a nonzero vector, then it contains
+infinitely many vectors (there was a free variable).  But then it is
 impossible to invert $\vec{0}$, since infinitely many vectors go to
 $\vec{0}$, so there is no unique vector that $A$ takes to $\vec{0}$.
 So if the kernel is nontrivial, that is, if there are any nonzero vectors,
