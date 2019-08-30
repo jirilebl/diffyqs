@@ -1962,8 +1962,8 @@ and
 \end{equation*}
 \end{example}
 
-There is one multiplication rule you have used since primary school on numbers
-that is quite conspicuously missing for matrices.
+A multiplication rule you have used since primary school on numbers
+is quite conspicuously missing for matrices.
 That is, matrix multiplication is
 not commutative.  Firstly, just because $AB$ makes sense, it may be
 that $BA$ is not even defined.  For example, if $A$ is $2 \times 3$, and
@@ -1993,7 +1993,7 @@ BA .
 
 \subsection{Inverse}
 
-There are a couple of other algebra rules you know for numbers that do not quite
+A couple of other algebra rules you know for numbers do not quite
 work on matrices:
 \begin{enumerate}[(i)]
 \item $AB = AC$ does not necessarily imply $B=C$, even if $A$ is not 0.
@@ -2331,11 +2331,9 @@ case of diagonal matrices.
 
 \subsection{Transpose}
 
-There is really nothing that says that vectors must always be column
-vectors, that is just a convention.
-Swapping rows and columns is sometimes useful.  This really swaps 
-the order of multiplication, and from time to time it is needed.
-
+Vectors do not always have to be column vectors,
+that is just a convention.
+Swapping rows and columns is from time to time needed.
 The operation that swaps rows and columns is the so-called
 \emph{\myindex{transpose}}.
 The transpose of $A$ is denoted by $A^T$.  Example:
@@ -2403,7 +2401,7 @@ to two column vectors:
 \end{equation*}
 That is the way that one often writes the dot product in software.
 
-Finally, we say a matrix $A$ is \emph{symmetric}\index{symmetric matrix}
+We say a matrix $A$ is \emph{symmetric}\index{symmetric matrix}
 if $A = A^T$.  For example,
 \begin{equation*}
 \begin{bmatrix}
@@ -2477,7 +2475,6 @@ $2\begin{bmatrix}
 \end{exercise}
 
 \begin{exercise}
-\pagebreak[2]
 Multiply the following matrices
 \begin{tasks}(2)
 \task
@@ -2552,7 +2549,6 @@ $\begin{bmatrix}
 \end{exercise}
 
 \begin{exercise}
-\pagebreak[2]
 Compute the inverse of the given matrices
 \begin{tasks}(3)
 \task
@@ -2658,7 +2654,6 @@ b)~$\begin{bmatrix}
 }
 
 \begin{exercise}
-\pagebreak[2]
 Multiply the following matrices
 \begin{tasks}(2)
 \task
@@ -2731,7 +2726,6 @@ d)~$\begin{bmatrix}
 }
 
 \begin{exercise}
-\pagebreak[2]
 Compute the inverse of the given matrices
 \begin{tasks}(4)
 \task
@@ -2898,7 +2892,7 @@ even if $A$ is not invertible, or perhaps not even square.
 
 Let us return to the equations themselves and see how we can manipulate
 them.
-There are a few operations we can perform on the equations that don't change
+There are a few operations we can perform on the equations that do not change
 the solution.  First, perhaps an operation that may seem stupid, we can swap 
 two equations in \eqref{linalg:elim:eq}:
 \begin{equation*}
@@ -2974,7 +2968,7 @@ Simply think of the matrix as the $3 \times 4$ matrix
 We apply the three operations above to the matrix.  We call these
 the \emph{\myindex{elementary operations}} or
 \emph{\myindex{elementary row operations}}.
-When we translate the operations to the matrix setting,
+Translating the operations to the matrix setting,
 the operations become:
 \begin{enumerate}[(i)]
 \item Swap two rows.
@@ -3308,9 +3302,11 @@ and in the third column:
 \end{align*}
 The variable $x_2$ can be anything you wish and we still get a solution.
 The $x_2$ is called a \emph{\myindex{free variable}}.
-So there are infinitely many solutions.  For example, if we pick $x_2=0$,
+There are infinitely many solutions, one for every choice of $x_2$.
+For example, if we pick $x_2=0$,
 then $x_1 = -5$, and $x_3 = 3$ give a solution.  But we also get a solution
-by picking say $x_2 = 1$, in which case $x_1 = -9$ and $x_3 = 3$.
+by picking say $x_2 = 1$, in which case $x_1 = -9$ and $x_3 = 3$,
+or by picking $x_2 = -5$ in which case $x_1 = 5$ and $x_3 = 3$.
 
 \medskip
 
@@ -3318,6 +3314,9 @@ The general idea is that
 if any row has all zeros in the columns corresponding to the
 variables, but a nonzero entry in the column corresponding to the
 right-hand side $\vec{b}$, then the system is inconsistent and has no solutions.
+In other words, the system is inconsistent if you find a pivot on the right
+side of the vertical line drawn in the augmented matrix.  Otherwise, the
+system is consistent, and at least one solution exists.
 
 If the system is consistent:
 \begin{enumerate}[(i)]
@@ -3335,8 +3334,8 @@ When $\vec{b} = \vec{0}$, we have a so-called
 \begin{equation*}
 A \vec{x} = \vec{0} .
 \end{equation*}
-If you think about it, there is no need to write an augmented matrix in this
-case, as the elementary operations do not do anything to a zero column, it
+There is no need to write an augmented matrix in this
+case.  As the elementary operations do not do anything to a zero column, it
 always stays a zero column.  Moreover, $A \vec{x} = \vec{0}$ always has at
 least one solution, namely $\vec{x} = \vec{0}$.  Such a system
 is always consistent.  It may have other solutions:  If you find
@@ -3361,21 +3360,21 @@ then $A$ is not invertible.  We will return to this idea later.
 If rows of a matrix correspond to equations, it might be good to find out
 how many equations do we really need to find the same set of solutions.
 Similarly, if we find a number of solutions to a linear equation
-$A \vec{x} = \vec{0}$, we may ask if we found enough equations
-so that all others can be formed out of the given set.
+$A \vec{x} = \vec{0}$, we may ask if we found enough 
+so that all other solutions can be formed out of the given set.
 The concept we want is that of linear independence.
 The same concept is useful for differential equations, for
 example in \chapterref{ho:chapter}.
 
-First, given row or column vectors $\vec{y}_1$, $\vec{y}_2$, \ldots,
-$\vec{y}_n$ a \emph{\myindex{linear combination}} is an expression of the form
+Given row or column vectors $\vec{y}_1, \vec{y}_2, \ldots, \vec{y}_n$,
+a \emph{\myindex{linear combination}} is an expression of the form
 \begin{equation*}
 \alpha_1 \vec{y}_1 + 
 \alpha_2 \vec{y}_2 + 
 \cdots +
 \alpha_n \vec{y}_n ,
 \end{equation*}
-where $\alpha_1$, $\alpha_2$, \ldots, $\alpha_n$ are all scalars.
+where $\alpha_1, \alpha_2, \ldots, \alpha_n$ are all scalars.
 For example,
 $3 \vec{y}_1 + \vec{y}_2 - 5 \vec{y}_3$ is a linear combination
 of $\vec{y}_1$, $\vec{y}_2$, and $\vec{y}_3$.
@@ -3470,7 +3469,7 @@ $\alpha_1 \vec{x}_1 +
 =
 \vec{0}$, then
 \begin{equation*}
-\alpha_1 \vec{x}_1 
+\vec{x}_1 
 =
 \frac{-\alpha_2}{\alpha_1}
 \vec{x}_2 - 
@@ -3482,11 +3481,12 @@ $\alpha_1 \vec{x}_1 +
 \end{equation*}
 For example,
 \begin{equation*}
+2
 \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}
--2
+-4
 \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}
 +
-\begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix}
+2 \begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix}
 =
 \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix} ,
 \end{equation*}
@@ -3501,8 +3501,8 @@ and so
 \end{equation*}
 
 You may have noticed that solving for those $\alpha_j$'s is just solving
-linear equations, and so you may not be surprised that we can figure out
-if a set of vectors is linearly independent by row reduction.
+linear equations, and so you may not be surprised that to check
+if a set of vectors is linearly independent we use row reduction.
 
 Given a set of vectors, we may not be interested in just finding if they
 are linearly independent or not, we may be interested in finding a linearly
@@ -3524,17 +3524,21 @@ $\vec{x}_1, \vec{x}_2 , \cdots , \vec{x}_n$}
 
 
 Given a matrix $A$, the maximal number of linearly independent rows is called
-the \emph{\myindex{rank}} of $A$.  The matrix
+the \emph{\myindex{rank}} of $A$, and we write
+\myquote{$\operatorname{rank} A$} for the rank.
+For example,
 \begin{equation*}
+\operatorname{rank}
 \begin{bmatrix}
 1 & 1 & 1 \\
 2 & 2 & 2 \\
 -1 & -1 & -1
 \end{bmatrix}
+=
+1 .
 \end{equation*}
-has rank 1.  
 The second and third
-row are multiples of the first one, so we cannot choose more than one row and
+row are multiples of the first one.  We cannot choose more than one row and
 still have a linearly independent set.   But what is
 \begin{equation*}
 \operatorname{rank}
@@ -3589,7 +3593,6 @@ The elementary row operations do not change the set of linear combinations of
 the rows (that was one of the main reasons for defining them as they were).
 In other words, the span of the rows of the $A$ is the same
 as the span of the rows of the row echelon form of $A$.
-
 In particular, the number of linearly independent rows is the same.
 And in the row echelon form, all nonzero rows are linearly independent.
 This is not hard to see.
@@ -3617,10 +3620,18 @@ $\alpha_1 = 0$.  For the same reason, $\alpha_2$ is zero.
 We only have two nonzero rows,
 and they are linearly independent, so the rank of the matrix is 2.
 
-The span of the rows is called the \emph{\myindex{row space}}.  The
-row space of $A$ and the row echelon form of $A$ are the same.  In the
-example
+The span of the rows is called the \emph{\myindex{row space}}.
+The row space of $A$ and the row echelon form of $A$ are the same.
+In the example,
 \begin{equation*}
+\begin{split}
+\text{row space of }
+\begin{bmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{bmatrix}
+& =
 \operatorname{span}
 \left\{
 \begin{bmatrix}
@@ -3635,7 +3646,8 @@ example
 7 & 8 & 9
 \end{bmatrix}
 \right\}
-=
+\\
+& =
 \operatorname{span}
 \left\{
 \begin{bmatrix}
@@ -3646,12 +3658,36 @@ example
 0 & 1 & 2
 \end{bmatrix}
 \right\} .
+\end{split}
 \end{equation*}
 
 \medskip
 
 Similarly to row space, the span of columns is called the
 \emph{\myindex{column space}}.
+\begin{equation*}
+\text{column space of }
+\begin{bmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{bmatrix}
+=
+\operatorname{span}
+\left\{
+\begin{bmatrix}
+1 \\ 4 \\ 7
+\end{bmatrix}
+,
+\begin{bmatrix}
+2 \\ 5 \\ 8
+\end{bmatrix}
+,
+\begin{bmatrix}
+3 \\ 6 \\ 9
+\end{bmatrix}
+\right\} .
+\end{equation*}
 
 So it may also be good to find the number of linearly independent columns
 of $A$.  One way to do that is to find the number of linearly independent
@@ -3723,6 +3759,13 @@ column.  All other columns correspond to free variables when solving
 $A \vec{x} = \vec{0}$, so all other columns can be solved in terms of the first and
 the third column.  In other words
 \begin{equation*}
+\text{column space of }
+\begin{bmatrix}
+1 & 2 & 3 & 4 \\
+2 & 4 & 5 & 6 \\
+3 & 6 & 7 & 8
+\end{bmatrix}
+=
 \operatorname{span}
 \left\{
 \begin{bmatrix}
@@ -3847,29 +3890,29 @@ $\vec{v}_3$.
 If the matrix $A$ is square and there exists a unique solution
 $\vec{x}$ to $A \vec{x} = \vec{b}$ for any $\vec{b}$ (there are no free
 variables), then $A$ is invertible.
-This is equivalent of an $n \times n$ matrix $A$ being of rank $n$.
+This is equivalent to the $n \times n$ matrix $A$ being of rank $n$.
 
 In particular, if $A \vec{x} = \vec{b}$ then $\vec{x} = A^{-1} \vec{b}$.
 Now we just need to compute what $A^{-1}$ is.  We can surely 
 do elimination every time we want to find $A^{-1} \vec{b}$, but that
 would be ridiculous.  The mapping $A^{-1}$ is linear and
 hence given by a matrix, and we have seen that to figure out the matrix
-we just need to find where does $A$ take the standard basis vectors
+we just need to find where does $A^{-1}$ take the standard basis vectors
 $\vec{e}_1$, 
 $\vec{e}_2$, \ldots,
 $\vec{e}_n$.
 
 That is, to find the first column of $A^{-1}$ we solve
-$A \vec{x} = \vec{e}_1$.
+$A \vec{x} = \vec{e}_1$, because then $A^{-1} \vec{e}_1 = \vec{x}$.
 To find the second column of $A^{-1}$ we solve
 $A \vec{x} = \vec{e}_2$.  And so on.  It is really just $n$
 eliminations that we need to do.  But it gets even easier.
-If you think about it, most of the elimination is the same for
+If you think about it, the elimination is the same for
 everything on the left side of the augmented matrix.  Doing
 $n$ eliminations separately we would redo most of the computations.
 Best is to do all at once.
 
-Therefore, to find the inverse of $A$ we write an $n
+Therefore, to find the inverse of $A$, we write an $n
 \times 2n$ augmented matrix $[ \,A ~|~ I\, ]$, where $I$ is the identity
 matrix, whose columns are precisely the standard basis vectors.
 We then perform row reduction until we arrive at the reduced row echelon
@@ -4049,7 +4092,6 @@ $\begin{bmatrix}
 \end{exercise}
 
 \begin{exercise}
-\pagebreak[2]
 Solve (find all solutions), or show no solution exists
 \begin{tasks}(2)
 \task
@@ -4287,7 +4329,6 @@ c)~$\begin{bmatrix}
 }
 
 \begin{exercise}
-\pagebreak[2]
 Solve (find all solutions), or show no solution exists
 \begin{tasks}(2)
 \task
@@ -4477,7 +4518,7 @@ ${\mathbb R}^n$, and so does multiplying by scalars.
 
 The set $S' = \{ \vec{0} \}$, that is,
 the set of the zero vector by itself, is 
-also a subspace of ${\mathbb R}^n$.  There's only one vector in this
+also a subspace of ${\mathbb R}^n$.  There is only one vector in this
 subspace, so we only need to check for that one vector, and everything checks
 out: $\vec{0}+\vec{0} = \vec{0}$ and $\alpha \vec{0} = \vec{0}$.
 
@@ -4868,7 +4909,7 @@ where $A$ is a square $n \times n$ matrix.
 There are then two mutually exclusive possibilities:
 \begin{enumerate}[(i)]
 \item
-There exists a nonzero solution $\vec{x}$ to $A \vec{x} = \vec{0}$.
+A nonzero solution $\vec{x}$ to $A \vec{x} = \vec{0}$ exists.
 \item
 The equation $A \vec{x} = \vec{b}$ has a unique solution $\vec{x}$ for every
 $\vec{b}$.
@@ -5799,7 +5840,7 @@ let us find $\operatorname{proj}_{S}\bigl((2,1,0)\bigr)$.
 
 Before leaving orthogonal bases, let us note a procedure for manufacturing
 them out of any old basis.  It may not be difficult to come up with an
-orthogonal basis for a 2 dimensional space, but for a 20 dimensional space,
+orthogonal basis for a 2-dimensional subspace, but for a 20-dimensional subspace,
 it seems a daunting task.  Fortunately, the orthogonal projection can be
 used to \myquote{project away} the bits of the vectors that are making them
 not orthogonal.  It is called the \emph{\myindex{Gram--Schmidt process}}.
@@ -5831,7 +5872,7 @@ $\vec{w}_1,\vec{w}_2,\ldots,\vec{w}_{k-1}$.
 
 \begin{example}
 Consider the vectors $(1,2,-1)$, and $(0,5,-2)$ and call $S$ the span
-of the two vectors.  First let us find an orthogonal basis of $S$:
+of the two vectors.  Let us find an orthogonal basis of $S$:
 \begin{align*}
 \vec{w}_1 & = (1,2,-1) , \\
 \vec{w}_2 & = (0,5,-2) 
@@ -5917,7 +5958,8 @@ an orthogonal basis.
 
 \begin{exercise}
 Let $S$ be the subspace spanned by
-$(1,3,-1)$, $(1,1,1)$.  Find an orthogonal basis of $S$.
+$(1,3,-1)$, $(1,1,1)$.  Find an orthogonal basis of $S$
+by the Gram-Schmidt process.
 \end{exercise}
 
 \begin{exercise}
@@ -6003,7 +6045,8 @@ c)~$2(1,1,-1)-2(2,-1,1)+2(1,-5,3)$
 
 \begin{exercise}
 Let $S$ be the subspace spanned by
-$(2,-1,1)$, $(2,2,2)$.  Find an orthogonal basis of $S$.
+$(2,-1,1)$, $(2,2,2)$.  Find an orthogonal basis of $S$
+by the Gram-Schmidt process.
 \end{exercise}
 \exsol{%
 $(2,-1,1)$, $(\nicefrac{2}{3},\nicefrac{8}{3},\nicefrac{4}{3})$
@@ -6171,7 +6214,7 @@ A_{12} =
 7 & 9
 \end{bmatrix}
 \qquad
-\text{or}
+\text{and}
 \qquad
 A_{23} = 
 \begin{bmatrix}
@@ -6255,7 +6298,8 @@ for any $i$,
 a_{ij} \det (A_{ij}) .
 \end{equation*}
 It is sometimes useful to use a row other than the first.  In the following
-example it is useful to expand along the second row
+example it is more convenient to expand along the second row.  Notice that for the
+second row we are starting with a negative sign.
 \begin{equation*}
 \begin{split}
 \det \left(
@@ -6298,8 +6342,54 @@ example it is useful to expand along the second row
 = -60 .
 \end{split}
 \end{equation*}
+Let us check if it is really the same as expanding along the first row,
+\begin{equation*}
+\begin{split}
+\det \left(
+\begin{bmatrix}
+1 & 2 & 3 \\
+0 & 5 & 0 \\
+7 & 8 & 9
+\end{bmatrix}
+\right)
+& =
+1 \cdot
+\det \left(
+\begin{bmatrix}
+5 & 0 \\
+8 & 9
+\end{bmatrix}
+\right)
+-
+2 \cdot
+\det \left(
+\begin{bmatrix}
+0 & 0 \\
+7 & 9
+\end{bmatrix}
+\right)
++
+3 \cdot
+\det \left(
+\begin{bmatrix}
+0 & 5 \\
+7 & 8
+\end{bmatrix}
+\right) \\
+& =
+1 (5 \cdot 9 - 0 \cdot 8)
+-
+2 (0 \cdot 9 - 0 \cdot 7)
++
+3 (0 \cdot 8 - 5 \cdot 7)
+= -60 .
+\end{split}
+\end{equation*}
 
-We alternately add and subtract the determinants of the submatrices
+
+
+In computing the determinant,
+we alternately add and subtract the determinants of the submatrices
 $A_{ij}$ multiplied by $a_{ij}$ for a fixed $i$ and all $j$.
 The numbers ${(-1)}^{i+j}\det(A_{ij})$ are called
 \emph{cofactors\index{cofactor}}
@@ -6342,9 +6432,9 @@ matrix is one where everything above the diagonal is zero.  For example,
 \end{bmatrix} .
 \end{equation*}
 
-The determinant for triangular matrices is very simple to compute.  For
-example think about the lower triangular matrix.  If you expand along the
-first row, you find that the determinant is 1 times the determinant
+The determinant for triangular matrices is very simple to compute.  
+Consider the lower triangular matrix.  If we expand along the
+first row, we find that the determinant is 1 times the determinant
 of the lower triangular matrix $\left[ \begin{smallmatrix} 5 & 0 \\ 8 & 9
 \end{smallmatrix} \right]$.  So the deteriminant is just the
 product of the diagonal entries.
@@ -6371,7 +6461,7 @@ Similarly for upper triangular matrices
 =
 1 \cdot 5 \cdot 9 = 45 .
 \end{equation*}
-So in general if $A$ is triangular then
+In general, if $A$ is triangular then
 \begin{equation*}
 \det (A) = a_{11} a_{22} \cdots a_{nn} .
 \end{equation*}
@@ -6399,7 +6489,7 @@ are all 1.  Thus,
 \medskip
 
 The determinant is telling you how geometric objects scale.
-So if $B$ doubles the sizes of geometric objects and $A$ tripples them,
+So if $B$ doubles the sizes of geometric objects and $A$ triples them,
 then $AB$ (which applies $B$ to an object and then $A$) should make size
 go up by a factor of $6$.  This is true in general:
 
@@ -6533,8 +6623,7 @@ $\begin{bmatrix}
 \end{exercise}
 
 \begin{exercise}
-\pagebreak[2]
-For which $x$ are the following matrices singular (not invertible)
+For which $x$ are the following matrices singular (not invertible).
 \begin{tasks}(4)
 \task
 $\begin{bmatrix}
@@ -6615,13 +6704,15 @@ $\det(SAS^{-1})$.  Justify your answer using the theorems in this section.
 
 \begin{exercise}
 Let $A$ be an $n \times n$ matrix such that $\det(A)=1$.
-Compute $\det(x A)$ given a number $x$.  Hint: First try computing
+Compute $\det(x A)$ given a number $x$.\linebreak[2]
+Hint: First try computing
 $\det(xI)$, then note that $xA = (xI)A$.
 \end{exercise}
 
 \setcounter{exercise}{100}
 
 \begin{exercise}
+\pagebreak[2]
 Compute the determinant of the following matrices:
 \begin{tasks}(4)
 \task
@@ -6684,7 +6775,7 @@ a)~$-2$
 }
 
 \begin{exercise}
-For which $x$ are the following matrices singular (not invertible)
+For which $x$ are the following matrices singular (not invertible).
 \begin{tasks}(4)
 \task
 $\begin{bmatrix}

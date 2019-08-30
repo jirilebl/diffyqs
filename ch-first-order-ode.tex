@@ -2405,8 +2405,8 @@ to approximate $y(2)$ using Euler's method.  In
 Figures~\ref{euler-step12:fig}
 and~\ref{euler-step12-sol:fig} we have 
 graphically approximated $y(2)$ with step size 1.  With step
-size 1 we have $y(2) \approx 1.926$.  The real
-answer is 3.  So we are approximately 1.074
+size 1, we have $y(2) \approx 1.926$.  The real
+answer is 3.  We are approximately 1.074
 off.  Let us halve the step size.
 %\begin{align*}
 %& x_1 = x_0 + h = 0 + \nicefrac{1}{2} = \nicefrac{1}{2},
@@ -3102,7 +3102,7 @@ y = \pm \sqrt{\frac{C-(\nicefrac{1}{3})x^3}{x+1}} .
 When $x=-1$, the term in front of $\frac{dy}{dx}$ vanishes.  You can also
 see that our solution is not valid in that case.  However, one could in that
 case try to solve for $x$ in terms of $y$ starting from the implicit
-solution $\frac{1}{3}x^3 + xy^2 + y^2 = C$.  In this case the solution is 
+solution $\frac{1}{3}x^3 + xy^2 + y^2 = C$.  The solution is 
 somewhat messy and we leave it as implicit.
 \end{example}
 
@@ -3546,17 +3546,18 @@ material at position $x$ and time $t$.  See
 in $u_t-u_x = 0$ (that is, $\alpha = 1$) where the
 initial condition $f(x)$ is a peak at the origin.  On the left is a graph
 of the initial condition $u(x,0)$.  On the right is a graph of
-the function $u(x,1)$, that is at time $t=1$.  Notice it is one unit to
+the function $u(x,1)$, that is at time $t=1$.  Notice it is the same
+graph shifted one unit to
 the right.\label{fopde:transportfig}}
 \end{myfig}
 \end{example}
 
-We can use similar idea in the more general case:
+We use similar idea in the more general case:
 \begin{equation*}
 a u_x + b u_t + c u = g, \qquad u(x,0) = f(x)  .
 \end{equation*}
 We change coordinates to the
-characteristic coordinates: let us call these coordinates $(\xi,s)$.
+characteristic coordinates. Let us call these coordinates $(\xi,s)$.
 These are coordinates where $a u_x + b u_t$ becomes differentiation
 in the $s$ variable.
 
@@ -3567,7 +3568,7 @@ we get the linear equation
 \begin{equation} \label{eq:fopde:charode}
 \frac{du}{ds} + c u = g.
 \end{equation}
-Here we think of everything as a function of $\xi$ and $s$,
+We think of everything as a function of $\xi$ and $s$,
 although
 we are thinking of $\xi$ as a parameter rather than an independent variable.
 So the equation is an ODE\@.  It is a linear
@@ -3698,13 +3699,13 @@ Let us consider a quick example of what can go wrong:
 \begin{equation*}
 u_x + u = 0, \qquad u(x,0) = \sin(x).
 \end{equation*}
-This PDE has no solution.  If we had a solution it
+This problem has no solution.  If we had a solution it
 would imply that $u_x(x,0) = \cos(x)$,
 but $u_x(x,0) + u(x,0) = \cos(x) + \sin(x) \not= 0$.
 The problem is that the characteristic curve is now the line $t=0$,
 and the solution is already provided on that line!
 
-In fact, in the above setup
+As long as $b$ is nonzero,
 it is convenient to ensure that $b$ is positive by multiplying by $-1$
 if necessary, so that positive $s$ means positive $t$.
 
@@ -3783,10 +3784,16 @@ Hint: Think a little out of the box.
 \setcounter{exercise}{100}
 
 \begin{exercise}
-Solve $u_t - 5u_x = 0$, $u(x,0) = \frac{1}{1+x^2}$.
+Solve
+\begin{tasks}(2)
+\task $u_t - 5u_x = 0$, $u(x,0) = \frac{1}{1+x^2}$,
+\task $u_t + 2u_x = 0$, $u(x,0) = \cos(x)$.
+\end{tasks}
 \end{exercise}
 \exsol{%
-$u = \frac{1}{1+{(x+5t)}^2}$
+a) $u = \frac{1}{1+{(x+5t)}^2}$
+\quad
+b) $u = \cos(x-2t)$
 }
 
 \begin{exercise}
