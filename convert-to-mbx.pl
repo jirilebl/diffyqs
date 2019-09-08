@@ -20,7 +20,7 @@ $commands = "";
 
 print $out <<END;
 <?xml version="1.0" encoding="UTF-8" ?>
-<mathbook>
+<pretext>
 END
 
 $docinfoextra = "";
@@ -81,6 +81,7 @@ $chapter_num = 0;
 $section_num = 0;
 $subsection_num = 0;
 $subsubsection_num = 0;
+$in_appendix = 0;
 
 $exercise_num = 0;
 $thm_num = 0;
@@ -89,6 +90,9 @@ $example_num = 0;
 
 #FIXME: equation counter implement
 $equation_num = 0;
+
+$list_level = 0;
+$list_start = 1;
 
 print $out $commands;
 
@@ -136,7 +140,11 @@ sub close_chapter {
 	close_section ();
 	if ($inchapter) {
 		$inchapter = 0;
-		print $out "</chapter>\n\n"
+		if ($in_appendix == 0) {
+			print $out "</chapter>\n\n"
+		} else {
+			print $out "</appendix>\n\n"
+		}
 	}
 }
 sub open_paragraph {
@@ -155,6 +163,19 @@ sub open_item {
 	$initem = 1;
 	print $out "<li>\n"
 }
+sub get_chapter_num {
+	if ($in_appendix == 0) {
+	  	return "$chapter_num";
+	} else {
+		if ($chapter_num == 1) { return "A"; }
+		elsif ($chapter_num == 2) { return "B"; }
+		elsif ($chapter_num == 3) { return "C"; }
+		elsif ($chapter_num == 4) { return "D"; }
+		elsif ($chapter_num == 5) { return "E"; }
+		print "\n\n\nHUH? too many appendices ($chapter_num)\n\n\n";
+		$num_errors++;
+	}
+}
 sub open_subsubsection {
 	my $theid = shift;
 	my $name = shift;
@@ -162,10 +183,12 @@ sub open_subsubsection {
 	$insubsubsection = 1;
 	$subsubsection_num = $subsubsection_num+1;
 
+	my $ch = get_chapter_num();
+
 	if ($theid ne "") {
-		print $out "\n<subsubsection xml:id=\"$theid\" number=\"$chapter_num.$section_num.$subsection_num.$subsubsection_num\">\n"
+		print $out "\n<subsubsection xml:id=\"$theid\" number=\"$ch.$section_num.$subsection_num.$subsubsection_num\">\n"
 	} else {
-		print $out "\n<subsubsection number=\"$chapter_num.$section_num.$subsection_num.$subsubsection_num\">\n"
+		print $out "\n<subsubsection number=\"$ch.$section_num.$subsection_num.$subsubsection_num\">\n"
 	}
 
 	print "(subsubsection >$name< label >$theid<)\n";
@@ -185,10 +208,12 @@ sub open_subsection {
 
 	$subsubsection_num = 0;
 
+	my $ch = get_chapter_num();
+
 	if ($theid ne "") {
-		print $out "\n<subsection xml:id=\"$theid\" number=\"$chapter_num.$section_num.$subsection_num\">\n"
+		print $out "\n<subsection xml:id=\"$theid\" number=\"$ch.$section_num.$subsection_num\">\n"
 	} else {
-		print $out "\n<subsection number=\"$chapter_num.$section_num.$subsection_num\">\n"
+		print $out "\n<subsection number=\"$ch.$section_num.$subsection_num\">\n"
 	}
 
 	print "(subsection >$name< label >$theid<)\n";
@@ -216,10 +241,12 @@ sub open_section {
 	$remark_num = 0;
 	$example_num = 0;
 
+	my $ch = get_chapter_num();
+
 	if ($theid ne "") {
-		print $out "\n<section xml:id=\"$theid\" number=\"$chapter_num.$section_num\">\n"
+		print $out "\n<section xml:id=\"$theid\" number=\"$ch.$section_num\">\n"
 	} else {
-		print $out "\n<section number=\"$chapter_num.$section_num\">\n"
+		print $out "\n<section number=\"$ch.$section_num\">\n"
 	}
 
 	print "(section >$name< label >$theid<)\n";
@@ -245,10 +272,20 @@ sub open_chapter {
 
 	$equation_num = 0;
 
-	if ($theid ne "") {
-		print $out "\n<chapter xml:id=\"$theid\" number=\"$chapter_num\">\n"
+	my $ch = get_chapter_num();
+
+	if ($in_appendix == 0) {
+		if ($theid ne "") {
+			print $out "\n<chapter xml:id=\"$theid\" number=\"$ch\">\n"
+		} else {
+			print $out "\n<chapter number=\"$ch\">\n"
+		}
 	} else {
-		print $out "\n<chapter number=\"$chapter_num\">\n"
+		if ($theid ne "") {
+			print $out "\n<appendix xml:id=\"$theid\" number=\"$ch\">\n"
+		} else {
+			print $out "\n<appendix number=\"$ch\">\n"
+		}
 	}
 }
 
@@ -307,40 +344,44 @@ sub do_thmtitle_subs {
 }
 
 sub get_exercise_number {
+	my $ch = get_chapter_num();
 	if ($insection) {
-		return "$chapter_num.$section_num.$exercise_num";
+		return "$ch.$section_num.$exercise_num";
 	} elsif ($inchapter) {
-		return "$chapter_num.$exercise_num";
+		return "$ch.$exercise_num";
 	} else {
 		return "$exercise_num";
 	}
 }
 
 sub get_thm_number {
+	my $ch = get_chapter_num();
 	if ($insection) {
-		return "$chapter_num.$section_num.$thm_num";
+		return "$ch.$section_num.$thm_num";
 	} elsif ($inchapter) {
-		return "$chapter_num.$thm_num";
+		return "$ch.$thm_num";
 	} else {
 		return "$thm_num";
 	}
 }
 
 sub get_remark_number {
+	my $ch = get_chapter_num();
 	if ($insection) {
-		return "$chapter_num.$section_num.$remark_num";
+		return "$ch.$section_num.$remark_num";
 	} elsif ($inchapter) {
-		return "$chapter_num.$remark_num";
+		return "$ch.$remark_num";
 	} else {
 		return "$remark_num";
 	}
 }
 
 sub get_example_number {
+	my $ch = get_chapter_num();
 	if ($insection) {
-		return "$chapter_num.$section_num.$example_num";
+		return "$ch.$section_num.$example_num";
 	} elsif ($inchapter) {
-		return "$chapter_num.$example_num";
+		return "$ch.$example_num";
 	} else {
 		return "$example_num";
 	}
@@ -451,7 +492,7 @@ sub read_paragraph {
 			$line =~ m/^\\addcontentsline/) {
 			# do nothing
 			;
-		} elsif ($line =~ m/^%mbxBACKMATTER/) {
+		} elsif ($line =~ m/^%mbxCLOSECHAPTER/) {
 			close_chapter ();
 		} elsif ($line =~ m/^%mbxINTROSUBSUBSECTION/) {
 			open_intro_subsubsection ();
@@ -653,8 +694,13 @@ while(1)
 	} elsif ($para =~ s/^\\chapterref\{([^}]*)\}// ||
 		$para =~ s/^\\chaptervref\{([^}]*)\}// ||
 		$para =~ s/^\\Chapterref\{([^}]*)\}// ||
+		$para =~ s/^\\appendixref\{([^}]*)\}// ||
+		$para =~ s/^\\appendixvref\{([^}]*)\}// ||
+		$para =~ s/^\\Appendixref\{([^}]*)\}// ||
 		$para =~ s/^\\sectionref\{([^}]*)\}// ||
 		$para =~ s/^\\sectionvref\{([^}]*)\}// ||
+		$para =~ s/^\\subsectionref\{([^}]*)\}// ||
+		$para =~ s/^\\subsectionvref\{([^}]*)\}// ||
 		$para =~ s/^\\thmref\{([^}]*)\}// ||
 		$para =~ s/^\\thmvref\{([^}]*)\}// ||
 		$para =~ s/^\\tableref\{([^}]*)\}// ||
@@ -918,7 +964,7 @@ while(1)
 
 			close_paragraph ();
 			print $out "<table xml:id=\"$theid\">\n";
-			print $out "  <caption>$caption</caption>\n";
+			print $out "  <title>$caption</title>\n";
 			print $out "  <tabular top=\"major\" halign=\"left\">\n";
 
 			if ($table =~ s/^(.*?)[ \n]*\\\\(\[.*?\])?[ \n]*//s) {
@@ -1092,6 +1138,15 @@ while(1)
 		ensure_mbx_svg_version ($thefile);
 		#ensure_mbx_png_version ($thefile);
 		print $out "<diffyqsimage source=\"$thefile-mbx\" width=\"$width\" background-color=\"white\" inline=\"yes\" />\n";
+		
+	#FIXME: this is based entirely too much on my usage :)
+	} elsif ($para =~ s/^\\includegraphics\[width=(.*?)\]\{(.*?)\}[ \n]*//) {
+		my $width = $1;
+		my $thefile = $2;
+		print "(Just inlined image >$width< >$thefile<\n)";
+		ensure_mbx_svg_version ($thefile);
+		#ensure_mbx_png_version ($thefile);
+		print $out "<diffyqsimage source=\"$thefile-mbx\" width=\"$width\" background-color=\"white\" inline=\"yes\" />\n";
 
 	#FIXME: not all substitutions are made, so check if more processing needs to be done
 	#on caption
@@ -1184,11 +1239,11 @@ while(1)
 					#$thesizestr = get_size_of_svg("$thefile-mbx.svg");
 					#print $out "  <diffyqsimage source=\"$thefile-mbx\" $thesizestr />\n";
 					#}
-				} elsif ($fig =~ m/^[ \n]*\\diffyincludegraphics\{[^}]*?\}\{([^}]*?)\}\{([^}]*?)\}[ \n]*\\\\[ \n]*\\diffyincludegraphics\{[^}]*?\}\{([^}]*?)\}\{([^}]*?)\}[ \n]*$/) {
+				} elsif ($fig =~ m/^[ \n]*\\diffyincludegraphics\{[^}]*?\}\{([^}]*?)\}\{([^}]*?)\}[ \n]*\\\\(\[[0-9]*pt\])?[ \n]*\\diffyincludegraphics\{[^}]*?\}\{([^}]*?)\}\{([^}]*?)\}[ \n]*$/) {
 					my $thesize1 = $1;
 					my $thefile1 = "figures/$2";
-					my $thesize2 = $3;
-					my $thefile2 = "figures/$4";
+					my $thesize2 = $4;
+					my $thefile2 = "figures/$5";
 					$thesize1 =~ s/width=//g;
 					$thesize2 =~ s/width=//g;
 					ensure_mbx_svg_version ($thefile1);
@@ -1391,7 +1446,8 @@ while(1)
 		}
 		open_paragraph();
 
-	} elsif ($para =~ s/^\\end\{exercise\}[ \n]*\\exsol\{//) {
+	} elsif ($para =~ s/^\\end\{exercise\}[ \n]*\\exsol\{// ||
+	         $para =~ s/^\\end\{exercise\}[ \n]*\\end\{samepage\}[ \n]*\\exsol\{//) {
 		print "(exercise end)\n";
 		print "(exsol start)\n";
 		close_paragraph();
@@ -1448,53 +1504,103 @@ while(1)
 		close_item();
 		print $out "</ul>\n";
 
+	} elsif ($para =~ s/^\\begin\{enumerate\}\[(.*?),resume\][ \n]*//) {
+		close_paragraph();
+		print "(begin enumerate resume label >$1<)\n";
+		if ($list_level > 0) {
+			print "\n\n\nHUH? RESUME ONLY WORKS ON ONE LEVEL!\n\n\n";
+			$num_errors++;
+		}
+		print $out "<ol label=\"$1\" start=\"$list_start\">\n";
+		$list_level++;
+	} elsif ($para =~ s/^\\begin\{enumerate\}\[resume\][ \n]*//) {
+		close_paragraph();
+		print "(begin enumerate resume)\n";
+		if ($list_level > 0) {
+			print "\n\n\nHUH? RESUME ONLY WORKS ON ONE LEVEL!\n\n\n";
+			$num_errors++;
+		}
+		print $out "<ol start=\"$list_start\">\n";
+		$list_level++;
 	} elsif ($para =~ s/^\\begin\{enumerate\}\[(.*?)\][ \n]*//) {
 		close_paragraph();
 		print "(begin enumerate label >$1<)\n";
 		print $out "<ol label=\"$1\">\n";
+		$list_start=1;
+		$list_level++;
 	} elsif ($para =~ s/^\\begin\{enumerate\}[ \n]*//) {
 		close_paragraph();
 		print "(begin enumerate)\n";
 		print $out "<ol>\n";
+		$list_start=1;
+		$list_level++;
 	} elsif ($para =~ s/^\\end\{enumerate\}[ \n]*//) {
 		close_item();
 		print $out "</ol>\n";
+		$list_level--;
 
 	} elsif ($para =~ s/^\\item[ \n]*//) {
 		print "(item)\n";
+		$list_start++;
 		open_item();
 		open_paragraph();
 
-	} elsif ($para =~ s/^\\begin\{tasks\}\[counter-format=tsk\[1\])\][ \n]*//) {
+	} elsif ($para =~ s/^\\begin\{tasks\}\[counter-format=tsk\[1\]\)\][ \n]*//) {
 		close_paragraph();
 		print "(begin tasks enumerate label 1)<)\n";
 		print $out "<ol label=\"1)\">\n";
-	} elsif ($para =~ s/^\\begin\{tasks\}\[counter-format=tsk\[1\])\]\((.*?)\)[ \n]*//) {
+		$list_start=1;
+		$list_level++;
+	} elsif ($para =~ s/^\\begin\{tasks\}\[counter-format=tsk\[1\]\)\]\((.*?)\)[ \n]*//) {
 		close_paragraph();
 		print "(begin tasks enumerate label 1) cols=$1<)\n";
 		print $out "<ol label=\"1)\" cols=\"$1\">\n";
+		$list_start=1;
+		$list_level++;
 	} elsif ($para =~ s/^\\begin\{tasks\}\[resume\]\((.*?)\)[ \n]*//) {
 		close_paragraph();
-		print "\n\n\nHUH? Don't understand resume on tasks yet!\n\n\n";
-		$num_errors++;
-		print "(begin resmume tasks enumerate cols=$1<)\n";
-		print $out "<ol label=\"a)\" cols=\"$1\">\n";
+		#FIXME: double check that this really works
+		#print "\n\n\nHUH? Don't understand resume on tasks yet!\n\n\n";
+		#$num_errors++;
+		print "(begin resume tasks enumerate cols=$1<)\n";
+		if ($list_level > 0) {
+			print "\n\n\nHUH? RESUME ONLY WORKS ON ONE LEVEL!\n\n\n";
+			$num_errors++;
+		}
+		print $out "<ol label=\"a)\" cols=\"$1\" start=\"$list_start\">\n";
+		$list_level++;
 	} elsif ($para =~ s/^\\begin\{tasks\}\[resume\][ \n]*//) {
 		close_paragraph();
-		print "\n\n\nHUH? Don't understand resume on tasks yet!\n\n\n";
-		$num_errors++;
-		print "(begin resmume tasks enumerate<)\n";
-		print $out "<ol label=\"a)\">\n";
+		#FIXME: DOUBLE CHECK
+		#print "\n\n\nHUH? Don't understand resume on tasks yet!\n\n\n";
+		#$num_errors++;
+		print "(begin resume tasks enumerate)\n";
+		if ($list_level > 0) {
+			print "\n\n\nHUH? RESUME ONLY WORKS ON ONE LEVEL!\n\n\n";
+			$num_errors++;
+		}
+		print $out "<ol label=\"a)\" start=\"$list_start\">\n";
+		$list_level++;
+	} elsif ($para =~ s/^\\begin\{tasks\}\((.*?)\)[ \n]*//) {
+		close_paragraph();
+		print "(begin tasks enumerate cols=$1<)\n";
+		print $out "<ol label=\"a)\" cols=\"$1\">\n";
+		$list_start=1;
+		$list_level++;
 	} elsif ($para =~ s/^\\begin\{tasks\}[ \n]*//) {
 		close_paragraph();
 		print "(begin tasks enumerate)\n";
 		print $out "<ol label=\"a)\">\n";
+		$list_start=1;
+		$list_level++;
 	} elsif ($para =~ s/^\\end\{tasks\}[ \n]*//) {
 		close_item();
 		print $out "</ol>\n";
+		$list_level--;
 
 	} elsif ($para =~ s/^\\task[ \n]*//) {
 		print "(task)\n";
+		$list_start++;
 		open_item();
 		open_paragraph();
 
@@ -1521,18 +1627,29 @@ while(1)
 
 
 
-	} elsif ($para =~ s/^\\ldots//) {
+	} elsif ($para =~ s/^\\[cl]?dots\b//) {
 		open_paragraph_if_not_open ();
 		print "...\n";
 
-	} elsif ($para =~ s/^\\noindent//) {
+	} elsif ($para =~ s/^\\appendix\b//) {
+		print "(start appendices)\n";
+		close_chapter();
+		$in_appendix = 1;
+		$chapter_num = 0;
+
+	} elsif ($para =~ s/^\\leavevmode\b//) {
+		print "(leavevmode do nothing)\n";
+
+	} elsif ($para =~ s/^\\noindent\b//) {
 		print "(noindent do nothing)\n";
-	} elsif ($para =~ s/^\\sectionnewpage//) {
+	} elsif ($para =~ s/^\\sectionnewpage\b//) {
 		print "(sectionnewpage do nothing)\n";
 	} elsif ($para =~ s/^\\nopagebreak(\[.\])?//) {
 		print "(nopagebreak do nothing)\n";
 	} elsif ($para =~ s/^\\pagebreak(\[.\])?//) {
 		print "(pagebreak do nothing)\n";
+	} elsif ($para =~ s/^\\linebreak(\[.\])?//) {
+		print "(linebreak do nothing)\n";
 
 	} elsif ($para =~ s/^\\ //) {
 		print "( )\n";
@@ -1541,7 +1658,7 @@ while(1)
 		print "(-)\n";
 		open_paragraph_if_not_open ();
 		print $out "-"; 
-	} elsif ($para =~ s/^\\medskip *//) {
+	} elsif ($para =~ s/^\\medskip\b *//) {
 		print "(medskip)\n";
 		if ($inparagraph) {
 			#print $out "</p><p><nbsp/></p><p><!--FIXME:this seems an ugly solution-->\n"; 
@@ -1631,7 +1748,7 @@ close_chapter ();
 
 print $out <<END;
 </book>
-</mathbook>
+</pretext>
 END
 
 close ($in); 

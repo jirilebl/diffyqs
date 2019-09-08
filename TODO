@@ -3,9 +3,6 @@ Possible cover art: https://www.jirka.org/album/cervenusa2008/tn/IMGP2805.jpg.ht
 SHOULD (edition 6):
 
 BIG(er):
-* (in progress) Add appendix chapter on linear algebra for courses that don't want to
-  require that as prerequisite.
-* (in progress) Another section on solving PDEs with Laplace? (in the Laplace chapter)
 * (maybe) Add large table of Laplace transforms, either as appendix, as some
   backmatter, or perhaps even inside chapter 6.
 
@@ -26,7 +23,7 @@ SMALL THIGS WHEN WE ARE CLOSER TO DONE:
 * Double check exercises are not split across pages
 * Make archive of all the figures to be usable by instructors
 
-TECHNICAL:
+TECHNICAL/MINOR/STYLE:
 * Update(check) EP references to 5th edition
 * Update(check) BD references to 11th edition
 * Change (almost?) all exercise parts to enumerates

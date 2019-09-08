@@ -34,12 +34,6 @@
 %mbxdocinfo    <rename element="inlineexercise">Exercise</rename>
 %mbxdocinfo    <rename element="divisionalexercise">Exercise</rename>
 %mbxdocinfo
-%mbxdocinfo    <search>
-%mbxdocinfo        <google>
-%mbxdocinfo            <cx>006490116505509195242:1mxn4dbgh8e</cx>
-%mbxdocinfo        </google>
-%mbxdocinfo    </search>
-%mbxdocinfo    
 %mbxdocinfo    <latex-preamble>
 %mbxdocinfo        <package>cancel</package>
 %mbxdocinfo    </latex-preamble>
@@ -302,18 +296,20 @@ at github: \url{https://github.com/jirilebl/diffyqs}
 \appendix
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% mbx wants appendices to be in backmatter it seems
+
+%mbx <backmatter>
+
 % Linear algebra appendix
 \input ap-linear-algebra.tex
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %must be in separate "paragraph"
-%mbxBACKMATTER
-
-%mbx <backmatter>
+% This closes the chapters/appedices above and starts actual backmatter
+%mbxCLOSECHAPTER
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

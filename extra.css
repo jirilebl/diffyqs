@@ -38,6 +38,11 @@
  background-attachment: local, local, scroll, scroll;
 }
 
+ol.lower-roman > li::marker { content: "(" counter(list-item, lower-roman) ")"; }
+ol.lower-alpha > li::marker { content: counter(list-item, lower-alpha) ")"; }
+ol.decimal > li::marker { content: counter(list-item, decimal) ")"; }
+li { display: list-item; }
+
 .diffyimg { margin:auto; vertical-align:middle; }
 
 @media (min-width: 600px) {

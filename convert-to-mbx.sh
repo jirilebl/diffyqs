@@ -126,7 +126,7 @@ echo
 echo RUNNING xsltproc
 echo
 
-xsltproc ../diffyqs-html.xsl ../diffyqs-out.xml
+xsltproc --stringparam html.google-search 006490116505509195242:1mxn4dbgh8e ../diffyqs-html.xsl ../diffyqs-out.xml
 
 echo
 echo FIXING UP HTML ...
