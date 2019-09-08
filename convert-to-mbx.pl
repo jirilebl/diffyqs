@@ -31,7 +31,7 @@ while($line = <$in>)
 {
 	chomp($line);
 	if ($line =~ m/^%mbxFIXME/) {
-		printf("\n\n\nFOUND mbxFIXME!\n\n\n");
+		printf("\n\n\nHUH?? FOUND mbxFIXME!\n\n\n");
 		$num_errors++;
 	} elsif ($line =~ m/^%mbxSTARTIGNORE/) {
 		$mbxignore = 1;
@@ -1458,6 +1458,16 @@ while(1)
 		close_paragraph();
 		print $out "</statement>\n</exercise>\n";
 
+	} elsif ($para =~ s/^\\begin\{center\}[ \n]*//) {
+		#FIXME: no centering yet
+		open_paragraph();
+		print "(begin center)";
+
+	} elsif ($para =~ s/^\\end\{center\}[ \n]*//) {
+		#FIXME: no centering yet
+		close_paragraph();
+		print "(end center)";
+
 	} elsif ($para =~ s/^\\begin\{example\}[ \n]*//) {
 		close_paragraph();
 		$example_num = $example_num+1;
@@ -1606,9 +1616,9 @@ while(1)
 
 	} elsif ($para =~ s/^([^\$\\{]*?)\}//) {
 		my $line = $1;
-		print "closing tag after >$line<\n\n";
-		print_line($line);
 		my $tagtoclose = pop @cltags;
+		print "closing tag ($tagtoclose) after >$line<\n\n";
+		print_line($line);
 		if ($tagtoclose eq "em") {
 			print $out "</em>";
 		} elsif ($tagtoclose eq "myquote") {
@@ -1624,7 +1634,6 @@ while(1)
 			print "\n\nHUH???\n\nNo (or unknown =\"$tagtoclose\") tag to close\n\n";
 			$num_errors++;
 		}
-
 
 
 	} elsif ($para =~ s/^\\[cl]?dots\b//) {
