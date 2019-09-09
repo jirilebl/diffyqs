@@ -141,4 +141,6 @@
 
   <xsl:param name="html.css.extra" select="'extra.css'"/>
 
+  <xsl:param name="html.google-search" select="'006490116505509195242:1mxn4dbgh8e'"/>
+
 </xsl:stylesheet>

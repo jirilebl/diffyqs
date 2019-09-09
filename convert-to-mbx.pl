@@ -670,14 +670,26 @@ while(1)
 	} elsif ($para =~ s/^\\index\{([^}]*)\}//) {
 		open_paragraph_if_not_open ();
 		print "(index $1)\n";
-		my $index = $1;
+		my $index = do_line_subs($1);
+		my $sortby = "";
+		if ($index =~ s|^(.*)@(.*)$|$2|s) {
+			$sortby = $1;
+		}
 		$index =~ s|\$(.*?)\$|<m>$1</m>|sg;
-		$index =~ s|^(.*)!(.*)$|<h>$1</h><h>$2</h>|s;
-		print $out "<idx>$index</idx>"; 
+		if ($sortby eq "") {
+			$index =~ s|^(.*)!(.*)$|<h>$1</h><h>$2</h>|s;
+			print $out "<idx>$index</idx>"; 
+		} else {
+			if ($index =~ s|^(.*)!(.*)$|<h sortby="$sortby">$1</h><h>$2</h>|s) {
+				print $out "<idx>$index</idx>"; 
+			} else {
+				print $out "<idx><h sortby=\"$sortby\">$index</h></idx>"; 
+			}
+		}
 	} elsif ($para =~ s/^\\myindex\{([^}]*)\}//) {
 		open_paragraph_if_not_open ();
 		print "(myindex $1)\n";
-		my $index = $1;
+		my $index = do_line_subs($1);
 		$index =~ s|\$(.*?)\$|<m>$1</m>|sg;
 		print $out "$index<idx>$index</idx>"; 
 
@@ -1608,7 +1620,7 @@ while(1)
 		print $out "</ol>\n";
 		$list_level--;
 
-	} elsif ($para =~ s/^\\task[ \n]*//) {
+	} elsif ($para =~ s/^\\task\*?[ \n]*//) {
 		print "(task)\n";
 		$list_start++;
 		open_item();
