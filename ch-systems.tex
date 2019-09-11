@@ -185,8 +185,8 @@ you will find out that this really is so.
 \end{example}
 
 \begin{example} \label{sintro:carts-example}
-Let us look at another example, this time second order.
-We return to the mass and spring setup again, but this time we will
+Let us look at a second order example.
+We return to the mass and spring setup, but this time we
 consider two masses.
 
 \begin{mywrapfigsimp}{2.0in}{2.3in}
@@ -194,8 +194,8 @@ consider two masses.
 \inputpdft{cartsfig}
 \end{mywrapfigsimp}
 Suppose we have one spring with constant $k$, but two masses $m_1$
-and $m_2$.  We can think of the masses as carts, and we will suppose that
-they ride along a straight track with no friction.  Let $x_1$ be the displacement of the first
+and $m_2$.  We think of the masses as carts that 
+ride along a straight track with no friction.  Let $x_1$ be the displacement of the first
 cart and $x_2$ be the displacement of the second cart.
 That is, we put the two
 carts somewhere with no tension on the spring, and we mark the position of
@@ -214,7 +214,7 @@ m_1 x_1'' & = k(x_2-x_1) , \\
 m_2 x_2'' & = - k(x_2-x_1) .
 \end{align*}
 
-Again, in this system we cannot solve for the $x_1$ or $x_2$ variable separately.
+Again, we cannot solve for the $x_1$ or $x_2$ variable separately.
 That we must solve for both $x_1$ and $x_2$ at once
 is intuitively clear, since where the first cart goes
 depends on exactly where the second cart goes and vice-versa.
@@ -328,11 +328,11 @@ is called an \emph{\myindex{autonomous system}}.  For example
 the system $y'=2y-x$, $y'=x$ is autonomous as $t$ is the independent
 variable but does not appear in the equations.
 
-For autonomous systems we can draw the so-called
-\emph{\myindex{direction field}} or \emph{\myindex{vector field}}.  That is,
+For autonomous systems we can the so-called
+\emph{\myindex{direction field}} or \emph{\myindex{vector field}},
 a plot similar to a slope field, but
 instead of giving a slope at each point, we give a direction (and a
-magnitude).  The previous example $x' = 2y-x$, $y' = x$ says
+magnitude).  The previous example, $x' = 2y-x$, $y' = x$, says
 that at the point $(x,y)$ the direction in which we should travel to satisfy
 the equations should be the direction of the vector $( 2y-x, x )$
 with the speed equal to the magnitude of this vector.  So we draw
@@ -419,7 +419,7 @@ continuous near some $(x_1^0,x_2^0,\ldots,x_n^0,t^0)$, then a solution to
 subject to the initial condition
 $x_1(t^0) = x_1^0$,
 $x_2(t^0) = x_2^0$, \ldots,
-$x_n(t^0) = x_n^0$,
+$x_n(t^0) = x_n^0$
 exists (at least for some small interval of $t$'s) and is unique.
 \end{theorem}
 
