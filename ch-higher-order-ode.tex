@@ -248,7 +248,40 @@ solution.
 
 If you have one solution to a second order linear homogeneous
 equation you can find another one.  This is the \emph{\myindex{reduction of
-order method}}.
+order method}}.  The idea is that if we somehow found $y_1$ as a solution of
+$y'' + p(x) y' + q(x) y = 0$ we try a second
+solution of the form $y_2(x) = y_1(x) v(x)$.
+We just need to find $v$.  We plug $y_2$ into the equation:
+\begin{equation*}
+\begin{split}
+0 = 
+y_2'' + p(x) y_2' + q(x) y_2 & =
+y_1'' v + 2 y_1' v' + y_1 v''
++ p(x) ( y_1' v + y_1 v' )
++ q(z) y_1 v
+\\
+& =
+y_1 v''
++ (2 y_1' + p(x) y_1) v'
++
+\cancelto{0}{\bigl( y_1'' + p(x) y_1' + q(x) y_1 \bigr)} v .
+\end{split}
+\end{equation*}
+In other words,
+$y_1 v'' + (2 y_1' + p(x) y_1) v' = 0$.  Using $w = v'$ we have the
+first order linear equation
+$y_1 w' + (2 y_1' + p(x) y_1) w = 0$.  After solving this equation for $w$
+(integrating factor),
+we find $v$ by antidifferentiating $w$.  We then form $y_2$ by computing
+$y_1 v$.  For example, suppose we somehow know $y_1 = x$ is a solution
+to $y''+x^{-1}y'-x^{-2} y=0$.
+The equation for $w$ is then
+$xw' + 3 w = 0$.  We find a solution, $w = Cx^{-3}$, and we find an 
+antiderivative $v = \frac{-C}{2x^2}$.
+Hence $y_2 = y_1 v = \frac{-C}{2x}$.
+Any $C$ works and so $C=-2$ makes $y_2 = \nicefrac{1}{x}$.  Thus, the
+general solution is $y = C_1 x + C_2\nicefrac{1}{x}$.
+
 
 \begin{exercise}[reduction of order] \label{exercise:reductionoforder}
 Suppose $y_1$ is a solution to $y'' + p(x) y' + q(x) y = 0$.
@@ -258,15 +291,6 @@ y_2(x) = y_1(x) \int \frac{e^{-\int p(x)\,dx}}{{\bigl(y_1(x)\bigr)}^2} ~dx
 \end{equation*}
 is also a solution.
 \end{exercise}
-
-Note: If you wish to come up with the formula for reduction of order
-yourself,
-start by trying $y_2(x) = y_1(x) v(x)$.  Then plug $y_2$ into the
-equation, use the fact that $y_1$ is a solution, substitute
-$w = v'$, and you have a first order linear equation in $w$.  Solve for
-$w$ and then for $v$.  When solving for $w$, make sure to include a constant
-of integration.
-Let us solve some famous equations using the method.
 
 \begin{exercise}[\myindex{Chebyshev's equation of order 1}]
 Take 
@@ -341,6 +365,8 @@ $y''-3y'+2y = 0$
 second part of \S3.1 in \cite{EP}}\BDref{,
 \S3.1 in \cite{BD}}}
 
+\subsection{Solving constant coefficient equations}
+
 Consider the problem
 \begin{equation*}
 y''-6y'+8y = 0, \qquad y(0) = - 2, \qquad y'(0) = 6 .
@@ -363,7 +389,7 @@ a solution of the form $y = e^{rx}$.  Then $y' = r e^{rx}$ and
 $y'' = r^2 e^{rx}$.  Plug in to get
 \begin{align*}
 y''-6y'+8y & = 0 , \\
-r^2 e^{rx} -6 r e^{rx}+8 e^{rx} & = 0 , \\
+\underbrace{r^2 e^{rx}}_{y''} -6 \underbrace{r e^{rx}}_{y'}+8 \underbrace{e^{rx}}_{y} & = 0 , \\
 r^2 -6 r +8 & = 0 \qquad \text{(divide through by } e^{rx} \text{)},\\
 (r-2)(r-4) & = 0 .
 \end{align*}
@@ -407,16 +433,18 @@ Suppose that we have an equation
 a y'' + b y' + c y = 0 ,
 \end{equation}
 where $a, b, c$ are constants.  Try the solution $y = e^{rx}$ to obtain
-\begin{align*}
+\begin{equation*}
 a r^2 e^{rx} + 
 b r e^{rx} + 
-c e^{rx} & = 0 , \\
+c e^{rx} = 0 .
+\end{equation*}
+Divide by $e^{rx}$ to obtain the so-called
+\emph{\myindex{characteristic equation}} of the ODE:
+\begin{equation*}
 a r^2 + 
 b r + 
-c & = 0 .
-\end{align*}
-The equation $a r^2 + b r + c = 0$ is called the
-\emph{\myindex{characteristic equation}} of the ODE\@.
+c = 0 .
+\end{equation*}
 Solve for the $r$ by using the \myindex{quadratic formula}.
 \begin{equation*}
 r_1, r_2 = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} .
@@ -1635,7 +1663,7 @@ conditions, see \figurevref{mv:overdampedfig}.
 %mbxlatex \caption{Overdamped motion for several different initial conditions.\label{mv:overdampedfig}}
 %mbxlatex \end{myfig}
 
-Note that no oscillation happens.  In fact, the graph crosses the
+No oscillation happens.  In fact, the graph crosses the
 $x$-axis at most once.  To see why, we try to solve
 $0 = C_1 e^{r_1 t} + C_2 e^{r_2 t}$.
 Therefore, $C_1 e^{r_1 t} = - C_2 e^{r_2 t}$ and using laws of exponents we
