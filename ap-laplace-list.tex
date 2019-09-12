@@ -1,0 +1,99 @@
+\chapter{Table of Laplace Transforms} \label{laplacelist:appendix}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The function $u$ is the
+Heaviside function, $\delta$ is the delta function, and 
+\begin{equation*}
+\Gamma(t) =
+\int_0^\infty e^{-\tau} \tau^{t-1} \, d\tau ,
+\qquad
+\operatorname{erf}(t) =
+\frac{2}{\sqrt{\pi}} \int_0^t e^{-\tau^2} \, d\tau ,
+\qquad
+\operatorname{erfc}(t) =
+%\frac{2}{\sqrt{\pi}} \int_t^\infty e^{-\tau^2} \, d\tau =
+1 - \operatorname{erf}(t) .
+\end{equation*}
+
+\begin{center}
+\begin{tabular}{@{}lllll@{}}
+\toprule
+$f(t)$ &
+$F(s) = \mathcal{L} \bigl\{ f(t) \bigr\}= \int_0^\infty e^{-st} f(t) \, dt$ \\
+\midrule
+$C$ & $\frac{C}{s}$
+\\[3pt]
+$t$ & $\frac{1}{s^2}$
+\\[3pt]
+$t^2$ & $\frac{2}{s^3}$
+\\[3pt]
+$t^n$ & $\frac{n!}{s^{n+1}}$
+\\[3pt]
+$t^p \quad (p > 0)$ & $\frac{\Gamma(p+1)}{s^{p+1}}$
+\\[3pt]
+$e^{-at}$ & $\frac{1}{s+a}$
+\\[3pt]
+$\sin (\omega t)$ & $\frac{\omega}{s^2+\omega^2}$
+\\[3pt]
+$\cos (\omega t)$ & $\frac{s}{s^2+\omega^2}$
+\\[3pt]
+$\sinh (\omega t)$ & $\frac{\omega}{s^2-\omega^2}$
+\\[3pt]
+$\cosh (\omega t)$ & $\frac{s}{s^2-\omega^2}$
+\\[3pt]
+$u(t-a)$ & $\frac{e^{-as}}{s}$
+\\[3pt]
+$\delta(t)$ & $1$
+\\[3pt]
+$\delta(t-a)$ & $e^{-as}$
+\\[3pt]
+$\operatorname{erf}\left( \frac{t}{2a} \right)$ & $\frac{1}{s} e^{(as)^2} \operatorname{erfc}(as)$
+\\[3pt]
+$\frac{1}{\sqrt{\pi t}} \exp\left(\frac{-a^2}{4t}\right)$ &
+$\frac{e^{-as}}{\sqrt{s}} \qquad (a \geq 0)$
+\\[3pt]
+$\frac{1}{\sqrt{\pi t}} - a e^{a^2 t} \operatorname{erfc}(a \sqrt{t})$ &
+$\frac{1}{\sqrt{s}+a} \qquad (a>0)$
+\\[3pt]
+%mbxSTARTIGNORE
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{@{}lllll@{}}
+\toprule
+$f(t)$ &
+$F(s) = \mathcal{L} \bigl\{ f(t) \bigr\}= \int_0^\infty e^{-st} f(t) \, dt$ \\
+\midrule
+%mbxENDIGNORE
+$a f(t) + b g(t)$ & $a F(s) + bG(s)$
+\\[3pt]
+$f(at)$ & $\frac{1}{a}F\left( \frac{s}{a} \right) \qquad (a > 0)$
+\\[3pt]
+$f(t-a)u(t-a)$ & $e^{-as} F(s)$
+\\[3pt]
+$e^{-at} f(t)$ & $F(s+a)$
+\\[3pt]
+$g'(t)$ & $sG(s)-g(0)$
+\\[3pt]
+$g''(t)$ & $s^2G(s)-sg(0)-g'(0)$
+\\[3pt]
+$g'''(t)$ & $s^3G(s)-s^2g(0)-sg'(0)-g''(0)$
+\\[3pt]
+$g^{(n)}(t)$ & $s^nG(s)-s^{n-1}g(0)-\cdots-g^{(n-1)}(0)$
+\\[3pt]
+$(f * g)(t) = \int_0^t f(\tau) g(t-\tau) \, d\tau$ & $F(s)G(s)$
+\\[3pt]
+$tf(t)$ & $-F'(s)$
+\\[3pt]
+$t^nf(t)$ & ${(-1)}^nF^{(n)}(s)$
+\\[3pt]
+$\int_0^t f(\tau) d\tau$ & $\frac{1}{s} F(s)$
+\\[3pt]
+$\frac{f(t)}{t}$ & $\int_s^\infty F(\sigma) d\sigma$
+\\[3pt]
+\bottomrule
+\end{tabular}
+\end{center}

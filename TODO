@@ -2,10 +2,6 @@ Possible cover art: https://www.jirka.org/album/cervenusa2008/tn/IMGP2805.jpg.ht
 
 SHOULD (edition 6):
 
-BIG(er):
-* (maybe) Add large table of Laplace transforms, either as appendix, as some
-  backmatter, or perhaps even inside chapter 6.
-
 SMALLER THINGS:
 * Expand discussion of vector fields and how they are drawn in 3.1.
 * Add maybe a few more exercises for setting up applications in 3.1
@@ -13,11 +9,11 @@ SMALLER THINGS:
   the units.
 * In 3.4 (or earlier?) Add some exercises on constant nonhomogeneity for
   an invertible A, that just translates the point.
-* exponential order / type, need to use one term only.  Order at infinity
+* exponential order / type, need to use one term only.  Order at infinity?
   also should be emphasized at more places.
 * Include annihilator method at least in exercises of section of 2.5 
 
-SMALL THIGS WHEN WE ARE CLOSER TO DONE:
+SMALL THINGS WHEN WE ARE CLOSER TO DONE:
 * Double check the total number of estimated lectures
 * Double check exercises are not split across pages
 * Make archive of all the figures to be usable by instructors

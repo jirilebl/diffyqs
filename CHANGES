@@ -1,6 +1,7 @@
 * Add section 1.9 on first order linear PDE and characteristics
 * Add section 6.5 on solving PDE with Laplace transform
 * Add appendix A on linear algebra.
+* Add appendix B with a more complete list of Laplace transforms
 
 * Change name of first chapter to "First order equations" since we are
   adding a PDE section
