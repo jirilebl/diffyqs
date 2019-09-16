@@ -634,6 +634,21 @@ Check that both forms of the $y$ given are
 really solutions to the equation.
 \end{exercise}
 
+\begin{example}
+In equations of higher order, you get more constants you must solve for to
+get a particular solution.  The equation $\frac{d^2y}{dx^2} = 0$ has the
+general solution $y = C_1 x + C_2$; simply integrate twice and don't forget
+about the constant of integration.  Consider the initial conditions $y(0) =
+2$ and $y'(0) = 3$.  We plug in our general solution and solve for the
+constants:
+\begin{equation*}
+2 = y(0) = C_1 \cdot 0 + C_2 = C_2, \qquad
+3 = y'(0) = C_1 .
+\end{equation*}
+In other words, $y = 3x + 2$ is the particular solution we seek.
+\end{example}
+
+
 An interesting note about $\cosh$:  The graph of $\cosh$ is the exact shape
 of a hanging chain.  This shape is called
 a \emph{\myindex{catenary}}.
@@ -690,7 +705,7 @@ know from basic calculus.
 \end{exercise}
 
 \begin{exercise}
-\pagebreak[2]
+%\pagebreak[2]
 Solve:
 \begin{tasks}(2)
 \task $\dfrac{dA}{dt} = -10 A, \quad A(0)=5$
@@ -703,6 +718,31 @@ Solve:
 \begin{exercise}
 Is there a solution to $y' = y$, such that $y(0) = y(1)$?
 \end{exercise}
+
+\begin{exercise}
+The population of city X was 100 thousand 20 years ago, and 
+the population of city X was 120 thousand 10 years ago.  Assuming constant
+growth, you can use the exponential population model
+(like for the bacteria).  What do you estimate the population is now?
+\end{exercise}
+
+\begin{exercise}
+Suppose that a football coach gets a salary of
+one million dollars now, and a raise of 10\% every year
+(so exponential model, like population of bacteria).
+Let $s$ be the salary in millions of dollars, and $t$ is time in years.
+\begin{tasks}(2)
+\task
+What is $s(0)$ and $s(1)$.
+\task
+Approximately how many year will it take for the salary to be 10 million.
+\task
+Approximately how many year will it take for the salary to be 20 million.
+\task
+Approximately how many year will it take for the salary to be 30 million.
+\end{tasks}
+\end{exercise}
+
 
 %mbxSTARTIGNORE
 \noindent
@@ -751,6 +791,22 @@ Solve $\frac{d\varphi}{ds} = 8 \varphi$ and $\varphi(0) = -9$.
 \end{exercise}
 \exsol{%
 $\varphi = -9 e^{8s}$
+}
+
+\begin{exercise}
+Solve:
+\begin{tasks}(2)
+\task $\dfrac{dx}{dt} = -4x, \quad x(0)=9$
+\task $\dfrac{d^2x}{dt^2} = -4x, \quad x(0)=1, \quad x'(0)=2$
+\task $\dfrac{dp}{dq} = 3 p, \quad p(0)=4$
+\task $\dfrac{d^2T}{dx^2} = 4 T, \quad T(0)=0, \quad T'(0)=6$
+\end{tasks}
+\end{exercise}
+\exsol{%
+a)~$x=9e^{-4t}$ \quad
+b)~$x=\cos(2t)+\sin(2t)$ \quad
+c)~$p=4e^{3q}$ \quad
+d)~$T=3\sinh(2x)$
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1042,5 +1098,12 @@ equation.  Write down the general solution.
 \end{exercise}
 \exsol{%
 equation: $a(x) y = b(x)$, solution: $y = \frac{b(x)}{a(x)}$.
+}
+
+\begin{exercise}
+For which $k$ is $\frac{dx}{dt}+x^k = t^{k+2}$ linear.  Hint: there are two answers.
+\end{exercise}
+\exsol{%
+$k=0$ or $k=1$
 }
 

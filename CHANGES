@@ -17,6 +17,7 @@
 
 * 0.2: Make the four fundamental equations a separate subsection, to
   emphasize and to make it possible to refer to it
+* 0.2: Add a very short example (0.2.2) on two constants and initial conditions
 * 0.3: Use a general form for the Newton's law of cooling, and
   name the old version exponential growth equation, which is more correct.
 
@@ -100,5 +101,5 @@
   Equations in chapter 4
 
 * Add exercises (other than in new secions/the appendix)
-  1.2.12, 1.2.106, 3.1.6, 3.1.7, 3.1.106, 3.5.5, 3.8.12,
-  3.8.105, 4.3.11, 4.3.106, 4.6.11, 4.6.105, 4.7.8.
+  0.2.13, 0.2.14, 0.2.106, 0.3.103, 1.2.12, 1.2.106, 3.1.6, 3.1.7, 3.1.106,
+  3.5.5, 3.8.12, 3.8.105, 4.3.11, 4.3.106, 4.6.11, 4.6.105, 4.7.8.

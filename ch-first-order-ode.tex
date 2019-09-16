@@ -841,7 +841,7 @@ Then we rewrite the equation as
 \begin{equation*}
 \frac{dy}{g(y)} = f(x) ~dx .
 \end{equation*}
-Now both sides look like something we can integrate.  We obtain
+Both sides look like something we can integrate.  We obtain
 \begin{equation*}
 \int \frac{dy}{g(y)} = \int f(x) ~dx + C .
 \end{equation*}
@@ -853,22 +853,22 @@ Take the equation
 \begin{equation*}
 y' = xy .
 \end{equation*}
-First note that $y=0$ is a solution,
-so assume $y \not =0$ from now on.
-Write the equation as $\frac{dy}{dx} = xy$, then
+Note that $y=0$ is a solution.  We will remember that fact and
+assume $y \not =0$ from now on, so that we can divide by $y$.
+Write the equation as $\frac{dy}{dx} = xy$. Then
 \begin{equation*}
 \int \frac{dy}{y} = \int x~dx + C .
 \end{equation*}
 We compute the antiderivatives to get
 \begin{equation*}
-\ln \, \lvert y\rvert = \frac{x^2}{2} + C .
+\ln \, \lvert y\rvert = \frac{x^2}{2} + C ,
 \end{equation*}
-Or
+or
 \begin{equation*}
 \lvert y \rvert = e^{\frac{x^2}{2} + C} = e^{\frac{x^2}{2}} e^C = D e^{\frac{x^2}{2}} ,
 \end{equation*}
-where $D > 0$ is some constant.  Because $y=0$ is a solution and because
-of the absolute value we actually can write:
+where $D > 0$ is some constant.  Because $y=0$ is also a solution and because
+of the absolute value we can write:
 \begin{equation*}
 y = D e^{\frac{x^2}{2}} ,
 \end{equation*}
@@ -882,10 +882,10 @@ Yay!
 \end{example}
 
 We should be a little bit more careful with this method.  You may be worried 
-that we were
-integrating in two different variables.
-We seemed to be
-doing a different operation to each side.  Let us work this method out more
+that we 
+integrated in two different variables.
+We seemingly did
+a different operation to each side.  Let us work through this method more
 rigorously.  Take
 \begin{equation*}
 \frac{dy}{dx} = f(x)g(y) .
@@ -900,7 +900,7 @@ We integrate both sides with respect to $x$:
 \begin{equation*}
 \int \frac{1}{g(y)}~\frac{dy}{dx} ~dx = \int f(x) ~dx + C .
 \end{equation*}
-We use the change of variables formula:
+We use the change of variables formula (substitution) on the left hand side:
 \begin{equation*}
 \int \frac{1}{g(y)}~dy = \int f(x) ~dx + C .
 \end{equation*}
@@ -909,7 +909,7 @@ And we are done.
 \subsection{Implicit solutions}
 
 We sometimes get stuck even if we can do the
-integration.  For example, take the separable equation
+integration.  Consider the separable equation
 \begin{equation*}
 y' = \frac{xy}{y^2+1} .
 \end{equation*}
@@ -931,15 +931,22 @@ it an
 \emph{\myindex{implicit solution}}.
 It is still
 easy to check that an implicit solution satisfies the differential
-equation.  In this case, we differentiate with respect to $x$
+equation.  In this case, we differentiate with respect to $x$, and remember
+that $y$ is a function of $x$,
 to get
 \begin{equation*}
 y'\left(2y + \frac{2}{y}\right) = 2x .
 \end{equation*}
-It is simple to see that the differential equation holds.
-If you want to compute values
-for $y$, you might have to be tricky.  For example, you can graph
-$x$ as a function of $y$, and then flip your paper.
+Multiply both sides by $y$ and divide by $2(y^2+1)$ and you will
+get exactly the differential equation.  We leave this computation to the
+reader.
+
+If you have an implicit solution, and
+you want to compute values
+for $y$, you might have to be tricky.  You might get multiple solutions $y$
+for each $x$, so you have to pick one.  Sometimes you can
+graph $x$ as a function of $y$, and then flip your paper.
+Sometimes you have to do more.
 
 Computers are also good at some of these tricks.
 More advanced mathematical software usually has some
@@ -947,7 +954,7 @@ way of plotting solutions to implicit equations.
 For example, for $C=0$ if you plot all the points $(x,y)$ that
 are solutions to $y^2+2\ln|y|=x^2$,
 you find the two curves in \figurevref{implicitsols:fig}.  This is not quite
-a graph of a function, for each $x$ there are two choices of $y$.
+a graph of a function. For each $x$ there are two choices of $y$.
 To find a function you would have to pick one of these two curves.
 You pick the one that satisfies your initial condition if you have one.
 For example, the top curve satisfies the condition $y(1)=1$.
@@ -963,17 +970,20 @@ tricky.  But sometimes, an implicit solution is the best we can do.
 
 
 The above equation also has the solution $y=0$.
-The general solution is 
-$y^2 + 2 \ln \, \lvert y \rvert = x^2 + C$ together with $y=0$.  These outlying solutions
+So the general solution is 
+\begin{equation*}
+y^2 + 2 \ln \, \lvert y \rvert = x^2 + C, \qquad \text{and} \qquad y=0.
+\end{equation*}
+These outlying solutions
 such as $y=0$
 are sometimes called \emph{singular solutions\index{singular solution}}.
 
-\subsection{Examples}
+\subsection{Examples of separable equations}
 
 \begin{example}
 Solve $x^2y' = 1 - x^2+y^2 - x^2y^2$, $y(1) = 0$.
 
-First factor the right-hand side to obtain
+Factor the right-hand side
 \begin{equation*}
 x^2y' = (1 - x^2)(1+y^2) .
 \end{equation*}
@@ -984,8 +994,8 @@ Separate variables, integrate, and solve for $y$:
 \operatorname{arctan} (y) & = \frac{-1}{x} - x + C , \\
 y & = \tan \left(\frac{-1}{x} - x + C\right) .
 \end{align*}
-Now solve for the initial condition, $0 = \tan(-2+C)$ to get $C=2$ (or $C = 2 +
-\pi$, or $C = 2 + 2\pi$, etc.).  The solution we seek is, therefore,
+Solve for the initial condition, $0 = \tan(-2+C)$ to get $C=2$ (or $C = 2 +
+\pi$, or $C = 2 + 2\pi$, etc.).  The particular solution we seek is, therefore,
 \begin{equation*}
 y = \tan \left(\frac{-1}{x} - x + 2 \right) .
 \end{equation*}
@@ -993,15 +1003,15 @@ y = \tan \left(\frac{-1}{x} - x + 2 \right) .
 
 \begin{example} \label{sep:coffeeexample}
 Bob made a cup of coffee, and
-Bob likes to drink coffee only once it will not burn him at 60
-degrees.
+Bob likes to drink coffee only once reaches 60 degrees Celsius and will not burn him.
 Initially at time $t=0$ minutes,
 Bob measured the temperature and the coffee was 89 degrees Celsius.
 One minute later, Bob measured the coffee again and it had 85 degrees.
 The temperature of the room (the ambient temperature) is 22 degrees.
 When should Bob start drinking?
 
-Let $T$ be the temperature of the coffee, and let $A$ be the ambient (room) temperature.
+Let $T$ be the temperature of the coffee in degrees Celsius, and let $A$ be
+the ambient (room) temperature, also in degrees Celsius.
 \myindex{Newton's law of cooling} states that the rate at which the
 temperature of the coffee is changing
 is proportional to the difference between the
@@ -1027,7 +1037,10 @@ $T = 22 + 67\, e^{-kt}$.  The second condition says $85 = T(1) =
 22 + 67\, e^{-k}$.  Solving for $k$ we get
 $k = - \ln \frac{85-22}{67} \approx 0.0616$.  Now we solve for the time $t$
 that gives us a temperature of 60 degrees.  That is, we solve
-$60 = 22 + 67 e^{-0.0616t}$ to get
+\begin{equation*}
+60 = 22 + 67 e^{-0.0616t}
+\end{equation*}
+to get
 $t = - \frac{\ln \frac{60-22}{67}}{0.0616} \approx 9.21$ minutes.  So Bob can
 begin to drink the coffee at just over 9 minutes from the time Bob made
 it.  That is probably about the amount of time it took us to calculate how long
@@ -1048,16 +1061,21 @@ with a horizontal line at the ambient temperature 22.\label{sintro:coffeefig}}
 \end{example}
 
 \begin{example}
+\pagebreak[2]
 Find the general solution to $y' = \frac{-xy^2}{3}$ (including singular
 solutions).
 
 First note that $y=0$ is a solution (a singular solution).
-So assume that $y \not= 0$ and write
+Now assume that $y \not= 0$.
 \begin{align*}
 \frac{-3}{y^2} y' & = x , \\
 \frac{3}{y} & = \frac{x^2}{2} + C , \\
 y & = \frac{3}{\nicefrac{x^2}{2} + C}
 = \frac{6}{x^2 + 2C}.
+\end{align*}
+So the general solution is,
+\begin{align*}
+y = \frac{6}{x^2 + 2C}, \qquad \text{and} \qquad y=0 .
 \end{align*}
 \end{example}
 
