@@ -2256,7 +2256,8 @@ on $u_1$ and $u_2$:
 We now solve for $u_1'$ and $u_2'$ in terms of $f(x)$, $y_1$ and $y_2$.
 We always get these formulas for any $Ly = f(x)$, where $Ly =
 y''+p(x)y'+q(x)y$.  There is a general
-formula for the solution we can just plug into, but it is better to
+formula for the solution we could just plug into, but instead of memorizing
+that, it is better, and easier, to
 just repeat what we do below.  In our case the two equations are
 \begin{align*}
 u_1' \cos (x) + u_2' \sin (x) &= 0 ,\\
@@ -2352,6 +2353,7 @@ to $y''-y=e^{cx}$.  Hint: Make sure to handle every possible real $c$.
 \end{exercise}
 
 \begin{exercise} \label{exercise:diffvarparunder}
+\pagebreak[2]
 \leavevmode
 \begin{tasks}
 \task Using variation of parameters find a particular solution of
@@ -2640,8 +2642,10 @@ e^{-p t} \bigl( C_1 \cos (\omega_1 t) + C_2 \sin (\omega_1 t) \bigr) &
 \end{cases}
 \end{equation*}
 where $\omega_1 = \sqrt{\omega_0^2 - p^2}$.  In any case, we see that
-$x_c(t) \to 0$ as $t \to \infty$.  Furthermore,
-there can be no conflicts when trying to solve for the
+$x_c(t) \to 0$ as $t \to \infty$.
+
+Let us find a particular solution.
+There can be no conflicts when trying to solve for the
 undetermined coefficients by trying $x_p = A \cos (\omega t)
 + B \sin (\omega t)$.
 %Hence, we will never get the kind of catastrophic scenario we have seen
@@ -2684,7 +2688,7 @@ where (if $\omega \not= \omega_0$)
 \begin{equation*}
 \tan \gamma = \frac{B}{A} = \frac{2\omega p}{\omega_0^2-\omega^2} .
 \end{equation*}
-Hence
+Hence,
 \begin{equation*}
 \boxed{~~
 x_p = 
@@ -2695,13 +2699,17 @@ x_p =
 If $\omega = \omega_0$, then $A=0$, $B = C = \frac{F_0}{2m\omega p}$,
 and $\gamma = \nicefrac{\pi}{2}$.
 
-The exact formula is not as important as the idea.  Do not memorize
-the above formula, you should instead remember the ideas involved.
-For a different forcing function $F$, you will get a different formula
-for $x_p$.
-So there is no point in memorizing this specific
-formula.  You can always recompute it later or look it up if you really need
-it.
+%What is important for us is how this
+%solution depends on the parameters, $F_0$, $m$, $\omega$, $\omega_0$,
+%and $p$.
+
+%The exact formula is not as important as the idea.  Do not memorize
+%the above formula, you should instead remember the ideas involved.
+%For a different forcing function $F$, you will get a different formula
+%for $x_p$.
+%So there is no point in memorizing this specific
+%formula.  You can always recompute it later or look it up if you really need
+%it.
 
 \medskip
 
@@ -2715,42 +2723,31 @@ The general solution to our problem is
 x = x_c + x_p = x_{tr} + x_{sp} .
 \end{equation*}
 
-%mbxSTARTIGNORE
-\begin{mywrapfig}{3.25in}
-\capstart
-\diffyincludegraphics{width=3in}{width=4.5in}{3-6-transbeh}
-\caption{Solutions with different initial conditions for parameters
-$k=1$, $m=1$, $F_0 = 1$, $c=0.7$, and $\omega=1.1$.\label{3.6:transbehfig}}
-\end{mywrapfig}
-%mbxENDIGNORE
-%
-% make sure the MBX below is synced!
-%
-
 The transient solution $x_c = x_{tr}$ goes to zero as $t \to \infty$,
 as all the terms involve an exponential with a negative exponent.  So
 for large $t$, the effect of $x_{tr}$ is negligible and we see essentially
 only $x_{sp}$.
 Hence the name \emph{transient}.
 Notice that $x_{sp}$ involves no arbitrary constants, and
-the initial conditions only affect $x_{tr}$.  This means that the effect
+the initial conditions only affect $x_{tr}$.  Thus, the effect
 of the initial conditions is negligible after some period of time.
-Because of this behavior,
-we might as well focus on the
+%Because of this behavior,
+We might as well focus on the
 steady periodic solution and ignore the transient solution.  See
 \figurevref{3.6:transbehfig} for a graph given several different initial conditions.
 
-%mbxlatex \begin{myfig}
-%mbxlatex \capstart
-%mbxlatex \diffyincludegraphics{width=3in}{width=4.5in}{3-6-transbeh}
-%mbxlatex \caption{Solutions with different initial conditions for parameters
-%mbxlatex $k=1$, $m=1$, $F_0 = 1$, $c=0.7$, and $\omega=1.1$.\label{3.6:transbehfig}}
-%mbxlatex \end{mywrapfig}
+\begin{myfig}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{3-6-transbeh}
+\caption{Solutions with different initial conditions for parameters
+$k=1$, $m=1$, $F_0 = 1$, $c=0.7$, and $\omega=1.1$.\label{3.6:transbehfig}}
+\end{myfig}
 
 The speed at which $x_{tr}$ goes to zero depends on $p$ (and
 hence $c$).  The
 bigger $p$ is (the bigger $c$ is), the \myquote{faster} $x_{tr}$ becomes negligible. 
-So the smaller the damping, the longer the \myquote{transient region.}  This agrees
+So the smaller the damping, the longer the \myquote{transient region.}
+This is consistent
 with the observation that when $c=0$, the initial conditions affect the
 behavior for all time (i.e.\ an infinite \myquote{transient region}).
 
