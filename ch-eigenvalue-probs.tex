@@ -283,12 +283,13 @@ are said to be
 with respect to the weight function
 $r(x)$ when
 \begin{equation*}
-\int_a^b f(x) \, g(x) \, r(x) ~dx = 0 .
+\int_a^b f(x) \, g(x) \, r(x) \,dx = 0 .
 \end{equation*}
 In this setting,
 we define the \emph{inner product\index{inner product of functions}} as
 \begin{equation*}
-\langle f , g \rangle \overset{\text{def}}{=} \int_a^b f(x) \, g(x) \, r(x) ~dx ,
+\langle f , g \rangle \overset{\text{def}}{=} \int_a^b f(x) \, g(x) \, r(x)
+\,dx ,
 \end{equation*}
 and then say $f$ and $g$ are orthogonal whenever $\langle f , g \rangle = 0$.
 The results and concepts are again analogous to 
@@ -299,7 +300,7 @@ is greater have more weight.
 Nontrivial (nonconstant)
 $r(x)$ arise naturally, for example from a change of variables.
 Hence, you could
-think of a change of variables such that $d\xi = r(x)~ dx$.
+think of a change of variables such that $d\xi = r(x)\, dx$.
 
 Eigenfunctions of a
 regular Sturm--Liouville problem satisfy an orthogonality property, just
@@ -318,7 +319,7 @@ Suppose we have a regular Sturm--Liouville problem
 Let $y_j$ and $y_k$ be two distinct eigenfunctions for two
 distinct eigenvalues $\lambda_j$ and $\lambda_k$.  Then
 \begin{equation*}
-\int_a^b y_j(x) \, y_k(x) \, r(x) ~dx = 0,
+\int_a^b y_j(x) \, y_k(x) \, r(x) \,dx = 0,
 \end{equation*}
 that is, $y_j$ and $y_k$ are orthogonal with respect to the weight function
 $r$.
@@ -380,10 +381,11 @@ Because of orthogonality we have
 \begin{equation*}
 \begin{split}
 \langle f , y_m \rangle
- = \int_a^b f(x) \, y_m (x) \, r(x) ~ dx
-& = \int_a^b \left( \sum_{n=1}^\infty c_n y_n(x) \right) \, y_m (x) \, r(x) ~ dx\\
-&= \sum_{n=1}^\infty c_n \int_a^b y_n(x) \, y_m (x) \, r(x) ~ dx\\
-&= c_m \int_a^b y_m(x) \, y_m (x) \, r(x) ~ dx = c_m \langle y_m , y_m \rangle
+ = \int_a^b f(x) \, y_m (x) \, r(x) \, dx
+& = \int_a^b \left( \sum_{n=1}^\infty c_n y_n(x) \right) \, y_m (x) \, r(x)
+\, dx\\
+&= \sum_{n=1}^\infty c_n \int_a^b y_n(x) \, y_m (x) \, r(x) \, dx\\
+&= c_m \int_a^b y_m(x) \, y_m (x) \, r(x) \, dx = c_m \langle y_m , y_m \rangle
 .
 \end{split}
 \end{equation*}
@@ -392,8 +394,8 @@ Hence,
 \boxed{~~
 c_m = \frac{\langle f , y_m \rangle}{\langle y_m , y_m \rangle}
 =
-\frac{\int_a^b f(x) \, y_m (x)\, r(x) ~ dx}%
-{\int_a^b {\bigl(y_m(x)\bigr)}^2 \, r(x) ~dx} .
+\frac{\int_a^b f(x) \, y_m (x)\, r(x) \, dx}%
+{\int_a^b {\bigl(y_m(x)\bigr)}^2 \, r(x) \,dx} .
 ~~}
 \end{equation}
 
@@ -460,7 +462,7 @@ y_n(x) = \sin \bigl( (2n-1)x \bigr) .
 \end{equation*}
 A little bit of calculus shows
 \begin{equation*}
-\int_0^{\frac{\pi}{2}} {\Bigl( \sin \bigl( (2n-1)x \bigr) \Bigr)}^2 ~ dx
+\int_0^{\frac{\pi}{2}} {\Bigl( \sin \bigl( (2n-1)x \bigr) \Bigr)}^2 \, dx
 = \frac{\pi}{4} .
 \end{equation*}
 
@@ -471,9 +473,9 @@ f(x) = \sum_{n=1}^\infty c_n \sin \bigl( (2n-1)x \bigr) ,
 where
 \begin{equation*}
 c_n = \frac{\langle f , y_n \rangle}{\langle y_n , y_n \rangle}
-= \frac{\int_0^{\frac{\pi}{2}} f(x) \, \sin \bigl( (2n-1)x \bigr) ~ dx
-}{\int_0^{\frac{\pi}{2}} {\Bigl(\sin \bigl((2n-1)x\bigr)\Bigr)}^2 ~ dx}
-= \frac{4}{\pi} \int_0^{\frac{\pi}{2}} f(x) \,\sin \bigl( (2n-1)x \bigr) ~ dx .
+= \frac{\int_0^{\frac{\pi}{2}} f(x) \, \sin \bigl( (2n-1)x \bigr) \, dx
+}{\int_0^{\frac{\pi}{2}} {\Bigl(\sin \bigl((2n-1)x\bigr)\Bigr)}^2 \, dx}
+= \frac{4}{\pi} \int_0^{\frac{\pi}{2}} f(x) \,\sin \bigl( (2n-1)x \bigr) \, dx .
 \end{equation*}
 
 Note that the series converges to an odd $2\pi$-periodic
@@ -492,7 +494,7 @@ Consider $f(x) = x$ for $0 < x <  \nicefrac{\pi}{2}$.  Some
 calculus later we find
 \begin{equation*}
 c_n = 
-\frac{4}{\pi} \int_0^{\frac{\pi}{2}} f(x) \,\sin \bigl( (2n-1)x \bigr) ~ dx 
+\frac{4}{\pi} \int_0^{\frac{\pi}{2}} f(x) \,\sin \bigl( (2n-1)x \bigr) \, dx 
 =
 \frac{4{(-1)}^{n+1}}{\pi {(2n-1)}^2} ,
 \end{equation*}

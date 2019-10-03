@@ -27,11 +27,11 @@ y' = f(x) .
 \end{equation}
 We could just integrate (antidifferentiate) both sides with respect to $x$.
 \begin{equation*}
-\int y'(x) ~dx = \int f(x) ~dx + C ,
+\int y'(x) \,dx = \int f(x) \,dx + C ,
 \end{equation*}
 that is
 \begin{equation*}
-y(x) = \int f(x) ~dx + C .
+y(x) = \int f(x) \,dx + C .
 \end{equation*}
 This $y(x)$ is actually the general solution.
 So to solve \eqref{ias:inteq},
@@ -51,9 +51,9 @@ is the definite integral.
 The only reason for the indefinite integral notation is that we can always
 write an antiderivative as a (definite) integral.  That is, by the fundamental
 theorem of calculus we can always write
-$\int f(x) ~dx + C$ as
+$\int f(x) \,dx + C$ as
 \begin{equation*}
-\int_{x_0}^x f(t) ~dt + C .
+\int_{x_0}^x f(t) \,dt + C .
 \end{equation*}
 Hence the terminology \emph{to \myindex{integrate}} when we may really mean
 \emph{to \myindex{antidifferentiate}}.
@@ -80,13 +80,13 @@ for some two numbers $x_0$ and $y_0$ ($x_0$ is usually 0, but not always).
 We can then write the solution as a definite integral in a nice way.
 Suppose our problem is $y' = f(x)$, $y(x_0) = y_0$.  Then the solution is
 \begin{equation} \label{int:eqdef}
-y(x) = \int_{x_0}^x f(s) ~ds + y_0 .
+y(x) = \int_{x_0}^x f(s) \,ds + y_0 .
 \end{equation}
 Let us check!
 We compute
 $y' = f(x)$, via the fundamental theorem of calculus, and by Jupiter, $y$ is a
 solution.  Is it the one satisfying the initial condition?  Well,
-$y(x_0) = \int_{x_0}^{x_0} f(x)~dx + y_0 = y_0$.  It is!
+$y(x_0) = \int_{x_0}^{x_0} f(x)\,dx + y_0 = y_0$.  It is!
 
 Do note that the definite integral and the indefinite integral
 (antidifferentiation) are completely different beasts.  The definite integral
@@ -105,7 +105,7 @@ y' = e^{-x^2}, \qquad y(0) = 1 .
 
 By the preceding discussion, the solution must be
 \begin{equation*}
-y(x) = \int_0^x e^{-s^2} ~ds + 1 .
+y(x) = \int_0^x e^{-s^2} \,ds + 1 .
 \end{equation*}
 Here is a good way to make fun of your friends taking second semester
 calculus.  Tell them to
@@ -142,7 +142,7 @@ especially when
 more than one independent variable is involved.
 At this point we can simply integrate,
 \begin{equation*}
-x(y) = \int \frac{1}{f(y)} ~dy + C .
+x(y) = \int \frac{1}{f(y)} \,dy + C .
 \end{equation*}
 Finally, we try to solve for $y$.
 
@@ -798,7 +798,7 @@ $f$, and an initial condition $y(x_0) = y_0$.  Does a
 solution exist for all $x$?  Why or why not?
 \end{exercise}
 \exsol{%
-The solution is $y(x) = \int_{x_0}^x f(s) ~ds + y_0$, and this does indeed
+The solution is $y(x) = \int_{x_0}^x f(s) \,ds + y_0$, and this does indeed
 exist for every $x$.
 }
 
@@ -814,13 +814,13 @@ exist for every $x$.
 When a differential equation is of the form
 $y' = f(x)$,
 we can just integrate:
-$y = \int f(x) ~dx + C$. 
+$y = \int f(x) \,dx + C$. 
 Unfortunately this method no longer works for the
 general form of the equation
 $y' = f(x,y)$.
 Integrating both sides yields
 \begin{equation*}
-y = \int f(x,y) ~dx + C .
+y = \int f(x,y) \,dx + C .
 \end{equation*}
 Notice the dependence on $y$ in the integral.
 
@@ -839,11 +839,11 @@ Let us write the equation in the \myindex{Leibniz notation}
 \end{equation*}
 Then we rewrite the equation as
 \begin{equation*}
-\frac{dy}{g(y)} = f(x) ~dx .
+\frac{dy}{g(y)} = f(x) \,dx .
 \end{equation*}
 Both sides look like something we can integrate.  We obtain
 \begin{equation*}
-\int \frac{dy}{g(y)} = \int f(x) ~dx + C .
+\int \frac{dy}{g(y)} = \int f(x) \,dx + C .
 \end{equation*}
 If we can find closed form expressions
 for these two integrals, we can, perhaps, solve for $y$.
@@ -857,7 +857,7 @@ Note that $y=0$ is a solution.  We will remember that fact and
 assume $y \not =0$ from now on, so that we can divide by $y$.
 Write the equation as $\frac{dy}{dx} = xy$. Then
 \begin{equation*}
-\int \frac{dy}{y} = \int x~dx + C .
+\int \frac{dy}{y} = \int x\,dx + C .
 \end{equation*}
 We compute the antiderivatives to get
 \begin{equation*}
@@ -894,15 +894,15 @@ We rewrite the equation as follows.
 Note that $y = y(x)$ is a function of $x$ and so is
 $\frac{dy}{dx}$!
 \begin{equation*}
-\frac{1}{g(y)}~\frac{dy}{dx} = f(x) .
+\frac{1}{g(y)}\,\frac{dy}{dx} = f(x) .
 \end{equation*}
 We integrate both sides with respect to $x$:
 \begin{equation*}
-\int \frac{1}{g(y)}~\frac{dy}{dx} ~dx = \int f(x) ~dx + C .
+\int \frac{1}{g(y)}\,\frac{dy}{dx} \,dx = \int f(x) \,dx + C .
 \end{equation*}
 We use the change of variables formula (substitution) on the left hand side:
 \begin{equation*}
-\int \frac{1}{g(y)}~dy = \int f(x) ~dx + C .
+\int \frac{1}{g(y)}\,dy = \int f(x) \,dx + C .
 \end{equation*}
 And we are done.
 
@@ -915,7 +915,7 @@ y' = \frac{xy}{y^2+1} .
 \end{equation*}
 We separate variables,
 \begin{equation*}
-\frac{y^2+1}{y}~dy = \left(y+\frac{1}{y}\right)~dy = x~dx .
+\frac{y^2+1}{y}\,dy = \left(y+\frac{1}{y}\right)\,dy = x\,dx .
 \end{equation*}
 We integrate to get
 \begin{equation*}
@@ -1262,8 +1262,8 @@ We compute:
 y' + p(x) y &= f(x) , \\
 e^{\int p(x) \,dx} y' + e^{\int p(x) \,dx} p(x) y & = e^{\int p(x) \,dx} f(x) , \\
 \frac{d}{dx}\left[ e^{\int p(x) \,dx} y \right] & = e^{\int p(x) \,dx} f(x) , \\
-e^{\int p(x) \,dx} y & = \int e^{\int p(x) \,dx} f(x) ~dx + C , \\
-y & = e^{-\int p(x) \,dx} \left( \int e^{\int p(x) \,dx} f(x) ~dx + C \right) .
+e^{\int p(x) \,dx} y & = \int e^{\int p(x) \,dx} f(x) \,dx + C , \\
+y & = e^{-\int p(x) \,dx} \left( \int e^{\int p(x) \,dx} f(x) \,dx + C \right) .
 \end{align*}
 
 Of course, to get a closed form formula for $y$,
@@ -1322,7 +1322,7 @@ as definite integrals.
 \boxed{
 ~~
 y(x) = e^{-\int_{x_0}^x p(s)\, ds} \left( \int_{x_0}^x e^{\int_{x_0}^t p(s)\, ds}
-f(t) ~dt + y_0 \right).
+f(t) \,dt + y_0 \right).
 ~~
 }
 \end{equation}
@@ -1678,7 +1678,7 @@ obtain $v' = 1 - y'$.  So $y' = 1-v'$.  We plug this into the equation to get
 In other words, $v' = 1-v^2$.  Such an equation we know how to solve by
 separating variables:
 \begin{equation*}
-\frac{1}{1-v^2} ~dv = dx .
+\frac{1}{1-v^2} \,dv = dx .
 \end{equation*}
 So
 \begin{equation*}
@@ -1780,7 +1780,7 @@ so $\lvert x \rvert = x$.  This assumption is OK\@, as our initial condition is
 $x=1$.  Let us compute the integrating factor.  Here $p(s)$ from formula
 \eqref{lei:defsol} is $\frac{-4(s+1)}{s}$.
 \begin{align*}
-e^{\int_1^x p(s)\,ds} & = \exp \left( \int_1^x \frac{-4(s+1)}{s} ~ds \right) =
+e^{\int_1^x p(s)\,ds} & = \exp \left( \int_1^x \frac{-4(s+1)}{s} \,ds \right) =
 e^{-4x-4\ln(x)+4} = 
 e^{-4x+4} x^{-4}
 =
@@ -1793,11 +1793,11 @@ We now plug in to \eqref{lei:defsol}
 \begin{equation*}
 \begin{split}
 v(x) & =
-e^{-\int_{1}^x p(s)\, ds} \left( \int_{1}^x e^{\int_{1}^t p(s)\, ds} 4 ~dt
+e^{-\int_{1}^x p(s)\, ds} \left( \int_{1}^x e^{\int_{1}^t p(s)\, ds} 4 \,dt
 + 1 \right) \\
 & =
 e^{4x-4} x^4
-\left( \int_{1}^x 4 \frac{e^{-4t+4}}{t^4} ~dt
+\left( \int_{1}^x 4 \frac{e^{-4t+4}}{t^4} \,dt
 + 1 \right) .
 \end{split}
 \end{equation*}
@@ -1805,8 +1805,8 @@ The integral in this expression is not possible to find in closed
 form.  As we said before, it is perfectly fine to have a
 definite integral in our solution.  Now \myquote{unsubstitute}
 \begin{align*}
- y^{-4} &= e^{4x-4}x^4 \left( 4 \int_1^x \frac{e^{-4t+4}}{t^4} ~dt + 1\right) , \\
- y &= \frac{e^{-x+1}}{x {\left( 4 \int_1^x \frac{e^{-4t+4}}{t^4} ~dt +
+ y^{-4} &= e^{4x-4}x^4 \left( 4 \int_1^x \frac{e^{-4t+4}}{t^4} \,dt + 1\right) , \\
+ y &= \frac{e^{-x+1}}{x {\left( 4 \int_1^x \frac{e^{-4t+4}}{t^4} \,dt +
 1\right)}^{1/4}} .
 \end{align*}
 \end{example}
@@ -1830,7 +1830,7 @@ v+ xv' = F(v) \qquad \text{or} \qquad xv' = F(v)-v
 \end{equation*}
 Hence an implicit solution is
 \begin{equation*}
-\int \frac{1}{F(v)-v} ~dv = \ln \, \lvert x \rvert + C .
+\int \frac{1}{F(v)-v} \,dv = \ln \, \lvert x \rvert + C .
 \end{equation*}
 
 \begin{example}
@@ -1848,7 +1848,7 @@ xv' = v^2+v-v = v^2 ,
 \end{equation*}
 which has a solution
 \begin{align*}
-\int \frac{1}{v^2} ~dv &= \ln \, \lvert x \rvert + C , \\
+\int \frac{1}{v^2} \,dv &= \ln \, \lvert x \rvert + C , \\
 \frac{-1}{v} &= \ln \, \lvert x \rvert + C , \\
 v &= \frac{-1}{\ln \, \lvert x \rvert + C} .
 \end{align*}

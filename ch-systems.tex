@@ -37,14 +37,15 @@ x_1' & = g_1(x_1,x_2,x_3,t) , \\
 x_2' & = g_2(x_1,x_2,x_3,t) , \\
 x_3' & = g_3(x_1,x_2,x_3,t) ,
 \end{align*}
-is a \emph{\myindex{first order system}} where the dependent variables
-are $x_1,x_2,x_3$ and $t$ is the independent variable.
+is a \emph{\myindex{first order system}}, where $x_1,x_2,x_3$ are
+the dependent variables,
+and $t$ is the independent variable.
 
 The terminology for systems is essentially the same as for
 single equations.
 For example, for the above system a
 \emph{solution}\index{solution to a system}
-is the set of three functions $x_1(t)$, $x_2(t)$, $x_3(t)$, such that
+is a set of three functions $x_1(t)$, $x_2(t)$, $x_3(t)$, such that
 \begin{align*}
 x_1'(t) &= g_1\bigl(x_1(t),x_2(t),x_3(t),t\bigr) , \\
 x_2'(t) &= g_2\bigl(x_1(t),x_2(t),x_3(t),t\bigr) , \\
@@ -193,8 +194,8 @@ consider two masses.
 \noindent
 \inputpdft{cartsfig}
 \end{mywrapfigsimp}
-Suppose we have one spring with constant $k$, but two masses $m_1$
-and $m_2$.  We think of the masses as carts that 
+Consider one spring with constant $k$ and two masses $m_1$
+and $m_2$.  Think of the masses as carts that 
 ride along a straight track with no friction.  Let $x_1$ be the displacement of the first
 cart and $x_2$ be the displacement of the second cart.
 That is, we put the two
@@ -311,8 +312,10 @@ Plug in and check that this really is the solution.
 
 It is useful to go back and forth between systems and higher order equations
 for other reasons.  For example, software for solving ODE numerically
-(approximation) is generally for first order systems.  It is not very hard
-to adapt computer code for the Euler method for first order equations to
+(approximation) is generally for first order systems.  So to use it,
+you have to take whatever ODE you want to solve and convert it to a first
+order system.  In fact, it is not very hard
+to adapt computer code for the Euler or Runge--Kutta method for first order equations to
 handle first
 order systems.  We essentially just treat the dependent variable not as
 a number but as a vector.  In many mathematical computer languages there is
@@ -982,7 +985,7 @@ go up by a factor of $6$.  This is true in general:
 This property is one of the most useful, and it is employed often to 
 actually compute determinants.  A particularly interesting consequence is to
 note what it means for existence of inverses.
-Take $A$ and $B$ to be inverses, that is $AB=I$.  Then
+Take $A$ and $B$ to be inverses of each other, that is $AB=I$.  Then
 \begin{equation*}
 \det(A)\det(B) = \det(AB) = \det(I) = 1 .
 \end{equation*}
@@ -1973,8 +1976,9 @@ scalar $\lambda$ and a nonzero vector $\vec{v}$ such that
 \begin{equation*}
 A \vec{v} = \lambda \vec{v}.
 \end{equation*}
-We then call $\lambda$ an \emph{\myindex{eigenvalue}} of $A$ and $\vec{v}$
-is said to be a corresponding \emph{\myindex{eigenvector}}.
+We call $\lambda$ an \emph{\myindex{eigenvalue}} of $A$ and we
+call $\vec{v}$
+a corresponding \emph{\myindex{eigenvector}}.
 
 \begin{example}
 The matrix $\left[ \begin{smallmatrix}
@@ -2776,7 +2780,7 @@ P \begin{bmatrix} x \\ y \end{bmatrix}
 \end{equation}
 The system is autonomous (compare this section
 to \sectionref{auteq:section})
-and so we can draw a vector field (see end of
+and so we can draw a vector field (see the end of
 \sectionref{sec:introtosys}).
 We will be able to visually tell what the vector field looks like and
 how the solutions behave, once we find 
@@ -4097,11 +4101,12 @@ $x_2 =
 
 It may happen that a matrix $A$ has some \myquote{repeated} eigenvalues.
 That is, the characteristic equation $\det(A-\lambda I) = 0$ may have
-repeated roots.  As we said before, this is actually unlikely to happen
+repeated roots.  This is actually unlikely to happen
 for a random matrix.  If we take a small perturbation of $A$ (we change the
 entries of $A$ slightly), we get a matrix with distinct eigenvalues.  As
 any system we want to solve in practice is an approximation to reality
-anyway, it is not absolutely indispensable to know how to solve these corner cases.  
+anyway, it is not absolutely indispensable to know how to solve these
+corner cases.  
 On the other hand, these cases do come up in applications from time to time.
 Furthermore, if we have distinct but very close eigenvalues, the behavior is
 similar to that of repeated eigenvalues, and so understanding that case
@@ -4445,9 +4450,9 @@ of this vector and so we have a defect of 1.
 Let $\vec{v}_1$ be the eigenvector and let's look for
 a generalized eigenvector $\vec{v}_2$:
 \begin{equation*}
-(A - 2 I) \vec{v}_2 = \vec{v}_1 . 
+(A - 2 I) \vec{v}_2 = \vec{v}_1 , 
 \end{equation*}
-Or
+or
 \begin{equation*}
 \begin{bmatrix}
 0 & -5 & 0 \\
@@ -5763,12 +5768,12 @@ and so
 We can now integrate.  That is, we integrate each component of the vector
 separately
 \begin{equation*}
-e^{tP} \vec{x}(t) = \int e^{tP}\vec{f}(t) ~ dt + \vec{c} .
+e^{tP} \vec{x}(t) = \int e^{tP}\vec{f}(t) \, dt + \vec{c} .
 \end{equation*}
 Recall from \exerciseref{matexp:expinvex} that ${(e^{tP})}^{-1} = e^{-tP}$.
 Therefore, we obtain
 \begin{equation*}
-\vec{x}(t) = e^{-tP} \int e^{tP}\vec{f}(t) ~ dt + e^{-tP} \vec{c} .
+\vec{x}(t) = e^{-tP} \int e^{tP}\vec{f}(t) \, dt + e^{-tP} \vec{c} .
 \end{equation*}
 
 Perhaps it is better understood as a definite integral.  In this case
@@ -5782,7 +5787,7 @@ equation with initial conditions
 The solution can then be written as
 \begin{equation} \label{nhsys:intfacsoleq}
 \boxed{~~
-\vec{x}(t) = e^{-tP} \int_0^t e^{sP}\vec{f}(s) ~ ds + e^{-tP} \vec{b} .
+\vec{x}(t) = e^{-tP} \int_0^t e^{sP}\vec{f}(s) \, ds + e^{-tP} \vec{b} .
 ~~}
 \end{equation}
 Again, the integration means that each component of the vector 
@@ -5790,7 +5795,7 @@ $e^{sP}\vec{f}(s)$ is integrated separately.
 It is not hard to see that \eqref{nhsys:intfacsoleq} really does satisfy the
 initial condition $\vec{x}(0) = \vec{b}$.
 \begin{equation*}
-\vec{x}(0) = e^{-0P} \int_0^0 e^{sP}\vec{f}(s) ~ ds + e^{-0P} \vec{b}
+\vec{x}(0) = e^{-0P} \int_0^0 e^{sP}\vec{f}(s) \, ds + e^{-0P} \vec{b}
 = I \vec{b} = \vec{b} .
 \end{equation*}
 
@@ -5836,14 +5841,14 @@ Instead of computing the whole formula at once, let us do it in stages.
 First
 \begin{equation*}
 \begin{split}
-\int_0^t e^{sP}\vec{f}(s) ~ ds & = 
+\int_0^t e^{sP}\vec{f}(s) \, ds & = 
 \int_0^t
  \begin{bmatrix}
  (1+3s)\,e^{2s} & -3se^{2s} \\
  3se^{2s} & (1-3s)\,e^{2s}
  \end{bmatrix}
  \begin{bmatrix} e^{s} \\ 0 \end{bmatrix}
-~ ds
+\, ds
 \\
 & =
 \int_0^t
@@ -5851,12 +5856,12 @@ First
  (1+3s)\,e^{3s} \\
  3se^{3s}
  \end{bmatrix}
-~ ds
+\, ds
 \\
  &=
  \begin{bmatrix}
- \int_0^t (1+3s)\,e^{3s} ~ds \\
- \int_0^t 3se^{3s} ~ds
+ \int_0^t (1+3s)\,e^{3s} \,ds \\
+ \int_0^t 3se^{3s} \,ds
  \end{bmatrix}
 \\
 & =
@@ -5871,7 +5876,7 @@ Then
 \begin{equation*}
 \begin{split}
 \vec{x}(t)
-& = e^{-tP} \int_0^t e^{sP}\vec{f}(s) ~ ds + e^{-tP} \vec{b} \\
+& = e^{-tP} \int_0^t e^{sP}\vec{f}(s) \, ds + e^{-tP} \vec{b} \\
 & =
 \begin{bmatrix}
 (1-3t)\,e^{-2t} & 3te^{-2t} \\
@@ -6042,7 +6047,7 @@ e^{-\lambda_k t} g_k(t) .
 We integrate and solve for $\xi_k$ to get
 \begin{equation*}
 \xi_k(t) =  e^{\lambda_k t} 
-\int e^{-\lambda_k t} g_k(t) ~dt + C_k e^{\lambda_k t} .
+\int e^{-\lambda_k t} g_k(t) \,dt + C_k e^{\lambda_k t} .
 \end{equation*}
 If we are looking for just any particular solution, we can set
 $C_k$ to be zero.  If we leave these constants in, we get the
@@ -6064,7 +6069,7 @@ Then if we write
 \begin{equation*}
 \boxed{~~
 \xi_k(t) =  e^{\lambda_k t} 
-\int_0^t e^{-\lambda_k s} g_k(s) ~ds + a_k e^{\lambda_k t} ,
+\int_0^t e^{-\lambda_k s} g_k(s) \,ds + a_k e^{\lambda_k t} ,
 ~~}
 \end{equation*}
 we get the particular solution
@@ -6277,7 +6282,7 @@ We get the two equations
 We solve with integrating factor.  Computation of the integral is left as
 an exercise to the student.  You will need integration by parts.
 \begin{equation*}
-\xi_1 = e^{-2t}\int e^{2t} \, (e^t-t) ~ dt + C_1 e^{-2t} = 
+\xi_1 = e^{-2t}\int e^{2t} \, (e^t-t) \, dt + C_1 e^{-2t} = 
 \frac{e^t}{3}-\frac{t}{2}+\frac{1}{4}+C_1 e^{-2t} .
 \end{equation*}
 $C_1$ is the constant of integration.
@@ -6286,7 +6291,7 @@ As $\xi_1(0) = \nicefrac{1}{4}$, then $\nicefrac{1}{4}= \nicefrac{1}{3}
 $C_1 = \nicefrac{-1}{3}$.
 Similarly
 \begin{equation*}
-\xi_2 = e^{4t}\int e^{-4t} \, (e^t+ t) ~ dt + C_2 e^{4t} = 
+\xi_2 = e^{4t}\int e^{-4t} \, (e^t+ t) \, dt + C_2 e^{4t} = 
 -\frac{e^t}{3}-\frac{t}{4}-\frac{1}{16} + C_2 e^{4t} .
 \end{equation*}
 As $\xi_2(0) = \nicefrac{-1}{16}$ we have $\nicefrac{-1}{16}= \nicefrac{-1}{3}
@@ -6669,7 +6674,7 @@ Let us write this as a formula
 \boxed{~~
 \vec{x}_p = 
 X(t)
-\int \left[X(t)\right]^{-1}\vec{f}(t) ~ dt .
+\int \left[X(t)\right]^{-1}\vec{f}(t) \, dt .
 ~~}
 \end{equation*}
 
@@ -6678,7 +6683,7 @@ $\left[X(t)\right]^{-1} = e^{-tA}$.
 We get a solution
 $\vec{x}_p = 
 e^{tA}
-\int e^{-tA}\,\vec{f}(t) ~ dt$,
+\int e^{-tA}\,\vec{f}(t) \, dt$,
 which is precisely what we got using the integrating factor method.
 
 \begin{example}
@@ -6724,7 +6729,7 @@ Next we know a particular solution to
 \begin{split}
 \vec{x}_p & = 
 X(t)
-\int \left[X(t)\right]^{-1}\vec{f}(t) ~ dt 
+\int \left[X(t)\right]^{-1}\vec{f}(t) \, dt 
 \\
 & =
 \begin{bmatrix}
@@ -6738,7 +6743,7 @@ t & 1
 -t & 1
 \end{bmatrix}
 \begin{bmatrix} t \\ 1 \end{bmatrix} \,(t^2+1) 
-~dt
+\,dt
 \\
 & =
 \begin{bmatrix}
@@ -6750,7 +6755,7 @@ t & 1
 2t \\
 -t^2 + 1
 \end{bmatrix} 
-~dt
+\,dt
 \\
 & =
 \begin{bmatrix}

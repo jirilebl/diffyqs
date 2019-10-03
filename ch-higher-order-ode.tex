@@ -287,7 +287,7 @@ general solution is $y = C_1 x + C_2\nicefrac{1}{x}$.
 Suppose $y_1$ is a solution to $y'' + p(x) y' + q(x) y = 0$.
 Show that
 \begin{equation*}
-y_2(x) = y_1(x) \int \frac{e^{-\int p(x)\,dx}}{{\bigl(y_1(x)\bigr)}^2} ~dx
+y_2(x) = y_1(x) \int \frac{e^{-\int p(x)\,dx}}{{\bigl(y_1(x)\bigr)}^2} \,dx
 \end{equation*}
 is also a solution.
 \end{exercise}
@@ -376,15 +376,16 @@ coefficients.  \emph{Constant coefficients\index{constant coefficient}}
 means that the functions 
 in front of $y''$, $y'$, and $y$ are constants, not depending on $x$.
 
-To guess a solution, think of a function that you know stays essentially the
+To guess a solution, think of a function that stays essentially the
 same when we differentiate it, so that we can take the function and its
 derivatives, add some multiples of these together, and end up with zero.
+Yes, we are talking about the exponential.
 
 Let us try\footnote{%
 Making an educated guess with some parameters to solve for 
 is such a central technique in differential equations, that people sometimes use
 a fancy name for such a guess: \emph{\myindex{ansatz}}, German for \myquote{initial
-placement of a tool at a work piece.}  Yes, Germans have a word for that.}
+placement of a tool at a work piece.}  Yes, the Germans have a word for that.}
 a solution of the form $y = e^{rx}$.  Then $y' = r e^{rx}$ and
 $y'' = r^2 e^{rx}$.  Plug in to get
 \begin{align*}
@@ -408,9 +409,9 @@ Hence, we can write the general solution as
 \begin{equation*}
 y = C_1 e^{2x} + C_2 e^{4x} .
 \end{equation*}
-We need to solve for $C_1$ and $C_2$.  To apply the initial conditions
-we first find $y' = 2 C_1 e^{2x} + 4 C_2 e^{4x}$.  We plug in $x=0$ and
-solve.
+We need to solve for $C_1$ and $C_2$.  To apply the initial conditions,
+we first find $y' = 2 C_1 e^{2x} + 4 C_2 e^{4x}$.  We plug $x=0$ into
+$y$ and $y'$ and solve.
 \begin{align*}
 -2 & = y(0) = C_1 + C_2 , \\
 6 & = y'(0) = 2 C_1 + 4 C_2 .
@@ -2310,13 +2311,13 @@ And thus
 \end{align*}
 We integrate $u_1'$ and $u_2'$ to get $u_1$ and $u_2$.
 \begin{align*}
-& u_1 = \int u_1'~dx 
-= \int - \tan (x) \sin (x)~dx
+& u_1 = \int u_1'\,dx 
+= \int - \tan (x) \sin (x)\,dx
 = \frac{1}{2}
 \ln \left\lvert \frac{\sin (x)-1}{\sin (x) + 1} \right\rvert
 + \sin (x) , \\
-& u_2 = \int u_2'~dx 
-= \int \sin (x)~dx = -\cos (x) .
+& u_2 = \int u_2'\,dx 
+= \int \sin (x)\,dx = -\cos (x) .
 \end{align*}
 So our particular solution is
 \begin{multline*}

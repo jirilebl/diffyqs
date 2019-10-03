@@ -334,7 +334,7 @@ eigenvalues $\lambda_1$ and $\lambda_2$.  Then they are
 \emph{orthogonal\index{orthogonal!functions}}
 in the sense that
 \begin{equation*}
-\int_a^b x_1(t) x_2(t) ~dt = 0 .
+\int_a^b x_1(t) x_2(t) \,dt = 0 .
 \end{equation*}
 \end{theorem}
 
@@ -354,11 +354,11 @@ Multiply the first by $x_2$ and the second by $x_1$ and subtract to get
 Now integrate both sides of the equation:
 \begin{equation*}
 \begin{split}
-(\lambda_1 - \lambda_2) \int_a^b x_1 x_2 ~dt
+(\lambda_1 - \lambda_2) \int_a^b x_1 x_2 \,dt
 & =
-\int_a^b x_2'' x_1 - x_2 x_1'' ~dt \\
+\int_a^b x_2'' x_1 - x_2 x_1'' \,dt \\
 & =
-\int_a^b \frac{d}{dt} \left( x_2' x_1 - x_2 x_1' \right) ~dt \\
+\int_a^b \frac{d}{dt} \left( x_2' x_1 - x_2 x_1' \right) \,dt \\
 & =
 \Bigl[ x_2' x_1 - x_2 x_1' \Bigr]_{t=a}^b
 = 0 .
@@ -379,36 +379,36 @@ $x''+\lambda x = 0$, $x(0) = 0$, $x(\pi) = 0$.
 Hence for positive
 integers $n$ and $m$ we have the integrals
 \begin{equation*}
-\int_{0}^\pi \sin (mt) \sin (nt) ~dt = 0 ,
+\int_{0}^\pi \sin (mt) \sin (nt) \,dt = 0 ,
 \quad
 \text{when } m \not = n.
 \end{equation*}
 Similarly,
 \begin{equation*}
-\int_{0}^\pi \cos (mt) \cos (nt) ~dt = 0 ,
+\int_{0}^\pi \cos (mt) \cos (nt) \,dt = 0 ,
 \quad
 \text{when } m \not = n,
 \qquad \text{and} \qquad
-\int_{0}^\pi  \cos (nt) ~dt = 0 .
+\int_{0}^\pi  \cos (nt) \,dt = 0 .
 \end{equation*}
 And finally we also get
 \begin{equation*}
-\int_{-\pi}^\pi \sin (mt) \sin (nt) ~dt = 0 ,
+\int_{-\pi}^\pi \sin (mt) \sin (nt) \,dt = 0 ,
 \quad
 \text{when } m \not = n, 
 \qquad \text{and} \qquad
-\int_{-\pi}^\pi  \sin (nt) ~dt = 0 ,
+\int_{-\pi}^\pi  \sin (nt) \,dt = 0 ,
 \end{equation*}
 \begin{equation*}
-\int_{-\pi}^\pi \cos (mt) \cos (nt) ~dt = 0 ,
+\int_{-\pi}^\pi \cos (mt) \cos (nt) \,dt = 0 ,
 \quad
 \text{when } m \not = n,
 \qquad \text{and} \qquad
-\int_{-\pi}^\pi  \cos (nt) ~dt = 0 ,
+\int_{-\pi}^\pi  \cos (nt) \,dt = 0 ,
 \end{equation*}
 and
 \begin{equation*}
-\int_{-\pi}^\pi \cos (mt) \sin (nt) ~dt = 0 
+\int_{-\pi}^\pi \cos (mt) \sin (nt) \,dt = 0 
 \qquad \text{(even if $m=n$).}
 \end{equation*}
 
@@ -422,12 +422,12 @@ and
 
 %By what we have seen previously we apply the theorem to find the integrals
 %\begin{equation*}
-%\int_{-\pi}^\pi \sin (mt) \sin (nt) ~dt = 0 \qquad \text{and} \qquad
-%\int_{-\pi}^\pi \cos (mt) \cos (nt) ~dt = 0 ,
+%\int_{-\pi}^\pi \sin (mt) \sin (nt) \,dt = 0 \qquad \text{and} \qquad
+%\int_{-\pi}^\pi \cos (mt) \cos (nt) \,dt = 0 ,
 %\end{equation*}
 %when $m \not = n$, and 
 %\begin{equation*}
-%\int_{-\pi}^\pi \sin (mt) \cos (nt) ~dt = 0 ,
+%\int_{-\pi}^\pi \sin (mt) \cos (nt) \,dt = 0 ,
 %\end{equation*}
 %for all $m$ and $n$.
 
@@ -851,7 +851,7 @@ find $a_n$ we want to compute $\langle \, f(t) \, , \, \cos (nt) \, \rangle$.
 We define the inner product as
 \begin{equation*}
 \langle \, f(t)\, , \, g(t) \, \rangle \overset{\text{def}}{=}
-\int_{-\pi}^\pi f(t) \, g(t) ~ dt .
+\int_{-\pi}^\pi f(t) \, g(t) \, dt .
 \end{equation*}
 With this definition of the inner product,
 we saw in the previous section that the eigenfunctions $\cos (kt)$
@@ -864,10 +864,25 @@ that
 \langle \, \sin (mt)\, , \, \cos (nt) \, \rangle = 0 & \qquad \text{for all } m \text{ and } n .
 \end{align*}
 For $n=1,2,3,\ldots$
-we have $\langle \, \cos (nt) \, , \, \cos (nt) \, \rangle = \pi$
-and $\langle \, \sin (nt) \, , \, \sin (nt) \, \rangle = \pi$ by elementary
-calculus.  For the constant we get
-that $\langle \, 1 \, , \, 1 \, \rangle = 2\pi$.
+we have
+\begin{align*}
+\langle \, \cos (nt) \, , \, \cos (nt) \, \rangle &=
+\int_{-\pi}^\pi \cos(nt)\cos(nt) \, dt
+=
+\pi,
+\\
+\langle \, \sin (nt) \, , \, \sin (nt) \, \rangle &=
+\int_{-\pi}^\pi \sin(nt)\sin(nt) \, dt
+=
+\pi,
+\end{align*}
+by elementary calculus.  For the constant we get
+\begin{equation*}
+\langle \, 1 \, , \, 1 \, \rangle
+=
+\int_{-\pi}^\pi 1 \cdot 1 \, dt
+ = 2\pi.
+\end{equation*}
 The coefficients are given by
 \begin{equation*}
 \boxed{~~
@@ -876,12 +891,12 @@ The coefficients are given by
 \frac{\langle \, f(t) \, , \, \cos (nt) \, \rangle}{\langle \, \cos (nt) \, , \,
 \cos (nt) \, \rangle}
 = 
-\frac{1}{\pi} \int_{-\pi}^\pi f(t) \cos (nt) ~ dt , \\
+\frac{1}{\pi} \int_{-\pi}^\pi f(t) \cos (nt) \, dt , \\
 & b_n =
 \frac{\langle \, f(t) \, , \, \sin (nt) \, \rangle}{\langle \, \sin (nt) \, , \,
 \sin (nt) \, \rangle}
 = 
-\frac{1}{\pi} \int_{-\pi}^\pi f(t) \sin (nt) ~ dt .
+\frac{1}{\pi} \int_{-\pi}^\pi f(t) \sin (nt) \, dt .
 \end{aligned}
 ~~}
 \end{equation*}
@@ -893,7 +908,7 @@ a_0 = 2
 \frac{\langle \, f(t) \, , \, 1 \, \rangle}{\langle \, 1 \, , \,
 1 \, \rangle}
 =
-\frac{1}{\pi} \int_{-\pi}^\pi f(t) ~ dt .
+\frac{1}{\pi} \int_{-\pi}^\pi f(t) \, dt .
 ~~}
 \end{equation*}
 
@@ -947,7 +962,7 @@ The plot of the extended periodic function is given in
 \figurevref{ts:sawtoothfig}.
 Let us compute the coefficients.  We start with $a_0$,
 \begin{equation*}
-a_0 = \frac{1}{\pi} \int_{-\pi}^\pi t ~dt = 0 .
+a_0 = \frac{1}{\pi} \int_{-\pi}^\pi t \,dt = 0 .
 \end{equation*}
 We will often use the result from calculus that says that the integral of an odd
 function over a symmetric interval is zero.  Recall that an
@@ -956,7 +971,7 @@ function $\varphi(t)$ such that $\varphi(-t) = -\varphi(t)$.  For example
 the functions $t$, $\sin t$, or (importantly for us)
 $t \cos (nt)$ are all odd functions.  Thus
 \begin{equation*}
-a_n = \frac{1}{\pi} \int_{-\pi}^\pi t \cos (nt) ~dt = 0 .
+a_n = \frac{1}{\pi} \int_{-\pi}^\pi t \cos (nt) \,dt = 0 .
 \end{equation*}
 Let us move to $b_n$.  Another useful fact from calculus
 is that the integral of an even function over
@@ -968,13 +983,13 @@ function $\varphi(t)$ such that $\varphi(-t) = \varphi(t)$.  For example
 $t \sin (nt)$ is even.
 \begin{equation*}
 \begin{split}
-b_n & = \frac{1}{\pi} \int_{-\pi}^\pi t \sin (nt) ~dt \\
-& = \frac{2}{\pi} \int_{0}^\pi t \sin (nt) ~dt \\
+b_n & = \frac{1}{\pi} \int_{-\pi}^\pi t \sin (nt) \,dt \\
+& = \frac{2}{\pi} \int_{0}^\pi t \sin (nt) \,dt \\
 & = \frac{2}{\pi} \left(
 \left[ \frac{-t \cos (nt)}{n} \right]_{t=0}^{\pi}
 +
 \frac{1}{n}
-\int_{0}^\pi \cos (nt) ~dt
+\int_{0}^\pi \cos (nt) \,dt
 \right)
 \\
 & = \frac{2}{\pi} \left(
@@ -1046,19 +1061,19 @@ The plot of the extended periodic function is given in
 \figurevref{ts:squarewavefig}.
 Now we compute the coefficients.  Let us start with $a_0$
 \begin{equation*}
-a_0 = \frac{1}{\pi} \int_{-\pi}^\pi f(t) ~dt
-= \frac{1}{\pi} \int_{0}^\pi \pi ~dt = \pi .
+a_0 = \frac{1}{\pi} \int_{-\pi}^\pi f(t) \,dt
+= \frac{1}{\pi} \int_{0}^\pi \pi \,dt = \pi .
 \end{equation*}
 Next,
 \begin{equation*}
-a_n = \frac{1}{\pi} \int_{-\pi}^\pi f(t) \cos (nt) ~dt 
-= \frac{1}{\pi} \int_{0}^\pi \pi \cos (nt) ~dt = 0 .
+a_n = \frac{1}{\pi} \int_{-\pi}^\pi f(t) \cos (nt) \,dt 
+= \frac{1}{\pi} \int_{0}^\pi \pi \cos (nt) \,dt = 0 .
 \end{equation*}
 And finally
 \begin{equation*}
 \begin{split}
-b_n & = \frac{1}{\pi} \int_{-\pi}^\pi f(t) \sin (nt) ~dt \\
-& = \frac{1}{\pi} \int_{0}^\pi \pi \sin (nt) ~dt \\
+b_n & = \frac{1}{\pi} \int_{-\pi}^\pi f(t) \sin (nt) \,dt \\
+& = \frac{1}{\pi} \int_{0}^\pi \pi \sin (nt) \,dt \\
 & = \left[ \frac{- \cos (nt)}{n} \right]_{t=0}^\pi \\
 & = \frac{1 - \cos (\pi n)}{n}
 = \frac{1 - {(-1)}^n}{n}
@@ -1214,9 +1229,14 @@ Extend periodically and compute the Fourier series of $f(t)$.
 \end{exercise}
 
 There is another form of the Fourier series using complex exponentials
-that is sometimes easier to work with.
+$e^{nt}$ for $n=\ldots,-2,-1,0,1,2,\ldots$ instead of
+$\cos(nt)$ and $\sin(nt)$ for positive $n$.  This form may be easier
+to work with sometimes.  It is certainly more compact to write,
+and there is only one formula for the coefficients.  On the downside,
+the coefficients are complex numbers.
 
 \begin{exercise}
+\begin{samepage}
 Let 
 \begin{equation*}
 f(t) = \frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos (n t)
@@ -1235,6 +1255,7 @@ the series as
 \begin{equation*}
 c_0 + \sum_{m=1}^\infty \Bigl( c_m e^{imt} + c_{-m} e^{-imt}  \Bigr).
 \end{equation*}
+\end{samepage}
 \end{exercise}
 
 \setcounter{exercise}{100}
@@ -1256,13 +1277,13 @@ $\sum\limits_{n=1}^\infty
 \frac{(\pi-n) \sin( \pi n+{\pi}^{2})
 +(\pi+n)\sin(\pi n-{\pi}^{2}) }{\pi {n}^{2}-{\pi}^{3}}
 \sin(nt)$
-%$a_0 = \frac{1}{\pi} \int_{-\pi}^\pi \sin(\pi t) ~ dt$
+%$a_0 = \frac{1}{\pi} \int_{-\pi}^\pi \sin(\pi t) \, dt$
 %\\
 %$a_n =
-%\frac{1}{\pi} \int_{-\pi}^\pi \sin(\pi t) \cos (nt) ~ dt$
+%\frac{1}{\pi} \int_{-\pi}^\pi \sin(\pi t) \cos (nt) \, dt$
 %\\
 %$b_n =
-%\frac{1}{\pi} \int_{-\pi}^\pi f(t) \sin (nt) ~ dt$
+%\frac{1}{\pi} \int_{-\pi}^\pi f(t) \sin (nt) \, dt$
 }
 
 \begin{exercise}
@@ -1337,27 +1358,27 @@ that $ds = \frac{\pi}{L} \, dt$.
 & a_0 =
 \frac{1}{\pi}
 \int_{-\pi}^\pi
-g(s) ~ ds
+g(s) \, ds
 =
 \frac{1}{L}
 \int_{-L}^L
-f(t) ~ dt , \\
+f(t) \, dt , \\
 & a_n =
 \frac{1}{\pi}
 \int_{-\pi}^\pi
-g(s) \, \cos (n s) ~ ds
+g(s) \, \cos (n s) \, ds
 =
 \frac{1}{L}
 \int_{-L}^L
-f(t) \, \cos \left( \frac{n \pi}{L} t \right) ~ dt , \\
+f(t) \, \cos \left( \frac{n \pi}{L} t \right) \, dt , \\
 & b_n =
 \frac{1}{\pi}
 \int_{-\pi}^\pi
-g(s) \, \sin (n s) ~ ds
+g(s) \, \sin (n s) \, ds
 =
 \frac{1}{L}
 \int_{-L}^L
-f(t) \, \sin \left( \frac{n \pi}{L} t \right) ~ dt .
+f(t) \, \sin \left( \frac{n \pi}{L} t \right) \, dt .
 \end{aligned}
 ~~}
 \end{equation*}
@@ -1393,10 +1414,10 @@ write $f(t) = \frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos (n \pi t) + b_n
 is even and hence
 \begin{equation*}
 \begin{split}
-a_n & = \int_{-1}^1 f(t) \cos (n \pi t) ~ dt \\
-& = 2 \int_{0}^1 t \cos (n \pi t) ~ dt \\
+a_n & = \int_{-1}^1 f(t) \cos (n \pi t) \, dt \\
+& = 2 \int_{0}^1 t \cos (n \pi t) \, dt \\
  & = 2 \left[ \frac{t}{n \pi} \sin (n \pi t) \right]_{t=0}^1 -
-2 \int_{0}^1 \frac{1}{n \pi} \sin (n \pi t) ~ dt \\
+2 \int_{0}^1 \frac{1}{n \pi} \sin (n \pi t) \, dt \\
 & =  0 + \frac{1}{n^2 \pi^2} \Bigl[ \cos (n \pi t) \Bigr]_{t=0}^1
  =  \frac{2 \bigl( {(-1)}^n -1 \bigr) }{n^2 \pi^2}
 =
@@ -1408,7 +1429,7 @@ a_n & = \int_{-1}^1 f(t) \cos (n \pi t) ~ dt \\
 \end{equation*}
 Next we find $a_0$:
 \begin{equation*}
-a_0 = \int_{-1}^1 \lvert t \rvert ~ dt 
+a_0 = \int_{-1}^1 \lvert t \rvert \, dt 
 =
 1 .
 \end{equation*}
@@ -1417,7 +1438,7 @@ as the area under the graph without doing any computation at all.
 Finally we can find $b_n$.  Here, we notice that
 $\lvert t \rvert \sin (n \pi t)$ is odd and, therefore,
 \begin{equation*}
-b_n = \int_{-1}^1 f(t) \sin (n \pi t) ~ dt = 0 .
+b_n = \int_{-1}^1 f(t) \sin (n \pi t) \, dt = 0 .
 \end{equation*}
 Hence,
 the series is 
@@ -1650,29 +1671,29 @@ involves several integration by parts and is left to student.
 \begin{align*}
 a_0 & = 
 \int_{-1}^1
-f(t) ~ dt = 
+f(t) \, dt = 
 \int_{-1}^0
-(t+1)\,t ~ dt +
+(t+1)\,t \, dt +
 \int_0^1
-(1-t)\,t ~ dt = 0 , \\
+(1-t)\,t \, dt = 0 , \\
 a_n & = 
 \int_{-1}^1
-f(t) \, \cos (n\pi t) ~ dt = 
+f(t) \, \cos (n\pi t) \, dt = 
 \int_{-1}^0
 (t+1)\,t
-\, \cos (n \pi t) ~ dt +
+\, \cos (n \pi t) \, dt +
 \int_0^1
 (1-t)\,t
-\, \cos (n \pi t) ~ dt = 0, \\
+\, \cos (n \pi t) \, dt = 0, \\
 b_n & = 
 \int_{-1}^1
-f(t) \, \sin (n\pi t) ~ dt = 
+f(t) \, \sin (n\pi t) \, dt = 
 \int_{-1}^0
 (t+1)\,t
-\, \sin (n \pi t) ~ dt +
+\, \sin (n \pi t) \, dt +
 \int_0^1
 (1-t)\,t
-\, \sin (n \pi t) ~ dt \\
+\, \sin (n \pi t) \, dt \\
 & =
 \frac{4 ( 1-{(-1)}^n)}{\pi^3 n^3} 
 =
@@ -2139,7 +2160,7 @@ the Fourier series for $f(t)$.  First, we compute the coefficients $a_n$ (includ
 $n=0$) and get
 \begin{equation*}
 a_n = \frac{1}{L} \int_{-L}^L f(t) \cos \left( \frac{n \pi}{L} t \right)
-~ dt = 0 .
+\, dt = 0 .
 \end{equation*}
 That is, there are no cosine terms in the Fourier series of an odd function.
 The integral is zero
@@ -2153,8 +2174,8 @@ The function $f(t) \sin \left( \frac{n \pi}{L} t \right)$ is the product of two 
 functions and hence is even.
 \begin{equation*}
 b_n = 
-\frac{1}{L} \int_{-L}^L f(t) \sin \left( \frac{n \pi}{L} t \right) ~ dt =
-\frac{2}{L} \int_{0}^L f(t) \sin \left( \frac{n \pi}{L} t \right) ~ dt .
+\frac{1}{L} \int_{-L}^L f(t) \sin \left( \frac{n \pi}{L} t \right) \, dt =
+\frac{2}{L} \int_{0}^L f(t) \sin \left( \frac{n \pi}{L} t \right) \, dt .
 \end{equation*}
 We now write the Fourier series of $f(t)$ as
 \begin{equation*}
@@ -2165,12 +2186,12 @@ Similarly, if $f(t)$ is an even $2L$-periodic function.  For the same exact
 reasons as above, we find that $b_n = 0$ and
 \begin{equation*}
 a_n = 
-\frac{2}{L} \int_{0}^L f(t) \cos \left( \frac{n \pi}{L} t \right) ~ dt .
+\frac{2}{L} \int_{0}^L f(t) \cos \left( \frac{n \pi}{L} t \right) \, dt .
 \end{equation*}
 The formula still works for $n=0$, in which case it becomes
 \begin{equation*}
 a_0 = 
-\frac{2}{L} \int_{0}^L f(t) ~ dt .
+\frac{2}{L} \int_{0}^L f(t) \, dt .
 \end{equation*}
 The Fourier series is then
 \begin{equation*}
@@ -2200,7 +2221,7 @@ where
 \begin{equation*}
 \boxed{~~
 b_n = 
-\frac{2}{L} \int_{0}^L f(t)\, \sin \left( \frac{n \pi}{L} t \right) ~ dt .
+\frac{2}{L} \int_{0}^L f(t)\, \sin \left( \frac{n \pi}{L} t \right) \, dt .
 ~~}
 \end{equation*}
 The even periodic extension of $f(t)$ has the Fourier series
@@ -2214,7 +2235,7 @@ where
 \begin{equation*}
 \boxed{~~
 a_n = 
-\frac{2}{L} \int_{0}^L f(t)\, \cos \left( \frac{n \pi}{L} t \right) ~ dt .
+\frac{2}{L} \int_{0}^L f(t)\, \cos \left( \frac{n \pi}{L} t \right) \, dt .
 ~~}
 \end{equation*}
 \end{theorem}
@@ -2237,7 +2258,7 @@ eigenfunctions of the eigenvalue problem $x''+\lambda x = 0$, $x'(0) = 0$,
 $x'(L) = L$.  We could have, therefore, gotten the same formulas
 by defining the inner product
 \begin{equation*}
-\langle f(t), g(t) \rangle = \int_0^L f(t) g(t) ~ dt ,
+\langle f(t), g(t) \rangle = \int_0^L f(t) g(t) \, dt ,
 \end{equation*}
 and following the procedure of \sectionref{ts:section}.  This point of view is
 useful, as we commonly use a specific series that arose because our underlying
@@ -2262,22 +2283,22 @@ f(t) = \frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos (n t) ,
 where
 \begin{equation*}
 a_0 = \frac{2}{\pi}
-\int_0^\pi t^2 ~ dt = \frac{2 \pi^2}{3} ,
+\int_0^\pi t^2 \, dt = \frac{2 \pi^2}{3} ,
 \end{equation*}
 and
 \begin{equation*}
 \begin{split}
 a_n & = \frac{2}{\pi}
-\int_0^\pi t^2 \cos (n t) ~ dt
+\int_0^\pi t^2 \cos (n t) \, dt
 = \frac{2}{\pi} \left[ t^2 \frac{1}{n} \sin (nt) \right]_0^\pi -
 \frac{4}{n\pi}
-\int_0^\pi t \sin (n t) ~ dt \\
+\int_0^\pi t \sin (n t) \, dt \\
 & = 
 \frac{4}{n^2\pi}
 \Bigl[ t \cos (n t) \Bigr]_0^\pi
 +
 \frac{4}{n^2\pi}
-\int_0^\pi \cos (n t) ~ dt
+\int_0^\pi \cos (n t) \, dt
 = 
 \frac{4{(-1)}^n}{n^2} .
 \end{split}
@@ -2349,7 +2370,7 @@ f(t) = \sum_{n=1}^\infty c_n \sin (n \pi t) .
 \end{equation*}
 Compute
 \begin{equation*}
-c_n = 2 \int_0^1 t \sin (n \pi t) ~dt = \frac{2 \, {(-1)}^{n+1}}{n \pi} .
+c_n = 2 \int_0^1 t \sin (n \pi t) \,dt = \frac{2 \, {(-1)}^{n+1}}{n \pi} .
 \end{equation*}
 We write $x(t)$ as
 \begin{equation*}
@@ -2427,11 +2448,11 @@ f(t) = \frac{c_0}{2} + \sum_{n=1}^\infty c_n \cos (n \pi t) ,
 \end{equation*}
 where
 \begin{equation*}
-c_0 = 2 \int_0^1 t ~dt = 1 ,
+c_0 = 2 \int_0^1 t \,dt = 1 ,
 \end{equation*}
 and
 \begin{equation*}
-c_n = 2 \int_0^1 t \cos (n \pi t) ~dt =
+c_n = 2 \int_0^1 t \cos (n \pi t) \,dt =
 \frac{2\bigl({(-1)}^n-1\bigr)}{\pi^2 n^2} = 
 \begin{cases}
 \frac{-4}{\pi^2 n^2} & \text{if } n \text{ odd} , \\
@@ -2736,15 +2757,15 @@ d_n \sin (n \pi t) .
 \end{equation*}
 We compute
 \begin{align*}
-c_n & = \int_{-1}^1 F(t) \cos (n \pi t) ~ dt = 
-\int_{0}^1 \cos (n \pi t) ~ dt = 0 \qquad \text{for } \; n \geq 1,
+c_n & = \int_{-1}^1 F(t) \cos (n \pi t) \, dt = 
+\int_{0}^1 \cos (n \pi t) \, dt = 0 \qquad \text{for } \; n \geq 1,
 \\
-c_0 & = \int_{-1}^1 F(t) ~ dt = 
-\int_{0}^1 ~ dt = 1 ,
+c_0 & = \int_{-1}^1 F(t) \, dt = 
+\int_{0}^1 \, dt = 1 ,
 \\
-d_n & = \int_{-1}^1 F(t) \sin (n \pi t) ~ dt
+d_n & = \int_{-1}^1 F(t) \sin (n \pi t) \, dt
 \\
-& = \int_{0}^1 \sin (n \pi t) ~ dt
+& = \int_{0}^1 \sin (n \pi t) \, dt
 \\
 & = \left[ \frac{-\cos (n \pi t)}{n \pi} \right]_{t=0}^1
 \\
@@ -3373,7 +3394,7 @@ f(x) = \sum_{n=1}^\infty b_n \sin (n \pi x) ,
 $
 where
 \begin{equation*}
-b_n = 2 \int_0^1 50\,x\,(1-x) \sin (n \pi x) ~dx
+b_n = 2 \int_0^1 50\,x\,(1-x) \sin (n \pi x) \,dx
 = 
 \frac{200}{{\pi }^{3}{n}^{3}}-\frac{200\,{\left( -1\right) }^{n}}{{\pi }^{3}{n}^{3}}
 =
@@ -3622,7 +3643,7 @@ of $\frac{25}{3} \approx 8.33$ along the entire length of the wire.
 
 Let us expand on the last point.  The constant term in the series is
 \begin{equation*}
-\frac{a_0}{2} = \frac{1}{L} \int_0^L f(x) ~ dx .
+\frac{a_0}{2} = \frac{1}{L} \int_0^L f(x) \, dx .
 \end{equation*}
 In other words, $\frac{a_0}{2}$ is the average value of $f(x)$, that is
 the average of the initial temperature.  As the wire is insulated
@@ -4612,9 +4633,9 @@ First let $F(x)$
 denote the odd periodic extension of $f(x)$, and let $G(x)$ denote the
 odd periodic extension of $g(x)$.  Define
 \begin{equation*}
-A(x) = \frac{1}{2} F(x) - \frac{1}{2a} \int_0^x G(s) ~ds ,
+A(x) = \frac{1}{2} F(x) - \frac{1}{2a} \int_0^x G(s) \,ds ,
 \qquad
-B(x) = \frac{1}{2} F(x) + \frac{1}{2a} \int_0^x G(s) ~ds .
+B(x) = \frac{1}{2} F(x) + \frac{1}{2a} \int_0^x G(s) \,ds .
 \end{equation*}
 We claim this $A(x)$ and $B(x)$ give the solution.  Explicitly, the
 solution is $y(x,t) = A(x-at) + B(x+at)$ or in other words:
@@ -4622,11 +4643,11 @@ solution is $y(x,t) = A(x-at) + B(x+at)$ or in other words:
 \boxed{~~
 \begin{aligned}
 y(x,t) & =
-\frac{1}{2} F(x-at) - \frac{1}{2a} \int_0^{x-at} G(s) ~ds 
+\frac{1}{2} F(x-at) - \frac{1}{2a} \int_0^{x-at} G(s) \,ds 
 +
-\frac{1}{2} F(x+at) + \frac{1}{2a} \int_0^{x+at} G(s) ~ds \\
+\frac{1}{2} F(x+at) + \frac{1}{2a} \int_0^{x+at} G(s) \,ds \\
 & =
-\frac{F(x-at) + F(x+at)}{2} + \frac{1}{2a} \int_{x-at}^{x+at} G(s) ~ds .
+\frac{F(x-at) + F(x+at)}{2} + \frac{1}{2a} \int_{x-at}^{x+at} G(s) \,ds .
 \end{aligned}
 ~~}
 \end{equation}
@@ -4634,7 +4655,7 @@ y(x,t) & =
 Let us check that the d'Alembert formula really works.
 \begin{equation*}
 y(x,0) =
-\frac{F(x) + F(x)}{2} + \frac{1}{2a} \int_{x}^{x} G(s) ~ds 
+\frac{F(x) + F(x)}{2} + \frac{1}{2a} \int_{x}^{x} G(s) \,ds 
 =
 F(x) .
 \end{equation*}
@@ -4659,9 +4680,9 @@ Yay!  We're smoking now.  OK\@, now the boundary conditions.  Note
 that $F(x)$ and $G(x)$ are odd.  So
 \begin{equation*}
 y(0,t) =
-\frac{F(-at) + F(at)}{2} + \frac{1}{2a} \int_{-at}^{at} G(s) ~ds 
+\frac{F(-at) + F(at)}{2} + \frac{1}{2a} \int_{-at}^{at} G(s) \,ds 
 =
-\frac{-F(at) + F(at)}{2} + \frac{1}{2a} \int_{-at}^{at} G(s) ~ds 
+\frac{-F(at) + F(at)}{2} + \frac{1}{2a} \int_{-at}^{at} G(s) \,ds 
 = 0 + 0 = 0.
 \end{equation*}
 Now $F(x)$ is odd and $2L$-periodic, so
@@ -4677,20 +4698,20 @@ Next, $G(s)$ is odd and $2L$-periodic, so we change
 variables $v = s-L$:
 \begin{equation*}
 \int_{L-at}^{L+at}
-G(s)~ds
+G(s)\,ds
 =
 \int_{-at}^{at}
-G(v+L)~dv
+G(v+L)\,dv
 =
 \int_{-at}^{at}
--G(v)~dv
+-G(v)\,dv
 =
 0 .
 \end{equation*}
 Hence
 \begin{equation*}
 y(L,t) =
-\frac{F(L-at) + F(L+at)}{2} + \frac{1}{2a} \int_{L-at}^{L+at} G(s) ~ds 
+\frac{F(L-at) + F(L+at)}{2} + \frac{1}{2a} \int_{L-at}^{L+at} G(s) \,ds 
 =
 0 + 0  = 0.
 \end{equation*}
@@ -4767,11 +4788,11 @@ $G(x) = 0$) the solution is
 On the other hand,
 when $f(x) = 0$ (and hence $F(x) = 0$), we let
 \begin{equation*}
-H(x) = \int_0^x G(s) ~ds .
+H(x) = \int_0^x G(s) \,ds .
 \end{equation*}
 The solution in this case is
 \begin{equation*}
-\frac{1}{2a} \int_{x-at}^{x+at} G(s) ~ds
+\frac{1}{2a} \int_{x-at}^{x+at} G(s) \,ds
 =
 \frac{ -H(x-at) + H(x+at) }{2a} .
 \end{equation*}
@@ -4824,7 +4845,7 @@ characteristics.}  Let us suppose that the string is very long (perhaps
 infinite) for simplicity.  Since the solution at time $t$ is
 \begin{equation*}
 y(x,t) =
-\frac{F(x-at) + F(x+at)}{2} + \frac{1}{2a} \int_{x-at}^{x+at} G(s) ~ds ,
+\frac{F(x-at) + F(x+at)}{2} + \frac{1}{2a} \int_{x-at}^{x+at} G(s) \,ds ,
 \end{equation*}
 we notice that we have only used the initial conditions in the interval
 $[x-at,x+at]$.  These two endpoints are called the

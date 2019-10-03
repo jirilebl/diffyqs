@@ -1442,7 +1442,8 @@ while(1)
 		open_paragraph();
 
 
-	} elsif ($para =~ s/^\\begin\{exercise\}[ \n]*//) {
+	} elsif ($para =~ s/^\\begin\{exercise\}[ \n]*\\begin\{samepage\}[ \n]*// ||
+		$para =~ s/^\\begin\{exercise\}[ \n]*//) {
 		close_paragraph();
 		$exercise_num = $exercise_num+1;
 		my $the_num = get_exercise_number ();
@@ -1459,6 +1460,7 @@ while(1)
 		open_paragraph();
 
 	} elsif ($para =~ s/^\\end\{exercise\}[ \n]*\\exsol\{// ||
+	         $para =~ s/^\\end\{samepage\}[ \n]*\\end\{exercise\}[ \n]*\\exsol\{//) {
 	         $para =~ s/^\\end\{exercise\}[ \n]*\\end\{samepage\}[ \n]*\\exsol\{//) {
 		print "(exercise end)\n";
 		print "(exsol start)\n";

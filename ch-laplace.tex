@@ -50,7 +50,7 @@ is the Laplace transform of the other.  For example $F(s)$ is the Laplace
 transform of $f(t)$.  Let us define the transform.
 \begin{equation*}
 \mathcal{L} \bigl\{ f(t) \bigr\} =
-F(s) \overset{\text{def}}{=} \int_0^\infty e^{-st} f(t) ~ dt .
+F(s) \overset{\text{def}}{=} \int_0^\infty e^{-st} f(t) \, dt .
 \end{equation*}
 We note that we are only considering $t \geq 0$ in the transform.  Of course,
 if we think of $t$ as time there is no problem, we are generally interested in
@@ -61,7 +61,7 @@ transforms.
 \begin{example}
 Suppose $f(t) = 1$, then
 \begin{equation*}
-\mathcal{L} \{1\} = \int_0^\infty e^{-st} ~ dt
+\mathcal{L} \{1\} = \int_0^\infty e^{-st} \, dt
 =
 \left[ \frac{e^{-st}}{-s} \right]_{t=0}^\infty
 =
@@ -80,8 +80,8 @@ $\mathcal{L} \{1\}$ is only defined for $s > 0$.
 Suppose $f(t) = e^{-at}$, then
 \begin{equation*}
 \mathcal{L} \bigl\{e^{-at}\bigr\}
-= \int_0^\infty e^{-st} e^{-at} ~ dt
-= \int_0^\infty e^{-(s+a)t} ~ dt
+= \int_0^\infty e^{-st} e^{-at} \, dt
+= \int_0^\infty e^{-(s+a)t} \, dt
 =
 \left[ \frac{e^{-(s+a)t}}{-(s+a)} \right]_{t=0}^\infty
 = \frac{1}{s+a} .
@@ -95,12 +95,12 @@ Suppose $f(t) = t$, then using integration by parts
 \begin{equation*}
 \begin{split}
 \mathcal{L} \{t\}
-& = \int_0^\infty e^{-st} t ~ dt \\
+& = \int_0^\infty e^{-st} t \, dt \\
 & =
 \left[ \frac{-te^{-st}}{s} \right]_{t=0}^\infty
 +
 \frac{1}{s}
-\int_0^\infty e^{-st} ~dt \\
+\int_0^\infty e^{-st} \,dt \\
 & =
 0
 +
@@ -136,9 +136,9 @@ That is, the function that is 0 for $t < a$ and 1 for $t \geq a$.
 \begin{equation*}
 \mathcal{L} \bigl\{ u(t-a) \bigr\}
 =
-\int_0^{\infty} e^{-st} u(t-a) ~ dt
+\int_0^{\infty} e^{-st} u(t-a) \, dt
 =
-\int_a^{\infty} e^{-st} ~ dt
+\int_a^{\infty} e^{-st} \, dt
 =
 \left[ \frac{e^{-st}}{-s} \right]_{t=a}^\infty \\
 =
@@ -199,8 +199,8 @@ Since the transform is defined by an integral.  We can use the linearity
 properties of the integral.  For example, suppose $C$ is a constant, then
 \begin{equation*}
 \mathcal{L} \bigl\{ C f(t) \bigr\} =
-\int_0^\infty e^{-st} C f(t) ~dt =
-C \int_0^\infty e^{-st} f(t) ~dt =
+\int_0^\infty e^{-st} C f(t) \,dt =
+C \int_0^\infty e^{-st} f(t) \,dt =
 C \mathcal{L} \bigl\{ f(t) \bigr\} .
 \end{equation*}
 So we can \myquote{pull out} a constant out of the transform.  Similarly  we have
@@ -285,9 +285,9 @@ Let $s > c$, or in other words $(c-s) < 0$.
 By the comparison theorem from calculus, the improper integral defining
 $\mathcal{L} \bigl\{ f(t) \bigr\}$ exists if the following integral exists
 \begin{equation*}
-\int_0^\infty e^{-st} ( M e^{ct} ) ~dt
+\int_0^\infty e^{-st} ( M e^{ct} ) \,dt
 =
-M \int_0^\infty e^{(c-s)t} ~dt = M \left[ \frac{e^{(c-s)t}}{c-s}
+M \int_0^\infty e^{(c-s)t} \,dt = M \left[ \frac{e^{(c-s)t}}{c-s}
 \right]_{t=0}^\infty = \frac{M}{c-s} .
 \end{equation*}
 
@@ -566,14 +566,14 @@ $\lim_{t\to\infty} e^{-st}g(t) = 0$ when $s > c$.  Then
 =
 \int_0^\infty
 e^{-st}
-g'(t) ~dt
+g'(t) \,dt
 =
 \Bigl[e^{-st} g(t) \Bigr]_{t=0}^\infty
 -
 \int_0^\infty
 (-s)\,
 e^{-st}
-g(t) ~dt
+g(t) \,dt
 =
 -g(0) + s \mathcal{L} \bigl\{ g(t) \bigr\} .
 \end{equation*}
@@ -1507,7 +1507,7 @@ M
 For simplicity we let $a=0$, and it is convenient
 to set $M = \nicefrac{1}{b}$ to have
 \begin{equation*}
-\int_0^\infty \varphi(t) ~dt = 1 .
+\int_0^\infty \varphi(t) \,dt = 1 .
 \end{equation*}
 That is, to have the pulse have \myquote{unit mass.}
 For such a pulse we
@@ -1538,7 +1538,7 @@ such that
 for any continuous function $f(t)$ we have
 \begin{equation*}
 \boxed{~~
-\int_{-\infty}^\infty \delta(t) f(t) ~dt = f(0) .
+\int_{-\infty}^\infty \delta(t) f(t) \,dt = f(0) .
 ~~}
 \end{equation*}
 The formula should hold if we integrate over any interval that contains 0,
@@ -1547,7 +1547,7 @@ So $\delta(t)$ is a \myquote{function}
 with all its \myquote{mass} at the single point $t=0$.  In other words, for any
 interval $[c,d]$
 \begin{equation*}
-\int_c^d \delta(t) ~dt = 
+\int_c^d \delta(t) \,dt = 
 \begin{cases}
 1 & \text{if the interval $[c,d]$ contains 0, i.e.\ } c \leq 0 \leq d, \\
 0 & \text{otherwise.}
@@ -1563,36 +1563,36 @@ we have a square pulse $\varphi(t)$ as above with $a=0$,
 $M=\nicefrac{1}{b}$, that is $\varphi(t) = \frac{u(t) - u(t-b)}{b}$.
 Compute
 \begin{equation*}
-\int_{-\infty}^\infty \varphi(t) f(t) ~dt =
-\int_{-\infty}^\infty \frac{u(t) - u(t-b)}{b} f(t) ~dt =
-\frac{1}{b} \int_{0}^b f(t) ~dt .
+\int_{-\infty}^\infty \varphi(t) f(t) \,dt =
+\int_{-\infty}^\infty \frac{u(t) - u(t-b)}{b} f(t) \,dt =
+\frac{1}{b} \int_{0}^b f(t) \,dt .
 \end{equation*}
 If $f(t)$ is continuous at $t=0$, then
 for very small $b$, the function $f(t)$ is approximately equal to $f(0)$ on
 the interval $[0,b]$.  We approximate the integral
 \begin{equation*}
-\frac{1}{b} \int_{0}^b f(t) ~dt \approx
-\frac{1}{b} \int_{0}^b f(0) ~dt = f(0) .
+\frac{1}{b} \int_{0}^b f(t) \,dt \approx
+\frac{1}{b} \int_{0}^b f(0) \,dt = f(0) .
 \end{equation*}
 Hence,
 \begin{equation*}
 \lim_{b\to 0}
-\int_{-\infty}^\infty \varphi(t) f(t) ~dt =
+\int_{-\infty}^\infty \varphi(t) f(t) \,dt =
 \lim_{b\to 0}
-\frac{1}{b} \int_{0}^b f(t) ~dt  = f(0) .
+\frac{1}{b} \int_{0}^b f(t) \,dt  = f(0) .
 \end{equation*}
 
 Let us therefore accept $\delta(t)$ as an object that is possible to
 integrate.  We often want to shift $\delta$ to another point, for example
 $\delta(t-a)$.  In that case we have
 \begin{equation*}
-\int_{-\infty}^\infty \delta(t-a) f(t) ~dt = f(a) .
+\int_{-\infty}^\infty \delta(t-a) f(t) \,dt = f(a) .
 \end{equation*}
 Note that $\delta(a-t)$ is the same object as $\delta(t-a)$.
 In other words, the convolution of $\delta(t)$ with $f(t)$ is again $f(t)$,
 \begin{equation*}
 (f * \delta) (t) = 
-\int_{0}^t \delta(t-s) f(s) ~ds
+\int_{0}^t \delta(t-s) f(s) \,ds
 = f(t) .
 \end{equation*}
 
@@ -1601,7 +1601,7 @@ As we can integrate $\delta(t)$, let us compute its Laplace transform.
 \boxed{~~
 {\mathcal{L}} \bigl\{ \delta(t-a) \bigr\}
 =
-\int_{0}^\infty e^{-st} \delta(t-a) ~dt = e^{-as} .
+\int_{0}^\infty e^{-st} \delta(t-a) \,dt = e^{-as} .
 ~~}
 \end{equation*}
 In particular,
@@ -1622,7 +1622,7 @@ we multiply by $s$, to obtain $e^{-as}$, which is the Laplace transform
 of $\delta(t-a)$.
 We see the same thing using integration,
 \begin{equation*}
-\int_0^t \delta(s-a)~ds = u(t-a) .
+\int_0^t \delta(s-a)\,ds = u(t-a) .
 \end{equation*}
 So in a certain sense
 \begin{equation*}
@@ -2007,15 +2007,15 @@ and treat it as a function of $x$, leaving $s$ as a parameter.
 \begin{equation*}
 Y(x)
 = {\mathcal L} \bigl\{ y(x,t) \bigr\}
-= \int_0^\infty y(x,t) e^{-st} ~ds .
+= \int_0^\infty y(x,t) e^{-st} \,ds .
 \end{equation*}
 The transform of a derivative with respect to $x$ is just differentiating 
 the transformed function:
 \begin{equation*}
 {\mathcal L} \bigl\{ y_x(x,t) \bigr\} =
-\int_0^\infty y_x(x,t) e^{-st} ~ds
+\int_0^\infty y_x(x,t) e^{-st} \,ds
 =
-\frac{d}{dx} \left[\int_0^\infty y(x,t) e^{-st} ~ds \right]
+\frac{d}{dx} \left[\int_0^\infty y(x,t) e^{-st} \,ds \right]
 =
 Y'(x) .
 \end{equation*}
@@ -2061,9 +2061,9 @@ be the Heaviside function.
 As
 \begin{equation*}
 {\mathcal L} \bigl\{ u(t-a) \bigr\} =
-\int_0^\infty u(t-a) \, e^{-st} ~dt
+\int_0^\infty u(t-a) \, e^{-st} \,dt
 =
-\int_a^\infty e^{-st} ~dt
+\int_a^\infty e^{-st} \,dt
 =
 \frac{e^{-as}}{s} ,
 \end{equation*}
