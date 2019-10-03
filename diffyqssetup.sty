@@ -1,6 +1,47 @@
 %FIXME: for PRINT run for lulu or createspace, search for %PRINT  (also
 %search diffyqs.tex)
 
+\usepackage{ifpdf}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{color}
+
+% Times
+%\usepackage{txfonts}
+% NewTX fonts are nicer, though slightly looser.  Using these we
+% can get rid of the extra spaces e.g. {\vec{x}\,}', if going back
+% to txfonts, these would need to be stuck back in.  One disadvantage
+% is that newtx fonts seem to be changing from time to time leading
+% to possible changes in pagination ...
+%\usepackage[tighter,defaultsups]{newtxtext}
+%\usepackage[vvarbb]{newtxmath}
+%STIX
+%\usepackage{stix}
+%\usepackage{stix2}
+%KP
+%\usepackage{kpfonts}
+
+%Palatino
+%\usepackage{mathpazo}
+%\usepackage[scaled]{helvet}
+\usepackage{newpxtext}
+\usepackage[vvarbb]{newpxmath}
+\linespread{1.05}
+
+% Utopia
+%\usepackage{fourier}
+%\usepackage[scaled]{helvet}
+
+%\usepackage{fouriernc}
+
+
+% San Serif fonts
+%\renewcommand{\familydefault}{\sfdefault}
+
+
 \usepackage[T1]{fontenc}
 
 % Footnotes should use symbols, not numbers.  Numbered footnotes are
@@ -11,20 +52,15 @@
 \usepackage{tasks}
 \usepackage{footnote}
 \makesavenoteenv{tasks}
+
 \usepackage[shortlabels]{enumitem}
-\usepackage{ifpdf}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{graphicx}
-\usepackage{color}
+
 %\usepackage{graphics}
 \usepackage{tcolorbox}
 
 % Remove page numbers on chapter opens
-% must come before fullpage
-\usepackage{nopageno}
+\usepackage{titlesec}
+\assignpagestyle{\chapter}{empty}
 
 \usepackage[headings]{fullpage}
 
@@ -68,25 +104,6 @@
 % This is my modified wrapfig that doesn't use intextsep
 \usepackage{mywrapfig}
 \usepackage{import}
-
-% Times
-%\usepackage{txfonts}
-% NewTX fonts are nicer, though slightly looser.  Using these we
-% can get rid of the extra spaces e.g. {\vec{x}\,}', if going back
-% to txfonts, these would need to be stuck back in.  One disadvantage
-% is that newtx fonts seem to be changing from time to time leading
-% to possible changes in pagination ...
-\usepackage[tighter,defaultsups]{newtxtext}
-\usepackage[vvarbb]{newtxmath}
-%STIX
-%\usepackage{stix}
-%\usepackage{stix2}
-%KP
-%\usepackage{kpfonts}
-
-
-% San Serif fonts
-%\renewcommand{\familydefault}{\sfdefault}
 
 \definecolor{mypersianblue}{rgb}{0.11, 0.22, 0.73}
 

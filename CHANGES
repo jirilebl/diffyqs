@@ -8,7 +8,8 @@
 * Change name of fifth chapter to "More on eigenvalue problems" as really
   eigenvalue problems have already been started in chapter 4
 
-* Use newtx fonts.  The changes should be minor, mostly nicer mathematics.
+* Use newpx fonts in the PDF version.  The line length has gotten slightly
+  shorter to improve readability.
 * Exercises with parts use the tasks package so they are not too cramped
   anymore.
 * Make bottom margin smaller to save paper

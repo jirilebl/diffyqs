@@ -2233,8 +2233,11 @@ c_n \vec{v}_n e^{\lambda_n t} .
 \end{theorem}
 
 The corresponding fundamental matrix solution is
-$X(t) = [\, \vec{v}_1 e^{\lambda_1 t} \quad \vec{v}_2 e^{\lambda_2 t}
-\quad \cdots \quad \vec{v}_n e^{\lambda_n t} \,]$.  That is, $X(t)$
+\begin{equation*}
+X(t) = \bigl[\, \vec{v}_1 e^{\lambda_1 t} \quad \vec{v}_2 e^{\lambda_2 t}
+\quad \cdots \quad \vec{v}_n e^{\lambda_n t} \,\bigr].
+\end{equation*}
+That is, $X(t)$
 is the matrix whose $j^{\text{th}}$ column is 
 $\vec{v}_j e^{\lambda_j t}$.
 
@@ -2858,7 +2861,7 @@ $\left[ \begin{smallmatrix} 1 \\ 1 \end{smallmatrix} \right]$.  The
 calculation and the picture are almost the same.  The only difference is that
 the eigenvalues are negative and hence all arrows are reversed.  We get the
 picture in \figurevref{pln:sink-fullfig}.  We call this kind of picture a
-\emph{\myindex{sink}} or sometimes a \emph{\myindex{stable node}}.
+\emph{\myindex{sink}} or a \emph{\myindex{stable node}}.
 
 \begin{myfig}
 \parbox[t]{3.0in}{
@@ -2909,15 +2912,15 @@ the eigenvalue $2i$ and its eigenvector
 $\left[ \begin{smallmatrix} 1 \\ 2i \end{smallmatrix} \right]$.
 The real and imaginary
 parts of $\vec{v} e^{2it}$ are
-\begin{align*}
+\begin{equation*}
 \operatorname{Re}
-\begin{bmatrix} 1 \\ 2i \end{bmatrix} e^{2it} & =
+\begin{bmatrix} 1 \\ 2i \end{bmatrix} e^{2it} =
 \begin{bmatrix} \cos (2t) \\ -2 \sin (2t)  \end{bmatrix} ,
-\\
+\qquad
 \operatorname{Im}
-\begin{bmatrix} 1 \\ 2i \end{bmatrix} e^{2it} & =
+\begin{bmatrix} 1 \\ 2i \end{bmatrix} e^{2it} =
 \begin{bmatrix} \sin (2t) \\ 2 \cos (2t) \end{bmatrix} .
-\end{align*}
+\end{equation*}
 We can take any linear combination of them to get other solutions,
 which one we take
 depends on the initial
@@ -2957,18 +2960,18 @@ $1 + 2i$ and its eigenvector
 $\left[ \begin{smallmatrix} 1 \\ 2i \end{smallmatrix} \right]$ and find
 the real and imaginary parts of
 $\vec{v} e^{(1+2i)t}$ are
-\begin{align*}
+\begin{equation*}
 \operatorname{Re}
-\begin{bmatrix} 1 \\ 2i \end{bmatrix} e^{(1+2i)t} & =
+\begin{bmatrix} 1 \\ 2i \end{bmatrix} e^{(1+2i)t} =
 e^t
 \begin{bmatrix} \cos (2t) \\ -2 \sin (2t)  \end{bmatrix} ,
-\\
+\qquad
 \operatorname{Im}
-\begin{bmatrix} 1 \\ 2i \end{bmatrix} e^{(1+2i)t} & =
+\begin{bmatrix} 1 \\ 2i \end{bmatrix} e^{(1+2i)t} =
 e^t
 \begin{bmatrix} \sin (2t) \\ 2 \cos (2t) \end{bmatrix} .
-\end{align*}
-Note the $e^t$ in front of the solutions.  This means that the solutions
+\end{equation*}
+Note the $e^t$ in front of the solutions.  The solutions
 grow in magnitude while spinning around the origin.  Hence we get
 a \emph{\myindex{spiral source}}.
 See \figurevref{pln:spiral-sourcefig}.
@@ -2986,18 +2989,18 @@ $-1 - 2i$ and its eigenvector
 $\left[ \begin{smallmatrix} 1 \\ 2i \end{smallmatrix} \right]$ and find
 the real and imaginary parts of
 $\vec{v} e^{(-1-2i)t}$ are
-\begin{align*}
+\begin{equation*}
 \operatorname{Re}
-\begin{bmatrix} 1 \\ 2i \end{bmatrix} e^{(-1-2i)t} & =
+\begin{bmatrix} 1 \\ 2i \end{bmatrix} e^{(-1-2i)t} =
 e^{-t}
 \begin{bmatrix} \cos (2t) \\ 2 \sin (2t)  \end{bmatrix} ,
-\\
+\qquad
 \operatorname{Im}
-\begin{bmatrix} 1 \\ 2i \end{bmatrix} e^{(-1-2i)t} & =
+\begin{bmatrix} 1 \\ 2i \end{bmatrix} e^{(-1-2i)t} =
 e^{-t}
 \begin{bmatrix} -\sin (2t) \\ 2 \cos (2t) \end{bmatrix} .
-\end{align*}
-Note the $e^{-t}$ in front of the solutions.  This means that the solutions
+\end{equation*}
+Note the $e^{-t}$ in front of the solutions.  The solutions
 shrink in magnitude while spinning around the origin.  Hence we get
 a \emph{\myindex{spiral sink}}.
 See \figurevref{pln:spiral-sinkfig}.
@@ -4040,6 +4043,7 @@ $\vec{x} =
 \end{smallmatrix}\right]
 \bigl( a_1 \cos (\sqrt{\nicefrac{3k}{m}}\, t)  + b_1 \sin
 (\sqrt{\nicefrac{3k}{m}}\, t) \bigr)
+\allowbreak
 +
 \left[ \begin{smallmatrix}
 1 \\ 0 \\ -1
@@ -4635,6 +4639,7 @@ $A = \left[ \begin{smallmatrix}
 \end{tasks}
 \end{exercise}
 
+\pagebreak[2]
 \begin{exercise}
 Let
 $A = \left[ \begin{smallmatrix}
@@ -5967,56 +5972,56 @@ $A \vec{v}_k = \lambda_k \vec{v}_k$:
 \begin{split}
 %{\vec{x}}' & =
 \overbrace{
-\vec{v}_1 \, \xi_1' + 
-\vec{v}_2 \, \xi_2' + \cdots +
-\vec{v}_n \, \xi_n'
+\vec{v}_1 \xi_1' + 
+\vec{v}_2 \xi_2' + \cdots +
+\vec{v}_n \xi_n'
 }^{{\vec{x}}'}
 %\\
 & =
 \overbrace{
-A \left( \vec{v}_1 \, \xi_1 + 
-\vec{v}_2 \, \xi_2 + \cdots +
-\vec{v}_n \, \xi_n \right)
+A \left( \vec{v}_1 \xi_1 + 
+\vec{v}_2 \xi_2 + \cdots +
+\vec{v}_n \xi_n \right)
 }^{A\vec{x}}
 +
 \overbrace{
-\vec{v}_1 \, g_1 + 
-\vec{v}_2 \, g_2 + \cdots +
-\vec{v}_n \, g_n
+\vec{v}_1 g_1 + 
+\vec{v}_2 g_2 + \cdots +
+\vec{v}_n g_n
 }^{\vec{f}}
 \\
 & = 
-A \vec{v}_1 \, \xi_1 + 
-A \vec{v}_2 \, \xi_2 + \cdots +
-A \vec{v}_n \, \xi_n
+A \vec{v}_1 \xi_1 + 
+A \vec{v}_2 \xi_2 + \cdots +
+A \vec{v}_n \xi_n
 +
-\vec{v}_1 \, g_1 + 
-\vec{v}_2 \, g_2 + \cdots +
-\vec{v}_n \, g_n
+\vec{v}_1 g_1 + 
+\vec{v}_2 g_2 + \cdots +
+\vec{v}_n g_n
 \\
 & =
-\vec{v}_1 \, \lambda_1 \, \xi_1 + 
-\vec{v}_2 \, \lambda_2 \, \xi_2 + \cdots +
-\vec{v}_n \, \lambda_n \, \xi_n
+\vec{v}_1 \lambda_1 \xi_1 + 
+\vec{v}_2 \lambda_2 \xi_2 + \cdots +
+\vec{v}_n \lambda_n \xi_n
 +
-\vec{v}_1 \, g_1 + 
-\vec{v}_2 \, g_2 + \cdots +
-\vec{v}_n \, g_n
+\vec{v}_1 g_1 + 
+\vec{v}_2 g_2 + \cdots +
+\vec{v}_n g_n
 \\
 & =
-\vec{v}_1 \, ( \lambda_1 \, \xi_1 + g_1 ) +
-\vec{v}_2 \, ( \lambda_2 \, \xi_2 + g_2 ) + \cdots + 
-\vec{v}_n \, ( \lambda_n \, \xi_n + g_n ) .
+\vec{v}_1 ( \lambda_1 \xi_1 + g_1 ) +
+\vec{v}_2 ( \lambda_2 \xi_2 + g_2 ) + \cdots + 
+\vec{v}_n ( \lambda_n \xi_n + g_n ) .
 \end{split}
 \end{equation*}
 If we identify the coefficients of the vectors $\vec{v}_1$ through
 $\vec{v}_n$ we get the
 equations
 \begin{align*}
-\xi_1' & = \lambda_1 \, \xi_1 + g_1 , \\
-\xi_2' & = \lambda_2 \, \xi_2 + g_2 , \\
+\xi_1' & = \lambda_1 \xi_1 + g_1 , \\
+\xi_2' & = \lambda_2 \xi_2 + g_2 , \\
 & ~~ \vdots \\
-\xi_n' & = \lambda_n \, \xi_n + g_n .
+\xi_n' & = \lambda_n \xi_n + g_n .
 \end{align*}
 Each one of these equations is independent of the others.  They are all
 linear first order equations and can easily be solved by the standard
@@ -6024,7 +6029,7 @@ integrating factor method for single equations.
 That is, for the $k^{\text{th}}$
 equation we write
 \begin{equation*}
-\xi_k'(t) - \lambda_k \, \xi_k(t) = g_k(t) .
+\xi_k'(t) - \lambda_k \xi_k(t) = g_k(t) .
 \end{equation*}
 We use the integrating factor $e^{-\lambda_k t}$ to find that
 \begin{equation*}
@@ -6040,9 +6045,9 @@ If we are looking for just any particular solution, we can set
 $C_k$ to be zero.  If we leave these constants in, we get the
 general solution.  Write
 $\vec{x}(t) =
-\vec{v}_1 \, \xi_1(t) + 
-\vec{v}_2 \, \xi_2(t) + \cdots +
-\vec{v}_n \, \xi_n(t)$, and we are done.
+\vec{v}_1 \xi_1(t) + 
+\vec{v}_2 \xi_2(t) + \cdots +
+\vec{v}_n \xi_n(t)$, and we are done.
 
 \medskip
 
@@ -6050,7 +6055,8 @@ As always,
 it is perhaps better to write these integrals as definite integrals.  
 Suppose that we have an initial condition $\vec{x}(0) = \vec{b}$.
 Take $\vec{a} = E^{-1} \vec{b}$ to find
-$\vec{b} = \vec{v}_1 \, a_1 + \vec{v}_2 \, a_2 + \cdots + \vec{v}_n \, a_n$, just like before.
+$\vec{b} = \vec{v}_1 a_1 + \vec{v}_2 a_2 + \cdots + \vec{v}_n a_n$,
+just like before.
 Then if we write 
 \begin{equation*}
 \boxed{~~
@@ -6878,67 +6884,67 @@ We plug in, and as before we obtain
 \begin{split}
 %{\vec{x}}'' & =
 \overbrace{
-\vec{v}_1 \, \xi_1'' + 
-\vec{v}_2 \, \xi_2'' + \cdots +
-\vec{v}_n \, \xi_n''
+\vec{v}_1 \xi_1'' + 
+\vec{v}_2 \xi_2'' + \cdots +
+\vec{v}_n \xi_n''
 }^{{\vec{x}}''}
 %\\
 & =
 \overbrace{
-A \left( \vec{v}_1 \, \xi_1 + 
-\vec{v}_2 \, \xi_2 + \cdots +
-\vec{v}_n \, \xi_n \right)
+A \left( \vec{v}_1 \xi_1 + 
+\vec{v}_2 \xi_2 + \cdots +
+\vec{v}_n \xi_n \right)
 }^{A\vec{x}}
 +
 \overbrace{
-\vec{v}_1 \, g_1 + 
-\vec{v}_2 \, g_2 + \cdots +
-\vec{v}_n \, g_n
+\vec{v}_1 g_1 + 
+\vec{v}_2 g_2 + \cdots +
+\vec{v}_n g_n
 }^{\vec{f}}
 \\
 & = 
-A \vec{v}_1 \, \xi_1 + 
-A \vec{v}_2 \, \xi_2 + \cdots +
-A \vec{v}_n \, \xi_n
+A \vec{v}_1 \xi_1 + 
+A \vec{v}_2 \xi_2 + \cdots +
+A \vec{v}_n \xi_n
++
+\vec{v}_1 g_1 + 
+\vec{v}_2 g_2 + \cdots +
+\vec{v}_n g_n
+\\
+& =
+\vec{v}_1 \lambda_1 \xi_1 + 
+\vec{v}_2 \lambda_2 \xi_2 + \cdots +
+\vec{v}_n \lambda_n \xi_n
 +
 \vec{v}_1 \, g_1 + 
 \vec{v}_2 \, g_2 + \cdots +
 \vec{v}_n \, g_n
 \\
 & =
-\vec{v}_1 \, \lambda_1 \, \xi_1 + 
-\vec{v}_2 \, \lambda_2 \, \xi_2 + \cdots +
-\vec{v}_n \, \lambda_n \, \xi_n
-+
-\vec{v}_1 \, g_1 + 
-\vec{v}_2 \, g_2 + \cdots +
-\vec{v}_n \, g_n
-\\
-& =
-\vec{v}_1 \, ( \lambda_1 \, \xi_1 + g_1 ) +
-\vec{v}_2 \, ( \lambda_2 \, \xi_2 + g_2 ) + \cdots + 
-\vec{v}_n \, ( \lambda_n \, \xi_n + g_n ) .
+\vec{v}_1 ( \lambda_1 \xi_1 + g_1 ) +
+\vec{v}_2 ( \lambda_2 \xi_2 + g_2 ) + \cdots + 
+\vec{v}_n ( \lambda_n \xi_n + g_n ) .
 \end{split}
 \end{equation*}
 We identify the coefficients of the eigenvectors to get the equations
 \begin{align*}
-\xi_1'' & = \lambda_1 \, \xi_1 + g_1 , \\
-\xi_2'' & = \lambda_2 \, \xi_2 + g_2 , \\
+\xi_1'' & = \lambda_1 \xi_1 + g_1 , \\
+\xi_2'' & = \lambda_2 \xi_2 + g_2 , \\
 & ~~ \vdots \\
-\xi_n'' & = \lambda_n \, \xi_n + g_n .
+\xi_n'' & = \lambda_n \xi_n + g_n .
 \end{align*}
 Each one of these equations is independent of the others.
 We solve each equation using the methods of \chapterref{ho:chapter}.
 We write
 $\vec{x}(t) =
-\vec{v}_1 \, \xi_1(t) +
-\vec{v}_2 \, \xi_2(t) + \cdots +
-\vec{v}_n \, \xi_n(t)$, and we are done; we have a particular solution.
+\vec{v}_1 \xi_1(t) +
+\vec{v}_2 \xi_2(t) + \cdots +
+\vec{v}_n \xi_n(t)$, and we are done; we have a particular solution.
 We find the general solutions for $\xi_1$ through $\xi_n$, and
 again
 $\vec{x}(t) =
-\vec{v}_1 \, \xi_1(t) + \vec{v}_2 \, \xi_2(t) + \cdots +
-\vec{v}_n \, \xi_n(t)$ is the general solution (and not just a particular
+\vec{v}_1 \xi_1(t) + \vec{v}_2 \, \xi_2(t) + \cdots +
+\vec{v}_n \xi_n(t)$ is the general solution (and not just a particular
 solution).
 
 \begin{example}

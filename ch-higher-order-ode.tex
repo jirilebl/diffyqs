@@ -519,7 +519,7 @@ y'' - 8 y' + 16 y =
 \end{example}
 
 In some sense, a doubled root rarely happens.  If coefficients are 
-picked truly randomly we are unlikely to get a doubled root.
+picked randomly a doubled root is unlikely.
 There are, however, some natural phenomena (such as resonance as we will see)
 where a doubled root does happen, so we cannot just dismiss this case.
 
@@ -534,11 +534,9 @@ $x e^{rx}$, and hence this is a solution in the doubled root case.
 
 \subsection{Complex numbers and Euler's formula}
 
-It may happen that a polynomial has some complex roots.  The
+A polynomial may have complex roots.  The
 equation $r^2 + 1 = 0$ has no real roots, but it does have two complex roots.
 Here we review some properties of complex numbers\index{complex number}.
-
-\medskip
 
 Complex numbers may seem a strange concept, especially because of the
 terminology.  There is nothing imaginary or really complicated about complex
@@ -573,7 +571,7 @@ For example,
 The numbers
 $i$ and $-i$ are the two roots of $r^2 + 1 = 0$.
 Engineers often use the letter $j$ instead of $i$ for the square
-root of $-1$.  We will use the mathematicians' convention and use $i$.
+root of $-1$.  We use the mathematicians' convention and use $i$.
 
 \begin{exercise}
 Make sure you understand (that you can justify)
@@ -588,6 +586,7 @@ the following identities:
 \end{tasks}
 \end{exercise}
 
+\pagebreak[2]
 We also define the exponential $e^{a+ib}$ of a complex number.  We do
 this by writing down the Taylor series and plugging in the complex
 number.  Because most properties of the exponential can be proved by looking
@@ -1072,22 +1071,24 @@ because the sign changed.
 If we find one root, say $r_1$, then we know $(r-r_1)$ is a factor
 of our polynomial.  Polynomial long division can then be used.
 
-A good strategy is to begin with $r=-1$, 1, or 0.  These are
-easy to compute.  Our polynomial happens to have
+A good strategy is to begin with $r=0$, $1$, or $-1$.  These are
+easy to compute.  Our polynomial has
 two such roots, $r_1 = -1$
 and $r_2 = 1$.  There should be 3 roots and the last root is reasonably
 easy to find.  The constant
-term in a monic polynomial such as this is the multiple of the negations of all the roots
+term in a monic\footnote{The word monic means that the coefficient of the
+top degree $r^d$, in our case $r^3$, is 1.}
+polynomial such as this is the multiple of the negations of all the roots
 because $r^3 - 3 r^2 - r + 3 = (r-r_1)(r-r_2)(r-r_3)$.
 So
 \begin{equation*}
 3 = (-r_1)(-r_2)(-r_3) = (1)(-1)(-r_3) = r_3 .
 \end{equation*}
 You should check that $r_3 = 3$ really
-is a root.  Hence we know that $e^{-x}$, $e^{x}$
+is a root.  Hence $e^{-x}$, $e^{x}$
 and $e^{3x}$ are solutions to \eqref{hol:cceq1}.  They are linearly independent
 as can easily be checked, and there are 3 of them, which happens to be exactly
-the number we need.  Hence the general solution is
+the number we need.  So the general solution is
 \begin{equation*}
 y = C_1 e^{-x} + C_2 e^{x} + C_3 e^{3x} .
 \end{equation*}
@@ -1103,7 +1104,8 @@ It is possible to find the solution by high school algebra, but it would be a
 pain.
 The sensible way to solve a system of equations such as this is to use
 matrix algebra, see
-\sectionref{sec:matrix}.  For now we note that the solution is $C_1 =
+\sectionref{sec:matrix} or \appendixref{linalg:appendix}.
+For now we note that the solution is $C_1 =
 -\nicefrac{1}{4}$,
 $C_2 = 1$, and $C_3 = \nicefrac{1}{4}$.  The specific solution
 to the ODE is
@@ -1258,12 +1260,13 @@ Find an equation such that $y=xe^{-2x}\sin(3x)$ is a solution.
 \setcounter{exercise}{100}
 
 \begin{exercise}
-Find the general solution of $y^{(5)}-y^{(4)}=0$
+Find the general solution of $y^{(5)}-y^{(4)}=0$.
 \end{exercise}
 \exsol{%
 $y=C_1 e^x +C_2 x^3 + C_3 x^2 +C_4 x + C_5$
 }
 
+\pagebreak[2]
 \begin{exercise}
 Suppose that the characteristic equation of a third order differential
 equation has
@@ -1279,8 +1282,10 @@ Find the general solution.
 \end{tasks}
 \end{exercise}
 \exsol{%
-a) $r^3-3r^2+4r-12 = 0$,
-b) $y'''-3y''+4y'-12y = 0$,
+a) $r^3-3r^2+4r-12 = 0$
+\quad
+b) $y'''-3y''+4y'-12y = 0$
+\quad
 c) $y = C_1 e^{3x} + C_2 \sin(2x) + C_3 \cos(2x)$
 }
 
@@ -1485,8 +1490,8 @@ $x(t) = C \cos ( \omega_0 t - \gamma )$.
 Justify the above identity and verify the equations for $C$
 and $\gamma$.  Hint: Start with
 $\cos (\alpha-\beta) = \cos (\alpha) \cos
-(\beta) + \sin (\alpha)\sin (\beta)$ and multiply by $C$.  Then think what should
-$\alpha$ and $\beta$ be.
+(\beta) + \sin (\alpha)\sin (\beta)$ and multiply by $C$.  Then what should
+$\alpha$ and $\beta$ be?
 \end{exercise}
 
 While it is generally easier to use the first form with $A$ and $B$
@@ -1503,7 +1508,7 @@ and $\gamma$ is the so-called \emph{\myindex{phase shift}}.
 The phase shift just shifts the
 graph left or right.
 We call $\omega_0$ the \emph{\myindex{natural (angular) frequency}}.
-This entire setup is usually  
+This entire setup is 
 called \emph{\myindex{simple harmonic motion}}.
 
 Let us pause to explain the word \emph{angular}
@@ -1561,7 +1566,8 @@ x(t) = 0.5 \cos (2t) + 0.5 \sin (2t) .
 A plot of $x(t)$ is shown in \figurevref{mv:undampedfig}.
 \end{example}
 
-\begin{mywrapfig}{3.25in}
+%15 is the number of lines, must be adjusted
+\begin{mywrapfig}[15]{3.25in}
 \capstart
 \diffyincludegraphics{width=3in}{width=4.5in}{mv-undamped}
 \caption{Simple undamped oscillation.\label{mv:undampedfig}}
@@ -1642,7 +1648,7 @@ nonnegative, or in other words if $c^2 \geq 4km$.
 %
 
 When
-$c^2 - 4km > 0$, we say the system is \emph{\myindex{overdamped}}.  In this case,
+$c^2 - 4km > 0$, the system is \emph{\myindex{overdamped}}.  In this case,
 there are two distinct real roots $r_1$ and $r_2$.  Both roots are
 negative:  As $\sqrt{p^2 - \omega_0^2}$ is always less than $p$,
 then
@@ -1688,7 +1694,7 @@ It is not hard to see that this satisfies the initial conditions.
 \subsubsection{Critical damping}
 
 When
-$c^2 - 4km = 0$, we say the system is \emph{\myindex{critically damped}}.  In this case,
+$c^2 - 4km = 0$, the system is \emph{\myindex{critically damped}}.  In this case,
 there is one root of multiplicity 2 and this root is $-p$.  Our solution is
 \begin{equation*}
 x(t) = C_1 e^{-pt} + C_2 t e^{-pt} .
@@ -1703,6 +1709,17 @@ dwell on critical damping.
 
 \subsubsection{Underdamping}
 
+%13 is the number of lines, must be adjusted
+%mbxSTARTIGNORE
+\begin{mywrapfig}[13]{3.25in}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{mv-underdamped}
+\caption{Underdamped motion with the envelope curves shown.\label{mv:underdampedfig}}
+\end{mywrapfig}
+%mbxENDIGNORE
+%
+% make sure the MBX below is synced!
+%
 When
 $c^2 - 4km < 0$, the system is \emph{\myindex{underdamped}}.  In this case,
 the roots are complex.
@@ -1727,11 +1744,11 @@ x(t) = C e^{-pt} \cos ( \omega_1 t - \gamma ) .
 An example plot is given in \figurevref{mv:underdampedfig}.  Note that we
 still have that $x(t) \to 0$ as $t \to \infty$.
 
-\begin{mywrapfig}{3.25in}
-\capstart
-\diffyincludegraphics{width=3in}{width=4.5in}{mv-underdamped}
-\caption{Underdamped motion with the envelope curves shown.\label{mv:underdampedfig}}
-\end{mywrapfig}
+%mbxlatex \begin{myfig}
+%mbxlatex \diffyincludegraphics{width=3in}{width=4.5in}{mv-underdamped}
+%mbxlatex \caption{Underdamped motion with the envelope curves shown.\label{mv:underdampedfig}}
+%mbxlatex \end{myfig}
+
 The figure also 
 shows the \emph{\myindex{envelope curves}}
 $C e^{-pt}$ and $-C e^{-pt}$.  The solution
@@ -1757,7 +1774,7 @@ at some point the solution should start looking
 like the solution for critical damping or overdamping, where no oscillation
 happens.  So if $c^2$ approaches $4km$, we want $\omega_1$ to approach 0.
 
-On the other hand when $c$ becomes smaller, $\omega_1$ approaches $\omega_0$
+On the other hand, when $c$ gets smaller, $\omega_1$ approaches $\omega_0$
 ($\omega_1$ is always smaller than $\omega_0$), and the solution looks more and more like the steady
 periodic motion of the undamped case.  The envelope curves become flatter and
 flatter as $c$ (and hence $p$) goes to 0.
@@ -1849,9 +1866,9 @@ constant voltage.
 \exsol{%
 a) $0.05 I'' + 0.1 I' + (\nicefrac{1}{5}) I = 0$
 \quad
-b) $x(t) = C e^{-t} \cos(\sqrt{3} \, t - \gamma)$
+b) $I = C e^{-t} \cos(\sqrt{3} \, t - \gamma)$
 \quad
-c) $x(t) = 10 e^{-t} \cos(\sqrt{3} \, t) + \frac{10}{\sqrt{3}} e^{-t}
+c) $I = 10 e^{-t} \cos(\sqrt{3} \, t) + \frac{10}{\sqrt{3}} e^{-t}
 \sin(\sqrt{3} \, t)$
 }
 
@@ -1872,9 +1889,12 @@ at \unitfrac[2]{m}{s}?
 \end{tasks}
 \end{exercise}
 \exsol{%
-a) $k=500000$, \quad
-b) $\frac{1}{5\sqrt{2}} \approx 0.141$, \quad
-c) \unit[45000]{kg}, \quad
+a) $k=500000$
+\quad
+b) $\frac{1}{5\sqrt{2}} \approx 0.141$
+\quad
+c) \unit[45000]{kg}
+\quad
 d) \unit[11250]{kg}
 }
 
@@ -1982,7 +2002,7 @@ way.  If we find a different particular solution (by a different method,
 or simply by guessing),
 then we still get the same general solution.
 The formula may 
-look different, and the constants we will have to choose to
+look different, and the constants we have to choose to
 satisfy
 the initial conditions may be different, but it is the same solution.
 
@@ -2070,12 +2090,12 @@ y_p = A \cos (2x) + B \sin (2x) = \frac{-\cos (2x) + 2 \sin (2x)}{10} .
 \end{equation*}
 
 Similarly, if the right-hand side contains exponentials we try
-exponentials.  For example, for
+exponentials.  If
 %if the equation is (where $L$ is a linear constant coefficient operator)
 \begin{equation*}
 Ly = e^{3x},
 \end{equation*}
-we will try $y = A e^{3x}$ as our guess and try to solve for $A$.
+we try $y = A e^{3x}$ as our guess and try to solve for $A$.
 
 \medskip
 
@@ -2090,12 +2110,12 @@ For example,
 \begin{equation*}
 Ly = (1+3x^2)\,e^{-x}\cos (\pi x) .
 \end{equation*}
-For this equation, we will guess
+For this equation, we guess
 \begin{equation*}
 y_p = (A + Bx + Cx^2)\,e^{-x} \cos (\pi x) + 
 (D + Ex + Fx^2)\,e^{-x} \sin (\pi x) .
 \end{equation*}
-We will plug in and then hopefully get equations that we can solve for
+We plug in and then hopefully get equations that we can solve for
 $A$, $B$, $C$, $D$, $E$, and $F$.
 As you can see this can make for a very long and
 \myindex{tedious} % a bit of fun
@@ -2533,14 +2553,14 @@ in \figurevref{3.6:beatingfig}.  First
 use the 
 trigonometric identity
 \begin{equation*}
-2\,\sin \left( \frac{A-B}{2} \right) \,\sin \left( \frac{A+B}{2} \right) =
+2\sin \left( \frac{A-B}{2} \right) \sin \left( \frac{A+B}{2} \right) =
 \cos B -\cos A 
 \end{equation*}
 to get 
 \begin{equation*}
 x = 
-\frac{20}{16 - \pi^2} \left( 2 \, \sin \left(\frac{4-\pi}{2} \, t \right)
-\,\sin \left( \frac{4+\pi}{2}\, t \right) \right) .
+\frac{20}{16 - \pi^2} \left( 2 \sin \left(\frac{4-\pi}{2} t \right)
+\sin \left( \frac{4+\pi}{2} t \right) \right) .
 \end{equation*}
 The function $x$ is a high frequency wave modulated by a low frequency
 wave.

@@ -705,6 +705,7 @@ initial condition $y(0) = 0$,
 and if so what is the solution?
 \end{exercise}
 
+\pagebreak[2]
 \begin{exercise}[challenging]
 Suppose $y' = f(x,y)$ is such that $f(x,1) = 0$ for every $x$,
 $f$ is continuous and $\frac{\partial f}{\partial y}$ exists and
@@ -1702,8 +1703,8 @@ We solve the first equation for $y$.
 \begin{align*}
 x-y+2 &= (x-y)D e^{2x} , \\
 x-y+2 &= Dx e^{2x}-yD e^{2x} , \\
--y + yD e^{2x} &= Dx e^{2x} - x - 2 , \\
-y\,(-1+ D e^{2x}) &= Dx e^{2x} - x - 2 , \\
+-y + yD e^{2x} &= Dx e^{2x} - x - 2 , \displaybreak[0]\\
+y\,(-1+ D e^{2x}) &= Dx e^{2x} - x - 2 , \displaybreak[0]\\
 y  &= \frac{Dx e^{2x} - x - 2}{D e^{2x}-1} .
 \end{align*}
 Note that $D=0$ gives $y=x+2$, but no value of $D$ gives the solution $y=x$.
@@ -1767,8 +1768,8 @@ v' = -4 y^{-5} y' .
 In other words, $\left( \nicefrac{-1}{4} \right) y^5 v' = y'$.  So
 \begin{align*}
 xy'+ y(x+1)+xy^5 & = 0 , \\
-\frac{-xy^5}{4} v'+ y(x+1)+xy^5 & = 0 , \\
-\frac{-x}{4} v'+ y^{-4}(x+1)+x & = 0 , \\
+\frac{-xy^5}{4} v'+ y(x+1)+xy^5 & = 0 , \displaybreak[0]\\
+\frac{-x}{4} v'+ y^{-4}(x+1)+x & = 0 , \displaybreak[0]\\
 \frac{-x}{4} v'+ v(x+1)+x & = 0 ,
 \end{align*}
 and finally
@@ -1938,7 +1939,7 @@ $y = \sqrt{x^2-\ln(C-x)}$
 \sectionnotes{1 lecture\EPref{, \S2.2 in \cite{EP}}\BDref{,
 \S2.5 in \cite{BD}}}
 
-Let us consider
+Consider
 problems of the form
 \begin{equation*}
 \frac{dx}{dt} = f(x) ,
@@ -1949,8 +1950,8 @@ equations\index{autonomous equation}}.  If we think
 of $t$ as time, the naming comes from the fact that the equation is
 independent of time.
 
-Let us return to the cooling coffee problem
-(see \exampleref{sep:coffeeexample}).
+We return to the cooling coffee problem
+(\exampleref{sep:coffeeexample}).
 \myindex{Newton's law of cooling}
 says
 \begin{equation*}
@@ -1973,10 +1974,10 @@ Note also, by looking at the graph, that the solution $x=A$ is
 that small perturbations in $x$ do not lead to substantially different
 solutions as $t$ grows.
 If we change the initial condition a little bit, then as 
-$t \to \infty$ we get $x(t) \to A$.  We call such critical points
+$t \to \infty$ we get $x(t) \to A$.  We call such a critical point
 \emph{stable}\index{stable critical point}.
 In this simple example it turns out that all solutions in fact go to $A$
-as $t \to \infty$.  If a critical point is not stable we would say it is
+as $t \to \infty$.  If a critical point is not stable, we say it is
 \emph{unstable}\index{unstable critical point}.
 
 \begin{myfig}
@@ -1999,7 +2000,7 @@ as $t \to \infty$.  If a critical point is not stable we would say it is
 
 \medskip
 
-Let us consider the \emph{\myindex{logistic equation}}
+Consider now the \emph{\myindex{logistic equation}}
 \begin{equation*}
 \frac{dx}{dt} = kx(M-x) ,
 \end{equation*}
@@ -2011,13 +2012,14 @@ predictions on world population than $x'=kx$.  In the real world there is no
 such thing as negative population, but we will still consider negative $x$ for
 the purposes of the math.
 
-See \figurevref{2.2:logisticfig} for an example.
-Note two critical points, $x=0$ and $x=5$.  The critical point
-at $x=5$ is stable.  On the other hand the critical point at $x=0$ is
+See \figurevref{2.2:logisticfig} for an example, $x' = 0.1 x(5-x)$.
+There are two critical points, $x=0$ and $x=5$.  The critical point
+at $x=5$ is stable, while the critical point at $x=0$ is
 unstable.
 
-It is not really necessary to find the exact solutions to talk about the long
-term behavior of the solutions.  For example, from the above we can easily
+It is not necessary to find the exact solutions to talk about the long
+term behavior of the solutions.  From the slope field above of
+$x' = 0.1 x(5-x)$, we 
 see that
 \begin{equation*}
 \lim_{t\to \infty} x(t) = 
@@ -2027,40 +2029,50 @@ see that
 \text{DNE or } {-\infty} & \text{if } \; x(0) < 0 . \\
 \end{cases}
 \end{equation*}
-Where DNE means \myquote{does not exist.}  From just looking at the slope field we
+Here DNE means \myquote{does not exist.}  From just looking at the slope field we
 cannot quite decide what happens if $x(0) < 0$.  It could be that the
 solution does not exist for $t$ all the way to $\infty$.
 Think of the equation $x' = x^2$; we
 have seen that solutions only exist for some finite period of time.  Same can happen
-here.  In our example equation above it will actually turn out that the
+here.  In our example equation above it turns out that the
 solution does not exist for all time, but to see that we would have to solve
 the equation.  In any case, the solution does go to $-\infty$, but it may get
 there rather quickly.
 
 
-
-%\begin{floatingfigure}[r]{1in}
-%\noindent
-%\includegraphics[height=1.4in]{figures/2-2-l-phasedia}
-%\end{floatingfigure}
-Often we are interested only in the long term behavior of the solution and
+If we are interested only in the long term behavior of the solution, 
 we would be doing unnecessary work if we solved the
 equation exactly.
-It is easier to just look at the \emph{\myindex{phase diagram}} or
+We could draw the slope field, but
+it is easier to just look at the \emph{\myindex{phase diagram}} or
 \emph{\myindex{phase portrait}}, which is a simple
 way to visualize the behavior of
 autonomous equations.  In this case there is one dependent variable $x$.
 We draw the $x$-axis, we mark all the critical points,
 and then we draw arrows in
-between.  If $f(x) > 0$, we draw an up arrow.  If $f(x) < 0$, we draw 
+between.  Since $x$ is the dependent variable we draw the axis vertically,
+as it appears in the slope field diagrams above.
+If $f(x) > 0$, we draw an up arrow.  If $f(x) < 0$, we draw 
 a down arrow.
+To figure this out, we could just plug in some $x$ between the critical
+points, $f(x)$ will have the same sign at all $x$ between two critical
+points as long $f(x)$ is continuous.
+For example, $f(6) = -0.6 < 0$, so $f(x) < 0$ for $x > 5$,
+and the arrow above $x=5$ is a down
+arrow.  Next, $f(1) = 0.4 > 0$, so $f(x) > 0$ whenever $0 < x < 5$, and
+the arrow points up.  Finally, $f(-1) = -0.6 < 0$ so $f(x) < 0$ when $x <
+0$, and the arrow points down.
 
 \begin{center}
 \inputpdft{2-2-l-phasedia}
 \end{center}
 
+\pagebreak[0]
 Armed with the phase diagram,
-it is easy to sketch the solutions approximately.
+it is easy to sketch the solutions approximately:  As time $t$
+moves from left to right,
+the graph of a solution
+goes up if the arrow is up, and it goes down if the arrow is down.
 
 \begin{exercise}
 Try sketching a few solutions simply from looking at the phase diagram.
@@ -2068,9 +2080,10 @@ Check with the preceding graphs if
 you are getting the type of curves.
 \end{exercise}
 
-Once we draw the phase diagram, we can easily classify critical points
-as stable or unstable\footnote{The unstable 
-points that have one of the
+\pagebreak[2]
+Once we draw the phase diagram, we classify critical points
+as stable or unstable\footnote{Unstable 
+points with one of the
 arrows pointing towards the critical point are sometimes called
 \emph{semistable}\index{semistable critical point}.}.  
 
@@ -2118,7 +2131,7 @@ $h$.
 
 For example, let $M=8$ and $k=0.1$.
 When $h=1$, then $A$ and $B$ are distinct and positive.
-The graph we will get is given in \figurevref{2.2:harv1}.  As long as 
+The slope field we get is in \figurevref{2.2:harv1}.  As long as 
 the population starts above $B$, which is approximately 1.55 million, then
 the population will not die out.  It will in fact tend towards $A \approx
 6.45$ million.  If ever some catastrophe happens and
@@ -2166,8 +2179,9 @@ $x' = 0.1\,x\,(8-x)-2$.\label{2.2:harv2}}
 
 \subsection{Exercises}
 
+\begin{samepage}
 \begin{exercise}
-Take $x' = x^2$.
+Consider $x' = x^2$.
 \begin{tasks}
 \task Draw the phase diagram,
 find the critical points, and mark them stable or unstable.
@@ -2176,9 +2190,12 @@ find the critical points, and mark them stable or unstable.
 $x(0) = -1$.
 \end{tasks}
 \end{exercise}
+\end{samepage}
 
+\pagebreak[3]
+\begin{samepage}
 \begin{exercise}
-Take $x' = \sin x$.
+Consider $x' = \sin x$.
 \begin{tasks}
 \task Draw the phase diagram for $-4\pi \leq x \leq 4\pi$.  On this interval
 mark the critical points stable or unstable.
@@ -2187,8 +2204,9 @@ mark the critical points stable or unstable.
 $x(0) = 1$.
 \end{tasks}
 \end{exercise}
+\end{samepage}
 
-\begin{samepage}
+\pagebreak[3]
 \begin{exercise}
 Suppose $f(x)$ is positive for $0 < x < 1$, it is zero when $x=0$ and $x=1$,
 and it is negative for all other $x$.
@@ -2200,7 +2218,6 @@ find the critical points, and mark them stable or unstable.
 $x(0) = 0.5$.
 \end{tasks}
 \end{exercise}
-\end{samepage}
 
 \begin{exercise}
 Start with the logistic equation
@@ -3682,9 +3699,6 @@ u = e^{-2s} \cos(\xi)= e^{-2t} \cos(xe^{-t}) .
 
 
 Let us make a few closing remarks.
-
-\medskip
-
 One thing to keep in mind is that we would get into trouble if the
 coefficient in front of $u_t$, that is the $b$, is ever zero.
 Let us consider a quick example of what can go wrong:
@@ -3701,16 +3715,15 @@ As long as $b$ is nonzero,
 it is convenient to ensure that $b$ is positive by multiplying by $-1$
 if necessary, so that positive $s$ means positive $t$.
 
-\medskip
-
-If $a$ or $b$ in the equation are variable, the computations can
+Another remark is that if $a$ or $b$ in the equation are variable,
+the computations can
 quickly get out of hand, as the expressions for the characteristic
 coordinates become messy and then solving the ODE becomes even messier.
 In the above examples, $b$ was always $1$, meaning we got $s=t$ in the 
 characteristic coordinates.  If $b$ is not constant, your expression for $s$
 will be more complicated.
 
-We also remark that finding the characteristic coordinates is really
+Finding the characteristic coordinates is really
 a system of ODE in general if $a$ depends on $t$ or if $b$ depends on $x$.
 In that case, we would need techniques of systems of ODE
 to solve, see \chapterref{sys:chapter} or \chapterref{nlin:chapter}.  In
@@ -3727,8 +3740,6 @@ up is traffic flow theory, and you have probably experienced the
 formation of singularities: traffic jams.  But we digress.
 
 \subsection{Exercises}
-
-%FIXME: need more
 
 \begin{exercise}
 Solve

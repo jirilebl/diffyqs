@@ -863,9 +863,10 @@ that
 \langle \, \sin (mt)\, , \, \sin (nt) \, \rangle = 0 & \qquad \text{for } m \not= n , \\
 \langle \, \sin (mt)\, , \, \cos (nt) \, \rangle = 0 & \qquad \text{for all } m \text{ and } n .
 \end{align*}
-By elementary calculus for $n=1,2,3,\ldots$
+For $n=1,2,3,\ldots$
 we have $\langle \, \cos (nt) \, , \, \cos (nt) \, \rangle = \pi$
-and $\langle \, \sin (nt) \, , \, \sin (nt) \, \rangle = \pi$.  For the constant we get
+and $\langle \, \sin (nt) \, , \, \sin (nt) \, \rangle = \pi$ by elementary
+calculus.  For the constant we get
 that $\langle \, 1 \, , \, 1 \, \rangle = 2\pi$.
 The coefficients are given by
 \begin{equation*}
@@ -2218,11 +2219,11 @@ a_n =
 \end{equation*}
 \end{theorem}
 
-The series $\sum_{n=1}^\infty b_n \sin \left( \frac{n \pi}{L} t\right)$ is called
-the \emph{\myindex{sine series}} of $f(t)$ and the series
+We call the series $\sum_{n=1}^\infty b_n \sin \left( \frac{n \pi}{L} t\right)$ 
+the \emph{\myindex{sine series}} of $f(t)$ and we call the series
 $\frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos \left( \frac{n \pi}{L} t
 \right)$
-is called the \emph{\myindex{cosine series}} of $f(t)$.  
+the \emph{\myindex{cosine series}} of $f(t)$.  
 We often do not actually care what happens outside of $[0,L]$.  In this case,
 we pick whichever series fits our problem better.
 
@@ -2411,7 +2412,6 @@ satisfies the boundary conditions.
 \end{myfig}
 \end{example}
 
-\pagebreak[2]
 \begin{example}
 Similarly we handle the Neumann conditions.
 Take the boundary value problem for $0 < t < 1$,
@@ -2515,6 +2515,7 @@ the function $f(t) = \sin t$ for $0 \leq t \leq \pi$.
 \end{exercise}
 
 \begin{exercise}
+\pagebreak[2]
 Consider
 \begin{equation*}
 x''(t) + 4 x(t) = f(t) ,
@@ -2937,7 +2938,8 @@ x_p''(t) =
 \end{multline*}
 We now plug into the left-hand side of the differential equation.
 \begin{align*}
-2x_p'' + 18\pi^2 x_p = & 
+2x_p'' + 18\pi^2 & x_p \\
+= & 
 - 12 a_3 \pi \sin (3 \pi t)
 - 18\pi^2 a_3 t \cos (3 \pi t)
 + 12 b_3 \pi \cos (3 \pi t)
@@ -3635,8 +3637,8 @@ infinity, the temperature goes to the constant $\frac{a_0}{2}$ everywhere.
 \subsection{Exercises}
 
 \begin{exercise}
-Imagine you have a wire of length 2, with $k=0.001$ and an initial
-temperature distribution of $u(x,0) = 50 x$.  Suppose that both the ends
+Consider a wire of length 2, with $k=0.001$ and an initial
+temperature distribution $u(x,0) = 50 x$.  Both ends
 are embedded in ice (temperature 0).  Find the solution as a series.
 \end{exercise}
 
@@ -4189,6 +4191,8 @@ y(x,t) & =
 \frac{0.8}{9 \pi^2} 
 \sin \left( \frac{3 \pi}{2}  x \right)
 \cos \left( \frac{3 \pi}{2}  t \right)
+\\
+& \hspace{20em}
 +
 \frac{0.8}{25 \pi^2}
 \sin \left( \frac{5 \pi}{2}  x \right)
@@ -4256,7 +4260,6 @@ reduces $a$ and produces a lower fundamental frequency (a lower note).
 A bass guitar has longer thicker strings, while a ukulele has short strings
 made of lighter material.
 
-\pagebreak[2]
 Something rather interesting is the almost symmetry between space and time.
 In its simplest form we see this symmetry in the solutions
 \begin{equation*}
@@ -4853,7 +4856,6 @@ $y(0,t) = y(1, t) = 0$, $y(x,0) = \sin^5 (\pi x)$, and
 $y_t(x,0) = \sin^3 (\pi x)$.
 \end{exercise}
 
-\pagebreak[2]
 \begin{exercise}
 Take
 $y_{tt} = 4y_{xx}$, $0 < x < \pi$, $t > 0$,
@@ -5099,7 +5101,7 @@ lying in the first quadrant.
 
 \begin{center}
 %mbxSTARTIGNORE
-\begin{minipage}[b]{2.7in}
+\begin{minipage}[b]{2.8in}
 \vspace{\fill}
 \begin{align}
 & \Delta u = 0 , & &  \label{dirich:eq1} \\
@@ -5772,7 +5774,6 @@ Compute the series for $u(1,\theta)$ and verify that it really is what
 we have just claimed.  Hint: Be careful, make sure not to divide by zero.
 \end{exercise}
 
-\pagebreak[2]
 We now simply write the solution (see \figurevref{dirichdisc:zero2yfig}) by multiplying by $r^n$ in the right places.
 \begin{equation*}
 u(r,\theta) = 
@@ -6036,9 +6037,10 @@ of the integral are given as 0 to $2\pi$; everything inside is
 $2\pi$-periodic in $\alpha$, so this does not change the integral.
 
 \begin{mywrapfigsimp}{2.1in}{2.4in}
-\diffypdfversion{\vspace*{5pt}}
+\vspace*{5pt}
 \noindent
 \inputpdft{poisson}
+\vspace*{5pt}
 \end{mywrapfigsimp}
 Let us not leave the Poisson kernel without explaining its geometric
 meaning.  Let $s$ be the distance from $(r,\theta)$ to
@@ -6168,7 +6170,6 @@ See also \exerciseref{exercise:dirichproblemxy}.
 
 \setcounter{exercise}{100}
 
-\pagebreak[2]
 \begin{exercise}
 Using series solve
 $\Delta u = 0$, $u(1,\theta) = 1+ \sum\limits_{n=1}^\infty \frac{1}{n^2}\sin(n\theta)$.

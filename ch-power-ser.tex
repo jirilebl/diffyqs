@@ -925,8 +925,9 @@ y'' &= \sum_{k=2}^\infty k\,(k-1) \, a_k x^{k-2} .
 Now we plug into the equation
 \begin{equation*}
 \begin{split}
-0 = y''-2xy'+2ny &= 
-\Biggl( \sum_{k=2}^\infty k\,(k-1) \, a_k x^{k-2}  \Biggr)
+0 = y''-2xy'&+2ny \\
+ &= 
+\Biggl( \sum_{k=2}^\infty k(k-1) a_k x^{k-2}  \Biggr)
 -
 2x
 \Biggl( \sum_{k=1}^\infty k a_k x^{k-1} \Biggr)
@@ -935,7 +936,7 @@ Now we plug into the equation
 \Biggl( \sum_{k=0}^\infty a_k x^k \Biggr)
 \\
 &=
-\Biggl( \sum_{k=2}^\infty k\,(k-1) \, a_k x^{k-2}  \Biggr)
+\Biggl( \sum_{k=2}^\infty k(k-1) a_k x^{k-2}  \Biggr)
 -
 \Biggl( \sum_{k=1}^\infty 2k a_k x^k \Biggr)
 +
@@ -943,7 +944,7 @@ Now we plug into the equation
 \\
 &=
 \Biggl(2a_2+
- \sum_{k=1}^\infty (k+2)\,(k+1) \, a_{k+2} x^k  \Biggr)
+ \sum_{k=1}^\infty (k+2)(k+1) a_{k+2} x^k  \Biggr)
 -
 \Biggl( \sum_{k=1}^\infty 2k a_k x^k \Biggr)
 +
@@ -953,12 +954,12 @@ Now we plug into the equation
 \\
 &=
 2a_2+2na_0+
-\sum_{k=1}^\infty \bigl( (k+2)\,(k+1) \, a_{k+2} - 2ka_k + 2n a_k \bigr) x^k .
+\sum_{k=1}^\infty \bigl( (k+2)(k+1)  a_{k+2} - 2ka_k + 2n a_k \bigr) x^k .
 \end{split}
 \end{equation*}
 As $y''-2xy'+2ny = 0$ we have
 \begin{equation*}
-(k+2)\,(k+1) \, a_{k+2} + ( - 2k+ 2n) a_k = 0 ,
+(k+2)(k+1)  a_{k+2} + ( - 2k+ 2n) a_k = 0 ,
 \qquad
 \text{or}
 \qquad
@@ -970,9 +971,9 @@ Again $a_0$ and $a_1$ are arbitrary.
 \begin{align*}
 & a_2 = \frac{-2n}{(2)(1)}a_0, \qquad
 a_3 = \frac{2(1-n)}{(3)(2)} a_1,
-\\
+\displaybreak[0]\\
 & a_4 = \frac{2(2-n)}{(4)(3)} a_2 = \frac{2^2(2-n)(-n)}{(4)(3)(2)(1)} a_0 ,
-\\
+\displaybreak[0]\\
 &
 a_5 = \frac{2(3-n)}{(5)(4)} a_3 = \frac{2^2(3-n)(1-n)}{(5)(4)(3)(2)} a_1 ,
 \quad \ldots

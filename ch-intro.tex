@@ -324,7 +324,8 @@ temperature oscillates with time.
 
 Solving the differential equation means finding $x$ in terms of $t$.  That
 is, we want to find a function of $t$, which we call $x$, such that when
-we plug $x$, $t$, and $\frac{dx}{dt}$ into \eqref{eq1}, the equation holds.
+we plug $x$, $t$, and $\frac{dx}{dt}$ into \eqref{eq1}, the equation holds;
+that is, the left hand side equals the right hand side.
 It is
 the same idea as it would be for a normal (algebraic) equation of just
 $x$ and $t$.  We claim that
@@ -355,8 +356,8 @@ a solution.  Let us try,
 Again plugging into the left-hand side of \eqref{eq1}
 \begin{equation*}
 \frac{dx}{dt} + x = 
-(-\sin t + \cos t - e^{-t}) +
-(\cos t + \sin t + e^{-t})
+\underbrace{(-\sin t + \cos t - e^{-t})}_{\frac{dx}{dt}} +
+\underbrace{(\cos t + \sin t + e^{-t})}_{x}
 = 2\cos t .
 \end{equation*}
 And it works yet again!
@@ -366,7 +367,9 @@ solutions can be written in the form
 \begin{equation*}
 x = \cos t + \sin t + C e^{-t} ,
 \end{equation*}
-for some constant $C$.  See \figurevref{intro:plotsfig} for the graph of a
+for some constant $C$.  Different constants $C$ will give different
+solutions, so there are really infinitely many possible solutions.
+See \figurevref{intro:plotsfig} for the graph of a
 few of these solutions. 
 We will see how we find these solutions
 a few lectures from now.
@@ -402,14 +405,15 @@ or PDEs\index{PDE}.
 
 Even for ODEs, which are very well understood, it is not a simple question
 of turning a crank to get answers.  
-It is important to
-know when it is easy to find solutions and how to do so.
+When you can find exact solutions, they are usually preferable to 
+approximate solutions.  It is important to understand how
+such solutions are found.
 Although in real applications you will
 leave much of the actual calculations to computers, you
 need to understand what they are doing.  It is often necessary
 to simplify or transform your equations into something that a computer can
 understand and solve.
-You may need to make certain assumptions and changes in your
+You may even need to make certain assumptions and changes in your
 model to achieve this.
 
 To be a successful engineer or scientist, you will be required to solve
@@ -419,12 +423,12 @@ new problems.  A common mistake is to expect to learn some prescription for
 solving all the problems you will encounter in your later career.  This
 course is no exception.
 
-
 \subsection{Differential equations in practice}
 
 \begin{mywrapfigsimp}{3.05in}{3.35in}
 \noindent
 \inputpdft{1-1-fig}
+\par\vspace*{5pt}
 \end{mywrapfigsimp}
 So how do we use differential equations in science and engineering?  
 First, we have some \emph{\myindex{real-world problem}} we wish
@@ -884,8 +888,8 @@ The equation governing transversal vibrations in a beam,
 a^4 \frac{\partial^4 y}{\partial x^4} + \frac{\partial^2 y}{\partial t^2} = 0,
 \end{equation*}
 is a fourth order partial differential equation.  It is
-fourth order since at least one derivative is the fourth derivative.  It
-does not matter that derivatives with respect to $t$ are only second order.
+fourth order as at least one derivative is the fourth derivative.  It
+does not matter that the derivative in $t$ is only of second order.
 
 In the first chapter we will start attacking first order ordinary
 differential equations, that is, equations of the form $\frac{dy}{dx} = f(x,y)$.
@@ -948,7 +952,7 @@ The equation
 \begin{equation} \label{classification:eqnonlinode}
 \frac{dx}{dt} = x^2
 \end{equation}
-is a nonlinear first order differential equation as there is a power of
+is a nonlinear first order differential equation as there is a second power of
 the dependent variable $x$.
 
 \medskip
@@ -982,7 +986,7 @@ then the equation is said to have
 \emph{constant coefficients}\index{constant coefficient}.
 The coefficients are the functions multiplying the dependent
 variable(s) or one of its derivatives, not the function $b(x)$ standing alone.
-That is,
+A constant coefficient nonhomogeneous ODE is an equation of the form
 \begin{equation*}
 a_n \frac{d^n y}{dx^n} + 
 a_{n-1} \frac{d^{n-1} y}{dx^{n-1}} + 
@@ -994,8 +998,7 @@ a_{0} y = b(x) ,
 \end{equation*}
 where $a_0, a_1, \ldots, a_n$ are all constants,
 but $b$ may depend on 
-the independent variable $x$,
-is a constant coefficient nonhomogeneous ODE\@.
+the independent variable $x$.
 The mechanical vibrations equation
 above is a constant coefficient nonhomogeneous second order ODE\@.
 Same nomenclature applies to PDEs, so the transport equation,
@@ -1006,7 +1009,7 @@ linear PDEs.
 
 Finally, an equation (or system) is called \emph{\myindex{autonomous}}
 if the equation does not depend on the independent variable.
-Usually here we only consider ordinary differential equations and the
+For autonomous ordinary differential equations, the
 independent variable is then thought of as time.  Autonomous equation
 means an equation that does not change with time.
 For example, Newton's law of cooling is autonomous, so is equation
