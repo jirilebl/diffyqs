@@ -231,8 +231,8 @@ x_{1} \\ x_2 \\ \vdots \\ x_n
 \end{equation*}
 Scaling (by a positive number) multiplies the magnitude
 and leaves direction untouched.
-So as the magnitude of $(1,2)$
-was $\sqrt{5}$, the magnitude of 3 times $(1,2)$, that is, $(3,6)$, is
+The magnitude of $(1,2)$
+is $\sqrt{5}$.  The magnitude of 3 times $(1,2)$, that is, $(3,6)$, is
 $3\sqrt{5}$.
 
 When the scalar is negative, then when we multiply a vector by it, the
@@ -240,7 +240,7 @@ vector is not only scaled, but it also switches direction.
 So
 multiplying $(1,2)$ by $-3$ means we should go 3 times further but in the
 opposite direction, so 3 units to the left and 6 units down, or in other
-words, $(-3,-6)$.  As we mentioned above $-\vec{y}$ was a reverse of
+words, $(-3,-6)$.  As we mentioned above, $-\vec{y}$ is a reverse of
 $\vec{y}$, and this is the same as $(-1)\vec{y}$.
 
 In \figurevref{linalg-vecscale:fig}, you can see a couple of examples of
@@ -1073,6 +1073,7 @@ c)~$\left( \frac{2}{\sqrt{33}},\frac{-5}{\sqrt{33}},\frac{2}{\sqrt{33}} \right)$
 }
 
 \begin{exercise}
+\pagebreak[2]
 Compute
 \begin{tasks}(3)
 \task
@@ -2662,6 +2663,7 @@ b)~$\begin{bmatrix}
 }
 
 \begin{exercise}
+\pagebreak[2]
 Multiply the following matrices
 \begin{tasks}(2)
 \task
@@ -2910,7 +2912,7 @@ two equations in \eqref{linalg:elim:eq}:
 \phantom{9} x_1 +           4 x_2 + \phantom{9} x_3 & = 10 .
 \end{aligned}
 \end{equation*}
-Clearly that has the same solutions $x_1,x_2,x_3$.
+Clearly these new equations have the same solutions $x_1,x_2,x_3$.
 A second operation is that we can multiply an equation by a nonzero number.  For
 example, we multiply the third equation in \eqref{linalg:elim:eq}
 by 3:
@@ -3324,6 +3326,7 @@ right-hand side $\vec{b}$, then the system is inconsistent and has no solutions.
 In other words, the system is inconsistent if you find a pivot on the right
 side of the vertical line drawn in the augmented matrix.  Otherwise, the
 system is consistent, and at least one solution exists.
+\pagebreak[2]
 
 If the system is consistent:
 \begin{enumerate}[(i)]
@@ -3941,8 +3944,8 @@ This is best seen by example.  Suppose we wish to invert the matrix
 \end{bmatrix} .
 \end{equation*}
 We write the augmented matrix and we start reducing:
-\begin{equation*}
-\left[
+\begin{align*}
+& \left[
 \begin{array}{ccc|ccc}
 \boxed{1} & 2 & 3 & 1 & 0 & 0\\
 2 & 0 & 1 & 0 & 1 & 0 \\
@@ -3950,6 +3953,7 @@ We write the augmented matrix and we start reducing:
 \end{array}
 \right]
 \to
+& &
 \left[
 \begin{array}{ccc|ccc}
 \boxed{1} & 2 & 3 & 1 & 0 & 0\\
@@ -3958,7 +3962,9 @@ We write the augmented matrix and we start reducing:
 \end{array}
 \right]
 \to
-\left[
+\\
+\to
+& \left[
 \begin{array}{ccc|ccc}
 \boxed{1} & 2 & 3 & 1 & 0 & 0\\
 0 & \boxed{1} & \nicefrac{5}{4} & \nicefrac{1}{2} & \nicefrac{1}{4} & 0 \\
@@ -3966,9 +3972,7 @@ We write the augmented matrix and we start reducing:
 \end{array}
 \right]
 \to
-\end{equation*}
-\begin{equation*}
-\to
+& &
 \left[
 \begin{array}{ccc|ccc}
 \boxed{1} & 2 & 3 & 1 & 0 & 0\\
@@ -3977,7 +3981,9 @@ We write the augmented matrix and we start reducing:
 \end{array}
 \right]
 \to
-\left[
+\\
+\to
+& \left[
 \begin{array}{ccc|ccc}
 \boxed{1} & 2 & 3 & 1 & 0 & 0\\
 0 & \boxed{1} & \nicefrac{5}{4} & \nicefrac{1}{2} & \nicefrac{1}{4} & 0 \\
@@ -3985,9 +3991,7 @@ We write the augmented matrix and we start reducing:
 \end{array}
 \right]
 \to
-\end{equation*}
-\begin{equation*}
-\to
+& &
 \left[
 \begin{array}{ccc|ccc}
 \boxed{1} & 2 & 0 & \nicefrac{5}{11} & \nicefrac{-5}{11} & \nicefrac{12}{11} \\
@@ -3996,14 +4000,16 @@ We write the augmented matrix and we start reducing:
 \end{array}
 \right]
 \to
-\left[
+\\
+\to
+& \left[
 \begin{array}{ccc|ccc}
 \boxed{1} & 0 & 0 & \nicefrac{-1}{11} & \nicefrac{3}{11} & \nicefrac{2}{11} \\
 0 & \boxed{1} & 0 & \nicefrac{3}{11} & \nicefrac{-9}{11} & \nicefrac{5}{11} \\
 0 & 0 & \boxed{1} & \nicefrac{2}{11} & \nicefrac{5}{11} & \nicefrac{-4}{11}
 \end{array}
 \right] .
-\end{equation*}
+\end{align*}
 So
 \begin{equation*}
 {\begin{bmatrix}
@@ -4024,6 +4030,7 @@ is done efficiently by a computer.
 
 \subsection{Exercises}
 
+\begin{samepage}
 \begin{exercise}
 Compute the reduced row echelon form for the following matrices:
 \begin{tasks}(4)
@@ -4073,6 +4080,7 @@ $\begin{bmatrix}
 \end{bmatrix}$
 \end{tasks}
 \end{exercise}
+\end{samepage}
 
 \begin{exercise}
 Compute the inverse of the given matrices
@@ -5857,12 +5865,12 @@ We start with a basis of vectors $\vec{v}_1,\vec{v}_2, \ldots,
 \vec{v}_n$.  We construct an orthogonal basis $\vec{w}_1, \vec{w}_2,
 \ldots, \vec{w}_n$ as follows.
 \begin{align*}
-\vec{w}_1 & = \vec{v}_1 , \\
+\vec{w}_1 & = \vec{v}_1 , \displaybreak[0]\\
 \vec{w}_2 & = \vec{v}_2
-- \operatorname{proj}_{\vec{w}_1}(\vec{v}_2) , \\
+- \operatorname{proj}_{\vec{w}_1}(\vec{v}_2) , \displaybreak[0]\\
 \vec{w}_3 & = \vec{v}_3
 - \operatorname{proj}_{\vec{w}_1}(\vec{v}_3)
-- \operatorname{proj}_{\vec{w}_2}(\vec{v}_3) , \\
+- \operatorname{proj}_{\vec{w}_2}(\vec{v}_3) , \displaybreak[0]\\
 \vec{w}_4 & = \vec{v}_4
 - \operatorname{proj}_{\vec{w}_1}(\vec{v}_4)
 - \operatorname{proj}_{\vec{w}_2}(\vec{v}_4)

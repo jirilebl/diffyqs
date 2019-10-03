@@ -1077,10 +1077,11 @@ Hence to find $y_c$ we need to solve the problem
 & y(x,0) = - \cos x + B \sin x +1 , \\
 & y_t(x,0) = 0 .
 \end{align*}
-Note that the formula that we use to define $y(x,0)$ is not odd,
-hence it is not a simple matter of plugging in to apply the d'Alembert
+The formula that we use to define $y(x,0)$ is not odd,
+hence it is not a simple matter of plugging in the expression for $y(x,0)$
+to the d'Alembert
 formula directly!  You must define $F$ to be the odd, 2-periodic
-extension of $y(x,0)$.  Then our solution would look like
+extension of $y(x,0)$.  Then our solution is
 \begin{equation} \label{natfreq:exsol}
 y(x,t) = 
 \frac{F(x+t) + F(x-t)}{2} + 
@@ -1096,7 +1097,7 @@ y(x,t) =
 It is not hard to compute specific values
 for an odd periodic extension of a function and
 hence \eqref{natfreq:exsol} is a wonderful solution to the problem.
-For example it is very easy to have a computer do it, unlike a series solution.
+For example, it is very easy to have a computer do it, unlike a series solution.
 A plot is given in \figurevref{natfreq:forcedvibfig}.
 \begin{myfig}
 \capstart

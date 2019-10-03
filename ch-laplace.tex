@@ -249,8 +249,7 @@ $\tan t$ or $e^{t^2}$ do not have Laplace transforms.
 
 \subsection{Existence and uniqueness}
 
-Let us consider when does the Laplace transform exist in more detail.  First
-let us consider functions of exponential order.  The function $f(t)$ is of
+When does the Laplace transform exist?  A function $f(t)$ is of
 \emph{\myindex{exponential order}} as $t$ goes to infinity if
 \begin{equation*}
 \lvert f(t) \rvert \leq M e^{ct} ,
@@ -311,7 +310,7 @@ Then $f(t) = g(t)$ for all $t \geq 0$.
 
 Both theorems hold for piecewise continuous functions as well.
 Recall that piecewise continuous means that the function
-is continuous except perhaps at a discrete set of points where it has jump
+is continuous except perhaps at a discrete set of points, where it has jump
 discontinuities like the Heaviside function.  Uniqueness, however, does
 not \myquote{see} values at the discontinuities.  So we can only conclude that
 $f(t) = g(t)$ outside of discontinuities.  For example, the unit step
@@ -325,11 +324,11 @@ As we said, the Laplace transform will allow us to convert a differential
 equation into an algebraic equation.  Once we solve the
 algebraic equation in the frequency domain we will want to get back to the
 time domain, as that is what we are interested in.
-If we have a function $F(s)$, to be able
-to find $f(t)$ such that $\mathcal{L} \bigl\{ f(t) \bigr\} = F(s)$, we need to first
-know if such a function is unique.  It turns out we are in luck by
-\thmref{lt:uniqthm}.  So we can without fear make the following
-definition.
+Given a function
+$F(s)$, we wish to find a function
+$f(t)$ such that $\mathcal{L} \bigl\{ f(t) \bigr\} = F(s)$.
+\thmref{lt:uniqthm} says that the solution $f(t)$ is unique.
+So we can without fear make the following definition.
 
 If $F(s) = \mathcal{L} \bigl\{ f(t) \bigr\}$ for some function $f(t)$.  We define the
 \emph{\myindex{inverse Laplace transform}} as

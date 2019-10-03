@@ -2838,7 +2838,7 @@ suppose
 x_c = A \cos (\omega_0 t) + B \sin (\omega_0 t), 
 \end{equation*}
 where $\omega_0 = \frac{N \pi}{L}$ for some positive integer $N$.
-In this case we have
+We have
 to modify our guess and try
 \begin{equation*}
 x(t) = \frac{a_0}{2} +
@@ -2929,7 +2929,6 @@ x_p''(t) =
 +
 6 b_3
 \pi \, \cos (3 \pi t) - 9\pi^2 b_3 \, t \, \sin (3 \pi t)
-+
 \\
 +
 \sum_{\substack{n=1 \\ n~\text{odd} \\ n\not= 3}}^\infty
@@ -2938,19 +2937,17 @@ x_p''(t) =
 \end{multline*}
 We now plug into the left-hand side of the differential equation.
 \begin{align*}
-2x_p'' + 18\pi^2 & x_p \\
+2x_p'' + 18\pi^2 x_p 
 = & 
 - 12 a_3 \pi \sin (3 \pi t)
 - 18\pi^2 a_3 t \cos (3 \pi t)
 + 12 b_3 \pi \cos (3 \pi t)
 - 18\pi^2 b_3 t \sin (3 \pi t)
-+
 \\
 & \phantom{\, - 12 a_3 \pi \sin (3 \pi t)} ~
 + 18 \pi^2 a_3 t \cos (3 \pi t)
 \phantom{\, + 12 b_3 \pi \cos (3 \pi t)} ~
 + 18 \pi^2 b_3 t \sin (3 \pi t)
-+
 \\
 & + \sum_{\substack{n=1 \\ n~\text{odd} \\ n\not= 3}}^\infty
 (-2n^2 \pi^2 b_n + 18\pi^2 b_n) \,
@@ -6036,11 +6033,11 @@ Also, often the limits
 of the integral are given as 0 to $2\pi$; everything inside is
 $2\pi$-periodic in $\alpha$, so this does not change the integral.
 
-\begin{mywrapfigsimp}{2.1in}{2.4in}
+%12 is the number of lines, must be adjusted
+\begin{mywrapfigsimp}[12]{2.1in}{2.4in}
 \vspace*{5pt}
 \noindent
 \inputpdft{poisson}
-\vspace*{5pt}
 \end{mywrapfigsimp}
 Let us not leave the Poisson kernel without explaining its geometric
 meaning.  Let $s$ be the distance from $(r,\theta)$ to

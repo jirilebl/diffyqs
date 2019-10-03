@@ -497,7 +497,6 @@ looking at the slope field itself.
 \caption{Slope field of $y' = -y$ with a graph of a few solutions.\label{1.3:fig3}}
 \end{myfig}
 
-\pagebreak[2]
 \subsection{Existence and uniqueness}
 
 We wish to ask two fundamental questions about the problem
@@ -705,8 +704,8 @@ initial condition $y(0) = 0$,
 and if so what is the solution?
 \end{exercise}
 
-\pagebreak[2]
 \begin{exercise}[challenging]
+\pagebreak[2]
 Suppose $y' = f(x,y)$ is such that $f(x,1) = 0$ for every $x$,
 $f$ is continuous and $\frac{\partial f}{\partial y}$ exists and
 is continuous for every $x$ and $y$.
@@ -1037,7 +1036,7 @@ and hence $D = 67$.  So
 $T = 22 + 67\, e^{-kt}$.  The second condition says $85 = T(1) = 
 22 + 67\, e^{-k}$.  Solving for $k$ we get
 $k = - \ln \frac{85-22}{67} \approx 0.0616$.  Now we solve for the time $t$
-that gives us a temperature of 60 degrees.  That is, we solve
+that gives us a temperature of 60 degrees.  Namely, we solve
 \begin{equation*}
 60 = 22 + 67 e^{-0.0616t}
 \end{equation*}
@@ -1046,7 +1045,6 @@ $t = - \frac{\ln \frac{60-22}{67}}{0.0616} \approx 9.21$ minutes.  So Bob can
 begin to drink the coffee at just over 9 minutes from the time Bob made
 it.  That is probably about the amount of time it took us to calculate how long
 it would take.  See \figurevref{sintro:coffeefig}.
-
 \begin{myfig}
 \capstart
 %original files coffeefig-1 coffeefig-2
@@ -1062,15 +1060,14 @@ with a horizontal line at the ambient temperature 22.\label{sintro:coffeefig}}
 \end{example}
 
 \begin{example}
-\pagebreak[2]
 Find the general solution to $y' = \frac{-xy^2}{3}$ (including singular
 solutions).
 
 First note that $y=0$ is a solution (a singular solution).
 Now assume that $y \not= 0$.
 \begin{align*}
-\frac{-3}{y^2} y' & = x , \\
-\frac{3}{y} & = \frac{x^2}{2} + C , \\
+\frac{-3}{y^2} y' & = x , \displaybreak[0]\\
+\frac{3}{y} & = \frac{x^2}{2} + C , \displaybreak[0]\\
 y & = \frac{3}{\nicefrac{x^2}{2} + C}
 = \frac{6}{x^2 + 2C}.
 \end{align*}
@@ -2080,7 +2077,7 @@ Check with the preceding graphs if
 you are getting the type of curves.
 \end{exercise}
 
-\pagebreak[2]
+\pagebreak[0]
 Once we draw the phase diagram, we classify critical points
 as stable or unstable\footnote{Unstable 
 points with one of the
@@ -2192,8 +2189,6 @@ $x(0) = -1$.
 \end{exercise}
 \end{samepage}
 
-\pagebreak[3]
-\begin{samepage}
 \begin{exercise}
 Consider $x' = \sin x$.
 \begin{tasks}
@@ -2204,9 +2199,7 @@ mark the critical points stable or unstable.
 $x(0) = 1$.
 \end{tasks}
 \end{exercise}
-\end{samepage}
 
-\pagebreak[3]
 \begin{exercise}
 Suppose $f(x)$ is positive for $0 < x < 1$, it is zero when $x=0$ and $x=1$,
 and it is negative for all other $x$.
@@ -2663,6 +2656,7 @@ y_{i+1} = y_i + \frac{k_1 + 2k_2 + 2k_3 + k_4}{6}\,h ,  \\
 
 
 \begin{exercise}
+\pagebreak[2]
 Consider $\dfrac{dy}{dx} = yx^2$, $y(0)=1$.
 \begin{tasks}
 \task Use Runge--Kutta (see above) with step sizes $h=1$ and $h=\nicefrac{1}{2}$
@@ -3500,7 +3494,7 @@ or in other words
 \begin{equation*}
 u_s = 0 .
 \end{equation*}
-That's trivial to solve.  If we treat $\xi$ as simply a parameter, we have
+That is trivial to solve.  Treating $\xi$ as simply a parameter, we have
 obtained the ODE $\frac{d u}{d s} = 0$.
 
 The solution is a function that does
@@ -3533,8 +3527,8 @@ along the characteristic.
 \caption{Characteristic curves.\label{fopde:charcurves}}
 \end{mywrapfig}
 
-In the $(x,t)$ coordinates, the characteristic curves have
-the equation $t = \frac{1}{\alpha} ( x- \xi)$, and in fact lines.
+In the $(x,t)$ coordinates, the characteristic curves satisfy 
+$t = \frac{1}{\alpha} ( x- \xi)$, and are in fact lines.
 The slope of characteristic lines is
 $\frac{1}{\alpha}$, and for each different $\xi$ we get a different
 characteristic line.
@@ -3570,9 +3564,9 @@ characteristic coordinates. Let us call these coordinates $(\xi,s)$.
 These are coordinates where $a u_x + b u_t$ becomes differentiation
 in the $s$ variable.
 
-So, along the characteristic curves (where $\xi$ is constant), we get a
+Along the characteristic curves (where $\xi$ is constant), we get a
 new ODE in the $s$ variable.  In the transport
-equation we got the simple $\frac{du}{ds} = 0$.  In general,
+equation, we got the simple $\frac{du}{ds} = 0$.  In general,
 we get the linear equation
 \begin{equation} \label{eq:fopde:charode}
 \frac{du}{ds} + c u = g.
@@ -3593,7 +3587,8 @@ Because when we think of $x$ and $t$ as functions of $s$ we find, using the
 chain rule,
 \begin{equation*}
 \frac{du}{ds} + c u = 
-\left( u_x \frac{dx}{ds} + u_t \frac{dt}{ds}\right) + c u =
+\underbrace{\left( u_x \frac{dx}{ds} + u_t
+\frac{dt}{ds}\right)}_{\frac{du}{ds}} + c u =
 a u_x + b u_t + c u = g .
 \end{equation*}
 So we get the ODE \eqref{eq:fopde:charode}, which
@@ -3617,7 +3612,7 @@ Consider
 \begin{equation*}
 u_x + u_t + u = x, \qquad u(x,0) = e^{-x^2} .
 \end{equation*}
-We find the characteristics, that is, they are given by
+We find the characteristics, that is, the curves given by
 \begin{equation*}
 \frac{dx}{ds} = 1, \qquad \frac{dt}{ds} = 1 .
 \end{equation*}
@@ -3632,29 +3627,35 @@ we let $c_1 = \xi$ and $c_2 = 0$:
 x = s + \xi, \qquad t = s .
 \end{equation*}
 
-The ODE is $\frac{du}{ds} + u = x$, and $x = s+\xi$.  So the ODE
-we are solving along the characteristic is
+The ODE is $\frac{du}{ds} + u = x$, and $x = s+\xi$. So, the ODE
+to solve along the characteristic is
 \begin{equation*}
 \frac{du}{ds} + u = s+ \xi .
 \end{equation*}
-The general solution of this ODE\@, treating $\xi$ as just a parameter, is 
+The general solution of this equation, treating $\xi$ as a parameter, is 
 $u = C e^{-s}+s+\xi-1$, for some constant $C$.
 At $s=0$, our initial condition is that $u$ is
-$e^{-\xi^2}$ since at $s=0$ we have $x=\xi$.
-Given this initial condition, we find $C=e^{-\xi^2} - \xi +1$, and so
+$e^{-\xi^2}$, since at $s=0$ we have $x=\xi$.
+Given this initial condition, we find $C=e^{-\xi^2} - \xi +1$.  So,
 \begin{equation*}
-u =
+\begin{split}
+u & =
 \bigl(e^{-\xi^2} - \xi +1\bigr) e^{-s}+s+\xi-1
-=
+\\
+& =
 e^{-\xi^2-s} + (1 - \xi) e^{-s} +s+\xi-1 .
+\end{split}
 \end{equation*}
-Now substitute $\xi = x-t$ and $s=t$ to find $u$ in terms of $x$ and $t$:
+Substitute $\xi = x-t$ and $s=t$ to find $u$ in terms of $x$ and $t$:
 \begin{equation*}
+\begin{split}
 u
-=
+& =
 e^{-\xi^2-s} + (1 - \xi) e^{-s} +s+\xi-1 
-=
+\\
+& =
 e^{-{(x-t)}^2-t} + (1 - x + t) e^{-t} +x-1 .
+\end{split}
 \end{equation*}
 See \figurevref{fopde:surfaceplot} for a plot of $u(x,t)$ as a function of
 two variables.
@@ -3666,9 +3667,11 @@ $u_x + u_t + u = x$,  $u(x,0) = e^{-x^2}$.\label{fopde:surfaceplot}}
 \end{myfig}
 \end{example}
 
-\pagebreak[2]
+When the coefficients are not constants, the characteristic curves
+are not going to be straight lines anymore.
+
 \begin{example}
-Finally let's do an example with a variable coefficient
+Consider the following variable coefficient equation:
 \begin{equation*}
 x u_x + u_t + 2 u = 0, \qquad u(x,0) = \cos(x) . % , \qquad -\infty < x < \infty,
 %\quad t > 0 .
@@ -3681,24 +3684,24 @@ So
 \begin{equation*}
 x = c_1 e^{s} , \qquad t = s+ c_2 .
 \end{equation*}
-At $s=0$ we wish to get the line $t=0$, and $x$ should be $\xi$.  So
+At $s=0$, we wish to get the line $t=0$, and $x$ should be $\xi$.  So
 \begin{equation*}
 x = \xi e^s, \qquad t = s .
 \end{equation*}
 
-OK\@, let's solve the ODE
+OK\@, the ODE we need to solve is
 \begin{equation*}
 \frac{du}{ds} + 2 u = 0 .
 \end{equation*}
 This is for a fixed $\xi$.  At $s=0$, we should get that $u$ is
-$\cos(\xi)$, so that's our initial condition.  So
+$\cos(\xi)$, so that is our initial condition.  Consequently,
 \begin{equation*}
 u = e^{-2s} \cos(\xi)= e^{-2t} \cos(xe^{-t}) .
 \end{equation*}
 \end{example}
 
 
-Let us make a few closing remarks.
+We make a few closing remarks.
 One thing to keep in mind is that we would get into trouble if the
 coefficient in front of $u_t$, that is the $b$, is ever zero.
 Let us consider a quick example of what can go wrong:

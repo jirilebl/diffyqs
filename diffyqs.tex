@@ -130,7 +130,7 @@
 \newcommand{\theversion}{6.0 draft}
 \makediffytitlepage
 
-\pagebreak
+\newpage
 
 \vspace*{\fill}
 
@@ -272,6 +272,13 @@ at github: \url{https://github.com/jirilebl/diffyqs}
 % Systems of ODEs chapter
 \input ch-systems.tex
 
+%mbxSTARTIGNORE
+%This makes contents fit if needed
+%FIXMEevillayouthack
+\addextraspacetotoc
+%mbxENDIGNORE
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Fourier series and PDEs chapter
@@ -281,12 +288,6 @@ at github: \url{https://github.com/jirilebl/diffyqs}
 
 % Eigenvalue problems chapter
 \input ch-eigenvalue-probs.tex
-
-%mbxSTARTIGNORE
-%This makes contents fit if needed
-%FIXMEevillayouthack
-%\addextraspacetotoc
-%mbxENDIGNORE
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

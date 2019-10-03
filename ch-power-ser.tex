@@ -40,11 +40,11 @@ the limit
 \end{equation*}
 exists, then we say that the series \eqref{ps:sereq1}
 \emph{converges}\index{convergence of a power series} at $x$.
-Note that for $x=x_0$, the series always converges to $a_0$.
+At $x=x_0$, the series always converges to $a_0$.
 When \eqref{ps:sereq1}
 converges at any other point $x \not= x_0$,
 we say that \eqref{ps:sereq1} is a
-\emph{\myindex{convergent power series}}.  In this case we write
+\emph{\myindex{convergent power series}}, and we write
 \begin{equation*}
 \sum_{k=0}^\infty a_k {(x-x_0)}^k = 
 \lim_{n\to\infty} \sum_{k=0}^n a_k {(x-x_0)}^k.
@@ -61,7 +61,7 @@ The series
 is convergent for any $x$.
 Recall that $k! = 1\cdot 2\cdot 3 \cdots k$ is the
 factorial.  By convention we define $0! = 1$.
-In fact, you may recall that this series
+You may recall that this series
 converges to $e^x$.
 \end{example}
 
@@ -89,7 +89,7 @@ as
 $\sum_{k=1}^\infty \frac{{(-1)}^k}{k}$ converges (conditionally)
 by the alternating series
 test.
-But the power series does not converge absolutely at $x=-1$, because
+The power series does not converge absolutely at $x=-1$, because
 $\sum_{k=1}^\infty \frac{1}{k}$ does not converge.
 The series
 diverges at $x=1$.
@@ -101,14 +101,14 @@ If a power series converges absolutely
 at some $x_1$, then for all $x$ such that
 $\lvert x - x_0  \rvert \leq \lvert x_1 - x_0 \vert$ (that is, $x$ is
 closer than $x_1$ to $x_0$) we have
-$\left\lvert a_k {(x-x_0)}^k \right\rvert \leq
-\left\lvert a_k {(x_1-x_0)}^k \right\rvert$
+$\bigl\lvert a_k {(x-x_0)}^k \bigr\rvert \leq
+\bigl\lvert a_k {(x_1-x_0)}^k \bigr\rvert$
 for all $k$.
-As the numbers $\left\lvert a_k {(x_1-x_0)}^k \right\rvert$ sum to some finite
+As the numbers $\bigl\lvert a_k {(x_1-x_0)}^k \bigr\rvert$ sum to some finite
 limit, summing smaller positive numbers
-$\left\lvert a_k {(x-x_0)}^k \right\rvert$ must also have a finite limit.
-Therefore, the series must converge
-absolutely at $x$.  We have the following result.
+$\bigl\lvert a_k {(x-x_0)}^k \bigr\rvert$ must also have a finite limit.
+Hence, the series must converge
+absolutely at $x$. %  We have the following result.
 
 \begin{theorem}
 For a power series \eqref{ps:sereq1}, there exists a number
@@ -145,8 +145,8 @@ L = \lim_{n\to\infty} \left \lvert \frac{c_{k+1}}{c_k} \right \rvert
 exists.  Then the series converges absolutely if $L < 1$ and diverges
 if $L > 1$.
 
-Let us apply this test to the series \eqref{ps:sereq1}.  That is
-we let $c_k = a_k {(x - x_0)}^k$ in the test.  Compute
+We apply this test to the series \eqref{ps:sereq1}. 
+Let $c_k = a_k {(x - x_0)}^k$ in the test.  Compute
 \begin{equation*}
 L = \lim_{n\to\infty} \left \lvert \frac{c_{k+1}}{c_k} \right \rvert
 =
@@ -174,7 +174,7 @@ if $\lvert x - x_0 \rvert < \nicefrac{1}{A}$,
 and diverges if $\lvert x - x_0 \rvert > \nicefrac{1}{A}$.  That is,
 the radius of convergence is $\nicefrac{1}{A}$.
 
-Another very similar test is the \emph{root test}\index{root test for series}.
+A similar test is the \emph{root test}\index{root test for series}.
 Suppose
 \begin{equation*}
 L = \lim_{k\to\infty} \sqrt[k]{\lvert c_k \rvert}
@@ -185,11 +185,11 @@ to find $A$.
 Let us summarize.
 
 \begin{theorem}[Ratio and root tests for power series]
-Let
+Consider a power series
 \begin{equation*}
 \sum_{k=0}^\infty a_k {(x-x_0)}^k
 \end{equation*}
-be a power series such that
+such that
 \begin{equation*}
 A =
 \lim_{n\to\infty}
@@ -202,6 +202,7 @@ A =
 \end{equation*}
 exists.  If $A = 0$, then the radius of convergence of the series
 is $\infty$.  Otherwise, the radius of convergence is $\nicefrac{1}{A}$.
+\pagebreak[3]
 \end{theorem}
 
 \begin{example}
@@ -1652,13 +1653,13 @@ order $p$ and $-p$ as
 & J_p(x) = \frac{1}{2^p\Gamma(1+p)} y_1
 =
 \sum_{k=0}^\infty
-\frac{{(-1)}^k}{k! \Gamma(k+p+1)}
+\frac{{(-1)}^k}{k! \, \Gamma(k+p+1)}
 {\left(\frac{x}{2}\right)}^{2k+p} ,
 \\
 & J_{-p}(x) = \frac{1}{2^{-p}\Gamma(1-p)} y_2
 =
 \sum_{k=0}^\infty
-\frac{{(-1)}^k}{k! \Gamma(k-p+1)}
+\frac{{(-1)}^k}{k! \,\Gamma(k-p+1)}
 {\left(\frac{x}{2}\right)}^{2k-p} .
 \end{align*}
 As these are constant multiples of the solutions we found above, these are
@@ -1671,7 +1672,7 @@ obtain
 \begin{equation*}
 J_n(x) =
 \sum_{k=0}^\infty
-\frac{{(-1)}^k}{k! (k+n)!}
+\frac{{(-1)}^k}{k! \,(k+n)!}
 {\left(\frac{x}{2}\right)}^{2k+n} .
 \end{equation*}
 In this case
@@ -1804,7 +1805,7 @@ Find a particular solution of $x^2 y'' +(x-\nicefrac{3}{4})y = 0$.
 \exsol{%
 $y = x^{3/2}
 \sum\limits_{k=0}^\infty
-\frac{{(-1)}^{-1}}{k!(k+2)!} x^k$ (Note that for convenience
+\frac{{(-1)}^{-1}}{k!\,(k+2)!} x^k$ (Note that for convenience
 we did not pick $a_0 = 1$)}
 
 \begin{exercise}[tricky]

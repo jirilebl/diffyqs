@@ -743,7 +743,7 @@ and
 $B = \left[ \begin{smallmatrix} 1 & 0 \\ 0 & 2 \end{smallmatrix} \right]$.
 \item $AB = AC$ does not necessarily imply $B=C$, even if $A$ is not 0.
 \item $AB = 0$ does not necessarily mean that $A=0$ or $B=0$.
-For example, take
+Try, for example,
 $A = B = \left[ \begin{smallmatrix} 0 & 1 \\ 0 & 0 \end{smallmatrix}
 \right]$.
 \end{enumerate}
@@ -2892,15 +2892,15 @@ obtain the picture in \figurevref{pln:saddle-fullfig}.  We call this picture a
 \emph{\myindex{saddle point}}.
 
 \medskip
-\pagebreak[2]
 
+\pagebreak[0]
 For the next three cases we will assume the eigenvalues are complex.  In this
 case the eigenvectors are also complex and we cannot just plot them in the
 plane.
 
-\pagebreak[2]
 \medskip
 
+\pagebreak[0]
 \emph{Case 4.} Suppose the eigenvalues are purely imaginary.
 That is, suppose the eigenvalues are $\pm ib$.  For example,
 let $P = 
@@ -4639,8 +4639,8 @@ $A = \left[ \begin{smallmatrix}
 \end{tasks}
 \end{exercise}
 
-\pagebreak[2]
 \begin{exercise}
+\pagebreak[2]
 Let
 $A = \left[ \begin{smallmatrix}
 0 & 4 & -2 \\
@@ -4973,10 +4973,12 @@ D^k = \begin{bmatrix} a^k & 0 \\ 0 & b^k \end{bmatrix} ,
 \end{equation*}
 and
 \begin{equation*}
-e^D =
+\begin{split}
+e^D & =
 I + D + \frac{1}{2} D^2 + 
 \frac{1}{6} D^3 + \cdots
-=
+\\
+&=
 \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} +
 \begin{bmatrix} a & 0 \\ 0 & b \end{bmatrix} +
 \frac{1}{2}
@@ -4985,6 +4987,7 @@ I + D + \frac{1}{2} D^2 +
 \begin{bmatrix} a^3 & 0 \\ 0 & b^3 \end{bmatrix} + \cdots
 =
 \begin{bmatrix} e^a & 0 \\ 0 & e^b \end{bmatrix} .
+\end{split}
 \end{equation*}
 So by this rationale
 \begin{equation*}
@@ -6531,13 +6534,13 @@ t
 We identify the coefficients of $e^t$, $te^t$, $t$ and any constant
 vectors in $\vec{x}'$ and in $A\vec{x}+\vec{f}$ to find the equations:
 \begin{align*}
-a_1+b_1 & = -a_1+1 , \\
-a_2+b_2 & = -2a_1+a_2 , \\
-b_1 & = -b_1 , \\
-b_2 & = -2b_1+b_2 , \\
+a_1+b_1 & = -a_1+1 , &
 0 & = -c_1 , \\
+a_2+b_2 & = -2a_1+a_2 , &
 0 & = -2c_1+c_2 + 1 , \\
+b_1 & = -b_1 , &
 c_1 & = -d_1 , \\
+b_2 & = -2b_1+b_2 , &
 c_2 & = -2d_1+d_2 .
 \end{align*}
 We could write the $8 \times 9$ augmented matrix and start row

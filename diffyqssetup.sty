@@ -27,7 +27,7 @@
 %Palatino
 %\usepackage{mathpazo}
 %\usepackage[scaled]{helvet}
-\usepackage{newpxtext}
+\usepackage[theoremfont]{newpxtext}
 \usepackage[vvarbb]{newpxmath}
 \linespread{1.05}
 
@@ -157,9 +157,11 @@ transform},
 \newtheoremstyle{exercise}% name
   {}% Space above
   {}% Space below
-  {\itshape}% Body font
+  %{\itshape}% Body font
+  {\slshape}% Body font
   {}% Indent amount 1
-  {\bfseries \itshape}% Theorem head font
+  %{\bfseries \itshape}% Theorem head font
+  {\bfseries \slshape}% Theorem head font
   {:}% Punctuation after theorem head
   {.5em}% Space after theorem head 2
   {}% Theorem head spec (can be left empty, meaning "normal")

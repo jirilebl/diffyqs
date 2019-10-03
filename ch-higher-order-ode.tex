@@ -1266,8 +1266,8 @@ Find the general solution of $y^{(5)}-y^{(4)}=0$.
 $y=C_1 e^x +C_2 x^3 + C_3 x^2 +C_4 x + C_5$
 }
 
-\pagebreak[2]
 \begin{exercise}
+\pagebreak[2]
 Suppose that the characteristic equation of a third order differential
 equation has
 roots $\pm 2i$ and 3.
@@ -1872,14 +1872,14 @@ c) $I = 10 e^{-t} \cos(\sqrt{3} \, t) + \frac{10}{\sqrt{3}} e^{-t}
 \sin(\sqrt{3} \, t)$
 }
 
-\pagebreak[2]
 \begin{exercise}
+\pagebreak[2]
 A \unit[5000]{kg} railcar hits a bumper (a spring) at \unitfrac[1]{m}{s},
 and the spring compresses by \unit[0.1]{m}.  Assume no damping.
 \begin{tasks}
 \task Find $k$.
-\task Find out how far does the spring compress when a
-\unit[10000]{kg} railcar hits the spring at the same speed.
+\task How far does the spring compress when a
+\unit[10000]{kg} railcar hits the spring at the same speed?
 \task If the spring
 would break if it compresses further than \unit[0.3]{m}, what is the maximum
 mass of a railcar that can hit it at \unitfrac[1]{m}{s}?
@@ -2016,11 +2016,15 @@ the same degree.  Let us try
 \begin{equation*}
 y_p = Ax + B .
 \end{equation*}
-We plug in to obtain
+We plug $y_p$ into the left hand side to obtain
 \begin{equation*}
-y_p'' + 5y_p'+ 6y_p =
-(Ax+B)'' + 5(Ax+B)' + 6(Ax+B) = 
+\begin{split}
+y_p'' + 5y_p'+ 6y_p & =
+(Ax+B)'' + 5(Ax+B)' + 6(Ax+B)
+\\
+& = 
 0 + 5A + 6Ax + 6B = 6Ax+ (5A+6B) .
+\end{split}
 \end{equation*}
 So $6Ax+(5A+6B) = 2x+1$.  Therefore, $A = \nicefrac{1}{3}$ and $B = \nicefrac{-1}{9}$.
 That means
@@ -2075,14 +2079,22 @@ sines.  We try
 y_p = A \cos (2x) + B \sin (2x) .
 \end{equation*}
 We plug $y_p$ into the equation and we get
+\begin{multline*}
+\underbrace{-4 A \cos (2x) - 4 B \sin (2x)}_{y_p''}
++2 \underbrace{\bigl(-2A \sin (2x) + 2B \cos (2x)\bigr)}_{y_p'}
+\\
++
+2 \underbrace{\bigl(A \cos (2x) + 2B \sin (2x)\bigr)}_{y_p}
+= \cos (2x) ,
+\end{multline*}
+or
 \begin{equation*}
--4 A \cos (2x) - 4 B \sin (2x) 
--4A \sin (2x) + 4B \cos (2x)
-+ 2A \cos (2x) + 2B \sin (2x)
-= \cos (2x) .
+(-4A+4B+2A) \cos(2x) +
+(-4B-4A+2B) \sin(2x)
+= \cos(2x) .
 \end{equation*}
-The left-hand side must equal to right-hand side.  We group terms and
-we get that $-4A + 4B + 2A = 1$ and
+The left-hand side must equal to right-hand side.  Namely,
+$-4A + 4B + 2A = 1$ and
 $-4B - 4A + 2B = 0$.  So $-2A+4B =1$ and $2A+B=0$ and hence
 $A=\nicefrac{-1}{10}$ and $B=\nicefrac{1}{5}$.  So
 \begin{equation*}
@@ -2199,12 +2211,14 @@ y''+y = \tan x .
 Each new derivative of $\tan x$ looks completely different and
 cannot be written as a linear combination of the previous derivatives.
 If we start differentiating $\tan x$, we get:
-\begin{equation*}
+\begin{multline*}
 \sec^2 x, \quad
 2\sec^2 x \, \tan x, \quad
-4 \sec^2 x \, \tan^2 x + 2 \sec^4 x, \quad
-8 \sec^2 x \, \tan^3 x + 16 \sec^4 x \, \tan x, \quad \ldots
-\end{equation*}
+4 \sec^2 x \, \tan^2 x + 2 \sec^4 x, \\
+8 \sec^2 x \, \tan^3 x + 16 \sec^4 x \, \tan x, \quad
+16\sec^2 x \, \tan^4 x + 88 \sec^4 x \tan^2 x + 16 \sec^6 x, \quad
+\ldots
+\end{multline*}
 
 This equation calls for a different method.  We present the method of
 \emph{\myindex{variation of parameters}}, which handles any equation of
@@ -2244,10 +2258,10 @@ easier.
 & y' = u_1 y_1' + u_2 y_2' , \\
 & y'' = (u_1' y_1' + u_2' y_2') + (u_1 y_1'' + u_2 y_2'') .
 \end{align*}
-Since $y_1$ and $y_2$ are solutions to $y''+y = 0$, we know
-that $y_1'' = - y_1$
+Since $y_1$ and $y_2$ are solutions to $y''+y = 0$, we find
+$y_1'' = - y_1$
 and $y_2'' = - y_2$.
-(Note: If the equation was instead $y''+p(x)y' +q(x)y = 0$ we would have
+(If the equation was a more general $y''+p(x)y' +q(x)y = 0$, we would have
 $y_i'' = -p(x)y_i' -q(x)y_i$.) So 
 \begin{equation*}
 y'' = (u_1' y_1' + u_2' y_2') - (u_1 y_1 + u_2 y_2) .
@@ -2263,7 +2277,7 @@ y'' + y = Ly = u_1' y_1' + u_2' y_2' .
 For $y$ to satisfy $Ly = f(x)$ we must have
 $f(x) = u_1' y_1' + u_2' y_2'$.
 
-So what we need to solve are the two equations (conditions) we imposed
+What we need to solve are the two equations (conditions) we imposed
 on $u_1$ and $u_2$:
 \begin{equation*}
 \boxed{~~
@@ -2273,7 +2287,7 @@ on $u_1$ and $u_2$:
 \end{aligned}
 ~~}
 \end{equation*}
-We now solve for $u_1'$ and $u_2'$ in terms of $f(x)$, $y_1$ and $y_2$.
+We solve for $u_1'$ and $u_2'$ in terms of $f(x)$, $y_1$ and $y_2$.
 We always get these formulas for any $Ly = f(x)$, where $Ly =
 y''+p(x)y'+q(x)y$.  There is a general
 formula for the solution we could just plug into, but instead of memorizing
@@ -2350,6 +2364,7 @@ for the coefficients for $y^{(4)}-2y'''+y'' = e^x + x + \sin x$.
 \end{exercise}
 
 \begin{exercise}
+\pagebreak[2]
 \leavevmode
 \begin{tasks}
 \task Using variation of parameters find a particular solution of
@@ -2520,8 +2535,9 @@ x = C_1 \cos (4 t) + C_2 \sin (4 t) +
 \frac{20}{16 - \pi^2} \cos (\pi t) .
 \end{equation*}
 
+%15 is the number of lines, must be adjusted
 %mbxSTARTIGNORE
-\begin{mywrapfig}{3.25in}
+\begin{mywrapfig}[15]{3.25in}
 \capstart
 \diffyincludegraphics{width=3in}{width=4.5in}{3-6-beating}
 \caption{Graph of
@@ -2533,8 +2549,7 @@ $\frac{20}{16 - \pi^2} \bigl( \cos (\pi t)- \cos (4 t) \bigr)$.\label{3.6:beatin
 %
 
 
-Solve for $C_1$ and $C_2$ using the initial conditions.
-It is easy to see that
+Solve for $C_1$ and $C_2$ using the initial conditions:
 $C_1 = \frac{-20}{16 - \pi^2}$ and $C_2 = 0$.  Hence
 \begin{equation*}
 x = 
@@ -2756,12 +2771,12 @@ We might as well focus on the
 steady periodic solution and ignore the transient solution.  See
 \figurevref{3.6:transbehfig} for a graph given several different initial conditions.
 
-\begin{myfig}
+\begin{mywrapfig}{3.25in}
 \capstart
 \diffyincludegraphics{width=3in}{width=4.5in}{3-6-transbeh}
 \caption{Solutions with different initial conditions for parameters
 $k=1$, $m=1$, $F_0 = 1$, $c=0.7$, and $\omega=1.1$.\label{3.6:transbehfig}}
-\end{myfig}
+\end{mywrapfig}
 
 The speed at which $x_{tr}$ goes to zero depends on $p$ (and
 hence $c$).  The
@@ -2882,6 +2897,7 @@ $C(\omega)$ for $\omega > 0$)?
 \end{exercise}
 
 \begin{exercise}
+\pagebreak[3]
 A water tower in an earthquake acts as a mass-spring system.
 Assume that the container on top is full and the water does not move around.
 The container then acts as the mass and the support acts as the spring, where
