@@ -16,6 +16,7 @@
 * Make bottom margin smaller to save paper
 * All floating figures/tables now have a gray border to better distinguish
   them from surrounding text, and all insets are on the right
+* Make the box for boxed equations a bit rounder
 
 * Improve wording and make minor clarifications throughout.
 

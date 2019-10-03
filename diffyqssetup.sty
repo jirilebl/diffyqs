@@ -58,6 +58,8 @@
 %\usepackage{graphics}
 \usepackage{tcolorbox}
 
+\tcbuselibrary{theorems}
+
 % Remove page numbers on chapter opens
 \usepackage{titlesec}
 \assignpagestyle{\chapter}{empty}
@@ -293,6 +295,9 @@ Remark
 \newcommand{\myendframe}{%
 \end{tcolorbox}%
 }
+
+% replace math boxed
+\renewcommand{\boxed}[1]{\tcboxmath[colback=white,colframe=black,boxrule=0.5pt,top=1pt,bottom=1pt]{#1}}
 
 % floaty inset figures
 
