@@ -829,7 +829,7 @@ We computed that eigenfunctions are 1, $\cos (k t)$,
 $\sin (k t)$.  That is, we want to find a representation of a
 $2\pi$-periodic function $f(t)$ as
 \begin{equation*}
-\boxed{~~
+\mybxbg{~~
 f(t) = \frac{a_0}{2} +
 \sum_{n=1}^\infty a_n \cos (n t) + b_n \sin (n t) .
 ~~}
@@ -885,7 +885,7 @@ by elementary calculus.  For the constant we get
 \end{equation*}
 The coefficients are given by
 \begin{equation*}
-\boxed{~~
+\mybxbg{~~
 \begin{aligned}
 & a_n =
 \frac{\langle \, f(t) \, , \, \cos (nt) \, \rangle}{\langle \, \cos (nt) \, , \,
@@ -903,7 +903,7 @@ The coefficients are given by
 Compare these expressions with the finite-dimensional example.
 For $a_0$ we get a similar formula
 \begin{equation*}
-\boxed{~~
+\mybxbg{~~
 a_0 = 2
 \frac{\langle \, f(t) \, , \, 1 \, \rangle}{\langle \, 1 \, , \,
 1 \, \rangle}
@@ -1335,7 +1335,7 @@ is $2\pi$-periodic.  We must also rescale all our sines and cosines.
 In the series we use $\frac{\pi}{L} t$ as the variable.  That is, we
 want to write
 \begin{equation*}
-\boxed{~~
+\mybxbg{~~
 f(t) = 
 \frac{a_0}{2} +
 \sum_{n=1}^\infty a_n \cos \left( \frac{n \pi}{L} t \right)
@@ -1353,7 +1353,7 @@ We compute $a_n$ and $b_n$ as before.  After we write down the
 integrals, we change variables from $s$ back to $t$, noting also
 that $ds = \frac{\pi}{L} \, dt$.
 \begin{equation*}
-\boxed{~~
+\mybxbg{~~
 \begin{aligned}
 & a_0 =
 \frac{1}{\pi}
@@ -2212,28 +2212,28 @@ Let $f(t)$ be a piecewise smooth function defined on $[0,L]$.
 Then the odd periodic extension
 of $f(t)$ has the Fourier series
 \begin{equation*}
-\boxed{~~
+\mybxbg{~~
 F_{\text{odd}}(t) = \sum_{n=1}^\infty b_n \sin \left( \frac{n \pi}{L} t
 \right) ,
 ~~}
 \end{equation*}
 where
 \begin{equation*}
-\boxed{~~
+\mybxbg{~~
 b_n = 
 \frac{2}{L} \int_{0}^L f(t)\, \sin \left( \frac{n \pi}{L} t \right) \, dt .
 ~~}
 \end{equation*}
 The even periodic extension of $f(t)$ has the Fourier series
 \begin{equation*}
-\boxed{~~
+\mybxbg{~~
 F_{\text{even}}(t) = \frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos \left(
 \frac{n \pi}{L} t \right) ,
 ~~}
 \end{equation*}
 where
 \begin{equation*}
-\boxed{~~
+\mybxbg{~~
 a_n = 
 \frac{2}{L} \int_{0}^L f(t)\, \cos \left( \frac{n \pi}{L} t \right) \, dt .
 ~~}
@@ -2951,7 +2951,7 @@ x_p''(t) =
 6 b_3
 \pi \, \cos (3 \pi t) - 9\pi^2 b_3 \, t \, \sin (3 \pi t)
 \\
-+
+{} +
 \sum_{\substack{n=1 \\ n~\text{odd} \\ n\not= 3}}^\infty
 (-n^2 \pi^2 b_n ) \,
 \sin (n \pi t) . 
@@ -2966,11 +2966,11 @@ We now plug into the left-hand side of the differential equation.
 - 18\pi^2 b_3 t \sin (3 \pi t)
 \\
 & \phantom{\, - 12 a_3 \pi \sin (3 \pi t)} ~
-+ 18 \pi^2 a_3 t \cos (3 \pi t)
+{} + 18 \pi^2 a_3 t \cos (3 \pi t)
 \phantom{\, + 12 b_3 \pi \cos (3 \pi t)} ~
-+ 18 \pi^2 b_3 t \sin (3 \pi t)
+{} + 18 \pi^2 b_3 t \sin (3 \pi t)
 \\
-& + \sum_{\substack{n=1 \\ n~\text{odd} \\ n\not= 3}}^\infty
+& {} + \sum_{\substack{n=1 \\ n~\text{odd} \\ n\not= 3}}^\infty
 (-2n^2 \pi^2 b_n + 18\pi^2 b_n) \,
 \sin (n \pi t) . 
 \end{align*}
@@ -3158,7 +3158,7 @@ Let $u(x,t)$ denote the temperature at point $x$ at time $t$.
 The equation governing this setup is the
 so-called \emph{\myindex{one-dimensional heat equation}}\index{heat equation}:
 \begin{equation*}
-\boxed{~~
+\mybxbg{~~
 \frac{\partial u}{\partial t} =
 k \frac{\partial^2 u}{\partial x^2} ,
 ~~}
@@ -3333,7 +3333,7 @@ We used the sine series as it corresponds to the eigenvalue problem for
 $X(x)$ above.
 Finally, we use superposition to write the solution as
 \begin{equation*}
-\boxed{~~
+\mybxbg{~~
 u(x,t) = 
 \sum_{n=1}^\infty
 b_n
@@ -3580,7 +3580,7 @@ That is, we find the Fourier series of the even periodic extension of $f(x)$.
 
 We use superposition to write the solution as
 \begin{equation*}
-\boxed{~~
+\mybxbg{~~
 u(x,t) = 
 \frac{a_0}{2} + 
 \sum_{n=1}^\infty
@@ -3873,7 +3873,7 @@ See
 The equation that governs this setup is the so-called
 \emph{\myindex{one-dimensional wave equation}}\index{wave equation}:
 \begin{equation*}
-\boxed{~~
+\mybxbg{~~
 y_{tt} =
 a^2 y_{xx} ,
 ~~}
@@ -4104,7 +4104,7 @@ g(x) =
 Then the solution $y(x,t)$ can be written as a sum of the solutions
 of \eqref{wave:weq} and \eqref{wave:zeq}:
 \begin{equation*}
-\boxed{~~
+\mybxbg{~~
 \begin{aligned}
 y(x,t)
 & =
@@ -4640,7 +4640,7 @@ B(x) = \frac{1}{2} F(x) + \frac{1}{2a} \int_0^x G(s) \,ds .
 We claim this $A(x)$ and $B(x)$ give the solution.  Explicitly, the
 solution is $y(x,t) = A(x-at) + B(x+at)$ or in other words:
 \begin{equation} \label{dalemb:form}
-\boxed{~~
+\mybxbg{~~
 \begin{aligned}
 y(x,t) & =
 \frac{1}{2} F(x-at) - \frac{1}{2a} \int_0^{x-at} G(s) \,ds 
@@ -5049,7 +5049,7 @@ for the steady state solution look like.  We are looking for a solution to
 0$.  Hence we are looking for a
 function $u(x,y)$ such that
 \begin{equation*}
-\boxed{~~
+\mybxbg{~~
 \Delta u = 
 u_{xx} + u_{yy} = 0 .
 ~~}
@@ -5217,7 +5217,7 @@ b_n \sin \left( \frac{n \pi x }{w} \right) .
 Then we get a solution of \eqref{dirich:eq1}--\eqref{dirich:eq5} of the
 following form.
 \begin{equation*}
-\boxed{
+\mybxbg{
 ~~
 u(x,y) =
 \sum_{n=1}^\infty
@@ -5590,7 +5590,7 @@ We're not quite there yet, but all we are lacking is
 $\frac{1}{r} u_r$.  Adding it we obtain the
 \emph{\myindex{Laplacian in polar coordinates}}:
 \begin{equation*}
-\boxed{~~
+\mybxbg{~~
 \Delta u 
 =
 u_{xx} + u_{yy} =
@@ -5696,7 +5696,7 @@ Hence our building block solutions are
 \end{align*}
 Putting everything together our solution is:
 \begin{equation*}
-\boxed{~~
+\mybxbg{~~
 u(r,\theta)
 =
 \frac{a_0}{2} +
@@ -6041,7 +6041,7 @@ re^{-i(\theta-\alpha)}\bigr)}^{n}
 That's a formula we can live with.  The
 solution to the Dirichlet problem using the Poisson kernel is
 \begin{equation*}
-\boxed{~~
+\mybxbg{~~
 u(r,\theta) = 
 \frac{1}{2\pi} \int_{-\pi}^{\pi}
 \frac{1 -r^2}{1 - 2r\cos(\theta-\alpha) +r^2} g(\alpha) ~ d\alpha .
@@ -6134,6 +6134,7 @@ $[-\nicefrac{\pi}{4},\nicefrac{\pi}{4}]$.
 \end{exercise}
 
 \begin{exercise}
+\pagebreak[2]
 \leavevmode
 \begin{tasks}
 \task Draw a graph for the Poisson kernel as a function of $\alpha$
@@ -6147,7 +6148,7 @@ to part b) means.
 \end{exercise}
 
 \begin{exercise} \label{exercise:dirichproblemxy}
-Take the function $g(\theta)$ to be the function $xy = \cos \theta \sin
+Let $g(\theta)$ be the function $xy = \cos \theta \sin
 \theta$ on the boundary.  Use the series solution to find a solution
 to the Dirichlet problem $\Delta u = 0$, $u(1,\theta) = g(\theta)$.  Now
 convert the solution to Cartesian coordinates $x$ and $y$.  Is this

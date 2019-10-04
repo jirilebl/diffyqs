@@ -211,7 +211,7 @@ Since linearity is very important we state it as a theorem.
 \index{linearity of the Laplace transform}
 Suppose that $A$, $B$, and $C$ are constants, then
 \begin{equation*}
-\boxed{~~
+\mybxbg{~~
 \mathcal{L} \bigl\{ A f(t) + B g(t) \bigr\} =
 A \mathcal{L} \bigl\{ f(t) \bigr\} +
 B \mathcal{L} \bigl\{ g(t) \bigr\} ,
@@ -410,7 +410,7 @@ Another useful property is the
 so-called \emph{\myindex{shifting property}} or
 the \emph{\myindex{first shifting property}}
 \begin{equation*}
-\boxed{~~
+\mybxbg{~~
 \mathcal{L} \bigl\{ e^{-at} f(t) \bigr\} = F(s+a) ,
 ~~}
 \end{equation*}
@@ -728,7 +728,7 @@ transform.  We have already seen that
 This can be generalized into a \emph{\myindex{shifting property}}
 or \emph{\myindex{second shifting property}}.
 \begin{equation} \label{ltd:sseq}
-\boxed{~~
+\mybxbg{~~
 \mathcal{L} \bigl\{ f(t-a) \, u(t-a) \bigr\}
 = e^{-as} \mathcal{L} \bigl\{ f(t) \bigr\} .
 ~~}
@@ -864,7 +864,7 @@ with integral equations.  That is, equations in which integrals rather than
 derivatives of functions appear.  The basic property, which can be proved
 by applying the definition and doing integration by parts, is 
 \begin{equation*}
-\boxed{~~
+\mybxbg{~~
 \mathcal{L} \left\{
 \int_0^t f(\tau) ~ d\tau
 \right\} = \frac{1}{s} \, F(s) .
@@ -1090,7 +1090,7 @@ where you may have to use the more general definition with infinities.
 }
 of $f(t)$ and $g(t)$ as
 \begin{equation} \label{ltc:convdef}
-\boxed{~~
+\mybxbg{~~
 (f * g)(t) \overset{\text{def}}{=}
 \int_0^t f(\tau) g(t-\tau) ~ d\tau .
 ~~}
@@ -1158,7 +1158,7 @@ the main result of this section is the following theorem.
 \begin{theorem}
 Let $f(t)$ and $g(t)$ be of exponential order, then
 \begin{equation*}
-\boxed{~~
+\mybxbg{~~
 \mathcal{L} \bigl\{ (f*g)(t) \bigr\}
 =
 \mathcal{L} \left\{ \int_0^t f(\tau) g(t-\tau) ~ d\tau \right\}
@@ -1537,7 +1537,7 @@ that we would like a \myquote{function} $\delta(t)$
 such that 
 for any continuous function $f(t)$ we have
 \begin{equation*}
-\boxed{~~
+\mybxbg{~~
 \int_{-\infty}^\infty \delta(t) f(t) \,dt = f(0) .
 ~~}
 \end{equation*}
@@ -1598,7 +1598,7 @@ In other words, the convolution of $\delta(t)$ with $f(t)$ is again $f(t)$,
 
 As we can integrate $\delta(t)$, let us compute its Laplace transform.
 \begin{equation*}
-\boxed{~~
+\mybxbg{~~
 {\mathcal{L}} \bigl\{ \delta(t-a) \bigr\}
 =
 \int_{0}^\infty e^{-st} \delta(t-a) \,dt = e^{-as} .

@@ -875,7 +875,7 @@ the matrix $A$ with the $i^{\text{th}}$ row and the $j^{\text{th}}$ column
 deleted.  To compute the determinant of a matrix, pick one row, say the
 $i^{\text{th}}$ row and compute:
 \begin{equation*}
-\boxed{~~
+\mybxbg{~~
 \det (A) =
 \sum_{j=1}^n
 {(-1)}^{i+j}
@@ -2228,7 +2228,7 @@ $\vec{v}_1$, $\vec{v}_2$, \ldots, $\vec{v}_n$, and the general solution to
 ${\vec{x}}' = P\vec{x}$
 can be written as
 \begin{equation*}
-\boxed{~~
+\mybxbg{~~
 \vec{x} = c_1 \vec{v}_1 e^{\lambda_1 t} +
 c_2 \vec{v}_2 e^{\lambda_2 t} + \cdots +
 c_n \vec{v}_n e^{\lambda_n t} .
@@ -3318,7 +3318,7 @@ eigenvectors by
 $\vec{v}_1$, $\vec{v}_2$, \ldots, $\vec{v}_n$.  If $A$ is invertible
 (that is, if $\omega_1 > 0$), then
 \begin{equation*}
-\boxed{~~
+\mybxbg{~~
 \vec{x}(t)
 = \sum_{i=1}^n \vec{v}_i \bigl(a_i \cos (\omega_i t) + b_i \sin (\omega_i t) \bigr) ,
 ~~}
@@ -3332,7 +3332,7 @@ If $A$ has a zero eigenvalue, that is $\omega_1 = 0$,
 and all other eigenvalues are distinct and
 negative, then the general solution can be written as
 \begin{equation*}
-\boxed{~~
+\mybxbg{~~
 \vec{x}(t) = \vec{v}_1 (a_1 + b_1 t) +
 \sum_{i=2}^n \vec{v}_i \bigl(a_i \cos (\omega_i t) + b_i \sin (\omega_i t) \bigr) .
 ~~}
@@ -4897,7 +4897,7 @@ Maybe we can try the same trick with matrices.  For an $n \times n$
 matrix $A$ we define the
 \emph{\myindex{matrix exponential}\index{exponential of a matrix}} as
 \begin{equation*}
-\boxed{~~
+\mybxbg{~~
 e^A \overset{\text{def}}{=} I + A + \frac{1}{2} A^2 + 
 \frac{1}{6} A^3 + \cdots + \frac{1}{k!} A^k + \cdots
 ~~}
@@ -5154,7 +5154,7 @@ A = E D E^{-1}.
 \end{equation*}
 This means that $e^A = E e^D E^{-1}$.  Multiplying the matrix by $t$ we obtain
 \begin{equation} \label{matexp:diagfundsol}
-\boxed{~~
+\mybxbg{~~
 e^{tA} = 
 Ee^{tD}E^{-1} = 
 E
@@ -5618,6 +5618,7 @@ $e^{tA}=\left[ \begin{smallmatrix}
 
 
 \begin{exercise}
+\pagebreak[2]
 \leavevmode
 \begin{tasks}(2)
 \task
@@ -5786,7 +5787,7 @@ equation with initial conditions
 \end{equation*}
 The solution can then be written as
 \begin{equation} \label{nhsys:intfacsoleq}
-\boxed{~~
+\mybxbg{~~
 \vec{x}(t) = e^{-tP} \int_0^t e^{sP}\vec{f}(s) \, ds + e^{-tP} \vec{b} .
 ~~}
 \end{equation}
@@ -6067,7 +6068,7 @@ $\vec{b} = \vec{v}_1 a_1 + \vec{v}_2 a_2 + \cdots + \vec{v}_n a_n$,
 just like before.
 Then if we write 
 \begin{equation*}
-\boxed{~~
+\mybxbg{~~
 \xi_k(t) =  e^{\lambda_k t} 
 \int_0^t e^{-\lambda_k s} g_k(s) \,ds + a_k e^{\lambda_k t} ,
 ~~}
@@ -6602,7 +6603,7 @@ t
 \end{equation*}
 That is, $x_1 = \frac{1}{2}\,e^t$, $x_2 = 
 -te^t - t - 1$.  We would add this to the complementary solution to get the
-general solution of the problem.  Notice also that both $\vec{a} e^t$
+general solution of the problem.  Notice that both $\vec{a} e^t$
 and $\vec{b} te^t$ were really needed.
 \end{example}
 
@@ -6671,7 +6672,7 @@ to obtain $\vec{u}$ and we have the particular solution
 $\vec{x}_p = X(t)\, \vec{u}(t)$.
 Let us write this as a formula
 \begin{equation*}
-\boxed{~~
+\mybxbg{~~
 \vec{x}_p = 
 X(t)
 \int \left[X(t)\right]^{-1}\vec{f}(t) \, dt .

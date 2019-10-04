@@ -3014,26 +3014,26 @@ The following matrices are in row echelon form.  The leading
 entries are marked:
 \begin{equation*}
 \begin{bmatrix}
-\boxed{1} & 2 & 9 & 3 \\
-0 & 0 & \boxed{1} & 5 \\
-0 & 0 & 0 & \boxed{1}
+\mybxsm{1} & 2 & 9 & 3 \\
+0 & 0 & \mybxsm{1} & 5 \\
+0 & 0 & 0 & \mybxsm{1}
 \end{bmatrix}
 \qquad
 \begin{bmatrix}
-\boxed{1} & -1 & -3  \\
-0 & \boxed{1} & 5  \\
-0 & 0 & \boxed{1}
+\mybxsm{1} & -1 & -3  \\
+0 & \mybxsm{1} & 5  \\
+0 & 0 & \mybxsm{1}
 \end{bmatrix}
 \qquad
 \begin{bmatrix}
-\boxed{1} & 2 & 1 \\
-0 & \boxed{1} & 2 \\
+\mybxsm{1} & 2 & 1 \\
+0 & \mybxsm{1} & 2 \\
 0 & 0 & 0
 \end{bmatrix}
 \qquad
 \begin{bmatrix}
-0 & \boxed{1} & -5 & 2 \\
-0 & 0 & 0 & \boxed{1} \\
+0 & \mybxsm{1} & -5 & 2 \\
+0 & 0 & 0 & \mybxsm{1} \\
 0 & 0 & 0 & 0
 \end{bmatrix}
 \end{equation*}
@@ -3046,26 +3046,26 @@ The following matrices are in reduced row echelon form.  The leading
 entries are marked:
 \begin{equation*}
 \begin{bmatrix}
-\boxed{1} & 3 & 0 & 8 \\
-0 & 0 & \boxed{1} & 6 \\
+\mybxsm{1} & 3 & 0 & 8 \\
+0 & 0 & \mybxsm{1} & 6 \\
 0 & 0 & 0 & 0
 \end{bmatrix}
 \qquad
 \begin{bmatrix}
-\boxed{1} & 0 & 2 &  0  \\
-0 & \boxed{1} & 3 & 0  \\
-0 & 0 & 0 & \boxed{1}
+\mybxsm{1} & 0 & 2 &  0  \\
+0 & \mybxsm{1} & 3 & 0  \\
+0 & 0 & 0 & \mybxsm{1}
 \end{bmatrix}
 \qquad
 \begin{bmatrix}
-\boxed{1} & 0 & 3 \\
-0 & \boxed{1} & -2 \\
+\mybxsm{1} & 0 & 3 \\
+0 & \mybxsm{1} & -2 \\
 0 & 0 & 0
 \end{bmatrix}
 \qquad
 \begin{bmatrix}
-0 & \boxed{1} & 2 & 0 \\
-0 & 0 & 0 & \boxed{1} \\
+0 & \mybxsm{1} & 2 & 0 \\
+0 & 0 & 0 & \mybxsm{1} \\
 0 & 0 & 0 & 0
 \end{bmatrix}
 \end{equation*}
@@ -3106,7 +3106,7 @@ case the first entry of the first column.
 \begin{equation*}
 \left[
 \begin{array}{ccc|c}
-\boxed{2} & 2 & 2 & 2 \\
+\mybxsm{2} & 2 & 2 & 2 \\
 1 & 1 & 3 & 5 \\
 1 & 4 & 1 & 10
 \end{array}
@@ -3117,7 +3117,7 @@ $\nicefrac{1}{2}$.
 \begin{equation*}
 \left[
 \begin{array}{ccc|c}
-\boxed{1} & 1 & 1 & 1 \\
+\mybxsm{1} & 1 & 1 & 1 \\
 1 & 1 & 3 & 5 \\
 1 & 4 & 1 & 10
 \end{array}
@@ -3153,7 +3153,7 @@ third row.
 \begin{array}{ccc|c}
 1 & 1 & 1 & 1 \\
 0 & 0 & 2 & 4 \\
-0 & \boxed{3} & 0 & 9
+0 & \mybxsm{3} & 0 & 9
 \end{array}
 \right]
 \end{equation*}
@@ -3162,7 +3162,7 @@ We swap rows.
 \left[
 \begin{array}{ccc|c}
 1 & 1 & 1 & 1 \\
-0 & \boxed{3} & 0 & 9 \\
+0 & \mybxsm{3} & 0 & 9 \\
 0 & 0 & 2 & 4
 \end{array}
 \right]
@@ -3172,7 +3172,7 @@ And we divide the pivot row by 3.
 \left[
 \begin{array}{ccc|c}
 1 & 1 & 1 & 1 \\
-0 & \boxed{1} & 0 & 3 \\
+0 & \mybxsm{1} & 0 & 3 \\
 0 & 0 & 2 & 4
 \end{array}
 \right]
@@ -3195,7 +3195,7 @@ We find the pivot, then divide that row by 2:
 \begin{array}{ccc|c}
 1 & 1 & 1 & 1 \\
 0 & 1 & 0 & 3 \\
-0 & 0 & \boxed{2} & 4
+0 & 0 & \mybxsm{2} & 4
 \end{array}
 \right] 
 \qquad \to \qquad
@@ -3290,8 +3290,8 @@ pivots.
 \begin{equation*}
 \left[
 \begin{array}{ccc|c}
-\boxed{1} & 2 & 0 & -5 \\
-0 & 0 & \boxed{1} & 3 \\
+\mybxsm{1} & 2 & 0 & -5 \\
+0 & 0 & \mybxsm{1} & 3 \\
 0 & 0 & 0 & 0 
 \end{array}
 \right]
@@ -3725,19 +3725,19 @@ random matrix:
 We find a pivot and reduce the rows below:
 \begin{equation*}
 \begin{bmatrix}
-\boxed{1} & 2 & 3 & 4 \\
+\mybxsm{1} & 2 & 3 & 4 \\
 2 & 4 & 5 & 6 \\
 3 & 6 & 7 & 8
 \end{bmatrix} 
 \to
 \begin{bmatrix}
-\boxed{1} & 2 & 3 & 4 \\
+\mybxsm{1} & 2 & 3 & 4 \\
 0 & 0 & -1 & -2 \\
 3 & 6 & 7 & 8
 \end{bmatrix} 
 \to
 \begin{bmatrix}
-\boxed{1} & 2 & 3 & 4 \\
+\mybxsm{1} & 2 & 3 & 4 \\
 0 & 0 & -1 & -2 \\
 0 & 0 & -2 & -4
 \end{bmatrix} .
@@ -3745,20 +3745,20 @@ We find a pivot and reduce the rows below:
 We find the next pivot, make it one, and rinse and repeat:
 \begin{equation*}
 \begin{bmatrix}
-\boxed{1} & 2 & 3 & 4 \\
-0 & 0 & \boxed{-1} & -2 \\
+\mybxsm{1} & 2 & 3 & 4 \\
+0 & 0 & \mybxsm{-1} & -2 \\
 0 & 0 & -2 & -4
 \end{bmatrix} 
 \to
 \begin{bmatrix}
-\boxed{1} & 2 & 3 & 4 \\
-0 & 0 & \boxed{1} & 2 \\
+\mybxsm{1} & 2 & 3 & 4 \\
+0 & 0 & \mybxsm{1} & 2 \\
 0 & 0 & -2 & -4
 \end{bmatrix} 
 \to
 \begin{bmatrix}
-\boxed{1} & 2 & 3 & 4 \\
-0 & 0 & \boxed{1} & 2 \\
+\mybxsm{1} & 2 & 3 & 4 \\
+0 & 0 & \mybxsm{1} & 2 \\
 0 & 0 & 0 & 0
 \end{bmatrix} . 
 \end{equation*}
@@ -3947,7 +3947,7 @@ We write the augmented matrix and we start reducing:
 \begin{align*}
 & \left[
 \begin{array}{ccc|ccc}
-\boxed{1} & 2 & 3 & 1 & 0 & 0\\
+\mybxsm{1} & 2 & 3 & 1 & 0 & 0\\
 2 & 0 & 1 & 0 & 1 & 0 \\
 3 & 1 & 0 & 0 & 0 & 1
 \end{array}
@@ -3956,7 +3956,7 @@ We write the augmented matrix and we start reducing:
 & &
 \left[
 \begin{array}{ccc|ccc}
-\boxed{1} & 2 & 3 & 1 & 0 & 0\\
+\mybxsm{1} & 2 & 3 & 1 & 0 & 0\\
 0 & -4 & -5 & -2 & 1 & 0 \\
 0 & -5 & -9 & -3 & 0 & 1
 \end{array}
@@ -3966,8 +3966,8 @@ We write the augmented matrix and we start reducing:
 \to
 & \left[
 \begin{array}{ccc|ccc}
-\boxed{1} & 2 & 3 & 1 & 0 & 0\\
-0 & \boxed{1} & \nicefrac{5}{4} & \nicefrac{1}{2} & \nicefrac{1}{4} & 0 \\
+\mybxsm{1} & 2 & 3 & 1 & 0 & 0\\
+0 & \mybxsm{1} & \nicefrac{5}{4} & \nicefrac{1}{2} & \nicefrac{1}{4} & 0 \\
 0 & -5 & -9 & -3 & 0 & 1
 \end{array}
 \right]
@@ -3975,8 +3975,8 @@ We write the augmented matrix and we start reducing:
 & &
 \left[
 \begin{array}{ccc|ccc}
-\boxed{1} & 2 & 3 & 1 & 0 & 0\\
-0 & \boxed{1} & \nicefrac{5}{4} & \nicefrac{1}{2} & \nicefrac{1}{4} & 0 \\
+\mybxsm{1} & 2 & 3 & 1 & 0 & 0\\
+0 & \mybxsm{1} & \nicefrac{5}{4} & \nicefrac{1}{2} & \nicefrac{1}{4} & 0 \\
 0 & 0 & \nicefrac{-11}{4} & \nicefrac{-1}{2} & \nicefrac{-5}{4} & 1
 \end{array}
 \right]
@@ -3985,18 +3985,18 @@ We write the augmented matrix and we start reducing:
 \to
 & \left[
 \begin{array}{ccc|ccc}
-\boxed{1} & 2 & 3 & 1 & 0 & 0\\
-0 & \boxed{1} & \nicefrac{5}{4} & \nicefrac{1}{2} & \nicefrac{1}{4} & 0 \\
-0 & 0 & \boxed{1} & \nicefrac{2}{11} & \nicefrac{5}{11} & \nicefrac{-4}{11}
+\mybxsm{1} & 2 & 3 & 1 & 0 & 0\\
+0 & \mybxsm{1} & \nicefrac{5}{4} & \nicefrac{1}{2} & \nicefrac{1}{4} & 0 \\
+0 & 0 & \mybxsm{1} & \nicefrac{2}{11} & \nicefrac{5}{11} & \nicefrac{-4}{11}
 \end{array}
 \right]
 \to
 & &
 \left[
 \begin{array}{ccc|ccc}
-\boxed{1} & 2 & 0 & \nicefrac{5}{11} & \nicefrac{-5}{11} & \nicefrac{12}{11} \\
-0 & \boxed{1} & 0 & \nicefrac{3}{11} & \nicefrac{-9}{11} & \nicefrac{5}{11} \\
-0 & 0 & \boxed{1} & \nicefrac{2}{11} & \nicefrac{5}{11} & \nicefrac{-4}{11}
+\mybxsm{1} & 2 & 0 & \nicefrac{5}{11} & \nicefrac{-5}{11} & \nicefrac{12}{11} \\
+0 & \mybxsm{1} & 0 & \nicefrac{3}{11} & \nicefrac{-9}{11} & \nicefrac{5}{11} \\
+0 & 0 & \mybxsm{1} & \nicefrac{2}{11} & \nicefrac{5}{11} & \nicefrac{-4}{11}
 \end{array}
 \right]
 \to
@@ -4004,9 +4004,9 @@ We write the augmented matrix and we start reducing:
 \to
 & \left[
 \begin{array}{ccc|ccc}
-\boxed{1} & 0 & 0 & \nicefrac{-1}{11} & \nicefrac{3}{11} & \nicefrac{2}{11} \\
-0 & \boxed{1} & 0 & \nicefrac{3}{11} & \nicefrac{-9}{11} & \nicefrac{5}{11} \\
-0 & 0 & \boxed{1} & \nicefrac{2}{11} & \nicefrac{5}{11} & \nicefrac{-4}{11}
+\mybxsm{1} & 0 & 0 & \nicefrac{-1}{11} & \nicefrac{3}{11} & \nicefrac{2}{11} \\
+0 & \mybxsm{1} & 0 & \nicefrac{3}{11} & \nicefrac{-9}{11} & \nicefrac{5}{11} \\
+0 & 0 & \mybxsm{1} & \nicefrac{2}{11} & \nicefrac{5}{11} & \nicefrac{-4}{11}
 \end{array}
 \right] .
 \end{align*}
@@ -4807,9 +4807,9 @@ Consider
 \begin{equation*}
 L = 
 \begin{bmatrix}
-\boxed{1} & 2 & 0 & 0 & 3 \\
-0 & 0 & \boxed{1} & 0 & 4 \\
-0 & 0 & 0 & \boxed{1} & 5
+\mybxsm{1} & 2 & 0 & 0 & 3 \\
+0 & 0 & \mybxsm{1} & 0 & 4 \\
+0 & 0 & 0 & \mybxsm{1} & 5
 \end{bmatrix} .
 \end{equation*}
 This matrix is in reduced row echelon form, the pivots are marked.
@@ -4832,12 +4832,12 @@ into the remaining entries. Let us check while marking which numbers went
 where:
 \begin{equation*}
 \begin{bmatrix}
-1 & \boxed{2} & 0 & 0 & 3 \\
-0 & \boxed{0} & 1 & 0 & 4 \\
-0 & \boxed{0} & 0 & 1 & 5
+1 & \mybxsm{2} & 0 & 0 & 3 \\
+0 & \mybxsm{0} & 1 & 0 & 4 \\
+0 & \mybxsm{0} & 0 & 1 & 5
 \end{bmatrix} 
 \begin{bmatrix}
-\boxed{2} \\ -1 \\ \boxed{0} \\ \boxed{0} \\ 0
+\mybxsm{2} \\ -1 \\ \mybxsm{0} \\ \mybxsm{0} \\ 0
 \end{bmatrix}
 =
 \begin{bmatrix}
@@ -4855,12 +4855,12 @@ We set the first question mark to 3, the second to 4, and the
 third to 5.  Let us check, marking things as previously,
 \begin{equation*}
 \begin{bmatrix}
-1 & 2 & 0 & 0 & \boxed{3} \\
-0 & 0 & 1 & 0 & \boxed{4} \\
-0 & 0 & 0 & 1 & \boxed{5}
+1 & 2 & 0 & 0 & \mybxsm{3} \\
+0 & 0 & 1 & 0 & \mybxsm{4} \\
+0 & 0 & 0 & 1 & \mybxsm{5}
 \end{bmatrix} 
 \begin{bmatrix}
-\boxed{3} \\ 0 \\ \boxed{4} \\ \boxed{5} \\ -1
+\mybxsm{3} \\ 0 \\ \mybxsm{4} \\ \mybxsm{5} \\ -1
 \end{bmatrix}
 =
 \begin{bmatrix}

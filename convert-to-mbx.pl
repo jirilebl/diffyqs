@@ -424,6 +424,14 @@ sub ensure_mbx_svg_version {
 #	}
 #}
 
+sub do_displaymath_subs {
+	my $eqn = shift;
+
+	$eqn = s/\\displaybreak[0]//g;
+
+	return $eqn;
+}
+
 sub read_paragraph {
 	my $para = "";
 	my $read_something = 0;
@@ -782,7 +790,7 @@ while(1)
 	} elsif ($para =~ s/^\\begin\{align\*\}[ \n]*//) {
 		print "(ALIGN*)\n";
 		if ($para =~ s/^(.*?)\\end\{align\*\}[ \n]*//s) {
-			my $eqn = $1;
+			my $eqn = do_displaymath_subs($1);
 
 			my $indexes = "";
 			while ($eqn =~ s/\\myindex\{(.*?)\}/$1/) {
@@ -806,7 +814,7 @@ while(1)
 	} elsif ($para =~ s/^\\begin\{align\}[ \n]*//) {
 		print "(ALIGN)\n";
 		if ($para =~ s/^(.*?)\\end\{align\}[ \n]*//s) {
-			my $eqn = $1;
+			my $eqn = do_displaymath_subs($1);
 			#$theid = "";
 			#if ($para =~ s/^ *\\label\{(.*?)\} *//) {
 			#	$theid = $1;
@@ -841,7 +849,7 @@ while(1)
 	} elsif ($para =~ s/^\\begin\{multline\*\}[ \n]*//) {
 		print "(MULTLINE*)\n";
 		if ($para =~ s/^(.*?)\\end\{multline\*\}[ \n]*//s) {
-			my $eqn = $1;
+			my $eqn = do_displaymath_subs($1);
 
 			my $indexes = "";
 			while ($eqn =~ s/\\myindex\{(.*?)\}/$1/) {
@@ -862,7 +870,7 @@ while(1)
 	} elsif ($para =~ s/^\\begin\{multline\}[ \n]*//) {
 		print "(MULTLINE)\n";
 		if ($para =~ s/^(.*?)\\end\{multline\}[ \n]*//s) {
-			my $eqn = $1;
+			my $eqn = do_displaymath_subs($1);
 			my $theid = "";
 			if ($eqn =~ s/^[ \n]*\\label\{(.*?)\}[ \n]*//s) {
 				$theid = modify_id($1);
@@ -895,7 +903,7 @@ while(1)
 	} elsif ($para =~ s/^\\begin\{equation\*\}[ \n]*//) {
 		print "(EQUATION*)\n";
 		if ($para =~ s/^(.*?)\\end\{equation\*\}[ \n]*//s) {
-			my $eqn = $1;
+			my $eqn = do_displaymath_subs($1);
 
 			my $indexes = "";
 			while ($eqn =~ s/\\myindex\{(.*?)\}/$1/) {
@@ -915,11 +923,13 @@ while(1)
 	} elsif ($para =~ s/^\\begin\{equation\}[ \n]*//) {
 		print "(EQUATION)\n";
 		if ($para =~ s/^(.*?)\\end\{equation\}[ \n]*//s) {
-			my $eqn = $1;
+			my $eqn = do_displaymath_subs($1);
 			my $theid = "";
 			if ($eqn =~ s/^[ \n]*\\label\{(.*?)\}[ \n]*//s) {
 				$theid = modify_id($1);
 			}
+
+			$eqn = s/\\displaybreak[0]//g;
 
 			my $indexes = "";
 			while ($eqn =~ s/\\myindex\{(.*?)\}/$1/) {
