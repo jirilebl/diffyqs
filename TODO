@@ -1,39 +1,26 @@
-Possible cover art: https://www.jirka.org/album/cervenusa2008/tn/IMGP2805.jpg.html
+Edition 6 stuff:
 
-SHOULD (edition 6):
+* cover art: https://www.jirka.org/album/cervenusa2008/tn/IMGP2805.jpg.html
+* Double check the total number of estimated lectures (half done)
+* Double check exercises are not split across pages
+* Make archive of all the figures to be usable by instructors
+* Update(check) EP references to 5th edition
+* Update(check) BD references to 11th edition
+
+Further down the road perhaps:
 
 SMALLER THINGS:
+
 * Expand discussion of vector fields and how they are drawn in 3.1.
 * Add maybe a few more exercises for setting up applications in 3.1
 * In 3.6 add more exercises on forced, and also improve the exposition wrt
   the units.
 * In 3.4 (or earlier?) Add some exercises on constant nonhomogeneity for
   an invertible A, that just translates the point.
-* exponential order / type, need to use one term only.  Order at infinity?
-  also should be emphasized at more places.
 * Include annihilator method at least in exercises of section of 2.5 
 
-SMALL THINGS WHEN WE ARE CLOSER TO DONE:
-* Double check the total number of estimated lectures (half done)
-* Double check exercises are not split across pages
-* Make archive of all the figures to be usable by instructors
 
-TECHNICAL/MINOR/STYLE:
-* Update(check) EP references to 5th edition
-* Update(check) BD references to 11th edition
-* Made pages larger as in realanal to save paper, but must check that
-  the layout still work, especially inset floating figures might go bad.
-* Double check all figures
-* Use more underbrace / cancel (cancel only if really needed,
-  it can look weird).
-  See subsection 3.9.2
-* Search for: will, previously, have, can, note, notice
-* adjectives like complex valued should be complex-valued (done for those,
-  but there are others, find them all)
-* use bigl( bigr) when a sqrt is in a parenthesis perhaps
-
-
-Non-edition 6 stuff:
+LARGER THINGS:
 
 MAYBE IN CASE OF BIG CHANGE (incompatible edition) in the Star Trek
 future (quite probably never):
