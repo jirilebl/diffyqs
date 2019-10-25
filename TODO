@@ -1,15 +1,8 @@
 Edition 6 stuff:
 
-* cover art: https://www.jirka.org/album/cervenusa2008/tn/IMGP2805.jpg.html
-* Double check the total number of estimated lectures (half done)
-* Double check exercises are not split across pages
-* Make archive of all the figures to be usable by instructors
-* Update(check) EP references to 5th edition
-* Update(check) BD references to 11th edition
-
 Further down the road perhaps:
 
-SMALLER THINGS:
+SMALLER THINGS MAYBE:
 
 * Expand discussion of vector fields and how they are drawn in 3.1.
 * Add maybe a few more exercises for setting up applications in 3.1
@@ -18,9 +11,13 @@ SMALLER THINGS:
 * In 3.4 (or earlier?) Add some exercises on constant nonhomogeneity for
   an invertible A, that just translates the point.
 * Include annihilator method at least in exercises of section of 2.5 
+* Perhaps change name of \vec{x}_1 solutions to avoid confusion with x_1
+  components, see what other books do
+* Add factorization idea in wave equation (d'Alembert) to write it as
+  two vector fields applied to y perhaps?  Makes more sense if we have 
+  first order before this.
 
-
-LARGER THINGS:
+LARGER THINGS MAYBE:
 
 MAYBE IN CASE OF BIG CHANGE (incompatible edition) in the Star Trek
 future (quite probably never):
@@ -29,13 +26,6 @@ future (quite probably never):
   before the second order ones since it leads naturally into d'Alembert,
   but they are in chapter 1, where they might make more sense.
   This requires much more thought, maybe forget about it.
-
-MAYBE:
-* Perhaps change name of \vec{x}_1 solutions to avoid confusion with x_1
-  components, see what other books do
-* Add factorization idea in wave equation (d'Alembert) to write it as
-  two vector fields applied to y perhaps?  Makes more sense if we have 
-  first order before this.
 
 PROBABLY NOT/VAGUE:
 * Perhaps an appendix with more info on existence uniqueness, linear
