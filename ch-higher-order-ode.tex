@@ -37,7 +37,7 @@ We have already seen some second order linear homogeneous equations.
 & \text{Two solutions are:} \quad y_1 = e^{kx}, \quad y_2 = e^{-kx} . \qquad
 \end{align*}
 
-If we know two solutions of a linear homogeneous equation, we know a lot
+If we know two solutions of a linear homogeneous equation, we know many
 more of them.
 
 \begin{theorem}[Superposition]\index{superposition}
@@ -59,7 +59,7 @@ proof is very enlightening and illustrates how linear equations work.
 
 \medskip
 
-Proof:
+\emph{Proof:}
 Let 
 $y = C_1 y_1 + C_2 y_2$.  Then
 \begin{equation*}
@@ -158,7 +158,7 @@ be able to solve
 for the constants and find a solution to the differential equation
 satisfying the initial conditions.
 
-Question: Suppose we find two different solutions $y_1$ and $y_2$ to the
+\emph{Question:} Suppose we find two different solutions $y_1$ and $y_2$ to the
 homogeneous equation \eqref{sol:eqlinhom}.  Can every solution
 be written (using superposition) in the form
 $y = C_1 y_1 + C_2 y_2$?
@@ -192,59 +192,15 @@ y = C_1 \cos x + C_2 \sin x
 \end{equation*}
 is the general solution to $y'' + y = 0$.
 
+For two functions, checking linear independence is rather simple.  Let us
+see another example.  Consider $y''-2x^{-2}y = 0$.  Then $y_1 = x^2$ and $y_2 =
+\nicefrac{1}{x}$ are solutions.  To see that they are linearly indepedent,
+suppose one is a multple of the other: $y_1 = A y_2$, we just have to find
+out that $A$ cannot be a constant.  In this case we have $A =
+\nicefrac{y_1}{y_2} = x^3$, this most decidedly not a constant.
+So $y = C_1 x^2 + C_2 \nicefrac{1}{x}$ is the general solution.
+
 \medskip
-
-We will study the solution of nonhomogeneous equations in
-\sectionref{sec:nonhom}.  We will first focus on finding general solutions to
-homogeneous equations.
-
-\subsection{Exercises}
-
-\begin{exercise}
-Show that $y=e^x$ and $y=e^{2x}$ are linearly independent.
-\end{exercise}
-
-\begin{exercise}
-Take $y'' + 5 y = 10 x + 5$.  Find (guess!) a solution.
-\end{exercise}
-
-\begin{exercise}
-Prove the superposition principle for nonhomogeneous equations.  Suppose that
-$y_1$ is a solution to $L y_1 = f(x)$ and $y_2$ is a solution to
-$L y_2 = g(x)$ (same linear operator $L$).  Show that $y = y_1+y_2$ solves
-$Ly = f(x) + g(x)$.
-\end{exercise}
-
-\begin{exercise}
-For the equation $x^2 y'' - x y' = 0$, find two solutions, show that they
-are linearly independent and find the general solution.
-Hint: Try $y = x^r$.
-\end{exercise}
-
-Equations of the form $a x^2 y'' + b x y' + c y = 0$ are called
-\emph{Euler's equations\index{Euler's equation}} or
-\emph{Cauchy--Euler equations\index{Cauchy--Euler equation}}.
-They are solved by trying
-$y=x^r$ and solving for $r$ (assume that $x \geq 0$ for simplicity).
-
-\begin{exercise} \label{sol:eulerex}
-Suppose that ${(b-a)}^2-4ac > 0$.
-\begin{tasks}
-\task Find a formula for the general solution
-of $a x^2 y'' + b x y' + c y = 0$.  Hint: Try $y=x^r$ and find a formula for
-$r$.
-\task What happens when ${(b-a)}^2-4ac = 0$ or ${(b-a)}^2-4ac < 0$?
-\end{tasks}
-\end{exercise}
-
-We will revisit the case when ${(b-a)}^2-4ac < 0$ later.
-
-\begin{exercise} \label{sol:eulerexln}
-Same equation as in \exerciseref{sol:eulerex}.
-Suppose ${(b-a)}^2-4ac = 0$.  Find a formula for the general solution
-of $a x^2 y'' + b x y' + c y = 0$.  Hint: Try $y=x^r \ln x$ for the second
-solution.
-\end{exercise}
 
 If you have one solution to a second order linear homogeneous
 equation you can find another one.  This is the \emph{\myindex{reduction of
@@ -282,10 +238,79 @@ Hence $y_2 = y_1 v = \frac{-C}{2x}$.
 Any $C$ works and so $C=-2$ makes $y_2 = \nicefrac{1}{x}$.  Thus, the
 general solution is $y = C_1 x + C_2\nicefrac{1}{x}$.
 
+Since we have a formula for the solution to the first order linear equation,
+we can write a formula for $y_2$:
+\begin{equation*}
+y_2(x) = y_1(x) \int \frac{e^{-\int p(x)\,dx}}{{\bigl(y_1(x)\bigr)}^2} \,dx
+\end{equation*}
+Although it is much easier to remember that we just need to try $y_2(x) =
+y_1(x) v(x)$ and find $v(x)$ as we did above.  Also, the technique
+works for higher order equations too: you get to reduce the order for each
+solution you find.  So it is better to remember how to do
+it rather than a specific formula.
+
+\medskip
+
+We will study the solution of nonhomogeneous equations in
+\sectionref{sec:nonhom}.  We will first focus on finding general solutions to
+homogeneous equations.
+
+
+\subsection{Exercises}
+
+\begin{exercise}
+Show that $y=e^x$ and $y=e^{2x}$ are linearly independent.
+\end{exercise}
+
+\begin{exercise}
+Take $y'' + 5 y = 10 x + 5$.  Find (guess!) a solution.
+\end{exercise}
+
+\begin{exercise}
+Prove the superposition principle for nonhomogeneous equations.  Suppose that
+$y_1$ is a solution to $L y_1 = f(x)$ and $y_2$ is a solution to
+$L y_2 = g(x)$ (same linear operator $L$).  Show that $y = y_1+y_2$ solves
+$Ly = f(x) + g(x)$.
+\end{exercise}
+
+\begin{exercise}
+For the equation $x^2 y'' - x y' = 0$, find two solutions, show that they
+are linearly independent and find the general solution.
+Hint: Try $y = x^r$.
+\end{exercise}
+
+\pagebreak[2]
+Equations of the form $a x^2 y'' + b x y' + c y = 0$ are called
+\emph{Euler's equations\index{Euler's equation}} or
+\emph{Cauchy--Euler equations\index{Cauchy--Euler equation}}.
+They are solved by trying
+$y=x^r$ and solving for $r$ (assume that $x \geq 0$ for simplicity).
+
+\begin{exercise} \label{sol:eulerex}
+\pagebreak[2]
+Suppose that ${(b-a)}^2-4ac > 0$.
+\begin{tasks}
+\task Find a formula for the general solution
+of $a x^2 y'' + b x y' + c y = 0$.  Hint: Try $y=x^r$ and find a formula for
+$r$.
+\task What happens when ${(b-a)}^2-4ac = 0$ or ${(b-a)}^2-4ac < 0$?
+\end{tasks}
+\end{exercise}
+
+We will revisit the case when ${(b-a)}^2-4ac < 0$ later.
+
+\begin{exercise} \label{sol:eulerexln}
+Same equation as in \exerciseref{sol:eulerex}.
+Suppose ${(b-a)}^2-4ac = 0$.  Find a formula for the general solution
+of $a x^2 y'' + b x y' + c y = 0$.  Hint: Try $y=x^r \ln x$ for the second
+solution.
+\end{exercise}
+
 
 \begin{exercise}[reduction of order] \label{exercise:reductionoforder}
 Suppose $y_1$ is a solution to $y'' + p(x) y' + q(x) y = 0$.
-Show that
+By directly plugging into the equation,
+show that
 \begin{equation*}
 y_2(x) = y_1(x) \int \frac{e^{-\int p(x)\,dx}}{{\bigl(y_1(x)\bigr)}^2} \,dx
 \end{equation*}
@@ -338,7 +363,7 @@ $y=5$
 
 \begin{exercise}
 Find the general solution to
-$x y'' + y' = 0$.  Hint: Notice that it is a first order ODE in $y'$.
+$x y'' + y' = 0$.  Hint: It is a first order ODE in $y'$.
 \end{exercise}
 \exsol{%
 $y=C_1 \ln(x) + C_2$
@@ -2480,7 +2505,7 @@ the calculations are essentially the same).
 
 \subsection{Undamped forced motion and resonance}
 
-First let us consider undamped ($c=0$) motion for simplicity.
+First let us consider undamped ($c=0$) motion.
 We have the equation
 \begin{equation*}
 mx'' + kx = F_0 \cos (\omega t) .

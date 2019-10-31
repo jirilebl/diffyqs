@@ -44,10 +44,7 @@
 
 \usepackage[T1]{fontenc}
 
-% Footnotes should use symbols, not numbers.  Numbered footnotes are
-% evil
-\usepackage[perpage,symbol*]{footmisc}
-
+\usepackage{perpage}
 
 \usepackage{tasks}
 \usepackage{footnote}
@@ -106,6 +103,15 @@
 % This is my modified wrapfig that doesn't use intextsep
 \usepackage{mywrapfig}
 \usepackage{import}
+
+% Footnotes should use symbols, not numbers.  Numbered footnotes are
+% evil, not using footmisc as it conflicts with hyperref
+%\usepackage[perpage,symbol*]{footmisc}
+
+% The [2] would not use star
+%\MakePerPage[2]{footnote}
+\MakePerPage{footnote}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
 
 \definecolor{mypersianblue}{rgb}{0.11, 0.22, 0.73}
 

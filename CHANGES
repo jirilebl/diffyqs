@@ -32,8 +32,8 @@
 * 1.6: A little bit more detail on drawing phase diagrams.
 * 1.7: Compute the first two steps in the example with $h=1$ explicitly
 
-* 2.1: In the exercises instead of just a quick note, actually work out
-       the reduction of order method and give an example.
+* 2.1: Actually work out the reduction of order method and give an example.
+* 2.1: Add another short example of linear independence of two functions.
 * 2.2: Make the first couple a pages its own subsection for consistency
 * 2.2: Add a short footnote on the word ``ansatz'' and add it to index.
 * 2.2: Make the $y''+k^2 y= 0$ an explicit example, so that we can refer to
