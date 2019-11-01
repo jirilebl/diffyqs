@@ -711,7 +711,7 @@ $m \times p$.  Example:
 For multiplication we want an analogue of a 1.  This analogue is the
 so-called \emph{\myindex{identity matrix}}.
 The identity matrix is a square matrix with 1s on the
-main diagonal and zeros everywhere else.  It is usually denoted by $I$.
+diagonal and zeros everywhere else.  It is usually denoted by $I$.
 For each size we have a different identity matrix and so sometimes we may denote
 the size as a subscript.  For example, the $I_3$ would be the $3 \times 3$
 identity matrix
@@ -3472,7 +3472,7 @@ a_1
 \begin{bmatrix} 1 \\ -1 \end{bmatrix}
 a_2 
 =
-\begin{bmatrix} a_1+a_2 \\2a_1 - a_2 \end{bmatrix}
+\begin{bmatrix} a_1+a_2 \\2a_1 - a_2 \end{bmatrix} .
 \end{equation*}
 We solve (exercise) to find $a_1 = 0$, $a_2 = 1$.
 To find the $b_1$ and $b_2$, we differentiate first:
@@ -3702,7 +3702,7 @@ Alternatively Bob could move away from the wall
 towards the incoming car 2, where another safe distance is
 $x_2 \left( \frac{4 \pi}{\sqrt{3}} \right) = \frac{8 \pi}{\sqrt{3}}
 \approx 14.51$ and so on.  We can use all the different
-$t$ such that $x_2'(t) = 0$.  Of course $t=0$ is always a solution here,
+$t$ such that $x_2'(t) = 0$.  Of course $t=0$ is also a solution,
 corresponding to $x_2 = 0$, but
 that means standing right at the wall.
 \end{example}
@@ -4851,13 +4851,13 @@ $A = \left[ \begin{smallmatrix}
 
 \subsection{Definition}
 
-In this section we present a different way of finding a fundamental
-matrix solution of a system.  Suppose that we have the constant
+There is another way of finding a fundamental
+matrix solution of a system.  Consider the constant
 coefficient equation
 \begin{equation*}
-{\vec{x}}' = P \vec{x} ,
+{\vec{x}}' = P \vec{x} .
 \end{equation*}
-as usual.  If this is just one equation ($P$ is a number or a $1
+If this would be just one equation (when $P$ is a number or a $1
 \times 1$ matrix), then the solution would be
 \begin{equation*}
 \vec{x} = e^{Pt} .
@@ -4923,7 +4923,7 @@ ${\vec{x}}' = P \vec{x}$ is
 \begin{equation*}
 \vec{x} = e^{tP} \vec{c} ,
 \end{equation*}
-where $\vec{c}$ is an arbitrary constant vector.  In fact $\vec{x}(0) =
+where $\vec{c}$ is an arbitrary constant vector.  In fact, $\vec{x}(0) =
 \vec{c}$.
 \end{theorem}
 
@@ -4940,8 +4940,8 @@ P \vec{x}.
 
 Hence $e^{tP}$ is a \myindex{fundamental matrix solution}
 of the homogeneous system.
-If we find a way to compute the matrix exponential,
-we will have another method of solving constant coefficient homogeneous
+So if we can compute the matrix exponential,
+we have another method of solving constant coefficient homogeneous
 systems.  It also makes it easy to solve for initial conditions.  To solve 
 ${\vec{x}}' = A \vec{x}$, $\vec{x}(0) = \vec{b}$, we take the solution
 \begin{equation*}
@@ -5073,7 +5073,7 @@ BAIAB^{-1} =
 BA^2B^{-1} .
 \end{equation*}
 And by the same reasoning ${(BAB^{-1})}^k = B A^k B^{-1}$.  Now write 
-down the Taylor series for
+the Taylor series for
 $e^{BAB^{-1}}$:
 \begin{equation*}
 \begin{split}
@@ -5107,15 +5107,14 @@ e^{tA} = E e^{tD} E^{-1} .
 \end{equation*}
 
 To diagonalize $A$
-we will need $n$ linearly independent eigenvectors of $A$.
+we need $n$ linearly independent eigenvectors of $A$.
 Otherwise, this method of computing the exponential does not work and we need to be trickier, but we will
 not get into such details.
-We let $E$ be the matrix with the eigenvectors as columns.  
+Let $E$ be the matrix with the eigenvectors as columns.  
 Let $\lambda_1$, $\lambda_2$, \ldots, $\lambda_n$ be the eigenvalues and
 let $\vec{v}_1$, $\vec{v}_2$, \ldots, $\vec{v}_n$ be the eigenvectors, then
 $E = [\, \vec{v}_1 \quad \vec{v}_2 \quad \cdots \quad \vec{v}_n \,]$.
-Let $D$ be the diagonal matrix with the eigenvalues on the main diagonal.
-That is
+Make a diagonal matrix $D$ with the eigenvalues on the diagonal:
 \begin{equation*}
 D =
 \begin{bmatrix}

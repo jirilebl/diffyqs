@@ -5,7 +5,7 @@
 \section{Second order linear ODEs}
 \label{solinear:section}
 
-\sectionnotes{less than 1 lecture\EPref{,
+\sectionnotes{1 lecture, reduction of order optional\EPref{,
 first part of \S3.1 in \cite{EP}}\BDref{,
 parts of \S3.1 and \S3.2 in \cite{BD}}}
 
@@ -399,7 +399,7 @@ y''-6y'+8y = 0, \qquad y(0) = - 2, \qquad y'(0) = 6 .
 This is a second order linear homogeneous equation with constant
 coefficients.  \emph{Constant coefficients\index{constant coefficient}}
 means that the functions 
-in front of $y''$, $y'$, and $y$ are constants, not depending on $x$.
+in front of $y''$, $y'$, and $y$ are constants, they do not depend on $x$.
 
 To guess a solution, think of a function that stays essentially the
 same when we differentiate it, so that we can take the function and its
@@ -1423,8 +1423,8 @@ L I''(t) + R I'(t) + \frac{1}{C} I(t) = E'(t) .
 \end{equation*}
 This is a nonhomogeneous second order constant coefficient linear equation.
 As $L, R$, and $C$ are all positive, this system behaves just like the
-mass and spring system.  The position of the mass is replaced by the current.
-Mass is replaced by the inductance, damping is replaced by resistance, and
+mass and spring system.  Position of the mass is replaced by current.
+Mass is replaced by inductance, damping is replaced by resistance, and
 the spring constant is replaced by one over the capacitance.  The change in
 voltage becomes the forcing function---for constant voltage this is an
 unforced motion.
@@ -2519,8 +2519,8 @@ where $\omega_0 = \sqrt{\nicefrac{k}{m}}$ is the
 \emph{\myindex{natural frequency}} (angular).  It is the frequency
 at which the system \myquote{wants to oscillate} without external interference.
 
-Let us suppose that $\omega_0 \not= \omega$.  We try the solution
-$x_p = A \cos (\omega t)$ and solve for $A$.  Note that we do not need a sine
+Suppose that $\omega_0 \not= \omega$.  We try the solution
+$x_p = A \cos (\omega t)$ and solve for $A$.  We do not need a sine
 in our trial solution as after plugging in we only have cosines.
 If you include a sine, it is fine; you will find that its
 coefficient is zero (I could not find a second rhyme).
@@ -2546,6 +2546,7 @@ x = C \cos (\omega_0 t - \gamma) +
 \frac{F_0}{m(\omega_0^2 - \omega^2)} \cos (\omega t) .
 \end{equation*}
 The solution is a superposition of two cosine waves at different frequencies.
+\pagebreak[2]
 
 \begin{example}
 Take
@@ -2691,8 +2692,7 @@ The roots of the characteristic equation of the associated
 homogeneous problem are $r_1,r_2 = -p \pm \sqrt{p^2 - \omega_0^2}$.  The form
 of the general solution of the associated homogeneous equation
 depends on the sign of $p^2 - \omega_0^2$, or
-equivalently on the sign of $c^2 - 4km$, as we have
-seen before.  That is,
+equivalently on the sign of $c^2 - 4km$, as before:
 \begin{equation*}
 x_c =
 \begin{cases}
@@ -2705,6 +2705,7 @@ e^{-p t} \bigl( C_1 \cos (\omega_1 t) + C_2 \sin (\omega_1 t) \bigr) &
 where $\omega_1 = \sqrt{\omega_0^2 - p^2}$.  In any case, we see that
 $x_c(t) \to 0$ as $t \to \infty$.
 
+\pagebreak[2]
 Let us find a particular solution.
 There can be no conflicts when trying to solve for the
 undetermined coefficients by trying $x_p = A \cos (\omega t)
@@ -2777,9 +2778,9 @@ and $\gamma = \nicefrac{\pi}{2}$.
 For reasons we will explain in a moment, we call $x_c$ the
 \emph{\myindex{transient solution}}
 and denote it by $x_{tr}$.  We call the
-$x_p$ we found above the \emph{\myindex{steady periodic solution}} and denote it
+$x_p$ from above the \emph{\myindex{steady periodic solution}} and denote it
 by $x_{sp}$.
-The general solution to our problem is
+The general solution is
 \begin{equation*}
 x = x_c + x_p = x_{tr} + x_{sp} .
 \end{equation*}
@@ -2816,7 +2817,7 @@ behavior for all time (i.e.\ an infinite \myquote{transient region}).
 
 Let us describe what we mean by resonance when damping is present.
 Since there were no conflicts when solving with undetermined coefficient,
-there is no term that goes to infinity.  We look at the
+there is no term that goes to infinity.  We look instead at the
 maximum value of the amplitude of the steady periodic solution.
 Let $C$ be the amplitude of $x_{sp}$.
 If we plot $C$ as a function of $\omega$ (with all other
@@ -2915,13 +2916,11 @@ $C(\omega)$ for $\omega > 0$)?
 \end{exercise}
 
 \begin{exercise}
-\begin{samepage}
 Take $m x'' + c x' + kx = F_0 \cos (\omega t)$.
 Fix $c > 0$, $k > 0$, and $F_0 > 0$.  Consider the function $C(\omega)$.
 For what values of $m$ (solve in terms of $c$, $k$, and $F_0$) will there be no
 practical resonance (that is, for what values of $m$ is there no maximum of
 $C(\omega)$ for $\omega > 0$)?
-\end{samepage}
 \end{exercise}
 
 \begin{exercise}
