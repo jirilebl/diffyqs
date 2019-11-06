@@ -427,7 +427,7 @@ sub ensure_mbx_svg_version {
 sub do_displaymath_subs {
 	my $eqn = shift;
 
-	$eqn = s/\\displaybreak[0]//g;
+	$eqn =~ s/\\displaybreak[0]//g;
 
 	return $eqn;
 }

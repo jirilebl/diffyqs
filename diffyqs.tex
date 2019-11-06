@@ -16,12 +16,13 @@
 \usepackage{diffyqssetup}
 
 % Useful for making up drafts
-\usepackage{draftwatermark}
-\SetWatermarkText{Draft of v6.0 as of \today. May still change!}
-\SetWatermarkAngle{90}
-\SetWatermarkHorCenter{0.5in}
-\SetWatermarkColor[gray]{0.7}
-\SetWatermarkScale{0.18}
+%PRINT
+%\usepackage{draftwatermark}
+%\SetWatermarkText{Draft of v6.0 as of \today. May still change!}
+%\SetWatermarkAngle{90}
+%\SetWatermarkHorCenter{0.5in}
+%\SetWatermarkColor[gray]{0.7}
+%\SetWatermarkScale{0.18}
 
 % This is useful for debugging
 %\overfullrule=2cm
@@ -94,7 +95,7 @@
 %mbx       </shortlicense>
 %mbx     </copyright>
 %mbx     <p>
-%mbx        Version 6.0 (draft)
+%mbx        Version 6.0
 %mbx     </p>
 %mbx     <p>
 %mbx       You can use, print, duplicate, share this book as much as you want.  You can
@@ -129,14 +130,14 @@
 %mbxSTARTIGNORE
 
 %also fix above
-\newcommand{\theversion}{6.0 draft}
+\newcommand{\theversion}{6.0}
 \makediffytitlepage
 
 \newpage
 
 \vspace*{\fill}
 
-%\begin{small} 
+\begin{small}
 \noindent
 Typeset in \LaTeX.
 
@@ -149,13 +150,13 @@ Copyright \copyright 2008--2019 Ji\v{r}\'i Lebl
 %\medskip
 %\noindent
 %Amazon KDP edition\\
-%ISBN-13: 978-1541329058
+%ISBN-13: 978-1-70623-023-6
 
 %PRINT
 % not for lulu
 %\medskip
 %\noindent
-%Cover image: Arch in St.\ Louis, \copyright 2009 Ji{\v r}\'i Lebl, all rights reserved.  Cover
+%Cover image: Arch in St.\ Louis, \copyright 2008 Ji{\v r}\'i Lebl, all rights reserved.  Cover
 %image cannot be reused in derivative works.
 
 \bigskip
@@ -240,10 +241,7 @@ See \url{https://www.jirka.org/diffyqs/} for more information
 The \LaTeX\ source for the book is available
 for possible modification and customization
 at github: \url{https://github.com/jirilebl/diffyqs}
-%\end{small}
-
-% For large print do this
-%\large
+\end{small}
 
 \diffytableofcontents
 
