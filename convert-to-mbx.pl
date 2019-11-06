@@ -1470,7 +1470,7 @@ while(1)
 		open_paragraph();
 
 	} elsif ($para =~ s/^\\end\{exercise\}[ \n]*\\exsol\{// ||
-	         $para =~ s/^\\end\{samepage\}[ \n]*\\end\{exercise\}[ \n]*\\exsol\{//) {
+	         $para =~ s/^\\end\{samepage\}[ \n]*\\end\{exercise\}[ \n]*\\exsol\{// ||
 	         $para =~ s/^\\end\{exercise\}[ \n]*\\end\{samepage\}[ \n]*\\exsol\{//) {
 		print "(exercise end)\n";
 		print "(exsol start)\n";
