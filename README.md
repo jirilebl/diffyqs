@@ -4,8 +4,8 @@ A free online textbook.  See http://www.jirka.org/diffyqs/
 
 ## Branches:
 
-* ``master`` branch is the current working version, currently it is what will become edition 6.  See TODO and CHANGES files.  Backward compatibility will be kept with this edition: Numbering of exercises, sections, chapters will not change.  New chapter (appendix) will be added, and a couple new sections, and some new exercises.  Pagination will change, and numbering of some examples, figures, etc... may change, but numbering changes will be kept to a minimum.
-* ``edition5`` branch is edition 5 and only smaller fixes or smaller changes that don't really change content or pagination go here.  Only very minor fixes or style changes.  Version 5.5 was released from this branch, but likely there won't be a 5.6 unless major errata are found.  The plan is to make edition 6 sometime in the fall 2019.
+* ``master`` branch is the current working version, version 6.
+* ``edition5`` branch is the now obsolete edition 5, no updates are planned for this version.
 
 ## Files
 

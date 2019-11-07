@@ -22,7 +22,7 @@ while($line = <STDIN>)
 		print " class=\"index-button toolbar-item button\" href=\"https://www.jirka.org/diffyqs/diffyqs.pdf\" title=\"PDF\">PDF</a>\n";
 
 		print "<a onclick=\"gtag('event','download',{'event_category': 'amazon', 'event_action': 'Link', 'event_label': 'PTXhtml(top) diffyqs'});\"\n";
-		print " class=\"index-button toolbar-item button\" style=\"width:100px;\" href=\"https://smile.amazon.com/dp/1541329058\" title=\"Paperback\" alt=\"Buy Paperback\">Paperback</a>\n";
+		print " class=\"index-button toolbar-item button\" style=\"width:100px;\" href=\"https://smile.amazon.com/dp/1706230230\" title=\"Paperback\" alt=\"Buy Paperback\">Paperback</a>\n";
 	}
 	if ($line =~ m/<\/head>/) {
 		# Fast preview doesn't seem worth it and it could be confusing since it's not quite right so disable it
