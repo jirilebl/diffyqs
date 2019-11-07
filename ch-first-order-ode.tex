@@ -165,7 +165,7 @@ Now we solve for $y$ (actually for $\lvert y \rvert$).
 e^{kx-kD} = 
 e^{-kD} e^{k x} .
 \end{equation*}
-If we replace $e^{-kD}$ with an arbitrary constant $C$ we can
+If we replace $e^{-kD}$ with an arbitrary constant $C$, we can
 get rid of the absolute value bars (which we can do as $D$ was arbitrary).  In
 this way, we
 also incorporate the solution $y=0$.  We get the same general solution as
@@ -786,9 +786,10 @@ Does $y' = f(y)$, $y(0) = 0$ have a continuously differentiable solution?  Does 
 \end{exercise}
 \exsol{%
 Picard does not apply as $f$ is not continuous at $y=0$.
-The equation does not have a continuously solution.  If it did notice that
-$y'(0) = 1$, by first derivative test, $y(x) > 0$ for small positive $x$,
-but then for those $x$ we would have $y'(x) = 0$, so clearly the derivative
+The equation does not have a continuously differentiable solution.
+Suppose it did. Notice that
+$y'(0) = 1$.  By the first derivative test, $y(x) > 0$ for small positive $x$.
+But then for those $x$ we would have $y'(x) = 0$, so clearly the derivative
 cannot be continuous.
 }
 
@@ -2251,7 +2252,7 @@ Let $x'=(x-1)(x-2)x^2$.
 \task Sketch the phase diagram and find critical
 points.
 \task Classify the critical points.
-\task If $x(0)=0.5$ then find $\displaystyle \lim_{t\to\infty} x(t)$.
+\task If $x(0)=0.5$, then find $\displaystyle \lim_{t\to\infty} x(t)$.
 \end{tasks}
 \end{exercise}
 \exsol{%
@@ -2986,8 +2987,8 @@ Poincar\`e} (1854--1912).}.
 
 \begin{theorem}[Poincar\`e]
 If $M$ and $N$ are continuously differentiable functions of $(x,y)$, and
-$\frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}$.
-Then near any point there is a function $F(x,y)$
+$\frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}$,
+then near any point there is a function $F(x,y)$
 such that
 $M = \frac{\partial F}{\partial x}$ and
 $N = \frac{\partial F}{\partial y}$.
@@ -3708,7 +3709,7 @@ Let us consider a quick example of what can go wrong:
 \begin{equation*}
 u_x + u = 0, \qquad u(x,0) = \sin(x).
 \end{equation*}
-This problem has no solution.  If we had a solution it
+This problem has no solution.  If we had a solution, it
 would imply that $u_x(x,0) = \cos(x)$,
 but $u_x(x,0) + u(x,0) = \cos(x) + \sin(x) \not= 0$.
 The problem is that the characteristic curve is now the line $t=0$,

@@ -330,7 +330,8 @@ $f(t)$ such that $\mathcal{L} \bigl\{ f(t) \bigr\} = F(s)$.
 \thmref{lt:uniqthm} says that the solution $f(t)$ is unique.
 So we can without fear make the following definition.
 
-If $F(s) = \mathcal{L} \bigl\{ f(t) \bigr\}$ for some function $f(t)$.  We define the
+Suppose $F(s) = \mathcal{L} \bigl\{ f(t) \bigr\}$ for some function $f(t)$.
+Define the
 \emph{\myindex{inverse Laplace transform}} as
 \begin{equation*}
 {\mathcal{L}}^{-1} \bigl\{ F(s) \bigr\} \overset{\text{def}}{=} f(t) .
@@ -2238,7 +2239,7 @@ sY(x) = Y''(x) .
 \end{equation*}
 The general solution to this ODE is
 \begin{equation*}
-Y(x) = A e^{\sqrt{s}x} + B e^{-\sqrt{s} x}
+Y(x) = A e^{\sqrt{s}x} + B e^{-\sqrt{s} x} .
 \end{equation*}
 First $A=0$, since otherwise $Y$ does not decay to zero as $s \to \infty$.
 
@@ -2251,7 +2252,7 @@ Y(x) = - F(s) \frac{1}{\sqrt{s}} e^{-\sqrt{s} x} .
 
 If we look up the inverse transform in a table such as the one in
 \Appendixref{laplacelist:appendix} (or we spend the afternoon
-doing calculus) we find 
+doing calculus), we find 
 \begin{equation*}
 {\mathcal L}^{-1}\left[e^{-\sqrt{s} x}\right] =
 \frac{x}{\sqrt{4\pi t^3}} e^{\frac{-x^2}{4t}} ,

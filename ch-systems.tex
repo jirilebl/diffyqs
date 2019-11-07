@@ -285,7 +285,7 @@ y' = x,
 where the independent variable is $t$.  We wish to solve for the initial
 conditions $x(0) = 1$, $y(0) =0$.
 
-If we differentiate the second equation we get
+If we differentiate the second equation, we get
 $y''=x'$.  We know what $x'$ is in terms of $x$ and $y$, and
 we know that $x=y'$.  So,
 \begin{equation*}
@@ -570,9 +570,10 @@ a_{31} & a_{32} & a_{33} & a_{34} & a_{35}
 The numbers $a_{ij}$ are called \emph{elements}\index{element of a matrix}
 or \emph{entries}\index{entry of a matrix}.
 
-By a \emph{\myindex{vector}} we usually mean a \emph{\myindex{column
-vector}}, that is an $m \times 1$ matrix.  If we mean a \emph{\myindex{row
-vector}} we will explicitly say so (a row vector is a $1 \times n$ matrix).
+By a \emph{\myindex{vector}} we usually mean a
+\emph{\myindex{column vector}}, that is an $m \times 1$ matrix.
+If we mean a \emph{\myindex{row vector}},
+we will explicitly say so (a row vector is a $1 \times n$ matrix).
 We usually denote
 matrices by upper case letters and vectors by lower case letters with an
 arrow such as $\vec{x}$ or $\vec{b}$.  By $\vec{0}$ we mean the vector
@@ -760,7 +761,7 @@ AB = I = BA .
 Then we call $B$ the inverse of $A$ and we denote $B$ by $A^{-1}$.
 If the inverse of $A$ exists, then we call $A$
 \emph{invertible\index{invertible matrix}}.
-If $A$ is not invertible we sometimes say $A$ is
+If $A$ is not invertible, we sometimes say $A$ is
 \emph{singular\index{singular matrix}}.
 
 If $A$ is invertible, then $AB = AC$ does imply
@@ -1179,7 +1180,7 @@ possible that the solution is not unique, or that no solution exists.
 It is easy to tell if a solution does not exist.  If during the row
 reduction you come up with a row where all the entries except the last one
 are zero (the last entry in a row corresponds to the right-hand side of the
-equation) the system is \emph{inconsistent\index{inconsistent system}} and
+equation), then the system is \emph{inconsistent\index{inconsistent system}} and
 has no solution.  For
 example, for a system of 3 equations and 3 unknowns, if you find a row
 such as $[\,0 \quad 0 \quad 0 ~\,|\,~ 1\,]$ in the augmented matrix,
@@ -3903,7 +3904,7 @@ ${\vec{x}}'' = M^{-1}K \vec{x} + M^{-1}\vec{f}$.  The
 term $\vec{g} = M^{-1} \vec{f}$ in ${\vec{x}}'' = A \vec{x} + \vec{g}$ is in units of force
 per unit mass.
 
-If $\omega$ is a natural frequency of the system
+If $\omega$ is a natural frequency of the system,
 \emph{\myindex{resonance}} may occur,
 because we will have to try a particular solution of the form
 \begin{equation*}
@@ -5177,7 +5178,7 @@ numbers.  It is clear from the definition that if $A$ is real,
 then $e^{tA}$ is real.  So you will only need complex numbers in the
 computation and not for the result.  You may need to apply
 \hyperref[eulersformula]{Euler's formula} to simplify the
-result.  If simplified properly the final matrix will not have any complex
+result.  If simplified properly, the final matrix will not have any complex
 numbers in it.
 
 \begin{example}
@@ -5935,7 +5936,7 @@ because matrix multiplication is not commutative.
 
 For the next method, note that eigenvectors of a matrix give the 
 directions in which the matrix acts like a scalar.  If we solve
-the system along these directions the computations are simpler as we
+the system along these directions, the computations are simpler as we
 treat the matrix as a scalar.  We then
 put those solutions together to get the general solution
 for the system.
@@ -5954,7 +5955,7 @@ $\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n$.  Write
 \end{equation}
 That is, we wish to write our solution as a linear combination of
 eigenvectors of $A$.
-If we solve for the scalar functions $\xi_1$ through $\xi_n$ we have
+If we solve for the scalar functions $\xi_1$ through $\xi_n$, we have
 our solution $\vec{x}$.
 Let us decompose $\vec{f}$ in terms of the eigenvectors as well.  We wish to write
 \begin{equation} \label{nhsys:decompf}
@@ -6023,7 +6024,7 @@ A \vec{v}_n \xi_n
 \end{split}
 \end{equation*}
 If we identify the coefficients of the vectors $\vec{v}_1$ through
-$\vec{v}_n$ we get the
+$\vec{v}_n$, we get the
 equations
 \begin{align*}
 \xi_1' & = \lambda_1 \xi_1 + g_1 , \\
