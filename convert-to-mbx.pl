@@ -589,7 +589,7 @@ while(1)
 
 	} elsif ($para =~ s/^\\chapter\*\{([^}]*)\}[\n ]*\\label\{([^}]*)\}[ \n]*//) {
 		#FIXME: un-numbered
-		my $name = $1;
+		my $name = do_line_subs($1);
 		my $theid = modify_id($2);
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
 		$chapter_num = $chapter_num-1; #hack
@@ -598,53 +598,53 @@ while(1)
 		print $out "<title>$name</title>\n"; 
 		print "PARA:>$para<\n";
 	} elsif ($para =~ s/^\\chapter\*\{([^}]*)\}[ \n]*//) {
-		my $name = $1;
 		#FIXME: un-numbered
+		my $name = do_line_subs($1);
 		$chapter_num = $chapter_num-1; #hack
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
 		open_chapter("");
 		print "(chapter >$name<)\n";
 		print $out "<title>$name</title>\n"; 
 	} elsif ($para =~ s/^\\chapter\{([^}]*)\}[\n ]*\\label\{([^}]*)\}[ \n]*//) {
-		my $name = $1;
+		my $name = do_line_subs($1);
 		my $theid = modify_id($2);
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
 		open_chapter($theid);
 		print "(chapter >$name< label >$theid<)\n";
 		print $out "<title>$name</title>\n"; 
 	} elsif ($para =~ s/^\\chapter\{([^}]*)\}[ \n]*//) {
-		my $name = 1;
+		my $name = do_line_subs($1);
 		open_chapter("");
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
 		print "(chapter >$name<)\n";
 		print $out "<title>$name</title>\n"; 
 	} elsif ($para =~ s/^\\section\{([^}]*)\}[ \n]*\\label\{([^}]*)\}[ \n]*//) {
-		my $name = $1;
+		my $name = do_line_subs($1);
 		my $theid = modify_id($2);
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
 		open_section($theid,$name);
 	} elsif ($para =~ s/^\\section\{([^}]*)\}[ \n]*//) {
-		my $name = $1;
+		my $name = do_line_subs($1);
 		my $theid = modify_id($2);
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
 		open_section("",$name);
 	} elsif ($para =~ s/^\\subsection\{([^}]*)\}[ \n]*\\label\{([^}]*)\}[ \n]*//) {
-		my $name = $1;
+		my $name = do_line_subs($1);
 		my $theid = modify_id($2);
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
 		open_subsection($theid,$name);
 	} elsif ($para =~ s/^\\subsection\{([^}]*)\}[ \n]*//) {
-		my $name = $1;
+		my $name = do_line_subs($1);
 		my $theid = modify_id($2);
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
 		open_subsection("",$name);
 	} elsif ($para =~ s/^\\subsubsection\{([^}]*)\}[ \n]*\\label\{([^}]*)\}[ \n]*//) {
-		my $name = $1;
+		my $name = do_line_subs($1);
 		my $theid = modify_id($2);
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
 		open_subsubsection($theid,$name);
 	} elsif ($para =~ s/^\\subsubsection\{([^}]*)\}[ \n]*//) {
-		my $name = $1;
+		my $name = do_line_subs($1);
 		my $theid = modify_id($2);
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
 		open_subsubsection("",$name);
@@ -929,7 +929,7 @@ while(1)
 				$theid = modify_id($1);
 			}
 
-			$eqn = s/\\displaybreak[0]//g;
+			$eqn =~ s/\\displaybreak[0]//g;
 
 			my $indexes = "";
 			while ($eqn =~ s/\\myindex\{(.*?)\}/$1/) {
@@ -1104,6 +1104,9 @@ while(1)
 			$fig =~ s/\\bigskip[ \n]*//g;
 			$fig =~ s/\\medskip[ \n]*//g;
 			$fig =~ s/\\diffypdfversion\{.*?\{.*?\}\}[ \n]*//g;
+			$fig =~ s/\\diffypdfversion\{.*?\}[ \n]*//g;
+
+			# FIXME: the above needs to cleaned up, the diffypdfversion macro is not a clean way to handle this I think
 
 			if ($fig =~ m/^[ \n]*\\inputpdft\{(.*?)\}[ \n]*$/) {
 				$thefile = "figures/$1";
@@ -1187,7 +1190,10 @@ while(1)
 			$figure =~ s/\\end\{center\}[ \n]*//g;
 			$figure =~ s/\\capstart[ \n]*//g;
 			$figure =~ s/\\noindent[ \n]*//g;
-			$figure =~ s/\\diffypdfversion\{\\vspace\*\{.*?\}\}[ \n]*//g;
+			$figure =~ s/\\diffypdfversion\{.*?\{.*?\}\}[ \n]*//g;
+			$figure =~ s/\\diffypdfversion\{.*?\}[ \n]*//g;
+			
+			# FIXME: the above needs to cleaned up, the diffypdfversion macro is not a clean way to handle this I think
 
 			my @figs = ();
 
