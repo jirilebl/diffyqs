@@ -7,7 +7,8 @@ sed -e "s/THEFILE/${n%.pdf_t}/" < figurerun-in.tex > figurerun.tex
 echo running pdflatex...
 pdflatex figurerun
 pdflatex figurerun
-cp figurerun.pdf ${n%.pdf_t}-tex4ht.pdf
+pdfcrop figurerun.pdf ${n%.pdf_t}-tex4ht.pdf
+rm figurerun.pdf
 #echo running pdftops...
 #pdftops -eps ${n%.pdf_t}-tex4ht.pdf ${n%.pdf_t}-tex4ht.eps
 echo running pdf2svg...

@@ -14,6 +14,7 @@
 \usepackage{units}
 \usepackage{booktabs}
 \usepackage{microtype}
+\usepackage[margin=0in]{geometry}
 \usepackage{cancel}
 
 % Times
@@ -34,7 +35,7 @@
 
 %\newenvironment{emptyenv}{}{}
 
-\usepackage[active,tightpage]{preview}
+\usepackage[pdftex,active,tightpage]{preview}
 \PreviewEnvironment{emptyenv}
 \usepackage{amsmath}
 \begin{document}
@@ -43,7 +44,17 @@
 \begin{emptyenv}
 %\hspace*{1cm}
 %\noindent
+
+\vspace*{\fill}
+
+\begin{center}
+
 \input THEFILE.pdf_t
+
+\end{center}
+
+\vspace*{\fill}
+
 %\hspace*{1cm}
 \end{emptyenv}
 \end{document}
