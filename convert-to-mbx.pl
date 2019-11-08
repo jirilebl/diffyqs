@@ -393,7 +393,7 @@ sub get_equation_number {
 
 sub get_size_of_svg {
 	my $thefile = shift;
-	$thesizestr = qx!cat $thefile | grep '^<svg ' | sed 's/^.*\\(width="[^"]*"\\) *\\(height="[^"]*"\\).*\$/\\1 \\2/'!;
+	$thesizestr = qx!cat $thefile | grep '^<svg ' | sed 's/^<[^>]*\\(width="[^"]*"\\) *\\(height="[^"]*"\\).*\$/\\1 \\2/'!;
 	
 	# If units missing, add them
 	$thesizestr =~ s/"([0-9.]*)"/"\1px"/;
