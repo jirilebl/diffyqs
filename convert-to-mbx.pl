@@ -1668,6 +1668,7 @@ while(1)
 
 	} elsif ($para =~ s/^\\[cl]?dots\b//) {
 		open_paragraph_if_not_open ();
+		print $out "...";
 		print "...\n";
 
 	} elsif ($para =~ s/^\\appendix\b//) {
