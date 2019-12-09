@@ -94,7 +94,7 @@ $equation_num = 0;
 $list_level = 0;
 $list_start = 1;
 
-print $out $commands;
+#print $out $commands;
 
 sub close_paragraph {
 	if ($inparagraph) {
