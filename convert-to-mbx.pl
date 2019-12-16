@@ -331,10 +331,10 @@ sub print_line {
 sub do_thmtitle_subs {
 	my $title = shift;
 
-	$title =~ s|\\href\{(.*?)\}\{(.*?)\}|<url href=\"$1\">$2</url>|s;
+	$title =~ s|\\href\{(.*?)\}\{(.*?)\}|<url href=\"$1\">$2</url>|gs;
 
 	#FIXME: should check if multiple footnotes work
-	while ($title =~ s|\\footnote\{(.*?)\}|<fn>$1</fn>|s) {
+	while ($title =~ s!\\footnote\{([^{}]*|([^{}]*\{[^{}]*\}[^{}]*)*)\}!<fn>$1</fn>!s) {
 		;
 	}
 
@@ -735,7 +735,7 @@ while(1)
 		open_paragraph_if_not_open ();
 		print "(named ref $theid)\n";
 		print $out "<xref ref=\"$theid\" text=\"type-global\"/>";
-	} elsif ($para =~ s/^\\hyperref\[([^[]*)\]\{([^}]*)\}//) {
+	} elsif ($para =~ s/^\\hyperref\[(.*?)\]\{(.*?)\}//) {
 		my $name = $2;
 		my $theid = modify_id($1);
 		open_paragraph_if_not_open ();
