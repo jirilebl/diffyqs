@@ -87,6 +87,7 @@ $exercise_num = 0;
 $thm_num = 0;
 $remark_num = 0;
 $example_num = 0;
+$figure_num = 0;
 
 #FIXME: equation counter implement
 $equation_num = 0;
@@ -271,6 +272,7 @@ sub open_chapter {
 	$example_num = 0;
 
 	$equation_num = 0;
+	$figure_num = 0;
 
 	my $ch = get_chapter_num();
 
@@ -387,8 +389,22 @@ sub get_example_number {
 	}
 }
 
+sub get_figure_number {
+	my $ch = get_chapter_num();
+	if ($inchapter and not $ch eq "0") {
+		return "$ch.$figure_num";
+	} else {
+		return "$figure_num";
+	}
+}
+
 sub get_equation_number {
-	return "$equation_num";
+	my $ch = get_chapter_num();
+	if ($inchapter and not $ch eq "0") {
+		return "$ch.$equation_num";
+	} else {
+		return "$equation_num";
+	}
 }
 
 sub get_size_of_svg {
@@ -1251,7 +1267,9 @@ while(1)
 				$fig =~ s/\\(med|big|small)skip[ \n]*//g;
 				$fig =~ s/\\par[ \n]*//g;
 
-				print $out "<figure xml:id=\"$theid\">\n";
+				$figure_num = $figure_num+1;
+				$the_num = get_figure_number ();
+				print $out "<figure xml:id=\"$theid\" number=\"$the_num\">\n";
 				print $out "  <caption>$caption</caption>\n";
 
 				if ($fig =~ m/^[ \n]*\\diffyincludegraphics\{[^}]*?\}\{([^}]*?)\}\{([^}]*?)\}[ \n]*$/) {
