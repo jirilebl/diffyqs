@@ -113,6 +113,12 @@
 \MakePerPage{footnote}
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 
+% to avoid counter error on footnotes on first pass
+\makeatletter
+\gdef\@ctrerr{%
+  \@latex@warning{Counter too large}}
+\makeatother
+
 \definecolor{mypersianblue}{rgb}{0.11, 0.22, 0.73}
 
 \hypersetup{
