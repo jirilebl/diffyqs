@@ -14,6 +14,9 @@ SMALLER THINGS MAYBE:
 * Add factorization idea in wave equation (d'Alembert) to write it as
   two vector fields applied to y perhaps?  Makes more sense if we have 
   first order before this.
+* Perhaps mention somewhere in 2.2 how the correspondence is with $y^{(n)}$
+  going to $r^n$ in the characteristic equation, might make it simpler to
+  see.
 
 LARGER THINGS MAYBE:
 
