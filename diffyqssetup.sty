@@ -243,6 +243,7 @@ Remark
 
 
 % referencing
+\makeatletter
     \DeclareRobustCommand{\myvref}[2]{%
       \leavevmode%
       \begingroup
@@ -263,6 +264,7 @@ Remark
         }%
       \endgroup
     }%
+\makeatother
 
 \newcommand{\figurevref}[1]{\myvref{Figure}{#1}}
 \newcommand{\figureref}[1]{\myref{Figure}{#1}}

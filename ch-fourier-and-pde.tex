@@ -4695,16 +4695,14 @@ F(-L-at)+F(L+at)
 = 0 .
 \end{equation*}
 Next, $G(s)$ is odd and $2L$-periodic, so we change
-variables $v = s-L$:
+variables $v = s-L$.  We then notice that $G(v+L)=G(v-L)=-G(-v+L)$,
+so $G(v+L)$ is odd as a function of $v$:
 \begin{equation*}
 \int_{L-at}^{L+at}
 G(s)\,ds
 =
 \int_{-at}^{at}
 G(v+L)\,dv
-=
-\int_{-at}^{at}
--G(v)\,dv
 =
 0 .
 \end{equation*}
