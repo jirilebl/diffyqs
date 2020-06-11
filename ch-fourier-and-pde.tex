@@ -3170,9 +3170,9 @@ if at a fixed $t$
 the graph of the heat distribution has a maximum (the graph is concave down),
 then heat flows away from the maximum.  And vice-versa.
 
-We will generally use a more convenient notation for partial derivatives.
-We will write $u_t$ instead of $\frac{\partial u}{\partial t}$,
-and we will write $u_{xx}$ instead of $\frac{\partial^2 u}{\partial x^2}$.
+We generally use a more convenient notation for partial derivatives.
+We write $u_t$ instead of $\frac{\partial u}{\partial t}$,
+and we write $u_{xx}$ instead of $\frac{\partial^2 u}{\partial x^2}$.
 With this notation the heat equation becomes
 \begin{equation*}
 u_t = k u_{xx} .
@@ -3182,7 +3182,7 @@ For the heat equation, we must also have some
 boundary conditions.
 We assume that the ends of the wire are either exposed 
 and touching some body of constant heat, or the ends are insulated.
-For example, if the ends of the wire are kept at temperature 0, then
+If the ends of the wire are kept at temperature 0, then
 the conditions are
 \begin{equation*}
 u(0,t) = 0 \qquad \text{and} \qquad u(L,t) = 0.
@@ -3202,11 +3202,11 @@ heat, that is to the right.  So when $u_x$ is zero, that is a point through
 which heat is not flowing.  In other words, $u_x(0,t) = 0$ means
 no heat is flowing in or out of the wire at the point $x=0$.
 
-We always have two conditions along the $x$-axis as there are
+We have two conditions along the $x$-axis as there are
 two derivatives in the $x$ direction.
 These side conditions are said to be
 \emph{homogeneous\index{homogeneous side conditions}}
-(that is, $u$ or a derivative of $u$ is set to zero).
+(i.e., $u$ or a derivative of $u$ is set to zero).
 
 We also need an initial condition---the temperature distribution
 at time $t=0$.  That is,
@@ -3222,7 +3222,7 @@ The heat equation is linear as $u$ and its derivatives do not
 appear to any powers or in any functions.
 Thus the principle of \myindex{superposition} still applies for
 the heat equation
-(without side conditions).
+(without side conditions):
 If $u_1$ and $u_2$ are
 solutions and $c_1$, $c_2$ are constants, then
 $u = c_1 u_1 + c_2 u_2$ is also a solution.
@@ -3231,7 +3231,7 @@ $u = c_1 u_1 + c_2 u_2$ is also a solution.
 Verify the principle of superposition for the heat equation.
 \end{exercise}
 
-Superposition also preserves some of the side conditions.  In particular,
+Superposition preserves some of the side conditions.  In particular,
 if $u_1$ and $u_2$ are
 solutions that satisfy $u(0,t) = 0$ and $u(L,t) = 0$,
 and $c_1$, $c_2$ are constants, then
@@ -3242,8 +3242,8 @@ superposition preserves all homogeneous side conditions.
 
 The method of
 \emph{separation of variables\index{separation of variables}} is to
-try to find solutions that are sums or products of functions of one variable.
-For example, for the heat equation, we try to find solutions of the form
+try to find solutions that are products of functions of one variable.
+For the heat equation, we try to find solutions of the form
 \begin{equation*}
 u(x,t) = X(x)T(t) .
 \end{equation*}
@@ -3263,7 +3263,7 @@ u(0,t) = 0 ,\quad \quad u(L,t) = 0,
 \end{equation*}
 We guess $u(x,t) = X(x)T(t)$.  We will try to make this guess satisfy the
 differential equation, $u_t = k u_{xx}$, and the homogeneous side conditions,
-$u(0,t) = 0$ and $u(L,t) = 0$.  Then, as superposition works preserves the
+$u(0,t) = 0$ and $u(L,t) = 0$.  Then, as superposition preserves the
 differential equation and the homogeneous side conditions, we will try to
 build up a solution from these building blocks to solve the
 nonhomogeneous initial condition $u(x,0) = f(x)$.
@@ -3287,7 +3287,7 @@ We obtain the two equations
 \frac{T'(t)}{k T(t)} = -\lambda =
 \frac{X''(x)}{X(x)} .
 \end{equation*}
-In other words
+In other words,
 \begin{align*}
 X''(x) + \lambda X(x) &= 0 , \\
 T'(t) + \lambda k T(t) &= 0 .
@@ -3367,9 +3367,12 @@ f(x) .
 Consider
 an insulated wire of length 1 whose
 ends are embedded in ice (temperature 0).
-Let $k=0.003$.  Suppose the initial heat distribution
-is $u(x,0) = 50\,x\,(1-x)$.
+Let $k=0.003$ and let the initial heat distribution
+be $u(x,0) = 50\,x\,(1-x)$.
 See \figurevref{heat:wireexinitfig}.
+Suppose we want to find the temperature function $u(x,t)$.  Let us also suppose we
+want to find when (at what $t$) does the maximum temperature in the wire 
+drop to one half of the initial maximum of 12.5.
 
 \begin{myfig}
 \capstart
@@ -3377,10 +3380,6 @@ See \figurevref{heat:wireexinitfig}.
 \caption{Initial distribution of temperature in the
 wire.\label{heat:wireexinitfig}}
 \end{myfig}
-
-We want to find the temperature function $u(x,t)$.  Let us suppose we also
-want to find when (at what $t$) does the maximum temperature in the wire 
-drop to one half of the initial maximum of 12.5.
 
 We are solving the following PDE problem:
 \begin{align*}
@@ -3424,9 +3423,8 @@ at time $t$.\label{heat:wireexfig}}
 
 Finally, let us answer the question about the maximum temperature.  It is
 relatively easy to see
-that the maximum temperature will always be at $x=0.5$, in
+that the maximum temperature at any fixed time is always at $x=0.5$, in
 the middle of the wire.  The plot of $u(x,t)$ confirms this intuition.
-
 If we plug in $x=0.5$, we get
 \begin{equation*}
 u(0.5,t) = 
@@ -3559,7 +3557,7 @@ For $n \geq 1$, as before,
 T_n(t) = e^{\frac{-n^2 \pi^2}{L^2} k t} .
 \end{equation*}
 For $n = 0$, we have $T_0'(t) = 0$ and hence $T_0(t) = 1$.
-Our building-block solutions will be
+Our building-block solutions are
 \begin{equation*}
 u_n(x,t) = X_n(x)T_n(t) =
 \cos \left( \frac{n \pi}{L} x \right)
@@ -3645,7 +3643,7 @@ Let us expand on the last point.  The constant term in the series is
 \begin{equation*}
 \frac{a_0}{2} = \frac{1}{L} \int_0^L f(x) \, dx .
 \end{equation*}
-In other words, $\frac{a_0}{2}$ is the average value of $f(x)$, that is
+In other words, $\frac{a_0}{2}$ is the average value of $f(x)$, that is,
 the average of the initial temperature.  As the wire is insulated
 everywhere, no heat can get out, no heat can get in.  So the temperature
 tries to distribute evenly over time, and the average temperature must always be the

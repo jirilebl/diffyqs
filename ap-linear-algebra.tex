@@ -6413,7 +6413,7 @@ of the matrix.  And that is why
 this method of computing the determinant is called the
 \emph{cofactor expansion}.
 
-Similarly we do not need to expand along a row, we could expand
+Similarly we do not need to expand along a row, we can expand
 along a column.  For any $j$
 \begin{equation*}
 \det (A)
@@ -6453,7 +6453,7 @@ Consider the lower triangular matrix.  If we expand along the
 first row, we find that the determinant is 1 times the determinant
 of the lower triangular matrix $\left[ \begin{smallmatrix} 5 & 0 \\ 8 & 9
 \end{smallmatrix} \right]$.  So the deteriminant is just the
-product of the diagonal entries.
+product of the diagonal entries:
 \begin{equation*}
 \det \left(
 \begin{bmatrix}
@@ -6477,7 +6477,7 @@ Similarly for upper triangular matrices
 =
 1 \cdot 5 \cdot 9 = 45 .
 \end{equation*}
-In general, if $A$ is triangular then
+In general, if $A$ is triangular, then
 \begin{equation*}
 \det (A) = a_{11} a_{22} \cdots a_{nn} .
 \end{equation*}
@@ -6505,8 +6505,8 @@ are all 1.  Thus,
 \medskip
 
 The determinant is telling you how geometric objects scale.
-So if $B$ doubles the sizes of geometric objects and $A$ triples them,
-then $AB$ (which applies $B$ to an object and then $A$) should make size
+If $B$ doubles the sizes of geometric objects and $A$ triples them,
+then $AB$ (which applies $B$ to an object and then it applies $A$) should make size
 go up by a factor of $6$.  This is true in general:
 
 \begin{theorem}

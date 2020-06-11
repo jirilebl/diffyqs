@@ -1073,7 +1073,7 @@ $H(s) = \frac{1}{s+1}$
 
 \subsection{The convolution}
 
-We said that the Laplace transformation of a product is not the product
+The Laplace transformation of a product is not the product
 of the transforms.  All hope is not lost however.  We simply have to use
 a different type of a \myquote{product.}
 Take
@@ -1122,12 +1122,12 @@ Then
 \int_0^t  \sin ( \omega \tau ) \,
 \cos \bigl( \omega (t-\tau) \bigr) ~ d\tau .
 \end{equation*}
-We apply the identity
+Apply the identity
 \begin{equation*}
 \cos (\theta) \sin (\psi) =
-\frac{1}{2} \, \bigl( \sin (\theta + \psi) - \sin (\theta - \psi) \bigr) .
+\frac{1}{2} \, \bigl( \sin (\theta + \psi) - \sin (\theta - \psi) \bigr) ,
 \end{equation*}
-Hence,
+to get
 \begin{equation*}
 \begin{split}
 (f*g)(t)
@@ -1147,15 +1147,14 @@ The formula holds only for $t \geq 0$.  We assumed that $f$
 and $g$ are zero (or simply not defined) for negative $t$.
 \end{example}
 
-The convolution has many properties that make it behave like a product.
-Let $c$ be a constant and $f$, $g$, and $h$ be functions then
+Convolution has many properties that make it behave like a product.
+Let $c$ be a constant and $f$, $g$, and $h$ be functions.  Then
 \begin{align*}
 & f * g = g * f , \\
 & (c f) * g = f * (c g) = c (f*g) , \\
 & ( f * g ) * h = f * ( g * h ) .
 \end{align*}
-The most interesting property for us, and
-the main result of this section is the following theorem.
+The most interesting property for us is the following theorem.
 
 \begin{theorem}
 Let $f(t)$ and $g(t)$ be of exponential order, then
@@ -1182,7 +1181,7 @@ defined by
 \frac{1}{s+1}\,
 \frac{1}{s^2} .
 \end{equation*}
-We recognize the two entries of \tableref{ltd:table}.  That is
+We recognize the two entries of \tableref{ltd:table}.  That is,
 \begin{equation*}
 \mathcal{L}^{-1} 
 \left\{
@@ -1256,7 +1255,7 @@ f(t-\tau) ~ d\tau .
 \end{equation*}
 \end{example}
 
-Let us notice one more feature of this example.
+Notice one more feature of this example.
 We can now see how Laplace transform
 handles \myindex{resonance}.  Suppose that $f(t) =
 \cos (\omega_0 t)$.  Then
