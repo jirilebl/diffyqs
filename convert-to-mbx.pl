@@ -756,7 +756,7 @@ while(1)
 		my $theid = modify_id($1);
 		open_paragraph_if_not_open ();
 		print "(hyperref $theid $name)\n";
-		print $out "<xref ref=\"$theid\" text=\"title\">$name</xref>";
+		print $out "<xref ref=\"$theid\" text=\"custom\">$name</xref>";
 	} elsif ($para =~ s/^\\emph\{//) {
 		print "(em start)\n";
 		open_paragraph_if_not_open();

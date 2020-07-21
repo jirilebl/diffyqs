@@ -4,13 +4,13 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 
   <!-- Import the usual html conversion templates            -->
-  <xsl:import href="/home/jirka/mathbook/xsl/mathbook-html.xsl"/>
+  <xsl:import href="/home/jirka/mathbook/xsl/pretext-html.xsl"/>
 
   <!-- Intend output for rendering by html -->
   <!--<xsl:output method="html" />-->
 
   <!-- apply-imports applies also the original, apply-templates ignores the original-->
-  <!-- need hardcoded numbers on everything, so nonstandard mathbookxml -->
+  <!-- need hardcoded numbers on everything, so nonstandard pretext -->
   <xsl:template match="men|mrow|exercise|example|remark|theorem|lemma|proposition|corollary|principle|axiom|definition|chapter|appendix|section|subsection|subsubsection|figure" mode="number">
     <xsl:choose>
       <xsl:when test="@number">
@@ -22,7 +22,7 @@
     </xsl:choose>
   </xsl:template>
 
-  <!-- Want hardcoded reference labels so nonstandard mathbookxml -->
+  <!-- Want hardcoded reference labels so nonstandard pretext -->
   <xsl:template match="biblio" mode="serial-number">
     <xsl:choose>
       <xsl:when test="@tag">
@@ -56,7 +56,7 @@
     </xsl:if>
   </xsl:template>
 
-  <!-- need break, so nonstandard mathbookxml -->
+  <!-- need break, so nonstandard pretext -->
   <xsl:template match="diffyqsbr">
     <br/>
   </xsl:template>
