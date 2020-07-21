@@ -1080,7 +1080,7 @@ Take
 two functions $f(t)$ and $g(t)$ defined for $t \geq 0$,
 and define the \emph{\myindex{convolution}}%
 \footnote{%
-For those that have seen convolution defined before, you may have
+For those that have seen convolution before, you may have
 seen it defined as
 $(f * g)(t) =
 \int_{-\infty}^\infty f(\tau) g(t-\tau) ~ d\tau$.  This definition
@@ -1143,8 +1143,8 @@ to get
 & = \frac{1}{2} \, t \sin (\omega t) .
 \end{split}
 \end{equation*}
-The formula holds only for $t \geq 0$.  We assumed that $f$
-and $g$ are zero (or simply not defined) for negative $t$.
+The formula holds only for $t \geq 0$.  The functions $f$, $g$,
+and $f*g$ are undefined for $t < 0$.
 \end{example}
 
 Convolution has many properties that make it behave like a product.
@@ -1958,7 +1958,7 @@ $3 \delta(t-1) + 2 t$
 
 The Laplace transform comes from the same family of transforms as does the
 Fourier series\footnote{There is a corresponding Fourier transform
-on the real line as well, that looks sort of like the Laplace transform.},
+on the real line as well that looks sort of like the Laplace transform.},
 which we used in \chapterref{FS:chapter} to solve partial differential
 equations (PDEs).
 It is therefore not surprising that we can also solve PDEs with the Laplace
