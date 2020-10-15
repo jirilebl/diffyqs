@@ -685,7 +685,7 @@ while(1)
 	} elsif ($para =~ s/^\\url\{([^}]*)\}//) {
 		open_paragraph_if_not_open ();
 		print "(url $1)\n";
-		print $out "<url>$1</url>"; 
+		print $out "<url href=\"$1\">$1</url>"; 
 	} elsif ($para =~ s/^\\cite\{([^}]*)\}//) {
 		open_paragraph_if_not_open ();
 		print "(cite $1)\n";
