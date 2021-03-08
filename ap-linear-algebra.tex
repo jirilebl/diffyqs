@@ -10,7 +10,7 @@
 In real life, there is most often more than one variable.
 We wish to organize dealing with multiple variables in a consistent
 manner, and in particular organize dealing with linear equations and linear
-mappings, as those both rather useful and rather easy to handle.
+mappings, as those are both rather useful and rather easy to handle.
 Mathematicians joke that
 \myquote{to an engineer every problem is linear, and everything is a
 matrix.}
@@ -20,8 +20,8 @@ right finite-dimensional linear problem to solve, which is then
 solved with some matrix manipulation.
 Most importantly, linear problems are the ones that we know how to solve,
 and we have many tools to solve them.
-For engineers, mathematicians, physicists, and anybody in a technical
-field it is absolutely vital to learn linear algebra.
+For engineers, mathematicians, physicists, and anybody else in a technical
+field, it is absolutely vital to learn linear algebra.
 
 As motivation, suppose we wish to solve
 \begin{equation*}
@@ -30,20 +30,21 @@ As motivation, suppose we wish to solve
 & 2x+y = 4 ,
 \end{aligned}
 \end{equation*}
-for $x$ and $y$, that is, find numbers $x$ and $y$ such that the two
+for $x$ and $y$.
+That is, we desire numbers $x$ and $y$ such that the two
 equations are satisfied.
 Let us perhaps start by adding the equations together to find
 \begin{equation*}
 x+2x-y+y = 2+4, \qquad \text{or} \qquad 3x = 6 .
 \end{equation*}
-In other words, $x=2$.  Once we have that, we plug in $x=2$ into the
+In other words, $x=2$.  Once we have that, we plug $x=2$ into the
 first equation to find $2-y=2$, so $y=0$.  OK\@, that was easy.  What is all
 this fuss about linear equations.  Well, try doing this if you have
 5000 unknowns\footnote{One of the downsides of making everything look like a
 linear problem is that the number of variables tends to become huge.}.
-Also, we may have such equations not of just numbers,
+Also, we may have such equations not just of numbers,
 but of functions and derivatives of functions in differential equations.
-Clearly we need a more systematic way of doing things.
+Clearly we need a systematic way of doing things.
 A nice consequence of making things systematic and simpler to write down
 is that it becomes easier to have computers do the work for us.
 Computers are rather stupid, they do not think,
