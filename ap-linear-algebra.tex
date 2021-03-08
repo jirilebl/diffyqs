@@ -91,7 +91,7 @@ we can think of everything being represented by a vector.
 A way to think of a vector, which is especially useful in calculus
 and differential equations, is an arrow.  It is an object that has
 a \emph{\myindex{direction}} and a \emph{magnitude}.
-For example, the vector $(1,2)$
+For instance, the vector $(1,2)$
 is the arrow from the origin to the point $(1,2)$ in the plane.
 The magnitude is the length of the arrow.
 See \figurevref{linalg-vecarrow:fig}.
@@ -121,7 +121,7 @@ keep repeating \myquote{Uncle Bob} and you can just say \myquote{Bob.}
 In this book, however, we will call Bob \myquote{Uncle Bob}
 and write vectors with the little arrows.
 
-The \emph{\myindex{magnitude}} can be computed using Pythagorean theorem.
+The \emph{\myindex{magnitude}} can be computed using the Pythagorean theorem.
 The vector $(1,2)$ drawn in the figure has magnitude $\sqrt{1^2+2^2} =
 \sqrt{5}$.  The magnitude is denoted by $\lVert \vec{x} \rVert$,
 and, in any number of dimensions, it can be computed in the same way:
@@ -171,7 +171,7 @@ result, $(3,-1)$, is drawn as a solid arrow.\label{linalg-vecadd:fig}}
 
 It is rather easy to see what it does to the numbers that represent the
 vectors.  Suppose we want to add $(1,2)$ to $(2,-3)$ as in the figure.
-So we travel along $(1,2)$
+We travel along $(1,2)$
 and then we travel along $(2,-3)$.
 What we did was travel one unit right, two units up, and then
 we travelled two units right, and three units down (the negative three).  That
@@ -198,8 +198,9 @@ It is like adding
 $\vec{x}+ (- \vec{y})$ where $-\vec{y}$
 is the arrow we obtain by erasing the arrow head
 from one side and drawing it on the other side, that is, we reverse the
-direction.  In terms of the numbers, we simply go backwards in both directions,
-so we negate both numbers.  For example, if $\vec{y}$ is $(-2,1)$,
+direction.  In terms of the numbers, we simply go backwards both vertically
+and horizontally,
+so we negate both numbers.  For instance, if $\vec{y}$ is $(-2,1)$,
 then $-\vec{y}$ is $(2,-1)$.
 
 \begin{myfig}
@@ -238,8 +239,7 @@ $3\sqrt{5}$.
 
 When the scalar is negative, then when we multiply a vector by it, the
 vector is not only scaled, but it also switches direction.
-So
-multiplying $(1,2)$ by $-3$ means we should go 3 times further but in the
+Multiplying $(1,2)$ by $-3$ means we should go 3 times further but in the
 opposite direction, so 3 units to the left and 6 units down, or in other
 words, $(-3,-6)$.  As we mentioned above, $-\vec{y}$ is a reverse of
 $\vec{y}$, and this is the same as $(-1)\vec{y}$.
@@ -289,7 +289,7 @@ As we said a vector is a direction and a magnitude.  Magnitude is easy to
 represent, it is just a number.  The \emph{\myindex{direction}} is usually
 given by a vector with magnitude one.  We call such a vector a
 \emph{\myindex{unit vector}}.  That is, $\vec{u}$ is a unit vector when
-$\lVert \vec{u} \rVert = 1$.  For example, the vectors $(1,0)$,
+$\lVert \vec{u} \rVert = 1$.  For instance, the vectors $(1,0)$,
 $(\nicefrac{1}{\sqrt{2}},\nicefrac{1}{\sqrt{2}})$, and $(0,-1)$ are all
 unit vectors.
 
@@ -299,7 +299,7 @@ $\vec{x}$ by the reciprocal of the magnitude, that is
 $\frac{1}{\lVert \vec{x} \rVert} \vec{x}$, or more concisely
 $\frac{\vec{x}}{\lVert \vec{x} \rVert}$.
 
-For example, the unit vector in the direction of $(1,2)$ is the vector
+As an example, the unit vector in the direction of $(1,2)$ is the vector
 \begin{equation*}
 \frac{1}{\sqrt{1^2+2^2}} (1,2)
 =
@@ -315,7 +315,7 @@ vectors:
 \begin{equation*}
 F(\vec{x}) = 2 \vec{x} .
 \end{equation*}
-For example,
+Applied to say $(1,3)$ we get
 \begin{equation*}
 F
 \left( \begin{bmatrix} 1 \\ 3 \end{bmatrix} \right)
@@ -350,7 +350,7 @@ After all, who hasn't wanted to write $\sqrt{x+y} = \sqrt{x} + \sqrt{y}$ or
 something like that at some point in their mathematical lives.
 Wouldn't life be simple if we could do that?
 Of course we can't always do that (for example, not with the square roots!)
-It turns out there are many functions where
+But there are many other functions where
 we can do exactly the above.  Such functions are called \emph{linear}.
 
 A mapping $F \colon {\mathbb R}^n \to {\mathbb R}^m$
@@ -384,7 +384,6 @@ We also call a linear function a
 \emph{linear transformation}\index{transformation}.
 If you want to be really fancy and impress your friends, you can call it a
 \emph{linear operator}\index{operator}.
-
 When a mapping is linear we often do not write the parentheses.  We write
 simply
 \begin{equation*}
@@ -443,7 +442,7 @@ The \emph{\myindex{standard basis vectors}} of ${\mathbb R}^n$ are
 0 \\ 0 \\ 0 \\ \vdots \\ 1
 \end{bmatrix} .
 \end{equation*}
-For example, in ${\mathbb R}^3$ these vectors are
+In ${\mathbb R}^3$ these vectors are
 \begin{equation*}
 \vec{e}_1 =
 \begin{bmatrix}
@@ -494,7 +493,7 @@ For example, in ${\mathbb R}^3$ the vector $(4,5,6)$ can be written as
 So how does a matrix represent a linear mapping?
 Well, the columns of the matrix are the vectors where $A$ as a linear
 mapping takes $\vec{e}_1$, $\vec{e}_2$, etc.
-For example, consider
+For instance, consider
 \begin{equation*}
 M = 
 \begin{bmatrix}
@@ -536,7 +535,7 @@ M \vec{e}_2 =
 \end{bmatrix}.
 \end{equation*}
 
-More generally, if we have an $n \times m$ matrix $A$, that is we have $n$ rows
+More generally, if we have an $n \times m$ matrix $A$, that is, we have $n$ rows
 and $m$ columns, then the mapping $A \colon {\mathbb R}^m \to {\mathbb R}^n$
 takes $\vec{e}_j$ to the $j^{\text{th}}$ column of $A$.
 For example,
@@ -576,8 +575,9 @@ a_{15} \\ a_{25} \\ a_{35}
 \end{bmatrix} .
 \end{equation*}
 
-But what if I have another vector $\vec{x}$?  Where does it go?  Well we use
-linearity.  First write the vector as a linear combination of the standard
+What about another vector $\vec{x}$, which isn't in the standard basis?
+Where does it go?  We use
+linearity.  First, we write the vector as a linear combination of the standard
 basis vectors:
 \begin{equation*}
 \vec{x} =
@@ -637,8 +637,8 @@ x_5 A\vec{e}_5 .
 If we know where $A$ takes all the basis vectors, we know where it takes
 all vectors.
 
-As an example, suppose $M$ is the $2 \times 2$ matrix from above, and
-suppose we wish to find
+Suppose $M$ is the $2 \times 2$ matrix from above,
+then
 \begin{equation*}
 M
 \begin{bmatrix}
@@ -679,14 +679,14 @@ and linear differential operators are linear mappings, although they are
 not acting on ${\mathbb R}^n$, but on 
 an infinite-dimensional space of functions:
 \begin{equation*}
-L f = g
+L f = g .
 \end{equation*}
-for a function $f$ we get a function $g$, and $L$ is linear in the sense that
+For a function $f$ we get a function $g$, and $L$ is linear in the sense that
 \begin{equation*}
 L ( f + h) = Lf + Lh, \qquad \text{and} \qquad
 L (\alpha f) = \alpha Lf .
 \end{equation*}
-for any number (scalars) $\alpha$ and all functions $f$ and $h$.
+for any number (scalar) $\alpha$ and all functions $f$ and $h$.
 
 So the answer is not really.  But if we consider vectors in
 finite-dimensional spaces ${\mathbb R}^n$ then yes, every linear mapping is a
@@ -706,7 +706,7 @@ noticed that to plot a function, we take a vector of inputs, ask Matlab
 to compute the corresponding vector of values of the function, and then we ask
 it to plot the result.}.
 It does not actually give you infinitely many values.
-So the way that you have been using the computer or your calculator so far has
+The way that you have been using the computer or your calculator so far has
 already been a certain approximation of the space of functions by a
 finite-dimensional space.
 
@@ -760,8 +760,7 @@ For example,
 0 \\ 2
 \end{bmatrix}  .
 \end{equation*}
-
-In other words, you take a row of the matrix, you multiply them by the
+That is, you take the entries in a row of the matrix, you multiply them by the
 entries in your vector, you add things up, and that's the corresponding
 entry in the resulting vector.
 
@@ -988,14 +987,14 @@ $(2,-1)$
 
 \begin{exercise}
 Suppose a linear mapping $F \colon {\mathbb R}^3 \to {\mathbb R}^2$
-takes $(1,0,0)$ to $(2,1)$ and it takes $(0,1,0)$ to $(3,4)$ and
+takes $(1,0,0)$ to $(2,1)$, it takes $(0,1,0)$ to $(3,4)$, and
 it takes $(0,0,1)$ to $(5,6)$.  Write down the matrix representing
 the mapping $F$.
 \end{exercise}
 
 \begin{exercise}
 Suppose that a mapping $F \colon {\mathbb R}^2 \to \mathbb{R}^2$ takes
-$(1,0)$ to $(1,2)$, $(0,1)$ to $(3,4)$, and it takes $(1,1)$ to $(0,-1)$.
+$(1,0)$ to $(1,2)$, $(0,1)$ to $(3,4)$, and $(1,1)$ to $(0,-1)$.
 Explain why $F$ is not linear.
 \end{exercise}
 
