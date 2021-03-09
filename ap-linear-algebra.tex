@@ -198,8 +198,8 @@ It is like adding
 $\vec{x}+ (- \vec{y})$ where $-\vec{y}$
 is the arrow we obtain by erasing the arrow head
 from one side and drawing it on the other side, that is, we reverse the
-direction.  In terms of the numbers, we simply go backwards both vertically
-and horizontally,
+direction.  In terms of the numbers, we simply go backwards both
+horizontally and vertically,
 so we negate both numbers.  For instance, if $\vec{y}$ is $(-2,1)$,
 then $-\vec{y}$ is $(2,-1)$.
 
@@ -2897,7 +2897,7 @@ We will see later that to compute the inverse we are really solving
 $A \vec{x} = \vec{b}$ for several different $\vec{b}$.  In other words, 
 we will need to do elimination to find $A^{-1}$.
 In addition, we may wish to solve $A \vec{x} = \vec{b}$
-even if $A$ is not invertible, or perhaps not even square.
+if $A$ is not invertible, or perhaps not even square.
 
 \medskip
 
@@ -2924,8 +2924,8 @@ by 3:
           3 x_1 +             12 x_2 + 3 x_3 & = 30 .
 \end{aligned}
 \end{equation*}
-Finally we can add a multiple of one equation to another equation.
-For example, we add 3 times the third equation in \eqref{linalg:elim:eq}
+Finally, we can add a multiple of one equation to another equation.
+For instance, we add 3 times the third equation in \eqref{linalg:elim:eq}
 to the second equation:
 \begin{equation*}
 \begin{aligned}
@@ -2950,8 +2950,8 @@ we write down the so-called \emph{\myindex{augmented matrix}}
 [ A ~|~ \vec{b} ] ,
 \end{equation*}
 where the vertical line is just a marker for us to know where the
-\myquote{right-hand side} of the equation starts.  For example,
-for the system \eqref{linalg:elim:eq} the augmented matrix is
+\myquote{right-hand side} of the equation starts.
+For the system \eqref{linalg:elim:eq} the augmented matrix is
 \begin{equation*}
 \left[
 \begin{array}{ccc|c}
@@ -3010,6 +3010,8 @@ if furthermore the following condition is satisfied.
 \item All the entries above a leading entry are zero.
 \end{enumerate}
 
+Note that the definition applies to matrices of any size.
+
 \begin{example}
 The following matrices are in row echelon form.  The leading
 entries are marked:
@@ -3038,11 +3040,9 @@ entries are marked:
 0 & 0 & 0 & 0
 \end{bmatrix}
 \end{equation*}
-Note that the definition applies to matrices of any size.
 None of the matrices above are in \emph{reduced} row echelon form.  For
 example, in the first matrix none of the entries above the second and third
 leading entries are zero; they are 9, 3, and 5.
-
 The following matrices are in reduced row echelon form.  The leading
 entries are marked:
 \begin{equation*}
@@ -3146,7 +3146,6 @@ pretend the matrix doesn't have the first column and the first row.
 \end{array}
 \right]
 \end{equation*}
-
 OK\@, look at the second column, and notice that now the pivot is in the
 third row.
 \begin{equation*}
@@ -3270,7 +3269,7 @@ that the row echelon form we found was
 \right] .
 \end{equation*}
 Then we have an equation $0=1$ coming from the last row.  That is impossible
-and the equations are \emph{\myindex{inconsistent}}.  There is no solution
+and the equations are what we call \emph{\myindex{inconsistent}}.  There is no solution
 to $A \vec{x} = \vec{b}$.
 
 
@@ -3313,7 +3312,7 @@ and in the third column:
 The variable $x_2$ can be anything you wish and we still get a solution.
 The $x_2$ is called a \emph{\myindex{free variable}}.
 There are infinitely many solutions, one for every choice of $x_2$.
-For example, if we pick $x_2=0$,
+If we pick $x_2=0$,
 then $x_1 = -5$, and $x_3 = 3$ give a solution.  But we also get a solution
 by picking say $x_2 = 1$, in which case $x_1 = -9$ and $x_3 = 3$,
 or by picking $x_2 = -5$ in which case $x_1 = 5$ and $x_3 = 3$.
@@ -3326,10 +3325,10 @@ variables, but a nonzero entry in the column corresponding to the
 right-hand side $\vec{b}$, then the system is inconsistent and has no solutions.
 In other words, the system is inconsistent if you find a pivot on the right
 side of the vertical line drawn in the augmented matrix.  Otherwise, the
-system is consistent, and at least one solution exists.
+system is \emph{\myindex{consistent}}, and at least one solution exists.
 \pagebreak[2]
 
-If the system is consistent:
+Suppose the system is consistent (at least one solution exists):
 \begin{enumerate}[(i)]
 \item If every column corresponding to a variable has a pivot element,
 then the solution is unique.
@@ -3361,7 +3360,8 @@ If the kernel of $A$ contains a nonzero vector, then it contains
 infinitely many vectors (there was a free variable).  But then it is
 impossible to invert $\vec{0}$, since infinitely many vectors go to
 $\vec{0}$, so there is no unique vector that $A$ takes to $\vec{0}$.
-So if the kernel is nontrivial, that is, if there are any nonzero vectors,
+So if the kernel is nontrivial, that is, if there are any nonzero vectors in
+the kernel,
 in other words, if there are any free variables, or in yet other words,
 if the row echelon form of $A$ has columns without pivots,
 then $A$ is not invertible.  We will return to this idea later.
@@ -3374,7 +3374,7 @@ Similarly, if we find a number of solutions to a linear equation
 $A \vec{x} = \vec{0}$, we may ask if we found enough 
 so that all other solutions can be formed out of the given set.
 The concept we want is that of linear independence.
-The same concept is useful for differential equations, for
+That same concept is useful for differential equations, for
 example in \chapterref{ho:chapter}.
 
 Given row or column vectors $\vec{y}_1, \vec{y}_2, \ldots, \vec{y}_n$,
@@ -3468,7 +3468,7 @@ are linearly independent.  Let's try:
 \begin{bmatrix} 0 \\ 0 \end{bmatrix} .
 \end{equation*}
 So $\alpha_1 = 0$, and then it is clear that $\alpha_2 = 0$ as well.  In
-other words, the vectors are linearly independent.
+other words, the two vectors are linearly independent.
 
 If a set of vectors is linearly dependent, that is, some of the $\alpha_j$'s
 are nonzero, then we can solve for one vector in terms of the others.
@@ -3560,7 +3560,8 @@ still have a linearly independent set.   But what is
 \end{bmatrix} \quad = \quad ?
 \end{equation*}
 That seems to be a tougher question to answer.  The
-first two rows are linearly independent, so the rank is at least
+first two rows are linearly independent (neither is a multiple of the other),
+so the rank is at least
 two.  If we would set up the equations for the $\alpha_1$, $\alpha_2$, and
 $\alpha_3$, we would find a system with infinitely many solutions.  One
 solution is
@@ -3867,8 +3868,8 @@ we started with the vectors
 \end{bmatrix} .
 \end{equation*}
 These vectors are not linearly independent as we saw above.  In particular,
-the span $\vec{v}_1$ and $\vec{v}_3$ is the same as
-the spen of all four of the vectors.  So $\vec{v}_2$ and $\vec{v}_4$
+the span of $\vec{v}_1$ and $\vec{v}_3$ is the same as
+the span of all four of the vectors.  So $\vec{v}_2$ and $\vec{v}_4$
 can both be written as linear combinations of $\vec{v}_1$ and $\vec{v}_3$.
 A common thing that comes up in practice is that one gets a set of vectors
 whose span is the set of solutions of some problem.  But perhaps we get way
@@ -3892,8 +3893,8 @@ that is, the matrix
 3 & 6 & 7 & 8
 \end{bmatrix} .
 \end{equation*}
-We crank up the row-reduction machine, feed this matrix into it, and find
-the pivot columns and pick those.  In this case, $\vec{v}_1$ and
+We crank up the row-reduction machine, feed this matrix into it, find
+the pivot columns, and pick those.  In this case, $\vec{v}_1$ and
 $\vec{v}_3$.
 
 \subsection{Computing the inverse}
@@ -3908,14 +3909,14 @@ Now we just need to compute what $A^{-1}$ is.  We can surely
 do elimination every time we want to find $A^{-1} \vec{b}$, but that
 would be ridiculous.  The mapping $A^{-1}$ is linear and
 hence given by a matrix, and we have seen that to figure out the matrix
-we just need to find where does $A^{-1}$ take the standard basis vectors
+we just need to find where $A^{-1}$ takes the standard basis vectors
 $\vec{e}_1$, 
 $\vec{e}_2$, \ldots,
 $\vec{e}_n$.
 
-That is, to find the first column of $A^{-1}$ we solve
+That is, to find the first column of $A^{-1}$, we solve
 $A \vec{x} = \vec{e}_1$, because then $A^{-1} \vec{e}_1 = \vec{x}$.
-To find the second column of $A^{-1}$ we solve
+To find the second column of $A^{-1}$, we solve
 $A \vec{x} = \vec{e}_2$.  And so on.  It is really just $n$
 eliminations that we need to do.  But it gets even easier.
 If you think about it, the elimination is the same for
@@ -4026,7 +4027,7 @@ So
 \end{bmatrix} .
 \end{equation*}
 Not too terrible, no?  Perhaps harder than inverting a $2 \times 2$ matrix
-for which we had a formula, but not too bad.  Really in practice this 
+for which we had a simple formula, but not too bad.  Really in practice this 
 is done efficiently by a computer.
 
 \subsection{Exercises}
