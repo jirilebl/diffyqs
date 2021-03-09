@@ -1216,14 +1216,14 @@ Real-valued linear mappings of the real line, linear functions
 that eat numbers and spit out numbers, are just multiplications by a
 number.  Consider a mapping defined by multiplying by a
 number.  Let's call this number $\alpha$.   The mapping then takes $x$ to
-$\alpha x$.  What we can do is
-to \emph{add} such mappings.
+$\alpha x$.  We can
+\emph{add} such mappings:
 If we have another mapping $\beta$, then
 \begin{equation*}
 \alpha x + \beta x = (\alpha + \beta) x .
 \end{equation*}
 We get a new mapping $\alpha+\beta$ that multiplies $x$ by, well,
-$\alpha+\beta$.  If $D$ is a mapping that doubles things, 
+$\alpha+\beta$.  If $D$ is a mapping that doubles its input, 
 $Dx = 2x$, and $T$ is a mapping that triples, $Tx = 3x$, then
 $D+T$ is a mapping that multiplies by $5$, $(D+T)x = 5x$.
 
@@ -1244,7 +1244,7 @@ multiplication.
 
 The mappings that multiply numbers by numbers are just $1 \times 1$ matrices.  The
 number $\alpha$ above could be written as a matrix $[\alpha]$.
-So perhaps we would want to do the same things to all matrices that we
+Perhaps we would want to do to all matrices the same things that we
 did to those $1 \times 1$ matrices at the start of this section above.
 First, let us add matrices.
 If we have a matrix $A$ and a matrix $B$ that are of the same size,
@@ -1480,13 +1480,13 @@ just assume that $0$ is the zero matrix of the same size as $A$.
 There are really two things we can multiply matrices by.  We can multiply
 matrices by scalars or we can multiply by other matrices.  Let us first
 consider multiplication by scalars.
-For a matrix $A$ and a scalar $\alpha$ we want $\alpha A$ to be the matrix
+For a matrix $A$ and a scalar $\alpha$, we want $\alpha A$ to be the matrix
 that accomplishes
 \begin{equation*}
 (\alpha A) \vec{x} = \alpha (A \vec{x}) .
 \end{equation*}
 That is just scaling the result by $\alpha$.  If you think about it,
-scaling every term in $A$ by $\alpha$ accomplishes just that:
+scaling every term in $A$ by $\alpha$ achieves just that:
 If
 \begin{equation*}
 A = 
@@ -1591,11 +1591,11 @@ number.
 
 Armed with the dot product we define the
 \emph{\myindex{product of matrices}}\index{matrix product}.
-First let us denote by $\operatorname{row}_i(A)$ the $i^{\text{th}}$ row
+We denote by $\operatorname{row}_i(A)$ the $i^{\text{th}}$ row
 of $A$ and by
 $\operatorname{column}_j(A)$ the $j^{\text{th}}$ column of $A$.
 For an $m \times n$ matrix $A$ and an $n \times p$ matrix $B$
-we can compute the product $AB$.  The matrix $AB$ is an $m \times p$
+we can compute the product $AB$:  The matrix $AB$ is an $m \times p$
 matrix whose $ij^{\text{th}}$ entry is the dot product
 \begin{equation*}
 \operatorname{row}_i(A) \cdot
@@ -1748,7 +1748,7 @@ so-called \emph{\myindex{identity matrix}}.
 The identity matrix is a square matrix with 1s on the
 main diagonal and zeros everywhere else.  It is usually denoted by $I$.
 For each size we have a different identity matrix and so sometimes we may denote
-the size as a subscript.  For example, the $I_3$ would be the $3 \times 3$
+the size as a subscript.  For example, $I_3$ is the $3 \times 3$
 identity matrix
 \begin{equation*}
 I = I_3 =
@@ -1971,7 +1971,7 @@ and
 \end{equation*}
 \end{example}
 
-A multiplication rule you have used since primary school on numbers
+A multiplication rule, one you have used since primary school on numbers,
 is quite conspicuously missing for matrices.
 That is, matrix multiplication is
 not commutative.  Firstly, just because $AB$ makes sense, it may be
@@ -2253,7 +2253,8 @@ On the other hand, multiplying on the right, they multiply the columns:
 2 & 3 & -1 
 \end{bmatrix} .
 \end{equation*}
-And it is really easy to multiply two diagonal matrices together:
+And it is really easy to multiply two diagonal matrices together---we
+multiply the entries:
 \begin{equation*}
 \begin{bmatrix}
 1 & 0 & 0 \\
@@ -2357,9 +2358,9 @@ The transpose of $A$ is denoted by $A^T$.  Example:
 3 & 6 
 \end{bmatrix} .
 \end{equation*}
-So transpose takes an $m \times n$ matrix to an $n \times m$ matrix.
+Transpose takes an $m \times n$ matrix to an $n \times m$ matrix.
 
-A key fact about the transpose is that if the product $AB$ makes sense
+A key feature of the transpose is that if the product $AB$ makes sense,
 then $B^TA^T$ also makes sense, at least from the point of view of sizes.
 In fact, we get precisely the transpose of $AB$.  That is:
 \begin{equation*}
