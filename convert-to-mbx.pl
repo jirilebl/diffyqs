@@ -692,7 +692,9 @@ while(1)
 		print $out "<xref ref=\"biblio-$1\"/>"; 
 
 	} elsif ($para =~ s/^\\index\{([^}]*)\}//) {
-		open_paragraph_if_not_open ();
+		# This might open paragraphs where we don't want to leading
+		# to empty paragraphs at the beginning of sections.
+		#open_paragraph_if_not_open ();
 		print "(index $1)\n";
 		my $index = do_line_subs($1);
 		my $sortby = "";
