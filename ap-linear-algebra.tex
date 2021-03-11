@@ -4536,7 +4536,7 @@ ${\mathbb R}^n$, and so does multiplying by scalars.
 The set $S' = \{ \vec{0} \}$, that is,
 the set of the zero vector by itself, is 
 also a subspace of ${\mathbb R}^n$.  There is only one vector in this
-subspace, so we only need to check for that one vector, and everything checks
+subspace, so we only need to verify the definition for that one vector, and everything checks
 out: $\vec{0}+\vec{0} = \vec{0}$ and $\alpha \vec{0} = \vec{0}$.
 
 The set $S''$ of all the vectors of the form
@@ -4608,8 +4608,8 @@ So as expected
 
 On the other hand the subspace $\{ \vec{0} \}$ is of dimension $0$.
 
-The subspace $S''$ from a previous example, that is, the set of
-vectors $(a,a)$ is of dimension~1.  One possible basis is simply
+The subspace $S''$ from \exampleref{example:simplesubspaces}, that is, the set of
+vectors $(a,a)$, is of dimension~1.  One possible basis is simply
 $\{ (1,1) \}$, the single
 vector $(1,1)$: every vector in $S''$ can be represented by $a (1,1) =
 (a,a)$.  Similarly another possible basis would be $\{ (-1,-1) \}$.  Then
@@ -4703,7 +4703,7 @@ L =
 {1} & 2 & 0 & 0 & 3 \\
 0 & 0 & {1} & 0 & 4 \\
 0 & 0 & 0 & {1} & 5
-\end{bmatrix} 
+\end{bmatrix} .
 \end{equation*}
 Conveniently, the matrix is in reduced row echelon form.
 The matrix is of rank 3.
@@ -4933,8 +4933,8 @@ $\vec{b}$.
 \end{enumerate}
 How does the Rank--Nullity theorem come into the picture?  Well, if $A$ has
 a nonzero solution $\vec{x}$ to $A \vec{x} = \vec{0}$, then the nullity $k$ is
-positive.  But then the rank $r = n-k$ must be less than $n$.  In particular
-it means that the column space of $A$ is of dimension less than $n$, so it is
+positive.  But then the rank $r = n-k$ must be less than $n$.
+It means that the column space of $A$ is of dimension less than $n$, so it is
 a subspace that does not include everything in ${\mathbb{R}}^n$.
 So ${\mathbb{R}}^n$ has to
 contain some vector $\vec{b}$ not in the column space of $A$.  In fact, most
@@ -5326,6 +5326,8 @@ the dot product:
 =
 \vec{y}^T \vec{x}
 =
+x_1 y_1 + x_2 y_2 + \cdots + x_n y_n
+=
 \sum_{i=1}^n x_i y_i .
 \end{equation*}
 Why do we seemingly give a new notation for the dot product?  
@@ -5341,7 +5343,7 @@ f(t) g(t) \, dt .
 \end{equation*}
 But we digress.
 
-Inner product satisfies the following rules
+The inner product satisfies the following rules:
 \begin{enumerate}[(i)]
 \item $\langle \vec{x} , \vec{x} \rangle \geq 0$, and
 $\langle \vec{x} , \vec{x} \rangle = 0$ if and only if $\vec{x} = 0$,
@@ -5357,7 +5359,7 @@ $\langle \vec{x}, \vec{y} + \vec{z} \rangle =
 \langle \vec{x} , \vec{y} \rangle +
 \langle \vec{x} , \vec{z} \rangle$.
 \end{enumerate}
-In fact, anything that satisfies the properties above can be called an inner
+Anything that satisfies the properties above can be called an inner
 product, although in this section we are concerned with the
 standard inner product in ${\mathbb{R}}^n$.
 
@@ -5374,8 +5376,8 @@ How does it give angles?
 %we compute $\theta$?
 
 You may recall from multivariable calculus, that in
-two or three dimensions, the standard inner product
-gives you the angle as you know from plane or three dimensional geometry:
+two or three dimensions, the standard inner product (the dot product)
+gives you the angle between the vectors:
 \begin{equation*}
 \langle \vec{x}, \vec{y} \rangle
 =
@@ -5384,7 +5386,7 @@ gives you the angle as you know from plane or three dimensional geometry:
 That is, $\theta$ is the angle that $\vec{x}$ and $\vec{y}$ make
 when they are based at the same point.
 
-In ${\mathbb{R}}^n$, we are simply going to say that $\theta$
+In ${\mathbb{R}}^n$ (any dimension), we are simply going to say that $\theta$
 from the formula is what the angle is.
 This makes sense as any two vectors based at the origin
 lie in a 2-dimensional plane (subspace),
@@ -5542,7 +5544,7 @@ the projection.  In other words,
 \end{equation*}
 
 \begin{example}
-Suppose we wish to project the vector $(1,2,3)$ onto the vector $(3,2,1)$.
+Suppose we wish to project the vector $(3,2,1)$ onto the vector $(1,2,3)$.
 Compute
 \begin{equation*}
 \begin{split}
@@ -5609,9 +5611,9 @@ The reason why we are interested in orthogonal (or orthonormal) bases is
 that they make it really simple to represent a vector (or a projection onto
 a subspace) in the basis.  The simple formula for the orthogonal projection
 onto a vector gives us the coefficients.  In 
-\chapterref{FS:chapter} we use the same idea by finding the correct 
-orthogonal basis for the set of solutions of a differential equation we
-are then able to find any particular solution by simply applying the
+\chapterref{FS:chapter}, we use the same idea by finding the correct 
+orthogonal basis for the set of solutions of a differential equation.
+We are then able to find any particular solution by simply applying the
 orthogonal projection formula, which is just a couple of a inner products.
 
 Let us come back to linear algebra.  Suppose that we have a subspace
@@ -5621,7 +5623,8 @@ express $\vec{x}$ in terms of the basis.  If $\vec{x}$ is not in the span
 of the basis (when it is not in the given subspace),
 then of course it is not possible,
 but the following formula
-gives us at least the orthogonal projection onto the subspace.
+gives us at least the orthogonal projection onto the subspace,
+or in other words, the best approximation in the subspace.
 
 First suppose that $\vec{x}$ is in the span.  Then it is the sum of the
 orthogonal projections:
@@ -5736,10 +5739,11 @@ So
 \end{equation*}
 \end{example}
 
-If the basis is orthonormal rather than orthogonal, than the denominators
-are always just one.  It is easy to make a basis orthonormal, just
-by dividing all the vectors by their size.  If you want to decompose
-many vectors, it may be better to find an orthonrmal basis.
+If the basis is orthonormal rather than orthogonal,
+then all the denominators are one.
+It is easy to make a basis orthonormal---divide all the vectors by their size.
+If you want to decompose many vectors,
+it may be better to find an orthonormal basis.
 In the example above, the orthonormal basis we would thus create is
 \begin{equation*}
 \left( \frac{1}{\sqrt{2}} , \frac{1}{\sqrt{2}} \right) , \quad
@@ -5809,13 +5813,13 @@ that is the closest to $\vec{x}$.  Then
 Of course, if $\vec{x}$ is in $S$, then $\operatorname{proj}_{S}(\vec{x}) =
 \vec{x}$, as the closest vector in $S$ to $\vec{x}$ is $\vec{x}$ itself.
 But true utility is obtained when $\vec{x}$ is not in $S$.
-In much of applied mathematics we cannot find an exact solution to a problem,
+In much of applied mathematics, we cannot find an exact solution to a problem,
 but we try
 to find the best solution out of a small subset (subspace).  The partial sums of
 Fourier series from \chapterref{FS:chapter} are one example.  Another
 example is least square approximation to fit a curve to data.  Yet another
 example is given by
-the most commonly used numerical methods to solve differential
+the most commonly used numerical methods to solve partial differential
 equations, the finite element methods.
 
 \begin{example}
@@ -5910,7 +5914,7 @@ of the two vectors.  Let us find an orthogonal basis of $S$:
 (-2,1,0) .
 \end{align*}
 So $(1,2,-1)$ and $(-2,1,0)$ span $S$ and are orthogonal.  Let us check:
-$(1,2,-1) \cdot (-2,1,0) = 0$.
+$\langle (1,2,-1) , (-2,1,0) \rangle = 0$.
 
 Suppose we wish to find an orthonormal basis, not just an orthogonal one.
 Well, we simply make the
@@ -6047,8 +6051,8 @@ c)~$(2,0,-2)$
 }
 
 \begin{exercise}
-The vectors $(1,1,-1)$, $(2,-1,1)$, $(1,-5,3)$ for an orthonormal basis.
-Represent the following vectors in terms of this basis.
+The vectors $(1,1,-1)$, $(2,-1,1)$, $(1,-5,3)$ form an orthogonal basis.
+Represent the following vectors in terms of this basis:
 \begin{tasks}(3)
 \task $(1,-8,4)$
 \task $(5,-7,5)$
