@@ -6091,7 +6091,7 @@ $(1,1,-1)$, $(0,1,1)$, $(\nicefrac{4}{3},\nicefrac{-2}{3},\nicefrac{2}{3})$
 \sectionnotes{1 lecture}
 
 For square matrices we define a useful quantity called the
-\emph{\myindex{determinant}}.  We define
+\emph{\myindex{determinant}}.  Define
 the determinant of a $1 \times 1$ matrix as the value of its only entry
 \begin{equation*}
 \det \left(
@@ -6102,7 +6102,7 @@ a
 \overset{\text{def}}{=}
 a .
 \end{equation*}
-For a $2 \times 2$ matrix we define
+For a $2 \times 2$ matrix, define
 \begin{equation*}
 \det \left(
 \begin{bmatrix}
@@ -6120,7 +6120,7 @@ the meaning of the determinant.
 An $n \times n$ matrix
 gives a mapping of the $n$-dimensional euclidean space ${\mathbb{R}}^n$ to 
 itself.
-In particular, a $2 \times 2$ matrix $A$ is a mapping of
+So a $2 \times 2$ matrix $A$ is a mapping of
 the plane to itself.  The determinant of 
 $A$ is the factor by which the area of objects changes. 
 If we take the unit square (square of side 1) in the plane, then
@@ -6135,7 +6135,7 @@ A =
 \end{bmatrix} .
 \end{equation*}
 Then $\det(A) = 1+1 = 2$.
-Let us see where $A$ sends the unit square with vertices
+Let us see where $A$ sends the unit square---the square with vertices
 $(0,0)$, $(1,0)$, $(0,1)$, and $(1,1)$.
 The point $(0,0)$ gets sent
 to $(0,0)$.  
@@ -6182,7 +6182,7 @@ to $(0,0)$.
 The image of the square is another square with vertices $(0,0)$, $(1,-1)$,
 $(1,1)$, and $(2,0)$.  The
 image square has
-a side of length $\sqrt{2}$ and is therefore of area 2.  See
+a side of length $\sqrt{2}$, and it is therefore of area 2.  See
 \figurevref{linalg-imagesquare:fig}.
 
 \begin{myfig}
@@ -6192,7 +6192,7 @@ a side of length $\sqrt{2}$ and is therefore of area 2.  See
 $A$.\label{linalg-imagesquare:fig}}
 \end{myfig}
 
-In general the image of a square is going to be a \myindex{parallelogram}.
+In general, the image of a square is going to be a \myindex{parallelogram}.
 In high school geometry, you may have seen a formula for
 computing the area of a \myindex{parallelogram}
 with vertices $(0,0)$, $(a,c)$, $(b,d)$
@@ -6420,7 +6420,7 @@ this method of computing the determinant is called the
 \emph{cofactor expansion}.
 
 Similarly we do not need to expand along a row, we can expand
-along a column.  For any $j$
+along a column.  For any $j$,
 \begin{equation*}
 \det (A)
 =
@@ -6523,7 +6523,7 @@ go up by a factor of $6$.  This is true in general:
 
 This property is one of the most useful, and it is employed often to 
 actually compute determinants.  A particularly interesting consequence is to
-note what it means for existence of inverses.
+note what it means for the existence of inverses.
 Take $A$ and $B$ to be inverses, that is $AB=I$.  Then
 \begin{equation*}
 \det(A)\det(B) = \det(AB) = \det(I) = 1 .
