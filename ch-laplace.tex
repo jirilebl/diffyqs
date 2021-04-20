@@ -531,14 +531,14 @@ $2t^2-2t+1-e^{-2t}$
 }
 
 \begin{exercise}
-Find the Laplace transform of $te^{-t}$ (Hint: integrate by parts).
+Find the Laplace transform of $te^{-t}$ (Hint: Integrate by parts).
 \end{exercise}
 \exsol{%
 $\frac{1}{{(s+1)}^2}$
 }
 
 \begin{exercise}
-Find the Laplace transform of $\sin(t)e^{-t}$ (Hint: integrate by parts).
+Find the Laplace transform of $\sin(t)e^{-t}$ (Hint: Integrate by parts).
 \end{exercise}
 \exsol{%
 $\frac{1}{s^2+2s+2}$
@@ -1215,7 +1215,7 @@ the Laplace transform.  We can give the solution to
 the forced oscillation problem for any forcing function as a definite
 integral.
 
-\begin{example}
+\begin{example} \label{example:undampedforcedbylaplacearbitrhs}
 Find the solution to
 \begin{equation*}
 x'' + \omega_0^2 x = f(t) , \quad x(0) = 0, \quad x'(0) = 0 ,
@@ -1224,7 +1224,7 @@ for an arbitrary function $f(t)$.
 
 We first apply the Laplace transform to the equation.  Denote
 the transform of $x(t)$ by $X(s)$ and the transform of $f(t)$ by
-$F(s)$ as usual.
+$F(s)$ as usual.  We get
 \begin{equation*}
 s^2 X(s) + \omega_0^2 X(s) = F(s) ,
 \end{equation*}
@@ -1368,7 +1368,7 @@ Find the solution to
 m x'' + c x' + k x = f(t) , \quad x(0) = 0, \quad x'(0) = 0 ,
 \end{equation*}
 for an arbitrary function $f(t)$, where $m > 0$, $c > 0$, $k > 0$,
-and $c^2 - 4km > 0$ (system is overdamped).
+and $c^2 - 4km > 0$ (the system is overdamped).
 Write the solution as a definite integral.
 \end{exercise}
 
@@ -1378,7 +1378,7 @@ Find the solution to
 m x'' + c x' + k x = f(t) , \quad x(0) = 0, \quad x'(0) = 0 ,
 \end{equation*}
 for an arbitrary function $f(t)$, where $m > 0$, $c > 0$, $k > 0$,
-and $c^2 - 4km < 0$ (system is underdamped).
+and $c^2 - 4km < 0$ (the system is underdamped).
 Write the solution as a definite integral.
 \end{exercise}
 
@@ -1388,7 +1388,7 @@ Find the solution to
 m x'' + c x' + k x = f(t) , \quad x(0) = 0, \quad x'(0) = 0 ,
 \end{equation*}
 for an arbitrary function $f(t)$, where $m > 0$, $c > 0$, $k > 0$,
-and $c^2 = 4km$ (system is critically damped).
+and $c^2 = 4km$ (the system is critically damped).
 Write the solution as a definite integral.
 \end{exercise}
 
@@ -1464,9 +1464,11 @@ $\int_0^t f(\tau) \bigl( 1 - \cos (t-\tau)\bigr)~ d\tau$
 
 \subsection{Rectangular pulse}
 
-Often in applications we study a physical system by putting in a short pulse 
-and then seeing what the system does.  The resulting behavior is
-often called \emph{\myindex{impulse response}}.
+Often we study a physical system by putting in a short pulse 
+and then seeing what the system does.
+The resulting behavior is
+often called \emph{\myindex{impulse response}},
+and understanding it tells us how the system responds to any input.
 Let us see what we mean by a pulse.
 The simplest kind of a pulse is a simple rectangular pulse defined by
 \begin{equation*}
@@ -1483,7 +1485,7 @@ See \figurevref{lt:sqpulse} for a graph.
 \begin{mywrapfig}[15]{3.25in}
 \capstart
 \diffyincludegraphics{width=3in}{width=4.5in}{lt-sqpulse}
-\caption{Sample square pulse with $a=0.5$, $b=1$ and $M = 2$.\label{lt:sqpulse}}
+\caption{Sample square pulse with $a=0.5$, $b=1$, and $M = 2$.\label{lt:sqpulse}}
 \end{mywrapfig}
 
 Notice that
@@ -1505,14 +1507,14 @@ M
 \end{split}
 \end{equation*}
 
-For simplicity we let $a=0$, and it is convenient
-to set $M = \nicefrac{1}{b}$ to have
+For simplicity, let $a=0$.
+It is also convenient
+to set $M = \nicefrac{1}{b}$ so that
 \begin{equation*}
 \int_0^\infty \varphi(t) \,dt = 1 .
 \end{equation*}
 That is, to have the pulse have \myquote{unit mass.}
-For such a pulse we
-compute
+For such a pulse,
 \begin{equation*}
 {\mathcal{L}} \bigl\{ \varphi(t) \bigr\}
 =
@@ -1520,7 +1522,7 @@ compute
 =
 \frac{1 - e^{-bs}}{bs} .
 \end{equation*}
-We generally want $b$ to be very small.  That is, we wish to have
+We want $b$ to be very small; we wish to have
 the pulse be very short and very tall.  By letting $b$ go to zero we arrive
 at the concept of the Dirac delta function.
 
@@ -1585,7 +1587,7 @@ Hence,
 
 Let us therefore accept $\delta(t)$ as an object that is possible to
 integrate.  We often want to shift $\delta$ to another point, for example
-$\delta(t-a)$.  In that case we have
+$\delta(t-a)$.  In that case,
 \begin{equation*}
 \int_{-\infty}^\infty \delta(t-a) f(t) \,dt = f(a) .
 \end{equation*}
@@ -1597,7 +1599,7 @@ In other words, the convolution of $\delta(t)$ with $f(t)$ is again $f(t)$,
 = f(t) .
 \end{equation*}
 
-As we can integrate $\delta(t)$, let us compute its Laplace transform.
+As we can integrate $\delta(t)$, we compute its Laplace transform:
 \begin{equation*}
 \mybxbg{~~
 {\mathcal{L}} \bigl\{ \delta(t-a) \bigr\}
@@ -1611,10 +1613,10 @@ In particular,
 \end{equation*}
 
 \begin{remark}
-Notice that the Laplace transform of $\delta(t-a)$ looks like
+The Laplace transform of $\delta(t-a)$ would be 
 the Laplace transform of the derivative of the Heaviside function
-$u(t-a)$, if we could differentiate the Heaviside function.
-First notice
+$u(t-a)$, if the Heaviside function had a derivative.
+First,
 \begin{equation*}
 {\mathcal{L}} \bigl\{ u(t-a) \bigr\} = \frac{e^{-as}}{s}.
 \end{equation*}
@@ -1647,10 +1649,11 @@ function.
 
 \begin{example}
 Let us compute ${\mathcal{L}}^{-1} \left\{ \frac{s+1}{s} \right\}$.  So
-far we have always looked at proper rational functions in the $s$ variable.
-That is, the numerator was always of lower degree than the denominator.
+far we only computed the inverse transform of proper rational functions
+in the $s$ variable.
+That is, the numerator was of lower degree than the denominator.
 Not so with $\frac{s+1}{s}$.
-We write,
+We can use the delta function to compute,
 \begin{equation*}
 {\mathcal{L}}^{-1} \left\{ \frac{s+1}{s} \right\}
 =
@@ -1670,8 +1673,9 @@ function and only makes sense when put underneath an integral.
 
 As we said before, in the differential equation
 $L x = f(t)$,
-we think of $f(t)$ as input, and $x(t)$ as the output.  Often it is important
-to find the response to an impulse, and then we use
+we think of $f(t)$ as input, and $x(t)$ as the output.
+We think of the delta function as an impulse, and so
+to find the response to an impulse, we use
 the delta function in place of $f(t)$.
 The solution to
 \begin{equation*}
@@ -1693,15 +1697,17 @@ s^2 X(s) + \omega_0^2 X(s) = 1 ,
 \qquad \text{and so} \qquad
 X(s) = \frac{1}{s^2+ \omega_0^2} .
 \end{equation*}
-Taking the inverse Laplace transform we obtain
+The inverse Laplace transform produces
 \begin{equation*}
 x(t) = 
 \frac{\sin (\omega_0 t)}{\omega_0} .
 \end{equation*}
 \end{example}
 
-Let us notice something about the example above.  We showed before that
-when the input is $f(t)$, then the solution to $Lx = f(t)$
+Let us notice something about the example above. 
+In \exampleref{example:undampedforcedbylaplacearbitrhs},
+we found that
+when the input is $f(t)$, the solution to $Lx = f(t)$
 is given by
 \begin{equation*}
 x(t) = 
@@ -1709,8 +1715,8 @@ x(t) =
 f(\tau) 
 \frac{\sin \bigl( \omega_0 (t-\tau) \bigr)}{\omega_0} ~ d\tau .
 \end{equation*}
-That is, the solution for an arbitrary input is given as
-convolution with the impulse response.  Let us see why.
+That is, \emph{the solution for an arbitrary input is given as
+convolution with the impulse response}.  Let us see why.
 The key is to notice that for functions $x(t)$ and $f(t)$,
 \begin{equation*}
 (x * f)''(t) =
@@ -1754,8 +1760,8 @@ the impulse response and the input $f(t)$.
 \index{three-point beam bending}
 
 Let us give another quite different
-example where delta functions turn up.  In this case 
-representing point loads on a steel beam.  Suppose we have a beam
+example where the delta function turns up:
+Representing point loads on a steel beam.  Consider a beam
 of length $L$, resting on two simple supports at the ends.  Let $x$ denote
 the position on the beam, and let $y(x)$ denote the deflection of the beam in
 the vertical direction.  The deflection $y(x)$ satisfies the
@@ -1788,7 +1794,7 @@ In this case the equation becomes
 \begin{equation*}
 EI \frac{d^4 y}{dx^4} = -F \delta(x-a) ,
 \end{equation*}
-where $x=a$ is the point where the mass is applied.  $F$ is the force
+where $x=a$ is the point where the mass is applied.  The constant $F$ is the force
 applied and the minus sign indicates that the force is downward, that is, in the
 negative $y$ direction.  The end points of the
 beam satisfy the conditions,
@@ -1801,7 +1807,7 @@ conditions applied to beams.
 
 
 \begin{example} \label{lt:examplebeam}
-Suppose that length of the beam is 2, and suppose that $EI=1$ for
+Suppose that length of the beam is 2, and $EI=1$ for
 simplicity.  Further suppose that the force $F=1$ is applied at $x=1$.
 That is, we have the equation
 \begin{equation*}
