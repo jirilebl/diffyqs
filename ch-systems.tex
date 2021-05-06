@@ -241,7 +241,7 @@ u_n' & = F(u_n,u_{n-1},\ldots,u_2,u_1,x) .
 \end{align*}
 We solve
 this system for $u_1$, $u_2$, \ldots, $u_n$.  Once we have solved
-for the $u$'s,
+for the $u$,
 we can discard $u_2$ through $u_n$ and let $y = u_1$.
 This $y$ solves the original equation.
 
@@ -390,7 +390,7 @@ dimension.  But note how much more complicated things become when we
 allow just one extra dimension.
 
 We can draw phase portraits and trajectories in the $xy$-plane
-even if the system is not autonomous.  In this case however we cannot draw
+even if the system is not autonomous.  In this case, however, we cannot draw
 the direction field, since the field changes as $t$ changes.  For
 each $t$ we would get a different direction field.
 
@@ -423,7 +423,7 @@ subject to the initial condition
 $x_1(t^0) = x_1^0$,
 $x_2(t^0) = x_2^0$, \ldots,
 $x_n(t^0) = x_n^0$
-exists (at least for some small interval of $t$'s) and is unique.
+exists (at least for $t$ in some small interval) and is unique.
 \end{theorem}
 
 That is, a unique solution exists for any initial condition
@@ -665,14 +665,14 @@ b_3
 \end{bmatrix}
 = a_1 b_1 + a_2 b_2 + a_3 b_3 .
 \end{equation*}
-And similarly for larger (or smaller) vectors.
+Similarly for larger (or smaller) vectors.
 
 Armed with the dot product we define the
 \emph{\myindex{product of matrices}}.
 First let us denote by $\operatorname{row}_i(A)$ the $i^{\text{th}}$ row
 of $A$ and by
 $\operatorname{column}_j(A)$ the $j^{\text{th}}$ column of $A$.
-For an $m \times n$ matrix $A$ and an $n \times p$ matrix $B$
+For an $m \times n$ matrix $A$ and an $n \times p$ matrix $B$,
 we can define the product $AB$.  We let $AB$ be an $m \times p$
 matrix whose $ij^{\text{th}}$ entry is the dot product
 \begin{equation*}
@@ -765,7 +765,7 @@ If $A$ is not invertible, we sometimes say $A$ is
 \emph{singular\index{singular matrix}}.
 
 If $A$ is invertible, then $AB = AC$ does imply
-that $B = C$ (in particular the inverse of $A$ is unique).
+that $B = C$ (in particular, the inverse of $A$ is unique).
 We just multiply both sides by $A^{-1}$ (on the left) to get
 $A^{-1}AB = A^{-1}AC$ or $IB=IC$ or $B=C$.
 It is also not hard to see that ${(A^{-1})}^{-1} = A$.
@@ -5360,7 +5360,7 @@ is to just compute the series up to a certain number of terms.  There
 are better ways to approximate the exponential%
 \footnote{C.\ Moler and C.F.\ Van Loan, \emph{Nineteen Dubious Ways
 to Compute the Exponential of a Matrix, Twenty-Five Years Later}, SIAM Review
-45 (1), 2003, 3--49}.  In many cases however,
+45 (1), 2003, 3--49}.  In many cases, however,
 few terms of the Taylor series give
 a reasonable approximation for the exponential and may suffice for
 the application.  For example, let us compute the first 4 terms of the
@@ -5483,8 +5483,8 @@ Suppose $AB = BA$.  Show that under this assumption, $e^{A+B} = e^A e^B$.
 
 \begin{exercise} \label{matexp:expinvex}
 Use \exerciseref{matexp:explawex}
-to show that ${(e^{A})}^{-1} = e^{-A}$.  In particular
-this means that $e^A$ is invertible even if $A$ is not.
+to show that ${(e^{A})}^{-1} = e^{-A}$.  In particular,
+$e^A$ is invertible even if $A$ is not.
 \end{exercise}
 
 \begin{exercise}
@@ -5511,9 +5511,9 @@ $\left[ \begin{smallmatrix}
 
 \begin{exercise}
 Suppose that $A$ is an $n \times n$ matrix with a repeated eigenvalue
-$\lambda$ of multiplicity $n$.
-Suppose that there are $n$ linearly independent eigenvectors.  Show that
-the matrix is diagonal, in particular $A = \lambda I$.  Hint: Use
+$\lambda$ of multiplicity $n$ with
+$n$ linearly independent eigenvectors.  Show that
+the matrix is diagonal, in fact, $A = \lambda I$.  Hint: Use
 diagonalization and the fact that the identity matrix commutes with every
 other matrix.
 \end{exercise}
@@ -5654,7 +5654,7 @@ $e^{tA}$ where
 $A=\left[ \begin{smallmatrix}
 2 & 3 \\
 2 & 2 
-\end{smallmatrix}\right]$ (Write as a single matrix).
+\end{smallmatrix}\right]$.  Write it as a single matrix.
 Then use it to approximate $e^{0.1A}$.
 \end{exercise}
 \exsol{%
