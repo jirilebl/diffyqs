@@ -312,12 +312,12 @@ Plug in and check that this really is the solution.
 
 It is useful to go back and forth between systems and higher order equations
 for other reasons.  For example, software for solving ODE numerically
-(approximation) is generally for first order systems.  So to use it,
-you have to take whatever ODE you want to solve and convert it to a first
-order system.  In fact, it is not very hard
+(approximation) is generally for first order systems.  To use it,
+you take whatever ODE you want to solve and convert it to a first
+order system.  It is not very hard
 to adapt computer code for the Euler or Runge--Kutta method for first order equations to
 handle first
-order systems.  We essentially just treat the dependent variable not as
+order systems.  We simply treat the dependent variable not as
 a number but as a vector.  In many mathematical computer languages there is
 almost no distinction in syntax.
 
@@ -331,7 +331,7 @@ is called an \emph{\myindex{autonomous system}}.  For example
 the system $y'=2y-x$, $y'=x$ is autonomous as $t$ is the independent
 variable but does not appear in the equations.
 
-For autonomous systems we can the so-called
+For autonomous systems we can draw the so-called
 \emph{\myindex{direction field}} or \emph{\myindex{vector field}},
 a plot similar to a slope field, but
 instead of giving a slope at each point, we give a direction (and a
@@ -347,7 +347,12 @@ a vector pointing to the right and a little bit up,
 while at the point $(2,1)$ we draw the vector $\bigl(2(1)-2,2\bigr) = (0,2)$
 a vector that points straight up.
 When drawing the vectors, we will scale down
-their size to fit many of them on the same direction field.  We are mostly 
+their size to fit many of them on the same direction field.
+If we drew the arrows at the actual size, the diagram would be a
+jumbled mess once you would draw more than a couple of arrows.
+So we scale them all so that not even the longest one interferes with
+the others.
+We are mostly 
 interested in their direction and relative size.  See
 \figurevref{sintro-vectorfield:fig}.
 

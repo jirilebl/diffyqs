@@ -1059,7 +1059,7 @@ in applications and the function is called the
 
 The plot of the extended periodic function is given in
 \figurevref{ts:squarewavefig}.
-Now we compute the coefficients.  Let us start with $a_0$
+Now we compute the coefficients.  We start with $a_0$
 \begin{equation*}
 a_0 = \frac{1}{\pi} \int_{-\pi}^\pi f(t) \,dt
 = \frac{1}{\pi} \int_{0}^\pi \pi \,dt = \pi .
@@ -1069,7 +1069,7 @@ Next,
 a_n = \frac{1}{\pi} \int_{-\pi}^\pi f(t) \cos (nt) \,dt 
 = \frac{1}{\pi} \int_{0}^\pi \pi \cos (nt) \,dt = 0 .
 \end{equation*}
-And finally
+And finally,
 \begin{equation*}
 \begin{split}
 b_n & = \frac{1}{\pi} \int_{-\pi}^\pi f(t) \sin (nt) \,dt \\
@@ -1095,7 +1095,7 @@ The Fourier series is
 \sin \bigl( (2k-1)\, t \bigr) .
 \end{equation*}
 
-Let us write out the first 3 harmonics of the series for $f(t)$.
+Let us write out the first 3 harmonics of the series for $f(t)$:
 \begin{equation*}
 \frac{\pi}{2}
 +
@@ -1126,10 +1126,10 @@ f(t) =
 \frac{2}{2k-1} 
 \sin \bigl( (2k-1)\, t \bigr) .
 \end{equation*}
-is only an equality for such $t$ where $f(t)$ is continuous.  That is,
-we do not get an equality for $t=-\pi,0,\pi$ and all the other discontinuities
+is only an equality for such $t$ where $f(t)$ is continuous.
+We do not get an equality for $t=-\pi,0,\pi$ and all the other discontinuities
 of $f(t)$.  It is not hard to see that when $t$ is an integer multiple of
-$\pi$ (which includes all the discontinuities), then
+$\pi$ (which gives all the discontinuities), then
 \begin{equation*}
 \frac{\pi}{2} + \sum_{k=1}^\infty
 \frac{2}{2k-1} 
@@ -1147,19 +1147,20 @@ t = \pi,
 \end{cases}
 \end{equation*}
 and extend periodically.
-The series equals this extended $f(t)$ everywhere, including the
+The series equals this new extended $f(t)$ everywhere, including the
 discontinuities.
 We will generally not worry about changing the function values
 at several (finitely many) points.
 
-We will say more about convergence in the next section.  Let us however
-mention briefly an effect of the discontinuity.  Let us zoom in near the
-discontinuity in the square wave.  Further, let us plot the first 100
+We will say more about convergence in the next section.  Let us, however,
+briefly mention an effect of the discontinuity.  Zoom in near the
+discontinuity in the square wave.  Further, plot the first 100
 harmonics, see
 \figurevref{ts:squarewavegibbsfig}.  While the
 series is a very good approximation away from the discontinuities, the error
 (the overshoot)
-near the discontinuity at $t=\pi$ does not seem to be getting any smaller.
+near the discontinuity at $t=\pi$ does not seem to be getting any smaller
+as we take more and more harmonics.
 This behavior is known as the \emph{\myindex{Gibbs phenomenon}}.
 The region where the error is large does get smaller, however, the more
 terms in the series we take.
@@ -1169,6 +1170,8 @@ terms in the series we take.
 \diffyincludegraphics{width=3in}{width=4.5in}{ts-squarewave-gibbs}
 \caption{Gibbs phenomenon in action.\label{ts:squarewavegibbsfig}}
 \end{myfig}
+
+\medskip
 
 We can think of a periodic function as a \myquote{signal} being a superposition of
 many signals of pure frequency.  For example, we could think of the square
