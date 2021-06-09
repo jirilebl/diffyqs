@@ -656,7 +656,7 @@ $y(0,t) = y_{xx}(0,t) = 0$ and $y(1,t) = y_{xx}(1,t) = 0$ imply
 X(0) =  X''(0) = 0, \qquad \text{and} \qquad
 X(1) =  X''(1) = 0 .
 \end{equation*}
-and the initial homogeneous condition $y_t(x,0) = 0$ implies
+The initial homogeneous condition $y_t(x,0) = 0$ implies
 \begin{equation*}
 T'(0) = 0 .
 \end{equation*}
@@ -664,8 +664,8 @@ As usual, we leave the nonhomogeneous $y(x,0) = f(x)$ for later.
 
 Considering the equation for $T$, that is,
 $T'' + \lambda a^4 T = 0$, and physical intuition leads us
-to the fact that if $\lambda$ is an eigenvalue then $\lambda > 0$.
-This is because we expect vibration and not exponential growth nor
+to the fact that if $\lambda$ is an eigenvalue then $\lambda > 0$:
+We expect vibration and not exponential growth nor
 decay in the $t$ direction (there is no friction in our model for instance).
 So there are no negative eigenvalues.
 Similarly $\lambda = 0$ is not an eigenvalue.
@@ -676,15 +676,18 @@ conditions.
 \end{exercise}
 
 Let $\omega = \sqrt[4]{\lambda}$, that is $\omega^4 = \lambda$,
-so that we do not need to write the fourth root
+to avoid writing the fourth root
 all the time.  Notice $\omega > 0$.
-The equation $X^{(4)} - \omega^4 X = 0$ has the
-general solution is
+The general solution to
+$X^{(4)} - \omega^4 X = 0$ is
 \begin{equation*}
 X(x) = A e^{\omega x} + B e^{-\omega x} + C \sin (\omega x) +
 D \cos (\omega x) .
 \end{equation*}
-Now $0 = X(0) = A+B+D$, $0 = X''(0) = \omega^2 (A + B - D)$.  Hence, $D = 0$ and $A+B = 0$, or $B = - A$.  So we have
+Now $0 = X(0) = A+B+D$, $0 = X''(0) = \omega^2 (A + B - D)$.
+Solving,
+$D = 0$ and $B = -A$.
+So
 \begin{equation*}
 X(x) = A e^{\omega x} - A e^{-\omega x} + C \sin (\omega x) .
 \end{equation*}
@@ -692,23 +695,23 @@ Also $0 = X(1) = A (e^{\omega} - e^{-\omega}) + C \sin \omega$, and
 $0 = X''(1) = A \omega^2 (e^{\omega} - e^{-\omega}) - C \omega^2 \sin \omega$.
 This means that $C \sin \omega  = 0$ and 
 $A (e^{\omega} - e^{-\omega}) = 2 A \sinh \omega = 0$.  If $\omega > 0$, then
-$\sinh \omega \not= 0$ and so $A = 0$.  This means that $C \not=0$ otherwise
+$\sinh \omega \not= 0$ and so $A = 0$.  Thus $C \not=0$, otherwise
 $\lambda$ is not an
-eigenvalue.  Also $\omega$ must be an integer multiple of
-$\pi$.   Hence $\omega = n \pi$ and $n \geq 1$ (as $\omega > 0$).  We can take
+eigenvalue.  Also, $\omega$ must be an integer multiple of
+$\pi$.  Hence $\omega = n \pi$ and $n \geq 1$ (as $\omega > 0$).  We can take
 $C=1$.  So the eigenvalues are $\lambda_n = n^4 \pi^4$ and corresponding eigenfunctions
 are $\sin (n \pi x)$.
 
 Now 
 $T'' + n^4 \pi^4 a^4 T = 0$.  The general solution is $T(t) =
 A \sin (n^2 \pi^2 a^2 t) + B \cos (n^2 \pi^2 a^2 t)$.  But $T'(0) = 0$ and hence
-we must have $A=0$.  We can take $B=1$ to make $T(0) = 1$ for convenience.
+$A=0$.  We take $B=1$ to make $T(0) = 1$ for convenience.
 So our solutions are $T_n(t) = \cos (n^2 \pi^2 a^2 t)$.
 
-As eigenfunctions are just sines again, we decompose the function
-$f(x)$ on $0 < x < 1$ using the sine series.
-We find numbers $b_n$ such that for
-$0 < x < 1$ we have
+The eigenfunctions are just the sines, so we decompose the function $f(x)$
+using the sine series.  That is,
+we find numbers $b_n$ such that for
+$0 < x < 1$,
 \begin{equation*}
 f(x) = \sum_{n=1}^\infty b_n \sin (n \pi x) .
 \end{equation*}
@@ -720,13 +723,14 @@ X_n(x) T_n(t)
 \sin (n \pi x)  \cos ( n^2 \pi^2 a^2 t ) .
 \end{equation*}
 The point is that $X_nT_n$ is a solution that satisfies all the homogeneous
-conditions (that is, all conditions except the initial position).  And since
-$T_n(0) = 1$, we have
+conditions (all conditions except the initial position).  And since
+$T_n(0) = 1$,
 \begin{equation*}
 y(x,0) = \sum_{n=1}^\infty b_n X_n(x) T_n(0) = 
 \sum_{n=1}^\infty b_n X_n(x) =
 \sum_{n=1}^\infty b_n
 \sin (n \pi x) = f(x) .
+\avoidbreak
 \end{equation*}
 So $y(x,t)$ solves \eqref{appeig:beameq}.
 
@@ -746,8 +750,8 @@ steel beam you hear a very pure sound.  The sound of a
 xylophone or vibraphone is, therefore, very different from a guitar or piano.
 
 \begin{example}
-Let us assume that $f(x) = \frac{x(x-1)}{10}$.  
-On $0 < x < 1$ we have (you know how to do this by now)
+Consider $f(x) = \frac{x(x-1)}{10}$.  
+On $0 < x < 1$ (you know how to do this by now)
 \begin{equation*}
 f(x) = \sum_{\substack{n=1\\n \text{~odd}}}^\infty \frac{4}{5\pi^3 n^3}
 \sin (n \pi x) .

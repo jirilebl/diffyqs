@@ -119,6 +119,9 @@
   \@latex@warning{Counter too large}}
 \makeatother
 
+% discourage pagebreak at end of display, put before \end{equation}
+\newcommand{\avoidbreak}{\postdisplaypenalty=100}
+
 \definecolor{mypersianblue}{rgb}{0.11, 0.22, 0.73}
 
 \hypersetup{

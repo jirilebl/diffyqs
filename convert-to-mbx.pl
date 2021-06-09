@@ -444,6 +444,8 @@ sub do_displaymath_subs {
 	my $eqn = shift;
 
 	$eqn =~ s/\\displaybreak\[0\]//g;
+	$eqn =~ s/\\avoidbreak[\r\n]*//g;
+	$eqn =~ s/\\pagebreak\[[0-9]\][\r\n]*//g;
 
 	return $eqn;
 }
