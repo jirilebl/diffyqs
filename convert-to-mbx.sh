@@ -126,7 +126,7 @@ echo
 echo RUNNING xsltproc
 echo
 
-xsltproc ../diffyqs-html.xsl ../diffyqs-out.xml
+xsltproc -stringparam publisher diffyqs-publisher.xml ../diffyqs-html.xsl ../diffyqs-out.xml
 
 echo
 echo FIXING UP HTML ...
