@@ -26,13 +26,14 @@ while($line = <STDIN>)
 	}
 	if ($line =~ m/<\/head>/) {
 		# Fast preview doesn't seem worth it and it could be confusing since it's not quite right so disable it
-		print "<script type=\"text/x-mathjax-config\">\n";
-		print " MathJax.Hub.Config({\n";
-		print "  \"fast-preview\": {\n";
-		print "   disabled: true,\n";
-		print "  },\n";
-		print " });\n";
-		print "</script>\n";
+		# This is no longer an issue with v3
+		#print "<script type=\"text/x-mathjax-config\">\n";
+		#print " MathJax.Hub.Config({\n";
+		#print "  \"fast-preview\": {\n";
+		#print "   disabled: true,\n";
+		#print "  },\n";
+		#print " });\n";
+		#print "</script>\n";
 		
 		print "<style>\n";
 		# Not really critical, avoids flashing some LaTeX code on initial load, as external .css files get loaded slowly
