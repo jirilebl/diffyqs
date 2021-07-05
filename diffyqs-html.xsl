@@ -4,7 +4,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 
   <!-- Import the usual html conversion templates            -->
-  <xsl:import href="/home/jirka/mathbook/xsl/pretext-html.xsl"/>
+ <xsl:import href="/home/tbazett/mathbook/xsl/pretext-html.xsl"/>
 
   <!-- Intend output for rendering by html -->
   <!--<xsl:output method="html" />-->

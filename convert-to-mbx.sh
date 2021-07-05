@@ -53,8 +53,11 @@ while [ "$1" != "" ]; do
         --kill-generated)
 	    echo "OPTION (kill-generated) Killing generated figures and exiting."
 	    cd figures
-	    rm *-mbx.(svg|png)
-	    rm *-tex4ht.(svg|png)
+	    rm *-mbx.svg
+		 rm *-mbx.png
+	    rm *-tex4ht.svg
+		 rm *-tex4ht.pngcd
+		 
 	    cd ..
 	    exit
 	    ;;

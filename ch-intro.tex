@@ -9,202 +9,10 @@
 \section{Notes about these notes}
 \label{notes:section}
 
-\sectionnotes{A section for the instructor.}
+This version of the textbook is for the Ordinary Differential Equations portion of Math 204 at the Univesrity of Victoria. This version is a fork with adaption by Trefor Bazett of the original text by Jiří Lebl. If you are an instructor,  \href{https://www.jirka.org/diffyqs/html/notes_section.html}{please consult the original version of the text} for more information and potential uses.
 
-This book originated from my class notes for Math 286
-at the \href{https://www.math.uiuc.edu/}{University of Illinois at
-Urbana-Champaign} (UIUC)
-in Fall 2008 and
-Spring 2009.
-It is a first course on differential equations for engineers.
-Using this book, I also taught Math 285 at UIUC\@,
-Math 20D at
-\href{https://www.math.ucsd.edu/}{University of California, San Diego} (UCSD),
-and Math 4233 at 
-\href{https://math.okstate.edu/}{Oklahoma State University} (OSU).
-Normally these courses are taught with
-Edwards and Penney, \emph{Differential
-Equations and Boundary Value Problems: Computing and Modeling}~\cite{EP}, or
-Boyce and DiPrima's
-\emph{Elementary
-Differential Equations and Boundary Value Problems}~\cite{BD},
-and this book aims to be more or less a drop-in replacement.
-Other books I used as sources of information and inspiration
-are E.L.\ Ince's classic (and inexpensive)
-\emph{Ordinary Differential Equations}~\cite{I},
-Stanley Farlow's \emph{Differential Equations and Their
-Applications}~\cite{F}, now available from Dover,
-Berg and McGregor's
-\emph{Elementary Partial Differential Equations}~\cite{BM},
-and William Trench's free book
-\emph{Elementary
-Differential Equations with Boundary Value Problems}~\cite{T}.
-See the \hyperref[furtherreading:chapter]{Further Reading} chapter at the end of the book.
 
-\subsection{Organization}
 
-The organization of this book to some degree
-requires chapters be done in order.
-Later chapters can be dropped.
-The dependence of the material covered is roughly:
-
-% If changing make sure to also update figures/chapterdiagram.pdf_t
-% That's a hopefully short term hack before I figure out how to do it
-% better so that it also gets links and such
-%mbxSTARTIGNORE
-\begin{equation*}
-\begin{tikzcd}[cramped, row sep=small]
-& {\text{\hyperref[intro:chapter]{Introduction}}} \arrow[d] \\
-{\text{\Appendixref{linalg:appendix}}} \arrow[dd, dotted]
-& {\text{\Chapterref{fo:chapter}}} \arrow[d] \\
-& {\text{\Chapterref{ho:chapter}}} \arrow[dddr] \arrow[dd] \arrow[dl] \arrow[dr] \\
-{\text{\Chapterref{sys:chapter}}} \arrow[dr, dotted] \arrow[d] & &
-  {\text{\Chapterref{ps:chapter}}} \\
-{\text{\Chapterref{nlin:chapter}}} & {\text{\Chapterref{FS:chapter}}} \arrow[d]
-\arrow[dr,dotted] \\
-& {\text{\Chapterref{SL:chapter}}}
-& {\text{\Chapterref{LT:chapter}}}
-\end{tikzcd}
-\end{equation*}
-%mbxENDIGNORE
-%mbxlatex \begin{center}
-%mbxlatex \inputpdft{chapterdiagram}
-%mbxlatex \end{center}
-
-There are a few references in chapters \ref{FS:chapter} and \ref{SL:chapter}
-to \chapterref{sys:chapter} (some linear algebra), but these
-references are not essential and can be skimmed over,
-so \chapterref{sys:chapter}
-can safely be dropped, while still covering
-chapters \ref{FS:chapter} and \ref{SL:chapter}.
-\Chapterref{LT:chapter} does not depend on 
-\chapterref{FS:chapter} except that the
-PDE section \ref{laplacepde:section} makes a
-few references to
-\chapterref{FS:chapter},
-although it could, in theory, be covered
-separately.
-The more in-depth \appendixref{linalg:appendix} on linear algebra
-can replace the short review \sectionref{sec:matrix}
-for a course that combines linear algebra and ODE\@.
-
-%\medskip
-\subsection{Typical types of courses}
-
-Several typical types of courses can be run with the book.
-There are the two original courses at UIUC\@,
-both cover ODE as well some PDE\@.
-Either, there is the 4 hours-a-week for a semester (Math 286 at UIUC):
-
-\medskip
-
-\noindent
-\hyperref[intro:chapter]{Introduction} (\ref{introde:section}),
-\chapterref{fo:chapter} (\ref{integralsols:section}--\ref{numer:section}),
-\chapterref{ho:chapter},
-\chapterref{sys:chapter},
-\chapterref{FS:chapter} (\ref{bvp:section}--\ref{dirich:section}),
-\chapterref{SL:chapter} (or
-\ref{LT:chapter} or \ref{ps:chapter} or \ref{nlin:chapter}).
-
-\medskip
-
-Or, the second course at UIUC is at 3 hours-a-week (Math 285 at UIUC):
-
-\medskip
-
-\noindent
-\hyperref[intro:chapter]{Introduction} (\ref{introde:section}),
-\chapterref{fo:chapter} (\ref{integralsols:section}--\ref{numer:section}),
-\chapterref{ho:chapter},
-\chapterref{FS:chapter} (\ref{bvp:section}--\ref{dirich:section}),
-(and maybe \chapterref{SL:chapter},
-\ref{LT:chapter}, or \ref{ps:chapter}).
-
-\medskip
-
-A semester-long course at 3 hours a week that doesn't cover either systems or PDE
-will cover, beyond the introduction,
-%\sectionref{introde:section},
-\chapterref{fo:chapter},
-\chapterref{ho:chapter},
-\chapterref{LT:chapter}, and \chapterref{ps:chapter},
-(with sections skipped as above).
-On the other hand, a typical course that covers 
-systems will probably need to skip Laplace and power series
-and cover
-%\sectionref{introde:section},
-\chapterref{fo:chapter},
-\chapterref{ho:chapter},
-\chapterref{sys:chapter}, and \chapterref{nlin:chapter}.
-
-\medskip
-
-If sections need to be skipped in the beginning, a good core of the 
-sections on single ODE is:
-\ref{introde:section},
-\ref{integralsols:section}--\ref{intfactor:section},
-\ref{auteq:section},
-\ref{solinear:section},
-\ref{sec:ccsol},
-\ref{sec:mv}--\ref{forcedo:section}.
-
-\medskip
-
-The complete book can be covered at a reasonably
-fast pace at approximately 76 lectures
-(without \appendixref{linalg:appendix})
-or 86 lectures (with \appendixref{linalg:appendix} replacing
-\sectionref{sec:matrix}).
-This is not accounting for exams, review,
-or time spent in a computer lab. % (if using IODE for example).
-A two-quarter or a two-semester course can be easily run with the material.
-For example (with some sections perhaps strategically skipped):
-
-\medskip
-
-\noindent
-Semester 1:
-\hyperref[intro:chapter]{Introduction},
-\chapterref{fo:chapter},
-\chapterref{ho:chapter},
-\chapterref{LT:chapter},
-\chapterref{ps:chapter}.
-\\
-Semester 2: 
-\Chapterref{sys:chapter},
-\chapterref{nlin:chapter},
-\chapterref{FS:chapter},
-\chapterref{SL:chapter}.
-
-\medskip
-
-A combined course on ODE with linear algebra can run as:
-
-\medskip
-
-\noindent
-\hyperref[intro:chapter]{Introduction},
-\chapterref{fo:chapter} (\ref{integralsols:section}--\ref{numer:section}),
-\chapterref{ho:chapter},
-\appendixref{linalg:appendix},
-\chapterref{sys:chapter} (w/o \sectionref{sec:matrix}), (possibly 
-\chapterref{nlin:chapter}).
-
-\medskip
-
-The chapter on
-the Laplace transform (\chapterref{LT:chapter}),
-the chapter on Sturm--Liouville (\chapterref{SL:chapter}),
-the chapter on power series (\chapterref{ps:chapter}),
-and the chapter on nonlinear systems (\chapterref{nlin:chapter}),
-are more or less interchangeable and can be treated as \myquote{topics}.
-If \chapterref{nlin:chapter} is covered, it may be best to place it right 
-after \chapterref{sys:chapter},
-and \chapterref{SL:chapter} is best covered right after
-\chapterref{FS:chapter}.
-If time is short, the first two sections of
-\chapterref{ps:chapter} make a reasonable self-contained unit.
 
 %\medskip
 \subsection{Computer resources}
@@ -220,7 +28,7 @@ for most sections, customized for this book.
 \item The PDFs of the figures used in this book.
 \end{enumerate}
 
-I taught the UIUC courses using IODE\index{IODE software}
+Jiří Lebl taught the UIUC courses using IODE\index{IODE software}
 (\url{https://faculty.math.illinois.edu/iode/}).
 IODE is a free software package that
 works with Matlab (proprietary) or Octave (free software).
@@ -241,7 +49,9 @@ at github (\url{https://github.com/jirilebl/diffyqs}).
 
 \subsection{Acknowledgments}
 
-Firstly, I would like to acknowledge Rick Laugesen.  I used his handwritten
+Acknowlegements by Trefor Bazett: Firstly, I want to thank the incredibly work of Ji\v{r}\'i Lebl for creating and maintaining this excellent textbook, without which this project would have been beyond daunting to begin. I want to thank both Afif Omar and Muhammad Awais for their extensive work on revising the exercises, answers, and solutions. This project is supported by an grant through the LTSI at the University of Victoria to create Open Educational Resources. 
+
+Acknowledgements by Ji\v{r}\'i Lebl: Firstly, I would like to acknowledge Rick Laugesen.  I used his handwritten
 class notes
 the first time I taught
 Math 286.  My organization of this book through chapter 5,
