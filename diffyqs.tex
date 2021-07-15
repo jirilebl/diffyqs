@@ -35,21 +35,20 @@
 
 %mbx <!--BEFORE book-->
 
-%mbxdocinfo    <website>
-%mbxdocinfo        <title>www.jirka.org/diffyqs/</title>
-%mbxdocinfo        <url>https://www.jirka.org/diffyqs/</url>
-%mbxdocinfo    </website>
+
 %mbxdocinfo
-%mbxdocinfo    <brandlogo source="logo.png" url="https://www.jirka.org/diffyqs/" />
+%mbxdocinfo    <brandlogo source="logo.png"  />
 %mbxdocinfo
 %mbxdocinfo    <rename element="inlineexercise">Exercise</rename>
+%mbxdocinfo    <rename element="project">Video</rename>
 %mbxdocinfo    <rename element="divisionalexercise">Exercise</rename>
 %mbxdocinfo
 %mbxdocinfo    <latex-preamble>
 %mbxdocinfo        <package>cancel</package>
 %mbxdocinfo    </latex-preamble>
-%mbxdocinfo
+%mbxdocinfo   
 %mbxdocinfo    <initialism>DIFFYQS</initialism>
+%mbxdocinfo
 
 
 %mbxmacro \newcommand{\nicefrac}[2]{{{}^{#1}}\!/\!{{}_{#2}}}
@@ -60,6 +59,7 @@
 %mbxmacro \newcommand{\mybxbg}[1]{\boxed{#1}}
 %mbxmacro \newcommand{\mybxsm}[1]{\boxed{#1}}
 %mbxmacro \newcommand{\allowbreak}{}
+
 
 \begin{document}
 
@@ -271,13 +271,16 @@ at github: \url{https://github.com/jirilebl/diffyqs}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%\input test.tex
+
+
 % Introduction chapter
 \input ch-intro.tex
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % First order ODEs chapter
-\input ch-first-order-ode.tex
+%\input ch-first-order-ode.tex
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -287,7 +290,7 @@ at github: \url{https://github.com/jirilebl/diffyqs}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Systems of ODEs chapter
-\%input ch-systems.tex
+%input ch-systems.tex
 
 %mbxSTARTIGNORE
 %This makes contents fit if needed

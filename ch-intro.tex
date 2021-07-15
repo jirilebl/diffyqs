@@ -9,12 +9,36 @@
 \section{Notes about these notes}
 \label{notes:section}
 
-This version of the textbook is for the Ordinary Differential Equations portion of Math 204 at the Univesrity of Victoria. This version is a fork with adaption by Trefor Bazett of the original text by Jiří Lebl. If you are an instructor,  \href{https://www.jirka.org/diffyqs/html/notes_section.html}{please consult the original version of the text} for more information and potential uses.
+This version of the textbook is for the Ordinary Differential Equations portion of Math 204 at the University of Victoria. This version is a fork adapted by Trefor Bazett of the original text by Jiří Lebl.
+
+\subsection{Original Textbook by Jiří Lebl}
+
+The original version of the textbook by  Jiří Lebl comes in three forms:
+
+\begin{enumerate}
+    \item \href{https://www.jirka.org/diffyqs/html/diffyqs.html}{The Web Version}.
+    \item \href{https://www.jirka.org/diffyqs/diffyqs.pdf}{A PDF}.
+    \item \href{https://smile.amazon.com/dp/1706230230\}{A printed paperback on Amazon }.
+    \end{enumerate}
+
+Additionally, \href{https://www.jirka.org/diffyqs/}{Jiří Lebl's website for the book} contain's a lot of additional information including the source code. 
+
+Note that this forked version of the book for Math 204 at UVic is only available in web version. If you would prefer a .pdf or printed version, as of this writing the books are similar enough that you can certainly access the original .pdf or printed version with the above links. 
+
+If you are an instructor,  \href{https://www.jirka.org/diffyqs/html/notes_section.html}{please consult the original version of the text} for more information and potential uses.
+
+\subsection{Differences between the versions}
+As of this writing, the original text by Jiří Lebl and the forked version by Trefor Bazett are very similar. The most substantial changes in the forked version are embedding of a video series and an expansion of the exercises at the end of each section, with more questions, more answers, and some brif solutions. For a more precise comparison, please consult the respective github pages for the original and forked version. 
+
+
+\subsection{The video playlist}
+The full playlist of videos \href{https://www.youtube.com/playlist?list=PLQ9f-JfDG2WyBPsKFkkfszurhIYeKN6oX}{can be found here}, and consists of both Vector Calculus (not covered in this textbook) and ODEs (covering this textbook). The individual videos are embedded throughout the text. 
+
+The videos are intended to be complimentary to the textbook. You could learn the content just by reading the textbook, as in the original version by Lebl. The other direction is not true; the videos alone don't always
+cover all the content. Typically the videos use slightly different examples from the textbook so that you can get extra exposure by reading/watching both. While there was an effort for the notation and scope of the videos to be similar to the textbook, ultimately the book is largely written by Lebl and the videos recorded by Bazett and there are stylistic differences and differences in emphasis between these two. 
 
 
 
-
-%\medskip
 \subsection{Computer resources}
 
 The book's
@@ -36,20 +60,15 @@ works with Matlab (proprietary) or Octave (free software).
 %trouble running on newer versions of Matlab.
 The graphs in the book were made with
 the Genius\index{Genius software} software
-(see \url{https://www.jirka.org/genius.html}).  I use Genius
-in class to show these (and other) graphs.
+(see \url{https://www.jirka.org/genius.html}). 
 
-The \LaTeX\ source of the book is also available
-for possible modification and customization
-at github (\url{https://github.com/jirilebl/diffyqs}).
-
-%\medskip
-
-%\textbf{Acknowlegements:}
+The \LaTeX\ source is available on github for the original version by Lebl (\url{https://github.com/jirilebl/diffyqs}) as well as the forked version by Bazett (\url{https://github.com/tbazett/diffyqs}) for possible modification and customizations.
 
 \subsection{Acknowledgments}
 
-Acknowlegements by Trefor Bazett: Firstly, I want to thank the incredibly work of Ji\v{r}\'i Lebl for creating and maintaining this excellent textbook, without which this project would have been beyond daunting to begin. I want to thank both Afif Omar and Muhammad Awais for their extensive work on revising the exercises, answers, and solutions. This project is supported by an grant through the LTSI at the University of Victoria to create Open Educational Resources. 
+
+
+Acknowlegements by Trefor Bazett: Firstly, I want to thank the incredibly work of Ji\v{r}\'i Lebl for creating and maintaining this excellent textbook, without which this project would have been beyond daunting to begin. I want to thank both Afif Omar and Muhammad Awais for their extensive work on revising the exercises, answers, and solutions. This project is supported by a grant through the LTSI at the University of Victoria to create Open Educational Resources. 
 
 Acknowledgements by Ji\v{r}\'i Lebl: Firstly, I would like to acknowledge Rick Laugesen.  I used his handwritten
 class notes
@@ -101,10 +120,12 @@ to acknowledge NSF grants DMS-0900885 and DMS-1362337.
 \section{Introduction to differential equations}
 \label{introde:section}
 
-\sectionnotes{more than 1 lecture\EPref{, \S1.1 in \cite{EP}}\BDref{,
-chapter 1 in \cite{BD}}}
 
 \subsection{Differential equations}
+
+\begin{video}[KM3n22ZE8Bw][Intro to Differential Equations][introode]
+    In this video we will learn the big ideas of differential equations. We will specifically focus on two, the equation for exponential growth and for freefall of an object in gravity.   
+\end{video}
 
 The laws of physics are generally written down as differential
 equations.  Therefore, all of science and engineering use
@@ -117,6 +138,8 @@ language as far as science and engineering are concerned.  As an analogy,
 suppose all your classes from now on were given in Swahili.  
 It would be important to first learn Swahili, or you would have a very
 tough time getting a good grade in your classes.
+
+
 
 You saw many
 differential equations already without perhaps knowing about it.
@@ -136,6 +159,9 @@ equation arises from Newton's law of cooling where the ambient
 temperature oscillates with time.
 
 \subsection{Solutions of differential equations}
+
+\begin{video}[wtnwuHdPMAw][The Key Definitions of Differential Equations][keydefs]Let's be a bit more careful with the definitions and ideas introduced in the first video. Along the way we will see a few different types of differential equations. 
+\end{video}
 
 Solving the differential equation means finding $x$ in terms of $t$.  That
 is, we want to find a function of $t$, which we call $x$, such that when
@@ -632,9 +658,6 @@ d)~$T=3\sinh(2x)$
 \sectionnewpage
 \section{Classification of differential equations}
 \label{classification:section}
-
-%Perhaps no [EP] ref?
-\sectionnotes{less than 1 lecture or left as reading\BDref{, \S1.3 in \cite{BD}}}
 
 There are many types of differential equations, and we classify them into
 different categories based on their properties.  Let us quickly go over

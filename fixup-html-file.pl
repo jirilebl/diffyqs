@@ -15,14 +15,14 @@ while($line = <STDIN>)
 	if ($line =~ m/<a class="index-button.*index-1.html.*Index/) {
 		# Add extra buttons
 
-		print "<a onclick=\"gtag('event','download',{'event_category': 'diffyqs', 'event_action': 'Link', 'event_label': 'PTXhtml(top) home diffyqs'});\"\n";
-		print " class=\"index-button toolbar-item button\" href=\"https://www.jirka.org/diffyqs/\" title=\"Home\" alt=\"Book Home\">Home</a>\n";
+		#print "<a onclick=\"gtag('event','download',{'event_category': 'diffyqs', 'event_action': 'Link', 'event_label': 'PTXhtml(top) home diffyqs'});\"\n";
+		#print " class=\"index-button toolbar-item button\" href=\"https://www.jirka.org/diffyqs/\" title=\"Web version of Original\" alt=\"Book Home\">Home</a>\n";
 
-		print "<a onclick=\"gtag('event','download',{'event_category': 'PDF', 'event_action': 'Download', 'event_label': 'PTXhtml(top) /diffyqs/diffyqs.pdf'});\"\n";
-		print " class=\"index-button toolbar-item button\" href=\"https://www.jirka.org/diffyqs/diffyqs.pdf\" title=\"PDF\">PDF</a>\n";
+		#print "<a onclick=\"gtag('event','download',{'event_category': 'PDF', 'event_action': 'Download', 'event_label': 'PTXhtml(top) /diffyqs/diffyqs.pdf'});\"\n";
+		#print " class=\"index-button toolbar-item button\" href=\"https://www.jirka.org/diffyqs/diffyqs.pdf\" title=\"PDF of Original\">PDF</a>\n";
 
-		print "<a onclick=\"gtag('event','download',{'event_category': 'amazon', 'event_action': 'Link', 'event_label': 'PTXhtml(top) diffyqs'});\"\n";
-		print " class=\"index-button toolbar-item button\" style=\"width:100px;\" href=\"https://smile.amazon.com/dp/1706230230\" title=\"Paperback\" alt=\"Buy Paperback\">Paperback</a>\n";
+		#print "<a onclick=\"gtag('event','download',{'event_category': 'amazon', 'event_action': 'Link', 'event_label': 'PTXhtml(top) diffyqs'});\"\n";
+		#print " class=\"index-button toolbar-item button\" style=\"width:100px;\" href=\"https://smile.amazon.com/dp/1706230230\" title=\"Paperback of Original\" alt=\"Buy Paperback\">Paperback</a>\n";
 	}
 	if ($line =~ m/<\/head>/) {
 		# Fast preview doesn't seem worth it and it could be confusing since it's not quite right so disable it

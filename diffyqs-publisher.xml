@@ -20,6 +20,9 @@
 	<knowl list="no" />
 	<knowl remark="no" />
 	<knowl figure="no" />
+	<knowl problem="no" />
+	<knowl project="yes" />
+	<knowl Video="yes" />
 	<knowl table="no" />
 	<knowl listing="no" />
 	<knowl exercise-inline="no" />

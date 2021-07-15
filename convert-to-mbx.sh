@@ -108,7 +108,7 @@ if [ "$OPTSVG" = "yes" ] ; then
 	echo
 
 	cd figures
-	./optimize-svgs.sh
+	sh optimize-svgs.sh
 	cd ..
 fi
 

@@ -1511,7 +1511,52 @@ while(1)
 		close_paragraph();
 		print $out "</statement>\n</exercise>\n";
 
-	} elsif ($para =~ s/^\\begin\{center\}[ \n]*//) {
+	} 
+	
+	#BEGIN MODIFCATIONS
+	elsif ($para =~ s/^\\begin\{video\}[ \n]*//) {
+		
+		print "TREFORTESTBEGIN\n";
+
+
+close_paragraph();
+		$youtubeid = "";
+		my $title = "";
+		my $vidid="";
+
+		$example_num = $example_num+1;
+		my $the_num = get_example_number ();
+
+		
+		if ($para =~ s/^\[(.*?)\]\[(.*?)\]\[(.*?)\][ \n]*//s) {
+			$youtubeid = do_thmtitle_subs($1);
+			$title=$2;
+			$vidid=$3;
+			print $out "<project xml:id=\"$vidid\" number=\"$the_num\">\n";
+			print $out "<title>$title</title>\n";
+		}
+		open_paragraph();
+		
+
+	}elsif ($para =~ s/^\\end\{video\}[ \n]*//) {
+	close_paragraph();	
+	print $out "<video youtube=\"$youtubeid\">";
+		print $out "</video>\n";
+		print $out "</project>\n";
+		
+
+	} 
+
+
+
+
+	#END MODIFCATIONS
+	
+	
+	
+	
+	
+	elsif ($para =~ s/^\\begin\{center\}[ \n]*//) {
 		#FIXME: no centering yet
 		open_paragraph();
 		print "(begin center)";
