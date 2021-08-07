@@ -28,7 +28,7 @@
 
 \author{Originally by Ji\v{r}\'i Lebl and adapted for UVic by Trefor Bazett}
 
-\title{Notes on Diffy Qs: Differential Equations for Engineers}
+\title{Notes on Diffy Qs: Introduction to Differential Equations}
 
 % Set up our index
 \makeindex
@@ -47,7 +47,7 @@
 %mbxdocinfo        <package>cancel</package>
 %mbxdocinfo    </latex-preamble>
 %mbxdocinfo   
-%mbxdocinfo    <initialism>DIFFYQS</initialism>
+%mbxdocinfo    <initialism>ODEs:</initialism>
 %mbxdocinfo
 
 
@@ -63,27 +63,23 @@
 
 \begin{document}
 
-%mbx <title>Notes on Diffy Qs</title>
-%mbx <subtitle>Differential Equations for Engineers</subtitle>
+%mbx <title>Introduction to Differential Equations</title>
 %mbx
 %mbx <frontmatter>
 %mbx   <titlepage>
-%mbx
 %mbx     <author>
 %mbx       <personname>Jiří Lebl</personname>
 %mbx       <department>Department of Mathematics</department>
 %mbx       <institution>Oklahoma State University</institution>
 %mbx       <email>jiri.lebl@gmail.com</email>
 %mbx     </author>
-
 %mbx     <author>
 %mbx       <personname>Trefor Bazett</personname>
 %mbx       <department>Department of Mathematics &amp; Statistics </department>
 %mbx       <institution>University of Victoria</institution>
 %mbx       <email>tbazett@uvic.ca</email>
 %mbx     </author>
-%mbx
-%mbx     <date><today /></date>
+
 
    
 
@@ -122,8 +118,8 @@
 %mbx     </p>
 %mbx     <p>
 %mbx       During the writing of this book, 
-%mbx       the author was in part supported by NSF grant DMS-0900885 and
-%mbx       DMS-1362337.
+%mbx       Lebl was in part supported by NSF grant DMS-0900885 and
+%mbx       DMS-1362337 while Bazett was in part supported by an LTSI OER grant at the University of Victoria. 
 %mbx     </p>
 %mbx     <p>
 %mbx       The date is the main identifier of version.  The major version / edition
@@ -141,6 +137,18 @@
 %mbx     </p>
 %mbx
 %mbx   </colophon>
+%mbx <abstract>
+%mbx     <p>
+%mbx     This book consists of an introduction to Differential Equations, primarily focusing on Ordinary Differential Equations (ODEs). It is used specifically in Math 204 at the University of Victoria, but covers a fairly typical one-semester introductory course for students who have taken Calculus.
+%mbx     </p>
+%mbx     <p>
+%mbx     This book is free and open source, which means that anyone can modify the source code for this book, please see the Colophon for more information. Specicfically, this version of the book, maintained by Trefor Bazett at the University of Victoria, has been forked from <url href="https://www.jirka.org/diffyqs/">the original text by Jiří Lebl.</url>
+%mbx     </p>
+%mbx     <p>
+%mbx     What are differential equations? Check out the first video from the book for an overview!
+%mbx    <video youtube="KM3n22ZE8Bw"></video>
+%mbx     </p>
+%mbx </abstract>
 %mbx </frontmatter>
 
 %mbxSTARTIGNORE
@@ -280,17 +288,35 @@ at github: \url{https://github.com/jirilebl/diffyqs}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % First order ODEs chapter
-%\input ch-first-order-ode.tex
+\input ch-first-order-ode.tex
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Higher order linear ODEs chapter
-%\input ch-higher-order-ode.tex
+\input ch-higher-order-ode.tex
+
+% The Laplace transform chapter
+\input ch-laplace.tex
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% Power series methods chapter
+\input ch-power-ser.tex
+
+% Fourier series and PDEs chapter
+\input ch-fourier-and-pde.tex
+
+
+% Eigenvalue problems chapter
+\input ch-eigenvalue-probs.tex
+
 % Systems of ODEs chapter
-%input ch-systems.tex
+\input ch-systems.tex
+
+
+
+
+
 
 %mbxSTARTIGNORE
 %This makes contents fit if needed
@@ -301,28 +327,26 @@ at github: \url{https://github.com/jirilebl/diffyqs}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Fourier series and PDEs chapter
-%\input ch-fourier-and-pde.tex
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Eigenvalue problems chapter
-%\input ch-eigenvalue-probs.tex
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% The Laplace transform chapter
-%\input ch-laplace.tex
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Power series methods chapter
-%\input ch-power-ser.tex
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 % Nonlinear systems chapter
-%\input ch-nonlin-systems.tex
+\input ch-nonlin-systems.tex
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \appendix
@@ -335,12 +359,12 @@ at github: \url{https://github.com/jirilebl/diffyqs}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Linear algebra appendix
-%\input ap-linear-algebra.tex
+\input ap-linear-algebra.tex
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Nonlinear systems chapter
-%\input ap-laplace-list.tex
+\input ap-laplace-list.tex
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

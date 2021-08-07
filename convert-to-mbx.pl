@@ -87,6 +87,7 @@ $exercise_num = 0;
 $thm_num = 0;
 $remark_num = 0;
 $example_num = 0;
+$video_num = 0;
 $figure_num = 0;
 
 #FIXME: equation counter implement
@@ -241,6 +242,7 @@ sub open_section {
 	$thm_num = 0;
 	$remark_num = 0;
 	$example_num = 0;
+	$video_num = 0;
 
 	my $ch = get_chapter_num();
 
@@ -270,6 +272,7 @@ sub open_chapter {
 	$thm_num = 0;
 	$remark_num = 0;
 	$example_num = 0;
+	$video_num = 0;
 
 	$equation_num = 0;
 	$figure_num = 0;
@@ -386,6 +389,17 @@ sub get_example_number {
 		return "$ch.$example_num";
 	} else {
 		return "$example_num";
+	}
+}
+
+sub get_video_number {
+	my $ch = get_chapter_num();
+	if ($insection) {
+		return "$ch.$section_num.$video_num";
+	} elsif ($inchapter) {
+		return "$ch.$video_num";
+	} else {
+		return "$video_num";
 	}
 }
 
@@ -1004,8 +1018,13 @@ while(1)
 			$table =~ s/\\mybeginframe[ \n]*//;
 			$table =~ s/\\myendframe[ \n]*//;
 
+
+		$example_num = $example_num+1;
+		my $the_num = get_example_number ();
+		
+
 			close_paragraph ();
-			print $out "<table xml:id=\"$theid\">\n";
+			print $out "<table xml:id=\"$theid\" number=\"$the_num\">\n";
 			print $out "  <title>$caption</title>\n";
 			print $out "  <tabular top=\"major\" halign=\"left\">\n";
 
@@ -1506,7 +1525,16 @@ while(1)
 		close_paragraph();
 		print $out "</statement>\n<answer>\n"; 
 		push @cltags, "exsol";
-	} elsif ($para =~ s/^\\end\{exercise\}[ \n]*//) {
+	} 
+	elsif ($para =~ s/^\\end\{exercise\}[ \n]*\\exsolution\{// ||
+	         $para =~ s/^\\end\{samepage\}[ \n]*\\end\{exercise\}[ \n]*\\exsolution\{// ||
+	         $para =~ s/^\\end\{exercise\}[ \n]*\\end\{samepage\}[ \n]*\\exsolution\{//) {
+		print "(exercise end)\n";
+		print "(exsolution start)\n";
+		close_paragraph();
+		print $out "</statement>\n<solution>\n"; 
+		push @cltags, "exsolution";
+	}elsif ($para =~ s/^\\end\{exercise\}[ \n]*//) {
 		print "(exercise end)\n";
 		close_paragraph();
 		print $out "</statement>\n</exercise>\n";
@@ -1524,9 +1552,8 @@ close_paragraph();
 		my $title = "";
 		my $vidid="";
 
-		$example_num = $example_num+1;
-		my $the_num = get_example_number ();
-
+		$video_num = $video_num+1;
+		my $the_num = get_video_number ();
 		
 		if ($para =~ s/^\[(.*?)\]\[(.*?)\]\[(.*?)\][ \n]*//s) {
 			$youtubeid = do_thmtitle_subs($1);
@@ -1727,6 +1754,10 @@ close_paragraph();
 			print "(exsol end)\n";
 			close_paragraph ();
 			print $out "</answer>\n</exercise>\n";
+		} elsif ($tagtoclose eq "exsolution") {
+			print "(exsolution end)\n";
+			close_paragraph ();
+			print $out "</solution>\n</exercise>\n";
 		} elsif ($tagtoclose eq "footnote") {
 			#FIXME: nested paragraphs??  Does this work?
 			print $out "</fn>";

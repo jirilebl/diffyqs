@@ -12,6 +12,8 @@
         <!-- Google search, via masthead textbox is switched on    -->
         <!-- and associated with a Google account via CX number    -->
         <search google-cx="006490116505509195242:1mxn4dbgh8e"/>
+		<analytics google-gst="G-GZD2XYF7R9"/>
+		<video privacy="no"/>
 	
 	<knowl theorem="no" />
 	<knowl proof="yes" />
