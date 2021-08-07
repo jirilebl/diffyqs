@@ -5,11 +5,10 @@
 \section{The Laplace transform}
 \label{laplace:section}
 
-\sectionnotes{1.5--2 lectures\EPref{, \S10.1 in \cite{EP}}\BDref{,
-\S6.1 and parts of \S6.2 in \cite{BD}}}
-
 \subsection{The transform}
-
+\begin{video}[iJVyAwmkAYY][Intro to Laplace Transform][la-intro]
+In this video we introduce the Laplace Transform which takes in functions and outputs a different type of a function. This is going to seem rather strange and unmotivated a bit, because the proof is really in the pudding here that Laplace Transforms are useful for us in how powerful they are to solve differential equations. One benefit is going to happen right away: we will see how to transform very discontinuous things like step functions and the gamma function into more reasonable objects.   
+\end{video}
 In this chapter we will discuss the Laplace transform%
 \footnote{Just like the Laplace equation and the Laplacian, the Laplace
 transform is also named after 
@@ -194,8 +193,11 @@ constants).\label{lt:table}}
 \begin{exercise}
 Verify \tablevref{lt:table}.
 \end{exercise}
+\begin{video}[BsAA4xu3wn0][Linearity, Existence, and Inverses of the Laplace Transform][la-linear]
+	The Laplace Transform has a lot properties that mean it behaves nicely. In this video we'll explore three crucial ones: linearity, existence, and inverses. 
+\end{video}
 
-Since the transform is defined by an integral.  We can use the linearity
+Since the transform is defined by an integral, we can use the linearity
 properties of the integral.  For example, suppose $C$ is a constant, then
 \begin{equation*}
 \mathcal{L} \bigl\{ C f(t) \bigr\} =
@@ -427,6 +429,12 @@ more complicated quadratic that may come up in the method of partial
 fractions.  We complete the square and write such quadratics as ${(s+a)}^2+b$
 and then use the shifting property.
 
+\begin{video}[-Rbr_3Cf7Ag][Translation  & Inverse Laplace Transforms of Irreducible Factors][la-inverse]
+	We want to widely expand the set of functions we can take the inverse Laplace transform of. We will learn about a very convenient property called Translation aka Shifting, and see specifically what to do with irreducible factors. 
+
+	\emph{TYPO: In the final example the $sin(2t)$ term should also have an exponential out front and be $\frac{1}{2}e^t\sin(2t)$ for the same reasons}
+\end{video}
+
 \begin{example}
 Find
 ${\mathcal{L}}^{-1} \left\{ \frac{1}{s^2+4s+8} \right\}$.
@@ -446,6 +454,10 @@ Putting it all together with the shifting property, we find
 \frac{1}{2}\,e^{-2t} \sin (2t) .
 \end{equation*}
 \end{example}
+
+\begin{video}[RlJXwoM1DF4][Inverse Laplace Transform with Repeated Factors][la-repeated]
+	\ref{la-inverse} showed us how to take an irreducible quadratic factor and use completing the square to write it in a fashion amendable for taking inverse Laplace transforms. In this video we show how to deal with repeated factors. 
+\end{video}
 
 In general, we want to be able to apply the Laplace transform to
 rational functions, that is functions of the form
@@ -467,31 +479,70 @@ denominator.
 \begin{exercise}
 Find the Laplace transform of $3+t^5+\sin (\pi t)$.
 \end{exercise}
+\exsolution{%
+Using linearity of the Laplace Transform, we write\\\\
+$\mathcal{L}[3+t^5+\sin (\pi t)]=\mathcal{L}[3]+\mathcal{L}[t^{5}]+\mathcal{L}[\sin(\pi t)]=\frac{3}{s}+\frac{120}{s^6}+\frac{\pi }{s^2+\pi ^2}$
+}
 
 \begin{exercise}
 Find the Laplace transform of $a+bt+ct^2$ for some constants $a$, $b$, and
 $c$.
 \end{exercise}
+\exsol{%
+$\frac{a}{s}+\frac{b}{s^2}+\frac{2 c}{s^3}$
+}
 
 \begin{exercise}
 Find the Laplace transform of $A \cos (\omega t) + B \sin (\omega t)$.
 \end{exercise}
+\exsol{%
+$\frac{\alpha  s + \beta  \omega}{s^2+\omega ^2}$
+}
 
 \begin{exercise}
 Find the Laplace transform of $\cos^2 (\omega t)$.
 \end{exercise}
+\exsol{%
+$\frac{s^2+2 \omega ^2}{s^3+4 s \omega ^2}$
+}
+
+\begin{exercise}
+	Find the Laplace transform of $4{(t+1)}^2$.
+\end{exercise}
+\exsol{%
+	$\frac{8}{s^3} + \frac{8}{s^2} + \frac{4}{s}$
+}
+
+\begin{exercise}
+	Find the Laplace transform of $te^{-t}$.  Hint: Laplace by definition, then Integrate by parts.
+\end{exercise}
+\exsol{%
+	$\frac{1}{{(s+1)}^2}$
+}
+
+\begin{exercise}
+	Find the Laplace transform of $\sin(t)e^{-t}$.  Hint: Laplace by definition, then Integrate by parts.
+\end{exercise}
+\exsol{%
+	$\frac{1}{s^2+2s+2}$
+}
 
 \begin{exercise}
 Find the inverse Laplace transform of $\frac{4}{s^2-9}$.
 \end{exercise}
+\exsolution{%
+Using Partial fractions, we write\\\\
+$\frac{4}{s^2-9}=\frac{2}{3}\frac{1}{s-3}-\frac{2}{3}\frac{1}{s+3}$\\\\
+Now taking the inverse Laplace transform, we get\\\\
+$\mathcal{L}^{-1}\left[\frac{4}{s^2-9}\right]=\frac{2}{3}\mathcal{L}^{-1}\left[\frac{1}{s-3}\right]-\frac{2}{3}\mathcal{L}^{-1}\left[\frac{1}{s+3}\right]=\frac{2}{3}e^{3t}-\frac{2}{3}e^{-3t}=\frac{4}{3}\frac{e^{3t}-e^{-3t}}{2}=\frac{4}{3} \sinh (3 t)$
+}
 
 \begin{exercise}
 Find the inverse Laplace transform of $\frac{2s}{s^2-1}$.
 \end{exercise}
-
-\begin{exercise}
-Find the inverse Laplace transform of $\frac{1}{{(s-1)}^2(s+1)}$.
-\end{exercise}
+\exsol{%
+$2 \cosh (t)$
+}
 
 \begin{exercise}
 Find the Laplace transform of $f(t) =
@@ -500,48 +551,63 @@ t & \text{if } \; t \geq 1, \\
 0 & \text{if } \; t < 1.
 \end{cases}$
 \end{exercise}
+\exsolution{%
+Using the definition of the laplace tranform (and the fact that $f(t)$ is non-zero only between 0 and 1):\\\\
+$\mathcal{L}[f(t)]=\int_{0}^{1}te^{-st}dt=\frac{1-e^{-s} (s+1)}{s^2}$
+}
+
+\begin{exercise}
+	Find the Laplace transform of the function whose graph is given below:
+\end{exercise}
+\exsol{%
+$\frac{-1+e^{-s} (s+1)}{s^2}$
+}
+
+\begin{exercise}
+Find the inverse Laplace transform of $\frac{1}{{(s-1)}^2(s+1)}$.
+\end{exercise}
+\exsolution{%
+\textbf{Hint:} Use Partial fractions and then take the inverse Laplace. For one of the terms, you will need the property $\mathcal{L}[e^{-at}f(t)]=F(s+a)$. Inverse Laplace will be given by:\\\\
+$\frac{1}{2} \left[te^t-\sinh (t)\right]$
+}
+
 
 \begin{exercise}
 Find the inverse Laplace transform of $\frac{s}{(s^2+s+2)(s+4)}$.
 \end{exercise}
+\exsolution{%
+Using partial fractions, we write\\\\
+$\mathcal{L}^{-1}\left[\frac{s}{(s^2+s+2)(s+4)}\right]=\mathcal{L}^{-1}\left[\frac{2 s+1}{7 \left(s^2+s+2\right)}-\frac{2}{7 (s+4)}\right]=\frac{2}{7}\mathcal{L}^{-1}\left[\frac{s+(1/2)}{\left(s+(1/2)\right)^{2}+(\sqrt{7}/2)^{2}}-\frac{1}{(s+4)}\right]=\frac{2}{7}\left[e^{-t/2} \cos \left(\frac{\sqrt{7} t}{2}\right)-e^{-4 t}\right]$
+}
+
+\begin{exercise}
+	Find the inverse Laplace transform of $\frac{8}{s^3(s+2)}$.
+\end{exercise}
+\exsol{%
+	$2t^2-2t+1-e^{-2t}$
+}
+
+\begin{exercise}
+	Find the inverse Laplace transform of $\frac{s+1}{s^{2}+2s+10}+\frac{3}{s^{2}+2s+10}$.
+\end{exercise}
+\exsol{%
+$e^{-t} (\sin (3 t)+\cos (3 t))$
+}
 
 \begin{exercise}
 Find the Laplace transform of $\sin\bigl(\omega (t-a)\bigr)$.
 \end{exercise}
+\exsolution{%
+First expand $\sin\bigl(\omega (t-a)\bigr)$ using trig. identity and then apply the Laplace transform. This gives the transform:\\\\
+$\frac{\omega  \cos (a  \omega )}{s^2+\omega ^2}-\frac{s \sin (a  \omega)}{s^2+\omega ^2}$
+}
 
 \begin{exercise}
 Find the Laplace transform of $t\sin(\omega t)$.  Hint: Several integrations
 by parts.
 \end{exercise}
-
-\setcounter{exercise}{100}
-
-\begin{exercise}
-Find the Laplace transform of $4{(t+1)}^2$.
-\end{exercise}
 \exsol{%
-$\frac{8}{s^3} + \frac{8}{s^2} + \frac{4}{s}$
-}
-
-\begin{exercise}
-Find the inverse Laplace transform of $\frac{8}{s^3(s+2)}$.
-\end{exercise}
-\exsol{%
-$2t^2-2t+1-e^{-2t}$
-}
-
-\begin{exercise}
-Find the Laplace transform of $te^{-t}$.  Hint: Integrate by parts.
-\end{exercise}
-\exsol{%
-$\frac{1}{{(s+1)}^2}$
-}
-
-\begin{exercise}
-Find the Laplace transform of $\sin(t)e^{-t}$.  Hint: Integrate by parts.
-\end{exercise}
-\exsol{%
-$\frac{1}{s^2+2s+2}$
+$\frac{2 s \omega }{\left(s^2+\omega ^2\right)^2}$
 }
 
 
@@ -551,10 +617,18 @@ $\frac{1}{s^2+2s+2}$
 \section{Transforms of derivatives and ODEs}
 \label{transformsofders:section}
 
-\sectionnotes{2 lectures\EPref{, \S7.2--7.3 in \cite{EP}}\BDref{,
-\S6.2 and \S6.3 in \cite{BD}}}
 
 \subsection{Transforms of derivatives}
+
+
+\begin{video}[xWaX-SsKDjU][Transforms of Derivatives and integrals][la-der]
+	The Laplace Transform has a lot properties that mean it behaves nicely. In this video we'll explore three crucial ones: linearity, existence, and inverses. 
+
+	\emph{Correction: The Laplace transform of derivatives is missing some negative signs. Correct expressions for the Laplace of the first, second and third derivatives, respectively are:}
+\[L[f'(t)]=sF(s)−f(0)\]
+\[L[f''(t)]=s2F(s)−sf(0)−f'′(0),\]
+\[L[f'''(t)]=s3F(s)−s2f(0)−sf'(0)−f''(0)\]
+\end{video}
 
 Let us see how the Laplace transform is used for differential equations.
 First let us try to find the Laplace transform of a function that is a
@@ -617,6 +691,10 @@ Notice that the Laplace transform turns differentiation into
 multiplication by $s$.  Let us see how to apply this fact to differential
 equations.
 
+\begin{video}[xGeG03opUCI][How to solve ODEs with the Laplace Transform][la-solve]
+	We finally know enough to go from start to finish. That is, we begin with an ODE. We transform it via the Laplace Transform. We manipulate it over in the world of Laplace Transforms. Then we translate it back to get a solution. Cool!
+\end{video}
+
 \begin{example}
 Take the equation
 \begin{equation*}
@@ -666,7 +744,16 @@ is not a linear constant coefficient ODE\@,
 then by applying the Laplace transform we may not
 obtain an algebraic equation.
 
+\begin{video}[JFvhCgalTMc][Solving an ODE using Laplace Transforms Example][la-odeexample]
+	In this video we put everything together. We start with an IVP we take the Laplace transform of. The solution to the algebraic equation has a partial fraction decomposition with multiple types of factors and we finally take the inverse Laplace Transform to get a solution to the original IVP.
+\end{video}
+
+
 \subsection{Using the Heaviside function}
+
+\begin{video}[2jbSXlQalwk][The Laplace Transform of Piecewise Functions][la-piecewise]
+	A major strength of Laplace Transforms is in how it deals with discontinuities whether piecewise defined functions but even more so periodic functions that repeat the same discontinuous pattern over and over. The Laplace Transform converts these into continuous functions that can often be easier to work with
+\end{video}
 
 Before we move on to more general equations
 than those we could solve before,
@@ -803,6 +890,13 @@ The plot of this solution is given in \figurevref{lt:heavisideexfig}.
 \end{myfig}
 \end{example}
 
+\begin{video}[SpLHM16mFt][Solving an IVP with a piecewise nonhomogeneity ][la-piecewise2]
+	This video is a start to finish walkthrough of the process of going from an IVP, converting via Laplace, dealing with the piecewise part, and then converting back to a solution to the original IVP. This video thus includes many pieces we've been developing so is probably your best check for comprehension yet. Feel free to try and work it out on your own first and skip to the end to check the solution. 
+
+	\emph{TYPO: At about 4:00, in the red, $\mathcal{L}\{u(t-a)f(t-a)\}=e^{-as}\mathcal{L}\{f(t)\}$. I wrote the exponential with a t not an s. This typo persists in a few places in the video}
+\end{video}
+
+
 \subsection{Transfer functions}
 
 The Laplace transform leads to the following useful concept for studying the
@@ -934,9 +1028,28 @@ x(t) = 2 e^{-t} t .
 \subsection{Exercises}
 
 \begin{exercise}
-Using the Heaviside function write down the piecewise function
-that is 0 for $t < 0$, $t^2$ for $t$ in $[0,1]$ and $t$ for $t > 1$.
+	Compute the inverse Laplace transform of the function $F(s)=\frac{1}{s^{2}\left(s-10\right)}$
 \end{exercise}
+\exsolution{%
+	First we write $F(s)=\frac{1}{s}\frac{1}{s\left(s-10\right)}$ and figure out the inverse Laplace transform of $G(s)=\frac{1}{s\left(s-10\right)}$. Using the property for Laplace transform of integrals, we write:
+	\begin{equation}
+	\mathcal{L}^{-1}\left(\frac{1}{s\left(s-10\right)}\right)=\int_{0}^{t}\mathcal{L}^{-1}\left(\frac{1}{s-10}\right)d\tau=\int_{0}^{t}e^{10\tau}d\tau=\frac{1}{10}\left(e^{10t}-1\right)\nonumber
+	\end{equation}
+	Now we write
+	\begin{equation}
+	\mathcal{L}^{-1}\left(\frac{1}{s^{2}\left(s-10\right)}\right)=\int_{0}^{t}\mathcal{L}^{-1}\left(\frac{1}{s\left(s-10\right)}\right)d\tau=\int_{0}^{t}[e^{10\tau}-1] d\tau=\frac{1}{100} \left(-10 t+e^{10 t}-1\right)\nonumber
+	\end{equation}
+}
+
+\begin{exercise}
+Compute the inverse Laplace transform of the function $F(s)=\frac{1}{s^{2}\left(s^{2}+1\right)}$
+\end{exercise}
+\exsolution{%
+Using the example from section above, we know that $\mathcal{L}^{-1}\left(\frac{1}{s\left(s^{2}+1\right)}\right)=1-\cos t$. Using this and the property for Laplace transform of integrals, we write:
+\begin{equation}
+\mathcal{L}^{-1}\left(\frac{1}{s^{2}\left(s^{2}+1\right)}\right)=\mathcal{L}^{-1}\left(\frac{1}{s}\frac{1}{s\left(s^{2}+1\right)}\right)=\int_{0}^{t}\mathcal{L}^{-1}\left(\frac{1}{s\left(s^{2}+1\right)}\right)d\tau=\int_{0}^{t}(1-\cos\tau)d\tau=t-\sin t\nonumber
+\end{equation} 
+}
 
 \begin{exercise}
 Using the Laplace transform solve
@@ -966,22 +1079,26 @@ $c^2 = 4km$ (system is critically damped).
 \end{exercise}
 
 \begin{exercise}
-Solve $x'' + x = u(t-1)$ for initial conditions $x(0) = 0$ and $x'(0) = 0$.
+	Using the Heaviside function write down the piecewise function
+	that is 0 for $t < 0$, $t^2$ for $t$ in $[0,1]$ and $t$ for $t > 1$.
 \end{exercise}
 
 \begin{exercise}
-Show the differentiation of the transform property.  Suppose
-$\mathcal{L} \bigl\{ f(t) \bigr\} = F(s)$, then show
-\begin{equation*}
-\mathcal{L} \bigl\{ -t f(t) \bigr\} = F'(s) .
-\end{equation*}
-Hint: Differentiate under the integral sign.
+Solve $x'' + x = u(t-1)$ for initial conditions $x(0) = 0$ and $x'(0) = 0$.
 \end{exercise}
 
 \begin{exercise}
 Solve $x''' + x = t^3 u(t-1)$ for initial conditions $x(0) = 1$ and $x'(0) =
 0$, $x''(0) = 0$.
 \end{exercise}
+
+\begin{exercise}
+	Solve $x''-x = (t^2-1) u(t-1)$ for initial conditions $x(0)=1$, $x'(0) = 2$
+	using the Laplace transform.
+\end{exercise}
+\exsol{%
+	$x(t) = (2e^{t-1}-t^2-1) u(t-1) -\frac{1}{2}e^{-t}+\frac{3}{2}e^t$
+}
 
 \begin{exercise}
 Show the second shifting property: 
@@ -1024,46 +1141,78 @@ f(t) =
 \end{exercise}
 
 \begin{exercise}
+	Using the Heaviside function $u(t)$, write down the function
+	\begin{equation*}
+	f(t) =
+	\begin{cases}
+	0 & \text{if } \; \phantom{1 \leq {}} t < 1  , \\
+	t-1 & \text{if } \; 1 \leq t < 2 , \\
+	1 & \text{if } \; 2 \leq t .
+	\end{cases}
+	\end{equation*}
+\end{exercise}
+\exsol{%
+	$f(t) =
+	(t-1)\bigl(u(t-1) - u(t-2)\bigr) + 
+	u(t-2)$
+}
+
+\begin{exercise}
+	Find the transfer function for 
+	$x' + x = f(t)$
+	(assuming the initial conditions are zero).
+\end{exercise}
+\exsol{%
+	$H(s) = \frac{1}{s+1}$
+}
+
+\begin{exercise}
 Find the transfer function for 
 $m x'' + c x' + kx = f(t)$
 (assuming the initial conditions are zero).
 \end{exercise}
 
-\setcounter{exercise}{100}
 
 \begin{exercise}
-Using the Heaviside function $u(t)$, write down the function
-\begin{equation*}
-f(t) =
-\begin{cases}
-0 & \text{if } \; \phantom{1 \leq {}} t < 1  , \\
-t-1 & \text{if } \; 1 \leq t < 2 , \\
-1 & \text{if } \; 2 \leq t .
-\end{cases}
-\end{equation*}
+	Show the differentiation of the transform property.  Suppose
+	$\mathcal{L} \bigl\{ f(t) \bigr\} = F(s)$, then show
+	\begin{equation*}
+	\mathcal{L} \bigl\{ -t f(t) \bigr\} = F'(s) .
+	\end{equation*}
+	Hint: Differentiate under the integral sign.
 \end{exercise}
-\exsol{%
-$f(t) =
-(t-1)\bigl(u(t-1) - u(t-2)\bigr) + 
-u(t-2)$
+
+\begin{exercise}
+	Find the Laplace transform of $f(t)=t\sin(3t)$
+	(assuming the initial conditions are zero).
+\end{exercise}
+\exsolution{%
+\begin{equation}
+\mathcal{L}[f(t)]=-\frac{d}{ds}\mathcal{L}[\sin(3t)]=-\frac{d}{ds}\left[\frac{3}{s^{2}+9}\right]=\frac{6s}{(s^{2}+9)^{2}}\nonumber
+\end{equation}
 }
 
 \begin{exercise}
-Solve $x''-x = (t^2-1) u(t-1)$ for initial conditions $x(0)=1$, $x'(0) = 2$
-using the Laplace transform.
+	Find the Laplace transform of $f(t)=te^{t}\sin(3t)$
+	(assuming the initial conditions are zero).
 \end{exercise}
-\exsol{%
-$x(t) = (2e^{t-1}-t^2-1) u(t-1) -\frac{1}{2}e^{-t}+\frac{3}{2}e^t$
+\exsolution{%
+	\begin{equation}
+	\mathcal{L}[f(t)]=-\frac{d}{ds}\mathcal{L}[e^{t}\sin(3t)]=-\frac{d}{ds}\left[\frac{3}{(s-1)^{2}+9}\right]=\frac{6 (s-1)}{\left(s^2-2 s+10\right)^2}\nonumber
+	\end{equation}
 }
- 
+
 \begin{exercise}
-Find the transfer function for 
-$x' + x = f(t)$
-(assuming the initial conditions are zero).
+	Solve the following initial value problem: $tx''+x'=t^{3}$ with $x(0)=0$.
 \end{exercise}
-\exsol{%
-$H(s) = \frac{1}{s+1}$
+\exsolution{%
+	Taking the Laplace transform of the given differential equation, we get
+	\begin{equation}
+	-\frac{d}{ds}\left[s^{2}X(s)-sx(0)-x'(0)\right]+sX(s)-x(0)=\frac{6}{s^{4}}\nonumber
+	\end{equation}
+	This becomes $X'(s)+\frac{1}{s}X(s)=-\frac{6}{s^{6}}$. Solving this, we get $X(s)=\frac{c}{s}+\frac{3}{2s^{5}}$. Taking the inverse Laplace of this we get $x(t)=C+\frac{t^{4}}{16}$.
 }
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1071,10 +1220,15 @@ $H(s) = \frac{1}{s+1}$
 \section{Convolution}
 \label{convolution:section}
 
-\sectionnotes{1 or 1.5 lectures\EPref{, \S7.2 in \cite{EP}}\BDref{,
-\S6.6 in \cite{BD}}}
+
+
+
 
 \subsection{The convolution}
+
+\begin{video}[_LX_58L8SJg][Convolutions][la-convolutions]
+	We know two binary operations on functions - pointwise addition and multiplication - that takes two functions and give a third. The convolution f(t)*g(t) is a new operation, and one that is going to play particularly nicely with the Laplace Transform and be particularly nice for computing inverse Laplace transforms of products. 
+\end{video}
 
 The Laplace transformation of a product is not the product
 of the transforms.  All hope is not lost however.  We simply have to use
@@ -1366,6 +1520,14 @@ $f * g$.
 \end{exercise}
 
 \begin{exercise}
+	Let $f(t) = \cos t$ for $t \geq 0$, and $g(t) = e^{-t}$.  Compute
+	$f * g$.
+\end{exercise}
+\exsol{%
+	$\frac{1}{2}(\cos t + \sin t - e^{-t})$
+}
+
+\begin{exercise}
 Find the solution to
 \begin{equation*}
 m x'' + c x' + k x = f(t) , \quad x(0) = 0, \quad x'(0) = 0 ,
@@ -1396,6 +1558,43 @@ Write the solution as a definite integral.
 \end{exercise}
 
 \begin{exercise}
+	Solve $x''+x = \sin t$, $x(0) = 0$, $x'(0)=0$ using convolution.
+\end{exercise}
+\exsol{%
+	$\frac{1}{2}(\sin t - t \cos t)$
+}
+
+\begin{exercise}
+	Solve $x'''+x' = f(t)$, $x(0) = 0$, $x'(0)=0$, $x''(0)=0$ using convolution.
+	Write the result as a definite integral.
+\end{exercise}
+\exsol{%
+	$\int_0^t f(\tau) \bigl( 1 - \cos (t-\tau)\bigr)~ d\tau$
+}
+
+\begin{exercise}
+	Find the Laplace transform of: $t\int_0^t \cos(t-\tau) sin(\tau) ~ d\tau$
+\end{exercise}
+\exsolution{Using the property of derivatives of the transform and the Convolution property, we write
+	\[\mathcal{L}\left[t\int_0^t \cos(t-\tau) sin(\tau) ~ d\tau\right]=-\frac{d}{ds}\mathcal{L}\left[\int_0^t \cos(t-\tau) sin(\tau) ~ d\tau\right]=-\frac{d}{ds}\left[\mathcal{L}(\cos t)\cdot\mathcal{L}(\sin t)\right]\]
+	\[\hspace*{5in}=-\frac{d}{ds}\left[\frac{s}{(s^{2}+1)}\right]=\frac{3 s^2-1}{\left(s^2+1\right)^3}\]
+}
+
+\begin{exercise}
+	Find the Laplace transform of: $\int_0^t \cos(t-\tau) sin(\tau) ~ d\tau$
+\end{exercise}
+\exsol{%
+	$\frac{s}{(s^{2}+1)^{2}}$
+}
+
+\begin{exercise}
+	Write down the solution to
+	$x''-2x=e^{-t^2}$, $x(0)=0$, $x'(0)=0$ as a
+	definite integral.  Hint: Do not try to compute the
+	Laplace transform of $e^{-t^2}$.
+\end{exercise}
+
+\begin{exercise}
 Solve
 \begin{equation*}
 x(t) =  e^{-t} + \int_0^t \cos(t-\tau) x(\tau) ~ d\tau .
@@ -1413,46 +1612,25 @@ x(t) =  \cos t + \int_0^t \cos(t-\tau) x(\tau) ~ d\tau .
 Compute ${\mathcal{L}}^{-1} \left\{ \frac{s}{{(s^2+4)}^2} \right\}$ using
 convolution.
 \end{exercise}
-
-\begin{exercise}
-Write down the solution to
-$x''-2x=e^{-t^2}$, $x(0)=0$, $x'(0)=0$ as a
-definite integral.  Hint: Do not try to compute the
-Laplace transform of $e^{-t^2}$.
-\end{exercise}
-
-\setcounter{exercise}{100}
-
-\begin{exercise}
-Let $f(t) = \cos t$ for $t \geq 0$, and $g(t) = e^{-t}$.  Compute
-$f * g$.
-\end{exercise}
-\exsol{%
-$\frac{1}{2}(\cos t + \sin t - e^{-t})$
+\exsolution{First we re-write:
+\[\mathcal{L}^{-1}\left[\frac{s}{(s^{2}+4)^{2}}\right]=\frac{1}{2}\mathcal{L}^{-1}\left[\frac{2}{(s^{2}+4)}\cdot\frac{s}{(s^{2}+4)}\right]\]
+Now using the Convolution property of the Laplace tranform, we write:
+\[\mathcal{L}^{-1}\left[\frac{s}{(s^{2}+4)^{2}}\right]=\frac{1}{2}\sin(2t)\star\cos(2t)=\frac{1}{2}t\sin t\cos t\]
 }
 
 \begin{exercise}
-Compute ${\mathcal{L}}^{-1} \left\{ \frac{5}{s^4+s^2} \right\}$ using
-convolution.
+Compute ${\mathcal{L}}^{-1} \left\{\frac{2}{s^{3}(s-4)}\right\}$ using convolution.
 \end{exercise}
 \exsol{%
-$5t-5\sin t$
-}
-
-
-\begin{exercise}
-Solve $x''+x = \sin t$, $x(0) = 0$, $x'(0)=0$ using convolution.
-\end{exercise}
-\exsol{%
-$\frac{1}{2}(\sin t - t \cos t)$
+$\frac{1}{32}\left(e^{4t}-1-4t-8t^{2}\right)$
 }
 
 \begin{exercise}
-Solve $x'''+x' = f(t)$, $x(0) = 0$, $x'(0)=0$, $x''(0)=0$ using convolution.
-Write the result as a definite integral.
+	Compute ${\mathcal{L}}^{-1} \left\{ \frac{5}{s^4+s^2} \right\}$ using
+	convolution.
 \end{exercise}
 \exsol{%
-$\int_0^t f(\tau) \bigl( 1 - \cos (t-\tau)\bigr)~ d\tau$
+	$5t-5\sin t$
 }
 
 
@@ -1462,10 +1640,14 @@ $\int_0^t f(\tau) \bigl( 1 - \cos (t-\tau)\bigr)~ d\tau$
 \section{Dirac delta and impulse response}
 \label{diracdelta:section}
 
-\sectionnotes{1 or 1.5 lecture\EPref{, \S7.6 in \cite{EP}}\BDref{,
-\S6.5 in \cite{BD}}}
 
 \subsection{Rectangular pulse}
+
+\begin{video}[Yam3Ff_QHvA][The Delta Function][la-delta]
+	This video covers the delta function, which is a sort of infinite spike at one point. It's a bit like hitting a system with a hammer, an impulse at an effectively instantaneous moment of time. We'll study this strange object, in particular computing its Laplace Transform, and thus can now solve systems like a mass on a spring that is hit by a hammer pulse. 
+\end{video}
+
+
 
 Often we study a physical system by putting in a short pulse 
 and then seeing what the system does.
@@ -1759,6 +1941,21 @@ you also know how to obtain the output $x(t)$ for any input $f(t)$
 by simply convolving
 the impulse response and the input $f(t)$.
 
+\subsection{Periodic functions}
+
+\emph{This section currently is only available in video format}
+\begin{video}[zgZe09sdTkc][Laplace Transform of Periodic Functions][la-periodic]
+	Periodic Functions are a much broader category than just sin t and cos t, because we can use any function defined on an interval to construct a periodic function on the real line. Thankfully, Laplace Transform is quite effective at dealing with periodic functions. 
+\end{video}
+
+\begin{video}[TTMdpnZuJ4E][The Laplace Transform of IVPs with Periodic Delta Functions][la-periodic2]
+	Now we turn to solving IVPs that have either a single delta function or periodic delta functions in their forcing terms. 
+
+	\emph{TYPO: The formula is $\mathcal{L}\{\delta_a(t)\}=e^{-as}$. In several places in the video I drop the negative sign.}
+\end{video}
+
+
+
 \subsection{Three-point beam bending}
 \index{three-point beam bending}
 
@@ -1864,106 +2061,118 @@ y(x) = \frac{-{(x-1)}^3}{6} u(x-1) - \frac{x}{4} + \frac{x^3}{12} .
 \end{example}
 
 \subsection{Exercises}
-
+\begin{exercise}
+	Solve (find the impulse response)
+	$x' + a x = \delta(t)$, $x(0) = 0$.
+\end{exercise}
+\exsolution{Taking Laplace transform of the given differential equation and using the initial values, we get
+\begin{equation}
+X(s)=\frac{1}{s+a}\nonumber
+\end{equation}
+Applying the inverse Laplace transform, we get		
+\begin{equation}x(t) = e^{-at}\nonumber\end{equation}
+}
+%$sX+aX = 1$
+%$X = \frac{1}{s+a}$
 \begin{exercise}
 Solve (find the impulse response)
 $x'' + x' + x = \delta(t)$, $x(0) = 0$, $x'(0)=0$.
 \end{exercise}
-
 \begin{exercise}
 Solve (find the impulse response)
 $x'' + 2 x' + x = \delta(t)$, $x(0) = 0$, $x'(0)=0$.
 \end{exercise}
-
 \begin{exercise}
 A pulse can come later and can be bigger.
 Solve 
 $x'' + 4 x = 4\delta(t-1)$, $x(0) = 0$, $x'(0)=0$.
 \end{exercise}
-
 \begin{exercise}
-Suppose that $f(t)$ and $g(t)$ are differentiable functions
-and suppose that $f(t) = g(t) = 0$ for all $t \leq 0$.  Show that
-\begin{equation*}
-(f * g)'(t) = (f' * g)(t) = (f * g')(t) .
-\end{equation*}
+	Solve (find the impulse response)
+	$x'' = \delta(t)$, $x(0) = 0$, $x'(0)=0$.
 \end{exercise}
-
+\exsol{%
+	$x(t) = t$
+}
+\begin{exercise}[challenging]
+	Solve \exampleref{lt:examplebeam} via integrating 4 times in the $x$ variable.
+\end{exercise}
 \begin{exercise}
-Suppose that $L x = \delta(t)$, $x(0) = 0$, $x'(0) = 0$, has the solution
-$x = e^{-t}$ for $t > 0$.  Find the solution to
-$Lx = t^2$, $x(0) = 0$, $x'(0) = 0$ for $t > 0$.
+	Suppose that $L x = \delta(t)$, $x(0) = 0$, $x'(0) = 0$, has the solution
+	$x(t) = \cos(t)$ for $t > 0$.  Find (in closed form) the solution to
+	$Lx = \sin(t)$, $x(0) = 0$, $x'(0) = 0$ for $t > 0$.
 \end{exercise}
-
+\exsolution{Taking the Laplace transform of $L x = \delta(t)$, we can write that $F(s)X(s)=1$ or $X(s)=\frac{1}{F(s)}$. We are given that when we take the inverse Laplace, we get $x(t)=\cos t$ implying that $\mathcal{L}^{-1}\left[1/F(s)\right]=\cos t$. Now, taking the Laplace transform of $Lx=\sin t$. This results in $X(s)=\frac{1}{F(s)}\cdot\frac{1}{s^{2}+1}$. Using the inverse Laplace, we get
+	$x(t) = \cos(t)*\sin(t) = \frac{1}{2} t \sin(t)$
+}
+\begin{exercise}
+	Suppose that $L x = \delta(t)$, $x(0) = 0$, $x'(0) = 0$, has the solution
+	$x = e^{-t}$ for $t > 0$.  Find the solution to
+	$Lx = t^2$, $x(0) = 0$, $x'(0) = 0$ for $t > 0$.
+\end{exercise}
+\begin{exercise}
+	Compute
+	${\mathcal{L}}^{-1} \left\{ \frac{s^2}{s^2+1} \right\}$.
+\end{exercise}
+\exsolution{Re-writing the given expression as:
+	\begin{equation}\frac{s^{2}}{s^{2}+1}=\frac{s^{2}+1-1}{s^{2}+1}=1-\frac{1}{s^{2}+1}\nonumber\end{equation}
+	Applying the inverse transform, we can get
+	\begin{equation}{\mathcal{L}}^{-1} \left\{ \frac{s^2}{s^2+1} \right\}=\delta(t) - \sin(t)\nonumber\end{equation}
+}
+%1 - 1/(s^2+1)
+\begin{exercise}
+	Compute
+	${\mathcal{L}}^{-1} \left\{ \frac{3 s^2 e^{-s} + 2}{s^2} \right\}$.
+\end{exercise}
+\exsol{%
+	$3 \delta(t-1) + 2 t$
+}
 \begin{exercise}
 Compute
 ${\mathcal{L}}^{-1} \left\{ \frac{s^2+s+1}{s^2} \right\}$.
 \end{exercise}
-
-\begin{exercise}[challenging]
-Solve \exampleref{lt:examplebeam} via integrating 4 times in the $x$ variable.
+\begin{exercise}
+	Suppose that $f(t)$ and $g(t)$ are differentiable functions
+	and suppose that $f(t) = g(t) = 0$ for all $t \leq 0$.  Show that
+	\begin{equation*}
+	(f * g)'(t) = (f' * g)(t) = (f * g')(t) .
+	\end{equation*}
 \end{exercise}
-
 \begin{exercise}
 Suppose we have a beam of length $1$ simply supported at the ends and
 suppose that force $F=1$ is applied at $x=\frac{3}{4}$ in the downward
 direction.  Suppose that $EI=1$ for simplicity.  Find the beam deflection
 $y(x)$.
 \end{exercise}
-
-\setcounter{exercise}{100}
-
-\begin{exercise}
-Solve (find the impulse response)
-$x'' = \delta(t)$, $x(0) = 0$, $x'(0)=0$.
-\end{exercise}
-\exsol{%
-$x(t) = t$
-}
-
-\begin{exercise}
-Solve (find the impulse response)
-$x' + a x = \delta(t)$, $x(0) = 0$, $x'(0)=0$.
-\end{exercise}
-\exsol{%
-$x(t) = e^{-at}$
-}
-%$sX+aX = 1$
-%$X = \frac{1}{s+a}$
-
-\begin{exercise}
-Suppose that $L x = \delta(t)$, $x(0) = 0$, $x'(0) = 0$, has the solution
-$x(t) = \cos(t)$ for $t > 0$.  Find (in closed form) the solution to
-$Lx = \sin(t)$, $x(0) = 0$, $x'(0) = 0$ for $t > 0$.
-\end{exercise}
-\exsol{%
-$x(t) = (\cos * \sin)(t) = \frac{1}{2} t \sin(t)$
-}
-
-\begin{exercise}
-Compute
-${\mathcal{L}}^{-1} \left\{ \frac{s^2}{s^2+1} \right\}$.
-\end{exercise}
-\exsol{%
-$\delta(t) - \sin(t)$
-}
-%1 - 1/(s^2+1)
-
-\begin{exercise}
-Compute
-${\mathcal{L}}^{-1} \left\{ \frac{3 s^2 e^{-s} + 2}{s^2} \right\}$.
-\end{exercise}
-\exsol{%
-$3 \delta(t-1) + 2 t$
-}
-
+%\noindent\textbf{Transform of Periodic Functions:} Given that we have a function $f(t)$ which is piecewise continuous on $[0,\infty)]$, periodic with period $T$ ($f(t+T)=f(t)$), and is of exponential order as well. Then, for $s>0$, we can show that:
+%\begin{equation}
+%\mathcal{L}[f(t)]=\frac{1}{1-e^{-sT}}\int_{0}^{T}e^{-st}f(t)dt.
+%\end{equation}
+%\begin{exercise}
+%	Compute the Laplace transform of the function $f(t)$ shown in figure below:
+	%Insert PeriodFunctionExample1.pdf here
+%\end{exercise}
+%\exsolution{We can say that our function $f(t)$ is periodic with period 1 and 
+%	\begin{equation}
+%	f(t)=\begin{cases}1\qquad 0\leq t\leq 1/2\\
+%	0\qquad 1/2<t<1\end{cases}\nonumber
+%	\end{equation}
+%	Using the formula for the Laplace transform of a periodic function, we write:
+%	\begin{equation}\mathcal{L}[f(t)]=\frac{1}{1-e^{-s}}\int_{0}^{1}e^{-st}f(t)dt=\frac{1-e^{-s/2}}{s\left(1-e^{-s}\right)}\nonumber\end{equation}
+%}
+%\begin{exercise}
+%	Compute the Laplace transform of the famous saw-tooth function $f(t)$ shown in figure below:
+	%Insert PeriodFunctionExample2.pdf here
+%\end{exercise}
+%\exsolution{%
+%$\frac{1-e^{-s}(s+1)}{s^{2}(1-e^{-s})}$
+%}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
 \section{Solving PDEs with the Laplace transform}
 \label{laplacepde:section}
 
-\sectionnotes{1--1.5 lecture, can be skipped}
 
 The Laplace transform comes from the same family of transforms as does the
 Fourier series\footnote{There is a corresponding Fourier transform

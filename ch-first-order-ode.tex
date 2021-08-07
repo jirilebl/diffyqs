@@ -5,8 +5,7 @@
 \section{Integrals as solutions}
 \label{integralsols:section}
 
-\sectionnotes{1 lecture (or less)\EPref{, \S1.2 in \cite{EP}}\BDref{,
-covered in \S1.2 and \S2.1 in \cite{BD}}}
+
 
 A first order ODE is an equation of the form
 \begin{equation*}
@@ -273,131 +272,193 @@ question.
 \subsection{Exercises}
 
 \begin{exercise}
-Solve $\frac{dy}{dx} = x^2+x$ for $y(1)=3$.
-\end{exercise}
-
-\begin{exercise}
-Solve $\frac{dy}{dx} = \sin (5x)$ for $y(0)=2$.
-\end{exercise}
-
-\begin{exercise}
-Solve $\frac{dy}{dx} = \frac{1}{x^2-1}$ for $y(0)=0$.
-\end{exercise}
-
-\begin{exercise}
-Solve $y' = y^3$ for $y(0)=1$.
-\end{exercise}
-
-\begin{exercise}[little harder]
-Solve $y' = (y-1)(y+1)$ for $y(0)=3$.
-\end{exercise}
-
-\begin{exercise}
-Solve $\frac{dy}{dx} = \frac{1}{y+1}$ for $y(0)=0$.
-\end{exercise}
-
-\begin{exercise}[harder]
-Solve $y'' = \sin x$ for $y(0)=0$, $y'(0) = 2$.
-\end{exercise}
-
-\begin{exercise}
-A spaceship is traveling at the speed \unitfrac[$2t^2+1$]{km}{s} ($t$ is
-time in seconds).  It is pointing directly away from earth and at time $t=0$
-it is 1000 kilometers from earth.  How far from earth is it at one minute from
-time $t=0$?
-\end{exercise}
-
-\begin{exercise}
-Solve $\frac{dx}{dt} = \sin(t^2)+t$, $x(0)=20$.  It is OK to leave your
-answer as a definite integral.
-\end{exercise}
-
-\begin{exercise}
-A dropped ball accelerates downwards at a constant rate $9.8$ meters per second
-squared.  Set up the differential equation for the height above ground $h$ in meters.
-Then supposing $h(0) = 100$ meters, how long does it take for the ball to hit
-the ground.
-\end{exercise}
-
-\begin{exercise}
-Find the general solution of
-$y' = e^x$,  and then $y' = e^y$.
-\end{exercise}
-
-
-\setcounter{exercise}{100}
-
-\begin{exercise}
-Solve $\frac{dy}{dx} = e^x + x$ and $y(0) = 10$.
-\end{exercise}
-\exsol{%
-$y = e^x + \frac{x^2}{2} + 9$
-}
-
-\begin{exercise}
-Solve $x' = \frac{1}{x^2}$, $x(1)=1$.
-\end{exercise}
-\exsol{%
-$x = {(3t-2)}^{1/3}$
-}
-
-\begin{exercise}
-Solve $x' = \frac{1}{\cos(x)}$, $x(0)=\frac{\pi}{2}$.
-\end{exercise}
-\exsol{%
-$x = \sin^{-1} \bigl(t+1\bigr)$
-}
-
-\begin{exercise}
-Sid is in a car traveling at speed $10t+70$ miles per hour away from Las Vegas,
-where $t$ is in hours.  At $t=0$, Sid is 10 miles away from Vegas.  How
-far from Vegas is Sid 2 hours later?
-\end{exercise}
-\exsol{%
-170
-}
-
-\begin{exercise}
-Solve $y' = y^n$, $y(0) = 1$, where $n$ is a positive integer.
-Hint: You have to consider different cases.
-\end{exercise}
-\exsol{%
-If $n \not= 1$, then
-$y={\bigl((1-n)x+1\bigr)}^{1/(1-n)}$.
-If $n=1$, then $y = e^x$.
-}
-
-\begin{exercise}
-The rate of change of the volume of a snowball that is melting is 
-proportional to the surface area of the snowball.  Suppose the
-snowball is perfectly spherical.  The volume (in centimeters cubed)
-of a ball of radius $r$ centimeters is
-$(\nicefrac{4}{3}) \pi r^3$.  The surface area is
-$4 \pi r^2$.  Set up the differential equation for how the radius $r$ is changing.
-Then, suppose that at time $t=0$ minutes, the radius is 10 centimeters.
-After 5 minutes, the radius is 8 centimeters.  At what time $t$ will the 
-snowball be completely melted?
-\end{exercise}
-\exsol{%
-The equation is $r' = -C$ for some constant $C$.
-The snowball will be completely melted in 25 minutes from time $t=0$.
-}
-
-\begin{exercise}
-Find the general solution to $y''''= 0$.  How many distinct constants do you need?
-\end{exercise}
-\exsol{%
-$y = Ax^3 + Bx^2 + Cx + D$, so 4 constants.
-}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    Solve $\frac{dy}{dx} = x^2+x$ for $y(1)=3$.
+    \end{exercise}
+    \exsolution{%
+    Integrating with respect to $x$ we get $y=\frac{x^3}{3}+\frac{x^2}{2}+c$. 
+    $y(1)=\frac{1}{3}+\frac{1}{2}+c=3\rightarrow c=\frac{13}{6}$.
+    \[
+    y=\frac{x^3}{3}+\frac{x^2}{2}+\frac{13}{6}
+    \]
+    }
+    
+    
+    
+    \begin{exercise}
+    Solve $\frac{dy}{dx} = \sin (5x)$ for $y(0)=2$.
+    \end{exercise}
+    \exsol{% 
+    $y=-\frac{\cos 5x}{5}+\frac{11}{5}$
+    }
+    
+    \begin{exercise}
+    Solve $\frac{dy}{dx} = \frac{1}{x^2-1}$ for $y(0)=0$.
+    \end{exercise}
+    \exsol{%
+    $y=\frac{1}{2}\ln\left(\frac{1-x}{1+x}\right)$
+    }
+    
+    \begin{exercise}
+    Solve $y' = y^3$ for $y(0)=1$.
+    \end{exercise}
+    \exsolution{%
+    Writing as $\frac{dy}{dx}=y^3\rightarrow \frac{dx}{dy}=\frac{1}{y^3}\rightarrow \frac{dx}{dy}dy=\frac{1}{y^3}dy$ and integrating we get 
+    \[
+    x+c=\frac{y^{-2}}{-2	}
+    \]
+    \[
+    y=\sqrt{\frac{1}{-2x-c}},\quad y(0)=\sqrt{\frac{1}{-c}}=1\rightarrow c=-1
+    \]
+    \[
+    \Rightarrow y=\sqrt{\frac{1}{1-2x}}
+    \]
+    }
+    
+    \begin{exercise}
+    Solve $y' = (y-1)(y+1)$ for $y(0)=3$.
+    \end{exercise}
+    \exsolution{%
+    \[
+    \int \frac{1}{(y+1)(y-1)}dy=\frac{1}{2}\int \frac{1}{y-1}-\frac{1}{y+1}dy=\frac{1}{2}\ln\left(\frac{y-1}{y+1}\right)=x+c
+    \]
+    \[
+    y(x)=\frac{ce^{2x}+1}{1-ce^{2x}},\quad y(0)=\frac{c+1}{1-c}=3\rightarrow\quad c=\frac{1}{2}
+    \]
+    \[
+    \Rightarrow y=\frac{e^{2x}+2}{2-e^{2x}}
+    \]
+    }
+    
+    \begin{exercise}
+    Solve $\frac{dy}{dx} = \frac{1}{y+1}$ for $y(0)=0$.
+    \end{exercise}
+    \exsol{%
+    $y=\sqrt{2x+1}-1$
+    }
+    
+    \begin{exercise}
+    Solve $y'' = \sin x$ for $y(0)=0$, $y'(0) = 2$.
+    \end{exercise}
+    \exsol{%
+    $y=-\sin x+3x$
+    }
+    
+    \begin{exercise}
+    A spaceship is traveling at the speed \unitfrac[$2t^2+1$]{km}{s} ($t$ is
+    time in seconds).  It is pointing directly away from earth and at time $t=0$
+    it is 1000 kilometers from earth.  How far from earth is it at one minute from
+    time $t=0$?
+    \end{exercise}
+    \exsol{%
+    $x(60)=145,060$ km
+    }
+    
+    \begin{exercise}
+    Solve $\frac{dx}{dt} = \sin(t^2)+t$, $x(0)=20$.  It is OK to leave your
+    answer as a definite integral.
+    \end{exercise}
+    \exsol{%
+    $x(t)=\int_0^t \sin(s^2)+s\ ds+20$
+    }
+    
+    \begin{exercise}
+    A dropped ball accelerates downwards at a constant rate $9.8$ meters per second
+    squared.  Set up the differential equation for the height above ground $h$ in meters.
+    Then supposing $h(0) = 100$ meters, how long does it take for the ball to hit
+    the ground.
+    \end{exercise}
+    \exsolution{%
+    $v'=-9.8,\rightarrow\quad v=-9.8t+v_0=h'$ the ball is '\emph{dropped}', so $v_0=0$.
+    \[
+    h=-\frac{9.8}{2}t^2+h_0,\quad h(0)=h_0=100
+    \]
+    \[
+    h=-\frac{9.8}{2}t^2+100\rightarrow\quad h(t_g)=0\rightarrow\quad t_g^2=\frac{200}{9.8}\rightarrow\quad t_g=4.52\ \rm s
+    \]
+    }
+    
+    \begin{exercise}
+    Find the general solution of
+    $y' = e^x$,  and then $y' = e^y$.
+    \end{exercise}
+    \exsol{%
+    $y=-\ln(-x-c)$
+    }
+    
+    
+    \setcounter{exercise}{100}
+    
+    \begin{exercise}
+    Solve $\frac{dy}{dx} = e^x + x$ and $y(0) = 10$.
+    \end{exercise}
+    \exsol{%
+    $y = e^x + \frac{x^2}{2} + 9$
+    }
+    
+    \begin{exercise}
+    Solve $x' = \frac{1}{x^2}$, $x(1)=1$.
+    \end{exercise}
+    \exsol{%
+    $x = {(3t-2)}^{1/3}$
+    }
+    
+    \begin{exercise}
+    Solve $x' = \frac{1}{\cos(x)}$, $x(0)=\frac{\pi}{2}$.
+    \end{exercise}
+    \exsol{%
+    $x = \sin^{-1} \bigl(t+1\bigr)$
+    }
+    
+    \begin{exercise}
+    Sid is in a car traveling at speed $10t+70$ miles per hour away from Las Vegas,
+    where $t$ is in hours.  At $t=0$, Sid is 10 miles away from Vegas.  How
+    far from Vegas is Sid 2 hours later?
+    \end{exercise}
+    \exsol{%
+    170
+    }
+    
+    \begin{exercise}
+    Solve $y' = y^n$, $y(0) = 1$, where $n$ is a positive integer.
+    Hint: You have to consider different cases.
+    \end{exercise}
+    \exsol{%
+    If $n \not= 1$, then
+    $y={\bigl((1-n)x+1\bigr)}^{1/(1-n)}$.
+    If $n=1$, then $y = e^x$.
+    }
+    
+    \begin{exercise}
+    The rate of change of the volume of a snowball that is melting is 
+    proportional to the surface area of the snowball.  Suppose the
+    snowball is perfectly spherical.  The volume (in centimeters cubed)
+    of a ball of radius $r$ centimeters is
+    $(\nicefrac{4}{3}) \pi r^3$.  The surface area is
+    $4 \pi r^2$.  Set up the differential equation for how the radius $r$ is changing.
+    Then, suppose that at time $t=0$ minutes, the radius is 10 centimeters.
+    After 5 minutes, the radius is 8 centimeters.  At what time $t$ will the 
+    snowball be completely melted?
+    \end{exercise}
+    \exsol{%
+    The equation is $r' = -C$ for some constant $C$.
+    The snowball will be completely melted in 25 minutes from time $t=0$.
+    }
+    
+    \begin{exercise}
+    Find the general solution to $y''''= 0$.  How many distinct constants do you need?
+    \end{exercise}
+    \exsol{%
+    $y = Ax^3 + Bx^2 + Cx + D$, so 4 constants.
+    }
+    
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
 \section{Slope fields}
 \label{slopefields:section}
 
-\sectionnotes{1 lecture\EPref{, \S1.3 in \cite{EP}}\BDref{,
-\S1.1 in \cite{BD}}}
+
+
 
 %At this point it may be good to first try the
 %Lab I\index{IODE software!Lab I} and/or Project I\index{IODE software!Project I} from the
@@ -413,7 +474,14 @@ A lot of the time, we cannot simply solve these kinds of equations explicitly.
 It would be nice if we could at least figure out the shape and behavior of
 the solutions, or find approximate solutions.
 
+
 \subsection{Slope fields}
+
+\begin{video}[-S5qwlphcRY][Slope Fields][first-slope]
+	We can visually describe 1st order ODEs using Slope Fields, which allows us to encode the slope at any point. We will see that the concepts of differential equations, solutions, an initial conditions that we have thus far described analytically - i.e. with equations - all have a geometric parallel.
+\end{video}
+
+
 
 %As you have seen in IODE Lab I (if you did it),
 The equation $y' = f(x,y)$
@@ -498,6 +566,10 @@ looking at the slope field itself.
 \end{myfig}
 
 \subsection{Existence and uniqueness}
+
+\begin{video}[Ggt6O2bff54][Existence and Uniqueness][first-existence]
+    The key theorems that makes differential equations work are called Existence and Uniqueness theorems. They tell you, depending on the type of ODE, when solutions exist, and when they are unique. This is pretty crucial, because otherwise we'd never know whether it was worth bothering to try to find a solution, or if we found one whether to keep looking. We will see many Existence and Uniqueness theorems, but for now we are focusing specifically on 1st order ODEs. 
+\end{video}
 
 We wish to ask two fundamental questions about the problem
 \begin{equation*}
@@ -595,9 +667,9 @@ possible that the solution only exists for a short while.
 
 \begin{example}
 For some constant $A$, solve:
-\begin{equation*}
+\[
 y' = y^2, \qquad y(0) = A .
-\end{equation*}
+\]
 
 We know how to solve this equation.  First assume that $A \not= 0$,
 so $y$ is not equal to zero at least for some $x$ near 0.  So
@@ -625,6 +697,8 @@ $y'=y^2$.
 
 \subsection{Exercises}
 
+For problems 1-5, try sketching by hand first, then you can use the Slope Field plotter to see the answer: \href{https://www.geogebra.org/m/z9c3ndaf}{https://www.geogebra.org/m/z9c3ndaf}.
+
 \begin{exercise}
 Sketch slope field for $y'=e^{x-y}$.  How do the solutions behave as $x$
 grows?  Can you guess a particular solution by looking at the slope
@@ -637,17 +711,6 @@ Sketch slope field for $y'=x^2$.
 
 \begin{exercise}
 Sketch slope field for $y'=y^2$.
-\end{exercise}
-
-\begin{exercise}
-Is it possible to solve the equation $y' = \frac{xy}{\cos x}$ for $y(0) = 1$?
-Justify.
-\end{exercise}
-
-\begin{exercise}
-Is it possible to solve the equation $y' = y\sqrt{\lvert x\rvert}$ for
-$y(0) = 0$?  Is the solution unique?
-Justify.
 \end{exercise}
 
 \begin{samepage}
@@ -663,7 +726,51 @@ Justify.
 \parbox[c]{1.75in}{\includegraphics[width=1.75in]{figures/yprimexminus2yslope}}
 \end{tasks}
 \end{exercise}
+\exsol{%
+a) $y' = x(1-y)$, \quad
+b) $y'=1-x$, \quad
+c) $y'=x-2y$. \quad
+}
 \end{samepage}
+
+\begin{samepage}
+    \begin{exercise}
+    Match equations $y'=\sin x$, $y'=\cos y$, $y' = y\cos(x)$ to slope fields.
+    Justify.
+    \begin{tasks}(3)
+    \task
+    \parbox[c]{1.75in}{\includegraphics[width=1.75in]{figures/yprimecosyslope}}
+    \task
+    \parbox[c]{1.75in}{\includegraphics[width=1.75in]{figures/yprimecosxyslope}}
+    \task
+    \parbox[c]{1.75in}{\includegraphics[width=1.75in]{figures/yprimesinxslope}}
+    \end{tasks}
+    \end{exercise}
+    \end{samepage}
+    \exsol{%
+    a) $y'=\cos y$, \quad
+    b) $y' = y\cos(x)$, \quad
+    c) $y'=\sin x$. \quad
+    Justification left to reader.
+    }
+
+\begin{exercise}
+Is it possible to solve the equation $y' = \frac{xy}{\cos x}$ for $y(0) = 1$?
+Justify.
+\end{exercise}
+\exsol{%
+$f(x,y)$ is continuous near $(0,1)$ and $\frac{\partial f}{\partial y}=\frac{x}{\cos x}$ exists and is continuous near  $(0,1)$, therefore by Picard's theorem a unique solution exists.
+}
+
+\begin{exercise}
+Is it possible to solve the equation $y' = y\sqrt{\lvert x\rvert}$ for
+$y(0) = 0$?  Is the solution unique?
+Justify.
+\end{exercise}
+\exsol{%
+$f(x,y)$ is continuous near $(0,0)$ and $\frac{\partial f}{\partial y}=\sqrt{|x|}$ exists and is continuous near  $(0,0)$, therefore by Picard's theorem a unique solution exists.
+}
+
 
 \begin{exercise}[challenging]
 Take $y' = f(x,y)$, $y(0) = 0$, where $f(x,y) > 1$
@@ -671,6 +778,9 @@ for all $x$ and $y$.  If
 the solution exists for all $x$, can you say
 what happens to $y(x)$ as $x$ goes to positive infinity?  Explain.
 \end{exercise}
+\exsol{%
+The slope field for this equation would have slopes of at least one everywhere as $f(x,y)>1$ for all $x$ and $y$, so with an initial condition $(0,0)$ a solution would pass through the origin and keep on increasing forever. Thus as $x\rightarrow \infty$, $y\rightarrow \infty$.
+}
 
 \begin{exercise}[challenging]
 Take $(y-x)y' = 0$, $y(0) = 0$.
@@ -679,6 +789,10 @@ Take $(y-x)y' = 0$, $y(0) = 0$.
 \task Explain why this does not violate Picard's theorem.  
 \end{tasks}
 \end{exercise}
+\exsol{%
+a) $y=0,\quad y=x$\\
+b) The DE cannot be written in the form $y'=f(x,y)$, so Picard's theorem does not apply. 
+}
 
 \begin{exercise}
 Suppose $y' = f(x,y)$.  What will the slope field look like, explain and
@@ -696,6 +810,9 @@ number $t$.
 \begin{exercise}
 Find a solution to $y' = \lvert y \rvert$, $y(0) = 0$.  Does Picard's theorem apply?
 \end{exercise}
+\exsol{%
+$y=0$ is a solution. $f(x,y)$ is continuous but $\frac{\partial f}{\partial y}$ does not exist near $(0,0)$, so Picard's theorem does not apply. 
+}
 
 \begin{exercise}
 Take an equation $y' = (y-2x) g(x,y) + 2$ for some function $g(x,y)$.
@@ -703,6 +820,9 @@ Can you solve the problem for the
 initial condition $y(0) = 0$,
 and if so what is the solution?
 \end{exercise}
+\exsol{%
+$y=2x$
+}
 
 \begin{exercise}[challenging]
 \pagebreak[2]
@@ -721,8 +841,13 @@ Given $y(0) = 0$, what can you say about the solution.  In particular,
 can $y(x) > 1$ for any $x$?  Can $y(x) = 1$ for any $x$?  Why or why not?
 \end{tasks}
 \end{exercise}
+\exsol{%
+a) $y=1$ \\
+b) No. As this satisfies the conditions of Picard's Theorem everywhere, there must be a unique solution from any given points. Thus two different solutions at the same point is not possible as that point can be taken as the initial condition.  \\
+c) Since $y=1$ is one solution for a different initial condition, by part (b), any other solution cannot intersect that. Given that the initial condition here $y(0)=0$ is below the $y(x)=1$ line, the solution can never intersect with 1, thus $y(x)< 1$ for all $x$.
+}
 
-\setcounter{exercise}{100}
+
 
 \begin{exercise}
 Sketch the slope field of $y'=y^3$.  Can you visually find the solution
@@ -752,26 +877,7 @@ Is it possible to solve $y' = \frac{x}{x^2-1}$ for $y(1) = 0$?
 No, the equation is not defined at $(x,y) = (1,0)$.
 }
 
-\begin{samepage}
-\begin{exercise}
-Match equations $y'=\sin x$, $y'=\cos y$, $y' = y\cos(x)$ to slope fields.
-Justify.
-\begin{tasks}(3)
-\task
-\parbox[c]{1.75in}{\includegraphics[width=1.75in]{figures/yprimecosyslope}}
-\task
-\parbox[c]{1.75in}{\includegraphics[width=1.75in]{figures/yprimecosxyslope}}
-\task
-\parbox[c]{1.75in}{\includegraphics[width=1.75in]{figures/yprimesinxslope}}
-\end{tasks}
-\end{exercise}
-\end{samepage}
-\exsol{%
-a) $y'=\cos y$, \quad
-b) $y' = y\cos(x)$, \quad
-c) $y'=\sin x$. \quad
-Justification left to reader.
-}
+
 
 \begin{exercise}[tricky]
 Suppose
@@ -809,8 +915,7 @@ exist for every $x$.
 \section{Separable equations}
 \label{separable:section}
 
-\sectionnotes{1 lecture\EPref{, \S1.4 in \cite{EP}}\BDref{,
-\S2.2 in \cite{BD}}}
+
 
 When a differential equation is of the form
 $y' = f(x)$,
@@ -826,6 +931,10 @@ y = \int f(x,y) \,dx + C .
 Notice the dependence on $y$ in the integral.
 
 \subsection{Separable equations}
+
+\begin{video}[RSLQvrzpdMQ][Separation of Variables][first-separable]
+	In this video we learn our first main of solving ODEs beyond just integrating, and it applies to so called separable ODEs.
+\end{video}
 
 We say a differential equation is
 \emph{\myindex{separable}}
@@ -1002,6 +1111,14 @@ y = \tan \left(\frac{-1}{x} - x + 2 \right) .
 \end{equation*}
 \end{example}
 
+\begin{video}[6JLG8uVWNHU][Newton's Law of Cooling][first-Newton]
+	In this example we investigate the modelling process to determine the temperature on a cooling object like a cup of tea. The ODE we come up with is separable, and so this gives us a nice second example. However, we have to collect a bit more data than just an initial condition because our model has some undetermined parameter in it. 
+\end{video}
+
+
+
+
+
 \begin{example} \label{sep:coffeeexample}
 Bob made a cup of coffee, and
 Bob likes to drink coffee only once reaches 60 degrees Celsius and will not burn him.
@@ -1083,56 +1200,129 @@ y = \frac{6}{x^2 + 2C}, \qquad \text{and} \qquad y=0 .
 \begin{exercise}
 Solve $y' = \nicefrac{x}{y}$.
 \end{exercise}
+\exsolution{%
+Rearranging we get
+\[
+\int ydy=\int xdx
+\]
+\[
+\frac{y^2}{2}=\frac{x^2}{2}+c
+\]
+Solving for $y$
+\[
+y=\sqrt{x^2+c}\quad \textrm{or}\quad y=-\sqrt{x^2+c}
+\]
+The choice of sign would depend on initial conditions. 
+}
 
 \begin{exercise}
 Solve $y' = x^2y$.
 \end{exercise}
+\exsol{%
+$y=Ce^{x^3/3}$
+}
 
 \begin{exercise}
 Solve $\dfrac{dx}{dt} = (x^2-1)\,t$, for $x(0) = 0$.
 \end{exercise}
+\exsol{%
+$x=\tanh \left(\frac{-t^2}{2}\right)=-\frac{e^{t^2}-1}{e^{t^2}+1}$
+}
 
 \begin{exercise}
 Solve $\dfrac{dx}{dt} = x\,\sin(t)$, for $x(0) = 1$.
 \end{exercise}
+\exsolution{%
+Rearranging 
+\[
+\int \frac{dx}{x}=\int \sin(t)dt\rightarrow \ln \lvert x \rvert =-\cos t+c
+\]
+Applying the initial condition $x(0)=1$ we get $c=1$.  Therefore
+\[
+\lvert x \rvert =e^{1-\cos(t)} \rightarrow x=\pm e^{1-\cos(t)}
+\]
+Checking the initial condition again $x(0)=\pm e^0=\pm 1$ so we choose the positive sign. Thus
+\[
+x=e^{1-\cos(t)}
+\]
+}
 
 \begin{exercise}
 Solve $\dfrac{dy}{dx} = xy+x+y+1$.  Hint: Factor the right-hand side.
 \end{exercise}
+\exsol{%
+$y=Ce^{x^2/2+x}-1$
+}
 
 \begin{exercise}
 Solve $xy' = y + 2x^2 y$, where $y(1) = 1$.
 \end{exercise}
+\exsol{%
+$y=\lvert x \rvert e^{x^2-1}$
+}
 
 \begin{exercise}
 Solve $\dfrac{dy}{dx} = \dfrac{y^2+1}{x^2+1}$, for $y(0) = 1$.
 \end{exercise}
+\exsol{%
+$y=\tan \left(\arctan(x)+\frac{\pi}{4}\right)$
+}
 
 \begin{exercise}
 Find an implicit solution for
 $\dfrac{dy}{dx} = \dfrac{x^2+1}{y^2+1}$, for $y(0) = 1$.
 \end{exercise}
+\exsolution{%
+Rearranging
+\[
+\int y^2+1 dy=\int x^2+1 dx\rightarrow \frac{y^3}{3}+y=\frac{x^3}{3}+x+c
+\]
+Applying the initial condition $y(0)=1$ we get $c=\frac{4}{3}$. Thus the implicit solution is
+\[
+\frac{y^3}{3}+y=\frac{x^3}{3}+x+\frac{4}{3}
+\]
+}
 
 \begin{exercise}
 Find an explicit solution for $y' = xe^{-y}$, $y(0)=1$.
 \end{exercise}
+\exsol{%
+$y=\ln(\frac{x^2}{2}+e)$
+}
 
 \begin{exercise}
 Find an explicit solution for $xy' = e^{-y}$, for $y(1)=1$.
 \end{exercise}
+\exsol{%
+$y=\ln\left(\ln \lvert x \rvert +e\right)$
+}
 
 \begin{exercise}
 Find an explicit solution for $y' = ye^{-x^2}$, $y(0)=1$.  It is alright to
 leave a definite integral in your answer.
 \end{exercise}
+\exsol{%
+$y=e^{\int e^{-x^2}dx}$. It is implied that the integral doesn't have an integration constant. A proper way to write this would be  $y=e^{\int_0^x e^{-t^2}dt}$
+}
 
 \begin{exercise}
 Suppose a cup of coffee is at 100 degrees Celsius at time $t=0$,
 it is at 70 degrees at $t=10$ minutes, and it is at 50 degrees at $t=20$
 minutes.  Compute the ambient temperature.
 \end{exercise}
-
-\setcounter{exercise}{100}
+\exsolution{%
+Applying the three conditions to the equation 
+\[
+T=A+De^{-kT}
+\]
+We get a system of three equations
+\begin{align*}
+100=& A+D \\
+70=& A+De^{-10k} \\
+50=& A+De^{-20k}
+\end{align*}
+Solving this system we get $A=10^{\circ}$ C (and $D=90$, $k\approx 0.0405$).
+}
 
 \begin{exercise}
 Solve $y'=2xy$.
@@ -1207,8 +1397,9 @@ a) $x = \frac{1000e^t}{e^t+24}$. \quad b) 102 rabbits after one month,
 \section{Linear equations and the integrating factor}
 \label{intfactor:section}
 
-\sectionnotes{1 lecture\EPref{, \S1.5 in \cite{EP}}\BDref{,
-\S2.1 in \cite{BD}}}
+\begin{video}[5DdXrMcbNIM][Linear Equations and Integrating Factors][first-linear]
+    In section \sectionref{slopefields:section} we saw existence and uniqueness for a completely general first order ODE. In \sectionref{separable:section} last class we saw separable differential equations which is a specific class of first order ODEs. Now in section 1.4 we are seeing a different class of ODEs called linear ODEs, and they are particularly nice because they come with a method that always works (provided you can evaluate the integrals) to solve the ODE.  We will also see that this comes with a particularly nice Existence & Uniqueness theorem that is stronger than the one for generic ODEs. 
+\end{video}
 
 One of the most important types of equations we will learn how to solve are
 the so-called
@@ -1301,11 +1492,10 @@ $e^{\int p(x) dx}$.  You can always add a constant of integration,
 but those constants
 will not matter in the end.
 
-\begin{exercise}
-Try it!  Add a constant of integration to the integral in
+Exercise: Try it!  Add a constant of integration to the integral in
 the integrating factor and show that the solution you get in the end is the
 same as what we got above.
-\end{exercise}
+
 
 Advice: Do not try to remember the formula itself, that is way too
 hard.  It is easier to remember the process and repeat it.
@@ -1332,18 +1522,20 @@ be careful to properly use dummy variables here.  If you now plug such a
 formula into a
 computer or a calculator, it will be happy to give you numerical answers.
 
-\begin{exercise}
-Check that $y(x_0) = y_0$ in formula \eqref{lei:defsol}.
-\end{exercise}
+\begin{video}[DCbNl-VVsuE][Integrating Factor Examples][first-linear2]
+    Let's work through a full example. 
+\end{video}
 
-\begin{exercise}
-Write the solution of the following problem
+Exercise: Check that $y(x_0) = y_0$ in formula \eqref{lei:defsol}.
+
+
+Exercise: Write the solution of the following problem
 as a definite integral, but try to simplify as far as you can.  You will not
 be able to find the solution in closed form.
 \begin{equation*}
 y' + y = e^{x^2-x}, \qquad y(0) = 10 .
 \end{equation*}
-\end{exercise}
+
 
 \begin{remark}
 Before we move on, we should note some interesting properties of linear
@@ -1521,22 +1713,71 @@ solution, you should give that.
 \begin{exercise}
 Solve $y' + xy = x$.
 \end{exercise}
+\exsolution{%
+\begin{align*}
+p(x)=x,\quad f(x)=x,\quad r(x)=e^{\int x dx}=e^{x^2/2}
+\end{align*}
+so we get
+\begin{align*}
+\frac{d}{dx}\left[e^{x^2/2}y\right]=xe^{x^2/2}
+\end{align*}
+Integrating
+\begin{align*}
+e^{x^2/2}y=e^{x^2/2}+c \rightarrow y=ce^{-x^2/2}+1
+\end{align*}
+}
 
 \begin{exercise}
 Solve $y' + 6y = e^x$.
 \end{exercise}
+\exsol{%
+$y=\frac{e^x}{7}+ce^{-6x}$
+}
 
 \begin{exercise}
 Solve $y' + 3x^2y = \sin(x) \, e^{-x^3}$, with $y(0) = 1$.
 \end{exercise}
+\exsolution{%
+\begin{align*}
+p(x)=3x^2,\quad f(x)=\sin(x)e^{-x^3},\quad r(x)=e^{\int 3x^2dx}=e^{x^3}
+\end{align*}
+Multiplying by the integrating factor and integrating
+\begin{align*}
+e^{x^3}y=-\cos x +c
+\end{align*}
+Applying the initial condition $y(0)=1$ we get $c=2$, therefore
+\begin{align*}
+y=e^{-x^3}(2-\cos x)
+\end{align*}
+}
 
 \begin{exercise}
 Solve $y' + \cos (x) y = \cos(x)$.
 \end{exercise}
+\exsol{%
+$y=1+ce^{-\sin x}$
+}
 
 \begin{exercise}
 Solve $\frac{1}{x^2+1} \, y' + x y = 3$, with $y(0) = 0$.
 \end{exercise}
+\exsol{%
+\begin{align*}
+p(x)=x^3+x,\quad f(x)=3(x^2+1),\quad r(x)=e^{x^4/4+x^2/2}
+\end{align*}
+Multiplying by the integrating factor and integrating 
+\begin{align*}
+e^{x^4/4+x^2/2}y=\int 3(x^2+1)e^{x^4/4+x^2/2}dx
+\end{align*}
+This integral doesn't have a closed form, so it is left as a definite integral 
+\begin{align*}
+y=e^{x^4/4+x^2/2}\int_0^x3(t^2+1)e^{t^4/4+t^2/2} dt +y_0
+\end{align*}
+Applying the initial condition $y(0)=0$ we get $y_0=0$ so finally
+\begin{align*}
+y=e^{x^4/4+x^2/2}\int_0^x3(t^2+1)e^{t^4/4+t^2/2} dt
+\end{align*}
+}
 
 \begin{exercise}
 Suppose there are two lakes located on a stream.  Clean
@@ -1558,6 +1799,51 @@ concentration in the first lake be below \unit[0.001]{kg} per liter?
 concentration in the second lake be maximal?
 \end{tasks}
 \end{exercise}
+\exsolution{%
+(a) Lake 1: 
+\begin{align*}
+x &= \textrm{kg of toxic material} \\
+\textrm{rate in} &=\textrm{rate out}=500 \\
+\textrm{concentration in} &=0 \\
+\textrm{concenctraiton out} &= \frac{x}{V_1}=\frac{x}{10^5}
+\end{align*}
+\begin{align*}
+\frac{dx}{dt}=-500\frac{x}{10^5}\rightarrow \ln x=-\frac{t}{200}
+\end{align*}
+\begin{align*}
+x=x_0e^{-t/200}
+\end{align*}
+Applying the initial condition $x(0)=x_0=500$ the equation becomes
+\[
+x(t)=500e^{-t/200}
+\]
+Lake 2:
+\begin{align*}
+\frac{dx_2}{dt}& =\frac{x_1(t)}{200}-\frac{x_2(t)}{400} \\
+\frac{dx_2}{dt}& =\frac{5e^{-t/200}}{2}-\frac{x_2(t)}{400} \\
+\end{align*}
+Where 
+\[
+p(t)=\frac{1}{400},\quad f(t)=\frac{5e^{-t/200}}{2},\quad r(t)=e^{t/400}
+\]
+Multiplying and integrating
+\[
+e^{t/400}x_2=-1000e^{-t/400}+c
+\]
+Applying the initial condition $x_2(0)=0$ we find $c=1000$ so
+\[
+x_2=1000(e^{-t/400}-e^{-t/200})
+\]
+(b) At concentration $=0.001\rightarrow x=100$ kg. Plugging into the solution for the first lake
+\[
+100=500e^{-t_f/200}\rightarrow t_f\approx 321.89 \rm hours
+\]
+(c) The critical point can be obtained by setting the first derivative to zero
+\[
+\frac{dx_2}{dt}=1000(-\frac{1}{400}e^{-t/400}+\frac{1}{200}e^{-t/200})=0
+\]
+Solving for $t$ we find $t=-400\ln\frac{1}{2}\approx 277.26$ hours.
+}
 
 \begin{exercise}
 \myindex{Newton's law of cooling} states that $\frac{dx}{dt} = -k(x-A)$ where
@@ -1572,6 +1858,31 @@ temperatures).
 initial conditions make much of a difference?  Why or why not?
 \end{tasks}
 \end{exercise}
+\exsolution{%
+(a) \[
+x'=-kx+kA_0\cos(\omega t)
+\]
+\[
+p(t)=k,\quad f(t)=kA_0\cos(\omega t),\quad r(t)=e^{kt}
+\]
+Multiplying and integrating
+\begin{equation*}
+    e^{kt}x=kA_0\int e^{kt}\cos(\omega t)dt=kA_0 e^{kt}\left(\frac{k\cos(\omega t)+\omega\cos(\omega t)}{k^2+\omega^2}\right)+C
+\end{equation}
+    \begin{equation*}
+x(t)=kA_0\left(\frac{k\cos(\omega t)+\omega \sin(\omega t)}{k^2+\omega^2}\right)+Ce^{-kt}
+\end{equation*}
+(b)
+In the long term, $t$ becomes large, so the $e^{-kt}$ term vanishes. The initial condition is 
+\begin{equation*}
+x(0)=x_0=\frac{k^2A_0}{k^2+\omega^2}+C
+\end{equation*}
+So we can write the solution as
+\begin{equation*}
+x(t)=kA_0\left(\frac{k\cos(\omega t)+\omega \sin(\omega t)}{k^2+\omega^2}\right)+\left(x_0-\frac{k^2A_0}{k^2+\omega^2}\right)e^{-kt}
+\end{equation*}
+Where the last term vanishes at large $t$, and so the initial condition $x_0$ doesn't matter. 
+}
 
 \begin{exercise}
 Initially 5 grams of salt are dissolved in 20 liters of water.  Brine
@@ -1580,6 +1891,9 @@ of 3 liters a minute.  The tank is mixed well and is drained at 3 liters
 a minute.  How long does the process have to continue until there are 20 grams
 of salt in the tank?
 \end{exercise}
+\exsol{%
+The solution is $x(t)=40-35e^{-3t/20}$, plugging in the values given, we get $t\approx 3.73$ minutes.
+}
 
 \begin{exercise}
 Initially a tank contains 10 liters of pure water.
@@ -1589,8 +1903,10 @@ The water is mixed well and drained at 1 liter per minute.
 In 20 minutes there are 15 grams of salt in the tank.  What is the
 concentration of salt in the incoming brine?
 \end{exercise}
+\exsol{%
+The solution is $x(t)=10k+ce^{-t/10}$, where $k$ is the concentration and $c$ is the integration constant. Plugging in the given values we find $k\approx 1.735$ g/L.
+}
 
-\setcounter{exercise}{100}
 
 \begin{exercise}
 Solve $y'+3 x^2 y = x^2$.
@@ -1649,9 +1965,6 @@ $Ah' = I - kh$, where $k$ is a constant with units $\unitfrac{m^2}{s}$.
 \sectionnewpage
 \section{Substitution}
 \label{substitution:section}
-
-\sectionnotes{1 lecture, can safely be skipped\EPref{, \S1.6 in \cite{EP}}\BDref{, not in
-\cite{BD}}}
 
 Just as when solving integrals, one method to try is to change variables to
 end up with a simpler equation to solve.
@@ -1732,6 +2045,10 @@ of thumb.  You might have to modify your guesses.  If a substitution
 does not work (it does not make the equation any simpler), try a different one.
 
 \subsection{Bernoulli equations}
+
+\begin{video}[MxI-XktO-go][Bernoulli equations][first-bernoulli]
+    We have two major classes that we have procedures to solve - separable and linear ODEs. However, we can often use a substitution to convert a different type of ODE into one of these two types. In this video we use a substitution to solve a major class of ODEs called Bernoulli equations
+\end{video}
 
 There are some forms of equations where there is a
 general rule for substitution that always works.
@@ -1876,28 +2193,104 @@ Hint: Answers need not always be in closed form.
 Solve
 $y'+ y(x^2-1)+xy^6 = 0$, with $y(1)=1$.
 \end{exercise}
+\exsolution{%
+This is a Bernoulli equation with $n=6$. So we substitute $v=y^{-5}$, $v'=-5y^{-6}y'$ and get \[
+v'-5v(x^2-1)=5x
+\]
+A linear ODE with 
+\[
+p(x)=-5(x^2-1),\quad f(x)=5x,\quad r(x)=e^{-\frac{5x^3}{3}+5x}
+\]
+Multiplying and integrating
+\[
+e^{-\frac{5x^3}{3}+5x}v=\int 5xe^{-\frac{5x^3}{3}+5x} dx
+\]
+This integral doesn't have a closed form. Applying the initial condition $y(1)=1\ \rightarrow\ v(1)=1$
+\[
+v=e^{\frac{5x^3}{3}-5x}\left(\int_1^x 5te^{-\frac{5t^3}{3}+5t}dt +1\right) 
+\]
+\begin{equation}
+y=\sqrt[5]{\frac{1}{e^{\frac{5x^3}{3}-5x}\left(\int_1^x 5te^{-\frac{5t^3}{3}+5t}dt +1\right) }}
+\end{equation}
+}
 
 \begin{exercise}
 Solve $2yy' + 1 = y^2 + x$, with $y(0)=1$.
 \end{exercise}
+\exsolution{%
+Try $v=y^2$ giving $v'=2yy'$. Substituting 
+\[
+v'+1=v+x \quad \rightarrow v'-v=x-1
+\]
+A linear ODE with 
+\[
+p(x)=-1,\quad f(x)=x-1,\quad r(x)=e^{-x}
+\]
+Multiplying and integrating
+\[
+e^{-x}v=-xe^{-x}+c
+\]
+Applying the initial condition $y(0)=1\ \rightarrow v(0)=1$, giving $c=1$. Thus we write
+\[
+v=-x+e^x
+\]
+\[
+y=\sqrt{e^x-x}
+\]
+}
 
 \begin{exercise}
 Solve $y' + xy = y^4$, with $y(0)=1$.
 \end{exercise}
+\exsol{%
+$y=\sqrt[3]{\frac{1}{e^{\frac{3x^2}{2}}\left(\int_0^x -3e^{\frac{-3t^2}{2}}dt+1\right)}}$
+}
 
 \begin{exercise}
 Solve $yy' + x = \sqrt{x^2 + y^2}$.
 \end{exercise}
+\exsolution{%
+This can be rewritten as  
+\[
+y'=\sqrt{\left(\frac{x}{y}\right)^2+1}-\frac{x}{y}
+\]
+\[
+y=\sqrt{\left( \frac{1}{y/x}\right)^2+1}-\frac{1}{y/x}=F(y/x)
+\]
+This is a homogeneous equation, so we substitute $v=y/x$. Following through with the substitution  
+\[
+\int \frac{1}{F(v)-v}dv=ln\lvert x\rvert +c
+\]
+\[
+\int \frac{1}{\sqrt{\frac{1}{v^2}+1}-\frac{1}{v}-v}dv=ln\lvert x\rvert +x
+\]
+Integrating
+\[
+\lvert 1-\sqrt{v^2+1}\rvert = c\lvert \frac{1}{x}\rvert 
+\]
+\[
+v=\sqrt{(1-c\lvert \frac{1}{x}\rvert)^2-1}=\sqrt{\frac{c^2}{x^2}-2c\lvert \frac{1}{x}\rvert}
+\]
+\[
+y=\sqrt{c^2-2c\lvert x \rvert}
+\]
+}
 
 \begin{exercise}
 Solve $y' = {(x+y-1)}^2$.
 \end{exercise}
+\exsol{%
+$y=\sqrt{\tan (x+c)}-x+1$
+}
 
 \begin{exercise}
 Solve $y' = \frac{x^2-y^2}{x y}$, with $y(1) = 2$.
 \end{exercise}
+\exsol{%
+$y=x\sqrt{\frac{1}{2}+\frac{7}{2x^4}}$
+}
 
-\setcounter{exercise}{100}
+
 
 \begin{exercise}
 Solve $xy'+y+y^2 = 0$, $y(1)=2$.
@@ -1933,8 +2326,9 @@ $y = \sqrt{x^2-\ln(C-x)}$
 \section{Autonomous equations}
 \label{auteq:section}
 
-\sectionnotes{1 lecture\EPref{, \S2.2 in \cite{EP}}\BDref{,
-\S2.5 in \cite{BD}}}
+\begin{video}[LSzos_8Ht1s][Autonomous Equations][first-autonomous]
+    An Autonomous equation $y'=f(y)$ ONLY depends on the dependent variable. This simplification allows a lot of special types of analysis such as equilibrium values, stability, and what happens as t gets large. 
+\end{video}
 
 Consider
 problems of the form
@@ -1996,6 +2390,10 @@ as $t \to \infty$.  If a critical point is not stable, we say it is
 \end{myfig}
 
 \medskip
+
+\begin{video}[yJG434tCeA4][Logistic Equation][first-logistic]
+    Exponential growth is great and all, but is it realistic that biological systems grow unbounded forever? In this video we will explore modelling with Logistic Growth to account for this difficulty. 
+\end{video}
 
 Consider now the \emph{\myindex{logistic equation}}
 \begin{equation*}
@@ -2071,11 +2469,10 @@ moves from left to right,
 the graph of a solution
 goes up if the arrow is up, and it goes down if the arrow is down.
 
-\begin{exercise}
-Try sketching a few solutions simply from looking at the phase diagram.
+Exercise: Try sketching a few solutions simply from looking at the phase diagram.
 Check with the preceding graphs if
 you are getting the type of curves.
-\end{exercise}
+
 
 \pagebreak[0]
 Once we draw the phase diagram, we classify critical points
@@ -2119,12 +2516,11 @@ A = \frac{kM + \sqrt{{(kM)}^2 - 4hk}}{2k}, \qquad
 B = \frac{kM - \sqrt{{(kM)}^2 - 4hk}}{2k} .
 \end{equation*}
 
-\begin{exercise}
-Sketch a phase diagram for different possibilities.  Note
+Exercise: Sketch a phase diagram for different possibilities.  Note
 that these possibilities are $A > B$, or $A=B$, or $A$ and $B$ both complex
 (i.e.\ no real solutions).  Hint: Fix some simple $k$ and $M$ and then vary
 $h$.
-\end{exercise}
+
 
 For example, let $M=8$ and $k=0.1$.
 When $h=1$, then $A$ and $B$ are distinct and positive.
@@ -2226,6 +2622,19 @@ the equation is still logistic.
 \task What happens when $kM < h$?
 \end{tasks}
 \end{exercise}
+\exsolution{%
+(a) $\frac{dx}{dt}=kx(M-x)-hx$ \\
+(b) Rearranging
+\[
+\frac{dx}{dt}=kx\left(\frac{kM-h}{k}-x\right)
+\]
+The term $\frac{kM-h}{k}>0$ in this case, and we cane rename it to $N$ making the equation
+\[
+\frac{dx}{dt}=kx(N-x)
+\]
+With $k$ and $N$ positive, making this the logistic equation again. \\
+(c) If $kM<0$ then $N<0$, so the critical points are at $x=0$ and $x=-N$. The latter point can be ignored since the population can only be positive. Substituting positive x values in $kx(N-x)$ gives negative values, hence $\displaystyle \lim_{t\to\infty} x(t)=0$, i.e. the population collapses. 
+}
 
 \begin{exercise}
 A disease is spreading through the country.  Let $x$ be the number of people
@@ -2241,9 +2650,13 @@ $\displaystyle \lim_{t\to\infty} x(t)$.
 \task Does the solution to part b) agree with your intuition?  Why or why not?
 \end{tasks}
 \end{exercise}
+\exsol{%
+(a) $\frac{dx}{dt}=kx(S-x)$ \\
+(b) $\displaystyle \lim_{t\to\infty}x(t)=S$ \\
+(c) It does, since the solution in part (b) says that if initially some population is infected, this will lead to the number of infected people ($x(t)$) to become equal to the whole susceptible population ($S$) after a long time. This is a reasonable expectation. 
+}
 
 
-\setcounter{exercise}{100}
 
 \begin{exercise}
 Let $x'=(x-1)(x-2)x^2$.
@@ -2500,13 +2913,12 @@ are lucky, we can estimate the error from a few of these calculations and the
 assumption that the error goes down by a factor of one half each time (if
 we are using standard Euler).
 
-\begin{exercise}
+Exericse:
 In the table above, suppose you do not know the error.  Take
 the approximate values of the function in the last two lines,
 assume that the error goes down by a factor of 2.  Can you estimate the
 error in the last time from this?  Does it (approximately) agree with the
 table?  Now do it for the first two rows.  Does this agree with the table?
-\end{exercise}
 
 Let us talk a little bit more about the example
 $y' = \nicefrac{y^2}{3}$, $y(0) =
@@ -2668,7 +3080,7 @@ $y(1)$, and compare.
 \end{tasks}
 \end{exercise}
 
-\setcounter{exercise}{100}
+
 
 \begin{exercise}
 Let $x' = \sin(xt)$, and $x(0)=1$.
@@ -2927,11 +3339,10 @@ for $y$ in terms of $x$.  In this case, we obtain $y = \pm \sqrt{C^2-x^2}$
 as we did before.
 \end{example}
 
-\begin{exercise}
-Why did we not need to add a constant of integration when integrating $A'(y)
+Exercise: Why did we not need to add a constant of integration when integrating $A'(y)
 = 2y$?  Add a constant of integration, say $3$, and see what $F$ you get.
 What is the difference from what we got above, and why does it not matter?
-\end{exercise}
+
 
 
 
@@ -3359,7 +3770,7 @@ find the corresponding harmonic conjugates $v$:
 \end{exercise}
 \end{samepage}
 
-\setcounter{exercise}{100}
+
 
 \begin{exercise}
 Solve the following exact equations, implicit general solutions
@@ -3437,7 +3848,7 @@ $F(x,y) = C$ leads to the same solution as the example.
 \section{First order linear PDE}
 \label{fopde:section}
 
-\sectionnotes{1 lecture, can safely be skipped}
+
 
 We only considered ODE so far, so let us solve a linear first order
 PDE\@.  Consider the equation
@@ -3787,7 +4198,6 @@ Solve $(1+x^2) u_t + x^2 u_x + e^x u = 0$, $u(x,0) = 0$.
 Hint: Think a little out of the box.
 \end{exercise}
 
-\setcounter{exercise}{100}
 
 \begin{exercise}
 Solve
