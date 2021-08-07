@@ -4,8 +4,6 @@
 
 \section{Boundary value problems} \label{bvp:section}
 
-\sectionnotes{2 lectures\EPref{, similar to \S3.8 in \cite{EP}}\BDref{,
-\S10.1 and \S11.1 in \cite{BD}}}
 
 \subsection{Boundary value problems}
 
@@ -670,8 +668,10 @@ $\frac{\sqrt{3}}{3} e^{\frac{-3}{2}\sqrt[3]{\lambda}}
 \sectionnewpage
 \section{The trigonometric series} \label{ts:section}
 
-\sectionnotes{2 lectures\EPref{, \S9.1 in \cite{EP}}\BDref{,
-\S10.2 in \cite{BD}}}
+\begin{video}[5-r0hphUNs4][Intro to Fourier Series][fourierintro]
+	In this video we learn how to approximate periodic functions with Fourier Series; that is, a sum of sin and cos terms of different frequencies.	
+\end{video}
+
 
 \subsection{Periodic functions and motivation}
 
@@ -736,90 +736,20 @@ extension and sketch its graph.  How does it compare to the graph of
 $\cos t$?
 \end{exercise}
 
-\subsection{Inner product and eigenvector decomposition}
 
-Suppose we have a \emph{\myindex{symmetric matrix}},
-that is $A^T = A$.  As we remarked before, 
-eigenvectors of $A$ are then orthogonal.  Here the word
-\emph{orthogonal}\index{orthogonal!vectors} means
-that if $\vec{v}$ and $\vec{w}$ are two 
-eigenvectors of $A$ for distinct eigenvalues,
-then $\langle \vec{v} , \vec{w} \rangle = 0$.
-In this case the inner product $\langle \vec{v} , \vec{w} \rangle$
-is the \emph{\myindex{dot product}},
-which can be computed as $\vec{v}^T\vec{w}$.
-
-To decompose a vector $\vec{v}$ in terms of mutually orthogonal
-vectors $\vec{w}_1$ and $\vec{w}_2$ we write
-\begin{equation*}
-\vec{v} = a_1 \vec{w}_1  + a_2 \vec{w}_2 .
-\end{equation*}
-Let us find the formula for $a_1$ and $a_2$.  First let us compute
-\begin{equation*}
-\langle \vec{v} , \vec{w_1} \rangle
-=
-\langle a_1 \vec{w}_1  + a_2 \vec{w}_2 , \vec{w_1} \rangle
-=
-a_1 \langle \vec{w}_1 , \vec{w_1} \rangle
-+
-a_2 \underbrace{\langle \vec{w}_2 , \vec{w_1} \rangle}_{=0}
-=
-a_1 \langle \vec{w}_1 , \vec{w_1} \rangle .
-\end{equation*}
-Therefore,
-\begin{equation*}
-a_1 = 
-\frac{\langle \vec{v} , \vec{w_1} \rangle}{
-\langle \vec{w}_1 , \vec{w_1} \rangle} .
-\end{equation*}
-Similarly
-\begin{equation*}
-a_2 = 
-\frac{\langle \vec{v} , \vec{w_2} \rangle}{
-\langle \vec{w}_2 , \vec{w_2} \rangle} .
-\end{equation*}
-You probably remember this formula from vector calculus.
-
-\begin{example}
-Write
-$\vec{v} = \left[ \begin{smallmatrix} 2 \\ 3 \end{smallmatrix} \right]$
-as a linear combination of 
-$\vec{w_1} = \left[ \begin{smallmatrix} 1 \\ -1 \end{smallmatrix} \right]$
-and
-$\vec{w_2} = \left[ \begin{smallmatrix} 1 \\ 1 \end{smallmatrix} \right]$.
-
-First note that $\vec{w}_1$ and $\vec{w}_2$ are orthogonal
-as $\langle \vec{w}_1 , \vec{w}_2 \rangle = 1(1) + (-1)1 = 0$.
-Then
-\begin{align*}
-& a_1 = 
-\frac{\langle \vec{v} , \vec{w_1} \rangle}{
-\langle \vec{w}_1 , \vec{w_1} \rangle}
-=
-\frac{2(1) + 3(-1)}{1(1) + (-1)(-1)} = \frac{-1}{2} ,
-\\
-& a_2 = 
-\frac{\langle \vec{v} , \vec{w_2} \rangle}{
-\langle \vec{w}_2 , \vec{w_2} \rangle}
-=
-\frac{2 + 3}{1 + 1} = \frac{5}{2} .
-\end{align*}
-Hence
-\begin{equation*}
-\begin{bmatrix} 2 \\ 3 \end{bmatrix}
-=
-\frac{-1}{2}
-\begin{bmatrix} 1 \\ -1 \end{bmatrix}
-+
-\frac{5}{2}
-\begin{bmatrix} 1 \\ 1 \end{bmatrix} .
-\end{equation*}
-\end{example}
 
 \subsection{The trigonometric series}
 
-Instead of decomposing a vector in terms of eigenvectors of a matrix,
-we decompose a function in terms of eigenfunctions of a certain
+\begin{video}[55hgKwHBJXk][Finding the Coefficients & Fourier Convergence Theorem][fouriercoefficients]
+    While in the previous video we had a Fourier Series, we didn't see how to find the coefficients $a_n$ and $b_n$. So our first task is to figure out how to find those. Secondly, we want to answer the question of when a Fourier Series actually converges. 
+\end{video}
+
+\begin{video}[2VXI-pZz8PA][The Linear Algebra Perspective][fourierlinear]
+    If you've taken Linear Algebra, then describing Fourier Series with Linear Algebra terminology and concepts will be very useful at crystalizing all the concepts, but perhaps more importantly it illustrates one of the most important themes in mathematic: how disparate fields can be deeply connected. And if you haven't taken linear algebra, then this is a nice little introduction to some of the ideas of that field. 
+\end{video}
+
+
+Our goal is to decompose a function in terms of eigenfunctions of a certain
 eigenvalue problem.  The eigenvalue problem we use for
 the Fourier series is 
 \begin{equation*}
@@ -1314,8 +1244,7 @@ $\frac{\pi^4}{5} + \sum\limits_{n=1}^\infty
 \section{More on the Fourier series}
 \label{moreonfourier:section}
 
-\sectionnotes{2 lectures\EPref{, \S9.2--\S9.3 in \cite{EP}}\BDref{,
-\S10.3 in \cite{BD}}}
+
 
 %Before reading the lecture, it may be good to first try
 %Project IV (Fourier series)\index{IODE software!Project IV} from the
@@ -1324,6 +1253,9 @@ $\frac{\pi^4}{5} + \sum\limits_{n=1}^\infty
 %Project V (Fourier series again)\index{IODE software!Project V}.
 
 \subsection{$2L$-periodic functions}
+
+
+
 
 We have computed the Fourier series for a $2\pi$-periodic function, but what
 about functions of different periods.  Well, fear not, the computation is a
@@ -1476,6 +1408,8 @@ and up to the ${20}^{\text{th}}$ harmonic (right graph).\label{gfs:sawcontfsfig}
 \end{example}
 
 \subsection{Convergence}
+
+\emph{Note: Convergence was covered previously in the video series in \ref{fouriercoefficients}}
 
 We will need the one sided limits of functions.
 We will use the following notation
@@ -2071,10 +2005,14 @@ f) $F(-9) = 0$
 \section{Sine and cosine series}
 \label{sec:scs}
 
-\sectionnotes{2 lectures\EPref{, \S9.3 in \cite{EP}}\BDref{,
-\S10.4 in \cite{BD}}}
+
 
 \subsection{Odd and even periodic functions}
+
+\begin{video}[-lHP7D6CaV0][Fourier Series Example for an odd function][fouriersodd]
+	We do one more example of computing the Fourier Series. This time we make use of a couple nice integration tricks involving whether sin and cos are even functions (which means $f(-x)=f(x)$) or odd functions (which means $f(-x)=-f(x)$). 
+\end{video}
+
 
 You may have noticed by now that an odd function has no cosine terms in the 
 Fourier series and an even function has no sine terms in the Fourier series.
@@ -2659,8 +2597,6 @@ $\frac{t}{\pi} + \sum\limits_{n=1}^\infty \frac{1}{2^n(\pi-n^2)} \sin(nt)$
 \section{Applications of Fourier series}
 \label{appoffourier:section}
 
-\sectionnotes{2 lectures\EPref{, \S9.4 in \cite{EP}}\BDref{,
-not in \cite{BD}}}
 
 \subsection{Periodically forced oscillation}
 
@@ -3109,8 +3045,7 @@ $x =
 \section{PDEs, separation of variables, and the heat equation}
 \label{heateq:section}
 
-\sectionnotes{2 lectures\EPref{, \S9.5 in \cite{EP}}\BDref{,
-\S10.5 in \cite{BD}}}
+
 
 Let us recall that a \emph{\myindex{partial differential equation}} or
 \emph{\myindex{PDE}} is an equation containing the partial derivatives
@@ -3855,8 +3790,7 @@ a) $0$,
 \sectionnewpage
 \section{One-dimensional wave equation} \label{we:section}
 
-\sectionnotes{1 lecture\EPref{, \S9.6 in \cite{EP}}\BDref{,
-\S10.7 in \cite{BD}}}
+
 
 Imagine we have a tensioned guitar string of length $L$.  Let us 
 only consider vibrations in one direction.  Let
@@ -4482,8 +4416,7 @@ $y(x,t) = \sin(2x)+t\sin(x)$
 \section{D'Alembert solution of the wave equation}
 \label{dalemb:section}
 
-\sectionnotes{1 lecture\EPref{, different from \S9.6 in \cite{EP}}\BDref{,
-part of \S10.7 in \cite{BD}}}
+
 
 We have solved the wave equation by using Fourier series.  But it is often
 more convenient to use the so-called
@@ -4995,8 +4928,7 @@ c) $y(3,9) = \nicefrac{1}{2}$
 \section{Steady state temperature and the Laplacian}
 \label{dirich:section}
 
-\sectionnotes{1 lecture\EPref{, \S9.7 in \cite{EP}}\BDref{,
-\S10.8 in \cite{BD}}}
+
 
 Consider an insulated wire, a plate, or a 3-dimensional object.
 We apply
@@ -5474,8 +5406,7 @@ $u(x,y) =
 \section{Dirichlet problem in the circle and the Poisson kernel}
 \label{dirichdisc:section}
 
-\sectionnotes{2 lectures\EPref{, \S9.7 in \cite{EP}}\BDref{,
-\S10.8 in \cite{BD}}}
+
 
 \subsection{Laplace in polar coordinates}
 

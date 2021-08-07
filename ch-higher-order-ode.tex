@@ -5,9 +5,9 @@
 \section{Second order linear ODEs}
 \label{solinear:section}
 
-\sectionnotes{1 lecture, reduction of order optional\EPref{,
-first part of \S3.1 in \cite{EP}}\BDref{,
-parts of \S3.1 and \S3.2 in \cite{BD}}}
+\begin{video}[1w5u-JgBc1w][2nd Order Linear Equations][secondorder]
+  We now move to 2nd order ODEs. We shall begin with 2nd order linear ODEs which are much easier to handle than nonlinear ODEs. Some of the theory, like Existence and Uniqueness parallel the 1st order case pretty well. However, we shall see that there are some new complications like Superposition to think about and we are going to have a lot of parallels to linear algebra here. 
+\end{video}
 
 Let us consider the general
 \emph{\myindex{second order linear differential equation}}
@@ -387,11 +387,14 @@ $y''-3y'+2y = 0$
 \section{Constant coefficient second order linear ODEs}
 \label{sec:ccsol}
 
-\sectionnotes{more than 1 lecture\EPref{,
-second part of \S3.1 in \cite{EP}}\BDref{,
-\S3.1 in \cite{BD}}}
+
 
 \subsection{Solving constant coefficient equations}
+
+
+\begin{video}[4ldFfny-RlE][Constant Coefficients (Distinct Roots)][constantcoefficients]
+  We now move to 2nd order ODEs. We shall begin with 2nd order linear ODEs which are much easier to handle than nonlinear ODEs. Some of the theory, like Existence and Uniqueness parallel the 1st order case pretty well. However, we shall see that there are some new complications like Superposition to think about and we are going to have a lot of parallels to linear algebra here. 
+\end{video}
 
 Consider the problem
 \begin{equation*}
@@ -453,6 +456,12 @@ y = -7 e^{2x} + 5 e^{4x} .
 \end{equation*}
 
 \medskip
+
+\begin{video}[H8dYb9rJ36Y][The Constant Coefficient Method (all cases)][constantcoefficients2]
+  In this video we generalize ad categorize all the possibilities for a 2nd order homogeneous constant coefficient equation
+\end{video}
+
+
 
 Let us generalize this example into a method.
 Suppose that we have an equation
@@ -895,16 +904,6 @@ $y'' -y'-6y=0$
 \sectionnewpage
 \section{Higher order linear ODEs} \label{sec:hol}
 
-\sectionnotes{somewhat more than 1 lecture\EPref{, \S3.2 and \S3.3 in
-\cite{EP}}\BDref{,
-\S4.1 and \S4.2 in \cite{BD}}}
-
-%After reading this lecture, it may be good to try
-%Project III\index{IODE software!Project III} from the
-%IODE website: \url{http://www.math.uiuc.edu/iode/}.
-%
-%\medskip
-
 We briefly study higher order equations.
 Equations appearing in applications tend to be second
 order.  Higher order equations do appear from time to time, but
@@ -927,39 +926,13 @@ Let us start with a general homogeneous linear equation
 y^{(n)} + p_{n-1}(x)y^{(n-1)} + \cdots + p_1(x) y' + p_0(x) y = 0 .
 \end{equation}
 
-\begin{theorem}[Superposition]\index{superposition}
-Suppose $y_1$, $y_2$, \ldots, $y_n$ are solutions of the
-homogeneous equation \eqref{hol:eqlinhom}.  Then 
-\begin{equation*}
-y(x) = C_1 y_1(x) + C_2 y_2(x) + \cdots + C_n y_n(x) 
-\end{equation*}
-also solves \eqref{hol:eqlinhom}
-for arbitrary constants $C_1, C_2, \ldots, C_n$.
-\end{theorem}
-
-In other words, a \emph{\myindex{linear combination}} of solutions
-to \eqref{hol:eqlinhom}
-is also a solution to \eqref{hol:eqlinhom}.
-We also have the existence and uniqueness theorem for nonhomogeneous linear
-equations.
-
-\begin{theorem}[Existence and uniqueness]\index{existence and uniqueness}
-Suppose $p_0$ through $p_{n-1}$, and $f$ are continuous functions
-on some interval $I$,
-$a$ is a number in $I$,
-and $b_0, b_1, \ldots, b_{n-1}$ are constants.
-The equation
-\begin{equation*} %\label{hol:eqlin}
-y^{(n)} + p_{n-1}(x)y^{(n-1)} + \cdots + p_1(x) y' + p_0(x) y = f(x) 
-\end{equation*}
-has exactly one solution $y(x)$ defined on the same interval $I$
-satisfying the initial conditions
-\begin{equation*}
-y(a) = b_0, \quad y'(a) = b_1, \quad \ldots, \quad y^{(n-1)}(a) = b_{n-1} .
-\end{equation*}
-\end{theorem}
-
 \subsection{Linear independence}
+
+\begin{video}[RDp9Tg7gj5U][Linear Independence][higherlinear]
+  We briefly saw the idea of two functions being linearly independent when talking about the theory of 2nd order ODEs in \sectionref{solinear:section}. Now that we are talking about nth order, we need to figure out how to show that n functions are linearly independent. As you can imagine there are strong parallels to linear algebra, but we also get something unique to ODEs called the Wronskian which will be a test for linear independence.
+\emph{Note: While the Wronskian was covered by Bazett in the videos of this section, the text of this section written by Lebl avoids this topic.}
+\end{video}
+
 
 When we had two functions $y_1$ and $y_2$ we said they were linearly
 independent if one was not the multiple of the other.  Same idea holds for
@@ -1053,7 +1026,52 @@ dependent.  Simply apply definition of the hyperbolic cosine:
 \end{equation*}
 \end{example}
 
+\subsection{Theory of Higher Order ODEs}
+
+\begin{video}[4ofQRpaI9ko][Theory of Higher Order ODEs][highertheory]
+  In this video we put on a firmer ground the theory of higher order ODEs. This both is what really makes the method of constant coefficients work for higher order cases, but these theorems also apply to more general linear ODEs.
+\end{video}
+
+
+\begin{theorem}[Superposition]\index{superposition}
+Suppose $y_1$, $y_2$, \ldots, $y_n$ are solutions of the
+homogeneous equation \eqref{hol:eqlinhom}.  Then 
+\begin{equation*}
+y(x) = C_1 y_1(x) + C_2 y_2(x) + \cdots + C_n y_n(x) 
+\end{equation*}
+also solves \eqref{hol:eqlinhom}
+for arbitrary constants $C_1, C_2, \ldots, C_n$.
+\end{theorem}
+
+In other words, a \emph{\myindex{linear combination}} of solutions
+to \eqref{hol:eqlinhom}
+is also a solution to \eqref{hol:eqlinhom}.
+We also have the existence and uniqueness theorem for nonhomogeneous linear
+equations.
+
+\begin{theorem}[Existence and uniqueness]\index{existence and uniqueness}
+Suppose $p_0$ through $p_{n-1}$, and $f$ are continuous functions
+on some interval $I$,
+$a$ is a number in $I$,
+and $b_0, b_1, \ldots, b_{n-1}$ are constants.
+The equation
+\begin{equation*} %\label{hol:eqlin}
+y^{(n)} + p_{n-1}(x)y^{(n-1)} + \cdots + p_1(x) y' + p_0(x) y = f(x) 
+\end{equation*}
+has exactly one solution $y(x)$ defined on the same interval $I$
+satisfying the initial conditions
+\begin{equation*}
+y(a) = b_0, \quad y'(a) = b_1, \quad \ldots, \quad y^{(n-1)}(a) = b_{n-1} .
+\end{equation*}
+\end{theorem}
+
+
+
 \subsection{Constant coefficient higher order ODEs}
+
+\begin{video}[IwM3JlNPlgQ][Higher Order Constant Coefficient ODEs][higherorderconstant]
+  Let's consider the generalization of the constant coefficient method to higher order. A few things change. Our characteristic equation is now an nth order polynomial, which we can still factor, although this can be harder than just using the quadratic formula, and we get a range of options analogous to the 2D case. 
+\end{video}
 
 When we have a higher order constant coefficient homogeneous linear
 equation, the song and dance is exactly the same as it was for second order.
@@ -1353,13 +1371,12 @@ $y'''-y''+y'-y=0$
 \sectionnewpage
 \section{Mechanical vibrations} \label{sec:mv}
 
-\sectionnotes{2 lectures\EPref{, \S3.4 in \cite{EP}}\BDref{,
-\S3.7 in \cite{BD}}}
-
 Let us look at some applications of linear second order constant
 coefficient equations.
 
 \subsection{Some examples}
+
+
 
 \begin{mywrapfigsimp}{2.0in}{2.3in}
 \noindent
@@ -1487,6 +1504,12 @@ the physics of the situation to see if the simplification is valid in the
 context of the questions we are trying to answer.
 
 \subsection{Free undamped motion}
+
+\begin{video}[pGXLxgdiRHQ][Frictionless Mechanical Vibrations][undampedmechanical]
+  In this video we imagine a mass moving due to the force of a spring in a frictionless environment, what is often called a harmonic oscillator. From the perspective of ODEs, this is just a 2nd order constant coefficient homogeneous ODE. However we also need to physically interpret the results that we get. 
+\emph{TYPO: My characteristic equation at 3:06 should be +k not -k. I did the subsequent finding the roots correctly, the minus sign error was just in the characteristic equation. }
+
+\end{video}
 
 In this section we only consider free or unforced motion,
 as we do not know yet how to solve nonhomogeneous equations.  Let us start with
@@ -1628,6 +1651,10 @@ takes two arguments, $B$ and $A$, and returns a $\gamma$ in the
 correct quadrant for you.
 
 \subsection{Free damped motion}
+
+\begin{video}[SMHC3Khm6cg][Damped Mechanical Vibrations][dampedmechanical]
+  We can also study a mass-spring system that has a damping or friction force proportional to velocity. Again it is a constant coefficient 2nd order ODE, but now we get quite a bit more complexity in the possible solutions depending on the values of coefficients. 
+\end{video}
 
 %mbxINTROSUBSUBSECTION
 
@@ -1943,10 +1970,11 @@ not oscillate.
 \section{Nonhomogeneous equations}
 \label{sec:nonhom}
 
-\sectionnotes{2 lectures\EPref{, \S3.5 in \cite{EP}}\BDref{,
-\S3.5 and \S3.6 in \cite{BD}}}
-
 \subsection{Solving nonhomogeneous equations}
+
+\begin{video}[_5aKZh7_71Q][Solving Nonhomogeneous Equatios using Undetermined Coefficients][undeterminedcoefficients]
+  Our study of constant coefficient ODEs thus far has always had them be homogeneous, that is no terms only in the independent variable. How can we deal with a non-homogeneity? In this video we learn the Method of Undetermined Coefficients. We first learn a bit of theory that lets us relate solutions to the non-homogeneous equation to solutions of the corresponding homogeneous equation, and then the methodology is basically a bit of intelligent guessing to find a solution that works. 
+\end{video}
 
 We have solved linear constant coefficient homogeneous 
 equations.

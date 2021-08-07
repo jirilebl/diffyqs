@@ -6,10 +6,10 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Notes about these notes}
+\section{About this book}
 \label{notes:section}
 
-This version of the textbook is for the Ordinary Differential Equations portion of Math 204 at the University of Victoria. This version is a fork adapted by Trefor Bazett of the original text by Jiří Lebl.
+This version of the book is for the Ordinary Differential Equations portion of Math 204 at the University of Victoria. This version is a fork adapted by Trefor Bazett of the original text by Jiří Lebl.
 
 \subsection{Original Textbook by Jiří Lebl}
 
@@ -23,19 +23,20 @@ The original version of the textbook by  Jiří Lebl comes in three forms:
 
 Additionally, \href{https://www.jirka.org/diffyqs/}{Jiří Lebl's website for the book} contain's a lot of additional information including the source code. 
 
-Note that this forked version of the book for Math 204 at UVic is only available in web version. If you would prefer a .pdf or printed version, as of this writing the books are similar enough that you can certainly access the original .pdf or printed version with the above links. 
+Note that this forked version of the book for Math 204 at UVic is only available in web version. If you would prefer a .pdf or printed version, you can access the original .pdf or printed version with the above links. See the next section for differences between the versions.
 
 If you are an instructor,  \href{https://www.jirka.org/diffyqs/html/notes_section.html}{please consult the original version of the text} for more information and potential uses.
 
 \subsection{Differences between the versions}
-As of this writing, the original text by Jiří Lebl and the forked version by Trefor Bazett are very similar. The most substantial changes in the forked version are embedding of a video series and an expansion of the exercises at the end of each section, with more questions, more answers, and some brif solutions. For a more precise comparison, please consult the respective github pages for the original and forked version. 
+As of this writing, the original text by Jiří Lebl and the forked version by Trefor Bazett are very similar. The most substantial changes in the forked version are embedding of a video series by Trefor Bazett and an expansion of the exercises at the end of each section, with more questions, more answers, and some brief solutions. Additioally, there is a rearrangement of the content. For a more precise comparison, please consult the respective github pages for the original and forked version. 
 
+A few chapters in this book are not taught in Math 204, namely Systems, Non-Linear Systems, Eigenvalue Systems, and PDEs. These chapters remain for reference purposes in the forked version of the textbook entirely untouched by Trefor Bazett. 
 
 \subsection{The video playlist}
 The full playlist of videos \href{https://www.youtube.com/playlist?list=PLQ9f-JfDG2WyBPsKFkkfszurhIYeKN6oX}{can be found here}, and consists of both Vector Calculus (not covered in this textbook) and ODEs (covering this textbook). The individual videos are embedded throughout the text. 
 
 The videos are intended to be complimentary to the textbook. You could learn the content just by reading the textbook, as in the original version by Lebl. The other direction is not true; the videos alone don't always
-cover all the content. Typically the videos use slightly different examples from the textbook so that you can get extra exposure by reading/watching both. While there was an effort for the notation and scope of the videos to be similar to the textbook, ultimately the book is largely written by Lebl and the videos recorded by Bazett and there are stylistic differences and differences in emphasis between these two. 
+cover all the content. Typically the videos use slightly different examples from the textbook so that you can get extra exposure by reading/watching both. While there was an effort for the notation and scope of the videos to be similar to the textbook, ultimately the book is largely written by Lebl and the videos recorded by Bazett and there are stylistic differences and differences in emphasis between these two. Typically videos are placed immediately prior to the analogous text content covered in the video.
 
 
 
@@ -117,7 +118,7 @@ to acknowledge NSF grants DMS-0900885 and DMS-1362337.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Introduction to differential equations}
+\section{What are Differential Equations?}
 \label{introde:section}
 
 
@@ -509,148 +510,189 @@ y = -127.7 \; \textrm{ft} \cdot \cosh({x / 127.7  \; \textrm{ft}}) + 757.7 \;
 \textrm{ft} .
 \end{equation*}
 
-
 \subsection{Exercises}
 
+
 \begin{exercise}
-Show that $x = e^{4t}$ is a solution to $x'''-12 x'' + 48 x' - 64 x = 0$.
+	Show that $x = e^{4t}$ is a solution to $x'''-12 x'' + 48 x' - 64 x = 0$.
 \end{exercise}
 
 \begin{exercise}
-Show that $x = e^{t}$ is not a solution to $x'''-12 x'' + 48 x' - 64 x = 0$.
+	Show that $x = e^{t}$ is not a solution to $x'''-12 x'' + 48 x' - 64 x = 0$.
 \end{exercise}
 
 \begin{exercise}
-Is $y = \sin t$ a solution to ${\left( \frac{dy}{dt} \right)}^2 = 1 - y^2$?
-Justify.
-\end{exercise}
-
-\begin{exercise}
-Let $y'' + 2y' - 8y = 0$.  Now try a solution of the form $y = e^{rx}$ for
-some (unknown) constant $r$.  Is this a solution
-for some $r$?  If so, find all such $r$.
-\end{exercise}
-
-\begin{exercise}
-Verify that $x = C e^{-2t}$ is a solution to $x' = -2x$.
-Find $C$ to solve for the initial condition $x(0) = 100$.
-\end{exercise}
-
-\begin{exercise}
-Verify that $x = C_1 e^{-t} + C_2 e^{2t}$ is a solution to $x'' - x' -2 x =
-0$.  Find $C_1$ and $C_2$ to solve for the initial conditions $x(0) = 10$
-and $x'(0) = 0$.
-\end{exercise}
-
-\begin{exercise}
-Find a solution to
-${(x')}^2 + x^2 = 4$
-using your knowledge of derivatives of functions that you
-know from basic calculus.
-\end{exercise}
-
-\begin{exercise}
-Solve:
-\begin{tasks}(2)
-\task $\dfrac{dA}{dt} = -10 A, \quad A(0)=5$
-\task $\dfrac{dH}{dx} = 3 H, \quad H(0)=1$
-\task $\dfrac{d^2y}{dx^2} = 4 y, \quad y(0)=0, \quad y'(0)=1$
-\task $\dfrac{d^2x}{dy^2} = -9 x, \quad x(0)=1, \quad x'(0)=0$
-\end{tasks}
-\end{exercise}
-
-\begin{exercise}
-Is there a solution to $y' = y$, such that $y(0) = y(1)$?
-\end{exercise}
-
-\begin{exercise}
-The population of city X was 100 thousand 20 years ago, and 
-the population of city X was 120 thousand 10 years ago.  Assuming constant
-growth, you can use the exponential population model
-(like for the bacteria).  What do you estimate the population is now?
-\end{exercise}
-
-\begin{exercise}
-Suppose that a football coach gets a salary of
-one million dollars now, and a raise of $10\%$ every year
-(so exponential model, like population of bacteria).
-Let $s$ be the salary in millions of dollars, and $t$ is time in years.
-\begin{tasks}(2)
-\task
-What is $s(0)$ and $s(1)$.
-\task
-Approximately how many years will it take for the salary to be 10 million.
-\task
-Approximately how many years will it take for the salary to be 20 million.
-\task
-Approximately how many years will it take for the salary to be 30 million.
-\end{tasks}
-\end{exercise}
-
-
-%mbxSTARTIGNORE
-\noindent
-\emph{Note: Exercises with numbers 101 and higher have solutions in the
-back of the book.}
-%mbxENDIGNORE
-
-%mbx <p><em>Note: Exercises with numbers 101 and higher have solutions.</em></p>
-
-\setcounter{exercise}{100}
-
-\begin{exercise}
-Show that $x = e^{-2t}$ is a solution to $x'' + 4x' + 4x = 0$.
+	Is $y = \sin t$ a solution to ${\left( \frac{dy}{dt} \right)}^2 = 1 - y^2$?
+	Justify.
 \end{exercise}
 \exsol{%
-Compute $x' = -2e^{-2t}$ and $x'' = 4e^{-2t}$.  Then
-$(4e^{-2t}) + 4 (-2e^{-2t}) + 4 (e^{-2t}) = 0$.
+Yes, since $\cos^2t=1-\sin^2t$ by a trig identity.
 }
 
 \begin{exercise}
-Is $y = x^2$ a solution to $x^2y'' - 2y = 0$?  Justify.
+	Let $y'' + 2y' - 8y = 0$.  Now try a solution of the form $y = e^{rx}$ for
+	some (unknown) constant $r$.  Is this a solution
+	for some $r$?  If so, find all such $r$.
 \end{exercise}
 \exsol{%
-Yes.
-}
-
-\begin{exercise}
-Let $xy'' - y' = 0$.  Try a solution of the form $y = x^r$.  Is this a
-solution for some $r$?  If so, find all such $r$.
-\end{exercise}
-\exsol{%
-$y=x^r$ is a solution for $r=0$ and $r=2$.
+Plugging $y=e^{rx}$ into the DE and simplifying
+\begin{equation}
+r^2+2r-8=0
+\end{equation}
+This is a solution when $r=2$ or $r=-4$.
 }
 
 
 \begin{exercise}
-Verify that $x=C_1e^t+C_2$ is a solution to $x''-x' = 0$.  Find $C_1$ and
-$C_2$ so that $x$ satisfies $x(0) = 10$ and $x'(0) = 100$.
+	Verify that $x = C e^{-2t}$ is a solution to $x' = -2x$.
+	Find $C$ to solve for the initial condition $x(0) = 100$.
 \end{exercise}
 \exsol{%
-$C_1 = 100$, $C_2 = -90$
+$C=100$
 }
 
 \begin{exercise}
-Solve $\frac{d\varphi}{ds} = 8 \varphi$ and $\varphi(0) = -9$.
+	Verify that $x = C_1 e^{-t} + C_2 e^{2t}$ is a solution to $x'' - x' -2 x =
+	0$.  Find $C_1$ and $C_2$ to solve for the initial conditions $x(0) = 10$
+	and $x'(0) = 0$.
 \end{exercise}
 \exsol{%
-$\varphi = -9 e^{8s}$
+$C_1=10/3$, $C_2=20/3$
 }
 
 \begin{exercise}
-Solve:
-\begin{tasks}(2)
-\task $\dfrac{dx}{dt} = -4x, \quad x(0)=9$
-\task $\dfrac{d^2x}{dt^2} = -4x, \quad x(0)=1, \quad x'(0)=2$
-\task $\dfrac{dp}{dq} = 3 p, \quad p(0)=4$
-\task $\dfrac{d^2T}{dx^2} = 4 T, \quad T(0)=0, \quad T'(0)=6$
-\end{tasks}
+	Find a solution to
+	${(x')}^2 + x^2 = 4$
+	using your knowledge of derivatives of functions that you
+	know from basic calculus.
 \end{exercise}
 \exsol{%
-a)~$x=9e^{-4t}$ \quad
-b)~$x=\cos(2t)+\sin(2t)$ \quad
-c)~$p=4e^{3q}$ \quad
-d)~$T=3\sinh(2x)$
+$x=2\sin t$ or $x=2\cos t$.
+}
+
+\begin{exercise}
+	Solve:
+	\begin{tasks}(2)
+		\task $\dfrac{dA}{dt} = -10 A, \quad A(0)=5$
+		\task $\dfrac{dH}{dx} = 3 H, \quad H(0)=1$
+		\task $\dfrac{d^2y}{dx^2} = 4 y, \quad y(0)=0, \quad y'(0)=1$
+		\task $\dfrac{d^2x}{dy^2} = -9 x, \quad x(0)=1, \quad x'(0)=0$
+	\end{tasks}
+\end{exercise}
+\exsol{%
+a) $A=5e^{-10t}$\quad
+b) $H=e^{3x}$ \quad
+c) $y=1/2(e^{2x}-e^{-2x})$ \quad
+d) Here $k^2=9$, so the general solution is 
+\begin{equation*}
+x=c_1\cos 3y+c_2\sin 3y \quad \rightarrow
+x'=-3c_1\sin 3y +3c_2\cos 3y
+\end{equation*}
+Plugging in the initial conditions we find $c_1=1$, $c_2=0$ therefore $x=\cos 3y$.
+}
+
+
+\begin{exercise}
+	Is there a solution to $y' = y$, such that $y(0) = y(1)$?
+\end{exercise}
+\exsol{%
+    Only the trivial solution $y=0$.
+}
+
+\begin{exercise}
+	The population of city X was 100 thousand 20 years ago, and 
+	the population of city X was 120 thousand 10 years ago.  Assuming constant
+	growth, you can use the exponential population model
+	(like for the bacteria).  What do you estimate the population is now?
+\end{exercise}
+\exsol{%
+Set the time 20 years ago as $t=0$, 10 years ago as $t=10$, and now as $t=20$. Using $P(t)=Ce^{kt}$, and $P(0)=100=C$ and $P(10)=100e^{10k}=120\rightarrow\quad k=0.0182$, then
+\begin{equation*}
+P(20)=100e^{0.0182\times 20}\approx 144
+\end{equation*}
+}
+
+\begin{exercise}
+	Suppose that a football coach gets a salary of
+	one million dollars now, and a raise of $10\%$ every year
+	(so exponential model, like population of bacteria).
+	Let $s$ be the salary in millions of dollars, and $t$ is time in years.
+	\begin{tasks}(2)
+		\task
+		What is $s(0)$ and $s(1)$.
+		\task
+		Approximately how many years will it take for the salary to be 10 million.
+		\task
+		Approximately how many years will it take for the salary to be 20 million.
+		\task
+		Approximately how many years will it take for the salary to be 30 million.
+	\end{tasks}
+\end{exercise}
+\exsol{%
+a) $s(0)=1$, $s(1)=1.1$ \quad
+b) $t_{10}\approx 24$ years \quad
+c) $t_{20}\approx 31$ years \quad
+d) $t_{30}\approx 37$ years
+}
+
+
+
+
+
+
+\begin{exercise}
+	Show that $x = e^{-2t}$ is a solution to $x'' + 4x' + 4x = 0$.
+\end{exercise}
+\exsol{%
+	Compute $x' = -2e^{-2t}$ and $x'' = 4e^{-2t}$.  Then
+	$(4e^{-2t}) + 4 (-2e^{-2t}) + 4 (e^{-2t}) = 0$.
+}
+
+\begin{exercise}
+	Is $y = x^2$ a solution to $x^2y'' - 2y = 0$?  Justify.
+\end{exercise}
+\exsol{%
+	Yes.
+}
+
+\begin{exercise}
+	Let $xy'' - y' = 0$.  Try a solution of the form $y = x^r$.  Is this a
+	solution for some $r$?  If so, find all such $r$.
+\end{exercise}
+\exsol{%
+	$y=x^r$ is a solution for $r=0$ and $r=2$.
+}
+
+
+\begin{exercise}
+	Verify that $x=C_1e^t+C_2$ is a solution to $x''-x' = 0$.  Find $C_1$ and
+	$C_2$ so that $x$ satisfies $x(0) = 10$ and $x'(0) = 100$.
+\end{exercise}
+\exsol{%
+	$C_1 = 100$, $C_2 = -90$
+}
+
+\begin{exercise}
+	Solve $\frac{d\varphi}{ds} = 8 \varphi$ and $\varphi(0) = -9$.
+\end{exercise}
+\exsol{%
+	$\varphi = -9 e^{8s}$
+}
+
+\begin{exercise}
+	Solve:
+	\begin{tasks}(2)
+		\task $\dfrac{dx}{dt} = -4x, \quad x(0)=9$
+		\task $\dfrac{d^2x}{dt^2} = -4x, \quad x(0)=1, \quad x'(0)=2$
+		\task $\dfrac{dp}{dq} = 3 p, \quad p(0)=4$
+		\task $\dfrac{d^2T}{dx^2} = 4 T, \quad T(0)=0, \quad T'(0)=6$
+	\end{tasks}
+\end{exercise}
+\exsol{%
+	a)~$x=9e^{-4t}$ \quad
+	b)~$x=\cos(2t)+\sin(2t)$ \quad
+	c)~$p=4e^{3q}$ \quad
+	d)~$T=3\sinh(2x)$
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -857,92 +899,120 @@ vibrations or
 \subsection{Exercises}
 
 \begin{exercise}
-Classify the following equations.  Are they ODE or PDE\@?  Is it an equation
-or a system?  What is the order?  Is it linear or nonlinear, and if it is
-linear, is it homogeneous, constant coefficient?  If it is an ODE\@, is it
-autonomous?
-\begin{tasks}(2)
-\task $\displaystyle \sin(t) \frac{d^2 x}{dt^2} + \cos(t) x = t^2$
-\task $\displaystyle \frac{\partial u}{\partial x} + 3 \frac{\partial u}{\partial y} = xy$
-\task $\displaystyle y''+3y+5x=0, \quad x''+x-y=0$
-\task $\displaystyle \frac{\partial^2 u}{\partial t^2} + u\frac{\partial^2 u}{\partial s^2} =
-0$
-\task $\displaystyle x''+tx^2=t$
-\task $\displaystyle \frac{d^4 x}{dt^4} = 0$
-\end{tasks}
-\end{exercise}
-
-\begin{exercise}
-If $\vec{u} = (u_1,u_2,u_3)$ is a vector, we have the divergence
-$\nabla \cdot \vec{u} =
-\frac{\partial u_1}{\partial x} +
-\frac{\partial u_2}{\partial y} +
-\frac{\partial u_3}{\partial z}$ and curl
-$\nabla \times \vec{u} =
-\Bigl(
-\frac{\partial u_3}{\partial y} - \frac{\partial u_2}{\partial z} , ~
-\frac{\partial u_1}{\partial z} - \frac{\partial u_3}{\partial x} , ~
-\frac{\partial u_2}{\partial x} - \frac{\partial u_1}{\partial y} \Bigr)$.
-Notice that curl of a vector is still a vector.  Write out Maxwell's
-equations in terms of partial derivatives and classify the system.
-\end{exercise}
-
-\begin{exercise}
-Suppose $F$ is a linear function, that is,
-$F(x,y) = ax+by$ for constants $a$ and $b$.  What is the
-classification of equations of the form $F(y',y) = 0$.
-\end{exercise}
-
-\begin{exercise}
-Write down an explicit example of a third order, linear, nonconstant coefficient,
-nonautonomous, nonhomogeneous system of two ODE such that every derivative
-that could appear, does appear.
-\end{exercise}
-
-\setcounter{exercise}{100}
-
-\begin{exercise}
-Classify the following equations.  Are they ODE or PDE\@?  Is it an equation
-or a system?  What is the order?  Is it linear or nonlinear, and if it is
-linear, is it homogeneous, constant coefficient?  If it is an ODE\@, is it
-autonomous?
-\begin{tasks}(2)
-\task $\displaystyle \frac{\partial^2 v}{\partial x^2} + 3 \frac{\partial^2
-v}{\partial y^2} = \sin(x)$
-\task $\displaystyle \frac{d x}{dt} + \cos(t) x = t^2+t+1$
-\task $\displaystyle \frac{d^7 F}{dx^7} = 3F(x)$
-\task $\displaystyle y''+8y'=1$
-\task $\displaystyle x''+tyx'=0, \quad y''+txy = 0$
-\task $\displaystyle \frac{\partial u}{\partial t} = \frac{\partial^2 u}{\partial s^2} + u^2$
-\end{tasks}
+	Classify the following equations.  Are they ODE or PDE\@?  Is it an equation
+	or a system?  What is the order?  Is it linear or nonlinear, and if it is
+	linear, is it homogeneous, constant coefficient?  If it is an ODE\@, is it
+	autonomous?
+	\begin{tasks}(2)
+		\task $\displaystyle \sin(t) \frac{d^2 x}{dt^2} + \cos(t) x = t^2$
+		\task $\displaystyle \frac{\partial u}{\partial x} + 3 \frac{\partial u}{\partial y} = xy$
+		\task $\displaystyle y''+3y+5x=0, \quad x''+x-y=0$
+		\task $\displaystyle \frac{\partial^2 u}{\partial t^2} + u\frac{\partial^2 u}{\partial s^2} =
+		0$
+		\task $\displaystyle x''+tx^2=t$
+		\task $\displaystyle \frac{d^4 x}{dt^4} = 0$
+	\end{tasks}
 \end{exercise}
 \exsol{%
-a) 
-PDE\@, equation, second order, linear, nonhomogeneous, constant coefficient.\\
-b) 
-ODE\@, equation, first order, linear, nonhomogeneous, not constant coefficient, not autonomous.\\
-c) 
-ODE\@, equation, seventh order, linear, homogeneous, constant coefficient, autonomous.\\
-d) 
-ODE\@, equation, second order, linear, nonhomogeneous, constant coefficient, autonomous.\\
-e) 
-ODE\@, system, second order, nonlinear.\\
-f) 
-PDE\@, equation, second order, nonlinear.
+    
+   a) ODE, equation, second order, linear, non homogeneous, non constant coefficient, non autonomous. \\
+   b) PDE, Equation, first order, linear, non homogeneous, constant coefficient. \\
+    c) ODE, system, second order, linear, homogeneous, constant coefficient, autonomous. Note: independent variable is t here. \\
+    d) PDE, equation, second order, non linear. \\
+   e) ODE, equation, second order, non linear, non autonomous. \\
+    f) ODE, equation, fourth order, linear, homogeneous, constant coefficient, autonomous.\\
 }
 
 \begin{exercise}
-Write down the general \emph{zero}th order linear ordinary differential
-equation.  Write down the general solution.
+	If $\vec{u} = (u_1,u_2,u_3)$ is a vector, we have the divergence
+	$\nabla \cdot \vec{u} =
+	\frac{\partial u_1}{\partial x} +
+	\frac{\partial u_2}{\partial y} +
+	\frac{\partial u_3}{\partial z}$ and curl
+	$\nabla \times \vec{u} =
+	\Bigl(
+	\frac{\partial u_3}{\partial y} - \frac{\partial u_2}{\partial z} , ~
+	\frac{\partial u_1}{\partial z} - \frac{\partial u_3}{\partial x} , ~
+	\frac{\partial u_2}{\partial x} - \frac{\partial u_1}{\partial y} \Bigr)$.
+	Notice that curl of a vector is still a vector.  Write out Maxwell's
+	equations in terms of partial derivatives and classify the system.
 \end{exercise}
 \exsol{%
-equation: $a(x) y = b(x)$, solution: $y = \frac{b(x)}{a(x)}$.
+    \begin{align*}
+    \frac{\partial D_1}{\partial x}+\frac{\partial D_2}{\partial y}+\frac{\partial D_3}{\partial z}=\rho, &\quad \frac{\partial B_1}{\partial x}+\frac{\partial B_2}{\partial y}+\frac{\partial B_3}{\partial z}=0 
+    \\
+    \frac{\partial E_3}{\partial y}-\frac{\partial E_2}{\partial z}=-\frac{\partial B_1}{\partial t}, &\quad 
+    \frac{\partial H_3}{\partial y}-\frac{\partial H_2}{\partial z}=\frac{\partial D_1}{\partial t}+J_1  
+    \\
+    \frac{\partial E_1}{\partial z}-\frac{\partial E_3}{\partial x}=-\frac{\partial B_2}{\partial t}, &\quad 
+    \frac{\partial H_1}{\partial z}-\frac{\partial H_3}{\partial x}=\frac{\partial D_2}{\partial t}+J_2 
+    \\ 
+    \frac{\partial E_2}{\partial x}-\frac{\partial E_1}{\partial y}=-\frac{\partial B_3}{\partial t}, &\quad 
+    \frac{\partial H_2}{\partial x}-\frac{\partial H_1}{\partial y}=\frac{\partial D_3}{\partial t}+J_3 
+    \end{align*}
+    PDE, system, first order, linear, nonhomogeneous, constant coefficient, autonomous.
 }
 
 \begin{exercise}
-For which $k$ is $\frac{dx}{dt}+x^k = t^{k+2}$ linear.  Hint: there are two answers.
+	Suppose $F$ is a linear function, that is,
+	$F(x,y) = ax+by$ for constants $a$ and $b$.  What is the
+	classification of equations of the form $F(y',y) = 0$.
 \end{exercise}
 \exsol{%
-$k=0$ or $k=1$
+ODE, linear, homogeneous, constant coefficient, autonomous.
 }
 
+\begin{exercise}
+	Write down an explicit example of a third order, linear, nonconstant coefficient,
+	nonautonomous, nonhomogeneous system of two ODE such that every derivative
+	that could appear, does appear.
+\end{exercise}
+\exsol{%
+    An example would be
+$y'''+xy''+y'+y=3x^2$.
+}
+
+\begin{exercise}
+	Classify the following equations.  Are they ODE or PDE\@?  Is it an equation
+	or a system?  What is the order?  Is it linear or nonlinear, and if it is
+	linear, is it homogeneous, constant coefficient?  If it is an ODE\@, is it
+	autonomous?
+	\begin{tasks}(2)
+		\task $\displaystyle \frac{\partial^2 v}{\partial x^2} + 3 \frac{\partial^2
+			v}{\partial y^2} = \sin(x)$
+		\task $\displaystyle \frac{d x}{dt} + \cos(t) x = t^2+t+1$
+		\task $\displaystyle \frac{d^7 F}{dx^7} = 3F(x)$
+		\task $\displaystyle y''+8y'=1$
+		\task $\displaystyle x''+tyx'=0, \quad y''+txy = 0$
+		\task $\displaystyle \frac{\partial u}{\partial t} = \frac{\partial^2 u}{\partial s^2} + u^2$
+	\end{tasks}
+\end{exercise}
+\exsol{%
+	a) 
+	PDE\@, equation, second order, linear, nonhomogeneous, constant coefficient.\\
+	b) 
+	ODE\@, equation, first order, linear, nonhomogeneous, not constant coefficient, not autonomous.\\
+	c) 
+	ODE\@, equation, seventh order, linear, homogeneous, constant coefficient, autonomous.\\
+	d) 
+	ODE\@, equation, second order, linear, nonhomogeneous, constant coefficient, autonomous.\\
+	e) 
+	ODE\@, system, second order, nonlinear.\\
+	f) 
+	PDE\@, equation, second order, nonlinear.
+}
+
+\begin{exercise}
+	Write down the general \emph{zero}th order linear ordinary differential
+	equation.  Write down the general solution.
+\end{exercise}
+\exsol{%
+	equation: $a(x) y = b(x)$, solution: $y = \frac{b(x)}{a(x)}$.
+}
+
+\begin{exercise}
+	For which $k$ is $\frac{dx}{dt}+x^k = t^{k+2}$ linear.  Hint: there are two answers.
+\end{exercise}
+\exsol{%
+	$k=0$ or $k=1$
+}
