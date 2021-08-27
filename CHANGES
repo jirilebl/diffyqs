@@ -1,0 +1,4 @@
+<li>Fix erratum from Martin Irungu, a sign error in the "proof" of Theorem
+6.1.2 (the final answer is off by a sign).  In the process, implement Martin's
+suggestion to write the whole thing in therms of the positive $s-c$ rather than
+the negative $c-s$, which clearly leads to more typos.

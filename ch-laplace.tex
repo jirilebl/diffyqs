@@ -281,14 +281,14 @@ all $s > c$.
 
 The existence is not difficult to see.  Let $f(t)$ be of exponential order,
 that is $\lvert f(t) \rvert \leq M e^{ct}$ for all $t > 0$ (for simplicity $t_0 = 0$).
-Let $s > c$, or in other words $(c-s) < 0$.
+Let $s > c$, or in other words $(s-c) > 0$.
 By the comparison theorem from calculus, the improper integral defining
 $\mathcal{L} \bigl\{ f(t) \bigr\}$ exists if the following integral exists
 \begin{equation*}
 \int_0^\infty e^{-st} ( M e^{ct} ) \,dt
 =
-M \int_0^\infty e^{(c-s)t} \,dt = M \left[ \frac{e^{(c-s)t}}{c-s}
-\right]_{t=0}^\infty = \frac{M}{c-s} .
+M \int_0^\infty e^{-(s-c)t} \,dt = M \left[ \frac{e^{-(s-c)t}}{-(s-c)}
+\right]_{t=0}^\infty = \frac{M}{s-c} .
 \end{equation*}
 
 The transform also exists for some other functions
