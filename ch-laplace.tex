@@ -1059,6 +1059,28 @@ m x'' + c x' + k x = 0 , \quad x(0) = a, \quad x'(0) = b ,
 where $m > 0$, $c > 0$, $k > 0$, and
 $c^2 - 4km > 0$ (system is overdamped).
 \end{exercise}
+\exsolution{%
+Taking the Laplace transform
+\begin{align*}
+m\left(s^2X-sa-b\right)+c\left(sX-a\right)+kX=0
+\end{align*}
+Solving for $X$
+\begin{align*}
+X=\frac{mas+mb+ca}{ms^2+cs+k}=\frac{mas}{ms^2+cs+k}+\frac{mb+ca}{ms^2+cs+k}
+\end{align*}
+Completing the square and noting that $4km-c^2<0$ 
+\begin{align*}
+X=a\frac{s}{(s+\frac{c}{2m})^2-\frac{1}{4m^2}(c^2-4km)}+\frac{b+\frac{ca}{m}}{\frac{1}{2m}\sqrt{c^2-4km}}\frac{\overbrace{\frac{1}{2m}\sqrt{c^2-4km}}^{\omega}}{(s+\frac{c}{2m})^2-\frac{1}{4m^2}(c^2-4km)}
+\end{align*}
+Noting the shift $+\frac{c}{2m}$, we rewrite 
+\begin{align*}
+X=a\frac{s+\frac{c}{2m}}{(s+\frac{c}{2m})^2-\frac{1}{4m^2}(c^2-4km)}+\frac{b+\frac{ca}{2m}}{\frac{1}{2m}\sqrt{c^2-4km}}\frac{\frac{1}{2m}\sqrt{c^2-4km}}{(s+\frac{c}{2m})^2-\frac{1}{4m^2}(c^2-4km)}
+\end{align*}
+Now taking the inverse Laplace transform we get
+\begin{align*}
+x(t)=ae^{-\frac{c}{2m}t}\sinh\left(\frac{\sqrt{c^2-4km}}{2m}t\right)+\frac{2mb+ca}{\sqrt{c^2-4km}}e^{-\frac{c}{2m}t}\cosh\left(\frac{\sqrt{c^2-4km}}{2m}t\right)
+\end{align*}
+}
 
 \begin{exercise}
 Using the Laplace transform solve
@@ -1068,6 +1090,9 @@ m x'' + c x' + k x = 0 , \quad x(0) = a, \quad x'(0) = b ,
 where $m > 0$, $c > 0$, $k > 0$, and
 $c^2 - 4km < 0$ (system is underdamped).
 \end{exercise}
+\exsol{%
+$x(t)=ae^{-\frac{c}{2m}t}\sin\left(\frac{\sqrt{4km-c^2}}{2m}t\right)+\frac{2mb+ca}{\sqrt{4km-c^2}}e^{-\frac{c}{2m}t}\cos\left(\frac{\sqrt{4km-c^2}}{2m}t\right)$
+}
 
 \begin{exercise}
 Using the Laplace transform solve
@@ -1077,22 +1102,42 @@ m x'' + c x' + k x = 0 , \quad x(0) = a, \quad x'(0) = b ,
 where $m > 0$, $c > 0$, $k > 0$, and
 $c^2 = 4km$ (system is critically damped).
 \end{exercise}
+\exsol{%
+$x(t)=ae^{-\frac{c}{2m}t}+\left(b+\frac{ca}{2m}\right)e^{-\frac{c}{2m}t}t$
+}
 
 \begin{exercise}
 	Using the Heaviside function write down the piecewise function
 	that is 0 for $t < 0$, $t^2$ for $t$ in $[0,1]$ and $t$ for $t > 1$.
 \end{exercise}
+\exsol{%
+$f(t)=\left(u(t)-u(t-1)\right)t^2+u(t-1)t$
+}
 
 \begin{exercise}
 Solve $x'' + x = u(t-1)$ for initial conditions $x(0) = 0$ and $x'(0) = 0$.
 \end{exercise}
+\exsolution{%
+Taking the Laplace transform 
+\begin{align*}
+s^2X+X= &\frac{e^{-s}}{s} \\
+X=&\frac{e^{-s}}{(s^2+1)s} = e^{-s}\left(\frac{1}{s}-\frac{s}{s^2+1}\right)
+\end{align*}
+Taking the inverse Laplace transform
+\begin{align*}
+x(t)=\left(1-\cos(t-1)\right)u(t-1)
+\end{align*}
+}
 
 \begin{exercise}
-Solve $x''' + x = t^3 u(t-1)$ for initial conditions $x(0) = 1$ and $x'(0) =
+Solve $x''' + x = (t-1)^3 u(t-1)$ for initial conditions $x(0) = 1$ and $x'(0) =
 0$, $x''(0) = 0$.
 \end{exercise}
+\exsol{%
+$x(t)=u(t-1)\left[(t-1)^3+4e^{(t-1)/2}\cos\left(\frac{\sqrt{3}}{2}(t-1)\right)+6+2e^{-(t-1)}\right]+\frac{1}{3}e^{t/2}\cos(\frac{\sqrt{3}}{2}t)+\frac{1}{3}e^{-t}$
+}
 
-\begin{exercise}
+\begin{exercise}2qw3q
 	Solve $x''-x = (t^2-1) u(t-1)$ for initial conditions $x(0)=1$, $x'(0) = 2$
 	using the Laplace transform.
 \end{exercise}
@@ -1105,6 +1150,21 @@ Show the second shifting property:
 $\mathcal{L} \bigl\{ f(t-a) \, u(t-a) \bigr\}
 = e^{-as} \mathcal{L} \bigl\{ f(t) \bigr\}$.
 \end{exercise}
+\exsolution{%
+Using the definition
+\begin{align*}
+\mathcal{L} \bigl\{ f(t-a)u(t-a) \bigr\} =&\int_0^\infty e^{-st}f(t-a)u(t-a)dt \\
+=& \int_a^\infty e^{-st}f(t-a)dt 
+\end{align*}
+Defining $\tau\equiv t-a$ we get
+\begin{align*}
+\int_0^\infty e^{-as}e^{-s\tau}f(\tau)d\tau=e^{-as}\underbrace{\int_0^\infty e^{-s\tau}f(\tau)}_{F(s)}d\tau
+\end{align*}
+Therefore
+\begin{align*}
+\mathcal{L} \bigl\{ f(t-a)u(t-a) \bigr\} = e^{-as}\mathcal{L}\bigl\{ f(t) \bigr\}
+\end{align*}
+}
 
 \begin{exercise}
 Let us think of the mass-spring system with a rocket from
@@ -1122,6 +1182,27 @@ for which the rocket fires and the resulting oscillation
 has amplitude 0 (the mass is not moving)?
 \end{tasks}
 \end{exercise}
+\exsolution{%
+a) From the example
+\begin{align*}
+x(t)=(1-\cos(t-1))u(t-1)-(1-\cos(t-5))u(t-5)
+\end{align*}
+At $t>5$ 
+\begin{align*}
+x(t)=& \cos(t-5)-\cos(t-1) \\
+=& \underbrace{2\sin\left(\frac{5-1}{2} \right)}_{A}\sin\left( t-\frac{5+1}{2}\right)
+\end{align*}
+Where $|A|\approx 1.81$ is the amplitude. Defining $t_f$ as the time the rocket stops firing, and $t_0=t_f-1$ as the duration the rocket fires, we can generalize this result
+\begin{align*}
+x(t)=2\sin\left( \frac{t_0}{2}\right)\sin\left( t-\frac{t_0+2}{2} \right)
+\end{align*}
+So the amplitude is given by 
+\begin{align*}
+A(t_0)=2\lvert \sin(t_0/2)\rvert
+\end{align*}
+\\
+b) From $A(t_0)=2\lvert \sin(t_0/2)\rvert$ this is zero when $t_0=2n\pi$ for $n$ a positive integer. 
+}
 
 \begin{exercise}
 Define
@@ -1139,6 +1220,11 @@ f(t) =
 \task Solve $x''+x=f(t)$, $x(0)=0$, $x'(0) = 0$ using Laplace transform.
 \end{tasks}
 \end{exercise}
+\exsol{%
+b) $u(t-1)(t-1)^2+u(t-2)\left((3-t)-(t-1)^2\right)-u(t-3)(t-3)$
+\\
+c) $x(t)=u(t-1)\bigl[(t-1)^2-2+2\cos(t-1)\bigr]+u(t-2)\bigl[-t^2+t+4+3\sin(t-2)-2\cos(t-2)\bigr]-u(t-3)\bigl[(t-3)-\sin(t-3)\bigr]$
+}
 
 \begin{exercise}
 	Using the Heaviside function $u(t)$, write down the function
@@ -1171,6 +1257,16 @@ Find the transfer function for
 $m x'' + c x' + kx = f(t)$
 (assuming the initial conditions are zero).
 \end{exercise}
+\exsolution{%
+Taking the Laplace transform
+\begin{align*}
+ms^2X+csX+kX=F(s)
+\end{align*}
+The transfer function is 
+\begin{align*}
+H(s)=\frac{X}{F}=\frac{1}{ms^2+cs+k}
+\end{align*}
+}
 
 
 \begin{exercise}
@@ -1181,6 +1277,12 @@ $m x'' + c x' + kx = f(t)$
 	\end{equation*}
 	Hint: Differentiate under the integral sign.
 \end{exercise}
+\exsolution{%
+\begin{align*}
+F'(s)=&\frac{dF(s)}{ds}=\frac{d}{ds}\int_0^\infty f(t)e^{-st}dt=\int_0^\infty f(t)\frac{d}{ds}e^{-st}dt=\int_0^\infty \underbrace{\left[ -tf(t) \right]}_{\textrm{call this } g(t)}e^{-st}dt \\
+=& \int_0^\infty g(t) e^{-st} dt=\mathcal{L}\{ g(t)\}=\mathcal{L} \{ -tf(t)\}
+\end{align*}
+}
 
 \begin{exercise}
 	Find the Laplace transform of $f(t)=t\sin(3t)$
@@ -1513,11 +1615,20 @@ x(t) = \cosh \bigl( \sqrt{2} \, t \bigr) -
 Let $f(t) = t^2$ for $t \geq 0$, and $g(t) = u(t-1)$.  Compute
 $f * g$.
 \end{exercise}
+\exsolution{%
+\begin{align*}
+f*g =& \int_0^t \tau^2 u(t-\tau-1) d\tau	  \\
+=& \int_0^{t-1}\tau^2 d\tau  = \frac{1}{3}(t-1)^3
+\end{align*}
+}
 
 \begin{exercise}
 Let $f(t) = t$ for $t \geq 0$, and $g(t) = \sin t $ for $t \geq 0$.  Compute
 $f * g$.
 \end{exercise}
+\exsol{%
+$ t-\sin(t)$
+}
 
 \begin{exercise}
 	Let $f(t) = \cos t$ for $t \geq 0$, and $g(t) = e^{-t}$.  Compute
@@ -1536,6 +1647,23 @@ for an arbitrary function $f(t)$, where $m > 0$, $c > 0$, $k > 0$,
 and $c^2 - 4km > 0$ (the system is overdamped).
 Write the solution as a definite integral.
 \end{exercise}
+\exsolution{%
+Taking the Laplace transform
+\begin{align*}
+ms^2X+csX+kX=& F(s) \\
+X=& F(s)\underbrace{ \frac{1}{ms^2+cs+k}}_{G(s)} \\
+G =& \frac{1}{m}\frac{1}{(s+\frac{c}{2m})^2+\frac{k}{m}-\frac{c^2}{4m^2}}= \frac{1}{m}\frac{1}{(s+\frac{c}{2m})^2-\left(\frac{\sqrt{c^2-4km}}{2m}\right)^2}=\frac{1}{m\omega}\frac{\omega}{(s+\frac{c}{2m})^2-\omega^2}
+\end{align*}
+Where we defined $\omega\equiv \frac{\sqrt{c^2-4km}}{2m}>0$.  We can now find $g(t)$ using the shifting property
+\begin{align*}
+g(t) = \frac{1}{m\omega}e^{-\frac{c}{2m}t}\sinh(\omega t)
+\end{align*}
+And finally using convolution 
+\begin{align*}
+x(t)=\int_0^t f(\tau) \frac{1}{m\omega}e^{-\frac{c}{2m}(t-\tau)}\sinh(\omega (t-\tau))d\tau
+\end{align*}
+}
+
 
 \begin{exercise}
 Find the solution to
@@ -1546,6 +1674,9 @@ for an arbitrary function $f(t)$, where $m > 0$, $c > 0$, $k > 0$,
 and $c^2 - 4km < 0$ (the system is underdamped).
 Write the solution as a definite integral.
 \end{exercise}
+\exsol{%
+$x(t)=\int_0^t f(\tau) \frac{1}{m\omega}e^{-\frac{c}{2m}(t-\tau)}\sin(\omega (t-\tau))d\tau$
+}
 
 \begin{exercise}
 Find the solution to
@@ -1556,6 +1687,9 @@ for an arbitrary function $f(t)$, where $m > 0$, $c > 0$, $k > 0$,
 and $c^2 = 4km$ (the system is critically damped).
 Write the solution as a definite integral.
 \end{exercise}
+\exsol{%
+$x(t)=\int_0^t f(\tau) \frac{1}{m}e^{-\frac{c}{2m}(t-\tau)}d\tau$
+}
 
 \begin{exercise}
 	Solve $x''+x = \sin t$, $x(0) = 0$, $x'(0)=0$ using convolution.
@@ -1577,7 +1711,7 @@ Write the solution as a definite integral.
 \end{exercise}
 \exsolution{Using the property of derivatives of the transform and the Convolution property, we write
 	\[\mathcal{L}\left[t\int_0^t \cos(t-\tau) sin(\tau) ~ d\tau\right]=-\frac{d}{ds}\mathcal{L}\left[\int_0^t \cos(t-\tau) sin(\tau) ~ d\tau\right]=-\frac{d}{ds}\left[\mathcal{L}(\cos t)\cdot\mathcal{L}(\sin t)\right]\]
-	\[\hspace*{5in}=-\frac{d}{ds}\left[\frac{s}{(s^{2}+1)}\right]=\frac{3 s^2-1}{\left(s^2+1\right)^3}\]
+	\[=-\frac{d}{ds}\left[\frac{s}{(s^{2}+1)}\right]=\frac{3 s^2-1}{\left(s^2+1\right)^3}\]
 }
 
 \begin{exercise}
@@ -1593,6 +1727,19 @@ Write the solution as a definite integral.
 	definite integral.  Hint: Do not try to compute the
 	Laplace transform of $e^{-t^2}$.
 \end{exercise}
+\exsolution{%
+Taking the Laplace transform of the equation
+\begin{align*}
+s^2X-2X=&L\left\{ e^{-t^2} \right\}=F(s) \\
+X=& F(s) \underbrace{\frac{1}{s^2-2}}_{G(s)} \\
+G(s) =& \frac{1}{\sqrt{2}}\frac{\sqrt{2}}{s^2-(\sqrt{2})^2} \rightarrow \\
+g(t) =& \frac{1}{\sqrt{2}}\sinh(\sqrt{2}t)
+\end{align*}
+So using the convolution property 
+\begin{align*}
+x(t)=\int_0^t e^{-\tau^2}\frac{1}{\sqrt{2}}\sinh(\sqrt{2}(t-\tau))d\tau
+\end{align*}
+}
 
 \begin{exercise}
 Solve
@@ -1600,6 +1747,16 @@ Solve
 x(t) =  e^{-t} + \int_0^t \cos(t-\tau) x(\tau) ~ d\tau .
 \end{equation*}
 \end{exercise}
+\exsolution{%
+Taking the Laplace transform of the equation and solving for $X$
+\begin{align*}
+X=\frac{1}{s+1}\frac{s^2+1}{s^2-s+1}
+\end{align*}
+Splitting the fraction and completing the square, this gives
+\begin{align*}
+x(t)=\frac{1}{\sqrt{3}}e^{t/2}\sin\left( \frac{\sqrt{3}}{2}t\right) + \frac{1}{3}e^{t/2}\cos\left( \frac{\sqrt{3}}{2}t\right) +\frac{2}{3}e^{-t}
+\end{align*}
+}
 
 \begin{exercise}
 Solve
@@ -1607,6 +1764,9 @@ Solve
 x(t) =  \cos t + \int_0^t \cos(t-\tau) x(\tau) ~ d\tau .
 \end{equation*}
 \end{exercise}
+\exsol{%
+$x(t)=\frac{1}{\sqrt{3}}e^{t/2}\sin\left( \frac{\sqrt{3}}{2}t\right)+e^{t/2}\cos\left( \frac{\sqrt{3}}{2}t\right)$
+}
 
 \begin{exercise}
 Compute ${\mathcal{L}}^{-1} \left\{ \frac{s}{{(s^2+4)}^2} \right\}$ using
@@ -2061,6 +2221,37 @@ y(x) = \frac{-{(x-1)}^3}{6} u(x-1) - \frac{x}{4} + \frac{x^3}{12} .
 \end{example}
 
 \subsection{Exercises}
+
+\begin{exercise}
+	Compute
+	${\mathcal{L}}^{-1} \left\{ \frac{s^2}{s^2+1} \right\}$.
+\end{exercise}
+\exsolution{Re-writing the given expression as:
+	\begin{equation}\frac{s^{2}}{s^{2}+1}=\frac{s^{2}+1-1}{s^{2}+1}=1-\frac{1}{s^{2}+1}\nonumber\end{equation}
+	Applying the inverse transform, we can get
+	\begin{equation}{\mathcal{L}}^{-1} \left\{ \frac{s^2}{s^2+1} \right\}=\delta(t) - \sin(t)\nonumber\end{equation}
+}
+%1 - 1/(s^2+1)
+
+
+\begin{exercise}
+	Compute
+	${\mathcal{L}}^{-1} \left\{ \frac{3 s^2 e^{-s} + 2}{s^2} \right\}$.
+\end{exercise}
+\exsol{%
+	$3 \delta(t-1) + 2 t$
+}
+
+
+\begin{exercise}
+Compute
+${\mathcal{L}}^{-1} \left\{ \frac{s^2+s+1}{s^2} \right\}$.
+\end{exercise}
+\exsol{%
+$\delta(t)+1+t $
+}
+
+
 \begin{exercise}
 	Solve (find the impulse response)
 	$x' + a x = \delta(t)$, $x(0) = 0$.
@@ -2074,19 +2265,41 @@ Applying the inverse Laplace transform, we get
 }
 %$sX+aX = 1$
 %$X = \frac{1}{s+a}$
+
+
 \begin{exercise}
 Solve (find the impulse response)
 $x'' + x' + x = \delta(t)$, $x(0) = 0$, $x'(0)=0$.
 \end{exercise}
+\exsol{%
+$x(t)=\frac{2}{\sqrt{3}}e^{-t/2}\sin \left (\frac{\sqrt{3}}{2}t\right)$
+}
+
+
 \begin{exercise}
 Solve (find the impulse response)
 $x'' + 2 x' + x = \delta(t)$, $x(0) = 0$, $x'(0)=0$.
 \end{exercise}
+\exsol{%
+$x(t)=te^{-t}$
+}
+
+
 \begin{exercise}
 A pulse can come later and can be bigger.
 Solve 
 $x'' + 4 x = 4\delta(t-1)$, $x(0) = 0$, $x'(0)=0$.
 \end{exercise}
+\exsolution{%
+Taking the Laplace transform 
+\begin{align*}
+s^2X+4X=& 4e^{-s} \\
+X =& 2e^{-s}\frac{2}{s^2+2^2} \\
+x(t) =& 2u(t-1) \sin\left( 2(t-1)\right)
+\end{align*}
+}
+
+
 \begin{exercise}
 	Solve (find the impulse response)
 	$x'' = \delta(t)$, $x(0) = 0$, $x'(0)=0$.
@@ -2094,9 +2307,30 @@ $x'' + 4 x = 4\delta(t-1)$, $x(0) = 0$, $x'(0)=0$.
 \exsol{%
 	$x(t) = t$
 }
+
+
 \begin{exercise}[challenging]
 	Solve \exampleref{lt:examplebeam} via integrating 4 times in the $x$ variable.
 \end{exercise}
+\exsolution{%
+Integrating twice
+\begin{align*}
+y^{(3)}(x)+C_1=& -u(x-1) \\
+y''(x)+C_1x+C_2=&-u(x-1)(x-1)
+\end{align*}
+Applying initial conditions we find that $C_1=0$ and $C_2=-\frac{1}{2}$. Integrating twice again
+\begin{align*}
+y'(x)-\frac{x^2}{4}+C_3=& -\frac{1}{2} u(x-1)(x-1)^2 \\
+y(x)-\frac{x^3}{12}+C_3+C_4=& -u(x-1) \frac{(x-1)^3}{6}
+\end{align*}
+Applying the other initial conditions we find that $C_4=0$ and $C_3=\frac{1}{4}$. Solving for $y(x)$
+\begin{align*}
+y(x)=\frac{x^3}{12}-\frac{x}{4}-u(x-1)\frac{(x-1)^3}{3}
+\end{align*}
+}
+
+
+
 \begin{exercise}
 	Suppose that $L x = \delta(t)$, $x(0) = 0$, $x'(0) = 0$, has the solution
 	$x(t) = \cos(t)$ for $t > 0$.  Find (in closed form) the solution to
@@ -2105,32 +2339,19 @@ $x'' + 4 x = 4\delta(t-1)$, $x(0) = 0$, $x'(0)=0$.
 \exsolution{Taking the Laplace transform of $L x = \delta(t)$, we can write that $F(s)X(s)=1$ or $X(s)=\frac{1}{F(s)}$. We are given that when we take the inverse Laplace, we get $x(t)=\cos t$ implying that $\mathcal{L}^{-1}\left[1/F(s)\right]=\cos t$. Now, taking the Laplace transform of $Lx=\sin t$. This results in $X(s)=\frac{1}{F(s)}\cdot\frac{1}{s^{2}+1}$. Using the inverse Laplace, we get
 	$x(t) = \cos(t)*\sin(t) = \frac{1}{2} t \sin(t)$
 }
+
+
 \begin{exercise}
 	Suppose that $L x = \delta(t)$, $x(0) = 0$, $x'(0) = 0$, has the solution
 	$x = e^{-t}$ for $t > 0$.  Find the solution to
 	$Lx = t^2$, $x(0) = 0$, $x'(0) = 0$ for $t > 0$.
 \end{exercise}
-\begin{exercise}
-	Compute
-	${\mathcal{L}}^{-1} \left\{ \frac{s^2}{s^2+1} \right\}$.
-\end{exercise}
-\exsolution{Re-writing the given expression as:
-	\begin{equation}\frac{s^{2}}{s^{2}+1}=\frac{s^{2}+1-1}{s^{2}+1}=1-\frac{1}{s^{2}+1}\nonumber\end{equation}
-	Applying the inverse transform, we can get
-	\begin{equation}{\mathcal{L}}^{-1} \left\{ \frac{s^2}{s^2+1} \right\}=\delta(t) - \sin(t)\nonumber\end{equation}
-}
-%1 - 1/(s^2+1)
-\begin{exercise}
-	Compute
-	${\mathcal{L}}^{-1} \left\{ \frac{3 s^2 e^{-s} + 2}{s^2} \right\}$.
-\end{exercise}
 \exsol{%
-	$3 \delta(t-1) + 2 t$
+$x(t)=t^2-2t-2e^{-t}+2$
 }
-\begin{exercise}
-Compute
-${\mathcal{L}}^{-1} \left\{ \frac{s^2+s+1}{s^2} \right\}$.
-\end{exercise}
+
+
+
 \begin{exercise}
 	Suppose that $f(t)$ and $g(t)$ are differentiable functions
 	and suppose that $f(t) = g(t) = 0$ for all $t \leq 0$.  Show that
@@ -2138,12 +2359,55 @@ ${\mathcal{L}}^{-1} \left\{ \frac{s^2+s+1}{s^2} \right\}$.
 	(f * g)'(t) = (f' * g)(t) = (f * g')(t) .
 	\end{equation*}
 \end{exercise}
+\exsolution{%
+Consider 
+\begin{align*}
+(f*g)'(t)=\frac{d}{dt}\int_0^t f(\tau)g(t-\tau)d\tau = \frac{d}{dt} h(t)
+\end{align*}
+Where $h(t)\equiv (f*g)(t)$. Taking the Laplace transform 
+\begin{align*}
+\mathcal{L}\{(f*g)'(t)\}=sH(s)-h(0)=sF(s)G(s)
+\end{align*}
+Now consider
+\begin{align*}
+\mathcal{L}\{ (f'*g)(t) \}=\mathcal{L}\{ f'\} \mathcal{L} \{ g\}=sF(s)G(s)
+\end{align*}
+And finally 
+\begin{align*}
+\mathcal{L}\{ (f*g')(t) \}=\mathcal{L}\{ f\} \mathcal{L} \{ g'\}=sF(s)G(s)
+\end{align*}
+By the uniqueness of the Laplace transform then 
+\begin{align*}
+(f*g)'(t)= (f'*g)(t) = (f*g')(t)
+\end{align*}
+}
+
+
 \begin{exercise}
 Suppose we have a beam of length $1$ simply supported at the ends and
 suppose that force $F=1$ is applied at $x=\frac{3}{4}$ in the downward
 direction.  Suppose that $EI=1$ for simplicity.  Find the beam deflection
 $y(x)$.
 \end{exercise}
+\exsolution{%
+The deflection equation is 
+\begin{align*}
+\frac{d^4y}{d^4x}=-\delta \left( x-\frac{3}{4}\right)
+\end{align*}
+With the boundary conditions $y(0)=y(1)=0$ and $y''(0)=y''(1)=0$.
+Taking the Laplace transform and solving for $Y$
+\begin{align*}
+Y=& -\frac{e^{-3s/4}}{s^3}+\frac{C_1}{s^2}+\frac{C_2}{s^4} \\
+y(x) =& -\frac{(x-3/4)^3}{6}u(x-3/4)+C_1x+C_2\frac{x^3}{6}
+\end{align*}
+Where the boundary conditions $y(0)=0$ and $y''(0)=0$ were applied, and we defined $y'(0)=C_1$  and $y'''(0)=C_2$
+Applying the other boundary conditions we find that $C_1=-\frac{5}{128}$ and $C_2=\frac{1}{4}$. Therefore
+\begin{align*}
+y(x)=\frac{(x-3/4)^3}{6}u(x-3/4)-\frac{5}{128}x+\frac{1}{24}x^3
+\end{align*}
+}
+
+
 %\noindent\textbf{Transform of Periodic Functions:} Given that we have a function $f(t)$ which is piecewise continuous on $[0,\infty)]$, periodic with period $T$ ($f(t+T)=f(t)$), and is of exponential order as well. Then, for $s>0$, we can show that:
 %\begin{equation}
 %\mathcal{L}[f(t)]=\frac{1}{1-e^{-sT}}\int_{0}^{T}e^{-st}f(t)dt.

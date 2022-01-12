@@ -1296,6 +1296,7 @@ while(1)
 				print $out "  <caption>$caption</caption>\n";
 
 				if ($fig =~ m/^[ \n]*\\diffyincludegraphics\{[^}]*?\}\{([^}]*?)\}\{([^}]*?)\}[ \n]*$/) {
+					print "\n\n\nTHISONE\n\nFIG=>$fig<\n\n";		
 					my $thesize = $1;
 					my $thefile = "figures/$2";
 					$thesize =~ s/width=//g;

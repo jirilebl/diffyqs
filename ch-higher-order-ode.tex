@@ -110,11 +110,8 @@ exponential.  Let us review some of their properties:
 \end{align*}
 
 
-\begin{exercise}
-Derive these properties using the definitions of $\sinh$
+Exercise: Derive these properties using the definitions of $\sinh$
 and $\cosh$ in terms of exponentials.
-\end{exercise}
-
 
 Linear equations have nice and simple
 answers to the existence and uniqueness question.
@@ -261,10 +258,52 @@ homogeneous equations.
 \begin{exercise}
 Show that $y=e^x$ and $y=e^{2x}$ are linearly independent.
 \end{exercise}
+\exsolution{%
+Let $y_1=e^x$ and $y_2=e^2x$. If they're linearly \emph{independent} then $y_2=Ay_1$ where $A$ cannot be a constant independent of $x$. 
+\[
+A=\frac{y_2}{y_1}=e^x
+\]
+$A$ clearly depends on $x$ so the two solutions are linearly \emph{independent}. 
+}
+
+\begin{exercise}
+Are $\sin(x)$ and $e^x$ linearly independent?  Justify.
+\end{exercise}
+\exsol{%
+Yes.  To justify try to find a constant $A$ such that $\sin(x) = A e^x$
+for all $x$.
+}
+
+\begin{exercise}
+Are $e^x$ and $e^{x+2}$ linearly independent?  Justify.
+\end{exercise}
+\exsol{%
+No.  $e^{x+2} = e^2 e^x$.
+}
 
 \begin{exercise}
 Take $y'' + 5 y = 10 x + 5$.  Find (guess!) a solution.
 \end{exercise}
+\exsol{%
+$y=2x+1$
+}
+
+\begin{exercise}
+Guess a solution to $y'' + y' + y= 5$.
+\end{exercise}
+\exsol{%
+$y=5$
+}
+
+\begin{exercise}
+Write down an equation (guess) for which we have the solutions
+$e^x$ and $e^{2x}$.  Hint: Try an equation of the form
+$y''+Ay'+By = 0$ for constants $A$ and $B$,
+plug in both $e^x$ and $e^{2x}$ and solve for $A$ and $B$.
+\end{exercise}
+\exsol{%
+$y''-3y'+2y = 0$
+}
 
 \begin{exercise}
 Prove the superposition principle for nonhomogeneous equations.  Suppose that
@@ -272,12 +311,47 @@ $y_1$ is a solution to $L y_1 = f(x)$ and $y_2$ is a solution to
 $L y_2 = g(x)$ (same linear operator $L$).  Show that $y = y_1+y_2$ solves
 $Ly = f(x) + g(x)$.
 \end{exercise}
+\exsolution{%
+From $Ly=f(x)+g(x)$
+\[
+Ly_1+Ly_2=f(x)+g(x)
+\]
+\begin{equation*}
+\underbrace{(Ly_1-f(x))}_{=0,\ \textrm{from}\ Ly_1=f(x)}+\underbrace{(Ly_2-g(x))}_{=0\ \textrm{from}\ Ly_2=g(x)}=0
+\end{equation*}
+}
 
 \begin{exercise}
 For the equation $x^2 y'' - x y' = 0$, find two solutions, show that they
 are linearly independent and find the general solution.
 Hint: Try $y = x^r$.
 \end{exercise}
+\exsolution{%
+\[
+y=x^r,\quad y'=rx^{r-1},\quad y''=r(r-1)x^{r-2}
+\]
+Plugging into the ODE
+\[
+r(r-1)x^r-rx^r=0\quad \rightarrow r^2-2r=0
+\]
+So $r=0$ or $2$. The two solutions are $y_1=1$ and $y_2=x^2$. Checking for linear dependence
+\[
+A=\frac{y_2}{y_1}=x^2 \neq \textrm{const}
+\] 
+So the solutions are linearly independent. The general solution is
+\[
+y=c_1+c_2x^2
+\]
+}
+
+\begin{exercise}
+Find the general solution to
+$x y'' + y' = 0$.  Hint: It is a first order ODE in $y'$.
+\end{exercise}
+\exsol{%
+$y=C_1 \ln(x) + C_2$
+}
+
 
 \pagebreak[2]
 Equations of the form $a x^2 y'' + b x y' + c y = 0$ are called
@@ -296,6 +370,15 @@ $r$.
 \task What happens when ${(b-a)}^2-4ac = 0$ or ${(b-a)}^2-4ac < 0$?
 \end{tasks}
 \end{exercise}
+\exsol{%
+(a) $y=c_1x^{r_1}+c_2x^{r_2}$ where
+\begin{equation*}
+r_1=\frac{-(b-1)+\sqrt{(b-a)^2-4ac}}{2a},\quad r_2=\frac{-(b-1)-\sqrt{(b-a)^2-4ac}}{2a}
+\end{equation*}
+Where $r_1$ and $r_2$ are real and distinct, since $(b-a)^2-4ac >0$ under the square root.  \\
+(b) If equal to 0, then $r_1=r_2=r$. We would need to find another linearly independent solution since the two terms in the solution in part (a) become linearly dependent now. \\
+If $<0$ then $r_1$ and $r_2$ become complex numbers (this case is dealt with in the following section). \\
+}
 
 We will revisit the case when ${(b-a)}^2-4ac < 0$ later.
 
@@ -305,7 +388,9 @@ Suppose ${(b-a)}^2-4ac = 0$.  Find a formula for the general solution
 of $a x^2 y'' + b x y' + c y = 0$.  Hint: Try $y=x^r \ln x$ for the second
 solution.
 \end{exercise}
-
+\exsol{%
+$y=c_1x^{(a-b)/2a}+c_2x^{(a-b)/2a}\ln x$
+}
 
 \begin{exercise}[reduction of order] \label{exercise:reductionoforder}
 Suppose $y_1$ is a solution to $y'' + p(x) y' + q(x) y = 0$.
@@ -316,6 +401,22 @@ y_2(x) = y_1(x) \int \frac{e^{-\int p(x)\,dx}}{{\bigl(y_1(x)\bigr)}^2} \,dx
 \end{equation*}
 is also a solution.
 \end{exercise}
+\exsolution{%
+\begin{equation*}
+y_2'=\frac{e^{-\int p(x) dx}}{y_1}+y_1'\int\frac{e^{-\int p(x)dx}}{y_1^2}dx
+\end{equation*}
+\begin{equation*}
+y''_2=y_1''\int\frac{e^{-\int p(x)dx}}{y_1^2}dx-p(x)\frac{e^{-\int p(x)dx}}{y_1}
+\end{equation*}
+Plugging into the ODE and simplifying
+\begin{equation*}
+y_1''\int\frac{e^{-\int p(x)dx}}{y_1^2}dx+p(x)y_1'\int\frac{e^{-\int p(x)dx}}{y_1^2}dx+q(x)y_1\int\frac{e^{-\int p(x)dx}}{y_1^2}dx=0
+\end{equation*}
+\begin{equation*}
+\int\frac{e^{-\int p(x)dx}}{y_1^2}dx\underbrace{\left(y_1''+p(x)y_1'+q(x)y_1\right)}_{=\ 0\ \textrm{since}\ y_1\  \textrm{is a solution}}=0
+\end{equation*}
+Therefore $y_2=y_1\int\frac{e^{-\int p(x)dx}}{y_1^2}dx$ is also a solution.
+}
 
 \begin{exercise}[\myindex{Chebyshev's equation of order 1}]
 Take 
@@ -326,6 +427,31 @@ $(1-x^2)y''-xy' + y = 0$.
 \task Write down the general solution.
 \end{tasks}
 \end{exercise}
+\exsolution{%
+(a)
+\[
+y=x,\quad y'=1,\quad y''=0
+\]
+Plugging into the ODE gives
+\[
+0-x+x=0
+\]
+\\
+(b)
+The second solution can either be derived from $y_2=y_1v(x)$ and plugging into the ODE to find the solution for $v(x)$, or by applying the result of that directly using the reduction of order formula
+\begin{equation*}
+y_2=y_1\int\frac{e^{-\int p(x)dx}}{y_1^2}dx=x\int\frac{e^{-\int\frac{-x}{1-x^2}dx}}{x^2}dx
+\end{equation*}
+\begin{equation*}
+y_2=x\int \frac{\lvert 1-x^2 \rvert^{-1/2}}{x^2}dx=\begin{cases}
+& -\sqrt{1-x^2},\quad -1\leq x \leq 1 \\
+& \sqrt{x^2-1},\quad \textrm{otherwise}
+\end{cases}
+\end{equation*}
+\\
+(c)
+$y=c_1x+c_2\sqrt{\lvert 1-x^2\rvert}$ where the sign difference is absorbed in the constant. 
+}
 
 \begin{exercise}[\myindex{Hermite's equation of order 2}]
 Take 
@@ -337,48 +463,17 @@ $y''-2xy' + 4y = 0$.
 \task Write down the general solution.
 \end{tasks}
 \end{exercise}
-
-\setcounter{exercise}{100}
-
-\begin{exercise}
-Are $\sin(x)$ and $e^x$ linearly independent?  Justify.
-\end{exercise}
 \exsol{%
-Yes.  To justify try to find a constant $A$ such that $\sin(x) = A e^x$
-for all $x$.
+(b) $y_2=(1-2x^2)\int_0^x\frac{e^{t^2}}{(1-2t^2)^2}dt$ \\
+(c) $y=c_1(1-2x^2)+c_2(1-2x^2)\int_0^x\frac{e^{t^2}}{(1-2t^2)^2}dt$
 }
 
-\begin{exercise}
-Are $e^x$ and $e^{x+2}$ linearly independent?  Justify.
-\end{exercise}
-\exsol{%
-No.  $e^{x+2} = e^2 e^x$.
-}
 
-\begin{exercise}
-Guess a solution to $y'' + y' + y= 5$.
-\end{exercise}
-\exsol{%
-$y=5$
-}
 
-\begin{exercise}
-Find the general solution to
-$x y'' + y' = 0$.  Hint: It is a first order ODE in $y'$.
-\end{exercise}
-\exsol{%
-$y=C_1 \ln(x) + C_2$
-}
 
-\begin{exercise}
-Write down an equation (guess) for which we have the solutions
-$e^x$ and $e^{2x}$.  Hint: Try an equation of the form
-$y''+Ay'+By = 0$ for constants $A$ and $B$,
-plug in both $e^x$ and $e^{2x}$ and solve for $A$ and $B$.
-\end{exercise}
-\exsol{%
-$y''-3y'+2y = 0$
-}
+
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -426,9 +521,7 @@ r^2 -6 r +8 & = 0 \qquad \text{(divide through by } e^{rx} \text{)},\\
 Hence, if $r=2$ or $r=4$, then $e^{rx}$ is a solution.  So let $y_1 = e^{2x}$
 and $y_2 = e^{4x}$.
 
-\begin{exercise}
-Check that $y_1$ and $y_2$ are solutions.
-\end{exercise}
+Verify: Check that $y_1$ and $y_2$ are solutions.
 
 The functions $e^{2x}$ and $e^{4x}$ are linearly independent.  If they
 were not linearly independent, we could write $e^{4x} = C e^{2x}$ for
@@ -539,9 +632,8 @@ double root $r_1 = r_2 = 4$.  The general solution is, therefore,
 y = (C_1 + C_2 x)\, e^{4 x} = C_1 e^{4x} + C_2 x e^{4x} .
 \end{equation*}
 
-\begin{exercise}
-Check that $e^{4x}$ and $x e^{4x}$ are linearly independent.
-\end{exercise}
+Verify: Check that $e^{4x}$ and $x e^{4x}$ are linearly independent.
+
 
 That $e^{4x}$ solves the equation is clear.  If $x e^{4x}$ solves the
 equation, then we know we are done.  Let us compute
@@ -609,8 +701,7 @@ $i$ and $-i$ are the two roots of $r^2 + 1 = 0$.
 Engineers often use the letter $j$ instead of $i$ for the square
 root of $-1$.  We use the mathematicians' convention and use $i$.
 
-\begin{exercise}
-Make sure you understand (that you can justify)
+Verify: make sure you understand (that you can justify)
 the following identities:
 \begin{tasks}(2)
 \task $i^2 = -1$, $i^3 = -i$, $i^4 = 1$,
@@ -620,7 +711,7 @@ the following identities:
 \task $\frac{1}{3-2i} = \frac{1}{3-2i} \frac{3+2i}{3+2i} = \frac{3+2i}{13}
 = \frac{3}{13}+\frac{2}{13}i$.
 \end{tasks}
-\end{exercise}
+
 
 \pagebreak[2]
 We also define the exponential $e^{a+ib}$ of a complex number.  We do
@@ -645,17 +736,15 @@ e^{- i \theta} = \cos \theta - i \sin \theta .
 
 In other words, $e^{a+ib} = e^a \bigl( \cos(b) + i \sin(b) \bigr) = e^a \cos(b) + i e^a \sin(b)$.
 
-\begin{exercise}
-Using Euler's formula, check the identities:
+Verify: using Euler's formula, check the identities:
 \begin{equation*}
 \cos \theta = \frac{e^{i \theta} + e^{-i \theta}}{2}
 \qquad \text{and} \qquad
 \sin \theta = \frac{e^{i \theta} - e^{-i \theta}}{2i}.
 \end{equation*}
-\end{exercise}
 
-\begin{exercise}
-Double angle identities:
+
+Verify: Double angle identities:
 Start with $e^{i(2\theta)} = {\bigl(e^{i \theta} \bigr)}^2$.  Use Euler on
 each side and deduce:
 \begin{equation*}
@@ -663,7 +752,7 @@ each side and deduce:
 \qquad \text{and} \qquad
 \sin (2\theta) = 2 \sin \theta \cos \theta .
 \end{equation*}
-\end{exercise}
+
 
 For a complex number $a+ib$ we call
 $a$ the \emph{\myindex{real part}} and $b$ the \emph{\myindex{imaginary part}} of the number.
@@ -775,58 +864,23 @@ y = 5 e^{3x} \sin (2x) .
 \begin{exercise}
 Find the general solution of $2y'' + 2y' -4 y = 0$.
 \end{exercise}
+\exsolution{%
+Writing the characteristic equation
+\[
+2r^2+2r-4=0
+\]
+Solving, we get $r_1=1$, $r_2=-2$. The general solution is
+\[
+y=C_1e^x+C_2e^{-2x}
+\]
+}
 
 \begin{exercise}
 Find the general solution of $y'' + 9y' - 10 y = 0$.
 \end{exercise}
-
-\begin{exercise}
-Solve $y'' - 8y' + 16 y = 0$ for $y(0) = 2$, $y'(0) = 0$.
-\end{exercise}
-
-\begin{exercise}
-Solve $y'' + 9y' = 0$ for $y(0) = 1$, $y'(0) = 1$.
-\end{exercise}
-
-\begin{exercise}
-Find the general solution of $2y'' + 50y = 0$.
-\end{exercise}
-
-\begin{exercise}
-Find the general solution of $y'' + 6 y' + 13 y = 0$.
-\end{exercise}
-
-\begin{exercise}
-Find the general solution of $y'' = 0$ using the methods of this section.
-\end{exercise}
-
-\begin{exercise}
-The method of this section applies to equations of other orders than two.
-We will see
-higher orders later.  Try to solve the first order equation
-$2y' + 3y = 0$ using the methods of this section.
-\end{exercise}
-
-\begin{exercise}
-Let us revisit the Cauchy--Euler equations\index{Cauchy--Euler equation} of
-\exercisevref{sol:eulerex}.  Suppose now
-that ${(b-a)}^2-4ac < 0$.  Find a formula for the general solution
-of $a x^2 y'' + b x y' + c y = 0$.  Hint: Note that $x^r = e^{r \ln x}$.
-\end{exercise}
-
-\begin{exercise}
-Find the solution to
-$y''-(2\alpha) y' + \alpha^2 y=0$, $y(0) = a$, $y'(0)=b$,
-where $\alpha$, $a$, and $b$ are real numbers.
-\end{exercise}
-
-\begin{exercise}
-Construct an equation such that $y = C_1 e^{-2x} \cos(3x) + C_2 e^{-2x}
-\sin(3x)$ is the general
-solution.
-\end{exercise}
-
-\setcounter{exercise}{100}
+\exsol{%
+$y=C_1e^{10x}+C_2e^{-x}$
+}
 
 \begin{exercise}
 Find the general solution to
@@ -848,6 +902,70 @@ $y =
 C_1 e^{3x}
 +
 C_2 x e^{3x}$
+}
+
+\begin{exercise}
+Solve $y'' - 8y' + 16 y = 0$ for $y(0) = 2$, $y'(0) = 0$.
+\end{exercise}
+\exsolution{%
+The characteristic equation is
+\[
+r^2-8r+16=0
+\]
+Solving, we find $r_1=r_2=4$. So the general solutions is
+\[
+y=C_1e^{4x}+C_2xe^{4x}
+\]
+Applying the initial conditions
+\[
+y(0)=C_1=2
+\]
+\[
+y'(0)=8e^{4x}+4C_2xe^{4x}+C_2e^{4x}\quad \rightarrow y'(0)=8+C_2=0\quad \rightarrow C_2=-8
+\]
+Therefore the solution is
+\[
+y=2e^{4x}-8xe^{4x}
+\]
+}
+
+\begin{exercise}
+Solve $y'' + 9y' = 0$ for $y(0) = 1$, $y'(0) = 1$.
+\end{exercise}
+\exsol{%
+$y=\frac{1}{9}\left(10-e^{-9x}\right)$
+}
+
+\begin{exercise}
+Find the general solution of $2y'' + 50y = 0$.
+\end{exercise}
+\exsolution{%
+The characteristic equation is 
+\[
+r^2+25=0\quad \rightarrow r_1,r_2=\pm i5
+\]
+Here $\alpha=0$ and $\beta=5$. Therefore the general solution is
+\[
+y=C_1\cos (5x)+C_2\sin(5x)
+\]
+}
+
+\begin{exercise}
+Find the general solution of $y'' + 6 y' + 13 y = 0$.
+\end{exercise}
+\exsolution{%
+The characteristic equation is 
+\[
+r^2+6r+13=0 
+\]
+Using the quadratic formula
+\begin{equation*}
+r_1,r_2= -3\pm \frac{\sqrt{36-49}}{2}=\underbrace{-3}_{\alpha}\pm \underbrace{i\frac{\sqrt{13}}{2}}_{\beta}
+\end{equation*}
+Therefore the general solution is
+\begin{equation*}
+y=C_1e^{-3x}\cos(\frac{\sqrt{13}}{2}x)+C_2e^{-3x}\sin(\frac{\sqrt{13}}{2}x)
+\end{equation*}
 }
 
 \begin{exercise}
@@ -880,6 +998,60 @@ $z(t) =
 }
 
 \begin{exercise}
+Find the general solution of $y'' = 0$ using the methods of this section.
+\end{exercise}
+\exsol{%
+$y=C_1+xC_2$
+}
+
+\begin{exercise}
+The method of this section applies to equations of other orders than two.
+We will see
+higher orders later.  Try to solve the first order equation
+$2y' + 3y = 0$ using the methods of this section.
+\end{exercise}
+\exsol{%
+$y=ce^{-2/3x}$
+}
+
+\begin{exercise}
+Let us revisit the Cauchy--Euler equations\index{Cauchy--Euler equation} of
+\exercisevref{sol:eulerex}.  Suppose now
+that ${(b-a)}^2-4ac < 0$.  Find a formula for the general solution
+of $a x^2 y'' + b x y' + c y = 0$.  Hint: Note that $x^r = e^{r \ln x}$.
+\end{exercise}
+\exsolution{%
+As was done in \exercisevref{sol:eulerex}
+\[
+y=x^r,\quad y'=rx^{r-1},\quad y''=r(r-1)x^{r-2}
+\]
+Plugging into the ODE and simplifying
+\[
+ar^2+(b-a)r+c=0
+\]
+Solving for $r$
+\[
+r_1,r_2=\frac{a-b}{2a}\pm i \frac{\sqrt{4ac-(b-a)^2}}{2a}
+\]
+Using Euler's formula
+\begin{equation*}
+y=e^{\frac{a-b}{2a}\ln x}\left[C_1\cos(\frac{\sqrt{4ac-(b-a)^2}}{2a} \ln x)+C_2 \sin(\frac{\sqrt{4ac-(b-a)^2}}{2a} \ln x)\right]
+\end{equation*}
+\begin{equation*}
+y=x^{\frac{a-b}{2a}}\left[C_1\cos(\frac{\sqrt{4ac-(b-a)^2}}{2a} \ln x)+C_2 \sin(\frac{\sqrt{4ac-(b-a)^2}}{2a} \ln x)\right]
+\end{equation*}
+}
+
+\begin{exercise}
+Find the solution to
+$y''-(2\alpha) y' + \alpha^2 y=0$, $y(0) = a$, $y'(0)=b$,
+where $\alpha$, $a$, and $b$ are real numbers.
+\end{exercise}
+\exsol{%
+$y=ae^{\alpha x}+(b-\alpha a)xe^{\alpha x}$
+}
+
+\begin{exercise}
 Find the solution to
 $y''-(\alpha+\beta) y' + \alpha \beta y=0$, $y(0) = a$, $y'(0)=b$,
 where $\alpha$, $\beta$, $a$, and $b$ are real numbers, and $\alpha \not=
@@ -892,12 +1064,30 @@ $y =
 }
 
 \begin{exercise}
+Construct an equation such that $y = C_1 e^{-2x} \cos(3x) + C_2 e^{-2x}
+\sin(3x)$ is the general
+solution.
+\end{exercise}
+\exsolution{%
+From the solution given $\alpha=-2$, and $\beta=3$ giving 
+\[
+r_1,r_2=-2\pm i3 \quad \rightarrow (r+2-i3)(r+2+i3)=r^2+4r+13=0
+\]
+An ODE that has this characteristic equation is
+\[
+y''+4y'+13y=0
+\]
+}
+
+\begin{exercise}
 Construct an equation such that $y = C_1 e^{3x} + C_2 e^{-2x}$ is the general
 solution.
 \end{exercise}
 \exsol{%
 $y'' -y'-6y=0$
 }
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1234,14 +1424,46 @@ a computer or an advanced calculator for the roots.
 \begin{exercise}
 Find the general solution for $y''' - y'' + y' - y = 0$.
 \end{exercise}
+\exsolution{%
+The characteristic equation is
+\begin{align*}
+r^3-r^2+3-1 &=0 \\
+(r^2+1)(r-1) &=0\quad \rightarrow r_1=1,\ r_2=i,\ r_3=-i
+\end{align*}
+Therefore the general solution is
+\begin{align*}
+y=C_1e^x+C_2\cos x +C_3\sin x
+\end{align*}
+}
 
 \begin{exercise}
 Find the general solution for $y^{(4)} - 5 y''' + 6 y'' = 0$.
 \end{exercise}
+\exsol{%
+$y=C_1+C_2x+C_3e^{2x}+C_4e^{3x}$
+}
 
 \begin{exercise}
 Find the general solution for $y''' + 2 y'' + 2 y' = 0$.
 \end{exercise}
+\exsol{%
+$y=C_1+e^{-x}\left( C_2\cos x+C_3 \sin x\right)$
+}
+
+\begin{exercise}
+Find the general solution of $y^{(5)}-y^{(4)}=0$.
+\end{exercise}
+\exsol{%
+$y=C_1 e^x +C_2 x^3 + C_3 x^2 +C_4 x + C_5$
+}
+
+\begin{exercise}
+Solve $1001y'''+3.2y''+\pi y'-\sqrt{4} y = 0$, $y(0)=0$, $y'(0) = 0$,
+$y''(0) = 0$.
+\end{exercise}
+\exsol{%
+$y=0$
+}
 
 \begin{exercise}
 Suppose the characteristic equation for an ODE is
@@ -1253,62 +1475,21 @@ Find such a differential equation.
 Find its general solution.
 \end{tasks}
 \end{exercise}
-
-\begin{exercise} \label{hol:eqfromsolex}
-Suppose that a fourth order equation has a solution
-$y = 2 e^{4x} x \cos x$.  
-\begin{tasks}
-\task
-Find such an equation.
-\task
-Find the initial conditions that the given
-solution satisfies.
-\end{tasks}
-\end{exercise}
-
-\begin{exercise}
-Find the general solution for the equation of \exerciseref{hol:eqfromsolex}.
-\end{exercise}
-
-\begin{exercise}
-Let
-$f(x) = e^x - \cos x$, $g(x) = e^x + \cos x$, and $h(x) = \cos x$.
-Are $f(x)$, $g(x)$, and $h(x)$
-linearly independent?  If so, show
-it, if not, find a linear combination that works.
-\end{exercise}
-
-\begin{exercise}
-Let
-$f(x) = 0$, $g(x) = \cos x$, and $h(x) = \sin x$.
-Are $f(x)$, $g(x)$, and $h(x)$
-linearly independent?  If so, show
-it, if not, find a linear combination that works.
-\end{exercise}
-
-\begin{exercise}
-Are $x$, $x^2$, and $x^4$
-linearly independent?  If so, show
-it, if not, find a linear combination that works.
-\end{exercise}
-
-\begin{exercise}
-Are $e^x$, $xe^x$, and $x^2e^x$
-linearly independent?  If so, show
-it, if not, find a linear combination that works.
-\end{exercise}
-
-\begin{exercise}
-Find an equation such that $y=xe^{-2x}\sin(3x)$ is a solution.
-\end{exercise}
-
-\setcounter{exercise}{100}
-
-\begin{exercise}
-Find the general solution of $y^{(5)}-y^{(4)}=0$.
-\end{exercise}
-\exsol{%
-$y=C_1 e^x +C_2 x^3 + C_3 x^2 +C_4 x + C_5$
+\exsolution{%
+a) Expanding the characteristic equation
+\begin{align*}
+(r^2-2r+1)(r^2-4r+4) &=0 \\
+r^4-6r^3+13r^2-12r+4 &= 0
+\end{align*}
+Therefore an ODE with such a characteristic equation is
+\begin{align*}
+y^{(4)}-6y'''+13y''-12y'+4y=0
+\end{align*}
+\\
+b) Since $r_1=r_2=1$ and $r_3=r_4=2$ the general solution is
+\begin{align*}
+y=(C_1+C_2x)e^x+(C_3+C_4x)e^{2x}
+\end{align*}
 }
 
 \begin{exercise}
@@ -1334,12 +1515,138 @@ b) $y'''-3y''+4y'-12y = 0$
 c) $y = C_1 e^{3x} + C_2 \sin(2x) + C_3 \cos(2x)$
 }
 
+\begin{exercise} \label{hol:eqfromsolex}
+Suppose that a fourth order equation has a solution
+$y = 2 e^{4x} x \cos x$.  
+\begin{tasks}
+\task
+Find such an equation.
+
+\task Find the general solution to the above equation. 
+\task
+Find the initial conditions that the given
+solution satisfies at $x=0$. Note: You might like to use a computer algebra system like Wolframalpha to take the derivatives.
+
+
+\end{tasks}
+\end{exercise}
+\exsolution{%
+a) The appearance of $\cos x$ means there are two complex roots with $r=4\pm i $. Furthermore, the appearance of $x$ means that these roots are repeated, so
+\begin{align*}
+r_1=r_2 &=4+i \\
+r_3=r_4 &=4-i \\
+\end{align*}
+The resulting characteristic equation after expanding is
+\begin{align*}
+r^3-16r^3+98r^2-272r+289=0
+\end{align*}
+Giving an ODE
+\begin{align*}
+y^{(4)}-16y'''+98y''-272y'+289y=0
+\end{align*}
+\\
+b) $y=(C_1+C_2x)e^{4x}\cos x-(C_3+C_4x)e^{4x}\sin x$\\
+c) Try $y(0)=2e^0(0)\cos(0)=0$, so the first initial condition is $y(0)=0$. Differentiating
+\begin{align*}
+y' &=2e^{4x}(-x\sin x+\cos x)+8e^{4x}x\cos x \\
+y'(0) &= 2
+\end{align*}
+Differentiating again 
+\begin{align*}
+y'' &= 2e^{4x}\left[(15x+8)\cos x-2(4x+1)\sin x\right] \\
+y''(0) &= 16
+\end{align*}
+Differentiating yet again
+\begin{align*}
+y''' &= 2e^{4x}\left[(52x+45)\cos x-(47x+24)\sin x\right] \\
+y'''(0) &= 90
+\end{align*}
+So the initial conditions are $y(0)=0,\ y'(0)=2,\ y''(0)=16,\ y'''(0)=90$.
+}
+
+
+
 \begin{exercise}
-Solve $1001y'''+3.2y''+\pi y'-\sqrt{4} y = 0$, $y(0)=0$, $y'(0) = 0$,
-$y''(0) = 0$.
+Find an equation such that $y=\cos(x)$, $y=\sin(x)$, $y=e^x$ are solutions.
 \end{exercise}
 \exsol{%
-$y=0$
+$y'''-y''+y'-y=0$
+}
+
+\begin{exercise}
+Find an equation such that $y=xe^{-2x}\sin(3x)$ is a solution.
+\end{exercise}
+\exsol{%
+$y^{(4)}+8y'''+42y''+104y'+169y=0$
+}
+
+\begin{exercise}
+Let
+$f(x) = e^x - \cos x$, $g(x) = e^x + \cos x$, and $h(x) = \cos x$.
+Are $f(x)$, $g(x)$, and $h(x)$
+linearly independent?  If so, show
+it, if not, find a linear combination that works.
+\end{exercise}
+\exsolution{%
+We want to write
+\begin{align*}
+c_1f(x)+c_2g(x)+c_3h(x)=0
+\end{align*}
+And find whether this is satisfied for any combination of coefficients $c_i$ (linearly dependent), or if $c_i=0$ is the only solution (linear independent). This equation should be satisfied for any choice of $x$ so first we set $x=0$
+\begin{align*}
+2c_2+c_3 &=0\quad \rightarrow c_3=-2c_2 \\
+c_1f(x)+c_2(g(x)-2h(x))&=0
+\end{align*}
+This equation should again be satisfied for any $x$, we choose $x=\pi/2$
+\begin{align*}
+c_1e^{\pi/2}+c_2(e^{\pi/2}-0) &=0\quad \rightarrow c_2=-c_1 \\
+c_1(f(x)-g(x)+2h(x)) &=0 \\
+c_1(e^x-\cos x-e^x-\cos x+2\cos x)&=0
+\end{align*}
+So $c_1$ is a free parameter, therefore $f(x), g(x)$ and $h(x)$ are linearly dependent. Choosing $c_1=1\quad \rightarrow c_2=-1,\ c_3=2$ we get the combination
+\begin{align*}
+(e^x-\cos x)-(e^x+\cos x)+2\cos x=0
+\end{align*}
+}
+
+\begin{exercise}
+Let
+$f(x) = 0$, $g(x) = \cos x$, and $h(x) = \sin x$.
+Are $f(x)$, $g(x)$, and $h(x)$
+linearly independent?  If so, show
+it, if not, find a linear combination that works.
+\end{exercise}
+\exsol{%
+No, choosing $c_1=1,\ c_2=c_3=0$ we get $1(0)+0(\cos x)+0(\sin x)=0$.
+}
+
+\begin{exercise}
+Are $x$, $x^2$, and $x^4$
+linearly independent?  If so, show
+it, if not, find a linear combination that works.
+\end{exercise}
+\exsolution{%
+We write 
+\begin{align*}
+c_1x+c_2x^2+c_3x^4=0
+\end{align*}
+We differentiate a few times
+\begin{align*}
+c_1+2c_2x+4c_3x^3 &=0 \\
+2c_2+12c_3x^2 &=0 \\
+24c_3x &=0 \\
+24c_3 &=0\quad \rightarrow c_3=0 
+\end{align*}
+Plugging $c_3=0$ back in and repeating the process, we find that $c_1=c_2=0$. So the functions are linearly independent. 
+}
+
+\begin{exercise}
+Are $e^x$, $xe^x$, and $x^2e^x$
+linearly independent?  If so, show
+it, if not, find a linear combination that works.
+\end{exercise}
+\exsol{%
+Yes. Divide the equation by $e^x$, then differentiate twice to find $c_3=0$ and consequently $c_1=c_2=0$. 
 }
 
 \begin{exercise}
@@ -1359,12 +1666,9 @@ Yes.  (Hint: First note that $\sin(x)$ is bounded.  Then note that
 $x$ and $x\sin(x)$ cannot be multiples of each other.)
 }
 
-\begin{exercise}
-Find an equation such that $y=\cos(x)$, $y=\sin(x)$, $y=e^x$ are solutions.
-\end{exercise}
-\exsol{%
-$y'''-y''+y'-y=0$
-}
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1536,14 +1840,13 @@ It is not hard to compute that $C= \sqrt{A^2 + B^2}$ and $\tan \gamma =
 $C$ and $\gamma$ be our arbitrary constants and write
 $x(t) = C \cos ( \omega_0 t - \gamma )$.
 
-\begin{exercise}
-Justify the identity $A \cos (\omega_0 t) + B \sin (\omega_0 t) =
+Verify: Justify the identity $A \cos (\omega_0 t) + B \sin (\omega_0 t) =
 C \cos ( \omega_0 t - \gamma )$ and verify the equations for $C$
 and $\gamma$.  Hint: Start with
 $\cos (\alpha-\beta) = \cos (\alpha) \cos
 (\beta) + \sin (\alpha)\sin (\beta)$ and multiply by $C$.  Then what should
 $\alpha$ and $\beta$ be?
-\end{exercise}
+
 
 While it is generally easier to use the first form with $A$ and $B$
 to solve for the initial conditions, the second form is much
@@ -1836,67 +2139,6 @@ flatter as $c$ (and hence $p$) goes to 0.
 
 \subsection{Exercises}
 
-\begin{samepage}
-\begin{exercise} \label{mv:ex1}
-Consider a mass and spring system with a mass $m=2$, spring constant $k=3$, and
-damping constant $c=1$.
-\begin{tasks}
-\task Set up and find the general solution of the system.
-\task Is the system underdamped, overdamped or critically damped?
-\task If the system is not critically damped, find a $c$ that makes the system
-critically damped.
-\end{tasks}
-\end{exercise}
-\end{samepage}
-
-\begin{exercise}
-Do \exerciseref{mv:ex1} for
-$m=3$, $k=12$, and $c=12$.
-\end{exercise}
-
-\begin{exercise} \label{mv:exwt1}
-Using the mks units (meters-kilograms-seconds)\index{mks units},
-suppose you have a spring with spring constant \unitfrac[4]{N}{m}.
-You want to use
-it to weigh items.  Assume no friction.  You place the mass on
-the spring and put it in motion.
-\begin{tasks}
-\task You count and find that the frequency is
-\unit[0.8]{Hz} (cycles per second).  What is the mass?
-\task Find a formula for the mass $m$
-given the frequency $\omega$ in \unit{Hz}.
-\end{tasks}
-\end{exercise}
-
-\begin{exercise}
-Suppose we add possible friction to \exerciseref{mv:exwt1}.
-Further, suppose you do not know the spring constant, but you have
-two reference weights \unit[1]{kg} and \unit[2]{kg} to calibrate your setup.
-You put each in motion on your spring and measure the
-frequency.  For the \unit[1]{kg}
-weight you measured \unit[1.1]{Hz}, for the \unit[2]{kg} weight you
-measured \unit[0.8]{Hz}.
-\begin{tasks}
-\task Find $k$ (spring constant) and $c$ (damping constant).
-\task Find a formula for the mass in terms of the frequency in Hz.  \emph{Note that
-there may be more than one possible mass for a given frequency.}
-\task For an unknown object you measured \unit[0.2]{Hz}, what is the mass of the
-object?  Suppose that you know that the mass of the unknown object
-is more than a kilogram.
-\end{tasks}
-\end{exercise}
-
-\begin{exercise}
-Suppose you wish to measure the friction a mass of \unit[0.1]{kg} experiences
-as it slides along a floor (you wish to find $c$).  You have a spring with
-spring constant $k=\unitfrac[5]{N}{m}$.  You take the spring, you attach it
-to the mass and fix it to a wall.  Then you pull on the spring and let the
-mass go.  You find that the mass oscillates with frequency \unit[1]{Hz}.
-What is the friction?
-\end{exercise}
-
-\setcounter{exercise}{100}
-
 \begin{exercise}
 A mass of $2$ kilograms is on a spring with spring constant $k$ newtons per
 meter with no damping.  Suppose the system is at rest and at time $t=0$ the
@@ -1906,25 +2148,6 @@ from the rest position?
 \end{exercise}
 \exsol{%
 $k=\nicefrac{8}{9}$ (and larger)
-}
-
-\begin{exercise}
-Suppose we have an RLC circuit with a resistor of 100 milliohms (0.1 ohms),
-inductor of inductance of 50 millihenries (0.05 henries), and a capacitor of 5 farads, with
-constant voltage.
-\begin{tasks}
-\task Set up the ODE equation for the current $I$.
-\task Find the general solution.
-\task Solve for $I(0) = 10$ and $I'(0) = 0$.
-\end{tasks}
-\end{exercise}
-\exsol{%
-a) $0.05 I'' + 0.1 I' + (\nicefrac{1}{5}) I = 0$
-\quad
-b) $I = C e^{-t} \cos(\sqrt{3} \, t - \gamma)$
-\quad
-c) $I = 10 e^{-t} \cos(\sqrt{3} \, t) + \frac{10}{\sqrt{3}} e^{-t}
-\sin(\sqrt{3} \, t)$
 }
 
 \begin{exercise}
@@ -1953,6 +2176,55 @@ c) \unit[45000]{kg}
 d) \unit[11250]{kg}
 }
 
+\begin{samepage}
+\begin{exercise} \label{mv:ex1}
+Consider a mass and spring system with a mass $m=2$, spring constant $k=3$, and
+damping constant $c=1$.
+\begin{tasks}
+\task Set up and find the general solution of the system.
+\task Is the system underdamped, overdamped or critically damped?
+\task If the system is not critically damped, find a $c$ that makes the system
+critically damped.
+\end{tasks}
+\end{exercise}
+\end{samepage}
+\exsolution{%
+a) The general equation is 
+\begin{align*}
+mx''+cx'+kx &=0 \\
+2x''+x'+3x &=0
+\end{align*}
+The characteristic equation is
+\begin{align*}
+2r^2+r+3 &=0 \\
+r &= -\frac{1}{4}\pm i\frac{\sqrt{23}}{4}
+\end{align*} 
+So the general solution is 
+\begin{align*}
+x(t)=e^{-x/4}\left[C_1\cos(\frac{\sqrt{23}}{4}x)+C_2\sin(\frac{\sqrt{23}}{4}x)\right]
+\end{align*}
+\\
+b) From the general solution (complex roots), the system is underdamped. 
+\\
+c) For critical damping, we want 
+\begin{align*}
+c^2-4km &=0 \\
+c^2 &=4km =24 \\
+c &= \sqrt{24}\ \textrm{N.s/m}
+\end{align*} 
+Note that we choose the positive sign as $c\geq 0$.
+}
+
+\begin{exercise}
+Do \exerciseref{mv:ex1} for
+$m=3$, $k=12$, and $c=12$.
+\end{exercise}
+\exsol{%
+a) $x(t)=(C_1+C_2x)e^{-2x}$.
+b) Critically damped since we have two repeated roots.
+c) The system is critically damped.
+}
+
 \begin{exercise}
 A mass of $m$ \unit{kg} is on a spring with $k=\unitfrac[3]{N}{m}$ and
 $c=\unitfrac[2]{Ns}{m}$.  Find the mass $m_0$ for which there is critical
@@ -1963,6 +2235,118 @@ underdamped or overdamped?
 $m_0 = \frac{1}{3}$.  If $m < m_0$, then the system is overdamped and will
 not oscillate.
 }
+
+\begin{exercise}
+Suppose we have an RLC circuit with a resistor of 100 milliohms (0.1 ohms),
+inductor of inductance of 50 millihenries (0.05 henries), and a capacitor of 5 farads, with
+constant voltage.
+\begin{tasks}
+\task Set up the ODE equation for the current $I$.
+\task Find the general solution.
+\task Solve for $I(0) = 10$ and $I'(0) = 0$.
+\end{tasks}
+\end{exercise}
+\exsol{%
+a) $0.05 I'' + 0.1 I' + (\nicefrac{1}{5}) I = 0$
+\quad
+b) $I = C e^{-t} \cos(\sqrt{3} \, t - \gamma)$
+\quad
+c) $I = 10 e^{-t} \cos(\sqrt{3} \, t) + \frac{10}{\sqrt{3}} e^{-t}
+\sin(\sqrt{3} \, t)$
+}
+
+\begin{exercise} \label{mv:exwt1}
+Using the mks units (meters-kilograms-seconds)\index{mks units},
+suppose you have a spring with spring constant \unitfrac[4]{N}{m}.
+You want to use
+it to weigh items.  Assume no friction.  You place the mass on
+the spring and put it in motion.
+\begin{tasks}
+\task You count and find that the frequency is
+\unit[0.8]{Hz} (cycles per second).  What is the mass?
+\task Find a formula for the mass $m$
+given the frequency in \unit{Hz}.
+\end{tasks}
+\end{exercise}
+\exsol{%
+a) $m=\frac{4}{(1.6 \pi)^2}\approx 0.158$ kg.
+b) $m=	\frac{1}{\pi^2f^2}$.
+}
+
+\begin{exercise}
+Suppose we add possible friction to \exerciseref{mv:exwt1}.
+Further, suppose you do not know the spring constant, but you have
+two reference weights \unit[1]{kg} and \unit[2]{kg} to calibrate your setup.
+You put each in motion on your spring and measure the
+frequency.  For the \unit[1]{kg}
+weight you measured \unit[1.1]{Hz}, for the \unit[2]{kg} weight you
+measured \unit[0.8]{Hz}.
+\begin{tasks}
+\task Find $k$ (spring constant) and $c$ (damping constant).
+\task Find a formula for the mass in terms of the frequency in Hz.  \emph{Note that
+there may be more than one possible mass for a given frequency.}
+\task For an unknown object you measured \unit[0.2]{Hz}, what is the mass of the
+object?  Suppose that you know that the mass of the unknown object
+is more than a kilogram.
+\end{tasks}
+\end{exercise}
+\exsolution{%
+a) The angular frequency is $\omega_1=1.1\times 2\pi$. For a damped oscillating system
+\begin{align*}
+\omega_1 &=\sqrt{\omega_0^2-p^2} \\
+\omega_1 &= \sqrt{\frac{k}{m_1}-\frac{c^2}{4m_1^2}} \\
+\omega_1^2 &=\frac{k}{m_1}-\frac{c^2}{4m_1^2} \\
+4m_1^2\omega_1^2 &=4km_1-c^2 \quad (1)
+\end{align*}
+Similarly
+\begin{align*}
+4m_2^2\omega_2^2 &=4km_2-c^2 \quad (2)
+\end{align*}
+Subtracting equation (2) from (1) we get
+\begin{align*}
+4(m_1^2\omega_1^2-m_2^2\omega_2^2)=4k(m_1-m_2)
+\end{align*}
+Solving for $k$
+\begin{align*}
+k=\frac{m_1^2\omega_1^2-m_2^2\omega_2^2}{m_1-m_2}\approx 53.33\ \textrm{N/m}
+\end{align*}
+Plugging into (1) 
+\begin{align*}
+c=2\sqrt{km_1-m_1^2\omega_1^2}\approx 4.718\ \textrm{N.s/m}
+\end{align*}
+\\
+b) 
+\begin{align*}
+\omega=\sqrt{\frac{k}{m}-\frac{c^2}{4m^2}}
+\end{align*}
+Solving for $m$
+\begin{align*}
+m=\frac{k\pm\sqrt{k^2-c^2\omega^2}}{2\omega^2}
+\end{align*}
+Writing $\omega=2\pi f$
+\begin{align*}
+m=\frac{k\pm \sqrt{k^2-(2\pi cf)^2}}{2(2\pi f)^2}
+\end{align*}
+Note that $k\geq \sqrt{k^2-c^2\omega^2}$, so these are two possible masses for each given frequency. 
+\\
+c) For $f=0.2$, plugging into the equation above we get $m\approx.104$ kg, or $m\approx 33.67$ kg. We know the mass is greater than 1 kg so we choose the latter answer.
+}
+
+\begin{exercise}
+Suppose you wish to measure the friction a mass of \unit[0.1]{kg} experiences
+as it slides along a floor (you wish to find $c$).  You have a spring with
+spring constant $k=\unitfrac[5]{N}{m}$.  You take the spring, you attach it
+to the mass and fix it to a wall.  Then you pull on the spring and let the
+mass go.  You find that the mass oscillates with frequency \unit[1]{Hz}.
+What is the friction?
+\end{exercise}
+\exsol{%
+$c=\sqrt{4km-4\omega_1^2m^2}\approx 0.659$ N.s/m.
+}
+
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -2086,7 +2470,7 @@ So $6Ax+(5A+6B) = 2x+1$.  Therefore, $A = \nicefrac{1}{3}$ and $B = \nicefrac{-1
 That means
 $y_p = \frac{1}{3}\, x - \frac{1}{9} = \frac{3x-1}{9}$.
 Solving the complementary
-problem (exercise!) we get
+problem (verify!) we get
 \begin{equation*}
 y_c = C_1 e^{-2x} + C_2 e^{-3x}.
 \end{equation*}
@@ -2109,10 +2493,9 @@ y(x) = \frac{1}{3} e^{-2x} - \frac{2}{9} e^{-3x} + \frac{3x-1}{9} =
 \frac{3 e^{-2x} - 2 e^{-3x} + 3x-1}{9} .
 \end{equation*}
 
-\begin{exercise}
-Check that $y$ really solves the equation \eqref{eq3.5:nh}
+Verify: check that $y$ really solves the equation \eqref{eq3.5:nh}
 and the given initial conditions.
-\end{exercise}
+
 
 Note: A common mistake is to solve for constants using the initial
 conditions with $y_c$ and only add the particular solution $y_p$ after that.
@@ -2398,78 +2781,56 @@ y = C_1 \cos (x) + C_2 \sin (x) +
 Find a particular solution of
 $y''-y' -6y = e^{2x}$.
 \end{exercise}
+\exsolution{%
+Finding the complementary solution $y_c$
+\begin{align*}
+y_c=C_1e^{3x}+C_2e^{-2x}
+\end{align*}
+The right hand side of the ODE is an exponential, so the particular solution should look like $y_p=Ae^{2x}$. Differentiating 
+\begin{align*}
+y_p'=2Ae^{2x},\quad y_p''=4Ae^{2x}
+\end{align*}
+Plugging into the ODE, we find $A=-1/4$. Therefore, the particular solution is $y_p=-\frac{e^{2x}}{4}$. 
+}
 
 \begin{exercise}
 Find a particular solution of
 $y''-4y' +4y = e^{2x}$.
 \end{exercise}
-
-\begin{exercise}
-Solve the initial value problem
-$y''+9y = \cos (3x) + \sin (3x)$ for $y(0) = 2$, $y'(0) = 1$.
-\end{exercise}
-
-\begin{exercise}
-Set up the form of the particular solution but do not solve
-for the coefficients for $y^{(4)}-2y'''+y'' = e^x$.
-\end{exercise}
-
-\begin{exercise}
-Set up the form of the particular solution but do not solve
-for the coefficients for $y^{(4)}-2y'''+y'' = e^x + x + \sin x$.
-\end{exercise}
-
-\begin{exercise}
-\pagebreak[2]
-\leavevmode
-\begin{tasks}
-\task Using variation of parameters find a particular solution of
-$y''-2y'+y = e^x$.
-\task Find a particular solution using undetermined
-coefficients.
-\task Are the two solutions you found the same?
-See also \exerciseref{exercise:diffvarparunder}.
-\end{tasks}
-\end{exercise}
-
-\begin{exercise}
-Find a particular solution of
-$y''-2y' +y = \sin (x^2)$.  It is OK to leave the answer as a definite
-integral.
-\end{exercise}
-
-\begin{exercise}
-For an arbitrary constant $c$ find a particular solution
-to $y''-y=e^{cx}$.  Hint: Make sure to handle every possible real $c$.
-\end{exercise}
-
-\begin{exercise} \label{exercise:diffvarparunder}
-\pagebreak[2]
-\leavevmode
-\begin{tasks}
-\task Using variation of parameters find a particular solution of
-$y''-y = e^x$.
-\task Find a particular solution using undetermined
-coefficients.
-\task Are the two solutions you found the same?
-What is going on?
-\end{tasks}
-\end{exercise}
-
-\begin{exercise}
-Find a polynomial $P(x)$, so that
-$y = 2 x^2 + 3 x + 4$
-solves
-$y''+5 y'+ y = P(x)$.
-\end{exercise}
-
-\setcounter{exercise}{100}
+\exsol{%
+$y_p=\frac{x^2e^{2x}}{2}$
+}
 
 \begin{exercise}
 Find a particular solution to $y''-y'+y=2\sin(3x)$.
 \end{exercise}
 \exsol{%
 $y=\frac{-16\sin(3x)+6\cos(3x)}{73}$
+}
+
+\begin{exercise}
+Solve the initial value problem
+$y''+9y = \cos (3x) + \sin (3x)$ for $y(0) = 2$, $y'(0) = 1$.
+\end{exercise}
+\exsolution{%
+The complementary solution is $y_c=C_1\cos(3x)+C_2\sin(3x)$. Given the right hand side of the ODE, we expect the particular solution to be of the form $y_p=A\cos(3x)+B\sin(3x)$. This however is a duplicate of $y_c$, so we multiply by $x$, giving
+\begin{align*}
+y_p &=Ax\cos(3x)+Bx\sin(3x) \\
+y_p' &=-3Ax\sin(3x)+A\cos(3x)+3Bx\cos(3x)+B\sin(3x) \\
+y_p'' &= -9Ax\cos(3x)-6A\sin(3x)-9Bx\sin(3x)+6B\cos(3x)
+\end{align*}
+Plugging into the ODE and cancelling terms, we end up with
+\begin{align*}
+-6A\sin(3x)+6B\cos(3x)=\cos(3x)+\sin(3x)\quad \rightarrow A=-1/6,\quad B=1/6
+\end{align*}
+So the general solution is 
+\begin{align*}
+y=C_1\cos(3x)+C_2\sin(3x)+\frac{x}{6}(\sin(3x)-\cos(3x))
+\end{align*}
+Applying the initial conditions (to the full general solution including the particular solution), we find that $C_1=2$ and $C_2=7/18$, so the solution to the initial value problem is
+\begin{align*}
+y=2\cos(3x)+\frac{7}{18}\sin(3x)+\frac{x}{6}\left(\sin(3x)-\cos(3x)\right)
+\end{align*}
 }
 
 \begin{samepage}
@@ -2494,6 +2855,74 @@ $y(x) = x^2-4 x+6+e^{-x}(x-5)$
 }
 
 \begin{exercise}
+Set up the form of the particular solution but do not solve
+for the coefficients for $y^{(4)}-2y'''+y'' = e^x$.
+\end{exercise}
+\exsolution{%
+Finding the complementary solution
+\begin{align*}
+y_c=C_1+C_2x+C_3e^x+C_4xe^x
+\end{align*}
+Given the right hand side of the ODE, we guess a particualr solution of the form $y_p=Ae^x$, but this is a duplicate of a term in $y_c$ so we multiply by $x^2$ giving
+\begin{align*}
+y_p=Ax^2e^x
+\end{align*}
+}
+
+\begin{exercise}
+Set up the form of the particular solution but do not solve
+for the coefficients for $y^{(4)}-2y'''+y'' = e^x + x + \sin x$.
+\end{exercise}
+\exsol{%
+$y_p=Ax^2e^x+Bx^3+Cx^2+D\cos x+E\sin x$ 
+}
+
+\begin{exercise}
+\pagebreak[2]
+\leavevmode
+\begin{tasks}
+\task Using variation of parameters find a particular solution of
+$y''-2y'+y = e^x$.
+\task Find a particular solution using undetermined
+coefficients.
+\task Are the two solutions you found the same?
+See also \exerciseref{exercise:diffvarparunder}.
+\end{tasks}
+\end{exercise}
+\exsolution{%
+a) The complementary solution is $y_c=C_1e^x+C_2xe^x$. Using 
+\begin{align*}
+u_1'y_1+u_2'y_2 &=0 \\
+u_1'e^x+u_2'xe^x &=0 \rightarrow u_1'=-xu_2'\\ 
+\end{align*}
+And using 
+\begin{align*}
+u_1'y_1'+u_2'y_2' &= f(x)\\
+u_1'e^x+u_2'(xe^x+e^x)& = e^x \rightarrow u_2'=1 \\
+\textrm{integrating}\ & \rightarrow u_2=x,\ u_1=-\frac{x^2}{2}
+\end{align*}
+The particular solution is 
+\begin{align*}
+y_p &=u_1y_1+u_2y_2 \\
+&= -\frac{x^2}{2}e^x+x^2e^x=\frac{x^2e^x}{2}
+\end{align*}
+\\
+b) We guess the particular solution has the form $y_p=Ae^x$, which is duplicated in $y_c$, so we multiply by $x^2$ giving 
+\begin{align*}
+y_p &=Ax^2e^x \\
+y_p'&= Ax^2e^x+2Axe^x \\
+y_p'' &= Ax^2e^x+4Axe^x+2Ae^x
+\end{align*}
+Plugging into the ODE we find that $A=1/2$, so 
+\begin{align*}
+y_p=\frac{x^2e^x}{2}
+\end{align*}
+As found in (a).
+\\
+c) Yes, the answers match!
+}
+
+\begin{exercise}
 Use variation of parameters to
 find a particular solution of $y''-y = \frac{1}{e^x+e^{-x}}$.
 \end{exercise}
@@ -2502,11 +2931,102 @@ $y = \frac{2xe^x-(e^x+e^{-x})\log(e^{2x}+1)}{4}$
 }
 
 \begin{exercise}
+Find a particular solution of
+$y''-2y' +y = \sin (x^2)$.  It is OK to leave the answer as a definite
+integral.
+\end{exercise}
+\exsol{%
+$y_p=e^x\int \frac{\sin(x^2)}{e^x}dx-xe^x\int \frac{x\sin(x^2)}{e^x}dx$
+}
+
+\begin{exercise}
+For an arbitrary constant $c$ find a particular solution
+to $y''-y=e^{cx}$.  Hint: Make sure to handle every possible real $c$.
+\end{exercise}
+\exsolution{%
+The complementary solution is $y_c=C_1e^x+C_2e^{-x}$. So we guess a particular solution of the form $y_p=Ae^{cx}$. We look at the case where $c=\pm1$ (case 1). Here we have
+\begin{align*}
+y_p &=Axe^{cx} \\
+y_p' &=cAxe^{cx}+Ae^{cx} \\
+y_p'' &=c^2Axe^{cx}+2cAe^{cx}
+\end{align*}
+Plugging into the ODE
+\begin{align*}
+c^2Axe^{cx}+2cAe^{cx}-Axe^{cx}=e^{cx}
+\end{align*}
+Since $c=\pm 1$ this simplifies to 
+\begin{align*}
+2cA &=1 \rightarrow \\
+A&=1/2,\ \textrm{for}\ c=1 \\
+A&=-1/2,\ \textrm{for}\ c=-1
+\end{align*}
+In the case where $c\neq \pm1$ (case 2), no modification is needed for our guess. Repeating the same process as above we find that 
+\begin{align*}
+A=\frac{1}{c^2-1}
+\end{align*}
+So finally the particular solution is
+\begin{align*}
+y_p=
+\begin{cases}
+\frac{xe^x}{2},\quad c=1 \\
+-\frac{xe^{-x}}{2},\quad c=-1 \\
+\frac{e^{cx}}{c^2-1},\quad \textrm{otherwise}
+\end{cases}
+\end{align*}
+}
+
+\begin{exercise}
 For an arbitrary constant $c$ find the general solution
 to $y''-2y=\sin(x+c)$.
 \end{exercise}
 \exsol{%
 $y=\frac{-\sin(x+c)}{3}+C_1 e^{\sqrt{2}\,x}+C_2 e^{-\sqrt{2}\,x}$
+}
+
+\begin{exercise} \label{exercise:diffvarparunder}
+\pagebreak[2]
+\leavevmode
+\begin{tasks}
+\task Using variation of parameters find a particular solution of
+$y''-y = e^x$.
+\task Find a particular solution using undetermined
+coefficients.
+\task Are the two solutions you found the same?
+What is going on?
+\end{tasks}
+\end{exercise}
+\exsol{%
+a) Using variation of parameters, we find $u_1=\frac{x}{2}$ and $u_2=-\frac{e^{2x}}{4}$ giving $y_p=\frac{x}{2}e^x-\frac{e^x}{4}$. \\
+b) Using undetermined coefficients we guess $y_p=Axe^x$ where $A=1/2$, giving $y_p=\frac{xe^x}{2}$. \\
+c) It is acceptable to get different $y_p$ with different methods. What needs to remain the same is the general solution (or the solution to the initial value problem). Looking at the general solution from (b)
+\begin{align*}
+y=C_1e^x+C_2e^{-x}+\frac{xe^x}{2}
+\end{align*}
+And the general solution from (a)
+\begin{align*}
+y &=C_1e^x+C_2e^{-x}+\frac{xe^x}{2}-\frac{e^x}{4} \\
+&= (\underbrace{C_1-\frac{1}{4}}_{\textrm{call}\ C_3})e^x++C_2e^{-x}+\frac{xe^x}{2} \\
+y &= C_3e^x+C_2e^{-x}+\frac{xe^x}{2}
+\end{align*}
+So the general solution is the same in both cases, as it should be. 
+}
+
+\begin{exercise}
+Find a polynomial $P(x)$, so that
+$y = 2 x^2 + 3 x + 4$
+solves
+$y''+5 y'+ y = P(x)$.
+\end{exercise}
+\exsolution{%
+Finding $y'$ and $y''$
+\begin{align*}
+y' &=4x+3 \\
+y'' &= 4
+\end{align*}
+We plug this into the ODE, giving 
+\begin{align*}
+P(x)=2x^2+23x+23
+\end{align*}
 }
 
 \begin{exercise}
@@ -2952,12 +3472,57 @@ back to this section once we have learned about the Fourier series.
 Derive a formula for $x_{sp}$ if the equation is
 $m x'' + c x' + kx = F_0 \sin (\omega t)$.  Assume $c > 0$.
 \end{exercise}
+\exsolution{%
+We know that in such a case, the particular solution should look like $x_{sp}=A\cos(\omega t)+B\sin(\omega t)$. So differentiating this and plugging it into the ODE we get
+\begin{align*}
+\left((\omega_0^2-\omega^2)B-2\omega pA\right)\sin(\omega t)+\left((\omega_0^2-\omega^2)A+2\omega pB\right)\cos(\omega t)=\frac{F_0}{m}\sin(\omega t)
+\end{align*}
+Where $\omega_0$ and $p$ are defined as before. Solving for $A$ and $B$ we get
+\begin{align*}
+&A=\frac{-F_0(2\omega p)}{m(2\omega p)^2+m(\omega_0^2-\omega^2)^2},\quad B=\frac{(\omega_0^2-\omega^2)^2F_0}{m(2\omega p)^2+m(\omega_0^2-\omega^2)^2} \\
+& C=\sqrt{A^2+B^2}=\frac{F_0}{m\sqrt{(2\omega p)^2+(\omega_0^2-\omega^2)^2}} \\
+& \tan(\gamma)=\frac{B}{A}=-\frac{\omega_0^2-\omega^2}{2\omega p}
+\end{align*}
+Therefore
+\begin{align*}
+x_{sp}=\frac{F_0}{m\sqrt{(2\omega p)^2+(\omega_0^2-\omega^2)^2}}\cos(\omega t-\gamma)
+\end{align*}
+Note that only the phase shift changes (which makes sense given that the force also only changed by a phase shift). 
+}
 
 \begin{exercise}
 Derive a formula for $x_{sp}$ if the equation is
 $m x'' + c x' + kx = F_0 \cos (\omega t) + F_1 \cos (3\omega t)$.
 Assume $c > 0$.
 \end{exercise}
+\exsol{%
+We find $x_{sp}$ for each term on the right hand side.
+\begin{align*}
+x_{sp_0}=\frac{F_0}{m\sqrt{(2\omega p)^2+(\omega_0^2-\omega^2)^2}}\cos(\omega t-\gamma),\quad \tan \gamma_0=\frac{2\omega p}{\omega_0^2-\omega^2}
+\end{align*}
+And 
+\begin{align*}
+x_{sp_1}=\frac{F_0}{m\sqrt{(2(3\omega)p)^2+(\omega_0^2-(3\omega)^2)^2}}\cos(3\omega t-\gamma_1),\quad \tan \gamma_1=\frac{2(3\omega)p}{\omega_0^2-(3\omega)^2}
+\end{align*}
+So finally $x_{sp}=x_{sp_0}+x_{sp_1}$.
+}
+
+
+\begin{exercise}
+Derive a formula for $x_{sp}$ for
+$mx''+cx'+kx = F_0 \cos(\omega t) + A$,
+where $A$ is some constant.  Assume $c > 0$.
+\end{exercise}
+\exsol{%
+$x_{sp} = 
+\frac{(\omega_0^2-\omega^2) F_0}
+{m{(2\omega p)}^2+m{(\omega_0^2-\omega^2)}^2} \cos (\omega t) +
+\frac{2 \omega p F_0}
+{m{(2\omega p)}^2+m{(\omega_0^2-\omega^2)}^2} \sin (\omega t)
++ \frac{A}{k}$,
+where
+$p = \frac{c}{2m}$ and $\omega_0 = \sqrt{\frac{k}{m}}$.
+}
 
 \begin{exercise}
 Take $m x'' + c x' + kx = F_0 \cos (\omega t)$.
@@ -2966,6 +3531,13 @@ For what values of $c$ (solve in terms of $m$, $k$, and $F_0$) will there be no
 practical resonance (that is, for what values of $c$ is there no maximum of
 $C(\omega)$ for $\omega > 0$)?
 \end{exercise}
+\exsolution{%
+There is no practical resonance if $\omega_0^2-2p^2\leq 0$ so
+\begin{align*}
+(\frac{k}{m})-\frac{c^2}{2m^2}& \leq 0 \\
+c \geq \sqrt{2km}
+\end{align*}
+}
 
 \begin{exercise}
 Take $m x'' + c x' + kx = F_0 \cos (\omega t)$.
@@ -2974,6 +3546,20 @@ For what values of $m$ (solve in terms of $c$, $k$, and $F_0$) will there be no
 practical resonance (that is, for what values of $m$ is there no maximum of
 $C(\omega)$ for $\omega > 0$)?
 \end{exercise}
+\exsol{%
+As was done in the previous exercise, we find $m \leq \frac{c^2}{2k}$. 
+}
+
+\begin{exercise}
+A mass of \unit[4]{kg} on a spring with $k=\unitfrac[4]{N}{m}$ and a damping
+constant $c=\unitfrac[1]{Ns}{m}$.
+Suppose that $F_0 = \unit[2]{N}$.  Using forcing function $F_0 \cos (\omega t)$,
+find the $\omega$ that causes practical resonance and find the amplitude.
+\end{exercise}
+\exsol{%
+$\omega = \frac{\sqrt{31}}{4\sqrt{2}} \approx 0.984$ \quad
+$C(\omega) = \frac{16}{3\sqrt{7}} \approx 2.016$
+}
 
 \begin{exercise}
 \pagebreak[3]
@@ -3003,36 +3589,36 @@ tower moves more than 1.5 meter from the rest position, the tower collapses.
 Will the tower collapse?
 \end{tasks}
 \end{exercise}
-
-
-\setcounter{exercise}{100}
-
-\begin{exercise}
-A mass of \unit[4]{kg} on a spring with $k=\unitfrac[4]{N}{m}$ and a damping
-constant $c=\unitfrac[1]{Ns}{m}$.
-Suppose that $F_0 = \unit[2]{N}$.  Using forcing function $F_0 \cos (\omega t)$,
-find the $\omega$ that causes practical resonance and find the amplitude.
-\end{exercise}
-\exsol{%
-$\omega = \frac{\sqrt{31}}{4\sqrt{2}} \approx 0.984$ \quad
-$C(\omega) = \frac{16}{3\sqrt{7}} \approx 2.016$
+\exsolution{%
+No friction means that $c=0$, and the differential equation is
+\begin{align*}
+x''+\omega_0^2x=\frac{F_0}{m}\cos(\omega t)
+\end{align*}
+The initial conditions are $x(0)=0,\ x'(0)=0$, and the applied force is $F(t)=F_0\cos(\omega t),\ F_0=mA\omega^2$.
+\\
+a) $\omega_0=\sqrt{k/m}=\sqrt{1/10}$.
+\\
+b) For undamped, forced motion with $\omega\neq \omega_0$ we know that
+\begin{align*}
+x(t)=C_1\cos(\omega_0 t)+C_2\sin(\omega_0 t)+\frac{A\omega^2}{(\omega_0^2-\omega^2)}\cos(\omega t)
+\end{align*}
+Applying the initial conditions, we find that 
+\begin{align*}
+C_1=\frac{-A\omega^2}{\omega_0^2-\omega^2},\quad C_2=0
+\end{align*}
+Giving
+\begin{align*}
+x&=\frac{A\omega^2}{\omega_0^2-\omega}\left(\cos(\omega t)-\cos(\omega_0 t)\right) \\
+&= \underbrace{\frac{2A\omega^2}{\omega_0^2-\omega}}_{C(\omega)} \sin\left( \frac{\omega+\omega_0}{2}t\right)\sin\left( \frac{\omega-\omega_0}{2}t\right)
+\end{align*}
+\\
+c) Plugging the given values into the answer from (b), we find 
+\begin{align*}
+C(\omega)=\frac{2\times 1\times \pi^2}{\pi^2-0.1^2}\approx 2\ \textrm{m}
+\end{align*}
+So the tower collapses.
 }
 
-\begin{exercise}
-Derive a formula for $x_{sp}$ for
-$mx''+cx'+kx = F_0 \cos(\omega t) + A$,
-where $A$ is some constant.  Assume $c > 0$.
-\end{exercise}
-\exsol{%
-$x_{sp} = 
-\frac{(\omega_0^2-\omega^2) F_0}
-{m{(2\omega p)}^2+m{(\omega_0^2-\omega^2)}^2} \cos (\omega t) +
-\frac{2 \omega p F_0}
-{m{(2\omega p)}^2+m{(\omega_0^2-\omega^2)}^2} \sin (\omega t)
-+ \frac{A}{k}$,
-where
-$p = \frac{c}{2m}$ and $\omega_0 = \sqrt{\frac{k}{m}}$.
-}
 
 \begin{exercise}
 Suppose there is no damping in a mass and spring system with

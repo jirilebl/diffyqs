@@ -513,61 +513,37 @@ x + \sum_{k=0}^\infty {(-1)}^k x^k - \sum_{k=0}^\infty x^k
 Is the power series $\displaystyle \sum_{k=0}^\infty e^k x^k$ convergent?
 If so, what is the radius of convergence?
 \end{exercise}
+\exsolution{%
+By the ratio test 
+\begin{align*}
+A=\lim_{k \to \infty}\left \lvert \frac{e^{k+1}}{e^k}\right \rvert = e
+\end{align*}
+So the series is convergent with a radius of convergence $\rho=1/e$.
+}
 
 \begin{exercise}
 Is the power series $\displaystyle \sum_{k=0}^\infty k x^k$ convergent?
 If so, what is the radius of convergence?
 \end{exercise}
+\exsol{%
+Yes. Radius of convergence is 1.
+}
 
 \begin{exercise}
 Is the power series $\displaystyle \sum_{k=0}^\infty k! x^k$ convergent?
 If so, what is the radius of convergence?
 \end{exercise}
+\exsol{%
+Yes. Radius of convergence is 0 (only converges if $x=0$).
+}
 
 \begin{exercise}
 Is the power series $\displaystyle \sum_{k=0}^\infty \frac{1}{(2k)!} {(x-10)}^k$
 convergent?  If so, what is the radius of convergence?
 \end{exercise}
-
-\begin{exercise}
-Determine the Taylor series for $\sin x$ around the point $x_0 = \pi$.
-\end{exercise}
-
-\begin{exercise}
-Determine the Taylor series for $\ln x$ around the point $x_0 = 1$,
-and find the radius of convergence.
-\end{exercise}
-
-\begin{exercise}
-Determine the Taylor series
-and its radius of convergence of $\dfrac{1}{1+x}$
-around $x_0 = 0$.
-\end{exercise}
-
-\begin{exercise}
-Determine the Taylor series and its radius of convergence
-of
-$\dfrac{x}{4-x^2}$ around $x_0 = 0$.  Hint: You will not be able to
-use the ratio test.
-\end{exercise}
-
-\begin{exercise}
-Expand $x^5+5x+1$ as a power series around $x_0 = 5$.
-\end{exercise}
-
-\begin{exercise}
-Suppose that the ratio test applies to a series
-$\displaystyle \sum_{k=0}^\infty a_k x^k$.  Show, using the ratio
-test, that the radius of convergence of the differentiated
-series is the same as that of the original series.
-\end{exercise}
-
-\begin{exercise}
-Suppose that $f$ is an analytic function such that
-$f^{(n)}(0) = n$.  Find $f(1)$.
-\end{exercise}
-
-\setcounter{exercise}{100}
+\exsol{%
+Yes. Radius of convergence is $\infty$.
+}
 
 \begin{exercise}
 Is the power series
@@ -578,6 +554,7 @@ convergent? If so, what is the radius of convergence?
 Yes.  Radius of convergence is $10$.
 }
 
+
 \begin{exercise}[challenging]
 Is the power series
 $\displaystyle \sum_{n=1}^\infty \frac{n!}{n^n} x^n$
@@ -585,6 +562,66 @@ convergent? If so, what is the radius of convergence?
 \end{exercise}
 \exsol{%
 Yes.  Radius of convergence is $e$.
+}
+
+\begin{exercise}
+Determine the Taylor series for $\sin x$ around the point $x_0 = \pi$.
+\end{exercise}
+\exsolution{%
+The Taylor series at $x_0=\pi$ is give by
+\begin{align*}
+\sum_{k=0}^{\infty}\frac{f^{(k)}(\pi)}{k!}(x-\pi)^k=0+(-1)(x-\pi)+0+\frac{1}{3!}(x-\pi)^3+0+\frac{-1}{5!}(x-\pi)^5+...=\sum_{k=0}^\infty\frac{(-1)^{k+1}(x-\pi)^{2k+1}}{(2k+1)!}
+\end{align*}
+}
+
+\begin{exercise}
+Determine the Taylor series for $\ln x$ around the point $x_0 = 1$,
+and find the radius of convergence.
+\end{exercise}
+\exsol{%
+$\sum_{k=1}^\infty\frac{(-1)^{k+1}(x-1)^k}{k}$. The radius of convergence is 1 (series also converges if x=2). 
+}
+
+\begin{exercise}
+Determine the Taylor series
+and its radius of convergence of $\dfrac{1}{1+x}$
+around $x_0 = 0$.
+\end{exercise}
+\exsol{%
+$\sum_{k=0}^\infty(-1)^kx^k$. The radius of convergence is 1.
+}
+
+\begin{exercise}
+Determine the Taylor series and its radius of convergence
+of
+$\dfrac{x}{4-x^2}$ around $x_0 = 0$.  Hint: You will not be able to
+use the ratio test.
+\end{exercise}
+\exsolution{%
+We can rewrite the expression as
+\begin{align*}
+\frac{x}{4}\frac{1}{1-(x/2)^2}=\frac{x}{4}\sum_{k=0}^{\infty}\left(\frac{x}{2}\right)^{2k}=\sum_{k=0}^\infty\frac{x^{2k+1}}{2^{2k+2}}
+\end{align*}
+To find the radius of convergence 
+\begin{align*}
+A=\lim_{k\to \infty}\frac{1/4^{k+2}}{1/4^{k+1}}=\frac{1}{4}
+\end{align*}
+So the radius of convergence is 4.
+}
+
+\begin{exercise}
+Expand $x^5+5x+1$ as a power series around $x_0 = 5$.
+\end{exercise}
+\exsol{%
+$51+15(x-5)+\frac{2}{2!}(x-5)^2$ (note that this gives back the original polynomial).
+}
+
+\begin{exercise}[challenging]
+Find the Taylor series for $x^7 e^x$ around $x_0 = 0$.
+\end{exercise}
+\exsol{%
+$\sum\limits_{n=7}^\infty
+\frac{1}{(n-7)!} x^n$
 }
 
 \begin{exercise}
@@ -598,13 +635,44 @@ $\frac{1}{1-x} =
 which converges for $1 < x < 3$.
 }
 
-\begin{exercise}[challenging]
-Find the Taylor series for $x^7 e^x$ around $x_0 = 0$.
+\begin{exercise}
+Suppose that the ratio test applies to a series
+$\displaystyle \sum_{k=0}^\infty a_k x^k$.  Show, using the ratio
+test, that the radius of convergence of the differentiated
+series is the same as that of the original series.
 \end{exercise}
-\exsol{%
-$\sum\limits_{n=7}^\infty
-\frac{1}{(n-7)!} x^n$
+\exsolution{%
+Applying the ratio test to the series
+\begin{align*}
+A=\lim_{k\to \infty}\left \lvert\frac{a_{k+1}}{a_k} \right\rvert 
+\end{align*}
+Taking the derivative of the series we get 
+\begin{align*}
+\rightarrow \sum_{k=1}^\infty ka_kx^{k-1}
+\end{align*}
+Applying the ratio test
+\begin{align*}
+A=\lim_{k\to \infty}\left\lvert\frac{(k+1)a_{k+1}}{ka_k}\right \rvert=\lim_{k\to \infty}\frac{k+1}{k} \lim_{k\to \infty}\left\lvert \frac{a_k+1}{a_k}\right \rvert=\lim_{k\to \infty}\left \lvert\frac{a_{k+1}}{a_k} \right\rvert =A
+\end{align*}
+So the radius of convergence is the same. 
 }
+
+\begin{exercise}
+Suppose that $f$ is an analytic function such that
+$f^{(n)}(0) = n$.  Find $f(1)$.
+\end{exercise}
+\exsolution{%
+Since it's an analytic function, near $x=0$
+\begin{align*}
+f(x)&=f(0)+f'(0)x+\frac{1}{2!} f''(0)x^2+\frac{1}{3!}f'''(0)x^3+... \\
+&=0+x+\frac{1}{2!} x^2+\frac{1}{3!}x^3 = \sum_{k=1}^\infty \frac{x^k}{k!}
+\end{align*}
+At $x=1$
+\begin{align*}
+f(1)= \sum_{k=1}^{\infty}\frac{1}{k!}= \sum_{k=0}^{\infty}\frac{1}{k!}-1=e-1
+\end{align*}
+}
+
 
 \begin{exercise}[challenging]
 Imagine $f$ and $g$ are analytic functions such that
@@ -1029,48 +1097,68 @@ and if possible find a general formula for the $k^{\text{th}}$ coefficient.
 \begin{exercise}
 Use power series methods to solve $y''+y = 0$ at the point $x_0 = 1$.
 \end{exercise}
+\exsolution{%
+\begin{align*}
+y=& \sum_{k=0}^{\infty}a_k(x-1)^k \\
+y''=& \sum_{k=2}^\infty k(k-1)a_k(x-1)^{k-2},\quad \rm (k\rightarrow k+2) \\
+=& \sum_{k=0}^\infty (k+2)(k+1)a_{k+2}(x-1)^{k}
+\end{align*}
+Plugging into the ODE
+\begin{align*}
+&\sum_{k=0}^\infty (k+2)(k+1)a_{k+2}(x-1)^{k} +  \sum_{k=0}^{\infty}a_k(x-1)^k = 0 \\
+&\rightarrow (k+2)(k+1)a_{k+2}+a_k=0 \\
+&a_{k+2}=-\frac{a_k}{(k+2)(k+1)} \\
+&a_2=-\frac{a_0}{2},\quad a_3=-\frac{a_1}{2\times3},\quad a_4=\frac{(-1)^2a_0}{4!} \\
+&a_5=\frac{(-1)^2a_1}{5!},\quad a_6=\frac{(-1)^3a_0}{6!},\quad a_7=\frac{(-1)^3a_1}{7!}\quad ...
+\end{align*}
+We can note that for even $k$:
+\begin{align*}
+a_k=a_{2n}=\frac{(-1)^na_0}{(2n)!}
+\end{align*}
+And for odd $k$:
+\begin{align*}
+a_k=a_{2n+1}=\frac{(-1)^na_1}{(2n+1)!}
+\end{align*}
+So the solution can be written as
+\begin{align*}
+y=a_0\sum_{n=0}^\infty \frac{(-1)^n}{(2n)!}(x-1)^{2n}+a_1\sum_{n=0}^\infty \frac{(-1)^n}{(2n+1)!}(x-1)^{2n+1}=a_0\cos(x-1)+a_1\sin(x-1)
+\end{align*}
+}
 
 \begin{exercise}
 Use power series methods to solve $y''+4xy = 0$ at the point $x_0 = 0$.
 \end{exercise}
+\exsol{%
+The solution can be written as $y=a_0y_0+a_1y_1$, where
+\begin{align*}
+y_0=& 1+\frac{(-4)}{(2)(3)}x^3+\frac{(-4)^2}{(2)(3)(5)(6)}x^6+...+\frac{(-4)^n}{(2)(3)(5)(6)...(3n-1)(3n)}x^{3n}+... \\
+y_1=& x+\frac{(-4)}{(3)(4)}x^4+\frac{(-4)^2}{(3)(4)(6)(7)}x^7+...+\frac{(-4)^n}{(3)(4)(6)(7)...(3n)(3n+1)}x^{3n+1}+...
+\end{align*}
+}
 
 \begin{exercise}
 Use power series methods to solve $y''-xy = 0$ at the point $x_0 = 1$.
 \end{exercise}
+\exsol{%
+Note: See Example 1.2.2. 
+The solution can be written as $y=a_0y_0+a_1y_1$, where
+\begin{align*}
+y_0=& 1+\frac{1}{6}(x-1)^3+\frac{1}{180}(x-1)^6+...+\frac{1}{(2)(3)(5)(6)...(3n-1)(3n)}(x-1)^{3n}+... \\
+y_1=& (x-1)+\frac{1}{12}(x-1)^4+\frac{1}{504}(x-1)^7+...+\frac{1}{(3)(4)(6)(7)...(3n)(3n+1)}(x-1)^{3n+1}+...
+\end{align*}
+}
 
 \begin{exercise}
 Use power series methods to solve $y''+x^2y = 0$ at the point $x_0 = 0$.
 \end{exercise}
+\exsol{%
+The solution can be written as $y=a_0y_0+a_1y_1$, where
+\begin{align*}
+y_0=& 1+\frac{(-1)}{(3)(4)}x^4+\frac{(-1)^2}{(3)(4)(7)(8)}x^8+...+\frac{(-1)^n}{(3)(4)(7)(8)...(4n-1)(4n)}x^{4n}+... \\
+y_1=& x+\frac{(-1)}{(4)(5)}x^5+\frac{(-1)^2}{(4)(5)(8)(9)}x^9+...+\frac{(-1)^n}{(4)(5)(8)(9)...(4n)(4n+1)}x^{4n+1}+...
+\end{align*}
+}
 
-\begin{exercise}
-The methods work for other orders than second order.  Try the methods
-of this section to solve the first order system $y'-xy = 0$ at
-the point $x_0 = 0$.
-\end{exercise}
-
-\begin{exercise}[\myindex{Chebyshev's equation of order $p$}]
-\leavevmode
-\begin{tasks}
-\task Solve $(1-x^2)y''-xy' + p^2y = 0$ using power series methods at $x_0=0$.
-\task For what $p$ is there a polynomial solution?
-\end{tasks}
-\end{exercise}
-
-\begin{exercise}
-Find a polynomial solution to $(x^2+1) y''-2xy'+2y = 0$ using
-power series methods.
-\end{exercise}
-
-\begin{exercise}
-\leavevmode
-\begin{tasks}
-\task Use power series methods to solve $(1-x)y''+y = 0$ at the point $x_0 = 0$.
-\task Use the solution to part a) to find a solution
-for $xy''+y=0$ around the point $x_0=1$.
-\end{tasks}
-\end{exercise}
-
-\setcounter{exercise}{100}
 
 \begin{exercise}
 Use power series methods to solve $y'' + 2 x^3 y = 0$ at the point $x_0 =
@@ -1114,7 +1202,125 @@ $y(x) = a_0 + a_1 x -\frac{a_0}{10} x^5 - \frac{a_1}{15} x^6
 \cdots$
 }
 
+
+\begin{exercise}
+The methods work for other orders than second order.  Try the methods
+of this section to solve the first order system $y'-xy = 0$ at
+the point $x_0 = 0$.
+\end{exercise}
+\exsolution{%
+Letting $y=\sum_{k=0}^\infty a_kx^k$, differentiating (and re-indexing) and plugging into the ODE we get
+\begin{align*}
+\sum_{k=0}^\infty(k+1)a_{k+1}x^k-\sum_{k=0}^\infty a_kx^{k+1}=&0 \\
+a_1+\sum_{k=1}^\infty(k+1)a_{k+1}x^k-\sum_{k=1}^\infty a_{k-1}x^{k}=&0 \\
+\end{align*}
+This gives $a_1=0$ and 
+\begin{align*}
+a_{k+1}=\frac{a_{k-1}}{k+1}
+\end{align*}
+Giving
+\begin{align*}
+&a_2=\frac{a_0}{2},\quad a_3=0,\quad a_4=\frac{a_0}{(2)(4)},\quad a_5=0\quad ... \\
+&a_{2n}=\frac{a_0}{\underbrace{(2)(4)(6)...(2n)}_{(2n)!!}},\quad a_{2n+1}=0
+\end{align*}
+So the solution is 
+\begin{align*}
+y=a_0\sum_{n=0}^\infty \frac{x^n}{(2n)!!}=a_0e^{x^2/2}
+\end{align*}
+}
+
 \pagebreak[2]
+\begin{exercise}[\myindex{Chebyshev's equation of order $p$}]
+\leavevmode
+\begin{tasks}
+\task Solve $(1-x^2)y''-xy' + p^2y = 0$ using power series methods at $x_0=0$.
+\task For what $p$ is there a polynomial solution?
+\end{tasks}
+\end{exercise}
+\exsolution{%
+(a) Setting $y=\sum_{k=0}^\infty a_k x^k$ and plugging into the ODE
+\begin{align*}
+&\sum_{k=2}^\infty k(k-1)a_kx^{k-2}-\sum_{k=2}^\infty k(k-1)a_kx^k-\sum_{k=1}^\infty ka_kx^k+\sum_{k=0}^\infty p^2a_kx^k=0 \\
+& 2a_2+6a_3x-a_1x+p^2a_0+p^2a_1x+\sum_{k=2}^\infty \left[ (k+2)(k+1)a_{k+2}-k(k-1)a_k-ka_k+p^2a_k\right]x^k=0
+\end{align*}
+This gives $a_2=-p^2a_0/2$, $a_3=(1-p^2)a_1/6$ and the relation
+\begin{align*}
+a_{k+2}=\frac{k^2-p^2}{(k+2)(k+1)}a_k
+\end{align*}
+Giving
+\begin{align*}
+& a_4=\frac{(2-p^2)(0^2-p^2)}{4!}a_0,\quad a_5=\frac{(3^2-p^2)(1^2-p^2)}{5!}a_1 \\
+& a_6=\frac{(4^2-p^2)(2^2-p^2)(0^2-p^2)}{6!}a_0,\quad a_7=\frac{(5^2-p^2)(3^2-p^2)(1^2-p^2)}{7!}a_1\quad ...
+\end{align*}
+So for even $k$
+\begin{align*}
+a_{2n}=\frac{\left( (2n-2)^2-p^2\right)\left( (2n-4)^2-p^2\right)...\left( 0^2-p^2\right)}{(2n)!}a_0
+\end{align*}
+And for odd $k$
+\begin{align*}
+a_{2n+1}=\frac{\left( (2n-1)^2-p^2\right)\left( (2n-3)^2-p^2\right)...\left( 1^2-p^2\right)}{(2n+1)!}a_1
+\end{align*}
+So the solution can be written as $y=a_0y_0+a_1y_1$, where
+\begin{align*}
+y_0 =& 1+\frac{(0^2-p^2)}{2}x^2+\frac{(2^2-p^2)(0^2-p^2)}{4!}x^4+...+\frac{\left( (2n-2)^2-p^2\right)\left( (2n-4)^2-p^2\right)...\left( 0^2-p^2\right)}{(2n)!}x^{2n}+... \\
+y_1=& x+\frac{(1^2-p^2)}{3!}x^3+\frac{(3^2-p^2)(1^2-p^2)}{5!}x^5+...+\frac{\left( (2n-1)^2-p^2\right)\left( (2n-3)^2-p^2\right)...\left( 1^2-p^2\right)}{(2n+1)!}x^{2n+1}+...
+\end{align*}
+\\
+(b)
+If $p$ is an even integer, the series for $y_0$ terminates, whereas if $p$ is an odd integer the series for $y_1$ terminates. Both cases giving a polynomial solution.
+}
+
+\begin{exercise}
+Find a polynomial solution to $(x^2+1) y''-2xy'+2y = 0$ using
+power series methods.
+\end{exercise}
+\exsol{%
+$y=a_0+a_1x-a_0x^2=a_0(1-x^2)+a_1x$
+}
+
+\begin{exercise}
+\leavevmode
+\begin{tasks}
+\task Use power series methods to solve $(1-x)y''+y = 0$ at the point $x_0 = 0$.
+\task Use the solution to part a) to find a solution
+for $xy''+y=0$ around the point $x_0=1$.
+\end{tasks}
+\end{exercise}
+\exsolution{%
+(a) Plugging the series solution into the ODE
+\begin{align*}
+&\sum_{k=2}^\infty a_k(k-1)kx^{k-2}-\sum_{k=2}^\infty a_k(k-1)kx^{k-1}+\sum_{k=0}^\infty a_kx^k=0 \\
+& \sum_{k=0}^\infty a_{k+2}(k+1)(k+2)x^{k}-\sum_{k=1}^\infty a_{k+1}(k+1)kx^{k}+\sum_{k=0}^\infty a_kx^k=0  \\
+& 2a_2+a_0 +\sum_{k=1}^\infty \left[ a_{k+2}(k+1)(k+2)-a_{k+1}k(k+1)+a_k\right] x^k=0
+\end{align*}
+This gives $a_2=-a_0/2$ and the relation
+\begin{align*}
+a_{k+2}=\frac{a_{k+1}k(k+1)-a_k}{(k+1)(k+2)}
+\end{align*}
+Giving
+\begin{align*}
+a_3=-\frac{a_0+a_1}{(2)(3)},\quad a_4=-\frac{a_0/2+a_1}{(3)(4)},\quad  a_5=-\frac{a_0/3+\frac{5a_1}{(2)(3)}}{(4)(5)}\quad ...
+\end{align*}
+The solution is then 
+\begin{align*}
+y=&\sum_{k=0}^\infty a_kx^k= a_0+a_1x-\frac{a_0}{2	}x^2-\frac{a_0+a_1}{(2)(3)}x^3-\frac{a_0/2+a_1}{(3)(4)}x^4+... \\
+y=& a_0\left[ 1-\frac{x^2}{2}-\frac{x^3}{6}-\frac{x^4}{24}-\frac{x^5}{60}+...\right] + a_1\left[x-\frac{x^3}{6}-\frac{x^4}{12}-\frac{x^5}{24}+...\right]
+\end{align*}
+\\
+(b)
+Let $x=z-1$, then the equation becomes
+\begin{align*}
+(z-1)\frac{d^2y}{dz^2}+y=0
+\end{align*}
+At $x=1\rightarrow z=0$, so we're solving this equation near $z=0$ which is the same as part (a), therefore the solution is 
+\begin{align*}
+y=& a_0\left[ 1-\frac{z^2}{2}-\frac{z^3}{6}-\frac{z^4}{24}-\frac{z^5}{60}+...\right] + a_1\left[z-\frac{z^3}{6}-\frac{z^4}{12}-\frac{z^5}{24}+...\right] \\
+y=& a_0\left[ 1-\frac{(x+1)^2}{2}-\frac{(x+1)^3}{6}-\frac{(x+1)^4}{24}-\frac{(x+1)^5}{60}+...\right] + \\
+& a_1\left[(x+1)-\frac{(x+1)^3}{6}-\frac{(x+1)^4}{12}-\frac{(x+1)^5}{24}+...\right] 
+\end{align*}
+}
+
+
 \begin{exercise}[challenging]
 Power series methods also work for nonhomogeneous equations.
 \begin{tasks}

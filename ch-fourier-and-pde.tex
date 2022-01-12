@@ -367,10 +367,9 @@ we consider \eqref{bv:eq1} we have $x_1(a) = x_1(b) = x_2(a) = x_2(b) = 0$
 and so $x_2' x_1 - x_2 x_1'$ is zero at both $a$ and $b$.
 As $\lambda_1 \not= \lambda_2$, the theorem follows.
 
-\begin{exercise}[easy]
-Finish the proof of the theorem (check the last equality in the proof) for the cases
+Verify: finish the proof of the theorem (check the last equality in the proof) for the cases
 \eqref{bv:eq2} and \eqref{bv:eq3}.
-\end{exercise}
+
 
 The function $\sin (n t)$ is an eigenfunction for the problem
 $x''+\lambda x = 0$, $x(0) = 0$, $x(\pi) = 0$. 
@@ -569,64 +568,24 @@ for the rope to stay \myquote{popped out}.
 
 \subsection{Exercises}
 
-Hint for the following exercises:  Note that
-when $\lambda > 0$, then
-$\cos \bigl( \sqrt{\lambda}\, (t - a) \bigr)$
-and $\sin  \bigl( \sqrt{\lambda}\, (t - a) \bigr)$
-are also solutions of the homogeneous
-equation.
+%Hint for the following exercises:  Note that
+%when $\lambda > 0$, then
+%$\cos \bigl( \sqrt{\lambda}\, (t - a) \bigr)$
+%and $\sin  \bigl( \sqrt{\lambda}\, (t - a) \bigr)$
+%are also solutions of the homogeneous
+%equation.
 
 \begin{exercise}
-Compute all
-eigenvalues and eigenfunctions of
-$x'' + \lambda x = 0, ~ x(a) = 0, ~ x(b) = 0$ (assume $a < b$).
+	Suppose $x'' + \lambda x = 0$ and $x(0)=1$, $x(1) = 1$.
+	Find all $\lambda$ for which there is more
+	than one solution.  Also find the corresponding solutions (only for the
+	eigenvalues).
 \end{exercise}
-
-\begin{exercise}
-Compute all
-eigenvalues and eigenfunctions of
-$x'' + \lambda x = 0, ~ x'(a) = 0, ~ x'(b) = 0$ (assume $a < b$).
-\end{exercise}
-
-\begin{exercise}
-Compute all
-eigenvalues and eigenfunctions of
-$x'' + \lambda x = 0, ~ x'(a) = 0, ~ x(b) = 0$ (assume $a < b$).
-\end{exercise}
-
-\begin{exercise}
-Compute all 
-eigenvalues and eigenfunctions of
-$x'' + \lambda x = 0, ~ x(a) = x(b), ~ x'(a) = x'(b)$ (assume $a < b$).
-\end{exercise}
-
-\begin{exercise}
-We skipped the case of $\lambda < 0$ for
-the boundary value problem
-$x'' + \lambda x = 0, ~ x(-\pi) = x(\pi), ~ x'(-\pi) = x'(\pi)$.
-Finish the calculation and show that there are no negative eigenvalues.
-\end{exercise}
-
-\setcounter{exercise}{100}
-
-\begin{exercise}
-Consider a spinning string of length 2 and linear density 0.1 and tension 3.
-Find smallest angular velocity when the string pops out.
-\end{exercise}
-\exsol{%
-$\omega = \pi \sqrt{\frac{15}{2}}$
-}
-
-\begin{exercise}
-Suppose $x'' + \lambda x = 0$ and $x(0)=1$, $x(1) = 1$.
-Find all $\lambda$ for which there is more
-than one solution.  Also find the corresponding solutions (only for the
-eigenvalues).
-\end{exercise}
-\exsol{%
-$\lambda_k = 4 k^2 \pi^2$ for $k = 1,2,3,\ldots$
-\quad
-$x_k =  \cos (2k\pi t) + B \sin (2k\pi t)$ \quad (for any $B$)
+\exsolution{%
+	Solving $x''+\lambda x=0$, the general solution will depend on whether $\lambda>0$, $\lambda =0$, or $\lambda <0$. Considering the case $\lambda>0$, we get two complex roots to the auxiliary equation and hence the general solution will be $x(t)=A\cos(\sqrt{\lambda}t)+B\sin(\sqrt{\lambda}t)$. Applying the given boundary conditions, we get
+	$\lambda_k = 4 k^2 \pi^2$ for $k = 1,2,3,\ldots$
+	\quad
+	$x_k =  \cos (2k\pi t) + B \sin (2k\pi t)$ \quad (for any $B$). Also, $\lambda>0$ is the only case for which we get more than one solution.
 }
 
 \begin{exercise}
@@ -650,18 +609,89 @@ the solution is always identically zero.  One condition is always
 enough to guarantee a unique solution for a first order equation.
 }
 
-\begin{exercise}[challenging]
-Suppose $x''' + \lambda x = 0$ and $x(0)=0$, $x'(0) = 0$, $x(1) = 0$.
-Suppose that $\lambda > 0$.  Find an equation that all such
-eigenvalues must satisfy.
-Hint: Note that $-\sqrt[3]{\lambda}$ is a root
-of $r^3+\lambda = 0$.
+\begin{exercise}
+	Solve the second order eigenvalue problem
+	$x' + \lambda x = 0$ and $x(0)=0$, $x'(L) = 0$.
 \end{exercise}
 \exsol{%
-$\frac{\sqrt{3}}{3} e^{\frac{-3}{2}\sqrt[3]{\lambda}}
-- \frac{\sqrt{3}}{3} \cos \bigl( \frac{\sqrt{3}\, \sqrt[3]{\lambda}}{2} \bigr)
-+ \sin \bigl( \frac{\sqrt{3}\, \sqrt[3]{\lambda}}{2}\bigr) = 0$
+	$x(t)=\sin\frac{(2n-1)\pi t}{2L}$
 }
+
+The following exercises won't be covered in Math 204. 
+
+\begin{exercise}
+    Compute all
+    eigenvalues and eigenfunctions of
+    $x'' + \lambda x = 0, ~ x(a) = 0, ~ x(b) = 0$ (assume $a < b$).
+    \end{exercise}
+    
+    \begin{exercise}
+    Compute all
+    eigenvalues and eigenfunctions of
+    $x'' + \lambda x = 0, ~ x'(a) = 0, ~ x'(b) = 0$ (assume $a < b$).
+    \end{exercise}
+    
+    \begin{exercise}
+    Compute all
+    eigenvalues and eigenfunctions of
+    $x'' + \lambda x = 0, ~ x'(a) = 0, ~ x(b) = 0$ (assume $a < b$).
+    \end{exercise}
+    
+    \begin{exercise}
+    Compute all 
+    eigenvalues and eigenfunctions of
+    $x'' + \lambda x = 0, ~ x(a) = x(b), ~ x'(a) = x'(b)$ (assume $a < b$).
+    \end{exercise}
+    
+    \begin{exercise}
+    We skipped the case of $\lambda < 0$ for
+    the boundary value problem
+    $x'' + \lambda x = 0, ~ x(-\pi) = x(\pi), ~ x'(-\pi) = x'(\pi)$.
+    Finish the calculation and show that there are no negative eigenvalues.
+    \end{exercise}
+    
+    \begin{exercise}
+    Consider a spinning string of length 2 and linear density 0.1 and tension 3.
+    Find smallest angular velocity when the string pops out.
+    \end{exercise}
+    \exsol{%
+    $\omega = \pi \sqrt{\frac{15}{2}}$
+    }
+    
+    \begin{exercise}
+    Suppose $x'' + x = 0$ and $x(0)=0$, $x'(\pi) = 1$.
+    Find all the solution(s) if any exist.
+    \end{exercise}
+    \exsol{%
+    $x(t) = - \sin(t)$
+    }
+    
+    \begin{exercise}
+    Consider
+    $x' + \lambda x = 0$ and $x(0)=0$, $x(1) = 0$.  Why does it not
+    have any eigenvalues?  Why does any first order equation with two endpoint
+    conditions such as above have no eigenvalues?
+    \end{exercise}
+    \exsol{%
+    General solution is $x = C e^{-\lambda t}$.  Since $x(0) = 0$ then $C=0$, and so $x(t) = 0$.
+    Therefore,
+    the solution is always identically zero.  One condition is always
+    enough to guarantee a unique solution for a first order equation.
+    }
+    
+    \begin{exercise}[challenging]
+    Suppose $x''' + \lambda x = 0$ and $x(0)=0$, $x'(0) = 0$, $x(1) = 0$.
+    Suppose that $\lambda > 0$.  Find an equation that all such
+    eigenvalues must satisfy.
+    Hint: Note that $-\sqrt[3]{\lambda}$ is a root
+    of $r^3+\lambda = 0$.
+    \end{exercise}
+    \exsol{%
+    $\frac{\sqrt{3}}{3} e^{\frac{-3}{2}\sqrt[3]{\lambda}}
+    - \frac{\sqrt{3}}{3} \cos \bigl( \frac{\sqrt{3}\, \sqrt[3]{\lambda}}{2} \bigr)
+    + \sin \bigl( \frac{\sqrt{3}\, \sqrt[3]{\lambda}}{2}\bigr) = 0$
+    }
+    
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -730,11 +760,10 @@ mistake is to assume that a formula for $f(t)$ holds for its extension.  It
 can be confusing when the formula for $f(t)$ is periodic, but with perhaps
 a different period.
 
-\begin{exercise}
-Define $f(t) = \cos t$ on $[\nicefrac{-\pi}{2},\nicefrac{\pi}{2}]$.  Take the $\pi$-periodic
+Exercise: Define $f(t) = \cos t$ on $[\nicefrac{-\pi}{2},\nicefrac{\pi}{2}]$.  Take the $\pi$-periodic
 extension and sketch its graph.  How does it compare to the graph of
 $\cos t$?
-\end{exercise}
+
 
 
 
@@ -870,9 +899,9 @@ $a_m =
 \frac{\langle \, f(t) \, , \, \cos (mt) \, \rangle}{\langle \, \cos (mt) \, , \,
 \cos (mt) \, \rangle}$.
 
-\begin{exercise}
-Carry out the calculation for $a_0$ and $b_m$.
-\end{exercise}
+
+Exercise: Carry out the calculation for $a_0$ and $b_m$.
+
 
 \begin{example}
 Take the function
@@ -1100,8 +1129,11 @@ terms in the series we take.
 \diffyincludegraphics{width=3in}{width=4.5in}{ts-squarewave-gibbs}
 \caption{Gibbs phenomenon in action.\label{ts:squarewavegibbsfig}}
 \end{myfig}
-
 \medskip
+
+
+
+
 
 We can think of a periodic function as a \myquote{signal} being a superposition of
 many signals of pure frequency.  For example, we could think of the square
@@ -1122,22 +1154,161 @@ simplest way to make sound using a computer is the square wave, and the sound
 is very different from a pure tone.  If you ever played video games
 from the 1980s or so, then you heard what square waves sound like.
 
+
+
 \subsection{Exercises}
+
+\begin{exercise}
+	Suppose $f(t)$ is defined on $[-\pi,\pi]$ as $f(t) = \sin(t)$.  Extend
+	periodically and compute the Fourier series.
+\end{exercise}
+\exsolution{%
+%\includegraphics[scale=0.5]{FourierSeriesQ1.pdf}
+The graph of the periodically extended $f(t)$ is shown in figure. We then calcualte the Fourier coefficients and see that
+\begin{equation*}
+a_{0}=0,\quad a_{n}=0, b_{n}=0\,(n\ne 1)\nonumber
+\end{equation*}
+Calculating $b_{n}$ for $n=1$, we find that $b_{1}=1$. Therefore, the Fourier series for the given $f(t)$ is $\sin(t)$.
+\begin{myfig}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{FourierSeriesQ1}
+\caption{Periodic Extension of $f(t)=\sin t$ on $[-\pi,\pi]$ \label{FourierSeriesQ1fig}}
+\end{myfig}
+\medskip
+}
+
+\begin{exercise}
+	Suppose $f(t)$ is defined on $(-\pi,\pi]$ as $f(t) = \sin(\pi t)$.  Extend
+	periodically and compute the Fourier series.
+\end{exercise}
+\exsol{%
+	$\sum\limits_{n=1}^\infty
+	\frac{(\pi-n) \sin( \pi n+{\pi}^{2})
+		+(\pi+n)\sin(\pi n-{\pi}^{2}) }{\pi {n}^{2}-{\pi}^{3}}
+	\sin(nt)$
+	%$a_0 = \frac{1}{\pi} \int_{-\pi}^\pi \sin(\pi t) \, dt$
+	%\\
+	%$a_n =
+	%\frac{1}{\pi} \int_{-\pi}^\pi \sin(\pi t) \cos (nt) \, dt$
+	%\\
+	%$b_n =
+	%\frac{1}{\pi} \int_{-\pi}^\pi f(t) \sin (nt) \, dt$
+\begin{myfig}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{FourierSeriesQ2}
+\caption{Periodic Extension of $f(t)=\sin \pi t$ on $(-\pi,\pi]$ \label{FourierSeriesQ2}}
+\end{myfig}
+\medskip
+}
+
+\begin{exercise}
+	Suppose $f(t)$ is defined on $(-\pi,\pi]$ as $f(t) = \sin^2(t)$.
+	Extend
+	periodically and compute the Fourier series.
+\end{exercise}
+\exsol{%
+	$\frac{1}{2}-\frac{1}{2}\cos(2t)$
+\begin{myfig}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{FourierSeriesQ3}
+\caption{Periodic Extension of $f(t)=\sin \pi t$ on $(-\pi,\pi]$ \label{FourierSeriesQ3}}
+\end{myfig}
+\medskip
+}
+
+
+\begin{exercise}
+	Suppose $f(t)$ is defined on $[-\pi,\pi]$ as $t^2$.
+	Extend periodically and compute the Fourier series of $f(t)$.
+\end{exercise}
+\exsol{%
+	$\frac{\pi^{2}}{3} + \sum\limits_{n=1}^\infty
+	\frac{4(-1)^{n}}{{n}^{2}}
+	\cos(nt)$
+\begin{myfig}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{FourierSeriesQ4}
+\caption{Periodic Extension of $f(t)=t^{2}$ on $[-\pi,\pi]$ \label{FourierSeriesQ4}}
+\end{myfig}
+	\medskip
+}
+
+
+\begin{exercise}
+	Suppose $f(t)$ is defined on $(-\pi,\pi]$ as $t^3$.
+	Extend periodically and compute the Fourier series of $f(t)$.
+\end{exercise}
+\exsol{%
+	$\sum\limits_{n=1}^\infty
+	\frac{2(-1)^{n}(6-n^{2}\pi^{2})}{{n}^{3}}
+	\sin(nt)$
+\begin{myfig}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{FourierSeriesQ5}
+\caption{Periodic Extension of $f(t)=t^{3}$ on $(-\pi,\pi]$ \label{FourierSeriesQ5}}
+\end{myfig}
+	\medskip
+}
+
+
+\begin{exercise}
+	Suppose $f(t)$ is defined on $(-\pi,\pi]$ as $t^4$.
+	Extend periodically and compute the Fourier series.
+\end{exercise}
+\exsol{%
+	$\frac{\pi^4}{5} + \sum\limits_{n=1}^\infty
+	\frac{{(-1)}^{n} (8{\pi}^{2}{n}^{2}-48) }{{n}^{4}}
+	\cos(nt)$
+\begin{myfig}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{FourierSeriesQ6}
+\caption{Periodic Extension of $f(t)=t^{4}$ on $(-\pi,\pi]$ \label{FourierSeriesQ6}}
+\end{myfig}
+	\medskip
+}
 
 \begin{exercise}
 Suppose $f(t)$ is defined on $[-\pi,\pi]$ as $\sin (5t) + \cos (3t)$.  Extend
 periodically and compute the Fourier series of $f(t)$.
 \end{exercise}
+\exsol{%
+	$\cos (3t) + \sin (5t)$
+\begin{myfig}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{FourierSeriesQ7}
+\caption{Periodic Extension of $f(t)=\sin (5t) + \cos (3t)$ on $(-\pi,\pi]$ \label{FourierSeriesQ7}}
+\end{myfig}
+	\medskip
+}
 
 \begin{exercise}
 Suppose $f(t)$ is defined on $[-\pi,\pi]$ as $\lvert t \rvert$.
 Extend periodically and compute the Fourier series of $f(t)$.
 \end{exercise}
+\exsol{%
+$\frac{\pi}{2}+\sum\limits_{n=1}^\infty\frac{2(-1+(-1)^{n})}{n^{2}\pi}\cos(nt)$
+\begin{myfig}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{FourierSeriesQ8}
+\caption{Periodic Extension of $f(t)=\lvert t \rvert$ on $[-\pi,\pi]$ \label{FourierSeriesQ8}}
+\end{myfig}
+\medskip
+}
 
 \begin{exercise}
 Suppose $f(t)$ is defined on $[-\pi,\pi]$ as $\lvert t \rvert^3$.
 Extend periodically and compute the Fourier series of $f(t)$.
 \end{exercise}
+\exsol{%
+	$\frac{\pi^{3}}{4}+\sum\limits_{n=1}^\infty\frac{12(1-(-1)^{n})+6n^{2}\pi^{2}(-1)^{n}}{n^{4}\pi}\cos(nt)$
+\begin{myfig}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{FourierSeriesQ9}
+\caption{Periodic Extension of $f(t)=\lvert t \rvert^3$ on $[-\pi,\pi]$ \label{FourierSeriesQ9}}
+\end{myfig}
+	\medskip
+}
+
 
 \begin{exercise}
 Suppose $f(t)$ is defined on $(-\pi,\pi]$ as
@@ -1150,16 +1321,15 @@ f(t) =
 \end{equation*}
 Extend periodically and compute the Fourier series of $f(t)$.
 \end{exercise}
-
-\begin{exercise}
-Suppose $f(t)$ is defined on $(-\pi,\pi]$ as $t^3$.
-Extend periodically and compute the Fourier series of $f(t)$.
-\end{exercise}
-
-\begin{exercise}
-Suppose $f(t)$ is defined on $[-\pi,\pi]$ as $t^2$.
-Extend periodically and compute the Fourier series of $f(t)$.
-\end{exercise}
+\exsol{%
+	$\sum\limits_{n=1}^\infty\frac{2(1-(-1)^{n})}{n\pi}\sin(nt)$
+\begin{myfig}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{FourierSeriesQ10}
+\caption{Periodic Extension of $f(t)$ on $(-\pi,\pi]$ \label{FourierSeriesQ10}}
+\end{myfig}
+	\medskip
+}
 
 There is another form of the Fourier series using complex exponentials
 $e^{nt}$ for $n=\ldots,-2,-1,0,1,2,\ldots$ instead of
@@ -1191,52 +1361,7 @@ c_0 + \sum_{m=1}^\infty \Bigl( c_m e^{imt} + c_{-m} e^{-imt}  \Bigr).
 \end{samepage}
 \end{exercise}
 
-\setcounter{exercise}{100}
 
-\begin{exercise}
-Suppose $f(t)$ is defined on $[-\pi,\pi]$ as $f(t) = \sin(t)$.  Extend
-periodically and compute the Fourier series.
-\end{exercise}
-\exsol{%
-$\sin(t)$
-}
-
-\begin{exercise}
-Suppose $f(t)$ is defined on $(-\pi,\pi]$ as $f(t) = \sin(\pi t)$.  Extend
-periodically and compute the Fourier series.
-\end{exercise}
-\exsol{%
-$\sum\limits_{n=1}^\infty
-\frac{(\pi-n) \sin( \pi n+{\pi}^{2})
-+(\pi+n)\sin(\pi n-{\pi}^{2}) }{\pi {n}^{2}-{\pi}^{3}}
-\sin(nt)$
-%$a_0 = \frac{1}{\pi} \int_{-\pi}^\pi \sin(\pi t) \, dt$
-%\\
-%$a_n =
-%\frac{1}{\pi} \int_{-\pi}^\pi \sin(\pi t) \cos (nt) \, dt$
-%\\
-%$b_n =
-%\frac{1}{\pi} \int_{-\pi}^\pi f(t) \sin (nt) \, dt$
-}
-
-\begin{exercise}
-Suppose $f(t)$ is defined on $(-\pi,\pi]$ as $f(t) = \sin^2(t)$.
-Extend
-periodically and compute the Fourier series.
-\end{exercise}
-\exsol{%
-$\frac{1}{2}-\frac{1}{2}\cos(2t)$
-}
-
-\begin{exercise}
-Suppose $f(t)$ is defined on $(-\pi,\pi]$ as $f(t) = t^4$.
-Extend periodically and compute the Fourier series.
-\end{exercise}
-\exsol{%
-$\frac{\pi^4}{5} + \sum\limits_{n=1}^\infty
-\frac{{(-1)}^{n} (8{\pi}^{2}{n}^{2}-48) }{{n}^{4}}
-\cos(nt)$
-}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1599,9 +1724,8 @@ and extend to a
 This function has one derivative everywhere, but it
 does not have a second derivative whenever $t$ is an integer.
 
-\begin{exercise}
-Compute $f''(0+)$ and $f''(0-)$.
-\end{exercise}
+Exercise: Compute $f''(0+)$ and $f''(0-)$.
+
 
 Let us compute the Fourier series coefficients.  The actual computation
 involves several integration by parts and is left to student.
@@ -1706,13 +1830,70 @@ the series again, we would obtain
 \end{equation*}
 which does not converge!
 
-\begin{exercise}
-Use a computer to plot the series we obtained for $f(t)$, $f'(t)$ and
+Computer Exercise: Use a computer to plot the series we obtained for $f(t)$, $f'(t)$ and
 $f''(t)$.  That is, plot say the first 5 harmonics of the functions.  At what
 points does $f''(t)$ have the discontinuities?
-\end{exercise}
 
 \subsection{Exercises}
+
+\begin{exercise}
+	Let
+	\begin{equation*}
+	f(t) = t^2 \qquad \text{for } \; {-2} < t \leq 2
+	\end{equation*}
+	extended periodically.
+	\begin{tasks}
+		\task Compute the Fourier series for $f(t)$.
+		\task Write out the series explicitly up to the $3^{\text{rd}}$ harmonic.
+	\end{tasks}
+\end{exercise}
+\exsolution{%
+Using the general Fourier coefficients for a $2L-$periodic function, we can find:
+a) $\frac{8}{6}+\sum\limits_{n=1}^\infty\frac{16{(-1)}^n}{\pi^2 n^2}\cos\bigl(\frac{n\pi}{2} t\bigr)$
+\quad
+b) $\frac{8}{6}-\frac{16}{\pi^2 }
+\cos\bigl(\frac{\pi}{2} t\bigr)+\frac{4}{\pi^2}\cos\bigl(\pi t\bigr)-\frac{16}{9\pi^2}\cos\bigl(\frac{3\pi}{2} t\bigr) + \cdots$
+\begin{myfig}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{GeneralFourierSeriesQ3}
+\caption{Periodic Extension of $f(t)=t^{2}$ on $(-2,\pi]$ \label{GeneralFourierSeriesQ3}}
+\end{myfig}
+	\medskip
+}
+
+\begin{exercise}
+	Let
+	\begin{equation*}
+	f(t) = t \qquad \text{for } \; {-\lambda} < t \leq \lambda \; \text{ (for some } \lambda > 0 \text{)}
+	\end{equation*}
+	extended periodically.
+	\begin{tasks}
+		\task Compute the Fourier series for $f(t)$.
+		\task Write out the series explicitly up to the $3^{\text{rd}}$ harmonic.
+	\end{tasks}
+\end{exercise}
+\exsol{%
+	a)
+	$\sum\limits_{n=1}^\infty
+	\frac{{(-1)}^{n+1}2\lambda}{n \pi}
+	\sin\bigl(\frac{n\pi}{\lambda} t\bigr)$
+	\quad
+	b)
+	$\frac{2\lambda}{\pi}
+	\sin\bigl(\frac{\pi}{\lambda} t\bigr)
+	-
+	\frac{\lambda}{\pi}
+	\sin\bigl(\frac{2\pi}{\lambda} t\bigr)
+	+
+	\frac{2\lambda}{3\pi}
+	\sin\bigl(\frac{3\pi}{\lambda} t\bigr) - \cdots$
+\begin{myfig}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{GeneralFourierSeriesQ4}
+\caption{Periodic Extension of $f(t)=t$ on $(-\lambda,\lambda]$ \label{GeneralFourierSeriesQ4}}
+\end{myfig}
+	\medskip
+}
 
 \begin{exercise}
 Let
@@ -1729,6 +1910,19 @@ extended periodically.
 \task Write out the series explicitly up to the $3^{\text{rd}}$ harmonic.
 \end{tasks}
 \end{exercise}
+\exsol{%
+	a)
+	$\frac{1}{4}+\sum\limits_{n=1}^\infty
+	\frac{-1+(-1)^{n}}{n^{2} \pi^{2}}\cos(n\pi t)+\frac{(-1)^{n+1}}{n \pi}\sin(n\pi t)$
+	\quad
+	b) Expand the above series for $n=1$ to $n=3$.
+\begin{myfig}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{GeneralFourierSeriesQ5}
+\caption{Periodic Extension of $f(t)$ on $(-1,1]$ \label{GeneralFourierSeriesQ5}}
+\end{myfig}
+	\medskip
+}
 
 \begin{exercise}
 Let
@@ -1745,6 +1939,20 @@ extended periodically.
 \task Write out the series explicitly up to the $3^{\text{rd}}$ harmonic.
 \end{tasks}
 \end{exercise}
+\exsol{%
+	a)
+	$\frac{5}{12}+\sum\limits_{n=1}^\infty
+	\frac{-1+3(-1)^{n}}{n^{2} \pi^{2}}\cos(n\pi t)+\frac{2(-1+(-1)^{n})}{n^{3} \pi^{3}}\sin(n\pi t)$
+	\quad
+	b) Expand the above series for $n=1$ to $n=3$.
+\begin{myfig}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{GeneralFourierSeriesQ6}
+\caption{Periodic Extension of $f(t)$ on $(-1,1]$ \label{GeneralFourierSeriesQ6}}
+\end{myfig}
+	\medskip
+}
+
 
 \begin{exercise}
 Let
@@ -1761,19 +1969,20 @@ extended periodically (period is 20).
 \task Write out the series explicitly up to the $3^{\text{rd}}$ harmonic.
 \end{tasks}
 \end{exercise}
+\exsol{%
+	a)
+	$\frac{1}{2}+\sum\limits_{n=1}^\infty
+	\frac{2(-1+(-1)^{n})}{n^{2} \pi^{2}}\cos(\frac{n\pi}{10} t)$
+	\quad
+	b) Expand the above series for $n=1$ to $n=3$.
+\begin{myfig}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{GeneralFourierSeriesQ7}
+\caption{Periodic Extension of $f(t)=t$ on $(-10,10]$ \label{GeneralFourierSeriesQ7}}
+\end{myfig}
+	\medskip
+}
 
-\begin{exercise}
-Let $f(t) = \sum_{n=1}^\infty \frac{1}{n^3} \cos (n t)$.  Is $f(t)$
-continuous and differentiable everywhere?  Find the derivative (if it exists
-everywhere)
-or justify why $f(t)$ is not differentiable everywhere.
-\end{exercise}
-
-\begin{exercise}
-Let $f(t) = \sum_{n=1}^\infty \frac{{(-1)}^n}{n} \sin (n t)$.  Is $f(t)$
-differentiable everywhere?  Find the derivative (if it exists everywhere) or
-justify why $f(t)$ is not differentiable everywhere.
-\end{exercise}
 
 \begin{exercise}
 Let
@@ -1791,6 +2000,20 @@ extended periodically.
 \task Write out the series explicitly up to the $3^{\text{rd}}$ harmonic.
 \end{tasks}
 \end{exercise}
+\exsol{%
+	a)
+	$\frac{1}{4}+\sum\limits_{n=1}^\infty
+	\frac{-2(1+(-1)^{n}-2\cos(n\pi/2))}{n^{2} \pi^{2}}\cos(\frac{n\pi}{2} t)+\frac{4\sin(n\pi/2)}{n^{2} \pi^{2}}\sin(\frac{n\pi}{2} t)$
+	\quad
+	b) Expand the above series for $n=1$ to $n=3$.
+\begin{myfig}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{GeneralFourierSeriesQ8}
+\caption{Periodic Extension of $f(t)=t$ on $(-2,2]$ \label{GeneralFourierSeriesQ8}}
+\end{myfig}
+	\medskip
+}
+
 
 \begin{exercise}
 Let
@@ -1804,6 +2027,92 @@ extended periodically.
 \task What does the series converge to at $t=1$.
 \end{tasks}
 \end{exercise}
+\exsol{%
+a)
+$\frac{e^{2}-1}{2e}+\sum\limits_{n=1}^\infty \frac{(-1)^{n}(e^{2}-1)}{e(1+n^{2}\pi^{2})}\cos(n\pi t)+\frac{(-1)^{n+1}(n\pi)(e^{2}-1)}{e(1+n^{2}\pi^{2})}\sin(n\pi t)$
+\quad
+b)
+$\frac{e^{2}-1}{2e} + \frac{-(e^{2}-1)}{e(1+\pi^{2})}\cos(\pi t)+\frac{(\pi)(e^{2}-1)}{e(1+\pi^{2})}\sin(\pi t)
++
+\frac{(e^{2}-1)}{e(1+4\pi^{2})}\cos(2\pi t)+\frac{(-2\pi)(e^{2}-1)}{e(1+4\pi^{2})}\sin(2\pi t)
++
+\frac{-(e^{2}-1)}{e(1+9\pi^{2})}\cos(3\pi t)+\frac{(3\pi)(e^{2}-1)}{e(1+9\pi^{2})}\sin(3\pi t) + \cdots$
+\quad
+c) $\frac{e+e^{-1}}{2}$
+\begin{myfig}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{GeneralFourierSeriesQ9}
+\caption{Periodic Extension of $f(t)=e^{t}$ on $(-1,1]$ \label{GeneralFourierSeriesQ9}}
+\end{myfig}
+	\medskip
+}
+
+\begin{exercise}
+	Let
+	\begin{equation*}
+	f(t) = 
+	\begin{cases}
+	0 & \text{if } \; {-2} < t \leq 0, \\
+	2 & \text{if } \; \phantom{-}0 < t \leq 2,
+	\end{cases}
+	\end{equation*}
+	extended periodically.  Suppose $F(t)$ is the function given
+	by the Fourier series of $f$.  Without computing the Fourier series
+	evaluate
+	\begin{tasks}(3)
+		\task $F(0)$
+		\task $F(-1)$
+		\task $F(1)$
+		\task $F(-2)$
+		\task $F(4)$
+		\task $F(-9)$
+	\end{tasks}
+\end{exercise}
+\exsol{%
+	a) $F(0) = 1$, 
+	b) $F(-1) = 0$, 
+	c) $F(1) = 2$, 
+	d) $F(-2) = 1$, 
+	e) $F(4) = 1$, 
+	f) $F(-9) = 0$ 
+}
+
+\begin{exercise}
+	Let
+	\begin{equation*}
+	f(t) = \nicefrac{t}{2} \qquad \text{for } \; {-\pi} < t < \pi
+	\end{equation*}
+	extended periodically.
+	\begin{tasks}
+		\task Compute the Fourier series for $f(t)$.
+		\task Plug in $t=\nicefrac{\pi}{2}$ to find a series representation
+		for $\nicefrac{\pi}{4}$.
+		\task Using the first 4 terms of the result from part b) approximate
+		$\nicefrac{\pi}{4}$.
+	\end{tasks}
+\end{exercise}
+\exsolution{%
+	a)
+	$\sum\limits_{n=1}^\infty
+	\frac{{(-1)}^{n+1}}{n} \sin(nt)$
+	\qquad
+	b) $f$ is continuous at $t=\nicefrac{\pi}{2}$ so the
+	Fourier series converges to $f(\nicefrac{\pi}{2}) = \nicefrac{\pi}{4}$.
+	Obtain (for even $n$, we get zero)
+	$\nicefrac{\pi}{4} = \sum\limits_{n=1}^\infty
+	\frac{{(-1)}^{n+1}}{2n-1} = 1 - \nicefrac{1}{3} + \nicefrac{1}{5}-
+	\nicefrac{1}{7} + \cdots$.
+	\qquad
+	c) Using the first 4 terms get $\nicefrac{76}{105}\approx 0.72$ (quite a bad
+	approximation, you would have to take about 50 terms to start to get to
+	within $0.01$ of $\nicefrac{\pi}{4}$).
+\begin{myfig}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{GeneralFourierSeriesQ11}
+\caption{Periodic Extension of $f(t)=t/2$ on $(-\pi,\pi)$ \label{GeneralFourierSeriesQ11}}
+\end{myfig}
+	\medskip
+}
 
 \begin{exercise}
 Let
@@ -1820,6 +2129,28 @@ evaluate $\displaystyle \sum_{n=1}^\infty \frac{{(-1)}^n}{n^2} = 1 - \frac{1}{4}
 \frac{1}{9} + \cdots$.
 \end{tasks}
 \end{exercise}
+\exsolution{%
+	a)
+	$\frac{2}{6}+\sum\limits_{n=1}^\infty
+	\frac{{4(-1)}^{n}}{n^{2}\pi^{2}} \cos(n\pi t)$
+	\qquad
+	b) $f$ is continuous at $t=0$ so the
+	Fourier series converges to $f(0) = 0$.
+	Obtain 
+	$0 = \frac{1}{3}+\frac{4}{\pi^{2}}\sum\limits_{n=1}^\infty
+	\frac{{(-1)}^{n}}{n^{2}}$. This gives $\sum\limits_{n=1}^\infty\frac{{(-1)}^{n}}{n^{2}}=-\frac{\pi^{2}}{12}$
+	\qquad
+	c) Using $t=1$, we obtain 
+	$1 = \frac{1}{3}+\frac{4}{\pi^{2}}\sum\limits_{n=1}^\infty
+	\frac{{(-1)}^{n}}{n^{2}}\cos(n\pi)$. This gives $\sum\limits_{n=1}^\infty\frac{1}{n^{2}}=\frac{\pi^{2}}{6}$
+\begin{myfig}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{GeneralFourierSeriesQ12}
+\caption{Periodic Extension of $f(t)=t^{2}$ on $(-1,1]$ \label{GeneralFourierSeriesQ12}}
+\end{myfig}
+	\medskip
+}
+
 
 \begin{exercise}
 Let
@@ -1842,65 +2173,23 @@ evaluate
 \task $F(-9)$
 \end{tasks}
 \end{exercise}
-
-\setcounter{exercise}{100}
-
-\begin{exercise}
-Let
-\begin{equation*}
-f(t) = t^2 \qquad \text{for } \; {-2} < t \leq 2
-\end{equation*}
-extended periodically.
-\begin{tasks}
-\task Compute the Fourier series for $f(t)$.
-\task Write out the series explicitly up to the $3^{\text{rd}}$ harmonic.
-\end{tasks}
-\end{exercise}
 \exsol{%
-a) $\frac{8}{6} +
-\sum\limits_{n=1}^\infty
-\frac{16{(-1)}^n}{\pi^2 n^2}
-\cos\bigl(\frac{n\pi}{2} t\bigr)$
-\quad
-b) $\frac{8}{6}
--
-\frac{16}{\pi^2 }
-\cos\bigl(\frac{\pi}{2} t\bigr)
-+
-\frac{4}{\pi^2}
-\cos\bigl(\pi t\bigr)
--
-\frac{16}{9\pi^2}
-\cos\bigl(\frac{3\pi}{2} t\bigr) + \cdots$
+	a) $F(2) = 2$, 
+	b) $F(-2) = 0$, 
+	c) $F(4) = 0$, 
+	d) $F(-4) = 2$, 
+	e) $F(3) = 3/2$, 
+	f) $F(-9) = 3/2$ 
+\begin{myfig}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{FourierSeriesQ13}
+\caption{Periodic Extension of $f(t)=$ on $(-\pi,\pi]$ \label{FourierSeriesQ13}}
+\end{myfig}
+\medskip
 }
 
-\begin{exercise}
-Let
-\begin{equation*}
-f(t) = t \qquad \text{for } \; {-\lambda} < t \leq \lambda \; \text{ (for some } \lambda > 0 \text{)}
-\end{equation*}
-extended periodically.
-\begin{tasks}
-\task Compute the Fourier series for $f(t)$.
-\task Write out the series explicitly up to the $3^{\text{rd}}$ harmonic.
-\end{tasks}
-\end{exercise}
-\exsol{%
-a)
-$\sum\limits_{n=1}^\infty
-\frac{{(-1)}^{n+1}2\lambda}{n \pi}
-\sin\bigl(\frac{n\pi}{\lambda} t\bigr)$
-\quad
-b)
-$\frac{2\lambda}{\pi}
-\sin\bigl(\frac{\pi}{\lambda} t\bigr)
--
-\frac{\lambda}{\pi}
-\sin\bigl(\frac{2\pi}{\lambda} t\bigr)
-+
-\frac{2\lambda}{3\pi}
-\sin\bigl(\frac{3\pi}{\lambda} t\bigr) - \cdots$
-}
+%\setcounter{exercise}{100}
+
 
 \begin{exercise}
 Let
@@ -1911,7 +2200,8 @@ f(t) = \frac{1}{2} + \sum_{n=1}^\infty
 \end{equation*}
 Compute $f'(t)$.
 \end{exercise}
-\exsol{%
+\exsolution{%
+Using term-by-term differentiation, we get
 $f'(t) = \sum\limits_{n=1}^\infty
 \frac{\pi}{n^2+1}
 \cos(n\pi t)$
@@ -1939,65 +2229,19 @@ b) no
 }
 
 \begin{exercise}
-Let
-\begin{equation*}
-f(t) = \nicefrac{t}{2} \qquad \text{for } \; {-\pi} < t < \pi
-\end{equation*}
-extended periodically.
-\begin{tasks}
-\task Compute the Fourier series for $f(t)$.
-\task Plug in $t=\nicefrac{\pi}{2}$ to find a series representation
-for $\nicefrac{\pi}{4}$.
-\task Using the first 4 terms of the result from part b) approximate
-$\nicefrac{\pi}{4}$.
-\end{tasks}
+	Let $f(t) = \sum_{n=1}^\infty \frac{1}{n^3} \cos (n t)$.  Is $f(t)$
+	continuous and differentiable everywhere?  Find the derivative (if it exists
+	everywhere)
+	or justify why $f(t)$ is not differentiable everywhere.
 \end{exercise}
-\exsol{%
-a)
-$\sum\limits_{n=1}^\infty
-\frac{{(-1)}^{n+1}}{n} \sin(nt)$
-\qquad
-b) $f$ is continuous at $t=\nicefrac{\pi}{2}$ so the
-Fourier series converges to $f(\nicefrac{\pi}{2}) = \nicefrac{\pi}{4}$.
-Obtain
-$\nicefrac{\pi}{4} = \sum\limits_{n=1}^\infty
-\frac{{(-1)}^{n+1}}{2n-1} = 1 - \nicefrac{1}{3} + \nicefrac{1}{5}-
-\nicefrac{1}{7} + \cdots$.
-\qquad
-c) Using the first 4 terms get $\nicefrac{76}{105}\approx 0.72$ (quite a bad
-approximation, you would have to take about 50 terms to start to get to
-within $0.01$ of $\nicefrac{\pi}{4}$).
-}
 
 \begin{exercise}
-Let
-\begin{equation*}
-f(t) = 
-\begin{cases}
-0 & \text{if } \; {-2} < t \leq 0, \\
-2 & \text{if } \; \phantom{-}0 < t \leq 2,
-\end{cases}
-\end{equation*}
-extended periodically.  Suppose $F(t)$ is the function given
-by the Fourier series of $f$.  Without computing the Fourier series
-evaluate
-\begin{tasks}(3)
-\task $F(0)$
-\task $F(-1)$
-\task $F(1)$
-\task $F(-2)$
-\task $F(4)$
-\task $F(-8)$
-\end{tasks}
+	Let $f(t) = \sum_{n=1}^\infty \frac{{(-1)}^n}{n} \sin (n t)$.  Is $f(t)$
+	differentiable everywhere?  Find the derivative (if it exists everywhere) or
+	justify why $f(t)$ is not differentiable everywhere.
 \end{exercise}
-\exsol{%
-a) $F(0) = 1$, 
-b) $F(-1) = 0$, 
-c) $F(1) = 2$, 
-d) $F(-2) = 1$, 
-e) $F(4) = 1$, 
-f) $F(-9) = 0$ 
-}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -2024,15 +2268,14 @@ Recall that a function $f(t)$ is \emph{odd}\index{odd function} if $f(-t) =
 $f(-t) = f(t)$.  For example, $\cos (n t)$ is even and $\sin (n t)$ is odd.
 Similarly the function $t^k$ is even if $k$ is even and odd when $k$ is odd.
 
-\begin{exercise}
-Take two functions $f(t)$ and $g(t)$ and define their product $h(t) =
+Exercise: Take two functions $f(t)$ and $g(t)$ and define their product $h(t) =
 f(t)g(t)$.
 \begin{tasks}
 \task Suppose both $f(t)$ and $g(t)$ are odd.  Is $h(t)$ odd or even?
 \task Suppose one is even and one is odd.  Is $h(t)$ odd or even?
 \task Suppose both are even.  Is $h(t)$ odd or even?
 \end{tasks}
-\end{exercise}
+
 
 If $f(t)$ and $g(t)$ are both odd, then $f(t)+g(t)$ is odd.  Similarly for
 even functions.  On the other hand,
@@ -2074,11 +2317,9 @@ $F_{\text{even}}(t)$ is called the
 \emph{\myindex{even periodic extension}} of $f(t)$.
 For the odd extension we generally assume that $f(0) = f(L) = 0$.
 
-\begin{exercise}
-Check that $F_{\text{odd}}(t)$ is odd and $F_{\text{even}}(t)$ is even.
+Verify: Check that $F_{\text{odd}}(t)$ is odd and $F_{\text{even}}(t)$ is even.
 For $F_{\text{odd}}$,
 assume $f(0) = f(L) = 0$.
-\end{exercise}
 
 \begin{example}
 Take the function $f(t) = t\,(1-t)$ defined on $[0,1]$. 
@@ -2256,8 +2497,7 @@ Explicitly, the first few terms of the series are
 \end{equation*}
 \end{example}
 
-\begin{exercise}
-\leavevmode
+Exercise: 
 \begin{tasks}
 \task Compute the derivative of the even periodic extension of $f(t)$ above and verify it
 has jump discontinuities.  Use the actual definition of $f(t)$, not its cosine
@@ -2265,7 +2505,7 @@ series!
 \task Why is it that the derivative of the even periodic extension of $f(t)$ is the
 odd periodic extension of $f'(t)$?
 \end{tasks}
-\end{exercise}
+
 
 \subsection{Application}
 
@@ -2451,12 +2691,86 @@ x(t) =
 \subsection{Exercises}
 
 \begin{exercise}
+	Let $f(t) = \nicefrac{t}{3}$ on $0 \leq t < 3$.
+	\begin{tasks}
+		\task Find the Fourier series of the even periodic extension.
+		\task Find the Fourier series of the odd periodic extension.
+	\end{tasks}
+\end{exercise}
+\exsol{%
+	a)
+	$\nicefrac{1}{2}
+	+
+	\sum\limits_{\substack{n=1\\n\text{ odd}}}^\infty
+	\frac{-4}{\pi^2 n^2}
+	\cos\bigl(\frac{n\pi}{3} t \bigr)$
+	\qquad
+	b) 
+	$\sum\limits_{n=1}^\infty
+	\frac{2{(-1)}^{n+1}}{\pi n}
+	\sin\bigl(\frac{n\pi}{3} t \bigr)$
+}
+
+\begin{exercise}
+	Let $f(t) = \cos(2t)$ on $0 \leq t < \pi$.
+	\begin{tasks}
+		\task Find the Fourier series of the even periodic extension.
+		\task Find the Fourier series of the odd periodic extension.
+	\end{tasks}
+\end{exercise}
+\exsol{%
+	a)
+	$\cos(2t)$
+	\qquad
+	b) 
+	$\sum\limits_{\substack{n=1 \\n \text{ odd}}}^\infty
+	\frac{-4n}{\pi n^2 - 4 \pi}
+	\sin(n t)$
+}
+
+\begin{exercise}
 Take $f(t) = {(t-1)}^2$ defined on $0 \leq t \leq 1$.
 \begin{tasks}
 \task Sketch the plot of the even periodic extension of $f$.
 \task Sketch the plot of the odd periodic extension of $f$.
 \end{tasks}
 \end{exercise}
+\exsol{%
+a) \begin{myfig}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{FourierSineCosineSeriesQ6a}
+\caption{Even Periodic Extension of $f(t)=(t-1)^{2}$ on $[0,1]$ \label{FourierSineCosineSeriesQ6a}}
+\end{myfig}
+\medskip
+b) \begin{myfig}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{FourierSineCosineSeriesQ6b}
+\caption{Odd Periodic Extension of $f(t)=(t-1)^{2}$ on $[0,1]$ \label{FourierSineCosineSeriesQ6b}}
+\end{myfig}
+\medskip
+}
+
+\begin{exercise}
+Take $f(t) = \sin t$ defined on $0 \leq t \leq \pi$.
+\begin{tasks}
+\task Sketch the plot of the even periodic extension of $f$.
+\task Sketch the plot of the odd periodic extension of $f$.
+\end{tasks}
+\end{exercise}
+\exsol{%
+a) \begin{myfig}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{FourierSineCosineSeriesQ7a}
+\caption{Even Periodic Extension of $f(t)=\sin t$ on $[0,\pi]$ \label{FourierSineCosineSeriesQ7a}}
+\end{myfig}
+\medskip
+b) \begin{myfig}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{FourierSineCosineSeriesQ7b}
+\caption{Odd Periodic Extension of $f(t)=\sin t$ on $[0,\pi]$ \label{FourierSineCosineSeriesQ7b}}
+\end{myfig}
+\medskip
+}
 
 \begin{exercise}
 Find the Fourier series of both the odd and even
@@ -2465,16 +2779,55 @@ the function $f(t) = {(t-1)}^2$ for $0 \leq t \leq 1$.
 Can you tell which extension is continuous from the Fourier series
 coefficients?
 \end{exercise}
+\exsol{%
+	a) $\sum\limits_{n=1}^{\infty}
+	\frac{-4+4(-1)^{n}+2n^{2}\pi^{2}}{n^{3}\pi^{3}}
+	\sin(n\pi t)$
+	b) $\frac{1}{3}+\sum\limits_{n=1}^{\infty}\frac{4}{n^{2}\pi^{2}}\cos(n\pi t)$
+}
+
 
 \begin{exercise}
 Find the Fourier series of both the odd and even periodic extension of 
 the function $f(t) = t$ for $0 \leq t \leq \pi$.
 \end{exercise}
+\exsol{%
+	a) $\sum\limits_{n=1}^{\infty}
+	\frac{2(-1)^{n+1}}{n}
+	\sin(nt)$
+	b) $\frac{\pi}{2}+\sum\limits_{n=1}^{\infty}\frac{-2+2(-1)^{n}}{n^{2}\pi}\cos(nt)$
+}
+
 
 \begin{exercise}
 Find the Fourier series of the even periodic extension of 
 the function $f(t) = \sin t$ for $0 \leq t \leq \pi$.
 \end{exercise}
+\exsol{%
+	a) $\sin(t)$
+	b) $\frac{2}{\pi}+\sum\limits_{n=2}^{\infty}\frac{2+2(-1)^{n}}{\pi(1-n^{2})}\cos(nt)$
+}
+
+
+\begin{exercise}
+	Let $f(t) = \sum_{n=1}^\infty \frac{1}{n^2} \sin(nt)$.  Solve
+	$x''- x = f(t)$ for the Dirichlet conditions $x(0) = 0$
+	and $x(\pi) = 0$.
+\end{exercise}
+\exsolution{%
+	Since our function $f(t)$ is expanded as a Sine series, we choose $x(t)=\sum\limits_{n=1}^\infty b_{n}\sin(nt)$ [satisfies the given boundary conditions as well]. Using this in the given differential equation, we can find the expression for $b_{n}$ for all $n$. This leaves us with the final solution $\sum\limits_{n=1}^\infty \frac{-1}{n^2(1+n^2)} \sin(nt)$
+}
+
+\begin{exercise}[challenging]
+	Let $f(t) = t + \sum_{n=1}^\infty \frac{1}{2^n} \sin(nt)$.  Solve
+	$x'' + \pi x = f(t)$ for the Dirichlet conditions $x(0) = 0$
+	and $x(\pi) = 1$.  Hint:  Note that $\frac{t}{\pi}$ satisfies the
+	given Dirichlet conditions.
+\end{exercise}
+\exsol{%
+	$\frac{t}{\pi} + \sum\limits_{n=1}^\infty \frac{1}{2^n(\pi-n^2)} \sin(nt)$
+}
+
 
 \begin{exercise}
 \pagebreak[2]
@@ -2488,6 +2841,10 @@ where $f(t) = 1$ on $0 < t < 1$.
 \task Solve for the Neumann conditions $x'(0)=0, x'(1) = 0$.
 \end{tasks}
 \end{exercise}
+\exsolution{First we use even and odd extensions of the given function $f(t)$ to write the Cosine and Sine series, respectively. The Cosine series is given by $1$ and the Sine series is given by $\sum\limits_{n=1,n\,odd}^{\infty}\frac{4}{n\pi}\sin(n\pi t)$.
+	a) Taking $x(t)=\sum\limits_{n=1,n\,odd}^{\infty}b_{n}\sin(n\pi t)$. Using it in the given differential equation, we can find $b_{n}$ to then show that $x(t)=\sum\limits_{n=1,n\,odd}^{\infty}\frac{4}{n\pi(4-n^{2}\pi^{2})}\sin(n\pi t)$
+	b) $x(t)=1/4$ is the required solution.
+}
 
 \begin{exercise}
 Consider
@@ -2500,6 +2857,11 @@ for $f(t) = \sin (2\pi t)$ on $0 < t < 1$.
 \task Solve for the Neumann conditions $x'(0)=0, x'(1) = 0$.
 \end{tasks}
 \end{exercise}
+\exsolution{%
+	a) $x(t)=\frac{1}{9-4\pi^{2}}\sin(2\pi t)$
+	b) $x(t)=\sum\limits_{n=1,n\,odd}^{\infty}\frac{-8}{\pi(9-n^{2}\pi^{2})(n^{2}-4)}\cos(n\pi t)$
+}
+
 
 \begin{exercise}
 Consider
@@ -2509,6 +2871,9 @@ x''(t) + 3 x(t) = f(t) , \quad x(0) = 0, \quad x(1) = 0,
 where $f(t) = \sum_{n=1}^\infty b_n \sin (n \pi t)$.  Write the solution $x(t)$
 as a Fourier series, where the coefficients are given in terms of $b_n$.
 \end{exercise}
+\exsolution{%
+$x(t)=\sum\limits_{n=1}^{\infty}\frac{b_n}{(3-n^{2}\pi^{2})}\sin(n\pi t)$
+}
 
 \begin{exercise}
 Let $f(t) = t^2(2-t)$ for $0 \leq t \leq 2$.  Let $F(t)$ be the odd periodic
@@ -2516,45 +2881,7 @@ extension.  Compute $F(1)$, $F(2)$, $F(3)$, $F(-1)$, $F(\nicefrac{9}{2})$,
 $F(101)$, $F(103)$.  Note: Do \textbf{not} compute using the sine series.
 \end{exercise}
 
-\setcounter{exercise}{100}
-
-\begin{exercise}
-Let $f(t) = \nicefrac{t}{3}$ on $0 \leq t < 3$.
-\begin{tasks}
-\task Find the Fourier series of the even periodic extension.
-\task Find the Fourier series of the odd periodic extension.
-\end{tasks}
-\end{exercise}
-\exsol{%
-a)
-$\nicefrac{1}{2}
-+
-\sum\limits_{\substack{n=1\\n\text{ odd}}}^\infty
-\frac{-4}{\pi^2 n^2}
-\cos\bigl(\frac{n\pi}{3} t \bigr)$
-\qquad
-b) 
-$\sum\limits_{n=1}^\infty
-\frac{2{(-1)}^{n+1}}{\pi n}
-\sin\bigl(\frac{n\pi}{3} t \bigr)$
-}
-
-\begin{exercise}
-Let $f(t) = \cos(2t)$ on $0 \leq t < \pi$.
-\begin{tasks}
-\task Find the Fourier series of the even periodic extension.
-\task Find the Fourier series of the odd periodic extension.
-\end{tasks}
-\end{exercise}
-\exsol{%
-a)
-$\cos(2t)$
-\qquad
-b) 
-$\sum\limits_{\substack{n=1 \\n \text{ odd}}}^\infty
-\frac{-4n}{\pi n^2 - 4 \pi}
-\sin(n t)$
-}
+%\setcounter{exercise}{100}
 
 \begin{exercise}
 Let $f(t)$ be defined on $0 \leq t < 1$.  Now take
@@ -2569,25 +2896,6 @@ $g(t) = \frac{F_{\text{odd}}(t)+ F_{\text{even}}(t)}{2}$.
 a) $f(t)$
 \qquad
 b) $0$
-}
-
-\begin{exercise}
-Let $f(t) = \sum_{n=1}^\infty \frac{1}{n^2} \sin(nt)$.  Solve
-$x''- x = f(t)$ for the Dirichlet conditions $x(0) = 0$
-and $x(\pi) = 0$.
-\end{exercise}
-\exsol{%
-$\sum\limits_{n=1}^\infty \frac{-1}{n^2(1+n^2)} \sin(nt)$
-}
-
-\begin{exercise}[challenging]
-Let $f(t) = t + \sum_{n=1}^\infty \frac{1}{2^n} \sin(nt)$.  Solve
-$x'' + \pi x = f(t)$ for the Dirichlet conditions $x(0) = 0$
-and $x(\pi) = 1$.  Hint:  Note that $\frac{t}{\pi}$ satisfies the
-given Dirichlet conditions.
-\end{exercise}
-\exsol{%
-$\frac{t}{\pi} + \sum\limits_{n=1}^\infty \frac{1}{2^n(\pi-n^2)} \sin(nt)$
 }
 
 
@@ -2991,7 +3299,7 @@ Find the steady periodic solution to
 $x'' + \pi^2 x = F(t)$.  Express your solution as a series.
 \end{exercise}
 
-\setcounter{exercise}{100}
+
 
 \begin{exercise}
 Let $F(t) = \sin(2\pi t) + 0.1 \cos(10 \pi t)$.
@@ -3038,8 +3346,7 @@ $x =
 (1-n^2)} \cos (n \pi t)$
 }
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
 \section{PDEs, separation of variables, and the heat equation}
