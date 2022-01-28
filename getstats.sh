@@ -11,5 +11,7 @@ echo Figures:"                      \t"`grep '^[\]begin{\(myfig\|mywrapfig\)' *.
 echo '\\---> which are simple insets:'"\t"`grep '^[\]begin{mywrapfigsimp' *.tex | wc -l`
 echo
 echo Tables:"                       \t"`grep '^[\]begin{table}' *.tex | wc -l`
+echo
+echo Footnotes:"                    \t"`grep '[\]footnote{' *.tex | wc -l`
 
 echo
