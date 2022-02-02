@@ -1,3 +1,9 @@
+<li><b>Change initial condition in Exercise 1.1.103 to fix an erratum.</b>
+The previous inition condition meant looking at a point where the
+differential equation is undefined.  While one can solve the problem
+continuously, and the formal process just works, it's best to avoid it.
+The initial condition is changed to $x(0)=\frac{\pi}{4}$ where the equation
+is well behaved.
 <li>Fix erratum from Martin Irungu, a sign error in the "proof" of Theorem
 6.1.2 (the final answer is off by a sign).  In the process, implement Martin's
 suggestion to write the whole thing in therms of the positive $s-c$ rather than
