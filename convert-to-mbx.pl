@@ -333,7 +333,7 @@ sub print_line {
 sub do_thmtitle_subs {
 	my $title = shift;
 
-	$title =~ s|\\href\{(.*?)\}\{(.*?)\}|<url href=\"$1\">$2</url>|gs;
+	$title =~ s|\\href\{(.*?)\}\{(.*?)\}|<url href=\"$1\" visual=\"$1\">$2</url>|gs;
 
 	#FIXME: should check if multiple footnotes work
 	while ($title =~ s!\\footnote\{([^{}]*|([^{}]*\{[^{}]*\}[^{}]*)*)\}!<fn>$1</fn>!s) {
@@ -683,11 +683,11 @@ while(1)
 	} elsif ($para =~ s/^\\href\{([^}]*)\}\{([^}]*)\}//) {
 		open_paragraph_if_not_open ();
 		print "(link $1 $2)\n";
-		print $out "<url href=\"$1\">$2</url>"; 
+		print $out "<url href=\"$1\" visual=\"$1\">$2</url>"; 
 	} elsif ($para =~ s/^\\url\{([^}]*)\}//) {
 		open_paragraph_if_not_open ();
 		print "(url $1)\n";
-		print $out "<url href=\"$1\">$1</url>"; 
+		print $out "<url href=\"$1\" />"; 
 	} elsif ($para =~ s/^\\cite\{([^}]*)\}//) {
 		open_paragraph_if_not_open ();
 		print "(cite $1)\n";
@@ -1574,7 +1574,7 @@ while(1)
 			print "\n\n\nHUH? RESUME ONLY WORKS ON ONE LEVEL!\n\n\n";
 			$num_errors++;
 		}
-		print $out "<ol label=\"$1\" start=\"$list_start\">\n";
+		print $out "<ol marker=\"$1\" start=\"$list_start\">\n";
 		$list_level++;
 	} elsif ($para =~ s/^\\begin\{enumerate\}\[resume\][ \n]*//) {
 		close_paragraph();
@@ -1588,7 +1588,7 @@ while(1)
 	} elsif ($para =~ s/^\\begin\{enumerate\}\[(.*?)\][ \n]*//) {
 		close_paragraph();
 		print "(begin enumerate label >$1<)\n";
-		print $out "<ol label=\"$1\">\n";
+		print $out "<ol marker=\"$1\">\n";
 		$list_start=1;
 		$list_level++;
 	} elsif ($para =~ s/^\\begin\{enumerate\}[ \n]*//) {
@@ -1612,14 +1612,14 @@ while(1)
 		 $para =~ s/^\\begin\{tasks\}\[label=\\arabic\*\)\][ \n]*//) {
 		close_paragraph();
 		print "(begin tasks enumerate label 1)<)\n";
-		print $out "<ol label=\"1)\">\n";
+		print $out "<ol marker=\"1)\">\n";
 		$list_start=1;
 		$list_level++;
 	} elsif ($para =~ s/^\\begin\{tasks\}\[counter-format=tsk\[1\]\)\]\((.*?)\)[ \n]*// ||
 		 $para =~ s/^\\begin\{tasks\}\[label=\\arabic\*\)\]\((.*?)\)[ \n]*//) {
 		close_paragraph();
 		print "(begin tasks enumerate label 1) cols=$1<)\n";
-		print $out "<ol label=\"1)\" cols=\"$1\">\n";
+		print $out "<ol marker=\"1)\" cols=\"$1\">\n";
 		$list_start=1;
 		$list_level++;
 	} elsif ($para =~ s/^\\begin\{tasks\}\[resume\]\((.*?)\)[ \n]*//) {
@@ -1632,7 +1632,7 @@ while(1)
 			print "\n\n\nHUH? RESUME ONLY WORKS ON ONE LEVEL!\n\n\n";
 			$num_errors++;
 		}
-		print $out "<ol label=\"a)\" cols=\"$1\" start=\"$list_start\">\n";
+		print $out "<ol marker=\"a)\" cols=\"$1\" start=\"$list_start\">\n";
 		$list_level++;
 	} elsif ($para =~ s/^\\begin\{tasks\}\[resume\][ \n]*//) {
 		close_paragraph();
@@ -1644,18 +1644,18 @@ while(1)
 			print "\n\n\nHUH? RESUME ONLY WORKS ON ONE LEVEL!\n\n\n";
 			$num_errors++;
 		}
-		print $out "<ol label=\"a)\" start=\"$list_start\">\n";
+		print $out "<ol marker=\"a)\" start=\"$list_start\">\n";
 		$list_level++;
 	} elsif ($para =~ s/^\\begin\{tasks\}\((.*?)\)[ \n]*//) {
 		close_paragraph();
 		print "(begin tasks enumerate cols=$1<)\n";
-		print $out "<ol label=\"a)\" cols=\"$1\">\n";
+		print $out "<ol marker=\"a)\" cols=\"$1\">\n";
 		$list_start=1;
 		$list_level++;
 	} elsif ($para =~ s/^\\begin\{tasks\}[ \n]*//) {
 		close_paragraph();
 		print "(begin tasks enumerate)\n";
-		print $out "<ol label=\"a)\">\n";
+		print $out "<ol marker=\"a)\">\n";
 		$list_start=1;
 		$list_level++;
 	} elsif ($para =~ s/^\\end\{tasks\}[ \n]*//) {
