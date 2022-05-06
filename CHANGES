@@ -4,7 +4,15 @@ differential equation is undefined.  While one can solve the problem
 continuously, and the formal process just works, it's best to avoid it.
 The initial condition is changed to $x(0)=\frac{\pi}{4}$ where the equation
 is well behaved.
-<li>Fix erratum from Martin Irungu, a sign error in the "proof" of Theorem
-6.1.2 (the final answer is off by a sign).  In the process, implement Martin's
-suggestion to write the whole thing in therms of the positive $s-c$ rather than
-the negative $c-s$, which clearly leads to more typos.
+<li>In the processof fixing an erratum from Martin Irungu (a sign error in the
+"proof" of Theorem 6.1.2; the final answer is off by a sign),  implement
+Martin's suggestion to write the whole thing in therms of the positive $s-c$
+rather than the negative $c-s$, which clearly leads to more typos.
+<li>For some reason a new version of LaTeX is now making some spacing slightly
+different (being a little bit more generous with space under figures for
+example), so the pagination is slightly different in places.  I went through
+and tried to get rid of bad page breaks by tightening up the language where
+needed (a good thing to do anyhow), so it is only in a couple of places where
+page breaks changed.
+<li>Some minor wording improvements.
+<li>Fix <a href="errata.html">errata</a>.

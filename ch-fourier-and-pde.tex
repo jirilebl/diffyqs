@@ -5176,11 +5176,11 @@ the general solution for $Y$ (one for each $n$) is
 Y_n(y) = A_n \cosh \left( \frac{n \pi}{w} y \right)
 + B_n \sinh \left( \frac{n \pi}{w} y \right) .
 \end{equation}
-We only have one condition on $Y_n$ and hence we can pick one of $A_n$
+There is only one condition on $Y_n$ and hence we can pick one of $A_n$
 or $B_n$
 to be something convenient.
-It will be useful to have $Y_n(0) = 1$, so we let $A_n=1$.
-Setting $Y_n(h) = 0$ and solving for $B_n$ we get that
+It will be useful to have $Y_n(0) = 1$, so let $A_n=1$.
+Setting $Y_n(h) = 0$ and solving for $B_n$, we get
 \begin{equation*}
 B_n = \frac{- \cosh \left( \frac{n \pi h }{w} \right)}%
 {\sinh \left( \frac{n \pi h }{w} \right)} .
@@ -5198,9 +5198,7 @@ Y_n(y) =
 We define $u_n(x,y) = X_n(x)Y_n(y)$.
 And note that $u_n$
 satisfies \eqref{dirich:eq1}--\eqref{dirich:eq4}.
-
-
-Observe that
+Observe
 \begin{equation*}
 u_n(x,0) = X_n(x)Y_n(0) = \sin \left( \frac{n \pi}{w} x \right) .
 \end{equation*}
@@ -5230,12 +5228,13 @@ b_n
 .
 ~~
 }
+\avoidbreak
 \end{equation*}
 As $u_n$ satisfies \eqref{dirich:eq1}--\eqref{dirich:eq4} and any linear
 combination (finite or infinite) of $u_n$ also satisfies 
 \eqref{dirich:eq1}--\eqref{dirich:eq4}, then $u$ satisfies
 \eqref{dirich:eq1}--\eqref{dirich:eq4}.
-By plugging in $y=0$, we see $u$
+We plug in $y=0$ to see $u$
 satisfies 
 \eqref{dirich:eq5} as well.
 
@@ -5249,7 +5248,7 @@ f(x) =
 \frac{4}{n}
 \sin (n x) .
 \end{equation*}
-Therefore the solution $u(x,y)$, see \figurevref{dirichsquareplot:fig},
+The solution $u(x,y)$, see \figurevref{dirichsquareplot:fig},
 to the corresponding Dirichlet problem is
 given as
 \begin{equation*}
@@ -5483,7 +5482,7 @@ A more natural setting for the Laplace equation $\Delta u = 0$
 is a circle rather than a rectangle.  On the other hand, what makes the
 problem somewhat more difficult is that we need polar coordinates.
 
-\begin{mywrapfigsimp}{1.3in}{1.5in}
+\begin{mywrapfigsimp}[5]{1.3in}{1.5in}
 \diffypdfversion{\vspace*{5pt}}
 \noindent
 \inputpdft{polarcoords}

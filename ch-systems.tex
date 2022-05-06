@@ -2769,7 +2769,7 @@ parts of \S7.5 and \S7.6 in \cite{BD}}}
 Let us take a moment to talk about constant coefficient linear
 homogeneous systems in the plane.
 Much intuition can be obtained by studying this simple case.
-Suppose we use coordinates $(x,y)$ for the plane as usual,
+We use coordinates $(x,y)$ for the plane as usual,
 and suppose
 $P = \left[ \begin{smallmatrix} a & b \\ c & d \end{smallmatrix} \right]$ 
 is a $2 \times 2$ matrix.  Consider the system
@@ -2807,13 +2807,13 @@ $\left[ \begin{smallmatrix} 1 \\ 0 \end{smallmatrix} \right]$ and
 $\left[ \begin{smallmatrix} 1 \\ 1 \end{smallmatrix} \right]$.  See
 \figurevref{pln:source-eigfig}.
 
-\begin{mywrapfig}{3.25in}
+\begin{mywrapfig}[14]{3.25in}
 \capstart
 \diffyincludegraphics{width=3in}{width=4.5in}{pln-source-eig}
 \caption{Eigenvectors of $P$.\label{pln:source-eigfig}}
 \end{mywrapfig}
 
-Suppose the point $(x,y)$ is on the line determined by an eigenvector
+Let $(x,y)$ be a point on the line determined by an eigenvector
 $\vec{v}$ for an eigenvalue $\lambda$.
 That is,
 $\left[ \begin{smallmatrix} x \\ y \end{smallmatrix} \right] = \alpha \vec{v}$
@@ -2830,8 +2830,8 @@ P ( \alpha \vec{v} ) =  \alpha ( P \vec{v} )
 The derivative is a multiple of $\vec{v}$ and hence points along the
 line determined by $\vec{v}$.  As $\lambda > 0$, the derivative points in the
 direction of $\vec{v}$ when $\alpha$ is positive and in the opposite direction
-when $\alpha$ is negative.  Let us draw the lines determined by
-the eigenvectors, and let us draw
+when $\alpha$ is negative.  We draw the lines determined by
+the eigenvectors, and we draw
 arrows on the lines to indicate the directions.
 See \figurevref{pln:source-eig-arrfig}.
 
@@ -2911,11 +2911,11 @@ plane.
 \medskip
 
 \pagebreak[0]
-\emph{Case 4.} Suppose the eigenvalues are purely imaginary.
-That is, suppose the eigenvalues are $\pm ib$.  For example,
+\emph{Case 4.} Suppose the eigenvalues are purely imaginary, that is,
+$\pm ib$.  For example,
 let $P = 
 \left[ \begin{smallmatrix} 0 & 1 \\ -4 & 0 \end{smallmatrix} \right]$.
-The eigenvalues turn out to be $\pm 2i$ and eigenvectors are
+The eigenvalues are $\pm 2i$ and corresponding eigenvectors are
 $\left[ \begin{smallmatrix} 1 \\ 2i \end{smallmatrix} \right]$ and
 $\left[ \begin{smallmatrix} 1 \\ -2i \end{smallmatrix} \right]$.  Consider
 the eigenvalue $2i$ and its eigenvector
@@ -3061,12 +3061,13 @@ for the mass-spring system.
 \task Convert this to a system of first
 order equations.
 \task Classify for what $m, c, k$ do you get which behavior.
-\task Can you explain from physical intuition why you do not get all the
+\task Explain from physical intuition why you do not get all the
 different kinds of behavior here?
 \end{tasks}
 \end{exercise}
 
 \begin{exercise}
+\pagebreak[2]
 What happens in the case when $P = 
 \left[ \begin{smallmatrix} 1 & 1 \\ 0 & 1 \end{smallmatrix} \right]$?  In
 this case the eigenvalue is repeated and there is only one independent eigenvector.
