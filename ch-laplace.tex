@@ -1541,7 +1541,7 @@ avoid unnecessary details and simply say that it is an object
 that does not really make sense unless we integrate it.  The motivation is
 that we would like a \myquote{function} $\delta(t)$
 such that 
-for any continuous function $f(t)$ we have
+for any continuous function $f(t)$,
 \begin{equation*}
 \mybxbg{~~
 \int_{-\infty}^\infty \delta(t) f(t) \,dt = f(0) .
@@ -1550,8 +1550,11 @@ for any continuous function $f(t)$ we have
 The formula should hold if we integrate over any interval that contains 0,
 not just $(-\infty,\infty)$.
 So $\delta(t)$ is a \myquote{function} 
-with all its \myquote{mass} at the single point $t=0$.  In other words, for any
-interval $[c,d]$
+with all its \myquote{mass} at the single point $t=0$.  For any
+interval\footnote{%
+It is important that we consider $c$ and $d$ as part of the
+interval.  One could write this integral as $\int_{c-}^{d+}$.}
+$[c,d]$,
 \begin{equation*}
 \int_c^d \delta(t) \,dt = 
 \begin{cases}
@@ -1564,9 +1567,10 @@ informally think that $\delta(t)$ is zero for $t\not=0$ and somehow
 infinite at $t=0$.
 
 A good way to think about $\delta(t)$ is as a limit of short pulses
-whose integral is $1$.  For example, suppose that
-we have a square pulse $\varphi(t)$ as above with $a=0$,
-$M=\nicefrac{1}{b}$, that is $\varphi(t) = \frac{u(t) - u(t-b)}{b}$.
+whose integral is $1$.  For example, 
+consider a square pulse
+$\varphi(t)$ as above with $a=0$ and
+$M=\nicefrac{1}{b}$, that is, $\varphi(t) = \frac{u(t) - u(t-b)}{b}$.
 Compute
 \begin{equation*}
 \int_{-\infty}^\infty \varphi(t) f(t) \,dt =
@@ -1615,7 +1619,7 @@ In particular,
 {\mathcal{L}} \bigl\{ \delta(t) \bigr\} = 1 .
 \end{equation*}
 
-\begin{remark}
+\begin{remark} \label{remark:deltaderivofjump}
 The Laplace transform of $\delta(t-a)$ would be 
 the Laplace transform of the derivative of the Heaviside function
 $u(t-a)$, if the Heaviside function had a derivative.
@@ -1623,7 +1627,7 @@ First,
 \begin{equation*}
 {\mathcal{L}} \bigl\{ u(t-a) \bigr\} = \frac{e^{-as}}{s}.
 \end{equation*}
-To obtain what the Laplace transform of the derivative would be
+To obtain what the Laplace transform of the derivative would be,
 we multiply by $s$, to obtain $e^{-as}$, which is the Laplace transform
 of $\delta(t-a)$.
 We see the same thing using integration,
@@ -1693,19 +1697,28 @@ Solve (find the impulse response)
 x'' + \omega_0^2 x = \delta(t) , \quad x(0) = 0, \quad x'(0) = 0 .
 \end{equation}
 
-We first apply the Laplace transform to the equation.  Denote
-the transform of $x(t)$ by $X(s)$.
+Apply the Laplace transform to the equation, and denote
+the transform of $x(t)$ by $X(s)$:
 \begin{equation*}
 s^2 X(s) + \omega_0^2 X(s) = 1 ,
 \qquad \text{and so} \qquad
 X(s) = \frac{1}{s^2+ \omega_0^2} .
 \end{equation*}
-The inverse Laplace transform produces
+The inverse Laplace transform produces (for $t > 0$)
 \begin{equation*}
 x(t) = 
 \frac{\sin (\omega_0 t)}{\omega_0} .
 \end{equation*}
 \end{example}
+
+\begin{remark}
+Perhaps an astute reader will notice that it does not seem like $x'(0)=0$.
+However, we really want to think of as $x(t)=0$ for $t \leq 0$, so $x(t)$
+has a \myquote{corner} at $t=0$, so $x'$ has a jump discontinuity there,
+which is what produces the $\delta(t)$ when we take $x''$,
+see \remarkref{remark:deltaderivofjump}.
+The initial condition really is $x'(0-) = \lim_{t \uparrow 0} x'(0) = 0$.
+\end{remark}
 
 Let us notice something about the example above. 
 In \exampleref{example:undampedforcedbylaplacearbitrhs},
@@ -1749,7 +1762,7 @@ The right-hand side becomes
 \begin{equation*}
 (\delta * f)(t) = f(t).
 \end{equation*}
-Therefore $y(t) = (x * f)(t)$ is the solution to
+Therefore, $y(t) = (x * f)(t)$ is the solution to
 \begin{equation*}
 y'' + \omega_0^2 y = f(t) .
 \end{equation*}
@@ -1891,7 +1904,7 @@ and suppose that $f(t) = g(t) = 0$ for all $t \leq 0$.  Show that
 
 \begin{exercise}
 Suppose that $L x = \delta(t)$, $x(0) = 0$, $x'(0) = 0$, has the solution
-$x = e^{-t}$ for $t > 0$.  Find the solution to
+$x(t) = t e^{-t}$ for $t > 0$.  Find the solution to
 $Lx = t^2$, $x(0) = 0$, $x'(0) = 0$ for $t > 0$.
 \end{exercise}
 
@@ -1933,11 +1946,11 @@ $x(t) = e^{-at}$
 
 \begin{exercise}
 Suppose that $L x = \delta(t)$, $x(0) = 0$, $x'(0) = 0$, has the solution
-$x(t) = \cos(t)$ for $t > 0$.  Find (in closed form) the solution to
-$Lx = \sin(t)$, $x(0) = 0$, $x'(0) = 0$ for $t > 0$.
+$x(t) = e^t \sin(t)$ for $t > 0$.  Find (in closed form) the solution to
+$Lx = e^t$, $x(0) = 0$, $x'(0) = 0$ for $t > 0$.
 \end{exercise}
 \exsol{%
-$x(t) = (\cos * \sin)(t) = \frac{1}{2} t \sin(t)$
+$x(t) = (e^t) * (e^t \sin(t) ) = e^t (1-\cos(t))$
 }
 
 \begin{exercise}

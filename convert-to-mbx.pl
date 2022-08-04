@@ -743,6 +743,7 @@ while(1)
 		$para =~ s/^\\subsectionvref\{([^}]*)\}// ||
 		$para =~ s/^\\thmref\{([^}]*)\}// ||
 		$para =~ s/^\\thmvref\{([^}]*)\}// ||
+		$para =~ s/^\\remarkref\{([^}]*)\}// ||
 		$para =~ s/^\\tableref\{([^}]*)\}// ||
 		$para =~ s/^\\tablevref\{([^}]*)\}// ||
 		$para =~ s/^\\figureref\{([^}]*)\}// ||
