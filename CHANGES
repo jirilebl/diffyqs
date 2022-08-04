@@ -1,5 +1,5 @@
 <li>Reformulate end of Example 1.8.5 so that it's clear that at the end we
-are talking about the corresponding \(N \, dx + M \, dy = 0\) equation.
+are talking about the corresponding \(M \, dx + N \, dy = 0\) equation.
 Also note that \(x=-1\) itself is a solution to that.
 <li><b>Change Exercise 6.4.5 to fix erratum</b>, in particular,
 the the impulse response given is changed to \(t e^{-t} . \)
