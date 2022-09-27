@@ -1691,9 +1691,9 @@ Another caveat is that the theorem only works in two
 dimensions.  In three dimensions and higher, there is simply too much room.
 
 The theorem applies to all solutions in the Van der Pol oscillator.
-Solutions that start at any point except the origin $(0,0)$ will tend to the
-periodic solution around the limit cycle, and if the initial condition
-of $(0,0)$ will lead to the constant solution $x=0$, $y=0$.
+Solutions that start at any point except the origin $(0,0)$ tend to the
+periodic solution around the limit cycle, and the initial condition
+of $(0,0)$ gives the constant solution $x=0$, $y=0$.
 
 \begin{example}
 Consider
@@ -1764,7 +1764,7 @@ the equation \eqref{nlin:gensys} is defined on a
 \emph{\myindex{simply connected region}}, that is, a region with no holes
 we can go around.  For example the entire plane is a simply
 connected region, and so is the inside of the unit disc.  However,
-the entire plane minus a point is not a simply connected domain as it has a
+the entire plane minus a point is not a simply connected region as it has a
 \myquote{hole} at the origin.
 
 \begin{theorem}[Bendixson--Dulac%
@@ -1826,7 +1826,7 @@ whole plane we cannot simply apply the theorem.  However, we could apply it
 on the set where $-x+y \geq 0$.  Via the theorem, there is no
 closed trajectory in that set.  Similarly, there is no closed trajectory
 in the set $-x+y \leq 0$.  We cannot conclude (yet) that there is no closed
-trajectory in the entire plane.  Perhaps half of it is in the set where
+trajectory in the entire plane.  For all we know, perhaps half of it is in the set where
 $-x+y \geq 0$ and the other half is in the set where $-x+y \leq 0$.
 
 The key is to look at the line where $-x+y=0$, or $x=y$.  On this line
@@ -2035,7 +2035,7 @@ x'' + a x' + bx + cx^3 = C \cos(\omega t) .
 Here $a$, $b$, $c$, $C$, and $\omega$ are constants.
 Except for the $c x^3$ term, this equation looks like
 a forced mass-spring system.  The $c x^3$ means the spring does
-not exactly obey Hooke's law (which no real-world spring actually does obey
+not exactly obey Hooke's law (which no real-world spring actually obeys
 exactly).  When $c$ is not zero, the equation does not have a closed
 form solution, so we must resort to numerical solutions, as is usual for
 nonlinear systems.  Not all choices of constants and initial conditions
@@ -2236,7 +2236,7 @@ which is now a curve in three-dimensional space.
 The solutions tend to an \emph{attractor} in space,
 the so-called \emph{\myindex{Lorenz attractor}}.
 In this case no strobing is
-necessary.
+necessary, the solution will tend towards the attractor set.
 Again we cannot quite see the attractor itself, but if we try to follow a solution
 for long enough, as in the figure,
 we get a pretty good picture of what the attractor looks
