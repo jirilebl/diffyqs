@@ -11,3 +11,5 @@ with the \(x'(0)=0\) by noting that \(x'\) has a jump at \(t=0\) to produce
 the delta function.
 <li>Add footnote when defining the integral of the delta function that we
 are always taking the endpoints.
+<li>In 8.5 when talking about the Lorentz system attractor, be clearer by
+explicitly saying that the solution tends to the attractor.
