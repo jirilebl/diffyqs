@@ -729,9 +729,13 @@ Sketch the slope field of $y'=y^3$.  Can you visually find the solution
 that satisfies $y(0)=0$?
 \end{exercise}
 \exsol{%
-\\[6pt]
-\includegraphics[width=2in]{figures/yprimey3slope}
-\\
+%mbxSTARTIGNORE
+\vtop{\vskip-1ex \hbox{\includegraphics[width=2in]{figures/yprimey3slope}}}
+\quad
+%mbxENDIGNORE
+%mbxlatex \\
+%mbxlatex \includegraphics[width=2in]{figures/yprimey3slope}
+%mbxlatex \\
 $y=0$ is a solution such that $y(0)=0$.
 }
 
@@ -2154,13 +2158,14 @@ of business.
 \end{myfig}
 
 When $h = 1.6$, then $A=B=4$.  There is only one critical point and it is
-unstable.  When the population starts above 4 million it will tend towards
-4 million.  If it ever drops below 4 million, humans will die out on the
+unstable.  When the population starts above 4 million, it will tend towards
+4 million.  However, if it ever drops below 4 million, perhaps a worse than
+normal hurricane season one year, then humans will die out on the
 planet.  This scenario is not one that we (as the human fast food proprietor) 
 want to be in.  A small perturbation of the equilibrium state and we are out
 of business.  There is no room for error.  See \figurevref{2.2:harvc}.
 
-Finally if we are harvesting at 2 million humans per year, there are no
+Finally, if we are harvesting at 2 million humans per year, there are no
 critical points.
 The population
 will always plummet towards zero, no matter how well stocked the planet
@@ -2247,6 +2252,7 @@ $\displaystyle \lim_{t\to\infty} x(t)$.
 \setcounter{exercise}{100}
 
 \begin{exercise}
+\pagebreak[2]
 Let $x'=(x-1)(x-2)x^2$.
 \begin{tasks}
 \task Sketch the phase diagram and find critical

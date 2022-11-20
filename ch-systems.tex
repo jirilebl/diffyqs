@@ -3143,9 +3143,11 @@ Draw the vector field and describe the behavior.  Is it one of the
 behaviors that we have seen before?
 \end{exercise}
 \exsol{%
+%mbxSTARTIGNORE
+\vtop{\vskip-1ex \hbox{\includegraphics[width=2in]{figures/0100vectorfield}}}
+%mbxENDIGNORE
+%mbxlatex \includegraphics[width=2in]{figures/0100vectorfield}
 \\[6pt]
-\includegraphics[width=2in]{figures/0100vectorfield}
-\\
 The solution does not move anywhere if $y = 0$.  When $y$ is positive,
 the solution moves (with constant speed)
 in the positive $x$ direction.  When $y$ is
@@ -4576,7 +4578,7 @@ The 3 linearly independent solutions are
 \vec{v}_{1} \frac{t^2}{2} \right) \, e^{\lambda t} .
 \end{equation*}
 
-If on the other hand $A$ has an eigenvalue $\lambda$
+If, on the other hand, $A$ has an eigenvalue $\lambda$
 of algebraic multiplicity 3 and defect 1, then 
 solve
 \begin{equation*}
@@ -6684,9 +6686,9 @@ X(t)
 ~~}
 \end{equation*}
 
-If $A$ is constant and $X(t) = e^{tA}$, then
+If $A$ is a constant matrix and $X(t) = e^{tA}$, then
 $\left[X(t)\right]^{-1} = e^{-tA}$.  
-We get a solution
+We obtain a solution
 $\vec{x}_p = 
 e^{tA}
 \int e^{-tA}\,\vec{f}(t) \, dt$,

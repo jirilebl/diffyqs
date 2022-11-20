@@ -15,7 +15,7 @@ Many functions can be written in terms of a power series
 If we assume that a solution of a differential equation is written as a
 power series, then perhaps we can use a method reminiscent of undetermined
 coefficients.  That is, we will try to solve for the numbers $a_k$.
-Before we can carry out this process, let us review some results
+Before we carry out this process, we review some results
 and concepts about power series.
 
 \subsection{Definition}
@@ -38,12 +38,12 @@ the limit
 \begin{equation*}
 \lim_{n\to \infty} S_n(x) = \lim_{n\to\infty} \sum_{k=0}^n a_k {(x-x_0)}^k
 \end{equation*}
-exists, then we say that the series \eqref{ps:sereq1}
+exists, we say the series \eqref{ps:sereq1}
 \emph{converges}\index{convergence of a power series} at $x$.
 At $x=x_0$, the series always converges to $a_0$.
 When \eqref{ps:sereq1}
-converges at any other point $x \not= x_0$,
-we say that \eqref{ps:sereq1} is a
+converges at any other $x \not= x_0$,
+we say \eqref{ps:sereq1} is a
 \emph{\myindex{convergent power series}}, and we write
 \begin{equation*}
 \sum_{k=0}^\infty a_k {(x-x_0)}^k = 
@@ -99,14 +99,14 @@ diverges at $x=1$.
 
 If a power series converges absolutely
 at some $x_1$, then for all $x$ such that
-$\lvert x - x_0  \rvert \leq \lvert x_1 - x_0 \vert$ (that is, $x$ is
+$\lvert x - x_0  \rvert \leq \lvert x_1 - x_0 \rvert$ (that is, $x$ is
 closer than $x_1$ to $x_0$) we have
-$\bigl\lvert a_k {(x-x_0)}^k \bigr\rvert \leq
-\bigl\lvert a_k {(x_1-x_0)}^k \bigr\rvert$
+$\lvert a_k {(x-x_0)}^k \rvert \leq
+\lvert a_k {(x_1-x_0)}^k \rvert$
 for all $k$.
-As the numbers $\bigl\lvert a_k {(x_1-x_0)}^k \bigr\rvert$ sum to some finite
+As the numbers $\lvert a_k {(x_1-x_0)}^k \rvert$ sum to some finite
 limit, summing smaller positive numbers
-$\bigl\lvert a_k {(x-x_0)}^k \bigr\rvert$ must also have a finite limit.
+$\lvert a_k {(x-x_0)}^k \rvert$ must also have a finite limit.
 Hence, the series must converge
 absolutely at $x$. %  We have the following result.
 
@@ -166,13 +166,14 @@ A =
 \frac{a_{k+1}}{a_k}
 \right \rvert .
 \end{equation*}
-Then if $1 > L = A \lvert x - x_0 \rvert$ the series \eqref{ps:sereq1}
-converges absolutely.
-If $A = 0$, then the series always converges.  If $A > 0$, then
+Then the series \eqref{ps:sereq1}
+converges absolutely if $1 > L = A \lvert x - x_0 \rvert$.
+If $A > 0$, then
 the series converges absolutely
 if $\lvert x - x_0 \rvert < \nicefrac{1}{A}$,
 and diverges if $\lvert x - x_0 \rvert > \nicefrac{1}{A}$.  That is,
 the radius of convergence is $\nicefrac{1}{A}$.
+If $A = 0$, then the series always converges.
 
 A similar test is the \emph{root test}\index{root test for series}.
 Suppose
