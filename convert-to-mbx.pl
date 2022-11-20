@@ -684,6 +684,8 @@ while(1)
 		$secnotes =~ s|\\cite\{([^}]*)\}|<xref ref=\"biblio-$1\"/>|g;
 		$secnotes =~ s|\\BDref\{([^}]*)\}|$1|g;
 		$secnotes =~ s|\\EPref\{([^}]*)\}|$1|g;
+		$secnotes =~ s|\\chapterref\{([^}]*)\}|'<xref ref="' . modify_id($1) . '" text="type-global"/>'|eg;
+		$secnotes =~ s|\\appendixref\{([^}]*)\}|'<xref ref="' . modify_id($1) . '" text="type-global"/>'|eg;
 		print "(secnotes $secnotes)\n";
 		print "(cite $secnotes)\n";
 		print $out "<p><em>Note: $secnotes</em></p>\n"; 
