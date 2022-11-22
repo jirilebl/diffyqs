@@ -321,6 +321,34 @@ sub do_line_subs {
 	return $line;
 }
 
+
+sub do_ref_subs {
+	my $str = shift;
+	$str =~ s|\\Chapterref\{([^}]*)\}|'<xref ref="' . modify_id($1) . '" text="type-global"/>'|eg;
+	$str =~ s|\\chapterref\{([^}]*)\}|'<xref ref="' . modify_id($1) . '" text="type-global"/>'|eg;
+	$str =~ s|\\chaptervref\{([^}]*)\}|'<xref ref="' . modify_id($1) . '" text="type-global"/>'|eg;
+	$str =~ s|\\appendixref\{([^}]*)\}|'<xref ref="' . modify_id($1) . '" text="type-global"/>'|eg;
+	$str =~ s|\\appendixvref\{([^}]*)\}|'<xref ref="' . modify_id($1) . '" text="type-global"/>'|eg;
+	$str =~ s|\\Appendixref\{([^}]*)\}|'<xref ref="' . modify_id($1) . '" text="type-global"/>'|eg;
+	$str =~ s|\\sectionref\{([^}]*)\}|'<xref ref="' . modify_id($1) . '" text="type-global"/>'|eg;
+	$str =~ s|\\sectionvref\{([^}]*)\}|'<xref ref="' . modify_id($1) . '" text="type-global"/>'|eg;
+	$str =~ s|\\subsectionref\{([^}]*)\}|'<xref ref="' . modify_id($1) . '" text="type-global"/>'|eg;
+	$str =~ s|\\subsectionvref\{([^}]*)\}|'<xref ref="' . modify_id($1) . '" text="type-global"/>'|eg;
+	$str =~ s|\\thmref\{([^}]*)\}|'<xref ref="' . modify_id($1) . '" text="type-global"/>'|eg;
+	$str =~ s|\\thmvref\{([^}]*)\}|'<xref ref="' . modify_id($1) . '" text="type-global"/>'|eg;
+	$str =~ s|\\remarkref\{([^}]*)\}|'<xref ref="' . modify_id($1) . '" text="type-global"/>'|eg;
+	$str =~ s|\\remarkvref\{([^}]*)\}|'<xref ref="' . modify_id($1) . '" text="type-global"/>'|eg;
+	$str =~ s|\\tableref\{([^}]*)\}|'<xref ref="' . modify_id($1) . '" text="type-global"/>'|eg;
+	$str =~ s|\\tablevref\{([^}]*)\}|'<xref ref="' . modify_id($1) . '" text="type-global"/>'|eg;
+	$str =~ s|\\figureref\{([^}]*)\}|'<xref ref="' . modify_id($1) . '" text="type-global"/>'|eg;
+	$str =~ s|\\figurevref\{([^}]*)\}|'<xref ref="' . modify_id($1) . '" text="type-global"/>'|eg;
+	$str =~ s|\\exampleref\{([^}]*)\}|'<xref ref="' . modify_id($1) . '" text="type-global"/>'|eg;
+	$str =~ s|\\examplevref\{([^}]*)\}|'<xref ref="' . modify_id($1) . '" text="type-global"/>'|eg;
+	$str =~ s|\\exerciseref\{([^}]*)\}|'<xref ref="' . modify_id($1) . '" text="type-global"/>'|eg;
+	$str =~ s|\\exercisevref\{([^}]*)\}|'<xref ref="' . modify_id($1) . '" text="type-global"/>'|eg;
+	return $str;
+}
+
 sub print_line {
 	my $line = shift;
 
@@ -684,8 +712,7 @@ while(1)
 		$secnotes =~ s|\\cite\{([^}]*)\}|<xref ref=\"biblio-$1\"/>|g;
 		$secnotes =~ s|\\BDref\{([^}]*)\}|$1|g;
 		$secnotes =~ s|\\EPref\{([^}]*)\}|$1|g;
-		$secnotes =~ s|\\chapterref\{([^}]*)\}|'<xref ref="' . modify_id($1) . '" text="type-global"/>'|eg;
-		$secnotes =~ s|\\appendixref\{([^}]*)\}|'<xref ref="' . modify_id($1) . '" text="type-global"/>'|eg;
+		$secnotes = do_ref_subs($secnotes);
 		print "(secnotes $secnotes)\n";
 		print "(cite $secnotes)\n";
 		print $out "<p><em>Note: $secnotes</em></p>\n"; 
@@ -1004,6 +1031,7 @@ while(1)
 				$caption = $1;
 				$theid = modify_id($2);
 				$caption =~ s|\$(.*?)\$|<m>$1</m>|sg;
+				$caption = do_ref_subs($caption);
 			} else {
 				print "\n\n\nHUH?\n\n\nNo caption/label!\n\n$para\n\n";
 				$num_errors++;
@@ -1277,6 +1305,8 @@ while(1)
 					$caption =~ s|~|<nbsp/>|g;
 			
 					$caption =~ s|\$(.*?)\$|<m>$1</m>|sg;
+
+					$caption = do_ref_subs($caption);
 				} else {
 					print "\n\n\nHUH?\n\n\nNo caption/label!\n\nFIG=>$fig<\n\n";
 					$num_errors++;
