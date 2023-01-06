@@ -33,7 +33,7 @@ The shell(``.sh``) and Perl(``.pl``) scripts here are mostly really hacky ways t
 
 ## Notes
 
-The tex sources require a very recent LaTeX.  If your latex does not have a recent enough ocgx2 package, you can simply comment out that line in ``diffyqssetup.sty``.
+The tex sources require a recent LaTeX.  If your latex does not have a recent enough ocgx2 package, you can simply comment out that line in ``diffyqssetup.sty``.
 
 ## Old stuff
 
