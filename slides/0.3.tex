@@ -1,0 +1,426 @@
+\documentclass[10pt,aspectratio=169]{beamer}
+
+% All the boilerplate is in deslides.sty
+\usepackage{deslides}
+
+\author{Ji\v{r}\'i Lebl}
+
+\institute[OSU]{%
+Oklahoma State University%
+%Departemento pri Matematiko de Oklahoma {\^S}tata Universitato%
+}
+
+\title{3. Introduction to differential equations\\(Notes on Diffy Qs, 0.3)}
+
+\date{}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+
+%\bigskip
+
+\begin{center}
+The textbook: \url{https://www.jirka.org/diffyqs/}
+\end{center}
+\end{frame}
+
+\begin{frame}
+There are many types of differential equations.
+
+\medskip
+\pause
+
+Most broadly:
+
+\begin{itemize}
+\item
+\pause
+\emph{Ordinary differential equations} (ODE):
+
+Only one independent variable.
+\item
+\pause
+\emph{Partial differential equations} (PDE):
+
+Several independent variables, using partial derivatives.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+\textbf{Examples:}
+
+\medskip
+
+ODE:
+
+\medskip
+\pause
+
+\quad\makebox[0pt][l]{$\displaystyle
+\frac{d y}{dt} = ky$}\hspace*{2in}%
+(Exponential growth)
+
+\medskip
+\pause
+
+\quad\makebox[0pt][l]{$\displaystyle
+\frac{d y}{dt} = k(A-y)$}\hspace*{2in}%
+(Newton's law of cooling)
+
+\medskip
+\pause
+
+\quad\makebox[0pt][l]{$\displaystyle
+m \frac{d^2 x}{dt^2} + c \frac{dx}{dt} + kx = f(t)$}\hspace*{2in}%
+(Mechanical vibrations)
+
+\medskip
+\pause
+
+PDE:
+
+\medskip
+\pause
+
+\quad\makebox[0pt][l]{$\displaystyle
+\frac{\partial y}{\partial t} + c \frac{\partial y}{\partial x} = 0$}\hspace*{2in}%
+(Transport equation)
+
+\medskip
+\pause
+
+\quad\makebox[0pt][l]{$\displaystyle
+\frac{\partial u}{\partial t} = \frac{\partial^2 u}{\partial x^2}$}\hspace*{2in}%
+(Heat equation)
+\medskip
+\pause
+
+\quad\makebox[0pt][l]{$\displaystyle
+\frac{\partial^2 u}{\partial t^2} = \frac{\partial^2 u}{\partial x^2} +
+\frac{\partial^2 u}{\partial y^2}$}\hspace*{2in}%
+(Wave equation in 2 dimensions)
+
+\end{frame}
+
+\begin{frame}
+
+If there is more than one equation it is a
+\emph{system of differential equations}.
+
+\medskip
+\pause
+
+\textbf{Examples:}
+
+\medskip
+\pause
+
+A \emph{system of ordinary differential equations} (system of ODE):
+\[
+y' = x , \qquad x' = y .
+\]
+
+\medskip
+\pause
+
+Maxwell's equations for electromagnetics are a
+\emph{system of partial differential equations}
+
+(system of PDE):
+\begin{align*}
+& \nabla \cdot \vec{D} = \rho, & & \nabla \cdot \vec{B} = 0 , \\
+& \nabla \times \vec{E} = - \frac{\partial \vec{B}}{\partial t}, &
+& \nabla \times \vec{H} = \vec{J} + \frac{\partial \vec{D}}{\partial t} .
+\end{align*}
+(Note: 
+divergence $\nabla \cdot$ and 
+curl $\nabla \times$ are written in partial derivatives in $x,y,z$.)
+
+\end{frame}
+
+\begin{frame}
+The highest order derivative that appears is the \emph{order} of the
+equation (or system).
+
+\medskip
+\pause
+
+\quad\makebox[0pt][l]{$\displaystyle
+\frac{d y}{dt} = ky
+$}\hspace*{2in}\quad is a first order ODE equation.
+
+\medskip
+\pause
+
+\quad\makebox[0pt][l]{$\displaystyle
+\frac{d^2 y}{dx^2} + \frac{dy}{dx} + y = \sin(x)
+$}\hspace*{2in}\quad is a second order ODE equation.
+
+\medskip
+\pause
+
+\quad\makebox[0pt][l]{$\displaystyle
+a^4 \frac{\partial^4 y}{\partial x^4} + \frac{\partial^2 y}{\partial t^2} = 0
+$}\hspace*{2in}\quad is a fourth order PDE equation.
+
+\bigskip
+\pause
+
+\textbf{Remark:} The most common equations in physics are first and second order.
+
+\end{frame}
+
+\begin{frame}
+An equation is \emph{linear} if the dependent variable(s) and their
+derivatives appear linearly.
+
+\pause
+
+(``linearly'': only first powers, not multiplied together, divided, or composed
+with functions such as $\sin$ or $\exp$.)
+
+\medskip
+\pause
+
+An ODE of order $n$ can be put into the form:
+\[
+a_n(x) \frac{d^n y}{dx^n} + 
+a_{n-1}(x) \frac{d^{n-1} y}{dx^{n-1}} + 
+\cdots
++
+a_{1}(x) \frac{dy}{dx}
++
+a_{0}(x) y = b(x) .
+\]
+
+\medskip
+\pause
+
+E.g., linear 2${}^\text{nd}$ order ODE:
+\vspace*{-5pt}
+\[
+e^x \frac{d^2 y}{dx^2} + 
+\sin(x) \frac{d y}{dx} + 
+x^2 y
+=
+\frac{1}{x}
+\]
+\pause
+Note: The dependence on $x$ need not be linear, only the dependence on
+$y$.
+
+\medskip
+\pause
+
+E.g., \textbf{non}linear 2$^{\text{nd}}$ order PDE (Burger's equation):
+\[
+\frac{\partial y}{\partial t} + 
+y \frac{\partial y}{\partial x} =
+\nu \frac{\partial^2 y}{\partial x^2} .
+\]
+
+\medskip
+\pause
+
+E.g., \textbf{non}linear 1$^{\text{st}}$ order ODE:
+\vspace*{-5pt}
+\[
+\frac{dx}{dt} = x^2
+\]
+
+\medskip
+\pause
+
+\textbf{Remark:} Nonlinear equations are notoriously difficult to handle.
+
+\end{frame}
+
+\begin{frame}
+A linear equation is \emph{homogeneous} if all terms depend on the dependent variable.
+
+\pause
+Otherwise it is \emph{nonhomogeneous} or \emph{inhomogeneous}.
+
+\medskip
+\pause
+
+\textbf{Examples:}
+
+\pause
+\medskip
+
+Homogeneous:
+
+\pause
+\vspace*{-12pt}
+\hspace*{1.5in}$\displaystyle
+e^x \frac{d^2 y}{dx^2} + 
+\sin(x) \frac{d y}{dx} + 
+x^2 y
+=
+0
+$
+
+\pause
+\medskip
+
+\hspace*{1.5in}$\displaystyle
+a^4 \frac{\partial^4 y}{\partial x^4} + \frac{\partial^2 y}{\partial t^2} = 0
+$
+
+\pause
+\medskip
+
+\hspace*{1.5in}$\displaystyle
+a_n(x) \frac{d^n y}{dx^n} + 
+a_{n-1}(x) \frac{d^{n-1} y}{dx^{n-1}} + 
+\cdots
++
+a_{1}(x) \frac{dy}{dx}
++
+a_{0}(x) y = 0
+$
+
+\pause
+\medskip
+
+Inhomogeneous:
+
+\pause
+\vspace*{-12pt}
+\hspace*{1.5in}$\displaystyle
+e^x \frac{d^2 y}{dx^2} + 
+\sin(x) \frac{d y}{dx} + 
+x^2 y
+=
+\frac{1}{x}
+$
+
+\pause
+\medskip
+
+\hspace*{1.5in}$\displaystyle
+\frac{dx}{dt} + x + t = 0 
+$
+
+\pause
+\medskip
+
+The inhomogeneity is often some ``outside input'' into the physical
+system.
+
+\medskip
+\pause
+
+We solve an inhomogeneous equation using the solution to the corresponding
+homogeneous equation.
+\end{frame}
+
+\begin{frame}
+A linear equation has
+\emph{constant coefficients} if the coefficients are constants (except for
+perhaps the inhomogeneity).
+\pause
+A general constant coefficient linear ODE:
+\[
+a_n \frac{d^n y}{dx^n} + 
+a_{n-1} \frac{d^{n-1} y}{dx^{n-1}} + 
+\cdots
++
+a_{1} \frac{dy}{dx}
++
+a_{0} y = b(x) ,
+\]
+$a_0, a_1, \ldots, a_n$ are constants, $b$ may depend on $x$.
+
+\medskip
+\pause
+
+Finally, an equation (or system) is \emph{autonomous} if the equation does
+not depend on the independent variable at all.
+
+\medskip
+\pause
+
+E.g., $\frac{dx}{dt}=x^2$
+is autonomous, but $\frac{dx}{dt}=xt$ is not.
+
+\medskip
+\pause
+
+Autonomous equations often appear when the setup is
+independent of time.
+\end{frame}
+
+\begin{frame}
+\textbf{Examples:} (see if you can guess the properties before they are
+revealed)
+
+\medskip
+\pause
+
+$\bullet$\quad$\displaystyle
+\frac{d y}{dt} = ky$
+
+\medskip
+\pause
+
+First order, autonomous, linear, homogeneous, constant coefficient ODE
+equation.
+
+\medskip
+\pause
+
+$\bullet$\quad$\displaystyle
+\frac{d y}{dt} = k(A-y)$,
+\qquad ($A\not=0$)
+
+\medskip
+\pause
+
+First order, autonomous, linear, inhomogeneous, constant coefficient ODE
+equation.
+
+\medskip
+\pause
+
+$\bullet$\quad$\displaystyle
+\frac{d^2 x}{dt^2} + \frac{dx}{dt} + x = \sin(t)$
+
+\medskip
+\pause
+
+Second order, linear, inhomogeneous, constant coefficient ODE equation.
+
+\medskip
+\pause
+
+$\bullet$\quad$\displaystyle
+\theta'' + \sin(\theta) = 0$
+
+\medskip
+\pause
+
+Second order, autonomous, nonlinear ODE equation.
+
+\medskip
+\pause
+
+$\bullet$\quad$\displaystyle
+\frac{\partial u}{\partial t} + \frac{\partial v}{\partial x} = x^2$
+\qquad
+$\displaystyle
+\frac{\partial u}{\partial t} - \frac{\partial v}{\partial x} = xt$
+
+\medskip
+\pause
+
+First order, linear, inhomogeneous, constant coefficient PDE system.
+
+\end{frame}
+
+\end{document}
