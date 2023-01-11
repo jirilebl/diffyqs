@@ -38,7 +38,14 @@ So to solve \eqref{ias:inteq},
 we find some antiderivative of $f(x)$
 and then we add an arbitrary constant to get the general solution.
 
-\medskip
+\begin{example}
+Find the general solution of $y' = 3 x^2$.
+
+Elementary calculus tells us
+that the general solution must be $y = x^3 + C$.  Let us check by
+differentiating:
+$y' = 3x^2$.  We got \emph{precisely} our equation back.
+\end{example}
 
 Now is a good time to discuss a point about
 calculus notation and terminology.  Calculus
@@ -66,17 +73,8 @@ indefinite integral notation when we want an antiderivative,
 and you should \emph{always} think of the definite integral
 as a way to write it.
 
-\begin{example}
-Find the general solution of $y' = 3 x^2$.
-
-Elementary calculus tells us
-that the general solution must be $y = x^3 + C$.  Let us check by
-differentiating:
-$y' = 3x^2$.  We got \emph{precisely} our equation back.
-\end{example}
-
 Normally, we also have an initial condition such as $y(x_0) = y_0$
-for some two numbers $x_0$ and $y_0$ ($x_0$ is usually 0, but not always).
+for some two numbers $x_0$ and $y_0$ ($x_0$ is often 0, but not always).
 We can then write the solution as a definite integral in a nice way.
 Suppose our problem is $y' = f(x)$, $y(x_0) = y_0$.  Then the solution is
 \begin{equation} \label{int:eqdef}
@@ -148,7 +146,7 @@ Finally, we try to solve for $y$.
 
 \begin{example}
 Previously, we guessed $y' = ky$ (for some $k > 0$) has the solution
-$y=Ce^{kx}$.  We can now find the solution without guessing.
+$y=Ce^{kx}$.  We could have found the solution by integrating.
 First we note that $y=0$ is a solution.
 Henceforth, we assume $y\not= 0$.  We write
 \begin{equation*}
@@ -190,7 +188,7 @@ So the general solution is
 \begin{equation*}
 y = \frac{1}{C-x} \qquad \text{or} \qquad y = 0.
 \end{equation*}
-Note the singularities of the solution.  If for example $C=1$, then the
+Note the singularities of the solution.  If, for example, $C=1$, then the
 solution \myquote{blows up} as we approach $x=1$.  See
 \figurevref{1over1mx:fig}.  Generally,
 it is hard to tell
