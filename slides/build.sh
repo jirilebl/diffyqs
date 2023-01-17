@@ -5,7 +5,7 @@ for n in *.tex ; do
 	echo =============================
 	p=`basename $n .tex`".pdf"
 	echo $n '-->' $p
-	rubber -d $n
+	rubber -d --synctex $n
 done
 
 echo =============================
