@@ -356,85 +356,166 @@ y = \tan \left(\frac{-1}{x} - x + 2 \right)$.
 
 \end{frame}
 
-%FIXME: not done from here
-
 \begin{frame}
 
 \textbf{Example:}
-Bob made a cup of coffee, and
-Bob likes to drink coffee only once reaches 60 degrees Celsius and will not burn him.
-Initially at time $t=0$ minutes,
-Bob measured the temperature and the coffee was 89 degrees Celsius.
-One minute later, Bob measured the coffee again and it had 85 degrees.
-The temperature of the room (the ambient temperature) is 22 degrees.
-When should Bob start drinking?
+Bob wants to drink coffee at 60${}^\circ$C.
 
-Let $T$ be the temperature of the coffee in degrees Celsius, and let $A$ be
-the ambient (room) temperature, also in degrees Celsius.
-Newton's law of cooling states that the rate at which the
-temperature of the coffee is changing
-is proportional to the difference between the
-ambient temperature and the temperature of the coffee.  That is,
-\begin{equation*}
-\frac{dT}{dt} = k(A-T) ,
-\end{equation*}
-for some constant $k$.
-For our setup $A=22$, $T(0) = 89$, $T(1) = 85$.
-We separate variables and integrate (let $C$ and $D$ denote arbitrary
-constants):
-\begin{align*}
-\frac{1}{T-A} \, \frac{dT}{dt} & = -k , \\
-\ln (T-A) &= -kt + C , \qquad \text{(note that } T-A > 0 \text{)} \\
-T-A &= D\, e^{-kt} ,  \\
-T &= A + D\, e^{-kt} .
-\end{align*}
-That is,
-$T = 22 + D\, e^{-kt}$.  We plug in the first condition: $89 = T(0) = 22 +
-D$,
-and hence $D = 67$.  So
-$T = 22 + 67\, e^{-kt}$.  The second condition says $85 = T(1) = 
-22 + 67\, e^{-k}$.  Solving for $k$ we get
-$k = - \ln \frac{85-22}{67} \approx 0.0616$.  Now we solve for the time $t$
-that gives us a temperature of 60 degrees.  Namely, we solve
-\begin{equation*}
-60 = 22 + 67 e^{-0.0616t}
-\end{equation*}
-to get
-$t = - \frac{\ln \frac{60-22}{67}}{0.0616} \approx 9.21$ minutes.  So Bob can
-begin to drink the coffee at just over 9 minutes from the time Bob made
-it.  That is probably about the amount of time it took us to calculate how long
-it would take.  See {sintro:coffeefig}.
+\pause
+Initially (time $t=0$), the temperature was 89${}^\circ$C.
 
-\includegraphics[width=6.24in]{../figures/coffeefig-1-2}
+\pause
+One minute later, the temperature was 85${}^\circ$C.
 
-Graphs of the coffee temperature function $T(t)$.
-On the left, horizontal
-lines are drawn at temperatures 60, 85, and 89.  Vertical lines
-are drawn at $t=1$ and $t=9.21$.  Notice that the
-temperature of the coffee hits 85 at $t=1$, and 60 at
-$t \approx 9.21$.  On the right, the graph is over a longer period of time,
-with a horizontal line at the ambient temperature 22.
+\pause
+The room has temperature 22${}^\circ$C.
+
+\pause
+When can Bob start drinking?
+
+\medskip
+\pause
+
+Let $T =$ the temperature of the coffee in ${}^\circ$C.
+
+\pause
+Let $A =$ the ambient temperature in ${}^\circ$C
+
+\medskip
+\pause
+
+Newton's law of cooling states \qquad
+$\dfrac{dT}{dt} = k(A-T)$ \quad for some $k > 0$.
+
+\medskip
+\pause
+
+We have $A=22$, $T(0)=89$, $T(1)=85$.
+
+\medskip
+\pause
+
+Separate variables, integrate (note that $T-A > 0$):
+
+\medskip
+\pause
+
+\quad
+$\displaystyle
+\frac{1}{T-A} \, \frac{dT}{dt} = -k$
+\pause
+\wthus
+$\displaystyle
+\ln (T-A) = -kt + C$
+\pause
+\wthus
+$\displaystyle
+T-A = D\, e^{-kt}$
+\pause
+\wthus
+$\displaystyle
+T = A + D\, e^{-kt}$
+
+\medskip
+\pause
+
+\wthus
+$T = 22 + D\, e^{-kt}$
+
+\medskip
+\pause
+
+First condition:
+\quad
+$89 = T(0) \pause = 22 + D$
+\pause
+\wthus 
+$D = 67$
+\pause
+\wthus $T = 22 + 67\, e^{-kt}$
+
+\medskip
+\pause
+
+Second condition
+\quad
+$85 = T(1) \pause
+= 22 + 67\, e^{-k}$
+\pause
+\wthus
+$k = - \ln \frac{85-22}{67} \approx 0.0616$
+
+\end{frame}
+
+\begin{frame}
+So approximately \quad $T = 22 + 67 e^{-0.0616t}$
+
+\medskip
+\pause
+
+Solve $T=60$ for time $t$:
+\quad
+$60 = 22 + 67 e^{-0.0616t}$
+\pause
+\wthus
+$t = - \frac{\ln \frac{60-22}{67}}{0.0616} \pause \approx 9.21$ minutes.
+
+\medskip
+\pause
+
+Bob can start drinking a little over 9 minutes from when the coffee was
+made.
+
+\begin{center}
+\includegraphics[width=5in]{../figures/coffeefig-1-2}
+\end{center}
+
+Graphs of the coffee temperature function $T(t)$ over different time frames.
+
+89, 85, 60 lines are marked on the left, and $T=A$ line is marked on the
+right.
 
 \end{frame}
 
 \begin{frame}
 
 \textbf{Example:}
-Find the general solution to $y' = \frac{-xy^2}{3}$ (including singular
-solutions).
+Find the general solution to $y' = \frac{-xy^2}{3}$.
 
-First note that $y=0$ is a solution (a singular solution).
-Now assume that $y \not= 0$.
-\begin{align*}
-\frac{-3}{y^2} y' & = x , \displaybreak[0]\\
-\frac{3}{y} & = \frac{x^2}{2} + C , \displaybreak[0]\\
-y & = \frac{3}{\nicefrac{x^2}{2} + C}
-= \frac{6}{x^2 + 2C}.
-\end{align*}
-So the general solution is,
-\begin{align*}
-y = \frac{6}{x^2 + 2C}, \qquad \text{and} \qquad y=0 .
-\end{align*}
+\medskip
+\pause
+
+$y=0$ is a solution (a singular solution).
+
+\medskip
+\pause
+
+Assume $y \not= 0$ and solve:
+
+\medskip
+\pause
+
+\quad
+$\displaystyle
+\frac{-3}{y^2} y'  = x$
+\pause
+\wthus
+$\displaystyle
+\frac{3}{y} = \frac{x^2}{2} + C$
+\pause
+\wthus
+$\displaystyle
+y = \frac{3}{\nicefrac{x^2}{2} + C}
+= \frac{6}{x^2 + 2C}
+$
+
+\medskip
+\pause
+
+The general solution is
+\[
+y = \frac{6}{x^2 + 2C} \qquad \text{and} \qquad y=0 .
+\]
 
 \end{frame}
 
