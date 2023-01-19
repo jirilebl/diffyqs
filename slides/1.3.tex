@@ -181,99 +181,184 @@ Substitution formula from calculus says
 
 \end{frame}
 
-%FIXME: not done from here
-
 \begin{frame}
-We sometimes get stuck even if we can do the
-integration.  Consider the separable equation
-\begin{equation*}
-y' = \frac{xy}{y^2+1} .
-\end{equation*}
-We separate variables,
-\begin{equation*}
-\frac{y^2+1}{y}\,dy = \left(y+\frac{1}{y}\right)\,dy = x\,dx .
-\end{equation*}
-We integrate to get
-\begin{equation*}
-\frac{y^2}{2} + \ln \, \lvert y \rvert = \frac{x^2}{2} + C ,
-\end{equation*}
-or perhaps the easier looking expression (where $D = 2C$)
-\begin{equation*}
-y^2 + 2 \ln \, \lvert y\rvert = x^2 + D .
-\end{equation*}
-It is not easy to find the solution explicitly as it is hard to solve
-for $y$.  We, therefore, leave the solution in this form and call
-it an
-\emph{implicit solution}.
-It is still
-easy to check that an implicit solution satisfies the differential
-equation.  In this case, we differentiate with respect to $x$, and remember
-that $y$ is a function of $x$,
-to get
-\begin{equation*}
-y'\left(2y + \frac{2}{y}\right) = 2x .
-\end{equation*}
-Multiply both sides by $y$ and divide by $2(y^2+1)$ and you will
-get exactly the differential equation.  We leave this computation to the
-reader.
+Solving for $y$ can be difficult.
 
-If you have an implicit solution, and
-you want to compute values
-for $y$, you might have to be tricky.  You might get multiple solutions $y$
-for each $x$, so you have to pick one.  Sometimes you can
-graph $x$ as a function of $y$, and then flip your paper.
-Sometimes you have to do more.
+\medskip
+\pause
 
-Computers are also good at some of these tricks.
-More advanced mathematical software usually has some
-way of plotting solutions to implicit equations.
-For example, for $C=0$ if you plot all the points $(x,y)$ that
-are solutions to $y^2+2\ln|y|=x^2$,
-you find the two curves in {implicitsols:fig}.  This is not quite
-a graph of a function. For each $x$ there are two choices of $y$.
-To find a function you would have to pick one of these two curves.
-You pick the one that satisfies your initial condition if you have one.
-For example, the top curve satisfies the condition $y(1)=1$.
-So for each $C$ we really got two solutions.
-As you can see, computing values from an implicit solution can be somewhat
-tricky.  But sometimes, an implicit solution is the best we can do.
+\textbf{Example:}
+Consider \quad
+$\displaystyle
+y' = \frac{xy}{y^2+1}$.
 
-\includegraphics[width=3in]{../figures/implicitsols}
+\medskip
+\pause
 
-The implicit solution $y^2+2\ln|y|=x^2$ to $y'=\frac{xy}{y^2+1}$.
+Separate variables:
+\quad
+$\displaystyle
+\frac{y^2+1}{y}\,dy = \left(y+\frac{1}{y}\right)\,dy = x\,dx$.
+\qquad
+\pause
+Integrate:
+\quad
+$\displaystyle
+\frac{y^2}{2} + \ln \, \lvert y \rvert = \frac{x^2}{2} + C$,
 
+\medskip
+\pause
 
-The equation above also has the solution $y=0$.
-So the general solution is 
+Simplify
+\quad
+$\displaystyle
+y^2 + 2 \ln \, \lvert y\rvert = x^2 + D$
+\quad ($D=2C$).
+
+\medskip
+\pause
+
+We can't solve for $y$ in a ``nice'' expression.
+
+\medskip
+\pause
+
+Just leave it as is.
+\pause
+It is called an \emph{implicit solution}.
+
+\medskip
+\pause
+
+We can still check that it satisfies the equation.
+\pause
+Differentiate remembering that $y=y(x)$ is a function of $x$:
+
+\medskip
+\pause
+
+\quad
+$\displaystyle
+y'\left(2y + \nicefrac{2}{y}\right) = 2x$
+\pause\wthus
+$\displaystyle
+y'\left(2y + \nicefrac{2}{y}\right)\frac{y}{2(y^2+1)} = 2x\frac{y}{2(y^2+1)}$
+\pause\wthus
+$\displaystyle
+y' = \frac{xy}{y^2+1}$
+\quad
+{\Large\checkmark}
+
+\medskip
+\pause
+
+The equation also has the solution $y=0$, and the general solution is
 \begin{equation*}
 y^2 + 2 \ln \, \lvert y \rvert = x^2 + C, \qquad \text{and} \qquad y=0.
 \end{equation*}
-These outlying solutions
-such as $y=0$
-are sometimes called \emph{singular solutions}.
+\pause
+Such solutions are sometimes called \emph{singular solutions}.
 
-{Examples of separable equations}
 
-\begin{example}
+\end{frame}
+
+\begin{frame}
+Computing values of $y$ given $x$ is tricky.
+\pause
+You might even get multiple values.
+
+\medskip
+\pause
+
+Often one uses computers to find values.
+
+\medskip
+\pause
+
+Here is what the set of points $(x,y)$ satisfying 
+$y^2+2\ln|y|=x^2$ looks like:
+
+\begin{center}
+\includegraphics[width=3in]{../figures/implicitsols}
+\end{center}
+
+\medskip
+\pause
+
+The initial condition tells you which solution to take.
+\pause
+E.g., the top curve satisfies $y(1)=1$.
+
+\end{frame}
+
+\begin{frame}
+A couple more examples of separable equations:
+
+\medskip
+\pause
+
+\textbf{Example:}
 Solve $x^2y' = 1 - x^2+y^2 - x^2y^2$, $y(1) = 0$.
 
-Factor the right-hand side
-\begin{equation*}
-x^2y' = (1 - x^2)(1+y^2) .
-\end{equation*}
+\medskip
+\pause
+
+Factor:
+\quad
+$\displaystyle
+x^2y' = (1 - x^2)(1+y^2)$.
+
+\medskip
+\pause
+
 Separate variables, integrate, and solve for $y$:
-\begin{align*}
-\frac{y'}{1+y^2} & = \frac{1 - x^2}{x^2} , \\
-\frac{y'}{1+y^2} & = \frac{1}{x^2} - 1 , \\
-\operatorname{arctan} (y) & = \frac{-1}{x} - x + C , \\
-y & = \tan \left(\frac{-1}{x} - x + C\right) .
-\end{align*}
-Solve for the initial condition, $0 = \tan(-2+C)$ to get $C=2$ (or $C = 2 +
-\pi$, or $C = 2 + 2\pi$, etc.).  The particular solution we seek is, therefore,
-\begin{equation*}
-y = \tan \left(\frac{-1}{x} - x + 2 \right) .
-\end{equation*}
-\end{example}
+
+\medskip
+\pause
+
+\quad
+$\displaystyle
+\frac{y'}{1+y^2} = \frac{1 - x^2}{x^2}$
+\pause
+\wthus
+$\displaystyle
+\frac{y'}{1+y^2} = \frac{1}{x^2} - 1$
+\pause
+\wthus
+$\displaystyle
+\operatorname{arctan} (y) = \frac{-1}{x} - x + C$
+
+\medskip
+\pause
+
+\wthus
+\quad
+$\displaystyle
+y = \tan \left(\frac{-1}{x} - x + C\right)$
+
+\medskip
+\pause
+
+Solve for IC:
+\quad
+$0 = \tan(-2+C)$
+\pause
+\wthus
+$C=2$ \pause (or $C = 2 + \pi$, or $C = 2 + 2\pi$, etc.)
+
+\medskip
+\pause
+
+The particular solution we seek is
+\quad
+$\displaystyle
+y = \tan \left(\frac{-1}{x} - x + 2 \right)$.
+
+\end{frame}
+
+%FIXME: not done from here
+
+\begin{frame}
 
 \textbf{Example:}
 Bob made a cup of coffee, and
