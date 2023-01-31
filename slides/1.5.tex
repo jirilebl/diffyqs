@@ -1,0 +1,443 @@
+\documentclass[10pt,aspectratio=169]{beamer}
+
+% All the boilerplate is in deslides.sty
+\usepackage{deslides}
+
+\author{Ji\v{r}\'i Lebl}
+
+\institute[OSU]{%
+Oklahoma State University%
+%Departemento pri Matematiko de Oklahoma {\^S}tata Universitato%
+}
+
+\title{7. Substitution\\(Notes on Diffy Qs, 1.5)}
+
+\date{}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+
+%\bigskip
+
+\begin{center}
+The textbook: \url{https://www.jirka.org/diffyqs/}
+\end{center}
+\end{frame}
+
+\begin{frame}
+As for integrals, one can use substitution.
+
+\medskip
+\pause
+
+\textbf{Example:}~$y' = {(x-y+1)}^2$~ is not separable nor linear.
+
+\medskip
+\pause
+
+Let $v = x-y+1$
+\pause
+\quad
+($v$ is a function of $x$)
+\qquad
+\pause
+Differentiate: ~$v' = 1 - y'$
+\pause
+\wthus
+$y' = 1-v'$
+
+\medskip
+\pause
+
+$y' = {(x-y+1)}^2$
+\wthus
+$1-v' = v^2$
+\pause
+\wthus
+$v' = 1-v^2$
+\quad
+\pause
+(separable!)
+
+\medskip
+\pause
+
+$\displaystyle
+\frac{1}{1-v^2} \,dv = dx$
+\pause
+\wthus
+$\displaystyle
+\frac{1}{2} \ln \left\lvert  \frac{v+1}{v-1} \right\rvert = x + C$
+\pause
+\wthus
+$\displaystyle
+\left\lvert \frac{v+1}{v-1} \right\rvert = e^{2x + 2C}$
+\pause
+\wthus
+$\displaystyle
+\frac{v+1}{v-1} = D e^{2x}$
+
+\medskip
+\pause
+
+Don't forget the singular solutions: $v=1$ and $v=-1$.
+
+\medskip
+\pause
+
+``Unsubstitute'':
+
+\medskip
+\pause
+
+$v=1$
+\pause
+\wthus
+$x-y+1=1$
+\pause
+\wthus $y=x$
+\pause
+\hfill
+$v=-1$
+\pause
+\wthus
+$x-y+1=-1$
+\pause
+\wthus
+$y=x+2$.
+
+\medskip
+\pause
+
+$\displaystyle
+\frac{v+1}{v-1} = D e^{2x}$
+\pause
+\wthus
+$\displaystyle
+\frac{x-y+2}{x-y} = D e^{2x}$
+\pause
+\wthus
+$x-y+2 = (x-y)D e^{2x}$
+
+\medskip
+
+\pause
+\wthus
+$x-y+2 = Dx e^{2x}-yD e^{2x}$
+\pause
+\wthus
+$-y + yD e^{2x} = Dx e^{2x} - x - 2$
+
+\medskip
+
+\pause
+\wthus
+$y\,(-1+ D e^{2x}) = Dx e^{2x} - x - 2$
+\pause
+\wthus
+$y  = \dfrac{Dx e^{2x} - x - 2}{D e^{2x}-1}$
+
+\medskip
+\pause
+
+Note: $D=0$ gives $y=x+2$, but no $D$ gives $y=x$.
+
+\end{frame}
+
+\begin{frame}
+
+Substitution in differential equations
+is the same idea as for integrals.  You guess.
+
+\medskip
+\pause
+
+Some patterns to look for:
+
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+\toprule
+When you see & Try substituting \\
+\midrule
+$yy'$ & $v=y^2$ \\
+$y^2y'$ & $v=y^3$ \\
+$(\cos y)y'$ & $v=\sin y$ \\
+$(\sin y)y'$ & $v=\cos y$ \\
+$y'e^y$ & $v=e^y$ \\ \bottomrule
+\end{tabular}
+\end{center}
+
+\pause
+
+Try to substitute in the ``most complicated'' part.
+
+\medskip
+\pause
+
+Nothing wrong with making many guesses.
+
+\end{frame}
+
+\begin{frame}
+\emph{Bernoulli equations}:
+\quad $y' + p(x)y = q(x)y^n$.
+
+\medskip
+\pause
+
+If $n=0$ or $n=1$ \wthus linear, we can solve.
+
+\medskip
+\pause
+
+Otherwise $v=y^{1-n}$ will result in a linear.
+
+\medskip
+\pause
+
+\textbf{Example:}
+Solve
+\quad
+$xy'+ y(x+1)+xy^5 = 0$, \qquad $y(1)=1$.
+
+\medskip
+\pause
+
+Note: $p(x) = (x+1)/x$ and $q(x) = -1$.
+
+\medskip
+\pause
+
+Substitute
+$v=y^{1-5} = y^{-4}$
+\pause
+\wthus
+$v' = -4 y^{-5} y'$
+\pause
+\wthus
+$\left( \nicefrac{-1}{4} \right) y^5 v' = y'$
+
+\medskip
+\pause
+
+$xy'+ y(x+1)+xy^5 = 0$
+\pause
+\wthus
+$\frac{-xy^5}{4} v'+ y(x+1)+xy^5 = 0$
+\pause
+\wthus
+$\frac{-x}{4} v'+ y^{-4}(x+1)+x = 0$
+
+\medskip
+
+\pause
+\wthus
+$\frac{-x}{4} v'+ v(x+1)+x = 0$
+\pause
+\wthus
+$v'- \frac{4(x+1)}{x} v  = 4$
+\pause
+\quad (linear!)
+
+\medskip
+\pause
+
+We just need to solve this linear equation.
+
+\end{frame}
+
+\begin{frame}
+
+$v'- \frac{4(x+1)}{x} v  = 4$
+\quad
+($v' + P(x) v = F(x)$ where $P(x) = - \frac{4(x+1)}{x}$ and $F(x) = 4$)
+
+\medskip
+\pause
+
+$y(1) = 1$ \wthus $v(1) = {(y(1))}^{-4} = 1$
+
+\medskip
+\pause
+
+Assume $x > 0$ (OK as initial condition is where $x = 1$)
+
+\medskip
+\pause
+
+Solution is:
+\qquad
+$\displaystyle
+v(x) = e^{-\int_1^x P(s) \, ds} \left(
+\int_1^x 
+e^{-\int_1^t P(s) \, ds}
+F(t) \, dt
++
+1 \right)$
+
+\medskip
+\pause
+
+$\displaystyle
+e^{\int_1^x P(s)\,ds}
+\pause
+= \exp \left( \int_1^x \frac{-4(s+1)}{s} \,ds \right)
+\pause
+=
+e^{-4x-4\ln(x)+4}
+\pause
+= 
+e^{-4x+4} x^{-4}
+\pause
+=
+\frac{e^{-4x+4}}{x^4}$
+
+\medskip
+\pause
+
+$\displaystyle
+e^{-\int_1^x P(s)\,ds}
+\pause
+=
+e^{4x+4\ln(x)-4}
+= 
+e^{4x-4} x^4$
+
+\medskip
+\pause
+
+\thus \quad
+$\displaystyle
+v(x)
+=
+%e^{-\int_{1}^x p(s)\, ds} \left( \int_{1}^x e^{\int_{1}^t p(s)\, ds} 4 \,dt
+%+ 1 \right) \\
+%=
+e^{4x-4} x^4
+\left( \int_{1}^x 4 \frac{e^{-4t+4}}{t^4} \,dt
++ 1 \right)$
+\qquad
+\pause
+(no closed form expression, that's OK)
+
+\medskip
+\pause
+
+Unsubstitute:
+\medskip
+
+\quad
+$y^{-4} = v$
+\pause
+\wthus
+$\displaystyle
+y = v^{-1/4}
+\pause
+= \frac{e^{-x+1}}{x {\left( 4 \int_1^x \frac{e^{-4t+4}}{t^4} \,dt + 1\right)}^{1/4}}$
+
+\end{frame}
+
+\begin{frame}
+
+\emph{Homogeneous equations}:
+\quad
+$y' = F\left(\frac{y}{x}\right)$
+\pause
+\quad
+Try
+$v = \frac{y}{x}$
+\pause
+\qquad
+$y' = v + x v'$
+
+\medskip
+\pause
+
+$y' = F\left(\frac{y}{x}\right)$
+\wthus
+$v+ xv' = F(v)$
+\pause
+\wthus
+$xv' = F(v)-v$
+\pause
+\wthus
+$\dfrac{v'}{F(v)-v} = \frac{1}{x}$
+
+\medskip
+\pause
+
+Implicit solution:
+\quad
+$\displaystyle
+\int \frac{1}{F(v)-v} \,dv = \ln \, \lvert x \rvert + C$
+
+\end{frame}
+
+\begin{frame}
+
+\textbf{Example:}
+Solve 
+\quad
+$x^2y' = y^2+xy$, \quad $y(1)=1$.
+
+\pause
+\medskip
+
+Write $y'= {\left(\nicefrac{y}{x}\right)}^2+\nicefrac{y}{x}$
+
+\medskip
+\pause
+
+Substitute \quad $v=\nicefrac{y}{x}$ \quad to get \quad
+$xv' = v^2+v-v = v^2$
+
+\medskip
+\pause
+
+Solve:
+\quad
+$\displaystyle
+\int \frac{1}{v^2} \,dv = \ln \, \lvert x \rvert + C$
+\pause
+\wthus
+$\displaystyle
+\frac{-1}{v} = \ln \, \lvert x \rvert + C$
+\pause
+\wthus
+$\displaystyle
+v = \frac{-1}{\ln \, \lvert x \rvert + C}$
+
+\medskip
+\pause
+
+\wthus
+$\displaystyle
+\frac{y}{x} = \frac{-1}{\ln \, \lvert x \rvert + C}$
+\pause
+\wthus
+$\displaystyle
+y = \frac{-x}{\ln \, \lvert x \rvert + C}$
+
+\medskip
+\pause
+
+$1 = y(1)
+\pause
+= \frac{-1}{\ln \, \lvert 1 \rvert + C}
+\pause
+= \frac{-1}{C}$
+\pause
+\wthus
+$C = -1$
+
+\medskip
+\pause
+
+\wthus
+$\displaystyle
+y = \frac{-x}{\ln \, \lvert x \rvert -1}$
+\end{frame}
+
+\end{document}
