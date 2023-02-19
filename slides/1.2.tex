@@ -10,7 +10,7 @@ Oklahoma State University%
 %Departemento pri Matematiko de Oklahoma {\^S}tata Universitato%
 }
 
-\title{4. Slope fields (Notes on Diffy Qs, 1.2)}
+\title{5. Slope fields (Notes on Diffy Qs, 1.2)}
 
 \date{}
 
@@ -49,6 +49,7 @@ So why not draw a little line with the slope $f(x,y)$ at the point $(x,y)$.
 \pause
 And do it for all $(x,y)$.
 
+\pause
 \medskip
 
 E.g., $y'=xy$. \pause
@@ -57,14 +58,14 @@ At $(2,1.5)$, draw a line of slope
 $xy = 2 \times 1.5 = 3$
 
 \vspace*{-24pt}
-\hspace*{3in}\visible<7>{\includegraphics[height=1.9in]{../figures/1-3-xysl-one}}
+\hspace*{3in}\visible<8>{\includegraphics[height=1.9in]{../figures/1-3-xysl-one}}
 
 \vspace*{-1.53in}
 \pause
 Now do it for a grid of points.
 
 \vspace*{-42.5pt}
-\hspace*{3in}\visible<8-10>{\includegraphics[height=1.9in]{../figures/1-3-xysl}}
+\hspace*{3in}\visible<9-11>{\includegraphics[height=1.9in]{../figures/1-3-xysl}}
 
 \vspace*{-1.3in}
 \pause
@@ -76,7 +77,7 @@ This is called the \emph{slope field}.
 
 Given a specific initial condition,
 
-$y(x_0)=y_0$, we could draw a solution.
+$y(x_0)=y_0$, we have a solution.
 
 \pause
 \medskip
@@ -84,7 +85,7 @@ $y(x_0)=y_0$, we could draw a solution.
 E.g., $y(0) = 0.2$, $y(0) = 0$, and $y(0) = -0.2$.
 
 \vspace*{-109.5pt}
-\hspace*{3in}\visible<11->{\includegraphics[height=1.9in]{../figures/1-3-xysl-sol}}
+\hspace*{3in}\visible<12->{\includegraphics[height=1.9in]{../figures/1-3-xysl-sol}}
 
 \pause
 \vspace*{-0.33in}
@@ -110,7 +111,7 @@ that all solutions just tend to $y=0$.
 \end{frame}
 
 \begin{frame}
-Given a problem
+Consider
 \begin{equation*}
 y' = f(x,y), \qquad y(x_0) = y_0.
 \end{equation*}
@@ -132,8 +133,8 @@ If the answer is no, you probably do not have the right model.
 
 \textbf{Example:}
 Answer to (i) can be no:
-
-\quad $y' = \frac{1}{x}, \qquad y(0) = 0$.
+  
+\quad $y' = \dfrac{1}{x}, \qquad y(0) = 0$.
 
 \pause (or the more harmless
 looking $x y' = 1$)
@@ -146,7 +147,7 @@ Integration yields: $y = \ln \, \lvert x \rvert + C$. \quad
 \pause
 There is no solution at $x=0$.
 
-\vspace*{-68pt}
+\vspace*{-72pt}
 \hspace*{3in}\includegraphics[width=2.5in]{../figures/1-3-xinv-sol}
 
 \end{frame}
@@ -181,7 +182,7 @@ All hope is not lost!
 \pause
 
 \begin{theorem}[Picard's theorem on existence and uniqueness]%
-If $f(x,y)$ is continuous and $\frac{\partial f}{\partial y}$ exists and is
+If $f(x,y)$ is continuous and $\dfrac{\partial f}{\partial y}$ exists and is
 continuous near $(x_0,y_0)$, then a solution to
 \begin{equation*}
 y' = f(x,y), \qquad y(x_0) = y_0,
