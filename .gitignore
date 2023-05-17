@@ -8,5 +8,7 @@ diffyqs.pdf
 diffyqs.toc
 diffyqs.rubbercache
 diffyqs.synctex.gz
+diffyqs.fls
+diffyqs.fdb_latexmk
 diffyqs-out.xml
 html
