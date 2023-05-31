@@ -1839,6 +1839,9 @@ Hence an implicit solution is
 \begin{equation*}
 \int \frac{1}{F(v)-v} \,dv = \ln \, \lvert x \rvert + C .
 \end{equation*}
+Clearly this solution does not work when $x = 0$ (we would, afterall,
+divide by zero in $\nicefrac{y}{x}$).  So we will either assume $x > 0$
+or $x < 0$ depending on the initial condition.
 
 \begin{example}
 Solve 
@@ -1847,8 +1850,11 @@ x^2y' = y^2+xy, \qquad y(1)=1.
 \end{equation*}
 
 We put the equation into
-the form $y'= {\left(\nicefrac{y}{x}\right)}^2+\nicefrac{y}{x}$.  We 
-substitute $v=\nicefrac{y}{x}$ to get
+the form $y'= {\left(\nicefrac{y}{x}\right)}^2+\nicefrac{y}{x}$,
+that is, $F(v) = v^2+v$.
+As the initial condition is for a positive $x$ value, we will assume
+\(x > 0 .\)
+We substitute $v=\nicefrac{y}{x}$ to get
 the separable equation
 \begin{equation*}
 xv' = v^2+v-v = v^2 ,
@@ -1856,22 +1862,25 @@ xv' = v^2+v-v = v^2 ,
 which has a solution
 \begin{align*}
 \int \frac{1}{v^2} \,dv &= \ln \, \lvert x \rvert + C , \\
-\frac{-1}{v} &= \ln \, \lvert x \rvert + C , \\
-v &= \frac{-1}{\ln \, \lvert x \rvert + C} .
+\frac{-1}{v} &= \ln  x + C , \\
+v &= \frac{-1}{\ln  x  + C} .
 \end{align*}
 We unsubstitute
-\begin{align*}
-\frac{y}{x} &= \frac{-1}{\ln \, \lvert x \rvert + C} , \\
-y &= \frac{-x}{\ln \, \lvert x \rvert + C} .
-\end{align*}
+\begin{equation*}
+\frac{y}{x} = \frac{-1}{\ln  x  + C} ,
+\qquad
+\text{or}
+\qquad
+y = \frac{-x}{\ln  x  + C} .
+\end{equation*}
 We want $y(1)=1$, so 
 \begin{equation*}
-1 = y(1) = \frac{-1}{\ln \, \lvert 1 \rvert + C} = \frac{-1}{C} .
+1 = y(1) = \frac{-1}{\ln  1 + C} = \frac{-1}{C} .
 \end{equation*}
 Thus $C = -1$ and
 the solution we are looking for is
 \begin{equation*}
-y = \frac{-x}{\ln \, \lvert x \rvert -1} .
+y = \frac{-x}{\ln  x  -1} .
 \end{equation*}
 \end{example}
 

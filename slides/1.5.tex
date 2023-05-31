@@ -27,7 +27,7 @@ The textbook: \url{https://www.jirka.org/diffyqs/}
 \end{frame}
 
 \begin{frame}
-As for integrals, one can use substitution.
+As for integrals, one can use substitution for differential equations.
 
 \medskip
 \pause
@@ -192,7 +192,7 @@ If $n=0$ or $n=1$ \wthus linear, we can solve.
 \medskip
 \pause
 
-Otherwise $v=y^{1-n}$ will result in a linear.
+Otherwise $v=y^{1-n}$ will result in a linear eq.
 
 \medskip
 \pause
@@ -205,7 +205,8 @@ $xy'+ y(x+1)+xy^5 = 0$, \qquad $y(1)=1$.
 \medskip
 \pause
 
-Note: $p(x) = (x+1)/x$ and $q(x) = -1$.
+Note: $p(x) = (x+1)/x$ and $q(x) = -1$. \qquad (eq. is $y' + \frac{x+1}{x} \, y =
+-y^5$)
 
 \medskip
 \pause
@@ -225,19 +226,19 @@ $\left( \nicefrac{-1}{4} \right) y^5 v' = y'$
 $xy'+ y(x+1)+xy^5 = 0$
 \pause
 \wthus
-$\frac{-xy^5}{4} v'+ y(x+1)+xy^5 = 0$
+$\dfrac{-xy^5}{4} v'+ y(x+1)+xy^5 = 0$
 \pause
 \wthus
-$\frac{-x}{4} v'+ y^{-4}(x+1)+x = 0$
+$\dfrac{-x}{4} v'+ y^{-4}(x+1)+x = 0$
 
 \medskip
 
 \pause
 \wthus
-$\frac{-x}{4} v'+ v(x+1)+x = 0$
+$\dfrac{-x}{4} v'+ v(x+1)+x = 0$
 \pause
 \wthus
-$v'- \frac{4(x+1)}{x} v  = 4$
+$v'- \dfrac{4(x+1)}{x} v  = 4$
 \pause
 \quad (linear!)
 
@@ -363,7 +364,7 @@ $v+ xv' = F(v)$
 $xv' = F(v)-v$
 \pause
 \wthus
-$\dfrac{v'}{F(v)-v} = \frac{1}{x}$
+$\dfrac{v'}{F(v)-v} = \dfrac{1}{x}$
 
 \medskip
 \pause
@@ -372,6 +373,12 @@ Implicit solution:
 \quad
 $\displaystyle
 \int \frac{1}{F(v)-v} \,dv = \ln \, \lvert x \rvert + C$
+
+\medskip
+\pause
+
+In the solution, we assume $x > 0$ or $x < 0$ depending on the initial
+condition.
 
 \end{frame}
 
@@ -385,12 +392,18 @@ $x^2y' = y^2+xy$, \quad $y(1)=1$.
 \pause
 \medskip
 
-Write $y'= {\left(\nicefrac{y}{x}\right)}^2+\nicefrac{y}{x}$
+Write $y'= {\left(\nicefrac{y}{x}\right)}^2+\nicefrac{y}{x}$,
+\quad so $F(v) = v^2+v$
+
+\pause
+\medskip
+
+Assume $x > 0$ due to the initial condition.
 
 \medskip
 \pause
 
-Substitute \quad $v=\nicefrac{y}{x}$ \quad to get \quad
+Substituting \quad $v=\nicefrac{y}{x}$ \quad as above gets \quad
 $xv' = v^2+v-v = v^2$
 
 \medskip
@@ -399,35 +412,36 @@ $xv' = v^2+v-v = v^2$
 Solve:
 \quad
 $\displaystyle
+\int \frac{1}{F(v)-v} \,dv =
 \int \frac{1}{v^2} \,dv = \ln \, \lvert x \rvert + C$
 \pause
 \wthus
 $\displaystyle
-\frac{-1}{v} = \ln \, \lvert x \rvert + C$
+\frac{-1}{v} = \ln  x  + C$
 \pause
 \wthus
 $\displaystyle
-v = \frac{-1}{\ln \, \lvert x \rvert + C}$
+v = \frac{-1}{\ln  x  + C}$
 
 \medskip
 \pause
 
 \wthus
 $\displaystyle
-\frac{y}{x} = \frac{-1}{\ln \, \lvert x \rvert + C}$
+\frac{y}{x} = \frac{-1}{\ln  x  + C}$
 \pause
 \wthus
 $\displaystyle
-y = \frac{-x}{\ln \, \lvert x \rvert + C}$
+y = \frac{-x}{\ln  x  + C}$
 
 \medskip
 \pause
 
 $1 = y(1)
 \pause
-= \frac{-1}{\ln \, \lvert 1 \rvert + C}
+= \dfrac{-1}{\ln  1  + C}
 \pause
-= \frac{-1}{C}$
+= \dfrac{-1}{C}$
 \pause
 \wthus
 $C = -1$
@@ -437,7 +451,7 @@ $C = -1$
 
 \wthus
 $\displaystyle
-y = \frac{-x}{\ln \, \lvert x \rvert -1}$
+y = \frac{-x}{\ln  x  -1}$
 \end{frame}
 
 \end{document}

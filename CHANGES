@@ -7,3 +7,6 @@
 * In Example 1.4.2, explain where the \(2t\) comes up for figuring out when
   the tank is full, and emphasize that the concentration is when we divide
   by the volume, by the 100.
+* In Example 1.5.2, note what \(F(v)\) is for clarity.  Also note just
+  before that since we have to avoid \(x=0\) we might as well assume
+  \(x > 0\) or \(x < 0 . \)  Use \(x > 0\) in the example for simplicity.
