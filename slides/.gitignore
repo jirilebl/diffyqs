@@ -7,6 +7,8 @@
 *.vrb
 *.rubbercache
 *.synctex.gz
+*.fdb_latexmk
+*.fls
 deslides.zip
 intro.pdf
 0.2.pdf
