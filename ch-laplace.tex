@@ -553,15 +553,15 @@ t & \text{if } \; t \geq 1, \\
 \end{exercise}
 \exsolution{%
 Using the definition of the laplace tranform (and the fact that $f(t)$ is non-zero only between 0 and 1):\\\\
-$\mathcal{L}[f(t)]=\int_{0}^{1}te^{-st}dt=\frac{1-e^{-s} (s+1)}{s^2}$
+$\mathcal{L}[f(t)]=\int_{1}^{\infty}te^{-st}dt=e^{-s}(\frac{1}{s}+\frac{1}{s^2})$
 }
 
-\begin{exercise}
-	Find the Laplace transform of the function whose graph is given below:
-\end{exercise}
-\exsol{%
-$\frac{-1+e^{-s} (s+1)}{s^2}$
-}
+%\begin{exercise}
+%	Find the Laplace transform of the function whose graph is given below:
+%\end{exercise}
+%\exsol{%
+%$\frac{-1+e^{-s} (s+1)}{s^2}$
+%}
 
 \begin{exercise}
 Find the inverse Laplace transform of $\frac{1}{{(s-1)}^2(s+1)}$.
@@ -890,7 +890,7 @@ The plot of this solution is given in \figurevref{lt:heavisideexfig}.
 \end{myfig}
 \end{example}
 
-\begin{video}[SpLHM16mFt][Solving an IVP with a piecewise nonhomogeneity ][la-piecewise2]
+\begin{video}[SpLHM16mFtI][Solving an IVP with a piecewise nonhomogeneity ][la-piecewise2]
 	This video is a start to finish walkthrough of the process of going from an IVP, converting via Laplace, dealing with the piecewise part, and then converting back to a solution to the original IVP. This video thus includes many pieces we've been developing so is probably your best check for comprehension yet. Feel free to try and work it out on your own first and skip to the end to check the solution. 
 
 	\emph{TYPO: At about 4:00, in the red, $\mathcal{L}\{u(t-a)f(t-a)\}=e^{-as}\mathcal{L}\{f(t)\}$. I wrote the exponential with a t not an s. This typo persists in a few places in the video}
@@ -1137,7 +1137,7 @@ Solve $x''' + x = (t-1)^3 u(t-1)$ for initial conditions $x(0) = 1$ and $x'(0) =
 $x(t)=u(t-1)\left[(t-1)^3+4e^{(t-1)/2}\cos\left(\frac{\sqrt{3}}{2}(t-1)\right)+6+2e^{-(t-1)}\right]+\frac{1}{3}e^{t/2}\cos(\frac{\sqrt{3}}{2}t)+\frac{1}{3}e^{-t}$
 }
 
-\begin{exercise}2qw3q
+\begin{exercise}
 	Solve $x''-x = (t^2-1) u(t-1)$ for initial conditions $x(0)=1$, $x'(0) = 2$
 	using the Laplace transform.
 \end{exercise}
@@ -2113,6 +2113,19 @@ the impulse response and the input $f(t)$.
 
 	\emph{TYPO: The formula is $\mathcal{L}\{\delta_a(t)\}=e^{-as}$. In several places in the video I drop the negative sign.}
 \end{video}
+
+\begin{example}
+	\emph{Geogebra Activity:} Use \href{https://www.geogebra.org/m/wzhdm4be}{this Geogebra applet} to explore the behaviour of a damped oscillator with a periodic impulse input $F(t)=F_0\delta_p(t)$. Explore how different the behaviour becomes under certain periods or amplitudes. A few examples of interesting behaviours:
+	\begin{itemize}
+	\item Reproduce the response shown in Video 3.4.3.
+	\item  With some minor modifications, this ODE could describe a pendulum with friction, e.g. a swing. How often do you need to apply a push (the impulse) to maximize the amplitude? 
+	\item Notice what happens when you set $p$ to be very small. What is behaviour similar to?  
+	\end{itemize}
+	
+  
+  
+  
+	\end{example}
 
 
 

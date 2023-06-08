@@ -261,13 +261,13 @@ What if we say $x' = v$.  Then we have the problem
 \begin{equation*}
 v' = t^2, \qquad v(0) = 10 .
 \end{equation*}
-Once we solve for $v$, we can integrate and find $x$.
+Once we solve for $v$, we can integrate and find $x$. Do this as an exercise. 
 \end{example}
 
-\begin{exercise}
-Solve for $v$, and then solve for $x$.  Find $x(10)$ to answer the
-question.
-\end{exercise}
+%\begin{exercise}
+%Solve for $v$, and then solve for $x$.  Find $x(10)$ to answer the
+%question.
+%\end{exercise}
 
 \subsection{Exercises}
 
@@ -386,7 +386,7 @@ question.
     }
     
     
-    \setcounter{exercise}{100}
+
     
     \begin{exercise}
     Solve $\frac{dy}{dx} = e^x + x$ and $y(0) = 10$.
@@ -564,6 +564,11 @@ looking at the slope field itself.
 \diffyincludegraphics{width=3in}{width=4.5in}{1-3-mysl-sol}
 \caption{Slope field of $y' = -y$ with a graph of a few solutions.\label{1.3:fig3}}
 \end{myfig}
+
+
+\begin{example}
+\emph{Geogebra Activity:} Use \href{https://www.geogebra.org/m/zjfhbkqe}{this Geogebra slope field plotter} to explore the slope fields of several first order differential equations and play around with the solutions starting at different initial conditions. 
+\end{example}
 
 \subsection{Existence and uniqueness}
 
@@ -1176,6 +1181,12 @@ $t \approx 9.21$.  On the right, the graph is over a longer period of time,
 with a horizontal line at the ambient temperature 22.\label{sintro:coffeefig}}
 \end{myfig}
 \end{example}
+
+
+\begin{example}
+    \emph{Geogebra Activity:} Use \href{https://www.geogebra.org/m/n7byk5wt}{this Geogebra applet}  to explore Newton's Law of Cooling. Try a few different initial conditions and explore how they affect the cooling curve. You can use this application as a check when solving problems involving Newton cooling.
+\end{example}
+
 
 \begin{example}
 Find the general solution to $y' = \frac{-xy^2}{3}$ (including singular
@@ -1791,7 +1802,7 @@ A truck with \unit[500]{kg} of toxic substance
 crashes into the first lake.  Assume that the water is being continually
 mixed perfectly by the stream.
 \begin{tasks}
-\task Find the concentration of toxic substance
+\task Find the mass of toxic substance
 as a function of time in both lakes.
 \task When will the
 concentration in the first lake be below \unit[0.001]{kg} per liter?
@@ -1802,21 +1813,23 @@ concentration in the second lake be maximal?
 \exsolution{%
 (a) Lake 1: 
 \begin{align*}
-x &= \textrm{kg of toxic material} \\
-\textrm{rate in} &=\textrm{rate out}=500 \\
+x_1 &= \textrm{kg of toxic material in Lake 1} \\
+\textrm{rate in} &=\textrm{rate out}=500L/h \\
 \textrm{concentration in} &=0 \\
-\textrm{concenctraiton out} &= \frac{x}{V_1}=\frac{x}{10^5}
+\textrm{concentration out} &= \frac{x_1}{V_1}=\frac{x_1}{10^5}
 \end{align*}
 \begin{align*}
-\frac{dx}{dt}=-500\frac{x}{10^5}\rightarrow \ln x=-\frac{t}{200}
+\frac{dx_1}{dt}=-500\frac{x_1}{10^5}\rightarrow \ln x_1=-\frac{t}{200}
 \end{align*}
 \begin{align*}
-x=x_0e^{-t/200}
+x_1=x(0)e^{-t/200}
 \end{align*}
-Applying the initial condition $x(0)=x_0=500$ the equation becomes
+Applying the initial condition $x(0)=500\textrm{kg}$ the equation becomes
 \[
-x(t)=500e^{-t/200}
+x_1(t)=500e^{-t/200}
 \]
+
+
 Lake 2:
 \begin{align*}
 \frac{dx_2}{dt}& =\frac{x_1(t)}{200}-\frac{x_2(t)}{400} \\
@@ -1828,9 +1841,9 @@ p(t)=\frac{1}{400},\quad f(t)=\frac{5e^{-t/200}}{2},\quad r(t)=e^{t/400}
 \]
 Multiplying and integrating
 \[
-e^{t/400}x_2=-1000e^{-t/400}+c
+e^{t/400}x_2=-1000e^{-t/400}+C
 \]
-Applying the initial condition $x_2(0)=0$ we find $c=1000$ so
+Applying the initial condition $x_2(0)=0$ we find $C=1000$ so
 \[
 x_2=1000(e^{-t/400}-e^{-t/200})
 \]
@@ -1868,8 +1881,8 @@ p(t)=k,\quad f(t)=kA_0\cos(\omega t),\quad r(t)=e^{kt}
 Multiplying and integrating
 \begin{equation*}
     e^{kt}x=kA_0\int e^{kt}\cos(\omega t)dt=kA_0 e^{kt}\left(\frac{k\cos(\omega t)+\omega\cos(\omega t)}{k^2+\omega^2}\right)+C
-\end{equation}
-    \begin{equation*}
+\end{equation*}
+\begin{equation*}
 x(t)=kA_0\left(\frac{k\cos(\omega t)+\omega \sin(\omega t)}{k^2+\omega^2}\right)+Ce^{-kt}
 \end{equation*}
 (b)
@@ -2047,7 +2060,9 @@ does not work (it does not make the equation any simpler), try a different one.
 \subsection{Bernoulli equations}
 
 \begin{video}[MxI-XktO-go][Bernoulli equations][first-bernoulli]
-    We have two major classes that we have procedures to solve - separable and linear ODEs. However, we can often use a substitution to convert a different type of ODE into one of these two types. In this video we use a substitution to solve a major class of ODEs called Bernoulli equations
+    We have two major classes that we have procedures to solve - separable and linear ODEs. However, we can often use a substitution to convert a different type of ODE into one of these two types. In this video we use a substitution to solve a major class of ODEs called Bernoulli equations. 
+
+    TYPO: At 5:25, an $10x$ should be a $10u$. 
 \end{video}
 
 There are some forms of equations where there is a
@@ -2569,6 +2584,27 @@ $x' = 0.1\,x\,(8-x)-2$.\label{2.2:harv2}}
 \end{myfig}
 
 %$dx/dt = 0.1*x*(8-x)-1$, $t: [0,20], x: [-5,10]$,
+
+
+
+\begin{example}
+    \emph{Geogebra Activity:} Try to sketch by hand the phase diagram for each of the following equations, then use \href{https://www.geogebra.org/m/twj2ycb9}{this Geogebra phase diagram plotter} to verify your answers. 
+    
+   \begin{equation*}
+    \frac{dx}{dt}=x^2-9x+4
+   \end{equation*}
+    \begin{equation*}
+        \frac{dx}{dt}=\cos(2x),\ \ -\pi<x<\pi
+    \end{equation*}
+        \begin{equation*}
+            \frac{dx}{dt}=(x-2)^2
+        \end{equation*}
+            \begin{equation*}
+                \frac{dx}{dt}=x^2+2
+            \end{equation*}
+
+
+    \end{example}
 
 \subsection{Exercises}
 

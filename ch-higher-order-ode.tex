@@ -373,7 +373,7 @@ $r$.
 \exsol{%
 (a) $y=c_1x^{r_1}+c_2x^{r_2}$ where
 \begin{equation*}
-r_1=\frac{-(b-1)+\sqrt{(b-a)^2-4ac}}{2a},\quad r_2=\frac{-(b-1)-\sqrt{(b-a)^2-4ac}}{2a}
+r_1=\frac{-(b-a)+\sqrt{(b-a)^2-4ac}}{2a},\quad r_2=\frac{-(b-a)-\sqrt{(b-a)^2-4ac}}{2a}
 \end{equation*}
 Where $r_1$ and $r_2$ are real and distinct, since $(b-a)^2-4ac >0$ under the square root.  \\
 (b) If equal to 0, then $r_1=r_2=r$. We would need to find another linearly independent solution since the two terms in the solution in part (a) become linearly dependent now. \\
@@ -763,6 +763,8 @@ Often the following notation is used,
 \operatorname{Im}(a+ib) = b.
 \end{equation*}
 
+
+
 \subsection{Complex roots}
 
 Suppose the equation $ay'' + by' + cy = 0$ has the 
@@ -1120,7 +1122,7 @@ y^{(n)} + p_{n-1}(x)y^{(n-1)} + \cdots + p_1(x) y' + p_0(x) y = 0 .
 
 \begin{video}[RDp9Tg7gj5U][Linear Independence][higherlinear]
   We briefly saw the idea of two functions being linearly independent when talking about the theory of 2nd order ODEs in \sectionref{solinear:section}. Now that we are talking about nth order, we need to figure out how to show that n functions are linearly independent. As you can imagine there are strong parallels to linear algebra, but we also get something unique to ODEs called the Wronskian which will be a test for linear independence.
-\emph{Note: While the Wronskian was covered by Bazett in the videos of this section, the text of this section written by Lebl avoids this topic.}
+\emph{Note: While the Wronskian was covered by Bazett in the videos of this section, the text of this section beyond a brief mention largely avoids this topic.}
 \end{video}
 
 
@@ -1139,13 +1141,34 @@ can solve for $y_1$ as a linear combination of the others.  If the functions
 are not
 linearly independent, they are \emph{\myindex{linearly dependent}}.
 
+There are several ways to show that a set of functions are linearly independent. The first method we'll present uses a tool called the Wronskian, which is rather unintuitive but computationally simple. 
+
+\begin{equation}
+W(y_1,...y_n)=
+\begin{vmatrix} 
+  y_1 & y_2 & ... & y_n \\
+  y_1' & y_2' & ... & y_n' \\ 
+  \vdots  &  \vdots &  \vdots &  \vdots \\
+  y_1^{(n-1)} & y_2^{(n-1)} & ... & y_n^{(n-1) }
+\end{vmatrix}
+.
+\end{equation}
+
+If the functions $y_1,...,y_n$ where linearly dependent (and $n-1$ times differentiable), then the columns of the matrix in the Wronskian will be as well and thus the Wronskian is zero. Thus to show a set of functions is linearly independent on an interval $I$ it suffices to find a single point in $I$ where the Wronskian is non-zero. Note the converse is not true, $W=0$ does not imply linear dependence. 
+
+\begin{example}
+  $e^x$ and $e^{2x}$ are linearly independent as 
+  \begin{equation*}
+    W(e^x, e^{2x})=\begin{vmatrix}e^x & e^{2x}\\
+      e^x & 2e^{2x}\end{vmatrix}=e^{3x}.
+  \end{equation*}
+  As $e^{3x}\neq 0$ for any $x$, these two functions are linearly independent everywhere.
+\end{example}
+
 \begin{example}
 Show that $e^x, e^{2x}, e^{3x}$ are linearly independent.
 
-Let us give several ways to show this fact.
-Many textbooks (including \cite{EP} and
-\cite{F}) introduce Wronskians, but it is difficult to see why they work and
-they are not really necessary here.
+
 
 Let us write down
 \begin{equation*}
@@ -1427,7 +1450,7 @@ Find the general solution for $y''' - y'' + y' - y = 0$.
 \exsolution{%
 The characteristic equation is
 \begin{align*}
-r^3-r^2+3-1 &=0 \\
+r^3-r^2+r-1 &=0 \\
 (r^2+1)(r-1) &=0\quad \rightarrow r_1=1,\ r_2=i,\ r_3=-i
 \end{align*}
 Therefore the general solution is
@@ -1953,6 +1976,15 @@ This function
 takes two arguments, $B$ and $A$, and returns a $\gamma$ in the
 correct quadrant for you.
 
+
+\begin{example}
+  \emph{Geogebra Activity:} Use \href{https://www.geogebra.org/m/wcgwfrtg}{this Geogebra applet} to to explore the effects of the mass $m$, spring constant $k$, and the initial conditions $x(0)=A$, $x'(0)=B$ on the solution of the free undamped equation $mx''+kx=0$.
+  
+
+
+
+  \end{example}
+
 \subsection{Free damped motion}
 
 \begin{video}[SMHC3Khm6cg][Damped Mechanical Vibrations][dampedmechanical]
@@ -2137,6 +2169,15 @@ On the other hand, when $c$ gets smaller, $\omega_1$ approaches $\omega_0$
 periodic motion of the undamped case.  The envelope curves become flatter and
 flatter as $c$ (and hence $p$) goes to 0.
 
+
+\begin{example}
+  \emph{Geogebra Activity:} Use \href{https://www.geogebra.org/m/nhsahq8e}{this Geogebra applet} to explore the behaviour of a free damped system as you change the parameters $k, m, c, x_0$ and $v_0$. 
+  
+
+
+
+  \end{example}
+
 \subsection{Exercises}
 
 \begin{exercise}
@@ -2201,7 +2242,7 @@ r &= -\frac{1}{4}\pm i\frac{\sqrt{23}}{4}
 \end{align*} 
 So the general solution is 
 \begin{align*}
-x(t)=e^{-x/4}\left[C_1\cos(\frac{\sqrt{23}}{4}x)+C_2\sin(\frac{\sqrt{23}}{4}x)\right]
+x(t)=e^{-t/4}\left[C_1\cos(\frac{\sqrt{23}}{4}t)+C_2\sin(\frac{\sqrt{23}}{4}t)\right]
 \end{align*}
 \\
 b) From the general solution (complex roots), the system is underdamped. 
@@ -2718,20 +2759,36 @@ $f(x) = u_1' y_1' + u_2' y_2'$.
 
 What we need to solve are the two equations (conditions) we imposed
 on $u_1$ and $u_2$:
-\begin{equation*}
+\begin{equation}
 \mybxbg{~~
 \begin{aligned}
 & u_1' y_1 + u_2' y_2 = 0 ,\\
 & u_1' y_1' + u_2' y_2' = f(x) .
 \end{aligned}
 ~~}
-\end{equation*}
-We solve for $u_1'$ and $u_2'$ in terms of $f(x)$, $y_1$ and $y_2$.
+\end{equation}
 We always get these formulas for any $Ly = f(x)$, where $Ly =
-y''+p(x)y'+q(x)y$.  There is a general
-formula for the solution we could just plug into, but instead of memorizing
-that, it is better, and easier, to
-just repeat what we do below.  In our case the two equations are
+y''+p(x)y'+q(x)y$.  Now we solve for $u_1'$ and $u_2'$ in terms of $f(x)$, $y_1$ and $y_2$ giving
+\begin{equation*}
+u_1(t)=-\int_{t_0}^t\frac{y_2(s)f(s)}{W(y_1,y_2)(s)}ds,
+\end{equation*}
+\begin{equation*}
+  u_2(t)=\int_{t_0}^t\frac{y_1(s)f(s)}{W(y_1,y_2)(s)}ds,
+\end{equation*}
+
+where $W(y_1,y_2)(s)=y_1(s)y_2'(s)-y_2(s)y_1'(s)$ is the Wronskian of $y_1$ and $y_2$ at a point $s$. This gives us the general formula 
+
+\begin{equation}
+  \mybxbg{~~
+y=-y_1(t)\int_{t_0}^t\frac{y_2(s)f(s)}{W(y_1,y_2)(s)}ds+y_2(t)\int_{t_0}^t\frac{y_1(s)f(s)}{W(y_1,y_2)(s)}ds
+  ~~}
+  \end{equation}
+
+
+
+We could just plug into this general formula, but memorizing this complicated formula is tedious and not instructive so and instead one can ignore the above formula and just go through the process to derive the formula in each specific case. Let's do that now for our example with $f(x)=\tan(x)$.  
+
+In our case the two equations are
 \begin{align*}
 u_1' \cos (x) + u_2' \sin (x) &= 0 ,\\
 -u_1' \sin (x) + u_2' \cos (x) &= \tan (x) .
@@ -3465,6 +3522,14 @@ A general periodic function will be the sum (superposition) of many
 cosine waves of different frequencies.
 The reader is encouraged to come
 back to this section once we have learned about the Fourier series.
+
+\begin{example}
+  \emph{Geogebra Activity:} Use \href{https://www.geogebra.org/m/nhsahq8e}{this Geogebra applet} to explore the behaviour of a forced damped harmonic oscillator. Try to find the practical resonance for some choice of parameters.
+  
+
+
+
+  \end{example}
 
 \subsection{Exercises}
 

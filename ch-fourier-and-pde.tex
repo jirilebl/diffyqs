@@ -1211,7 +1211,7 @@ Calculating $b_{n}$ for $n=1$, we find that $b_{1}=1$. Therefore, the Fourier se
 \begin{myfig}
 \capstart
 \diffyincludegraphics{width=3in}{width=4.5in}{FourierSeriesQ3}
-\caption{Periodic Extension of $f(t)=\sin \pi t$ on $(-\pi,\pi]$ \label{FourierSeriesQ3}}
+\caption{Periodic Extension of $f(t)=\sin t$ on $(-\pi,\pi]$ \label{FourierSeriesQ3}}
 \end{myfig}
 \medskip
 }
@@ -1532,6 +1532,20 @@ and up to the ${20}^{\text{th}}$ harmonic (right graph).\label{gfs:sawcontfsfig}
 \end{myfig}
 \end{example}
 
+
+\begin{example}
+	\emph{Geogebra Activity:} Use \href{https://www.geogebra.org/m/n88jfkwq}{this Geogebra applet} to explore how the periodic extension looks like for different functions and intervals. 
+	
+	Note: You can define $f(x)$ to be piecewise within the interval by writing \emph{If(x>a,g(x),h(x))} in the input box, which in the usual notation corresponds to 
+\begin{equation*}
+	f(x)=\begin{cases}
+	g(x)\quad x>a \\
+	h(x)\quad x\leq a
+	\end{cases}
+\end{equation*}
+ \end{example}
+
+
 \subsection{Convergence}
 
 \emph{Note: Convergence was covered previously in the video series in \ref{fouriercoefficients}}
@@ -1830,9 +1844,13 @@ the series again, we would obtain
 \end{equation*}
 which does not converge!
 
-Computer Exercise: Use a computer to plot the series we obtained for $f(t)$, $f'(t)$ and
-$f''(t)$.  That is, plot say the first 5 harmonics of the functions.  At what
-points does $f''(t)$ have the discontinuities?
+
+
+\begin{example}
+	\emph{Geogebra Activity:} Use \href{https://www.geogebra.org/m/m4wsepwu}{this Geogebra applet} to plot the series for $f(t)$ and the obtained series for its derivatives to see the behaviour described above. Explore this behaviour with your own series and see how fast they (and their derivatives) converge. 
+	
+
+ \end{example}
 
 \subsection{Exercises}
 
@@ -2268,13 +2286,17 @@ Recall that a function $f(t)$ is \emph{odd}\index{odd function} if $f(-t) =
 $f(-t) = f(t)$.  For example, $\cos (n t)$ is even and $\sin (n t)$ is odd.
 Similarly the function $t^k$ is even if $k$ is even and odd when $k$ is odd.
 
-Exercise: Take two functions $f(t)$ and $g(t)$ and define their product $h(t) =
+\begin{example} Take two functions $f(t)$ and $g(t)$ and define their product $h(t) =
 f(t)g(t)$.
 \begin{tasks}
 \task Suppose both $f(t)$ and $g(t)$ are odd.  Is $h(t)$ odd or even?
 \task Suppose one is even and one is odd.  Is $h(t)$ odd or even?
 \task Suppose both are even.  Is $h(t)$ odd or even?
 \end{tasks}
+
+You can check your answers graphically using \href{https://www.geogebra.org/m/hfk7axbg}{this Geogebra applet}. Even functions are symmetric about the y-axis, while odd functions are flip over both the y-axis and the x-axis. 
+
+ \end{example} 
 
 
 If $f(t)$ and $g(t)$ are both odd, then $f(t)+g(t)$ is odd.  Similarly for
@@ -2760,14 +2782,14 @@ Take $f(t) = \sin t$ defined on $0 \leq t \leq \pi$.
 \exsol{%
 a) \begin{myfig}
 \capstart
-\diffyincludegraphics{width=3in}{width=4.5in}{FourierSineCosineSeriesQ7a}
-\caption{Even Periodic Extension of $f(t)=\sin t$ on $[0,\pi]$ \label{FourierSineCosineSeriesQ7a}}
+\diffyincludegraphics{width=3in}{width=4.5in}{FourierSineCosineSeriesQ7b}
+\caption{Even Periodic Extension of $f(t)=\sin t$ on $[0,\pi]$ \label{FourierSineCosineSeriesQ7b}}
 \end{myfig}
 \medskip
 b) \begin{myfig}
 \capstart
-\diffyincludegraphics{width=3in}{width=4.5in}{FourierSineCosineSeriesQ7b}
-\caption{Odd Periodic Extension of $f(t)=\sin t$ on $[0,\pi]$ \label{FourierSineCosineSeriesQ7b}}
+\diffyincludegraphics{width=3in}{width=4.5in}{FourierSineCosineSeriesQ7a}
+\caption{Odd Periodic Extension of $f(t)=\sin t$ on $[0,\pi]$ \label{FourierSineCosineSeriesQ7a}}
 \end{myfig}
 \medskip
 }
@@ -3083,9 +3105,7 @@ $F(t)$ itself.  See \figurevref{afs:steadyexfig} for the plot of this solution.
 \begin{myfig}
 \capstart
 \diffyincludegraphics{width=3in}{width=4.5in}{afs-steadyex}
-\caption{Plot of the steady periodic solution $x_{sp}$ of
-\exampleref{afs:steadyex}.%
-\label{afs:steadyexfig}}
+\caption{Plot of the steady periodic solution $x_{sp}$.\label{afs:steadyexfig}}
 \end{myfig}
 \end{example}
 
