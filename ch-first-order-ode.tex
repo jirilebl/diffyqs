@@ -2029,9 +2029,9 @@ See \figurevref{2.2:logisticfig} for an example, $x' = 0.1 x(5-x)$.
 There are two critical points, $x=0$ and $x=5$.  The critical point
 at $x=5$ is stable, while the critical point at $x=0$ is
 unstable.
-
-It is not necessary to find the exact solutions to talk about the long
-term behavior of the solutions.  From the slope field above of
+It is not necessary to find the exact solutions to understand their long
+term behavior, that is, behavior as time goes to infinity.
+From the slope field above of
 $x' = 0.1 x(5-x)$, we 
 see that
 \begin{equation*}
@@ -2099,20 +2099,23 @@ as stable or unstable\footnote{Unstable
 points with one of the
 arrows pointing towards the critical point are sometimes called
 \emph{semistable}\index{semistable critical point}.}.  
+Since any mathematical model we cook up will only be an approximation
+to the real world, unstable points are generally bad news.
 
 \begin{center}
 \inputpdft{2-2-ph-class}
 \end{center}
 
-Since any mathematical model we cook up will only be an approximation
-to the real world, unstable points are generally bad news.
+We remark that you can figure out the arrows by plotting the graph $y=f(x)$.
+However, in that case note that $x$ is then the dependent variable and will
+be on the horizontal axis.
 
 \medskip
 
 Let us think about the logistic equation
 with harvesting\index{logistic equation!with harvesting}\index{harvesting}.
 Suppose an alien race really likes to
-eat humans.  They keep a planet with humans on it and harvest the
+eat humans.  They keep a planet with humans and harvest the
 humans at a rate of $h$ million humans per
 year.  Suppose $x$
 is the number of humans in millions on the planet and $t$ is time in years.
@@ -2144,10 +2147,10 @@ $h$.
 
 For example, let $M=8$ and $k=0.1$.
 When $h=1$, then $A$ and $B$ are distinct and positive.
-The slope field we get is in \figurevref{2.2:harv1}.  As long as 
+See \figurevref{2.2:harv1} for the slope field.  As long as 
 the population starts above $B$, which is approximately 1.55 million, then
-the population will not die out.  It will in fact tend towards $A \approx
-6.45$ million.  If ever some catastrophe happens and
+the population will not die out, it will tend towards $A \approx
+6.45$ million.  If ever a catastrophe happens and
 the population drops below $B$,
 humans will die out, and the fast food restaurant serving them will go out
 of business.
@@ -2449,10 +2452,10 @@ Solve this equation exactly and show that $y(2) = 3$.
 
 The difference between the actual solution and the approximate solution is
 called the error.  We usually talk about just the size of the error
-and we do not care much about its sign.  The point is, we usually
-do not know the real solution, so we only have a vague understanding of the
-error.  If we knew the error exactly \ldots what is the point of doing the
-approximation?
+and we do not care much about its sign.  The point is, we
+do not know the real solution.
+If we knew the error exactly, we would know the actual solution \ldots
+so what is the point of doing the approximation?
 
 \begin{table}[h!t]
 \mybeginframe
@@ -2478,27 +2481,30 @@ of $y'=\nicefrac{y^2}{3}$, $y(0)=1$.\label{euler-table:table}}
 \myendframe
 \end{table}
 
-Notice that except for the first few times, every time we halved 
-the interval the error approximately halved.
-This halving of the error is a general feature of Euler's method as it is a
+Note that except for the first few times, each time we halve 
+the $h$, the error approximately halves.
+Halving of the error is a general feature of Euler's method as it is a
 \emph{\myindex{first order method}}.
 %  In the IODE Project II you are
 %asked to implement a \myindex{second order method}.
-There exists an improved Euler method, see the exercises,
-which is a \myindex{second order method}.
+A simple improvement of the Euler method, see the exercises,
+produces a \myindex{second order method}.
 A second order method
 reduces the error to approximately one
-quarter every time we halve the interval.  The meaning of
-\myquote{second} order is the squaring in $\nicefrac{1}{4} = \nicefrac{1}{2} \times
-\nicefrac{1}{2} = {(\nicefrac{1}{2})}^2$.
+quarter every time we halve the interval.  The order being
+\myquote{second} means the squaring in
+$\nicefrac{1}{4} = \nicefrac{1}{2} \times \nicefrac{1}{2}
+= {(\nicefrac{1}{2})}^2$.
 
-To get the error to be within 0.1 of the answer we had to already
-do 64 steps.  To get it to within 0.01 we would have to halve another three or
-four times, meaning doing 512 to 1024 steps.  That is quite a bit to do by
-hand.  The improved Euler method from the exercises
+To get the error to be within 0.1 of the answer, we had to
+do 64 steps.  To get it to within 0.01, we would have to halve another three or
+four times, meaning doing 512 to 1024 steps.
+%That is quite a bit to do by hand.
+The improved Euler method from the exercises
 %IODE  Project II
 should quarter the
-error every time we halve the interval, so we would have to approximately do half as many
+error every time we halve the interval,
+so we would have to do (approximately) half as many
 \myquote{halvings} to get the same error.  This reduction can be a big deal.  With 10
 halvings (starting at $h=1$) we have 1024 steps, whereas with 5 halvings
 we only have to do 32 steps, assuming that the error was comparable to start
@@ -2511,9 +2517,9 @@ double the time to do each step.  Even so, it is 1 minute versus 17 minutes.
 Next, suppose that we have to repeat such a calculation for different
 parameters a thousand times.  You get the idea.
 
-Note that in practice we do not know how large the error is!
+In practice, we do not know how large the error is!
 How do we know what is
-the right step size?  Well, essentially we keep halving the interval, and if we
+the right step size?  Well, essentially, we keep halving the interval, and if we
 are lucky, we can estimate the error from a few of these calculations and the
 assumption that the error goes down by a factor of one half each time (if
 we are using standard Euler).
@@ -2794,7 +2800,7 @@ $0.55$ for standard Euler.
 
 \sectionnotes{1--2 lectures, can safely be skipped\EPref{, \S1.6 in \cite{EP}}\BDref{, \S2.6 in \cite{BD}}}
 
-Another type of equation that comes up quite often in physics and
+A type of equation that comes up quite often in physics and
 engineering is an
 \emph{\myindex{exact equation}}.
 %  To truly make sense out of these
@@ -2810,15 +2816,15 @@ Let us make up a simple example.  Let
 F(x,y) = x^2+y^2 .
 \end{equation*}
 
-%17 is the number of lines, must be adjusted
-\begin{mywrapfig}[17]{3.25in}
+%16 is the number of lines, must be adjusted
+\begin{mywrapfig}[16]{3.25in}
 \capstart
 \diffyincludegraphics{width=3in}{width=4.5in}{circlesfig}
 \caption{Solutions to $F(x,y) = x^2+y^2 = C$ for various
 $C$.\label{exact:circlesfig}}
 \end{mywrapfig}
-We are interested in the lines of constant energy, that is lines where
-the energy is conserved;  we want curves where $F(x,y) = C$,
+We are interested in the lines of constant energy, that is, lines where
+the energy is conserved:  the curves where $F(x,y) = C$,
 for some constant $C$.  In
 our example, the curves $x^2+y^2=C$ are circles.  See
 \figurevref{exact:circlesfig}.
@@ -2830,7 +2836,7 @@ $F$:
 dF = \frac{\partial F}{\partial x} dx + \frac{\partial F}{\partial y} dy .
 \end{equation*}
 For convenience,
-we will make use of the notation of
+we will use the notation
 $F_x = \frac{\partial F}{\partial x}$ and
 $F_y = \frac{\partial F}{\partial y}$.
 In our example,
@@ -2861,7 +2867,7 @@ We often wish to solve for $y$ in terms of $x$.  In our example,
 y = \pm \sqrt{C^2-x^2} .
 \end{equation*}
 
-An interpretation of the setup is that at each point $\vec{v} = (M,N)$ is
+An interpretation of the setup is that at each point $(x,y)$, $\vec{v} = (M,N)$ is
 a vector in the plane, that is, a direction and a magnitude.
 As $M$ and $N$ are functions of $(x,y)$, we have a \emph{\myindex{vector field}}.  The particular 
 vector field $\vec{v}$ that comes from an exact equation is a so-called
@@ -2883,7 +2889,7 @@ move along $\gamma$ is
 =
 F(x_2,y_2) - F(x_1,y_1) .
 \end{equation*}
-That is, the work done only depends on endpoints, that is where we start and
+In other words, the work done only depends on endpoints, that is, where we start and
 where we end.   For example, suppose $F$ is gravitational potential.  The
 derivative of $F$ given by $\vec{v}$ is the gravitational force.
 What we
@@ -3016,7 +3022,7 @@ general, we can only find the potential locally, near some initial point.
 By this time, we have come to expect this from differential
 equations.
 
-Let us return to \exampleref{exact:example:2xyandxy} where $M = 2x + y$ and $N = xy$.  
+Let us return to \exampleref{exact:example:2xyandxy}, where $M = 2x + y$ and $N = xy$.  
 Notice 
 $M_y = 1$ and  $N_x =
 y$, which are clearly not equal.  The equation is not exact.
@@ -3074,8 +3080,8 @@ you can consult your multivariable calculus textbook.  So there is no
 potential function $F$ defined everywhere outside the origin $(0,0)$.
 
 If we think back to the theorem, it does not guarantee such a function
-anyway.  It only guarantees a potential function locally, that is only in
-some region near the initial point.  As $y(1) = 2$
+anyway.  It only guarantees a potential function locally, that is, only in
+some region near the initial point.  As $y(1) = 2$,
 we start at the point $(1,2)$.  Considering $x > 0$ and
 integrating $M$ in $x$ or $N$ in $y$, we find
 \begin{equation*}
@@ -3227,7 +3233,7 @@ M_y-N_x = \frac{2y}{x+1} - 0 = \frac{2y}{x+1} .
 \end{equation*}
 As this is not zero, the equation is not exact.  We notice 
 \begin{equation*}
-P(x) = \frac{M_y-N_x}{N} = \frac{2y}{x+1} \frac{1}{2y} = \frac{1}{x+1} 
+P(x) = \frac{M_y-N_x}{N} = \frac{2y}{x+1} \, \frac{1}{2y} = \frac{1}{x+1} 
 \end{equation*}
 is a function of $x$ alone.    We compute the integrating factor
 \begin{equation*}
@@ -3279,12 +3285,13 @@ and
 \begin{equation}
 \frac{xy+1}{y} = x+\frac{1}{y} = x+ A'(y) .
 \end{equation}
-Consequently, $A'(y) = \frac{1}{y}$ or $A(y) = \ln y$.  Thus $F(x,y) = xy + \ln y$.
+Consequently, $A'(y) = \nicefrac{1}{y}$ or $A(y) = \ln \, \lvert y \rvert$.  Thus $F(x,y)
+= xy + \ln \, \lvert y \rvert$.
 It is not possible to solve $F(x,y)=C$ for $y$
 in terms of elementary functions, so 
 let us be content with the implicit solution:
 \begin{equation*}
-xy + \ln y = C .
+xy + \ln \, \lvert y \rvert = C .
 \end{equation*}
 We are looking for the general solution and we divided by
 $y$ above.  We should check what happens when $y=0$, as the equation itself
@@ -3480,7 +3487,7 @@ although the computations may get difficult quickly.
 This method we use is the
 \emph{\myindex{method of characteristics}}\index{characteristics}.
 The idea is that we find lines along which the equation is
-an ODE that we solve.
+an ODE that we then solve.
 We will see this technique again for second order PDE
 when we encounter the wave equation in \sectionref{dalemb:section}.
 
@@ -3515,8 +3522,9 @@ or in other words
 \begin{equation*}
 u_s = 0 .
 \end{equation*}
-That is trivial to solve.  Treating $\xi$ as simply a parameter, we have
+Treating $\xi$ as simply a parameter, we have
 obtained the ODE $\frac{d u}{d s} = 0$.
+That is trivial to solve.
 
 The solution is a function that does
 not depend on $s$ (but it does depend on $\xi$).
@@ -3551,11 +3559,11 @@ along the characteristic.
 In the $(x,t)$ coordinates, the characteristic curves satisfy 
 $t = \frac{1}{\alpha} ( x- \xi)$, and are in fact lines.
 The slope of characteristic lines is
-$\frac{1}{\alpha}$, and for each different $\xi$ we get a different
+$\frac{1}{\alpha}$, and for each different $\xi$, we get a different
 characteristic line.
 
 We see why $u_t + \alpha u_x = 0$ is called the
-transport equation: everything travels at some constant speed.
+transport equation: Everything travels at some constant speed.
 Sometimes this is called \emph{\myindex{convection}}.
 An example application is material being moved by a river where the material
 does not diffuse and is simply carried along.  In this setup, $x$ is 
@@ -3616,8 +3624,8 @@ So we get the ODE \eqref{eq:fopde:charode}, which
 then describes the value of the solution $u$ of
 the PDE along
 this characteristic curve.
-It is also convenient to make sure that $s=0$
-corresponds to $t=0$, that is $t(0) = 0$.  It will be convenient also for
+It is convenient to make sure that $s=0$
+corresponds to $t=0$, that is, $t(0) = 0$.  It will also be convenient for
 $x(0) = \xi$.
 See \figurevref{fopde:charcurvecurvy}.
 
@@ -3642,7 +3650,7 @@ So
 x = s + c_1, \qquad t = s+ c_2 ,
 \end{equation*}
 for some $c_1$ and $c_2$.
-At $s=0$ we want $t=0$, and $x$ should be $\xi$.  So
+At $s=0$, we want $x=\xi$ and $t=0$.  So
 we let $c_1 = \xi$ and $c_2 = 0$:
 \begin{equation*}
 x = s + \xi, \qquad t = s .
@@ -3656,7 +3664,7 @@ to solve along the characteristic is
 The general solution of this equation, treating $\xi$ as a parameter, is 
 $u = C e^{-s}+s+\xi-1$, for some constant $C$.
 At $s=0$, our initial condition is that $u$ is
-$e^{-\xi^2}$, since at $s=0$ we have $x=\xi$.
+$e^{-\xi^2}$, since at $s=0$, we have $x=\xi$.
 Given this initial condition, we find $C=e^{-\xi^2} - \xi +1$.  So,
 \begin{equation*}
 \begin{split}
@@ -3705,7 +3713,7 @@ So
 \begin{equation*}
 x = c_1 e^{s} , \qquad t = s+ c_2 .
 \end{equation*}
-At $s=0$, we wish to get the line $t=0$, and $x$ should be $\xi$.  So
+At $s=0$, we wish to get $x=\xi$ and $t=0$ as before.  So
 \begin{equation*}
 x = \xi e^s, \qquad t = s .
 \end{equation*}
@@ -3714,8 +3722,9 @@ OK\@, the ODE we need to solve is
 \begin{equation*}
 \frac{du}{ds} + 2 u = 0 .
 \end{equation*}
-This is for a fixed $\xi$.  At $s=0$, we should get that $u$ is
-$\cos(\xi)$, so that is our initial condition.  Consequently,
+This is for a fixed $\xi$.  At $s=0$, we want $u$ to be
+$\cos(\xi)$, so that is our initial condition for the ODE.
+Consequently,
 \begin{equation*}
 u = e^{-2s} \cos(\xi)= e^{-2t} \cos(xe^{-t}) .
 \end{equation*}

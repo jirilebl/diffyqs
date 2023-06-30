@@ -12,3 +12,12 @@
   we might as well assume \(x > 0\) or \(x < 0 . \)  Use \(x > 0\) in the
   example for simplicity and therefore get rid of most of the absolute
   value signs.
+* In 1.6, add a short note about plotting \(y=f(x)\) to figure out the
+  signs.
+* In 1.7, tighten the language when describing first vs. second order
+  method, leading to slightly nicer page breaks as a side benefit.
+* In Example 1.8.7, in the final solution for \(F(x,y)\) we better put
+  absolute values around \(y .\)  In a sense it is not wrong
+  but we would require the complex logarithm otherwise. 
+* A few minor clarifications.
+* Several improvements in wording and fixes for grammar and style.
