@@ -27,7 +27,7 @@ The textbook: \url{https://www.jirka.org/diffyqs/}
 \end{frame}
 
 \begin{frame}
-~$\dfrac{dx}{dt} = f(x)$~
+$\dfrac{dx}{dt} = f(x)$\quad
 (equation independent of time)
 is called an
 \emph{autonomous equation}.
@@ -35,17 +35,21 @@ is called an
 \medskip
 \pause
 
-\hspace*{3.8in} \includegraphics[width=1.5in]{../figures/2-2-coffee}
+\hspace*{3.1in} \includegraphics[width=2.2in]{../figures/2-2-coffee}
 
-\hspace*{3.8in} $k=0.3$, $A=5$
+\hspace*{3.1in} $x' = 0.3(5-x)$\quad (i.e., $k=0.3$, $A=5$)
 
-\vspace*{-1.3in}
+\vspace*{-1.8in}
 
 \textbf{Example:} The cooling coffee problem
 
-(Newton's law of cooling)
-~
+\medskip
+
 $\dfrac{dx}{dt} = k (A-x)$
+\quad
+(Newton's law of cooling)
+
+\medskip
 
 $x$=temperature of coffee, $t$=time,
 
@@ -54,24 +58,26 @@ $A$=ambient temperature, $k$=constant
 \medskip
 \pause
 
-The solution $x=A$ ($x=5$ above) is called
+The solution $x=A$ is called
 
 an \emph{equilibrium solution}.
 
 \medskip
 \pause
 
-Equilibrium solutions happen when $f(x)=0$ (above $f(5)=0$).
+Equilibrium solutions happen when $f(x)=0$.
 
 \medskip
 \pause
 
-Call an $x$ such that $f(x)=0$ a \emph{critical point}.
+Call an $x$ such that $f(x)=0$ a \emph{critical point}
+
+($f(5)=0$ in the plot)
 
 \medskip
 \pause
 
-The critical point $x=5$ above is \emph{stable},
+The critical point $x=A=5$ is \emph{stable},
 
 small changes in initial condition still lead to the solution approaching
 $x=5$ as $t \to \infty$.
@@ -97,7 +103,7 @@ for some $k > 0$ and $M > 0$.
 \medskip
 \pause
 
-Commonly model for population given a maximum sustainable population $M$.
+Common model for population where there is a maximum sustainable population $M$.
 
 (less catastrophic than $x'=kx$)
 
@@ -108,26 +114,29 @@ Commonly model for population given a maximum sustainable population $M$.
 
 \vspace*{-\baselineskip}
 
-\hspace*{2in} \includegraphics[width=2in]{../figures/2-2-logistic}
+\hspace*{3.1in} \includegraphics[width=2.2in]{../figures/2-2-logistic}
 
-\medskip
+\vspace*{-1.4in}
 \pause
 
 Two critical points $x=0$ and $x=5$.
-\qquad
+
 \pause
 $x=0$ is unstable, \pause $x=5$ is stable.
 
 \medskip
 \pause
 
-By inspection, \qquad
+By inspection,
+
+\medskip
+
 $\displaystyle
 \lim_{t\to \infty} x(t) = 
 \begin{cases}
 5 & \text{if } \; x(0) > 0 , \\
 0 & \text{if } \; x(0) = 0 , \\
-\text{DNE or } {-\infty} & \text{if } \; x(0) < 0 . \\
+\text{DNE ~~or~~ } {-\infty} & \text{if } \; x(0) < 0 . \\
 \end{cases}
 $
 
@@ -139,15 +148,15 @@ $
 ~
 $x(t)$ may not exist for all time $t$.
 
-\end{frame}
-
-\begin{frame}
-So to find long term behavior, we don't need to solve.
-
 \medskip
 \pause
 
-Enough to look at a \emph{phase diagram} (or \emph{phase portrait}):
+So to find long term behavior, $x(t)$ for very large $t$, we don't need to solve.
+
+\end{frame}
+
+\begin{frame}
+To find $\lim\limits_{t \to \infty} x(t)$, enough to look at a \emph{phase diagram} (or \emph{phase portrait}):
 
 \pause
 1) Draw the $x$ axis (vertical).
@@ -158,6 +167,11 @@ Enough to look at a \emph{phase diagram} (or \emph{phase portrait}):
 \pause
 3) Draw an up arrow between where $f(x) > 0$ and down arrow where $f(x) <
 0$.
+
+\medskip
+\pause
+
+E.g.: $x' = f(x) = 0.1x(5-x)$
 
 \bigskip
 \pause
@@ -245,7 +259,7 @@ $t$=time in years,
 $M$=limiting population when no harvesting.
 
 \pause
-$k > 0$ is a number depending on how humans multiply.
+$k > 0$ is a number depending on how quickly humans multiply.
 
 \medskip
 \pause
