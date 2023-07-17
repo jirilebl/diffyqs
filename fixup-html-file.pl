@@ -14,19 +14,29 @@ while($line = <STDIN>)
 {
 	if ($line =~ m/<a class="index-button.*index-1.html.*Index/) {
 		# Add extra buttons
+		#
+		# FIXME: fix tracking?
 
-		print "<a onclick=\"gtag('event','download',{'event_category': 'diffyqs', 'event_action': 'Link', 'event_label': 'PTXhtml(top) home diffyqs'});\"\n";
-		print " class=\"index-button toolbar-item button\" href=\"https://www.jirka.org/diffyqs/\" title=\"Home\" alt=\"Book Home\">Home</a>\n";
+		#print "<a onclick=\"gtag('event','download',{'event_category': 'diffyqs', 'event_action': 'Link', 'event_label': 'PTXhtml(top) home diffyqs'});\"\n";
+		#print " class=\"index-button toolbar-item button\" href=\"https://www.jirka.org/diffyqs/\" title=\"Home\" alt=\"Book Home\">Home</a>\n";
+		$extra = "<a class=\"index-button button\" href=\"https://www.jirka.org/diffyqs/\" title=\"Home\" alt=\"Book Home\"><span class=\"name\">Home</span></a>\n";
 
-		print "<a onclick=\"gtag('event','download',{'event_category': 'PDF', 'event_action': 'Download', 'event_label': 'PTXhtml(top) /diffyqs/diffyqs.pdf'});\"\n";
-		print " class=\"index-button toolbar-item button\" href=\"https://www.jirka.org/diffyqs/diffyqs.pdf\" title=\"PDF\">PDF</a>\n";
+		#print "<a onclick=\"gtag('event','download',{'event_category': 'PDF', 'event_action': 'Download', 'event_label': 'PTXhtml(top) /diffyqs/diffyqs.pdf'});\"\n";
+		#print " class=\"index-button toolbar-item button\" href=\"https://www.jirka.org/diffyqs/diffyqs.pdf\" title=\"PDF\">PDF</a>\n";
+		$extra .= "<a class=\"index-button button\" href=\"https://www.jirka.org/diffyqs/diffyqs.pdf\" title=\"PDF\"><span class=\"name\">PDF</span></a>\n";
 
-		print "<a onclick=\"gtag('event','download',{'event_category': 'amazon', 'event_action': 'Link', 'event_label': 'PTXhtml(top) diffyqs'});\"\n";
-		print " class=\"index-button toolbar-item button\" style=\"width:100px;\" href=\"https://smile.amazon.com/dp/1706230230\" title=\"Paperback\" alt=\"Buy Paperback\">Paperback</a>\n";
+		#print "<a onclick=\"gtag('event','download',{'event_category': 'amazon', 'event_action': 'Link', 'event_label': 'PTXhtml(top) diffyqs'});\"\n";
+		#print " class=\"index-button toolbar-item button\" style=\"width:100px;\" href=\"https://smile.amazon.com/dp/1706230230\" title=\"Paperback\" alt=\"Buy Paperback\">Paperback</a>\n";
+		$extra .= "<a class=\"index-button button\" href=\"https://www.amazon.com/dp/1706230230\" title=\"Paperback\" alt=\"Buy Paperback\"><span class=\"name\">Paperback</span></a>\n";
+
+		if (not ($line =~ s/<button id="user-preferences-button"/$extra<button id="user-preferences-button"/)) {
+			print STDERR "Can't add extra buttons!";
+			exit 1;
+		}
 	}
 	if ($line =~ m/<\/head>/) {
 		# Fast preview doesn't seem worth it and it could be confusing since it's not quite right so disable it
-		# This is no longer an issue with v3
+		# Note: Doesn't really work in MathJax3, but it's probably not needed anymore
 		#print "<script type=\"text/x-mathjax-config\">\n";
 		#print " MathJax.Hub.Config({\n";
 		#print "  \"fast-preview\": {\n";
@@ -48,10 +58,12 @@ while($line = <STDIN>)
 		print " <em>For a higher quality printout use the PDF version: <tt>https://www.jirka.org/diffyqs/diffyqs.pdf</tt></em>\n";
 		print "</span>\n";
 	}
-	$line =~ s/>Authored in PreTeXt</>Created with PreTeXt</;
-
-	# chtml works again so stick with that
-	#$line =~ s/tex-chtml[.]js/tex-svg.js/;
+	# no longer there
+	#$line =~ s/>Authored in PreTeXt</>Created with PreTeXt</;
+	
+	# In case chtml is broken again
+	$line =~ s/^  chtml: {/  svg: {/;
+	$line =~ s/tex-chtml[.]js/tex-svg.js/;
 
 	#print line
 	print $line;

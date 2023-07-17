@@ -1,17 +1,24 @@
-.main #content {
+#ptx-content {
  max-width: 800px !important; text-align: justify !important;
 }
-#masthead.smallbuttons {
+#ptx-masthead {
+ max-width: 1104px !important;
+ z-index:19;
+}
+#ptx-navbar {
+ max-width: 1104px !important;
+}
+#ptx-page-footer {
  max-width: 1104px !important;
 }
 .container.has-sidebar-left, .has-sidebar-left .container {
  max-width: 1104px !important;
 }
 @media screen and (max-width:700px) { 
- .figure-like , .table-like , .displaymath { 
-  margin-left: 0px !important; 
-  margin-right: 0px !important; 
- } 
+  .figure-like , .table-like , .displaymath { 
+    margin-left: 0px !important; 
+    margin-right: 0px !important; 
+  } 
 } 
 @media screen and (max-width:943px) { 
  .figure-like , .table-like , .displaymath {
@@ -45,6 +52,11 @@
  background-size: 20px 100%, 20px 100%, 10px 100%, 10px 100%;
  
  background-attachment: local, local, scroll, scroll;
+}
+
+/* get rid of boldness in definitions */
+.pretext-content .definition-like p > em {
+	font-weight:normal;
 }
 
 ol.lower-roman > li::marker { content: "(" counter(list-item, lower-roman) ")"; }
