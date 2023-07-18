@@ -12,6 +12,7 @@
         <!-- Google search, via masthead textbox is switched on    -->
         <!-- and associated with a Google account via CX number    -->
         <search google-cx="006490116505509195242:1mxn4dbgh8e"/>
+        <search variant="none"/>
 	
 	<knowl theorem="no" />
 	<knowl proof="yes" />
