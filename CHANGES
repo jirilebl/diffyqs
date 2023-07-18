@@ -19,5 +19,9 @@
 * In Example 1.8.7, in the final solution for \(F(x,y)\) we better put
   absolute values around \(y .\)  In a sense it is not wrong
   but we would require the complex logarithm otherwise. 
+* When talking about "linear operator" after Theorem 2.1.1,
+  mention that it seems almost as if we are multiplying by it.
+* In Exercise 2.1.6, explicitly mention the name of the equation and
+  say "see above" as the explanatory note is on the previous page.
 * A few minor clarifications.
 * Several improvements in wording and fixes for grammar and style.
