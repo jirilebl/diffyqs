@@ -35,22 +35,26 @@ $y' = f(x,y)$, \quad $y(x_0) = y_0$.
 \pause
 
 But we want answers!
+
 \pause
-\quad
-Enter numerical methods.
+Enter numerical methods:
+
+Given a function $f(x,y)$ and numbers $x_0$, $y_0$, and $x_1$ gives you (approximately) $y(x_1)$.
 
 \medskip
 \pause
 
-Not ideal.
+Not ideal, but sometimes best that we got.
 
 \begin{itemize}
 \item \pause
 We need to know $f(x,y)$, $x_0$, $y_0$ exactly, we can't have parameters.
 \item \pause
-Hard to get qualitative understanding from just a solution.
+Hard to get qualitative understanding from a numerical solution.
 \item \pause
 It is only approximate, so we'd better understand the errors.
+\item \pause
+Must choose the right method.
 \end{itemize}
 
 \pause
@@ -67,23 +71,32 @@ $y' = f(x,y)$, \quad $y(x_0) = y_0$.
 
 \begin{enumerate}
 \item
-Pick $h$.
+\pause
+Pick a step size $h$.
 \item
+\pause
 Compute the slope $k = f(x_0,y_0)$ at $(x_0,y_0)$.
 \item
+\pause
 Follow the line of slope $k$ for $x$ from $x_0$ to $x_0+h$.
 \item
+\pause
 That is, the new point $(x_1,y_1)$ is \quad
 $x_1 = x_0+h$ \quad $y_1 = y_0 + h k$.
 \item
+\pause
 Compute $k = f(x_1,y_1)$.
 \item
+\pause
 Let $x_2 = x_1+h$ \quad $y_2 = y_1 + h k$.
 \item
+\pause
 Compute $k = f(x_2,y_2)$.
 \item
+\pause
 Let $x_3 = x_2+h$ \quad $y_3 = y_2 + h k$.
 \item
+\pause
 Rinse, repeat!
 \end{enumerate}
 
@@ -92,7 +105,7 @@ Essentially, keep repeating : \quad $x_{i+1} = x_i + h$, \quad $y_{i+1}  = y_i +
 \end{frame}
 
 \begin{frame}
-\textbf{Example:} $y' = \nicefrac{y^2}{3}$, $y(0)=1$, and $h=1$.
+\textbf{Example:} \quad $y' = \nicefrac{y^2}{3}$, \quad $y(0)=1$, \quad $h=1$.
 
 \medskip
 
@@ -215,26 +228,26 @@ $h$ & Approximate $y(2)$ & Error & $\frac{\text{Error}}{\text{Previous error}}$ 
 \medskip
 \pause
 
-Note that it seems like error halves when we halve the interval.
+Note that it seems like error halves when we halve $h$.
 
 \end{frame}
 
 \begin{frame}
 
 Euler's method is a \emph{first order method}:
-when we halve the interval reduces by $\nicefrac{1}{2}$.
+when we halve $h$, error reduces by $\nicefrac{1}{2}$.
 
 \medskip
 \pause
 
 A \emph{second order method} reduces the error by
-$(\nicefrac{1}{2})^2 = \nicefrac{1}{4}$ each time you halve the interval.
+$(\nicefrac{1}{2})^2 = \nicefrac{1}{4}$ each time you halve $h$.
 
 \medskip
 \pause
 
 A \emph{fourth order method} reduces the error by
-$(\nicefrac{1}{2})^4 = \nicefrac{1}{16}$ each time you halve the interval.
+$(\nicefrac{1}{2})^4 = \nicefrac{1}{16}$ each time you halve $h$.
 
 \medskip
 \pause
@@ -255,7 +268,7 @@ If starting with one step, 10 halvings ${} = 2^{10} = 1024$ steps.
 \pause
 
 A second order method requires half as many halvings for same
-reduction of error
+reduction of error.
 
 \medskip
 \pause
@@ -269,6 +282,23 @@ That can be a huge difference if we need to run this many times.
 \end{frame}
 
 \begin{frame}
+In practice we don't know the error, we must estimate it.
+
+\medskip
+\pause
+
+By successive halvings, and assuming it halves each time we can estimate the
+error.
+
+\medskip
+\pause
+
+\textbf{Exercise:} Take the last two approximate values, and (assume they
+are less than $y(2)$) assuming that the error halves each time, approximate
+$y(2)$, and hence the error.  Is it close?
+
+\medskip
+
 \hspace*{\fill}
 \begin{tabular}{@{}rrrr@{}}
 \toprule
@@ -285,24 +315,6 @@ $h$ & Approximate $y(2)$ & Error & $\frac{\text{Error}}{\text{Previous error}}$ 
 \bottomrule
 \end{tabular}
 \hspace*{\fill}
-
-\medskip
-\pause
-
-In practice we don't know the error, we must estimate it.
-
-\medskip
-\pause
-
-By successive halvings, and assuming it halves each time we can estimate the
-error.
-
-\medskip
-\pause
-
-\textbf{Exercise:} Take the last two approximate values, and (assume they
-are less than $y(2)$) assuming that the error halves each time, approximate
-$y(2)$, and hence the error.  Is it close?
 
 \medskip
 \pause
@@ -345,7 +357,7 @@ What is going on? \pause $y(3)$ does not exist, \pause $y \to \infty$ as $x \to 
 
 \begin{frame}
 
-In real applications methods used are similar to Euler
+In real applications, methods used are similar to Euler
 but better (e.g., the fourth order Runge--Kutta, see next slide).
 
 \medskip
