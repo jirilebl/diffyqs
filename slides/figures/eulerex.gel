@@ -1,0 +1,38 @@
+# Category: Differential Equations
+# Name: Euler's Method graphs for the exponential
+
+# You can play around with different 
+# differential equations, the equation is dy/dx = g(x,y)
+function g(x,y)=(y^2)/3;
+LinePlotWindow=[-0.1,2.1,0.9,3.1];
+
+LinePlotDrawLegends=false;
+LinePlotClear();
+PlotWindowPresent(); # Make sure the window is raised
+
+#LinePlotDrawPoints(0,1,"thickness",10,"color","red");
+
+#AskButtons("The initial point (0,1)","Next");
+
+# h is step size, x0, y0 are the initial conditions
+h=1;
+x0=0;
+y0=1;
+
+
+xx=[x0];yy=[y0];
+h=0.1;
+for j=2 to round(2/h)+1 do (
+  xx@(j) = xx@(j-1)+h;
+  yy@(j) = -3/(xx@(j)-3);
+);
+LinePlotDrawLine([xx',yy'],"color","red");
+
+h=0.125;
+xx=[x0];yy=[y0];
+for j=2 to round(2/h)+1 do (
+  xx@(j) = xx@(j-1)+h;
+  yy@(j) = yy@(j-1)+g(xx@(j-1),yy@(j-1))*h;
+);
+LinePlotDrawLine ([xx',yy'],"color","darkgreen");
+LinePlotDrawPoints([xx',yy'],"thickness",6,"color","blue");
