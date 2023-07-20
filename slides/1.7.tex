@@ -27,7 +27,7 @@ The textbook: \url{https://www.jirka.org/diffyqs/}
 \end{frame}
 
 \begin{frame}
-It is usually hard to find closed form solutions to
+It is often hard to find closed form solutions to
 \quad
 $y' = f(x,y)$, \quad $y(x_0) = y_0$.
 
@@ -39,7 +39,7 @@ But we want answers!
 \pause
 Enter numerical methods:
 
-Given a function $f(x,y)$ and numbers $x_0$, $y_0$, and $x_1$ gives you (approximately) $y(x_1)$.
+Given a function $f(x,y)$ and numbers $x_0$, $y_0$, and $x_1$, get (approximately) $y(x_1)$.
 
 \medskip
 \pause
@@ -48,7 +48,7 @@ Not ideal, but sometimes best that we got.
 
 \begin{itemize}
 \item \pause
-We need to know $f(x,y)$, $x_0$, $y_0$ exactly, we can't have parameters.
+We need to know $f(x,y)$, $x_0$, $y_0$, $x_1$ exactly, we can't have parameters.
 \item \pause
 Hard to get qualitative understanding from a numerical solution.
 \item \pause
@@ -110,17 +110,17 @@ Essentially, keep repeating : \quad $x_{i+1} = x_i + h$, \quad $y_{i+1}  = y_i +
 \medskip
 
 \uncover<2-9>{
-$x_0 = 0$, $y_0 = 1$
+$x_0 = 0$, \quad $y_0 = 1$
 }
 
 \medskip
 
 \uncover<3-9>{
-$k = f(0,1) = \nicefrac{1^2}{3} = \nicefrac{1}{3}$,
+$k = f(0,1) = \nicefrac{1^2}{3} = \nicefrac{1}{3}$
 }
 
 \uncover<4-9>{
-$x_1 = x_0+h = 0+1 = 1$,
+$x_1 = x_0+h = 0+1 = 1$
 }
 
 \uncover<5-9>{
@@ -131,11 +131,11 @@ $y_1 = y_0 + h k = 1 + 1 \cdot
 \medskip
 
 \uncover<6-9>{
-$k = f(1,\nicefrac{4}{3}) = \frac{(4/3)^2}{3} = \frac{16}{27}$,
+$k = f(1,\nicefrac{4}{3}) = \frac{(4/3)^2}{3} = \frac{16}{27}$
 }
 
 \uncover<7-9>{
-$x_2 = x_1+h = 1+1 = 2$,
+$x_2 = x_1+h = 1+1 = 2$
 }
 
 \uncover<8-9>{
@@ -181,7 +181,7 @@ Let's do a few more $h$s.
 \end{frame}
 
 \begin{frame}
-Actual solution is $y(2) = 3$.
+Actual solution at $x=2$ is $y(2) = 3$.
 
 \medskip
 \pause
@@ -192,18 +192,18 @@ called the \emph{error}.
 \medskip
 \pause
 
-With $h=1$, $x_2=2$ so $y(2) = y_2 \approx 1.926$, 
-\quad
+With $h=1$, $x_2=2$ so $y(2) \approx y_2 = 1.926$ 
+\qquad
 \pause
-Error ${}\approx 1.074$
+Error ${}=\lvert 3-y_2 \rvert \approx 1.074$
 
 \medskip
 \pause
 
-With $h=\nicefrac{1}{2} = 0.5$, $x_4=2$ so $y(2) = y_4 \approx 2.209$
-\quad
+With $h=\nicefrac{1}{2} = 0.5$, $x_4=2$ so $y(2) \approx y_4 = 2.209$
+\qquad
 \pause
-Error ${}\approx 0.791$
+Error ${}=\lvert 3-y_4 \rvert {}\approx 0.791$
 
 \medskip
 \pause
@@ -228,14 +228,14 @@ $h$ & Approximate $y(2)$ & Error & $\frac{\text{Error}}{\text{Previous error}}$ 
 \medskip
 \pause
 
-Note that it seems like error halves when we halve $h$.
+Note: It seems like error halves when we halve $h$.
 
 \end{frame}
 
 \begin{frame}
 
 Euler's method is a \emph{first order method}:
-when we halve $h$, error reduces by $\nicefrac{1}{2}$.
+When we halve $h$, error reduces by $\nicefrac{1}{2}$.
 
 \medskip
 \pause
@@ -252,7 +252,7 @@ $(\nicefrac{1}{2})^4 = \nicefrac{1}{16}$ each time you halve $h$.
 \medskip
 \pause
 
-To be within $0.1$ we needed to do 64 steps.
+To be within $0.1$ we needed to do 64 steps of Euler.
 
 \medskip
 \pause
