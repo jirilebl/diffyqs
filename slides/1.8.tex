@@ -304,41 +304,72 @@ Consider now $2x+y + xy \frac{dy}{dx} = 0$.
 \medskip
 \pause
 
-OK\@, so $M = 2x+y$ and $N=xy$.  We try to proceed as before.
-Suppose 
-$F$ exists.  Then $F_x (x,y) = 2x+y$.
-We integrate:
-\begin{equation*}
-F(x,y) = x^2 + xy + A(y)
-\end{equation*}
-for some function $A(y)$.  Differentiate in $y$ and set equal to $N$:
-\begin{equation*}
-N = xy = F_y (x,y) = x+A'(y) .
-\end{equation*}
-But there is no way to satisfy this requirement!  The function $xy$ cannot
-be written as $x$ plus a function of $y$.  The equation is not
-exact; no potential function $F$ exists.
+$M = 2x+y$, \quad $N=xy$.
+
+\medskip
+\pause
+
+We try as before.  Suppose $F$ exists.
+
+\medskip
+\pause
+
+$F_x (x,y) = 2x+y$.
+
+\medskip
+\pause
+
+Integrate in $x$: \quad $F(x,y) = x^2 + xy + A(y)$
+
+\medskip
+\pause
+
+Differentiate in $y$ and set equal to $N$:
+
+\medskip
+\pause
+
+$N = xy = F_y (x,y) = x+A'(y)$.
+
+\medskip
+\pause
+
+But there is no way to write $xy = x+ A'(y)$, no matter what $A'(y)$ is.
+
+\medskip
+\pause
+
+The equation is not exact!  $F$ does not exist.
 \end{frame}
 
 \begin{frame}
+How to check if $F$ exists?
 
-Is there an easier way to check for the existence of $F$, other than failing
-in trying to
-find it?  Turns out there is.  Suppose
+\medskip
+\pause
+
+If $F$ exists, then
 $M = F_x$ and
-$N = F_y$.  Then
-as long as the second derivatives are continuous,
-\begin{equation*}
+$N = F_y$.
+
+\medskip
+\pause
+
+Then
+\[
 \frac{\partial M}{\partial y}
+\pause
 =
 \frac{\partial^2 F}{\partial y \partial x}
+\pause
 =
 \frac{\partial^2 F}{\partial x \partial y}
+\pause
 =
 \frac{\partial N}{\partial x} .
-\end{equation*}
-Let us state it as
-a theorem.  Usually this is called the Poincar\'e Lemma.
+\]
+\pause
+In other words:
 
 \begin{theorem}[Poincar\'e]
 If $M$ and $N$ are continuously differentiable functions of $(x,y)$, and
@@ -349,15 +380,20 @@ $M = \frac{\partial F}{\partial x}$ and
 $N = \frac{\partial F}{\partial y}$.
 \end{theorem}
 
-The theorem doesn't give us a global $F$ defined everywhere.  In
-general, we can only find the potential locally, near some initial point.
-By this time, we have come to expect this from differential
-equations.
+\pause
 
-Let us return to {exact:example:2xyandxy}, where $M = 2x + y$ and $N = xy$.  
-Notice 
-$M_y = 1$ and  $N_x =
-y$, which are clearly not equal.  The equation is not exact.
+\textbf{Note:} The theorem doesn't say a \emph{global} $F$ exists, only \emph{local}.
+
+\medskip
+\pause
+
+Back to example: If $M = 2x + y$ and $N = xy$,  
+then
+$M_y = 1$ and  $N_x = y$.
+\pause
+Not equal.
+\pause
+Not exact.
 
 \end{frame}
 
