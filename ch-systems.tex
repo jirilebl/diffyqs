@@ -533,6 +533,8 @@ Suppose the tanks are as in
 \examplevref{sintro:closedbrine-example} except that clean water flows in
 at the rate $s$ liters per second into tank 1, and brine flows out of tank 2
 and into the sewer also at the rate of $s$ liters per second.
+The rate of flow from tank 1 into tank 2 is still $r$, but the rate of flow
+from tank 2 back into tank 1 is $r-s$ (assume $r > s$).
 \begin{tasks}
 \task Draw the picture.
 \task Set up the system of equations.
@@ -542,8 +544,8 @@ and into the sewer also at the rate of $s$ liters per second.
 \exsol{%
 a) Left to reader.
 \quad b) 
-$x_1' = \frac{r}{V} (x_2-x_1)$,
-$x_2' = \frac{r}{V} x_1- \frac{r-s}{V}x_2$.
+$x_1' = \frac{r-s}{V} x_2- \frac{r}{V}x_1$,
+$x_2' = \frac{r}{V} (x_1- x_2)$.
 \quad c) As $t$ goes to infinity, both $x_1$ and $x_2$ go to zero,
 explanation is left to reader.
 }

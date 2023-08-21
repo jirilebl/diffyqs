@@ -1,0 +1,2 @@
+<li><b>Change Exercise 3.1.106</b> to fix an erratum.  Rate of flow from tank 2 back into tank 1 should
+be \(r-s ,\) otherwise volumes do not stay constant and the problem doesn't quite all make sense.
