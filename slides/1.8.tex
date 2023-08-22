@@ -196,31 +196,34 @@ implicit solutions are given by the potential functions.
 \end{frame}
 
 \begin{frame}
-The process is, we are given
-an equation
+The process is:
+
+\medskip
+
+1) We are given an equation
 \quad
 $M + N \, \frac{dy}{dx} = 0$
 
 \medskip
 \pause
 
-We need to then determine if the equation is exact.
+2) We determine if the equation is exact.
 
 \medskip
 \pause
 
-If it is, we need to find an $F$ such that $F_x = M$
+3) If it is, we try to find an $F$ such that $F_x = M$
 and $F_y = N$.
 
 \medskip
 \pause
 
-$F\bigl(x,y(x)\bigr) = C$ gives an implicit solution
+$F\bigl(x,y(x)\bigr) = C$ gives an implicit solution.
 
 \medskip
 \pause
 
-Note that adding a constant to $F$ does not change anything.
+Note: Adding a constant to $F$ does not change anything.
 
 \pause
 If $F(x,y)$ works, $F(x,y)+3$ or $F(x,y)-8$ also work.
@@ -299,7 +302,7 @@ Roles of $x$ and $y$ can be reversed.
 \begin{frame}
 
 \textbf{Example:}
-Consider now $2x+y + xy \frac{dy}{dx} = 0$.
+Consider \quad $2x+y + xy \frac{dy}{dx} = 0$.
 
 \medskip
 \pause
@@ -369,7 +372,7 @@ Then
 \frac{\partial N}{\partial x} .
 \]
 \pause
-In other words:
+In fact:
 
 \begin{theorem}[Poincar\'e]
 If $M$ and $N$ are continuously differentiable functions of $(x,y)$, and
@@ -401,114 +404,190 @@ Not exact.
 
 \textbf{Example:}
 Solve
-\begin{equation*}
-\frac{dy}{dx} = \frac{-2x-y}{x-1}, \qquad y(0) = 1.
-\end{equation*}
-We write the equation as
-\begin{equation*}
-(2x+y) + (x-1)\frac{dy}{dx} = 0 ,
-\end{equation*}
-so $M = 2x+y$ and $N = x-1$.  Then
-\begin{equation*}
-M_y = 1 = N_x .
-\end{equation*}
-The equation is exact.
-Integrating $M$ in $x$, we find
-\begin{equation*}
-F(x,y) = x^2+xy + A(y) .
-\end{equation*}
-Differentiating in $y$ and setting to $N$, we find
-\begin{equation*}
-x-1 = x + A'(y) .
-\end{equation*}
-So $A'(y) = -1$, and $A(y) = -y$ will work.  Take $F(x,y) = x^2+xy-y$.  We
-wish to solve $x^2+xy-y = C$.  First let us find $C$.  As $y(0)=1$ then
-$F(0,1) = C$.  Therefore $0^2+0\times 1 - 1 = C$, so $C=-1$.  Now we solve
-$x^2+xy-y = -1$ for $y$ to get
-\begin{equation*}
+\quad $\displaystyle \frac{dy}{dx} = \frac{-2x-y}{x-1}$, \quad $y(0) = 1$.
+
+\medskip
+\pause
+
+Write the equation as \quad
+$\displaystyle
+(2x+y) + (x-1)\frac{dy}{dx} = 0$,
+\quad
+\pause
+so \quad $M = 2x+y$ \quad and \quad $N = x-1$.
+
+\medskip
+\pause
+
+$M_y = 1 = N_x$
+\quad
+so the equation is exact.
+
+\medskip
+\pause
+
+Integrate $M$ in $x$:
+\quad
+$F(x,y) = x^2+xy + A(y)$
+
+\medskip
+\pause
+
+Differentiate in $y$ and set to $N$ to find
+\quad
+$x-1 = x + A'(y)$
+
+\medskip
+\pause
+
+$A'(y) = -1$ \quad so \quad $A(y) = -y$ works.
+\quad
+\pause
+Take \quad $F(x,y) = x^2+xy-y$.
+
+\medskip
+\pause
+
+Implicit (general) solution is \quad
+$x^2+xy-y = C$
+
+\medskip
+\pause
+
+$y(0)=1$ \wthus $F(0,1) = C$ \pause \wthus $0^2+0\times 1 - 1 = C$ \pause
+\wthus $C=-1$.
+
+\medskip
+\pause
+
+Finally, solve $x^2+xy-y = -1$ for $y$:
+\[
 y = \frac{-x^2-1}{x-1} .
-\end{equation*}
+\]
 \end{frame}
 
 \begin{frame}
 
 \textbf{Example:}
 Solve
-\begin{equation*}
--\frac{y}{x^2+y^2} dx + \frac{x}{x^2+y^2} dy = 0 , \qquad y(1) = 2.
-\end{equation*}
-We leave to the reader to check that
-$M_y = N_x$.
+\quad
+$\displaystyle
+-\frac{y}{x^2+y^2} dx + \frac{x}{x^2+y^2} dy = 0$, \quad $y(1) = 2$.
+\qquad
+\pause
+(Exercise: $M_y = N_x$)
 
-This vector field $(M,N)$ is not conservative if considered as a vector
-field of the entire plane minus the origin.  The problem is that if the curve $\gamma$
-is a circle around the origin, say starting at $(1,0)$ and
-ending at $(1,0)$ going counterclockwise, then if $F$ existed we would expect
-\begin{equation*}
-0 = F(1,0) - F(1,0) = \int_\gamma F_x \, dx + F_y \, dy = \int_\gamma \frac{-y}{x^2+y^2} \, dx +
-\frac{x}{x^2+y^2} \, dy = 2\pi .
-\end{equation*}
-That is nonsense!
-We leave the computation of the path integral to the interested reader, or
-you can consult your multivariable calculus textbook.  So there is no
-potential function $F$ defined everywhere outside the origin $(0,0)$.
+\medskip
+\pause
 
-If we think back to the theorem, it does not guarantee such a function
-anyway.  It only guarantees a potential function locally, that is, only in
-some region near the initial point.  As $y(1) = 2$,
-we start at the point $(1,2)$.  Considering $x > 0$ and
-integrating $M$ in $x$ or $N$ in $y$, we find
-\begin{equation*}
-F(x,y) = \operatorname{arctan} \bigl( \nicefrac{y}{x} \bigr) .
-\end{equation*}
-The implicit solution is 
-$\operatorname{arctan} \bigl( \nicefrac{y}{x} \bigr) = C$.  Solving,
-$y = \tan(C) x$.  That is, the solution is a straight line.  Solving $y(1) =
-2$ gives us that $\tan(C) = 2$, and so $y= 2x$ is the desired solution.
-See {exact:y2x}, and note that the solution only exists for $x >
-0$.
+The vector field
+$(M,N)$ is \textbf{not} conservative on the entire plane minus the origin.
 
+\pause
+Problem: Let $\gamma$ be a circle around the origin counterclockwise
+starting and ending at $(1,0)$.  If $F$ existed we would have
+(computation left to interested student)
+\[
+0 = F(1,0) - F(1,0) \pause = \int_\gamma F_x \, dx + F_y \, dy \pause = \int_\gamma \frac{-y}{x^2+y^2} \, dx +
+\frac{x}{x^2+y^2} \, dy \pause = 2\pi 
+\pause
+\quad
+\text{Nonsense!}
+\]
+\pause
+There is no $F$ defined for all $(x,y) \not= (0,0)$.
+
+\medskip
+\pause
+
+The theorem only guaranteed $F$ defined \emph{locally}.
+
+\medskip
+\pause
+
+Suppose $x > 0$ (note the IC).
+
+\pause
+Integrate $M$ in $x$ to find
+\quad $F(x,y) = \operatorname{arctan} \bigl( \nicefrac{y}{x} \bigr)$.
+
+\pause
+Implicit solution:
+\quad
+$\operatorname{arctan} \bigl( \nicefrac{y}{x} \bigr) = C$.
+
+\pause
+Explicit solution: \quad  $y = \tan(C) x$.
+
+\pause
+As $y(1)=2$, we get $\tan(C) = 2$,
+
+so \quad $y=2x$ \quad is the solution (only for $x > 0$).
+
+\vspace*{-1.65in}
+\hfill
 \includegraphics[width=2.5in]{../figures/exact-y2x}
 
-Solution to 
-$-\frac{y}{x^2+y^2} dx + \frac{x}{x^2+y^2} dy = 0$, $y(1) = 2$,
-with initial point marked.
 \end{frame}
 
 \begin{frame}
 
 \textbf{Example:}
 Solve
-\begin{equation*}
-x^2+y^2 + 2y(x+1) \frac{dy}{dx} = 0 .
-\end{equation*}
+\quad
+$x^2+y^2 + 2y(x+1) \frac{dy}{dx} = 0$.
+\qquad
+\pause
+Exercise:
+Check the equation is exact.
 
-The reader should check that this equation is exact.
-Let $M= x^2+y^2$ and $N=2y(x+1)$.
-We follow the procedure for exact equations
-\begin{equation*}
-F(x,y) = \frac{1}{3}x^3 + xy^2 + A(y) ,
-\end{equation*}
-and
-\begin{equation*}
-2y(x+1) = 2xy + A'(y) .
-\end{equation*}
-Therefore $A'(y) = 2y$ or $A(y) = y^2$ and $F(x,y) = \frac{1}{3}x^3 + xy^2 +
-y^2$.
-We try to solve $F(x,y) = C$.  We easily solve for $y^2$ and then just take
-the square root:
+\medskip
+\pause
+
+As before,
+\quad
+$F(x,y) = \frac{1}{3}x^3 + xy^2 + A(y)$
+\pause
+\wthus
+$2y(x+1) = 2xy + A'(y)$
+
+\medskip
+\pause
+
+\thus \quad $A'(y)=2y$
+\pause
+\wthus
+$A(y) = y^2$
+\pause
+\wthus
+$F(x,y) = \frac{1}{3}x^3 + xy^2 + y^2$.
+\quad
+\pause
+Now solve $F(x,y) = C$.
+\pause
 \begin{equation*}
 y^2 = \frac{C-(\nicefrac{1}{3})x^3}{x+1},
 \qquad \text{so} \qquad
 y = \pm \sqrt{\frac{C-(\nicefrac{1}{3})x^3}{x+1}} .
 \end{equation*}
-When $x=-1$, the term in front of $\frac{dy}{dx}$ vanishes, and our explicit
-solution is not valid at $x=-1$.
-The given equation has no solution near $x=-1$, but
-the equation $(x^2+y^2) \, dx + 2y(x+1) \, dy = 0$ does have
-a solution $x=-1$.  In fact, one could solve for $x$ in terms
-of $y$ for any initial condition.  The solution is messy,
-so we leave it as $\frac{1}{3}x^3 + xy^2 + y^2 = C$.
+If $x=-1$, the explicit solution invalid.
+
+\medskip
+\pause
+
+$x^2+y^2 + 2y(x+1) \frac{dy}{dx} = 0$ has no solution there,
+note that term before
+$\frac{dy}{dx}$ is zero.
+
+\medskip
+\pause
+
+$(x^2+y^2) \, dx + 2y(x+1) \, dy = 0$ does have a solution $x=-1$.
+
+\medskip
+\pause
+
+One could solve for $x$ in terms of $y$ for any initial condition (messy).
 \end{frame}
 
 \begin{frame}
