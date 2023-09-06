@@ -2038,15 +2038,15 @@ and treat it as a function of $x$, leaving $s$ as a parameter.
 \begin{equation*}
 Y(x)
 = {\mathcal L} \bigl\{ y(x,t) \bigr\}
-= \int_0^\infty y(x,t) e^{-st} \,ds .
+= \int_0^\infty y(x,t) e^{-st} \,dt .
 \end{equation*}
 The transform of a derivative with respect to $x$ is just differentiating 
 the transformed function:
 \begin{equation*}
 {\mathcal L} \bigl\{ y_x(x,t) \bigr\} =
-\int_0^\infty y_x(x,t) e^{-st} \,ds
+\int_0^\infty y_x(x,t) e^{-st} \,dt
 =
-\frac{d}{dx} \left[\int_0^\infty y(x,t) e^{-st} \,ds \right]
+\frac{d}{dx} \left[\int_0^\infty y(x,t) e^{-st} \,dt \right]
 =
 Y'(x) .
 \end{equation*}
