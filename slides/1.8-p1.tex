@@ -10,7 +10,7 @@ Oklahoma State University%
 %Departemento pri Matematiko de Oklahoma {\^S}tata Universitato%
 }
 
-\title{11. Exact equations\\(Notes on Diffy Qs, 1.8)}
+\title{11. Exact equations (part 1)\\(Notes on Diffy Qs, 1.8)}
 
 \date{}
 
@@ -42,7 +42,9 @@ Naming suggests electric potential or potential energy.
 \pause
 
 Such equations come up when there is some conservation
-law (e.g., conservation of energy) at play.
+law at play.
+
+(e.g., conservation of energy)
 
 \end{frame}
 
@@ -82,7 +84,9 @@ $dF = 2x \, dx + 2y \, dy$.
 \medskip
 \pause
 
-To get $F(x,y) = C$, the differential equation is
+The differential equation for
+$F(x,y) = C$
+is
 
 \medskip
 
@@ -145,14 +149,14 @@ unknown $F(x,y)$.
 
 \begin{frame}
 \textbf{Interpretation:}
-At each point $(x,y)$, the vector $\vec{v} = (M,N)$ gives a \emph{vector
+At each point $(x,y)$ there is a vector $\vec{v} = (M,N)$ giving a \emph{vector
 field}.
 
 \medskip
 \pause
 
 $\vec{v}$ is a \emph{conservative vector field} if it comes with a potential
-function $F$ where
+function $F$, where
 $\vec{v} = \left( \frac{\partial F}{\partial x} ,\frac{\partial F}{\partial
 y} \right)$.
 
@@ -181,8 +185,8 @@ In other words, work done depends only on endpoints.
 \medskip
 \pause
 
-\textbf{Example:} Force of gravity $\vec{v}$ is conservative (assuming 2D),
-and $F$ is the gravitational potential.
+\textbf{Example:} Force of gravity is conservative (assuming 2D)
+--- $F$ is the gravitational potential.
 \pause
 Work done by moving a mass only depends on the change in elevation.
 
@@ -223,7 +227,7 @@ $F\bigl(x,y(x)\bigr) = C$ gives an implicit solution.
 \medskip
 \pause
 
-Note: Adding a constant to $F$ does not change anything.
+\textbf{Note:} Adding a constant to $F$ does not change anything.
 
 \pause
 If $F(x,y)$ works, $F(x,y)+3$ or $F(x,y)-8$ also work.
@@ -295,7 +299,7 @@ Differentiate $F$ in $y$, and set that equal to
 $N$ to find $A(y)$ by integration.
 \end{enumerate}
 \pause
-Roles of $x$ and $y$ can be reversed.
+Roles of $x$ and $y$ (and so $M$ and $N$) can be reversed.
 
 \end{frame}
 
@@ -485,7 +489,9 @@ $(M,N)$ is \textbf{not} conservative on the entire plane minus the origin.
 
 \pause
 Problem: Let $\gamma$ be a circle around the origin counterclockwise
-starting and ending at $(1,0)$.  If $F$ existed we would have
+starting and ending at $(1,0)$.
+\pause
+If $F$ existed we would have
 (computation left to interested student)
 \[
 0 = F(1,0) - F(1,0) \pause = \int_\gamma F_x \, dx + F_y \, dy \pause = \int_\gamma \frac{-y}{x^2+y^2} \, dx +
@@ -528,321 +534,6 @@ so \quad $y=2x$ \quad is the solution (only for $x > 0$).
 \hfill
 \includegraphics[width=2.5in]{../figures/exact-y2x}
 
-\end{frame}
-
-\begin{frame}
-
-\textbf{Example:}
-Solve
-\quad
-$x^2+y^2 + 2y(x+1) \frac{dy}{dx} = 0$.
-\qquad
-\pause
-Exercise:
-Check the equation is exact.
-
-\medskip
-\pause
-
-As before,
-\quad
-$F(x,y) = \frac{1}{3}x^3 + xy^2 + A(y)$
-\pause
-\wthus
-$2y(x+1) = 2xy + A'(y)$
-
-\medskip
-\pause
-
-\thus \quad $A'(y)=2y$
-\pause
-\wthus
-$A(y) = y^2$
-\pause
-\wthus
-$F(x,y) = \frac{1}{3}x^3 + xy^2 + y^2$.
-\quad
-\pause
-Now solve $F(x,y) = C$.
-\pause
-\begin{equation*}
-y^2 = \frac{C-(\nicefrac{1}{3})x^3}{x+1},
-\qquad \text{so} \qquad
-y = \pm \sqrt{\frac{C-(\nicefrac{1}{3})x^3}{x+1}} .
-\end{equation*}
-If $x=-1$, the explicit solution invalid.
-
-\medskip
-\pause
-
-$x^2+y^2 + 2y(x+1) \frac{dy}{dx} = 0$ has no solution there,
-note that term before
-$\frac{dy}{dx}$ is zero.
-
-\medskip
-\pause
-
-$(x^2+y^2) \, dx + 2y(x+1) \, dy = 0$ does have a solution $x=-1$.
-
-\medskip
-\pause
-
-One could solve for $x$ in terms of $y$ for any initial condition (messy).
-\end{frame}
-
-\begin{frame}
-\textbf{Integrating factors:}
-
-Sometimes \quad $M\, dx + N \, dy = 0$ \quad is not exact, but \quad $u M \, dx + u N \, dy = 0$ \quad is.
-
-\medskip
-\pause
-
-The linear
-\quad
-$\displaystyle
-\frac{dy}{dx} + p(x) y = f(x)$, \quad
-or \quad $\bigl( p(x) y - f(x) \bigr)\, dx +  dy  = 0$ \quad
-is an example:
-
-\medskip
-\pause
-
-Let $r(x) = e^{\int p(x)\,dx}$ and multiply
-\qquad
-$\displaystyle
-\bigl(r(x) p(x) y - r(x) f(x) \bigr)\, dx + r(x) \, dy = 0$.
-
-\medskip
-\pause
-
-$M = r(x) p(x) y - r(x) f(x)$ and $N=r(x)$,
-\pause so
-\quad
-$M_y = r(x) p(x)$ and $N_x = r'(x) = r(x) p(x)$.
-\quad
-\pause
-Exact!
-
-\medskip
-\pause
-
-How to find the $u$ in general?
-
-\medskip
-\pause
-
-$u$ must satisfy
-\quad
-$\displaystyle
-\frac{\partial}{\partial y} \bigl[ u M \bigr] = 
-u_y M + u M_y = 
-\frac{\partial}{\partial x} \bigl[ u N \bigr] = 
-u_x N + u N_x$.
-
-\medskip
-\pause
-
-\thus \quad
-$(M_y-N_x)u = u_x N - u_y M$.
-
-\medskip
-\pause
-
-OK, that's another differential equation, how does that help?
-
-\medskip
-\pause
-
-One strategy: Look for $u$ that is a function of $x$ alone, or $y$ alone.
-
-\end{frame}
-
-\begin{frame}
-Let's look for $u(x)$.  Then $u_x = u'$ and $u_y = 0$.
-
-\medskip
-\pause
-
-$(M_y-N_x)u = u_x N - u_y M$
-\pause
-\wthus
-$(M_y-N_x)u = u' N$
-\pause
-\wthus
-$\dfrac{M_y-N_x}{N}u = u'$
-
-\medskip
-\pause
-
-If $\dfrac{M_y-N_x}{N}$ is a function of $x$ alone, then
-\quad
-$u' - \dfrac{M_y-N_x}{N} u = 0$ \quad is a linear equation!
-
-\medskip
-\pause
-
-Let $P(x) = \frac{M_y-N_x}{N}$
-\wthus
-$u(x) = e^{\int P(x) \, dx}$
-
-\medskip
-\pause
-
-Similarly if $u = u(y)$.
-\pause
-\wthus
-$\dfrac{M_y-N_x}{M} u = - u'$.
-
-\medskip
-\pause
-
-If $\dfrac{M_y-N_x}{M}$ is a function of $y$ alone, then
-
-\medskip
-\pause
-
-Let $Q(y) = \frac{M_y-N_x}{M}$
-\wthus
-$u(y) = e^{-\int Q(y) \, dy}$.
-
-\end{frame}
-
-\begin{frame}
-
-\textbf{Example:}
-Solve \quad
-$\displaystyle
-\frac{x^2+y^2}{x+1} + 2y \frac{dy}{dx} = 0$.
-
-\medskip
-\pause
-
-Let $M= \frac{x^2+y^2}{x+1}$ and $N=2y$.
-
-\medskip
-\pause
-
-$M_y-N_x = \frac{2y}{x+1} - 0 = \frac{2y}{x+1} \pause \not= 0$
-\pause
-\wthus
-Not exact!
-
-\medskip
-\pause
-
-Notice
-\quad
-$\displaystyle
-\frac{M_y-N_x}{N}
-\pause
-= \frac{2y}{x+1} \, \frac{1}{2y}
-\pause
-= \frac{1}{x+1}
-= P(x)
-$
-\quad
-is a function of $x$ alone.
-
-\medskip
-\pause
-
-Compute \quad
-$u(x) = 
-e^{\int  P(x) \, dx}
-\pause
-=
-e^{\ln (x+1)} = x+1$.
-
-\medskip
-\pause
-
-The equation becomes: \quad
-$\displaystyle
-x^2+y^2 + 2y(x+1) \frac{dy}{dx} = 0$.
-
-\medskip
-\pause
-
-This is exact and we solved it above!
-
-\medskip
-
-$\displaystyle y = \pm \sqrt{\frac{C-(\nicefrac{1}{3})x^3}{x+1}}$
-\end{frame}
-
-\begin{frame}
-\textbf{Example:}
-Solve
-$\displaystyle
-y^2 + (xy+1) \frac{dy}{dx} = 0$.
-
-\medskip
-\pause
-
-$M_y-N_x \pause = 2y-y = y \pause \not= 0$
-\wthus
-Not exact.
-
-\medskip
-\pause
-
-$\displaystyle
-\frac{M_y-N_x}{M} \pause = \frac{y}{y^2} = \frac{1}{y} =Q(y)$ 
-\quad
-is a function of $y$ alone.
-
-\medskip
-\pause
-
-$\displaystyle
-u(y)
-= e^{-\int  Q(y) \, dy}
-\pause
-=
-e^{-\ln y} = \frac{1}{y}$.
-
-\medskip
-\pause
-
-Equation becomes
-\quad
-$\displaystyle y + \frac{xy+1}{y} \frac{dy}{dx} = 0$. \quad (Exercise: exact)
-
-\medskip
-\pause
-
-Solve: \quad
-$F(x,y) = xy + A(y)$,
-\pause
-\quad
-$\displaystyle
-\frac{xy+1}{y} = x+\frac{1}{y} \pause = x+ A'(y)$.
-
-\medskip
-\pause
-
-$A'(y) = \nicefrac{1}{y}$
-\pause
-\wthus
-$A(y) = \ln \, \lvert y \rvert$
-\pause
-\wthus
- $F(x,y) = xy + \ln \, \lvert y \rvert$.
-
-\medskip
-\pause
-
-Implicit solution:
-$xy + \ln \, \lvert y \rvert = C$.
-
-\medskip
-\pause
-
-We divided by $y$, so we should check $y=0$:
-\pause
-\quad
-$y=0$ is a solution too.
 \end{frame}
 
 \end{document}
