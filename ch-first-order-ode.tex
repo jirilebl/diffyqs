@@ -3468,7 +3468,7 @@ $F(x,y) = C$ leads to the same solution as the example.
 \sectionnotes{1 lecture, can safely be skipped}
 
 We only considered ODE so far, so let us solve a linear first order
-PDE\@.  Consider the equation
+PDE\@.  Consider
 \begin{equation*}
 a(x,t) \, u_x + b(x,t) \, u_t + c(x,t) \, u = g(x,t), \qquad u(x,0) = f(x) , \qquad -\infty < x < \infty,
 \quad t > 0 ,
@@ -3486,13 +3486,13 @@ although the computations may get difficult quickly.
 
 This method we use is the
 \emph{\myindex{method of characteristics}}\index{characteristics}.
-The idea is that we find lines along which the equation is
+The idea is to find lines along which the equation is
 an ODE that we then solve.
 We will see this technique again for second order PDE
 when we encounter the wave equation in \sectionref{dalemb:section}.
 
 \begin{example}
-Consider the equation
+Consider
 \begin{equation*}
 u_t + \alpha u_x = 0, \qquad u(x,0) = f(x) .
 \end{equation*}
@@ -3565,7 +3565,7 @@ characteristic line.
 
 We see why $u_t + \alpha u_x = 0$ is called the
 transport equation: Everything travels at some constant speed.
-Sometimes this is called \emph{\myindex{convection}}.
+This behavior is called \emph{\myindex{convection}}.
 An example application is material being moved by a river where the material
 does not diffuse and is simply carried along.  In this setup, $x$ is 
 the position along the river, $t$ is the time, and $u(x,t)$ the concentration the
@@ -3585,7 +3585,7 @@ the right.\label{fopde:transportfig}}
 \end{myfig}
 \end{example}
 
-We use similar idea in the more general case:
+We use a similar idea in the more general case:
 \begin{equation*}
 a u_x + b u_t + c u = g, \qquad u(x,0) = f(x)  .
 \end{equation*}
@@ -3613,7 +3613,7 @@ $\bigl(x(s),t(s)\bigr)$.  We try to have the curve satisfy
 \frac{dx}{ds} = a, \qquad \frac{dt}{ds} = b .
 \end{equation*}
 Why?
-Because when we think of $x$ and $t$ as functions of $s$ we find, using the
+Because when we think of $x$ and $t$ as functions of $s$, we find, using the
 chain rule,
 \begin{equation*}
 \frac{du}{ds} + c u = 
@@ -3663,7 +3663,7 @@ to solve along the characteristic is
 \frac{du}{ds} + u = s+ \xi .
 \end{equation*}
 The general solution of this equation, treating $\xi$ as a parameter, is 
-$u = C e^{-s}+s+\xi-1$, for some constant $C$.
+$u = C e^{-s}+s+\xi-1$, for some $C$, which can depend on $\xi$.
 At $s=0$, our initial condition is that $u$ is
 $e^{-\xi^2}$, since at $s=0$, we have $x=\xi$.
 Given this initial condition, we find $C=e^{-\xi^2} - \xi +1$.  So,
@@ -3723,8 +3723,10 @@ OK\@, the ODE we need to solve is
 \begin{equation*}
 \frac{du}{ds} + 2 u = 0 .
 \end{equation*}
-This is for a fixed $\xi$.  At $s=0$, we want $u$ to be
+This is for a fixed $\xi$.  We find $u = C e^{-2s}$.
+At $s=0$, we want $u$ to be
 $\cos(\xi)$, so that is our initial condition for the ODE.
+Moreover, $\xi = xe^{-t}$ and $s=t$.
 Consequently,
 \begin{equation*}
 u = e^{-2s} \cos(\xi)= e^{-2t} \cos(xe^{-t}) .
@@ -3745,11 +3747,12 @@ but $u_x(x,0) + u(x,0) = \cos(x) + \sin(x) \not= 0$.
 The problem is that the characteristic curve is now the line $t=0$,
 and the solution is already provided on that line!
 
-As long as $b$ is nonzero,
-it is convenient to ensure that $b$ is positive by multiplying by $-1$
+As $b$ ought to then be nonzero,
+it is convenient to ensure that $b$ is positive by multiplying
+the equation by $-1$
 if necessary, so that positive $s$ means positive $t$.
 
-Another remark is that if $a$ or $b$ in the equation are variable,
+Another remark is that if $a$ or $b$ in the equation are not constants,
 the computations can
 quickly get out of hand, as the expressions for the characteristic
 coordinates become messy and then solving the ODE becomes even messier.

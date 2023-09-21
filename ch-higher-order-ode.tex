@@ -9,7 +9,7 @@
 first part of \S3.1 in \cite{EP}}\BDref{,
 parts of \S3.1 and \S3.2 in \cite{BD}}}
 
-Let us consider the general
+Consider the general
 \emph{\myindex{second order linear differential equation}}
 \begin{equation*}
 A(x) y'' + B(x)y' + C(x)y = F(x) .
@@ -85,7 +85,7 @@ Ly = y'' + py' + qy .
 The differential equation now becomes $Ly=0$.
 The operator (and the equation)
 $L$ being \emph{linear}\index{linear operator} means that $L(C_1y_1 + C_2y_2) = 
-C_1 Ly_1 + C_2 Ly_2$.  Almost as if we were \myquote{multiplying} by $L$.  The proof above becomes
+C_1 Ly_1 + C_2 Ly_2$.  It is almost as if we were \myquote{multiplying} by $L$.  The proof above becomes
 \begin{equation*}
 Ly = L(C_1y_1 + C_2y_2) = 
 C_1 Ly_1 + C_2 Ly_2 = C_1 \cdot 0 + C_2 \cdot 0 = 0 .
@@ -94,12 +94,14 @@ C_1 Ly_1 + C_2 Ly_2 = C_1 \cdot 0 + C_2 \cdot 0 = 0 .
 \medskip
 
 Two different solutions to the second equation $y'' - k^2y = 0$ are
-$y_1 = \cosh (kx)$ and $y_2 = \sinh (kx)$.  Let us remind ourselves of the
-definition, $\cosh x = \frac{e^x  + e^{-x}}{2}$ and
-$\sinh x = \frac{e^x - e^{-x}}{2}$.  Therefore, these are solutions by
+$y_1 = \cosh (kx)$ and $y_2 = \sinh (kx)$.
+Recalling the definition of $\sinh$ and $\cosh$,
+we note that these are solutions by
 superposition as they
 are linear combinations of the two
-exponential solutions.
+exponential solutions:
+$\cosh x = \frac{e^x  + e^{-x}}{2} = (\nicefrac{1}{2}) e^x  + (\nicefrac{1}{2}) e^{-x}$ and
+$\sinh x = \frac{e^x - e^{-x}}{2} = (\nicefrac{1}{2}) e^x  - (\nicefrac{1}{2}) e^{-x}$.
 
 The functions $\sinh$ and $\cosh$ are sometimes more convenient to use than the
 exponential.  Let us review some of their properties:
@@ -182,8 +184,8 @@ For example, we found the solutions
 $y_1 = \sin x$ and $y_2 = \cos x$ for the
 equation $y'' + y = 0$.  It is not hard to see that sine and cosine are not
 constant
-multiples of each other.  If $\sin x = A \cos x$ for some constant $A$,
-we let $x=0$ and this would imply $A = 0$.  But then $\sin x = 0$ for all
+multiples of each other.  Indeed, if $\sin x = A \cos x$ for some constant $A$,
+plugging in $x=0$ would imply $A = 0$.  But then $\sin x = 0$ for all
 $x$, which is preposterous.
 So $y_1$ and $y_2$ are linearly independent.  Hence,
 \begin{equation*}
@@ -204,7 +206,7 @@ So $y = C_1 x^2 + C_2 \nicefrac{1}{x}$ is the general solution.
 If you have one solution to a second order linear homogeneous
 equation, then you can find another one.  This is the \emph{\myindex{reduction of
 order method}}.  The idea is that if we somehow found $y_1$ as a solution of
-$y'' + p(x) y' + q(x) y = 0$ we try a second
+$y'' + p(x) y' + q(x) y = 0$, then we try a second
 solution of the form $y_2(x) = y_1(x) v(x)$.
 We just need to find $v$.  We plug $y_2$ into the equation:
 \begin{equation*}
@@ -223,7 +225,7 @@ y_1 v''
 \end{split}
 \end{equation*}
 In other words,
-$y_1 v'' + (2 y_1' + p(x) y_1) v' = 0$.  Using $w = v'$ we have the
+$y_1 v'' + (2 y_1' + p(x) y_1) v' = 0$.  Using $w = v'$, we have the
 first order linear equation
 $y_1 w' + (2 y_1' + p(x) y_1) w = 0$.  After solving this equation for $w$
 (integrating factor),
@@ -244,7 +246,7 @@ y_2(x) = y_1(x) \int \frac{e^{-\int p(x)\,dx}}{{\bigl(y_1(x)\bigr)}^2} \,dx
 \end{equation*}
 However, it is much easier to remember that we just need to try $y_2(x) =
 y_1(x) v(x)$ and find $v(x)$ as we did above.  Also, the technique
-works for higher order equations too: you get to reduce the order for each
+works for higher order equations too: You get to reduce the order for each
 solution you find.  So it is better to remember how to do
 it rather than a specific formula.
 
