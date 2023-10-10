@@ -1,0 +1,432 @@
+\documentclass[10pt,aspectratio=169]{beamer}
+
+% All the boilerplate is in deslides.sty
+\usepackage{deslides}
+
+\author{Ji\v{r}\'i Lebl}
+
+\institute[OSU]{%
+Oklahoma State University%
+%Departemento pri Matematiko de Oklahoma {\^S}tata Universitato%
+}
+
+\title{13. Second order linear ODEs\\(Notes on Diffy Qs, 2.1)}
+
+\date{}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+
+%\bigskip
+
+\begin{center}
+The textbook: \url{https://www.jirka.org/diffyqs/}
+\end{center}
+\end{frame}
+
+\begin{frame}
+Second order linear differential equation:
+\[
+A(x) y'' + B(x)y' + C(x)y = F(x) .
+\]
+\pause
+Or
+\[
+y'' + p(x)y' + q(x)y = f(x) ,
+\]
+\pause
+\emph{linear} means that the 
+equation contains no powers nor
+functions of $y$, $y'$, and $y''$.
+\medskip
+\pause
+
+If $f(x)=0$, then the equation is \emph{homogeneous}:
+\[
+y'' + p(x)y' + q(x)y = 0 .
+\]
+\pause
+\textbf{Examples:}
+\begin{align*}
+\qquad y'' + k^2 y & = 0 &
+& \text{Two solutions are:} \quad y_1 = \cos (kx), \quad y_2 = \sin(kx) . \qquad \\
+\qquad y'' - k^2 y & = 0 &
+& \text{Two solutions are:} \quad y_1 = e^{kx}, \quad y_2 = e^{-kx} . \qquad
+\end{align*}
+\end{frame}
+
+\begin{frame}
+\begin{theorem}[Superposition]
+Suppose $y_1$ and $y_2$ are two solutions of the
+homogeneous equation
+$y'' + p(x)y' + q(x)y = 0$.
+\pause
+Then 
+\[
+y(x) = C_1 y_1(x) + C_2 y_2(x)
+\]
+also solves the equation for arbitrary constants $C_1$ and $C_2$.
+\end{theorem}
+\pause
+
+We call $C_1 y_1 + C_2 y_2$ a \emph{linear combination} of $y_1$ and $y_2$.
+
+\medskip
+\pause
+
+\textbf{Proof:}
+Let 
+$y = C_1 y_1 + C_2 y_2$.  \pause Then
+
+\medskip
+$y'' + py' + qy  = (C_1 y_1 + C_2 y_2)'' + p(C_1 y_1 + C_2 y_2)' + q(C_1 y_1
++ C_2 y_2)$
+
+\pause
+\phantom{$y'' + py' + qy$}%
+${} = C_1 y_1'' + C_2 y_2'' + C_1 p y_1' + C_2 p y_2' + C_1 q y_1 + C_2 q y_2$
+
+\pause
+\phantom{$y'' + py' + qy$}%
+${} = C_1 ( y_1'' + p y_1' + q y_1 ) + C_2 ( y_2'' + p y_2' + q y_2 )$
+
+\pause
+\phantom{$y'' + py' + qy$}%
+${} = C_1 \cdot 0 + C_2 \cdot 0 = 0$. \qed
+
+\end{frame}
+
+\begin{frame}
+
+An \emph{operator} is a thing that eats functions and spits out functions.
+
+\medskip
+\pause
+
+Define the operator $L$ by
+\[
+Ly = y'' + py' + qy .
+\]
+
+\medskip
+\pause
+
+The homogeneous differential equation becomes $Ly=0$.
+
+\medskip
+\pause
+
+The operator $L$ is \emph{linear} if 
+\[
+L(C_1y_1 + C_2y_2) = 
+C_1 Ly_1 + C_2 Ly_2
+\quad \text{(almost like multiplying by $L$)}
+\] 
+
+\medskip
+\pause
+
+Nicer proof of the theorem:
+
+\medskip
+\pause
+
+Suppose that $Ly_1 =0$ and $Ly_2=0$.
+\pause
+Then
+\[
+Ly = L(C_1y_1 + C_2y_2) \pause = 
+C_1 Ly_1 + C_2 Ly_2 \pause = C_1 \cdot 0 + C_2 \cdot 0 = 0 .
+\]
+
+\end{frame}
+
+\begin{frame}
+\textbf{Example:}
+$y'' - k^2y = 0$ has solutions
+$y_1 = e^{kx}$ and 
+$y_2 = e^{-kx}$.
+
+\medskip
+\pause
+
+Recall that 
+\quad
+$\cosh t = \dfrac{e^{t}  + e^{-t}}{2}$,
+\quad
+$\sinh t = \dfrac{e^{t}  + e^{-t}}{2}$
+
+\medskip
+\pause
+
+So
+\quad
+$\cosh(kx)
+\pause = \dfrac{e^{kx}  + e^{-kx}}{2}
+\pause = (\nicefrac{1}{2}) e^{kx}  + (\nicefrac{1}{2}) e^{-kx}
+\pause = (\nicefrac{1}{2}) y_1  + (\nicefrac{1}{2}) y_2$
+\quad
+is a solution
+
+\medskip
+\pause
+
+And
+\quad
+$\sinh(kx)
+\pause = \dfrac{e^{kx}  - e^{-kx}}{2}
+\pause = (\nicefrac{1}{2}) e^{kx}  + (-\nicefrac{1}{2}) e^{-kx}
+\pause = (\nicefrac{1}{2}) y_1  + (-\nicefrac{1}{2}) y_2$
+\quad
+is a solution
+
+\medskip
+\pause
+
+$\sinh$ and $\cosh$ are sometimes more convenient than the
+exponential.
+
+\medskip
+\pause
+
+\textbf{Exercise:} Verify that
+\begin{align*}
+& \cosh 0  = 1 , &   & \sinh 0 = 0 , \\
+& \frac{d}{dx} \Bigl[ \cosh x \Bigr] = \sinh x , &  & \frac{d}{dx} \Bigl[ \sinh x \Bigr] = \cosh x , \\
+& \cosh^2 x - \sinh^2 x = 1 .
+\end{align*}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{theorem}[Existence and uniqueness]
+Suppose $p, q, f$ are continuous functions on some interval
+$I$, $a$ is a number in $I$,
+and $a, b_0, b_1$ are constants.
+\pause
+Then the equation
+\begin{equation*}
+y'' + p(x) y' + q(x) y = f(x) ,
+\end{equation*}
+has exactly one solution $y(x)$ defined on the same interval $I$ satisfying the initial conditions
+\begin{equation*}
+y(a) = b_0 , \qquad y'(a) = b_1 .
+\end{equation*}
+\end{theorem}
+
+\pause
+
+\textbf{Example:}
+$y'' + k^2 y = 0$ with $y(0) = b_0$ and $y'(0) = b_1$ has the solution
+\[
+y(x) = b_0 \cos (kx) + \frac{b_1}{k} \sin (kx) .
+\]
+\pause
+Verify IC: \quad $y(0) = b_0 \cos (0) + \frac{b_1}{k} \sin (0) = b_0$.
+
+\medskip
+\pause
+$y'(x) = - k b_0 \sin (kx) + b_1 \cos (kx)$
+\wthus
+\pause
+$y'(0) = - k b_0 \sin (0) + b_1 \cos (0) = b_1$.
+
+\medskip
+\pause
+
+Similarly, $y'' - k^2 y = 0$ with $y(0) = b_0$ and $y'(0) = b_1$
+has the solution
+\[
+y(x) = b_0 \cosh (kx) + \frac{b_1}{k} \sinh (kx) .
+\]
+\end{frame}
+
+\begin{frame}
+Two functions $y_1$ and $y_2$ are
+\emph{linearly independent} if one is not a constant multiple of the other.
+
+\pause
+
+\begin{theorem}
+Let $p, q$ be continuous functions.
+Let $y_1$ and $y_2$ be two linearly independent
+solutions to the homogeneous equation
+$y'' + p(x) y' + q(x) y = 0$.
+\pause
+Then every other solution is 
+of the form
+\begin{equation*}
+y = C_1 y_1 + C_2 y_2 .
+\qquad \text{(i.e., that's the general solution)}
+\end{equation*}
+\end{theorem}
+
+\textbf{Example:}
+$y_1 = \sin x$ and $y_2 = \cos x$ solve $y'' + y = 0$.
+
+\medskip
+\pause
+
+$\sin$ and $\cos$ are linearly independent:
+\pause
+If $\sin x = A \cos x$ for some constant $A$,
+then let $x=0$ to get $A = 0$.
+\pause But then $\sin x = 0$ for all
+$x$, that's nonsense.
+
+\medskip
+\pause
+
+$y_1$ and $y_2$ are linearly independent and
+\[
+y = C_1 \cos x + C_2 \sin x 
+\]
+is the general solution to $y'' + y = 0$.
+
+\end{frame}
+
+\begin{frame}
+\textbf{Example:}
+$y''-2x^{-2}y = 0$ has solutions $y_1 = x^2$ and $y_2 = \dfrac{1}{x}$.
+
+\medskip
+\pause
+
+To see $y_1$ and $y_2$ are linearly independent, suppose
+$y_1 = A y_2$.
+
+\medskip
+\pause
+
+Solve for $A \pause = \dfrac{y_1}{y_2} = x^3$.
+\pause
+That's not a constant!
+\pause \wthus $y_1$ and $y_2$ are linearly independent.
+
+\medskip
+\pause
+
+\thus
+\quad
+$y = C_1 x^2 + C_2\dfrac{1}{x}$ \quad is the general solution.
+
+\end{frame}
+
+\begin{frame}
+If you have one solution we can find the second
+via the
+\emph{reduction of order method}.
+
+\medskip
+\pause
+
+Suppose $y_1$ solves
+$y'' + p(x) y' + q(x) y = 0$.
+
+\pause
+
+Try to find a second solution of the form $y_2(x) = y_1(x) v(x)$.
+\pause
+Plug in:
+
+\medskip
+
+\quad
+$
+0 = y_2'' + p(x) y_2' + q(x) y_2
+=
+y_1'' v + 2 y_1' v' + y_1 v''
++ p(x) ( y_1' v + y_1 v' )
++ q(z) y_1 v$
+
+\quad
+\phantom{$0 = y_2'' + p(x) y_2' + q(x) y_2$}%
+${} =
+y_1 v''
++ (2 y_1' + p(x) y_1) v'
++
+\cancelto{0}{\bigl( y_1'' + p(x) y_1' + q(x) y_1 \bigr)} v$.
+
+
+\medskip
+\pause
+
+So
+$y_1 v'' + (2 y_1' + p(x) y_1) v' = 0$.
+
+
+\medskip
+\pause
+
+Write $w = v'$ and we have a first order ODE
+\quad
+$y_1 w' + (2 y_1' + p(x) y_1) w = 0$.
+
+\medskip
+\pause
+
+Solve for $w$, and find $v$ by antidifferentiating.
+
+\medskip
+\pause
+
+\textbf{Example:}
+$y_1 = x$ is a solution to $y''+x^{-1}y'-x^{-2} y=0$, let's find $y_2$.
+
+\medskip
+\pause
+
+\thus \quad $xw' + 3 w = 0$
+\pause
+\wthus
+$w = Cx^{-3}$
+\pause
+\wthus
+$v = \dfrac{-C}{2x^2}$
+\pause
+\wthus
+$y_2 = y_1 v = \dfrac{-C}{2x}$
+
+\medskip
+\pause
+
+Any $C$ works, e.g., $C=-2$ for $y_2 = \dfrac{1}{x}$.
+
+\pause
+
+The general solution is \quad $y = C_1 x + C_2\dfrac{1}{x}$.
+
+\end{frame}
+
+\begin{frame}
+We can even just write down a formula
+\begin{equation*}
+y_2(x) = y_1(x) \int \frac{e^{-\int p(x)\,dx}}{{\bigl(y_1(x)\bigr)}^2} \,dx
+\end{equation*}
+\end{frame}
+
+\begin{frame}
+A useful warm-up for next time:
+
+\medskip
+
+\textbf{Exercise:}
+For $x^2 y'' - x y' = 0$, find two solutions, show that they
+are linearly independent and find the general solution.
+
+\pause
+Hint: Try $y = x^r$.
+
+\medskip
+\pause
+
+Equations of the form $a x^2 y'' + b x y' + c y = 0$ are called
+\emph{Euler's equations} or
+\emph{Cauchy--Euler equations}.
+
+\end{frame}
+
+\end{document}
