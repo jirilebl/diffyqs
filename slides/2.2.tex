@@ -1,0 +1,562 @@
+\documentclass[10pt,aspectratio=169]{beamer}
+
+% All the boilerplate is in deslides.sty
+\usepackage{deslides}
+
+\author{Ji\v{r}\'i Lebl}
+
+\institute[OSU]{%
+Oklahoma State University%
+%Departemento pri Matematiko de Oklahoma {\^S}tata Universitato%
+}
+
+\title{14. Constant coefficient second order linear ODEs\\(Notes on Diffy Qs, 2.2)}
+
+\date{}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+
+%\bigskip
+
+\begin{center}
+The textbook: \url{https://www.jirka.org/diffyqs/}
+\end{center}
+\end{frame}
+
+\begin{frame}
+Consider the problem
+\qquad $y''-5y'+6y = 0$, \qquad $y(0) = 1$, \qquad $y'(0) = 7$.
+
+\medskip
+\pause
+
+It's a second order \pause linear \pause homogeneous equation \pause  with
+constant coefficients.
+
+\medskip
+\pause
+
+Let's guess a solution smartly.
+\pause
+What function stays more or less the same when differentiated?
+\pause
+The exponential!
+
+\medskip
+\pause
+
+We try $y=e^{rx}$ \quad (Germans call this ``ansatz'')
+\pause
+\qquad
+$y' = r e^{rx}$ \qquad $y'' = r^2 e^{rx}$
+
+\pause
+\vspace*{-12pt}
+\begin{align*}
+\uncover<11->{y''-5y'+6y & = 0 , \\}
+\uncover<12->{\underbrace{r^2 e^{rx}}_{y''} -5 \underbrace{r e^{rx}}_{y'}+6 \underbrace{e^{rx}}_{y} & = 0 , \\}
+\uncover<13->{r^2 -5 r +6 & = 0 \qquad \text{(divide through by $e^{rx}$)},\\}
+\uncover<14->{(r-2)(r-3) & = 0 .}
+\end{align*}
+\uncover<15->{So $r=2$ or $r=3$.}
+\quad
+\uncover<16->{Let $y_1 = e^{2x}$ and $y_2 = e^{3x}$.}
+
+\medskip
+
+\uncover<17->{
+\textbf{Exercise:}
+Check that $y_1$ and $y_2$ are solutions.
+}
+\end{frame}
+
+\begin{frame}
+Still considering
+\qquad $y''-5y'+6y = 0$, \qquad $y(0) = 1$, \qquad $y'(0) = 7$.
+
+\medskip
+
+$e^{2x}$ and $e^{3x}$ are linearly independent:
+\pause
+If not, $e^{3x} = C e^{2x}$ for a constant $C$.
+\pause
+So $e^x = C$.
+\pause
+Nonsense!
+
+\medskip
+\pause
+
+The general solution is \quad $y = C_1 e^{2x} + C_2 e^{3x}$
+\pause
+\qquad
+$y' = 2 C_2 e^{2x} + 3 C_2 e^{3x}$
+
+\medskip
+\pause
+
+$1 = y(0) \pause = C_1 + C_2$,
+
+\medskip
+\pause
+
+$7 = y'(0) \pause = 2 C_1 + 3 C_2$.
+
+\medskip
+\pause
+
+Solve!
+
+\pause
+(e.g., $2 = 2C_1 + 2C_2$
+\pause\wthus
+$(7-2) = (2-2)C_1 + (3-2)C_2$
+\pause
+\wthus
+$C_2 = 5$
+\wthus
+\pause
+$C_1 = -4$.)
+
+\medskip
+\pause
+
+So the solution is: \quad
+$y = -4 e^{2x} + 5 e^{3x}$
+
+\end{frame}
+
+\begin{frame}
+Given
+\quad
+$a y'' + b y' + c y = 0$
+
+\medskip
+\pause
+
+Try $y = e^{rx}$:
+\quad
+$a r^2 e^{rx} + 
+b r e^{rx} + 
+c e^{rx} = 0$
+
+\medskip
+\pause
+Divide by $e^{rx}$ to get the
+\emph{characteristic equation} of the ODE:
+\[
+a r^2 + 
+b r + 
+c = 0 .
+\]
+\pause
+Solve for the $r$:
+\qquad 
+$r_1, r_2 = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$.
+
+\medskip
+\pause
+
+\wthus $e^{r_1 x}$ and $e^{r_2 x}$ are solutions (a bit more complicated if
+$r_1=r_2$)
+
+\pause
+\begin{theorem}
+Suppose that $r_1$ and $r_2$ are the roots of the characteristic equation.
+\begin{enumerate}[(i)]
+\item\pause
+If $r_1$ and $r_2$ are distinct and real (when $b^2 - 4ac > 0$),
+the general solution is
+\[
+y = C_1 e^{r_1 x} + C_2 e^{r_2 x} .
+\]
+\item
+\pause
+If $r_1 = r_2$ (when $b^2 - 4ac = 0$), 
+the general solution is
+\[
+y = (C_1 + C_2 x)\, e^{r_1 x} .
+\]
+\end{enumerate}
+\end{theorem}
+\end{frame}
+
+\begin{frame}
+
+\textbf{Example:}
+Solve
+\quad $y'' - k^2 y = 0$.
+
+\medskip
+\pause
+
+Characteristic equation is $r^2 - k^2 = 0$ or $(r-k)(r+k) = 0$.
+
+\medskip
+\pause
+
+\wthus $e^{-k x}$ and $e^{kx}$ are the two
+linearly independent solutions,
+\pause
+and the general solution is
+\[
+y = C_1 e^{kx} + C_2e^{-kx}
+\]
+
+\medskip
+\pause
+
+\textbf{Example:}
+Solve \quad
+$y'' -8 y' + 16 y = 0$.
+
+\medskip
+\pause
+
+Characteristic equation is $r^2 - 8 r + 16 = {(r-4)}^2 = 0$.
+
+\medskip
+\pause
+
+We have
+a double root $r_1 = r_2 = 4$.
+\medskip
+The general solution is,
+\[
+y = (C_1 + C_2 x)\, e^{4 x} = C_1 e^{4x} + C_2 x e^{4x} .
+\]
+\end{frame}
+
+\begin{frame}
+In a sense, a doubled root rarely happens for a randomly chosen equation,
+
+but it does occur with some phenomena (e.g., resonance).
+
+\medskip
+\pause
+
+Why does $xe^{rx}$ work if we the root is doubled?
+
+\medskip
+\pause
+
+Think of two distinct roots $r_1$ and $r_2$ very close.
+\pause
+\[
+\frac{e^{r_2 x} - e^{r_1 x}}{r_2 - r_1}
+\qquad \text{is a solution.}
+\]
+\pause
+Doubled root is like taking the limit
+$r_1 \to r_2$.
+
+\medskip
+\pause
+
+So we are taking the derivative of $e^{rx}$ as if $r$ is the variable:
+\[
+\frac{d}{dr} \bigl[ e^{rx} \bigr] = x e^{rx}
+\]
+\pause
+Voila!
+
+\end{frame}
+
+\begin{frame}
+What if the characteristic equation has no real roots?
+E.g., $r^2+1=0$.
+
+\medskip
+\pause
+
+$r^2+1=0$ has \emph{complex} roots.  If $i$ is such that
+$i^2=-1$, then $i^2+1=0$ and $(-i)^2+1 = 0$.
+
+\pause
+\medskip
+
+\textbf{Remark:} Engineers sometimes use $j$ instead of $i$.
+
+\medskip
+\pause
+
+More generally, \emph{complex} numbers are just a pair of real numbers
+$(a,b)$, where we decree that
+\[
+(a,b)+(c,d)\overset{\text{def}}{=}(a+c,b+d) \qquad  \text{and} \qquad
+(a,b) \times (c,d) \overset{\text{def}}{=} (ac-bd,ad+bc)
+\]
+\pause
+For real numbers we say $a = (a,0)$, and we write $i=(0,1)$.
+
+\medskip
+\pause
+
+Then $i^2 \pause = i \times i \pause = (0,1) \times (0,1) \pause = (-1,0)
+\pause = -1$.
+
+\medskip
+\pause
+
+We write $a+ib = (a,b)$.
+
+\pause
+$a$ is the \emph{real part}, write $\Re (a+ib) = a$.
+
+\pause
+$b$ is the \emph{imaginary part}, write $\Im (a+ib) = b$.
+
+\medskip
+\pause
+
+\textbf{Example:}
+\quad
+$(2+3i)(4i) - 5i
+\pause
+=
+(2\times 4)i + (3 \times 4) i^2 - 5i
+\pause
+=
+8i + 12 (-1) - 5i
+\pause
+=
+-12 + 3i$
+
+\medskip
+\pause
+
+\textbf{Example:}
+\quad
+$(3+2i)(3-2i)
+\pause
+= 3^2-(2i)^2
+\pause
+= 3^2+2^2
+=13$
+
+\medskip
+\pause
+
+\textbf{Example:}
+\quad
+$\displaystyle \frac{1}{3-2i}
+\pause
+= \frac{1}{3-2i} \frac{3+2i}{3+2i}
+\pause
+= \frac{3+2i}{13}
+\pause
+= \frac{3}{13}+\frac{2}{13}i$.
+\end{frame}
+
+\begin{frame}
+The exponential should satisfy $e^{x+y} = e^xe^y$.
+
+\medskip
+\pause
+
+So $e^{a+ib} = e^a e^{ib}$.
+
+\medskip
+\pause
+
+\textbf{Euler's formula:}
+\quad
+$e^{i \theta} = \cos \theta + i \sin \theta$
+\quad and \quad
+$e^{- i \theta} = \cos \theta - i \sin \theta$
+
+\medskip
+\pause
+
+\thus\quad
+$e^{a+ib} 
+\pause
+= e^a e^{ib}
+\pause
+=
+e^a (\cos b + i \sin b)
+\pause
+=
+e^a \cos b + i e^a \sin b$
+
+\medskip
+\pause
+
+\textbf{Exercise:}
+Check the identities:
+\quad
+$\cos \theta = \dfrac{e^{i \theta} + e^{-i \theta}}{2}$
+\quad and \quad
+$\sin \theta = \dfrac{e^{i \theta} - e^{-i \theta}}{2i}$.
+
+\medskip
+\pause
+
+\textbf{Remark:} Most trig identities follow from $e^{z+w} = e^ze^w$ for
+complex numbers.
+
+\end{frame}
+
+\begin{frame}
+$ay'' + by' + cy = 0$ has the characteristic equation $a r^2 + b r + c = 0$.
+
+\medskip
+\pause
+
+Suppose the roots are complex, that is, $b^2 - 4ac < 0$.
+
+\medskip
+\pause
+
+The roots are (quadratic formula)
+\quad
+$r_1,r_2
+=
+\dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\pause
+=
+\dfrac{-b}{2a} \pm i\dfrac{\sqrt{4ac - b^2}}{2a}$.
+
+\medskip
+\pause
+
+The roots are always a pair of the form $\alpha \pm i \beta$.
+
+\medskip
+\pause
+
+The general solution is
+\quad
+$y = C_1 e^{(\alpha+i\beta)x} + C_2 e^{(\alpha-i\beta)x}$.
+
+\medskip
+\pause
+
+The exponential is complex valued and so must be $C_1$, $C_2$.
+Let's do better.
+
+\medskip
+\pause
+
+Write
+\quad
+$y_1
+= e^{(\alpha+i\beta)x}
+\pause
+=
+e^{\alpha x} \cos (\beta x) + i e^{\alpha x} \sin (\beta x)$,
+\quad
+$y_2
+= e^{(\alpha-i\beta)x}
+\pause
+=
+e^{\alpha x} \cos (\beta x) - i e^{\alpha x} \sin (\beta x)$.
+
+\medskip
+\pause
+
+These are also solutions:
+\quad
+$y_3 = \dfrac{y_1 + y_2}{2}
+\pause 
+= e^{\alpha x} \cos (\beta x)$
+\quad
+$y_4  = \dfrac{y_1 - y_2}{2i}
+\pause
+= e^{\alpha x} \sin (\beta x)$
+
+\pause
+\begin{theorem}
+If the characteristic equation has the roots $\alpha \pm i \beta$
+(i.e., $b^2 - 4ac < 0$),
+then the general solution is
+\[
+y = C_1 e^{\alpha x} \cos (\beta x) + C_2 e^{\alpha x} \sin (\beta x) .
+\]
+\end{theorem}
+\end{frame}
+
+\begin{frame}
+
+\textbf{Example:} Solve $y'' + k^2 y = 0$, for a constant $k > 0$.
+
+\medskip
+\pause
+
+Characteristic equation is $r^2 + k^2 = 0$,
+\pause
+roots are $r = \pm ik$,
+\pause
+the general solution is
+\[
+y = C_1 \cos (kx) + C_2 \sin (kx) .
+\]
+
+\medskip
+\pause
+
+\textbf{Example:}
+Solve \quad $y'' - 6 y' + 13 y = 0$, $y(0) = 0$, $y'(0) = 10$.
+
+\medskip
+\pause
+
+Characteristic equation is $r^2 - 6 r + 13 = 0$.
+
+\pause
+Complete the square ${(r-3)}^2 + 2^2 = 0$,
+\pause
+so $r = 3 \pm 2i$,
+\pause
+the general solution is
+\[
+y =
+C_1 e^{3x} \cos (2x) + C_2 e^{3x} \sin (2x).
+\]
+
+\medskip
+\pause
+
+$0 = y(0)
+\pause
+= C_1 e^{0} \cos 0 + C_2 e^{0} \sin 0
+\pause
+= C_1$
+\pause
+\wthus $C_1 = 0$ and $y = C_2 e^{3x} \sin (2x)$.
+
+\medskip
+\pause
+$y' = 3C_2 e^{3x} \sin (2x) + 2C_2 e^{3x} \cos (2x)$
+\pause
+\wthus $10 = y'(0) = 2C_2$, or $C_2 = 5$.
+
+\medskip
+\pause
+The solution is
+\[
+y = 5 e^{3x} \sin (2x) 
+\]
+
+\end{frame}
+
+\begin{frame}
+Complex numbers are useful also for the Cauchy--Euler equations.
+
+\medskip
+
+\textbf{Exercise:}
+Suppose ${(b-a)}^2-4ac < 0$.  Find a formula for the general solution
+of $a x^2 y'' + b x y' + c y = 0$.  Hint: Try $y=x^r$ and note $x^r = e^{r \ln x}$.
+
+\medskip
+\pause
+
+Try it with something simple like $x^2 y'' + y = 0$.
+
+\end{frame}
+
+\end{document}
