@@ -61,6 +61,11 @@
     <br/>
   </xsl:template>
 
+  <!-- need hr (so far only using to separate figures) so nonstandard pretext -->
+  <xsl:template match="diffyqshr">
+    <hr class="diffyqshr"/>
+  </xsl:template>
+
   <!-- need inline image, custom width, maxwidth, etc.., so nonstandard -->
   <!-- the image should be without extension .svg is appended -->
   <xsl:template match="diffyqsimage">

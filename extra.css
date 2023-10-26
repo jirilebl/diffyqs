@@ -82,3 +82,8 @@ li { display: list-item; }
 	.searchwrapper { display:none; }
 	.has-sidebar-left.mathbook-loaded.sidebar-left-open .main { margin-left:0px!important; left:auto!important; }
 }
+hr.diffyqshr {
+    border-style: none;
+    height: 0px;
+    border-top: thin solid #bbb;
+}

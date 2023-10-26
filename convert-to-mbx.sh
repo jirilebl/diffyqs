@@ -84,8 +84,13 @@ echo
 echo RUNNING convert-to-mbx.pl ...
 echo
 
-
 perl convert-to-mbx.pl
+
+echo
+echo REMOVE doubled horizontal rules
+echo
+
+perl -0777 -i.original -pe 's:<diffyqshr/>[ \r\n]*<diffyqshr/>:<diffyqshr/>:igs' diffyqs-out.xml
 
 #xmllint --format -o diffyqs-out2.xml diffyqs-out.xml
 
