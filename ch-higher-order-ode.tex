@@ -441,10 +441,12 @@ y = C_1 e^{2x} + C_2 e^{4x} .
 We need to solve for $C_1$ and $C_2$.  To apply the initial conditions,
 we first find $y' = 2 C_1 e^{2x} + 4 C_2 e^{4x}$.  We plug $x=0$ into
 $y$ and $y'$ and solve.
-\begin{align*}
+\begin{equation*}
+\begin{aligned}
 -2 & = y(0) = C_1 + C_2 , \\
 6 & = y'(0) = 2 C_1 + 4 C_2 .
-\end{align*}
+\end{aligned}
+\end{equation*}
 Either apply some matrix algebra, or just solve these by high school
 math.  For example, divide the second equation by 2
 to obtain $3 = C_1 + 2 C_2$, and subtract the two equations to
@@ -603,7 +605,7 @@ For example,
 
 The numbers
 $i$ and $-i$ are the two roots of $r^2 + 1 = 0$.
-Engineers often use the letter $j$ instead of $i$ for the square
+Some engineers use the letter $j$ instead of $i$ for the square
 root of $-1$.  We use the mathematicians' convention and use $i$.
 
 \begin{exercise}
@@ -702,16 +704,20 @@ Here we can use \hyperref[eulersformula]{Euler's formula}.  Let
 y_1 = e^{(\alpha+i\beta)x} \qquad \text{and} \qquad y_2 = e^{(\alpha-i\beta)x} .
 \end{equation*}
 Then 
-\begin{align*}
+\begin{equation*}
+\begin{aligned}
 y_1 & = e^{\alpha x} \cos (\beta x) + i e^{\alpha x} \sin (\beta x) , \\
 y_2 & = e^{\alpha x} \cos (\beta x) - i e^{\alpha x} \sin (\beta x) .
-\end{align*}
+\end{aligned}
+\end{equation*}
 
 Linear combinations of solutions are also solutions.  Hence,
-\begin{align*}
+\begin{equation*}
+\begin{aligned}
 y_3 & = \frac{y_1 + y_2}{2} = e^{\alpha x} \cos (\beta x) , \\ 
 y_4 & = \frac{y_1 - y_2}{2i} = e^{\alpha x} \sin (\beta x) ,
-\end{align*}
+\end{aligned}
+\end{equation*}
 are also solutions.  Furthermore, they are real-valued.  It is not hard to
 see that they are linearly independent (not multiples of each other).
 Therefore, we have the following theorem.
@@ -1128,11 +1134,13 @@ y = C_1 e^{-x} + C_2 e^{x} + C_3 e^{3x} .
 
 Suppose we were given some initial conditions $y(0) = 1$, $y'(0) = 2$,
 and $y''(0) = 3$.  Then
-\begin{align*}
+\begin{equation*}
+\begin{aligned}
 1 = y(0) & = C_1 + C_2 + C_3 , \\
 2 = y'(0) & = -C_1 + C_2 + 3C_3 , \\
 3 = y''(0) & = C_1 + C_2 + 9C_3 .
-\end{align*}
+\end{aligned}
+\end{equation*}
 It is possible to find the solution by high school algebra, but it would be a
 pain.
 The sensible way to solve a system of equations such as this is to use
@@ -2327,23 +2335,30 @@ y''+p(x)y'+q(x)y$.  There is a general
 formula for the solution we could just plug into, but instead of memorizing
 that, it is better, and easier, to
 just repeat what we do below.  In our case the two equations are
-\begin{align*}
+\begin{equation*}
+\begin{aligned}
 u_1' \cos (x) + u_2' \sin (x) &= 0 ,\\
 -u_1' \sin (x) + u_2' \cos (x) &= \tan (x) .
-\end{align*}
+\end{aligned}
+\end{equation*}
 Hence
-\begin{align*}
+\begin{equation*}
+\begin{aligned}
 u_1' \cos (x) \sin (x) + u_2' \sin^2 (x) & = 0 ,\\
 -u_1' \sin (x) \cos (x) + u_2' \cos^2 (x) & = \tan (x) \cos (x) = \sin (x) .
-\end{align*}
+\end{aligned}
+\end{equation*}
 And thus
-\begin{align*}
+\begin{equation*}
+\begin{aligned}
 & u_2' \bigl(\sin^2 (x) + \cos^2 (x)\bigr) = \sin (x) , \\
 & u_2' = \sin (x) , \\
 & u_1' = \frac{- \sin^2 (x)}{\cos (x)} = - \tan (x) \sin (x) .
-\end{align*}
+\end{aligned}
+\end{equation*}
 We integrate $u_1'$ and $u_2'$ to get $u_1$ and $u_2$.
-\begin{align*}
+\begin{equation*}
+\begin{aligned}
 & u_1 = \int u_1'\,dx 
 = \int - \tan (x) \sin (x)\,dx
 = \frac{1}{2}
@@ -2351,7 +2366,8 @@ We integrate $u_1'$ and $u_2'$ to get $u_1$ and $u_2$.
 + \sin (x) , \\
 & u_2 = \int u_2'\,dx 
 = \int \sin (x)\,dx = -\cos (x) .
-\end{align*}
+\end{aligned}
+\end{equation*}
 So our particular solution is
 \begin{multline*}
 y_p = u_1 y_1 + u_2 y_2 =
@@ -2756,12 +2772,14 @@ details are left to reader)
 \end{equation*}
 
 We solve for $A$ and $B$:
-\begin{align*}
+\begin{equation*}
+\begin{aligned}
 & A=\frac{(\omega_0^2-\omega^2) F_0}
 {m{(2\omega p)}^2+m{(\omega_0^2-\omega^2)}^2} , \\
 & B=\frac{2 \omega p F_0}
 {m{(2\omega p)}^2+m{(\omega_0^2-\omega^2)}^2} .
-\end{align*}
+\end{aligned}
+\end{equation*}
 We also compute $C = \sqrt{A^2+B^2}$
 to be
 \begin{equation*}

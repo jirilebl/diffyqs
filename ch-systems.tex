@@ -22,21 +22,25 @@ derivatives with respect to one independent variable $x$.
 For example, $y_1'' = f(y_1',y_2',y_1,y_2,x)$.
 Usually, when we have two dependent variables we have two equations
 such as
-\begin{align*}
+\begin{equation*}
+\begin{aligned}
 y_1'' & = f_1(y_1',y_2',y_1,y_2,x) , \\
 y_2'' & = f_2(y_1',y_2',y_1,y_2,x) ,
-\end{align*}
+\end{aligned}
+\end{equation*}
 for some functions $f_1$ and $f_2$.  We call the above a
 \emph{\myindex{system of differential equations}}.
 More precisely, the above is a \emph{\myindex{second order system}}
 of ODEs as second
 order derivatives appear.
 The system
-\begin{align*}
+\begin{equation*}
+\begin{aligned}
 x_1' & = g_1(x_1,x_2,x_3,t) , \\
 x_2' & = g_2(x_1,x_2,x_3,t) , \\
 x_3' & = g_3(x_1,x_2,x_3,t) ,
-\end{align*}
+\end{aligned}
+\end{equation*}
 is a \emph{\myindex{first order system}}, where $x_1,x_2,x_3$ are
 the dependent variables,
 and $t$ is the independent variable.
@@ -46,11 +50,13 @@ single equations.
 For the system above, a
 \emph{solution}\index{solution to a system}
 is a set of three functions $x_1(t)$, $x_2(t)$, $x_3(t)$, such that
-\begin{align*}
+\begin{equation*}
+\begin{aligned}
 x_1'(t) &= g_1\bigl(x_1(t),x_2(t),x_3(t),t\bigr) , \\
 x_2'(t) &= g_2\bigl(x_1(t),x_2(t),x_3(t),t\bigr) , \\
 x_3'(t) &= g_3\bigl(x_1(t),x_2(t),x_3(t),t\bigr) .
-\end{align*}
+\end{aligned}
+\end{equation*}
 
 We usually also have an
 \emph{initial condition}\index{initial condition for a system}.  Just like
@@ -68,10 +74,12 @@ Sometimes a system is easy to solve
 by solving for one variable and then for the second variable.
 Take 
 the first order system
-\begin{align*}
+\begin{equation*}
+\begin{aligned}
 y_1' & = y_1 , \\
 y_2' & = y_1 - y_2 ,
-\end{align*}
+\end{aligned}
+\end{equation*}
 with $y_1$, $y_2$ as the dependent variables and $x$ as the independent
 variable.  And consider initial conditions
 $y_1(0) = 1$, $y_2(0) = 2$.
@@ -113,10 +121,12 @@ appear in nonlinear functions or with powers
 higher than one ($x$, $y$, $x'$ and $y'$, constants, and functions of $t$
 can appear, but not $xy$ or ${(y')}^2$ or $x^3$).  Another, more
 complicated, example of a linear system is
-\begin{align*}
+\begin{equation*}
+\begin{aligned}
 y_1'' &= e^t y_1' + t^2 y_1 + 5 y_2 + \sin(t), \\
 y_2'' &= t y_1'-y_2' + 2 y_1 + \cos(t).
-\end{align*}
+\end{aligned}
+\end{equation*}
 
 \subsection{Applications}
 
@@ -154,10 +164,12 @@ x_1' = \frac{x_2}{V} r - \frac{x_1}{V} r =
 \end{equation*}
 Similarly we find the rate $x_2'$, where the roles of $x_1$ and $x_2$
 are reversed.  All in all, the system of ODEs for this problem is
-\begin{align*}
+\begin{equation*}
+\begin{aligned}
 x_1' & = \frac{r}{V} (x_2-x_1), \\
 x_2' & = \frac{r}{V} (x_1-x_2).
-\end{align*}
+\end{aligned}
+\end{equation*}
 In this system we cannot solve for $x_1$ or $x_2$ separately.  We must
 solve for both $x_1$ and $x_2$ at once, which is intuitively clear since
 the amount of salt in one tank affects the amount in the other.
@@ -210,10 +222,12 @@ the rest position.  The force exerted on the second cart is the opposite,
 thus the same thing with a negative sign.
 \myindex{Newton's second law} states that
 force equals mass times acceleration.  So the system of equations is
-\begin{align*}
+\begin{equation*}
+\begin{aligned}
 m_1 x_1'' & = k(x_2-x_1) , \\
 m_2 x_2'' & = - k(x_2-x_1) .
-\end{align*}
+\end{aligned}
+\end{equation*}
 
 Again, we cannot solve for the $x_1$ or $x_2$ variable separately.
 That we must solve for both $x_1$ and $x_2$ at once
@@ -1502,13 +1516,15 @@ are similar to rules for normal
 functions.  Let $A(t)$ and $B(t)$ be matrix-valued
 functions.  Let $c$ a scalar and let $C$ be a constant matrix.
 Then
-\begin{align*}
+\begin{equation*}
+\begin{aligned}
 \bigl(A(t)+B(t)\bigr)' & = A'(t) + B'(t), \\
 \bigl(A(t)B(t)\bigr)' & = A'(t)B(t) + A(t)B'(t), \\
 \bigl(cA(t)\bigr)' & = cA'(t), \\
 \bigl(CA(t)\bigr)' & = CA'(t), \\
 \bigl(A(t)\,C\bigr)' & = A'(t)\,C .
-\end{align*}
+\end{aligned}
+\end{equation*}
 Note the order of the multiplication in the last two expressions.
 
 A \emph{\myindex{first order linear system of ODEs}} is a system that can be
@@ -1524,10 +1540,12 @@ the system is a vector-valued function
 $\vec{x}$ satisfying the vector equation.
 
 For example, the equations
-\begin{align*}
+\begin{equation*}
+\begin{aligned}
 x_1' &= 2t x_1 + e^t x_2 + t^2 , \\
 x_2' &= \frac{x_1}{t} -x_2 + e^t ,
-\end{align*}
+\end{aligned}
+\end{equation*}
 can be written as
 \begin{equation*}
 {\vec{x}}' = 
@@ -2420,7 +2438,7 @@ therefore,
 In other words, if $\lambda = a+ib$ is an eigenvalue, then so is $\bar{\lambda} = a-ib$.
 And if $\vec{v}$ is an eigenvector corresponding to the eigenvalue
 $\lambda$, then $\overline{\vec{v}}$ is an eigenvector corresponding
-to the eigenvalue $\bar{\lambda}$.  
+to the eigenvalue~$\bar{\lambda}$.  
 
 Suppose $a + ib$ is a complex eigenvalue of $P$, and $\vec{v}$
 is a corresponding eigenvector.  Then
