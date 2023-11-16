@@ -34,10 +34,10 @@ A(x) y'' + B(x)y' + C(x)y = F(x) .
 \pause
 Or
 \[
-y'' + p(x)y' + q(x)y = f(x) ,
+y'' + p(x)y' + q(x)y = f(x) .
 \]
 \pause
-\emph{linear} means that the 
+\emph{Linear} means that the 
 equation contains no powers nor
 functions of $y$, $y'$, and $y''$.
 \medskip
@@ -156,7 +156,7 @@ Recall that
 \quad
 $\cosh t = \dfrac{e^{t}  + e^{-t}}{2}$,
 \quad
-$\sinh t = \dfrac{e^{t}  + e^{-t}}{2}$
+$\sinh t = \dfrac{e^{t}  - e^{-t}}{2}$
 
 \medskip
 \pause
@@ -194,8 +194,8 @@ exponential.
 \textbf{Exercise:} Verify that
 \begin{align*}
 & \cosh 0  = 1 , &   & \sinh 0 = 0 , \\
-& \frac{d}{dx} \Bigl[ \cosh x \Bigr] = \sinh x , &  & \frac{d}{dx} \Bigl[ \sinh x \Bigr] = \cosh x , \\
-& \cosh^2 x - \sinh^2 x = 1 .
+& \frac{d}{dt} \Bigl[ \cosh t \Bigr] = \sinh t , &  & \frac{d}{dt} \Bigl[ \sinh t \Bigr] = \cosh t , \\
+& \cosh^2 t - \sinh^2 t = 1 .
 \end{align*}
 
 \end{frame}
@@ -205,13 +205,13 @@ exponential.
 \begin{theorem}[Existence and uniqueness]
 Suppose $p, q, f$ are continuous functions on some interval
 $I$, $a$ is a number in $I$,
-and $a, b_0, b_1$ are constants.
+and $b_0, b_1$ are constants.
 \pause
 Then the equation
 \begin{equation*}
 y'' + p(x) y' + q(x) y = f(x) ,
 \end{equation*}
-has exactly one solution $y(x)$ defined on the same interval $I$ satisfying the initial conditions
+has exactly one solution $y(x)$ defined on the interval $I$ satisfying the initial conditions
 \begin{equation*}
 y(a) = b_0 , \qquad y'(a) = b_1 .
 \end{equation*}
@@ -225,13 +225,13 @@ $y'' + k^2 y = 0$ with $y(0) = b_0$ and $y'(0) = b_1$ has the solution
 y(x) = b_0 \cos (kx) + \frac{b_1}{k} \sin (kx) .
 \]
 \pause
-Verify IC: \quad $y(0) = b_0 \cos (0) + \frac{b_1}{k} \sin (0) = b_0$.
+Verify IC: \quad $y(0) = b_0 \cos (0) + \dfrac{b_1}{k} \sin (0) = b_0$.
 
 \medskip
 \pause
 $y'(x) = - k b_0 \sin (kx) + b_1 \cos (kx)$
-\wthus
 \pause
+\wthus
 $y'(0) = - k b_0 \sin (0) + b_1 \cos (0) = b_1$.
 
 \medskip
@@ -263,6 +263,8 @@ y = C_1 y_1 + C_2 y_2 .
 \qquad \text{(i.e., that's the general solution)}
 \end{equation*}
 \end{theorem}
+
+\pause
 
 \textbf{Example:}
 $y_1 = \sin x$ and $y_2 = \cos x$ solve $y'' + y = 0$.
@@ -337,11 +339,14 @@ Plug in:
 \quad
 $
 0 = y_2'' + p(x) y_2' + q(x) y_2
+\pause
 =
-y_1'' v + 2 y_1' v' + y_1 v''
-+ p(x) ( y_1' v + y_1 v' )
-+ q(z) y_1 v$
+\underbrace{y_1'' v + 2 y_1' v' + y_1 v''}_{y_2''}
++ p(x) \underbrace{( y_1' v + y_1 v' )}_{y_2'}
++ q(z) \underbrace{y_1 v}_{y_2}$
 
+\vspace*{-4pt}
+\pause
 \quad
 \phantom{$0 = y_2'' + p(x) y_2' + q(x) y_2$}%
 ${} =
@@ -394,9 +399,8 @@ $y_2 = y_1 v = \dfrac{-C}{2x}$
 \pause
 
 Any $C$ works, e.g., $C=-2$ for $y_2 = \dfrac{1}{x}$.
-
 \pause
-
+\wthus
 The general solution is \quad $y = C_1 x + C_2\dfrac{1}{x}$.
 
 \end{frame}

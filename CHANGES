@@ -1,0 +1,5 @@
+<li>On page 82 in the computation on top of the page add underbraces to make
+it clearer what's happening.
+<li>Resonance is a terrible example for a doubled root on page 86, replace
+it with a reference to a critically damped mass-spring system.  Add a
+remark about why two very close roots are bad (numerical instability).

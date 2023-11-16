@@ -36,19 +36,24 @@ Consider the problem
 It's a second order \pause linear \pause homogeneous equation \pause  with
 constant coefficients.
 
+\pause
+(\emph{Constant coefficients} means that in $y'' + p(x)y' + q(x)y = f(x)$,
+the $p$ and $q$ are constants.)
+
 \medskip
 \pause
 
-Let's guess a solution smartly.
+Let's guess a solution.
 \pause
 What function stays more or less the same when differentiated?
+
 \pause
 The exponential!
 
 \medskip
 \pause
 
-We try $y=e^{rx}$ \quad (Germans call this ``ansatz'')
+We try ~$y=e^{rx}$ \quad (Germans call this ``ansatz'')
 \pause
 \qquad
 $y' = r e^{rx}$ \qquad $y'' = r^2 e^{rx}$
@@ -133,11 +138,9 @@ $y = -4 e^{2x} + 5 e^{3x}$
 Given
 \quad
 $a y'' + b y' + c y = 0$
-
-\medskip
+\qquad
 \pause
-
-Try $y = e^{rx}$:
+try $y = e^{rx}$:
 \quad
 $a r^2 e^{rx} + 
 b r e^{rx} + 
@@ -155,7 +158,7 @@ c = 0 .
 \pause
 Solve for the $r$:
 \qquad 
-$r_1, r_2 = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$.
+$r_1, r_2 = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}$.
 
 \medskip
 \pause
@@ -203,7 +206,7 @@ linearly independent solutions,
 \pause
 and the general solution is
 \[
-y = C_1 e^{kx} + C_2e^{-kx}
+y = C_1 e^{kx} + C_2e^{-kx} .
 \]
 
 \medskip
@@ -224,7 +227,7 @@ Characteristic equation is $r^2 - 8 r + 16 = {(r-4)}^2 = 0$.
 We have
 a double root $r_1 = r_2 = 4$.
 \medskip
-The general solution is,
+The general solution is
 \[
 y = (C_1 + C_2 x)\, e^{4 x} = C_1 e^{4x} + C_2 x e^{4x} .
 \]
@@ -233,7 +236,8 @@ y = (C_1 + C_2 x)\, e^{4 x} = C_1 e^{4x} + C_2 x e^{4x} .
 \begin{frame}
 In a sense, a doubled root rarely happens for a randomly chosen equation,
 
-but it does occur with some phenomena (e.g., resonance).
+but it does occur in real-world problems
+(e.g., critically damped mass-spring system).
 
 \medskip
 \pause

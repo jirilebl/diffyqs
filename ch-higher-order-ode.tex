@@ -126,12 +126,12 @@ answers to the existence and uniqueness question.
 \begin{theorem}[Existence and uniqueness]\index{existence and uniqueness}
 Suppose $p, q, f$ are continuous functions on some interval
 $I$, $a$ is a number in $I$,
-and $a, b_0, b_1$ are constants.
+and $b_0, b_1$ are constants.
 Then the equation
 \begin{equation*}
 y'' + p(x) y' + q(x) y = f(x) ,
 \end{equation*}
-has exactly one solution $y(x)$ defined on the same interval $I$ satisfying the initial conditions
+has exactly one solution $y(x)$ defined on the interval $I$ satisfying the initial conditions
 \begin{equation*}
 y(a) = b_0 , \qquad y'(a) = b_1 .
 \end{equation*}
@@ -214,10 +214,11 @@ We just need to find $v$.  We plug $y_2$ into the equation:
 \begin{equation*}
 \begin{split}
 0 = 
-y_2'' + p(x) y_2' + q(x) y_2 & =
-y_1'' v + 2 y_1' v' + y_1 v''
-+ p(x) ( y_1' v + y_1 v' )
-+ q(z) y_1 v
+y_2'' + p(x) y_2' + q(x) y_2
+& =
+\underbrace{y_1'' v + 2 y_1' v' + y_1 v''}_{y_2''}
++ p(x) \underbrace{( y_1' v + y_1 v' )}_{y_2'}
++ q(z) \underbrace{y_1 v}_{y_2}
 \\
 & =
 y_1 v''
@@ -555,17 +556,22 @@ y'' - 8 y' + 16 y =
 
 In some sense, a doubled root rarely happens.  If coefficients are 
 picked randomly, a doubled root is unlikely.
-There are, however, some natural phenomena (such as resonance as we will see)
-where a doubled root does happen, so we cannot just dismiss this case.
+There are, however, some real-world problems
+where a doubled root does happen naturally (e.g., critically damped
+mass-spring system as we will see).
 
-Let us give a short argument for why the solution $x e^{r x}$ works when the
-root is doubled.  This case is really a limiting case of when
-the two roots are distinct and very close.  Note that 
+Let us give a short argument for why the solution $x e^{r x}$ works for a
+doubled root.
+This case is a limiting case of
+two distinct but very close roots.  Note that 
 $\frac{e^{r_2 x} - e^{r_1 x}}{r_2 - r_1}$ is a solution when the roots are
 distinct.  When we take the limit as $r_1$ goes to $r_2$, we are really
 taking the
 derivative of $e^{rx}$ using $r$ as the variable.  Therefore, the limit is 
 $x e^{rx}$, and hence this is a solution in the doubled root case.
+We remark that in some numerical computations,
+two very close roots may lead to numerical instability while
+a doubled root will not.
 
 \subsection{Complex numbers and Euler's formula}
 
