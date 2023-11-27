@@ -3,3 +3,10 @@ it clearer what's happening.
 <li>Resonance is a terrible example for a doubled root on page 86, replace
 it with a reference to a critically damped mass-spring system.  Add a
 remark about why two very close roots are bad (numerical instability).
+<li><b>Exercise 3.8.15 part b) was changed to fix erratum</b>, the matrix given
+was a typo that made the problem unnecessarily difficult and the solution in
+the back was what was intended.
+<li><b>Exercise 4.3.106 part f) was changed to fix erratum</b>,
+we really wanted to ask about F(-9), so that we also ask for some point not in
+the original range that's not the discontinuity.  The answer in the back was
+in fact giving F(-9) as intended.
