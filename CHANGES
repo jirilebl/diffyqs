@@ -1,3 +1,5 @@
+<li>After Example 0.2.1, add a short note about how the analytic solution
+helped us find the parameters and how this is useful in real problems.
 <li>In Example 1.4.2 at the very end, write 0.1667 to approximate 1/6 to use the same
 number of decimal places as the concentration.
 <li>On page 82 in the computation on top of the page add underbraces to make

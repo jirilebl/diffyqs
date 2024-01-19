@@ -524,7 +524,7 @@ At one minute, $t=60$, the population is $P(60) = 6400$.  See
 %mbxlatex \end{myfig}
 
 
-Let us talk about the interpretation of the results.  Does our solution
+Let us interpret the results.  Does our solution
 mean that
 there must be exactly 6400 bacteria on the plate at 60s?  No!  We made
 assumptions that might not be true exactly, just approximately.
@@ -537,24 +537,28 @@ that for example at 61 seconds, $P(61) \approx 6859.35$.
 %are either 6859 bacteria or 6860 bacteria.
 \end{example}
 
-Normally, the $k$ in $P' = kP$ is known,
+Normally, the $k$ in $P' = kP$ is given,
 and we want to solve
 the equation for different \emph{initial conditions\index{initial condition}}.
 What does that mean?
-Take $k=1$ for simplicity.  Suppose we want to solve the equation
+Take $k=1$ for simplicity:  We want to solve the equation
 $\frac{dP}{dt} = P$ 
 subject to $P(0) = 1000$ (the initial condition).
-Then the solution turns out to be (exercise)
+Then the solution is (exercise)
 \begin{equation*}
 P(t) = 1000 \, e^t .
 \end{equation*}
-
 We call $P(t) = C e^t$ \emph{the \myindex{general solution}},
 as every solution
 of the equation can be written in this form for some constant $C$.  We
 need an initial condition to find out what $C$ is, in order to find the
 \emph{\myindex{particular solution}} we are looking for.  Generally, when we say
 \myquote{particular solution,} we just mean some solution.
+
+In real life, parameters such as $k$
+must first often be somehow computed or estimated.  The example above
+shows how finding an analytical solution to the differential equation
+is useful in finding these parameters.
 
 \subsection{Four fundamental equations} \label{subsection:fourfundamental}
 
