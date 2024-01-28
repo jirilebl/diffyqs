@@ -952,20 +952,21 @@ If you have an implicit solution, and
 you want to compute values
 for $y$, you might have to be tricky.  You might get multiple solutions $y$
 for each $x$, so you have to pick one.  Sometimes you can
-graph $x$ as a function of $y$, and then turn your paper.
+graph $x$ as a function of $y$, and then turn your paper to
+see a graph.
 Sometimes you have to do more.
 
 Computers are also good at some of these tricks.
 More advanced mathematical software usually has some
 way of plotting solutions to implicit equations.
-For example, for $C=0$, if you plot all the points $(x,y)$ that
+For example, for $D=0$, if you plot all the points $(x,y)$ that
 are solutions to $y^2+2\ln \, \lvert y\rvert=x^2$,
 you find the two curves in \figurevref{implicitsols:fig}.  This is not quite
 a graph of a function. For each $x$ there are two choices of $y$.
 To find a function, you have to pick one of these two curves.
 You pick the one that satisfies your initial condition if you have one.
 For example, the top curve satisfies the condition $y(1)=1$.
-So for each $C$, we really got two solutions.
+So for each $D$, we really got two solutions.
 As you can see, computing values from an implicit solution can be somewhat
 tricky.  But sometimes, an implicit solution is the best we can do.
 
@@ -976,15 +977,15 @@ tricky.  But sometimes, an implicit solution is the best we can do.
 to $y'=\frac{xy}{y^2+1}$.\label{implicitsols:fig}}
 \end{myfig}
 
-
 The equation above also has the solution $y=0$.
 So the general solution is 
 \begin{equation*}
-y^2 + 2 \ln \, \lvert y \rvert = x^2 + C, \qquad \text{and} \qquad y=0.
+y^2 + 2 \ln \, \lvert y \rvert = x^2 + D, \qquad \text{and} \qquad y=0.
 \avoidbreak
 \end{equation*}
-These solutions with no arbitrary constants
-such as $y=0$
+Sometimes these extra solutions that came up 
+due to division by zero such as
+$y=0$
 are called \emph{singular solutions\index{singular solution}}.
 
 \subsection{Examples of separable equations}
@@ -1043,7 +1044,7 @@ $T = 22 + D\, e^{-kt}$.  We plug in the first condition: $89 = T(0) = 22 +
 D$,
 and hence $D = 67$.  So
 $T = 22 + 67\, e^{-kt}$.  The second condition says $85 = T(1) = 
-22 + 67\, e^{-k}$.  Solving for $k$ we get
+22 + 67\, e^{-k}$.  Solving for $k$, we get
 $k = - \ln \frac{85-22}{67} \approx 0.0616$.  Now we solve for the time $t$
 that gives us a temperature of 60 degrees.  Namely, we solve
 \begin{equation*}
@@ -1236,7 +1237,7 @@ The dependence on $x$ can be more
 complicated.
 
 Solutions of linear equations have nice properties.  For example, the
-solution exists wherever $p(x)$ and $f(x)$ are defined, and has the same
+solution exists wherever $p(x)$ and $f(x)$ are defined, and has essentially the same
 regularity (read: it is just as nice).  But most importantly for us right now,
 there is a method for solving linear first order equations.
 
@@ -1249,12 +1250,12 @@ we find a function $r(x)$ such that
 r(x) y' + r(x) p(x) y = \frac{d}{dx}\Bigl[ r(x) y \Bigr] .
 \end{equation*}
 This is the left-hand side of
-\eqref{lineq:eq1} multiplied by $r(x)$.  So if we multiply \eqref{lineq:eq1} by
+\eqref{lineq:eq1} multiplied by $r(x)$.  If we multiply \eqref{lineq:eq1} by
 $r(x)$, we obtain
 \begin{equation*}
 \frac{d}{dx}\Bigl[ r(x) y \Bigr] = r(x)f(x) .
 \end{equation*}
-Now we integrate both sides.
+We integrate both sides.
 The right-hand side does not depend on $y$ and the left-hand side
 is written as a derivative of a function.  Afterwards, we solve for $y$.
 The function $r(x)$ is called the \emph{\myindex{integrating factor}} and the
@@ -1315,7 +1316,7 @@ the integrating factor and show that the solution you get in the end is the
 same as what we got above.
 \end{exercise}
 
-Advice: Do not try to remember the formula itself, that is way too
+Advice: Do not try to remember the formula for $y$ itself, that is way too
 hard.  It is easier to remember the process and repeat it.
 
 Since we cannot always evaluate the integrals in closed form, it is useful to
@@ -1357,7 +1358,7 @@ y' + y = e^{x^2-x}, \qquad y(0) = 10 .
 Before we move on, we should note some interesting properties of linear
 equations.  First, for the linear initial value problem
 $y' + p(x) y = f(x)$, $y(x_0) = y_0$,
-there is always an explicit formula \eqref{lei:defsol} for the
+there is an explicit formula \eqref{lei:defsol} for the
 solution.  Second, it follows
 from the formula \eqref{lei:defsol} that if $p(x)$
 and $f(x)$ are continuous on some interval $(a,b)$, then the 
@@ -1370,9 +1371,7 @@ and compare to \thmref{slope:picardthm}.
 \begin{example}
 Let us discuss a common
 simple application of linear equations.
-This type of 
-problem is used often in real life.
-For example, linear equations are used in
+Real life applications of this type of problem include
 figuring out the concentration of
 chemicals in bodies of water (rivers and lakes).
 
