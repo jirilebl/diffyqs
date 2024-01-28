@@ -1,0 +1,424 @@
+\documentclass[10pt,aspectratio=169]{beamer}
+
+% All the boilerplate is in deslides.sty
+\usepackage{deslides}
+
+\author{Ji\v{r}\'i Lebl}
+
+\institute[OSU]{%
+Oklahoma State University%
+%Departemento pri Matematiko de Oklahoma {\^S}tata Universitato%
+}
+
+\title{16. Higher order linear ODEs\\(Notes on Diffy Qs, 2.3)}
+
+\date{}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+
+%\bigskip
+
+\begin{center}
+The textbook: \url{https://www.jirka.org/diffyqs/}
+\end{center}
+\end{frame}
+
+\begin{frame}
+Let us consider linear equations of order higher than 2 --- Mostly the same
+idea.
+
+\pause
+
+\begin{theorem}[Superposition]
+If $y_1$, $y_2$, \ldots, $y_n$ are solutions of the
+homogeneous equation
+\[
+y^{(n)} + p_{n-1}(x)y^{(n-1)} + \cdots + p_1(x) y' + p_0(x) y = 0 ,
+\]
+then the \emph{linear combination}
+\[
+y(x) = C_1 y_1(x) + C_2 y_2(x) + \cdots + C_n y_n(x) 
+\]
+is also a solution
+for arbitrary constants $C_1, C_2, \ldots, C_n$.
+\end{theorem}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{theorem}[Existence and uniqueness]
+Suppose $p_0$ through $p_{n-1}$, and $f$ are continuous functions
+on some interval $I$,
+$a$ is a number in $I$,
+and $b_0, b_1, \ldots, b_{n-1}$ are constants.
+Then the equation
+\[
+y^{(n)} + p_{n-1}(x)y^{(n-1)} + \cdots + p_1(x) y' + p_0(x) y = f(x) 
+\]
+has exactly one solution $y(x)$ defined on the same interval $I$
+satisfying the initial conditions
+\begin{equation*}
+y(a) = b_0, \quad y'(a) = b_1, \quad \ldots, \quad y^{(n-1)}(a) = b_{n-1} .
+\end{equation*}
+\end{theorem}
+\end{frame}
+
+\begin{frame}
+
+To use superposition, we need enough \emph{linearly independent} solutions.
+
+\medskip
+\pause
+
+The functions $y_1$, $y_2$, \ldots, $y_n$ are \emph{linearly independent} if
+the equation
+\[
+c_1 y_1 + c_2 y_2 + \cdots + c_n y_n = 0 
+\]
+has only the trivial solution $c_1 = c_2 = \cdots = c_n = 0$.
+
+\medskip
+\pause
+
+If there is a solution where, e.g.,
+$c_1 \not= 0$, then we
+can solve for $y_1$ as a linear combination of the others.
+\pause
+The functions are then
+\emph{linearly dependent}.
+
+\medskip
+\pause
+
+\textbf{Example:} Show that $e^x, e^{2x}, e^{3x}$ are linearly independent.
+
+\medskip
+\pause
+
+Consider
+\[
+c_1 e^x + c_2 e^{2x} + c_3 e^{3x} = 0.
+\]
+\pause
+Write $z = e^x$
+\pause
+\wthus
+$z^2 = e^{2x}$ and $z^3 = e^{3x}$ \pause \wthus
+\[
+c_1 z + c_2 z^2 + c_3 z^3 = 0.
+\]
+\pause
+This polynomial must be zero for any positive number $z=e^{x}$
+\pause
+\wthus
+it is identically zero
+
+\pause
+\thus
+\quad
+$c_1 = c_2 = c_3 = 0$
+\pause
+\wthus
+the functions are linearly independent.
+\end{frame}
+
+\begin{frame}
+
+Let's show that $e^x, e^{2x}, e^{3x}$ are linearly independent in another
+way:
+
+\medskip
+\pause
+
+Start with
+\[
+c_1 e^x + c_2 e^{2x} + c_3 e^{3x} = 0.
+\]
+\pause
+Divide by $e^{3x}$:
+\[
+c_1 e^{-2x} + c_2 e^{-x} + c_3 = 0.
+\]
+\pause
+True for all $x$ so let $x \to \infty$
+\pause
+\wthus $c_3 = 0$.
+
+\medskip
+\pause
+
+So $c_1 e^x + c_2 e^{2x} = 0$.
+\pause Rinse, repeat!
+
+\medskip
+\pause
+
+A third way:  Suppose
+\[
+c_1 e^x + c_2 e^{2x} + c_3 e^{3x} = 0.
+\]
+This has to be true for all $x$, so plug in $x=0$, $x=1$, and $x=2$.
+
+\medskip
+\pause
+
+We must have
+\[
+c_1 + c_2 + c_3 = 0
+\quad\text{and}\quad
+c_1 e + c_2 e^{2} + c_3 e^{3} = 0
+\quad\text{and}\quad
+c_1 e^2 + c_2 e^{4} + c_3 e^{6} = 0.
+\]
+\pause
+Solving the three equation yields $c_1=c_2=c_3=0$.
+
+\medskip
+\pause
+
+A so-called \emph{Wronskian} can also be used, but let's skip it.
+\pause
+
+The main thing to understand is the meaning of linear independence!
+
+\end{frame}
+
+\begin{frame}
+\textbf{Example:}
+The functions $e^x$, $e^{-x}$, and $\cosh x$ are linearly
+dependent:
+\pause
+\[
+\cosh x = \frac{e^x + e^{-x}}{2} 
+\qquad
+\text{or}
+\qquad
+2 \cosh x - e^x - e^{-x} = 0.
+\]
+
+\medskip
+\pause
+
+Note: You must consider all the functions at once.
+The functions
+$e^x$ and $e^{-x}$ are linearly independent.
+
+\medskip
+\pause
+
+\textbf{Solving ODE:}
+For an $n^{\text{th}}$ order linear homogeneous equation
+\[
+y^{(n)} + p_{n-1}(x)y^{(n-1)} + \cdots + p_1(x) y' + p_0(x) y = 0 ,
+\]
+if we find $n$ linearly independent solutions
+$y_1$, $y_2$, \ldots, $y_n$, the general solution is
+\[
+y(x) = C_1 y_1(x) + C_2 y_2(x) + \cdots + C_n y_n(x) 
+\]
+
+\end{frame}
+
+\begin{frame}
+\textbf{Example:}
+Solve
+~$y''' - 3 y'' - y' + 3y = 0$~
+subject to
+$y(0) = 1$, $y'(0) = 2$, and $y''(0) = 3$.
+
+\medskip
+\pause
+
+Try: $y = e^{rx}$:
+\[
+\underbrace{r^3 e^{rx}}_{y'''} - 3 \underbrace{r^2 e^{rx}}_{y''} -
+\underbrace{r e^{rx}}_{y'} + 3 \underbrace{e^{rx}}_{y} = 0 .
+\]
+\pause
+We divide by $e^{rx}$: \qquad
+$r^3 - 3 r^2 - r + 3 = 0$.
+
+\medskip
+\pause
+
+Find the roots! \pause By trial and error $r=-1,1,3$.
+
+\medskip
+\pause
+
+So solutions are \quad $y_1 = e^{-x}$, \quad $y_2 = e^{x}$, \quad $y_3 =
+e^{3x}$.
+
+\medskip
+\pause
+
+The general solution is
+\[
+y = C_1 e^{-x} + C_2 e^{x} + C_3 e^{3x} .
+\]
+\pause
+Initial conditions say
+\[
+1 = y(0)  = C_1 + C_2 + C_3 , \quad
+\pause
+2 = y'(0)  = -C_1 + C_2 + 3C_3 , \quad
+\pause
+3 = y''(0)  = C_1 + C_2 + 9C_3 .
+\]
+\pause
+We solve these to find
+$C_1 = -\nicefrac{1}{4}$, $C_2 = 1$, and $C_3 = \nicefrac{1}{4}$.
+
+\medskip
+\pause
+
+So the particular solution to our problem is:
+\[
+y = \frac{-1}{4}\, e^{-x} + e^x + \frac{1}{4}\, e^{3x} .
+\]
+\end{frame}
+
+\begin{frame}
+The real trick is finding the roots.
+
+\medskip
+\pause
+
+There are complicated formulas for degree
+3 and 4 polynomials.
+
+\medskip
+\pause
+
+There is \textbf{no} formula for degree 5 or higher.
+
+\medskip
+\pause
+
+But there are always $n$ roots for an 
+$n^{\text{th}}$ degree polynomial,
+though they can be repeated, and they may be complex.
+
+\medskip
+\pause
+
+One often uses a computer, but a good strategy to do it by hand is
+to plug in some easy numbers to start with:
+Start with $0$, then try $1$ and $-1$, then try other integers.
+
+\medskip
+\pause
+
+E.g., for $r^3 - 3 r^2 - r + 3 = 0$, we find $r_1 = 1$ and $r_2 = -1$ are
+roots by trying.
+
+\pause
+The third root $r_3$ is easy to find:
+\pause
+\[
+r^3 - 3 r^2 - r + 3 = (r-r_1)(r-r_2)(r-r_3)
+\]
+\pause
+So the constant term is
+\[
+3 = (-r_1)(-r_2)(-r_3) .
+\]
+\pause
+So $3 = (-1)(1)(-r_3)$ or $r_3 = 3$.
+
+\end{frame}
+
+\begin{frame}
+If a real root $r$
+is repeated $k$ times then we have solutions
+\[
+e^{rx}, \quad xe^{rx}, \quad x^2 e^{rx}, \quad \ldots, \quad x^{k-1} e^{rx} .
+\]
+
+\pause
+\textbf{Example:}
+Solve $y^{(4)} - 3 y''' + 3 y'' - y' =  0$.
+
+\medskip
+\pause
+
+The characteristic equation is \quad $r^4 - 3r^3 + 3r^2 -r = 0$.
+
+\medskip
+\pause
+
+By inspection \quad $r^4 - 3r^3 + 3r^2 -r = r{(r-1)}^3$.
+
+\medskip
+\pause
+
+The roots are $r = 0, 1, 1, 1$. \quad ($r=1$ has multiplicity $3$)
+
+\medskip
+\pause
+
+The general solution is
+\[
+y = \underbrace{(C_1 + C_2 x + C_3 x^2)\, e^x}_{\text{terms coming from }
+r=1} + \underbrace{C_4}_{\text{from } r=0} .
+\]
+
+\end{frame}
+
+\begin{frame}
+Complex roots come in pairs $r = \alpha \pm i \beta$.
+
+\medskip
+\pause
+
+If we have such a pair each repeated $k$ times,
+the solution is
+\[
+( C_0 + C_1 x + \cdots + C_{k-1} x^{k-1} ) \, e^{\alpha x} \cos (\beta x)
++
+( D_0 + D_1 x + \cdots + D_{k-1} x^{k-1} ) \, e^{\alpha x} \sin (\beta x) .
+\]
+
+
+\textbf{Example:}
+Solve
+\quad
+$y^{(4)} - 4 y''' + 8 y'' - 8 y' + 4y = 0$.
+
+\medskip
+\pause
+
+The characteristic equation is
+\quad
+$r^4 - 4 r^3 + 8 r^2 - 8 r + 4 = 0$
+
+\pause
+\thus
+\quad
+${(r^2-2r+2)}^2 = 0$
+\pause
+\wthus
+${\bigl({(r-1)}^2+1\bigr)}^2 = 0$.
+
+\medskip
+\pause
+
+Roots are $1 \pm i$, both with multiplicity $2$.
+
+\medskip
+\pause
+
+The general solution is
+\[
+y = 
+( C_1 + C_2 x ) \, e^{x} \cos x
++
+( C_3 + C_4 x ) \, e^{x} \sin x .
+\]
+\end{frame}
+
+\end{document}
