@@ -2,6 +2,10 @@
 helped us find the parameters and how this is useful in real problems.
 <li>On page 23, emphasize a bit more that if we applied the inverse function
 theorem, we are integrating with respect to y.
+<li>On page 33 in Example 1.3.1, explicitly separate variables before
+integrating.
+<li>Be more precise when defining "singular solution" as the solution
+that has no arbitrary constant.
 <li>In Example 1.4.2 at the very end, write 0.1667 to approximate 1/6 to use the same
 number of decimal places as the concentration.
 <li>On page 82 in the computation on top of the page add underbraces to make
