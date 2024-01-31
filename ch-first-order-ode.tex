@@ -823,7 +823,7 @@ $y = \int f(x) \,dx + C$.
 Unfortunately, simply integrating no longer works for the
 general form of the equation
 $y' = f(x,y)$.
-Integrating both sides yields
+Integrating both sides yields the rather unhelpful expression
 \begin{equation*}
 y = \int f(x,y) \,dx + C .
 \end{equation*}
@@ -888,12 +888,12 @@ y' = D x e^{\frac{x^2}{2}} = x \left( D e^{\frac{x^2}{2}} \right) = xy .
 Yay!
 \end{example}
 
-We should be a little bit more careful with this method.  You may be worried 
-that we 
+You may be worried that we 
 integrated in two different variables.
-We seemingly did
-a different operation to each side.  Let us work through this method more
-rigorously.  Take
+We seemingly did a different operation to each side.
+Perhaps we should be a little bit more careful
+and work through this method more rigorously.
+Consider
 \begin{equation*}
 \frac{dy}{dx} = f(x)g(y) .
 \end{equation*}
@@ -928,11 +928,11 @@ We integrate to get
 \begin{equation*}
 \frac{y^2}{2} + \ln \, \lvert y \rvert = \frac{x^2}{2} + C ,
 \end{equation*}
-or perhaps the easier-looking expression (where $D = 2C$)
+or perhaps the less intimidating expression (where $D = 2C$)
 \begin{equation*}
 y^2 + 2 \ln \, \lvert y\rvert = x^2 + D .
 \end{equation*}
-It is not easy to find the solution explicitly as it is hard to solve
+It is not easy to find the solution explicitly---it is hard to solve
 for $y$.  We, therefore, leave the solution in this form and call
 it an
 \emph{\myindex{implicit solution}}.
@@ -965,7 +965,7 @@ you find the two curves in \figurevref{implicitsols:fig}.  This is not quite
 a graph of a function. For each $x$ there are two choices of $y$.
 To find a function, you have to pick one of these two curves.
 You pick the one that satisfies your initial condition if you have one.
-For example, the top curve satisfies the condition $y(1)=1$.
+For instance, the top curve satisfies the condition $y(1)=1$.
 So for each $D$, we really got two solutions.
 As you can see, computing values from an implicit solution can be somewhat
 tricky.  But sometimes, an implicit solution is the best we can do.
@@ -1070,8 +1070,8 @@ with a horizontal line at the ambient temperature 22.\label{sintro:coffeefig}}
 \end{example}
 
 \begin{example}
-Find the general solution to $y' = \frac{-xy^2}{3}$ (including singular
-solutions).
+Find the general solution to $y' = \frac{-xy^2}{3}$
+(including any singular solutions).
 
 First note that $y=0$ is a solution (a singular solution).
 Now assume that $y \not= 0$.
@@ -1219,7 +1219,7 @@ a) $x = \frac{1000e^t}{e^t+24}$. \quad b) 102 rabbits after one month,
 \sectionnotes{1 lecture\EPref{, \S1.5 in \cite{EP}}\BDref{,
 \S2.1 in \cite{BD}}}
 
-One of the most important types of equations we will learn how to solve are
+One of the most important types of equations we will learn to solve are
 the so-called
 \emph{linear equations\index{linear equation}}.
 In fact, the majority of the course is about linear
@@ -1244,7 +1244,7 @@ there is a method for solving linear first order equations.
 The trick is to rewrite the left-hand side
 of \eqref{lineq:eq1} as a derivative of a product of $y$ with another
 function.
-To this end
+To this end,
 we find a function $r(x)$ such that
 \begin{equation*}
 r(x) y' + r(x) p(x) y = \frac{d}{dx}\Bigl[ r(x) y \Bigr] .
@@ -1255,7 +1255,7 @@ $r(x)$, we obtain
 \begin{equation*}
 \frac{d}{dx}\Bigl[ r(x) y \Bigr] = r(x)f(x) .
 \end{equation*}
-We integrate both sides.
+We can now integrate both sides.
 The right-hand side does not depend on $y$ and the left-hand side
 is written as a derivative of a function.  Afterwards, we solve for $y$.
 The function $r(x)$ is called the \emph{\myindex{integrating factor}} and the
@@ -1268,13 +1268,15 @@ That seems like a job for the exponential function!  Let
 r(x) = e^{\int p(x) \,dx} .
 \end{equation*}
 We compute:
-\begin{align*}
+\begin{equation*}
+\begin{aligned}
 y' + p(x) y &= f(x) , \\
 e^{\int p(x) \,dx} y' + e^{\int p(x) \,dx} p(x) y & = e^{\int p(x) \,dx} f(x) , \\
 \frac{d}{dx}\left[ e^{\int p(x) \,dx} y \right] & = e^{\int p(x) \,dx} f(x) , \\
 e^{\int p(x) \,dx} y & = \int e^{\int p(x) \,dx} f(x) \,dx + C , \\
 y & = e^{-\int p(x) \,dx} \left( \int e^{\int p(x) \,dx} f(x) \,dx + C \right) .
-\end{align*}
+\end{aligned}
+\end{equation*}
 
 Of course, to get a closed form formula for $y$,
 we need to be able to find a
@@ -1289,15 +1291,19 @@ y' + 2xy = e^{x-x^2}, \qquad y(0) = -1 .
 First note that $p(x) = 2x$ and $f(x) = e^{x-x^2}$.
 The integrating factor is $r(x) = e^{\int p(x)\, dx} = e^{x^2}$.
 We multiply both sides of the equation by $r(x)$ to get
-\begin{align*}
+\begin{equation*}
+\begin{aligned}
 e^{x^2} y' + 2xe^{x^2}y & = e^{x-x^2} e^{x^2} , \\
 \frac{d}{dx} \left[ e^{x^2} y \right] &= e^x .
-\end{align*}
+\end{aligned}
+\end{equation*}
 We integrate
-\begin{align*}
+\begin{equation*}
+\begin{aligned}
 e^{x^2} y &= e^x +C , \\
 y &= e^{x-x^2} + C e^{-x^2} .
-\end{align*}
+\end{aligned}
+\end{equation*}
 Next, we solve for the initial condition $-1 = y(0) = 1 + C$, so $C=-2$.
 The solution is
 \begin{equation*}
@@ -1402,12 +1408,14 @@ taking the limit $\Delta t \to 0$, we see that
 (\text{rate out} \times \text{concentration out}) .
 \end{equation*}
 In our example,
-\begin{align*}
+\begin{equation*}
+\begin{aligned}
 \text{rate in} &= 5 , \\
 \text{concentration in} &= 0.1 , \\
 \text{rate out} &= 3 , \\
 \text{concentration out} &= \frac{x}{\text{volume}} = \frac{x}{60+(5-3)t} .
-\end{align*}
+\end{aligned}
+\end{equation*}
 Our equation is, therefore,
 \begin{equation*}
 \frac{dx}{dt} =
@@ -1708,14 +1716,16 @@ Now we need to \myquote{unsubstitute} to obtain
 \frac{x-y+2}{x-y} = D e^{2x} ,
 \end{equation*}
 and also the two solutions $x-y+1=1$ or $y=x$, and $x-y+1=-1$ or $y=x+2$.
-We solve the first equation for $y$.
-\begin{align*}
+We solve the first equation for $y$:
+\begin{equation*}
+\begin{aligned}
 x-y+2 &= (x-y)D e^{2x} , \\
 x-y+2 &= Dx e^{2x}-yD e^{2x} , \\
--y + yD e^{2x} &= Dx e^{2x} - x - 2 , \displaybreak[0]\\
-y\,(-1+ D e^{2x}) &= Dx e^{2x} - x - 2 , \displaybreak[0]\\
+-y + yD e^{2x} &= Dx e^{2x} - x - 2 , \\
+y\,(-1+ D e^{2x}) &= Dx e^{2x} - x - 2 , \\
 y  &= \frac{Dx e^{2x} - x - 2}{D e^{2x}-1} .
-\end{align*}
+\end{aligned}
+\end{equation*}
 Note that $D=0$ gives $y=x+2$, but no value of $D$ gives the solution $y=x$.
 
 \medskip
@@ -1865,11 +1875,13 @@ the separable equation
 xv' = v^2+v-v = v^2 ,
 \end{equation*}
 which has a solution
-\begin{align*}
+\begin{equation*}
+\begin{aligned}
 \int \frac{1}{v^2} \,dv &= \ln \, \lvert x \rvert + C , \\
 \frac{-1}{v} &= \ln  x + C , \\
 v &= \frac{-1}{\ln  x  + C} .
-\end{align*}
+\end{aligned}
+\end{equation*}
 We unsubstitute
 \begin{equation*}
 \frac{y}{x} = \frac{-1}{\ln  x  + C} ,
@@ -3088,7 +3100,7 @@ If we think back to the theorem, it does not guarantee such a function
 anyway.  It only guarantees a potential function locally, that is, only in
 some region near the initial point.  As $y(1) = 2$,
 we start at the point $(1,2)$.  Considering $x > 0$ and
-integrating $M$ in $x$ or $N$ in $y$, we find
+integrating $M$ in~$x$ or $N$ in~$y$, we find
 \begin{equation*}
 F(x,y) = \operatorname{arctan} \bigl( \nicefrac{y}{x} \bigr) .
 \end{equation*}
