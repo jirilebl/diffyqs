@@ -10,6 +10,9 @@ for the arbitrary constant.
 that comes about because of the division by zero.
 <li>In Example 1.4.2 at the very end, write 0.1667 to approximate 1/6 to use the same
 number of decimal places as the concentration.
+<li>In 1.9, mention again the meaning \(u_x\) and \(u_t\) notation for
+partial derivatives.
+<li>Add "characteristic curve" to the index for 1.9
 <li>On page 82 in the computation on top of the page add underbraces to make
 it clearer what's happening.
 <li>Resonance is a terrible example for a doubled root on page 86, replace
