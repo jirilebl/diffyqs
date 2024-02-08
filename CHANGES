@@ -8,8 +8,13 @@ integrating.
 for the arbitrary constant.
 <li>Be more precise to say that "singular solution" is the solution
 that comes about because of the division by zero.
-<li>In Example 1.4.2 at the very end, write 0.1667 to approximate 1/6 to use the same
+<li>In Example 1.4.2 at the very end,
+explicitly say in
+English that there are 11.86 kg of salt in the tank when full.
+Also in the remark about concentration afterwards, write 0.1667 to approximate 1/6 to use the same
 number of decimal places as the concentration.
+<li>On page 58, add a displayed equations showing what the error is for
+clarity.
 <li>In 1.9, mention again the meaning \(u_x\) and \(u_t\) notation for
 partial derivatives.
 <li>Add "characteristic curve" to the index for 1.9

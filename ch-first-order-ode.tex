@@ -1255,9 +1255,10 @@ $r(x)$, we obtain
 \begin{equation*}
 \frac{d}{dx}\Bigl[ r(x) y \Bigr] = r(x)f(x) .
 \end{equation*}
-We can now integrate both sides.
-The right-hand side does not depend on $y$ and the left-hand side
-is written as a derivative of a function.  Afterwards, we solve for $y$.
+We can now integrate both sides, which we can do as
+the right-hand side does not depend on $y$ and the left-hand side
+is written as a derivative of a function.  After the integration, we solve for $y$
+by dividing by $r(x)$.
 The function $r(x)$ is called the \emph{\myindex{integrating factor}} and the
 method is called the \emph{\myindex{integrating factor method}}.
 
@@ -1518,6 +1519,7 @@ x(20) & =
 11.86 .
 \end{split}
 \end{equation*}
+There are $\unit[11.86]{kg}$ of salt in the tank when it is full.
 See \figurevref{linear-salt-graph:fig} for the graph of $x$ over $t$.
 
 The concentration when the tank is full is approximately
@@ -2387,10 +2389,10 @@ The simplest method for approximating a solution is
 \href{https://en.wikipedia.org/wiki/Euler}{Leonhard Paul Euler}
 (1707--1783).  The correct pronunciation of the name sounds more
 like \myquote{oiler.}}}.  It works as follows:
-Take $x_0$ and compute the slope $k = f(x_0,y_0)$.  The slope is the
+Take $x_0$ and $y_0$ and compute the slope $k = f(x_0,y_0)$.  The slope is the
 change in $y$ per unit change in $x$.  Follow the line for an interval of
 length $h$ on the $x$-axis.  Hence if $y = y_0$ at $x_0$, then we say that
-$y_1$ (the approximate value of $y$ at $x_1 = x_0 + h$) is
+$y_1$, the approximate value of $y$ at $x_1 = x_0 + h$, is
 $y_1 = y_0 + h k$.
 Rinse, repeat!  Let $k = f(x_1,y_1)$, and then compute
 $x_2 = x_1 + h$, and $y_2 = y_1 + h k$.
@@ -2468,8 +2470,13 @@ Solve this equation exactly and show that $y(2) = 3$.
 \end{exercise}
 
 The difference between the actual solution and the approximate solution is
-called the error.  We usually talk about just the size of the error
-and we do not care much about its sign.  The point is, we
+called the error.  We usually talk about the size of the error
+and we do not care much about its sign.
+\begin{equation*}
+\text{Error} = \bigl\lvert \text{Actual } y - \text{Approximate } y
+\bigr\rvert .
+\end{equation*}
+The point is, we
 do not know the real solution.
 If we knew the error exactly, we would know the actual solution \ldots
 so what is the point of doing the approximation?
@@ -2551,9 +2558,10 @@ table?  Now do it for the first two rows.  Does this agree with the table?
 
 Let us talk a little bit more about the example
 $y' = \nicefrac{y^2}{3}$, $y(0) =
-1$.  Suppose that instead of the value $y(2)$ we wish to find $y(3)$.
-The results of this effort are listed in
-\tablevref{euler-table2:table} for successive halvings of $h$.  What is
+1$.  Suppose that instead of $y(2)$ we wish to find $y(3)$.
+\tablevref{euler-table2:table}
+lists the results of this effort
+for successive halvings of $h$.  What is
 going on here?  Well, you should solve the equation exactly and you will
 notice that the solution does not exist at $x=3$.  In fact, the solution goes
 to infinity when you approach $x=3$.
