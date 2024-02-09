@@ -2836,7 +2836,7 @@ Suppose $F(x,y)$ is a function of two variables, which we call the
 potential energy, or electric potential.  Exact equations and potential
 functions appear when there is a conservation law at play, such as 
 conservation of energy.
-Let us make up a simple example.  Let
+Let us make up a simple example.  Consider
 \begin{equation*}
 F(x,y) = x^2+y^2 .
 \end{equation*}
@@ -2960,7 +2960,7 @@ Integrate in the $x$ variable to find
 F(x,y) = x^2 + A(y) ,
 \end{equation}
 for some function $A(y)$.  The function $A$ is the \myquote{constant of
-integration}, though it is only constant as far as $x$ is concerned, and
+integration,} though it is only constant as far as $x$ is concerned, and
 may still depend on $y$.  Now differentiate \eqref{eq:exact:fint} in $y$ 
 and set it equal to $N$, which is what $F_y$ is supposed to be:
 \begin{equation*}
@@ -2972,7 +2972,7 @@ Next for a constant $C$, we solve
 \begin{equation*}
 F\bigl(x,y(x)\bigr) = C .
 \end{equation*}
-for $y$ in terms of $x$.  In this case, we obtain $y = \pm \sqrt{C^2-x^2}$
+for $y$ in terms of $x$.  In this case, we obtain $y = \pm \sqrt{C-x^2}$
 as we did before.
 \end{example}
 
@@ -3042,7 +3042,7 @@ $M = \frac{\partial F}{\partial x}$ and
 $N = \frac{\partial F}{\partial y}$.
 \end{theorem}
 
-The theorem doesn't give us a global $F$ defined everywhere.  In
+The theorem doesn't give us a global $F$ defined everywhere in the plane.  In
 general, we can only find the potential locally, near some initial point.
 By this time, we have come to expect this from differential
 equations.
@@ -3086,7 +3086,7 @@ y = \frac{-x^2-1}{x-1} .
 \begin{example}
 Solve
 \begin{equation*}
--\frac{y}{x^2+y^2} dx + \frac{x}{x^2+y^2} dy = 0 , \qquad y(1) = 2.
+\frac{-y}{x^2+y^2} dx + \frac{x}{x^2+y^2} dy = 0 , \qquad y(1) = 2.
 \end{equation*}
 We leave to the reader to check that
 $M_y = N_x$.
@@ -3122,7 +3122,7 @@ See \figurevref{exact:y2x}, and note that the solution only exists for $x >
 \capstart
 \diffyincludegraphics{width=3in}{width=4.5in}{exact-y2x}
 \caption{Solution to 
-$-\frac{y}{x^2+y^2} dx + \frac{x}{x^2+y^2} dy = 0$, $y(1) = 2$,
+$\frac{-y}{x^2+y^2} dx + \frac{x}{x^2+y^2} dy = 0$, $y(1) = 2$,
 with initial point marked.\label{exact:y2x}}
 \end{myfig}
 \end{example}
