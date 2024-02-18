@@ -1388,16 +1388,17 @@ Our first example is a mass on a spring.  Suppose we have a mass $m > 0$
 (in kilograms) connected
 by a spring with spring constant $k > 0$ (in newtons per meter)
 to a fixed wall.  There may be some external
-force $F(t)$ (in newtons) acting on the mass.  Finally, there is some
+force $F(t)$ (in newtons) acting on the mass.
+Here, $t$ is time in seconds.  Finally, there is some
 friction measured by $c \geq 0$ (in newton-seconds per meter) as the mass
 slides along the floor (or perhaps a damper is connected).
 
-Let $x$ be the displacement of the mass ($x=0$ is the rest position), with
+Let $x$ be the displacement of the mass in meters ($x=0$ is the rest position), with
 $x$ growing to the right (away from the wall).
 The force exerted by the spring is proportional to the
 compression of the spring by \myindex{Hooke's law}.
 Therefore, it is $kx$ in the negative direction.
-Similarly the amount of force exerted by friction is proportional
+Similarly the force exerted by friction is proportional
 to the velocity of the mass.
 By \myindex{Newton's second law} we know that force equals mass times acceleration
 and hence $mx'' = F(t)-cx'-kx$ or
@@ -1407,11 +1408,11 @@ mx'' + cx' + kx = F(t) .
 This is a linear second order constant coefficient ODE\@.
 We say the motion is
 \begin{enumerate}[(i)]
-\item \emph{forced\index{forced motion}}, if $F \not\equiv 0$ (if $F$ is not identically zero),
+\item \emph{forced\index{forced motion}} if $F \not\equiv 0$ (if $F$ is not identically zero),
 \item \emph{unforced\index{unforced motion}} or \emph{free\index{free
-motion}}, if $F \equiv 0$ (if $F$ is identically zero),
-\item \emph{damped\index{damped motion}}, if $c > 0$, and
-\item \emph{undamped\index{undamped motion}}, if $c = 0$.
+motion}} if $F \equiv 0$ (if $F$ is identically zero),
+\item \emph{damped\index{damped motion}} if $c > 0$, and
+\item \emph{undamped\index{undamped motion}} if $c = 0$.
 \end{enumerate}
 
 This system appears in lots of applications even if it does not at first
@@ -1434,8 +1435,8 @@ inductor with an inductance of $L$ henries,
 and a capacitor with a capacitance of $C$ farads.  There is also
 an electric source (such as a battery) giving a voltage of $E(t)$ volts
 at time $t$ (measured in seconds).
-Let $Q(t)$ be the charge in coulombs on the capacitor
-and $I(t)$ be the current in the circuit.  The relation between the two is
+Let $Q(t)$ be the charge (in coulombs) on the capacitor
+and $I(t)$ be the current (in amperes) in the circuit.  The relation between the two is
 $Q' = I$.  By elementary principles we find 
 $L I' + RI + \nicefrac{Q}{C} = E$.   We differentiate to get
 \begin{equation*}
@@ -1626,14 +1627,16 @@ form
 x(t) = A \cos (\omega_0 t) + B \sin (\omega_0 t) ,
 \end{equation*}
 corresponds to the initial conditions $x(0) = A$ and $x'(0) = \omega_0 B$.
-Therefore, it is easy to figure out $A$ and $B$ from the initial
+So it is easy to figure out $A$ and $B$ from the initial
 conditions. 
-The amplitude and the phase shift can then be computed from $A$ and $B$.
-In the example, we have already found the amplitude $C$.  Let us
-compute the phase shift.  We know that $\tan \gamma = \nicefrac{B}{A} = 1$.  We take the
+The amplitude and the phase shift are computed from $A$ and $B$.
+In the example, we found the amplitude $C$.  Let us
+compute the phase shift.  We know $\tan \gamma = \nicefrac{B}{A} = 1$.
+We take the
 arctangent of 1 and get $\nicefrac{\pi}{4}$ or approximately 0.785.
-We still need to check if this $\gamma$ is in the correct quadrant
-(and add $\pi$ to $\gamma$ if it is not).
+We need to check if $\nicefrac{\pi}{4}$ gives the correct quadrant
+(same quadrant as the point $(A,B)$)
+and add $\pi$ to get $\gamma$ if it is not.
 Since both $A$ and $B$ are positive, then $\gamma$ should be in the first
 quadrant, $\nicefrac{\pi}{4}$ radians is in the first quadrant, so $\gamma =
 \nicefrac{\pi}{4}$.

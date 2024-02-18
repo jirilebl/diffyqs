@@ -23,6 +23,9 @@ it clearer what's happening.
 <li>Resonance is a terrible example for a doubled root on page 86, replace
 it with a reference to a critically damped mass-spring system.  Add a
 remark about why two very close roots are bad (numerical instability).
+<li>On page 96, explicitly say that \(t\) is in seconds and \(x\) is in
+meters since we give the units of all the other variables, also we forgot to
+say that current is measured in amperes.
 <li><b>Exercise 3.8.15 part b) was changed to fix erratum</b>, the matrix given
 was a typo that made the problem unnecessarily difficult and the solution in
 the back was what was intended.
