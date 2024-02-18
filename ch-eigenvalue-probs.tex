@@ -166,7 +166,7 @@ start labeling the eigenvalues at 0 rather than at 1 for convenience.
 That is we label the eigenvalues $\lambda_0 < \lambda_1 < \lambda_2 < \cdots$.
 
 \begin{example}
-The problem $y''+\lambda y$, $0 < x < L$, $y(0) = 0$, and $y(L) = 0$
+The problem $y''+\lambda y=0$, $0 < x < L$, $y(0) = 0$, and $y(L) = 0$
 is a regular Sturm--Liouville problem:  $p(x) = 1$, $q(x) = 0$, $r(x) = 1$,
 and we have $p(x) = 1 > 0$ and $r(x) = 1 > 0$.  We also have
 $a=0$, $b=L$, $\alpha_1 = \beta_1 = 1$, $\alpha_2 = \beta_2 = 0$.
@@ -564,8 +564,11 @@ y'' + \lambda y = 0, \quad y(-1) = 0, \quad y(1) = 0 .
 \end{equation*}
 \end{exercise}
 \exsol{%
-$\lambda_n = \frac{(2n-1)\pi}{2}$, $n=1,2,3,\ldots$, 
-$y_n = \cos\left(\frac{(2n-1)\pi}{2} x\right)$
+$\lambda_n = \frac{n^2\pi^2}{4}$, $n=1,2,3,\ldots$.
+For odd $n$,
+$y_n = \cos\left(\frac{n\pi}{2} x \right)$,
+for even $n$,
+$y_n = \sin\left(\frac{n\pi}{2} x \right)$.
 }
 
 \begin{exercise}
@@ -606,8 +609,6 @@ b)~$p(x) = 1+x^2$, $q(x) = x^2$, $r(x) = 1$, $\alpha_1 = 1$, $\alpha_2 =
 
 \sectionnotes{1 lecture\EPref{, \S10.2 in \cite{EP}}\BDref{,
 exercises in \S11.2 in \cite{BD}}}
-
-%\subsection{Transversal vibrations of a beam}
 
 The eigenfunction series can arise even from higher order equations.
 Consider an elastic beam (say made of steel).  We will study the

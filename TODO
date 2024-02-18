@@ -1,5 +1,11 @@
 Pretext/HTML:
 
+* Exercises that aren't in a subsection aren't shown.  If we switch
+exercises section to <exercises> it seems to work but that requires 
+some work including numbering
+
+* Currrently the conversion is broken
+
 * https://pretextbook.org/doc/guide/html/processing-directory-management.html
 
 Further down the road perhaps (some of them could be doable in next
