@@ -23,6 +23,9 @@ it clearer what's happening.
 <li>Resonance is a terrible example for a doubled root on page 86, replace
 it with a reference to a critically damped mass-spring system.  Add a
 remark about why two very close roots are bad (numerical instability).
+<li>At the end of subsection 2.3.1, the reason why we want linear
+independence was not explicitly stated so add Theorem 2.3.3 to have a
+parallel with the three theorems from section 2.1.
 <li><b>Exercise 3.8.15 part b) was changed to fix erratum</b>, the matrix given
 was a typo that made the problem unnecessarily difficult and the solution in
 the back was what was intended.
