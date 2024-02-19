@@ -1,0 +1,248 @@
+\documentclass[10pt,aspectratio=169]{beamer}
+
+% All the boilerplate is in deslides.sty
+\usepackage{deslides}
+
+\author{Ji\v{r}\'i Lebl}
+
+\institute[OSU]{%
+Oklahoma State University%
+%Departemento pri Matematiko de Oklahoma {\^S}tata Universitato%
+}
+
+\title{17. Mechanical vibrations, part 2: free damped motion\\(Notes on Diffy Qs, 2.4)}
+
+\date{}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+
+%\bigskip
+
+\begin{center}
+The textbook: \url{https://www.jirka.org/diffyqs/}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\textbf{Review:}
+
+\medskip
+
+\textbf{Mass on a spring:}
+
+\vspace*{-12pt}
+\hspace*{3in}%
+\scalebox{0.9}{\subimport*{../figures}{massfigforce.pdf_t}}
+
+\vspace*{-0.55in}
+$t = {}$ time in seconds.\\
+$x(t) = {}$ displacement from rest, in meters.\\
+$m = {}$ mass in kilograms.\\
+$k = {}$ spring constant in newtons per meter.\\
+$c = {}$ damping (friction) in newton-seconds per meter.\\
+$F(t) = {}$ external force on the mass in newtons.
+
+\medskip
+
+\[
+mx'' + cx' + kx = F(t) .
+\]
+
+\medskip
+\pause
+
+We are considering free motion, $F \equiv 0$.
+
+\medskip
+\pause
+
+Last time we looked at undamped motion, $c=0$.
+\end{frame}
+
+\begin{frame}
+%\subsection{Free damped motion}
+
+%mbxINTROSUBSUBSECTION
+
+Let us now focus on \myindex{damped} motion.  Let us rewrite the equation
+\begin{equation*}
+m x'' + c x' + kx = 0,
+\end{equation*}
+as
+\begin{equation*}
+x'' + 2p x' + \omega_0^2 x = 0,
+\end{equation*}
+where
+\begin{equation*}
+\omega_0 = \sqrt{\frac{k}{m}}, \qquad p = \frac{c}{2m} .
+\end{equation*}
+The characteristic equation is
+\begin{equation*}
+r^2 + 2 pr + \omega_0^2 = 0 .
+\end{equation*}
+Using the quadratic formula we get that the roots are
+\begin{equation*}
+r = -p \pm \sqrt{p^2 - \omega_0^2} .
+\end{equation*}
+The form of the solution depends on whether we get complex or real roots.
+We get real roots if and only if the following number is nonnegative:
+\begin{equation*}
+p^2 - \omega_0^2 = {\left( \frac{c}{2m} \right)}^2 - \frac{k}{m}
+= \frac{c^2 - 4km}{4m^2} .
+\end{equation*}
+The sign of $p^2-\omega_0^2$ is the same as the sign of
+$c^2 - 4km$.  Thus we get real roots if and only if $c^2-4km$ is
+nonnegative, or in other words if $c^2 \geq 4km$.
+
+%\subsubsection{Overdamping}
+
+%15 is the number of lines, must be adjusted
+%mbxSTARTIGNORE
+\begin{mywrapfig}[15]{3.25in}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{mv-overdamped}
+\caption{Overdamped motion for several different initial conditions.\label{mv:overdampedfig}}
+\end{mywrapfig}
+%mbxENDIGNORE
+%
+% make sure the MBX below is synced!
+%
+
+When
+$c^2 - 4km > 0$, the system is \emph{\myindex{overdamped}}.  In this case,
+there are two distinct real roots $r_1$ and $r_2$.  Both roots are
+negative:  As $\sqrt{p^2 - \omega_0^2}$ is always less than $p$,
+then
+$-p \pm \sqrt{p^2 - \omega_0^2}$ is negative in either case.
+
+
+The solution is
+\begin{equation*}
+x(t) = C_1 e^{r_1 t} + C_2 e^{r_2 t} .
+\end{equation*}
+Since $r_1, r_2$ are negative, $x(t) \to 0$ as $t \to \infty$.
+Thus the mass will tend towards the rest position as
+time goes to infinity.  For a few sample plots for different initial
+conditions, see \figurevref{mv:overdampedfig}.
+
+%mbxlatex \begin{myfig}
+%mbxlatex \diffyincludegraphics{width=3in}{width=4.5in}{mv-overdamped}
+%mbxlatex \caption{Overdamped motion for several different initial conditions.\label{mv:overdampedfig}}
+%mbxlatex \end{myfig}
+
+No oscillation happens.  In fact, the graph crosses the
+$x$-axis at most once.  To see why, we try to solve
+$0 = C_1 e^{r_1 t} + C_2 e^{r_2 t}$.
+Therefore, $C_1 e^{r_1 t} = - C_2 e^{r_2 t}$ and using laws of exponents we
+obtain
+\begin{equation*}
+\frac{-C_1}{C_2} = e^{(r_2-r_1) t} .
+\end{equation*}
+This equation has at most one solution $t \geq 0$.
+For some initial conditions the graph never crosses the $x$-axis, as is
+evident from the sample graphs.
+
+\begin{example}
+Suppose the mass is released from rest.  That is,
+$x(0) = x_0$ and $x'(0) = 0$.
+Then
+\begin{equation*}
+x(t) = \frac{x_0}{r_1-r_2} \left(r_1 e^{r_2 t} - r_2 e^{r_1 t} \right) .
+\end{equation*}
+It is not hard to see that this satisfies the initial conditions.
+\end{example}
+
+%\subsubsection{Critical damping}
+
+When
+$c^2 - 4km = 0$, the system is \emph{\myindex{critically damped}}.  In this case,
+there is one root of multiplicity 2 and this root is $-p$.  Our solution is
+\begin{equation*}
+x(t) = C_1 e^{-pt} + C_2 t e^{-pt} .
+\end{equation*}
+The behavior of a critically damped system is very similar to an overdamped
+system.  After all a critically damped system is in some sense a limit
+of overdamped systems.  Since these equations are really only an
+approximation to the real world, in reality we are never critically
+damped, it is a place we can only reach in theory.  We are always
+a little bit underdamped or a little bit overdamped.  It is better not to
+dwell on critical damping.
+
+%\subsubsection{Underdamping}
+
+%13 is the number of lines, must be adjusted
+%mbxSTARTIGNORE
+\begin{mywrapfig}[13]{3.25in}
+\capstart
+\diffyincludegraphics{width=3in}{width=4.5in}{mv-underdamped}
+\caption{Underdamped motion with the envelope curves shown.\label{mv:underdampedfig}}
+\end{mywrapfig}
+%mbxENDIGNORE
+%
+% make sure the MBX below is synced!
+%
+When
+$c^2 - 4km < 0$, the system is \emph{\myindex{underdamped}}.  In this case,
+the roots are complex.
+\begin{equation*}
+\begin{split}
+r & =
+-p \pm \sqrt{p^2 - \omega_0^2} \\
+& = 
+-p \pm \sqrt{-1}\sqrt{\omega_0^2 - p^2} \\
+& = 
+-p \pm i \omega_1 ,
+\end{split}
+\end{equation*}
+where $\omega_1 =\sqrt{\omega_0^2 - p^2}$.  Our solution is
+\begin{equation*}
+x(t) = e^{-pt} \bigl( A \cos (\omega_1 t) + B \sin (\omega_1 t) \bigr) ,
+\end{equation*}
+or
+\begin{equation*}
+x(t) = C e^{-pt} \cos ( \omega_1 t - \gamma ) .
+\end{equation*}
+An example plot is given in \figurevref{mv:underdampedfig}.  Note that we
+still have that $x(t) \to 0$ as $t \to \infty$.
+
+%mbxlatex \begin{myfig}
+%mbxlatex \diffyincludegraphics{width=3in}{width=4.5in}{mv-underdamped}
+%mbxlatex \caption{Underdamped motion with the envelope curves shown.\label{mv:underdampedfig}}
+%mbxlatex \end{myfig}
+
+The figure also 
+shows the \emph{\myindex{envelope curves}}
+$C e^{-pt}$ and $-C e^{-pt}$.  The solution
+is the oscillating line between the two envelope curves.
+The envelope curves give
+the maximum amplitude of the oscillation at any given point in time.  For
+example, if you are bungee jumping, you are really interested in computing the
+envelope curve as not to hit the concrete with your head.
+
+The phase shift $\gamma$ shifts the oscillation left or right, but within the
+envelope curves (the envelope curves do not change if $\gamma$
+changes).
+
+
+Notice that the angular
+\emph{\myindex{pseudo-frequency}}\footnote{We do not call $\omega_1$ a frequency
+since the solution is not really a periodic function.}  becomes
+smaller when the damping $c$ (and hence $p$) becomes larger.  This makes sense.
+When we change the damping just a little bit, we do not
+expect the behavior of the solution to change dramatically.
+If we keep making $c$ larger, then
+at some point the solution should start looking 
+like the solution for critical damping or overdamping, where no oscillation
+happens.  So if $c^2$ approaches $4km$, we want $\omega_1$ to approach 0.
+
+On the other hand, when $c$ gets smaller, $\omega_1$ approaches $\omega_0$
+($\omega_1$ is always smaller than $\omega_0$), and the solution looks more and more like the steady
+periodic motion of the undamped case.  The envelope curves become flatter and
+flatter as $c$ (and hence $p$) goes to 0.
+
+\end{frame}
+
+\end{document}

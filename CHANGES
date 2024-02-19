@@ -26,6 +26,9 @@ remark about why two very close roots are bad (numerical instability).
 <li>At the end of subsection 2.3.1, the reason why we want linear
 independence was not explicitly stated so add Theorem 2.3.3 to have a
 parallel with the three theorems from section 2.1.
+<li>On page 96, explicitly say that \(t\) is in seconds and \(x\) is in
+meters since we give the units of all the other variables, also we forgot to
+say that current is measured in amperes.
 <li><b>Exercise 3.8.15 part b) was changed to fix erratum</b>, the matrix given
 was a typo that made the problem unnecessarily difficult and the solution in
 the back was what was intended.

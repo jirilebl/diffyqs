@@ -600,6 +600,7 @@ sub read_paragraph {
 	$para =~ s/\\`\{e\}/è/g;
 	$para =~ s/\\`a/à/g;
 	$para =~ s/\\`\{a\}/à/g;
+	$para =~ s/\\'a/á/g;
 	$para =~ s/\\'i/í/g;
 	$para =~ s/\\'\{i\}/í/g;
 	$para =~ s/\\'E/É/g;
