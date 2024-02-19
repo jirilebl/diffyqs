@@ -25,7 +25,8 @@ it with a reference to a critically damped mass-spring system.  Add a
 remark about why two very close roots are bad (numerical instability).
 <li>At the end of subsection 2.3.1, the reason why we want linear
 independence was not explicitly stated so add Theorem 2.3.3 to have a
-parallel with the three theorems from section 2.1.
+parallel with the three theorems from section 2.1.  It is mentioned in passing
+in the next subsection, but this makes more sense.
 <li>On page 96, explicitly say that \(t\) is in seconds and \(x\) is in
 meters since we give the units of all the other variables, also we forgot to
 say that current is measured in amperes.
