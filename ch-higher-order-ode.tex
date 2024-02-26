@@ -681,19 +681,19 @@ Often the following notation is used,
 
 \subsection{Complex roots}
 
-Suppose the equation $ay'' + by' + cy = 0$ has the 
+Suppose the differential equation $ay'' + by' + cy = 0$ has the 
 characteristic equation
 $a r^2 + b r + c = 0$ that has \myindex{complex roots}.
 By the quadratic
 formula, the roots are
 $\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$.
-These roots are complex if $b^2 - 4ac < 0$.  In this case the
-roots are
+These roots are complex if $b^2 - 4ac < 0$.  In this case, we
+can write the roots as
 \begin{equation*}
 r_1, r_2 = \frac{-b}{2a} \pm i\frac{\sqrt{4ac - b^2}}{2a} .
 \end{equation*}
 As you can see, we always get a pair of roots of the form $\alpha \pm i
-\beta$.  In this case we can still write the solution as
+\beta$.  We can still write the solution as
 \begin{equation*}
 y = C_1 e^{(\alpha+i\beta)x} + C_2 e^{(\alpha-i\beta)x} .
 \end{equation*}
@@ -705,7 +705,7 @@ it can make calculations harder and it is generally preferred
 to find two real-valued
 solutions.
 
-Here we can use \hyperref[eulersformula]{Euler's formula}.  Let
+\hyperref[eulersformula]{Euler's formula} comes to the rescue.  Let
 \begin{equation*}
 y_1 = e^{(\alpha+i\beta)x} \qquad \text{and} \qquad y_2 = e^{(\alpha-i\beta)x} .
 \end{equation*}
@@ -725,7 +725,8 @@ y_4 & = \frac{y_1 - y_2}{2i} = e^{\alpha x} \sin (\beta x) ,
 \end{equation*}
 are also solutions.  Furthermore, they are real-valued.  It is not hard to
 see that they are linearly independent (not multiples of each other).
-Therefore, we have the following theorem.
+We summarize what we found as
+a theorem.
 
 \begin{theorem}
 Take the equation
@@ -954,14 +955,14 @@ also solves \eqref{hol:eqlinhom}
 for arbitrary constants $C_1, C_2, \ldots, C_n$.
 \end{theorem}
 
-In other words, a \emph{\myindex{linear combination}} of solutions
+That is, a \emph{\myindex{linear combination}} of solutions
 to \eqref{hol:eqlinhom}
-is also a solution to \eqref{hol:eqlinhom}.
-We also have the existence and uniqueness theorem for nonhomogeneous linear
-equations.
+is a solution to \eqref{hol:eqlinhom}.
+There is also the existence and uniqueness theorem for linear
+equations, including nonhomogeneous ones.
 
 \begin{theorem}[Existence and uniqueness]\index{existence and uniqueness}
-Suppose $p_0$ through $p_{n-1}$, and $f$ are continuous functions
+Suppose $p_0, p_1, \ldots, p_{n-1}$, and $f$ are continuous functions
 on some interval $I$,
 $a$ is a number in $I$,
 and $b_0, b_1, \ldots, b_{n-1}$ are constants.
@@ -988,13 +989,13 @@ c_1 y_1 + c_2 y_2 + \cdots + c_n y_n = 0
 \end{equation*}
 has only the trivial solution $c_1 = c_2 = \cdots = c_n = 0$, where the
 equation must hold for all $x$.  If we can
-solve the equation with some constants $c_1,c_2,\ldots,c_n$ where for example $c_1 \not= 0$, then we
+solve the equation with some constants $c_1,c_2,\ldots,c_n$, where for example $c_1 \not= 0$, then we
 can solve for $y_1$ as a linear combination of the others.  If the functions
 are not
 linearly independent, they are \emph{\myindex{linearly dependent}}.
 
 \begin{example}
-Show that $e^x, e^{2x}, e^{3x}$ are linearly independent.
+Verify that $e^x, e^{2x}, e^{3x}$ are linearly independent.
 
 Let us give several ways to show this fact.
 Many textbooks (including \cite{EP} and
@@ -1194,7 +1195,7 @@ We note that the characteristic equation is
 \begin{equation*}
 r^4 - 3r^3 + 3r^2 -r = 0 .
 \end{equation*}
-By inspection we note that $r^4 - 3r^3 + 3r^2 -r = r{(r-1)}^3$.  Hence
+By inspection, we note that $r^4 - 3r^3 + 3r^2 -r = r{(r-1)}^3$.  Hence
 the roots given with \myindex{multiplicity} are $r = 0, 1, 1, 1$.  Thus the general
 solution is
 \begin{equation*}
