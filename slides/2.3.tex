@@ -207,19 +207,20 @@ Note: You must consider all the functions at once.
 The functions
 $e^x$ and $e^{-x}$ are linearly independent.
 
-\medskip
 \pause
+\medskip
 
-\textbf{Solving ODE:}
-For an $n^{\text{th}}$ order linear homogeneous equation
+\begin{theorem}
+If $y_1$, $y_2$, \ldots, $y_n$ are linearly independent solutions of the
+homogeneous equation 
 \[
 y^{(n)} + p_{n-1}(x)y^{(n-1)} + \cdots + p_1(x) y' + p_0(x) y = 0 ,
 \]
-if we find $n$ linearly independent solutions
-$y_1$, $y_2$, \ldots, $y_n$, the general solution is
-\[
-y(x) = C_1 y_1(x) + C_2 y_2(x) + \cdots + C_n y_n(x)  .
-\]
+then the general solution can be written as
+\begin{equation*}
+y(x) = C_1 y_1(x) + C_2 y_2(x) + \cdots + C_n y_n(x) .
+\end{equation*}
+\end{theorem}
 \end{frame}
 
 \begin{frame}
