@@ -140,7 +140,7 @@ A useful test for convergence of a series is the
 \end{equation*}
 is a series and the limit
 \begin{equation*}
-L = \lim_{n\to\infty} \left \lvert \frac{c_{k+1}}{c_k} \right \rvert
+L = \lim_{k\to\infty} \left \lvert \frac{c_{k+1}}{c_k} \right \rvert
 \end{equation*}
 exists.  Then the series converges absolutely if $L < 1$ and diverges
 if $L > 1$.
@@ -148,13 +148,13 @@ if $L > 1$.
 We apply this test to the series \eqref{ps:sereq1}. 
 Let $c_k = a_k {(x - x_0)}^k$ in the test.  Compute
 \begin{equation*}
-L = \lim_{n\to\infty} \left \lvert \frac{c_{k+1}}{c_k} \right \rvert
+L = \lim_{k\to\infty} \left \lvert \frac{c_{k+1}}{c_k} \right \rvert
 =
-\lim_{n\to\infty} \left \lvert
+\lim_{k\to\infty} \left \lvert
 \frac{a_{k+1} {(x - x_0)}^{k+1}}{a_k {(x - x_0)}^k}
 \right \rvert
 =
-\lim_{n\to\infty} \left \lvert
+\lim_{k\to\infty} \left \lvert
 \frac{a_{k+1}}{a_k}
 \right \rvert
 \lvert  x - x_0 \rvert .
@@ -162,7 +162,7 @@ L = \lim_{n\to\infty} \left \lvert \frac{c_{k+1}}{c_k} \right \rvert
 Define $A$ by
 \begin{equation*}
 A =
-\lim_{n\to\infty} \left \lvert
+\lim_{k\to\infty} \left \lvert
 \frac{a_{k+1}}{a_k}
 \right \rvert .
 \end{equation*}
@@ -193,7 +193,7 @@ Consider a power series
 such that
 \begin{equation*}
 A =
-\lim_{n\to\infty}
+\lim_{k\to\infty}
 \left \lvert
 \frac{a_{k+1}}{a_k}
 \right \rvert
@@ -1807,7 +1807,7 @@ Find a particular solution of $x^2 y'' +(x-\nicefrac{3}{4})y = 0$.
 \exsol{%
 $y = x^{3/2}
 \sum\limits_{k=0}^\infty
-\frac{{(-1)}^{-1}}{k!\,(k+2)!} x^k$ (Note that for convenience
+\frac{{(-1)}^{k}}{k!\,(k+2)!} x^k$ (Note that for convenience
 we did not pick $a_0 = 1$.)}
 
 \begin{exercise}[tricky]

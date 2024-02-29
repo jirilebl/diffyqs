@@ -33,3 +33,12 @@ the back was what was intended.
 we really wanted to ask about F(-9), so that we also ask for some point not in
 the original range that's not the discontinuity.  The answer in the back was
 in fact giving F(-9) as intended.
+<li>On page 286, do not use \(F(t)\) for the forcing function as capital
+\(F\) is used later in the d'Alembert solution so avoid confusion.  Also
+explicitly use the words "forcing function" when we first talk about it
+to make the exercises easier to figure out.
+<li><b>Exercises 5.3.6 and 5.3.101 were changed to fix errata</b>:
+As given, 1) the forcing functions would cause resonance and we didn't
+really cover that and 2) they were given in x rather than t by mistake.
+Both were changed to be on the interval \([-\pi,\pi]\) which avoids the
+resonance and makes computations easier anyhow.

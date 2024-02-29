@@ -912,8 +912,10 @@ for integers $n \geq 1$.
 But these are free vibrations.  What if there is an external force acting on
 the string.  Let us assume say air vibrations (noise), for example from a second
 string.  Or perhaps a jet engine.  For simplicity, assume nice pure
-sound and assume the force is uniform at every position on the string.
-Let us say $F(t) = F_0 \cos (\omega t)$ as force per unit mass.  Then our wave
+sound and assume the force is uniform at every position on the string:
+The external force as a function of time $t$ is given as
+$F_0 \cos (\omega t)$ as force per unit mass, we will call this
+the forcing function.  Then our wave
 equation becomes (remember force is mass times acceleration)
 \begin{equation} \label{sps:forcedeq}
 y_{tt} = a^2 y_{xx} + F_0 \cos ( \omega t) ,
@@ -1080,14 +1082,15 @@ B \sin x
 and after differentiating in $t$ we see that 
 $g(x) = -\frac{\partial y_p}{\partial t}(x,0) = 0$.
 
-Hence to find $y_c$ we need to solve the problem
+Hence to find $y_c$, we need to solve the problem
 \begin{align*}
 & y_{tt} = y_{xx} , \\
 & y(0,t) = 0 , \quad y(1,t) = 0 , \\
 & y(x,0) = - \cos x + B \sin x +1 , \\
 & y_t(x,0) = 0 .
 \end{align*}
-The formula that we use to define $y(x,0)$ is not odd,
+If we use d'Alembert, we note that
+the formula that we use to define $y(x,0)$ is not odd,
 hence it is not a simple matter of plugging in the expression for $y(x,0)$
 to the d'Alembert
 formula directly!  You must define $F$ to be the odd, 2-periodic
@@ -1280,8 +1283,8 @@ is $F_0 \sin (\omega t)$.  Derive the particular solution $y_p$.
 \begin{exercise}
 Take the forced vibrating string.
 Suppose that $L=1$, $a=1$.  Suppose that the forcing function
-is the square wave that is 1 on the interval $0 < x < 1$ and
-$-1$ on the interval $-1 < x< 0$.
+is the square wave that is 1 on the interval $0 < t < \pi$ and
+$-1$ on the interval $-\pi < t < 0$.
 Find the particular solution.  Hint: You may want to use result
 of \exerciseref{sps:sinforceexr}.
 \end{exercise}
@@ -1303,22 +1306,26 @@ that $T_0 = 0$.
 \begin{exercise}
 Take the forced vibrating string.
 Suppose that $L=1$, $a=1$.  Suppose that the forcing function
-is a sawtooth, that is $\lvert x \rvert -\frac{1}{2}$
-on $-1 < x < 1$ extended periodically.
+is a sawtooth, that is $\lvert t \rvert -\frac{\pi}{2}$
+on $-\pi < t < \pi$ extended periodically.
 Find the particular solution.
 \end{exercise}
 \exsol{%
+%Fourier series of the forcing function is:
+%\sum\limits_{\substack{n=1 \\ n \text{ odd}}}^\infty
+%\frac{-4}{\pi n^2}
+%\cos (n \pi t)
 $y_p(x,t) =
 \sum\limits_{\substack{n=1 \\ n \text{ odd}}}^\infty
-\frac{-4}{n^4 \pi^4}
+\frac{-4}{\pi n^4}
 \left(
-\cos(n \pi x ) -
-\frac{\cos ( n \pi ) - 1}%
-{\sin( n \pi)}
-\sin( n \pi x)
+\cos(n x ) -
+\frac{\cos ( n ) - 1}%
+{\sin( n )}
+\sin( n x)
 -1
 \right)
-\cos (n \pi t) .
+\cos (n t) .
 $
 }
 
