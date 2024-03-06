@@ -2130,6 +2130,12 @@ conditions with $y_c$ and only add the particular solution $y_p$ after that.
 That will \emph{not} work.  You need to first compute $y = y_c + y_p$ and
 \emph{only then} solve for the constants using the initial conditions.
 
+Another important remark is that you should not forget the lower degree
+terms, even if they do not appear on the right hand side.  If the equation
+is $Ly=x^3+1$, you must try $y_p = Ax^3+Bx^2+Cx+D$, even though there is
+no $x^2$ nor $x$ on the right hand side of the equation.  It is
+a general polynomial of degree 3 that must be tried.
+
 \medskip
 
 A right-hand side consisting of exponentials, sines, and cosines
@@ -2212,7 +2218,7 @@ left-hand side of the equation we get
 \begin{equation*}
 y''-9y = 9Ae^{3x} - 9Ae^{3x} = 0 \not= e^{3x} .
 \end{equation*}
-There is no way we can choose $A$ to make the left-hand side be $e^{3x}$.
+There is no way to choose $A$ to make the left-hand side be $e^{3x}$.
 The trick in
 this case
 is to multiply our guess by $x$ to get rid of duplication with the
@@ -2248,8 +2254,9 @@ y''-6y'+9y = e^{3x} .
 \end{equation*}
 The complementary solution is
 $y_c = C_1 e^{3x} + C_2 x e^{3x}$.  Guessing $y=A xe^{3x}$
-would not get us anywhere.  In this case we want to guess
-$y_p = Ax^2e^{3x}$. Basically, we want to multiply our guess by $x$
+does not get us anywhere.
+We want to guess $y_p = Ax^2e^{3x}$.
+Basically, we multiply our guess by $x$
 until all duplication is gone.  \emph{But no more!}  Multiplying too many
 times will not work.
 
@@ -2260,9 +2267,10 @@ Finally, what if the right-hand side has several terms, such as
 Ly = e^{2x} + \cos x .
 \end{equation*}
 In this case we find $u$ that solves $Lu = e^{2x}$ and $v$ that
-solves $Lv = \cos x$ (that is, do each term separately).  Then note
-that if $y = u+ v$, then $Ly = e^{2x} + \cos x$.  This is because
-$L$ is linear; we have
+solves $Lv = \cos x$ (that is, do each term separately).
+If we set
+$y = u+ v$, then we find our desired solution $Ly = e^{2x} + \cos x$.
+This is because $L$ is linear; we have
 $Ly = L(u+v) = Lu + Lv = e^{2x} + \cos x$.
 
 \subsection{Variation of parameters}

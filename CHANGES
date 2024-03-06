@@ -30,6 +30,8 @@ in the next subsection, but this makes more sense.
 <li>On page 96, explicitly say that \(t\) is in seconds and \(x\) is in
 meters since we give the units of all the other variables, also we forgot to
 say that current is measured in amperes.
+<li>On page 105, add an explicit remark about trying a generic polynomial
+even if some of the powers do not really appear on the right hand side.
 <li><b>Exercise 3.8.15 part b) was changed to fix erratum</b>, the matrix given
 was a typo that made the problem unnecessarily difficult and the solution in
 the back was what was intended.
