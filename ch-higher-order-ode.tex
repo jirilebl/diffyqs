@@ -2349,7 +2349,7 @@ and hence
 \begin{equation*}
 y'' + y = Ly = u_1' y_1' + u_2' y_2' .
 \end{equation*}
-For $y$ to satisfy $Ly = f(x)$ we must have
+For $y$ to satisfy $Ly = f(x)$, we must have
 $f(x) = u_1' y_1' + u_2' y_2'$.
 
 What we need to solve are the two equations (conditions) we imposed
@@ -2401,6 +2401,8 @@ We integrate $u_1'$ and $u_2'$ to get $u_1$ and $u_2$.
 = \int \sin (x)\,dx = -\cos (x) .
 \end{aligned}
 \end{equation*}
+We are looking for a particular solution, so we forget about the constants
+of integration.
 So our particular solution is
 \begin{multline*}
 y_p = u_1 y_1 + u_2 y_2 =
@@ -2525,7 +2527,7 @@ Use variation of parameters to
 find a particular solution of $y''-y = \frac{1}{e^x+e^{-x}}$.
 \end{exercise}
 \exsol{%
-$y = \frac{2xe^x-(e^x+e^{-x})\log(e^{2x}+1)}{4}$
+$y = \frac{2xe^x-(e^x+e^{-x})\ln(e^{2x}+1)}{4}$
 }
 
 \begin{exercise}
