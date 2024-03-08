@@ -2367,38 +2367,38 @@ We always get these formulas for any $Ly = f(x)$, where $Ly =
 y''+p(x)y'+q(x)y$.  There is a general
 formula for the solution we could just plug into, but instead of memorizing
 that, it is better, and easier, to
-just repeat what we do below.  In our case the two equations are
+just repeat what we do below.  In our case, the two equations are
 \begin{equation*}
 \begin{aligned}
-u_1' \cos (x) + u_2' \sin (x) &= 0 ,\\
--u_1' \sin (x) + u_2' \cos (x) &= \tan (x) .
+u_1' \cos x + u_2' \sin x &= 0 ,\\
+-u_1' \sin x + u_2' \cos x &= \tan x .
 \end{aligned}
 \end{equation*}
 Hence
 \begin{equation*}
 \begin{aligned}
-u_1' \cos (x) \sin (x) + u_2' \sin^2 (x) & = 0 ,\\
--u_1' \sin (x) \cos (x) + u_2' \cos^2 (x) & = \tan (x) \cos (x) = \sin (x) .
+u_1' \cos x \sin x + u_2' \sin^2 x & = 0 ,\\
+-u_1' \sin x \cos x + u_2' \cos^2 x & = \tan x \cos x = \sin x .
 \end{aligned}
 \end{equation*}
 And thus
 \begin{equation*}
 \begin{aligned}
-& u_2' \bigl(\sin^2 (x) + \cos^2 (x)\bigr) = \sin (x) , \\
-& u_2' = \sin (x) , \\
-& u_1' = \frac{- \sin^2 (x)}{\cos (x)} = - \tan (x) \sin (x) .
+& u_2' \bigl(\sin^2 x + \cos^2 x\bigr) = \sin x , \\
+& u_2' = \sin x , \\
+& u_1' = \frac{- \sin^2 x}{\cos x} = \cos x - \sec x .
 \end{aligned}
 \end{equation*}
 We integrate $u_1'$ and $u_2'$ to get $u_1$ and $u_2$.
 \begin{equation*}
 \begin{aligned}
 & u_1 = \int u_1'\,dx 
-= \int - \tan (x) \sin (x)\,dx
-= \frac{1}{2}
-\ln \left\lvert \frac{\sin (x)-1}{\sin (x) + 1} \right\rvert
-+ \sin (x) , \\
+= \int ( \cos x-\sec x ) \,dx
+= \sin x -
+\ln \left\lvert \sec x + \tan x \right\rvert
+, \\
 & u_2 = \int u_2'\,dx 
-= \int \sin (x)\,dx = -\cos (x) .
+= \int \sin x\,dx = -\cos x .
 \end{aligned}
 \end{equation*}
 We are looking for a particular solution, so we forget about the constants
@@ -2406,19 +2406,27 @@ of integration.
 So our particular solution is
 \begin{multline*}
 y_p = u_1 y_1 + u_2 y_2 =
-\frac{1}{2} \cos (x) \ln \left\lvert \frac{\sin (x)-1}{\sin (x) + 1}
-\right\rvert
-+ \cos (x) \sin (x)
--\cos (x) \sin (x)
-= \\ =
-\frac{1}{2} \cos (x) \ln \left\lvert \frac{\sin (x)-1}{\sin (x) + 1}
-\right\rvert .
+\cos x \sin x
+-
+\cos x
+\,
+\ln \lvert
+\sec x + \tan x
+\rvert
+-\cos x \sin x
+\\ =
+-
+\cos x \, \ln \lvert
+\sec x + \tan x
+\rvert .
 \end{multline*}
 The general solution to $y'' + y = \tan x$ is, therefore,
 \begin{equation*}
-y = C_1 \cos (x) + C_2 \sin (x) +
-\frac{1}{2} \cos (x) \ln \left\lvert \frac{\sin (x)-1}{\sin (x) + 1}
-\right\rvert .
+y = C_1 \cos x + C_2 \sin x
+-
+\cos x \, \ln \lvert
+\sec x + \tan x
+\rvert .
 \end{equation*}
 
 \subsection{Exercises}
