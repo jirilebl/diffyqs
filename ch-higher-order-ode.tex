@@ -2697,13 +2697,15 @@ The function $x$ is a high frequency wave modulated by a low frequency
 wave.
 \end{example}
 
-Now suppose $\omega_0 = \omega$.  Obviously, we cannot try
-the solution $A \cos (\omega t)$ and then use the method of undetermined
-coefficients.  We notice that $\cos (\omega t)$ solves the associated
-homogeneous equation.  Therefore,
-we 
-try $x_p = A t \cos (\omega t) + B t \sin (\omega t)$.  This time we need
-the sine
+Now suppose $\omega_0 = \omega$.
+We notice that $\cos (\omega t)$ solves the associated
+homogeneous equation.
+Hence, we cannot try
+the solution $A \cos (\omega t)$ with the method of undetermined
+coefficients.
+Therefore, we 
+try $x_p = A t \cos (\omega t) + B t \sin (\omega t)$.
+This time we do need the sine
 term, since the second derivative of $t \cos (\omega t)$ contains sines.
 We write the equation
 \begin{equation*}
@@ -2728,7 +2730,7 @@ between $\frac{F_0 t}{2m\omega}$ and
 $\frac{- F_0 t}{2m\omega}$.  The first two terms only oscillate between
 $\pm\sqrt{C_1^2 + C_2^2}$, which becomes smaller and smaller in proportion to
 the oscillations of the last term as $t$ gets larger.  In
-\figurevref{3.6:resonancefig} we see the graph with $C_1=C_2=0$, $F_0 = 2$,
+\figurevref{3.6:resonancefig}, we see the graph with $C_1=C_2=0$, $F_0 = 2$,
 $m=1$, $\omega = \pi$.
 
 \begin{mywrapfig}{3.25in}
@@ -2876,7 +2878,7 @@ The general solution is
 x = x_c + x_p = x_{tr} + x_{sp} .
 \end{equation*}
 
-The transient solution $x_c = x_{tr}$ goes to zero as $t \to \infty$,
+The transient solution $x_{tr} = x_c$ goes to zero as $t \to \infty$,
 as all the terms involve an exponential with a negative exponent.  So
 for large $t$, the effect of $x_{tr}$ is negligible and we see essentially
 only $x_{sp}$.
