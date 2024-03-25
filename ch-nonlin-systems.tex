@@ -357,11 +357,18 @@ Find the critical points and linearizations of the following systems.
 \end{tasks}
 \end{exercise}
 \exsol{%
-a) Critical points $(0,0)$ and $(0,1)$.  At $(0,0)$ using $u=x$, $v=y$ the linearization is $u'=-2u-(\nicefrac{1}{\pi})v$, $v'=-v$.
-At $(0,1)$ using $u=x$, $v=y-1$ the linearization is
-$u'=-2u+(\nicefrac{1}{\pi})v$, $v'=v$.\\
-b) Critical point $(0,0)$.  Using $u=x$, $v=y$ the linearization is
+a) Critical points $(1,0)$ and $(1,1)$.
+At $(1,0)$ using $u=x-1$, $v=y$ the linearization is
+$u'=\pi v$, $v'=-v$.
+At $(1,1)$ using $u=x-1$, $v=y-1$ the linearization is
+$u'=-\pi v$, $v'=v$.\\
+b) Critical points $(0,0)$ and $(0,-1)$.
+Using $u=x$, $v=y$ the linearization is
 $u'=u+v$, $v'=u$.\\
+At $(0,0)$ using $u=x$, $v=y$ the linearization is
+$u'=u+v$, $v'=u$.
+At $(0,-1)$ using $u=x$, $v=y+1$ the linearization is
+$u'=u-v$, $v'=v$.\\
 c) Critical point $(\nicefrac{1}{2},\nicefrac{-1}{4})$.  Using
 $u=x-\nicefrac{1}{2}$, $v=y+\nicefrac{1}{4}$ the linearization is
 $u'=-u+v$, $v'=u+v$.
@@ -1910,7 +1917,7 @@ Show that the following systems have no closed trajectories.
 \begin{tasks}(2)
 \task $x'=x+y^2,\quad y'=y+x^2$,
 \task $x'=-x\sin^2(y),\quad y'=e^x$,
-\task $x'=xy,\quad y'=x+x^2$.
+\task $x'=xy^2,\quad y'=x+x^2$.
 \end{tasks}
 \end{exercise}
 \exsol{%
@@ -1918,7 +1925,7 @@ Use Bendixson--Dulac Theorem.
 a) $f_x+g_y = 1+1 > 0$, so no closed trajectories.
 b) $f_x+g_y = -\sin^2(y)+0 < 0$ for all $x,y$ except the lines
 given by $y=k\pi$ (where we get zero), so no closed trajectories.
-c) $f_x+g_y = y + 0 > 0$ for all $x,y$ except the line
+c) $f_x+g_y = y^2 + 0 > 0$ for all $x,y$ except the line
 given by $y=0$ (where we get zero), so no closed trajectories.
 }
 
