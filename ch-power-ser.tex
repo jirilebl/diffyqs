@@ -127,9 +127,9 @@ the series converges for all $x$.
 \end{myfig}
 
 See \figurevref{ps:convfig}.
-In \exampleref{ps:expex} the radius of convergence is $\rho = \infty$
-as the series converges everywhere.  In \exampleref{ps:1kex}
-the radius of convergence is $\rho=1$.
+In \exampleref{ps:expex}, the radius of convergence is $\rho = \infty$
+as the series converges everywhere.
+In \exampleref{ps:1kex}, the radius of convergence is $\rho=1$.
 We note that $\rho = 0$ is another way of saying that the series is
 divergent.
 
@@ -276,7 +276,7 @@ So the radius of convergence is $\infty$: the series
 converges everywhere.  The ratio test would also work here.
 \end{example}
 
-The root or the ratio test does not always apply.  That is
+The root or the ratio test does not always apply.  That is,
 the limit
 of
 $\bigl \lvert \frac{a_{k+1}}{a_k} \bigr \rvert$
@@ -294,15 +294,21 @@ be easier to compute in one way than the other.
 Functions represented by power series are called
 \emph{\myindex{analytic functions}}.  Not every function is analytic,
 although the majority of the functions you have seen in calculus are.
-
 An analytic function $f(x)$ is equal to its \emph{\myindex{Taylor series}}%
 \footnote{Named after the English mathematician
 \href{http://en.wikipedia.org/wiki/Brook_Taylor}{Sir Brook Taylor}
-(1685--1731).}
+(1685--1731).} (a power series computed from $f$)
 near a point $x_0$.
-That is, for $x$ near $x_0$ we have
+That is, for $x$ near $x_0$,
 \begin{equation} \label{ps:tayloreq}
-f(x) = \sum_{k=0}^\infty \frac{f^{(k)}(x_0)}{k!} {(x-x_0)}^k ,
+f(x) = \sum_{k=0}^\infty \frac{f^{(k)}(x_0)}{k!} {(x-x_0)}^k 
+=
+f(x_0)
++ f'(x_0) (x-x_0)
++ \frac{f''(x_0)}{2} (x-x_0)^2
++ \cdots
+,
+\avoidbreak
 \end{equation}
 where $f^{(k)}(x_0)$ denotes the $k^{\text{th}}$ derivative of $f(x)$
 at the point $x_0$.
@@ -656,14 +662,14 @@ Let us try a power series solution near $x_0 = 0$,
 which is an ordinary point.  Every point is an ordinary
 point in fact, as the equation is constant coefficient.  We already know
 we should obtain exponentials or the hyperbolic sine and cosine,
-but let us pretend we do not know this.
+but let us pretend we do not know this fact.
 
 We try
 \begin{equation*}
 y = \sum_{k=0}^\infty a_k x^k .
 \end{equation*}
 If we differentiate, the $k=0$ term is a constant and hence disappears.
-We therefore get
+We get
 \begin{equation*}
 y' = \sum_{k=1}^\infty k a_k x^{k-1} .
 \end{equation*}
@@ -1577,7 +1583,7 @@ obtain a second solution.
 
 \subsection{Bessel functions} \label{bessel:subsection}
 
-An important class of functions that arises commonly in physics are the
+An important class of functions that arise commonly in physics are the
 \emph{Bessel functions}%
 \footnote{Named after
 the German astronomer and mathematician
@@ -1726,8 +1732,8 @@ For example, given a positive constant $\lambda$,
 x y'' + y' + \lambda^2 x y = 0 ,
 \end{equation*}
 can be changed to 
-$x^2 y'' + x y' + \lambda^2 x^2 y = 0$.  Then changing variables
-$t = \lambda x$, we obtain via chain rule the equation in $y$ and $t$:
+$x^2 y'' + x y' + \lambda^2 x^2 y = 0$.  Changing variables
+$t = \lambda x$, we obtain, via the chain rule, the equation in $y$ and $t$:
 \begin{equation*}
 t^2 y'' + t y' + t^2 y = 0 ,
 \end{equation*}
