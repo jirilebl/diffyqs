@@ -56,8 +56,10 @@ Both were changed to be on the interval \([-\pi,\pi]\) which avoids the
 resonance and makes computations easier anyhow.
 <li>On page 330, when writing out the Taylor series, mention that it
 is a power series to drive that point home and also
-expand it as it is sometimes not totally clear what the \(k=0\) term
+expand a few terms as it is sometimes not totally clear what the \(k=0\) term
 means here.
+<li>Expand the first few terms of the differentiated series on page 331
+to make it clearer what it looks like.
 <li><b>Exercise 8.4.101 part c was changed to fix erratum</b>:
 The system is changed to \(x'=xy^2,y'=x+x^2 ,\) and then the solution
 in the back (changing \(y\) to \(y^2\) of course) works.

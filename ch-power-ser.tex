@@ -346,14 +346,22 @@ for $x$ in the radius of convergence we have
 \frac{d}{dx}
 \left[\sum_{k=0}^\infty a_k {(x-x_0)}^k\right]
 =
-\sum_{k=1}^\infty k a_k {(x-x_0)}^{k-1} .
+\sum_{k=1}^\infty k a_k {(x-x_0)}^{k-1}
+=
+a_1
++ 2 a_2 (x-x_0)
++ 3 a_3 {(x-x_0)}^{2}
++ \cdots
+.
 \end{equation*}
 Notice that the term corresponding to $k=0$ disappeared as
 it was constant.  The radius of convergence of the differentiated
 series is the same as that of the original.
 
 \begin{example}
-Let us show that the exponential $y=e^x$ solves $y'=y$.  First write
+Let us show that the exponential $y=e^x$ solves $y'=y$.  Suppose
+we didn't know that.
+Write
 \begin{equation*}
 y = e^x = \sum_{k=0}^\infty \frac{1}{k!} x^k .
 \end{equation*}
