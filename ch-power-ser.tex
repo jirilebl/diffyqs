@@ -662,7 +662,7 @@ is a \emph{\myindex{singular point}}.  Handling singular points is
 harder than ordinary points and so we now focus only on ordinary points.
 
 \begin{example}
-Let us start with a very simple example
+We start with a very simple example
 \begin{equation*}
 y'' - y = 0 .
 \end{equation*}
@@ -718,7 +718,7 @@ a_{k+2} = \frac{a_k}{(k+2)(k+1)} .
 The equation above is called a \emph{\myindex{recurrence relation}}
 for the coefficients of the power series.
 It did not matter what $a_0$ or $a_1$ was.  They can be arbitrary.
-But once we pick $a_0$ and $a_1$, then all other coefficients are
+But once we pick $a_0$ and $a_1$, all other coefficients are
 determined by the recurrence relation.
 
 Let us see what the coefficients
@@ -829,8 +829,8 @@ Again $y''-xy$ is supposed to be 0, so $a_2 = 0$, and
 \qquad
 a_{k+2} = \frac{a_{k-1}}{(k+2)(k+1)} .
 \end{equation*}
-We jump in steps of three.  First, since $a_2 = 0$
-we must have , $a_5 = 0$, $a_8 = 0$, $a_{11}=0$, etc.
+We jump in steps of three.  First, since $a_2 = 0$,
+we must have $a_5 = 0$, $a_8 = 0$, $a_{11}=0$, etc.
 In general, $a_{3n+2} = 0$.
 
 The constants $a_0$ and $a_1$ are arbitrary and we obtain
@@ -840,7 +840,7 @@ a_4 = \frac{a_1}{(4)(3)}, \quad
 a_6 = \frac{a_3}{(6)(5)} = \frac{a_0}{(6)(5)(3)(2)}, \quad
 a_7 = \frac{a_4}{(7)(6)} = \frac{a_1}{(7)(6)(4)(3)}, \quad \ldots
 \end{equation*}
-For $a_k$ where $k$ is a multiple of $3$, that is $k=3n$ we notice
+For $a_k$ where $k$ is a multiple of $3$, that is, $k=3n$, we notice
 that
 \begin{equation*}
 a_{3n} = \frac{a_0}{(2)(3)(5)(6) \cdots (3n-1)(3n)} .
@@ -941,7 +941,7 @@ y'' &= \sum_{k=2}^\infty k\,(k-1) \, a_k x^{k-2} .
 Now we plug into the equation
 \begin{equation*}
 \begin{split}
-0 = y''-2xy'&+2ny \\
+0 &= y''-2xy'+2ny \\
  &= 
 \Biggl( \sum_{k=2}^\infty k(k-1) a_k x^{k-2}  \Biggr)
 -
@@ -973,7 +973,7 @@ Now we plug into the equation
 \sum_{k=1}^\infty \bigl( (k+2)(k+1)  a_{k+2} - 2ka_k + 2n a_k \bigr) x^k .
 \end{split}
 \end{equation*}
-As $y''-2xy'+2ny = 0$ we have
+As $y''-2xy'+2ny = 0$, we have
 \begin{equation*}
 (k+2)(k+1)  a_{k+2} + ( - 2k+ 2n) a_k = 0 ,
 \qquad
@@ -982,7 +982,7 @@ As $y''-2xy'+2ny = 0$ we have
 a_{k+2} = \frac{(2k-2n)}{(k+2)(k+1)} a_k .
 \end{equation*}
 This recurrence relation actually includes
-$a_2 = -na_0$ (which comes about from $2a_2+2na_0 = 0$).
+$a_2 = -na_0$ (which comes about from the constant term $2a_2+2na_0 = 0$).
 Again $a_0$ and $a_1$ are arbitrary.
 \begin{align*}
 & a_2 = \frac{-2n}{(2)(1)}a_0, \qquad
@@ -1018,8 +1018,8 @@ y(x) = a_0 y_1(x) + a_1 y_2(x) .
 \end{equation*}
 
 We remark that if $n$ is a positive even integer, then $y_1(x)$ is a
-polynomial as all the coefficients in the series beyond a certain
-degree are zero.  If $n$ is a positive odd integer, then $y_2(x)$ is
+polynomial as all the coefficients in the series beyond
+degree $n$ are zero.  If $n$ is a positive odd integer, then $y_2(x)$ is
 a polynomial.  For example, if $n=4$, then
 \begin{equation*}
 y_1(x) = 1 + \frac{2(-4)}{2!} x^2 + \frac{2^2(-4)(2-4)}{4!} x^4
