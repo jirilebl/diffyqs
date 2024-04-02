@@ -28,6 +28,9 @@ SMALLER THINGS MAYBE:
 * Perhaps mention somewhere in 2.2 how the correspondence is with $y^{(n)}$
   going to $r^n$ in the characteristic equation, might make it simpler to
   see.
+* More detail in 7.1, work more with the expanded series
+* Another example in 7.2, perhaps nonlinear to show that one can keep
+  cranking out the coefficients.
 
 LARGER THINGS MAYBE:
 
