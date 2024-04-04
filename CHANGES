@@ -60,6 +60,10 @@ expand a few terms as it is sometimes not totally clear what the \(k=0\) term
 means here.
 <li>Expand the first few terms of the differentiated series on page 331
 to make it clearer what it looks like.
+<li>In sections 7.1, 7.2, 7.3, add 0.5 lecture to the estimates in the
+note for instructors, they were too optimistic.
+I just did them each in 2 lectures and I felt it was about the same pace as
+chapters 1 and 2 where I was hitting my estimates spot on.
 <li><b>Exercise 8.4.101 part c was changed to fix erratum</b>:
 The system is changed to \(x'=xy^2,y'=x+x^2 ,\) and then the solution
 in the back (changing \(y\) to \(y^2\) of course) works.
