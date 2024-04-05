@@ -64,6 +64,8 @@ to make it clearer what it looks like.
 note for instructors, they were too optimistic.
 I just did them each in 2 lectures and I felt it was about the same pace as
 chapters 1 and 2 where I was hitting my estimates spot on.
+<li>In 7.3 when describing the method, mention very quickly what to do
+if \(x_0\) is not zero.
 <li><b>Exercise 8.4.101 part c was changed to fix erratum</b>:
 The system is changed to \(x'=xy^2,y'=x+x^2 ,\) and then the solution
 in the back (changing \(y\) to \(y^2\) of course) works.

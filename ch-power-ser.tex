@@ -1269,7 +1269,8 @@ Then $y' = r x^{r-1}$.  So
 0 = 2 x y' - y = 2 x r x^{r-1} - x^r = (2r-1) x^r .
 \end{equation*}
 Therefore $r= \nicefrac{1}{2}$, or in other words $y = x^{1/2}$.
-Multiplying by a constant, the general solution for positive $x$ is
+As the equation is linear,
+the general solution for positive $x$ is
 \begin{equation*}
 y = C x^{1/2} .
 \end{equation*}
@@ -1302,12 +1303,12 @@ y = x^r \sum_{k=0}^\infty a_k x^k
 \end{equation*}
 where $r$ is a real number, not necessarily an integer.
 Again if such a solution exists, it may only exist for positive $x$.
-First let us find the derivatives
+First we find the derivatives
 \begin{align*}
 y' & = \sum_{k=0}^\infty (k+r)\, a_k x^{k+r-1} , \\
 y'' & = \sum_{k=0}^\infty (k+r)\,(k+r-1)\, a_k x^{k+r-2} .
 \end{align*}
-Plugging into our equation we obtain
+We plug those into our equation:
 \begin{equation*}
 \begin{split}
 0 & = 4x^2y''-4x^2y'+(1-2x)y
@@ -1361,9 +1362,8 @@ a_k
 \bigl( 4 (k+r-1) + 2 \bigr) \, a_{k-1} \Bigr) \, x^{k+r} .
 \end{split}
 \end{equation*}
-To have a solution we must first have
-$\bigl( 4r(r-1) + 1 \bigr) \, a_0 = 0$.  Supposing that $a_0 \not= 0$
-we obtain 
+First, to have a solution we must have
+$\bigl( 4r(r-1) + 1 \bigr) \, a_0 = 0$.  Supposing $a_0 \not= 0$,
 \begin{equation*}
 4r(r-1) + 1 = 0 .
 \end{equation*}
@@ -1496,7 +1496,9 @@ Let us now discuss the general \emph{\myindex{Method of Frobenius}}\index{Froben
 \footnote{Named after the German mathematician
 \href{http://en.wikipedia.org/wiki/Ferdinand_Georg_Frobenius}{Ferdinand
 Georg Frobenius} (1849--1917).}.
-We only consider the method at the point $x=0$ for simplicity.  The main
+We only consider the method at the point $x=0$ for simplicity.
+If $x_0 \not=0$, then in the solution, we would replace every $x$ with $(x-x_0)$.
+The main
 idea is the following theorem.
 
 \begin{theorem}[Method of Frobenius]
