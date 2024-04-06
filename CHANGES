@@ -32,6 +32,8 @@ meters since we give the units of all the other variables, also we forgot to
 say that current is measured in amperes.
 <li>On page 105, add an explicit remark about trying a generic polynomial
 even if some of the powers do not really appear on the right hand side.
+<li>On pages 106 and 107, some of the particular solutions were just $y$,
+but that's not totally consistent with the rest of the section.
 <li>On page 109, the computation of the example for variation parameters,
 rewrite the \(u_1'\) in a different way to make calculus easier
 and use a different, somewhat simpler, antiderivative of the secant

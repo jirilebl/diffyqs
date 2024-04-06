@@ -2116,7 +2116,7 @@ Then
 We solve to get $C_1 = \nicefrac{1}{3}$ and $C_2 = \nicefrac{-2}{9}$.
 The particular solution we want is
 \begin{equation*}
-y(x) = \frac{1}{3} e^{-2x} - \frac{2}{9} e^{-3x} + \frac{3x-1}{9} =
+y = \frac{1}{3} e^{-2x} - \frac{2}{9} e^{-3x} + \frac{3x-1}{9} =
 \frac{3 e^{-2x} - 2 e^{-3x} + 3x-1}{9} .
 \end{equation*}
 
@@ -2180,7 +2180,7 @@ exponentials.  If
 \begin{equation*}
 Ly = e^{3x},
 \end{equation*}
-we try $y = A e^{3x}$ as our guess and try to solve for $A$.
+we try $y_p = A e^{3x}$ as our guess and try to solve for $A$.
 
 \medskip
 
@@ -2209,31 +2209,31 @@ calculation very quickly.  C'est \myindex{la vie}! %bit more fun
 \medskip
 
 There is one hiccup in all this.  It could be that our guess actually
-solves the associated homogeneous equation.  That is, suppose we have
+solves the associated homogeneous equation.  That is, consider
 \begin{equation*}
 y'' - 9y = e^{3x} .
 \end{equation*}
-We would love to guess $y = Ae^{3x}$, but if we plug this into the
+We would love to guess $y_p = Ae^{3x}$, but if we plug this into the
 left-hand side of the equation we get
 \begin{equation*}
-y''-9y = 9Ae^{3x} - 9Ae^{3x} = 0 \not= e^{3x} .
+y_p''-9y_p = 9Ae^{3x} - 9Ae^{3x} = 0 \not= e^{3x} .
 \end{equation*}
 There is no way to choose $A$ to make the left-hand side be $e^{3x}$.
 The trick in
 this case
 is to multiply our guess by $x$ to get rid of duplication with the
-complementary solution.  That is first we compute $y_c$ (solution to $Ly =
+complementary solution.  That is, first we find $y_c$ (solution to $Ly =
 0$)
 \begin{equation*}
 y_c = C_1 e^{-3x} + C_2 e^{3x} ,
 \end{equation*}
 and we note that the $e^{3x}$ term is a duplicate with our desired guess.
-We modify our guess to $y = Axe^{3x}$ so that there is no
+We modify our guess to $y_p = Axe^{3x}$ so that there is no
 duplication anymore.  Let us try:
-$y' = Ae^{3x} + 3Axe^{3x}$ and 
-$y'' = 6Ae^{3x} + 9Axe^{3x}$, so
+$y_p' = Ae^{3x} + 3Axe^{3x}$ and 
+$y_p'' = 6Ae^{3x} + 9Axe^{3x}$, so
 \begin{equation*}
-y'' -9y = 6Ae^{3x} + 9Axe^{3x} - 9Axe^{3x} = 
+y_p'' -9y_p = 6Ae^{3x} + 9Axe^{3x} - 9Axe^{3x} = 
 6Ae^{3x} .
 \end{equation*}
 Thus $6Ae^{3x}$ is supposed to equal $e^{3x}$.  Hence,
@@ -2253,7 +2253,7 @@ duplication.  For example,
 y''-6y'+9y = e^{3x} .
 \end{equation*}
 The complementary solution is
-$y_c = C_1 e^{3x} + C_2 x e^{3x}$.  Guessing $y=A xe^{3x}$
+$y_c = C_1 e^{3x} + C_2 x e^{3x}$.  Guessing $y_p=A xe^{3x}$
 does not get us anywhere.
 We want to guess $y_p = Ax^2e^{3x}$.
 Basically, we multiply our guess by $x$

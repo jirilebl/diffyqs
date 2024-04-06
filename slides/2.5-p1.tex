@@ -1,0 +1,408 @@
+\documentclass[10pt,aspectratio=169]{beamer}
+
+% All the boilerplate is in deslides.sty
+\usepackage{deslides}
+
+\author{Ji\v{r}\'i Lebl}
+
+\institute[OSU]{%
+Oklahoma State University%
+%Departemento pri Matematiko de Oklahoma {\^S}tata Universitato%
+}
+
+\title{19. Nonhomogeneous equations,\\part 1: undetermined coefficients\\(Notes on Diffy Qs, 2.5)}
+
+\date{}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+
+%\bigskip
+
+\begin{center}
+The textbook: \url{https://www.jirka.org/diffyqs/}
+\end{center}
+\end{frame}
+
+\begin{frame}
+How do we solve nonhomogeneous equations?  E.g.,
+\[
+y'' + 5y'+ 6y = 2x+1
+\pause
+\qquad
+\text{(Write $Ly = 2x+1$ for short).}
+\]
+\pause
+Consider the \emph{associated homogeneous equation}:
+\[
+y'' + 5y'+ 6y = 0
+\pause
+\qquad
+\text{($Ly = 0$).}
+\]
+\pause
+Its general solution $y_c$ (i.e. $Ly_c = 0$) is called the
+\emph{complementary solution}.
+
+\medskip
+\pause
+
+Find any one \emph{particular solution} $y_p$ of $Ly_p=2x+1$.
+
+\medskip
+\pause
+
+$y = y_c + y_p$ \quad is the general solution to $Ly=2x+1$
+as $L$ is a linear operator:
+\pause
+\[
+L y = L ( y_c + y_p) \pause = L y_c + L y_p \pause = 0 + (2x+1).
+\]
+\pause
+Why is it the \emph{general} solution?
+Suppose
+$y_p$ and $\tilde{y}_p$ be two particular solutions:
+Then
+\[
+L(y_p-\tilde{y}_p) \pause =
+Ly_p-L\tilde{y}_p \pause =
+(2x+1)-(2x+1) = 0 .
+\]
+\pause
+The difference is a solution to the
+associated homogeneous equation.
+
+\medskip
+\pause
+
+\textbf{Theorem:} If $y_c$ is the general solution to $Ly_c = 0$
+and $y_p$ is any particular solution to $Ly_p = f(x)$, then
+\[
+y=y_c+y_p
+\qquad
+\text{is the general solution to $Ly = f(x)$.}
+\]
+\end{frame}
+
+\begin{frame}
+OK, so how do we find some particular $y_p$ solving
+$y'' + 5y'+ 6y = 2x+1$.
+
+\medskip
+\pause
+
+\textbf{Undetermined coefficients}
+
+\medskip
+\pause
+
+We guess in a smart way.
+We want $y_p$ such that $Ly_p = 2x+1$.
+\pause
+Derivatives of polynomials are polynomials.
+\pause
+So are their linear combinations.
+
+\medskip
+\pause
+
+Try: \quad $y_p = Ax + B$
+\pause
+\[
+y_p'' + 5y_p'+ 6y_p  \pause =
+(Ax+B)'' + 5(Ax+B)' + 6(Ax+B)
+\pause  = 
+0 + 5A + 6Ax + 6B
+\pause
+= 6Ax+ (5A+6B) .
+\]
+\pause
+We want \quad $6Ax+(5A+6B) = 2x+1$ \quad or \quad $6A=2$ and $5A+6B=1$.
+
+\medskip
+\pause
+
+\thus \quad  $A = \nicefrac{1}{3}$ and $B = \nicefrac{-1}{9}$.
+
+\medskip
+\pause
+
+Let \quad $\displaystyle y_p = \frac{1}{3}\, x - \frac{1}{9} = \frac{3x-1}{9}$.
+
+\medskip
+\pause
+
+Solving the complementary problem:
+\quad
+$y_c = C_1 e^{-2x} + C_2 e^{-3x}$.
+
+\medskip
+\pause
+
+The general solution is
+\[
+y = C_1 e^{-2x} + C_2 e^{-3x} + \frac{3x-1}{9} .
+\]
+\end{frame}
+
+\begin{frame}
+Suppose we had an initial value problem:
+\quad $y'' + 5y'+ 6y = 2x+1$, \quad
+$y(0) = 0$ and $y'(0) = \nicefrac{1}{3}$.
+
+\medskip
+\pause
+
+\quad $y = C_1 e^{-2x} + C_2 e^{-3x} + \frac{3x-1}{9}$.
+\qquad
+\pause
+$y' = - 2C_1 e^{-2x} - 3C_2 e^{-3x} + \nicefrac{1}{3}$.
+
+\medskip
+\pause
+Then
+$0 = y(0) \pause = C_1 + C_2 -\nicefrac{1}{9}$, \pause \qquad
+$\nicefrac{1}{3} = y'(0) \pause = - 2C_1 - 3C_2 + \nicefrac{1}{3}$.
+\medskip
+\pause
+
+Solve to get $C_1 = \nicefrac{1}{3}$ and $C_2 = \nicefrac{-2}{9}$.
+
+\medskip
+\pause
+
+The solution to the initial value problem is
+\[
+y = \frac{1}{3} e^{-2x} - \frac{2}{9} e^{-3x} + \frac{3x-1}{9} =
+\frac{3 e^{-2x} - 2 e^{-3x} + 3x-1}{9} .
+\]
+\pause
+
+\textbf{Warning:}
+Do not solve for constants in $y_c$ before adding $y_p$!
+Write $y=y_c+y_p$ and \textit{then} solve for constants.
+
+\medskip
+\pause
+
+\textbf{Note:}
+Do not forget lower degree terms even if they don't appear on the right
+hand side:
+
+\medskip
+
+E.g., for \quad $Ly = x^3+1$, \quad try $y_p = Ax^3+Bx^2+Cx+D$.
+
+\medskip
+\pause
+
+For $Ly = x^3$, $y_p = Ax^3+Bx^2+Cx$ would work,
+but no harm in trying $y_p = Ax^3+Bx^2+Cx+D$.
+\end{frame}
+
+\begin{frame}
+Sines, cosines and exponentials are similar.
+
+\pause
+\medskip
+
+\textbf{Example:}
+Find a particular solution to
+\quad
+$y''+2y'+2y = \cos (2x)$.
+
+\medskip
+\pause
+
+Linear combinations of derivatives of $\cos(2x)$ will be combinations
+of $\cos (2x)$ and $\sin (2x)$.
+
+\medskip
+\pause
+
+Try:
+\quad
+$y_p = A \cos (2x) + B \sin (2x)$.
+\pause
+\begin{multline*}
+\underbrace{-4 A \cos (2x) - 4 B \sin (2x)}_{y_p''}
++2 \underbrace{\bigl(-2A \sin (2x) + 2B \cos (2x)\bigr)}_{y_p'}
+\\
++
+2 \underbrace{\bigl(A \cos (2x) + 2B \sin (2x)\bigr)}_{y_p}
+= \cos (2x) ,
+\end{multline*}
+\pause
+\thus\quad
+$(-4A+4B+2A) \cos(2x) +
+(-4B-4A+2B) \sin(2x)
+= \cos(2x)$.
+
+\medskip
+\pause
+\thus \quad $-4A + 4B + 2A = 1$ ~and~
+$-4B - 4A + 2B = 0$
+\pause
+\wthus
+$-2A+4B =1$ ~and~ $2A+B=0$
+
+\pause
+\thus
+\quad
+$A=\nicefrac{-1}{10}$ ~and~ $B=\nicefrac{1}{5}$.
+
+\medskip
+\pause
+
+So \quad
+$\displaystyle
+y_p = A \cos (2x) + B \sin (2x) = \frac{-\cos (2x) + 2 \sin (2x)}{10} .
+$
+\end{frame}
+
+\begin{frame}
+Similarly for exponentials:
+
+\medskip
+
+For
+\quad $Ly = e^{3x}$, \quad try
+$y_p = A e^{3x}$.
+
+\medskip
+\pause
+
+And we can combine exponentials, sines, cosines, and polynomials:
+
+\medskip
+\pause
+
+For
+\quad
+$Ly = (1+3x^2)\,e^{-x}\cos (\pi x)$,
+
+\medskip
+try
+$y_p = (A + Bx + Cx^2)\,e^{-x} \cos (\pi x) + 
+(D + Ex + Fx^2)\,e^{-x} \sin (\pi x)$.
+
+\medskip
+\pause
+
+Plug in, then solve for $A$, $B$, $C$, $D$, $E$, and $F$.
+\end{frame}
+
+\begin{frame}
+Those guesses may not \emph{always} work. \pause
+The guess could get eaten by the left hand side.
+
+\medskip
+\pause
+
+\textbf{Example:}
+Consider
+\quad $y'' - 9y = e^{3x}$.
+
+\medskip
+\pause
+
+Try guessing \quad $y_p = Ae^{3x}$:
+\pause
+\[
+y_p''-9y_p = (9Ae^{3x}) - 9(Ae^{3x}) \pause = 0 \not= e^{3x} .
+\]
+\pause
+No way to solve for $A$.
+
+\medskip
+\pause
+
+\textbf{Hint:} To save work, compute the complimentary solution first.
+Here, $y_c = C_1 e^{-3x} + C_2 e^{3x}$.
+
+\medskip
+\pause
+
+\textbf{Trick:} Multiply guess by $x$: \quad $y_p = Axe^{3x}$.
+
+\medskip
+\pause
+
+\quad $y_p' = Ae^{3x} + 3Axe^{3x}$ \quad and \quad $y_p'' = 6Ae^{3x} + 9Axe^{3x}$
+
+\medskip
+\pause
+
+\quad $y_p'' -9y_p \pause = 6Ae^{3x} + 9Axe^{3x} - 9Axe^{3x} \pause = 6Ae^{3x}$.
+
+\medskip
+\pause
+
+\thus \quad $6Ae^{3x} = e^{3x}$ \wthus $6A = 1$ \wthus $A=\nicefrac{1}{6}$.
+
+\medskip
+\pause
+
+The general solution is
+\[
+y = y_c + y_p = 
+C_1 e^{-3x} + C_2 e^{3x} + \frac{1}{6}\,xe^{3x} .
+\]
+\end{frame}
+
+\begin{frame}
+Multiplying by $x$ once may not be enough:
+
+\medskip
+
+\textbf{Example:}
+Consider
+\quad
+$y''-6y'+9y = e^{3x}$.
+
+\medskip
+\pause
+
+\quad $y_c = C_1 e^{3x} + C_2 x e^{3x}$.
+
+\medskip
+\pause
+
+So $y_p = A xe^{3x}$ does not get rid of the duplication with $y_c$.
+
+\medskip
+\pause
+
+Solution? \pause Guess \quad $y_p = Ax^2e^{3x}$.
+
+\pause
+\medskip
+So keep multiplying by $x$ until duplication is gone but no more.
+\end{frame}
+
+\begin{frame}
+What if the right-hand side has several terms, e.g.,
+\[
+Ly = e^{2x} + \cos x .
+\]
+\pause
+Find a particular $u$ that solves
+\[
+Lu = e^{2x} .
+\]
+\pause
+Find particular $v$ that solves
+\[
+Lv = \cos x .
+\]
+\pause
+$y=u+v$ \quad solves \quad
+$Ly = e^{2x} + \cos x$:
+\[
+Ly=L(u+v) = Lu+Lv = e^{2x} + \cos x .
+\]
+\end{frame}
+
+\end{document}
