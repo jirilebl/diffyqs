@@ -642,9 +642,9 @@ $f(x)-g(x)$ is a polynomial.  Hint: Use Taylor series.
 
 Suppose we have a linear second order homogeneous ODE of the form
 \begin{equation*}
-p(x) y'' + q(x) y' + r(x) y = 0 .
+P(x) y'' + Q(x) y' + R(x) y = 0 .
 \end{equation*}
-Suppose that $p(x)$, $q(x)$, and $r(x)$ are polynomials.  We will 
+Suppose that $P(x)$, $Q(x)$, and $R(x)$ are polynomials.  We will 
 try a solution of the form
 \begin{equation*}
 y = \sum_{k=0}^\infty a_k {(x-x_0)}^k
@@ -653,11 +653,11 @@ and solve for the $a_k$ to try to obtain a solution defined in some
 interval around $x_0$.
 
 The point $x_0$ is called an \emph{\myindex{ordinary point}}
-if $p(x_0) \not= 0$.  That is, the functions
+if $P(x_0) \not= 0$.  That is, the functions
 \begin{equation*}
-\frac{q(x)}{p(x)} \qquad \text{and} \qquad \frac{r(x)}{p(x)}
+\frac{Q(x)}{P(x)} \qquad \text{and} \qquad \frac{R(x)}{P(x)}
 \end{equation*}
-are defined for $x$ near $x_0$.  If $p(x_0) = 0$, then we say $x_0$
+are defined for $x$ near $x_0$.  If $P(x_0) = 0$, then we say $x_0$
 is a \emph{\myindex{singular point}}.  Handling singular points is
 harder than ordinary points and so we now focus only on ordinary points.
 
@@ -1451,14 +1451,14 @@ we write the general solution as $y = A y_1 + B y_2$.
 Before giving the general method, let us clarify when the method applies.
 Let
 \begin{equation*}
-p(x) y'' + q(x) y' + r(x) y = 0
+P(x) y'' + Q(x) y' + R(x) y = 0
 \end{equation*}
-be an ODE\@.  As before, if $p(x_0) = 0$, then $x_0$ is a
+be an ODE\@.  As before, if $P(x_0) = 0$, then $x_0$ is a
 singular point.  If, furthermore, the limits
 \begin{equation*}
-\lim_{x \to x_0} ~ (x-x_0) \frac{q(x)}{p(x)}
+\lim_{x \to x_0} ~ (x-x_0) \frac{Q(x)}{P(x)}
 \qquad \text{and} \qquad
-\lim_{x \to x_0} ~ (x-x_0)^2 \frac{r(x)}{p(x)}
+\lim_{x \to x_0} ~ (x-x_0)^2 \frac{R(x)}{P(x)}
 \end{equation*}
 both exist and are finite, then we say that $x_0$ is
 a \emph{\myindex{regular singular point}}.
@@ -1470,10 +1470,10 @@ x^2y'' + x(1+x)y' + (\pi+x^2)y = 0 .
 \end{equation*}
 Write
 \begin{align*}
-& \lim_{x \to 0} ~x \frac{q(x)}{p(x)} = 
+& \lim_{x \to 0} ~x \frac{Q(x)}{P(x)} = 
 \lim_{x \to 0} ~x \frac{x(1+x)}{x^2} = \lim_{x \to 0} ~(1+x) = 1 ,
 \\
-& \lim_{x \to 0} ~x^2 \frac{r(x)}{p(x)} = 
+& \lim_{x \to 0} ~x^2 \frac{R(x)}{P(x)} = 
 \lim_{x \to 0} ~x^2 \frac{(\pi+x^2)}{x^2} = \lim_{x \to 0} ~(\pi+x^2) = \pi .
 \end{align*}
 So $x = 0$ is a regular singular point.
@@ -1484,7 +1484,7 @@ x^2y'' + (1+x)y' + (\pi+x^2)y = 0 ,
 \end{equation*}
 then
 \begin{equation*}
-\lim_{x \to 0} ~x \frac{q(x)}{p(x)} = 
+\lim_{x \to 0} ~x \frac{Q(x)}{P(x)} = 
 \lim_{x \to 0} ~x \frac{(1+x)}{x^2} = \lim_{x \to 0} ~\frac{1+x}{x} =
 \text{DNE}.
 \end{equation*}
@@ -1504,7 +1504,7 @@ idea is the following theorem.
 \begin{theorem}[Method of Frobenius]
 Suppose that 
 \begin{equation} \label{eq:frobeniusmethod}
-p(x) y'' + q(x) y' + r(x) y = 0
+P(x) y'' + Q(x) y' + R(x) y = 0
 \end{equation}
 has a regular singular point at $x=0$, then there exists at least
 one solution of the form
