@@ -58,6 +58,8 @@ Both were changed to be on the interval \([-\pi,\pi]\) which avoids the
 resonance and makes computations easier anyhow.
 <li>In Theorem 6.1.2, mention the interval \([0,\infty)\) just in case
 someone wonders what happened to the \(\frac{1}{t}\) counterexample.
+<li>In Example 6.1.7, add an intermediate step in computing the unshifted
+inverse transform.
 <li>On page 330, when writing out the Taylor series, mention that it
 is a power series to drive that point home and also
 expand a few terms as it is sometimes not totally clear what the \(k=0\) term

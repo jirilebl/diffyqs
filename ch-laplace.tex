@@ -380,7 +380,7 @@ $s(s^2+1)$ and write
 \end{equation*}
 Putting the right-hand side over a common
 denominator and equating the numerators we get
-$A(s^2+1) + s(Bs+C) = s^2+s+1$.  Expanding and equating coefficients
+$A(s^2+1) + s(Bs+C) = s^2+s+1$.  Expanding and equating coefficients,
 we obtain $A+B = 1$, $C=1$, $A=1$,
 and thus $B=0$.  In
 other words,
@@ -431,14 +431,17 @@ and then use the shifting property.
 Find
 ${\mathcal{L}}^{-1} \left\{ \frac{1}{s^2+4s+8} \right\}$.
 
-First we complete the square to make the denominator ${(s+2)}^2+4$.  
-Next we find
+First, we complete the square to make the denominator ${(s+2)}^2+4$.  
+We find
 \begin{equation*}
 {\mathcal{L}}^{-1} \left\{ \frac{1}{s^2+4} \right\}
 =
+\frac{1}{2}
+{\mathcal{L}}^{-1} \left\{ \frac{2}{s^2+2^2} \right\}
+=
 \frac{1}{2} \sin (2t) .
 \end{equation*}
-Putting it all together with the shifting property, we find
+Finally, we put it all together with the shifting property to find
 \begin{equation*}
 {\mathcal{L}}^{-1} \left\{ \frac{1}{s^2+4s+8} \right\} = 
 {\mathcal{L}}^{-1} \left\{ \frac{1}{{(s+2)}^2+4} \right\}
