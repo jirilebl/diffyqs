@@ -60,6 +60,9 @@ resonance and makes computations easier anyhow.
 someone wonders what happened to the \(\frac{1}{t}\) counterexample.
 <li>In Example 6.1.7, add an intermediate step in computing the unshifted
 inverse transform.
+<li>Replace Example 6.2.5 by a more intelligent one that also very simple,
+somewhat easier to understand, and not as trivially solved without Laplace
+(still easily though).
 <li>On page 330, when writing out the Taylor series, mention that it
 is a power series to drive that point home and also
 expand a few terms as it is sometimes not totally clear what the \(k=0\) term

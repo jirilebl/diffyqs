@@ -560,8 +560,8 @@ $\frac{1}{s^2+2s+2}$
 \subsection{Transforms of derivatives}
 
 Let us see how the Laplace transform is used for differential equations.
-First let us try to find the Laplace transform of a function that is a
-derivative.  Suppose $g(t)$ is a differentiable function
+First we find the Laplace transform of the derivative of a function.
+Suppose $g(t)$ is a differentiable function
 of exponential order, that is, $\lvert g(t) \rvert \leq M e^{ct}$ for some
 $M$ and $c$.  So $\mathcal{L} \bigl\{ g(t) \bigr\}$ exists, and what is more,
 $\lim_{t\to\infty} e^{-st}g(t) = 0$ when $s > c$.  Then
@@ -584,7 +584,7 @@ g(t) \,dt
 We repeat this procedure for higher derivatives.
 The results are
 listed in \tablevref{ltd:table}.  The procedure also works for piecewise
-smooth functions, that is functions that are piecewise continuous with a
+smooth functions, that is, functions that are continuous with a
 piecewise continuous derivative.
 %The fact that the function is of
 %exponential order is used to show that the limits appearing above 
@@ -909,25 +909,20 @@ An equation containing an integral of the unknown function is
 called an \emph{\myindex{integral equation}}.
 Consider
 \begin{equation*}
-t^2 = \int_0^t e^{\tau} x(\tau) ~d\tau ,
+x(t) - t = \int_0^t x(\tau) ~d\tau ,
 \end{equation*}
 where we wish to solve for $x(t)$.
-We apply the Laplace transform and the shifting property to get
+We apply the Laplace transform to get
 \begin{equation*}
-\frac{2}{s^3} = \frac{1}{s} \, \mathcal{L} \bigl\{ e^{t} x(t) \bigr\}
-=
-\frac{1}{s} \, X(s-1) ,
+X(s) - \frac{1}{s^2} = \frac{1}{s} X(s) ,
 \end{equation*}
 where $X(s) = \mathcal{L} \bigl\{ x(t) \bigr\}$.  Thus
 \begin{equation*}
-X(s-1) =
-\frac{2}{s^2} \qquad \text{or} \qquad
-X(s) =
-\frac{2}{{(s+1)}^2}.
+X(s) = \frac{1}{s(s-1)} = \frac{1}{s-1} - \frac{1}{s} .
 \end{equation*}
-We use the shifting property again
+Taking the inverse Laplace transform, we obtain
 \begin{equation*}
-x(t) = 2 e^{-t} t .
+x(t) = e^t - 1 .
 \end{equation*}
 %More complicated integral
 %equations can also be solved using convolution, about which we will
