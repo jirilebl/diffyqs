@@ -60,6 +60,11 @@ resonance and makes computations easier anyhow.
 someone wonders what happened to the \(\frac{1}{t}\) counterexample.
 <li>In Example 6.1.7, add an intermediate step in computing the unshifted
 inverse transform.
+<li>In 6.2.1, we offhand make a remark about piecewise smooth functions,
+but if the functions have discontinuities, then one would have to
+write a little bit more (the same procedure works, but does not get the same
+formula as we'd be missing the delta functions in the derivative).
+So just say "continuous" here and then the same formula will work.
 <li>Replace Example 6.2.5 by a more intelligent one that also very simple,
 somewhat easier to understand, and not as trivially solved without Laplace
 (still easily though).
