@@ -1222,12 +1222,15 @@ all $k$ and so $y(x) = 0$ is the only solution we find.
 \sectionnotes{1.5 or 2 lectures\EPref{, \S8.4 and \S8.5 in \cite{EP}}\BDref{,
 \S5.4--\S5.7 in \cite{BD}}}
 
-While behavior of ODEs at singular points is more complicated,
-certain singular points are
-not especially difficult to solve.  Let us look at some examples
-before giving a general method.  We may be lucky and obtain a power series
-solution using the method of the previous section, but in general we may
-have to try other things.
+The behavior of ODEs at singular points can be complicated,
+for certain singular points,
+we can find a solution on at least one side of the singular point
+using a modification of
+the power series.
+Let us look at some examples before giving a general method.
+%We may be lucky and obtain a power series
+%solution using the method of the previous section, but in general we
+%have to try other things.
 
 \subsection{Examples}
 
@@ -1237,6 +1240,9 @@ Let us first look at a simple first order equation
 2 x y' - y = 0 .
 \end{equation*}
 Note that $x=0$ is a singular point.
+Setting $x=0$ in the equation, we find
+that any solution defined near zero satisfies
+$y(0)=0$, but it is even worse.
 If we try to plug in
 \begin{equation*}
 y = \sum_{k=0}^\infty a_k x^k ,
@@ -1268,7 +1274,7 @@ Then $y' = r x^{r-1}$.  So
 \begin{equation*}
 0 = 2 x y' - y = 2 x r x^{r-1} - x^r = (2r-1) x^r .
 \end{equation*}
-Therefore $r= \nicefrac{1}{2}$, or in other words $y = x^{1/2}$.
+Thus $r= \nicefrac{1}{2}$ and so $y = x^{1/2}$.
 As the equation is linear,
 the general solution for positive $x$ is
 \begin{equation*}
@@ -1284,10 +1290,11 @@ Not every problem with a singular point has a solution of the form $y=x^r$, of
 course.  But perhaps we can combine the methods.  What we will do is
 to try a solution of the form
 \begin{equation*}
-y = x^r f(x) ,
+y = x^r f(x)
 \avoidbreak
 \end{equation*}
-where $f(x)$ is an analytic function.
+for positive $x$,
+where $f(x)$ is an analytic function (a power series).
 
 \begin{example}
 Consider the equation
@@ -1454,7 +1461,11 @@ Let
 P(x) y'' + Q(x) y' + R(x) y = 0
 \end{equation*}
 be an ODE\@.  As before, if $P(x_0) = 0$, then $x_0$ is a
-singular point.  If, furthermore, the limits
+singular point.
+If we divide by $P(x)$ to put the equation in standard form
+$y'' + \frac{Q(x)}{P(x)} y' + \frac{R(x)}{P(x)} y = 0$,
+perhaps the singularities introduced are not too bad.
+More specifically, if the limits
 \begin{equation*}
 \lim_{x \to x_0} ~ (x-x_0) \frac{Q(x)}{P(x)}
 \qquad \text{and} \qquad
@@ -1478,7 +1489,7 @@ Write
 \end{align*}
 So $x = 0$ is a regular singular point.
 
-On the other hand if we make the slight change
+On the other hand, if we make the slight change
 \begin{equation*}
 x^2y'' + (1+x)y' + (\pi+x^2)y = 0 ,
 \end{equation*}
@@ -1489,10 +1500,10 @@ then
 \text{DNE}.
 \end{equation*}
 Here DNE stands for \emph{does not exist}.
-The point $0$ is a singular point, but not a regular singular point.
+The point $0$ is singular, but not a regular singular point.
 \end{example}
 
-Let us now discuss the general \emph{\myindex{Method of Frobenius}}\index{Frobenius method}%
+We now discuss the general \emph{\myindex{Method of Frobenius}}\index{Frobenius method}%
 \footnote{Named after the German mathematician
 \href{http://en.wikipedia.org/wiki/Ferdinand_Georg_Frobenius}{Ferdinand
 Georg Frobenius} (1849--1917).}.

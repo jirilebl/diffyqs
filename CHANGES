@@ -73,6 +73,10 @@ chapters 1 and 2 where I was hitting my estimates spot on.
 <li>In sections 7.2 and 7.3, name the coefficients
 \(P(x),\) \(Q(x),\) \(R(x)\) since lower case letters are used for
 other things, most confusingly little \(r.\)
+<li>In 7.3, a little bit more explicitly say in the beginning that we're
+just trying to find a solution on one side of the singular point.  Also
+mention the thing about what the singular point does to the initial value
+in the first example.
 <li>In 7.3 when describing the method, mention very quickly what to do
 if \(x_0\) is not zero.
 <li><b>Exercise 8.4.101 part c was changed to fix erratum</b>:
