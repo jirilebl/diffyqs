@@ -13,6 +13,9 @@ minor version):
 
 SMALLER THINGS MAYBE:
 
+* Add smallish subsection to 6.2 about transform of periodic functions.
+  After that, readd the WeBWorK exercises with the periodic functions.
+
 * Expand discussion of vector fields and how they are drawn in 3.1.
 * Add maybe a few more exercises for setting up applications in 3.1
 * In 3.6 add more exercises on forced, and also improve the exposition wrt
