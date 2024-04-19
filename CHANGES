@@ -68,6 +68,11 @@ So just say "continuous" here and then the same formula will work.
 <li>Replace Example 6.2.5 by a more intelligent one that also very simple,
 somewhat easier to understand, and not as trivially solved without Laplace
 (still easily though).
+<li>Add an extremely short subsection 6.2.6 on Laplace transform of
+periodic functions, which seem to pop up in these courses,
+and it makes sense in the same section as where we are looking at
+piecewise functions.
+<li>Add Exercise 6.2.13 for a periodic function.
 <li>On page 330, when writing out the Taylor series, mention that it
 is a power series to drive that point home and also
 expand a few terms as it is sometimes not totally clear what the \(k=0\) term

@@ -450,18 +450,19 @@ Finally, we put it all together with the shifting property to find
 \end{equation*}
 \end{example}
 
-In general, we want to be able to apply the Laplace transform to
-rational functions, that is functions of the form
+Often, we want to be able to apply the inverse Laplace transform to
+rational functions, that is, functions of the form
 \begin{equation*}
 \frac{F(s)}{G(s)}
 \end{equation*}
-where $F(s)$ and $G(s)$ are polynomials.  Since normally, for the functions
-that we are considering, the Laplace transform goes
-to zero as $s \to \infty$, it is not hard to see that the degree of $F(s)$
+where $F(s)$ and $G(s)$ are polynomials.  If $\frac{F(s)}{G(s)}$ is
+the Laplace transform of an exponential order function,
+it goes to zero as $s \to \infty$, and so the degree of $F(s)$
 must be smaller than that of $G(s)$.  Such rational functions
 are called \emph{proper rational functions\index{proper rational function}}
-and we can always apply the method of partial fractions.  Of
-course, this means we need to be able to factor the denominator into
+and we can always apply the method of partial fractions without polynomial
+division.
+Of course, we still need to be able to factor the denominator into
 linear and quadratic terms, which involves finding the roots of the
 denominator.
 
@@ -929,6 +930,60 @@ x(t) = e^t - 1 .
 %learn in the next section.
 \end{example}
 
+\subsection{Periodic functions}
+
+The reader might ask: What about periodic functions as our input $f(t)$?
+That is, a function $f(t)$ where $f(t) = f(t+P)$ for some constant $P$ (the period).
+Well, let us compute $F(s)$:
+\begin{equation*}
+\begin{split}
+F(s)
+& = \int_0^\infty e^{-st} f(t) \, dt
+= \int_0^P e^{-st} f(t) \, dt
++ \int_P^\infty e^{-st} f(t) \, dt
+\\
+& = \int_0^P e^{-st} f(t) \, dt
++ \int_0^\infty e^{-s(t+P)} f(t+P) \, dt
+= \int_0^P e^{-st} f(t) \, dt
++ e^{-Ps} \int_0^\infty e^{-st} f(t) \, dt
+\\
+& = \int_0^P e^{-st} f(t) \, dt
++ e^{-Ps} F(s) .
+\end{split}
+\end{equation*}
+Solving for $F(s)$, we get
+\begin{equation*}
+F(s)
+=
+\frac{1}{1-e^{-Ps}}
+\int_0^P e^{-st} f(t) \, dt .
+\end{equation*}
+As before, computing the inverse would be more complex and possibly
+involve consulting a table.  Let us not worry about computing the inverse
+here.
+
+\begin{example}
+Suppose our function $f(t)$ is a version of the \emph{\myindex{sawtooth}}, that is,
+let
+$f(t) = t$ for $0 \leq t < 1$
+and use $f(t)=f(t+1)$ to extend it periodically.  So
+$f(t) = t-1$ for $1 \leq t < 2$, 
+$f(t) = t-2$ for $2 \leq t < 3$, etc.  Then $P=1$ and
+a short computation with integration by parts gets
+\begin{equation*}
+F(s) =
+\frac{1}{1-e^{-s}}
+\int_0^1 e^{-st} t \, dt 
+=
+\frac{1}{1-e^{-s}}
+\left(
+\frac{-e^{-s}}{s}-\frac{e^{-s}}{s^2} + \frac{1}{s^2}
+\right)
+=
+\frac{-e^{-s}}{(1-e^{-s})s} + \frac{1}{s^2} .
+\end{equation*}
+\end{example}
+
 \subsection{Exercises}
 
 \begin{exercise}
@@ -1025,6 +1080,12 @@ f(t) =
 Find the transfer function for 
 $m x'' + c x' + kx = f(t)$
 (assuming the initial conditions are zero).
+\end{exercise}
+
+\begin{exercise}
+Suppose $f(t) = 1$ if $0 \leq t < 1$ and $f(t)=0$ if $1 \leq t < 2$, and
+then extend periodically for all $t \geq 0$ so that $f(t)=f(t+2)$.  Compute the
+Laplace transform $F(s)$.
 \end{exercise}
 
 \setcounter{exercise}{100}
