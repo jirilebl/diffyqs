@@ -68,6 +68,8 @@ So just say "continuous" here and then the same formula will work.
 <li>Replace Example 6.2.5 by a more intelligent one that also very simple,
 somewhat easier to understand, and not as trivially solved without Laplace
 (still easily though).
+<li>Add short note about how one can compute \(H(s)\) without knowing the
+equations, just knowing \(X(s)\) for a given \(F(s) .\)
 <li>Add an extremely short subsection 6.2.6 on Laplace transform of
 periodic functions, which seem to pop up in these courses,
 and it makes sense in the same section as where we are looking at
