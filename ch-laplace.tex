@@ -859,7 +859,7 @@ H(s) = \frac{X(s)}{F(s)} = \frac{1}{s^2 + \omega_0^2} .
 Let us see how to use the transfer function.  Suppose we have the constant input
 $f(t) = 1$.  Hence $F(s) = \nicefrac{1}{s}$, and
 \begin{equation*}
-X(s) = H(s) F(s) = \frac{1}{s^2+\omega_0^2} \frac{1}{s} .
+X(s) = H(s) F(s) = \frac{1}{s^2+\omega_0^2} \, \frac{1}{s} .
 \end{equation*}
 Taking the inverse Laplace transform of $X(s)$ we obtain
 \begin{equation*}
@@ -1145,7 +1145,7 @@ $H(s)$.
 \end{exercise}
 \exsol{%
 $F(s) = \frac{4}{s}$,
-$X(s) = 1/s - s/(4 + s^2)$,
+$X(s) = \frac{1}{s} - \frac{s}{s^2+4}$,
 $H(s) = \frac{1}{s^2+4}$.
 }
 
