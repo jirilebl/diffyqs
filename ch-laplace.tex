@@ -1866,6 +1866,11 @@ you also know how to obtain the output $x(t)$ for any input $f(t)$
 by simply convolving
 the impulse response and the input $f(t)$.
 
+As you may have noticed in the example,
+the impulse response is in fact just the inverse Laplace
+transform of the transfer function, that is,
+${\mathcal{L}}^{-1} \bigl\{ H(s) \bigr\}$.
+
 \subsection{Three-point beam bending}
 \index{three-point beam bending}
 
@@ -2013,7 +2018,7 @@ Solve \exampleref{lt:examplebeam} via integrating 4 times in the $x$ variable.
 
 \begin{exercise}
 Suppose we have a beam of length $1$ simply supported at the ends and
-suppose that force $F=1$ is applied at $x=\frac{3}{4}$ in the downward
+suppose that force $F=1$ is applied at $x=\nicefrac{3}{4}$ in the downward
 direction.  Suppose that $EI=1$ for simplicity.  Find the beam deflection
 $y(x)$.
 \end{exercise}
