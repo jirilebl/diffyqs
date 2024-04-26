@@ -78,6 +78,13 @@ piecewise functions.
 output (this is similar to the exercise on the WeBWorK).
 <li>Add Exercise 6.2.14 for a periodic function.
 <li>Clean up wording for exerecises 6.2.12 and 6.2.103.
+<li>On page 309 add distributive law to the list of properties of
+convolution.
+<li>In Example 6.3.4 mention that \(\frac{1}{s^2+\omega_0^2}\) is
+the transfer function (and flip the order to be consistent
+with the text before).  Then after the example mention how to get the
+general formula from the transfer function, thus relating transfer functions
+and convolution.
 <li>On page 330, when writing out the Taylor series, mention that it
 is a power series to drive that point home and also
 expand a few terms as it is sometimes not totally clear what the \(k=0\) term

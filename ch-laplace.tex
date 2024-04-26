@@ -1235,10 +1235,12 @@ and $f*g$ are undefined for $t < 0$.
 \end{example}
 
 Convolution has many properties that make it behave like a product.
-Let $c$ be a constant and $f$, $g$, and $h$ be functions.  Then
+Let $c$ be a constant and $f$, $g$, and $h$ be functions.  Then it is a
+calculus exercise to show
 \begin{align*}
 & f * g = g * f , \\
 & (c f) * g = f * (c g) = c (f*g) , \\
+& (f+g) * h = f * h + g * h , \\
 & ( f * g ) * h = f * ( g * h ) .
 \end{align*}
 The most interesting property for us is the following theorem.
@@ -1315,10 +1317,11 @@ $F(s)$ as usual.  We get
 \begin{equation*}
 s^2 X(s) + \omega_0^2 X(s) = F(s) ,
 \end{equation*}
-or in other words
+or in other words we find the 
 \begin{equation*}
-X(s) = F(s) \frac{1}{s^2+ \omega_0^2} .
+X(s) = \frac{1}{s^2+ \omega_0^2} F(s).
 \end{equation*}
+Recall that $H(s) = \frac{1}{s^2+ \omega_0^2}$ is the transfer function.
 We know
 \begin{equation*}
 {\mathcal{L}}^{-1} \left\{
@@ -1330,19 +1333,19 @@ Therefore,
 \begin{equation*}
 x(t) = 
 \int_0^t
-f(\tau) 
-\frac{\sin \bigl( \omega_0 (t-\tau) \bigr)}{\omega_0} ~ d\tau ,
+\frac{\sin (\omega_0 \tau)}{\omega_0}
+f(t-\tau) ~ d\tau ,
 \end{equation*}
 or if we reverse the order
 \begin{equation*}
 x(t) = 
 \int_0^t
-\frac{\sin (\omega_0 \tau)}{\omega_0}
-f(t-\tau) ~ d\tau .
+f(\tau) 
+\frac{\sin \bigl( \omega_0 (t-\tau) \bigr)}{\omega_0} ~ d\tau .
 \end{equation*}
 \end{example}
 
-Notice one more feature of this example.
+Notice one more feature of the example above.
 We can now see how Laplace transform
 handles \myindex{resonance}.  Suppose that $f(t) =
 \cos (\omega_0 t)$.  Then
@@ -1366,19 +1369,28 @@ x(t) =
 \right) \,
 \left(
 \frac{1}{2} \,
-t \,
+t
 \sin ( \omega_0 t )
 \right)
 =
 \frac{1}{2 \omega_0} \,
 t
-\,
 \sin ( \omega_0 t ).
 \end{equation*}
 Note the $t$ in front of the sine.  The solution, therefore, grows without
 bound as $t$ gets large, meaning we get resonance.
 
-Similarly,
+The general idea here is that if $H(s)$ is the transfer function, then
+$X(s)=H(s)F(s)$.
+If we find the $h(t) = {\mathcal{L}}^{-1}\bigl\{ H(s) \bigr\}$, then
+\begin{equation*}
+x(t)
+= {\mathcal{L}}^{-1}\bigl\{ X(s) \bigr\}
+= {\mathcal{L}}^{-1}\bigl\{ H(s)F(s) \bigr\}
+= (h * f)(t)
+= \int_0^t h(\tau) f(t-\tau) ~ d\tau .
+\end{equation*}
+Hence,
 we can solve any constant coefficient equation with an arbitrary forcing
 function $f(t)$ as a definite integral using convolution.
 A definite integral, rather than a closed form solution, is usually enough
@@ -1523,7 +1535,6 @@ convolution.
 $5t-5\sin t$
 }
 
-
 \begin{exercise}
 Solve $x''+x = \sin t$, $x(0) = 0$, $x'(0)=0$ using convolution.
 \end{exercise}
@@ -1538,7 +1549,6 @@ Write the result as a definite integral.
 \exsol{%
 $\int_0^t f(\tau) \bigl( 1 - \cos (t-\tau)\bigr)~ d\tau$
 }
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
