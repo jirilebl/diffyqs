@@ -74,7 +74,10 @@ equations, just knowing \(X(s)\) for a given \(F(s) .\)
 periodic functions, which seem to pop up in these courses,
 and it makes sense in the same section as where we are looking at
 piecewise functions.
-<li>Add Exercise 6.2.13 for a periodic function.
+<li>Add Exercises 6.2.13 and 6.2.104 on transfer functions from input and
+output (this is similar to the exercise on the WeBWorK).
+<li>Add Exercise 6.2.14 for a periodic function.
+<li>Clean up wording for exerecises 6.2.12 and 6.2.103.
 <li>On page 330, when writing out the Taylor series, mention that it
 is a power series to drive that point home and also
 expand a few terms as it is sometimes not totally clear what the \(k=0\) term

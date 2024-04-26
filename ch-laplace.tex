@@ -841,6 +841,7 @@ steady state behavior of the system given different inputs by simply
 multiplying by the transfer function.
 Moreover, it is possible to compute the $H(s)$ without knowing exactly what
 the equation is by observing the output $X(s)$ for a given input $F(s)$.
+Once $H(s)$ is known, you can find the output for any input.
 
 \begin{example}
 Given $x'' + \omega_0^2 x = f(t)$, let us find the transfer function
@@ -1080,8 +1081,18 @@ f(t) =
 
 \begin{exercise}
 Find the transfer function for 
-$m x'' + c x' + kx = f(t)$
-(assuming the initial conditions are zero).
+$m x'' + c x' + kx = f(t)$,
+$x(0)=0$, $x'(0)=0$.
+\end{exercise}
+
+\begin{exercise}
+Suppose $Lx = f(t)$, $x(0)=0$, $x'(0)=0$
+for the input function $f(t) = t$ has the output
+$x(t) = 2e^{-t} + te^{-t} + (t-2)$.
+\begin{tasks}
+\task Find $F(s)$, $X(s)$, and the transfer function $H(s)$.
+\task If the input is instead $f(t) = \sin(t)$ instead, find the new output $x(t)$.
+\end{tasks}
 \end{exercise}
 
 \begin{exercise}
@@ -1119,11 +1130,23 @@ $x(t) = (2e^{t-1}-t^2-1) u(t-1) -\frac{1}{2}e^{-t}+\frac{3}{2}e^t$
  
 \begin{exercise}
 Find the transfer function for 
-$x' + x = f(t)$
-(assuming the initial conditions are zero).
+$x' + x = f(t)$,
+$x(0)=0$.
 \end{exercise}
 \exsol{%
 $H(s) = \frac{1}{s+1}$
+}
+
+\begin{exercise}
+Suppose $Lx = f(t)$, $x(0)=0$, $x'(0)=0$
+for the input function $f(t) = 4$ has the output
+$x(t) = 1 - \cos(2 t)$.  Find $F(s)$, $X(s)$, and the transfer function
+$H(s)$.
+\end{exercise}
+\exsol{%
+$F(s) = \frac{4}{s}$,
+$X(s) = 1/s - s/(4 + s^2)$,
+$H(s) = \frac{1}{s^2+4}$.
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
