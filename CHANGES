@@ -85,6 +85,9 @@ the transfer function (and flip the order to be consistent
 with the text before).  Then after the example mention how to get the
 general formula from the transfer function, thus relating transfer functions
 and convolution.
+<li>Use "rectangular pulse" consistently on 6.4 and put it in the index.
+<li>Add a short note at the end of 6.4.1 to note that the Laplace of the
+given pulse function goes to 1.
 <li>After Example 6.4.2, mention that the impulse response is just the
 inverse Laplace transform of the transfer function.
 <li>On page 330, when writing out the Taylor series, mention that it

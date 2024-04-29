@@ -1567,7 +1567,9 @@ The resulting behavior is
 often called \emph{\myindex{impulse response}},
 and understanding it tells us how the system responds to any input.
 Let us see what we mean by a pulse.
-The simplest kind of a pulse is a simple rectangular pulse defined by
+The simplest kind of a pulse is a simple
+\emph{\myindex{rectangular pulse}}\index{pulse}
+defined by
 \begin{equation*}
 \varphi(t) = 
 \begin{cases}
@@ -1582,7 +1584,7 @@ See \figurevref{lt:sqpulse} for a graph.
 \begin{mywrapfig}[15]{3.25in}
 \capstart
 \diffyincludegraphics{width=3in}{width=4.5in}{lt-sqpulse}
-\caption{Sample square pulse with $a=0.5$, $b=1$, and $M = 2$.\label{lt:sqpulse}}
+\caption{Sample rectangular pulse with $a=0.5$, $b=1$, and $M = 2$.\label{lt:sqpulse}}
 \end{mywrapfig}
 
 Notice that
@@ -1590,8 +1592,7 @@ Notice that
 \varphi(t) = M \bigl( u(t-a) - u(t-b) \bigr) ,
 \end{equation*}
 where $u(t)$ is the unit step function.
-
-Let us take the Laplace transform of a square pulse,
+Let us take the Laplace transform of a rectangular pulse,
 \begin{equation*}
 \begin{split}
 {\mathcal{L}} \bigl\{ \varphi(t) \bigr\}
@@ -1620,8 +1621,11 @@ For such a pulse,
 \frac{1 - e^{-bs}}{bs} .
 \end{equation*}
 We want $b$ to be very small; we wish to have
-the pulse be very short and very tall.  By letting $b$ go to zero we arrive
-at the concept of the Dirac delta function.
+the pulse be very short and very tall.  By letting $b$ go to zero, we arrive
+at the concept of the Dirac delta function.  The limit
+of $\frac{1-e^{-bs}}{bs}$
+as $b \to \infty$ is $1$, so we are looking for a \myquote{function} whose Laplace
+transform is $1$.
 
 \subsection{The delta function}
 
@@ -1662,7 +1666,7 @@ infinite at $t=0$.
 
 A good way to think about $\delta(t)$ is as a limit of short pulses
 whose integral is $1$.  For example, 
-consider a square pulse
+consider a rectangular pulse
 $\varphi(t)$ as above with $a=0$ and
 $M=\nicefrac{1}{b}$, that is, $\varphi(t) = \frac{u(t) - u(t-b)}{b}$.
 Compute
@@ -1843,8 +1847,7 @@ x''(t-\tau) ~ d\tau
 We simply differentiate twice under the
 integral\footnote{You should really think of the integral going over
 $(-\infty,\infty)$ rather than over $[0,t]$ and simply assume that $f(t)$ and
-$x(t)$ are continuous and zero for negative $t$.}, the details are
-left as an exercise.
+$x(t)$ are zero for negative $t$.}.
 If we convolve the entire equation \eqref{eq:lteximpulseresp},
 the left-hand side becomes
 \begin{equation*}
@@ -1995,6 +1998,7 @@ $x'' + 4 x = 4\delta(t-1)$, $x(0) = 0$, $x'(0)=0$.
 
 \begin{exercise}
 Suppose that $f(t)$ and $g(t)$ are differentiable functions
+(and the derivatives are continuous)
 and suppose that $f(t) = g(t) = 0$ for all $t \leq 0$.  Show that
 \begin{equation*}
 (f * g)'(t) = (f' * g)(t) = (f * g')(t) .
