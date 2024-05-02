@@ -1,3 +1,13 @@
+The point of this revision is to fix not only errata, but improve wording,
+clarity, and consistency in many places.
+There is essentially no new
+material, except for a few short paragraphs in the Laplace transform
+(periodic functions, and expanded explanation for transfer functions),
+and a couple of places throughout where explanations were
+expanded or added.  Most changes are in chapters 1, 2, 6, and 7, because
+those were the ones I used in class.
+Several exercises needed to be changed to fix errata.
+
 <li>After Example 0.2.1, add a short note about how the analytic solution
 helped us find the parameters and how this is useful in real problems.
 <li>On page 23, emphasize a bit more that if we applied the inverse function
@@ -88,6 +98,8 @@ and convolution.
 <li>Use "rectangular pulse" consistently on 6.4 and put it in the index.
 <li>Add a short note at the end of 6.4.1 to note that the Laplace of the
 given pulse function goes to 1.
+<li>On page 314, when writing the convolution with delta, be more consistent.
+<li>On page 314, when writing the convolution with delta, be more consistent.
 <li>After Example 6.4.2, mention that the impulse response is just the
 inverse Laplace transform of the transfer function.
 <li>On page 330, when writing out the Taylor series, mention that it

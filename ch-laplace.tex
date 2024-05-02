@@ -1386,9 +1386,9 @@ If we find the $h(t) = {\mathcal{L}}^{-1}\bigl\{ H(s) \bigr\}$, then
 \begin{equation*}
 x(t)
 = {\mathcal{L}}^{-1}\bigl\{ X(s) \bigr\}
-= {\mathcal{L}}^{-1}\bigl\{ H(s)F(s) \bigr\}
-= (h * f)(t)
-= \int_0^t h(\tau) f(t-\tau) ~ d\tau .
+= {\mathcal{L}}^{-1}\bigl\{ F(s)H(s) \bigr\}
+= (f * h)(t)
+= \int_0^t f(\tau) h(t-\tau) ~ d\tau .
 \end{equation*}
 Hence,
 we can solve any constant coefficient equation with an arbitrary forcing
@@ -1697,10 +1697,10 @@ $\delta(t-a)$.  In that case,
 \int_{-\infty}^\infty \delta(t-a) f(t) \,dt = f(a) .
 \end{equation*}
 Note that $\delta(a-t)$ is the same object as $\delta(t-a)$.
-In other words, the convolution of $\delta(t)$ with $f(t)$ is again $f(t)$,
+With that, the convolution of $\delta(t)$ with $f(t)$ is again $f(t)$,
 \begin{equation*}
 (f * \delta) (t) = 
-\int_{0}^t \delta(t-s) f(s) \,ds
+\int_{0}^t f(\tau) \delta(t-\tau) \,d\tau
 = f(t) .
 \end{equation*}
 
@@ -1833,7 +1833,7 @@ That is, \emph{the solution for an arbitrary input is given as
 convolution with the impulse response}.  Let us see why.
 The key is to notice that for functions $x(t)$ and $f(t)$,
 \begin{equation*}
-(x * f)''(t) =
+(f * x)''(t) =
 \frac{d^2}{dt^2}\left[
 \int_0^t
 f(\tau) 
@@ -1842,7 +1842,7 @@ x(t-\tau) ~ d\tau \right]
 \int_0^t
 f(\tau) 
 x''(t-\tau) ~ d\tau
-= (x'' * f)(t) .
+= (f * x'')(t) .
 \end{equation*}
 We simply differentiate twice under the
 integral\footnote{You should really think of the integral going over
@@ -1851,15 +1851,15 @@ $x(t)$ are zero for negative $t$.}.
 If we convolve the entire equation \eqref{eq:lteximpulseresp},
 the left-hand side becomes
 \begin{equation*}
-(x'' + \omega_0^2 x) * f =
-(x'' * f) + \omega_0^2 (x * f) =
-(x * f)'' + \omega_0^2 (x * f) .
+f * (x'' + \omega_0^2 x) =
+(f * x'') + \omega_0^2 (f * x) =
+(f * x)'' + \omega_0^2 (f * x) .
 \end{equation*}
 The right-hand side becomes
 \begin{equation*}
-(\delta * f)(t) = f(t).
+(f * \delta)(t) = f(t).
 \end{equation*}
-Therefore, $y(t) = (x * f)(t)$ is the solution to
+Therefore, $y(t) = (f * x)(t)$ is the solution to
 \begin{equation*}
 y'' + \omega_0^2 y = f(t) .
 \end{equation*}
