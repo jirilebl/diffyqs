@@ -1821,10 +1821,10 @@ The initial condition really is $x'(0-) = \lim_{t \uparrow 0} x'(0) = 0$.
 Let us notice something about the example above. 
 In \exampleref{example:undampedforcedbylaplacearbitrhs},
 we found that
-when the input is $f(t)$, the solution to $Lx = f(t)$
+when the input is $f(t)$, the solution to $Ly = f(t)$
 is given by
 \begin{equation*}
-x(t) = 
+y(t) = 
 \int_0^t
 f(\tau) 
 \frac{\sin \bigl( \omega_0 (t-\tau) \bigr)}{\omega_0} ~ d\tau .
@@ -1848,6 +1848,7 @@ We simply differentiate twice under the
 integral\footnote{You should really think of the integral going over
 $(-\infty,\infty)$ rather than over $[0,t]$ and simply assume that $f(t)$ and
 $x(t)$ are zero for negative $t$.}.
+Suppose that $x(t)$ is the impulse response.
 If we convolve the entire equation \eqref{eq:lteximpulseresp},
 the left-hand side becomes
 \begin{equation*}
@@ -1863,12 +1864,12 @@ Therefore, $y(t) = (f * x)(t)$ is the solution to
 \begin{equation*}
 y'' + \omega_0^2 y = f(t) .
 \end{equation*}
+
 This procedure works in general for other linear
 equations $Lx = f(t)$.  If you determine the impulse response,
 you also know how to obtain the output $x(t)$ for any input $f(t)$
 by simply convolving
 the impulse response and the input $f(t)$.
-
 As you may have noticed in the example,
 the impulse response is in fact just the inverse Laplace
 transform of the transfer function, that is,
