@@ -4611,7 +4611,7 @@ $y_{\xi} = C(\xi)$.
 Next, we integrate with respect to $\xi$ and notice that the constant of
 integration depends on $\eta$.
 Thus,
-$y = \int C(\xi) ~ d\xi + B(\eta)$.
+$y = \int C(\xi) \, d\xi + B(\eta)$.
 The solution must, therefore, be of the following form for some functions
 $A(\xi)$ and $B(\eta)$:
 \begin{equation*}
@@ -5720,10 +5720,10 @@ multiply the $n^{\text{th}}$ term by $r^n$.  To
 find the $a_n$ and the $b_n$ we compute
 \begin{equation*}
 a_n =
-\frac{1}{\pi} \int_{-\pi}^\pi g(\theta) \cos (n\theta) ~ d\theta , \qquad
+\frac{1}{\pi} \int_{-\pi}^\pi g(\theta) \cos (n\theta) \, d\theta , \qquad
 \text{and} \qquad
 b_n =
-\frac{1}{\pi} \int_{-\pi}^\pi g(\theta) \sin (n\theta) ~ d\theta.
+\frac{1}{\pi} \int_{-\pi}^\pi g(\theta) \sin (n\theta) \, d\theta.
 \end{equation*}
 
 \begin{example}
@@ -5827,7 +5827,7 @@ Denis Poisson}
 u(r,\theta) = 
 \frac{1}{2\pi}
 \int_{-\pi}^{\pi}
-P(r,\theta,\alpha) \, g(\alpha) ~d\alpha .
+P(r,\theta,\alpha) \, g(\alpha) \,d\alpha .
 \end{equation*}
 While the integral will generally not be solvable analytically, it can
 be evaluated numerically.   In fact, unless the boundary data is given
@@ -5875,7 +5875,7 @@ a_n r^n \cos(n \theta) + b_n r^n \sin(n \theta)
 & =
 \underbrace{
  \left(
-  \frac{1}{2\pi} \int_{-\pi}^\pi g(\alpha) ~ d\alpha
+  \frac{1}{2\pi} \int_{-\pi}^\pi g(\alpha) \, d\alpha
  \right)
 }_{\frac{a_0}{2}}
 +
@@ -5884,7 +5884,7 @@ a_n r^n \cos(n \theta) + b_n r^n \sin(n \theta)
 \sum_{n=1}^\infty
 \underbrace{
  \left(
-  \frac{1}{\pi} \int_{-\pi}^\pi g(\alpha) \cos (n\alpha) ~ d\alpha
+  \frac{1}{\pi} \int_{-\pi}^\pi g(\alpha) \cos (n\alpha) \, d\alpha
  \right)
 }_{a_n}
 r^n \cos(n \theta) +
@@ -5892,7 +5892,7 @@ r^n \cos(n \theta) +
 & ~~~~~~~~ +
 \underbrace{
  \left(
-  \frac{1}{\pi} \int_{-\pi}^\pi g(\alpha) \sin (n\alpha) ~ d\alpha
+  \frac{1}{\pi} \int_{-\pi}^\pi g(\alpha) \sin (n\alpha) \, d\alpha
  \right)
 }_{b_n}
 r^n \sin(n \theta)
@@ -5908,7 +5908,7 @@ g(\alpha) \cos (n\alpha)
 \, r^n \cos(n \theta) +
 g(\alpha) \sin (n\alpha)
 \, r^n \sin(n \theta)
-\right) ~d\alpha
+\right) \,d\alpha
 \\
 & =
 \frac{1}{2\pi}
@@ -5926,7 +5926,7 @@ g(\alpha) \sin (n\alpha)
  \sin(n \theta) \bigr)
  \right)
 }_{P(r,\theta,\alpha)}
-g(\alpha) ~d\alpha
+g(\alpha) \,d\alpha
 %\\
 %& =
 %\frac{1}{2\pi}
@@ -5937,7 +5937,7 @@ g(\alpha) ~d\alpha
 %\sum_{n=1}^\infty
 %r^n 
 %\cos \bigl(n(\theta-\alpha)\bigr)
-%\right) g(\alpha) ~d\alpha .
+%\right) g(\alpha) \,d\alpha .
 \end{split}
 \end{equation*}
 OK\@, so we have what we wanted, the expression in the parentheses is the
@@ -6044,7 +6044,7 @@ solution to the Dirichlet problem using the Poisson kernel is
 \mybxbg{~~
 u(r,\theta) = 
 \frac{1}{2\pi} \int_{-\pi}^{\pi}
-\frac{1 -r^2}{1 - 2r\cos(\theta-\alpha) +r^2} g(\alpha) ~ d\alpha .
+\frac{1 -r^2}{1 - 2r\cos(\theta-\alpha) +r^2} g(\alpha) \, d\alpha .
 ~~}
 \end{equation*}
 Sometimes the formula for the Poisson kernel is
@@ -6081,11 +6081,11 @@ that is when $r=0$. %(and then $\theta$ can be anything at all)
 \begin{split}
 u(0,0) &= 
 \frac{1}{2\pi} \int_{-\pi}^{\pi}
-\frac{1 -0^2}{1 - 2(0)\cos(0-\alpha) +0^2} g(\alpha) ~ d\alpha
+\frac{1 -0^2}{1 - 2(0)\cos(0-\alpha) +0^2} g(\alpha) \, d\alpha
 \\
 & =
 \frac{1}{2\pi} \int_{-\pi}^{\pi}
-g(\alpha) ~ d\alpha .
+g(\alpha) \, d\alpha .
 \end{split}
 \end{equation*}
 So $u(0,0)$ is precisely the average value of $g(\theta)$ and
@@ -6232,5 +6232,5 @@ than 1.  That is, solve $\Delta u = 0$, $u(\rho,\theta) = g(\theta)$.
 $\displaystyle
 u(r,\theta) = 
 \frac{1}{2\pi} \int_{-\pi}^{\pi}
-\frac{\rho^2 -r^2}{\rho^2 - 2r\rho\cos(\theta-\alpha) +r^2} g(\alpha) ~ d\alpha$
+\frac{\rho^2 -r^2}{\rho^2 - 2r\rho\cos(\theta-\alpha) +r^2} g(\alpha) \, d\alpha$
 }

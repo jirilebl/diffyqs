@@ -793,8 +793,9 @@ Picard does not apply as $f$ is not continuous at $y=0$.
 The equation does not have a continuously differentiable solution.
 Suppose it did. Notice that
 $y'(0) = 1$.  By the first derivative test, $y(x) > 0$ for small positive $x$.
-But then for those $x$ we would have $y'(x) = 0$, so clearly the derivative
-cannot be continuous.
+But then for those $x$, we have $y'(x) = f\bigl(y(x)\bigr) = 0$.
+It is not possible for $y'$ to be continous, $y'(0)=1$ and
+$y'(x) = 0$ for arbitrarily small positive $x$.
 }
 
 \begin{exercise}
@@ -3475,7 +3476,7 @@ that the solution is the same as it was in \exampleref{example:yprimeisxy}.
 \end{tasks}
 \end{exercise}
 \exsol{%
-a) The equation is $ - f(x) \, dx + \frac{1}{g(y)} \, dy$,
+a) The equation is $ - f(x) \, dx + \frac{1}{g(y)} \, dy = 0$,
 and this is exact
 because $M = -f(x)$, $N = \frac{1}{g(y)}$, so $M_y = 0 = N_x$.
 \quad

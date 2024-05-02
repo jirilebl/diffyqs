@@ -99,8 +99,12 @@ and convolution.
 <li>Add a short note at the end of 6.4.1 to note that the Laplace of the
 given pulse function goes to 1.
 <li>On page 314, when writing the convolution with delta, be more consistent.
-<li>On page 314, when writing the convolution with delta, be more consistent.
-<li>After Example 6.4.2, mention that the impulse response is just the
+<li>On page 316, after Example 6.4.2, write convolutions all in the same order for consistency,
+use \(h\) for the impulse response for consistency and to
+not jump back and forth with \(x\) and \(y ,\)
+in general make the wording clearer about how the computation works in
+general, and finally mention
+that the impulse response is just the
 inverse Laplace transform of the transfer function.
 <li>On page 330, when writing out the Taylor series, mention that it
 is a power series to drive that point home and also

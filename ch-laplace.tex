@@ -876,14 +876,14 @@ by applying the definition and doing integration by parts, is
 \begin{equation*}
 \mybxbg{~~
 \mathcal{L} \left\{
-\int_0^t f(\tau) ~ d\tau
+\int_0^t f(\tau) \, d\tau
 \right\} = \frac{1}{s} \, F(s) .
 ~~}
 \end{equation*}
 It is sometimes useful (e.g.\ for computing the inverse transform) to write
 this as
 \begin{equation*}
-\int_0^t f(\tau) ~ d\tau
+\int_0^t f(\tau) \, d\tau
 =
 {\mathcal{L}}^{-1} \left\{
 \frac{1}{s} \, F(s) \right\} .
@@ -898,10 +898,10 @@ proceed by applying this integration rule.
 =
 \int_0^t 
 {\mathcal{L}}^{-1} \left\{
-\frac{1}{s^2+1} \right\} ~ d\tau
+\frac{1}{s^2+1} \right\} \, d\tau
 =
 \int_0^t 
-\sin \tau ~ d\tau
+\sin \tau \, d\tau
 =
 1 - \cos t .
 \end{equation*}
@@ -913,7 +913,7 @@ An equation containing an integral of the unknown function is
 called an \emph{\myindex{integral equation}}.
 Consider
 \begin{equation*}
-x(t) - t = \int_0^t x(\tau) ~d\tau ,
+x(t) - t = \int_0^t x(\tau) \, d\tau ,
 \end{equation*}
 where we wish to solve for $x(t)$.
 We apply the Laplace transform to get
@@ -1170,7 +1170,7 @@ and define the \emph{\myindex{convolution}}%
 For those that have seen convolution before, you may have
 seen it defined as
 $(f * g)(t) =
-\int_{-\infty}^\infty f(\tau) g(t-\tau) ~ d\tau$.  This definition
+\int_{-\infty}^\infty f(\tau) g(t-\tau) \, d\tau$.  This definition
 agrees with \eqref{ltc:convdef} if you define $f(t)$ and $g(t)$
 to be zero for $t < 0$.
 When discussing the Laplace transform the definition we gave is
@@ -1181,7 +1181,7 @@ of $f(t)$ and $g(t)$ as
 \begin{equation} \label{ltc:convdef}
 \mybxbg{~~
 (f * g)(t) \overset{\text{def}}{=}
-\int_0^t f(\tau) g(t-\tau) ~ d\tau .
+\int_0^t f(\tau) g(t-\tau) \, d\tau .
 ~~}
 \end{equation}
 As you can see, the convolution of two functions of $t$ is another function of $t$.
@@ -1192,7 +1192,7 @@ Take $f(t) = e^t$ and $g(t) = t$ for $t \geq 0$.  Then
 \begin{equation*}
 (f*g)(t)
 =
-\int_0^t e^\tau (t-\tau) ~ d\tau
+\int_0^t e^\tau (t-\tau) \, d\tau
 =
 e^t - t - 1 .
 \end{equation*}
@@ -1207,7 +1207,7 @@ Then
 (f*g)(t)
 =
 \int_0^t  \sin ( \omega \tau ) \,
-\cos \bigl( \omega (t-\tau) \bigr) ~ d\tau .
+\cos \bigl( \omega (t-\tau) \bigr) \, d\tau .
 \end{equation*}
 Apply the identity
 \begin{equation*}
@@ -1221,7 +1221,7 @@ to get
 & =
 \int_0^t
 \frac{1}{2} \, \bigl( \sin (\omega t) - \sin (\omega t - 2 \omega \tau
-) \bigr) ~ d\tau
+) \bigr) \, d\tau
 \\
 & =
 \left[ \frac{1}{2} \, \tau  \sin (\omega t) + \frac{1}{4\omega} \, \cos (2 \omega \tau -
@@ -1251,7 +1251,7 @@ Let $f(t)$ and $g(t)$ be of exponential order, then
 \mybxbg{~~
 \mathcal{L} \bigl\{ (f*g)(t) \bigr\}
 =
-\mathcal{L} \left\{ \int_0^t f(\tau) g(t-\tau) ~ d\tau \right\}
+\mathcal{L} \left\{ \int_0^t f(\tau) g(t-\tau) \, d\tau \right\}
 =
 \mathcal{L} \bigl\{ f(t) \bigr\} \mathcal{L} \bigl\{ g(t) \bigr\} .
 ~~}
@@ -1290,7 +1290,7 @@ Therefore,
 \frac{1}{s^2} \right\}
 =
 \int_0^t
-\tau e^{-(t-\tau)} ~d\tau
+\tau e^{-(t-\tau)} \,d\tau
 =
 e^{-t}+t-1 .
 \end{equation*}
@@ -1334,14 +1334,14 @@ Therefore,
 x(t) = 
 \int_0^t
 \frac{\sin (\omega_0 \tau)}{\omega_0}
-f(t-\tau) ~ d\tau ,
+f(t-\tau) \, d\tau ,
 \end{equation*}
 or if we reverse the order
 \begin{equation*}
 x(t) = 
 \int_0^t
 f(\tau) 
-\frac{\sin \bigl( \omega_0 (t-\tau) \bigr)}{\omega_0} ~ d\tau .
+\frac{\sin \bigl( \omega_0 (t-\tau) \bigr)}{\omega_0} \, d\tau .
 \end{equation*}
 \end{example}
 
@@ -1353,12 +1353,12 @@ handles \myindex{resonance}.  Suppose that $f(t) =
 x(t) = 
 \int_0^t
 \frac{\sin (\omega_0 \tau)}{\omega_0} \,
-\cos \bigl( \omega_0 (t-\tau) \bigr) ~ d\tau
+\cos \bigl( \omega_0 (t-\tau) \bigr) \, d\tau
 =
 \frac{1}{\omega_0}
 \int_0^t
 \sin ( \omega_0 \tau ) \,
-\cos \bigl(\omega_0 (t-\tau) \bigr) ~ d\tau .
+\cos \bigl(\omega_0 (t-\tau) \bigr) \, d\tau .
 \end{equation*}
 We have computed the convolution of sine and cosine in
 \exampleref{ltc:convsincosex}.  Hence
@@ -1388,7 +1388,7 @@ x(t)
 = {\mathcal{L}}^{-1}\bigl\{ X(s) \bigr\}
 = {\mathcal{L}}^{-1}\bigl\{ F(s)H(s) \bigr\}
 = (f * h)(t)
-= \int_0^t f(\tau) h(t-\tau) ~ d\tau .
+= \int_0^t f(\tau) h(t-\tau) \, d\tau .
 \end{equation*}
 Hence,
 we can solve any constant coefficient equation with an arbitrary forcing
@@ -1405,7 +1405,7 @@ is the \emph{\myindex{Volterra integral equation}}%
 \href{https://en.wikipedia.org/wiki/Vito_Volterra}{Vito Volterra}
 (1860--1940).}
 \begin{equation*}
-x(t) = f(t) + \int_0^t g(t-\tau) x(\tau) ~ d\tau ,
+x(t) = f(t) + \int_0^t g(t-\tau) x(\tau) \, d\tau ,
 \end{equation*}
 where $f(t)$ and $g(t)$ are known functions and $x(t)$ is an unknown we
 wish to solve for.
@@ -1425,7 +1425,7 @@ inverse Laplace transform of $X(s)$.
 \begin{example}
 Solve
 \begin{equation*}
-x(t) =  e^{-t} + \int_0^t \sinh(t-\tau) x(\tau) ~ d\tau .
+x(t) =  e^{-t} + \int_0^t \sinh(t-\tau) x(\tau) \, d\tau .
 \end{equation*}
 
 We apply Laplace transform to obtain
@@ -1494,14 +1494,14 @@ Write the solution as a definite integral.
 \begin{exercise}
 Solve
 \begin{equation*}
-x(t) =  e^{-t} + \int_0^t \cos(t-\tau) x(\tau) ~ d\tau .
+x(t) =  e^{-t} + \int_0^t \cos(t-\tau) x(\tau) \, d\tau .
 \end{equation*}
 \end{exercise}
 
 \begin{exercise}
 Solve
 \begin{equation*}
-x(t) =  \cos t + \int_0^t \cos(t-\tau) x(\tau) ~ d\tau .
+x(t) =  \cos t + \int_0^t \cos(t-\tau) x(\tau) \, d\tau .
 \end{equation*}
 \end{exercise}
 
@@ -1547,7 +1547,7 @@ Solve $x'''+x' = f(t)$, $x(0) = 0$, $x'(0)=0$, $x''(0)=0$ using convolution.
 Write the result as a definite integral.
 \end{exercise}
 \exsol{%
-$\int_0^t f(\tau) \bigl( 1 - \cos (t-\tau)\bigr)~ d\tau$
+$\int_0^t f(\tau) \bigl( 1 - \cos (t-\tau)\bigr)\, d\tau$
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1821,59 +1821,61 @@ The initial condition really is $x'(0-) = \lim_{t \uparrow 0} x'(0) = 0$.
 Let us notice something about the example above. 
 In \exampleref{example:undampedforcedbylaplacearbitrhs},
 we found that
-when the input is $f(t)$, the solution to $Ly = f(t)$
+when the input is $f(t)$, the solution to $Lx = f(t)$
 is given by
 \begin{equation*}
-y(t) = 
+x(t) = 
 \int_0^t
 f(\tau) 
-\frac{\sin \bigl( \omega_0 (t-\tau) \bigr)}{\omega_0} ~ d\tau .
+\frac{\sin \bigl( \omega_0 (t-\tau) \bigr)}{\omega_0} \, d\tau .
 \end{equation*}
 That is, \emph{the solution for an arbitrary input is given as
 convolution with the impulse response}.  Let us see why.
-The key is to notice that for functions $x(t)$ and $f(t)$,
+The key is to notice that for functions $f(t)$ and $h(t)$,
 \begin{equation*}
-(f * x)''(t) =
+(f * h)''(t) =
 \frac{d^2}{dt^2}\left[
 \int_0^t
 f(\tau) 
-x(t-\tau) ~ d\tau \right]
+h(t-\tau) \, d\tau \right]
 =
 \int_0^t
 f(\tau) 
-x''(t-\tau) ~ d\tau
-= (f * x'')(t) .
+h''(t-\tau) \, d\tau
+= (f * h'')(t) .
 \end{equation*}
 We simply differentiate twice under the
 integral\footnote{You should really think of the integral going over
 $(-\infty,\infty)$ rather than over $[0,t]$ and simply assume that $f(t)$ and
-$x(t)$ are zero for negative $t$.}.
-Suppose that $x(t)$ is the impulse response.
+$h(t)$ are zero for negative $t$.}.
+Suppose that $h(t)$ is the impulse response (solution to $h''+\omega_0^2 h = \delta(t)$).
 If we convolve the entire equation \eqref{eq:lteximpulseresp},
 the left-hand side becomes
 \begin{equation*}
-f * (x'' + \omega_0^2 x) =
-(f * x'') + \omega_0^2 (f * x) =
-(f * x)'' + \omega_0^2 (f * x) .
+f * (h'' + \omega_0^2 h) =
+(f * h'') + \omega_0^2 (f * h) =
+(f * h)'' + \omega_0^2 (f * h) .
 \end{equation*}
 The right-hand side becomes
 \begin{equation*}
 (f * \delta)(t) = f(t).
 \end{equation*}
-Therefore, $y(t) = (f * x)(t)$ is the solution to
+Therefore, if $h$ is the impulse response,
+then $x(t) = (f * h)(t)$ is the solution to
 \begin{equation*}
-y'' + \omega_0^2 y = f(t) .
+x'' + \omega_0^2 x = f(t) .
 \end{equation*}
 
-This procedure works in general for other linear
-equations $Lx = f(t)$.  If you determine the impulse response,
-you also know how to obtain the output $x(t)$ for any input $f(t)$
-by simply convolving
-the impulse response and the input $f(t)$.
+The procedure works for any constant coefficient linear
+equation $Lx = f(t)$.
+If you find the impulse response $h$
+(solution to $Lh = \delta(t)$),
+you also know how to obtain the output $x(t)$ for any input $f(t)$.
+We simply convolve, $x(t) = (f * h)(t)$.
 As you may have noticed in the example,
 the impulse response is in fact just the inverse Laplace
 transform of the transfer function, that is,
-${\mathcal{L}}^{-1} \bigl\{ H(s) \bigr\}$.
+$h(t) = {\mathcal{L}}^{-1} \bigl\{ H(s) \bigr\}$.
 
 \subsection{Three-point beam bending}
 \index{three-point beam bending}
