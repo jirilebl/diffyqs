@@ -126,6 +126,9 @@ sub close_subsection {
 	if ($insubsection == 2) {
 		$insubsection = 0;
 		print $out "</introduction>\n\n"
+	} elsif ($insubsection == 3) {
+		$insubsection = 0;
+		print $out "</exercises>\n\n"
 	} elsif ($insubsection) {
 		$insubsection = 0;
 		print $out "</subsection>\n\n"
@@ -226,7 +229,21 @@ sub open_subsection {
 sub open_intro_subsection {
 	$insubsection = 2;
 
+	print "(intro subsection)\n";
 	print $out "\n<introduction>\n";
+}
+sub open_exercise_subsection {
+	close_subsection ();
+	$insubsection = 3;
+	$subsection_num = $subsection_num+1;
+
+	$subsubsection_num = 0;
+
+	my $ch = get_chapter_num();
+
+
+	print "(exercises subsection)\n";
+	print $out "\n<exercises number=\"$ch.$section_num.$subsection_num\">\n"
 }
 sub open_section {
 	my $theid = shift;
@@ -254,7 +271,8 @@ sub open_section {
 	print "(section >$name< label >$theid<)\n";
 	print $out "<title>$name</title>\n"; 
 
-	open_intro_subsection();
+	# Don't open an intro subsection, that's done manually with %mbxINTROSUBSECTION
+	#open_intro_subsection();
 }
 
 sub open_chapter {
@@ -562,6 +580,8 @@ sub read_paragraph {
 			close_chapter ();
 		} elsif ($line =~ m/^%mbxINTROSUBSUBSECTION/) {
 			open_intro_subsubsection ();
+		} elsif ($line =~ m/^%mbxINTROSUBSECTION/) {
+			open_intro_subsection ();
 		} elsif ($mbxignore == 0) {
 			my $newline = 1;
 			if ($line =~ m/^%/ || $line =~ m/[^\\]%/) {
@@ -684,9 +704,10 @@ while(1)
 		open_section($theid,$name);
 	} elsif ($para =~ s/^\\section\{([^}]*)\}[ \n]*//) {
 		my $name = do_line_subs($1);
-		my $theid = modify_id($2);
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
 		open_section("",$name);
+	} elsif ($para =~ s/^\\subsection\{Exercises\}[ \n]*//) {
+		open_exercise_subsection();
 	} elsif ($para =~ s/^\\subsection\{([^}]*)\}[ \n]*\\label\{([^}]*)\}[ \n]*//) {
 		my $name = do_line_subs($1);
 		my $theid = modify_id($2);
@@ -694,7 +715,6 @@ while(1)
 		open_subsection($theid,$name);
 	} elsif ($para =~ s/^\\subsection\{([^}]*)\}[ \n]*//) {
 		my $name = do_line_subs($1);
-		my $theid = modify_id($2);
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
 		open_subsection("",$name);
 	} elsif ($para =~ s/^\\subsubsection\{([^}]*)\}[ \n]*\\label\{([^}]*)\}[ \n]*//) {
@@ -704,7 +724,6 @@ while(1)
 		open_subsubsection($theid,$name);
 	} elsif ($para =~ s/^\\subsubsection\{([^}]*)\}[ \n]*//) {
 		my $name = do_line_subs($1);
-		my $theid = modify_id($2);
 		$name =~ s|\$(.*?)\$|<m>$1</m>|gs;
 		open_subsubsection("",$name);
 

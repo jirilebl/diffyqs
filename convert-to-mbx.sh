@@ -126,6 +126,16 @@ echo
 xsltproc -stringparam publisher diffyqs-publisher.xml ../diffyqs-html.xsl ../diffyqs-out.xml
 
 echo
+echo Copy the _static things
+echo
+
+mkdir _static
+mkdir _static/pretext
+cp -a ~/pretext/js _static/pretext/
+cp -a ~/pretext/css _static/pretext/
+cp -a ~/pretext/js_lib _static/pretext/js/lib
+
+echo
 echo FIXING UP HTML ...
 echo
 
