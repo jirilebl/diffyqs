@@ -202,6 +202,7 @@ sub open_subsubsection {
 sub open_intro_subsubsection {
 	$insubsubsection = 2;
 
+	print "(intro subsubsection)\n";
 	print $out "\n<introduction>\n";
 }
 sub open_subsection {
@@ -607,9 +608,11 @@ sub read_paragraph {
 		}
 	}
 
-	#Do simple substitutions
+	#Do simple substitutions, (these are incomplete, just the ones I actually used at some point)
 	$para =~ s/\\"\{o\}/ö/g;
 	$para =~ s/\\"o/ö/g;
+	$para =~ s/\\\^o/ô/g;
+	$para =~ s/\\"i/ï/g;
 	$para =~ s/\\c\{S\}/Ş/g;
 	$para =~ s/\\u\{g\}/ğ/g;
 	$para =~ s/\\v\{r\}/ř/g;
@@ -621,7 +624,9 @@ sub read_paragraph {
 	$para =~ s/\\`a/à/g;
 	$para =~ s/\\`\{a\}/à/g;
 	$para =~ s/\\'a/á/g;
+	$para =~ s/\\'o/ó/g;
 	$para =~ s/\\'i/í/g;
+	$para =~ s/\{\\i\}/ı/g;
 	$para =~ s/\\'\{i\}/í/g;
 	$para =~ s/\\'E/É/g;
 	$para =~ s/\\'\{E\}/É/g;
@@ -1842,16 +1847,16 @@ while(1)
 		print $out "<fn>"; 
 		push @cltags, "footnote";
 
-	} elsif ($para =~ s/^\\begin\{samepage\}//) {
+	} elsif ($para =~ s/^\\begin\{samepage\}[ \n]*//) {
 		print "(begin samepage} do nothing)\n";
 
-	} elsif ($para =~ s/^\\end\{samepage\}//) {
+	} elsif ($para =~ s/^\\end\{samepage\}[ \n]*//) {
 		print "(end{samepage} do nothing)\n";
 
-	} elsif ($para =~ s/^\\begin\{mysamepage\}//) {
+	} elsif ($para =~ s/^\\begin\{mysamepage\}[ \n]*//) {
 		print "(begin mysamepage} do nothing)\n";
 
-	} elsif ($para =~ s/^\\end\{mysamepage\}//) {
+	} elsif ($para =~ s/^\\end\{mysamepage\}[ \n]*//) {
 		print "(end{mysamepage} do nothing)\n";
 
 	} elsif ($para =~ s/^\\@//) {

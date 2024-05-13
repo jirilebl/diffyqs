@@ -1,8 +1,10 @@
-Pretext/HTML:
+* Make everything be in some subsection, the "introduction" divisions in
+  pretext may be screwing up and just dropping certain things on the floor.
+  This requires a new edition since there are going to be probably page
+  number changes.  If this is done, we could drop the manual introduction
+  %mbxINTROSUBSECTION thing and do it automatically again perhaps.
 
-* Exercises that aren't in a subsection aren't shown.  If we switch
-exercises section to <exercises> it seems to work but that requires 
-some work including numbering
+Pretext/HTML:
 
 * Currrently the conversion is broken
 
