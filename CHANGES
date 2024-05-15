@@ -1,4 +1,4 @@
-The point of this revision is to fix not only errata, but improve wording,
+The point of this revision is to fix errata, and also to improve wording,
 clarity, and consistency in many places.
 There is essentially no new
 material, except for a few short paragraphs in the Laplace transform
@@ -119,7 +119,7 @@ chapters 1 and 2 where I was hitting my estimates spot on.
 <li>In sections 7.2 and 7.3, name the coefficients
 \(P(x),\) \(Q(x),\) \(R(x)\) since lower case letters are used for
 other things, most confusingly little \(r.\)
-<li>In 7.3, a little bit more explicitly say in the beginning that we're
+<li>In 7.3, say a little bit more explicitly in the beginning that we're
 just trying to find a solution on one side of the singular point.  Also
 mention the thing about what the singular point does to the initial value
 in the first example.

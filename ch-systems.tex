@@ -62,11 +62,12 @@ x_3'(t) &= g_3\bigl(x_1(t),x_2(t),x_3(t),t\bigr) .
 
 We usually also have an
 \emph{initial condition}\index{initial condition for a system}.  Just like
-for single equations we specify $x_1$, $x_2$, and $x_3$ for some fixed $t$.
-For example, $x_1(0) = a_1$, $x_2(0) = a_2$, $x_3(0) = a_3$.
-For some constants $a_1$, $a_2$, and $a_3$.  For the second order system
+for single equations, we specify $x_1$, $x_2$, and $x_3$ for some fixed $t$.
+For example, $x_1(0) = a_1$, $x_2(0) = a_2$, $x_3(0) = a_3$,
+where $a_1$, $a_2$, and $a_3$ are some constants.  For the second order
+system,
 we would also specify the first derivatives at a point.
-And if we find a solution with constants in it, where by solving for the
+If we find a solution with some arbitrary constants in it, where by solving for the
 constants we find a solution for any initial condition, we call this
 solution the \emph{general solution}\index{general solution to a system}.
 Best to look at a simple example.
@@ -113,7 +114,7 @@ example above, and we will have to solve for all variables at once.
 While we won't generally be able to solve for one variable and then the
 next, we will try to salvage as much as possible from this technique.
 It will turn out that in a certain sense we will still (try to) solve
-a bunch of single equations and put their solutions together.  Let's not
+a bunch of single equations and put their solutions together.  Let us not
 worry right now about how to solve systems yet.
 
 We will mostly consider the \emph{\myindex{linear systems}}.  The example
@@ -177,7 +178,7 @@ solve for both $x_1$ and $x_2$ at once, which is intuitively clear since
 the amount of salt in one tank affects the amount in the other.
 We can't know $x_1$ before we know $x_2$, and vice versa.
 
-We don't yet know how to find all the solutions, but
+We do not yet know how to find all the solutions, but
 intuitively we can at least find some solutions.  Suppose we
 know that initially the tanks have the same amount of salt.  That is,
 we have an initial condition such as $x_1(0)=x_2(0) = C$.  Then clearly the
@@ -4308,14 +4309,14 @@ We differentiate to get
 ( 3 \vec{v}_2 + \vec{v}_1 )\, e^{3t} +  3 \vec{v}_1 t e^{3t} .
 \end{equation*}
 As we are assuming that $\vec{x}_2$ is a solution, ${\vec{x}_2}'$ must
-equal $A \vec{x}_2$. So let's compute $A \vec{x}_2$:
+equal $A \vec{x}_2$. So we compute $A \vec{x}_2$:
 \begin{equation*}
 A \vec{x}_2 = 
 A ( \vec{v}_2 +  \vec{v}_1 t )\, e^{3t}
 =
 A \vec{v}_2 e^{3t} +  A \vec{v}_1 t e^{3t} .
 \end{equation*}
-By looking at the coefficients of $e^{3t}$ and $t e^{3t}$ we see
+By looking at the coefficients of $e^{3t}$ and $t e^{3t}$, we see
 $3 \vec{v}_2 + \vec{v}_1 = A \vec{v}_2$ and
 $3 \vec{v}_1 = A \vec{v}_1$.
 This means that
@@ -4465,7 +4466,7 @@ $\left[ \begin{smallmatrix} 0 \\ 0 \\ 1 \end{smallmatrix} \right]$
 is an eigenvector
 for the eigenvalue $\lambda = 1$.
 
-Let's focus on $\lambda = 2$.  We compute eigenvectors:
+Let us focus on $\lambda = 2$.  We compute eigenvectors:
 \begin{equation*}
 \vec{0} =
 (A - 2 I) \vec{v}
@@ -4485,8 +4486,8 @@ is $-v_1 -v_3 = 0$.  Let $v_3$ be the free variable to find
 that $v_1 = -v_3$.  Perhaps let $v_3 = -1$ to find an eigenvector
 $\left[ \begin{smallmatrix} 1 \\ 0 \\ -1 \end{smallmatrix} \right]$.
 Problem is that setting $v_3$ to anything else just gets multiples
-of this vector and so we have a defect of 1.
-Let $\vec{v}_1$ be the eigenvector and let's look for
+of this vector and so we have a defect of~1.
+Let $\vec{v}_1$ be the eigenvector and let us look for
 a generalized eigenvector $\vec{v}_2$:
 \begin{equation*}
 (A - 2 I) \vec{v}_2 = \vec{v}_1 , 
@@ -6123,11 +6124,11 @@ $\vec{x}(t) =
 \vec{v}_n \xi_n(t)$ satisfying $\vec{x}(0) = \vec{b}$,
 because $\xi_k(0) = a_k$.
 
-Let us remark that the technique we just outlined is the eigenvalue
+We remark that the technique we just outlined is the eigenvalue
 method applied to nonhomogeneous systems.  If a system is homogeneous, that
 is, if $\vec{f}=\vec{0}$, then the equations we get are
 $\xi_k' = \lambda_k \xi_k$, and so $\xi_k = C_k e^{\lambda_k t}$ are the
-solutions and that's precisely what we got in
+solutions and that is precisely what we got in
 \sectionref{eigenmethod:section}.
 
 \begin{example}
@@ -6929,7 +6930,7 @@ Decompose $\vec{f}$ in terms of the eigenvectors
 \end{equation*}
 where, again, $\vec{g} = E^{-1} \vec{f}$.
 
-We plug in, and as before we obtain
+We plug in and as before we obtain
 \begin{equation*}
 \begin{split}
 %{\vec{x}}'' & =

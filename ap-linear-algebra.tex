@@ -5,6 +5,8 @@
 \section{Vectors, mappings, and matrices}
 \label{vecsandmaps:section}
 
+%mbxINTROSUBSECTION
+
 \sectionnotes{2 lectures}
 
 In real life, there is most often more than one variable.
@@ -96,7 +98,7 @@ is the arrow from the origin to the point $(1,2)$ in the plane.
 The magnitude is the length of the arrow.
 See \figurevref{linalg-vecarrow:fig}.
 If we think of vectors as arrows,
-the arrow doesn't always have to start at the origin.  If we do move it
+the arrow does not always have to start at the origin.  If we do move it
 around, however, it should always keep the same direction and the same magnitude.
 
 \begin{myfig}
@@ -111,11 +113,11 @@ we draw a little arrow above it:
 \begin{equation*}
 \vec{x}
 \end{equation*}
-Another popular notation is $\mathbf{x}$, although we will use the little
+Another popular notation is a bold $\mathbf{x}$, although we will use the little
 arrows.  It may be easy to write a bold letter in a book, but it is not so
 easy to write it by hand on paper or on the board.
-Mathematicians often don't even write the arrows.  A mathematician would
-write $x$ and just remember that $x$ is a vector and not a number.
+Mathematicians often do not even write the arrows.  A mathematician would
+write $x$ and remember that $x$ is a vector and not a number.
 Just like you remember that Bob is your uncle, and you don't have to
 keep repeating \myquote{Uncle Bob} and you can just say \myquote{Bob.}
 In this book, however, we will call Bob \myquote{Uncle Bob}
@@ -349,7 +351,7 @@ yearns to write
 After all, who hasn't wanted to write $\sqrt{x+y} = \sqrt{x} + \sqrt{y}$ or
 something like that at some point in their mathematical lives.
 Wouldn't life be simple if we could do that?
-Of course we can't always do that (for example, not with the square roots!)
+Of course we cannot always do that (for example, not with the square roots!)
 But there are many other functions where
 we can do exactly the above.  Such functions are called \emph{linear}.
 
@@ -575,7 +577,7 @@ a_{15} \\ a_{25} \\ a_{35}
 \end{bmatrix} .
 \end{equation*}
 
-What about another vector $\vec{x}$, which isn't in the standard basis?
+What about another vector $\vec{x}$ that is not in the standard basis?
 Where does it go?  We use
 linearity.  First, we write the vector as a linear combination of the standard
 basis vectors:
@@ -1208,6 +1210,8 @@ a)~$(3,-1)$ \quad b)~$(4,0)$ \quad c)~$(-1,-1)$
 \section{Matrix algebra}
 \label{matalg:section}
 
+%mbxINTROSUBSECTION
+
 \sectionnotes{2--3 lectures}
 
 \subsection{One-by-one matrices}
@@ -1445,12 +1449,12 @@ regroup things:
 \end{split}
 \end{equation*}
 If we replaced the numbers by letters that would constitute a proof!
-You'll notice that we didn't really have to even compute what the
+Notice that we did not really have to compute what the
 result is to convince ourselves that the two expressions were equal.
 
-If the sizes of the matrices do not match, then addition is not defined.
+If the sizes of the matrices do not match, then addition is undefined.
 If $A$ is $3 \times 2$ and $B$ is $2 \times 5$, then we cannot add
-these matrices.  We don't know what that could possibly mean.
+the matrices.  We do not know what that could possibly mean.
 
 \medskip
 
@@ -2834,6 +2838,8 @@ c)~$\begin{bmatrix}
 \section{Elimination}
 \label{elim:section}
 
+%mbxINTROSUBSECTION
+
 \sectionnotes{2--3 lectures}
 
 \subsection{Linear systems of equations}
@@ -3137,7 +3143,7 @@ operations).
 \right]
 \end{equation*}
 We are done with the first column and the first row for now.  We almost
-pretend the matrix doesn't have the first column and the first row.
+pretend the matrix does not have the first column and the first row.
 \begin{equation*}
 \left[
 \begin{array}{ccc|c}
@@ -4185,7 +4191,7 @@ $\begin{bmatrix}
 \begin{exercise}
 For the matrices in \exerciseref{exercise:rankmatrix}, find
 a linearly independent set of row vectors that span the row space
-(they don't need to be rows of the matrix).
+(they do not need to be rows of the matrix).
 \end{exercise}
 
 \begin{exercise}
@@ -4438,7 +4444,7 @@ a) 3 \quad b) 1 \quad c) 2
 \begin{exercise}
 For the matrices in \exerciseref{exercise:rankmatrixans}, find
 a linearly independent set of row vectors that span the row space
-(they don't need to be rows of the matrix).
+(they do not need to be rows of the matrix).
 \end{exercise}
 \exsol{%
 a)~$\begin{bmatrix} 1 & 0 & 0\end{bmatrix}$,
@@ -4505,6 +4511,8 @@ $\begin{bmatrix}
 \sectionnewpage
 \section{Subspaces, dimension, and the kernel}
 \label{subspaces:section}
+
+%mbxINTROSUBSECTION
 
 \sectionnotes{1 lecture}
 
@@ -5307,6 +5315,8 @@ a)~3 \quad b)~2 \quad c)~3 \quad d)~2 \quad e)~3
 \section{Inner product and projections}
 \label{innerproduct:section}
 
+%mbxINTROSUBSECTION
+
 \sectionnotes{1--2 lectures}
 
 \subsection{Inner product and orthogonality}
@@ -5511,7 +5521,7 @@ $\lVert \vec{w} - \vec{u} \rVert$ among all vectors $\vec{u}$ that are
 multiples of $\vec{v}$.
 Because of this, this projection comes up often in applied
 mathematics in all sorts of contexts we cannot solve a problem
-exactly: We can't always solve
+exactly: We cannot always solve
 \myquote{Find $\vec{w}$ as a multiple of
 $\vec{v}$,}
 but $\operatorname{proj}_{\vec{v}}(\vec{w})$ is the best \myquote{solution.}
