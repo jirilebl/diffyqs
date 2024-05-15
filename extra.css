@@ -18,9 +18,9 @@
   width: 90px;
 }
 /* Some fixes, perhaps will not be needed later*/
-.ptx-navbar .toc-toggle .icon {
+/*.ptx-navbar .toc-toggle .icon {
   bottom: 0.2em;
-}
+}*/
 /* bad fix for floating pics running into displaymath */
 .displaymath {
   clear: both;

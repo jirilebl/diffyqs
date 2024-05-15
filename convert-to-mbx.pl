@@ -886,6 +886,7 @@ while(1)
 			while ($eqn =~ s/\\index\{(.*?)\}//) {
 				$indexes = $indexes . "<idx>$1</idx>";
 			}
+			$indexes = do_line_subs($indexes);
 
 			#FIXME: Is wrapping in aligned all kosher?
 			print $out "<me>$indexes\n";
@@ -914,6 +915,7 @@ while(1)
 			while ($eqn =~ s/\\index\{(.*?)\}//) {
 				$indexes = $indexes . "<idx>$1</idx>";
 			}
+			$indexes = do_line_subs($indexes);
 
 			print $out "<md>$indexes\n";
 			print $out "<mrow>\n";
@@ -945,6 +947,7 @@ while(1)
 			while ($eqn =~ s/\\index\{(.*?)\}//) {
 				$indexes = $indexes . "<idx>$1</idx>";
 			}
+			$indexes = do_line_subs($indexes);
 
 			print $out "<me latexenv=\"multline*\">$indexes\n";
 			print "EQ(multline*) = $eqn\n";
@@ -970,6 +973,7 @@ while(1)
 			while ($eqn =~ s/\\index\{(.*?)\}//) {
 				$indexes = $indexes . "<idx>$1</idx>";
 			}
+			$indexes = do_line_subs($indexes);
 
 			$equation_num = $equation_num+1;
 			my $the_num = get_equation_number ();
@@ -999,6 +1003,7 @@ while(1)
 			while ($eqn =~ s/\\index\{(.*?)\}//) {
 				$indexes = $indexes . "<idx>$1</idx>";
 			}
+			$indexes = do_line_subs($indexes);
 
 			print $out "<me>$indexes\n";
 			print "EQ = $eqn\n";
@@ -1025,6 +1030,7 @@ while(1)
 			while ($eqn =~ s/\\index\{(.*?)\}//) {
 				$indexes = $indexes . "<idx>$1</idx>";
 			}
+			$indexes = do_line_subs($indexes);
 
 			$equation_num = $equation_num+1;
 			my $the_num = get_equation_number ();
@@ -1474,7 +1480,7 @@ while(1)
 		#FIXME: hack because I sometime switch index and label
 		my $indexo = "";
 		while ($para =~ s/^[ \n]*\\index\{(.*?)\}[ \n]*//s) {
-			$term = $1;
+			$term = do_line_subs($1);
 			$term =~ s|^(.*)!(.*)$|<h>$1</h><h>$2</h>|s;
 			$term =~ s|\$(.*?)\$|<m>$1</m>|sg;
 			$indexo = $indexo . "<idx>$term</idx>\n";
@@ -1532,7 +1538,7 @@ while(1)
 		$title =~ s|\$(.*?)\$|<m>$1</m>|sg;
 		my $index = "";
 		if ($title =~ s/\\myindex\{(.*?)\}/$1/) {
-			$index = $1;
+			$index = do_line_subs($1);
 		}
 		close_paragraph();
 		$exercise_num = $exercise_num+1;
