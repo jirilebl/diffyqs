@@ -1,0 +1,320 @@
+\documentclass[10pt,aspectratio=169]{beamer}
+
+% All the boilerplate is in deslides.sty
+\usepackage{deslides}
+
+\author{Ji\v{r}\'i Lebl}
+
+\institute[OSU]{%
+Oklahoma State University%
+%Departemento pri Matematiko de Oklahoma {\^S}tata Universitato%
+}
+
+\title{19. Nonhomogeneous equations,\\part 2: variation of parameters\\(Notes on Diffy Qs, 2.5)}
+
+\date{}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+
+%\bigskip
+
+\begin{center}
+The textbook: \url{https://www.jirka.org/diffyqs/}
+\end{center}
+\end{frame}
+
+\begin{frame}
+Trying to solve $Ly = f(x)$.
+
+\medskip
+
+Undetermined coefficients needs $f(x)$ and its derivatives
+to be of the same form.
+
+\medskip
+\pause
+
+What about $Ly = \tan x$, that is, $f(x) = \tan x$?
+
+\medskip
+\pause
+
+$f'(x) = \sec^2 x$,
+
+\pause
+$f''(x) = 2\sec^2 x \, \tan x$,
+
+\pause
+$f'''(x) = 4 \sec^2 x \, \tan^2 x + 2 \sec^4 x$,
+
+\pause
+$f^{(4)}(x) = 8 \sec^2 x \, \tan^3 x + 16 \sec^4 x \, \tan x$,
+
+\pause
+$f^{(5)}(x) = 16\sec^2 x \, \tan^4 x + 88 \sec^4 x \tan^2 x + 16 \sec^6 x$,
+
+\ldots
+
+\medskip
+\pause
+
+No luck ...
+
+\end{frame}
+
+\begin{frame}
+\emph{Variation of parameters} can handle $\tan x$ or any other $f(x)$ (but
+computations can get tedious).
+
+\medskip
+\pause
+
+The technique works for the general linear equations of any order,
+but we stick to constant coefficient second order equations.
+
+\medskip
+\pause
+
+Suppose $Ly= 0$ (associated homogeneous equation) has general
+solution
+\[
+C_1 y_1 + C_2 y_2 ,
+\]
+where $C_1,C_2$ are constants.
+
+\medskip
+\pause
+
+We look for a solution of $Ly=f(x)$ of the form
+\[
+y  = u_1 y_1 + u_2 y_2 ,
+\]
+where $u_1,u_2$ are functions.
+
+\end{frame}
+
+\begin{frame}
+\textbf{Example:}
+Solve $y''+y=\tan x$.
+
+\medskip
+\pause
+
+The complementary solution is
+\[
+y_c = C_1 \cos x + C_2 \sin x .
+\]
+\pause
+So let's look for a solution of the form
+\[
+y = u_1 \cos x + u_2 \sin x = u_1 y_1 + u_2 y_2 .
+\]
+\pause
+Compute
+\[
+y' = (u_1' y_1 + u_2' y_2) + (u_1 y_1' + u_2 y_2').
+\]
+\pause
+We have two unknown functions ($u_1,u_2$) and one condition ($Ly=f(x)$),
+so we can still impose another condition.
+\pause
+Wouldn't it be convenient if
+\[
+(u_1' y_1 + u_2' y_2) = 0
+\]
+\pause
+Yes?  So let's assume that!
+\pause
+Then
+\[
+y' = u_1 y_1' + u_2 y_2' .
+\]
+
+\end{frame}
+
+\begin{frame}
+Start with
+
+\quad
+$y' = u_1 y_1' + u_2 y_2'$.
+
+\medskip
+\pause
+
+Differentiate
+
+\quad
+$y'' = (u_1' y_1' + u_2' y_2') + (u_1 y_1'' + u_2 y_2'')$
+
+\medskip
+\pause
+
+$y_1$ and $y_2$ solve $y''+y = 0$, so $y_1'' = - y_1$ and $y_2'' = - y_2$.
+
+\medskip
+\pause
+
+So
+
+\quad
+$y'' =
+(u_1' y_1' + u_2' y_2') - (u_1 y_1 + u_2 y_2) 
+\pause
+=
+(u_1' y_1' + u_2' y_2') - y
+$
+
+\medskip
+\pause
+
+In other words
+
+\quad
+$y'' + y = Ly = u_1' y_1' + u_2' y_2'$.
+
+\medskip
+
+\pause
+Soooo ...  for $y$ to satisfy $Ly = f(x)$, we must have
+$f(x) = u_1' y_1' + u_2' y_2'$.
+
+\medskip
+\pause
+
+To summarize we need to solve the two imposed conditions:
+\[
+\boxed{~~
+\begin{aligned}
+& u_1' y_1 + u_2' y_2 = 0 ,\\
+& u_1' y_1' + u_2' y_2' = f(x) .
+\end{aligned}
+~~}
+\]
+
+\end{frame}
+
+\begin{frame}
+In our case
+\[
+\begin{aligned}
+u_1' \cos x + u_2' \sin x &= 0 ,\\
+-u_1' \sin x + u_2' \cos x &= \tan x .
+\end{aligned}
+\]
+\pause
+Hence
+\[
+\begin{aligned}
+u_1' \cos x \sin x + u_2' \sin^2 x & = 0 ,\\
+-u_1' \sin x \cos x + u_2' \cos^2 x & = \tan x \cos x = \sin x .
+\end{aligned}
+\]
+\pause
+And thus
+\[
+\begin{aligned}
+& u_2' \bigl(\sin^2 x + \cos^2 x\bigr) = \sin x , \\
+& u_2' = \sin x , \\
+& u_1' = \frac{- \sin^2 x}{\cos x} = \cos x - \sec x .
+\end{aligned}
+\]
+\pause
+Integrate %$u_1'$ and $u_2'$ to get $u_1$ and $u_2$.
+\[
+\begin{aligned}
+& u_1 = \int u_1'\,dx 
+= \int ( \cos x-\sec x ) \,dx
+= \sin x -
+\ln \left\lvert \sec x + \tan x \right\rvert
+, \\
+& u_2 = \int u_2'\,dx 
+= \int \sin x\,dx = -\cos x .
+\end{aligned}
+\]
+\pause
+(Forget about constants of integration, we want a particular solution)
+
+\end{frame}
+
+\begin{frame}
+So
+
+\medskip
+
+\quad
+$
+y_p = u_1 y_1 + u_2 y_2$
+
+\pause
+\medskip
+
+\quad
+$
+\phantom{y_p}
+=
+\cos x \sin x
+-
+\cos x
+\,
+\ln \lvert
+\sec x + \tan x
+\rvert
+-\cos x \sin x
+$
+
+\pause
+\medskip
+
+\quad
+$
+\phantom{y_p}
+=
+-
+\cos x \, \ln \lvert
+\sec x + \tan x
+\rvert $.
+
+\pause
+\medskip
+
+The general solution to $y'' + y = \tan x$ is
+\[
+y = C_1 \cos x + C_2 \sin x
+-
+\cos x \, \ln \lvert
+\sec x + \tan x
+\rvert .
+\]
+
+\medskip
+\pause
+
+In general, the procedure for finding $y_p$ using variation parameters (2nd
+order) is
+
+1) Solve the associated homogeneous equation.
+
+\pause
+2) Solve for $u_1'$ and $u_2'$ in
+\[
+%\boxed{~~
+\begin{aligned}
+& u_1' y_1 + u_2' y_2 = 0 ,\\
+& u_1' y_1' + u_2' y_2' = f(x) .
+\end{aligned}
+%~~}
+\]
+\pause
+3) Integrate to get $u_1$ and $u_2$ to find $y_p = u_1 y_1 + u_2 y_2$.
+
+\medskip
+\pause
+
+\textbf{Note:} Undetermined coefficients are usually less tedious if
+applicable.
+\end{frame}
+
+\end{document}
