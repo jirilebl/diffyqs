@@ -3593,7 +3593,7 @@ The curves given by the equation
 are called the \emph{characteristic curves}\index{characteristic curve}.
 See \figurevref{fopde:charcurves}.
 In this case, the solution does not change
-along the characteristic.
+along the characteristic as $\frac{du}{ds} = 0$.
 
 \begin{mywrapfig}{2.8in}
 \capstart
@@ -3825,19 +3825,19 @@ formation of singularities: traffic jams.  But we digress.
 \begin{exercise}
 Solve
 \begin{tasks}(2)
-\task $u_t +9u_x = 0$, \enspace $u(x,0) = \sin(x)$,
-\task $u_t -8u_x = 0$, \enspace $u(x,0) = \sin(x)$,
-\task $u_t +\pi u_x = 0$, \enspace $u(x,0) = \sin(x)$,
-\task $u_t + \pi u_x + u = 0$, \enspace $u(x,0) = \sin(x)$.
+\task $9u_x + u_t = 0$, \enspace $u(x,0) = \sin(x)$,
+\task $-8u_x + u_t = 0$, \enspace $u(x,0) = \sin(x)$,
+\task $\pi u_x + u_t = 0$, \enspace $u(x,0) = \sin(x)$,
+\task $\pi u_x + u_t + u = 0$, \enspace $u(x,0) = \sin(x)$.
 \end{tasks}
 \end{exercise}
 
 \begin{exercise}
-Solve $u_t +3u_x = 1$, $u(x,0) = x^2$.
+Solve $3u_x + u_t = 1$, $u(x,0) = x^2$.
 \end{exercise}
 
 \begin{exercise}
-Solve $u_t +3u_x = x$, $u(x,0) = e^x$.
+Solve $3u_x + u_t = x$, $u(x,0) = e^x$.
 \end{exercise}
 
 \begin{exercise}
@@ -3861,7 +3861,7 @@ you found were different.
 \end{exercise}
 
 \begin{exercise}
-Solve $(1+x^2) u_t + x^2 u_x + e^x u = 0$, $u(x,0) = 0$.
+Solve $x^2 u_x + (1+x^2) u_t + e^x u = 0$, $u(x,0) = 0$.
 Hint: Think a little out of the box.
 \end{exercise}
 
@@ -3870,8 +3870,8 @@ Hint: Think a little out of the box.
 \begin{exercise}
 Solve
 \begin{tasks}(2)
-\task $u_t - 5u_x = 0$, \enspace $u(x,0) = \frac{1}{1+x^2}$,
-\task $u_t + 2u_x = 0$, \enspace $u(x,0) = \cos(x)$.
+\task $-5u_x + u_t = 0$, \enspace $u(x,0) = \frac{1}{1+x^2}$,
+\task $2u_x + u_t = 0$, \enspace $u(x,0) = \cos(x)$.
 \end{tasks}
 \end{exercise}
 \exsol{%
