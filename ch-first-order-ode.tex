@@ -1252,7 +1252,7 @@ The trick is to rewrite the left-hand side
 of \eqref{lineq:eq1} as a derivative of a product of $y$ with another
 function.
 To this end,
-we find a function $r(x)$ such that
+we wish to find a function $r(x)$ such that
 \begin{equation*}
 r(x) y' + r(x) p(x) y = \frac{d}{dx}\Bigl[ r(x) y \Bigr] .
 \end{equation*}
@@ -1301,7 +1301,7 @@ The integrating factor is $r(x) = e^{\int p(x)\, dx} = e^{x^2}$.
 We multiply both sides of the equation by $r(x)$ to get
 \begin{equation*}
 \begin{aligned}
-e^{x^2} y' + 2xe^{x^2}y & = e^{x-x^2} e^{x^2} , \\
+e^{x^2} y' + 2xe^{x^2}y & = e^{x^2} e^{x-x^2} , \\
 \frac{d}{dx} \left[ e^{x^2} y \right] &= e^x .
 \end{aligned}
 \end{equation*}
@@ -1421,6 +1421,8 @@ In our example,
 \text{rate in} &= 5 , \\
 \text{concentration in} &= 0.1 , \\
 \text{rate out} &= 3 , \\
+\text{volume} &= \text{initial volume} + (\text{rate in} - \text{rate out})t
+= 60+(5-3)t, \\
 \text{concentration out} &= \frac{x}{\text{volume}} = \frac{x}{60+(5-3)t} .
 \end{aligned}
 \end{equation*}
@@ -1446,7 +1448,7 @@ r(t) = \exp \left( \int \frac{3}{60+2t} dt  \right)
 =
 {(60+2t)}^{3/2} .
 \end{equation*}
-We multiply both sides of the equation to get
+We multiply both sides of the equation by $r(t)$ to get
 \begin{align*}
 {(60+2t)}^{3/2} \frac{dx}{dt} +
 {(60+2t)}^{3/2} \frac{3}{60+2t} x
@@ -2015,9 +2017,10 @@ Note also, by looking at the graph, that the solution $x=A$ is
 that small perturbations in $x$ do not lead to substantially different
 solutions as $t$ grows.
 If we change the initial condition a little bit, then as 
-$t \to \infty$ we get $x(t) \to A$.  We call such a critical point
+$t \to \infty$, we still get $x(t) \to A$.
+We call such a critical point
 \emph{stable}\index{stable critical point}.
-In this simple example it turns out that all solutions in fact go to $A$
+In this simple example, all solutions in fact go to $A$
 as $t \to \infty$.  If a critical point is not stable, we say it is
 \emph{unstable}\index{unstable critical point}.
 
@@ -2049,7 +2052,7 @@ for some positive $k$ and $M$.  This equation is commonly used to model
 population if we know the limiting population $M$, that is the maximum
 sustainable population.  The logistic equation leads to 
 less catastrophic
-predictions on world population than $x'=kx$.  In the real world there is no
+predictions on world population than $x'=kx$.  In the real world, there is no
 such thing as negative population, but we will still consider negative $x$ for
 the purposes of the math.
 
