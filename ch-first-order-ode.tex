@@ -3532,9 +3532,9 @@ when we encounter the wave equation in \sectionref{dalemb:section}.
 \begin{example}
 Consider
 \begin{equation*}
-u_t + \alpha u_x = 0, \qquad u(x,0) = f(x) .
+\alpha u_x + u_t = 0, \qquad u(x,0) = f(x) .
 \end{equation*}
-This particular equation, $u_t + \alpha u_x = 0$, is
+This particular equation, $\alpha u_x + u_t = 0$, is
 called the \emph{\myindex{transport equation}}.
 
 The data will propagate along curves called characteristics.  The
@@ -3549,13 +3549,16 @@ equation is
 Let us see what the equation becomes. Remember the chain rule in several
 variables.
 \begin{align*}
-& u_t = u_\xi \xi_t + u_s s_t = - \alpha u_\xi + u_s , \\
-& u_x = u_\xi \xi_x + u_s s_x = u_\xi .
+& u_x = u_\xi \xi_x + u_s s_x = u_\xi , \\
+& u_t = u_\xi \xi_t + u_s s_t = - \alpha u_\xi + u_s .
 \end{align*}
 The equation in the coordinates $\xi$ and $s$ becomes
 \begin{equation*}
-\underbrace{(- \alpha u_\xi + u_s)}_{u_t} + \alpha
-\underbrace{(u_\xi)}_{u_x} = 0 ,
+\alpha
+\underbrace{(u_\xi)}_{u_x}
++
+\underbrace{(- \alpha u_\xi + u_s)}_{u_t}
+= 0 ,
 \end{equation*}
 or in other words
 \begin{equation*}
@@ -3601,7 +3604,7 @@ The slope of characteristic lines is
 $\frac{1}{\alpha}$, and for each different $\xi$, we get a different
 characteristic line.
 
-We see why $u_t + \alpha u_x = 0$ is called the
+We see why $\alpha u_x + u_t = 0$ is called the
 transport equation: Everything travels at some constant speed.
 This behavior is called \emph{\myindex{convection}}.
 An example application is material being moved by a river where the material
@@ -3614,7 +3617,7 @@ material at position $x$ and time $t$.  See
 %original files fopde-transport-1 fopde-transport-2
 \diffyincludegraphics{width=6.24in}{width=9in}{fopde-transport-1-2}
 \caption{Example of \myquote{transport}
-in $u_t-u_x = 0$ (that is, $\alpha = 1$) where the
+in $u_x+u_t = 0$ (that is, $\alpha = 1$) where the
 initial condition $f(x)$ is a peak at the origin.  On the left is a graph
 of the initial condition $u(x,0)$.  On the right is a graph of
 the function $u(x,1)$, that is at time $t=1$.  Notice it is the same
