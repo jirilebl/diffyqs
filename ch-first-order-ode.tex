@@ -2907,10 +2907,11 @@ We often wish to solve for $y$ in terms of $x$.  In our example,
 y = \pm \sqrt{C-x^2} .
 \end{equation*}
 
-An interpretation of the setup is that at each point $(x,y)$, $\vec{v} = (M,N)$ is
-a vector in the plane, that is, a direction and a magnitude.
-As $M$ and $N$ are functions of $(x,y)$, we have a \emph{\myindex{vector field}}.  The particular 
-vector field $\vec{v}$ that comes from an exact equation is a so-called
+In terms of multivariable calculus, at each point $(x,y)$ in the plane,
+$\vec{v} = (M,N)$ is
+a vector, that is, a direction and a magnitude.
+As $M$ and $N$ are functions of $(x,y)$, we have a \emph{\myindex{vector field}}.
+A vector field $\vec{v}$ that comes from an exact equation is a so-called
 \emph{\myindex{conservative vector field}}, that is, a vector field that comes with a
 potential function $F(x,y)$, such that
 \begin{equation*}
@@ -2921,7 +2922,7 @@ Let
 $\gamma$ be a path in the plane starting at $(x_1,y_1)$ and ending at
 $(x_2,y_2)$.
 If we think of $\vec{v}$ as force, then the work required to
-move along $\gamma$ is
+move along $\gamma$ is the path integral
 \begin{equation*}
 \int_\gamma \vec{v}(\vec{r}) \cdot d\vec{r}
 =
@@ -2962,8 +2963,8 @@ gives an implicit solution of the ODE\@.
 
 \begin{example}
 Let us find the general solution to
-$2x + 2y \frac{dy}{dx} = 0$.  Forget we knew
-what $F$ was.
+$2x + 2y \frac{dy}{dx} = 0$.  Forget we know
+$F$.
 
 If we know that this is an exact equation, we start looking for a potential
 function $F$.
@@ -3032,8 +3033,8 @@ Is there an easier way to check for the existence of $F$, other than failing
 in trying to
 find it?  Turns out there is.  Suppose
 $M = F_x$ and
-$N = F_y$.  Then
-as long as the second derivatives are continuous,
+$N = F_y$.
+As long as the second derivatives are continuous,
 \begin{equation*}
 \frac{\partial M}{\partial y}
 =
@@ -3240,11 +3241,12 @@ depend on $y$).  If so, then we have a linear equation
 u' - \frac{M_y-N_x}{N} u = 0 .
 \end{equation*}
 Letting $P(x) = \frac{M_y-N_x}{N}$,
-we solve using the standard integrating factor method,
+we solve the linear equation
 to find $u(x) = C e^{\int P(x) \, dx}$.  The constant in the
 solution is not relevant, we need any nonzero solution,
 so we take $C=1$.
-Then $u(x) = e^{\int P(x) \, dx}$ is the integrating factor.
+Then $u(x) = e^{\int P(x) \, dx}$ is the integrating factor
+making the equation exact.
 
 Similarly, we could try a function of the form $u(y)$.
 Then
