@@ -415,7 +415,7 @@ Yes, we are talking about the exponential.
 
 Let us try\footnote{%
 Making an educated guess with some parameters to solve for 
-is such a central technique in differential equations, that people sometimes use
+is such a central technique in differential equations that people sometimes use
 a fancy name for such a guess: \emph{\myindex{ansatz}}, German for \myquote{initial
 placement of a tool at a work piece.}  Yes, the Germans have a word for that.}
 a solution of the form $y = e^{rx}$.  Then $y' = r e^{rx}$ and
@@ -484,6 +484,7 @@ Solve for the $r$ by using the \myindex{quadratic formula}:
 \begin{equation*}
 r_1, r_2 = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} .
 \end{equation*}
+Suppose that $b^2 -4ac \geq 0$ for now so that $r_1$ and $r_2$ are real.
 So $e^{r_1 x}$ and $e^{r_2 x}$ are solutions.  There is
 still a difficulty if $r_1 = r_2$, but it is not hard to overcome.
 
@@ -758,10 +759,10 @@ y = C_1 \cos (kx) + C_2 \sin (kx) .
 Find the solution of $y'' - 6 y' + 13 y = 0$, $y(0) = 0$, $y'(0) =
 10$.
 
-The characteristic equation is $r^2 - 6 r + 13 = 0$.  By completing the
-square we get ${(r-3)}^2 + 2^2 = 0$ and hence the roots are
+The characteristic equation is $r^2 - 6 r + 13 = 0$.  Completing the
+square, we get ${(r-3)}^2 + 2^2 = 0$ and hence the roots are
 $r = 3 \pm 2i$.
-By the theorem we have the general solution
+Per the theorem, the general solution is
 \begin{equation*}
 y = C_1 e^{3x} \cos (2x) + C_2 e^{3x} \sin (2x) .
 \end{equation*}
