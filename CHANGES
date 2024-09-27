@@ -4,3 +4,5 @@ and \(u_t\) second and some vice-versa.  Order them all the same for
 consistency's sake, that is, \(u_x\) first.
 This includes the exercises 1.9.1, 1.9.2, 1.9.3, 1.9.6, and 1.9.101.
 (There is no change in content, it's just how its presented)
+<li>In section 2.2, just before Theorem 2.2.1, mention that we are for the moment
+supposing that the roots are real.
