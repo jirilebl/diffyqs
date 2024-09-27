@@ -1,4 +1,4 @@
-<li>In Example 1.4.2, explicitly say how the volume is computed
+<li>In Example 1.4.2, explicitly say how the volume is computed.
 <li>In section 1.9, terms in some equations were ordered with \(u_x\) first
 and \(u_t\) second and some vice-versa.  Order them all the same for
 consistency's sake, that is, \(u_x\) first.
