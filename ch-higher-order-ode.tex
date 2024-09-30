@@ -638,7 +638,7 @@ at the Taylor series, these
 properties still hold for the complex
 exponential.  For example the very important property: $e^{x+y} = e^x e^y$.  This means that
 $e^{a+ib} = e^a e^{ib}$.  Hence if we can compute $e^{ib}$, we can
-compute $e^{a+ib}$.  For $e^{ib}$ we use the so-called
+compute $e^{a+ib}$.  For $e^{ib}$, we use the so-called
 \emph{\myindex{Euler's formula}}.
 
 \begin{theorem}[Euler's formula] \label{eulersformula}
@@ -673,9 +673,9 @@ each side and deduce:
 \end{equation*}
 \end{exercise}
 
-For a complex number $a+ib$ we call
+For a complex number $a+ib$, we call
 $a$ the \emph{\myindex{real part}} and $b$ the \emph{\myindex{imaginary part}} of the number.
-Often the following notation is used,
+Often the following notation is used:
 \begin{equation*}
 \operatorname{Re}(a+ib) = a
 \qquad \text{and} \qquad
@@ -691,12 +691,12 @@ By the quadratic
 formula, the roots are
 $\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$.
 These roots are complex if $b^2 - 4ac < 0$.  In this case, we
-can write the roots as
+write the roots as
 \begin{equation*}
 r_1, r_2 = \frac{-b}{2a} \pm i\frac{\sqrt{4ac - b^2}}{2a} .
 \end{equation*}
-As you can see, we always get a pair of roots of the form $\alpha \pm i
-\beta$.  We can still write the solution as
+As you can see, we get a pair of roots of the form $\alpha \pm i
+\beta$.  We could still write the solution as
 \begin{equation*}
 y = C_1 e^{(\alpha+i\beta)x} + C_2 e^{(\alpha-i\beta)x} .
 \end{equation*}
@@ -726,10 +726,14 @@ y_3 & = \frac{y_1 + y_2}{2} = e^{\alpha x} \cos (\beta x) , \\
 y_4 & = \frac{y_1 - y_2}{2i} = e^{\alpha x} \sin (\beta x) ,
 \end{aligned}
 \end{equation*}
-are also solutions.  Furthermore, they are real-valued.  It is not hard to
-see that they are linearly independent (not multiples of each other).
-We summarize what we found as
-a theorem.
+are also solutions.
+It is not hard to
+see that $y_3$ and $y_4$ are linearly independent (not multiples of each other).
+So the general solution can be written in terms of $y_3$ and $y_4$.
+And as they are real-valued,
+no complex numbers need to be used for the arbitrary constants in the
+general solution.
+We summarize what we found as a theorem.
 
 \begin{theorem}
 Take the equation
@@ -1311,13 +1315,13 @@ it, if not, find a linear combination that works.
 \begin{exercise}
 Are $x$, $x^2$, and $x^4$
 linearly independent?  If so, show
-it, if not, find a linear combination that works.
+it, if not, find a linear combination that gives $0$.
 \end{exercise}
 
 \begin{exercise}
 Are $e^x$, $xe^x$, and $x^2e^x$
 linearly independent?  If so, show
-it, if not, find a linear combination that works.
+it, if not, find a linear combination that gives $0$.
 \end{exercise}
 
 \begin{exercise}
@@ -1366,7 +1370,7 @@ $y=0$
 
 \begin{exercise}
 Are $e^{x}$, $e^{x+1}$, $e^{2x}$, $\sin(x)$ linearly independent?
-If so, show it, if not find a linear combination that works.
+If so, show it, if not find a linear combination that gives $0$.
 \end{exercise}
 \exsol{%
 No.  $e^1 e^x -  e^{x+1} = 0$.
@@ -1374,7 +1378,7 @@ No.  $e^1 e^x -  e^{x+1} = 0$.
 
 \begin{exercise}
 Are $\sin(x)$, $x$, $x\sin(x)$ linearly independent?
-If so, show it, if not find a linear combination that works.
+If so, show it, if not find a linear combination that gives $0$.
 \end{exercise}
 \exsol{%
 Yes.  (Hint: First note that $\sin(x)$ is bounded.  Then note that
@@ -1650,19 +1654,19 @@ form
 x(t) = A \cos (\omega_0 t) + B \sin (\omega_0 t) ,
 \end{equation*}
 corresponds to the initial conditions $x(0) = A$ and $x'(0) = \omega_0 B$.
-So it is easy to figure out $A$ and $B$ from the initial
+It is easy to find $A$ and $B$ from the initial
 conditions. 
 The amplitude and the phase shift are computed from $A$ and $B$.
-In the example, we found the amplitude $C$.  Let us
-compute the phase shift.  We know $\tan \gamma = \nicefrac{B}{A} = 1$.
-We take the
-arctangent of 1 and get $\nicefrac{\pi}{4}$ or approximately 0.785.
-We need to check if $\nicefrac{\pi}{4}$ gives the correct quadrant
-(same quadrant as the point $(A,B)$)
-and add $\pi$ to get $\gamma$ if it is not.
-Since both $A$ and $B$ are positive, then $\gamma$ should be in the first
-quadrant, $\nicefrac{\pi}{4}$ radians is in the first quadrant, so $\gamma =
-\nicefrac{\pi}{4}$.
+In the example, we found the amplitude $C$.
+How about the phase shift $\gamma$.
+We know $\tan \gamma = \nicefrac{B}{A} = 1$.
+The arctangent of $1$ is $\nicefrac{\pi}{4}$ or approximately $0.785$.
+We must check if $\nicefrac{\pi}{4}$ gives the correct
+quadrant---if the angle from the positive $x$-axis is in the same quadrant as the
+point $(A,B)$---if not, we add $\pi$.
+Both $A$ and $B$ are positive, so $\gamma$ must be in the first
+quadrant.  As $\nicefrac{\pi}{4}$ radians is in the first quadrant,
+$\gamma = \nicefrac{\pi}{4}$.
 
 Note: Many
 calculators and computer software have not only the

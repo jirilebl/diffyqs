@@ -6,3 +6,8 @@ This includes the exercises 1.9.1, 1.9.2, 1.9.3, 1.9.6, and 1.9.101.
 (There is no change in content, it's just how its presented)
 <li>In section 2.2, just before Theorem 2.2.1, mention that we are for the moment
 supposing that the roots are real.
+<li>In exercises 2.3.9, 2.3.10, 2.3.104, 2.3.105 change "find a linear combination that works."
+to "find a linear combination that gives 0." as "works" may be a little confusing or unclear.
+<li>Add a few words about the quadrant in the explanation of how to get the phase shift.
+It is not too important, so we don't want to dwell on it, but it turns out many students here
+have not seen polar coordinates yet (or just don't remember them).
