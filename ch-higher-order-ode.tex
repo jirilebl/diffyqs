@@ -1427,12 +1427,13 @@ compression of the spring by \myindex{Hooke's law}.
 Therefore, it is $kx$ in the negative direction.
 Similarly the force exerted by friction is proportional
 to the velocity of the mass.
-By \myindex{Newton's second law} we know that force equals mass times acceleration
-and hence $mx'' = F(t)-cx'-kx$ or
+\myindex{Newton's second law} says that force equals mass times
+acceleration.
+Hence, $mx'' = F(t)-cx'-kx$ or
 \begin{equation*}
 mx'' + cx' + kx = F(t) .
 \end{equation*}
-This is a linear second order constant coefficient ODE\@.
+The equation is a linear second order constant coefficient ODE\@.
 We say the motion is
 \begin{enumerate}[(i)]
 \item \emph{forced\index{forced motion}} if $F \not\equiv 0$ (if $F$ is not identically zero),
@@ -1460,7 +1461,7 @@ pictured \myindex{RLC circuit}.
 There is a resistor with a resistance of $R$ ohms, an
 inductor with an inductance of $L$ henries,
 and a capacitor with a capacitance of $C$ farads.  There is also
-an electric source (such as a battery) giving a voltage of $E(t)$ volts
+an electric source (such as a battery) with voltage of $E(t)$ volts
 at time $t$ (measured in seconds).
 Let $Q(t)$ be the charge (in coulombs) on the capacitor
 and $I(t)$ be the current (in amperes) in the circuit.  The relation between the two is
@@ -1470,7 +1471,7 @@ $L I' + RI + \nicefrac{Q}{C} = E$.   We differentiate to get
 L I''(t) + R I'(t) + \frac{1}{C} I(t) = E'(t) .
 \end{equation*}
 This is a nonhomogeneous second order constant coefficient linear equation.
-As $L, R$, and $C$ are all positive, this system behaves just like the
+As $L, R$, and $C$ are all positive, this circuit behaves just like the
 mass and spring system.  Position of the mass is replaced by current.
 Mass is replaced by inductance, damping is replaced by resistance, and
 the spring constant is replaced by one over the capacitance.  The change in
@@ -1503,7 +1504,7 @@ The $m$ curiously cancels from the equation.
 
 Now we make our approximation.  For small $\theta$ we have that approximately
 $\sin \theta \approx \theta$.  This can be seen by looking at the graph.
-In \figurevref{mv:sinthetafig} we can see that for approximately
+In \figurevref{mv:sinthetafig}, we can see that for approximately
 $-0.5 < \theta < 0.5$ (in radians) the graphs of $\sin \theta$ and $\theta$ are almost the
 same.
 
@@ -1513,7 +1514,7 @@ same.
 \caption{The graphs of $\sin \theta$ and $\theta$ (in radians).\label{mv:sinthetafig}}
 \end{mywrapfig}
 
-Therefore, when the swings are small, $\theta$ is small and we can
+Therefore, when the swings are small, $\theta$ is small, and we can
 model the behavior by the simpler linear equation
 \begin{equation*}
 \theta'' + \frac{g}{L} \theta = 0 .
