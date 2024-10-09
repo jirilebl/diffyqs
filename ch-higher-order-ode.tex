@@ -1556,23 +1556,26 @@ A \cos (\omega_0 t) + B \sin (\omega_0 t) =
 C \cos ( \omega_0 t - \gamma ) ,
 \end{equation*}
 for two different constants $C$ and $\gamma$.
-It is not hard to compute that $C= \sqrt{A^2 + B^2}$ and $\tan \gamma =
-\nicefrac{B}{A}$.  Therefore, we let
+One finds that $A = C \cos \gamma$ and $B = C \sin \gamma$,
+and therefore
+it is not hard to compute that $C= \sqrt{A^2 + B^2}$ and $\tan \gamma =
+\nicefrac{B}{A}$.
+Therefore, we let
 $C$ and $\gamma$ be our arbitrary constants and write
 $x(t) = C \cos ( \omega_0 t - \gamma )$.
 
 \begin{exercise}
 Justify the identity $A \cos (\omega_0 t) + B \sin (\omega_0 t) =
-C \cos ( \omega_0 t - \gamma )$ and verify the equations for $C$
-and $\gamma$.  Hint: Start with
+C \cos ( \omega_0 t - \gamma )$ and verify the equations $C = \sqrt{A^2+B^2}$
+and $\tan \gamma = \frac{B}{A}$.  Hint: Start with
 $\cos (\alpha-\beta) = \cos (\alpha) \cos
 (\beta) + \sin (\alpha)\sin (\beta)$ and multiply by $C$.  Then what should
 $\alpha$ and $\beta$ be?
 \end{exercise}
 
-While it is generally easier to use the first form with $A$ and $B$
-to solve for the initial conditions, the second form is much
-more natural.  The constants $C$ and $\gamma$ have nice physical interpretation.
+While it is easier to use the first form with $A$ and $B$
+to solve for the initial conditions, the second form is more natural.
+The constants $C$ and $\gamma$ have nice physical interpretation.
 Write the solution as
 \begin{equation*}
 x(t) = C \cos ( \omega_0 t - \gamma ) .
@@ -1617,14 +1620,13 @@ The units are the mks units\index{mks units} (meters-kilograms-seconds).
 The setup means that the mass was at half a meter in the positive
 direction during the crash and
 relative to the wall the spring is mounted to, the mass was moving forward
-(in the positive direction) at \unitfrac[1]{m}{s}.  This gives us the initial
+(in the positive direction) at \unitfrac[1]{m}{s}.  This gives the initial
 conditions.
-
 So the equation with initial conditions is
 \begin{equation*}
 2 x'' + 8 x = 0 , \qquad x(0) = 0.5, \qquad x'(0) = 1.
 \end{equation*}
-We directly compute $\omega_0 = \sqrt{\nicefrac{k}{m}} = \sqrt{4} = 2$.
+We compute $\omega_0 = \sqrt{\nicefrac{k}{m}} = \sqrt{4} = 2$.
 Hence the angular frequency is 2.  The usual frequency in Hertz (cycles per
 second) is $\nicefrac{2}{2\pi} = \nicefrac{1}{\pi} \approx 0.318$.
 
@@ -1665,6 +1667,7 @@ The arctangent of $1$ is $\nicefrac{\pi}{4}$ or approximately $0.785$.
 We must check if $\nicefrac{\pi}{4}$ gives the correct
 quadrant---if the angle from the positive $x$-axis is in the same quadrant as the
 point $(A,B)$---if not, we add $\pi$.
+That is because $A = C \cos \gamma$ and $B = C \sin(\gamma)$.
 Both $A$ and $B$ are positive, so $\gamma$ must be in the first
 quadrant.  As $\nicefrac{\pi}{4}$ radians is in the first quadrant,
 $\gamma = \nicefrac{\pi}{4}$.
@@ -2443,6 +2446,18 @@ y = C_1 \cos x + C_2 \sin x
 \rvert .
 \end{equation*}
 
+\medskip
+
+So the general idea for any $y'' + p y' + q y = f(x)$ is to first find solutions
+$y_1$, $y_2$ to $y''+py'+qy = 0$.  Then solve the two boxed equations
+for $u_1'$ and $u_2'$, that is, solve
+is $u_1' y_1 + u_2' y_2 = 0$ and $u_1' y_1' + u_2' y_2' = f(x)$.  Then
+integrate $u_1'$ and $u_2'$ to find $u_1$ and $u_2$, and you have your
+particular solution $y = u_1 y_1 + u_2 y_2$.
+We remark that if $y''$ has some coefficient that is not $1$, that is, if
+the equation is $ay'' + by' + cy = f(x)$, you must divide the equation by
+$a$ first.
+
 \subsection{Exercises}
 
 \begin{exercise}
@@ -2562,7 +2577,7 @@ $y=\frac{-\sin(x+c)}{3}+C_1 e^{\sqrt{2}\,x}+C_2 e^{-\sqrt{2}\,x}$
 
 \begin{exercise}
 Undetermined coefficients can sometimes be used to guess a particular solution
-to other equations than constant coefficients.
+to other equations than those with constant coefficients.
 Find a polynomial $y(x)$ that solves 
 $y'+ x y = x^3+2x^2+5x+2$.
 
@@ -2597,7 +2612,7 @@ the case of forced oscillations, which we did not yet handle.  That is, we consi
 mx'' + cx' + kx = F(t) ,
 \end{equation*}
 for some nonzero $F(t)$.  The setup
-is again: $m$ is mass, $c$ is friction, $k$ is the spring constant, and
+is again: $x$ is position, $m$ is mass, $c$ is friction, $k$ is the spring constant, and
 $F(t)$ is an external force acting on the mass.
 
 We are interested in periodic
