@@ -2013,13 +2013,13 @@ For example, the equations for forced mechanical vibrations.
 %usually corresponds to some outside input to the system we are trying to
 %model, like the forcing function for the mechanical vibrations of last
 %section.
-That is, suppose we have an equation such as
+That is, consider an equation such as
 \begin{equation} \label{eq3.5:nh}
 y'' + 5y'+ 6y = 2x+1 .
 \end{equation}
 %We still say this equation is constant coefficient equation.  We
 %only require constants in front of the $y''$, $y'$, and $y$.
-
+%
 We will write $Ly = 2x+1$ when the exact form of the operator is not
 important.
 We solve \eqref{eq3.5:nh} in the following manner.  First, we find the general
@@ -2037,8 +2037,8 @@ y = y_c + y_p
 \end{equation*}
 is the general solution to \eqref{eq3.5:nh}.  
 We have $L y_c = 0$ and $L y_p = 2x+1$.  As
-$L$ is a \emph{\myindex{linear operator}}
-we verify that $y$ is a solution, $L y = L ( y_c + y_p) = L y_c + L y_p = 0
+$L$ is a \emph{\myindex{linear operator}},
+we verify that $y$ is a solution: $L y = L ( y_c + y_p) = L y_c + L y_p = 0
 + (2x+1)$.  Let us see
 why we obtain the \emph{general} solution.
 
@@ -2054,15 +2054,15 @@ w'' + 5w'+ 6w =
 (\tilde{y}_p'' + 5\tilde{y}_p'+ 6\tilde{y}_p) =
 (2x+1) - (2x+1) = 0 .
 \end{equation*}
-Using the operator notation the calculation becomes simpler.
+Using the operator notation, the calculation becomes simpler.
 %As $L$ is a \emph{\myindex{linear operator}} and so we could just
-As $L$ is a linear operator we write
+As $L$ is a linear operator, we write
 \begin{equation*}
 Lw = L(y_p - \tilde{y}_p) =
 Ly_p - L\tilde{y}_p =
 (2x+1)-(2x+1) = 0 .
 \end{equation*}
-So $w = y_p - \tilde{y}_p$ is a solution to \eqref{eq3.5:h}, that is
+So $w = y_p - \tilde{y}_p$ is a solution to \eqref{eq3.5:h}, that is,
 $Lw = 0$.  Any two
 solutions of \eqref{eq3.5:nh} differ by a solution to the homogeneous
 equation \eqref{eq3.5:h}.  The solution $y = y_c + y_p$ includes \emph{all}
@@ -2114,7 +2114,7 @@ So $6Ax+(5A+6B) = 2x+1$.  Therefore, $A = \nicefrac{1}{3}$ and $B = \nicefrac{-1
 That means
 $y_p = \frac{1}{3}\, x - \frac{1}{9} = \frac{3x-1}{9}$.
 Solving the complementary
-problem (exercise!) we get
+problem (exercise!), we get
 \begin{equation*}
 y_c = C_1 e^{-2x} + C_2 e^{-3x}.
 \end{equation*}
@@ -2191,7 +2191,7 @@ $A=\nicefrac{-1}{10}$ and $B=\nicefrac{1}{5}$.  So
 y_p = A \cos (2x) + B \sin (2x) = \frac{-\cos (2x) + 2 \sin (2x)}{10} .
 \end{equation*}
 
-Similarly, if the right-hand side contains exponentials we try
+Similarly, if the right-hand side contains exponentials, we try
 exponentials.  If
 %if the equation is (where $L$ is a linear constant coefficient operator)
 \begin{equation*}
@@ -2231,7 +2231,7 @@ solves the associated homogeneous equation.  That is, consider
 y'' - 9y = e^{3x} .
 \end{equation*}
 We would love to guess $y_p = Ae^{3x}$, but if we plug this into the
-left-hand side of the equation we get
+left-hand side of the equation, we get
 \begin{equation*}
 y_p''-9y_p = 9Ae^{3x} - 9Ae^{3x} = 0 \not= e^{3x} .
 \end{equation*}
@@ -2330,7 +2330,7 @@ Ly = y''+y = \tan x .
 \end{equation*}
 First we find the complementary solution (solution to $Ly_c = 0$).  
 We get $y_c = C_1 y_1 + C_2 y_2$, where $y_1 = \cos x$ and $y_2 = \sin x$.
-To find a particular solution to the nonhomogeneous equation we try
+To find a particular solution to the nonhomogeneous equation, we try
 \begin{equation*}
 y_p = y = u_1 y_1 + u_2 y_2 ,
 \end{equation*}
