@@ -13,6 +13,8 @@ It is not too important, so we don't want to dwell on it, but it turns out many 
 have not seen polar coordinates yet (or just don't remember them).  Also add the
 equations for A and B in terms of C and \(\gamma\) as that makes it easier to see.
 <li>In the mass-spring diagram in 2.4 and 2.6, mark the direction of the position \(x.\)
+<li>At the end of 2.5, add more detail to computation with variation of
+parameters.
 <li>At the end of 2.5, add a paragraph recapping of how that procedure (variation of parameters)
 would work in general.  Then also remark that if there is a coefficient in front of the \(y'' ,\)
 it is necessary to first divide by it.

@@ -2323,14 +2323,17 @@ order equations just as well (the computations become more
 The method also works for equations with nonconstant coefficients,
 provided we can solve the associated homogeneous equation.
 
-Perhaps it is best to explain this method by example.
-Let us try to solve the equation
+The details below will work for any equation of the form
+$y''+p(x)y' +q(x)y = f(x)$, but
+perhaps it is best to explain the method with a specific example.
+Consider the equation
 \begin{equation*}
 Ly = y''+y = \tan x .
 \end{equation*}
 First we find the complementary solution (solution to $Ly_c = 0$).  
 We get $y_c = C_1 y_1 + C_2 y_2$, where $y_1 = \cos x$ and $y_2 = \sin x$.
-To find a particular solution to the nonhomogeneous equation, we try
+To find a particular solution to the nonhomogeneous equation, 
+the trick to this method is to try
 \begin{equation*}
 y_p = y = u_1 y_1 + u_2 y_2 ,
 \end{equation*}
@@ -2344,8 +2347,8 @@ y' = (u_1' y_1 + u_2' y_2) + (u_1 y_1' + u_2 y_2').
 We can still
 impose one more condition at our discretion to simplify computations (we have two unknown functions,
 so we should be allowed two conditions).  We require that
-$(u_1' y_1 + u_2' y_2) = 0$.  This makes computing the second derivative
-easier.
+$u_1' y_1 + u_2' y_2 = 0$ (the first term above).
+This makes computing the second derivative easier:
 \begin{align*}
 & y' = u_1 y_1' + u_2 y_2' , \\
 & y'' = (u_1' y_1' + u_2' y_2') + (u_1 y_1'' + u_2 y_2'') .
@@ -2358,7 +2361,7 @@ $y_i'' = -p(x)y_i' -q(x)y_i$.) So
 \begin{equation*}
 y'' = (u_1' y_1' + u_2' y_2') - (u_1 y_1 + u_2 y_2) .
 \end{equation*}
-We have $(u_1 y_1 + u_2 y_2) = y$ and so
+We have $u_1 y_1 + u_2 y_2 = y$ and so
 \begin{equation*}
 y'' = (u_1' y_1' + u_2' y_2') - y ,
 \end{equation*}
@@ -2379,26 +2382,30 @@ on $u_1$ and $u_2$:
 \end{aligned}
 ~~}
 \end{equation*}
-We solve for $u_1'$ and $u_2'$ in terms of $f(x)$, $y_1$ and $y_2$.
-We always get these formulas for any $Ly = f(x)$, where $Ly =
-y''+p(x)y'+q(x)y$.  There is a general
+We get these same equations for any $Ly = f(x)$, where $Ly = y''+p(x)y'+q(x)y$.
+We solve for $u_1'$ and $u_2'$ in terms of $f(x)$, $y_1$, and $y_2$.
+There is a general
 formula for the solution we could just plug into, but instead of memorizing
-that, it is better, and easier, to
-just repeat what we do below.  In our case, the two equations are
+that, it is easier to simply solve it as we do below.  In our case,
+$y_1 = \cos x$, 
+$y_2 = \sin x$,
+and $f(x) = \tan x$,
+so the two equations are
 \begin{equation*}
 \begin{aligned}
 u_1' \cos x + u_2' \sin x &= 0 ,\\
 -u_1' \sin x + u_2' \cos x &= \tan x .
 \end{aligned}
 \end{equation*}
-Hence
+Multiply the first equation by $\sin x$ and the second by $\cos x$:
 \begin{equation*}
 \begin{aligned}
 u_1' \cos x \sin x + u_2' \sin^2 x & = 0 ,\\
 -u_1' \sin x \cos x + u_2' \cos^2 x & = \tan x \cos x = \sin x .
 \end{aligned}
 \end{equation*}
-And thus
+Add the two equations to eliminate $u_1'$, solve for $u_2'$, and then
+solve for $u_1'$:
 \begin{equation*}
 \begin{aligned}
 & u_2' \bigl(\sin^2 x + \cos^2 x\bigr) = \sin x , \\
@@ -2451,12 +2458,12 @@ y = C_1 \cos x + C_2 \sin x
 So the general idea for any $y'' + p y' + q y = f(x)$ is to first find solutions
 $y_1$, $y_2$ to $y''+py'+qy = 0$.  Then solve the two boxed equations
 for $u_1'$ and $u_2'$, that is, solve
-is $u_1' y_1 + u_2' y_2 = 0$ and $u_1' y_1' + u_2' y_2' = f(x)$.  Then
-integrate $u_1'$ and $u_2'$ to find $u_1$ and $u_2$, and you have your
-particular solution $y = u_1 y_1 + u_2 y_2$.
-We remark that if $y''$ has some coefficient that is not $1$, that is, if
-the equation is $ay'' + by' + cy = f(x)$, you must divide the equation by
-$a$ first.
+$u_1' y_1 + u_2' y_2 = 0$ and $u_1' y_1' + u_2' y_2' = f(x)$.
+Integrate $u_1'$ and $u_2'$ to find $u_1$ and $u_2$, and plug those into
+$y = u_1 y_1 + u_2 y_2$ to find the particular solution.
+We remark that if $y''$ has some coefficient that is not $1$, that is,
+if the equation is $ay'' + by' + cy = f(x)$,
+you must first divide the equation (and hence $f$) by $a$.
 
 \subsection{Exercises}
 
