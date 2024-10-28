@@ -44,7 +44,8 @@
 
 \usepackage[T1]{fontenc}
 
-\usepackage{perpage}
+%footmisc now works with hyperref
+%\usepackage{perpage}
 
 \usepackage{tasks}
 \usepackage{footnote}
@@ -105,13 +106,14 @@
 \usepackage{import}
 
 % Footnotes should use symbols, not numbers.  Numbered footnotes are
-% evil, not using footmisc as it conflicts with hyperref
-%\usepackage[perpage,symbol*]{footmisc}
+% evil, not using footmisc as it conflicts with hyperref (it no longer
+% conflicts)
+\usepackage[perpage,symbol*]{footmisc}
 
 % The [2] would not use star
 %\MakePerPage[2]{footnote}
-\MakePerPage{footnote}
-\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+%\MakePerPage{footnote}
+%\renewcommand{\thefootnote}{\fnsymbol{footnote}}
 
 % to avoid counter error on footnotes on first pass
 \makeatletter

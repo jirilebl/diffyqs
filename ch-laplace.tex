@@ -12,7 +12,7 @@
 
 \subsection{The transform}
 
-In this chapter we will discuss the Laplace transform%
+In this chapter, we will discuss the Laplace transform%
 \footnote{Just like the Laplace equation and the Laplacian, the Laplace
 transform is also named after 
 \href{https://en.wikipedia.org/wiki/Laplace}{Pierre-Simon, marquis de Laplace}
@@ -40,7 +40,8 @@ m x''(t) + c x'(t) + k x(t) = f(t) .
 We can think of $t$ as time and $f(t)$ as incoming signal.  The Laplace
 transform will convert the equation from a differential equation in time to
 an algebraic (no derivatives) equation, where the new independent variable
-$s$ is the frequency.
+$s$ is the frequency.\footnote{Really, it is the ``frequency'' in terms
+of complex numbers, but we digress.}
 
 We can think of the \emph{\myindex{Laplace transform}} as a black box.  It
 eats functions and spits out functions in a new variable.  We write
@@ -55,7 +56,7 @@ transform of $f(t)$.  Let us define the transform.
 F(s) \overset{\text{def}}{=} \int_0^\infty e^{-st} f(t) \, dt .
 \end{equation*}
 We note that we are only considering $t \geq 0$ in the transform.  Of course,
-if we think of $t$ as time there is no problem, we are generally interested in
+if we think of $t$ as time, there is no problem, we are generally interested in
 finding out what will happen in the future (Laplace transform is one place
 where it is safe to ignore the past).  Let us compute some simple
 transforms.
@@ -134,7 +135,7 @@ u(t) =
 %Note that some authors prefer to define $u(0) = \frac{1}{2}$.
 Let us find the Laplace transform of $u(t-a)$, where $a \geq 0$
 is some constant.
-That is, the function that is 0 for $t < a$ and 1 for $t \geq a$.
+That is, it is the function that is $0$ for $t < a$ and $1$ for $t \geq a$.
 \begin{equation*}
 \mathcal{L} \bigl\{ u(t-a) \bigr\}
 =
@@ -149,7 +150,7 @@ That is, the function that is 0 for $t < a$ and 1 for $t \geq a$.
 where of course $s > 0$ (and $a \geq 0$ as we said before).
 \end{example}
 
-By applying similar procedures we can compute the transforms of many
+By applying similar procedures, we can compute the transforms of many
 elementary functions.  Many basic transforms are listed in
 \tablevref{lt:table}.
 
@@ -197,7 +198,7 @@ constants).\label{lt:table}}
 Verify \tablevref{lt:table}.
 \end{exercise}
 
-Since the transform is defined by an integral.  We can use the linearity
+Since the transform is defined by an integral, we can use the linearity
 properties of the integral.  For example, suppose $C$ is a constant, then
 \begin{equation*}
 \mathcal{L} \bigl\{ C f(t) \bigr\} =
@@ -205,9 +206,9 @@ properties of the integral.  For example, suppose $C$ is a constant, then
 C \int_0^\infty e^{-st} f(t) \,dt =
 C \mathcal{L} \bigl\{ f(t) \bigr\} .
 \end{equation*}
-So we can \myquote{pull out} a constant out of the transform.  Similarly  we have
-linearity.
-Since linearity is very important we state it as a theorem.
+So we can \myquote{pull out} a constant out of the transform.
+Similarly, with addition.
+As linearity is important, we state it as a theorem.
 
 \begin{theorem}[Linearity of the Laplace transform]
 \index{linearity of the Laplace transform}
@@ -296,8 +297,8 @@ M \int_0^\infty e^{-(s-c)t} \,dt = M \left[ \frac{e^{-(s-c)t}}{-(s-c)}
 The transform also exists for some other functions
 that are not of exponential
 order, but that will not be relevant to us.
-Before dealing with uniqueness, let
-us note that for exponential order functions, we obtain that their
+Before dealing with uniqueness,
+we note that for functions of exponential order, their
 Laplace transform decays at infinity:
 \begin{equation*}
 \lim_{s\to\infty} F(s) = 0 .
@@ -318,13 +319,13 @@ not \myquote{see} values at the discontinuities.  So we can only conclude that
 $f(t) = g(t)$ outside of discontinuities.  For example, the unit step
 function is sometimes defined using $u(0) = \nicefrac{1}{2}$.  This new
 step function, however, has the exact same Laplace transform
-as the one we defined earlier where $u(0) = 1$.
+as the one we defined earlier, where $u(0) = 1$.
 
 \subsection{The inverse transform}
 
 As we said, the Laplace transform will allow us to convert a differential
 equation into an algebraic equation.  Once we solve the
-algebraic equation in the frequency domain we will want to get back to the
+algebraic equation in the frequency domain, we will want to get back to the
 time domain, as that is what we are interested in.
 Given a function
 $F(s)$, we wish to find a function
@@ -622,8 +623,9 @@ Verify \tablevref{ltd:table}.
 \subsection{Solving ODEs with the Laplace transform}
 
 Notice that the Laplace transform turns differentiation into
-multiplication by $s$.  Let us see how to apply this fact to differential
-equations.
+multiplication by $s$.
+It is this property that makes it useful to apply 
+the transform to differential equations.
 
 \begin{example}
 Take the equation
