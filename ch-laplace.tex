@@ -774,9 +774,10 @@ We leave it as an exercise to the reader to show that
 {\mathcal{L}}^{-1} \left\{ \frac{1}{s(s^2+1)} \right\}
 = 1 - \cos t .
 \end{equation*}
-In other words ,
+In other words,
 $\mathcal{L} \{ 1 - \cos t  \} = 
-\frac{1}{s(s^2+1)}$.  Using \eqref{ltd:sseq}, we find
+\frac{1}{s(s^2+1)}$.
+Using the second shifting property \eqref{ltd:sseq}, we find
 \begin{equation*}
 {\mathcal{L}}^{-1} \left\{ \frac{e^{-s}}{s(s^2+1)} \right\}
 =
@@ -829,8 +830,8 @@ mass.  We would like to have a convenient way to study the behavior of
 the system for different inputs.
 
 Let us suppose that
-all the initial conditions are zero.  Taking the Laplace transform
-of the equation, we obtain the equation
+all the initial conditions are zero.
+We take the Laplace transform of the equation to obtain the equation
 \begin{equation*}
 A(s) X(s) = F(s) .
 \end{equation*}
@@ -853,11 +854,11 @@ Once $H(s)$ is known, you can find the output for any input.
 Given $x'' + \omega_0^2 x = f(t)$, let us find the transfer function
 (assuming the initial conditions are zero).
 
-First, we take the Laplace transform of the equation.
+First, we take the Laplace transform of the equation,
 \begin{equation*}
 s^2 X(s) + \omega_0^2 X(s) = F(s) .
 \end{equation*}
-Now we solve for the transfer function $\nicefrac{X(s)}{F(s)}$.
+Now we solve for the transfer function $\nicefrac{X(s)}{F(s)}$,
 \begin{equation*}
 H(s) = \frac{X(s)}{F(s)} = \frac{1}{s^2 + \omega_0^2} .
 \end{equation*}
@@ -867,7 +868,7 @@ $f(t) = 1$.  Hence $F(s) = \nicefrac{1}{s}$, and
 \begin{equation*}
 X(s) = H(s) F(s) = \frac{1}{s^2+\omega_0^2} \, \frac{1}{s} .
 \end{equation*}
-Taking the inverse Laplace transform of $X(s)$ we obtain
+Taking the inverse Laplace transform of $X(s)$, we obtain
 \begin{equation*}
 x(t) = \frac{1-\cos(\omega_0 t)}{\omega_0^2} .
 \end{equation*}
