@@ -1182,7 +1182,7 @@ $(f * g)(t) =
 \int_{-\infty}^\infty f(\tau) g(t-\tau) \, d\tau$.  This definition
 agrees with \eqref{ltc:convdef} if you define $f(t)$ and $g(t)$
 to be zero for $t < 0$.
-When discussing the Laplace transform the definition we gave is
+When discussing the Laplace transform, the definition we gave is
 sufficient.  Convolution does occur in many other applications, however,
 where you may have to use the more general definition with infinities.
 }
@@ -1255,7 +1255,8 @@ calculus exercise to show
 The most interesting property for us is the following theorem.
 
 \begin{theorem}
-Let $f(t)$ and $g(t)$ be of exponential order, then
+If $f(t)$ and $g(t)$ are of exponential order, then
+so is $(f*g)(t)$ and
 \begin{equation*}
 \mybxbg{~~
 \mathcal{L} \bigl\{ (f*g)(t) \bigr\}
@@ -1326,7 +1327,7 @@ $F(s)$ as usual.  We get
 \begin{equation*}
 s^2 X(s) + \omega_0^2 X(s) = F(s) ,
 \end{equation*}
-or in other words we find the 
+or in other words,
 \begin{equation*}
 X(s) = \frac{1}{s^2+ \omega_0^2} F(s).
 \end{equation*}
@@ -1345,7 +1346,7 @@ x(t) =
 \frac{\sin (\omega_0 \tau)}{\omega_0}
 f(t-\tau) \, d\tau ,
 \end{equation*}
-or if we reverse the order
+or, if we reverse the order,
 \begin{equation*}
 x(t) = 
 \int_0^t
@@ -1428,7 +1429,7 @@ $g(t)$ respectively.  We find
 \begin{equation*}
 X(s) = \frac{F(s)}{1-G(s)} .
 \end{equation*}
-To find $x(t)$ we now need to find the 
+To find $x(t)$, we now need to find the 
 inverse Laplace transform of $X(s)$.
 
 \begin{example}
