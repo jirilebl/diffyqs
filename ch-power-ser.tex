@@ -213,7 +213,7 @@ Suppose we have the series
 \begin{equation*}
 \sum_{k=0}^\infty 2^{-k} {(x-1)}^k .
 \end{equation*}
-First we compute the limit in the ratio test,
+We compute the limit in the ratio test,
 \begin{equation*}
 A = \lim_{k\to\infty} 
 \left \lvert
@@ -228,9 +228,9 @@ A = \lim_{k\to\infty}
 \lim_{k\to\infty} 
 2^{-1} = \nicefrac{1}{2}.
 \end{equation*}
-Therefore the radius of convergence is $2$, and the series
+Therefore, the radius of convergence is $2$, and the series
 converges absolutely on the interval $(-1,3)$.
-And we could just as well have used the root test:
+We could just as well have used the root test:
 \begin{equation*}
 A = \lim_{k\to\infty} 
 \lim_{k\to\infty} 
@@ -278,7 +278,7 @@ So the radius of convergence is $\infty$: the series
 converges everywhere.  The ratio test would also work here.
 \end{example}
 
-The root or the ratio test does not always apply.  That is,
+The root or the ratio test as given does not always apply.  That is,
 the limit
 of
 $\bigl \lvert \frac{a_{k+1}}{a_k} \bigr \rvert$
@@ -322,7 +322,7 @@ is given by
 \sin(x) = \sum_{n=0}^\infty \frac{{(-1)}^n}{(2n+1)!}
  x^{2n+1} .
 \end{equation*}
-In \figurevref{ps:sin} we plot $\sin(x)$ and the truncations of the
+In \figurevref{ps:sin}, we plot $\sin(x)$ and the truncations of the
 series up to degree 5 and 9.  You can see that the approximation is very
 good for $x$ near 0, but gets worse for $x$ further away from 0.  This is 
 what happens in general.
@@ -343,7 +343,7 @@ One of the main properties of power series that we will use is
 that we can differentiate them term by term.  That is,
 suppose that 
 $\sum a_k {(x-x_0)}^k$ is a convergent power series.  Then
-for $x$ in the radius of convergence we have
+for $x$ in the radius of convergence, we have
 \begin{equation*}
 \frac{d}{dx}
 \left[\sum_{k=0}^\infty a_k {(x-x_0)}^k\right]
@@ -429,7 +429,7 @@ $2x^2-3x+4$ as a power series around $x_0 = 1$:
 \begin{equation*}
 2x^2-3x+4 = 3 + (x-1) + 2{(x-1)}^2 .
 \end{equation*}
-In other words $a_0 = 3$, $a_1 = 1$, $a_2 = 2$, and all other
+In other words, $a_0 = 3$, $a_1 = 1$, $a_2 = 2$, and all other
 $a_k = 0$.  To do this, we know that $a_k = 0$ for all $k \geq 3$ as the
 polynomial is of degree 2.
 We write $a_0 + a_1(x-1) + a_2{(x-1)}^2$, we expand, and we solve
@@ -488,8 +488,8 @@ x \,
 \sum_{k=0}^\infty c_k x^{k+1} ,
 \end{split}
 \end{equation*}
-where to get $c_k$, we use the formula for the product of series.  
-We obtain, $c_0 = 1$, $c_1 = -1 -1 = -2$, $c_2 = 1+1+1 = 3$, etc.
+where to get $c_k$, we use the formula for the product of series:
+$c_0 = 1$, $c_1 = -1 -1 = -2$, $c_2 = 1+1+1 = 3$, etc.
 Therefore
 \begin{equation*}
 \frac{x}{1+2x+x^2}
