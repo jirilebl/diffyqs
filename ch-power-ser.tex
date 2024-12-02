@@ -642,7 +642,7 @@ $f(x)-g(x)$ is a polynomial.  Hint: Use Taylor series.
 \sectionnotes{1.5 or 2 lectures\EPref{, \S8.2 in \cite{EP}}\BDref{,
 \S5.2 and \S5.3 in \cite{BD}}}
 
-Suppose we have a linear second order homogeneous ODE of the form
+Consider a linear second order homogeneous ODE of the form
 \begin{equation*}
 P(x) y'' + Q(x) y' + R(x) y = 0 .
 \end{equation*}
@@ -670,7 +670,7 @@ y'' - y = 0 .
 \end{equation*}
 Let us try a power series solution near $x_0 = 0$,
 which is an ordinary point.  Every point is an ordinary
-point in fact, as the equation is constant coefficient.  We already know
+point in fact, as the equation is a constant coefficient one.  We already know
 we should obtain exponentials or the hyperbolic sine and cosine,
 but let us pretend we do not know this fact.
 
@@ -719,7 +719,7 @@ a_{k+2} = \frac{a_k}{(k+2)(k+1)} .
 \end{equation*}
 The equation above is called a \emph{\myindex{recurrence relation}}
 for the coefficients of the power series.
-It did not matter what $a_0$ or $a_1$ was.  They can be arbitrary.
+It does not matter what $a_0$ or $a_1$ are.  They can be arbitrary.
 But once we pick $a_0$ and $a_1$, all other coefficients are
 determined by the recurrence relation.
 
@@ -731,16 +731,16 @@ a_3 = \frac{a_1}{(3)(2)}, \quad
 a_4 = \frac{a_2}{(4)(3)} = \frac{a_0}{(4)(3)(2)}, \quad
 a_5 = \frac{a_3}{(5)(4)} = \frac{a_1}{(5)(4)(3)(2)}, \quad \ldots
 \end{equation*}
-So for even $k$, that is $k=2n$,
+For even $k$, that is, $k=2n$,
 we have
 \begin{equation*}
-a_k = a_{2n} = \frac{a_0}{(2n)!} ,
+a_k = a_{2n} = \frac{a_0}{(2n)!} .
 \end{equation*}
-and for odd $k$, that is $k=2n+1$, we have
+For odd $k$, that is, $k=2n+1$, we have
 \begin{equation*}
 a_k = a_{2n+1} = \frac{a_1}{(2n+1)!} .
 \end{equation*}
-Let us write down the series
+We write down the series for the solution
 \begin{equation*}
 y =
 \sum_{k=0}^\infty
@@ -771,7 +771,7 @@ a_0 \cosh x + a_1 \sinh x .
 
 Of course, in general we will not be able to recognize 
 the series that appears, since usually there will not be
-any elementary function that matches it.  In that case we will be
+any elementary function that matches it.  In that case, we will be
 content with the series.
 
 \begin{example}
