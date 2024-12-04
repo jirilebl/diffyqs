@@ -916,7 +916,8 @@ for positive $x$ they grow without bound (like solutions to $y''-y=0$).
 
 \medskip
 
-Sometimes a solution may turn out to be a polynomial.
+Sometimes a series solution may turn out to be a polynomial.
+Let us see an example.
 
 \begin{example}
 Let us find a solution to the so-called
@@ -996,14 +997,12 @@ a_3 = \frac{2(1-n)}{(3)(2)} a_1,
 a_5 = \frac{2(3-n)}{(5)(4)} a_3 = \frac{2^2(3-n)(1-n)}{(5)(4)(3)(2)} a_1 ,
 \quad \ldots
 \end{align*}
-Let us separate the even and odd coefficients.
-We find that 
+We separate the even and odd coefficients to find that
 \begin{align*}
 a_{2m} &=\frac{2^m(-n)(2-n)\cdots(2m-2-n)}{(2m)!} , \\
 a_{2m+1} &=\frac{2^m(1-n)(3-n)\cdots(2m-1-n)}{(2m+1)!} .
 \end{align*}
-
-Let us write down the two series, one with the even powers and one with the
+We write down the two series, one with the even powers and one with the
 odd.
 \begin{align*}
 y_1(x) & = 
@@ -1014,7 +1013,7 @@ y_2(x) & =
 x+\frac{2(1-n)}{3!} x^3 + \frac{2^2(1-n)(3-n)}{5!} x^5 + 
 \frac{2^3(1-n)(3-n)(5-n)}{7!} x^7 + \cdots .
 \end{align*}
-We then write
+Then
 \begin{equation*}
 y(x) = a_0 y_1(x) + a_1 y_2(x) .
 \end{equation*}
