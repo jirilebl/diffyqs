@@ -236,16 +236,36 @@ B \mathcal{L} \bigl\{ g(t) \bigr\}$.
 
 These rules together with \tablevref{lt:table} make it easy to find
 the Laplace transform of a whole lot of functions already.
+For example:
+\[
+\mathcal{L}\bigl\{
+2 + 5t + 9e^{-2t}
+\bigr\}
+=
+\mathcal{L}\bigl\{
+2
+\bigr\}
++5
+\mathcal{L}\bigl\{
+t
+\bigr\}
++
+9
+\mathcal{L}\bigl\{
+e^{-2t}
+\bigr\}
+=
+\frac{2}{s} + \frac{5}{s^2} + \frac{9}{s+2} .
+\]
 But be careful.
-It is a common mistake to think that the Laplace transform of a product
-is the product of the transforms.  In general 
+The Laplace transform of a product
+is \emph{not} the product of the transforms.  In general 
 \begin{equation*}
 \mathcal{L} \bigl\{ f(t) g(t) \bigr\} \not=
 \mathcal{L} \bigl\{ f(t) \bigr\}
 \mathcal{L} \bigl\{ g(t) \bigr\} .
 \end{equation*}
-
-It must also be noted that not all functions have a Laplace transform.  For
+Moreover, not all functions have a Laplace transform.  For
 example, the function $\frac{1}{t}$ does not have a Laplace transform as the
 integral diverges for all $s$.  Similarly,
 $\tan t$ or $e^{t^2}$ do not have Laplace transforms.
@@ -286,7 +306,7 @@ The existence is not difficult to see.  Let $f(t)$ be of exponential order,
 that is $\lvert f(t) \rvert \leq M e^{ct}$ for all $t > 0$ (for simplicity $t_0 = 0$).
 Let $s > c$, or in other words $(s-c) > 0$.
 By the comparison theorem from calculus, the improper integral defining
-$\mathcal{L} \bigl\{ f(t) \bigr\}$ exists if the following integral exists
+$\mathcal{L} \bigl\{ f(t) \bigr\}$ exists because the following integral exists
 \begin{equation*}
 \int_0^\infty e^{-st} ( M e^{ct} ) \,dt
 =
@@ -366,7 +386,7 @@ B {\mathcal{L}}^{-1} \bigl\{ G(s) \bigr\} .
 Of course, we also have
 ${\mathcal{L}}^{-1} \bigl\{ A F(s) \bigr\} =
 A {\mathcal{L}}^{-1} \bigl\{ F(s) \bigr\}$.
-Let us demonstrate how linearity can be used.
+%Let us demonstrate how linearity can be used.
 
 \begin{example}
 Take
