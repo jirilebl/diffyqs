@@ -1,0 +1,377 @@
+\documentclass[10pt,aspectratio=169]{beamer}
+
+% All the boilerplate is in deslides.sty
+\usepackage{deslides}
+
+\author{Ji\v{r}\'i Lebl}
+
+\institute[OSU]{%
+Oklahoma State University%
+%Departemento pri Matematiko de Oklahoma {\^S}tata Universitato%
+}
+
+\title{23. The Laplace transform, part 1\\(Notes on Diffy Qs, 6.1)}
+
+\date{}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+
+%\bigskip
+
+\begin{center}
+The textbook: \url{https://www.jirka.org/diffyqs/}
+\end{center}
+\end{frame}
+
+\begin{frame}
+Solving differential equations is hard!
+It would be a lot easier if there were no derivatives.
+
+\medskip
+\pause
+
+Laplace transform to the rescue:
+\[
+\begin{tikzcd}[ampersand replacement=\&]
+\boxed{\text{algebraic equation}} \arrow[r, "\text{easy}"] \&
+\boxed{\text{algebraic solution}} \arrow[d, "\text{inverse Laplace transform}"] \\
+\boxed{\text{differential equation}}
+\arrow[r, "\text{hard}"] \arrow[u, "\text{Laplace transform}"] \&
+\boxed{\text{solution to differential equation}}
+\end{tikzcd}
+\]
+
+\pause
+
+Other applications: electrical circuit analysis, NMR
+spectroscopy, signal processing, etc.
+
+\medskip
+\pause
+
+Laplace transform is similar to the Fourier transform and Fourier series.
+
+\medskip
+\pause
+
+What it does: Laplace takes a function of time $t$ and gives a function of
+``frequency'' $s$:
+\[
+\sL \bigl\{ f(t) \bigr\} = F(s)
+\]
+\pause
+Notation: We will use capital letters to represent the Laplace transforms.
+
+\end{frame}
+
+\begin{frame}
+In particular, consider
+\[
+m x''(t) + c x'(t) + k x(t) = f(t) .
+\]
+Think of $t$ as time, $f(t)$ as the input signal, and $x(t)$ as the output.
+
+\medskip
+\pause
+
+We will take $t=0$ to be the initial time and consider $x(t)$
+only for $t \geq 0$.
+
+\medskip
+\pause
+
+\textbf{Example:} In the mass-spring system, the external force is the input and
+the position of the mass is the output.
+
+\medskip
+\pause
+
+\textbf{Example:}
+Or in the RLC circuit, the change in voltage on the electric source
+was the input and the current in the circuit is the output.
+
+\medskip
+\pause
+
+\textbf{Solution procedure:}
+
+We transform the input $f(t)$ into $F(s)$.
+
+\medskip
+\pause
+
+We transform the equation to get an equation in the transforms $X(s)$ and $F(s)$
+that we solve by algebra.
+
+\medskip
+\pause
+
+Then we invert the transform of $X(s)$ to find the output $x(t)$.
+
+\end{frame}
+
+\begin{frame}
+\textbf{Definition:}  Suppose that $f(t)$ is a function of time $t \geq 0$.
+Then
+\[
+\mathcal{L} \bigl\{ f(t) \bigr\} =
+F(s) \overset{\text{def}}{=} \int_0^\infty e^{-st} f(t) \, dt .
+\]
+\pause
+
+\textbf{Example:}
+Consider $f(t) = 1$
+\begin{equation*}
+\mathcal{L} \{1\} = \int_0^\infty e^{-st} \, dt
+\pause
+=
+\left[ \frac{e^{-st}}{-s} \right]_{t=0}^\infty
+\pause
+=
+\lim_{h\to\infty}
+\left[ \frac{e^{-st}}{-s} \right]_{t=0}^h
+\pause
+=
+\lim_{h\to\infty}
+\left( \frac{e^{-sh}}{-s} - \frac{1}{-s} \right)
+\pause
+= \frac{1}{s} .
+\end{equation*}
+Limit exists for $s > 0$
+\pause
+\wthus
+$\mathcal{L} \{1\}$ only defined for $s > 0$.
+
+\medskip
+\pause
+
+\textbf{Example:}
+Consider
+$f(t) = e^{-at}$
+\begin{equation*}
+\mathcal{L} \bigl\{e^{-at}\bigr\}
+= \int_0^\infty e^{-st} e^{-at} \, dt
+\pause
+= \int_0^\infty e^{-(s+a)t} \, dt
+\pause
+=
+\left[ \frac{e^{-(s+a)t}}{-(s+a)} \right]_{t=0}^\infty
+\pause
+= \frac{1}{s+a} .
+\end{equation*}
+Limit exists for $s+a > 0$  ~(that is, $s > -a$)
+\pause
+\wthus
+$\mathcal{L} \bigl\{e^{-at}\bigr\}$ only defined for $s+a > 0$.
+
+\end{frame}
+
+\begin{frame}
+\textbf{Example:}
+Consider $f(t) = t$, and assume $s > 0$
+\begin{equation*}
+\mathcal{L} \{t\}
+= \int_0^\infty e^{-st} t \, dt
+\pause
+=
+\left[ \frac{-te^{-st}}{s} \right]_{t=0}^\infty
++
+\frac{1}{s}
+\int_0^\infty e^{-st} \,dt
+\pause
+=
+0
++
+\frac{1}{s}
+\left[ \frac{e^{-st}}{-s} \right]_{t=0}^\infty
+\pause
+=
+\frac{1}{s^2} .
+\end{equation*}
+%Limit only exists if $s > 0$.
+
+\medskip
+\pause
+
+\textbf{Example:}  Consider the
+\emph{unit step function}, sometimes the
+\emph{Heaviside function}
+\begin{equation*}
+u(t) = 
+\begin{cases}
+0 & \text{if } \; t < 0 , \\
+1 & \text{if } \; t \geq 0 ,
+\end{cases}
+\qquad
+\text{or more generally}
+\qquad
+\pause
+u(t-a) = 
+\begin{cases}
+0 & \text{if } \; t < a , \\
+1 & \text{if } \; t \geq a .
+\end{cases}
+\end{equation*}
+\pause
+The formulation with a number $a \geq 0$ is more useful:
+$u(t-a)$ is $0$ for $t < a$ and $1$ for $t \geq a$.
+\pause
+Again assume $s > 0$.
+\pause
+\begin{equation*}
+\mathcal{L} \bigl\{ u(t-a) \bigr\}
+=
+\int_0^{\infty} e^{-st} u(t-a) \, dt
+\pause
+=
+\int_a^{\infty} e^{-st} \, dt
+\pause
+=
+\left[ \frac{e^{-st}}{-s} \right]_{t=a}^\infty
+\pause
+=
+\frac{e^{-as}}{s} .
+\end{equation*}
+%\pause
+%Limit only exists if $s > 0$ (and $a \geq 0$).
+
+\end{frame}
+
+\begin{frame}
+
+Here are some useful Laplace transforms ($C$, $\omega$, and $a$ are constants):
+
+\begin{center}
+\begin{tabular}{@{}cclcc@{}}
+\toprule
+$f(t)$ & $\mathcal{L} \bigl\{ f(t) \bigr\} = F(s)$ & $\qquad\quad$ &
+$f(t)$ & $\mathcal{L} \bigl\{ f(t) \bigr\} = F(s)$ \\
+\midrule
+$C$ & $\dfrac{C}{s}$
+& &
+$\sin (\omega t)$ & $\dfrac{\omega}{s^2+\omega^2}$
+\\[12pt]
+$t$ & $\dfrac{1}{s^2}$
+& &
+$\cos (\omega t)$ & $\dfrac{s}{s^2+\omega^2}$
+\\[12pt]
+$t^2$ & $\dfrac{2}{s^3}$
+& &
+$\sinh (\omega t)$ & $\dfrac{\omega}{s^2-\omega^2}$
+\\[12pt]
+$t^3$ & $\dfrac{6}{s^4}$
+& &
+$\cosh (\omega t)$ & $\dfrac{s}{s^2-\omega^2}$
+\\[12pt]
+$t^n$ & $\dfrac{n!}{s^{n+1}}$
+& &
+$u(t-a)$ & $\dfrac{e^{-as}}{s}$
+\\[12pt]
+$e^{-at}$ & $\dfrac{1}{s+a}$
+& & &
+\\[12pt]
+\bottomrule
+\end{tabular}
+\end{center}
+
+\pause
+
+\textbf{Exercise:}
+Verify the table.
+
+\end{frame}
+
+\begin{frame}
+The transform is defined by an integral and integral is linear, so
+if $C$ is a constant
+\begin{equation*}
+\mathcal{L} \bigl\{ C f(t) \bigr\}
+\pause
+=
+\int_0^\infty e^{-st} C f(t) \,dt
+\pause
+=
+C \int_0^\infty e^{-st} f(t) \,dt
+\pause
+=
+C \mathcal{L} \bigl\{ f(t) \bigr\} .
+\end{equation*}
+\pause
+Similarly, if $A$ and $B$ are constants:
+\begin{equation*}
+\mathcal{L} \bigl\{ A f(t) + B g(t) \bigr\} =
+A \mathcal{L} \bigl\{ f(t) \bigr\} +
+B \mathcal{L} \bigl\{ g(t) \bigr\} .
+\end{equation*}
+
+%\pause
+%\textbf{Exercise:} Verify this statement.
+
+\medskip
+\pause
+
+\textbf{Example:}
+\[
+\mathcal{L} \bigl\{
+2 + 9t + \cos(2t) + 5 e^{-2t}
+\bigr\}
+\pause
+=
+\mathcal{L} \bigl\{
+2
+\bigr\}
++ 9
+\mathcal{L} \bigl\{
+t
+\bigr\}
++
+\mathcal{L} \bigl\{
+\cos(2t)
+\bigr\}
++ 5
+\mathcal{L} \bigl\{
+e^{-2t}
+\bigr\}
+\pause
+=
+%\frac{2}{s}
+%+ 9
+%\frac{1}{s^2}
+%+
+%\frac{2}{s^2+4}
+%+ 5
+%\frac{1}{s+2}
+%=
+\frac{2}{s}
++
+\frac{9}{s^2}
++
+\frac{2}{s^2+4}
++
+\frac{5}{s+2} .
+\]
+\pause
+
+\textbf{Caution:}
+In general 
+\begin{equation*}
+\mathcal{L} \bigl\{ f(t) g(t) \bigr\} \not=
+\mathcal{L} \bigl\{ f(t) \bigr\}
+\mathcal{L} \bigl\{ g(t) \bigr\} .
+\end{equation*}
+
+\medskip
+\pause
+
+\textbf{Remark:}
+Not all functions have a Laplace transform. \quad E.g.,
+~
+$\frac{1}{t}$, ~$\tan t$, or ~ $e^{t^2}$
+
+\end{frame}
+
+
+\end{document}

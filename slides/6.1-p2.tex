@@ -1,0 +1,327 @@
+\documentclass[10pt,aspectratio=169]{beamer}
+
+% All the boilerplate is in deslides.sty
+\usepackage{deslides}
+
+\author{Ji\v{r}\'i Lebl}
+
+\institute[OSU]{%
+Oklahoma State University%
+%Departemento pri Matematiko de Oklahoma {\^S}tata Universitato%
+}
+
+\title{24. The Laplace transform, part 2\\(Notes on Diffy Qs, 6.1)}
+
+\date{}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+
+%\bigskip
+
+\begin{center}
+The textbook: \url{https://www.jirka.org/diffyqs/}
+\end{center}
+\end{frame}
+
+\begin{frame}
+As we said, not all functions have Laplace transforms.  But many do.
+
+\medskip
+\pause
+
+A function $f(t)$ is of
+\emph{\myindex{exponential order}} as $t \to \infty$ if
+there are constants $M$ and $c$ such that
+\begin{equation*}
+\lvert f(t) \rvert \leq M e^{ct} ,
+\qquad
+\text{for sufficiently large $t$} .
+\end{equation*}
+\pause
+One way to check this condition is to compute
+\begin{equation*}
+\lim_{t\to \infty} \frac{f(t)}{e^{ct}} .
+\end{equation*}
+\pause
+If the limit exists and is finite (usually zero), then $f(t)$ is of
+exponential order.
+
+\medskip
+\pause
+
+A sum of exponential order functions is of exponential order.
+
+\pause
+\medskip
+
+Every polynomial is of exponential order.
+
+\pause
+\medskip
+
+$e^{at}$ is of exponential order for any $a$.
+
+\pause
+\medskip
+
+$e^{t^2}$ is \textbf{not} of exponential order for any $a$.
+
+\end{frame}
+
+\begin{frame}
+
+\textbf{Theorem:} (Existence)
+Let $f(t)$ be continuous on the interval $[0,\infty)$ and of exponential order for a certain
+constant $c$.  Then $F(s) = \mathcal{L} \bigl\{ f(t) \bigr\}$ is defined for
+all $s > c$.
+
+\medskip
+\pause
+
+Not difficult to see:
+
+Suppose
+$\lvert f(t) \rvert \leq M e^{ct}$ for all $t > 0$.
+Let $s > c$, or in other words $(s-c) > 0$.
+
+\medskip
+\pause
+
+By the comparison theorem from calculus, the improper integral
+$\mathcal{L} \bigl\{ f(t) \bigr\}$ exists because the following integral exists
+\begin{equation*}
+\int_0^\infty e^{-st} ( M e^{ct} ) \,dt
+\pause
+=
+M \int_0^\infty e^{-(s-c)t} \,dt
+\pause
+= M \left[ \frac{e^{-(s-c)t}}{-(s-c)}
+\right]_{t=0}^\infty
+\pause
+= \frac{M}{s-c} .
+\end{equation*}
+\pause
+
+Moreover,
+if $f$ is of exponential order, then
+\begin{equation*}
+\lim_{s\to\infty} F(s) = 0 .
+\end{equation*}
+\end{frame}
+
+\begin{frame}
+
+\textbf{Theorem:} (Uniqueness)
+Let $f(t)$ and $g(t)$ be continuous and of exponential order.
+Suppose that there exists a constant $C$,
+such that $F(s) = G(s)$ for all $s > C$.
+Then $f(t) = g(t)$ for all $t \geq 0$.
+
+\medskip
+\pause
+
+The theorems also hold for piecewise continuous functions:
+functions with a discrete set of jump discontinuities like the
+Heaviside.
+
+\medskip
+
+However, for uniqueness, we can only conclude
+$f(t) = g(t)$ outside of discontinuities.
+
+\medskip
+\pause
+
+Uniqueness says it makes sense to invert the transform:
+Given $F(s)$, find the unique $f(t)$.
+
+\medskip
+\pause
+
+Suppose $F(s) = \mathcal{L} \bigl\{ f(t) \bigr\}$.
+Define the
+\emph{\myindex{inverse Laplace transform}} as
+\begin{equation*}
+{\mathcal{L}}^{-1} \bigl\{ F(s) \bigr\} \overset{\text{def}}{=} f(t) .
+\end{equation*}
+
+\pause
+
+There is an integral formula for the inverse, but it is complicated.
+
+We will be satisfied with using the table of transforms we computed.
+
+\medskip
+\pause
+
+\textbf{Example:}
+Via the table,
+\begin{equation*}
+{\mathcal{L}}^{-1} \left\{ \frac{1}{s+1} \right\} = 
+e^{-t} .
+\end{equation*}
+
+\end{frame}
+
+\begin{frame}
+The inverse is also linear:
+\begin{equation*}
+{\mathcal{L}}^{-1} \bigl\{ A F(s) + B G(s) \bigr\} =
+A {\mathcal{L}}^{-1} \bigl\{ F(s) \bigr\} +
+B {\mathcal{L}}^{-1} \bigl\{ G(s) \bigr\} .
+\end{equation*}
+Of course, also
+${\mathcal{L}}^{-1} \bigl\{ A F(s) \bigr\} =
+A {\mathcal{L}}^{-1} \bigl\{ F(s) \bigr\}$.
+
+\medskip
+\pause
+
+\textbf{Example:}
+Let us find the inverse Laplace transform of
+$F(s) = \dfrac{s^2+s+1}{s^3+s}$.
+
+\medskip
+\pause
+
+Use the \emph{method of partial fractions} to split up $F(s)$:
+\begin{equation*}
+\frac{s^2+s+1}{s^3+s}
+\pause
+=
+\frac{s^2+s+1}{s(s^2+1)}
+\pause
+=
+\frac{A}{s} + 
+\frac{Bs+C}{s^2+1} .
+\end{equation*}
+\pause
+Clear denominators to find
+$s^2+s+1 = A(s^2+1) + s(Bs+C)$.
+\pause
+Expand and equate coefficients to find
+$A+B = 1$, $C=1$, $A=1$, and $B=0$.
+\pause
+That is,
+\begin{equation*}
+F(s) =
+\frac{s^2+s+1}{s^3+s}
+=
+\frac{1}{s} +
+\frac{1}{s^2+1} .
+\end{equation*}
+\pause
+By linearity,
+\begin{equation*}
+{\mathcal{L}}^{-1} \left\{ 
+\frac{s^2+s+1}{s^3+s} \right\}
+\pause
+=
+{\mathcal{L}}^{-1} \left\{ 
+\frac{1}{s} \right\} 
++
+{\mathcal{L}}^{-1} \left\{ 
+\frac{1}{s^2+1} \right\}
+\pause
+=
+1 + 
+\sin t .
+\end{equation*}
+\end{frame}
+
+\begin{frame}
+
+A useful property is the 
+\emph{shifting property} (or \emph{first shifting property}).
+If $F(s)$ is the Laplace transform of $f(t)$, then
+\begin{equation*}
+\mathcal{L} \bigl\{ e^{-at} f(t) \bigr\} = F(s+a) .
+\end{equation*}
+
+\pause
+This property is useful if the denominator is more complicated, e.g.,
+an irreducible quadratic.  Then complete the square
+ ${(s+a)}^2+b$
+and use
+the shifting property.
+
+\medskip
+\pause
+
+\textbf{Example:}
+Find
+${\mathcal{L}}^{-1} \left\{ \frac{1}{s^2+4s+8} \right\}$.
+
+\medskip
+\pause
+
+Complete the square in the denominator:
+$s^2+4s+8 = {(s+2)}^2+4$.
+
+\medskip
+\pause
+
+Next find
+\begin{equation*}
+{\mathcal{L}}^{-1} \left\{ \frac{1}{s^2+4} \right\}
+\pause
+=
+\frac{1}{2}
+{\mathcal{L}}^{-1} \left\{ \frac{2}{s^2+2^2} \right\}
+\pause
+=
+\frac{1}{2} \sin (2t) .
+\end{equation*}
+\pause
+Now put it together with the shifting property
+\begin{equation*}
+{\mathcal{L}}^{-1} \left\{ \frac{1}{s^2+4s+8} \right\}
+\pause
+= 
+{\mathcal{L}}^{-1} \left\{ \frac{1}{{(s+2)}^2+4} \right\}
+\pause
+=
+\frac{1}{2}\,e^{-2t} \sin (2t) .
+\end{equation*}
+\end{frame}
+
+\begin{frame}
+We often try to 
+apply the inverse Laplace transform to
+rational functions:
+\begin{equation*}
+\frac{F(s)}{G(s)}
+\end{equation*}
+where $F(s)$ and $G(s)$ are polynomials.
+
+\medskip
+\pause
+
+If $\frac{F(s)}{G(s)}$ is the Laplace transform of an exponential order function,
+it goes to zero as $s \to \infty$:
+
+\pause
+So the degree of $F(s)$
+is smaller than that of $G(s)$.
+That is,
+$\frac{F(s)}{G(s)}$ is a \emph{proper rational function}.
+
+\medskip
+\pause
+
+For proper rational functions, partial fractions method applies without
+polynomial division, and the techniques above always work.
+
+\medskip
+\pause
+
+Though for partial fractions, you still need to factor the denominator,
+which can be hard (finding roots).
+
+\end{frame}
+
+
+\end{document}
