@@ -23,6 +23,8 @@ it is necessary to first divide by it.
 <li>After Theorem 6.1.1 (linearity of the Laplace transform), demonstrate
 its use together with the table with a quick computation, rather than just
 saying it.
+<li>Right after the second shifting property, do a quick example
+where the function is not just a constant.
 <li>In Theorem 6.3.1, mention that the convolution is of exponential order.
 <li>In first example in 6.5 (6.5.1), mention explicitly that \(\alpha\) is a
 constant.

@@ -750,8 +750,8 @@ f(t) = t \, \bigl( u(t) - u(t-1) \bigr) +
 (-t+2) \, \bigl( u(t - 1) - u(t-2) \bigr) .
 \end{equation*}
 
-Hence it is 
-useful to know how the Heaviside function interacts with the Laplace
+We
+need to know how the Heaviside function interacts with the Laplace
 transform.  We have already seen that
 \begin{equation*}
 \mathcal{L} \bigl\{ u(t-a) \bigr\} = \frac{e^{-as}}{s} .
@@ -764,23 +764,33 @@ or \emph{\myindex{second shifting property}}.
 = e^{-as} \mathcal{L} \bigl\{ f(t) \bigr\} .
 ~~}
 \end{equation}
+For example,
+\begin{equation*}
+\mathcal{L} \bigl\{ t \, u(t-1) \bigr\}
+=
+\mathcal{L} \bigl\{ \bigl( (t-1) + 1\bigr) \, u(t-1) \bigr\}
+= e^{-as} \mathcal{L} \bigl\{ t+1 \bigr\}
+= e^{-as} \left(\frac{1}{s^2} + \frac{1}{s} \right)
+.
+\end{equation*}
 
 \begin{example} \label{lt:rocketex}
-The forcing function in our setup need not be periodic.
+%The forcing function in our setup need not be periodic.
 Consider
 the mass-spring system
 \begin{equation*}
 x''(t) + x(t) = f(t) , \quad x(0) = 0, \quad x'(0) = 0,
 \end{equation*}
-where $f(t) = 1$ if $1 \leq t < 5$ and zero otherwise.  Imagine a
+where $f(t) = 1$ if $1 \leq t < 5$ and zero otherwise.
+The $f(t)$ is not periodic and defined piecewise; no problem for Laplace.
+Imagine a
 rocket attached to the mass is fired for 4 seconds starting at
 $t=1$.  Or perhaps imagine an RLC circuit, where the voltage is raised
 at a constant rate for 4 seconds starting at $t=1$, and then held steady 
 again
 starting at $t=5$.
 
-We can
-write $f(t) = u(t-1) - u(t-5)$.  We transform the equation and we plug in
+We write $f(t) = u(t-1) - u(t-5)$.  We transform the equation and we plug in
 the initial conditions as before to obtain
 \begin{equation*}
 s^2 X(s) + X(s) = \frac{e^{-s}}{s} - \frac{e^{-5s}}{s} .
