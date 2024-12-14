@@ -20,6 +20,8 @@ parameters.
 <li>At the end of 2.5, add a paragraph recapping of how that procedure (variation of parameters)
 would work in general.  Then also remark that if there is a coefficient in front of the \(y'' ,\)
 it is necessary to first divide by it.
+<li>Make the caption to Figure 4.17 slightly more descriptive, which as
+side condition gets rid of a horrible page break.
 <li>After Theorem 6.1.1 (linearity of the Laplace transform), demonstrate
 its use together with the table with a quick computation, rather than just
 saying it.

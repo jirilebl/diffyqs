@@ -257,7 +257,7 @@ e^{-2t}
 =
 \frac{2}{s} + \frac{5}{s^2} + \frac{9}{s+2} .
 \]
-But be careful.
+Be careful!
 The Laplace transform of a product
 is \emph{not} the product of the transforms.  In general 
 \begin{equation*}
@@ -659,8 +659,8 @@ $x(t)$.
 \mathcal{L} \bigl\{ x''(t) + x(t) \bigr\} & = \mathcal{L} \bigl\{ \cos (2t) \bigr\} , \\
 s^2 X(s) -sx(0)-x'(0) + X(s) & = \frac{s}{s^2 + 4} .
 \end{align*}
-We plug in the initial conditions now---this makes the computations more
-streamlined---to obtain
+We plug in the initial conditions now---making computations more
+streamlined---to find
 \begin{equation*}
 s^2 X(s) -1 + X(s) = \frac{s}{s^2 + 4} .
 \end{equation*}
@@ -717,13 +717,13 @@ u(t) =
 $u(t)$.\label{lt:heavisidefig}}
 \end{myfig}
 
-This function is useful for
-putting together functions, or cutting functions off.  Most commonly it is
-used as $u(t-a)$ for some constant $a$.  This just shifts the graph to the
-right by $a$.  That is, it is a function that is 0 when $t < a$ and 1
-when $t \geq a$.  Suppose for example that $f(t)$ is a \myquote{signal} and
-you started receiving the signal
-$\sin t$ at time $t=\pi$.  The function $f(t)$ should then be defined as
+The Heaviside function is useful for
+putting other functions together or cutting functions off.  Usually we use
+$u(t-a)$ for some constant $a$;  we just shift the graph to the
+right by $a$.  That is, $u(t-a) = 0$ when $t < a$ and $u(t-a) = 1$
+when $t \geq a$.  For example, suppose $f(t)$ is a \myquote{signal},
+and we started receiving $\sin t$ at time $t=\pi$.
+The function $f(t)$ is then defined as
 \begin{equation*}
 f(t) =
 \begin{cases}
@@ -736,27 +736,26 @@ be written as
 \begin{equation*}
 f(t) = u(t - \pi) \, \sin t .
 \end{equation*}
-Similarly the step function that is 1 on the interval $[1,2)$ and zero
-everywhere else can be written as
+Similarly, the step function that is $1$ on the interval $[1,2)$ and $0$
+elsewhere is written as
 \begin{equation*}
 u(t - 1) - u(t-2) .
 \end{equation*}
-The Heaviside function is useful to define functions defined piecewise.  If
-you want to define $f(t)$ such that $f(t) = t$ when $t$ is in $[0,1]$,
+With the Heaviside function we can express functions defined piecewise.
+If $f(t) = t$ when $t$ is in $[0,1]$,
 $f(t) = -t+2$
-when $t$ is in $[1,2]$, and $f(t) = 0$ otherwise, then you can use the expression
+when $t$ is in $[1,2]$, and $f(t) = 0$ otherwise, then you write
 \begin{equation*}
 f(t) = t \, \bigl( u(t) - u(t-1) \bigr) + 
 (-t+2) \, \bigl( u(t - 1) - u(t-2) \bigr) .
 \end{equation*}
 
-We
-need to know how the Heaviside function interacts with the Laplace
-transform.  We have already seen that
+How does the Heaviside function interact with the Laplace
+transform?  We saw that
 \begin{equation*}
 \mathcal{L} \bigl\{ u(t-a) \bigr\} = \frac{e^{-as}}{s} .
 \end{equation*}
-This can be generalized into a \emph{\myindex{shifting property}}
+This computation can be generalized into a \emph{\myindex{shifting property}}
 or \emph{\myindex{second shifting property}}.
 \begin{equation} \label{ltd:sseq}
 \mybxbg{~~
@@ -771,6 +770,8 @@ For example,
 \mathcal{L} \bigl\{ \bigl( (t-1) + 1\bigr) \, u(t-1) \bigr\}
 = e^{-as} \mathcal{L} \bigl\{ t+1 \bigr\}
 = e^{-as} \left(\frac{1}{s^2} + \frac{1}{s} \right)
+%= e^{-as} \Bigl(\frac{1}{s^2} + \frac{1}{s} \Bigr)
+%= \frac{e^{-as}}{s^2} + \frac{e^{-as}}{s}
 .
 \end{equation*}
 
@@ -785,16 +786,16 @@ The $f(t)$ is not periodic and defined piecewise; no problem for Laplace.
 Imagine a
 rocket attached to the mass is fired for 4 seconds starting at
 $t=1$.  Or perhaps imagine an RLC circuit, where the voltage is raised
-at a constant rate for 4 seconds starting at $t=1$, and then held steady 
+at a constant rate for 4 seconds starting at $t=1$ and then held steady 
 again
 starting at $t=5$.
 
 We write $f(t) = u(t-1) - u(t-5)$.  We transform the equation and we plug in
-the initial conditions as before to obtain
+the initial conditions as before
 \begin{equation*}
 s^2 X(s) + X(s) = \frac{e^{-s}}{s} - \frac{e^{-5s}}{s} .
 \end{equation*}
-We solve for $X(s)$ to obtain
+We solve for $X(s)$,
 \begin{equation*}
 X(s) = \frac{e^{-s}}{s(s^2+1)} - \frac{e^{-5s}}{s(s^2+1)} .
 \end{equation*}
@@ -927,7 +928,7 @@ this as
 
 \begin{example}
 To compute ${\mathcal{L}}^{-1} \left\{\frac{1}{s(s^2+1)}\right\}$ we could
-proceed by applying this integration rule.  
+apply this integration rule:
 \begin{equation*}
 {\mathcal{L}}^{-1} \left\{
 \frac{1}{s} \, \frac{1}{s^2+1} \right\} 
@@ -960,7 +961,7 @@ where $X(s) = \mathcal{L} \bigl\{ x(t) \bigr\}$.  Thus
 \begin{equation*}
 X(s) = \frac{1}{s(s-1)} = \frac{1}{s-1} - \frac{1}{s} .
 \end{equation*}
-Taking the inverse Laplace transform, we obtain
+The inverse Laplace transform gives
 \begin{equation*}
 x(t) = e^t - 1 .
 \end{equation*}
@@ -1062,7 +1063,7 @@ Solve $x'' + x = u(t-1)$ for initial conditions $x(0) = 0$ and $x'(0) = 0$.
 \end{exercise}
 
 \begin{exercise}
-Show the differentiation of the transform property.  Suppose
+Show the ``differentiation of the transform'' property.  Suppose
 $\mathcal{L} \bigl\{ f(t) \bigr\} = F(s)$, then show
 \begin{equation*}
 \mathcal{L} \bigl\{ -t f(t) \bigr\} = F'(s) .
