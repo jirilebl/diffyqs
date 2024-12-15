@@ -103,8 +103,13 @@ We transform the input $f(t)$ into $F(s)$.
 \medskip
 \pause
 
-We transform the equation to get an equation in the transforms $X(s)$ and $F(s)$
-that we solve by algebra.
+We transform the equation to get an equation in the transforms $X(s)$ and
+$F(s)$.
+
+\medskip
+\pause
+
+We solve for $X(s)$ by algebra.
 
 \medskip
 \pause
@@ -165,7 +170,7 @@ $f(t) = e^{-at}$
 Limit exists for $s+a > 0$  ~(that is, $s > -a$)
 \pause
 \wthus
-$\mathcal{L} \bigl\{e^{-at}\bigr\}$ only defined for $s+a > 0$.
+$\mathcal{L} \bigl\{e^{-at}\bigr\}$ only defined for $s > -a$.
 
 \end{frame}
 
@@ -205,10 +210,10 @@ u(t) =
 0 & \text{if } \; t < 0 , \\
 1 & \text{if } \; t \geq 0 ,
 \end{cases}
+\pause
 \qquad
 \text{or more generally}
 \qquad
-\pause
 u(t-a) = 
 \begin{cases}
 0 & \text{if } \; t < a , \\
@@ -221,7 +226,7 @@ $u(t-a)$ is $0$ for $t < a$ and $1$ for $t \geq a$.
 \pause
 Again assume $s > 0$.
 \pause
-\begin{equation*}
+\[
 \mathcal{L} \bigl\{ u(t-a) \bigr\}
 =
 \int_0^{\infty} e^{-st} u(t-a) \, dt
@@ -234,7 +239,7 @@ Again assume $s > 0$.
 \pause
 =
 \frac{e^{-as}}{s} .
-\end{equation*}
+\]
 %\pause
 %Limit only exists if $s > 0$ (and $a \geq 0$).
 
@@ -245,33 +250,45 @@ Again assume $s > 0$.
 Here are some useful Laplace transforms ($C$, $\omega$, and $a$ are constants):
 
 \begin{center}
-\begin{tabular}{@{}cclcc@{}}
+\begin{tabular}{@{}ccclccc@{}}
 \toprule
-$f(t)$ & $\mathcal{L} \bigl\{ f(t) \bigr\} = F(s)$ & $\qquad\quad$ &
+$f(t)$ & $\mathcal{L} \bigl\{ f(t) \bigr\} = F(s)$ &  & $\qquad\quad$ &
 $f(t)$ & $\mathcal{L} \bigl\{ f(t) \bigr\} = F(s)$ \\
 \midrule
 $C$ & $\dfrac{C}{s}$
+&
 & &
 $\sin (\omega t)$ & $\dfrac{\omega}{s^2+\omega^2}$
+&
 \\[12pt]
 $t$ & $\dfrac{1}{s^2}$
+&
 & &
 $\cos (\omega t)$ & $\dfrac{s}{s^2+\omega^2}$
+&
 \\[12pt]
 $t^2$ & $\dfrac{2}{s^3}$
+&
 & &
 $\sinh (\omega t)$ & $\dfrac{\omega}{s^2-\omega^2}$
+&
 \\[12pt]
 $t^3$ & $\dfrac{6}{s^4}$
+&
 & &
 $\cosh (\omega t)$ & $\dfrac{s}{s^2-\omega^2}$
+&
 \\[12pt]
 $t^n$ & $\dfrac{n!}{s^{n+1}}$
+&
 & &
 $u(t-a)$ & $\dfrac{e^{-as}}{s}$
+& $(a \geq 0)$
 \\[12pt]
 $e^{-at}$ & $\dfrac{1}{s+a}$
+&
 & & &
+&
 \\[12pt]
 \bottomrule
 \end{tabular}
@@ -316,7 +333,7 @@ B \mathcal{L} \bigl\{ g(t) \bigr\} .
 \textbf{Example:}
 \[
 \mathcal{L} \bigl\{
-2 + 9t + \cos(2t) + 5 e^{-2t}
+2 + 9t + \sin(2t) + 5 e^{-2t}
 \bigr\}
 \pause
 =
@@ -329,7 +346,7 @@ t
 \bigr\}
 +
 \mathcal{L} \bigl\{
-\cos(2t)
+\sin(2t)
 \bigr\}
 + 5
 \mathcal{L} \bigl\{
