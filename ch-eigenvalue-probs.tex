@@ -205,8 +205,8 @@ $\lambda \geq 0$.
 So the general solution (without boundary conditions) is
 \begin{equation*}
 \begin{aligned}
- & y(x) = A \cos ( \sqrt{\lambda}\, x) + B \sin (
-\sqrt{\lambda}\, x) & & \qquad \text{if } \; \lambda > 0 , \\
+ & y(x) = A \cos \bigl( \sqrt{\lambda}\, x\bigr)
++ B \sin \bigl( \sqrt{\lambda}\, x\bigr) & & \qquad \text{if } \; \lambda > 0 , \\
 & y(x) = A x + B & & \qquad \text{if } \; \lambda = 0 .
 \end{aligned}
 \end{equation*}
@@ -219,16 +219,17 @@ Now let us
 try $\lambda > 0$.  We plug in the boundary conditions:
 \begin{align*}
 & 0 = h A - \sqrt{\lambda}\, B , \\
-& 0 = -A \sqrt{\lambda}\, \sin (\sqrt{\lambda}) +B \sqrt{\lambda}\,
-\cos (\sqrt{\lambda}) .
+& 0 = -A \sqrt{\lambda}\, \sin \bigl(\sqrt{\lambda}\bigr)
++ B \sqrt{\lambda}\, \cos \bigl(\sqrt{\lambda}\bigr) .
 \end{align*}
 If $A=0$, then $B=0$ and vice versa, hence both are nonzero.
 So $B = \frac{hA}{\sqrt{\lambda}}$, and
-$0 = -A \sqrt{\lambda}\, \sin ( \sqrt{\lambda}) + \frac{hA}{\sqrt{\lambda}}
-\sqrt{\lambda}\, \cos ( \sqrt{\lambda})$.  As $A \not= 0$ we get
+$0 = -A \sqrt{\lambda}\, \sin \bigl( \sqrt{\lambda}\bigr) + \frac{hA}{\sqrt{\lambda}}
+\sqrt{\lambda}\, \cos \bigl( \sqrt{\lambda}\bigr)$.  As $A \not= 0$ we get
 \begin{equation*}
 0 = 
-- \sqrt{\lambda}\, \sin ( \sqrt{\lambda}) + h \cos ( \sqrt{\lambda}) ,
+- \sqrt{\lambda}\, \sin \bigl( \sqrt{\lambda}\bigr)
++ h \cos \bigl( \sqrt{\lambda}\bigr) ,
 \end{equation*}
 or
 \begin{equation*}
@@ -253,8 +254,8 @@ The appropriate eigenfunction
 (let $A = 1$ for convenience, then
 $B=\nicefrac{h}{\sqrt{\lambda}}$) is
 \begin{equation*}
-y_n(x) = \cos ( \sqrt{\lambda_n}\, x ) + \frac{h}{\sqrt{\lambda_n}}
-\sin (\sqrt{\lambda_n} \, x ) .
+y_n(x) = \cos \bigl( \sqrt{\lambda_n}\, x \bigr) + \frac{h}{\sqrt{\lambda_n}}
+\sin \bigl(\sqrt{\lambda_n} \, x \bigr) .
 \end{equation*}
 When $h=1$ we get (approximately)
 \begin{equation*}
@@ -441,7 +442,8 @@ Hence $\lambda = 0$ is not an eigenvalue.
 So let us consider $\lambda > 0$, where
 the general solution is
 \begin{equation*}
-y(x) = A \cos ( \sqrt{\lambda} \, x ) + B \sin ( \sqrt{\lambda} \, x) .
+y(x) = A \cos \bigl( \sqrt{\lambda} \, x \bigr)
++ B \sin \bigl( \sqrt{\lambda} \, x \bigr) .
 \end{equation*}
 Plugging in the boundary conditions we get
 $0 = y(0) = A$ and $0 = y'(\nicefrac{\pi}{2})

@@ -27,6 +27,8 @@ its use together with the table with a quick computation, rather than just
 saying it.
 <li>Right after the second shifting property, do a quick example
 where the function is not just a constant.
+<li>At the end of Example 6.2.3, emphasize that the same transfer function
+can be used for any input.
 <li>In Theorem 6.3.1, mention that the convolution is of exponential order.
 <li>In first example in 6.5 (6.5.1), mention explicitly that \(\alpha\) is a
 constant.

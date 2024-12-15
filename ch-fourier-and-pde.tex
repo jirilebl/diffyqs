@@ -54,10 +54,12 @@ On the other hand, consider $\lambda = 2$.  That is,
 x'' + 2 x = 0, \quad x(0) = 0, \quad x(\pi) = 0.
 \end{equation*}
 Then the general solution is
-$x= A \cos ( \sqrt{2}\,t) + B \sin ( \sqrt{2}\,t)$.  Letting $x(0) = 0$ still
-forces $A = 0$.  We apply the second condition to find
-$0=x(\pi) = B \sin ( \sqrt{2}\,\pi)$.
-As $\sin ( \sqrt{2}\,\pi) \not= 0$ we obtain
+$x= A \cos \bigl( \sqrt{2}\,t\bigr)
++ B \sin \bigl( \sqrt{2}\,t\bigr)$.
+Letting $x(0) = 0$ still forces $A = 0$.
+We apply the second condition to find
+$0=x(\pi) = B \sin \bigl( \sqrt{2}\,\pi\bigr)$.
+As $\sin \bigl( \sqrt{2}\,\pi\bigr) \not= 0$ we obtain
 $B = 0$.  Therefore $x=0$ is the unique solution to this problem.
 \end{example}
 
@@ -119,15 +121,16 @@ the cases $\lambda > 0$, $\lambda = 0$, $\lambda < 0$ separately.
 First suppose that $\lambda > 0$.  Then
 the general solution to $x''+\lambda x = 0$ is
 \begin{equation*}
-x = A \cos ( \sqrt{\lambda}\, t) + B \sin ( \sqrt{\lambda}\, t).
+x = A \cos \bigl( \sqrt{\lambda}\, t\bigr)
++ B \sin \bigl( \sqrt{\lambda}\, t\bigr).
 \end{equation*}
 The condition $x(0) = 0$ implies immediately $A = 0$.
 Next
 \begin{equation*}
-0 = x(\pi) = B \sin ( \sqrt{\lambda}\, \pi ) .
+0 = x(\pi) = B \sin \bigl( \sqrt{\lambda}\, \pi \bigr) .
 \end{equation*}
 If $B$ is zero, then $x$ is not a nonzero solution.  So to get a nonzero
-solution we must have that $\sin ( \sqrt{\lambda}\, \pi) = 0$.  Hence,
+solution we must have that $\sin \bigl( \sqrt{\lambda}\, \pi\bigr) = 0$.  Hence,
 $\sqrt{\lambda}\, \pi$ must be an integer multiple of $\pi$.  In other words,
  $\sqrt{\lambda} = k$ for a positive integer $k$.
 Hence the positive eigenvalues are
@@ -150,10 +153,11 @@ try the computation with the general solution written as
 $x = A e^{\sqrt{-\lambda}\, t} + B e^{-\sqrt{-\lambda}\, t}$ (for
 different $A$ and $B$ of course).}
 \begin{equation*}
-x = A \cosh ( \sqrt{-\lambda}\, t) + B \sinh ( \sqrt{-\lambda}\, t ) .
+x = A \cosh \bigl( \sqrt{-\lambda}\, t\bigr)
++ B \sinh \bigl( \sqrt{-\lambda}\, t \bigr) .
 \end{equation*}
 Letting $x(0) = 0$ implies that $A = 0$ (recall $\cosh 0 = 1$ and $\sinh 0 =
-0$).  So our solution must be $x = B \sinh ( \sqrt{-\lambda}\, t )$ and satisfy
+0$).  So our solution must be $x = B \sinh \bigl( \sqrt{-\lambda}\, t \bigr)$ and satisfy
 $x(\pi) = 0$.  This is only possible if $B$ is zero.  Why?  Because
 $\sinh \xi$ is only zero when $\xi=0$.  You should plot sinh to see this
 fact.
@@ -180,18 +184,20 @@ Again we have to handle the cases $\lambda > 0$, $\lambda = 0$, $\lambda
 < 0$ separately.
 First suppose that $\lambda > 0$.
 The general solution to $x''+\lambda x = 0$ is
-$x = A \cos ( \sqrt{\lambda}\, t) + B \sin ( \sqrt{\lambda}\, t)$.  So
+$x = A \cos \bigl( \sqrt{\lambda}\, t\bigr) + B \sin \bigl( \sqrt{\lambda}\,
+t\bigr)$.
+So
 \begin{equation*}
-x' = -A\sqrt{\lambda}\, \sin ( \sqrt{\lambda}\, t) + B\sqrt{\lambda}\,
-\cos (\sqrt{\lambda}\, t) .
+x' = -A\sqrt{\lambda}\, \sin \bigl( \sqrt{\lambda}\, t\bigr) +
+B\sqrt{\lambda}\, \cos \bigl(\sqrt{\lambda}\, t\bigr) .
 \end{equation*}
 The condition $x'(0) = 0$ implies immediately $B = 0$.
 Next
 \begin{equation*}
-0 = x'(\pi) = -A\sqrt{\lambda}\, \sin ( \sqrt{\lambda}\, \pi) .
+0 = x'(\pi) = -A\sqrt{\lambda}\, \sin \bigl( \sqrt{\lambda}\, \pi\bigr) .
 \end{equation*}
 Again $A$ cannot be zero if $\lambda$ is to be an eigenvalue,
-and $\sin ( \sqrt{\lambda}\, \pi)$ is only zero
+and $\sin \bigl( \sqrt{\lambda}\, \pi\bigr)$ is only zero
 if
 $\sqrt{\lambda} = k$ for a positive integer $k$.
 Hence the positive eigenvalues are again
@@ -206,11 +212,12 @@ Hence $B$ could be anything (let us take it to be 1).  So $\lambda = 0$
 is an eigenvalue and $x=1$ is a corresponding eigenfunction.
 
 Finally, let $\lambda < 0$.  In this case the general solution is
-$x = A \cosh ( \sqrt{-\lambda}\, t) + B \sinh ( \sqrt{-\lambda}\, t)$
+$x = A \cosh \bigl( \sqrt{-\lambda}\, t\bigr)
++ B \sinh \bigl( \sqrt{-\lambda}\, t\bigr)$
 and
 \begin{equation*}
-x' = A\sqrt{-\lambda}\, \sinh ( \sqrt{-\lambda}\, t)
-+ B\sqrt{-\lambda}\, \cosh ( \sqrt{-\lambda}\, t ) .
+x' = A\sqrt{-\lambda}\, \sinh \bigl( \sqrt{-\lambda}\, t\bigr)
++ B\sqrt{-\lambda}\, \cosh \bigl( \sqrt{-\lambda}\, t \bigr) .
 \end{equation*}
 We have already seen (with roles of $A$ and $B$ switched) that for this
 expression to be zero at $t=0$ and $t=\pi$, we must have $A=B=0$.  Hence there are
@@ -250,27 +257,32 @@ The second condition $x'(-\pi) = x'(\pi)$ says nothing about $B$ and hence
 $\lambda=0$ is an eigenvalue with a corresponding eigenfunction $x=1$.
 
 For $\lambda > 0$ we get that
-$x = A \cos ( \sqrt{\lambda}\, t ) + B \sin ( \sqrt{\lambda}\, t)$.
+$x = A \cos \bigl( \sqrt{\lambda}\, t \bigr)
++ B \sin \bigl( \sqrt{\lambda}\, t\bigr)$.
 Now
 \begin{equation*}
-\underbrace{A \cos (-\sqrt{\lambda}\, \pi) + B \sin (-\sqrt{\lambda}\,
-\pi)}_{x(-\pi)}
+\underbrace{A \cos \bigl(-\sqrt{\lambda}\, \pi\bigr)
++ B \sin \bigl(-\sqrt{\lambda}\,
+\pi\bigr)}_{x(-\pi)}
 =
-\underbrace{A \cos (  \sqrt{\lambda}\, \pi ) + B \sin ( \sqrt{\lambda}\,
-\pi)}_{x(\pi)} .
+\underbrace{A \cos \bigl(  \sqrt{\lambda}\, \pi \bigr)
++ B \sin \bigl( \sqrt{\lambda}\,
+\pi\bigr)}_{x(\pi)} .
 \end{equation*}
 We remember that $\cos (- \theta) = \cos (\theta)$ and
 $\sin (-\theta) = - \sin (\theta)$.  Therefore,
 \begin{equation*}
-A \cos (\sqrt{\lambda}\, \pi) - B \sin ( \sqrt{\lambda}\, \pi)
+A \cos \bigl(\sqrt{\lambda}\, \pi\bigr)
+- B \sin \bigl( \sqrt{\lambda}\, \pi\bigr)
 =
-A \cos (\sqrt{\lambda}\, \pi) + B \sin ( \sqrt{\lambda}\, \pi).
+A \cos \bigl(\sqrt{\lambda}\, \pi\bigr)
++ B \sin \bigl( \sqrt{\lambda}\, \pi\bigr).
 \end{equation*}
-Hence either $B=0$ or $\sin ( \sqrt{\lambda}\, \pi) = 0$.
+Hence either $B=0$ or $\sin \bigl( \sqrt{\lambda}\, \pi\bigr) = 0$.
 Similarly (exercise) if we differentiate $x$ and plug in the second
-condition we find that $A=0$ or $\sin ( \sqrt{\lambda}\, \pi) = 0$.
+condition we find that $A=0$ or $\sin \bigl( \sqrt{\lambda}\, \pi\bigr) = 0$.
 Therefore, unless we want $A$ and $B$ to both be zero (which we do not)
-we must have $\sin ( \sqrt{\lambda}\, \pi ) = 0$.  Hence, $\sqrt{\lambda}$
+we must have $\sin \bigl( \sqrt{\lambda}\, \pi \bigr) = 0$.  Hence, $\sqrt{\lambda}$
 is an integer and the eigenvalues are yet again $\lambda = k^2$ for
 an integer $k \geq 1$.  In this case, however, 
 $x = A \cos (k t) + B \sin (k t)$ is an eigenfunction for any $A$ and any $B$.
@@ -529,10 +541,12 @@ interval length being $L$ instead of $\pi$.  We are looking for eigenvalues
 of $y'' + \lambda y = 0, y(0) = 0, y(L) = 0$ where
 $\lambda = \frac{\rho \omega^2}{T}$.  As before
 there are no nonpositive eigenvalues.  With $\lambda > 0$,
-the general solution to the equation is $y = A \cos (  \sqrt{\lambda} \,x ) + B
-\sin ( \sqrt{\lambda} \,x )$.  The condition $y(0) = 0$ implies that $A = 0$ as
+the general solution to the equation is
+$y = A \cos \bigl(  \sqrt{\lambda} \,x \bigr)
++ B \sin \bigl( \sqrt{\lambda} \,x \bigr)$.
+The condition $y(0) = 0$ implies that $A = 0$ as
 before.  The condition $y(L) = 0$ implies that
-$\sin ( \sqrt{\lambda} \, L) = 0$ and hence
+$\sin \bigl( \sqrt{\lambda} \, L\bigr) = 0$ and hence
 $\sqrt{\lambda} \, L = k \pi$  for some integer $k > 0$, so
 \begin{equation*}
 \frac{\rho \omega^2}{T} = \lambda = \frac{k^2 \pi^2}{L^2} .
@@ -3619,7 +3633,7 @@ We are solving the following PDE problem
 \end{align*}
 
 For this problem, we must find the cosine series of $u(x,0)$.
-For $0 < x < 1$ we have
+For $0 < x < 1$, we have
 \begin{equation*}
 50\, x\,(1-x)
 =

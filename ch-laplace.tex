@@ -790,6 +790,7 @@ at a constant rate for 4 seconds starting at $t=1$ and then held steady
 again
 starting at $t=5$.
 
+\pagebreak[2]
 We write $f(t) = u(t-1) - u(t-5)$.  We transform the equation and we plug in
 the initial conditions as before
 \begin{equation*}
@@ -881,8 +882,8 @@ the equation is by observing the output $X(s)$ for a given input $F(s)$.
 Once $H(s)$ is known, you can find the output for any input.
 
 \begin{example}
-Given $x'' + \omega_0^2 x = f(t)$, let us find the transfer function
-(assuming the initial conditions are zero).
+Given $x'' + \omega_0^2 x = f(t)$ (assume the initial conditions are zero),
+let us find the transfer function.
 
 First, we take the Laplace transform of the equation,
 \begin{equation*}
@@ -902,6 +903,8 @@ Taking the inverse Laplace transform of $X(s)$, we obtain
 \begin{equation*}
 x(t) = \frac{1-\cos(\omega_0 t)}{\omega_0^2} .
 \end{equation*}
+Similarly, for any other input $F(s)$, the output is
+$X(s) = H(s) F(s) = \frac{1}{s^2+\omega_0^2} \, F(s)$.
 \end{example}
 
 \subsection{Transforms of integrals}
