@@ -22,7 +22,7 @@ then
 we can have a differential equation involving all of them and their
 derivatives with respect to one independent variable $x$.
 For example, $y_1'' = f(y_1',y_2',y_1,y_2,x)$.
-Usually, when we have two dependent variables we have two equations
+Usually, when we have two dependent variables, we have two equations
 such as
 \begin{equation*}
 \begin{aligned}
@@ -72,7 +72,7 @@ constants we find a solution for any initial condition, we call this
 solution the \emph{general solution}\index{general solution to a system}.
 Best to look at a simple example.
 
-\begin{example}
+\begin{example} \label{example:simplesystem}
 Sometimes a system is easy to solve
 by solving for one variable and then for the second variable.
 Take 
@@ -118,16 +118,18 @@ a bunch of single equations and put their solutions together.  Let us not
 worry right now about how to solve systems yet.
 
 We will mostly consider the \emph{\myindex{linear systems}}.  The example
-above is a so-called \emph{\myindex{linear first order system}}.
+above (\exampleref{example:simplesystem})
+is a so-called \emph{\myindex{linear first order system}}.
 It is linear as none of the dependent variables or their derivatives
 appear in nonlinear functions or with powers
-higher than one ($x$, $y$, $x'$ and $y'$, constants, and functions of $t$
-can appear, but not $xy$ or ${(y')}^2$ or $x^3$).  Another, more
-complicated, example of a linear system is
+higher than one ($y_1$, $y_2$, $y_1'$ and $y_2'$, constants, and functions of $x$
+can appear, but not $y_1y_2$ or ${(y_2')}^2$ or $y_1^3$).
+Another, more
+complicated, example of a linear (second order) system is
 \begin{equation*}
 \begin{aligned}
-y_1'' &= e^t y_1' + t^2 y_1 + 5 y_2 + \sin(t), \\
-y_2'' &= t y_1'-y_2' + 2 y_1 + \cos(t).
+y_1'' &= e^x y_1' + x^2 y_1 + 5 y_2 + \sin(x), \\
+y_2'' &= x y_1'-y_2' + 2 y_1 + \cos(x).
 \end{aligned}
 \end{equation*}
 
