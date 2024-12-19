@@ -93,7 +93,7 @@
 %mbx       </shortlicense>
 %mbx     </copyright>
 %mbx     <p>
-%mbx        Version 6.7
+%mbx        Version 6.8
 %mbx     </p>
 %mbx     <p>
 %mbx       You can use, print, duplicate, and share this book as much as you want.  You can
@@ -128,7 +128,8 @@
 %mbxSTARTIGNORE
 
 %also fix above
-\newcommand{\theversion}{6.7}
+\newcommand{\theversion}{6.8}
+\newcommand{\theedition}{6}
 \makediffytitlepage
 
 \newpage
@@ -138,6 +139,11 @@
 \begin{small}
 \noindent
 Typeset in \LaTeX.
+
+\bigskip
+
+\noindent
+Edition \theedition\ (version \theversion)
 
 \bigskip
 
@@ -155,8 +161,16 @@ Copyright \copyright 2008--2024 Ji\v{r}\'i Lebl
 % not for lulu
 %\medskip
 %\noindent
-%Cover image: Arch in St.\ Louis, \copyright 2008 Ji{\v r}\'i Lebl, all rights reserved.  Cover
+%Cover image: Arch in St.\ Louis, \copyright 2008 Ji{\v r}\'i Lebl, all rights reserved.
+%
+% Now not needed. Cover
 %image cannot be reused in derivative works.
+
+%PRINT
+% not for lulu, lulu is fine with this
+% note that I am the copyright holder, I can put out versions
+% that are under any license, so for kdp, they are non-free
+%\ignore{
 
 \bigskip
 
@@ -206,6 +220,9 @@ Derivative works must be prominently marked as such.
 %duplication service is charging a fee for printing and selling the printed
 %copy.  I consider that duplicating cost.
 
+%PRINT
+%}
+
 \bigskip
 
 \noindent
@@ -216,7 +233,8 @@ DMS-1362337.
 \bigskip
 
 \noindent
-The date is the main identifier of version.  The major version / edition
+%The date is the main identifier of version.
+The major version / edition
 number is raised only if there have been substantial changes.
 %, if only
 %very minor changes or fixes are done only the minor version is raised.
@@ -233,12 +251,20 @@ before.
 See \url{https://www.jirka.org/diffyqs/} for more information
 (including contact information).
 
+%PRINT
+% not for lulu, lulu is fine with this
+%\ignore{
+
 \bigskip
 
 \noindent
 The \LaTeX\ source for the book is available
 for possible modification and customization
 at github: \url{https://github.com/jirilebl/diffyqs}
+
+%PRINT
+%}
+
 \end{small}
 
 \diffytableofcontents
