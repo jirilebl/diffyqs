@@ -384,12 +384,12 @@ sub do_thmtitle_subs {
 
 	$title =~ s|\\href\{(.*?)\}\{(.*?)\}|<url href=\"$1\" visual=\"$1\">$2</url>|gs;
 
+	$title = do_line_subs($title);
+
 	#FIXME: should check if multiple footnotes work
 	while ($title =~ s!\\footnote\{([^{}]*|([^{}]*\{[^{}]*\}[^{}]*)*)\}!<fn>$1</fn>!s) {
 		;
 	}
-
-	$title = do_line_subs($title);
 
 	return $title;
 }

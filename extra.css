@@ -1,6 +1,7 @@
 #ptx-content {
  max-width: 800px !important; text-align: justify !important;
 }
+/*
 #ptx-masthead {
  max-width: 1104px !important;
  z-index:19;
@@ -17,6 +18,7 @@
 .ptx-navbar .index-button {
   width: 90px;
 }
+*/
 /* Some fixes, perhaps will not be needed later*/
 /*.ptx-navbar .toc-toggle .icon {
   bottom: 0.2em;
