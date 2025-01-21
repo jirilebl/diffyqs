@@ -102,7 +102,7 @@ Laplace the equation and write $X(s)$ for $\mathcal{L}\bigl\{x(t)\bigr\}$:
 \Rightarrow
 \quad
 \underbrace{s^2 X(s) -sx(0)-x'(0)}_{\mathcal{L}\{x''(t)\}}
-+ \underbrace{X(s)}_{\mathcal{L}\{x''(t)\}}
++ \underbrace{X(s)}_{\mathcal{L}\{x(t)\}}
 = \frac{s}{s^2 + 4} .
 \]
 \pause
@@ -248,9 +248,9 @@ We Laplace transform such functions using the \emph{second shifting property}:
 =
 \mathcal{L} \bigl\{ \bigl( (t-1) + 1\bigr) \, u(t-1) \bigr\}
 \pause
-= e^{-as} \mathcal{L} \bigl\{ t+1 \bigr\}
+= e^{-s} \mathcal{L} \bigl\{ t+1 \bigr\}
 \pause
-= e^{-as} \left(\frac{1}{s^2} + \frac{1}{s} \right)
+= e^{-s} \left(\frac{1}{s^2} + \frac{1}{s} \right)
 .
 \]
 \end{frame}
