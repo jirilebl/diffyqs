@@ -37,10 +37,9 @@ Suppose $g(t)$ is a differentiable function of exponential order:
 \medskip
 \pause
 
-$\lvert g(t) \rvert \leq M e^{ct}$ for some
-$M$ and $c$,
+$\lvert g(t) \rvert \leq M e^{ct}$ for large $t$,
 \qquad
-$\mathcal{L} \bigl\{ g(t) \bigr\}$ exists,
+so $\mathcal{L} \bigl\{ g(t) \bigr\}$ exists
 \quad
 and
 \qquad
@@ -81,8 +80,7 @@ $g'''(t)$ & $s^3G(s)-s^2g(0)-sg'(0)-g''(0)$ \\[4pt]
 \end{tabular}
 \end{center}
 \pause
-Notice: $G(s)$ is never differentiated, just multiplied by
-$s$.
+Notice: $G(s)$ is not differentiated, it is multiplied by $s$.
 
 \end{frame}
 
@@ -98,7 +96,7 @@ $x''(t) + x(t) = \cos (2t), \quad x(0) = 0, \quad x'(0) = 1$.
 Laplace the equation and write $X(s)$ for $\mathcal{L}\bigl\{x(t)\bigr\}$:
 \[
 \mathcal{L} \bigl\{ x''(t) + x(t) \bigr\}
-= \mathcal{L} \bigl\{ \cos (2t) \bigr\} ,
+= \mathcal{L} \bigl\{ \cos (2t) \bigr\}
 \pause
 \quad
 \Rightarrow
@@ -202,7 +200,7 @@ u(t-a) =
 \]
 \pause
 \textbf{Example:}
-Suppose:
+Suppose
 \begin{equation*}
 f(t) =
 \begin{cases}
@@ -212,8 +210,7 @@ f(t) =
 \hspace*{3in}
 \end{equation*}
 \pause
-Using Heaviside,
-you could write $f$ as: \quad $f(t) = u(t - \pi) \, \sin t$.
+Using Heaviside: \quad $f(t) = u(t - \pi) \, \sin t$.
 \end{frame}
 
 \begin{frame}
@@ -229,7 +226,7 @@ f(t) =
 \begin{cases}
 t & \text{if } \; t \in [0,1) , \\ 
 -t+2 & \text{if } \; t \in [1,2), \\
-0 & \text{otherwise} .
+0 & \text{otherwise} ,
 \end{cases}
 \]
 becomes
