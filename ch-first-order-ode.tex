@@ -2705,6 +2705,8 @@ The simplest method used in practice is the
 Consider $\frac{dy}{dx}=f(x,y)$, $y(x_0) = y_0$,
 and a step size $h$.  Everything is the same as in Euler's method, except
 the computation of $y_{i+1}$ and $x_{i+1}$.
+That is, in each step we compute slopes $k_1$, $k_2$, $k_3$, and $k_4$,
+and then we compute the next $x_{i+1}$ and $y_{i+1}$:
 \begin{align*}
 & k_1 = f(x_i,y_i) , & & \\
 & k_2 = f\bigl(x_i + \nicefrac{h}{2},y_i + k_1 (\nicefrac{h}{2})\bigr) ,
@@ -2721,12 +2723,13 @@ y_{i+1} = y_i + \frac{k_1 + 2k_2 + 2k_3 + k_4}{6}\,h ,  \\
 \pagebreak[2]
 Consider $\dfrac{dy}{dx} = yx^2$, $y(0)=1$.
 \begin{tasks}
-\task Use Runge--Kutta (see above) with step sizes $h=1$ and $h=\nicefrac{1}{2}$
-to approximate $y(1)$.
-\task Use Euler's method with $h=1$ and
+\task Approximate $y(1)$
+using Runge--Kutta (see above) with step sizes $h=1$ and
+$h=\nicefrac{1}{2}$.
+\task Approximate $y(1)$ using Euler's method with $h=1$ and
 $h=\nicefrac{1}{2}$.
 \task Solve exactly, find the exact value of
-$y(1)$, and compare.
+$y(1)$, and compare with the approximations.
 \end{tasks}
 \end{exercise}
 
@@ -2787,6 +2790,8 @@ if we halve the step, the error should go down by a factor of $2^2 = 4$.
 To summarize, the setup is the
 same as for regular Euler, except
 the computation of $y_{i+1}$ and $x_{i+1}$.
+At each step we compute the new slopes $k_1$ and $k_2$ and then the next
+$y_{i+1}$ and $x_{i+1}$:
 \begin{align*}
 & k_1 = f(x_i,y_i) , & & 
 x_{i+1} = x_i + h , \\
@@ -2798,9 +2803,9 @@ x_{i+1} = x_i + h , \\
 \begin{exercise}
 Consider $\dfrac{dy}{dx} = x+y$, $y(0)=1$.
 \begin{tasks}
-\task Use the improved Euler's method (see above) with step sizes $h=\nicefrac{1}{4}$ and $h=\nicefrac{1}{8}$
-to approximate $y(1)$.
-\task Use Euler's method with
+\task Approximate $y(1)$ using the improved Euler's method (see above) with
+step sizes $h=\nicefrac{1}{4}$ and $h=\nicefrac{1}{8}$.
+\task Approximate $y(1)$ using Euler's method with
 $h=\nicefrac{1}{4}$ and $h=\nicefrac{1}{8}$.
 \task Solve exactly, find the exact value of
 $y(1)$.
@@ -2817,16 +2822,16 @@ $y(1) \approx 3.1316$ for $h=\nicefrac{1}{8}$,
 c) $y = 2e^x-x-1$, so $y(2)$ is approximately $3.4366$.
 \quad
 d) Approximate errors for improved Euler:
-$0.046852$ for $h=\nicefrac{1}{4}$, 
+$0.046852$ for $h=\nicefrac{1}{4}$ 
 and
 $0.012881$ for $h=\nicefrac{1}{8}$. 
 \quad
 For standard Euler:
-$0.55375$ for $h=\nicefrac{1}{4}$, 
+$0.55375$ for $h=\nicefrac{1}{4}$ 
 and
 $0.30499$ for $h=\nicefrac{1}{8}$. 
 \quad
-Factor is approximately $0.27$ for improved Euler, and
+Factor is approximately $0.27$ for improved Euler and
 $0.55$ for standard Euler.
 }
 
@@ -2940,7 +2945,7 @@ the work done is the same
 no matter what path we took; if we took the stairs or the elevator.
 Although if we took the elevator, the elevator is doing the work for us.
 The curves $F(x,y) = C$ are those where no work need be done, such as
-the heavy box sliding along without accelerating or breaking on a perfectly
+the heavy box sliding along without accelerating or braking on a perfectly
 flat roof, on a cart with incredibly well oiled wheels.
 
 An exact equation is a conservative vector field, and the implicit
