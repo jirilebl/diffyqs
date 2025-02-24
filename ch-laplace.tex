@@ -1302,35 +1302,41 @@ so is $(f*g)(t)$ and
 \end{theorem}
 
 In other words, the Laplace transform of a convolution is the product
-of the Laplace transforms.  The simplest way to use this result is in
-reverse.
+of the Laplace transforms:
+${\mathcal{L}} \bigl\{ (f*g)(t) \bigr\} = F(s)G(s)$,
+or in reverse,
+${\mathcal{L}}^{-1} \bigl\{ F(s) G(s) \bigr\} = (f*g)(t)$.
 
 \begin{example}
-Suppose we have the function of $s$
-defined by
+Suppose we wish to find the inverse Laplace transform of
 \begin{equation*}
-\frac{1}{(s+1)s^2} = 
-\frac{1}{s+1}\,
-\frac{1}{s^2} .
+\frac{1}{s^2(s+1)} = 
+\frac{1}{s^2}
+\,
+\frac{1}{s+1}
+.
 \end{equation*}
-We recognize the two entries of \tableref{ltd:table}.  That is,
+We recognize the two entries of \tableref{ltd:table}:
 \begin{equation*}
+\mathcal{L}^{-1} 
+\left\{
+\frac{1}{s^2} \right\} 
+= t
+\qquad \text{and} \qquad
 \mathcal{L}^{-1} 
 \left\{
 \frac{1}{s+1} \right\}
 = e^{-t}
-\qquad \text{and} \qquad
-\mathcal{L}^{-1} 
-\left\{
-\frac{1}{s^2} \right\} 
-= t.
+.
 \end{equation*}
-Therefore,
+Therefore, we convolve $t$ and $e^{-t}$,
 \begin{equation*}
 \mathcal{L}^{-1}
 \left\{
-\frac{1}{s+1}\,
-\frac{1}{s^2} \right\}
+\frac{1}{s^2}
+\,
+\frac{1}{s+1}
+\right\}
 =
 \int_0^t
 \tau e^{-(t-\tau)} \,d\tau
@@ -1351,6 +1357,7 @@ integral.
 Find the solution to
 \begin{equation*}
 x'' + \omega_0^2 x = f(t) , \quad x(0) = 0, \quad x'(0) = 0 ,
+\avoidbreak
 \end{equation*}
 for an arbitrary function $f(t)$.
 
