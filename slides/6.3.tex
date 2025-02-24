@@ -27,7 +27,7 @@ The textbook: \url{https://www.jirka.org/diffyqs/}
 \end{frame}
 
 \begin{frame}
-Laplace transform of a product is not the product of the transforms.
+Laplace transform of a product is \textbf{not} the product of the transforms.
 
 \medskip
 \pause
@@ -41,7 +41,7 @@ the \emph{convolution} as a new function $f * g$:
 
 \pause
 
-\emph{Remark:}  It is the same formula as
+\emph{Remark:}  Same formula as
 $\int_{-\infty}^\infty f(\tau) g(t-\tau) \, d\tau$
 assuming $f(t)=g(t)=0$ for $t < 0$.
 
@@ -61,60 +61,82 @@ Let $f(t) = e^t$ and $g(t) = t$ for $t \geq 0$.  Then
 e^t - t - 1 .
 \]
 
-\medskip
+%\medskip
 \pause
 
 \textbf{Example:}
 Take $f(t) = \sin (\omega t)$ and $g(t) = \cos (\omega t)$ for $t \geq 0$.
+%Then (use the identity
+%$\cos (\theta) \sin (\psi) =
+%\frac{1}{2} \, \bigl( \sin (\theta + \psi) - \sin (\theta - \psi) \bigr)$)
 
-Then (use the identity
-$\cos (\theta) \sin (\psi) =
-\frac{1}{2} \, \bigl( \sin (\theta + \psi) - \sin (\theta - \psi) \bigr)$)
-\[
+\smallskip
+
+$\displaystyle
+\quad\qquad
 (f*g)(t)
 =
 \int_0^t  \sin ( \omega \tau ) \,
 \cos \bigl( \omega (t-\tau) \bigr) \, d\tau
 \pause
 =
+%\underset{\mathclap{\substack{\\\ \\\uparrow\\\cos (\theta) \sin (\psi) =
+%\frac{1}{2} \, \bigl( \sin (\theta + \psi) - \sin (\theta - \psi) \bigr)}}}{=}
 \int_0^t
-\frac{1}{2} \, \bigl( \sin (\omega t) - \sin (\omega t - 2 \omega \tau
-) \bigr) \, d\tau
-\]
-Apply the identity
-\begin{equation*}
-\cos (\theta) \sin (\psi) =
-\frac{1}{2} \, \bigl( \sin (\theta + \psi) - \sin (\theta - \psi) \bigr) ,
-\end{equation*}
-to get
-\begin{equation*}
-\begin{split}
-& =
-\left[ \frac{1}{2} \, \tau  \sin (\omega t) + \frac{1}{4\omega} \, \cos (2 \omega \tau -
+\underbrace{
+\tfrac{1}{2} \, \bigl( \sin (\omega t) - \sin (\omega t - 2 \omega \tau
+) \bigr)
+}_{\mathclap{\text{used } \cos (\theta) \sin (\psi) =
+\frac{1}{2} \, \bigl( \sin (\theta + \psi) - \sin (\theta - \psi) \bigr)}}
+\, d\tau
+$
+
+\medskip
+\pause
+
+$\displaystyle
+\quad\qquad
+\phantom{(f*g)(t)}
+%Apply the identity
+%\begin{equation*}
+%\cos (\theta) \sin (\psi) =
+%\frac{1}{2} \, \bigl( \sin (\theta + \psi) - \sin (\theta - \psi) \bigr) ,
+%\end{equation*}
+%to get
+{} =
+\left[ \tfrac{1}{2} \, \tau  \sin (\omega t) + \tfrac{1}{4\omega} \, \cos (2 \omega \tau -
 \omega t) \right]_{\tau=0}^t
-\\
-& = \frac{1}{2} \, t \sin (\omega t) .
-\end{split}
-\end{equation*}
-The formula holds only for $t \geq 0$.  The functions $f$, $g$,
-and $f*g$ are undefined for $t < 0$.
+\pause
+= \tfrac{1}{2} \, t \sin (\omega t) .
+$
+
+\medskip
+\pause
+
+Only for $t \geq 0$. \quad  $f$, $g$, and $f*g$ are undefined for $t < 0$.
 
 \end{frame}
 
 \begin{frame}
-
-Convolution has many properties that make it behave like a product.
-Let $c$ be a constant and $f$, $g$, and $h$ be functions.  Then it is a
-calculus exercise to show
+Convolution is sort of like a product.  If $f,g,h$ are functions and $c$
+is a constant, then
 \begin{align*}
 & f * g = g * f , \\
 & (c f) * g = f * (c g) = c (f*g) , \\
 & (f+g) * h = f * h + g * h , \\
 & ( f * g ) * h = f * ( g * h ) .
 \end{align*}
-The most interesting property for us is the following theorem.
 
-\begin{theorem}
+
+\medskip
+\pause
+
+For us, the most
+interesting property is
+
+\medskip
+
+\textbf{Theorem:}
 If $f(t)$ and $g(t)$ are of exponential order, then
 so is $(f*g)(t)$ and
 \begin{equation*}
@@ -124,104 +146,138 @@ so is $(f*g)(t)$ and
 =
 \mathcal{L} \bigl\{ f(t) \bigr\} \mathcal{L} \bigl\{ g(t) \bigr\} .
 \end{equation*}
-\end{theorem}
 
-In other words, the Laplace transform of a convolution is the product
-of the Laplace transforms.  The simplest way to use this result is in
-reverse.
+\medskip
+\pause
 
-\begin{example}
-Suppose we have the function of $s$
-defined by
-\begin{equation*}
-\frac{1}{(s+1)s^2} = 
-\frac{1}{s+1}\,
-\frac{1}{s^2} .
-\end{equation*}
-We recognize the two entries of \tableref{ltd:table}.  That is,
-\begin{equation*}
-\mathcal{L}^{-1} 
-\left\{
-\frac{1}{s+1} \right\}
-= e^{-t}
-\qquad \text{and} \qquad
-\mathcal{L}^{-1} 
-\left\{
-\frac{1}{s^2} \right\} 
-= t.
-\end{equation*}
-Therefore,
-\begin{equation*}
-\mathcal{L}^{-1}
-\left\{
-\frac{1}{s+1}\,
-\frac{1}{s^2} \right\}
-=
-\int_0^t
-\tau e^{-(t-\tau)} \,d\tau
-=
-e^{-t}+t-1 .
-\end{equation*}
-The calculation of the integral involved an integration by parts.
-\end{example}
+So the Laplace transform of a convolution is the product
+of the Laplace transforms:
+
+\medskip
+\qquad
+${\mathcal{L}} \bigl\{ (f*g)(t) \bigr\} = F(s)G(s)$,
+\pause
+\qquad
+or in reverse,
+\qquad
+${\mathcal{L}}^{-1} \bigl\{ F(s) G(s) \bigr\} = (f*g)(t)$.
+
+
 
 \end{frame}
 
 \begin{frame}
+\textbf{Example:}
+Suppose we wish to find the inverse Laplace transform of
+\[
+\frac{1}{s^2 (s+1)} \pause = 
+\frac{1}{s^2}
+\,
+\frac{1}{s+1}
+.
+\]
+\pause
+We recognize
+\[
+\mathcal{L}^{-1} 
+\left\{
+\frac{1}{s^2} \right\} 
+= t
+\qquad \text{and} \qquad
+\mathcal{L}^{-1} 
+\left\{
+\frac{1}{s+1} \right\}
+= e^{-t} .
+\]
+\pause
+Therefore,
+\[
+\mathcal{L}^{-1}
+\left\{
+\frac{1}{s^2(s+1)}
+\right\}
+\pause
+=
+\mathcal{L}^{-1}
+\left\{
+\frac{1}{s^2}
+\,
+\frac{1}{s+1}
+\right\}
+\pause
+=
+\underbrace{
+\int_0^t
+\tau e^{-(t-\tau)} \,d\tau
+}_{\mathclap{\text{convolution of } t \text{ and } e^{-t}}}
+\pause
+=
+\text{(integration by parts)}
+=
+\pause
+e^{-t}+t-1 .
+\]
 
-{Solving ODEs}
+\end{frame}
 
-The next example demonstrates the full power of the convolution and
-the Laplace transform.  We can give the solution to
-the forced oscillation problem for any forcing function as a definite
-integral.
+\begin{frame}
+\textbf{Example:}
+Solve \quad 
+$x'' + \omega_0^2 x = f(t) , \quad x(0) = 0, \quad x'(0) = 0$.
 
-\begin{example} \label{example:undampedforcedbylaplacearbitrhs}
-Find the solution to
-\begin{equation*}
-x'' + \omega_0^2 x = f(t) , \quad x(0) = 0, \quad x'(0) = 0 ,
-\end{equation*}
-for an arbitrary function $f(t)$.
+\medskip
+\pause
 
-We first apply the Laplace transform to the equation.  Denote
-the transform of $x(t)$ by $X(s)$ and the transform of $f(t)$ by
-$F(s)$ as usual.  We get
-\begin{equation*}
-s^2 X(s) + \omega_0^2 X(s) = F(s) ,
-\end{equation*}
-or in other words,
-\begin{equation*}
-X(s) = \frac{1}{s^2+ \omega_0^2} F(s).
-\end{equation*}
-Recall that $H(s) = \frac{1}{s^2+ \omega_0^2}$ is the transfer function.
-We know
-\begin{equation*}
+Apply Laplace: \quad
+$s^2 X(s) + \omega_0^2 X(s) = F(s)$,
+\pause
+\quad
+or
+\quad
+$X(s) = \dfrac{1}{s^2+ \omega_0^2} F(s)$.
+
+\medskip
+\pause
+
+$H(s) = \frac{1}{s^2+ \omega_0^2}$ is the transfer function
+and
+$
 {\mathcal{L}}^{-1} \left\{
 \frac{1}{s^2+ \omega_0^2}
 \right\} = 
-\frac{\sin (\omega_0 t)}{\omega_0} .
-\end{equation*}
-Therefore,
-\begin{equation*}
+\frac{\sin (\omega_0 t)}{\omega_0}$.
+
+\medskip
+\pause
+
+To find $
+x(t) = 
+{\mathcal{L}}^{-1} \bigl\{
+X(s)
+\bigr\}
+=
+{\mathcal{L}}^{-1} \bigl\{
+H(s) F(s)
+\bigr\}$, we use convolution:
+\[
 x(t) = 
 \int_0^t
 \frac{\sin (\omega_0 \tau)}{\omega_0}
-f(t-\tau) \, d\tau ,
-\end{equation*}
-or, if we reverse the order,
-\begin{equation*}
-x(t) = 
+f(t-\tau) \, d\tau 
+\pause
+=
 \int_0^t
 f(\tau) 
 \frac{\sin \bigl( \omega_0 (t-\tau) \bigr)}{\omega_0} \, d\tau .
-\end{equation*}
-\end{example}
-
-Notice one more feature of the example above.
-We can now see how Laplace transform
-handles resonance.  Suppose that $f(t) =
-\cos (\omega_0 t)$.  Then
-\begin{equation*}
+\]
+\pause
+Let's see how Laplace handles resonance:
+\quad
+Suppose $f(t) =
+\cos (\omega_0 t)$.
+\pause\quad
+Then
+\[
 x(t) = 
 \int_0^t
 \frac{\sin (\omega_0 \tau)}{\omega_0} \,
@@ -231,10 +287,10 @@ x(t) =
 \int_0^t
 \sin ( \omega_0 \tau ) \,
 \cos \bigl(\omega_0 (t-\tau) \bigr) \, d\tau .
-\end{equation*}
-We have computed the convolution of sine and cosine in
-\exampleref{ltc:convsincosex}.  Hence
-\begin{equation*}
+\]
+\pause
+We just computed convolution of sine and cosine a moment ago!
+\[
 x(t) =
 \left(
 \frac{1}{\omega_0}
@@ -248,82 +304,106 @@ t
 \frac{1}{2 \omega_0} \,
 t
 \sin ( \omega_0 t ).
-\end{equation*}
-Note the $t$ in front of the sine.  The solution, therefore, grows without
-bound as $t$ gets large, meaning we get resonance.
+\]
+\pause
+The $t$ in front of the sine causes oscillations growing without
+bound, that is, resonance.
 
-The general idea here is that if $H(s)$ is the transfer function, then
-$X(s)=H(s)F(s)$.
-If we find the $h(t) = {\mathcal{L}}^{-1}\bigl\{ H(s) \bigr\}$, then
-\begin{equation*}
+\end{frame}
+
+\begin{frame}
+The general idea for a constant coefficient
+\quad $Lx = f(t)$, \quad $x(0)=0$, \quad $x'(0)=0$, \quad
+is
+
+\medskip
+\pause
+
+Find the transfer function $H(s)$.
+
+\medskip
+\pause
+
+Then $X(s) = H(s)F(s)$.
+
+\medskip
+\pause
+
+If
+$h(t) = {\mathcal{L}}^{-1}\bigl\{ H(s) \bigr\}$, then
+\[
 x(t)
 = {\mathcal{L}}^{-1}\bigl\{ X(s) \bigr\}
 = {\mathcal{L}}^{-1}\bigl\{ F(s)H(s) \bigr\}
 = (f * h)(t)
 = \int_0^t f(\tau) h(t-\tau) \, d\tau .
-\end{equation*}
-Hence,
-we can solve any constant coefficient equation with an arbitrary forcing
-function $f(t)$ as a definite integral using convolution.
-A definite integral, rather than a closed form solution, is usually enough
-for most practical purposes.  It is
-not hard to numerically evaluate a definite integral.
+\]
+\pause
+We solve for an arbitrary 
+forcing function $f(t)$ as a definite integral using convolution.
 
 \end{frame}
 
 \begin{frame}
+A common integral equation
+is the \emph{Volterra integral equation}:
 
-{Volterra integral equation}
+\medskip
 
-A common integral equation\index{integral equation}
-is the \emph{Volterra integral equation}%
-\footnote{Named for the Italian mathematician
-\href{https://en.wikipedia.org/wiki/Vito_Volterra}{Vito Volterra}
-(1860--1940).}
-\begin{equation*}
-x(t) = f(t) + \int_0^t g(t-\tau) x(\tau) \, d\tau ,
-\end{equation*}
-where $f(t)$ and $g(t)$ are known functions and $x(t)$ is an unknown we
-wish to solve for.
-To find $x(t)$,
-we apply the Laplace transform to the equation to obtain 
-\begin{equation*}
-X(s) = F(s) + G(s) X(s) ,
-\end{equation*}
-where $X(s)$, $F(s)$, and $G(s)$ are the Laplace transforms of $x(t)$, $f(t)$, and
-$g(t)$ respectively.  We find
-\begin{equation*}
-X(s) = \frac{F(s)}{1-G(s)} .
-\end{equation*}
-To find $x(t)$, we now need to find the 
-inverse Laplace transform of $X(s)$.
+\quad
+$\displaystyle
+x(t) = f(t) + \int_0^t g(t-\tau) x(\tau) \, d\tau$,
+\quad 
+where $f(t)$ and $g(t)$ are known,
+and $x(t)$ is the unknown.
 
-\begin{example}
-Solve
-\begin{equation*}
-x(t) =  e^{-t} + \int_0^t \sinh(t-\tau) x(\tau) \, d\tau .
-\end{equation*}
+\medskip
+\pause
 
-We apply Laplace transform to obtain
-\begin{equation*}
-X(s) = \frac{1}{s+1} + \frac{1}{s^2-1} X(s) ,
-\end{equation*}
+To find $x(t)$ apply Laplace:
+\quad
+$X(s) = F(s) + G(s) X(s)$,
+\pause
+\quad
 or
-\begin{equation*}
+\quad
+$X(s) = \dfrac{F(s)}{1-G(s)}$, \pause \quad then invert.
+
+\medskip
+\pause
+
+\textbf{Example:}
+Solve
+\quad
+$\displaystyle
+x(t) =  e^{-t} + \int_0^t \sinh(t-\tau) x(\tau) \, d\tau$.
+
+\medskip
+\pause
+
+Apply Laplace:
+\[
+X(s) = \frac{1}{s+1} + \frac{1}{s^2-1} X(s) .
+\]
+\pause
+Solve for $X(s)$:
+\[
 X(s) = \frac{\frac{1}{s+1}}{1- \frac{1}{s^2-1}}
+\pause
 =
 \frac{s-1}{s^2 - 2}
+\pause
 =
 \frac{s}{s^2 - 2}
 -
 \frac{1}{s^2 - 2} .
-\end{equation*}
-It is not hard to apply \tablevref{lt:table} to find
-\begin{equation*}
+\]
+\pause
+Using the table, invert:
+\[
 x(t) = \cosh \bigl( \sqrt{2} \, t \bigr) -
 \frac{1}{\sqrt{2}} \sinh \bigl( \sqrt{2}\, t \bigr).
-\end{equation*}
-\end{example}
+\]
 
 \end{frame}
 
