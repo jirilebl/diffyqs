@@ -103,7 +103,7 @@ y' = e^{-x^2}, \qquad y(0) = 1 .
 
 By the preceding discussion, the solution must be
 \begin{equation*}
-y(x) = \int_0^x e^{-s^2} \,ds + 1 .
+y(x) = \int_0^x e^{-t^2} \,dt + 1 .
 \end{equation*}
 Here is a good way to make fun of your friends taking second semester
 calculus.  Tell them to
@@ -257,15 +257,16 @@ The equation with initial conditions is
 \begin{equation*}
 x'' = t^2 , \qquad x(0) = 1 , \qquad x'(0) = 10 .
 \end{equation*}
-What if we say $x' = v$.  Then we have the problem
+We can add a new dependent variable $v$ and declare that $x' = v$.  Then we solve
 \begin{equation*}
 v' = t^2, \qquad v(0) = 10 .
 \end{equation*}
-Once we solve for $v$, we can integrate and find $x$.
+Once we find $v$, we solve $x' = v$, $x(0)=1$ to find $x$.
+We leave the integration to the reader.
 \end{example}
 
 \begin{exercise}
-Solve for $v$, and then solve for $x$.  Find $x(10)$ to answer the
+Solve for $v$, then solve for $x$.  Find $x(10)$ to answer the
 question.
 \end{exercise}
 
@@ -410,7 +411,7 @@ As we said, the general first order equation we are studying looks like
 \begin{equation*}
 y' = f(x,y).
 \end{equation*}
-A lot of the time, we cannot simply solve these kinds of equations explicitly.
+Frequently, we cannot simply solve these kinds of equations explicitly.
 It would be nice if we could at least figure out the shape and behavior of
 the solutions, or find approximate solutions.
 
@@ -513,7 +514,7 @@ What do you think is the answer?
 The answer seems to be yes to both does it not?  Well, pretty much.  But there
 are cases when the answer to either question can be no.
 
-Since generally the equations we encounter in applications
+Since the equations we encounter in applications
 come from real life situations, it seems
 logical that a solution always exists.
 It also has to be unique if we believe our
@@ -530,7 +531,7 @@ y' = \frac{1}{x}, \qquad y(0) = 0 .
 
 Integrate to find the general solution $y = \ln \, \lvert x \rvert + C$.  The
 solution does not exist at $x=0$.  See \figurevref{1.3:xinvfig}.
-Moreover,
+You may say one can see the division by zero a mile away, but
 the equation may have been written as the seemingly harmless $x y' = 1$.
 
 \begin{myfig}
@@ -613,13 +614,13 @@ If $A=0$, then $y=0$ is a solution.
 
 For example, when $A=1$
 the solution \myquote{blows up} at $x=1$.  Hence, the solution does not exist
-for all $x$ even if the equation is nice everywhere.  The equation
+for all $x$ even if the equation itself is nice everywhere.  The equation
 $y' = y^2$ certainly
 looks nice.
 \end{example}
 
 For most of this
-course we will be interested in equations where existence and
+course, we will be interested in equations where existence and
 uniqueness holds, and in fact holds \myquote{globally} unlike for the equation
 $y'=y^2$.
 %But it is necessary to understand the examples where things fail for the
@@ -1053,7 +1054,7 @@ $T = 22 + 67\, e^{-kt}$.  The second condition says $85 = T(1) =
 $k = - \ln \frac{85-22}{67} \approx 0.0616$.  Now we solve for the time $t$
 that gives us a temperature of 60 degrees.  Namely, we solve
 \begin{equation*}
-60 = 22 + 67 e^{-0.0616t}
+60 = 22 + 67 e^{-0.0616\,t}
 \end{equation*}
 to get
 $t = - \frac{\ln \frac{60-22}{67}}{0.0616} \approx 9.21$ minutes.  So Bob can
@@ -1078,8 +1079,8 @@ with a horizontal line at the ambient temperature 22.\label{sintro:coffeefig}}
 Find the general solution to $y' = \frac{-xy^2}{3}$
 (including any singular solutions).
 
-First note that $y=0$ is a solution (a singular solution).
-Now assume that $y \not= 0$.
+First, note that $y=0$ is a solution (a singular solution).
+Next, assume $y \not= 0$ and separate:
 \begin{align*}
 \frac{-3}{y^2} y' & = x , \displaybreak[0]\\
 \frac{3}{y} & = \frac{x^2}{2} + C , \displaybreak[0]\\
