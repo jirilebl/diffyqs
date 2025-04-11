@@ -6326,22 +6326,22 @@ We get the two equations
 & \xi_1' = -2\xi_1 + e^t -t, & & \text{where } \xi_1(0) = a_1 = \frac{1}{4} , \\
 & \xi_2' = 4\xi_2 + e^t + t, & & \text{where } \xi_2(0) = a_2 = \frac{-1}{16} .
 \end{align*}
-We solve with integrating factor.  Computation of the integral is left as
+We solve with the integrating factor method.  Computation of the integral is left as
 an exercise to the student.  You will need integration by parts.
 \begin{equation*}
 \xi_1 = e^{-2t}\int e^{2t} \, (e^t-t) \, dt + C_1 e^{-2t} = 
-\frac{e^t}{3}-\frac{t}{2}+\frac{1}{4}+C_1 e^{-2t} .
+\frac{e^t}{3}-\frac{t}{2}+\frac{1}{4}+C_1 e^{-2t} ,
 \end{equation*}
-$C_1$ is the constant of integration.
+where $C_1$ is the constant of integration.
 As $\xi_1(0) = \nicefrac{1}{4}$, then $\nicefrac{1}{4}= \nicefrac{1}{3}
-+ \nicefrac{1}{4} + C_1$ and hence
++ \nicefrac{1}{4} + C_1$ and
 $C_1 = \nicefrac{-1}{3}$.
-Similarly
+Similarly,
 \begin{equation*}
 \xi_2 = e^{4t}\int e^{-4t} \, (e^t+ t) \, dt + C_2 e^{4t} = 
 -\frac{e^t}{3}-\frac{t}{4}-\frac{1}{16} + C_2 e^{4t} .
 \end{equation*}
-As $\xi_2(0) = \nicefrac{-1}{16}$ we have $\nicefrac{-1}{16}= \nicefrac{-1}{3}
+As $\xi_2(0) = \nicefrac{-1}{16}$, we have $\nicefrac{-1}{16}= \nicefrac{-1}{3}
 -\nicefrac{1}{16} + C_2$ and hence
 $C_2 = \nicefrac{1}{3}$.
 The solution is
@@ -6410,12 +6410,12 @@ e^t \\
 t
 \end{smallmatrix} \right]$.
 
-Note that we can solve this system in an easier way (can you see how?), but
-for the purposes of the example, let us use the eigenvalue method plus
+One can solve this system in an easier way (can you see how?), but
+for the purposes of the example, we use the eigenvalue method and
 undetermined coefficients.
 The eigenvalues of $A$ are 
-$-1$ and 1 and corresponding eigenvectors
-are
+$-1$ and $1$.
+Corresponding eigenvectors are
 $\left[ \begin{smallmatrix}
 1 \\
 1
@@ -6424,7 +6424,7 @@ $\left[ \begin{smallmatrix}
 0 \\
 1
 \end{smallmatrix} \right]$ respectively.
-Hence our complementary solution is
+Hence, our complementary solution is
 \begin{equation*}
 \vec{x}_c = 
 \alpha_1
@@ -6441,7 +6441,7 @@ e^{t} ,
 \end{equation*}
 for some arbitrary constants $\alpha_1$ and $\alpha_2$.
 
-We would want to guess a particular solution of
+We would next want to guess a particular solution of the form
 \begin{equation*}
 \vec{x} = 
 \vec{a}
@@ -6458,7 +6458,7 @@ is a multiple of $\left[ \begin{smallmatrix}
 1
 \end{smallmatrix} \right]$, we do not know if a conflict
 arises.  It is possible that there is no conflict,
-but to be safe we should also try
+but to be safe we also try
 $\vec{b} t e^t$.
 Here we find
 the crux of the difference between a single equation and systems.  We try
@@ -6478,7 +6478,8 @@ e^{t}
 t +
 \vec{d}.
 \end{equation*}
-Thus we have 8 unknowns.  We write
+We have 8 unknowns:
+We write
 $\vec{a} =
 \Bigl[ \begin{smallmatrix} a_1 \\ a_2 \end{smallmatrix} \Bigr]$,
 $\vec{b} =
@@ -6593,18 +6594,18 @@ c_1 & = -d_1 , \\
 b_2 & = -2b_1+b_2 , &
 c_2 & = -2d_1+d_2 .
 \end{align*}
-We could write the $8 \times 9$ augmented matrix and start row
-reduction, but it is easier to just solve the equations in an ad hoc
-manner. Immediately we see that $b_1 = 0$, $c_1 = 0$, $d_1 = 0$.  Plugging
+We could write the $8 \times 9$ augmented matrix and do row
+reduction, but it is easier to solve these in an ad hoc
+manner. Immediately, we see $b_1 = 0$, $c_1 = 0$, $d_1 = 0$.  Plugging
 these
-back in, we get that $c_2 = -1$ and $d_2 = -1$.  The remaining equations
+back in, we get $c_2 = -1$ and $d_2 = -1$.  The remaining equations
 that tell us something are
 \begin{align*}
 a_1 & = -a_1+1 , \\
 a_2+b_2 & = -2a_1+a_2 .
 \end{align*}
 So $a_1 = \nicefrac{1}{2}$ and $b_2 = -1$.  Finally, $a_2$ can be arbitrary and still satisfy the
-equations.  We are looking for just a single solution so presumably the
+equations.  We are looking for just a single solution, so presumably the
 simplest
 one is when $a_2 = 0$.
 Therefore,
@@ -6645,16 +6646,24 @@ t
 -te^t - t - 1
 \end{bmatrix} .
 \end{equation*}
-That is, $x_1 = \frac{1}{2}\,e^t$, $x_2 = 
--te^t - t - 1$.  We would add this to the complementary solution to get the
-general solution of the problem.  Notice that both $\vec{a} e^t$
-and $\vec{b} te^t$ were really needed.
+That is, $x_1 = \frac{1}{2}\,e^t$,
+$x_2 = -te^t - t - 1$.
+We add this particular solution to the complementary solution to get the
+general solution of the problem:
+\begin{equation*}
+x_1 = \frac{1}{2}\,e^t + 
+\alpha_1 e^{-t} \quad \text{and} \quad
+x_2 = -te^t - t - 1 + \alpha_1 e^{-t} + \alpha_2 e^{t}.
+\avoidbreak
+\end{equation*}
+Notice that both $\vec{a} e^t$
+and $\vec{b} te^t$ really were needed.
 \end{example}
 
 \begin{exercise}
-Check that $x_1$ and $x_2$ solve the problem.  Try setting $a_2 = 1$
-and check we get a solution as well.  What is the difference between the two
-solutions we obtained (one with $a_2=0$ and one with $a_2=1$)?
+Check that $x_1$ and $x_2$ solve the problem.  Then set $a_2 = 1$
+and check this solution as well.  What is the difference between the two
+solutions (one with $a_2=0$ and one with $a_2=1$)?
 \end{exercise}
 
 As you can see, other than the handling of conflicts, undetermined
@@ -6674,22 +6683,22 @@ However, this method works for any linear system, even if it is not
 constant coefficient, provided we somehow solve the associated
 homogeneous problem.
 
-Suppose we have the equation
+Consider the equation
 \begin{equation} \label{nhsys:nhvceq}
 {\vec{x}}' = A(t) \, \vec{x} + \vec{f}(t) .
 \end{equation}
-Further, suppose we solved the associated homogeneous equation
+Suppose we somehow solved the associated homogeneous equation
 ${\vec{x}}' = A(t) \, \vec{x}$ and found
 a fundamental matrix solution
 $X(t)$.  The general solution to the associated homogeneous equation
-is $X(t) \vec{c}$ for a constant vector $\vec{c}$.  Just like for
-variation of parameters for single equation we try the solution
+is $X(t) \vec{c}$ for a constant vector $\vec{c}$.  As in
+variation of parameters for single equation, we try the solution
 to the nonhomogeneous equation of the form
 \begin{equation*}
 \vec{x}_p = X(t)\, \vec{u}(t) ,
 \end{equation*}
 where $\vec{u}(t)$ is a vector-valued function instead of a constant.
-We substitute $\vec{x}_p$ into \eqref{nhsys:nhvceq} to obtain
+We substitute $\vec{x}_p$ into \eqref{nhsys:nhvceq}:
 \begin{equation*}
 %{\vec{x}_p}'(t)
 %=
@@ -6700,21 +6709,22 @@ _{{\vec{x}_p}'(t)}
 _{A(t) \vec{x}_p (t)} 
  + \vec{f}(t) .
 \end{equation*}
-But $X(t)$ is a fundamental matrix solution to the homogeneous problem.
-So $X'(t) = A(t)X(t)$, and
+As $X(t)$ is a fundamental matrix solution to the homogeneous problem,
+that is,
+$X'(t) = A(t)X(t)$, we find
 \begin{equation*}
 \cancel{X'(t)\, \vec{u}(t)} + X(t)\, {\vec{u}}'(t)
 =
 \cancel{X'(t)\, \vec{u}(t)} + \vec{f}(t) .
 \end{equation*}
-Hence
-$X(t)\, {\vec{u}}'(t) = \vec{f}(t)$.  If we compute
+Hence,
+$X(t)\, {\vec{u}}'(t) = \vec{f}(t)$.  We compute
 $\left[X(t)\right]^{-1}$,
-then
+and then
 ${\vec{u}}'(t) = \left[X(t)\right]^{-1}\vec{f}(t)$.  We integrate
-to obtain $\vec{u}$ and we have the particular solution
+to obtain $\vec{u}$, and we have the particular solution
 $\vec{x}_p = X(t)\, \vec{u}(t)$.
-Let us write this as a formula
+Hence, we have the formula
 \begin{equation*}
 \mybxbg{~~
 \vec{x}_p = 
@@ -6745,7 +6755,7 @@ t & -1 \\
 + \begin{bmatrix} t \\ 1 \end{bmatrix} \,(t^2+1) .
 \end{equation}
 
-Here $A = 
+Here, $A = 
 \frac{1}{t^2+1}
 \left[ \begin{smallmatrix}
 t & -1 \\
@@ -6757,8 +6767,8 @@ $X =
 1 & -t \\
 t & 1
 \end{smallmatrix} \right]$ solves
-$X'(t) = A(t) X(t)$.  Once we know the complementary solution we can easily find
-a solution to \eqref{nhsys:vcexeq}.  First we find
+$X'(t) = A(t) X(t)$.  Once we know the complementary solution, we can find
+a solution to \eqref{nhsys:vcexeq}.  First, we compute
 \begin{equation*}
 \left[ X(t) \right]^{-1}
 =
@@ -6768,7 +6778,7 @@ a solution to \eqref{nhsys:vcexeq}.  First we find
 -t & 1
 \end{bmatrix} .
 \end{equation*}
-Next we know a particular solution to
+Next, we know a particular solution to
 \eqref{nhsys:vcexeq} is
 \begin{equation*}
 \begin{split}
@@ -6819,7 +6829,7 @@ t^2 \\
 \end{bmatrix}  .
 \end{split}
 \end{equation*}
-Adding the complementary solution we find the general solution
+Adding the complementary solution, we find the general solution
 to \eqref{nhsys:vcexeq}:
 \begin{equation*}
 \vec{x} =
@@ -6855,9 +6865,9 @@ Check that $x_1 =
 \eqref{nhsys:vcexeq}.
 \end{exercise}
 
-In the variation of parameters, just like in the integrating factor method
+In the variation of parameters, as in the integrating factor method,
 we can obtain the general solution by adding in constants of integration.
-That is, we will add $X(t) \vec{c}$ for a vector of arbitrary constants.  But
+Doing so would add $X(t) \vec{c}$ for a vector $\vec{c}$ of arbitrary constants.  But
 that is precisely the complementary solution.
 
 \subsection{Second order constant coefficients}
@@ -6871,20 +6881,21 @@ for second order systems in \sectionref{sol:section}.
 This method is essentially the same as undetermined coefficients for first
 order systems.
 There are some simplifications that we can make, as we did in 
-\sectionref{sol:section}.  Let the equation be
+\sectionref{sol:section}.  Consider the equation
 \begin{equation*}
 {\vec{x}}'' = A \vec{x} + \vec{F}(t) ,
 \end{equation*}
 where $A$ is a constant matrix.  If $\vec{F}(t)$ is of the form
 $\vec{F}_0 \cos (\omega t)$, then as two derivatives of cosine is again
-cosine we can try a solution of the form
+cosine,
+we do not need to introduce sines, and
+we try a solution of the form
 \begin{equation*}
-\vec{x}_p = \vec{c} \cos (\omega t) ,
+\vec{x}_p = \vec{c} \cos (\omega t) .
 \end{equation*}
-and we do not need to introduce sines.
 
 If the $\vec{F}$ is a sum of
-cosines, note that we still have the superposition principle.
+cosines, recall the superposition principle.
 If $\vec{F}(t) =
 \vec{F}_0 \cos (\omega_0 t) + 
 \vec{F}_1 \cos (\omega_1 t)$, then we would try
@@ -6894,13 +6905,13 @@ $\vec{b} \cos (\omega_1 t)$ for the problem
 ${\vec{x}}'' = A \vec{x} + \vec{F}_1 \cos (\omega_1 t)$.  Then we sum the
 solutions.
 
-However, if there is duplication with the
+If there is duplication with the
 complementary solution, or the equation is of the form
 ${\vec{x}}'' = A{\vec{x}}'+ B \vec{x} + \vec{F}(t)$, then we need
 to do the same thing as we do for first order systems.
 
-You will never go wrong with putting in more terms than needed into
-your guess.  You will find that the extra coefficients will turn out to
+You can never go wrong by putting in more terms than needed into
+your guess.  Those extra coefficients will turn out to
 be zero.  But it is useful to save some time and effort.
 
 \subsubsection{Eigenvector decomposition}
@@ -6992,13 +7003,11 @@ We write
 $\vec{x}(t) =
 \vec{v}_1 \xi_1(t) +
 \vec{v}_2 \xi_2(t) + \cdots +
-\vec{v}_n \xi_n(t)$, and we are done; we have a particular solution.
-We find the general solutions for $\xi_1$ through $\xi_n$, and
-again
+\vec{v}_n \xi_n(t)$ to find a particular solution.
+If we find the general solutions for $\xi_1$ through $\xi_n$, then
 $\vec{x}(t) =
 \vec{v}_1 \xi_1(t) + \vec{v}_2 \, \xi_2(t) + \cdots +
-\vec{v}_n \xi_n(t)$ is the general solution (and not just a particular
-solution).
+\vec{v}_n \xi_n(t)$ is the general solution as well.
 
 \begin{example}
 Let us do the example from \sectionref{sol:section} using this method.
