@@ -5322,9 +5322,8 @@ a)~3 \quad b)~2 \quad c)~3 \quad d)~2 \quad e)~3
 \subsection{Inner product and orthogonality}
 
 To do basic geometry, we need length, and we need angles.
-We have already seen the euclidean length, so let us figure out how to
-compute angles. 
- Mostly, we are worried about 
+We have already seen the euclidean length, so let us figure out angles. 
+Mostly, we are worried about 
 the right angle\footnote{When Euclid defined angles in his
 \emph{Elements}, the only angle he ever really defined was the right angle.}.
 
@@ -5388,14 +5387,17 @@ How does it give angles?
 %  If we take two vectors $\vec{x}$ and $\vec{y}$
 %and base them at the same point, they make an angle $\theta$.  How do
 %we compute $\theta$?
-
-You may recall from multivariable calculus, that in
-two or three dimensions, the standard inner product (the dot product)
-gives you the angle between the vectors:
+You may recall a formula
+for the standard inner product (the dot product)
+from multivariable calculus in
+two or three dimensions
+in terms of
+the angle $\theta$ between the vectors:
 \begin{equation*}
 \langle \vec{x}, \vec{y} \rangle
 =
 \lVert{\vec{x}}\rVert \lVert{\vec{y}}\rVert \cos \theta.
+\avoidbreak
 \end{equation*}
 That is, $\theta$ is the angle that $\vec{x}$ and $\vec{y}$ make
 when they are based at the same point.
@@ -5623,7 +5625,7 @@ magnitude.
 
 The reason why we are interested in orthogonal (or orthonormal) bases is
 that they make it really simple to represent a vector (or a projection onto
-a subspace) in the basis.  The simple formula for the orthogonal projection
+a subspace) in the basis.  The formula for the orthogonal projection
 onto a vector gives us the coefficients.  In 
 \chapterref{FS:chapter}, we use the same idea by finding the correct 
 orthogonal basis for the set of solutions of a differential equation.

@@ -374,6 +374,12 @@ the others.
 We are mostly 
 interested in their direction and relative size.  See
 \figurevref{sintro-vectorfield:fig}.
+The diagrams we drew in
+\sectionref{auteq:section}
+for autonomous equations in one dimension
+are similar,
+but note how much more complicated things become when we
+allow just one extra dimension.
 
 We can draw a path of the solution in the plane.  Suppose the
 solution is given by $x = f(t)$, $y=g(t)$.  We pick an interval
@@ -407,11 +413,6 @@ to the top right end of the plotted solution curve in the figure.
  \label{sintro-vectorfield-sol:fig}}
 }
 \end{myfig}
-
-
-Notice the similarity to the diagrams we drew for autonomous systems in one
-dimension.  But note how much more complicated things become when we
-allow just one extra dimension.
 
 We can draw phase portraits and trajectories in the $xy$-plane
 even if the system is not autonomous.  In this case, however, we cannot draw
@@ -457,7 +458,7 @@ we may not have a solution for all time $t$, but at least for some
 short period of time.
 
 As we can change any $n$th order ODE into a first order system,
-then we notice that this theorem provides also the
+we notice that this theorem provides also the
 existence and uniqueness of solutions for higher order equations
 that we have until now not stated explicitly.
 
@@ -1007,11 +1008,11 @@ use this notation in this book.
 Think of the determinants telling you the scaling of a mapping.  
 If $B$ doubles the sizes of geometric objects and $A$ triples them,
 then $AB$ (which applies $B$ to an object and then $A$) should make size
-go up by a factor of $6$.  This is true in general:
+go up by a factor of $6 = 3 \cdot 2$.  This is true in general:
 \begin{equation*}
 \det(AB) = \det(A)\det(B) .
 \end{equation*}
-This property is one of the most useful, and it is employed often to 
+This property is one of the most useful, and it can be employed to 
 actually compute determinants.  A particularly interesting consequence is to
 note what it means for existence of inverses.
 Take $A$ and $B$ to be inverses of each other, that is $AB=I$.  Then
@@ -1711,14 +1712,13 @@ X(t_0)\,\vec{c} = \vec{b} - \vec{x}_p(t_0) .
 \end{equation*}
 
 \begin{example}
-In \sectionref{sec:introtosys} we solved the system
+In \examplevref{example:simplesystem}, we solved the system
 \begin{align*}
 x_1' & = x_1 , \\
 x_2' & = x_1 - x_2 ,
 \end{align*}
 with initial conditions $x_1(0) = 1$, $x_2(0) = 2$.
 Let us consider this problem in the language of this section.
-
 The system is homogeneous, so $\vec{f}(t) = \vec{0}$.
 We write the system and the initial conditions as
 \begin{equation*}
@@ -1737,13 +1737,14 @@ We write the system and the initial conditions as
 \end{bmatrix} .
 \end{equation*}
 
-We found the general solution is
+Ignoring the initial condition for a moment,
+the general solution is
 $x_1 = c_1 e^t $ and
 $x_2 = \frac{c_1}{2}e^{t} + c_2e^{-t}$. 
 Letting $c_1=1$ and $c_2=0$, we obtain the solution
-$\left[ \begin{smallmatrix} e^t \\ (1/2) e^t \end{smallmatrix} \right]$.
+$\vec{x}(t) = \left[ \begin{smallmatrix} e^t \\ (1/2) e^t \end{smallmatrix} \right]$.
 Letting $c_1=0$ and $c_2=1$, we obtain
-$\left[ \begin{smallmatrix} 0 \\ e^{-t} \end{smallmatrix} \right]$.
+$\vec{x}(t) = \left[ \begin{smallmatrix} 0 \\ e^{-t} \end{smallmatrix} \right]$.
 These two solutions are linearly independent,
 as can be seen by setting
 $t=0$, and noting that the resulting constant vectors are
@@ -1757,7 +1758,7 @@ e^t & 0 \\
 \end{bmatrix} .
 \end{equation*}
 
-To solve the initial value problem we solve for $\vec{c}$ in the equation
+To solve the initial value problem, we solve for $\vec{c}$ in the equation
 \begin{equation*}
 X(0)\,\vec{c} = \vec{b} ,
 \end{equation*}
@@ -1977,7 +1978,7 @@ C_2 e^{t^2}
 \sectionnotes{2 lectures\EPref{, \S5.2 in \cite{EP}}\BDref{,
 part of \S7.3, \S7.5, and \S7.6 in \cite{BD}}}
 
-In this section we will learn how to solve linear homogeneous constant
+In this section, we will learn how to solve linear homogeneous constant
 coefficient systems of ODEs by the eigenvalue method.
 Suppose we have such a system
 \begin{equation*}
@@ -2860,7 +2861,7 @@ The derivative is a multiple of $\vec{v}$ and hence points along the
 line determined by $\vec{v}$.  As $\lambda > 0$, the derivative points in the
 direction of $\vec{v}$ when $\alpha$ is positive and in the opposite direction
 when $\alpha$ is negative.  We draw the lines determined by
-the eigenvectors, and we draw
+the eigenvectors and
 arrows on the lines to indicate the directions.
 See \figurevref{pln:source-eig-arrfig}.
 
@@ -2897,9 +2898,9 @@ The eigenvalues are $-1$ and $-2$ and corresponding eigenvectors are
 the same,
 $\left[ \begin{smallmatrix} 1 \\ 0 \end{smallmatrix} \right]$ and
 $\left[ \begin{smallmatrix} 1 \\ 1 \end{smallmatrix} \right]$.  The
-calculation and the picture are almost the same.  The only difference is that
-the eigenvalues are negative and hence all arrows are reversed.  We get the
-picture in \figurevref{pln:sink-fullfig}.  We call this kind of picture a
+calculation and the picture are almost the same.  The difference is that
+the eigenvalues are negative and arrows are reversed.  We get the
+picture in \figurevref{pln:sink-fullfig}.  We call this type of picture a
 \emph{\myindex{sink}} or a \emph{\myindex{stable node}}.
 
 \begin{myfig}
@@ -2921,12 +2922,12 @@ picture in \figurevref{pln:sink-fullfig}.  We call this kind of picture a
 \medskip
 
 \emph{Case 3.} Suppose one eigenvalue is positive and one is negative.
-For example the matrix
-$\left[ \begin{smallmatrix} 1 & 1 \\ 0 & -2 \end{smallmatrix} \right]$.
+For example, consider
+$P = \left[ \begin{smallmatrix} 1 & 1 \\ 0 & -2 \end{smallmatrix} \right]$.
 The eigenvalues are 1 and $-2$ and corresponding eigenvectors are
 $\left[ \begin{smallmatrix} 1 \\ 0 \end{smallmatrix} \right]$ and
 $\left[ \begin{smallmatrix} 1 \\ -3 \end{smallmatrix} \right]$.  We reverse
-the arrows on one line (corresponding to the negative eigenvalue) and we
+the arrows on the line corresponding to the negative eigenvalue and we
 obtain the picture in \figurevref{pln:saddle-fullfig}.  We call this picture a
 \emph{\myindex{saddle point}}.
 
