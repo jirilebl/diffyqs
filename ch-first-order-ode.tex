@@ -57,7 +57,7 @@ of antiderivatives).  There really exists only one integral and that
 is the definite integral.
 The only reason for the indefinite integral notation is that we can always
 write an antiderivative as a (definite) integral.  That is, by the fundamental
-theorem of calculus we can always write
+theorem of calculus, we can always write
 $\int f(x) \,dx + C$ as
 \begin{equation*}
 \int_{x_0}^x f(t) \,dt + C .
@@ -1051,8 +1051,8 @@ D$,
 and hence $D = 67$.  So
 $T = 22 + 67\, e^{-kt}$.  The second condition says $85 = T(1) = 
 22 + 67\, e^{-k}$.  Solving for $k$, we get
-$k = - \ln \frac{85-22}{67} \approx 0.0616$.  Now we solve for the time $t$
-that gives us a temperature of 60 degrees.  Namely, we solve
+$k = - \ln \frac{85-22}{67} \approx 0.0616$.  We solve for the time $t$
+that gives a temperature of 60 degrees.  Namely, we solve
 \begin{equation*}
 60 = 22 + 67 e^{-0.0616\,t}
 \end{equation*}
@@ -1096,7 +1096,7 @@ y = \frac{6}{x^2 + 2C} \qquad \text{and} \qquad y=0 .
 \subsection{Exercises}
 
 \begin{exercise}
-Solve $y' = \nicefrac{x}{y}$.
+Solve $y' = \dfrac{x}{y}$.
 \end{exercise}
 
 \begin{exercise}
@@ -1165,7 +1165,7 @@ $x = e^{t^3}+1$
 
 \begin{exercise}
 Find an implicit solution for
-$x'=\frac{1}{3x^2+1}$, $x(0)=1$.
+$x'=\dfrac{1}{3x^2+1}$, $x(0)=1$.
 \end{exercise}
 \exsol{%
 $x^3+x=t+2$
@@ -1179,7 +1179,7 @@ $y = \frac{1}{1-\ln x}$
 }
 
 \begin{exercise}
-Find an implicit solution to $y' = \frac{\sin(x)}{\cos(y)}$.
+Find an implicit solution to $y' = \dfrac{\sin(x)}{\cos(y)}$.
 \end{exercise}
 \exsol{%
 $\sin(y) = -\cos(x) + C$
@@ -1246,7 +1246,7 @@ complicated.
 
 Solutions of linear equations have nice properties.  For example, the
 solution exists wherever $p(x)$ and $f(x)$ are defined, and has essentially the same
-regularity (read: it is just as nice).  But most importantly for us right now,
+regularity (read: it is just as nice).  Most importantly for us right now,
 there is a method for solving linear first order equations.
 
 The trick is to rewrite the left-hand side
@@ -1384,7 +1384,7 @@ and compare to \thmref{slope:picardthm}.
 
 
 \begin{example}
-Let us discuss a common
+We get to a common
 simple application of linear equations.
 Real life applications of this type of problem include
 figuring out the concentration of
@@ -1401,7 +1401,9 @@ liter is flowing in at the rate of 5 liters a minute.  The solution
 in the tank is well stirred and flows out at a rate of 3 liters a minute.
 How much salt is in the tank when the tank is full?
 
-Let us come up with the equation.  Let $x$ denote the kilograms of salt in the tank,
+To solve this problem, we need to find the differential equation
+for this setup.
+Let $x$ denote the kilograms of salt in the tank,
 let $t$ denote the time in minutes.  For a small change $\Delta t$ in
 time, the change in $x$ (denoted $\Delta x$) is approximately
 \begin{equation*}
@@ -1427,13 +1429,13 @@ In our example,
 \text{concentration out} &= \frac{x}{\text{volume}} = \frac{x}{60+(5-3)t} .
 \end{aligned}
 \end{equation*}
-Our equation is, therefore,
+Our differential equation is
 \begin{equation*}
 \frac{dx}{dt} =
 (5 \times 0.1)  - 
 \left(3 \frac{x}{60+2t}\right) .
 \end{equation*}
-Or in the form \eqref{lineq:eq1},
+In the form \eqref{lineq:eq1}, it is
 \begin{equation*}
 \frac{dx}{dt} +
 \frac{3}{60+2t} x
