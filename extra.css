@@ -1,5 +1,5 @@
 #ptx-content {
- max-width: 800px !important; text-align: justify !important;
+ max-width: 820px !important; text-align: justify !important;
 }
 /*
 #ptx-masthead {
@@ -95,4 +95,7 @@ hr.diffyqshr {
     border-style: none;
     height: 0px;
     border-top: thin solid #bbb;
+}
+.runestone-link {
+	display: none;
 }

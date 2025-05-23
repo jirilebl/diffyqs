@@ -6,6 +6,7 @@ my ($arg) = @ARGV;
 
 while($line = <STDIN>)
 {
+	$line =~ s{<span[^>]*><button id="light-dark-button".*</button></span>}{};
 	if ($line =~ m/<a class="index-button.*title="Index"/) {
 		# Add extra buttons
 
