@@ -12,13 +12,12 @@
 \subsection{Systems}
 
 Often we do not have just one dependent variable and one equation.
-And as we will see, we may end up with systems of several
-equations and several dependent variables even if we start with a single
-equation.
+We will see that we may end up with a system of several
+equations and several dependent variables even if we start with
+a single equation.
 
-If we have several dependent variables,
+Given several dependent variables,
 suppose $y_1$, $y_2$, \ldots, $y_n$,
-then
 we can have a differential equation involving all of them and their
 derivatives with respect to one independent variable $x$.
 For example, $y_1'' = f(y_1',y_2',y_1,y_2,x)$.
@@ -30,7 +29,7 @@ y_1'' & = f_1(y_1',y_2',y_1,y_2,x) , \\
 y_2'' & = f_2(y_1',y_2',y_1,y_2,x) ,
 \end{aligned}
 \end{equation*}
-for some functions $f_1$ and $f_2$.  We call the above a
+for some known functions $f_1$ and $f_2$.  We call the above a
 \emph{\myindex{system of differential equations}}.
 More precisely, the above is a \emph{\myindex{second order system}}
 of ODEs as second
@@ -60,16 +59,17 @@ x_3'(t) &= g_3\bigl(x_1(t),x_2(t),x_3(t),t\bigr) .
 \end{aligned}
 \end{equation*}
 
-We usually also have an
-\emph{initial condition}\index{initial condition for a system}.  Just like
-for single equations, we specify $x_1$, $x_2$, and $x_3$ for some fixed $t$.
+We may also have an
+\emph{initial condition}\index{initial condition for a system}.
+As for single equations, we specify $x_1$, $x_2$, and $x_3$ for some fixed $t$.
 For example, $x_1(0) = a_1$, $x_2(0) = a_2$, $x_3(0) = a_3$,
-where $a_1$, $a_2$, and $a_3$ are some constants.  For the second order
-system,
-we would also specify the first derivatives at a point.
-If we find a solution with some arbitrary constants in it, where by solving for the
-constants we find a solution for any initial condition, we call this
-solution the \emph{general solution}\index{general solution to a system}.
+where $a_1$, $a_2$, and $a_3$ are some constants.
+For a second order system,
+we must also specify the first derivatives at the initial point.
+If we find a solution with arbitrary constants in it,
+where solving for the constants gives a solution for
+any initial condition, we call this solution the
+\emph{general solution}\index{general solution to a system}.
 Best to look at a simple example.
 
 \begin{example} \label{example:simplesystem}
@@ -84,14 +84,14 @@ y_2' & = y_1 - y_2 ,
 \end{aligned}
 \end{equation*}
 with $y_1$, $y_2$ as the dependent variables and $x$ as the independent
-variable.  And consider initial conditions
+variable.  Consider initial conditions
 $y_1(0) = 1$, $y_2(0) = 2$.
 
 We note that $y_1 = C_1 e^x$ is the general solution of the first equation.
 We then plug this $y_1$ into the second equation
 and get the equation $y_2' = C_1e^x - y_2$, which is a linear first order
-equation that is easily solved for $y_2$.  By the method of integrating
-factor we get
+equation that is easily solved for $y_2$.
+By the integrating factor method, we get
 \begin{equation*}
 e^x y_2 = \frac{C_1}{2}e^{2x} + C_2 ,
 \end{equation*}
@@ -102,27 +102,30 @@ y_1 = C_1 e^x , \qquad
 y_2 = \frac{C_1}{2}e^{x} + C_2e^{-x} .
 \end{equation*}
 We solve for $C_1$ and $C_2$ given the initial conditions.
-We substitute $x=0$ and find
-that $C_1=1$ and $C_2=\nicefrac{3}{2}$.  Thus the solution is
+We substitute $x=0$ to find
+$1 = y_1(0) = C_1$ and
+$2 = y_2(0) = \nicefrac{C_1}{2} + C_2$,
+or in other words,
+$C_1=1$ and $C_2=\nicefrac{3}{2}$.  Thus the solution is
 $y_1 = e^x$, and
 $y_2 = (\nicefrac{1}{2}) e^x + (\nicefrac{3}{2}) e^{-x}$.
 \end{example}
 
 Generally, we will not be so lucky to be able to solve for
 each variable separately as in the 
-example above, and we will have to solve for all variables at once.
-While we won't generally be able to solve for one variable and then the
-next, we will try to salvage as much as possible from this technique.
-It will turn out that in a certain sense we will still (try to) solve
-a bunch of single equations and put their solutions together.  Let us not
-worry right now about how to solve systems yet.
+example---we will need to solve for all variables at once.
+While we cannot always solve one variable at a time,
+we will try to salvage as much as possible from this technique.
+In a certain sense, to solve systems, we will still (try to) solve
+a bunch of single equations and put their solutions together.
+Let us not worry right now about how to solve systems yet.
 
-We will mostly consider the \emph{\myindex{linear systems}}.  The example
-above (\exampleref{example:simplesystem})
-is a so-called \emph{\myindex{linear first order system}}.
+We will mostly consider \emph{\myindex{linear systems}}.
+\exampleref{example:simplesystem}
+is a \emph{\myindex{linear first order system}}.
 It is linear as none of the dependent variables or their derivatives
 appear in nonlinear functions or with powers
-higher than one ($y_1$, $y_2$, $y_1'$ and $y_2'$, constants, and functions of $x$
+higher than one ($y_1$, $y_2$, $y_1'$, $y_2'$, constants, and functions of $x$
 can appear, but not $y_1y_2$ or ${(y_2')}^2$ or $y_1^3$).
 Another, more
 complicated, example of a linear (second order) system is
@@ -135,13 +138,20 @@ y_2'' &= x y_1'-y_2' + 2 y_1 + \cos(x).
 
 \subsection{Applications}
 
-Let us consider some simple applications of systems and how to set up the
+We consider some simple applications of systems and how to set up the
 equations.
 
 \begin{example} \label{sintro:closedbrine-example}
 First, we consider salt and brine tanks, but this time water flows
-from one to the other and back.  We again consider that the tanks are
-evenly mixed.
+from one to the other and back.
+Imagine we have two tanks, each containing volume $V$ liters of salt brine.
+The amount of salt in the first tank is $x_1$ grams, and the amount of salt
+in the second tank is $x_2$ grams.
+Let $t$ denote time---the independent variable.
+The liquid in each tank is being
+constantly and perfectly mixed and
+flows or is pumped at the rate $r$ liters per second out of each tank into the other.
+See \figurevref{sintro:closedbrine}.
 
 \begin{myfig}
 \capstart
@@ -149,25 +159,21 @@ evenly mixed.
 \caption{A closed system of two brine tanks.\label{sintro:closedbrine}}
 \end{myfig}
 
-Suppose we have two tanks, each containing volume $V$ liters of salt brine.
-The amount of salt in the first tank is $x_1$ grams, and the amount of salt
-in the second tank is $x_2$ grams.  The liquid is perfectly mixed and
-flows at the rate $r$ liters per second out of each tank into the other.
-See \figurevref{sintro:closedbrine}.
-
 The rate of change of $x_1$,
-that is $x_1'$, is the
-rate of salt coming in minus the rate going out.
-The rate coming in is the
-density of the salt in tank 2, that is $\frac{x_2}{V}$, times the rate $r$.
-The rate coming out is the
-density of the salt in tank 1, that is $\frac{x_1}{V}$, times the rate $r$.
-In other words it is
+that is, $x_1'$, is the
+rate of salt entering minus the rate leaving.
+The density of the salt in tank 2 is $\nicefrac{x_2}{V}$,
+so the rate of salt entering tank 1 is
+$\nicefrac{x_2}{V}$ times $r$.
+The density of the salt in tank 1 is $\nicefrac{x_1}{V}$,
+so the rate of salt leaving tank 1 is
+$\nicefrac{x_1}{V}$ times $r$.
+In other words,
 \begin{equation*}
 x_1' = \frac{x_2}{V} r - \frac{x_1}{V} r =
 \frac{r}{V} x_2 - \frac{r}{V} x_1  = \frac{r}{V} (x_2-x_1).
 \end{equation*}
-Similarly we find the rate $x_2'$, where the roles of $x_1$ and $x_2$
+Similarly, to find the rate $x_2'$, the roles of $x_1$ and $x_2$
 are reversed.  All in all, the system of ODEs for this problem is
 \begin{equation*}
 \begin{aligned}
@@ -175,31 +181,35 @@ x_1' & = \frac{r}{V} (x_2-x_1), \\
 x_2' & = \frac{r}{V} (x_1-x_2).
 \end{aligned}
 \end{equation*}
-In this system we cannot solve for $x_1$ or $x_2$ separately.  We must
-solve for both $x_1$ and $x_2$ at once, which is intuitively clear since
-the amount of salt in one tank affects the amount in the other.
-We can't know $x_1$ before we know $x_2$, and vice versa.
+In this system, we cannot solve for $x_1$ or $x_2$ separately.  We must
+solve for both $x_1$ and $x_2$ at once,
+which is intuitively clear---the amount of salt in one tank
+affects the amount in the other.
+We cannot know $x_1$ before we know $x_2$, and vice versa.
 
 We do not yet know how to find all the solutions, but
 intuitively we can at least find some solutions.  Suppose we
 know that initially the tanks have the same amount of salt.  That is,
 we have an initial condition such as $x_1(0)=x_2(0) = C$.  Then clearly the
-amount of salt coming and out of each tank is the same, so the amounts are
+amount of salt entering and leaving each tank is the same, so the amounts are
 not changing.  In other words, $x_1 = C$ and $x_2 = C$ (the constant
 functions) is a solution:  $x_1' = x_2' = 0$, and
-$x_2-x_1 = x_1-x_2 = 0$, so the equations are satisfied.
+$\frac{r}{V}(x_2-x_1) = \frac{r}{V}(x_1-x_2) = 0$, so the equations are satisfied.
 
 Let us think about the setup a little bit more without solving it.  Suppose the
 initial conditions are $x_1(0) = A$ and $x_2(0) = B$, for two different
 constants $A$ and $B$.  Since no salt is coming in or out of this closed system,
 the total amount of salt is constant.  That is, $x_1+x_2$ is constant,
 and so it equals $A+B$.
-Intuitively if $A$ is bigger than $B$, then more salt will flow out of tank
-one than into it.  Eventually, after a long time we would then expect
+Intuitively, if $A > B$, more salt will flow out of tank
+one than into it.  After a long time, we then expect
 the amount of salt in each tank to equalize. In other words,
 the solutions of both $x_1$ and $x_2$ should
-tend towards $\frac{A+B}{2}$.  Once you know how to solve systems
-you will find out that this really is so.
+tend towards $\frac{A+B}{2}$ as
+$t$ goes to $\infty$.
+Once you know how to solve systems,
+you can check
+that this really is so.
 \end{example}
 
 \begin{example} \label{sintro:carts-example}
@@ -212,21 +222,24 @@ consider two masses.
 \inputpdft{cartsfig}
 \end{mywrapfigsimp}
 Consider one spring with constant $k$ and two masses $m_1$
-and $m_2$.  Think of the masses as carts that 
-ride along a straight track with no friction.  Let $x_1$ be the displacement of the first
+and $m_2$.  Think of the masses as carts on
+a straight track with no friction.  Let $x_1$ be the displacement of the first
 cart and $x_2$ be the displacement of the second cart.
 That is, we put the two
-carts somewhere with no tension on the spring, and we mark the position of
-the first and second cart and call those the zero positions.
+carts somewhere with no tension on the spring,
+we mark the position of
+the first and second cart,
+and we call those the zero positions.
 Then $x_1$ measures how far the first cart is from its zero position,
 and $x_2$ measures how far the second cart is from its zero position.
 The force exerted by the spring on the first cart is
-$k(x_2-x_1)$,
-since $x_2-x_1$ is how far the string is stretched (or compressed) from
-the rest position.  The force exerted on the second cart is the opposite,
+$k(x_2-x_1)$
+as $x_2-x_1$ is how far the string is stretched (or compressed) from
+the rest position.
+The force exerted on the second cart is the opposite,
 thus the same thing with a negative sign.
 \myindex{Newton's second law} states that
-force equals mass times acceleration.  So the system of equations is
+force equals mass times acceleration, that is,
 \begin{equation*}
 \begin{aligned}
 m_1 x_1'' & = k(x_2-x_1) , \\
@@ -234,19 +247,16 @@ m_2 x_2'' & = - k(x_2-x_1) .
 \end{aligned}
 \end{equation*}
 
-Again, we cannot solve for the $x_1$ or $x_2$ variable separately.
-That we must solve for both $x_1$ and $x_2$ at once
-is intuitively clear, since where the first cart goes
+Again, we cannot solve for the $x_1$ or $x_2$ variables
+one at a time.  Where the first cart goes
 depends on exactly where the second cart goes and vice versa.
 \end{example}
 
 \subsection{Changing to first order}
 
-Before we talk about how to handle systems, let us note that
-in some sense
-we need only consider first order systems.
-Let us
-take an $n^{\text{th}}$ order differential equation
+To some degree,
+we need only be able to solve first order systems.
+Consider an $n^{\text{th}}$ order differential equation
 \begin{equation*}
 y^{(n)} = F(y^{(n-1)},\ldots,y',y,x) .
 \end{equation*}
@@ -270,6 +280,14 @@ Take $x''' = 2x''+ 8x' + x + t$.  Letting $u_1 = x$, $u_2 = x'$, $u_3
 \begin{equation*}
 u_1' = u_2, \qquad u_2' = u_3, \qquad u_3' = 2u_3 + 8u_2 + u_1 + t .
 \end{equation*}
+Note why $x=u_1$ solves the original equation:  The first
+two equations of the system give that
+$u_3' = u_2'' = u_1''' = x'''$.
+If we plug $u_3' = x'''$, 
+$u_1 = x$, $u_2 = x'$, and $u_3
+= x''$ into 
+the third equation of the system, we
+recover the third order equation we started with.
 \end{example}
 
 A similar process can be followed for a system of higher order differential
@@ -295,14 +313,16 @@ m_2 u_4' = - k(u_3-u_1) .
 \end{example}
 
 \begin{example}
-The idea works in reverse as well.  Consider 
+The idea works in reverse as well.
+Suppose we want to solve
 the system
 \begin{equation*}
 x' = 2y-x , \qquad
 y' = x, 
 \end{equation*}
-where the independent variable is $t$.  We wish to solve for the initial
+for the initial
 conditions $x(0) = 1$, $y(0) =0$.
+Let the independent variable be $t$.
 
 If we differentiate the second equation, we get
 $y''=x'$.  We know what $x'$ is in terms of $x$ and $y$, and
@@ -600,7 +620,7 @@ The numbers $a_{ij}$ are called \emph{elements}\index{element of a matrix}
 or \emph{entries}\index{entry of a matrix}.
 
 By a \emph{\myindex{vector}} we usually mean a
-\emph{\myindex{column vector}}, that is an $m \times 1$ matrix.
+\emph{\myindex{column vector}}, that is, an $m \times 1$ matrix.
 If we mean a \emph{\myindex{row vector}},
 we will explicitly say so (a row vector is a $1 \times n$ matrix).
 We usually denote
@@ -1015,7 +1035,7 @@ go up by a factor of $6 = 3 \cdot 2$.  This is true in general:
 This property is one of the most useful, and it can be employed to 
 actually compute determinants.  A particularly interesting consequence is to
 note what it means for existence of inverses.
-Take $A$ and $B$ to be inverses of each other, that is $AB=I$.  Then
+Take $A$ and $B$ to be inverses of each other, that is, $AB=I$.  Then
 \begin{equation*}
 \det(A)\det(B) = \det(AB) = \det(I) = 1 .
 \end{equation*}
@@ -3112,7 +3132,7 @@ Does this look like any of the pictures we have drawn?
 \end{exercise}
 
 \begin{exercise}
-Which behaviors are possible if $P$ is diagonal, that is
+Which behaviors are possible if $P$ is diagonal, that is,
 $P = \left[ \begin{smallmatrix} a & 0 \\ 0 & b \end{smallmatrix} \right]$?
 You can assume that $a$ and $b$ are not zero.
 \end{exercise}
@@ -3369,7 +3389,7 @@ is the general solution of
 {\vec{x}}'' = A \vec{x},
 \end{equation*}
 for some arbitrary constants $a_i$ and $b_i$.
-If $A$ has a zero eigenvalue, that is $\omega_1 = 0$,
+If $A$ has a zero eigenvalue, that is, $\omega_1 = 0$,
 and all other eigenvalues are distinct and
 negative, then the general solution can be written as
 \begin{equation*}
@@ -4409,7 +4429,7 @@ $(A-3I)\vec{w} \not= \vec{0}$.  Then we could use
 $\vec{w}$ for $\vec{v}_2$, and $(A-3I)\vec{w}$ for $\vec{v}_1$.
 
 Note that the system ${\vec{x}}' = A \vec{x}$ has a simpler solution since
-$A$ is a so-called \emph{\myindex{upper triangular matrix}}, that is
+$A$ is a so-called \emph{\myindex{upper triangular matrix}}, that is,
 every entry below the diagonal is zero.
 In particular, the equation for $x_2$
 does not depend on $x_1$.  Mind you, not every defective matrix is

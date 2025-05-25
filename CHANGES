@@ -2,6 +2,13 @@
 consistent with the discussion above.
 <li>Be somewhat more precise in Example 1.1.6.
 <li>Say a little bit more on why Example 1.2.1 is nontrivial.
+<li>In Example 3.1.1, write out the equations for the
+arbitrary constants.  This is the first example, it should be
+as explicit as possible.
+<li>Reword parts of Examples 3.1.2 and 3.1.3 to be more specific.
+<li>In Example 3.1.4, add a short paragraph
+to explain why \(x=u_1\) really is the solution to the original
+equation.
 <li>In subsection 3.1.4, reword the note about similarity to 1.6 and give
 an explicit link to 1.6.
 <li>At the end of Example 3.9.3, give the general solution explicitly.
