@@ -290,14 +290,15 @@ the third equation of the system, we
 recover the third order equation we started with.
 \end{example}
 
-A similar process can be followed for a system of higher order differential
-equations.  For example, a system of $k$ differential equations in $k$
+The same idea works for a system a system of higher
+order differential equations.
+A system of $k$ differential equations in $k$
 unknowns, all of order $n$, can be transformed into a first
 order system of $n \times k$
 equations and $n \times k$ unknowns.
 
 \begin{example}
-Consider the system from the carts example,
+Consider the system from the example with carts, \exampleref{sintro:carts-example}:
 \begin{equation*}
 m_1 x_1''  = k(x_2-x_1), \qquad m_2 x_2'' = - k(x_2-x_1) .
 \end{equation*}
@@ -367,10 +368,11 @@ almost no distinction in syntax.
 
 A system where the equations do not depend on the independent variable
 is called an \emph{\myindex{autonomous system}}.  For example,
-the system $x'=2y-x$, $y'=x$ is autonomous as $t$ is the independent
-variable but does not appear in the equations.
+the system $x'=2y-x$, $y'=x$ is autonomous as
+the independent
+variable, say $t$, does not appear in the equations.
 
-For autonomous systems we can draw the so-called
+For autonomous systems, we can draw the so-called
 \emph{\myindex{direction field}} or \emph{\myindex{vector field}},
 a plot similar to a slope field, but
 instead of giving a slope at each point, we give a direction (and a
@@ -380,7 +382,7 @@ the equations should be the direction of the vector $( 2y-x, x )$
 with the speed equal to the magnitude of this vector.  So we draw
 the vector $(2y-x,x)$ at the point $(x,y)$ and we do this for
 many points on the $xy$-plane.
-For example, at the point $(1,2)$ we draw the vector
+For example, at the point $(1,2)$, we draw the vector
 $\bigl(2(2)-1,1\bigr) = (3,1)$,
 a vector pointing to the right and a little bit up,
 while at the point $(2,1)$ we draw the vector $\bigl(2(1)-2,2\bigr) = (0,2)$
@@ -388,7 +390,7 @@ a vector that points straight up.
 When drawing the vectors, we will scale down
 their size to fit many of them on the same direction field.
 If we drew the arrows at the actual size, the diagram would be a
-jumbled mess once you would draw more than a couple of arrows.
+jumbled mess once we draw more than a couple of arrows.
 So we scale them all so that not even the longest one interferes with
 the others.
 We are mostly 
@@ -441,9 +443,10 @@ each $t$ we would get a different direction field.
 
 \subsection{Picard's theorem}
 
-Perhaps before going further, let us mention that Picard's theorem on
-existence and uniqueness still holds for systems of ODE\@.  Let us restate
-this theorem in the setting of systems.  A general first order
+Before going further, we mention that Picard's theorem on
+existence and uniqueness also holds for systems of ODE\@.
+Let us restate this theorem in this setting.
+A general first order
 system is of the form
 \begin{equation} \label{eq:general-system}
 \begin{aligned}
@@ -472,15 +475,15 @@ exists (at least for $t$ in some small interval) and is unique.
 \end{theorem}
 
 That is, a unique solution exists for any initial condition
-given that the system is reasonable ($F_j$ and its partial derivatives
-in the $x$ variables are continuous).  As for single equations
-we may not have a solution for all time $t$, but at least for some 
+given that the system is reasonable (each $F_j$ and its partial derivatives
+in the $x$ variables are continuous).  As for single equations,
+we may not have a solution for all time $t$, but it
+is guaranteed at least for some 
 short period of time.
 
 As we can change any $n$th order ODE into a first order system,
 we notice that this theorem provides also the
-existence and uniqueness of solutions for higher order equations
-that we have until now not stated explicitly.
+existence and uniqueness of solutions for higher order equations.
 
 \subsection{Exercises}
 
@@ -618,15 +621,17 @@ a_{31} & a_{32} & a_{33} & a_{34} & a_{35}
 \end{equation*}
 The numbers $a_{ij}$ are called \emph{elements}\index{element of a matrix}
 or \emph{entries}\index{entry of a matrix}.
+We say a matrix is \emph{square}\index{square matrix}
+if it has $m=n$, that is, it has the same number of rows and columns.
 
-By a \emph{\myindex{vector}} we usually mean a
+In the setting of matrices,
+by a \emph{\myindex{vector}}, we usually mean a
 \emph{\myindex{column vector}}, that is, an $m \times 1$ matrix.
 If we mean a \emph{\myindex{row vector}},
 we will explicitly say so (a row vector is a $1 \times n$ matrix).
 We usually denote
 matrices by upper case letters and vectors by lower case letters with an
-arrow such as $\vec{x}$ or $\vec{b}$.  By $\vec{0}$ we mean the vector
-of all zeros.
+arrow such as $\vec{x}$ or $\vec{b}$.  We write $\vec{0}$ for a vector of all zeros.
 
 We define some operations on matrices.  We 
 want $1 \times 1$ matrices to really act like numbers, so our operations
@@ -695,10 +700,12 @@ The transpose of $A$ is denoted by $A^T$.  Example:
 
 \subsection{Matrix multiplication}
 
-Let us now define matrix multiplication.  First we define the so-called
+Matrix multiplication is a bit more complicated.
+First we define the so-called
 \emph{\myindex{dot product}} (or \emph{\myindex{inner product}}) of two vectors.
 Usually this will be a row vector multiplied
-with a column vector of the same size.  For the dot product we multiply
+with a column vector of the same size.  For the dot product,
+we multiply
 each pair of entries from the first and the second vector and we sum these
 products.  The result is a single number.
 For example,
@@ -716,9 +723,9 @@ b_3
 \end{equation*}
 Similarly for larger (or smaller) vectors.
 
-Armed with the dot product we define the
+Armed with the dot product, we define the
 \emph{\myindex{product of matrices}}.
-First let us denote by $\operatorname{row}_i(A)$ the $i^{\text{th}}$ row
+Let us denote by $\operatorname{row}_i(A)$ the $i^{\text{th}}$ row
 of $A$ and by
 $\operatorname{column}_j(A)$ the $j^{\text{th}}$ column of $A$.
 For an $m \times n$ matrix $A$ and an $n \times p$ matrix $B$,
@@ -756,14 +763,13 @@ $m \times p$.  Example:
 \end{bmatrix}
 \end{multline*}
 
-\medskip
-
 For multiplication we want an analogue of a 1.  This analogue is the
 so-called \emph{\myindex{identity matrix}}.
 The identity matrix is a square matrix with 1s on the
 diagonal and zeros everywhere else.  It is usually denoted by $I$.
-For each size we have a different identity matrix and so sometimes we may denote
-the size as a subscript.  For example, the $I_3$ would be the $3 \times 3$
+For each size, we have a different identity matrix.
+So sometimes we may denote
+the size as a subscript.  For example, $I_3$ would be the $3 \times 3$
 identity matrix
 \begin{equation*}
 I = I_3 =
@@ -774,9 +780,11 @@ I = I_3 =
 \end{bmatrix} .
 \end{equation*}
 
+\pagebreak[2]
 We have the following rules for matrix multiplication.  Suppose that
 $A$, $B$, $C$ are matrices of the correct sizes so that the following
 make sense.  Let $\alpha$ denote a scalar (number).
+Then,
 \begin{align*}
 A(BC) & = (AB)C, \\
 A(B+C) & = AB + AC, \\
@@ -801,7 +809,7 @@ $A = B = \left[ \begin{smallmatrix} 0 & 1 \\ 0 & 0 \end{smallmatrix}
 \right]$.
 \end{enumerate}
 
-For the last two items to hold we would need to \myquote{divide} by
+For the last two items to hold, we would need to \myquote{divide} by
 a matrix.  This is where the \emph{\myindex{matrix inverse}} comes in.
 Suppose that $A$ and $B$ are $n \times n$ matrices such that
 \begin{equation*}
@@ -932,7 +940,7 @@ $i^{\text{th}}$ row and compute:
 a_{ij} \det (A_{ij}) .
 ~~}
 \end{equation*}
-For the first row we get
+For the first row, we get
 \begin{equation*}
 \det (A) =
 a_{11} \det (A_{11}) - 
@@ -1040,8 +1048,10 @@ Take $A$ and $B$ to be inverses of each other, that is, $AB=I$.  Then
 \det(A)\det(B) = \det(AB) = \det(I) = 1 .
 \end{equation*}
 Neither $\det(A)$ nor $\det(B)$ can be zero.
-Let us state this as a theorem
-as it will be very important in the context of this course.
+Conversely, if $\det(A)$ is not zero, then $A$ is
+invertible.
+We state this observation as a theorem
+as it is very important in the context of this course.
 
 \begin{theorem}
 An $n \times n$ matrix $A$ is invertible if and only if $\det (A) \not= 0$.
@@ -1108,11 +1118,12 @@ x_3
 10
 \end{bmatrix} .
 \end{equation*}
-To solve the system we put the coefficient matrix (the matrix on the
+To solve the system,
+we put the coefficient matrix (the matrix on the
 left-hand side of the equation) together with the vector on the right and side
 and get the
 so-called
-\emph{\myindex{augmented matrix}}
+\emph{\myindex{augmented matrix}}:
 \begin{equation*}
 \left[
 \begin{array}{ccc|c}
@@ -1132,7 +1143,8 @@ so-called
 \end{equation*}
 
 \pagebreak[2]
-We apply the following three elementary operations.
+We apply a sequence of the following three
+\emph{\myindex{elementary row operations}}\index{row operations}.
 \begin{enumerate}[(i)]
 \item Swap two rows.
 \item Multiply a row by a nonzero number.
@@ -1153,7 +1165,7 @@ $\nicefrac{1}{2}$ to obtain
 \end{array}
 \right] .
 \end{equation*}
-Now subtract the first row from the second and third row.
+Now subtract the first row from the second and third row:
 \begin{equation*}
 \left[
 \begin{array}{ccc|c}
@@ -1163,7 +1175,7 @@ Now subtract the first row from the second and third row.
 \end{array}
 \right]
 \end{equation*}
-Multiply the last row by $\nicefrac{1}{3}$ and the second row by $\nicefrac{1}{2}$.
+Multiply the last row by $\nicefrac{1}{3}$ and the second row by $\nicefrac{1}{2}$:
 \begin{equation*}
 \left[
 \begin{array}{ccc|c}
@@ -1173,7 +1185,7 @@ Multiply the last row by $\nicefrac{1}{3}$ and the second row by $\nicefrac{1}{2
 \end{array}
 \right]
 \end{equation*}
-Swap rows 2 and 3.
+Swap rows 2 and 3:
 \begin{equation*}
 \left[
 \begin{array}{ccc|c}
@@ -1184,7 +1196,7 @@ Swap rows 2 and 3.
 \right]
 \end{equation*}
 Subtract the last row from the first, then subtract the second row
-from the first.
+from the first:
 \begin{equation*}
 \left[
 \begin{array}{ccc|c}
@@ -1194,7 +1206,7 @@ from the first.
 \end{array}
 \right]
 \end{equation*}
-If we think about what equations this augmented matrix represents, we see that
+Finally, we think about what equations this augmented matrix represents:
 $x_1 = -4$, $x_2 = 3$, and $x_3 = 2$.  We try this solution in the original
 system and, voil\`a, it works!
 
@@ -1271,7 +1283,7 @@ free variable, $x_1 = 3 - 2x_2$, and $x_3 = 1$.
 
 \medskip
 
-On the other hand if during the row reduction process you come up with the
+On the other hand, if during the row reduction process you come up with the
 matrix
 \begin{equation*}
 \left[
@@ -1513,7 +1525,7 @@ second part of \S5.1 in \cite{EP}}\BDref{,
 
 First let us talk about matrix- or vector-valued functions.  
 Such a function is
-just a matrix or vector whose entries depend on some variable.
+just a matrix or a vector whose entries depend on some variable.
 If $t$ is the independent variable, we write a
 \emph{\myindex{vector-valued function}}
 $\vec{x}(t)$ as
@@ -1597,7 +1609,7 @@ be constant; it will not depend on $t$.
 
 When $\vec{f} = \vec{0}$ (the zero vector), then we say the system is
 \emph{homogeneous\index{homogeneous system}}.
-For homogeneous linear systems we have the
+For homogeneous linear systems, we have the
 principle of superposition, just like for single homogeneous equations.
 
 \begin{theorem}[Superposition]\index{superposition}

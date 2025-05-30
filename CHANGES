@@ -11,6 +11,10 @@ to explain why \(x=u_1\) really is the solution to the original
 equation.
 <li>In subsection 3.1.4, reword the note about similarity to 1.6 and give
 an explicit link to 1.6.
+<li>Define what we mean by "square" matrix in 3.2.1.
+<li>In subsection 3.2.4, mark "elementary row operations"
+as a defined term and add it to the index.  Add
+"row operations" to the index also for the appendix.
 <li>At the end of Example 3.9.3, give the general solution explicitly.
 <li>Just after 6.3.1, give both directions in formulas
 for clarity
