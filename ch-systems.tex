@@ -2034,17 +2034,19 @@ and a vector $\vec{v}$ that satisfy the equation
 \lambda \vec{v} = P\vec{v} .
 \end{equation*}
 
-To solve this equation we need a little bit more linear algebra, which we now
+To solve this equation, we need a little bit more linear algebra, which we now
 review.
 
 \subsection{Eigenvalues and eigenvectors of a matrix}
 
-Let $A$ be a constant square matrix.  Suppose there is a
-scalar $\lambda$ and a nonzero vector $\vec{v}$ such that
+Let $A$ be a constant square matrix.  Suppose
+$\lambda$ is a scalar for which there is
+a nonzero vector $\vec{v}$ such that
 \begin{equation*}
 A \vec{v} = \lambda \vec{v}.
 \end{equation*}
-We call $\lambda$ an \emph{\myindex{eigenvalue}} of $A$ and we
+We call such a $\lambda$ an \emph{\myindex{eigenvalue}} of $A$,
+and we
 call $\vec{v}$
 a corresponding \emph{\myindex{eigenvector}}.
 
@@ -2056,7 +2058,7 @@ The matrix $\left[ \begin{smallmatrix}
 corresponding
 eigenvector $\left[ \begin{smallmatrix}
 1 \\ 0
-\end{smallmatrix} \right]$ as
+\end{smallmatrix} \right]$, because
 \begin{equation*}
 \begin{bmatrix}
 2 & 1 \\
@@ -2083,8 +2085,9 @@ Rewrite the equation for an eigenvalue as
 \begin{equation*}
 (A - \lambda I)\vec{v} = \vec{0} .
 \end{equation*}
-This equation has a nonzero solution $\vec{v}$ only if 
-$A - \lambda I$ is not invertible.  Were it invertible,
+This equation has a nonzero solution $\vec{v}$ if and only if 
+$A - \lambda I$ is not invertible.
+Were $A - \lambda I$ invertible,
 we could write
 ${(A - \lambda I)}^{-1}(A - \lambda I)\vec{v} = {(A-\lambda I)}^{-1}\vec{0}$,
 which implies $\vec{v} = \vec{0}$.  Therefore,
@@ -2093,7 +2096,6 @@ eigenvalue $\lambda$ if and only if $\lambda$ solves the equation
 \begin{equation*}
 \det (A-\lambda I) = 0 .
 \end{equation*}
-
 Consequently, we can find an eigenvalue of $A$ without
 finding a corresponding eigenvector at the same time.  An eigenvector will have to be
 found later, once $\lambda$ is known.
@@ -2135,7 +2137,8 @@ We write
 = 
 -(\lambda -1)(\lambda -2)(\lambda-3) .
 \end{multline*}
-So the eigenvalues are $\lambda = 1$, $\lambda = 2$, and
+Setting this to zero, we find that
+the eigenvalues are $\lambda = 1$, $\lambda = 2$, and
 $\lambda = 3$.
 \end{example}
 
@@ -2195,7 +2198,9 @@ v_1 \\ v_2 \\ v_3
 =
 \vec{0} .
 \end{equation*}
-It is easy to solve this system of linear equations.  We write down the
+To solve this 
+system of linear equations,
+we write down the
 augmented matrix
 \begin{equation*}
 \left[
@@ -2206,7 +2211,7 @@ augmented matrix
 \end{array}
 \right] ,
 \end{equation*}
-and perform row operations (exercise: which ones?) until we get:
+and we perform row operations (exercise: which ones?) until we get:
 \begin{equation*}
 \left[
 \begin{array}{ccc|c}
@@ -2218,7 +2223,7 @@ and perform row operations (exercise: which ones?) until we get:
 \end{equation*}
 The entries of $\vec{v}$ have to satisfy the equations
 $v_1 - v_2 = 0$, $v_3 = 0$, and $v_2$ is a free variable.  
-We can pick $v_2$ to be arbitrary (but nonzero), let
+We pick $v_2$ to be arbitrary (but nonzero), we let
 $v_1 = v_2$, and of course $v_3 = 0$.
 For example, if we pick $v_2 = 1$, then
 $\vec{v} =
@@ -2269,14 +2274,14 @@ $\left[ \begin{smallmatrix} 2 & 1 \\ 1 & 2 \end{smallmatrix} \right]$.
 
 \subsection{The eigenvalue method with distinct real eigenvalues}
 
-OK\@.  We have the system of equations
+OK\@, back to homogeneous constant coefficient systems of ODE.  We have the system
 \begin{equation*}
 {\vec{x}}' = P\vec{x} .
 \end{equation*}
 We find the eigenvalues $\lambda_1$, $\lambda_2$, \ldots, $\lambda_n$
 of the matrix $P$, and corresponding eigenvectors
 $\vec{v}_1$, $\vec{v}_2$, \ldots, $\vec{v}_n$.
-Now we notice that the functions
+The functions
 $\vec{v}_1 e^{\lambda_1 t}$, 
 $\vec{v}_2 e^{\lambda_2 t}$, \ldots,
 $\vec{v}_n e^{\lambda_n t}$ are solutions of the system of equations and hence
@@ -2332,10 +2337,10 @@ $\left[ \begin{smallmatrix} 1 \\ 1 \\ 0 \end{smallmatrix} \right]$
 for the eigenvalue 3.  Similarly
 we find the eigenvector 
 $\left[ \begin{smallmatrix} 1 \\ -1 \\ 0 \end{smallmatrix} \right]$
-for the eigenvalue 1, and 
+for the eigenvalue 1 and 
 $\left[ \begin{smallmatrix} 0 \\ 1 \\ -1 \end{smallmatrix} \right]$
 for the eigenvalue 2 (exercise: check).
-Hence our general solution is
+The general solution is
 \begin{equation*}
 \vec{x} =
 c_1
@@ -2430,7 +2435,7 @@ are multiples of each other.  So we only need to consider one of them.
 After picking $v_2 = 1$, for example, we have an
 eigenvector
 $\vec{v} = \left[ \begin{smallmatrix} i \\ 1 \end{smallmatrix} \right]$.
-In similar fashion we find that
+In similar fashion, we find that
 $\left[ \begin{smallmatrix} -i \\ 1 \end{smallmatrix} \right]$
 is an eigenvector corresponding to the eigenvalue $1+i$.
 
@@ -2461,8 +2466,8 @@ We claim that we did not have to look for a second eigenvector
 
 First a small detour.  The real part of
 a complex number $z$ can be computed as $\frac{z + \bar{z}}{2}$, where
-the bar above $z$ means $\overline{a+ib} = a -ib$.  This operation is called the
-\emph{\myindex{complex conjugate}}.
+the bar above $z$ means $\overline{a+ib} = a -ib$.  The bar of $z$ is called the
+\emph{\myindex{complex conjugate}} of $z$.
 If $a$ is a real number, then $\bar{a} = a$.
 Similarly
 we bar whole vectors or matrices by taking the complex conjugate
@@ -2551,13 +2556,13 @@ Then
 \begin{bmatrix}
 e^t \sin t  \\
 e^t \cos t
-\end{bmatrix} ,
+\end{bmatrix}
 \qquad \text{and} \qquad
 \operatorname{Im} \vec{x}_1 = 
 \begin{bmatrix}
 e^t \cos t \\
 - e^t \sin t
-\end{bmatrix} ,
+\end{bmatrix}
 \end{equation*}
 are the two real-valued linearly independent solutions we seek.
 
@@ -2590,7 +2595,7 @@ for any initial conditions we may have to find $c_1$ and $c_2$.
 
 \medskip
 
-Let us summarize the discussion as a theorem.
+We summarize the discussion as a theorem.
 
 \begin{theorem}
 Let $P$ be a real-valued constant matrix.
@@ -2601,7 +2606,7 @@ Furthermore,
 ${\vec{x}}' = P\vec{x}$ has
 two linearly independent real-valued solutions
 \begin{equation*}
-\vec{x}_1 = \operatorname{Re} \vec{v} e^{(a+ib)t} ,
+\vec{x}_1 = \operatorname{Re} \vec{v} e^{(a+ib)t}
 \qquad
 \text{and}
 \qquad
@@ -2828,7 +2833,7 @@ C_2 \left[ \begin{smallmatrix}
 \sectionnotes{1 lecture\EPref{, part of \S6.2 in \cite{EP}}\BDref{,
 parts of \S7.5 and \S7.6 in \cite{BD}}}
 
-Let us take a moment to talk about constant coefficient linear
+We take a moment to discuss constant coefficient linear
 homogeneous systems in the plane.
 Much intuition can be obtained by studying this simple case.
 We use coordinates $(x,y)$ for the plane as usual,
@@ -2847,15 +2852,17 @@ P \begin{bmatrix} x \\ y \end{bmatrix}
 .
 \end{equation}
 The system is autonomous (compare this section
-to \sectionref{auteq:section})
-and so we can draw a vector field (see the end of
+to \sectionref{auteq:section}),
+and so we draw a vector field (see the end of
 \sectionref{sec:introtosys}).
-We will be able to visually tell what the vector field looks like and
-how the solutions behave, once we find 
-the eigenvalues and eigenvectors of the matrix $P$.
+We will be able to visually understand this vectorfield
+and the solutions of the ODE in terms of the
+eigenvalues and eigenvectors of the matrix $P$.
 For this section,
-we assume that $P$ has two eigenvalues and two corresponding
+we assume that $P$ has two distinct eigenvalues and two corresponding
 eigenvectors.
+We will also assume that $P$ is nonsingular, that is,
+neither eigenvalue is zero.
 
 \medskip
 
@@ -2897,8 +2904,8 @@ the eigenvectors and
 arrows on the lines to indicate the directions.
 See \figurevref{pln:source-eig-arrfig}.
 
-We fill in the rest of the arrows for the vector field
-and we also draw a few solutions.  See
+We fill in the rest of the arrows for the vector field,
+and we draw a few solutions.  See
 \figurevref{pln:source-fullfig}.
 The picture looks like a source
 with arrows coming out from the origin.
@@ -2924,7 +2931,7 @@ Hence we call this type of picture a
 
 \emph{Case 2.} Suppose both eigenvalues are negative.  For example, take
 the
-negation of the matrix in case 1,
+negation of the matrix from case 1,
 $\left[ \begin{smallmatrix} -1 & -1 \\ 0 & -2 \end{smallmatrix} \right]$.
 The eigenvalues are $-1$ and $-2$ and corresponding eigenvectors are
 the same,
@@ -2966,7 +2973,7 @@ obtain the picture in \figurevref{pln:saddle-fullfig}.  We call this picture a
 \medskip
 
 \pagebreak[0]
-For the next three cases we will assume the eigenvalues are complex.  In this
+For the next three cases, we will assume the eigenvalues are complex.  In this
 case the eigenvectors are also complex and we cannot just plot them in the
 plane.
 
@@ -3092,6 +3099,13 @@ Systems where one of the eigenvalues is zero (the matrix is singular)
 come up in practice from time to time, see
 \examplevref{sintro:closedbrine-example}, and the pictures are somewhat
 different (simpler in a way).  See the exercises.
+When the eigenvalues are real and repeated, the 
+analysis is a little bit more difficult and we have not
+yet covered how to solve such systems, but
+the idea is roughly the same---a repeated positive
+eigenvalue means a source and a repeated negative
+eigenvalue means a sink.
+
 
 \begin{table}[h!t]
 \mybeginframe
@@ -3133,13 +3147,13 @@ different kinds of behavior here?
 What happens in the case when $P = 
 \left[ \begin{smallmatrix} 1 & 1 \\ 0 & 1 \end{smallmatrix} \right]$?  In
 this case the eigenvalue is repeated and there is only one independent eigenvector.
-What
-picture does this look like?
+Draw and describe the vector field.
 \end{exercise}
 
 \begin{exercise}
 What happens in the case when $P = 
 \left[ \begin{smallmatrix} 1 & 1 \\ 1 & 1 \end{smallmatrix} \right]$?
+Draw the vector field.
 Does this look like any of the pictures we have drawn?
 \end{exercise}
 
@@ -3154,7 +3168,7 @@ Take the system from \examplevref{sintro:closedbrine-example},
 $x_1'=\frac{r}{V}(x_2-x_1)$,
 $x_2'=\frac{r}{V}(x_1-x_2)$.
 As we said, one of the eigenvalues is zero.  What is the other eigenvalue, how
-does the picture look like and what happens when $t$ goes to infinity.
+does the picture look like, and what happens when $t$ goes to infinity.
 \end{exercise}
 
 \setcounter{exercise}{100}
@@ -3234,11 +3248,11 @@ not in \cite{BD}}}
 
 \subsection{Undamped mass-spring systems}
 
-While we did say that we will usually only look at first order systems, it is
-sometimes more convenient to study the system in the way it arises naturally.
-For example, suppose we have 3 masses connected by springs between two
+While we did say that we can usually only study first order systems, it is
+sometimes more convenient to analyze the system in the way it arises naturally.
+For example, consider 3 masses connected by springs between two
 walls.  We could pick any higher number, and the math would be essentially
-the same, but for simplicity we pick 3 right now.  Let us also assume no
+the same, but for simplicity, we pick 3 right now.  We also assume no
 friction, that is, the system is undamped\index{undamped motion!systems}.
 The masses are $m_1$, $m_2$, and
 $m_3$ and the spring constants are $k_1$, $k_2$, $k_3$, and $k_4$.
@@ -3315,7 +3329,7 @@ Do it for 5 masses.  Can you
 find a prescription to do it for $n$ masses?
 \end{exercise}
 
-As with a single equation we want to \myquote{divide by $M$.}  This means
+As with a single equation, we want to \myquote{divide by $M$.}  This means
 computing the inverse of $M$.
 The masses are all nonzero and $M$ is a
 diagonal matrix\index{diagonal matrix}, so computing the inverse
@@ -3362,7 +3376,7 @@ eigenvalues (and possibly a zero eigenvalue).  So we study only this
 case.  When an eigenvalue $\lambda$ is negative, it means that
 $\alpha^2 = \lambda$ is negative.  Hence there is some real number $\omega$
 such that $-\omega^2 = \lambda$.  Then $\alpha = \pm i \omega$.
-The solution we guessed was
+For $\alpha = i \omega$, the solution we guessed is $\vec{x} = \vec{v} e^{i \omega t}$ or
 \begin{equation*}
 \vec{x} = \vec{v} \, \bigl(\cos (\omega t) + i \sin (\omega t) \bigr) .
 \end{equation*}
@@ -3393,7 +3407,7 @@ $\vec{v}_1$, $\vec{v}_2$, \ldots, $\vec{v}_n$.  If $A$ is invertible
 \begin{equation*}
 \mybxbg{~~
 \vec{x}(t)
-= \sum_{i=1}^n \vec{v}_i \bigl(a_i \cos (\omega_i t) + b_i \sin (\omega_i t) \bigr) ,
+= \sum_{i=1}^n \vec{v}_i \bigl(a_i \cos (\omega_i t) + b_i \sin (\omega_i t) \bigr) 
 ~~}
 \end{equation*}
 is the general solution of
@@ -3460,7 +3474,6 @@ We find corresponding eigenvectors to be
 $\left[ \begin{smallmatrix} 1 \\ 2 \end{smallmatrix} \right]$ and
 $\left[ \begin{smallmatrix} 1 \\ -1 \end{smallmatrix} \right]$ respectively
 (exercise).
-
 We check the theorem and note that $\omega_1 = 1$ and $\omega_2 = 2$.
 Hence the general solution is
 \begin{equation*}
@@ -3706,7 +3719,7 @@ b_1 + \sqrt{3} \, b_2 \\
 b_1 - 2 \sqrt{3} \, b_2 
 \end{bmatrix} .
 \end{equation*}
-Solving these two equations we
+Solving these two equations, we
 find $b_1 = 2$ and $b_2 =
 \frac{1}{\sqrt{3}}$.  Hence the position of our cars is
 (until the impact with the wall)
@@ -4218,7 +4231,7 @@ ${\vec{x}}' = A\vec{x}$ has the general solution
 c_1 \begin{bmatrix} 1 \\ 0 \end{bmatrix} e^{3t}
 + c_2 \begin{bmatrix} 0 \\ 1 \end{bmatrix} e^{3t} .
 \end{equation*}
-Let us restate the theorem about real eigenvalues.  In the following theorem
+We restate the theorem about real eigenvalues.  In the theorem,
 we will repeat eigenvalues according to (algebraic) multiplicity.  So
 for the matrix $A$ above, we would say that it has eigenvalues 3 and 3.
 
@@ -4288,7 +4301,13 @@ The matrix
 \end{bmatrix}
 \end{equation*}
 has an eigenvalue 3 of algebraic multiplicity 2.
-Let us try to compute eigenvectors.
+As 
+$A-\lambda I = \left[ \begin{smallmatrix} 3 & 1 \\ 0 & 3 \end{smallmatrix} \right]
+- 3
+\left[ \begin{smallmatrix} 1 & 0 \\ 0 & 1 \end{smallmatrix} \right]
+=
+\left[ \begin{smallmatrix} 0 & 1 \\ 0 & 0 \end{smallmatrix} \right]
+$, to compute the eigenvectors, we must solve
 \begin{equation*}
 \begin{bmatrix}
 0 & 1 \\ 0 & 0
@@ -4298,7 +4317,7 @@ v_1 \\ v_2
 \end{bmatrix}
 = \vec{0} .
 \end{equation*}
-We must have that $v_2 = 0$.  Hence any eigenvector is of the form
+So $v_2 = 0$.  All eigenvectors are of the form
 $\left[ \begin{smallmatrix} v_1 \\ 0 \end{smallmatrix} \right]$.  Any two
 such vectors are linearly dependent, and hence the geometric multiplicity
 of the eigenvalue is 1.  Therefore, the defect is 1, and we can no longer
@@ -4307,18 +4326,21 @@ coefficient matrix.
 
 \medskip
 
-Roughly, the key observation is that
+To solve such an ODE we need a new idea.
+Roughly, the key observation we will use is that
 if $\lambda$ is an eigenvalue of $A$ of algebraic multiplicity $m$,
-then we can find certain $m$ linearly independent vectors
+then it is possible to find certain $m$ linearly independent vectors
 solving ${(A-\lambda I)}^k \vec{v} = \vec{0}$ for various powers
 $k$.  We will call these \emph{\myindex{generalized eigenvectors}}.
 
 \medskip
 
-Let us continue with the example
+We continue with
+the example equation ${\vec{x}}' = A\vec{x}$
+where
 $A = \left[ \begin{smallmatrix}
 3 & 1 \\ 0 & 3
-\end{smallmatrix} \right]$ and the equation ${\vec{x}}' = A\vec{x}$.
+\end{smallmatrix} \right]$.
 We found an eigenvalue $\lambda=3$ of (algebraic) multiplicity 2 and defect 1.
 We found one eigenvector 
 $\vec{v} = \left[ \begin{smallmatrix} 1 \\ 0 \end{smallmatrix} \right]$.
@@ -4330,8 +4352,8 @@ We are now stuck, we get no other solutions from standard eigenvectors.  But
 we need two linearly independent solutions to find the general solution of
 the equation.
 
-Let us try (in the spirit of repeated roots of the
-characteristic equation for a single equation) another solution of the form
+In the spirit of repeated roots of the
+characteristic equation for a single equation, we try another solution of the form
 \begin{equation*}
 \vec{x}_2 = ( \vec{v}_2 +  \vec{v}_1 t )\, e^{3t} .
 \end{equation*}
@@ -4386,7 +4408,7 @@ a \\ b
 1 \\ 0
 \end{bmatrix} .
 \end{equation*}
-By inspection we see that letting $a=0$ ($a$ could be anything in fact) and
+By inspection, we see that letting $a=0$ ($a$ could be anything in fact) and
 $b=1$ does the job.  Hence we can take $\vec{v}_2 = 
 \left[ \begin{smallmatrix} 0 \\ 1 \end{smallmatrix} \right]$.  Our general
 solution to
@@ -4431,16 +4453,18 @@ $(A-3I)\vec{v}_1 = \vec{0}$ we find
 \qquad \text{or} \qquad
 {(A-3I)}^2\vec{v}_2 = \vec{0}.
 \end{equation*}
-Furthermore, if 
-$(A-3I) \vec{w} \not= \vec{0}$, then 
+If 
+$(A-3I) \vec{w} \not= \vec{0}$
+and
+${(A-3I)}^2 \vec{w} = \vec{0}$, then 
 $(A-3I) \vec{w}$ is an eigenvector, a multiple of $\vec{v}_1$.
-In this $2 \times 2$ case ${(A-3I)}^2$ is just the zero matrix (exercise).
+In this $2 \times 2$ case, ${(A-3I)}^2$ is just the zero matrix (exercise).
 So any vector $\vec{w}$ solves
 ${(A-3I)}^2\vec{w} = \vec{0}$ and we just need a $\vec{w}$ such that
 $(A-3I)\vec{w} \not= \vec{0}$.  Then we could use
-$\vec{w}$ for $\vec{v}_2$, and $(A-3I)\vec{w}$ for $\vec{v}_1$.
+$\vec{w}$ for $\vec{v}_2$ and $(A-3I)\vec{w}$ for $\vec{v}_1$.
 
-Note that the system ${\vec{x}}' = A \vec{x}$ has a simpler solution since
+Note this example system ${\vec{x}}' = A \vec{x}$ has a simpler solution since
 $A$ is a so-called \emph{\myindex{upper triangular matrix}}, that is,
 every entry below the diagonal is zero.
 In particular, the equation for $x_2$
@@ -4501,7 +4525,7 @@ $\left[ \begin{smallmatrix} 0 \\ 0 \\ 1 \end{smallmatrix} \right]$
 is an eigenvector
 for the eigenvalue $\lambda = 1$.
 
-Let us focus on $\lambda = 2$.  We compute eigenvectors:
+We focus on $\lambda = 2$.  We compute eigenvectors:
 \begin{equation*}
 \vec{0} =
 (A - 2 I) \vec{v}
@@ -4522,7 +4546,7 @@ that $v_1 = -v_3$.  Perhaps let $v_3 = -1$ to find an eigenvector
 $\left[ \begin{smallmatrix} 1 \\ 0 \\ -1 \end{smallmatrix} \right]$.
 Problem is that setting $v_3$ to anything else just gets multiples
 of this vector and so we have a defect of~1.
-Let $\vec{v}_1$ be the eigenvector and let us look for
+Let $\vec{v}_1$ be the eigenvector and we look for
 a generalized eigenvector $\vec{v}_2$:
 \begin{equation*}
 (A - 2 I) \vec{v}_2 = \vec{v}_1 , 
@@ -4547,7 +4571,7 @@ The first equation says $-5b = 1$ so $b = \nicefrac{-1}{5}$.  The
 second equation says nothing.
 The last equation is $-a + 4b - c = -1$, or
 $a + \nicefrac{4}{5} + c = 1$, or
-$a + c = \nicefrac{1}{5}$.  We let $c$ be the free variable and we
+$a + c = \nicefrac{1}{5}$.  We let $c$ be the free variable, and we
 choose $c=0$.  We find
 $\vec{v}_2 = \left[ \begin{smallmatrix} \nicefrac{1}{5} \\ \nicefrac{-1}{5}
 \\ 0 \end{smallmatrix} \right]$.
@@ -4577,7 +4601,8 @@ e^{2t}
 
 This machinery can also be generalized to higher multiplicities
 and higher defects.
-We will not go over this method in detail, but let us just sketch the ideas.  Suppose that $A$
+We will not go over this method in detail, but we sketch the idea.
+Suppose that $A$
 has an eigenvalue $\lambda$ of multiplicity $m$.
 We find vectors such that
 \begin{equation*}
@@ -4618,7 +4643,7 @@ you will have to find $\ell$ such chains (some of them might be
 short: just the single eigenvector equation).
 We go until we form $m$ linearly independent solutions where
 $m$ is the algebraic multiplicity.
-We don't quite know which specific eigenvectors go with which chain, so
+We do not quite know which specific eigenvectors go with which chain, so
 start by finding $\vec{v}_k$ first for the longest possible chain and
 go from there.
 
@@ -4939,10 +4964,10 @@ If this would be just one equation (when $P$ is a number or a $1
 \begin{equation*}
 \vec{x} = e^{Pt} .
 \end{equation*}
-That doesn't make sense if $P$ is a larger matrix, but
+That does not (yet) make sense if $P$ is a larger matrix, but
 essentially the same computation that led to the above
 works for matrices when we define
-$e^{Pt}$ properly.  First let us write down the Taylor series for $e^{at}$
+$e^{Pt}$ properly.  First we write the Taylor series for $e^{at}$
 for some number $a$:
 \begin{equation*}
 e^{at} = 1 + at
@@ -4979,11 +5004,11 @@ e^A \overset{\text{def}}{=} I + A + \frac{1}{2} A^2 +
 \frac{1}{6} A^3 + \cdots + \frac{1}{k!} A^k + \cdots
 ~~}
 \end{equation*}
-Let us not worry about convergence.  The series really does
+We will not worry about convergence---the series really does
 always converge.
 We usually write $Pt$ as $tP$ by convention when $P$ is a matrix.
 With this small change and by the exact same
-calculation as above
+calculation as above,
 we have that
 \begin{equation*}
 \frac{d}{dt} \left(e^{tP} \right) = 
@@ -5004,7 +5029,7 @@ where $\vec{c}$ is an arbitrary constant vector.  In fact, $\vec{x}(0) =
 \vec{c}$.
 \end{theorem}
 
-Let us check:
+Check:
 \begin{equation*}
 \frac{d}{dt}
 \vec{x} =
@@ -5017,7 +5042,7 @@ P \vec{x}.
 
 Hence $e^{tP}$ is a \myindex{fundamental matrix solution}
 of the homogeneous system.
-So if we can compute the matrix exponential,
+If we can compute the matrix exponential,
 we have another method of solving constant coefficient homogeneous
 systems.  It also makes it easy to solve for initial conditions.  To solve 
 ${\vec{x}}' = A \vec{x}$, $\vec{x}(0) = \vec{b}$, we take the solution
@@ -5032,11 +5057,11 @@ so $\vec{x} (0) = e^{0A} \vec{b} = \vec{b}$.
 We mention a drawback of matrix exponentials.
 In general $e^{A+B} \not= e^A e^B$.  The trouble is that matrices do
 not commute, that is, in general $AB \not= BA$.
-If you try to prove $e^{A+B} \not= e^A e^B$ using the Taylor series,
+If you would try to rewrite $e^A e^B$ as $e^{A+B}$ using the Taylor series,
 you will see why the lack of commutativity becomes a problem.
-However, it is still true that if
+It is true that if
 $AB = BA$, that is, if $A$ and $B$ commute, then $e^{A+B} = e^Ae^B$.  We will
-find this fact useful.  Let us restate this as a theorem to make a point.
+find this fact useful.  We restate this as a theorem to make a point.
 
 \begin{theorem}
 If $AB = BA$, then $e^{A+B} = e^Ae^B$.  Otherwise,
@@ -5071,7 +5096,7 @@ I + D + \frac{1}{2} D^2 +
 \begin{bmatrix} e^a & 0 \\ 0 & e^b \end{bmatrix} .
 \end{split}
 \end{equation*}
-So by this rationale
+In particular,
 \begin{equation*}
 e^I = \begin{bmatrix} e & 0\\ 0 & e \end{bmatrix}
 \qquad \text{and} \qquad
@@ -5228,7 +5253,7 @@ Since $AE = ED$, we multiply on the right by $E^{-1}$ and we get
 \begin{equation*}
 A = E D E^{-1}.
 \end{equation*}
-This means that $e^A = E e^D E^{-1}$.  Multiplying the matrix by $t$ we obtain
+This means that $e^A = E e^D E^{-1}$.  Multiplying the matrix by $t$, we obtain
 \begin{equation} \label{matexp:diagfundsol}
 \mybxbg{~~
 e^{tA} = 
@@ -5374,10 +5399,10 @@ e^{3t} & -e^{-t}
 \end{equation*}
 
 The initial conditions are $x(0) = 4$ and $y(0) = 2$.  Hence, by the property
-that $e^{0A} = I$ we find that the particular solution we are looking for
+that $e^{0A} = I$, we find that the particular solution we are looking for
 is $e^{tA} \vec{b}$ where $\vec{b}$ is $\left[
 \begin{smallmatrix} 4 \\ 2 \end{smallmatrix} \right]$.
-Then the particular solution we are looking for is
+The particular solution we are looking for is
 \begin{equation*}
 \begin{bmatrix}
 x \\ y
@@ -5405,18 +5430,18 @@ x \\ y
 
 \subsection{Fundamental matrix solutions}
 
-We note that if you can compute a fundamental matrix solution
+If you can compute a fundamental matrix solution
 in a different way, you can use this to find the matrix exponential $e^{tA}$.
 A fundamental matrix solution of a system of ODEs is not unique.  The
 exponential is the fundamental matrix solution with the property that
 for $t=0$ we get the identity matrix.  So we
 must find the right fundamental matrix solution.  Let $X$ be any fundamental
-matrix solution to ${\vec{x}}' = A \vec{x}$.  Then we claim
+matrix solution to ${\vec{x}}' = A \vec{x}$.  We claim
 \begin{equation*}
 e^{tA} = X(t) \left[ X(0) \right]^{-1} .
 \end{equation*}
-Clearly, if we plug $t=0$ into 
-$X(t) \left[ X(0) \right]^{-1}$ we get the identity.  
+If we plug $t=0$ into 
+$X(t) \left[ X(0) \right]^{-1}$, we get the identity as needed.
 We can multiply a fundamental matrix solution on the right by any
 constant invertible matrix and we still get a fundamental matrix solution.
 All we are doing is changing what are the arbitrary constants in the general
@@ -5482,7 +5507,7 @@ I + t
 \end{multline*}
 Just like the scalar version of the Taylor series approximation, the
 approximation will be better for small $t$ and worse for larger $t$.  For
-larger $t$, we will generally have to compute more terms.
+larger $t$, we will have to compute more terms.
 Let us see how we stack up against the real solution with $t=0.1$.  The
 approximate solution is approximately (rounded to 8 decimal places)
 \begin{equation*}
@@ -5494,7 +5519,7 @@ I + 0.1\,A + \frac{0.1^2}{2}A^2 + \frac{0.1^3}{6}A^3
 0.22233333 & 1.12716667 \\
 \end{bmatrix} .
 \end{equation*}
-And plugging $t=0.1$ into the real solution (rounded to 8 decimal places) we get
+Plugging $t=0.1$ into the real solution (rounded to 8 decimal places), we get
 \begin{equation*}
 e^{0.1\,A} = 
 \begin{bmatrix}
@@ -5502,7 +5527,7 @@ e^{0.1\,A} =
 0.22251069 & 1.12734811
 \end{bmatrix} .
 \end{equation*}
-Not bad at all!  Although if we take the same approximation for $t=1$
+Not bad at all!  Although if we take the same approximation for $t=1$,
 we get
 \begin{equation*}
 I + A + \frac{1}{2}A^2 + \frac{1}{6}A^3
@@ -5521,7 +5546,7 @@ e^{A} =
 \end{bmatrix} .
 \end{equation*}
 So the approximation is not very good once we get up to $t=1$.  To get a good
-approximation at $t=1$ (say up to 2 decimal places) we would need to go up to
+approximation at $t=1$ (say up to 2 decimal places), we would need to go up to
 the ${11}^{\text{th}}$ power (exercise).
 
 \subsection{Exercises}
@@ -5799,13 +5824,13 @@ different from \S5.7 in \cite{EP}}\BDref{,
 
 \subsubsection{Integrating factor}
 
-Let us first focus on the nonhomogeneous first order equation
+We first focus on the nonhomogeneous first order equation
 \begin{equation*}
 {\vec{x}}'(t) = A\vec{x}(t) + \vec{f}(t) ,
 \end{equation*}
 where $A$ is a constant matrix.  The first method we look at is the
 \emph{integrating factor method\index{integrating factor method!for systems}}.
-For simplicity we rewrite the equation as
+For simplicity, we rewrite the equation as
 \begin{equation*}
 {\vec{x}}'(t) + P \vec{x}(t) = \vec{f}(t) ,
 \end{equation*}

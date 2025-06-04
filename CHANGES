@@ -15,6 +15,16 @@ an explicit link to 1.6.
 <li>In subsection 3.2.4, mark "elementary row operations"
 as a defined term and add it to the index.  Add
 "row operations" to the index also for the appendix.
+<li>At the end of 3.5 mention that repeated eigenvalues
+have the same behavior roughly (that is, the table still applies).
+<li>In Exercises 3.5.2 and 3.5.3, explicitly say that the student
+should draw the vector field (it was hopefully implied in the previous
+wording, but be explicit here).
+<li>In 3.7.2, when first solving for the generalized eigenvalue in the
+example, explicitly say that \(\vec{w}\) should solve
+\({(A-3I)}^2 \vec{w} = \vec{0},\) to make the argument be clear.
+<li>The paragraph above Theorem 3.8.2 was a little confusing about
+where the commutativity comes in, so rewrite it a little.
 <li>At the end of Example 3.9.3, give the general solution explicitly.
 <li>Just after 6.3.1, give both directions in formulas
 for clarity
