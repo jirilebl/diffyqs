@@ -26,7 +26,17 @@ example, explicitly say that \(\vec{w}\) should solve
 <li>The paragraph above Theorem 3.8.2 was a little confusing about
 where the commutativity comes in, so rewrite it a little.
 <li>At the end of Example 3.9.3, give the general solution explicitly.
+<li>In the explanation of Theorem 4.1.1 (the "proof"), include the "(t)"
+in the computation of the integrals, seems clearer that way.
+<li>In Example 4.2.1, give the definition of \(f(t)\) for a few of the
+intervals.
+<li>In subsection 4.2.3, write out the first few terms of the Fourier
+series in the boxed equation for clarity, and also explicitly
+say that we say "nth harmonic" for the nth term of the series.
+<li>In examples 4.2.3 and 4.2.4, motivate the functions tiny bit more
+than saying they appear in applications.
 <li>Just after 6.3.1, give both directions in formulas
 for clarity
 <li>In Example 6.3.3, reverse the order of the factors
 as that's the way we write the convolution integral.
+<li>Many other small clarifications and improvements

@@ -110,7 +110,7 @@ $(L- \lambda)x = 0$.  A lot of the formalism from linear algebra still
 applies here, though we will not pursue this line of reasoning too far.
 
 \begin{example} \label{bvp:eig1ex}
-Let us find the eigenvalues and eigenfunctions of
+Find the eigenvalues and eigenfunctions of
 \begin{equation*}
 x'' + \lambda x = 0, \quad x(0) = 0, \quad x(\pi) = 0 .
 \end{equation*}
@@ -133,7 +133,7 @@ If $B$ is zero, then $x$ is not a nonzero solution.  So to get a nonzero
 solution we must have that $\sin \bigl( \sqrt{\lambda}\, \pi\bigr) = 0$.  Hence,
 $\sqrt{\lambda}\, \pi$ must be an integer multiple of $\pi$.  In other words,
  $\sqrt{\lambda} = k$ for a positive integer $k$.
-Hence the positive eigenvalues are
+Hence, the positive eigenvalues are
 $k^2$ for all integers $k \geq 1$.  Corresponding eigenfunctions
 can be taken as $x=\sin (k t)$.  Just like for eigenvectors, constant
 multiples of an eigenfunction are also eigenfunctions,
@@ -174,7 +174,7 @@ In summary, the eigenvalues and corresponding eigenfunctions are
 \end{example}
 
 \begin{example}
-Let us compute the 
+Compute the 
  eigenvalues and eigenfunctions of
 \begin{equation*}
 x'' + \lambda x = 0, \quad x'(0) = 0, \quad x'(\pi) = 0 .
@@ -200,18 +200,18 @@ Again $A$ cannot be zero if $\lambda$ is to be an eigenvalue,
 and $\sin \bigl( \sqrt{\lambda}\, \pi\bigr)$ is only zero
 if
 $\sqrt{\lambda} = k$ for a positive integer $k$.
-Hence the positive eigenvalues are again
+Hence, the positive eigenvalues are again
 $k^2$ for all integers $k \geq 1$.  And the corresponding eigenfunctions
 can be taken as $x=\cos (k t)$.
 
-Now suppose that $\lambda = 0$.  In this case the equation is $x'' = 0$
+Now suppose that $\lambda = 0$.  In this case, the equation is $x'' = 0$
 and the general solution is $x = At + B$ so $x' = A$.  The condition
 $x'(0) = 0$ implies that
 $A=0$.  The condition $x'(\pi) = 0$ also implies $A=0$.
 Hence $B$ could be anything (let us take it to be 1).  So $\lambda = 0$
 is an eigenvalue and $x=1$ is a corresponding eigenfunction.
 
-Finally, let $\lambda < 0$.  In this case the general solution is
+Finally, let $\lambda < 0$.  In this case, the general solution is
 $x = A \cosh \bigl( \sqrt{-\lambda}\, t\bigr)
 + B \sinh \bigl( \sqrt{-\lambda}\, t\bigr)$
 and
@@ -220,7 +220,8 @@ x' = A\sqrt{-\lambda}\, \sinh \bigl( \sqrt{-\lambda}\, t\bigr)
 + B\sqrt{-\lambda}\, \cosh \bigl( \sqrt{-\lambda}\, t \bigr) .
 \end{equation*}
 We have already seen (with roles of $A$ and $B$ switched) that for this
-expression to be zero at $t=0$ and $t=\pi$, we must have $A=B=0$.  Hence there are
+expression to be zero at $t=0$ and $t=\pi$, we must have $A=B=0$.
+Hence, there are
 no negative eigenvalues.
 
 In summary, the eigenvalues and corresponding eigenfunctions are
@@ -238,7 +239,7 @@ The following problem is the one that leads to the general Fourier
 series.
 
 \begin{example} \label{bvp-periodic:example}
-Let us compute the 
+Compute the 
 eigenvalues and eigenfunctions of
 \begin{equation*}
 x'' + \lambda x = 0, \quad x(-\pi) = x(\pi), \quad x'(-\pi) = x'(\pi) .
@@ -247,7 +248,7 @@ We have not specified the values or the derivatives
 at the endpoints, but rather that they are the same at the beginning and
 at the end of the interval.
 
-Let us skip $\lambda < 0$.  The computations are the same as before,
+We skip $\lambda < 0$.  The computations are the same as before,
 and again we find
 that there are no negative eigenvalues.
 
@@ -287,7 +288,7 @@ is an integer and the eigenvalues are yet again $\lambda = k^2$ for
 an integer $k \geq 1$.  In this case, however, 
 $x = A \cos (k t) + B \sin (k t)$ is an eigenfunction for any $A$ and any $B$.
 So we have two linearly independent eigenfunctions $\sin (kt)$ and $\cos (kt)$.
-Remember that for a matrix we can also have two eigenvectors
+Remember that for a matrix, we can also have two eigenvectors
 corresponding to a single eigenvalue if the eigenvalue is repeated.
 
 In summary, the eigenvalues and corresponding eigenfunctions are
@@ -342,7 +343,7 @@ We, therefore, get the following theorem.
 
 \begin{theorem} \label{bvp:orthogonaleigen}
 Suppose that $x_1(t)$ and $x_2(t)$ are two eigenfunctions of the problem
-\eqref{bv:eq1}, \eqref{bv:eq2} or \eqref{bv:eq3}
+\eqref{bv:eq1}, \eqref{bv:eq2}, or \eqref{bv:eq3}
 for two different
 eigenvalues $\lambda_1$ and $\lambda_2$.  Then they are
 \emph{orthogonal\index{orthogonal!functions}}
@@ -354,7 +355,7 @@ in the sense that
 
 The terminology comes from the fact that the integral is a type of
 inner product.  We will expand on this in the next section.  The theorem
-has a very short, elegant, and illuminating proof so let us give it here.
+has a very short, elegant, and illuminating proof so we give it here.
 First, we have the following two equations.
 \begin{equation*}
 x_1'' + \lambda_1 x_1 = 0
@@ -365,16 +366,16 @@ Multiply the first by $x_2$ and the second by $x_1$ and subtract to get
 \begin{equation*}
 (\lambda_1 - \lambda_2) x_1 x_2 = x_2'' x_1 - x_2 x_1'' .
 \end{equation*}
-Now integrate both sides of the equation:
+Integrate both sides of the equation:
 \begin{equation*}
 \begin{split}
-(\lambda_1 - \lambda_2) \int_a^b x_1 x_2 \,dt
+(\lambda_1 - \lambda_2) \int_a^b x_1(t) x_2(t) \,dt
 & =
-\int_a^b x_2'' x_1 - x_2 x_1'' \,dt \\
+\int_a^b \bigl( x_2''(t) x_1(t) - x_2(t) x_1''(t) \bigr) \,dt \\
 & =
-\int_a^b \frac{d}{dt} \left( x_2' x_1 - x_2 x_1' \right) \,dt \\
+\int_a^b \frac{d}{dt} \Bigl( x_2'(t) x_1(t) - x_2(t) x_1'(t) \Bigr) \,dt \\
 & =
-\Bigl[ x_2' x_1 - x_2 x_1' \Bigr]_{t=a}^b
+\Bigl[ x_2'(t) x_1(t) - x_2(t) x_1'(t) \Bigr]_{t=a}^b
 = 0 .
 \end{split}
 \end{equation*}
@@ -733,8 +734,15 @@ We could have also started with $f$
 defined only on the half-open interval $(-L,L]$ and then define $f(-L) = f(L)$.
 
 \begin{example}
-Define $f(t) = 1-t^2$ on $[-1,1]$.  Now extend $f(t)$ periodically to
-a 2-periodic function.  See \figurevref{ts:perextofinvertedparabolafig}.
+Define $f(t) = 1-t^2$ on $[-1,1]$.  Extend $f(t)$ periodically to
+a 2-periodic function.
+For $1 \leq t \leq 3$, we get
+$f(t) = 1-{(t-2)}^2$.
+For $-3 \leq t \leq 1$, we get
+$f(t) = 1-{(t+2)}^2$.
+For $3 \leq t \leq 5$, we get
+$f(t) = 1-{(t-4)}^2$.  And so on.
+See \figurevref{ts:perextofinvertedparabolafig}.
 \begin{myfig}
 \capstart
 \diffyincludegraphics{width=3in}{width=4.5in}{ts-perextofinvertedparabola}
@@ -756,19 +764,19 @@ $\cos t$?
 
 \subsection{Inner product and eigenvector decomposition}
 
-Suppose we have a \emph{\myindex{symmetric matrix}},
+Suppose $A$ is a \emph{\myindex{symmetric matrix}},
 that is, $A^T = A$.  As we remarked before, 
 eigenvectors of $A$ are then orthogonal.  Here the word
 \emph{orthogonal}\index{orthogonal!vectors} means
 that if $\vec{v}$ and $\vec{w}$ are two 
 eigenvectors of $A$ for distinct eigenvalues,
 then $\langle \vec{v} , \vec{w} \rangle = 0$.
-In this case the inner product $\langle \vec{v} , \vec{w} \rangle$
+In this case, the inner product $\langle \vec{v} , \vec{w} \rangle$
 is the \emph{\myindex{dot product}},
 which can be computed as $\vec{v}^T\vec{w}$.
 
 To decompose a vector $\vec{v}$ in terms of mutually orthogonal
-vectors $\vec{w}_1$ and $\vec{w}_2$ we write
+vectors $\vec{w}_1$ and $\vec{w}_2$, we write
 \begin{equation*}
 \vec{v} = a_1 \vec{w}_1  + a_2 \vec{w}_2 .
 \end{equation*}
@@ -848,8 +856,18 @@ $\sin (k t)$.  That is, we want to find a representation of a
 $2\pi$-periodic function $f(t)$ as
 \begin{equation*}
 \mybxbg{~~
-f(t) = \frac{a_0}{2} +
+\begin{split}
+f(t) &=
+\frac{a_0}{2} +
 \sum_{n=1}^\infty a_n \cos (n t) + b_n \sin (n t) .
+\\
+& = 
+\frac{a_0}{2}
++ a_1 \cos (t) + b_1 \sin (t) 
++ a_2 \cos (2 t) + b_2 \sin (2 t) 
+%+ a_3 \cos (3 t) + b_3 \sin (3 t) 
++ \cdots
+\end{split}
 ~~}
 \end{equation*}
 This series is called the \emph{\myindex{Fourier series}}%
@@ -857,25 +875,28 @@ This series is called the \emph{\myindex{Fourier series}}%
 \href{https://en.wikipedia.org/wiki/Joseph_Fourier}{Jean Baptiste Joseph Fourier}
 (1768--1830).} or the
 \emph{\myindex{trigonometric series}} for $f(t)$.
+The term
+$a_n \cos (n t) + b_n \sin (n t)$ is
+sometimes called the $n^{\text{th}}$ \emph{\myindex{harmonic}}.
 We write the coefficient of the eigenfunction 1 as $\frac{a_0}{2}$
 for convenience.
 We could also think of $1 = \cos (0t)$, so that
 we only need to look at $\cos (kt)$ and $\sin (kt)$.
 
-As for matrices we want to find a \emph{\myindex{projection}}
+As for matrices, we want to find a \emph{\myindex{projection}}
 of $f(t)$ onto the subspaces given by the eigenfunctions.  So we want to
 define an \emph{\myindex{inner product of functions}}.  For example, to
-find $a_n$ we want to compute $\langle \, f(t) \, , \, \cos (nt) \, \rangle$.
+find $a_n$,
+we want to compute $\langle \, f(t) \, , \, \cos (nt) \, \rangle$.
 We define the inner product as
 \begin{equation*}
 \langle \, f(t)\, , \, g(t) \, \rangle \overset{\text{def}}{=}
 \int_{-\pi}^\pi f(t) \, g(t) \, dt .
 \end{equation*}
-With this definition of the inner product,
+With this inner product,
 we saw in the previous section that the eigenfunctions $\cos (kt)$
 (including the constant eigenfunction), and
-$\sin (kt)$ are \emph{orthogonal\index{orthogonal!functions}} in the sense
-that
+$\sin (kt)$ are \emph{orthogonal\index{orthogonal!functions}}, that is,
 \begin{align*}
 \langle \, \cos (mt)\, , \, \cos (nt) \, \rangle = 0 & \qquad \text{for } m \not= n , \\
 \langle \, \sin (mt)\, , \, \sin (nt) \, \rangle = 0 & \qquad \text{for } m \not= n , \\
@@ -968,7 +989,9 @@ Take the function
 f(t) = t
 \end{equation*}
 for $t$ in $(-\pi,\pi]$.  Extend $f(t)$ periodically and write it 
-as a Fourier series.  This function is called the \emph{\myindex{sawtooth}}.
+as a Fourier series.  This function is called the
+\emph{\myindex{sawtooth}}, and it finds many applications,
+for example, in electronic music.
 
 \begin{myfig}
 \capstart
@@ -991,11 +1014,11 @@ $t \cos (nt)$ are all odd functions.  Thus
 \begin{equation*}
 a_n = \frac{1}{\pi} \int_{-\pi}^\pi t \cos (nt) \,dt = 0 .
 \end{equation*}
-We move on to $b_n$.  Another useful fact from calculus
+We move to $b_n$.  Another useful fact from calculus
 is that the integral of an even function over
 a symmetric interval is
 twice the integral of the same function over half the interval.  
-Recall an \emph{\myindex{even function}}
+An \emph{\myindex{even function}}
 is a
 function $\varphi(t)$ such that $\varphi(-t) = \varphi(t)$.  For example,
 $t \sin (nt)$ is even.
@@ -1019,7 +1042,7 @@ b_n & = \frac{1}{\pi} \int_{-\pi}^\pi t \sin (nt) \,dt \\
 =  \frac{2 \,{(-1)}^{n+1}}{n} .
 \end{split}
 \end{equation*}
-We have used the fact that 
+We have used that 
 \begin{equation*}
 \cos (n\pi) = {(-1)}^n =
 \begin{cases}
@@ -1034,7 +1057,8 @@ The series, therefore, is
 \sin (n t) .
 \end{equation*}
 
-Let us write out the first 3 harmonics of the series for $f(t)$:
+More explicitly,
+the first 3 harmonics of the series for $f(t)$ are
 \begin{equation*}
 2 \, \sin (t)
 - \sin (2t)
@@ -1067,7 +1091,8 @@ f(t) =
 Extend $f(t)$ periodically and write it 
 as a Fourier series.  This function or its variants appear often
 in applications and the function is called the
-\emph{\myindex{square wave}}.
+\emph{\myindex{square wave}}.  It is a signal
+generated by simply periodically flipping a switch on or off.
 
 \begin{myfig}
 \capstart
@@ -1114,7 +1139,7 @@ The Fourier series is
 \sin \bigl( (2k-1)\, t \bigr) .
 \end{equation*}
 
-Let us write out the first 3 harmonics of the series for $f(t)$:
+The first 3 harmonics of the series for $f(t)$ are
 \begin{equation*}
 \frac{\pi}{2}
 +
@@ -1149,6 +1174,7 @@ is only an equality for such $t$ where $f(t)$ is continuous.
 We do not get an equality for $t=-\pi,0,\pi$ and all the other discontinuities
 of $f(t)$.  It is not hard to see that when $t$ is an integer multiple of
 $\pi$ (which gives all the discontinuities), then
+$\sin \bigl( (2k-1)\, t \bigr) = 0$ and so
 \begin{equation*}
 \frac{\pi}{2} + \sum_{k=1}^\infty
 \frac{2}{2k-1} 
@@ -1171,7 +1197,10 @@ discontinuities.
 We will generally not worry about changing the function values
 at several (finitely many) points.
 
-We will say more about convergence in the next section.  Let us, however,
+We will say more about convergence in the next section.
+Roughly speaking,
+if $f(t)$ is a nice enough function then the series
+converges to $f(t)$ wherever $f(t)$ is continuous.  Let us, however,
 briefly mention an effect of the discontinuity.  Zoom in near the
 discontinuity in the square wave.  Further, plot the first 100
 harmonics, see
@@ -1192,13 +1221,16 @@ terms in the series we take.
 
 \medskip
 
-We can think of a periodic function as a \myquote{signal} being a superposition of
-many signals of pure frequency.  For example, we could think of the square
-wave as a tone of certain base frequency.
+We can think of a periodic function as a \myquote{signal}
+that is a superposition of
+many signals of pure frequency.
+For example, we could think of the square
+wave as a tone of certain base frequency
+coming through the speaker of your computer.
 This base frequency is called the
-\emph{\myindex{fundamental frequency}}.
-The square wave
-will be
+\emph{\myindex{fundamental frequency}}
+and that is the ``musical note'' that you identify this sound as.
+But the square wave will also be
 a superposition of
 many different pure tones of frequencies that are multiples of the
 fundamental frequency.
@@ -1206,9 +1238,14 @@ In music,
 the higher frequencies are called the \emph{\myindex{overtones}}.
 All the frequencies that appear are called the
 \emph{\myindex{spectrum}} of the signal.
-On the other hand a simple sine wave is only the pure tone (no overtones).  The
-simplest way to make sound using a computer is the square wave, and the sound
-is very different from a pure tone.  If you ever played video games
+On the other hand,
+if the signal were
+a simple sine wave instead of the square wave,
+then it is only the pure tone of
+fundamental frequency (no overtones).
+The simplest way to make sound using a computer is the square wave,
+and the sound is very different from a pure tone.
+If you ever played video games
 from the 1980s or so, then you heard what square waves sound like.
 
 \subsection{Exercises}
@@ -1346,17 +1383,18 @@ $\frac{\pi^4}{5} + \sum\limits_{n=1}^\infty
 
 \subsection{$2L$-periodic functions}
 
-We have computed the Fourier series for a $2\pi$-periodic function, but what
+We computed the Fourier series for a $2\pi$-periodic function, but what
 about functions of different periods.  Well, fear not, the computation is a
 simple case of change of variables.  We just rescale the independent
-axis.  Suppose we have a $2L$-periodic function $f(t)$.  Then $L$ is called
+axis.  Consider a $2L$-periodic function $f(t)$.  The $L$ is called
 the \emph{\myindex{half period}}.  Let $s = \frac{\pi}{L}  t$.
 Then the function
 \begin{equation*}
 g(s) = f\left(\frac{L}{\pi} s \right)
 \end{equation*}
-is $2\pi$-periodic.  We must also rescale all our sines and cosines.
-In the series we use $\frac{\pi}{L} t$ as the variable.  That is, we
+is $2\pi$-periodic and we know what to do with it.
+We must also rescale all our sines and cosines.
+In the series, we use $\frac{\pi}{L} t$ as the variable.  That is, we
 want to write
 \begin{equation*}
 \mybxbg{~~
@@ -1471,8 +1509,8 @@ the series is
 \sum_{\substack{n=1 \\ n \text{ odd}}}^\infty \frac{-4}{n^2 \pi^2} \cos (n \pi t) .
 \end{equation*}
 
-Let us explicitly write down the first few terms of the series
-up to the $3^{\text{rd}}$ harmonic:
+The first few terms of the series
+up to the $3^{\text{rd}}$ harmonic are
 \begin{equation*}
 \frac{1}{2} -
 \frac{4}{\pi^2} \cos (\pi t)
@@ -3240,7 +3278,7 @@ We have two conditions along the $x$-axis as there are
 two derivatives in the $x$ direction.
 These side conditions are said to be
 \emph{homogeneous\index{homogeneous side conditions}}
-(i.e., $u$ or a derivative of $u$ is set to zero).
+(i.e.\ $u$ or a derivative of $u$ is set to zero).
 
 We also need an initial condition---the temperature distribution
 at time $t=0$.  That is,
