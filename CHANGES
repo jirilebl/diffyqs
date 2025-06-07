@@ -46,6 +46,8 @@ the figure 4.11.
 <li>Just before the Example 4.5.2, the paragraph is not quite right.
 There is still just one resonance frequency, we're just hitting it with
 the overtones.
+<li>In the first paragraph of 4.6.2, also mention that the heat
+equation is homogeneous as that is also needed for superposition.
 <li>Just after 6.3.1, give both directions in formulas
 for clarity
 <li>In Example 6.3.3, reverse the order of the factors

@@ -2964,25 +2964,29 @@ b_n \sin \left( \frac{n \pi}{L} t \right) .
 In other words, we multiply the offending term by $t$.  From then on, we
 proceed as before.
 
-Of course, the solution is not a Fourier series (it is not even
-periodic) since it contains these terms multiplied by $t$.  Further, the
-terms
+The solution is not a Fourier series (it is not even
+periodic) since it contains these terms multiplied by $t$.
+The terms
 $t \left( a_N \cos \left( \frac{N \pi}{L} t \right) +
 b_N \sin \left( \frac{N \pi}{L} t \right) \right)$ eventually dominate and lead to
 wild oscillations.  As before, this behavior is called \emph{\myindex{pure
 resonance}} or just \emph{\myindex{resonance}}.
 
-Note that we may now hit the resonance frequency with infinitely
+Note that we may hit the resonance frequency with infinitely
 many terms (overtones) of the forcing function $F$.
-That is, suppose we use the same \myquote{shape} for $F$ and we change the
-frequency of $F$ (we change $L$).
+That is, suppose we use the same \myquote{shape} for $F$, and we change the
+base frequency (we change the $L$).
 Then different
 terms from the Fourier series of $F$ may interfere with the complementary
-solution and cause resonance.
-However, we should note that since everything is an approximation and in
-particular $c$ is never actually zero but at best something very close to zero,
+solution, that is, $\frac{n \pi}{L} = \omega_0$ for some $n$, and possibly
+cause resonance.
+Theoretically, infinitely many base frequencies
+could cause resonance,
+however, we should note that since everything is an approximation to
+any real life application,
 only the first
-few such frequencies matter in real life.
+few terms of $F$, and hence only a few such frequencies,
+would matter in real life.
 
 \begin{example}
 We want to solve the equation
@@ -3036,7 +3040,7 @@ t \sin (3 \pi t)
 b_n
 \sin (n \pi t) . 
 \end{equation*}
-Let us compute the second derivative.
+We compute the second derivative.
 \begin{multline*}
 x_p''(t) =
 - 6 a_3
@@ -3082,14 +3086,13 @@ We simplify,
 \sin (n \pi t) . 
 \end{equation*}
 This series has to equal to the series for $F(t)$.
-We equate the coefficients and solve for $a_3$ and $b_n$.
+We equate the coefficients and solve for $a_3$ and $b_n$:
 \begin{align*}
 & a_3 = \frac{4/(3\pi)}{-12\pi} = \frac{-1}{9\pi^2} , \\
 & b_3 = 0 , \\
 & b_n = \frac{4}{n\pi(18\pi^2 - 2n^2 \pi^2)} 
 = \frac{2}{\pi^3 n(9 - n^2)} \qquad \text{for } n \text{ odd and } n\not=3 .
 \end{align*}
-
 That is,
 \begin{equation*}
 x_p(t) =
@@ -3103,13 +3106,13 @@ t \, \cos (3 \pi t)
 \end{equation*}
 \end{example}
 
-When $c > 0$, you do not have to worry about pure resonance.  That is,
-there are never any conflicts and you do not need to multiply any
+When $c > 0$, you do not have to worry about pure resonance.
+There are never any conflicts, and you do not need to multiply any
 terms by $t$.  There is a corresponding concept of
-\myindex{practical resonance}
+\myindex{practical resonance,}
 and it is very similar to the ideas we already explored in
 \chapterref{ho:chapter}.
-Basically what happens in practical resonance is that one of the
+Basically, what happens in practical resonance is that one of the
 coefficients in the series for $x_{sp}$ can get very big.  Let us not go
 into details here.
 
@@ -3260,11 +3263,16 @@ k \frac{\partial^2 u}{\partial x^2} ,
 ~~}
 \end{equation*}
 where $k > 0$ is a constant (the \emph{\myindex{thermal conductivity}} of the material).
-That is, the change in heat at a specific point is proportional to the second
-derivative of the heat along the wire.  This makes sense;
+That is, the change in heat with respect to time at some point
+is proportional to the second
+derivative of the heat in the $x$ direction---along the wire.
+This makes sense;
 if at a fixed $t$
-the graph of the heat distribution has a maximum (the graph is concave down),
-then heat flows away from the maximum.  And vice versa.
+the graph of the heat distribution has a maximum
+(the graph is concave down and the second $x$ derivative is negative),
+then heat should flow away from the maximum and so the $t$ derivative should also
+be negative.
+Similarly at a minimum, heat wants to flow in.
 
 We generally use a more convenient notation for partial derivatives.
 We write $u_t$ instead of $\frac{\partial u}{\partial t}$,
@@ -3290,9 +3298,9 @@ u_x(L,t) = 0 .
 \end{equation*}
 Let us see why that is so.
 If $u_x$ is positive at some point $x_0$, then at a particular time,
-$u$ is smaller to the left of $x_0$, and higher to the right of $x_0$.
+$u$ is smaller to the left of $x_0$ and higher to the right of $x_0$.
 Heat is flowing from high heat to low heat, that is, to the left.
-On the other hand if $u_x$ is negative then heat is again flowing
+On the other hand, if $u_x$ is negative, then heat is again flowing
 from high heat to low
 heat, that is, to the right.  So when $u_x$ is zero,
 we are at a point where 
@@ -3317,7 +3325,8 @@ This initial condition is not a homogeneous side condition.
 \subsection{Separation of variables}
 
 The heat equation is linear as $u$ and its derivatives do not
-appear to any powers or in any functions.
+appear to any powers or in any functions,
+and it is homogeneous---there is no term independent of $u$.
 Thus the principle of \myindex{superposition} still applies for
 the heat equation
 (without side conditions):
@@ -3345,16 +3354,16 @@ For the heat equation, we try to find solutions of the form
 \begin{equation*}
 u(x,t) = X(x)T(t) .
 \end{equation*}
-That the desired solution we are looking for is of this form is too much to
+That the desired particular solution we are looking for is of this form is too much to
 hope for.  What is perfectly reasonable to ask, however, is to find
 enough \myquote{building-block} solutions of the form
 $u(x,t) = X(x)T(t)$ using this procedure
 so that the desired solution to the PDE is somehow constructed from these
 building blocks by the use of superposition.
 
-Let us try to solve the heat equation
+Let us try to solve the heat equation problem
 \begin{equation*}
-u_t = k u_{xx}
+u_t = k u_{xx},
 \qquad \text{with} \quad
 u(0,t) = 0 ,\quad \quad u(L,t) = 0,
 \quad \text{and} \quad u(x,0) = f(x) .
@@ -3366,7 +3375,7 @@ differential equation and the homogeneous side conditions, we will try to
 build up a solution from these building blocks to solve the
 nonhomogeneous initial condition $u(x,0) = f(x)$.
 
-First we plug $u(x,t) = X(x)T(t)$ into the heat equation to
+First, we plug $u(x,t) = X(x)T(t)$ into the heat equation to
 obtain
 \begin{equation*}
 X(x)T'(t) = k X''(x)T(t) .
@@ -3391,7 +3400,7 @@ X''(x) + \lambda X(x) &= 0 , \\
 T'(t) + \lambda k T(t) &= 0 .
 \end{align*}
 The boundary condition $u(0,t) = 0$ implies $X(0)T(t) = 0$.  We are looking
-for a nontrivial solution and so we can assume that $T(t)$ is not identically
+for a nontrivial solution, and so we can assume that $T(t)$ is not identically
 zero.  Hence $X(0) = 0$.  Similarly, $u(L,t) = 0$ implies $X(L) = 0$.  We
 are looking for nontrivial solutions $X$ of the eigenvalue problem
 $X'' + \lambda X = 0$, $X(0) = 0$, $X(L) = 0$.  We have previously found that
@@ -3408,12 +3417,13 @@ T_n'(t) + \frac{n^2 \pi^2}{L^2} k T_n(t) = 0 .
 \end{equation*}
 This is one of our
 \hyperref[subsection:fourfundamental]{fundamental equations},
-and the solution is just
+and the solution is
 an exponential:
 \begin{equation*}
-T_n(t) = e^{\frac{-n^2 \pi^2}{L^2} k t} .
+T_n(t) = e^{\frac{-n^2 \pi^2}{L^2} k t} ,
 \end{equation*}
-It will be useful to note that $T_n(0) = 1$.
+where we picked the particular solution
+where conveniently $T_n(0) = 1$.
 Our building-block solutions are
 \begin{equation*}
 u_n(x,t) = X_n(x)T_n(t) =
@@ -3421,8 +3431,8 @@ u_n(x,t) = X_n(x)T_n(t) =
 e^{\frac{-n^2 \pi^2}{L^2} k t} .
 \end{equation*}
 
-We note that $u_n(x,0) = \sin \left( \frac{n \pi}{L} x \right)$.  Let us
-write $f(x)$ as the sine series
+We note that $u_n(x,0) = \sin \left( \frac{n \pi}{L} x \right)$.
+We write $f(x)$ as the sine series
 \begin{equation*}
 f(x) = \sum_{n=1}^\infty b_n \sin \left(\frac{n \pi}{L}  x \right) .
 \end{equation*}
@@ -3447,7 +3457,7 @@ e^{\frac{-n^2 \pi^2}{L^2} k t} .
 Why does this solution work?  First note that it is a solution to
 the heat equation by superposition.  It satisfies $u(0,t) = 0$
 and $u(L,t) = 0$, because $x=0$ or $x=L$ makes all the sines vanish.
-Finally, plugging in $t=0$, we notice that $T_n(0) = 1$ and so
+Finally, plugging in $t=0$, we notice that $T_n(0) = 1$, and so
 \begin{equation*}
 u(x,0) = 
 \sum_{n=1}^\infty
@@ -3468,8 +3478,10 @@ ends are embedded in ice (temperature 0).
 Let $k=0.003$ and let the initial heat distribution
 be $u(x,0) = 50\,x\,(1-x)$.
 See \figurevref{heat:wireexinitfig}.
-Suppose we want to find the temperature function $u(x,t)$.  Let us also suppose we
-want to find when (at what $t$) does the maximum temperature in the wire 
+Suppose we want to find the temperature function $u(x,t)$.
+In particular, suppose we
+want to find when (at what time $t$)
+does the maximum temperature in the wire 
 drop to one half of the initial maximum of 12.5.
 
 \begin{myfig}
@@ -3519,7 +3531,7 @@ $u(0,t)=u(1,t)=0$ and how the exponential makes the temperature decay
 with time.\label{heat:wireexfig}}
 \end{myfig}
 
-Finally, let us answer the question about the maximum temperature.  It is
+Finally, we answer the question about the maximum temperature.  It is
 relatively easy to see
 that the maximum temperature at any fixed time is always at $x=0.5$, in
 the middle of the wire.  The plot of $u(x,t)$ confirms this intuition.
@@ -3544,7 +3556,7 @@ u(0.5,t) \approx
 \end{equation*}
 The approximation gets better and better as $t$ gets larger as the other
 terms decay much faster.
-Let us plot the function $u(0.5,t)$, the temperature at the midpoint of the wire
+We plot the function $u(0.5,t)$, the temperature at the midpoint of the wire
 at time $t$, in \figurevref{heat:wireexmaxfig}.  The figure also
 plots the approximation by the first term.
 
@@ -3556,7 +3568,7 @@ and the approximation of this temperature by using only the first term in
 the series (top curve).\label{heat:wireexmaxfig}}
 \end{myfig}
 
-After $t=5$ or so
+After $t=5$ or so,
 it would be hard to tell the difference
 between the first term of the series for $u(x,t)$ and 
 the real solution $u(x,t)$.  This behavior
@@ -3567,7 +3579,7 @@ first one or two terms may be necessary.
 We get back to the question of when is the maximum temperature one half of the
 initial maximum temperature.  That is, when is the temperature
 at the midpoint $\nicefrac{12.5}{2} = 6.25$.  The graph suggests
-that the approximation by the first term we will be close enough.  We
+that the approximation by the first term will be close enough.  We
 solve
 \begin{equation*}
 6.25 =
@@ -3613,8 +3625,9 @@ u(x,t) =
 
 \subsection{Insulated ends}
 
-Now suppose the ends of the wire are insulated.  In this case, we are solving
-the equation
+Now suppose the ends of the wire are insulated.
+In this case, we are solving
+the problem
 \begin{equation*}
 u_t = k u_{xx}
 \qquad \text{with} \quad
@@ -3622,14 +3635,14 @@ u_x(0,t) = 0, \quad u_x(L,t) = 0,
 \quad \text{and} \quad u(x,0) = f(x) .
 \end{equation*}
 Yet again we try a solution of the form $u(x,t) = X(x)T(t)$.  By the same
-procedure as before we plug into the heat equation and arrive at the
+procedure as before, we plug into the heat equation and arrive at the
 following
-two equations
+two equations:
 \begin{align*}
 X''(x) + \lambda X(x) &= 0 , \\
 T'(t) + \lambda k T(t) &= 0 .
 \end{align*}
-At this point the story changes slightly.
+At this point, the story changes slightly.
 The boundary condition $u_x(0,t) = 0$ implies $X'(0)T(t) = 0$.
 Hence $X'(0) = 0$.  Similarly, $u_x(L,t) = 0$ implies $X'(L) = 0$.  We
 are looking for nontrivial solutions $X$ of the eigenvalue problem
@@ -3658,15 +3671,15 @@ Our building-block solutions are
 \begin{equation*}
 u_n(x,t) = X_n(x)T_n(t) =
 \cos \left( \frac{n \pi}{L} x \right)
-e^{\frac{-n^2 \pi^2}{L^2} k t} ,
+e^{\frac{-n^2 \pi^2}{L^2} k t}
 \end{equation*}
 and
 \begin{equation*}
 u_0(x,t) = 1 .
 \end{equation*}
 
-We note that $u_n(x,0) = \cos \left( \frac{n \pi}{L} x \right)$.  Let us
-write $f$ using the cosine series
+We note that $u_n(x,0) = \cos \left( \frac{n \pi}{L} x \right)$.
+We write $f$ using the cosine series
 \begin{equation*}
 f(x) = \frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos \left( \frac{n \pi}{L} x
 \right) .
@@ -3691,7 +3704,7 @@ e^{\frac{-n^2 \pi^2}{L^2} k t} .
 \end{equation*}
 
 \begin{example}
-Let us try the same equation as before, but for insulated ends.
+Try the same equation as before, but with insulated ends.
 We are solving the following PDE problem
 \begin{align*}
 & u_t = 0.003 \, u_{xx} , \\
@@ -3744,7 +3757,7 @@ In other words, $\frac{a_0}{2}$ is the average value of $f(x)$, that is,
 the average of the initial temperature.  As the wire is insulated
 everywhere, no heat can get out, no heat can get in.  So the temperature
 tries to distribute evenly over time, and the average temperature must always be the
-same, in particular it is always $\frac{a_0}{2}$.  As time goes to
+same, in particular, it is always $\frac{a_0}{2}$.  As time goes to
 infinity, the temperature goes to the constant $\frac{a_0}{2}$ everywhere.
 
 \subsection{Exercises}
