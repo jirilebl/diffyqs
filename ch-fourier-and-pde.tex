@@ -1229,7 +1229,7 @@ wave as a tone of certain base frequency
 coming through the speaker of your computer.
 This base frequency is called the
 \emph{\myindex{fundamental frequency}}
-and that is the ``musical note'' that you identify this sound as.
+and that is the \myquote{musical note} that you identify this sound as.
 But the square wave will also be
 a superposition of
 many different pure tones of frequencies that are multiples of the
@@ -1470,10 +1470,12 @@ Compute the Fourier series of $f(t)$.
 \caption{Periodic extension of the function $f(t)$.\label{gfs:sawcontfig}}
 \end{myfig}
 
+First, we recognize that $f$ is $2$-periodic and so $L=1$.
 We want to
 write $f(t) = \frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos (n \pi t) + b_n
-\sin (n \pi t)$.  For $n \geq 1$ we note that $\lvert t \rvert \cos (n \pi t)$
-is even and hence
+\sin (n \pi t)$.  We start with $a_n$ for $n \geq 1$.
+We note that $\lvert t \rvert \cos (n \pi t)$
+is even and for $0 \leq t \leq 1$, $f(t) = \lvert t \rvert = t$.  Hence,
 \begin{equation*}
 \begin{split}
 a_n & = \int_{-1}^1 f(t) \cos (n \pi t) \, dt \\
@@ -1497,8 +1499,8 @@ a_0 = \int_{-1}^1 \lvert t \rvert \, dt
 \end{equation*}
 You should be able to find this integral by thinking about the integral
 as the area under the graph without doing any computation at all.
-Finally we can find $b_n$.  Here, we notice that
-$\lvert t \rvert \sin (n \pi t)$ is odd and, therefore,
+Finally, we find $b_n$.  Notice that
+$\lvert t \rvert \sin (n \pi t)$ is odd, and so
 \begin{equation*}
 b_n = \int_{-1}^1 f(t) \sin (n \pi t) \, dt = 0 .
 \end{equation*}
@@ -1584,9 +1586,10 @@ and $f'(t)$ is piecewise continuous, then
 $f(t)$ is said to be \emph{\myindex{piecewise smooth}}.
 
 \begin{example}
-The square wave function \eqref{gfs:sqwaveeq}
-is piecewise smooth on $[-\pi,\pi]$ or any other interval.  In such a
-case we simply say that the function is piecewise smooth.
+The square wave function, \eqref{gfs:sqwaveeq} extended periodically,
+is piecewise smooth on $[-\pi,\pi]$ or any other finite interval, so
+we just say that $f(t)$ is
+piecewise smooth without mentioning an interval.
 \end{example}
 
 \begin{example}
@@ -1602,8 +1605,9 @@ even piecewise continuous.
 
 \begin{example}
 The function $f(t) = \sqrt[3]{t}$ is not piecewise smooth on
-$[-1,1]$ (or any other interval containing zero).  $f(t)$ is continuous, but
-the derivative of $f(t)$ is unbounded near zero and hence not piecewise
+$[-1,1]$ (or any other interval containing zero).  
+The function $f(t)$ is continuous, but
+its derivative $f'(t) = \frac{1}{3t^{2/3}}$, is unbounded near zero and hence not piecewise
 continuous.
 \end{example}
 
@@ -1674,7 +1678,9 @@ f'(t) = \sum_{n=1}^\infty \frac{-a_n n \pi}{L}
 It is important that the function is continuous.  It can have corners, but no
 jumps.  Otherwise, the differentiated series will fail to converge.  For an
 exercise, take the series obtained for the square wave and try to
-differentiate the series.  Similarly, we can also integrate a Fourier series.
+differentiate the series.
+Similarly to differentiation,
+integration of Fourier series is also done term by term.
 
 \begin{theorem}
 Suppose
@@ -1696,11 +1702,12 @@ where $F'(t) = f(t)$ and $C$ is an arbitrary constant.
 Note that the series for $F(t)$ is no longer a Fourier series as it contains
 the $\frac{a_0 t}{2}$ term.  The antiderivative
 of a periodic function need no longer be periodic and so we should not
-expect a Fourier series.
+expect a Fourier series.  Unless, of course, $a_0 = 0$.
 
 \subsection{Rates of convergence and smoothness}
 
-Let us do an example of a periodic function with one derivative everywhere.
+We consider an example of a periodic function differentiable once but not
+twice.
 
 \begin{example}
 Take the function
@@ -1712,17 +1719,24 @@ f(t) =
 \end{cases}
 \end{equation*}
 and extend to a
-2-periodic function.  The plot is given in
-\figurevref{gfs:smoothexfig}.
+2-periodic function.
+The derivative $f'(t)$ exists for all $t$, but $f''(t)$
+does not exist if $t$ is an integer.
+In particular,
+$f'(t) = 2t+1$ if $-1 \leq t \leq 0$ and $f'(t) = 1-2t$ if
+$0 \leq t \leq 1$, so $f'(t)$ has a \myquote{corner} at $0$.
+See
+\figurevref{gfs:smoothexfig}
+for the plot of $f(t)$ and $f'(t)$.
+
 
 \begin{myfig}
 \capstart
 \diffyincludegraphics{width=3in}{width=4.5in}{gfs-smoothex}
-\caption{Smooth 2-periodic function.\label{gfs:smoothexfig}}
+\caption{Smooth 2-periodic function (the smooth line) with its nonsmooth derivative
+(the jagged line).\label{gfs:smoothexfig}}
 \end{myfig}
 
-This function has one derivative everywhere, but it
-does not have a second derivative whenever $t$ is an integer.
 
 \begin{exercise}
 Compute $f''(0+)$ and $f''(0-)$.
@@ -1788,16 +1802,21 @@ zero.
 
 For functions constructed piecewise from polynomials as above,
 it is generally true that
-if you have one derivative, the Fourier
-coefficients will go to zero approximately like $\nicefrac{1}{n^3}$.  If you
-have only a continuous function, then the Fourier coefficients will go to
+if you have one derivative but not two derivatives,
+the Fourier
+coefficients will go to zero approximately like $\nicefrac{1}{n^3}$.
+If you
+have only a continuous function that is not differentiable,
+then the Fourier coefficients will go to
 zero as $\nicefrac{1}{n^2}$.  If you have discontinuities, then 
 the Fourier coefficients will go to zero approximately as $\nicefrac{1}{n}$.
 For more general functions the story is somewhat more complicated but the
 same idea holds, the more derivatives you have, the faster the coefficients
 go to zero.  Similar reasoning works in reverse.  If the coefficients go to
-zero like $\nicefrac{1}{n^2}$, you always obtain a continuous function.  If
-they go to zero like $\nicefrac{1}{n^3}$, you obtain an everywhere differentiable
+zero like $\nicefrac{1}{n^2}$ (or faster),
+you always obtain a continuous function.  If
+they go to zero like $\nicefrac{1}{n^3}$ (or faster),
+you obtain an everywhere differentiable
 function.
 %Therefore, we can tell a lot about the smoothness of a function by looking
 %at its Fourier coefficients.
@@ -1807,7 +1826,7 @@ the Fourier series
 \begin{equation*}
 f(t) = \sum_{n=1}^\infty \frac{1}{n^3} \sin (n t) .
 \end{equation*}
-When we differentiate term by term we notice
+When we differentiate term by term, we notice
 \begin{equation*}
 f'(t) = \sum_{n=1}^\infty \frac{1}{n^2} \cos (n t) .
 \end{equation*}
@@ -2147,7 +2166,7 @@ function in more detail.
 Recall that a function $f(t)$ is \emph{odd}\index{odd function} if $f(-t) =
 -f(t)$.  A function $f(t)$ is \emph{even}\index{even function} if
 $f(-t) = f(t)$.  For example, $\cos (n t)$ is even and $\sin (n t)$ is odd.
-Similarly the function $t^k$ is even if $k$ is even and odd when $k$ is odd.
+Similarly the function $t^k$ is even if $k$ is even and odd if $k$ is odd.
 
 \begin{exercise}
 Take two functions $f(t)$ and $g(t)$ and define their product $h(t) =
@@ -2166,10 +2185,10 @@ the sum
 $f(t) + g(t)$.  In fact, the Fourier series of any function is a sum of
 an odd (the sine terms) and an even (the cosine terms) function.
 
-In this section we consider odd and even periodic
+In this section, we consider odd and even periodic
 functions.  We have previously defined the $2L$-periodic extension
 of a function defined on the interval $[-L,L]$.  Sometimes we are only
-interested in the function on the range $[0,L]$ and it would be convenient
+interested in the function on the range $[0,L]$, and it would be convenient
 to have an odd (resp.\ even) function.  If the function is odd (resp.\ even),
 all the cosine (resp.\ sine) terms disappear.
 What we will do is
@@ -2197,7 +2216,7 @@ $F_{\text{odd}}(t)$ is called
 the \emph{\myindex{odd periodic extension}} of $f(t)$, and
 $F_{\text{even}}(t)$ is called the
 \emph{\myindex{even periodic extension}} of $f(t)$.
-For the odd extension we generally assume that $f(0) = f(L) = 0$.
+For the odd extension, we generally assume that $f(0) = f(L) = 0$.
 
 \begin{exercise}
 Check that $F_{\text{odd}}(t)$ is odd and $F_{\text{even}}(t)$ is even.
@@ -2228,22 +2247,24 @@ $n=0$) and get
 a_n = \frac{1}{L} \int_{-L}^L f(t) \cos \left( \frac{n \pi}{L} t \right)
 \, dt = 0 .
 \end{equation*}
-That is, there are no cosine terms in the Fourier series of an odd function.
+That is, the Fourier series of an odd function has no cosine terms.
 The integral is zero
-because $f(t) \cos \left( {n \pi}{L} t \right)$
+as $f(t) \cos \left( {n \pi}{L} t \right)$
 is an odd function (product of an odd and an
 even function is odd) and the integral of an odd function over a symmetric
-interval is always zero.
+interval is zero.
+The function $f(t) \sin \left( \frac{n \pi}{L} t \right)$ is even
+as it is the product of two odd
+functions.
 The integral of an even function over a symmetric interval
 $[-L,L]$ is twice the integral of the function over the interval $[0,L]$.
-The function $f(t) \sin \left( \frac{n \pi}{L} t \right)$ is the product of two odd
-functions and hence is even.
+So
 \begin{equation*}
 b_n = 
 \frac{1}{L} \int_{-L}^L f(t) \sin \left( \frac{n \pi}{L} t \right) \, dt =
 \frac{2}{L} \int_{0}^L f(t) \sin \left( \frac{n \pi}{L} t \right) \, dt .
 \end{equation*}
-We now write the Fourier series of $f(t)$ as
+The Fourier series of an odd $f(t)$ is then
 \begin{equation*}
 \sum_{n=1}^\infty b_n \sin \left( \frac{n \pi}{L} t \right) .
 \end{equation*}
@@ -2259,7 +2280,7 @@ The formula still works for $n=0$, in which case it becomes
 a_0 = 
 \frac{2}{L} \int_{0}^L f(t) \, dt .
 \end{equation*}
-The Fourier series is then
+The Fourier series of an even $f(t)$ is then
 \begin{equation*}
 \frac{a_0}{2}
 +
@@ -2311,8 +2332,8 @@ the \emph{\myindex{sine series}} of $f(t)$ and we call the series
 $\frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos \left( \frac{n \pi}{L} t
 \right)$
 the \emph{\myindex{cosine series}} of $f(t)$.  
-We often do not actually care what happens outside of $[0,L]$.  In this case,
-we pick whichever series fits our problem better.
+We often do not actually care what happens outside of $[0,L]$.
+We simply pick whichever series fits our problem better.
 
 It is not necessary to start with the full Fourier series to obtain
 the sine and cosine series.
@@ -2321,7 +2342,7 @@ eigenfunctions of the eigenvalue problem $x''+\lambda x = 0$, $x(0) = 0$,
 $x(L) = L$.  The cosine series is the eigenfunction expansion of $f(t)$
 using 
 eigenfunctions of the eigenvalue problem $x''+\lambda x = 0$, $x'(0) = 0$,
-$x'(L) = L$.  We could have, therefore, gotten the same formulas
+$x'(L) = L$.  We would, therefore, get the same formulas
 by defining the inner product
 \begin{equation*}
 \langle f(t), g(t) \rangle = \int_0^L f(t) g(t) \, dt ,
@@ -2369,13 +2390,13 @@ a_n & = \frac{2}{\pi}
 \frac{4{(-1)}^n}{n^2} .
 \end{split}
 \end{equation*}
-Note that we have \myquote{detected} the continuity of the extension since the
+Note that we \myquote{detected} the continuity of the extension since the
 coefficients decay as $\frac{1}{n^2}$.  That is, the even periodic extension
 of $t^2$ has no jump discontinuities.  It does have corners, since
 the derivative, which is an odd function and a sine series, has jumps; it has
 a Fourier series whose coefficients decay only as $\frac{1}{n}$.
 
-Explicitly, the first few terms of the series are
+Explicitly, the first few terms of the series for $f(t)$ are
 \begin{equation*}
 \frac{\pi^2}{3} - 4 \cos (t) + \cos (2t) - \frac{4}{9} \cos (3t) + \cdots
 \end{equation*}
@@ -2394,14 +2415,13 @@ odd periodic extension of $f'(t)$?
 
 \subsection{Application}
 
-Fourier series ties in to the boundary value problems
-we studied earlier.  Let us see this connection in an application.
-
-Consider the boundary value problem for $0 < t < L$,
+Fourier series ties in to the boundary value problems that
+we studied earlier.
+Consider the boundary value problem
 \begin{equation*}
-x''(t) + \lambda\, x(t) = f(t) ,
+x''(t) + \lambda\, x(t) = f(t) , \quad 0 < t < L,
 \end{equation*}
-for the \emph{\myindex{Dirichlet boundary conditions}}
+with the \emph{\myindex{Dirichlet boundary conditions}}
 $x(0) = 0$, $x(L) = 0$.
 The Fredholm alternative (\thmvref{thm:fredholmsimple})
 says that
@@ -2409,23 +2429,24 @@ as long as $\lambda$ is not an eigenvalue of the underlying homogeneous
 problem, there exists a unique solution.
 Eigenfunctions of this eigenvalue problem are the functions
 $\sin \left( \frac{n \pi}{L} t \right)$.
-Therefore,
-to find the solution,
+To find the solution,
 we first find the Fourier sine series for $f(t)$.
-We write $x$ also as a sine series, but with unknown coefficients.  
-We substitute the series for $x$ into the equation and solve for the unknown
-coefficients.
+We write $x(t)$ also as a sine series, but with unknown coefficients.  
+We substitute the series for $x(t)$
+into the equation and solve for the unknown coefficients.
 If we have
 the \emph{\myindex{Neumann boundary conditions}}
 $x'(0) = 0$, $x'(L) = 0$, we do the same procedure using the cosine
 series.
-
+%
 Let us see how this method works on examples.
 
 \begin{example}
-Take the boundary value problem for $0 < t < 1$,
+Take the boundary value problem
 \begin{equation*}
 x''(t) + 2 x(t) = f(t) ,
+\quad
+0 < t < 1,
 \end{equation*}
 where $f(t) = t$ on $0 < t < 1$, and 
 satisfying the Dirichlet boundary conditions
@@ -2500,10 +2521,10 @@ satisfies the boundary conditions.
 \end{example}
 
 \begin{example}
-Similarly we handle the Neumann conditions.
-Take the boundary value problem for $0 < t < 1$,
+We handle the Neumann conditions with cosine series.
+Take the boundary value problem
 \begin{equation*}
-x''(t) + 2 x(t) = f(t) ,
+x''(t) + 2 x(t) = f(t) , \quad 0 < t < 1,
 \end{equation*}
 where again $f(t) = t$ on $0 < t < 1$, but now satisfying
 the Neumann boundary conditions
@@ -2550,8 +2571,10 @@ a_0 +
 \frac{-4}{\pi^2 n^2} \cos (n \pi t) .
 \end{split}
 \end{equation*}
-Therefore, $a_0 = \frac{1}{2}$, $a_n = 0$ for $n$ even ($n \geq 2$) and for
-$n$ odd we have
+Therefore,
+$a_0 = \frac{1}{2}$,
+$a_n = 0$ for $n$ even ($n \geq 2$), and for
+$n$ odd, we have
 \begin{equation*}
 a_n (2 - n^2 \pi^2)
 =
@@ -2733,7 +2756,7 @@ not in \cite{BD}}}
 \noindent
 \inputpdft{massfigforce}
 \end{mywrapfigsimp}
-Let us return to the forced oscillations.  Consider a mass-spring system as
+We return to the forced oscillations.  Consider a mass-spring system as
 before, where we have a mass $m$
 on a spring with spring constant $k$,
 with damping $c$, and a force $F(t)$ applied to the mass.  Suppose 
@@ -2796,7 +2819,7 @@ is perhaps best understood by example.
 \pagebreak[2]
 
 \begin{example} \label{afs:steadyex}
-Suppose that $k=2$, and $m=1$.
+Suppose that $k=2$ and $m=1$.
 The units are again the mks units\index{mks units}
 (meters-kilograms-seconds).
 There is a jetpack strapped to the mass, which fires with a force of 1
@@ -2858,7 +2881,7 @@ b_n \sin (n \pi t) .
 Once we plug $x$ into the differential equation $x''+2x = F(t)$,
 it is clear that $a_n = 0$ for $n \geq 1$ as there are no corresponding terms
 in the series for
-$F(t)$.  Similarly $b_n = 0$ for $n$ even.  Hence we try
+$F(t)$.  Similarly, $b_n = 0$ for even $n$.  Hence we try
 \begin{equation*}
 x(t) = \frac{a_0}{2} +
 \sum_{\substack{n=1 \\ n \text{ odd}}}^\infty
@@ -2885,7 +2908,7 @@ F(t) = \frac{1}{2} + \sum_{\substack{n=1 \\ n \text{ odd}}}^\infty
 \frac{2}{\pi n} \sin (n \pi t) .
 \end{split}
 \end{equation*}
-So $a_0 = \frac{1}{2}$, $b_n = 0$ for even $n$, and for odd $n$ we
+So $a_0 = \frac{1}{2}$, $b_n = 0$ for even $n$, and for odd $n$, we
 get
 \begin{equation*}
 b_n = 
@@ -2913,7 +2936,7 @@ $F(t)$ itself.  See \figurevref{afs:steadyexfig} for the plot of this solution.
 \subsection{Resonance}
 
 Just as when the forcing function was a simple cosine, we may encounter
-resonance.  Assume $c=0$ and let us discuss only pure resonance.
+resonance.  We assume $c=0$ and so we discuss only pure resonance.
 Let $F(t)$ be $2L$-periodic and consider
 \begin{equation*}
 m x''(t) + k x (t) = F(t) .
@@ -2921,7 +2944,7 @@ m x''(t) + k x (t) = F(t) .
 When we expand $F(t)$ and find that some of its terms coincide with the
 complementary solution to $mx''+kx=0$, we cannot use those terms in the
 guess.  Just like before, they disappear when we plug them into the left-hand
-side and we get a contradictory equation (such as $0=1$).   That is,
+side, and we get a contradictory equation (such as $0=1$).   That is,
 suppose
 \begin{equation*}
 x_c = A \cos (\omega_0 t) + B \sin (\omega_0 t), 
@@ -2949,14 +2972,17 @@ b_N \sin \left( \frac{N \pi}{L} t \right) \right)$ eventually dominate and lead 
 wild oscillations.  As before, this behavior is called \emph{\myindex{pure
 resonance}} or just \emph{\myindex{resonance}}.
 
-Note that there now may be infinitely many resonance frequencies to hit.
-That is, as we change the frequency of $F$ (we change $L$), different
+Note that we may now hit the resonance frequency with infinitely
+many terms (overtones) of the forcing function $F$.
+That is, suppose we use the same \myquote{shape} for $F$ and we change the
+frequency of $F$ (we change $L$).
+Then different
 terms from the Fourier series of $F$ may interfere with the complementary
 solution and cause resonance.
 However, we should note that since everything is an approximation and in
-particular $c$ is never actually zero but something very close to zero,
+particular $c$ is never actually zero but at best something very close to zero,
 only the first
-few resonance frequencies matter in real life.
+few such frequencies matter in real life.
 
 \begin{example}
 We want to solve the equation

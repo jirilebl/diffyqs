@@ -35,6 +35,17 @@ series in the boxed equation for clarity, and also explicitly
 say that we say "nth harmonic" for the nth term of the series.
 <li>In examples 4.2.3 and 4.2.4, motivate the functions tiny bit more
 than saying they appear in applications.
+<li>A bit more detail in Example 4.3.1, such as explicitly noting the L.
+<li>In Example 4.3.1 say that we extend (4.8) periodically and be clearer
+about what we mean about just saying piecewise smooth without mentioning an
+interval.
+<li>In Example 4.3.6, give more detail about the second
+derivative not existing by explicitly showing the first
+derivative on \([-1,1]\) and plotting it in 
+the figure 4.11.
+<li>Just before the Example 4.5.2, the paragraph is not quite right.
+There is still just one resonance frequency, we're just hitting it with
+the overtones.
 <li>Just after 6.3.1, give both directions in formulas
 for clarity
 <li>In Example 6.3.3, reverse the order of the factors
