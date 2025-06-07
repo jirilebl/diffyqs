@@ -856,10 +856,10 @@ $\sin (k t)$.  That is, we want to find a representation of a
 $2\pi$-periodic function $f(t)$ as
 \begin{equation*}
 \mybxbg{~~
-\begin{split}
+\begin{aligned}
 f(t) &=
 \frac{a_0}{2} +
-\sum_{n=1}^\infty a_n \cos (n t) + b_n \sin (n t) .
+\sum_{n=1}^\infty a_n \cos (n t) + b_n \sin (n t)
 \\
 & = 
 \frac{a_0}{2}
@@ -867,7 +867,7 @@ f(t) &=
 + a_2 \cos (2 t) + b_2 \sin (2 t) 
 %+ a_3 \cos (3 t) + b_3 \sin (3 t) 
 + \cdots
-\end{split}
+\end{aligned}
 ~~}
 \end{equation*}
 This series is called the \emph{\myindex{Fourier series}}%
@@ -3282,19 +3282,23 @@ With this notation the heat equation becomes
 u_t = k u_{xx} .
 \end{equation*}
 
-For the heat equation, we must also have some
-boundary conditions.
+The region in which we will solve the heat equation is given by 
+\begin{equation*}
+0 < x < L \quad \text{and} \quad t > 0 .
+\end{equation*}
+We must also have some side conditions on the boundaries of that region.
 We assume that the ends of the wire are either exposed 
 and touching some body of constant heat, or the ends are insulated.
 If the ends of the wire are kept at temperature 0, then
 the conditions are
 \begin{equation*}
-u(0,t) = 0 \qquad \text{and} \qquad u(L,t) = 0.
+u(0,t) = 0 \quad \text{and} \quad u(L,t) = 0
+\quad \text{for } \; t > 0.
 \end{equation*}
-If, on the other hand, the ends are also insulated, the conditions are
+If, on the other hand, the ends are insulated, the conditions are
 \begin{equation*}
-u_x(0,t) = 0 \qquad \text{and} \qquad
-u_x(L,t) = 0 .
+u_x(0,t) = 0 \quad \text{and} \quad u_x(L,t) = 0
+\quad \text{for } \; t > 0 .
 \end{equation*}
 Let us see why that is so.
 If $u_x$ is positive at some point $x_0$, then at a particular time,
@@ -3317,7 +3321,8 @@ These side conditions are said to be
 We also need an initial condition---the temperature distribution
 at time $t=0$.  That is,
 \begin{equation*}
-u(x,0) = f(x) ,
+u(x,0) = f(x)
+\quad \text{for } \; 0 < x < L ,
 \end{equation*}
 for some known function $f(x)$.
 This initial condition is not a homogeneous side condition.
@@ -3492,11 +3497,13 @@ wire.\label{heat:wireexinitfig}}
 \end{myfig}
 
 We are solving the following PDE problem:
-\begin{align*}
-& u_t = 0.003 \, u_{xx} , \\
-& u(0,t) = u(1,t) = 0 , \\
-& u(x,0) = 50\,x\,(1-x) \qquad \text{for } \; 0 < x < 1 .
-\end{align*}
+\begin{equation*}
+\begin{array}{ll}
+u_t = 0.003 \, u_{xx} & \qquad \text{for } \; 0 < x < 1 \text{ and } t > 0, \\
+u(0,t) = u(1,t) = 0 & \qquad \text{for } \; t > 0, \\
+u(x,0) = 50\,x\,(1-x) & \qquad \text{for } \; 0 < x < 1 .
+\end{array}
+\end{equation*}
 Write $f(x) = 50\,x\,(1-x)$ for $0 < x < 1$ as a sine series
 $f(x) = \sum_{n=1}^\infty b_n \sin (n \pi x)$,
 where
@@ -3706,11 +3713,14 @@ e^{\frac{-n^2 \pi^2}{L^2} k t} .
 \begin{example}
 Try the same equation as before, but with insulated ends.
 We are solving the following PDE problem
-\begin{align*}
-& u_t = 0.003 \, u_{xx} , \\
-& u_x(0,t) = u_x(1,t) = 0 , \\
-& u(x,0) = 50\,x\,(1-x) \qquad \text{for } \; 0 < x < 1 .
-\end{align*}
+\begin{equation*}
+\begin{array}{ll}
+u_t = 0.003 \, u_{xx} & \qquad \text{for } \; 0 < x < 1 \text{ and } t > 0, \\
+u_x(0,t) = u_x(1,t) = 0  & \qquad  \text{for } \; t > 0, \\
+u(x,0) = 50\,x\,(1-x) & \qquad \text{for } \; 0 < x < 1 .
+\end{array}
+\end{equation*}
+
 
 For this problem, we must find the cosine series of $u(x,0)$.
 For $0 < x < 1$, we have
@@ -3770,38 +3780,46 @@ are embedded in ice (temperature 0).  Find the solution as a series.
 
 \begin{exercise}
 Find a series solution of
-\begin{align*}
-& u_t =  u_{xx} , \\
-& u(0,t) = u(1,t) = 0 , \\
-& u(x,0) = 100 \qquad \text{for } \; 0 < x < 1 .
-\end{align*}
+\begin{equation*}
+\begin{array}{ll}
+u_t =  u_{xx} & \qquad \text{for } \; 0 < x < 1 \text{ and } t > 0, \\
+u(0,t) = u(1,t) = 0 & \qquad \text{for } \; t > 0, \\
+u(x,0) = 100 & \qquad \text{for } \; 0 < x < 1 .
+\end{array}
+\end{equation*}
 \end{exercise}
 
 \begin{exercise}
 Find a series solution of
-\begin{align*}
-& u_t =  u_{xx} , \\
-& u_x(0,t) = u_x(\pi,t) = 0 , \\
-& u(x,0) = 3\cos (x) + \cos (3x) \qquad \text{for } \; 0 < x < \pi .
-\end{align*}
+\begin{equation*}
+\begin{array}{ll}
+u_t =  u_{xx} & \qquad \text{for } \; 0 < x < \pi \text{ and } t > 0, \\
+u_x(0,t) = u_x(\pi,t) = 0 & \qquad \text{for } \; t > 0, \\
+u(x,0) = 3\cos (x) + \cos (3x) & \qquad \text{for } \; 0 < x < \pi .
+\end{array}
+\end{equation*}
 \end{exercise}
 
 \begin{exercise} \label{heat:cosexr}
 Find a series solution of
-\begin{align*}
-& u_t = \frac{1}{3} u_{xx} , \\
-& u_x(0,t) = u_x(\pi,t) = 0 , \\
-& u(x,0) = \frac{10x}{\pi} \qquad \text{for } \; 0 < x < \pi .
-\end{align*}
+\begin{equation*}
+\begin{array}{ll}
+u_t = \frac{1}{3} u_{xx} & \qquad \text{for } \; 0 < x < \pi \text{ and } t > 0, \\
+u_x(0,t) = u_x(\pi,t) = 0 & \qquad \text{for } \; t > 0, \\
+u(x,0) = \frac{10x}{\pi} & \qquad \text{for } \; 0 < x < \pi .
+\end{array}
+\end{equation*}
 \end{exercise}
 
 \begin{exercise} \label{heat:oneto100exr}
 Find a series solution of
-\begin{align*}
-& u_t =  u_{xx} , \\
-& u(0,t) = 0 , \quad u(1,t) = 100 , \\
-& u(x,0) = \sin (\pi x) \qquad \text{for } \; 0 < x < 1 .
-\end{align*}
+\begin{equation*}
+\begin{array}{ll}
+u_t =  u_{xx} & \qquad \text{for } \; 0 < x < 1 \text{ and } t > 0, \\
+u(0,t) = 0 , \quad u(1,t) = 100 & \qquad \text{for } \; t > 0, \\
+u(x,0) = \sin (\pi x) & \qquad \text{for } \; 0 < x < 1 .
+\end{array}
+\end{equation*}
 Hint: Use the fact that $u(x,t) = 100 x$ is a solution satisfying
 $u_t = u_{xx}$, $u(0,t) = 0$, $u(1,t) = 100$.  Then use superposition.
 \end{exercise}
@@ -3825,11 +3843,13 @@ Hint: Try $u(x,y) = X(x)Y(y)$.
 Suppose that one end of the wire is insulated (say at $x=0$) and
 the other end is kept at zero temperature.  That is,
 find a series solution of
-\begin{align*}
-& u_t = k u_{xx} , \\
-& u_x(0,t) = u(L,t) = 0 , \\
-& u(x,0) = f(x) \qquad \text{for } \; 0 < x < L .
-\end{align*}
+\begin{equation*}
+\begin{array}{ll}
+u_t = k u_{xx} & \qquad \text{for } \; 0 < x < L \text{ and } t > 0, \\
+u_x(0,t) = u(L,t) = 0  & \qquad \text{for } \; t > 0, \\
+u(x,0) = f(x) & \qquad \text{for } \; 0 < x < L .
+\end{array}
+\end{equation*}
 Express any coefficients in the series by integrals of $f(x)$.
 \end{exercise}
 
@@ -3838,12 +3858,14 @@ Suppose that the wire is circular and insulated, so there are no ends.
 You can think of this as simply connecting the two ends and 
 making sure the solution matches up at the ends.
 That is, find a series solution of
-\begin{align*}
-& u_t = k u_{xx} , \\
-& u(0,t) = u(L,t) , \qquad
-u_x(0,t) = u_x(L,t) , \\
-& u(x,0) = f(x) \qquad \text{for } \; 0 < x < L .
-\end{align*}
+\begin{equation*}
+\begin{array}{ll}
+u_t = k u_{xx} & \qquad \text{for } \; 0 < x < L \text{ and } t > 0, \\
+u(0,t) = u(L,t) , \quad
+u_x(0,t) = u_x(L,t)  & \qquad \text{for } \; t > 0, \\
+u(x,0) = f(x) & \qquad \text{for } \; 0 < x < L .
+\end{array}
+\end{equation*}
 Express any coefficients in the series by integrals of $f(x)$.
 \end{exercise}
 
@@ -3875,11 +3897,13 @@ Find the time when the variation is $\nicefrac{1}{2}$.
 
 \begin{exercise}
 Find a series solution of
-\begin{align*}
-& u_t =  3 u_{xx} , \\
-& u(0,t) = u(\pi,t) = 0 , \\
-& u(x,0) = 5\sin (x) + 2\sin (5x) \qquad \text{for } \; 0 < x < \pi .
-\end{align*}
+\begin{equation*}
+\begin{array}{ll}
+u_t =  3 u_{xx} & \qquad \text{for } \; 0 < x < \pi \text{ and } t > 0, \\
+u(0,t) = u(\pi,t) = 0 & \qquad \text{for } \; t > 0, \\
+u(x,0) = 5\sin (x) + 2\sin (5x) & \qquad \text{for } \; 0 < x < \pi .
+\end{array}
+\end{equation*}
 \end{exercise}
 \exsol{%
 $u(x,t) = 
@@ -3906,11 +3930,13 @@ $u(x,t) =
 
 \begin{exercise}
 Find a series solution of
-\begin{align*}
-& u_t =  0.1 u_{xx} , \\
-& u_x(0,t) = u_x(\pi,t) = 0 , \\
-& u(x,0) = 1 + 2\cos (x) \qquad \text{for } \; 0 < x < \pi .
-\end{align*}
+\begin{equation*}
+\begin{array}{ll}
+u_t =  0.1 u_{xx} & \qquad \text{for } \; 0 < x < \pi \text{ and } t > 0, \\
+u_x(0,t) = u_x(\pi,t) = 0 &  \qquad \text{for } \; t > 0, \\
+u(x,0) = 1 + 2\cos (x) & \qquad \text{for } \; 0 < x < \pi .
+\end{array}
+\end{equation*}
 \end{exercise}
 \exsol{%
 $u(x,t) = 
@@ -3929,7 +3955,7 @@ $u(x,t) = e^{\lambda t} e^{\lambda x}$ for some $\lambda$
 }
 
 \begin{exercise}
-Use separation of variables 
+Use a variation on separation of variables 
 to find a nontrivial solution to
 $u_{x} + u_{t} = u$.  Hint: Try $u(x,t) = X(x)+T(t)$.
 \end{exercise}
@@ -3989,39 +4015,44 @@ a^2 y_{xx} ,
 for some constant $a > 0$.
 The intuition is similar to the heat equation, replacing velocity with
 acceleration: the acceleration at a specific point is proportional to the second
-derivative of the shape of the string.  In other words
+derivative of the shape of the string.  In other words,
 when the string is
-concave down then $u_{xx}$ is negative and the string wants to accelerate
-downwards, so $u_{tt}$ should be negative.  And vice versa.
+concave down then $y_{xx}$ is negative and the string wants to accelerate
+downwards, so $y_{tt}$ should be negative.  And vice versa.
 The wave equation is an example of a hyperbolic PDE.
 
+We will again solve in the region $0 < x < L$ and $t > 0$.
 Assume that the ends of the string are fixed in place as on the guitar:
 \begin{equation*}
-y(0,t) = 0 \qquad \text{and} \qquad y(L,t) = 0.
+y(0,t) = 0 \quad \text{and} \quad y(L,t) = 0 \quad \text{for } \; t > 0.
 \end{equation*}
-Note that we have two conditions along the $x$-axis as there are
+We have two conditions along the $x$-axis as there are
 two derivatives in the $x$ direction.
-
 There are also two derivatives along the $t$ direction and hence we need
 two further conditions here.  We need to know the initial position
 and the initial velocity of the string.  That is,
 for some known functions $f(x)$ and $g(x)$, we impose
 \begin{equation*}
-y(x,0) = f(x)  \qquad \text{and} \qquad y_t (x,0) =
-g(x) .
+y(x,0) = f(x)  \quad \text{and} \quad y_t (x,0) = g(x)
+\quad \text{for } \; 0 < x < L .
 \end{equation*}
 
-The equation is linear, so superposition works just as it did for the
-heat equation.  And again we will use separation of variables to find
-enough building-block solutions to get the overall solution.  There is
-one change however.  It will be easier to solve two separate problems
+The equation is linear and homogeneous,
+so superposition works just as it did for the
+heat equation.
+Superposition also preserves the homogeneous 
+side conditions $y(0,t)=0$ and $y(L,t)=0$.
+Again we will use separation of variables to find
+enough building-block solutions to get the particular solution
+also solving the nonhomogeneous initial conditions.  There is
+one change however.  We will solve two separate problems
 and add their solutions.
 
 The two problems we will solve are
 \begin{equation} \label{wave:weq}
 \begin{array}{ll}
-w_{tt} = a^2 w_{xx} , &  \\
-w(0,t) = w(L,t) = 0 , &  \\
+w_{tt} = a^2 w_{xx} & \qquad \text{for } \; 0 < x < L \text{ and } t > 0, \\
+w(0,t) = w(L,t) = 0 & \qquad \text{for } \; t > 0,  \\
 w(x,0) = 0 & \qquad \text{for } \; 0 < x < L , \\
 w_t(x,0) = g(x) & \qquad \text{for } \; 0 < x < L ,
 \end{array}
@@ -4029,8 +4060,8 @@ w_t(x,0) = g(x) & \qquad \text{for } \; 0 < x < L ,
 and
 \begin{equation} \label{wave:zeq}
 \begin{array}{ll}
-z_{tt} = a^2 z_{xx} , &  \\
-z(0,t) = z(L,t) = 0 , &  \\
+z_{tt} = a^2 z_{xx} & \qquad \text{for } \; 0 < x < L \text{ and } t > 0, \\
+z(0,t) = z(L,t) = 0 & \qquad \text{for } \; t > 0,  \\
 z(x,0) = f(x) & \qquad \text{for } \; 0 < x < L , \\
 z_t(x,0) = 0 & \qquad \text{for } \; 0 < x < L .
 \end{array}
@@ -4043,8 +4074,8 @@ $y_t(x,0) = w_t(x,0) + z_t(x,0) = g(x)$.  Hence, $y$ is
 a solution to
 \begin{equation} \label{wave:yeq}
 \begin{array}{ll}
-y_{tt} = a^2 y_{xx} , &  \\
-y(0,t) = y(L,t) = 0 , &  \\
+y_{tt} = a^2 y_{xx}  & \qquad \text{for } \; 0 < x < L \text{ and } t > 0,  \\
+y(0,t) = y(L,t) = 0  & \qquad \text{for } \; t > 0,  \\
 y(x,0) = f(x) & \qquad \text{for } \; 0 < x < L , \\
 y_t(x,0) = g(x) & \qquad \text{for } \; 0 < x < L .
 \end{array}
@@ -4155,7 +4186,7 @@ X_n(x) = \sin \left( \frac{n \pi}{L} x \right) .
 \end{equation*}
 This time
 the condition on $T$ is $T'(0) = 0$.  Thus 
-we get that $B = 0$ and we take
+we get that $B = 0$, and we take
 \begin{equation*}
 T_n(t) = \cos \left( \frac{n \pi a}{L} t \right).
 \end{equation*}
@@ -4171,7 +4202,7 @@ we expand $f(x)$ in terms of these sines as
 f(x) =
 \sum_{n=1}^\infty c_n \sin \left( \frac{n \pi}{L} x \right) .
 \end{equation*}
-And we
+We
 write down the solution to \eqref{wave:zeq} as a series
 \begin{equation*}
 z(x,t) =
@@ -4192,11 +4223,11 @@ Check that the solution satisfies all the side conditions.
 
 Putting these two solutions together, let us state the result as a theorem.
 \begin{theorem}
-Take the equation
+Take the problem
 \begin{equation} \label{wave:tyeq}
 \begin{array}{ll}
-y_{tt} = a^2 y_{xx} , &  \\
-y(0,t) = y(L,t) = 0 , &  \\
+y_{tt} = a^2 y_{xx} & \qquad \text{for } \; 0 < x < L \text{ and } t > 0,  \\
+y(0,t) = y(L,t) = 0 & \qquad \text{for } \; t > 0,  \\
 y(x,0) = f(x) & \qquad \text{for } \; 0 < x < L , \\
 y_t(x,0) = g(x) & \qquad \text{for } \; 0 < x < L ,
 \end{array}
@@ -4263,11 +4294,14 @@ f(x) = \begin{cases}
 Let the string start at rest ($g(x) =
 0$), and let $a=1$ for simplicity.  In other words, we wish to
 solve the problem:
-\begin{align*}
-& y_{tt} = y_{xx}, \\
-& y(0,t) = y(2,t)= 0 , \\
-& y(x,0) = f(x) \quad \text{and} \quad y_t(x,0)= 0 .
-\end{align*}
+\begin{equation*}
+\begin{array}{ll}
+y_{tt} = y_{xx} & \qquad \text{for } \; 0 < x < 2 \text{ and } t > 0, \\
+y(0,t) = y(2,t)= 0 & \qquad \text{for } \; t > 0 , \\
+y(x,0) = f(x) & \qquad \text{for } \; 0 < x < 2 , \\
+y_t(x,0)= 0 & \qquad \text{for } \; 0 < x < 2.
+\end{array}
+\end{equation*}
 
 We leave it to the reader to compute the sine series of $f(x)$.  The series
 will be
@@ -4419,8 +4453,8 @@ resistance.  Those variables clearly impact the sound as well.
 Solve
 \begin{equation*}
 \begin{array}{ll}
-y_{tt} = 9 y_{xx} , &  \\
-y(0,t) = y(1,t) = 0 , &  \\
+y_{tt} = 9 y_{xx}  & \qquad \text{for } \; 0 < x < 1 \text{ and } t > 0,  \\
+y(0,t) = y(1,t) = 0 & \qquad \text{for } \; t > 0 ,  \\
 y(x,0) = \sin (3\pi x) + \frac{1}{4} \sin (6 \pi x) & \qquad \text{for } \; 0 < x < 1 , \\
 y_t(x,0) = 0 & \qquad \text{for } \; 0 < x < 1 .
 \end{array}
@@ -4431,8 +4465,8 @@ y_t(x,0) = 0 & \qquad \text{for } \; 0 < x < 1 .
 Solve
 \begin{equation*}
 \begin{array}{ll}
-y_{tt} = 4 y_{xx} , &  \\
-y(0,t) = y(1,t) = 0 , &  \\
+y_{tt} = 4 y_{xx} & \qquad \text{for } \; 0 < x < 1 \text{ and } t > 0, \\
+y(0,t) = y(1,t) = 0 & \qquad \text{for } \; t > 0,  \\
 y(x,0) = \sin (3\pi x) + \frac{1}{4} \sin (6 \pi x) & \qquad \text{for } \; 0 < x < 1 , \\
 y_t(x,0) = \sin (9 \pi x) & \qquad \text{for } \; 0 < x < 1 .
 \end{array}
@@ -4462,8 +4496,8 @@ Suppose that you have a vibrating string and that
 there is air resistance proportional to the velocity.  That is, you have
 \begin{equation*}
 \begin{array}{ll}
-y_{tt} = a^2 y_{xx} - k y_t , &  \\
-y(0,t) = y(1,t) = 0 , &  \\
+y_{tt} = a^2 y_{xx} - k y_t  & \qquad \text{for } \; 0 < x < 1 \text{ and } t > 0,  \\
+y(0,t) = y(1,t) = 0 & \qquad \text{for } \; t > 0, \\
 y(x,0) = f(x) & \qquad \text{for } \; 0 < x < 1 , \\
 y_t(x,0) = 0 & \qquad \text{for } \; 0 < x < 1 .
 \end{array}
@@ -4486,8 +4520,8 @@ show up in the solution?
 Solve
 \begin{equation*}
 \begin{array}{ll}
-y_{tt} = y_{xx} , &  \\
-y(0,t) = y(\pi,t) = 0 , &  \\
+y_{tt} = y_{xx}  & \qquad \text{for } \; 0 < x < \pi, t > 0,  \\
+y(0,t) = y(\pi,t) = 0 & \qquad \text{for } \; t > 0,  \\
 y(x,0) = \sin(x) & \qquad \text{for } \; 0 < x < \pi , \\
 y_t(x,0) = \sin(x) & \qquad \text{for } \; 0 < x < \pi .
 \end{array}
@@ -4506,8 +4540,8 @@ $
 Solve
 \begin{equation*}
 \begin{array}{ll}
-y_{tt} = 25 y_{xx} , &  \\
-y(0,t) = y(2,t) = 0 , &  \\
+y_{tt} = 25 y_{xx} & \qquad \text{for } \; 0 < x < 2 \text{ and } t > 0,  \\
+y(0,t) = y(2,t) = 0 & \qquad \text{for } \; t > 0, \\
 y(x,0) = 0 & \qquad \text{for } \; 0 < x < 2 , \\
 y_t(x,0) = \sin(\pi t) + 0.1 \sin(2\pi t) & \qquad \text{for } \; 0 < x < 2 .
 \end{array}
@@ -4542,8 +4576,8 @@ $y(x,t)
 Solve
 \begin{equation*}
 \begin{array}{ll}
-y_{tt} = 2 y_{xx} , &  \\
-y(0,t) = y(\pi,t) = 0 , &  \\
+y_{tt} = 2 y_{xx} & \qquad \text{for } \; 0 < x < \pi \text{ and } t > 0,  \\
+y(0,t) = y(\pi,t) = 0 & \qquad \text{for } \; t > 0 , \\
 y(x,0) = x & \qquad \text{for } \; 0 < x < \pi , \\
 y_t(x,0) = 0 & \qquad \text{for } \; 0 < x < \pi .
 \end{array}
@@ -4574,7 +4608,7 @@ $
 }
 
 \begin{exercise}
-Let's see what happens when $a=0$.  Find a solution to
+What happens when $a=0$?  Find a solution to
 $y_{tt} = 0$, $y(0,t) = y(\pi,t) = 0$,
 $y(x,0) = \sin(2x)$,
 $y_t(x,0) = \sin(x)$.
@@ -4610,14 +4644,15 @@ Suppose we wish to solve the \myindex{wave equation}
 \begin{equation} \label{dalemb:weq}
 y_{tt} = a^2 y_{xx}
 \end{equation}
+in the region $0 < x < L$ and $t > 0$
 subject to the side conditions
 \begin{equation} \label{dalemb:weqside}
-\begin{aligned}
-y(0,t) &=  y(L,t) = 0 &
-& \text{for all } t , \\
-y(x,0) &= f(x) &  & 0 < x < L , \\
-y_t(x,0) &= g(x) &  & 0 < x < L .
-\end{aligned}
+\begin{array}{ll}
+y(0,t) =  y(L,t) = 0 &
+\qquad \text{for } \; t > 0 , \\
+y(x,0) = f(x) & \qquad \text{for } \; 0 < x < L , \\
+y_t(x,0) = g(x) &  \qquad \text{for } \; 0 < x < L .
+\end{array}
 \end{equation}
 
 \subsection{Change of variables}
@@ -4830,12 +4865,14 @@ D'Alembert says that the solution is a superposition of
 two functions (waves) moving in the opposite direction at \myquote{speed} $a$.
 To get an idea of
 how it works, let us work out an example.  Consider the simpler setup
-\begin{align*}
-& y_{tt} = y_{xx} , \\
-& y(0,t) = y(1,t) = 0 , \\
-& y(x,0) = f(x) , \\
-& y_t(x,0) = 0 .
-\end{align*}
+\begin{equation*}
+\begin{array}{ll}
+y_{tt} = y_{xx} & \qquad \text{for } \; 0 < x < 1 \text{ and } t > 0, \\
+y(0,t) = y(1,t) = 0 & \qquad \text{for } \; t > 0, \\
+y(x,0) = f(x)  & \qquad \text{for } \; 0 < x < 1, \\
+y_t(x,0) = 0   & \qquad \text{for } \; 0 < x < 1 .
+\end{array}
+\end{equation*}
 Here $f(x)$ is an impulse of height 1 centered at $x=0.5$:
 \begin{equation*}
 f(x) =
@@ -5203,7 +5240,8 @@ This setup is left as an exercise.
 
 We wish to solve the following problem.  Let $h$ and $w$
 be the height and width of our rectangle, with one corner at the origin and
-lying in the first quadrant.
+lying in the first quadrant, so that the region is
+given by $0 < x < w$ and $0 < y < h$.
 
 % FIXME: numbering does not work now since there are no hard coded numbers
 % here!
@@ -5398,8 +5436,8 @@ the Laplace equation with the given boundary data.
 \subsection{Exercises}
 
 \begin{exercise}
-Let $R$ be the region described by $0 < x < \pi$ and $0 < y < \pi$.
-Solve the problem
+In the region described by $0 < x < \pi$ and $0 < y < \pi$,
+solve the problem
 \begin{equation*}
 \Delta u = 0, \quad u(x,0) = \sin x, \quad u(x,\pi) = 0,
 \quad u(0,y) = 0, 
@@ -5408,8 +5446,8 @@ Solve the problem
 \end{exercise}
 
 \begin{exercise}
-Let $R$ be the region described by $0 < x < 1$ and $0 < y < 1$.
-Solve the problem
+In the region described by $0 < x < 1$ and $0 < y < 1$,
+solve the problem
 \begin{align*}
 & u_{xx} + u_{yy} = 0, \\
 & u(x,0) = \sin (\pi x) - \sin (2\pi x), \quad u(x,1) = 0, \\
@@ -5418,8 +5456,8 @@ Solve the problem
 \end{exercise}
 
 \begin{exercise}
-Let $R$ be the region described by $0 < x < 1$ and $0 < y < 1$.
-Solve the problem
+In the region described by $0 < x < 1$ and $0 < y < 1$,
+solve the problem
 \begin{align*}
 & u_{xx} + u_{yy} = 0, \\
 & u(x,0) = u(x,1) = u(0,y) = u(1,y) = C .
@@ -5428,8 +5466,8 @@ for some constant $C$.  Hint: Guess, then check your intuition.
 \end{exercise}
 
 \begin{exercise} \label{dirich:diffsepexr}
-Let $R$ be the region described by $0 < x < \pi$ and $0 < y < \pi$.
-Solve
+In the region described by $0 < x < \pi$ and $0 < y < \pi$,
+solve
 \begin{equation*}
 \Delta u = 0,
 \quad u(x,0) = 0,
@@ -5454,8 +5492,8 @@ Hint: Use superposition.
 \end{exercise}
 
 \begin{exercise}
-Let $R$ be the region described by $0 < x < w$ and $0 < y < h$.
-Solve the problem
+In the region described by $0 < x < w$ and $0 < y < h$,
+solve the problem
 \begin{align*}
 & u_{xx} + u_{yy} = 0, \\
 & u(x,0) = 0, \quad u(x,h) = f(x), \\
@@ -5466,8 +5504,8 @@ of $f(x)$.
 \end{exercise}
 
 \begin{exercise}
-Let $R$ be the region described by $0 < x < w$ and $0 < y < h$.
-Solve the problem
+In the region described by $0 < x < w$ and $0 < y < h$,
+solve the problem
 \begin{align*}
 & u_{xx} + u_{yy} = 0, \\
 & u(x,0) = 0, \quad u(x,h) = 0, \\
@@ -5478,8 +5516,8 @@ of $f(y)$.
 \end{exercise}
 
 \begin{exercise}
-Let $R$ be the region described by $0 < x < w$ and $0 < y < h$.
-Solve the problem
+In the region described by $0 < x < w$ and $0 < y < h$,
+solve the problem
 \begin{align*}
 & u_{xx} + u_{yy} = 0, \\
 & u(x,0) = 0, \quad u(x,h) = 0, \\
@@ -5490,8 +5528,8 @@ of $f(y)$.
 \end{exercise}
 
 \begin{exercise}
-Let $R$ be the region described by $0 < x < 1$ and $0 < y < 1$.
-Solve the problem
+In the region described by $0 < x < 1$ and $0 < y < 1$,
+solve the problem
 \begin{align*}
 & u_{xx} + u_{yy} = 0, \\
 & u(x,0) = \sin (9 \pi x), \quad u(x,1) = \sin (2 \pi x), \\
@@ -5501,8 +5539,8 @@ Hint: Use superposition.
 \end{exercise}
 
 \begin{exercise}
-Let $R$ be the region described by $0 < x < 1$ and $0 < y < 1$.
-Solve the problem
+In the region described by $0 < x < 1$ and $0 < y < 1$,
+solve the problem
 \begin{align*}
 & u_{xx} + u_{yy} = 0, \\
 & u(x,0) = \sin (\pi x), \quad u(x,1) = \sin (\pi x), \\
@@ -5521,8 +5559,8 @@ $u(x,0) = u(x,1) = 0$ for $0 < x < 1$.  Explain.
 \setcounter{exercise}{100}
 
 \begin{exercise}
-Let $R$ be the region described by $0 < x < 1$ and $0 < y < 1$.
-Solve the problem
+In the region described by $0 < x < 1$ and $0 < y < 1$,
+solve the problem
 \begin{equation*}
 \Delta u = 0, \quad u(x,0) = \sum_{n=1}^\infty \frac{1}{n^2} \sin (n \pi x),
 \quad u(x,1) = 0,
@@ -5540,8 +5578,8 @@ $
 }
 
 \begin{exercise}
-Let $R$ be the region described by $0 < x < 1$ and $0 < y < 2$.
-Solve the problem
+In the region described by $0 < x < 1$ and $0 < y < 2$,
+solve the problem
 \begin{equation*}
 \Delta u = 0, \quad u(x,0) = 0.1 \sin (\pi x),
 \quad u(x,2) = 0,
@@ -5620,8 +5658,8 @@ coordinates.
 We have the problem:
 \begin{equation} \label{dirichdisc:theprobeq}
 \begin{aligned}
-& \Delta u = 0 , & & \text{for } \; r < 1, \\
-& u(1,\theta) = g(\theta), & & \text{for } \; {-\pi} < \theta \leq \pi.
+& \Delta u = 0  & & \text{for } \; r < 1, \\
+& u(1,\theta) = g(\theta) & & \text{for } \; {-\pi} < \theta \leq \pi.
 \end{aligned}
 \end{equation}
 
