@@ -3998,7 +3998,8 @@ a) $0$,
 
 Imagine a tensioned guitar string of length $L$ that can vibrate.
 We will only consider vibrations in one direction.  Let
-$x$ denote the position along the string, let $t$ denote time, and let $y$
+$x$ denote the position along the string, let $t$ denote time,
+and let $y(x,t)$
 denote the displacement of the string from the rest position.
 See
 \figurevref{we:vibstrfig}.
@@ -4026,7 +4027,7 @@ concave down then $y_{xx}$ is negative and the string wants to accelerate
 downwards, so $y_{tt}$ should be negative.  And vice versa.
 The wave equation is an example of a hyperbolic PDE.
 
-We will again solve in the region $0 < x < L$ and $t > 0$.
+We will again solve for $y$ in the region $0 < x < L$ and $t > 0$.
 Assume that the ends of the string are fixed in place as on the guitar:
 \begin{equation*}
 y(0,t) = 0 \quad \text{and} \quad y(L,t) = 0 \quad \text{for } \; t > 0.
@@ -4310,8 +4311,8 @@ y_t(x,0)= 0 & \qquad \text{for } \; 0 < x < 2.
 \end{array}
 \end{equation*}
 
-We leave it to the reader to compute the sine series of $f(x)$.  The series
-will be
+We leave the details of computing the sine series of $f(x)$
+to the reader.  The series is
 \begin{equation*}
 f(x) = \sum_{n=1}^\infty
 \frac{0.8}{n^2 \pi^2}
@@ -4388,7 +4389,7 @@ telling you.  For each fixed $t$, you can think of the function
 $y(x,t)$ as just a function of $x$.  This function gives you the shape of the
 string at time $t$.  See \figurevref{wave:pluckedtsfig} for plots of
 at $y$ as a function of $x$ at several different values of $t$.
-On this plot you can see the sharp edges remaining much better.
+On this plot, you can see the sharp edges remaining much better.
 
 \begin{myfig}
 \capstart
@@ -5161,16 +5162,17 @@ or on all sides of the 3-dimensional object.  We wish to find out what is the
 \emph{\myindex{steady state temperature}} distribution.  That is, we wish to know what will
 be the temperature after long enough period of time.
 
-We are really looking for a solution to the heat equation that is not
-dependent on time.  Let us first solve the problem in one space variable.  We are
-looking for a function $u$ that satisfies
+We are really seeking a solution to the heat equation that is not
+dependent on time.
+We first solve the problem in one space variable.
+We are looking for a function $u$ that satisfies
 \begin{equation*}
 u_t = k u_{xx} ,
 \end{equation*}
 but such that $u_t = 0$ for all $x$ and $t$.  Hence, we are looking for a
 function of $x$ alone that satisfies $u_{xx} = 0$.  It is easy to solve this
-equation by integration and we see that $u = Ax+B$ for some constants $A$ and
-$B$.
+equation by integration,
+ and we see that $u = Ax+B$ for some constants $A$ and $B$.
 
 Consider an insulated wire where we apply constant temperature $T_1$
 at one end (say where $x=0$) and $T_2$ on the other end (at $x=L$ where $L$
@@ -5192,9 +5194,9 @@ u_t = k(u_{xx} + u_{yy}) ,
 or more commonly written as
 $u_t = k \Delta u$ or
 $u_t = k \nabla^2 u$.  The $\Delta$ and $\nabla^2$ symbols
-mean $\frac{\partial^2}{\partial x^2} +
-\frac{\partial^2}{\partial y^2}$.  We will use $\Delta$
-from now on.  The reason for using such a notation is that you
+both mean $\frac{\partial^2}{\partial x^2} +
+\frac{\partial^2}{\partial y^2}$.  We will use $\Delta$ here.
+The reason for using such a notation is that you
 can define $\Delta$ to be the right thing for any number of space
 dimensions and then the heat equation is always
 $u_t = k \Delta u$.  The operator $\Delta$ is called the \emph{\myindex{Laplacian}}.
@@ -5241,7 +5243,7 @@ Laplace equation defined on
 this region such that $u$ agrees with the values we specified on the
 boundary.
 
-In this section, we consider a rectangular region.  For simplicity
+In this section, we consider a rectangular region.  For simplicity,
 we specify boundary values to be zero at 3 of the four edges and only
 specify an arbitrary function at one edge.  As we still have the
 principle of superposition, we can use this simpler
@@ -5302,8 +5304,8 @@ solutions satisfying all the homogeneous boundary conditions
 (all conditions except \eqref{dirich:eq5}).  We notice that superposition
 still works for the equation and all the homogeneous conditions.
 Therefore,
-we can use the Fourier series for $f(x)$ to solve the
-problem as before.
+we can use the Fourier series for $f(x)$ to find
+a solution $u$ that also solves \eqref{dirich:eq5}.
 
 We try $u(x,y) = X(x)Y(y)$.  We plug $u$ into the equation to get
 \begin{equation*}
@@ -5322,8 +5324,8 @@ And we get two equations
 & Y'' - \lambda Y = 0 .
 \end{align*}
 Furthermore, the homogeneous boundary conditions imply that
-$X(0) = X(w) = 0$ and $Y(h) = 0$.  Taking the equation for $X$
-we have already seen that we have a nontrivial solution if and only if
+$X(0) = X(w) = 0$ and $Y(h) = 0$.  Using the equation for $X$,
+we have already seen that there is a nontrivial solution if and only if
 $\lambda = \lambda_n = \frac{n^2 \pi^2}{w^2}$ and the solution is
 a multiple of
 \begin{equation*}
@@ -5344,7 +5346,7 @@ Setting $Y_n(h) = 0$ and solving for $B_n$, we get
 B_n = \frac{- \cosh \left( \frac{n \pi h }{w} \right)}%
 {\sinh \left( \frac{n \pi h }{w} \right)} .
 \end{equation*}
-After we plug the $A_n$ and $B_n$ we
+After we plug the $A_n$ and $B_n$
 into \eqref{dirich:Yngensol} and simplify by using
 the identity $\sinh(\alpha-\beta) =
 \sinh(\alpha) \cosh(\beta) -
@@ -5355,7 +5357,7 @@ Y_n(y) =
 {\sinh \left( \frac{n \pi h }{w} \right)} .
 \end{equation*}
 We define $u_n(x,y) = X_n(x)Y_n(y)$.
-And note that $u_n$
+Note that $u_n$
 satisfies \eqref{dirich:eq1}--\eqref{dirich:eq4}.
 Observe
 \begin{equation*}
@@ -5679,7 +5681,7 @@ The first issue we face is that we do not know the Laplacian
 in polar coordinates.
 Normally, we would find $u_{xx}$ and $u_{yy}$ in terms of
 the derivatives in $r$ and $\theta$.  We would need to solve
-for $r$ and $\theta$ in terms of $x$ and $y$.  In this case
+for $r$ and $\theta$ in terms of $x$ and $y$.  In this case,
 it is more convenient to work in
 reverse.  We compute derivatives in $r$ and $\theta$ in terms
 of derivatives in $x$ and $y$ and then we solve.  The
@@ -5768,7 +5770,7 @@ coefficients.
 
 \subsection{Series solution}
 
-Let us separate variables as usual.  That is let us try
+Let us separate variables as usual.  That is, we try
 $u(r,\theta) = R(r)\Theta(\theta)$.  Then
 \begin{equation*}
 0 = \Delta u = 
@@ -5778,7 +5780,7 @@ $u(r,\theta) = R(r)\Theta(\theta)$.  Then
 +
 R'' \Theta .
 \end{equation*}
-Let us put $R$ on one side and $\Theta$ on the other and conclude
+We put $R$ on one side and $\Theta$ on the other and conclude
 that both sides must be constant.
 \begin{align*}
 \frac{1}{r^2} R \Theta''
@@ -5797,7 +5799,7 @@ We get two equations:
 \\
 & r^2 R'' + r R' -\lambda R = 0.
 \end{align*}
-Let us first focus on $\Theta$.  We know that $u(r,\theta)$ ought to be
+We first focus on $\Theta$.  We know that $u(r,\theta)$ ought to be
 $2\pi$-periodic in $\theta$, that is,
 $u(r,\theta) = u(r,\theta+2\pi)$.  Therefore, the solution to
 $\Theta'' + \lambda \Theta = 0$ must be $2\pi$-periodic.
@@ -5811,7 +5813,7 @@ $\Theta'' + n^2 \Theta = 0$.  When $n=0$ the equation is just
 $\Theta'' = 0$, so we have the general solution $A \theta + B$.  As
 $\Theta$ is periodic,
 $A=0$.
-For convenience we write this solution as
+For convenience, we write this solution as
 \begin{equation*}
 \Theta_0 = \frac{a_0}{2}
 \end{equation*}
@@ -5848,12 +5850,12 @@ will pick up the slack so nothing is lost.  Let
 R_0 = 1 , \qquad \text{and} \qquad
 R_n = r^n .
 \end{equation*}
-Hence our building block solutions are
+Our building block solutions are
 \begin{align*}
 & u_0(r,\theta) = \frac{a_0}{2} ,
 & u_n(r,\theta) = a_n r^n \cos(n \theta) + b_n r^n \sin(n \theta) .
 \end{align*}
-Putting everything together our solution is:
+Putting everything together our solution is
 \begin{equation*}
 \mybxbg{~~
 u(r,\theta)
@@ -5876,10 +5878,10 @@ Therefore, to solve \eqref{dirichdisc:theprobeq}
 we expand $g(\theta)$, which is 
 a $2\pi$-periodic function, as a Fourier series, and then 
 multiply the $n^{\text{th}}$ term by $r^n$.  To
-find the $a_n$ and the $b_n$ we compute
+find the $a_n$ and the $b_n$, we compute
 \begin{equation*}
 a_n =
-\frac{1}{\pi} \int_{-\pi}^\pi g(\theta) \cos (n\theta) \, d\theta , \qquad
+\frac{1}{\pi} \int_{-\pi}^\pi g(\theta) \cos (n\theta) \, d\theta \qquad
 \text{and} \qquad
 b_n =
 \frac{1}{\pi} \int_{-\pi}^\pi g(\theta) \sin (n\theta) \, d\theta.
@@ -5915,8 +5917,8 @@ Let us solve a more difficult problem.  Consider a long
 rod with circular cross section of radius 1.  Suppose we wish to solve the
 steady state heat problem in the rod.
 If the rod is long enough, we simply need to solve
-the Laplace equation in two dimensions.  Let us put the center of the rod at
-the origin and we have exactly the region we are currently
+the Laplace equation in two dimensions.  We put the center of the rod at
+the origin, and we have exactly the region we are currently
 studying---a circle of radius 1.  For the boundary conditions, suppose in
 Cartesian coordinates $x$ and
 $y$, the temperature on the boundary is 0 when $y < 0$, and it is $2y$ when $y > 0$.
@@ -5936,7 +5938,7 @@ circle of radius 1, that is, where $r=1$, we have $2y = 2\sin(\theta)$.  So
 
 We must now compute the Fourier series for the boundary
 condition.  By now the reader has plentiful experience in computing
-Fourier series and so we simply state that 
+Fourier series, and so we simply state that 
 \begin{equation*}
 u(1,\theta) = 
 \frac{2}{\pi}
@@ -5975,7 +5977,7 @@ boundary data 0 for $y < 0$ and $2y$ for $y > 0$.\label{dirichdisc:zero2yfig}}
 
 \subsection{Poisson kernel}
 
-There is another way to solve the Dirichlet problem with the help of an
+There is another way to solve the Dirichlet problem---with the help of an
 integral kernel.  That is, we will find a function $P(r,\theta,\alpha)$
 called the \emph{\myindex{Poisson kernel}}\footnote{%
 Named for the French mathematician
