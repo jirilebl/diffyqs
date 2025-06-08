@@ -3282,6 +3282,11 @@ With this notation the heat equation becomes
 u_t = k u_{xx} .
 \end{equation*}
 
+%10 is the number of lines, must be adjusted
+\begin{mywrapfigsimp}[10]{2.25in}{2.55in}
+\noindent
+\inputpdft{heateqregion}
+\end{mywrapfigsimp}
 The region in which we will solve the heat equation is given by 
 \begin{equation*}
 0 < x < L \quad \text{and} \quad t > 0 .
@@ -3991,8 +3996,8 @@ a) $0$,
 \sectionnotes{1 lecture\EPref{, \S9.6 in \cite{EP}}\BDref{,
 \S10.7 in \cite{BD}}}
 
-Imagine we have a tensioned guitar string of length $L$.  Let us 
-only consider vibrations in one direction.  Let
+Imagine a tensioned guitar string of length $L$ that can vibrate.
+We will only consider vibrations in one direction.  Let
 $x$ denote the position along the string, let $t$ denote time, and let $y$
 denote the displacement of the string from the rest position.
 See
@@ -4068,7 +4073,9 @@ z_t(x,0) = 0 & \qquad \text{for } \; 0 < x < L .
 \end{equation}
 
 The principle of superposition implies that
-$y = w + z$ solves the wave equation and furthermore
+$y = w + z$ solves the wave equation and the homogeneous
+side conditions.
+Furthermore,
 $y(x,0) = w(x,0) + z(x,0) = f(x)$ and
 $y_t(x,0) = w_t(x,0) + z_t(x,0) = g(x)$.  Hence, $y$ is
 a solution to
@@ -4095,7 +4102,7 @@ the wave equation to obtain
 \begin{equation*}
 X(x)T''(t) = a^2 X''(x) T(t) .
 \end{equation*}
-Rewriting we get
+Rewriting, we get
 \begin{equation*}
 \frac{T''(t)}{a^2 T(t)} = \frac{X''(x)}{X(x)} .
 \end{equation*}
@@ -4179,12 +4186,12 @@ We obtain
 X''(x) + \lambda X(x) &= 0 , \\
 T''(t) + \lambda a^2 T(t) &= 0 ,
 \end{align*}
-and the conditions $X(0) = 0$, $X(L) = 0$.  So again
+and the conditions $X(0) = 0$, $X(L) = 0$.  Again,
 $\lambda = \lambda_n = \frac{n^2 \pi^2}{L^2}$ and
 \begin{equation*}
 X_n(x) = \sin \left( \frac{n \pi}{L} x \right) .
 \end{equation*}
-This time
+This time,
 the condition on $T$ is $T'(0) = 0$.  Thus 
 we get that $B = 0$, and we take
 \begin{equation*}
@@ -4403,7 +4410,8 @@ get all the multiples of this frequency, which in music are called
 the \emph{\myindex{overtones}}.  Which overtones appear and with what amplitude
 is what musicians call the \emph{\myindex{timbre}} of the note.
 Mathematicians usually call this the \emph{\myindex{spectrum}}.
-Because all the frequencies are multiples of one frequency (the fundamental)
+Because all the frequencies are multiples of one frequency (the
+fundamental),
 we get a nice pleasing sound.
 
 The fundamental frequency $\frac{\pi a}{L}$ increases as we decrease length $L$.  That is, if
@@ -4436,15 +4444,17 @@ of the initial shape decay to zero (as $n \to \infty$) at the same rate as the F
 of the wave in time (for some fixed $x$).  So if you use a sharp object to
 pick the string, you get a sharper sound with lots of high frequency
 components, while if you use your thumb, you get a softer sound without
-so many high overtones.  Similarly if you pluck close to the bridge, you are
+so many high overtones.
+Similarly if you pluck close to the bridge (close
+to one end of the string), you are
 getting a pluck that looks more like the sawtooth, and you get an even
 sharper sound.
 
 In fact, if you look at the formula for the solution, you see that for any
-fixed $x$ we get an almost arbitrary Fourier series in $t$, everything
+fixed $x$, we get an almost arbitrary Fourier series in $t$, everything
 except the constant term.  You can essentially obtain any sound you want
 by plucking the string in just the right way.
-Of course we are considering an ideal string of no stiffness and no air
+Of course, we are considering an ideal string of no stiffness and no air
 resistance.  Those variables clearly impact the sound as well.
 
 \subsection{Exercises}
@@ -4747,7 +4757,7 @@ twice.  Keeping $\xi$ constant, we integrate with respect to $\eta$
 first\footnote{There is nothing special about $\eta$, you can integrate with
 $\xi$ first, if you wish.}
 and notice that
-the constant of integration depends on $\xi$; for each $\xi$ we might get a
+the constant of integration depends on $\xi$; for each $\xi$, we might get a
 different constant of integration.  We get
 $y_{\xi} = C(\xi)$.
 Next, we integrate with respect to $\xi$ and notice that the constant of
@@ -4941,13 +4951,13 @@ The solution in this case is
 =
 \frac{ -H(x-at) + H(x+at) }{2a} .
 \end{equation*}
-By superposition we get a solution for the general side conditions
+By superposition, we get a solution for the general side conditions
 \eqref{dalemb:weqside} (when neither $f(x)$ nor $g(x)$ are identically zero).
 \begin{equation} \label{dalemb:altform}
 y(x,t) = \frac{ F(x-at) + F(x+at) }{2} +
 \frac{ -H(x-at) + H(x+at) }{2a} .
 \end{equation}
-Do note the minus sign before the $H$, and the $a$ in the second denominator.
+Do note the minus sign before the $H$ and the $a$ in the second denominator.
 
 \begin{exercise}
 Check that the new formula \eqref{dalemb:altform} satisfies
@@ -4959,13 +4969,13 @@ the side conditions
 Make sure you use the odd periodic extensions $F(x)$ and $G(x)$,
 when you have formulas for $f(x)$ and $g(x)$.
 The thing is, those formulas in general hold
-only for $0 < x < L$, and are not usually equal to $F(x)$ and $G(x)$
+only for $0 < x < L$ and are not usually equal to $F(x)$ and $G(x)$
 for other $x$.
 
 \subsection{Some remarks}
 
-Let us remark that the formula $y(x,t) = A(x-at) + B(x+at)$ is the reason
-why the solution of the wave equation doesn't get \myquote{nicer} as time
+We remark that the formula $y(x,t) = A(x-at) + B(x+at)$ is the reason
+why the solution of the wave equation does not get \myquote{nicer} as time
 goes on, that is, why in the examples where the initial conditions
 had corners, the solution also has corners at every time $t$.
 
@@ -4986,20 +4996,20 @@ $\frac{F(x-t)+F(x+t)}{2}$ and nobody would notice the switch.
 One final remark is what the d'Alembert solution tells us about what
 part of the initial conditions influence the solution at a certain point.
 We can figure this out by \myquote{traveling backwards along the
-characteristics.}  Let us suppose that the string is very long (perhaps
+characteristics.}  Suppose that the string is very long (perhaps
 infinite) for simplicity.  Since the solution at time $t$ is
 \begin{equation*}
 y(x,t) =
 \frac{F(x-at) + F(x+at)}{2} + \frac{1}{2a} \int_{x-at}^{x+at} G(s) \,ds ,
 \end{equation*}
 we notice that we have only used the initial conditions in the interval
-$[x-at,x+at]$.  These two endpoints are called the
+$[x-at,x+at]$.  The endpoints of this interval are called the
 \emph{\myindex{wavefronts}}, as that is where the wave front is given an
 initial ($t=0$) disturbance at $x$.
-So if $a=1$, an observer sitting at $x=0$ at time $t=1$ has only seen the
+If $a=1$, an observer sitting at $x=0$ at time $t=1$ has only seen the
 initial conditions for $x$ in the range $[-1,1]$
 and is blissfully unaware of anything else.
-This is why for example we do not know that a supernova has occurred in the
+This is why, for example, we do not know that a supernova has occurred in the
 universe until we see its light, millions of years from the time
 when it did in fact happen.
 
@@ -5172,15 +5182,16 @@ This solution agrees with our common sense intuition with how the heat should be
 distributed in the wire.  So in one dimension, the steady state solutions
 are basically just straight lines.
 
-Things are more complicated in two or more space dimensions.  Let us
-restrict to two space dimensions for simplicity.  The heat equation in two
+Things are more complicated in two or more space dimensions.
+We restrict to two space dimensions for simplicity.
+The heat equation in two
 space variables is
 \begin{equation} \label{dirich:heateq}
 u_t = k(u_{xx} + u_{yy}) ,
 \end{equation}
 or more commonly written as
 $u_t = k \Delta u$ or
-$u_t = k \nabla^2 u$.  Here the $\Delta$ and $\nabla^2$ symbols
+$u_t = k \nabla^2 u$.  The $\Delta$ and $\nabla^2$ symbols
 mean $\frac{\partial^2}{\partial x^2} +
 \frac{\partial^2}{\partial y^2}$.  We will use $\Delta$
 from now on.  The reason for using such a notation is that you
@@ -5190,8 +5201,9 @@ $u_t = k \Delta u$.  The operator $\Delta$ is called the \emph{\myindex{Laplacia
 
 OK\@, now that we have notation out of the way, let us see what does an equation
 for the steady state solution look like.  We are looking for a solution to
-\eqref{dirich:heateq} that does not depend on $t$, or in other words $u_t =
-0$.  Hence we are looking for a
+\eqref{dirich:heateq} that does not depend on $t$, that is,
+$u_t = 0$.
+Hence, we are looking for a
 function $u(x,y)$ such that
 \begin{equation*}
 \mybxbg{~~
@@ -5202,7 +5214,7 @@ u_{xx} + u_{yy} = 0 .
 This equation is called the \emph{\myindex{Laplace equation}}%
 \footnote{Named after the French mathematician
 \href{https://en.wikipedia.org/wiki/Laplace}{Pierre-Simon, marquis de Laplace}
-(1749--1827).}, and is an example of an elliptic equation.
+(1749--1827).} and is an example of an elliptic equation.
 Solutions to the Laplace equation
 are called \emph{harmonic functions\index{harmonic function}}
 and have many nice properties and
@@ -5229,7 +5241,7 @@ Laplace equation defined on
 this region such that $u$ agrees with the values we specified on the
 boundary.
 
-In this section we consider a rectangular region.  For simplicity
+In this section, we consider a rectangular region.  For simplicity
 we specify boundary values to be zero at 3 of the four edges and only
 specify an arbitrary function at one edge.  As we still have the
 principle of superposition, we can use this simpler
@@ -5665,13 +5677,13 @@ We have the problem:
 
 The first issue we face is that we do not know the Laplacian
 in polar coordinates.
-Normally we would find $u_{xx}$ and $u_{yy}$ in terms of
+Normally, we would find $u_{xx}$ and $u_{yy}$ in terms of
 the derivatives in $r$ and $\theta$.  We would need to solve
 for $r$ and $\theta$ in terms of $x$ and $y$.  In this case
 it is more convenient to work in
 reverse.  We compute derivatives in $r$ and $\theta$ in terms
 of derivatives in $x$ and $y$ and then we solve.  The
-computations are easier this way.  First
+computations are easier this way.  First,
 \begin{equation*}
 \begin{aligned}
 & x_r = \cos \theta, & &
@@ -5680,7 +5692,7 @@ x_\theta = - r \sin \theta, \\
 y_\theta = r \cos \theta.
 \end{aligned}
 \end{equation*}
-Next by chain rule we obtain
+By chain rule, we obtain
 \begin{align*}
 u_r & = u_x x_r + u_y y_r = \cos(\theta) u_x + \sin(\theta) u_y ,
 \\
@@ -5721,7 +5733,7 @@ r\cos(\theta) (u_{yx} x_\theta + u_{yy} y_\theta)
 -r^2 2\sin(\theta)\cos(\theta) u_{xy}
 +r^2 \cos^2(\theta) u_{yy} .
 \end{align*}
-Let us now try to solve for $u_{xx} + u_{yy}$.  We start with
+Let us now try to find $u_{xx} + u_{yy}$.  We start with
 $\frac{1}{r^2} u_{\theta\theta}$ to get rid of those pesky $r^2$.
 If we add $u_{rr}$
 and use the fact that $\cos^2(\theta) +\sin^2(\theta) = 1$, we get
@@ -5733,8 +5745,8 @@ u_{rr}
 u_{xx} + u_{yy} - \frac{1}{r} \cos(\theta) u_x - \frac{1}{r} \sin(\theta)
 u_y .
 \end{equation*}
-We're not quite there yet, but all we are lacking is 
-$\frac{1}{r} u_r$.  Adding it we obtain the
+We are not quite there yet, but all we are lacking is 
+$\frac{1}{r} u_r$.  We add it to obtain the
 \emph{\myindex{Laplacian in polar coordinates}}:
 \begin{equation*}
 \mybxbg{~~
@@ -5939,7 +5951,7 @@ Compute the series for $u(1,\theta)$ and verify that it really is what
 we have just claimed.  Hint: Be careful, make sure not to divide by zero.
 \end{exercise}
 
-We now simply write the solution (see \figurevref{dirichdisc:zero2yfig}) by multiplying by $r^n$ in the right places.
+We now simply write the solution (see \figurevref{dirichdisc:zero2yfig}) by multiplying by $r^n$ in the right places:
 \begin{equation*}
 u(r,\theta) = 
 \frac{2}{\pi}
@@ -5984,7 +5996,7 @@ evaluate this formula as there is only one integral to evaluate.
 The formula also has theoretical applications.
 For instance, as $P(r,\theta,\alpha)$ 
 will have infinitely many derivatives, then
-via differentiating under the integral we find
+via differentiating under the integral, we find
 that the solution $u(r,\theta)$ has infinitely many derivatives, at least
 when inside the circle, $r < 1$.  By \myquote{having infinitely many
 derivatives,} what you
@@ -6073,7 +6085,7 @@ g(\alpha) \sin (n\alpha)
  \sin(n \theta) \bigr)
  \right)
 }_{P(r,\theta,\alpha)}
-g(\alpha) \,d\alpha
+g(\alpha) \,d\alpha .
 %\\
 %& =
 %\frac{1}{2\pi}
@@ -6185,7 +6197,7 @@ re^{-i(\theta-\alpha)}\bigr)}^{n}
 \frac{1 -r^2}{1 - 2r\cos(\theta-\alpha) +r^2} .
 \end{split}
 \end{equation*}
-That's a formula we can live with.  The
+That is a formula we can live with.  The
 solution to the Dirichlet problem using the Poisson kernel is
 \begin{equation*}
 \mybxbg{~~
@@ -6242,7 +6254,7 @@ is equal to the average of the values on a circle centered at $p$.
 
 What the formula says is that the value of the solution at any point in the
 circle is a weighted average of the boundary data $g(\theta)$.  The kernel
-is bigger when $(1,\alpha)$ is closer to $(r,\theta)$.  Therefore when
+is bigger when $(1,\alpha)$ is closer to $(r,\theta)$.  Therefore, when
 computing $u(r,\theta)$, we
 give more weight to the values $g(\alpha)$ when $(1,\alpha)$ is closer to $(r,\theta)$ and less
 weight to the values $g(\alpha)$ when $(1,\alpha)$ far from $(r,\theta)$.

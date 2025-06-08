@@ -1,0 +1,30 @@
+\begin{picture}(0,0)%
+\includegraphics{heateqregion.pdf}%
+\end{picture}%
+\setlength{\unitlength}{3947sp}%
+\begin{picture}(1997,1969)(41,-1334)
+\put(226,-436){\makebox(0,0)[rb]{\smash{\fontsize{12}{14.4}\normalfont {\color[rgb]{0,0,0}or}%
+}}}
+\put(301,-1261){\makebox(0,0)[b]{\smash{\fontsize{12}{14.4}\normalfont {\color[rgb]{0,0,0}$0$}%
+}}}
+\put(376,464){\makebox(0,0)[lb]{\smash{\fontsize{12}{14.4}\normalfont {\color[rgb]{0,0,0}$t$}%
+}}}
+\put(226,-136){\makebox(0,0)[rb]{\smash{\fontsize{12}{14.4}\normalfont {\color[rgb]{0,0,0}$u=0$}%
+}}}
+\put(1726,-136){\makebox(0,0)[lb]{\smash{\fontsize{12}{14.4}\normalfont {\color[rgb]{0,0,0}$u=0$}%
+}}}
+\put(1726,-436){\makebox(0,0)[lb]{\smash{\fontsize{12}{14.4}\normalfont {\color[rgb]{0,0,0}or}%
+}}}
+\put(1876,-1186){\makebox(0,0)[lb]{\smash{\fontsize{12}{14.4}\normalfont {\color[rgb]{0,0,0}$x$}%
+}}}
+\put(1651,-1261){\makebox(0,0)[b]{\smash{\fontsize{12}{14.4}\normalfont {\color[rgb]{0,0,0}$L$}%
+}}}
+\put(976,-361){\makebox(0,0)[b]{\smash{\fontsize{12}{14.4}\normalfont {\color[rgb]{0,0,0}$u_t = k u_{xx}$}%
+}}}
+\put(1051,-1186){\makebox(0,0)[b]{\smash{\fontsize{12}{14.4}\normalfont {\color[rgb]{0,0,0}$u=f(x)$}%
+}}}
+\put(1726,-736){\makebox(0,0)[lb]{\smash{\fontsize{12}{14.4}\normalfont {\color[rgb]{0,0,0}$u_x=0$}%
+}}}
+\put(226,-736){\makebox(0,0)[rb]{\smash{\fontsize{12}{14.4}\normalfont {\color[rgb]{0,0,0}$u_x=0$}%
+}}}
+\end{picture}%

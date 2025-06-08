@@ -52,10 +52,14 @@ give the \(t > 0\) for the boundary conditions, and give the
 ranges whenever introducing all the side conditions.  Also explicitly
 mention the range when introducing the type of problem we are solving in
 each section.
+<li>Add diagram of the \((x,t)\) space for the region that we
+are solving the heat equation in subsection 4.6.1.
 <li>In the first paragraph of 4.6.2, also mention that the heat
 equation is homogeneous as that is also needed for superposition.
 <li>In the paragraph introducing superposition in 4.7, mention homogeneity
 of the equation and also of the side conditions.
+<li>In 4.9 and 4.10 in the diagrams for the region, make the region gray
+and make the boundary thicker.
 <li>In the exercises in 4.9, we mentioned the region by name, but in the
 text we no longer use this (for decades now:) so rephrase
 to remove the name.
