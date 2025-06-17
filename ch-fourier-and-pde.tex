@@ -4424,36 +4424,36 @@ a = \sqrt{\frac{T}{\rho}} ,
 where $T$ is tension and $\rho$ is the linear density of the string.
 Tightening the string (turning the tuning peg on a guitar) increases $a$ and
 hence produces a higher fundamental frequency (a higher note).
-On the other hand using a heavier string 
+On the other hand, using a heavier string 
 reduces $a$ and produces a lower fundamental frequency (a lower note).
 A bass guitar has longer thicker strings, while a ukulele has short strings
 made of lighter material.
 
-Something rather interesting is the almost symmetry between space and time.
-In its simplest form we see this symmetry in the solutions
+Something rather interesting is the almost-symmetry between space and time.
+In its simplest form, we see this symmetry in the solutions
 \begin{equation*}
 \sin \left( \frac{n \pi}{L} x \right)
 \sin \left( \frac{n \pi a}{L} t \right)  .
 \end{equation*}
-Except for the $a$, time and space are just the same.
-
+Except for the constant $a$, this solution looks the same if we
+flip time and space.
 In general, the solution for a fixed $x$ is a Fourier series in $t$, for
 a fixed $t$ it is a Fourier series in $x$, and the coefficients are related.
-If the shape $f(x)$ or the initial velocity have lots of corners, then
+If the shape $f(x)$ or the initial velocity $g(x)$ have lots of corners, then
 the sound wave will have lots of corners.  That is because the Fourier coefficients
 of the initial shape decay to zero (as $n \to \infty$) at the same rate as the Fourier coefficients
 of the wave in time (for some fixed $x$).  So if you use a sharp object to
 pick the string, you get a sharper sound with lots of high frequency
 components, while if you use your thumb, you get a softer sound without
 so many high overtones.
-Similarly if you pluck close to the bridge (close
+Similarly, if you pluck close to the bridge (close
 to one end of the string), you are
 getting a pluck that looks more like the sawtooth, and you get an even
 sharper sound.
 
 In fact, if you look at the formula for the solution, you see that for any
 fixed $x$, we get an almost arbitrary Fourier series in $t$, everything
-except the constant term.  You can essentially obtain any sound you want
+except the constant term.  In theory, you can obtain any timbre you want
 by plucking the string in just the right way.
 Of course, we are considering an ideal string of no stiffness and no air
 resistance.  Those variables clearly impact the sound as well.
@@ -4753,15 +4753,15 @@ We plug what we got into the wave equation,
 \end{equation*}
 Therefore, the wave equation \eqref{dalemb:weq} transforms into
 $y_{\xi\eta} = 0$.
-It is easy to find the general solution to this equation by integrating
+It is easy to find the general solution to this new equation by integrating
 twice.  Keeping $\xi$ constant, we integrate with respect to $\eta$
 first\footnote{There is nothing special about $\eta$, you can integrate with
 $\xi$ first, if you wish.}
-and notice that
-the constant of integration depends on $\xi$; for each $\xi$, we might get a
+and note that
+the constant of integration depends on $\xi$; for each $\xi$, we may get a
 different constant of integration.  We get
 $y_{\xi} = C(\xi)$.
-Next, we integrate with respect to $\xi$ and notice that the constant of
+Next, we integrate with respect to $\xi$ and note that the constant of
 integration depends on $\eta$.
 Thus,
 $y = \int C(\xi) \, d\xi + B(\eta)$.
