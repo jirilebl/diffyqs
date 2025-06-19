@@ -4785,7 +4785,7 @@ these are the curves where $\xi$ and $\eta$ are constant.
 
 We know what any solution must look like, but we need to solve for the
 given side conditions.  We will just give the formula and see that it works.
-First let $F(x)$
+Let $F(x)$
 denote the odd periodic extension of $f(x)$, and let $G(x)$ denote the
 odd periodic extension of $g(x)$.  Define
 \begin{equation*}
@@ -4793,7 +4793,7 @@ A(x) = \frac{1}{2} F(x) - \frac{1}{2a} \int_0^x G(s) \,ds ,
 \qquad
 B(x) = \frac{1}{2} F(x) + \frac{1}{2a} \int_0^x G(s) \,ds .
 \end{equation*}
-We claim this $A(x)$ and $B(x)$ give the solution.  Explicitly, the
+We claim these $A(x)$ and $B(x)$ give the solution.  Explicitly, the
 solution is $y(x,t) = A(x-at) + B(x+at)$ or in other words:
 \begin{equation} \label{dalemb:form}
 \mybxbg{~~
@@ -4809,6 +4809,7 @@ y(x,t) & =
 \end{equation}
 
 Let us check that the d'Alembert formula really works.
+First,
 \begin{equation*}
 y(x,0) =
 \frac{F(x) + F(x)}{2} + \frac{1}{2a} \int_{x}^{x} G(s) \,ds 
@@ -4875,7 +4876,8 @@ And voil\`a, it works.
 D'Alembert says that the solution is a superposition of
 two functions (waves) moving in the opposite direction at \myquote{speed} $a$.
 To get an idea of
-how it works, let us work out an example.  Consider the simpler setup
+how it works, we work out the following example.
+Consider the simpler setup
 \begin{equation*}
 \begin{array}{ll}
 y_{tt} = y_{xx} & \qquad \text{for } \; 0 < x < 1 \text{ and } t > 0, \\
@@ -4884,7 +4886,7 @@ y(x,0) = f(x)  & \qquad \text{for } \; 0 < x < 1, \\
 y_t(x,0) = 0   & \qquad \text{for } \; 0 < x < 1 .
 \end{array}
 \end{equation*}
-Here $f(x)$ is an impulse of height 1 centered at $x=0.5$:
+Let $f(x)$ be the following triangluar impulse of height 1 centered at $x=0.5$:
 \begin{equation*}
 f(x) =
 \begin{cases}
@@ -4903,8 +4905,10 @@ the solution is
 \begin{equation*}
 y(x,t) = \frac{F(x-t) + F(x+t)}{2} .
 \end{equation*}
-It is not hard to compute specific values of $y(x,t)$.  For example, to
-compute $y(0.1,0.6)$ we notice $x-t = -0.5$ and $x+t = 0.7$.  Now $F(-0.5) =
+It is not hard to compute specific values of $y(x,t)$.
+For example, to
+compute $y(0.1,0.6)$, we notice $x-t = -0.5$ and $x+t = 0.7$.
+Now $F(-0.5) =
 -f(0.5) = - 20\,(0.55 - 0.5) = -1$
 and $F(0.7) = f(0.7) = 0$.  Hence
 $y(0.1,0.6) = \frac{-1 + 0}{2} = -0.5$.  As you can see the d'Alembert
@@ -4926,8 +4930,8 @@ $t=0.6$.%
 \subsection{Another way to solve for the side conditions}
 
 It is perhaps easier and more useful
-to memorize the procedure rather than the formula
-itself.  The important thing to remember is that a solution to the wave
+to remember the procedure rather than memorizing the formula
+itself.  The important thing is that a solution to the wave
 equation is a superposition of two waves traveling in opposite directions.
 That is,
 \begin{equation*}
@@ -4935,9 +4939,9 @@ y(x,t) = A(x-at) + B(x+at) .
 \end{equation*}
 If you think about it, the exact formulas for $A$ and $B$ are not hard
 to guess once you realize what kind of side conditions $y(x,t)$ is supposed to
-satisfy.  Let us find the formula again, but slightly differently.
+satisfy.  Let walk through the formula again, but slightly differently.
 Best approach is to do it in stages.  When $g(x) = 0$ (and hence
-$G(x) = 0$) the solution is
+$G(x) = 0$), the solution is
 \begin{equation*}
 \frac{ F(x-at) + F(x+at) }{2} .
 \end{equation*}
@@ -5182,10 +5186,10 @@ u(x) = \frac{T_2-T_1}{L} x + T_1 .
 \end{equation*}
 This solution agrees with our common sense intuition with how the heat should be
 distributed in the wire.  So in one dimension, the steady state solutions
-are basically just straight lines.
+are just straight lines.
 
 Things are more complicated in two or more space dimensions.
-We restrict to two space dimensions for simplicity.
+We restrict ourselves to two space dimensions for simplicity.
 The heat equation in two
 space variables is
 \begin{equation} \label{dirich:heateq}
@@ -5222,14 +5226,14 @@ are called \emph{harmonic functions\index{harmonic function}}
 and have many nice properties and
 applications far beyond the steady state heat problem.
 
-Harmonic functions in two variables are no longer just linear (plane
-graphs).  For example, you can check that the functions
+Harmonic functions in two variables are no longer just linear
+(so not just plane graphs).  For example, you can check that the functions
 $x^2-y^2$ and $xy$ are harmonic.  However, note that if $u_{xx}$ is positive, $u$ is concave
 up in the $x$ direction, then $u_{yy}$ must be negative and $u$ must be
 concave down in the $y$ direction.  A harmonic function can never
 have any \myquote{hilltop} or \myquote{valley} on the graph.  This observation is
 consistent with our intuitive idea of steady state heat distribution;
-the hottest or coldest spot will not be inside.
+the hottest or coldest spot should not be inside.
 
 Commonly the Laplace equation is part of a so-called
 \emph{\myindex{Dirichlet problem}}%
@@ -5256,6 +5260,7 @@ We wish to solve the following problem.  Let $h$ and $w$
 be the height and width of our rectangle, with one corner at the origin and
 lying in the first quadrant, so that the region is
 given by $0 < x < w$ and $0 < y < h$.
+Consider the problem
 
 % FIXME: numbering does not work now since there are no hard coded numbers
 % here!
@@ -5462,11 +5467,13 @@ solve the problem
 \begin{exercise}
 In the region described by $0 < x < 1$ and $0 < y < 1$,
 solve the problem
-\begin{align*}
-& u_{xx} + u_{yy} = 0, \\
-& u(x,0) = \sin (\pi x) - \sin (2\pi x), \quad u(x,1) = 0, \\
-& u(0,y) = 0, \quad u(1,y) = 0 .
-\end{align*}
+\begin{equation*}
+\begin{array}{ll}
+u_{xx} + u_{yy} = 0, & \\
+u(x,0) = \sin (\pi x) - \sin (2\pi x), \quad & u(x,1) = 0, \\
+u(0,y) = 0, \quad & u(1,y) = 0 .
+\end{array}
+\end{equation*}
 \end{exercise}
 
 \begin{exercise}
@@ -5508,11 +5515,13 @@ Hint: Use superposition.
 \begin{exercise}
 In the region described by $0 < x < w$ and $0 < y < h$,
 solve the problem
-\begin{align*}
-& u_{xx} + u_{yy} = 0, \\
-& u(x,0) = 0, \quad u(x,h) = f(x), \\
-& u(0,y) = 0, \quad u(w,y) = 0.
-\end{align*}
+\begin{equation*}
+\begin{array}{ll}
+u_{xx} + u_{yy} = 0, & \\
+u(x,0) = 0, \quad & u(x,h) = f(x), \\
+u(0,y) = 0, \quad & u(w,y) = 0.
+\end{array}
+\end{equation*}
 The solution should be in series form using the Fourier series coefficients
 of $f(x)$.
 \end{exercise}
@@ -5520,11 +5529,13 @@ of $f(x)$.
 \begin{exercise}
 In the region described by $0 < x < w$ and $0 < y < h$,
 solve the problem
-\begin{align*}
-& u_{xx} + u_{yy} = 0, \\
-& u(x,0) = 0, \quad u(x,h) = 0, \\
-& u(0,y) = f(y), \quad u(w,y) = 0.
-\end{align*}
+\begin{equation*}
+\begin{array}{ll}
+u_{xx} + u_{yy} = 0, & \\
+u(x,0) = 0, \quad & u(x,h) = 0, \\
+u(0,y) = f(y), \quad & u(w,y) = 0.
+\end{array}
+\end{equation*}
 The solution should be in series form using the Fourier series coefficients
 of $f(y)$.
 \end{exercise}
@@ -5532,11 +5543,13 @@ of $f(y)$.
 \begin{exercise}
 In the region described by $0 < x < w$ and $0 < y < h$,
 solve the problem
-\begin{align*}
-& u_{xx} + u_{yy} = 0, \\
-& u(x,0) = 0, \quad u(x,h) = 0, \\
-& u(0,y) = 0, \quad u(w,y) = f(y).
-\end{align*}
+\begin{equation*}
+\begin{array}{ll}
+u_{xx} + u_{yy} = 0, & \\
+u(x,0) = 0, \quad & u(x,h) = 0, \\
+u(0,y) = 0, \quad & u(w,y) = f(y).
+\end{array}
+\end{equation*}
 The solution should be in series form using the Fourier series coefficients
 of $f(y)$.
 \end{exercise}
@@ -5544,11 +5557,13 @@ of $f(y)$.
 \begin{exercise}
 In the region described by $0 < x < 1$ and $0 < y < 1$,
 solve the problem
-\begin{align*}
-& u_{xx} + u_{yy} = 0, \\
-& u(x,0) = \sin (9 \pi x), \quad u(x,1) = \sin (2 \pi x), \\
-& u(0,y) = 0, \quad u(1,y) = 0 .
-\end{align*}
+\begin{equation*}
+\begin{array}{ll}
+u_{xx} + u_{yy} = 0, & \\
+u(x,0) = \sin (9 \pi x), \quad & u(x,1) = \sin (2 \pi x), \\
+u(0,y) = 0, \quad & u(1,y) = 0 .
+\end{array}
+\end{equation*}
 Hint: Use superposition.
 \end{exercise}
 
