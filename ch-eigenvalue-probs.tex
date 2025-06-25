@@ -215,7 +215,7 @@ Let us see if $\lambda = 0$ is an eigenvalue:
 We must satisfy $0 = hB - A$ and $A = 0$, hence $B=0$ (as $h > 0$).
 Therefore, 0 is not an eigenvalue (no nonzero solution, so no eigenfunction).
 
-Now let us
+Now we
 try $\lambda > 0$.  We plug in the boundary conditions:
 \begin{align*}
 & 0 = h A - \sqrt{\lambda}\, B , \\
@@ -511,7 +511,7 @@ be computed to be
 \begin{equation*}
 f(x) = \sum_{n=1}^\infty \frac{{(-1)}^{n+1}}{n}  \sin ( 2nx ) .
 \end{equation*}
-Both sums converge are equal to $f(x)$ for $0 < x < \nicefrac{\pi}{2}$, but
+Both series converge to $f(x)$ for $0 < x < \nicefrac{\pi}{2}$, but
 the eigenfunctions involved come from different eigenvalue problems.
 \end{example}
 
@@ -615,7 +615,10 @@ exercises in \S11.2 in \cite{BD}}}
 
 The eigenfunction series can arise even from higher order equations.
 Consider an elastic beam (say made of steel).  We will study the
-transversal vibrations of the beam.  That is, suppose the beam lies along
+\emph{\myindex{transversal vibrations}}
+(vibrations where the beam \myquote{bends})
+of the beam.
+Suppose the beam lies along
 the $x$-axis and let $y(x,t)$ measure the displacement of the point $x$
 on the beam at time $t$.  See \figurevref{appeig:transbeamfig}.
 
@@ -634,7 +637,7 @@ you are interested, $a^4 = \frac{EI}{\rho}$, where $E$ is the elastic
 modulus, $I$ is the second moment of area of the cross section,
 and $\rho$ is linear density.}.
 
-Suppose the beam is of length 1 simply supported (hinged) at the ends.
+Suppose the beam is of length 1 and simply supported (hinged) at the ends.
 The beam is displaced by some function $f(x)$ at time $t=0$ and then
 let go (initial velocity is 0).  Then $y$ satisfies:
 \begin{equation} \label{appeig:beameq}
@@ -771,7 +774,7 @@ y(x,t) = \sum_{\substack{n=1\\n \text{~odd}}}^\infty \frac{4}{5\pi^3 n^3}
 \end{example}
 
 There are other boundary conditions than just hinged ends.  There are
-three basic possibilities: hinged, free, or fixed.  Let us consider
+three basic possibilities: hinged, free, or fixed.  Consider
 the end at $x=0$.  For the other end, it is the same idea.
 If the end is \emph{hinged}\index{hinged end of beam}, then
 \begin{equation*}

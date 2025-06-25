@@ -5849,7 +5849,7 @@ This equation appeared in exercises before---we
 solved it in \exerciseref{sol:eulerex}
 and \exercisevref{sol:eulerexln}.  The idea is to try a solution
 $r^s$ and if that does not give us two solutions, also try a solution of the form
-$r^s \ln r$.  Let us name the solution for $R_n$.  When $n=0$ we obtain
+$r^s \ln r$.  We name the solution $R_n$ as usual.  When $n=0$ we obtain
 \begin{equation*}
 R_0 = A r^0 + B r^0 \ln r = A + B \ln r ,
 \end{equation*}
@@ -5857,19 +5857,22 @@ and if $n > 0$, we get
 \begin{equation*}
 R_n = A r^n + B r^{-n} .
 \end{equation*}
-The function $u(r,\theta)$ must be finite at the origin, that is, when $r=0$.
+The function $u(r,\theta)$ must be finite (it cannot blow up) at the origin, that is, when $r=0$.
 So $B=0$ in both
-cases.  Set $A=1$ in both cases as well; the constants in $\Theta_n$
-will pick up the slack so nothing is lost.  Let
+cases as otherwise $r^{-n}$ or $\ln r$ does blow up as $r\to 0$.
+Set $A=1$ in both cases; the constants in $\Theta_n$
+will pick up the slack so nothing is lost.  That is,
 \begin{equation*}
-R_0 = 1 , \qquad \text{and} \qquad
+R_0 = 1
+\qquad \text{and} \qquad
 R_n = r^n .
 \end{equation*}
 Our building block solutions are
-\begin{align*}
-& u_0(r,\theta) = \frac{a_0}{2} ,
-& u_n(r,\theta) = a_n r^n \cos(n \theta) + b_n r^n \sin(n \theta) .
-\end{align*}
+\begin{equation*}
+u_0(r,\theta) = \frac{a_0}{2}
+\qquad \text{and} \qquad
+u_n(r,\theta) = a_n r^n \cos(n \theta) + b_n r^n \sin(n \theta) .
+\end{equation*}
 Putting everything together our solution is
 \begin{equation*}
 \mybxbg{~~
@@ -5909,11 +5912,11 @@ Suppose we wish to solve
 & u(1,\theta) = \cos(10\,\theta), \qquad -\pi < \theta \leq \pi.
 \end{align*}
 
-The solution is
+The $g(\theta)$ is already expanded, so
+the solution is
 \begin{equation*}
 u(r,\theta) = r^{10} \cos(10\,\theta) .
 \end{equation*}
-
 See the plot in \figurevref{dirichdisc:tenspeedfig}.
 The thing to notice in this example is that the effect of a high frequency
 is mostly felt at the boundary.  In the middle of the disc, the solution
@@ -5928,7 +5931,8 @@ $\cos(10\,\theta)$ as boundary data.\label{dirichdisc:tenspeedfig}}
 \end{example}
 
 \begin{example}
-Let us solve a more difficult problem.  Consider a long
+Let us solve a more difficult problem.
+Consider a long
 rod with circular cross section of radius 1.  Suppose we wish to solve the
 steady state heat problem in the rod.
 If the rod is long enough, we simply need to solve
@@ -5968,7 +5972,9 @@ Compute the series for $u(1,\theta)$ and verify that it really is what
 we have just claimed.  Hint: Be careful, make sure not to divide by zero.
 \end{exercise}
 
-We now simply write the solution (see \figurevref{dirichdisc:zero2yfig}) by multiplying by $r^n$ in the right places:
+To obtain the solution (see \figurevref{dirichdisc:zero2yfig}), we
+write its series by multiplying terms in the series for $g(\theta)$
+by $r^n$ in the right places:
 \begin{equation*}
 u(r,\theta) = 
 \frac{2}{\pi}
@@ -6172,12 +6178,11 @@ Recall from calculus that if $z$ is a complex number where $\lvert z \rvert < 1$
 \begin{equation*}
 \sum_{n=1}^\infty z^n = \frac{z}{1-z} .
 \end{equation*}
-Note that $n$ starts at $1$ and that is why we have the $z$ in the numerator.
+Note that $n$ starts at $1$, and that is why we have the $z$ in the numerator.
 It is the standard geometric series multiplied by $z$.
 We can use $z = re^{i(\theta-\alpha)}$, as
 lo and behold $\lvert re^{i(\theta-\alpha)} \rvert = r < 1$.
-Let us
-continue with the computation.
+We continue with the computation.
 \begin{equation*}
 \begin{split}
 P(r,\theta,\alpha)
@@ -6224,9 +6229,9 @@ u(r,\theta) =
 ~~}
 \end{equation*}
 Sometimes the formula for the Poisson kernel is
-given together with the constant $\frac{1}{2\pi}$, in which case we should
-of course not leave it in front of the integral.
-Also, often the limits
+given together with the constant $\frac{1}{2\pi}$, in which case we should,
+of course, not leave it in front of the integral.
+Sometimes the limits
 of the integral are given as 0 to $2\pi$; everything inside is
 $2\pi$-periodic in $\alpha$, so this does not change the integral.
 
@@ -6239,8 +6244,7 @@ $2\pi$-periodic in $\alpha$, so this does not change the integral.
 Let us not leave the Poisson kernel without explaining its geometric
 meaning.  Let $s$ be the distance from $(r,\theta)$ to
 $(1,\alpha)$.
-You may recall from calculus that
-this distance $s$ in polar coordinates is given precisely by the square root
+This distance $s$ in polar coordinates is given precisely by the square root
 of $1 - 2r\cos(\theta-\alpha) +r^2$.  That is, the Poisson kernel is really
 the formula
 \begin{equation*}
@@ -6250,9 +6254,9 @@ the formula
 
 One final note we make about the formula is that it is really
 a weighted average of the boundary values.
-First let us look
+First, we look
 at what happens at the origin,
-that is, when $r=0$. %(and then $\theta$ can be anything at all)
+that is, when $r=0$: %(and then $\theta$ can be anything at all)
 \begin{equation*}
 \begin{split}
 u(0,0) &= 
@@ -6269,8 +6273,9 @@ therefore the average value of $u$ on the boundary.  This is
 a general feature of harmonic functions, the value at some point $p$
 is equal to the average of the values on a circle centered at $p$.
 
-What the formula says is that the value of the solution at any point in the
-circle is a weighted average of the boundary data $g(\theta)$.  The kernel
+What the formula says at other points inside the circle
+is that the value of the solution
+is a weighted average of the boundary data $g(\theta)$.  The kernel
 is bigger when $(1,\alpha)$ is closer to $(r,\theta)$.  Therefore, when
 computing $u(r,\theta)$, we
 give more weight to the values $g(\alpha)$ when $(1,\alpha)$ is closer to $(r,\theta)$ and less
@@ -6387,7 +6392,7 @@ $u = 1-x$
 \begin{tasks}
 \task
 Try and guess a solution to $\Delta u = -1$, $u(1,\theta) = 0$.
-Hint: try a solution that only depends on $r$.  Also first, don't worry
+Hint: try a solution that only depends on~$r$.  Also first, don't worry
 about the boundary condition.
 \task
 Now solve $\Delta u = -1$, $u(1,\theta) = \sin(2\theta)$ using
