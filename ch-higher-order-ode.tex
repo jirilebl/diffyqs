@@ -20,7 +20,7 @@ y'' + p(x)y' + q(x)y = f(x) ,
 \end{equation}
 where $p(x) = \nicefrac{B(x)}{A(x)}$, $q(x) = \nicefrac{C(x)}{A(x)}$, and
 $f(x) = \nicefrac{F(x)}{A(x)}$.
-The word \emph{linear\index{linear equation}} means that the equation contains no powers nor
+The word \emph{linear\index{linear equation}} means that the equation contains no powers or
 functions of $y$, $y'$, and $y''$.
 
 In the special case when $f(x) = 0$, we have a so-called
@@ -150,7 +150,7 @@ y(x) = b_0 \cosh (kx) + \frac{b_1}{k} \sinh (kx) .
 Using $\cosh$ and $\sinh$ in this solution allows us to solve for
 the initial conditions
 in a cleaner way
-than if we have used the exponentials.
+than if we had used the exponentials.
 
 \medskip
 
@@ -200,7 +200,7 @@ see another example.  Consider $y''-2x^{-2}y = 0$.  Then $y_1 = x^2$ and $y_2 =
 \nicefrac{1}{x}$ are solutions.  To see that they are linearly independent,
 suppose one is a multiple of the other: $y_1 = A y_2$, we just have to find
 out that $A$ cannot be a constant.  In this case we have $A =
-\nicefrac{y_1}{y_2} = x^3$, this most decidedly not a constant.
+\nicefrac{y_1}{y_2} = x^3$, which is most decidedly not a constant.
 So $y = C_1 x^2 + C_2 \nicefrac{1}{x}$ is the general solution.
 
 \medskip
@@ -406,7 +406,7 @@ y''-6y'+8y = 0, \qquad y(0) = - 2, \qquad y'(0) = 6 .
 This is a second order linear homogeneous equation with constant
 coefficients.  \emph{Constant coefficients\index{constant coefficient}}
 means that the functions 
-in front of $y''$, $y'$, and $y$ are constants, they do not depend on $x$.
+in front of $y''$, $y'$, and $y$ are constants; they do not depend on $x$.
 
 To guess a solution, think of a function that stays essentially the
 same when we differentiate it, so that we can take the function and its
@@ -561,7 +561,7 @@ In some sense, a doubled root rarely happens.  If coefficients are
 picked randomly, a doubled root is unlikely.
 There are, however, some real-world problems
 where a doubled root does happen naturally (e.g.\ critically damped
-mass-spring system as we will see).
+mass-spring system, as we will see).
 
 Let us give a short argument for why the solution $x e^{r x}$ works for a
 doubled root.
@@ -636,8 +636,8 @@ this by writing down the Taylor series and plugging in the complex
 number.  Because most properties of the exponential can be proved by looking
 at the Taylor series, these
 properties still hold for the complex
-exponential.  For example the very important property: $e^{x+y} = e^x e^y$.  This means that
-$e^{a+ib} = e^a e^{ib}$.  Hence if we can compute $e^{ib}$, we can
+exponential.  For example, the very important property: $e^{x+y} = e^x e^y$.  This means that
+$e^{a+ib} = e^a e^{ib}$.  Hence, if we can compute $e^{ib}$, we can
 compute $e^{a+ib}$.  For $e^{ib}$, we use the so-called
 \emph{\myindex{Euler's formula}}.
 
@@ -1118,7 +1118,7 @@ We divide through by $e^{rx}$.  Then
 r^3 - 3 r^2 - r + 3 = 0 .
 \end{equation*}
 The trick now is to find the roots.  There is a formula for the roots of
-degree 3 and 4 polynomials but it is very complicated.  There is no formula
+degree 3 and 4 polynomials, but it is very complicated.  There is no formula
 for higher degree polynomials.  That does not mean that the roots do not
 exist.  There are always
 $n$ roots for an $n^{\text{th}}$ degree polynomial.  They may be
@@ -1425,7 +1425,7 @@ $x$ growing to the right (away from the wall).
 The force exerted by the spring is proportional to the
 compression of the spring by \myindex{Hooke's law}.
 Therefore, it is $kx$ in the negative direction.
-Similarly the force exerted by friction is proportional
+Similarly, the force exerted by friction is proportional
 to the velocity of the mass.
 \myindex{Newton's second law} says that force equals mass times
 acceleration.
@@ -1781,10 +1781,10 @@ there is one root of multiplicity 2 and this root is $-p$.  Our solution is
 x(t) = C_1 e^{-pt} + C_2 t e^{-pt} .
 \end{equation*}
 The behavior of a critically damped system is very similar to an overdamped
-system.  After all a critically damped system is in some sense a limit
+system.  After all, a critically damped system is, in some sense, a limit
 of overdamped systems.  Since these equations are really only an
-approximation to the real world, in reality we are never critically
-damped, it is a place we can only reach in theory.  We are always
+approximation to the real world, in reality, we are never critically
+damped; it is a place we can only reach in theory.  We are always
 a little bit underdamped or a little bit overdamped.  It is better not to
 dwell on critical damping.
 
@@ -1837,7 +1837,7 @@ is the oscillating line between the two envelope curves.
 The envelope curves give
 the maximum amplitude of the oscillation at any given point in time.  For
 example, if you are bungee jumping, you are really interested in computing the
-envelope curve as not to hit the concrete with your head.
+envelope curve so as not to hit the concrete with your head.
 
 The phase shift $\gamma$ shifts the oscillation left or right, but within the
 envelope curves (the envelope curves do not change if $\gamma$
@@ -1871,7 +1871,7 @@ Consider a mass and spring system with a mass $m=2$, spring constant $k=3$, and
 damping constant $c=1$.
 \begin{tasks}
 \task Set up and find the general solution of the system.
-\task Is the system underdamped, overdamped or critically damped?
+\task Is the system underdamped, overdamped, or critically damped?
 \task If the system is not critically damped, find a $c$ that makes the system
 critically damped.
 \end{tasks}
@@ -2102,7 +2102,7 @@ the same degree.  Let us try
 \begin{equation*}
 y_p = Ax + B .
 \end{equation*}
-We plug $y_p$ into the left hand side to obtain
+We plug $y_p$ into the left-hand side to obtain
 \begin{equation*}
 \begin{split}
 y_p'' + 5y_p'+ 6y_p & =
@@ -2150,9 +2150,9 @@ That will \emph{not} work.  You need to first compute $y = y_c + y_p$ and
 \emph{only then} solve for the constants using the initial conditions.
 
 Another important remark is that you should not forget the lower degree
-terms, even if they do not appear on the right hand side.  If the equation
+terms, even if they do not appear on the right-hand side.  If the equation
 is $Ly=x^3+1$, you must try $y_p = Ax^3+Bx^2+Cx+D$, even though there is
-no $x^2$ nor $x$ on the right hand side of the equation.  It is
+no $x^2$ nor $x$ on the right-hand side of the equation.  It is
 a general polynomial of degree 3 that must be tried.
 
 \medskip
@@ -2185,7 +2185,7 @@ or
 (-4B-4A+2B) \sin(2x)
 = \cos(2x) .
 \end{equation*}
-The left-hand side must equal to right-hand side.  Namely,
+The left-hand side must equal the right-hand side.  Namely,
 $-4A + 4B + 2A = 1$ and
 $-4B - 4A + 2B = 0$.  So $-2A+4B =1$ and $2A+B=0$ and hence
 $A=\nicefrac{-1}{10}$ and $B=\nicefrac{1}{5}$.  So
@@ -2498,7 +2498,7 @@ for the coefficients for $y^{(4)}-2y'''+y'' = e^x + x + \sin x$.
 \pagebreak[2]
 \leavevmode
 \begin{tasks}
-\task Using variation of parameters find a particular solution of
+\task Using variation of parameters, find a particular solution of
 $y''-2y'+y = e^x$.
 \task Find a particular solution using undetermined
 coefficients.
@@ -2522,7 +2522,7 @@ to $y''-y=e^{cx}$.  Hint: Make sure to handle every possible real $c$.
 \pagebreak[2]
 \leavevmode
 \begin{tasks}
-\task Using variation of parameters find a particular solution of
+\task Using variation of parameters, find a particular solution of
 $y''-y = e^x$.
 \task Find a particular solution using undetermined
 coefficients.
@@ -2591,7 +2591,7 @@ Find a polynomial $y(x)$ that solves
 $y'+ x y = x^3+2x^2+5x+2$.
 
 Note: 
-Not every right hand side will allow a polynomial solution,
+Not every right-hand side will allow a polynomial solution,
 for example, $y'+xy=1$ does not, but a technique based on undetermined
 coefficients does work, see \chapterref{ps:chapter}.
 \end{exercise}
@@ -2655,7 +2655,7 @@ $x_p = A \cos (\omega t)$ and solve for $A$.  We do not need a sine
 in our trial solution as after plugging in we only have cosines.
 If you include a sine, it is fine; you will find that its
 coefficient is zero (I could not find a second rhyme).
-We plug into the equation and solving for $A$ to find
+We plug into the equation and solve for $A$ to find
 \begin{equation*}
 x_p = \frac{F_0}{m(\omega_0^2 - \omega^2)} \cos (\omega t) .
 \end{equation*}
@@ -2781,7 +2781,7 @@ $m=1$, $\omega = \pi$.
 $\frac{1}{\pi} t \sin (\pi t)$.\label{3.6:resonancefig}}
 \end{mywrapfig}
 
-By forcing the system in just the right frequency, we produce very wild
+By forcing the system at just the right frequency, we produce very wild
 oscillations.  This kind of behavior is called \emph{\myindex{resonance}} or
 perhaps
 \emph{\myindex{pure resonance}}.  Sometimes resonance is
@@ -2791,13 +2791,13 @@ and forth on the swing seat in the \myquote{correct frequency}?  You were trying
 achieve resonance.  The force of each one of your moves was small, but after a
 while it produced large swings.
 
-On the other hand resonance can be destructive.
-In an earthquake some buildings collapse while
+On the other hand, resonance can be destructive.
+In an earthquake, some buildings collapse while
 others may be relatively undamaged.  This is due to different buildings
 having different resonance frequencies.  So figuring out the resonance
 frequency can be very important.
 
-A common (but wrong) example of destructive force of resonance is the Tacoma
+A common (but wrong) example of the destructive force of resonance is the Tacoma
 Narrows bridge failure.  It turns out there was a different
 phenomenon at play%
 \footnote{K.\ Billah and R.\ Scanlan, \emph{Resonance, Tacoma Narrows
@@ -2807,7 +2807,7 @@ Physics, 59(2), 1991, 118--124,
 
 \subsection{Damped forced motion and practical resonance}
 
-In real life things are not as simple as they were above.  There is,
+In real life, things are not as simple as they were above.  There is,
 of course, some damping.  Our equation becomes
 \begin{equation} \label{3.6:deq}
 mx'' + cx' + kx = F_0 \cos (\omega t) ,
@@ -2963,7 +2963,7 @@ the \emph{\myindex{practical resonance amplitude}}.
 Thus when damping is present we talk of \emph{\myindex{practical resonance}}
 rather than pure resonance.
 A sample plot for three different
-values of $c$ is given in \figurevref{3.6:pracresfig}.  As you can see the
+values of $c$ is given in \figurevref{3.6:pracresfig}.  As you can see, the
 practical resonance amplitude grows as damping gets smaller, and 
 practical resonance can disappear altogether when damping is large.
 
@@ -3063,8 +3063,8 @@ Assume that the container on top is full and the water does not move around.
 The container then acts as the mass and the support acts as the spring, where
 the induced vibrations are horizontal.  The container with water
 has a mass of $m=\unit[10,000]{kg}$.  It takes a force of 1000 newtons
-to displace the container 1 meter.  For simplicity assume no friction.
-When the earthquake hits the water tower is at rest (it is not moving).
+to displace the container 1 meter.  For simplicity, assume no friction.
+When the earthquake hits, the water tower is at rest (it is not moving).
 %
 The earthquake induces an external force 
 $F(t) = m A \omega^2 \cos (\omega t)$.
@@ -3080,7 +3080,7 @@ sines.
 \task
 Suppose $A = 1$ and an earthquake with frequency 0.5 cycles per second
 comes.  What is the amplitude of the oscillations?  Suppose that if the water
-tower moves more than 1.5 meter from the rest position, the tower collapses.
+tower moves more than 1.5 meters from the rest position, the tower collapses.
 Will the tower collapse?
 \end{tasks}
 \end{exercise}
@@ -3091,8 +3091,10 @@ Will the tower collapse?
 \begin{exercise}
 A mass of \unit[4]{kg} on a spring with $k=\unitfrac[4]{N}{m}$ and a damping
 constant $c=\unitfrac[1]{Ns}{m}$.
-Suppose that $F_0 = \unit[2]{N}$.  Using forcing function $F_0 \cos (\omega t)$,
-find the $\omega$ that causes practical resonance and find the amplitude.
+Suppose that $F_0 = \unit[2]{N}$.
+Using the forcing function $F_0 \cos (\omega t)$,
+find the $\omega$ that causes practical resonance and find the
+practical resonance amplitude.
 \end{exercise}
 \exsol{%
 $\omega = \frac{\sqrt{31}}{4\sqrt{2}} \approx 0.984$ \quad
