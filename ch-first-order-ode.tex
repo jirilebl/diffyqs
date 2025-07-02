@@ -1,4 +1,4 @@
-\chapter{First order equations} \label{fo:chapter}
+\chapter{First-order equations} \label{fo:chapter}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -8,7 +8,7 @@
 \sectionnotes{1 lecture (or less)\EPref{, \S1.2 in \cite{EP}}\BDref{,
 covered in \S1.2 and \S2.1 in \cite{BD}}}
 
-A first order ODE is an equation of the form
+A first-order ODE is an equation of the form
 \begin{equation*}
 \frac{dy}{dx} = f(x,y) ,
 \end{equation*}
@@ -251,7 +251,7 @@ Suppose that the car accelerates at $\unitfrac[t^2]{m}{s^2}$.
 At time $t=0$ the car is at the 1 meter mark and is traveling at
 \unitfrac[10]{m}{s}.  Where is the car at time $t=10$?
 
-Well this is actually a second order problem.  If $x$ is the distance
+Well this is actually a second-order problem.  If $x$ is the distance
 traveled, then $x'$ is the velocity, and $x''$ is the acceleration.
 The equation with initial conditions is
 \begin{equation*}
@@ -407,7 +407,7 @@ $y = Ax^3 + Bx^2 + Cx + D$, so 4 constants.
 %
 %\medskip
 
-As we said, the general first order equation we are studying looks like
+As we said, the general first-order equation we are studying looks like
 \begin{equation*}
 y' = f(x,y).
 \end{equation*}
@@ -1233,8 +1233,8 @@ the so-called
 \emph{linear equations\index{linear equation}}.
 In fact, the majority of the course is about linear
 equations.  In this section we focus on the
-\emph{\myindex{first order linear equation}}.
-A first order equation is linear if we can put it
+\emph{\myindex{first-order linear equation}}.
+A first-order equation is linear if we can put it
 into the form:
 \begin{equation} \label{lineq:eq1}
 y' + p(x) y = f(x) .
@@ -1248,7 +1248,7 @@ complicated.
 Solutions of linear equations have nice properties.  For example, the
 solution exists wherever $p(x)$ and $f(x)$ are defined, and has essentially the same
 regularity (read: it is just as nice).  Most importantly for us right now,
-there is a method for solving linear first order equations.
+there is a method for solving linear first-order equations.
 
 The trick is to rewrite the left-hand side
 of \eqref{lineq:eq1} as a derivative of a product of $y$ with another
@@ -2525,12 +2525,12 @@ of $y'=\nicefrac{y^2}{3}$, $y(0)=1$.\label{euler-table:table}}
 Note that except for the first few times, each time we halve 
 the $h$, the error approximately halves.
 Halving of the error is a general feature of Euler's method as it is a
-\emph{\myindex{first order method}}.
+\emph{\myindex{first-order method}}.
 %  In the IODE Project II you are
-%asked to implement a \myindex{second order method}.
+%asked to implement a \myindex{second-order method}.
 A simple improvement of the Euler method, see the exercises,
-produces a \myindex{second order method}.
-A second order method
+produces a \myindex{second-order method}.
+A second-order method
 reduces the error to approximately one
 quarter every time we halve the interval.  The order being
 \myquote{second} means the squaring in
@@ -2553,7 +2553,7 @@ with.  A computer may not care about this
 difference for a problem this simple, but suppose each step would take a
 second to compute (the function may be substantially more difficult to compute
 than $\nicefrac{y^2}{3}$).  Then the difference is 32 seconds versus about 17 minutes.
-We are not being altogether fair, a second order method would probably
+We are not being altogether fair, a second-order method would probably
 double the time to do each step.  Even so, it is 1 minute versus 17 minutes.
 Next, suppose that we have to repeat such a calculation for different
 parameters a thousand times.  You get the idea.
@@ -2621,9 +2621,9 @@ And computers might not be able to easily handle such a small step size.
 In real applications we would not use a simple method such as Euler's.  The
 simplest method that would probably be used in a real application is the
 standard Runge--Kutta method (see exercises).  That is a
-\myindex{fourth order method},
+\myindex{fourth-order method},
 meaning that if we halve the interval, the error generally
-goes down by a factor of 16 (it is fourth order as $\nicefrac{1}{16} =
+goes down by a factor of 16 (it is fourth-order as $\nicefrac{1}{16} =
 \nicefrac{1}{2} \times \nicefrac{1}{2}
 \times \nicefrac{1}{2} \times \nicefrac{1}{2}$).
 
@@ -2780,7 +2780,7 @@ b) $x=0$ is a solution so errors are: 0, 0, 0.
 }
 
 There is a simple way to improve Euler's method to make it a
-second order method by doing just one extra step.\index{Improved Euler's method}
+second-order method by doing just one extra step.\index{Improved Euler's method}
 Consider $\frac{dy}{dx}=f(x,y)$, $y(x_0) = y_0$,
 and a step size $h$.
 What we do is to pretend we compute the next step as in Euler,
@@ -3516,12 +3516,12 @@ $F(x,y) = C$ leads to the same solution as the example.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{First order linear PDE}
+\section{First-order linear PDE}
 \label{fopde:section}
 
 \sectionnotes{1 lecture, can safely be skipped}
 
-We only considered ODE so far, so let us solve a linear first order
+We only considered ODE so far, so let us solve a linear first-order
 PDE\@.  Consider
 \begin{equation*}
 a(x,t) \, u_x + b(x,t) \, u_t + c(x,t) \, u = g(x,t), \qquad u(x,0) = f(x) , \qquad -\infty < x < \infty,
@@ -3544,7 +3544,7 @@ This method we use is the
 \emph{\myindex{method of characteristics}}\index{characteristics}.
 The idea is to find lines along which the equation is
 an ODE that we then solve.
-We will see this technique again for second order PDE
+We will see this technique again for second-order PDE
 when we encounter the wave equation in \sectionref{dalemb:section}.
 
 \begin{example}
@@ -3761,7 +3761,7 @@ When the coefficients are not constants, the characteristic curves
 are not going to be straight lines anymore.
 
 \begin{example}
-Consider the following variable coefficient equation:
+Consider the following variable-coefficient equation:
 \begin{equation*}
 x u_x + u_t + 2 u = 0, \qquad u(x,0) = \cos(x) . % , \qquad -\infty < x < \infty,
 %\quad t > 0 .
@@ -3827,12 +3827,13 @@ to solve, see \chapterref{sys:chapter} or \chapterref{nlin:chapter}.  In
 general, if $a$ and $b$ are not linear functions or constants, finding closed
 form expressions for the characteristic coordinates may be impossible.
 
-Finally, the method of characteristics applies to nonlinear first order PDE
+Finally, the method of characteristics applies to nonlinear
+first-order PDE
 as well.  In the nonlinear case, the characteristics depend not only
 on the differential equation, but also on the initial data.  This leads to
 not only more difficult computations, but also the formation of
 singularities where the solution breaks down at a certain point in time.
-An example application where first order nonlinear PDE come
+An example application where first-order nonlinear PDE come
 up is traffic flow theory, and you have probably experienced the
 formation of singularities: traffic jams.  But we digress.
 

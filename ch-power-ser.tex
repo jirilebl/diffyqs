@@ -1,4 +1,4 @@
-\chapter{Power series methods} \label{ps:chapter}
+\chapter{Power-series methods} \label{ps:chapter}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -636,13 +636,13 @@ $f(x)-g(x)$ is a polynomial.  Hint: Use Taylor series.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Series solutions of linear second order ODEs}
+\section{Series solutions of linear second-order ODEs}
 \label{seriessols:section}
 
 \sectionnotes{1.5 or 2 lectures\EPref{, \S8.2 in \cite{EP}}\BDref{,
 \S5.2 and \S5.3 in \cite{BD}}}
 
-Consider a linear second order homogeneous ODE of the form
+Consider a linear second-order homogeneous ODE of the form
 \begin{equation*}
 P(x) y'' + Q(x) y' + R(x) y = 0 .
 \end{equation*}
@@ -670,7 +670,7 @@ y'' - y = 0 .
 \end{equation*}
 Let us try a power series solution near $x_0 = 0$,
 which is an ordinary point.  Every point is an ordinary
-point in fact, as the equation is a constant coefficient one.  We already know
+point in fact, as the equation is a constant-coefficient one.  We already know
 we should obtain exponentials or the hyperbolic sine and cosine,
 but let us pretend we do not know this fact.
 
@@ -1052,7 +1052,7 @@ Use power series methods to solve $y''+x^2y = 0$ at the point $x_0 = 0$.
 
 \begin{exercise}
 The methods work for other orders than second order.  Try the methods
-of this section to solve the first order system $y'-xy = 0$ at
+of this section to solve the first-order system $y'-xy = 0$ at
 the point $x_0 = 0$.
 \end{exercise}
 
@@ -1124,11 +1124,11 @@ $y(x) = a_0 + a_1 x -\frac{a_0}{10} x^5 - \frac{a_1}{15} x^6
 
 \pagebreak[2]
 \begin{exercise}[challenging]
-Power series methods also work for nonhomogeneous equations.
+Power-series methods also work for nonhomogeneous equations.
 \begin{tasks}
 \task Use power series methods to solve $y'' - x y = \frac{1}{1-x}$
 at the point $x_0 = 0$. Hint: Recall the geometric series.
-\task Now solve for the initial condition $y(0)=0$, $y'(0) = 0$.
+\task Now solve for the initial condition $y(0)=0$, $y'(0)=0$.
 \end{tasks}
 \end{exercise}
 \exsol{%
@@ -1160,17 +1160,17 @@ at the point $x_0 = 0$. Hint: Recall the geometric series.
 %\Biggl( \sum_{k=1}^\infty a_{k-1} x^k \Biggr) .
 %\end{split}
 %\end{equation*}
-a) $a_2 = \frac{1}{2}$, and for $k \geq 1$ we have
+a) $a_2 = \frac{1}{2}$, and for $k \geq 3$ we have
 $a_k = \frac{a_{k-3} + 1}{k(k-1)}$, so \\
 $y(x) = a_0 + a_1 x + \frac{1}{2} x^2
 + \frac{a_0 + 1}{6} x^3
 + \frac{a_1 + 1}{12} x^4
 + \frac{3}{40} x^5
-+ \frac{a_0 + 2}{30} x^6
-+ \frac{a_1 + 2}{42} x^7
-+ \frac{5}{112} x^8
-+ \frac{a_0 + 3}{72} x^9
-+ \frac{a_1 + 3}{90} x^{10} +
++ \frac{a_0 + 7}{180} x^6
++ \frac{a_1 + 13}{504} x^7
++ \frac{43}{2240} x^8
++ \frac{a_0 + 187}{12960} x^9
++ \frac{a_1 + 517}{45360} x^{10} +
 \cdots$
 \\
 b)
@@ -1178,11 +1178,11 @@ $y(x) = \frac{1}{2} x^2
 + \frac{1}{6} x^3
 + \frac{1}{12} x^4
 + \frac{3}{40} x^5
-+ \frac{1}{15} x^6
-+ \frac{1}{21} x^7
-+ \frac{5}{112} x^8
-+ \frac{1}{24} x^9
-+ \frac{1}{30} x^{10} +
++ \frac{7}{180} x^6
++ \frac{13}{504} x^7
++ \frac{43}{2240} x^8
++ \frac{187}{12960} x^9
++ \frac{517}{45360} x^{10} +
 \cdots$
 }
 
@@ -1238,7 +1238,7 @@ Let us look at some examples before giving a general method.
 \subsection{Examples}
 
 \begin{example}
-Consider the simple first order equation 
+Consider the simple first-order equation 
 \begin{equation*}
 2 x y' - y = 0 .
 \end{equation*}
@@ -1761,7 +1761,7 @@ $t = \lambda x$, we obtain, via the chain rule, the equation in $y$ and $t$:
 \begin{equation*}
 t^2 y'' + t y' + t^2 y = 0 ,
 \end{equation*}
-which we recognize as Bessel's equation of order 0.  Therefore the
+which we recognize as Bessel's equation of order $0$.  Therefore the
 general solution is $y(t) = A J_0(t) + B Y_0(t)$, or in terms of $x$:
 \begin{equation*}
 y = A J_0(\lambda x) + B Y_0(\lambda x) .

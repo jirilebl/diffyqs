@@ -31,9 +31,8 @@ y_2'' & = f_2(y_1',y_2',y_1,y_2,x) ,
 \end{equation*}
 for some known functions $f_1$ and $f_2$.  We call the above a
 \emph{\myindex{system of differential equations}}.
-More precisely, the above is a \emph{\myindex{second order system}}
-of ODEs as second
-order derivatives appear.
+More precisely, the above is a \emph{\myindex{second-order system}}
+of ODEs as second-order derivatives appear.
 The system
 \begin{equation*}
 \begin{aligned}
@@ -42,7 +41,7 @@ x_2' & = g_2(x_1,x_2,x_3,t) , \\
 x_3' & = g_3(x_1,x_2,x_3,t) ,
 \end{aligned}
 \end{equation*}
-is a \emph{\myindex{first order system}}, where $x_1,x_2,x_3$ are
+is a \emph{\myindex{first-order system}}, where $x_1,x_2,x_3$ are
 the dependent variables,
 and $t$ is the independent variable.
 
@@ -64,7 +63,7 @@ We may also have an
 As for single equations, we specify $x_1$, $x_2$, and $x_3$ for some fixed $t$.
 For example, $x_1(0) = a_1$, $x_2(0) = a_2$, $x_3(0) = a_3$,
 where $a_1$, $a_2$, and $a_3$ are some constants.
-For a second order system,
+For a second-order system,
 we must also specify the first derivatives at the initial point.
 If we find a solution with arbitrary constants in it,
 where solving for the constants gives a solution for
@@ -76,7 +75,7 @@ Best to look at a simple example.
 Sometimes a system is easy to solve
 by solving for one variable and then for the second variable.
 Take 
-the first order system
+the first-order system
 \begin{equation*}
 \begin{aligned}
 y_1' & = y_1 , \\
@@ -89,7 +88,8 @@ $y_1(0) = 1$, $y_2(0) = 2$.
 
 We note that $y_1 = C_1 e^x$ is the general solution of the first equation.
 We then plug this $y_1$ into the second equation
-and get the equation $y_2' = C_1e^x - y_2$, which is a linear first order
+and get the equation $y_2' = C_1e^x - y_2$, which is a linear
+first-order
 equation that is easily solved for $y_2$.
 By the integrating factor method, we get
 \begin{equation*}
@@ -122,13 +122,13 @@ Let us not worry right now about how to solve systems yet.
 
 We will mostly consider \emph{\myindex{linear systems}}.
 \exampleref{example:simplesystem}
-is a \emph{\myindex{linear first order system}}.
+is a \emph{\myindex{linear first-order system}}.
 It is linear as none of the dependent variables or their derivatives
 appear in nonlinear functions or with powers
 higher than one ($y_1$, $y_2$, $y_1'$, $y_2'$, constants, and functions of $x$
 can appear, but not $y_1y_2$ or ${(y_2')}^2$ or $y_1^3$).
 Another, more
-complicated, example of a linear (second order) system is
+complicated, example of a linear (second-order) system is
 \begin{equation*}
 \begin{aligned}
 y_1'' &= e^x y_1' + x^2 y_1 + 5 y_2 + \sin(x), \\
@@ -150,7 +150,7 @@ in the second tank is $x_2$ grams.
 Let $t$ denote time---the independent variable.
 The liquid in each tank is being
 constantly and perfectly mixed and
-flows or is pumped at the rate $r$ liters per second out of each tank into the other.
+flows or is pumped at a rate of $r$ liters per second out of each tank into the other.
 See \figurevref{sintro:closedbrine}.
 
 \begin{myfig}
@@ -213,7 +213,7 @@ that this really is so.
 \end{example}
 
 \begin{example} \label{sintro:carts-example}
-Let us look at a second order example.
+Let us look at a second-order example.
 We return to the mass and spring setup, but this time we
 consider two masses.
 
@@ -234,7 +234,7 @@ Then $x_1$ measures how far the first cart is from its zero position,
 and $x_2$ measures how far the second cart is from its zero position.
 The force exerted by the spring on the first cart is
 $k(x_2-x_1)$
-as $x_2-x_1$ is how far the string is stretched (or compressed) from
+as $x_2-x_1$ is how far the spring is stretched (or compressed) from
 the rest position.
 The force exerted on the second cart is the opposite,
 thus the same thing with a negative sign.
@@ -252,11 +252,11 @@ one at a time.  Where the first cart goes
 depends on exactly where the second cart goes and vice versa.
 \end{example}
 
-\subsection{Changing to first order}
+\subsection{Changing to first-order systems}
 
 To some degree,
-we need only be able to solve first order systems.
-Consider an $n^{\text{th}}$ order differential equation
+we need only be able to solve first-order systems.
+Consider an $n^{\text{th}}$-order differential equation
 \begin{equation*}
 y^{(n)} = F(y^{(n-1)},\ldots,y',y,x) .
 \end{equation*}
@@ -287,14 +287,14 @@ If we plug $u_3' = x'''$,
 $u_1 = x$, $u_2 = x'$, and $u_3
 = x''$ into 
 the third equation of the system, we
-recover the third order equation we started with.
+recover the third-order equation we started with.
 \end{example}
 
-The same idea works for a system a system of higher
-order differential equations.
+The same idea works for a system of higher-order
+differential equations.
 A system of $k$ differential equations in $k$
-unknowns, all of order $n$, can be transformed into a first
-order system of $n \times k$
+unknowns, all of order $n$, can be transformed into a
+first-order system of $n \times k$
 equations and $n \times k$ unknowns.
 
 \begin{example}
@@ -303,8 +303,8 @@ Consider the system from the example with carts, \exampleref{sintro:carts-exampl
 m_1 x_1''  = k(x_2-x_1), \qquad m_2 x_2'' = - k(x_2-x_1) .
 \end{equation*}
 Let $u_1 = x_1$, $u_2 = x_1'$, 
-$u_3 = x_2$, $u_4 = x_2'$.  The second order system becomes the
-first order system
+$u_3 = x_2$, $u_4 = x_2'$.  The second-order system becomes the
+first-order system
 \begin{equation*}
 u_1' = u_2, \qquad
 m_1 u_2'  = k(u_3-u_1), \qquad
@@ -350,18 +350,20 @@ y = \frac{-e^{-2t} + e^t}{3} .
 Plug in and check that this really is the solution.
 \end{exercise}
 
-It is useful to go back and forth between systems and higher order equations
+It is useful to go back and forth between systems
+and higher-order equations
 for other reasons.  For example, software for solving ODE numerically
-(approximation) is generally for first order systems.  To use it,
-you take whatever ODE you want to solve and convert it to a first
-order system.  It is not very hard
-to adapt computer code for the Euler or Runge--Kutta method for first order equations to
-handle first
-order systems.  We simply treat the dependent variable not as
+(approximation) is generally for first-order systems.  To use it,
+you take whatever ODE you want to solve and convert it to a
+first-order system.  It is not very hard
+to adapt computer code for the Euler or Runge--Kutta method for
+first-order equations to
+handle first-order systems.
+We simply treat the dependent variable not as
 a number but as a vector.  In many mathematical computer languages there is
 almost no distinction in syntax.
 
-%In fact, this is what IODE was doing when you had it solve a second order
+%In fact, this is what IODE was doing when you had it solve a second-order
 %equation numerically in the IODE Project III if you have done that project.
 
 \subsection{Autonomous systems and vector fields}
@@ -446,7 +448,7 @@ each $t$ we would get a different direction field.
 Before going further, we mention that Picard's theorem on
 existence and uniqueness also holds for systems of ODE\@.
 Let us restate this theorem in this setting.
-A general first order
+A general first-order
 system is of the form
 \begin{equation} \label{eq:general-system}
 \begin{aligned}
@@ -481,9 +483,10 @@ we may not have a solution for all time $t$, but it
 is guaranteed at least for some 
 short period of time.
 
-As we can change any $n^{\text{th}}$ order ODE into a first order system,
+As we can change any $n^{\text{th}}$-order ODE into
+a first-order system,
 this theorem also provides the
-existence and uniqueness of solutions for higher order equations.
+existence and uniqueness of solutions for higher-order equations.
 
 \subsection{Exercises}
 
@@ -497,12 +500,12 @@ Find the general solution of $x_1' = 3 x_1 - x_2 + e^t$, $x_2' = x_1$.
 
 \begin{exercise}
 Write $ay'' + by' + cy = f(x)$
-as a first order system of ODEs.
+as a first-order system of ODEs.
 \end{exercise}
 
 \begin{exercise}
 Write $x'' + y^2 y' - x^3 = \sin(t)$, 
-$y'' + {(x'+y')}^2 -x = 0$ as a first order system of ODEs.
+$y'' + {(x'+y')}^2 -x = 0$ as a first-order system of ODEs.
 \end{exercise}
 
 \begin{exercise}
@@ -541,7 +544,7 @@ $y=\frac{5}{3} e^{2t} + \frac{4}{3} e^{-t}$
 }
 
 \begin{exercise}
-Write $x''' = x+t$ as a first order system.
+Write $x''' = x+t$ as a first-order system.
 \end{exercise}
 \exsol{%
 $x_1' = x_2$,
@@ -551,7 +554,7 @@ $x_3' = x_1+t$
 
 \begin{exercise}
 Write $y_1'' + y_1 + y_2 = t$, 
-$y_2'' + y_1 - y_2 = t^2$ as a first order system.
+$y_2'' + y_1 - y_2 = t^2$ as a first-order system.
 \end{exercise}
 \exsol{%
 $y_3' + y_1 + y_2 = t$, 
@@ -574,8 +577,8 @@ $x_1 = x_2 = at$.  Explanation of the intuition is left to reader.
 \begin{exercise}
 Suppose the tanks are as in 
 \examplevref{sintro:closedbrine-example} except that clean water flows in
-at the rate $s$ liters per second into tank 1, and brine flows out of tank 2
-and into the sewer also at the rate of $s$ liters per second.
+at a rate of $s$ liters per second into tank 1, and brine flows out of tank 2
+and into the sewer also at a rate of $s$ liters per second.
 The rate of flow from tank 1 into tank 2 is still $r$, but the rate of flow
 from tank 2 back into tank 1 is $r-s$ (assume $r > s$).
 \begin{tasks}
@@ -706,7 +709,7 @@ First we define the so-called
 Usually this will be a row vector multiplied
 with a column vector of the same size.  For the dot product,
 we multiply
-each pair of entries from the first and the second vector and we sum these
+each pair of entries from the first and the second vector, and we sum these
 products.  The result is a single number.
 For example,
 \begin{equation*}
@@ -725,7 +728,7 @@ Similarly for larger (or smaller) vectors.
 
 Armed with the dot product, we define the
 \emph{\myindex{product of matrices}}.
-Let us denote by $\operatorname{row}_i(A)$ the $i^{\text{th}}$ row
+We denote by $\operatorname{row}_i(A)$ the $i^{\text{th}}$ row
 of $A$ and by
 $\operatorname{column}_j(A)$ the $j^{\text{th}}$ column of $A$.
 For an $m \times n$ matrix $A$ and an $n \times p$ matrix $B$,
@@ -763,7 +766,7 @@ $m \times p$.  Example:
 \end{bmatrix}
 \end{multline*}
 
-For multiplication we want an analogue of a 1.  This analogue is the
+For multiplication, we want an analogue of a 1.  This analogue is the
 so-called \emph{\myindex{identity matrix}}.
 The identity matrix is a square matrix with 1s on the
 diagonal and zeros everywhere else.  It is usually denoted by $I$.
@@ -1567,7 +1570,7 @@ Then
 \end{equation*}
 Note the order of the multiplication in the last two expressions.
 
-A \emph{\myindex{first order linear system of ODEs}} is a system that can be
+A \emph{\myindex{first-order linear system of ODEs}} is a system that can be
 written as the vector equation
 \begin{equation*}
 {\vec{x}}'(t) = P(t)\vec{x}(t) + \vec{f}(t),
@@ -1602,7 +1605,7 @@ e^t
 \end{equation*}
 
 We will mostly concentrate on equations that are not just linear, but are in
-fact \emph{\myindex{constant coefficient}} equations.  That is, the matrix $P$ will
+fact \emph{\myindex{constant-coefficient}} equations.  That is, the matrix $P$ will
 be constant; it will not depend on $t$.
 
 \medskip
@@ -1696,7 +1699,7 @@ or a \emph{\myindex{fundamental matrix solution}}.
 
 \medskip
 
-To solve nonhomogeneous first order linear systems, we use the same
+To solve nonhomogeneous first-order linear systems, we use the same
 technique as we applied to solve single linear nonhomogeneous equations.
 
 \begin{theorem}
@@ -2010,8 +2013,8 @@ C_2 e^{t^2}
 \sectionnotes{2 lectures\EPref{, \S5.2 in \cite{EP}}\BDref{,
 part of \S7.3, \S7.5, and \S7.6 in \cite{BD}}}
 
-In this section, we will learn how to solve linear homogeneous constant
-coefficient systems of ODEs by the eigenvalue method.
+In this section, we will learn how to solve linear homogeneous
+constant-coefficient systems of ODEs by the eigenvalue method.
 Suppose we have such a system
 \begin{equation*}
 {\vec{x}}' = P\vec{x} ,
@@ -2021,7 +2024,7 @@ $P$ is a
 constant square matrix.
 We wish to
 adapt the method for the single
-constant coefficient equation by trying the function $e^{\lambda t}$.
+constant-coefficient equation by trying the function $e^{\lambda t}$.
 However, $\vec{x}$ is a vector.  So we try $\vec{x} = \vec{v} e^{\lambda t}$, where
 $\vec{v}$ is an arbitrary constant vector.  We plug this $\vec{x}$ into the equation to get
 \begin{equation*}
@@ -2274,7 +2277,7 @@ $\left[ \begin{smallmatrix} 2 & 1 \\ 1 & 2 \end{smallmatrix} \right]$.
 
 \subsection{The eigenvalue method with distinct real eigenvalues}
 
-OK\@, back to homogeneous constant coefficient systems of ODE.  We have the system
+OK\@, back to homogeneous constant-coefficient systems of ODE.  We have the system
 \begin{equation*}
 {\vec{x}}' = P\vec{x} .
 \end{equation*}
@@ -2384,8 +2387,9 @@ c_1 \\ c_2 \\ c_3
 Check that this $\vec{x}$ really solves the system.
 \end{exercise}
 
-Note: If we write a single homogeneous linear constant coefficient $n^{\text{th}}$
-order equation as a first order system (as we did in \sectionref{sec:introtosys}),
+Note: If we write a single homogeneous linear constant-coefficient
+$n^{\text{th}}$-order equation
+as a first-order system (as we did in \sectionref{sec:introtosys}),
 then the eigenvalue equation
 \begin{equation*}
 \det(P - \lambda I) = 0
@@ -2833,7 +2837,7 @@ C_2 \left[ \begin{smallmatrix}
 \sectionnotes{1 lecture\EPref{, part of \S6.2 in \cite{EP}}\BDref{,
 parts of \S7.5 and \S7.6 in \cite{BD}}}
 
-We take a moment to discuss constant coefficient linear
+We take a moment to discuss constant-coefficient linear
 homogeneous systems in the plane.
 Much intuition can be obtained by studying this simple case.
 We use coordinates $(x,y)$ for the plane as usual,
@@ -3134,8 +3138,7 @@ complex with negative real part & spiral sink \\
 Take the equation $m x'' + c x' + kx = 0$, with $m > 0$, $c \geq 0$, $k > 0$
 for the mass-spring system.
 \begin{tasks}
-\task Convert this to a system of first
-order equations.
+\task Convert this to a system of first-order equations.
 \task Classify for what $m, c, k$ do you get which behavior.
 \task Explain from physical intuition why you do not get all the
 different kinds of behavior here?
@@ -3238,7 +3241,7 @@ description above.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Second order systems and applications}
+\section{Second-order systems and applications}
 \label{sol:section}
 
 %mbxINTROSUBSECTION
@@ -3248,7 +3251,7 @@ not in \cite{BD}}}
 
 \subsection{Undamped mass-spring systems}
 
-While we did say that we can usually only study first order systems, it is
+While we did say that we can usually only study first-order systems, it is
 sometimes more convenient to analyze the system in the way it arises naturally.
 For example, consider 3 masses connected by springs between two
 walls.  We could pick any higher number, and the math would be essentially
@@ -3318,8 +3321,8 @@ We write the equation simply as
 M {\vec{x}}'' = K \vec{x} .
 \end{equation*}
 At this point we could introduce 3 new variables and write out a system
-of 6 first order equations.  We claim this simple setup is easier to handle as
-a second order system.
+of 6 first-order equations.  We claim this simple setup is easier to handle as
+a second-order system.
 We call $\vec{x}$ the \emph{\myindex{displacement vector}}, $M$ the
 \emph{\myindex{mass matrix}}, and $K$ the \emph{\myindex{stiffness matrix}}.
 
@@ -3814,8 +3817,7 @@ ${\vec{x}}'' = A \vec{x}$, then we can guess
 where $\vec{c}$ is an unknown constant vector.  Note that we do not need
 to use sine since there are only second derivatives.  We solve for $\vec{c}$ to
 find $\vec{x}_p$.  This is really just the method of
-\emph{undetermined coefficients\index{undetermined coefficients!for second
-order systems}}
+\emph{undetermined coefficients\index{undetermined coefficients!for second-order systems}}
 for systems.  Let us differentiate $\vec{x}_p$ twice to get
 \begin{equation*}
 {\vec{x}_p}'' = -\omega^2 \vec{c} \cos (\omega t) .
@@ -4954,8 +4956,8 @@ $A = \left[ \begin{smallmatrix}
 \subsection{Definition}
 
 There is another way of finding a fundamental
-matrix solution of a system.  Consider the constant
-coefficient equation
+matrix solution of a system.
+Consider the constant-coefficient equation
 \begin{equation*}
 {\vec{x}}' = P \vec{x} .
 \end{equation*}
@@ -5043,7 +5045,7 @@ P \vec{x}.
 Hence $e^{tP}$ is a \myindex{fundamental matrix solution}
 of the homogeneous system.
 If we can compute the matrix exponential,
-we have another method of solving constant coefficient homogeneous
+we have another method of solving constant-coefficient homogeneous
 systems.  It also makes it easy to solve for initial conditions.  To solve 
 ${\vec{x}}' = A \vec{x}$, $\vec{x}(0) = \vec{b}$, we take the solution
 \begin{equation*}
@@ -5820,11 +5822,11 @@ if $n$ is odd.
 different from \S5.7 in \cite{EP}}\BDref{,
 \S7.9 in \cite{BD}}}
 
-\subsection{First order constant coefficient}
+\subsection{First-order constant-coefficient}
 
 \subsubsection{Integrating factor}
 
-We first focus on the nonhomogeneous first order equation
+We first focus on the nonhomogeneous first-order equation
 \begin{equation*}
 {\vec{x}}'(t) = A\vec{x}(t) + \vec{f}(t) ,
 \end{equation*}
@@ -6137,7 +6139,7 @@ equations
 \xi_n' & = \lambda_n \xi_n + g_n .
 \end{align*}
 Each one of these equations is independent of the others.  They are all
-linear first order equations and can easily be solved by the standard
+linear first-order equations and can easily be solved by the standard
 integrating factor method for single equations.
 That is, for the $k^{\text{th}}$
 equation we write
@@ -6729,16 +6731,16 @@ coefficients works exactly the same as it did for
 single equations.  However, the computations can get out of hand pretty
 quickly for systems.  The equation we considered was pretty simple.
 
-\subsection{First order variable coefficient}
+\subsection{First-order variable-coefficient}
 
 \subsubsection{Variation of parameters}
 
 Just as for a single equation, there is the method of
 variation of parameters\index{variation of parameters!for systems}.
-For constant coefficient systems, it is essentially
+For constant-coefficient systems, it is essentially
 the same thing as the integrating factor method we discussed earlier.
 However, this method works for any linear system, even if it is not
-constant coefficient, provided we somehow solve the associated
+constant-coefficient, provided we somehow solve the associated
 homogeneous problem.
 
 Consider the equation
@@ -6928,16 +6930,16 @@ we can obtain the general solution by adding in constants of integration.
 Doing so would add $X(t) \vec{c}$ for a vector $\vec{c}$ of arbitrary constants.  But
 that is precisely the complementary solution.
 
-\subsection{Second order constant coefficients}
+\subsection{Second-order constant-coefficients}
 
 \subsubsection{Undetermined coefficients}
 
 We have already seen a simple example of the method
-of undetermined coefficients\index{undetermined coefficients!for second order
-systems}
-for second order systems in \sectionref{sol:section}.
-This method is essentially the same as undetermined coefficients for first
-order systems.
+of undetermined
+coefficients\index{undetermined coefficients!for second-order systems}
+for second-order systems in \sectionref{sol:section}.
+This method is essentially the same as undetermined coefficients
+for first-order systems.
 There are some simplifications that we can make, as we did in 
 \sectionref{sol:section}.  Consider the equation
 \begin{equation*}
@@ -6966,7 +6968,7 @@ solutions.
 If there is duplication with the
 complementary solution, or the equation is of the form
 ${\vec{x}}'' = A{\vec{x}}'+ B \vec{x} + \vec{F}(t)$, then we need
-to do the same thing as we do for first order systems.
+to do the same thing as we do for first-order systems.
 
 You can never go wrong by putting in more terms than needed into
 your guess.  Those extra coefficients will turn out to
@@ -6978,8 +6980,8 @@ If we have the system
 \begin{equation*}
 {\vec{x}}'' = A \vec{x} + \vec{f}(t) ,
 \end{equation*}
-we can do \emph{\myindex{eigenvector decomposition}}, just like for first
-order systems.
+we can do \emph{\myindex{eigenvector decomposition}},
+just like for first-order systems.
 
 Let $\lambda_1, \lambda_2, \ldots, \lambda_n$ be the eigenvalues
 and $\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n$ be eigenvectors.

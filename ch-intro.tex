@@ -337,7 +337,7 @@ Here $x$ is the \emph{\myindex{dependent variable}} and $t$ is the
 \emph{\myindex{independent variable}}.
 Equation \eqref{eq1}
 is a basic example of a \emph{\myindex{differential equation}}.  It
-is an example of a \emph{\myindex{first order differential equation}}, since
+is an example of a \emph{\myindex{first-order differential equation}}, since
 it involves only the first derivative of the dependent variable.  This 
 equation arises from Newton's law of cooling where the ambient
 temperature oscillates with time.
@@ -512,7 +512,7 @@ And it really is a solution.
 
 OK\@, now what?  We do not know $C$, and we do not know $k$.  But we know
 something.  We know $P(0) = 100$, and we know 
-$P(10) = 200$.  Let us plug these conditions in and see what happens.
+$P(10) = 200$.  We plug these conditions in and see what happens:
 \begin{align*}
 & 100 = P(0) = C e^{k0} = C ,\\
 & 200 = P(10) = 100 \, e^{k10} .
@@ -613,7 +613,7 @@ Check that the $y$ given is really a solution to the equation above.
 \end{exercise}
 
 Next, take the
-\emph{\myindex{second order differential equation}}
+\emph{\myindex{second-order differential equation}}
 \begin{equation*}
 \frac{d^2y}{{dx}^2} = -k^2 y ,
 \end{equation*}
@@ -622,14 +622,14 @@ The general solution for this equation is
 \begin{equation*}
 y(x) = C_1 \cos(kx) + C_2 \sin(kx) .
 \end{equation*}
-Since the equation is a second order differential equation,
+Since the equation is a second-order differential equation,
 we have two constants in our general solution.
 
 \begin{exercise}
 Check that the $y$ given is really a solution to the equation above.
 \end{exercise}
 
-Finally, consider the second order differential equation
+Finally, consider the second-order differential equation
 \begin{equation*}
 \frac{d^2y}{{dx}^2} = k^2 y ,
 \end{equation*}
@@ -907,19 +907,19 @@ equation (or system).  The order is the order of the largest
 derivative that appears.  If the highest derivative that appears is
 the first derivative, the equation is of first order.  If the highest
 derivative that appears is the second derivative, then the equation is of second
-order.  For example, Newton's law of cooling above is a first order
-equation, while the mechanical vibrations equation is a second order equation.
+order.  For example, Newton's law of cooling above is a first-order
+equation, while the mechanical vibrations equation is a second-order equation.
 The equation governing transversal vibrations in a beam,
 \begin{equation*}
 a^4 \frac{\partial^4 y}{\partial x^4} + \frac{\partial^2 y}{\partial t^2} = 0,
 \end{equation*}
-is a fourth order partial differential equation.  It is
+is a fourth-order partial differential equation.  It is of
 fourth order as at least one derivative is the fourth derivative.  It
 does not matter that the derivative in $t$ is only of second order.
 
-In the first chapter, we will start attacking first order ordinary
+In the first chapter, we will start attacking first-order ordinary
 differential equations, that is, equations of the form $\frac{dy}{dx} = f(x,y)$.
-In general, lower order equations are easier to work with and have simpler
+In general, lower-order equations are easier to work with and have simpler
 behavior, which is why we start with them.
 
 \medskip
@@ -973,13 +973,13 @@ nonlinear equations.  For example \myindex{Burger's equation},
 y \frac{\partial y}{\partial x} =
 \nu \frac{\partial^2 y}{\partial x^2} ,
 \end{equation*}
-is a nonlinear second order partial differential equation.  It is nonlinear
+is a nonlinear second-order partial differential equation.  It is nonlinear
 because $y$ and $\frac{\partial y}{\partial x}$ are multiplied together.
 The equation
 \begin{equation} \label{classification:eqnonlinode}
 \frac{dx}{dt} = x^2
 \end{equation}
-is a nonlinear first order differential equation as there is a second power of
+is a nonlinear first-order differential equation as there is a second power of
 the dependent variable $x$.  Another nonlinear ODE is the pendulum equation
 \begin{equation} \label{classification:pendulum}
 \theta''+\sin(\theta)=0 ,
@@ -1022,10 +1022,10 @@ function $b(x)$.
 
 If the coefficients of a linear equation are actually constant functions,
 then the equation is said to have
-\emph{constant coefficients}\index{constant coefficient}.
+\emph{constant coefficients}\index{constant-coefficient}.
 The coefficients are the functions multiplying the dependent
 variable(s) or one of its derivatives, not the function $b(x)$ standing alone.
-A constant coefficient nonhomogeneous ODE is an equation of the form
+A constant-coefficient nonhomogeneous ODE is an equation of the form
 \begin{equation*}
 a_n \frac{d^n y}{dx^n} + 
 a_{n-1} \frac{d^{n-1} y}{dx^{n-1}} + 
@@ -1039,10 +1039,12 @@ where $a_0, a_1, \ldots, a_n$ are all constants,
 but $b$ may depend on 
 the independent variable $x$.
 The mechanical vibrations equation
-above is a constant coefficient nonhomogeneous second order ODE\@.
+above is a constant-coefficient nonhomogeneous second-order ODE\@.
 The same nomenclature applies to PDEs, so the transport equation,
-heat equation and wave equation are all examples of constant coefficient
-linear PDEs.
+heat equation and wave equation are all examples of
+constant-coefficient linear PDEs.
+A linear equation whose coefficients are not constants is sometimes
+called a \emph{\myindex{variable-coefficient}} equation.
 
 \medskip
 
@@ -1057,7 +1059,7 @@ For example, Newton's law of cooling is autonomous, so are the equations
 vibrations (as long as $f(t)$ is nonconstant) or 
 \eqref{classification:eqlinex} are not autonomous.
 A general
-first order autonomous ODE would have the form
+first-order autonomous ODE would have the form
 \begin{equation*}
 \frac{dx}{dt} = f(x) .
 \end{equation*}
@@ -1068,7 +1070,7 @@ first order autonomous ODE would have the form
 \begin{exercise}
 Classify the following equations.  Are they ODE or PDE\@?  Is it an equation
 or a system?  What is the order?  Is it linear or nonlinear, and if it is
-linear, is it homogeneous, constant coefficient?  If it is an ODE\@, is it
+linear, is it homogeneous, constant-coefficient?  If it is an ODE\@, is it
 autonomous?
 \begin{tasks}(2)
 \task $\displaystyle \sin(t) \frac{d^2 x}{dt^2} + \cos(t) x = t^2$
@@ -1103,7 +1105,8 @@ classification of equations of the form $F(y',y) = 0$.
 \end{exercise}
 
 \begin{exercise}
-Write down an explicit example of a third order, linear, nonconstant coefficient,
+Write down an explicit example of a third-order, linear,
+variable-coefficient (i.e.\ not constant-coefficient),
 nonautonomous, nonhomogeneous system of two ODE such that every derivative
 that could appear, does appear.
 \end{exercise}
@@ -1113,7 +1116,7 @@ that could appear, does appear.
 \begin{exercise}
 Classify the following equations.  Are they ODE or PDE\@?  Is it an equation
 or a system?  What is the order?  Is it linear or nonlinear, and if it is
-linear, is it homogeneous, constant coefficient?  If it is an ODE\@, is it
+linear, is it homogeneous, constant-coefficient?  If it is an ODE\@, is it
 autonomous?
 \begin{tasks}(2)
 \task $\displaystyle \frac{\partial^2 v}{\partial x^2} + 3 \frac{\partial^2
@@ -1127,21 +1130,21 @@ v}{\partial y^2} = \sin(x)$
 \end{exercise}
 \exsol{%
 a) 
-PDE\@, equation, second order, linear, nonhomogeneous, constant coefficient.\\
+PDE\@, equation, second-order, linear, nonhomogeneous, constant-coefficient.\\
 b) 
-ODE\@, equation, first order, linear, nonhomogeneous, not constant coefficient, not autonomous.\\
+ODE\@, equation, first-order, linear, nonhomogeneous, not constant-coefficient, not autonomous.\\
 c) 
-ODE\@, equation, seventh order, linear, homogeneous, constant coefficient, autonomous.\\
+ODE\@, equation, seventh-order, linear, homogeneous, constant-coefficient, autonomous.\\
 d) 
-ODE\@, equation, second order, linear, nonhomogeneous, constant coefficient, autonomous.\\
+ODE\@, equation, second-order, linear, nonhomogeneous, constant-coefficient, autonomous.\\
 e) 
-ODE\@, system, second order, nonlinear.\\
+ODE\@, system, second-order, nonlinear.\\
 f) 
-PDE\@, equation, second order, nonlinear.
+PDE\@, equation, second-order, nonlinear.
 }
 
 \begin{exercise}
-Write down the general \emph{zero}th order linear ordinary differential
+Write down the general \emph{zero}th-order linear ordinary differential
 equation.  Write down the general solution.
 \end{exercise}
 \exsol{%
