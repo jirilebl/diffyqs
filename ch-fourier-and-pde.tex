@@ -115,7 +115,6 @@ Find the eigenvalues and eigenfunctions of
 x'' + \lambda x = 0, \quad x(0) = 0, \quad x(\pi) = 0 .
 \end{equation*}
 
-%For reasons that will be clear from the computations,
 We have to handle
 the cases $\lambda > 0$, $\lambda = 0$, and $\lambda < 0$ separately.
 First suppose that $\lambda > 0$.  Then
@@ -659,14 +658,14 @@ $x(t) = - \sin(t)$
 \begin{exercise}
 Consider
 $x' + \lambda x = 0$ and $x(0)=0$, $x(1) = 0$.  Why does it not
-have any eigenvalues?  Why does any first order equation with two endpoint
+have any eigenvalues?  Why does every first-order equation with two endpoint
 conditions such as above have no eigenvalues?
 \end{exercise}
 \exsol{%
 General solution is $x = C e^{-\lambda t}$.  Since $x(0) = 0$ then $C=0$, and so $x(t) = 0$.
 Therefore,
 the solution is always identically zero.  One condition is always
-enough to guarantee a unique solution for a first order equation.
+enough to guarantee a unique solution for a first-order equation.
 }
 
 \begin{exercise}[challenging]
@@ -1742,7 +1741,7 @@ for the plot of $f(t)$ and $f'(t)$.
 Compute $f''(0+)$ and $f''(0-)$.
 \end{exercise}
 
-Let us compute the Fourier series coefficients.  The actual computation
+Let us compute the Fourier-series coefficients.  The actual computation
 involves several integration by parts and is left to student.
 \begin{align*}
 a_0 & = 
@@ -2610,7 +2609,7 @@ Take $f(t) = {(t-1)}^2$ defined on $0 \leq t \leq 1$.
 Find the Fourier series of both the odd and even
 periodic extension of 
 the function $f(t) = {(t-1)}^2$ for $0 \leq t \leq 1$.
-Can you tell which extension is continuous from the Fourier series
+Can you tell which extension is continuous from the Fourier-series
 coefficients?
 \end{exercise}
 
@@ -3830,7 +3829,7 @@ $u_t = u_{xx}$, $u(0,t) = 0$, $u(1,t) = 100$.  Then use superposition.
 \end{exercise}
 
 \begin{exercise}
-Find the \emph{\myindex{steady state temperature}} solution as a function
+Find the \emph{\myindex{steady-state temperature}} solution as a function
 of $x$ alone,
 by letting $t \to
 \infty$ in the solution from
@@ -4775,8 +4774,9 @@ $a$
 in opposite directions.  The coordinates $\xi$ and $\eta$ are called the
 \emph{\myindex{characteristic coordinates}}, and a similar technique can
 be applied to more complicated hyperbolic PDE\@.
-In \sectionref{fopde:section} it is used to solve first
-order linear PDE\@.  Basically, to solve the wave equation (or more general
+In \sectionref{fopde:section} it is used to solve
+first-order linear PDE\@.
+Basically, to solve the wave equation (or more general
 hyperbolic equations) we find certain characteristic curves along which
 the equation is really just an ODE\@, or a pair of ODEs.  In this case
 these are the curves where $\xi$ and $\eta$ are constant.
@@ -5163,7 +5163,7 @@ Consider an insulated wire, a plate, or a 3-dimensional object.
 We apply
 certain fixed temperatures on the ends of the wire, the edges of the plate,
 or on all sides of the 3-dimensional object.  We wish to find out what is the
-\emph{\myindex{steady state temperature}} distribution.  That is, we wish to know what will
+\emph{\myindex{steady-state temperature}} distribution.  That is, we wish to know what will
 be the temperature after long enough period of time.
 
 We are really seeking a solution to the heat equation that is not
@@ -5180,12 +5180,12 @@ equation by integration,
 
 Consider an insulated wire where we apply constant temperature $T_1$
 at one end (say where $x=0$) and $T_2$ on the other end (at $x=L$ where $L$
-is the length of the wire).  Our steady state solution is
+is the length of the wire).  Our steady-state solution is
 \begin{equation*}
 u(x) = \frac{T_2-T_1}{L} x + T_1 .
 \end{equation*}
 This solution agrees with our common sense intuition with how the heat should be
-distributed in the wire.  So in one dimension, the steady state solutions
+distributed in the wire.  So in one dimension, the steady-state solutions
 are just straight lines.
 
 Things are more complicated in two or more space dimensions.
@@ -5206,7 +5206,7 @@ dimensions and then the heat equation is always
 $u_t = k \Delta u$.  The operator $\Delta$ is called the \emph{\myindex{Laplacian}}.
 
 OK\@, now that we have notation out of the way, let us see what does an equation
-for the steady state solution look like.  We are looking for a solution to
+for the steady-state solution look like.  We are looking for a solution to
 \eqref{dirich:heateq} that does not depend on $t$, that is,
 $u_t = 0$.
 Hence, we are looking for a
@@ -5224,7 +5224,7 @@ This equation is called the \emph{\myindex{Laplace equation}}%
 Solutions to the Laplace equation
 are called \emph{harmonic functions\index{harmonic function}}
 and have many nice properties and
-applications far beyond the steady state heat problem.
+applications far beyond the steady-state heat problem.
 
 Harmonic functions in two variables are no longer just linear
 (so not just plane graphs).  For example, you can check that the functions
@@ -5232,7 +5232,7 @@ $x^2-y^2$ and $xy$ are harmonic.  However, note that if $u_{xx}$ is positive, $u
 up in the $x$ direction, then $u_{yy}$ must be negative and $u$ must be
 concave down in the $y$ direction.  A harmonic function can never
 have any \myquote{hilltop} or \myquote{valley} on the graph.  This observation is
-consistent with our intuitive idea of steady state heat distribution;
+consistent with our intuitive idea of steady-state heat distribution;
 the hottest or coldest spot should not be inside.
 
 Commonly the Laplace equation is part of a so-called
@@ -5435,7 +5435,7 @@ held at zero and one side held at $\pi$.\label{dirichsquareplot:fig}}
 \end{example}
 
 This scenario
-corresponds to the steady state temperature on a square plate of width $\pi$
+corresponds to the steady-state temperature on a square plate of width $\pi$
 with 3 sides held at 0 degrees and one side held at $\pi$ degrees.
 If we have arbitrary initial data on all sides, then we solve four problems,
 each using one piece of nonhomogeneous data.  Then we use the principle of
@@ -5522,7 +5522,7 @@ u(x,0) = 0, \quad & u(x,h) = f(x), \\
 u(0,y) = 0, \quad & u(w,y) = 0.
 \end{array}
 \end{equation*}
-The solution should be in series form using the Fourier series coefficients
+The solution should be in series form using the Fourier-series coefficients
 of $f(x)$.
 \end{exercise}
 
@@ -5536,7 +5536,7 @@ u(x,0) = 0, \quad & u(x,h) = 0, \\
 u(0,y) = f(y), \quad & u(w,y) = 0.
 \end{array}
 \end{equation*}
-The solution should be in series form using the Fourier series coefficients
+The solution should be in series form using the Fourier-series coefficients
 of $f(y)$.
 \end{exercise}
 
@@ -5550,7 +5550,7 @@ u(x,0) = 0, \quad & u(x,h) = 0, \\
 u(0,y) = 0, \quad & u(w,y) = f(y).
 \end{array}
 \end{equation*}
-The solution should be in series form using the Fourier series coefficients
+The solution should be in series form using the Fourier-series coefficients
 of $f(y)$.
 \end{exercise}
 
@@ -5934,7 +5934,7 @@ $\cos(10\,\theta)$ as boundary data.\label{dirichdisc:tenspeedfig}}
 Let us solve a more difficult problem.
 Consider a long
 rod with circular cross section of radius 1.  Suppose we wish to solve the
-steady state heat problem in the rod.
+steady-state heat problem in the rod.
 If the rod is long enough, we simply need to solve
 the Laplace equation in two dimensions.  We put the center of the rod at
 the origin, and we have exactly the region we are currently

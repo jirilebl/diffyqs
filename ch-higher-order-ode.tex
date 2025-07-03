@@ -1,8 +1,8 @@
-\chapter{Higher order linear ODEs} \label{ho:chapter}
+\chapter{Higher-order linear ODEs} \label{ho:chapter}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Second order linear ODEs}
+\section{Second-order linear ODEs}
 \label{solinear:section}
 
 \sectionnotes{1 lecture, reduction of order optional\EPref{,
@@ -10,7 +10,7 @@ first part of \S3.1 in \cite{EP}}\BDref{,
 parts of \S3.1 and \S3.2 in \cite{BD}}}
 
 Consider the general
-\emph{\myindex{second order linear differential equation}}
+\emph{\myindex{second-order linear differential equation}}
 \begin{equation*}
 A(x) y'' + B(x)y' + C(x)y = F(x) .
 \end{equation*}
@@ -29,7 +29,7 @@ equation
 \begin{equation} \label{sol:eqlinhom}
 y'' + p(x)y' + q(x)y = 0 .
 \end{equation}
-We have already seen some second order linear homogeneous equations.
+We have already seen some second-order linear homogeneous equations.
 \begin{align*}
 \qquad y'' + k^2 y & = 0 &
 & \text{Two solutions are:} \quad y_1 = \cos (kx), \quad y_2 = \sin(kx) . \qquad \\
@@ -154,7 +154,7 @@ than if we had used the exponentials.
 
 \medskip
 
-The initial conditions for a second order ODE consist of two
+The initial conditions for a second-order ODE consist of two
 equations.  Common sense tells us that
 if we have two arbitrary constants and two equations, then we should 
 be able to solve
@@ -205,7 +205,7 @@ So $y = C_1 x^2 + C_2 \nicefrac{1}{x}$ is the general solution.
 
 \medskip
 
-If you have one nonzero solution to a second order linear homogeneous
+If you have one nonzero solution to a second-order linear homogeneous
 equation, then you can find another one.  This is the \emph{\myindex{reduction of
 order method}}.  The idea is that if we somehow found $y_1$ as a solution of
 $y'' + p(x) y' + q(x) y = 0$, then we try a second
@@ -229,7 +229,7 @@ y_1 v''
 \end{equation*}
 In other words,
 $y_1 v'' + (2 y_1' + p(x) y_1) v' = 0$.  Using $w = v'$, we have the
-first order linear equation
+first-order linear equation
 $y_1 w' + (2 y_1' + p(x) y_1) w = 0$.  After solving this equation for $w$
 (integrating factor),
 we find $v$ by antidifferentiating $w$.  We then form $y_2$ by computing
@@ -242,14 +242,14 @@ Hence $y_2 = y_1 v = \frac{-C}{2x}$.
 Any $C$ works and so $C=-2$ makes $y_2 = \nicefrac{1}{x}$.  Thus, the
 general solution is $y = C_1 x + C_2\nicefrac{1}{x}$.
 
-Since we have a formula for the solution to the first order linear equation,
+Since we have a formula for the solution to the first-order linear equation,
 we can write a formula for $y_2$:
 \begin{equation*}
 y_2(x) = y_1(x) \int \frac{e^{-\int p(x)\,dx}}{{\bigl(y_1(x)\bigr)}^2} \,dx
 \end{equation*}
 However, it is much easier to remember that we just need to try $y_2(x) =
 y_1(x) v(x)$ and find $v(x)$ as we did above.  The technique
-works for higher order equations too: You get to reduce the order by one for each
+works for higher-order equations too: You get to reduce the order by one for each
 solution you find.  So it is better to remember how to do
 it rather than a specific formula.
 
@@ -368,7 +368,7 @@ $y=5$
 
 \begin{exercise}
 Find the general solution to
-$x y'' + y' = 0$.  Hint: It is a first order ODE in $y'$.
+$x y'' + y' = 0$.  Hint: It is a first-order ODE in $y'$.
 \end{exercise}
 \exsol{%
 $y=C_1 \ln(x) + C_2$
@@ -388,7 +388,7 @@ $y''-3y'+2y = 0$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Constant coefficient second order linear ODEs}
+\section{Constant-coefficient second-order linear ODEs}
 \label{sec:ccsol}
 
 %mbxINTROSUBSECTION
@@ -397,14 +397,14 @@ $y''-3y'+2y = 0$
 second part of \S3.1 in \cite{EP}}\BDref{,
 \S3.1 in \cite{BD}}}
 
-\subsection{Solving constant coefficient equations}
+\subsection{Solving constant-coefficient equations}
 
 Consider the problem
 \begin{equation*}
 y''-6y'+8y = 0, \qquad y(0) = - 2, \qquad y'(0) = 6 .
 \end{equation*}
-This is a second order linear homogeneous equation with constant
-coefficients.  \emph{Constant coefficients\index{constant coefficient}}
+This is a second-order linear homogeneous equation with constant
+coefficients.  \emph{Constant coefficients\index{constant-coefficient}}
 means that the functions 
 in front of $y''$, $y'$, and $y$ are constants; they do not depend on $x$.
 
@@ -819,7 +819,7 @@ Find the general solution of $y'' = 0$ using the methods of this section.
 \begin{exercise}
 The method of this section applies to equations of other orders than two.
 We will see higher orders later.
-Solve the first order equation
+Solve the first-order equation
 $2y' + 3y = 0$ using the methods of this section.
 \end{exercise}
 
@@ -918,7 +918,7 @@ $y'' -y'-6y=0$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Higher order linear ODEs} \label{sec:hol}
+\section{Higher-order linear ODEs} \label{sec:hol}
 
 %mbxINTROSUBSECTION
 
@@ -932,24 +932,24 @@ $y'' -y'-6y=0$
 %
 %\medskip
 
-We briefly study higher order equations.
-Equations appearing in applications tend to be second
-order.  Higher order equations do appear from time to time, but
-generally the world around us is \myquote{second order.}  
+We briefly study higher-order equations.
+Equations appearing in applications tend to be second-order.
+Higher-order equations do appear from time to time, but
+generally the world around us is \myquote{second-order.}  
 
 The basic results about linear ODEs of higher order are essentially 
-the same as for second order equations, with 2 replaced by $n$.
+the same as for second-order equations, with 2 replaced by $n$.
 The important concept
 of linear independence is somewhat more complicated when more than two
 functions are involved.
-For higher order constant coefficient ODEs, the methods developed are also
+For higher-order constant-coefficient ODEs, the methods developed are also
 somewhat harder to apply,
 but we will not dwell on these complications.
 It is also possible to use the methods for systems
-of linear equations from \chapterref{sys:chapter} to solve higher order
-constant coefficient equations.
+of linear equations from \chapterref{sys:chapter} to solve higher-order
+constant-coefficient equations.
 
-Let us start with a general homogeneous linear equation
+Consider a general homogeneous linear equation
 \begin{equation} \label{hol:eqlinhom}
 y^{(n)} + p_{n-1}(x)y^{(n-1)} + \cdots + p_1(x) y' + p_0(x) y = 0 .
 \end{equation}
@@ -1081,7 +1081,7 @@ dependent.  Simply apply definition of the hyperbolic cosine:
 \end{example}
 
 Once we have enough linearly independent solutions, we have the general
-solution to the homogeneous equation, just as we did for second order
+solution to the homogeneous equation, just as we did for second-order
 equations.
 
 \begin{theorem}
@@ -1094,12 +1094,12 @@ y(x) = C_1 y_1(x) + C_2 y_2(x) + \cdots + C_n y_n(x) .
 \end{equation*}
 \end{theorem}
 
-\subsection{Constant coefficient higher order ODEs}
+\subsection{Constant-coefficient higher-order ODEs}
 
-When we have a higher order constant coefficient homogeneous linear
+When we have a higher-order constant-coefficient homogeneous linear
 equation, the song and dance is exactly the same as it was for second order.
 We just need to find more solutions.  If the equation is
-$n^{\text{th}}$ order, we need to find $n$ linearly independent solutions.
+$n^{\text{th}}$-order, we need to find $n$ linearly independent solutions.
 It is best seen by example.
 
 \begin{example}
@@ -1186,8 +1186,8 @@ y = \frac{-1}{4}\, e^{-x} + e^x + \frac{1}{4}\, e^{3x} .
 
 Next, suppose that we have real roots, but they are repeated.  Let us say
 we have
-a root $r$ repeated $k$ times.  In the spirit of the second
-order solution, and for the same reasons, we have the solutions
+a root $r$ repeated $k$ times.  In the spirit of the second-order
+solution, and for the same reasons, we have the solutions
 \begin{equation*}
 e^{rx}, \quad xe^{rx}, \quad x^2 e^{rx}, \quad \ldots, \quad x^{k-1} e^{rx} .
 \end{equation*}
@@ -1214,7 +1214,7 @@ r=1} + \underbrace{C_4}_{\text{from } r=0} .
 \end{example}
 
 The case of complex roots is similar
-to second order equations.
+to second-order equations.
 Complex roots
 always come in pairs $r = \alpha \pm i \beta$.  Suppose we have
 two such complex roots, each repeated $k$ times.
@@ -1281,7 +1281,7 @@ Find its general solution.
 \end{exercise}
 
 \begin{exercise} \label{hol:eqfromsolex}
-Suppose that a fourth order equation has a solution
+Suppose that a fourth-order equation has a solution
 $y = 2 e^{4x} x \cos x$.  
 \begin{tasks}
 \task
@@ -1339,7 +1339,7 @@ $y=C_1 e^x +C_2 x^3 + C_3 x^2 +C_4 x + C_5$
 
 \begin{exercise}
 \pagebreak[2]
-Suppose that the characteristic equation of a third order differential
+Suppose that the characteristic equation of a third-order differential
 equation has
 roots $\pm 2i$ and 3.
 \begin{tasks}
@@ -1402,8 +1402,8 @@ $y'''-y''+y'-y=0$
 \sectionnotes{2 lectures\EPref{, \S3.4 in \cite{EP}}\BDref{,
 \S3.7 in \cite{BD}}}
 
-Let us look at some applications of linear second order constant
-coefficient equations.
+Let us look at some applications of linear second-order
+constant-coefficient equations.
 
 \subsection{Some examples}
 
@@ -1433,7 +1433,7 @@ Hence, $mx'' = F(t)-cx'-kx$ or
 \begin{equation*}
 mx'' + cx' + kx = F(t) .
 \end{equation*}
-The equation is a linear second order constant coefficient ODE\@.
+The equation is a linear second-order constant-coefficient ODE\@.
 We say the motion is
 \begin{enumerate}[(i)]
 \item \emph{forced\index{forced motion}} if $F \not\equiv 0$ (if $F$ is not identically zero),
@@ -1470,7 +1470,7 @@ $L I' + RI + \nicefrac{Q}{C} = E$.   We differentiate to get
 \begin{equation*}
 L I''(t) + R I'(t) + \frac{1}{C} I(t) = E'(t) .
 \end{equation*}
-This is a nonhomogeneous second order constant coefficient linear equation.
+This is a nonhomogeneous second-order constant-coefficient linear equation.
 As $L, R$, and $C$ are all positive, this circuit behaves just like the
 mass and spring system.  Position of the mass is replaced by current.
 Mass is replaced by inductance, damping is replaced by resistance, and
@@ -1537,7 +1537,8 @@ context of the questions we are trying to answer.
 \subsection{Free undamped motion}
 
 In this section we only consider free or unforced motion,
-as we do not know yet how to solve nonhomogeneous equations.  Let us start with
+as we do not know yet how to solve nonhomogeneous equations.
+We start with
 \myindex{undamped} motion where $c=0$.  The equation is
 \begin{equation*}
 mx'' + kx = 0 .
@@ -2006,7 +2007,7 @@ not oscillate.
 
 \subsection{Solving nonhomogeneous equations}
 
-We have solved linear constant coefficient homogeneous 
+We have solved linear constant-coefficient homogeneous 
 equations.
 What about nonhomogeneous linear ODEs?
 For example, the equations for forced mechanical vibrations.
@@ -2019,7 +2020,7 @@ That is, consider an equation such as
 \begin{equation} \label{eq3.5:nh}
 y'' + 5y'+ 6y = 2x+1 .
 \end{equation}
-%We still say this equation is constant coefficient equation.  We
+%We still say this equation is a constant-coefficient equation.  We
 %only require constants in front of the $y''$, $y'$, and $y$.
 %
 We will write $Ly = 2x+1$ when the exact form of the operator is not
@@ -2072,8 +2073,7 @@ solutions to \eqref{eq3.5:nh},
 since $y_c$ is the general solution to the associated homogeneous equation.
 
 \begin{theorem}
-Let $Ly=f(x)$ be a linear ODE (not necessarily constant
-coefficient).  Let $y_c$ be the complementary solution
+Let $Ly=f(x)$ be a linear ODE (not necessarily constant-coefficient).  Let $y_c$ be the complementary solution
 (the general
 solution to the associated homogeneous equation $Ly = 0$) and let $y_p$
 be any particular solution to $Ly=f(x)$.  Then the general
@@ -2195,7 +2195,7 @@ y_p = A \cos (2x) + B \sin (2x) = \frac{-\cos (2x) + 2 \sin (2x)}{10} .
 
 Similarly, if the right-hand side contains exponentials, we try
 exponentials.  If
-%if the equation is (where $L$ is a linear constant coefficient operator)
+%if the equation is (where $L$ is a linear constant-coefficient operator)
 \begin{equation*}
 Ly = e^{3x},
 \end{equation*}
@@ -2318,9 +2318,9 @@ This equation calls for a different method.  We present the method of
 \emph{\myindex{variation of parameters}}, which handles any equation of
 the form $Ly = f(x)$,
 provided we can solve certain integrals.  For simplicity, we restrict
-ourselves to second order constant coefficient equations,
-but the method works for higher
-order equations just as well (the computations become more
+ourselves to second-order constant-coefficient equations,
+but the method works for
+higher-order equations just as well (the computations become more
 \myindex{tedious}). % a bit of fun 
 The method also works for equations with nonconstant coefficients,
 provided we can solve the associated homogeneous equation.

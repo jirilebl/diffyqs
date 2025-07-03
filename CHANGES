@@ -1,3 +1,6 @@
+<li>To improve readability, hypthenate first-order, second-order,
+constant-coefficient, etc. when used as a compound adjective.
+<li>Explicitly mention "variable-coefficient" at the end of 0.3.
 <li>In Example 1.1.2, use \(t\) for the dummy variable to be
 consistent with the discussion above.
 <li>Be somewhat more precise in Example 1.1.6.

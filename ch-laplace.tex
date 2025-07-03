@@ -57,8 +57,10 @@ F(s) \overset{\text{def}}{=} \int_0^\infty e^{-st} f(t) \, dt .
 \end{equation*}
 We note that we are only considering $t \geq 0$ in the transform.  Of course,
 if we think of $t$ as time, there is no problem, we are generally interested in
-finding out what will happen in the future (Laplace transform is one place
-where it is safe to ignore the past).  Let us compute some simple
+finding out what will happen in the future
+(the Laplace transform is one place
+where it is safe to ignore the past).
+Let us compute some simple
 transforms.
 
 \begin{example}
@@ -288,12 +290,12 @@ exponential order.
 
 \begin{exercise}
 Use L'Hopital's rule from calculus to show that a polynomial is of
-exponential order.  Hint: Note that a sum of two exponential order functions
+exponential order.  Hint: Note that a sum of two exponential-order functions
 is also of exponential order.  Then show that $t^n$ is of exponential order
 for any $n$.
 \end{exercise}
 
-For an exponential order function we have existence and uniqueness of the
+For an exponential-order function, we have existence and uniqueness of the
 Laplace transform.
 
 \begin{theorem}[Existence]
@@ -479,7 +481,7 @@ rational functions, that is, functions of the form
 \frac{F(s)}{G(s)}
 \end{equation*}
 where $F(s)$ and $G(s)$ are polynomials.  If $\frac{F(s)}{G(s)}$ is
-the Laplace transform of an exponential order function,
+the Laplace transform of an exponential-order function,
 it goes to zero as $s \to \infty$, and so the degree of $F(s)$
 must be smaller than that of $G(s)$.  Such rational functions
 are called \emph{proper rational functions\index{proper rational function}}
@@ -680,7 +682,7 @@ x(t) =\frac{1}{3}  \cos (t) -
 \end{equation*}
 \end{example}
 
-The procedure for linear constant coefficient equations is as follows:
+The procedure for linear constant-coefficient equations is as follows:
 Take an ordinary differential
 equation in the time variable $t$.  Apply the Laplace transform
 to transform the equation into an algebraic (non differential) equation in
@@ -692,7 +694,7 @@ Then taking the inverse transform, if possible, find $x(t)$.
 
 It should be noted that since not every function has a Laplace transform,
 not every equation can be solved in this manner.  Also if the equation
-is not a linear constant coefficient ODE\@,
+is not a linear constant-coefficient ODE\@,
 then applying the Laplace transform may not
 give us an algebraic equation.
 
@@ -788,7 +790,8 @@ rocket attached to the mass is fired for 4 seconds starting at
 $t=1$.  Or perhaps imagine an RLC circuit, where the voltage is raised
 at a constant rate for 4 seconds starting at $t=1$ and then held steady 
 again
-starting at $t=5$.
+starting at $t=5$ (recall that $f(t)$ represents the derivative of
+the voltage in the RLC circuit).
 
 \pagebreak[2]
 We write $f(t) = u(t-1) - u(t-5)$.  We transform the equation and we plug in
@@ -848,12 +851,12 @@ The plot of this solution is given in \figurevref{lt:heavisideexfig}.
 \subsection{Transfer functions}
 
 The Laplace transform leads to the following useful concept for studying the
-steady state behavior of a linear system.  Consider an equation of the
+steady-state behavior of a linear system.  Consider an equation of the
 form
 \begin{equation*}
 L x = f(t) ,
 \end{equation*}
-where $L$ is a linear constant coefficient differential operator.
+where $L$ is a linear constant-coefficient differential operator.
 Then $f(t)$ is usually thought of as input of the system and $x(t)$ is
 thought of as the output of the system.  For example, for a mass-spring
 system the input is the forcing function and the output is the behavior of the
@@ -875,7 +878,7 @@ H(s) = \frac{X(s)}{F(s)} .
 \end{equation*}
 In other words, $X(s) = H(s) F(s)$.  We obtain an algebraic dependence of
 the output of the system based on the input.  We can now easily study the
-steady state behavior of the system given different inputs by simply
+steady-state behavior of the system given different inputs by simply
 multiplying by the transfer function.
 Moreover, it is possible to compute the $H(s)$ without knowing exactly what
 the equation is by observing the output $X(s)$ for a given input $F(s)$.
@@ -1115,7 +1118,7 @@ f(t) =
 \begin{tasks}
 \task Sketch the graph of $f(t)$.
 \task Write down $f(t)$ using the Heaviside function.
-\task Solve $x''+x=f(t)$, $x(0)=0$, $x'(0) = 0$ using Laplace transform.
+\task Solve $x''+x=f(t)$, $x(0)=0$, $x'(0) = 0$ using the Laplace transform.
 \end{tasks}
 \end{exercise}
 
@@ -1203,7 +1206,7 @@ $H(s) = \frac{1}{s^2+4}$.
 \subsection{The convolution}
 
 The Laplace transformation of a product is not the product
-of the transforms.  All hope is not lost however.  We simply have to use
+of the transforms.  All hope is not lost, however.  We simply have to use
 a different type of a \myquote{product.}
 Take
 two functions $f(t)$ and $g(t)$ defined for $t \geq 0$,
@@ -1396,7 +1399,7 @@ f(\tau)
 \end{example}
 
 Notice one more feature of the example above.
-We can now see how Laplace transform
+We can now see how the Laplace transform
 handles \myindex{resonance}.  Suppose that $f(t) =
 \cos (\omega_0 t)$.  Then
 \begin{equation*}
@@ -1441,7 +1444,7 @@ x(t)
 = \int_0^t f(\tau) h(t-\tau) \, d\tau .
 \end{equation*}
 Hence,
-we can solve any constant coefficient equation with an arbitrary forcing
+we can solve any constant-coefficient equation with an arbitrary forcing
 function $f(t)$ as a definite integral using convolution.
 A definite integral, rather than a closed form solution, is usually enough
 for most practical purposes.  It is
@@ -1478,7 +1481,7 @@ Solve
 x(t) =  e^{-t} + \int_0^t \sinh(t-\tau) x(\tau) \, d\tau .
 \end{equation*}
 
-We apply Laplace transform to obtain
+We apply the Laplace transform to obtain
 \begin{equation*}
 X(s) = \frac{1}{s+1} + \frac{1}{s^2-1} X(s) ,
 \end{equation*}
@@ -1676,7 +1679,7 @@ We want $b$ to be very small; we wish to have
 the pulse be very short and very tall.  By letting $b$ go to zero, we arrive
 at the concept of the Dirac delta function.  The limit
 of $\frac{1-e^{-bs}}{bs}$
-as $b \to \infty$ is $1$, so we are looking for a \myquote{function} whose Laplace
+as $b \to 0$ is $1$, so we are looking for a \myquote{function} whose Laplace
 transform is $1$.
 
 \subsection{The delta function}
@@ -1865,9 +1868,10 @@ x(t) =
 \begin{remark}
 Perhaps an astute reader will notice that it does not seem like $x'(0)=0$.
 However, we really want to think of as $x(t)=0$ for $t \leq 0$, so $x(t)$
-has a \myquote{corner} at $t=0$, so $x'$ has a jump discontinuity there,
-which is what produces the $\delta(t)$ when we take $x''$,
-see \remarkref{remark:deltaderivofjump}.
+has a \myquote{corner} at $t=0$, that is,
+$x'$ has a jump discontinuity there,
+which is what produces the $\delta(t)$ when we take $x''$.
+See \remarkref{remark:deltaderivofjump}.
 The initial condition really is $x'(0-) = \lim_{t \uparrow 0} x'(0) = 0$.
 \end{remark}
 
@@ -1919,7 +1923,7 @@ then $x(t) = (f * h)(t)$ is the solution to
 x'' + \omega_0^2 x = f(t) .
 \end{equation*}
 
-The procedure works for any constant coefficient linear
+The procedure works for any constant-coefficient linear
 equation $Lx = f(t)$.
 If you find the impulse response $h$
 (solution to $Lh = \delta(t)$),
@@ -1933,9 +1937,9 @@ $h(t) = {\mathcal{L}}^{-1} \bigl\{ H(s) \bigr\}$.
 \subsection{Three-point beam bending}
 \index{three-point beam bending}
 
-Let us give another quite different
-example where the delta function turns up:
-Representing point loads on a steel beam.  Consider a beam
+A quite different
+example application where the delta function appears is in
+representing point loads on a steel beam.  Consider a beam
 of length $L$, resting on two simple supports at the ends.  Let $x$ denote
 the position on the beam, and let $y(x)$ denote the deflection of the beam in
 the vertical direction.  The deflection $y(x)$ satisfies the
@@ -1996,8 +2000,8 @@ y(2) = 0, \qquad y''(2) = 0.
 We could integrate, but using the Laplace transform
 is even easier.
 We apply the transform
-in the $x$ variable rather than the $t$ variable.  Let us again denote the
-transform of $y(x)$ as $Y(s)$.
+in the $x$ variable rather than the $t$ variable.  We again denote the
+transform of $y(x)$ by $Y(s)$.
 \begin{equation*}
 s^4Y(s)-s^3y(0)-s^2y'(0)-sy''(0)-y'''(0)
 = -e^{-s}.
@@ -2010,7 +2014,7 @@ Y(s) = \frac{-e^{-s}}{s^4} + \frac{C_1}{s^2}+ \frac{C_2}{s^4} .
 \end{equation*}
 We take the inverse Laplace transform utilizing the 
 second shifting property \eqref{ltd:sseq} to take the inverse of the first
-term.
+term:
 \begin{equation*}
 y(x) = \frac{-{(x-1)}^3}{6} u(x-1) + C_1 x + \frac{C_2}{6} x^3 .
 \end{equation*}
@@ -2026,8 +2030,8 @@ and
 0 = y''(2) = \frac{-3\cdot 2 \cdot (2-1)}{6} + \frac{C_2}{6} 3\cdot 2 \cdot 2
  = -1 + 2 C_2 .
 \end{equation*}
-Hence $C_2 = \frac{1}{2}$ and solving for $C_1$ using the first
-equation we obtain
+Hence, $C_2 = \frac{1}{2}$.
+Solving for $C_1$ using the first equation, we obtain
 $C_1 = \frac{-1}{4}$.  Our solution for the beam deflection is
 \begin{equation*}
 y(x) = \frac{-{(x-1)}^3}{6} u(x-1) - \frac{x}{4} + \frac{x^3}{12} .
@@ -2155,7 +2159,7 @@ problem.
 It is best to see the procedure on an example.
 
 \begin{example}
-Consider the first order PDE
+Consider the first-order PDE
 \begin{equation*}
 y_t = - \alpha y_x, \qquad \text{for } x > 0, \enspace t > 0,
 \end{equation*}
@@ -2317,7 +2321,7 @@ C  u\bigl(t-\nicefrac{x}{\alpha}\bigr)
 So $y_t = - \alpha y_x$.
 \end{example}
 
-Laplace equation is very good with constant coefficient equations.  One
+Laplace equation is very good with constant-coefficient equations.  One
 advantage of Laplace is that it easily handles
 nonhomogeneous side conditions.
 Let us try a more complicated example.
@@ -2407,8 +2411,8 @@ is in the wrong direction.
 
 \medskip
 
-Of course, we need not restrict ourselves to first order equations, although
-the computations become more involved for higher order equations.
+Of course, we need not restrict ourselves to first-order equations, although
+the computations become more involved for higher-order equations.
 
 \begin{example}
 Let us use Laplace for the following problem:
@@ -2468,7 +2472,7 @@ f(\tau)
 
 Laplace can solve problems where separation of variables fails.
 Laplace does not mind nonhomogeneity, but it is essentially only useful for
-constant coefficient equations.
+constant-coefficient equations.
 
 \subsection{Exercises}
 
