@@ -63,8 +63,12 @@ and make the boundary thicker.
 <li>In the exercises in 4.9, we mentioned the region by name, but in the
 text we no longer use this (for decades now:) so rephrase
 to remove the name.
+<li><b>Change Exercise 5.2.102 to fix erratum</b>.
+Change the initial shape
+of the beam to be \(\sin^2(\pi x)\) to be
+consistent with fixed ends.
 <li>Just after 6.3.1, give both directions in formulas
-for clarity
+for clarity.
 <li>In Example 6.3.3, reverse the order of the factors
 as that's the way we write the convolution integral.
-<li>Many other small clarifications and improvements
+<li>Many other small clarifications and improvements.

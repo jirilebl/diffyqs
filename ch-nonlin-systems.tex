@@ -370,7 +370,7 @@ $u'=u+v$, $v'=u$.\\
 At $(0,0)$ using $u=x$, $v=y$ the linearization is
 $u'=u+v$, $v'=u$.
 At $(0,-1)$ using $u=x$, $v=y+1$ the linearization is
-$u'=u-v$, $v'=v$.\\
+$u'=u-v$, $v'=u$.\\
 c) Critical point $(\nicefrac{1}{2},\nicefrac{-1}{4})$.  Using
 $u=x-\nicefrac{1}{2}$, $v=y+\nicefrac{1}{4}$ the linearization is
 $u'=-u+v$, $v'=u+v$.
@@ -463,7 +463,7 @@ to the critical point.
 
 For example, the system in
 Examples~\ref{example:nlin-1b-example} and \ref{example:nlin-1b-examplelin}
-has two isolated critical points $(0,0)$ and $(0,1)$, and
+has two isolated critical points $(0,0)$ and $(1,0)$, and
 is almost linear at both critical points as 
 the Jacobian matrices at both points,
 $\left[ \begin{smallmatrix} 0 & 1 \\ -1 & 0 \end{smallmatrix} \right]$ and
@@ -772,7 +772,7 @@ Plotting these graphs we get exactly the trajectories in
 the trajectories are \emph{\myindex{closed curves}}: they keep going
 around the origin, never spiraling in or out.  Therefore we discovered a way
 to verify that the critical point at $(0,0)$ is a stable center.
-The critical point at $(0,1)$ is a saddle as we already noticed.
+The critical point at $(1,0)$ is a saddle as we already noticed.
 This example is typical for conservative equations.
 \end{example}
 
@@ -1832,7 +1832,7 @@ curves.  Another way to state the conclusion of the theorem would be to
 say that there exist no nonconstant periodic solutions that stay in $R$.
 
 \begin{example}
-Let us look at a somewhat more complicated example.
+We consider a somewhat more complicated example.
 Take the system $x'=-y-x^2$, $y'=-x+y^2$ (see
 \examplevref{example:nlin-xplusy}).  We compute
 $\frac{\partial f}{\partial x} + \frac{\partial g}{\partial y} =
@@ -1853,16 +1853,6 @@ set where $-x+y \geq 0$
 and go into the set where $-x+y \leq 0$.  Once we are in
 the set where $-x+y \geq 0$, we stay there.  So no closed trajectory can
 have points in both sets.
-%
-%The key is to look at the set $x+y=0$, or $x=-y$.  Let us
-%make a substitution $x=z$ and $y=-z$ (so that $x=-y$).  
-%Both equations become
-%$z'=z-z^2$.  So any solution of $z'=z-z^2$, gives us a solution
-%$x(t)=z(t)$, $y(t)=-z(t)$.  In particular, any solution that starts
-%out on the line $x+y=0$, stays on the line $x+y = 0$.  In other words,
-%there cannot be a closed trajectory that starts on the set where $x+y > 0$
-%and goes through the set where $x+y < 0$, as it would have to pass through
-%$x+y = 0$.
 \end{example}
 
 \begin{example}
