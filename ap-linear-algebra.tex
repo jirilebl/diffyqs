@@ -417,9 +417,9 @@ a column vector there is also a
 If we have an $n \times n$ matrix, then we say that it is a
 \emph{\myindex{square matrix}}.
 
-Now how does a matrix $A$ relate to a linear mapping?
-Well a matrix tells you where
-certain special vectors go.  Let's give a name to those certain vectors.
+How does a matrix $A$ relate to a linear mapping?
+A matrix tells you where
+certain special vectors go.  We give a name to those certain vectors.
 The \emph{\myindex{standard basis vectors}} of ${\mathbb R}^n$ are
 \begin{equation*}
 \vec{e}_1 =
@@ -444,7 +444,7 @@ The \emph{\myindex{standard basis vectors}} of ${\mathbb R}^n$ are
 0 \\ 0 \\ 0 \\ \vdots \\ 1
 \end{bmatrix} .
 \end{equation*}
-In ${\mathbb R}^3$ these vectors are
+In ${\mathbb R}^3$, these vectors are
 \begin{equation*}
 \vec{e}_1 =
 \begin{bmatrix}
@@ -465,7 +465,7 @@ You may recall from calculus of several variables that these are
 sometimes called $\vec{\imath}$, $\vec{\jmath}$, $\vec{k}$.
 
 The reason these are called a \emph{\myindex{basis}} is that every other
-vector can be written as a \emph{\myindex{linear combination}} of them.
+vector can be written as a unique \emph{\myindex{linear combination}} of them.
 For example, in ${\mathbb R}^3$ the vector $(4,5,6)$ can be written as
 \begin{equation*}
 4 \vec{e}_1 + 
@@ -493,8 +493,9 @@ For example, in ${\mathbb R}^3$ the vector $(4,5,6)$ can be written as
 \end{equation*}
 
 So how does a matrix represent a linear mapping?
-Well, the columns of the matrix are the vectors where $A$ as a linear
-mapping takes $\vec{e}_1$, $\vec{e}_2$, etc.
+Well, the columns of the matrix are the vectors where the matrix,
+as a linear
+mapping, takes $\vec{e}_1$, $\vec{e}_2$, etc.
 For instance, consider
 \begin{equation*}
 M = 
@@ -502,7 +503,7 @@ M =
 1 & 2 \\ 3 & 4
 \end{bmatrix} .
 \end{equation*}
-As a linear mapping $M \colon {\mathbb R}^2 \to {\mathbb R}^2$ takes
+As a linear mapping, $M \colon {\mathbb R}^2 \to {\mathbb R}^2$ takes
 $\vec{e}_1 = \left[ \begin{smallmatrix} 1 \\ 0 \end{smallmatrix} \right]$ to
 $\left[ \begin{smallmatrix} 1 \\ 3 \end{smallmatrix} \right]$
 and
@@ -1166,7 +1167,7 @@ a)~$\begin{bmatrix}
 \end{bmatrix}$
 \quad f)~$\begin{bmatrix}
 -8 \\
-3
+0
 \end{bmatrix}$
 }
 
@@ -1286,7 +1287,7 @@ a_{11} + b_{11} & a_{12} + b_{12} & a_{13} + b_{13}  \\
 a_{21} + b_{21} & a_{22} + b_{22} & a_{23} + b_{23}
 \end{bmatrix} .
 \end{equation*}
-Let us illustrate on a more concrete example:
+We illustrate on a more concrete example:
 \begin{equation*}
 \begin{bmatrix}
 1 & 2 \\
@@ -1312,7 +1313,7 @@ Let us illustrate on a more concrete example:
 16 & 5
 \end{bmatrix} .
 \end{equation*}
-Let's check that this does the right thing to a vector.  Let's use some
+Let us check that this does the right thing to a vector.  We use some
 of the vector algebra that we already know, and
 regroup things:
 \begin{equation*}
@@ -1449,7 +1450,7 @@ regroup things:
 \right) .
 \end{split}
 \end{equation*}
-If we replaced the numbers by letters that would constitute a proof!
+If we replaced the numbers by letters, that would constitute a proof!
 Notice that we did not really have to compute what the
 result is to convince ourselves that the two expressions were equal.
 
@@ -1568,7 +1569,7 @@ in ${\mathbb R}^m$.  In other words, the composition $AB$ should be an $m
 \end{equation*}
 Notice how the middle size must match.
 
-OK\@, now we know what sizes of matrices we should be able to multiply,
+OK\@, now we know what sizes of matrices we should be able to multiply
 and what the product should be.
 Let us see how to actually compute matrix multiplication.
 We start with the so-called
@@ -3978,7 +3979,7 @@ We write the augmented matrix and we start reducing:
 & \left[
 \begin{array}{ccc|ccc}
 \mybxsm{1} & 2 & 3 & 1 & 0 & 0\\
-0 & \mybxsm{1} & \nicefrac{5}{4} & \nicefrac{1}{2} & \nicefrac{1}{4} & 0 \\
+0 & \mybxsm{1} & \nicefrac{5}{4} & \nicefrac{1}{2} & \nicefrac{-1}{4} & 0 \\
 0 & -5 & -9 & -3 & 0 & 1
 \end{array}
 \right]
@@ -3987,7 +3988,7 @@ We write the augmented matrix and we start reducing:
 \left[
 \begin{array}{ccc|ccc}
 \mybxsm{1} & 2 & 3 & 1 & 0 & 0\\
-0 & \mybxsm{1} & \nicefrac{5}{4} & \nicefrac{1}{2} & \nicefrac{1}{4} & 0 \\
+0 & \mybxsm{1} & \nicefrac{5}{4} & \nicefrac{1}{2} & \nicefrac{-1}{4} & 0 \\
 0 & 0 & \nicefrac{-11}{4} & \nicefrac{-1}{2} & \nicefrac{-5}{4} & 1
 \end{array}
 \right]
@@ -3997,7 +3998,7 @@ We write the augmented matrix and we start reducing:
 & \left[
 \begin{array}{ccc|ccc}
 \mybxsm{1} & 2 & 3 & 1 & 0 & 0\\
-0 & \mybxsm{1} & \nicefrac{5}{4} & \nicefrac{1}{2} & \nicefrac{1}{4} & 0 \\
+0 & \mybxsm{1} & \nicefrac{5}{4} & \nicefrac{1}{2} & \nicefrac{-1}{4} & 0 \\
 0 & 0 & \mybxsm{1} & \nicefrac{2}{11} & \nicefrac{5}{11} & \nicefrac{-4}{11}
 \end{array}
 \right]
@@ -4540,21 +4541,24 @@ where we can take linear combinations and still end up being in the subset.
 Consequently the span of a number of vectors is automatically a subspace.
 
 \begin{example} \label{example:simplesubspaces}
+\begin{enumerate}[(i)]
+\item
 If we let $S = {\mathbb R}^n$, then this $S$ is a subspace of
 ${\mathbb R}^n$.  Adding any two vectors in ${\mathbb R}^n$ gets a vector in
 ${\mathbb R}^n$, and so does multiplying by scalars.
-
+\item
 The set $S' = \{ \vec{0} \}$, that is,
 the set of the zero vector by itself, is 
 also a subspace of ${\mathbb R}^n$.  There is only one vector in this
 subspace, so we only need to verify the definition for that one vector, and everything checks
 out: $\vec{0}+\vec{0} = \vec{0}$ and $\alpha \vec{0} = \vec{0}$.
-
+\item
 The set $S''$ of all the vectors of the form
 $(a,a)$ for any real number $a$, such as $(1,1)$, $(3,3)$, or $(-0.5,-0.5)$
 is a subspace of ${\mathbb R}^2$.  Adding two such vectors, say
 $(1,1)+(3,3) = (4,4)$ again gets a vector of the same form, and so does
 multiplying by a scalar, say $8(1,1) = (8,8)$.
+\end{enumerate}
 \end{example}
 
 If $S$ is a subspace and we can find $k$ linearly independent vectors in $S$
@@ -4567,14 +4571,17 @@ then the set
 $\{ \vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k \}$ is called a
 \emph{\myindex{basis}} of $S$.  In other words, $S$
 is the span of 
-$\{ \vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k \}$.
+$\{ \vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k \}$
+and there is no smaller subset of these vectors that spans $S$.
 We say that $S$ has dimension $k$,
 and we write 
 \begin{equation*}
 \dim S = k .
 \end{equation*}
+We have the following theorem.
 
 \begin{theorem}
+\pagebreak[2]
 If $S \subset {\mathbb R}^n$ is a subspace and $S$ is not the trivial
 subspace $\{ \vec{0} \}$, then there exists a
 unique positive integer $k$ (the dimension) and a (not unique)
@@ -4588,18 +4595,23 @@ $\vec{w}$ in $S$ can be uniquely represented by
 \cdots
 +
 \alpha_k \vec{v}_k ,
+\avoidbreak
 \end{equation*}
 for some scalars $\alpha_1$, $\alpha_2$, \ldots, $\alpha_k$.
+By \myquote{uniquely represented} we mean that these
+scalars $\alpha_1$, $\alpha_2$, \ldots, $\alpha_k$ are unique.
 \end{theorem}
 
 Just as a vector in ${\mathbb R}^k$ is represented by a $k$-tuple of
 numbers, so is a vector in a $k$-dimensional subspace of ${\mathbb R}^n$
-represented by a $k$-tuple of numbers.  At least once we have fixed a basis.
+represented by a unique $k$-tuple of numbers.  At least once we have fixed a basis.
 A different basis would give a different $k$-tuple of numbers for the same
 vector.
 
-We should reiterate that while $k$ is unique (a subspace cannot have two different
-dimensions), the set of basis vectors is not at all unique.  There are lots
+We should reiterate that while $k$ is unique
+(a subspace cannot have two different dimensions---every
+basis has the same number of vectors),
+the set of basis vectors is not at all unique.  There are lots
 of different bases for any given subspace.  Finding just the right basis for
 a subspace is a large part of what one does in linear algebra.  In fact,
 that is what we spend a lot of time on in
@@ -4607,6 +4619,8 @@ linear differential equations, although at first glance
 it may not seem like that is what we are doing.
 
 \begin{example}
+\begin{enumerate}[(i)]
+\item
 The standard basis
 \begin{equation*}
 \vec{e}_1, \vec{e}_2, \ldots, \vec{e}_n ,
@@ -4616,15 +4630,36 @@ So as expected
 \begin{equation*}
 \dim {\mathbb R}^n = n .
 \end{equation*}
-
-On the other hand the subspace $\{ \vec{0} \}$ is of dimension $0$.
-
+\item
+Both sets $\bigl\{ (1,0) , (0,1) \bigr\}$ and
+$\bigl\{ (1,1), (1,-1) \bigr\}$ are
+bases of ${\mathbb{R}}^2$.  A vector $(3,7)$ can
+be written as
+$(3,7)=3 (1,0) + 7 (0,1)$
+(and in no other way with the first basis),
+and it can be written as
+$(3,7)=5 (1,1) - 2(1,-1)$
+(and in no other way with the second basis).
+\item
+The subspace $\{ \vec{0} \}$ is of dimension $0$.
+A basis is simply an empty set of vectors.
+\item
 The subspace $S''$ from \exampleref{example:simplesubspaces}, that is, the set of
 vectors $(a,a)$, is of dimension~1.  One possible basis is simply
-$\{ (1,1) \}$, the single
-vector $(1,1)$: every vector in $S''$ can be represented by $a (1,1) =
-(a,a)$.  Similarly another possible basis would be $\{ (-1,-1) \}$.  Then
+$\bigl\{ (1,1) \bigr\}$, the single
+vector $(1,1)$: Every vector in $S''$ can be represented by $a (1,1) =
+(a,a)$.  Similarly another possible basis would be
+$\bigl\{ (-1,-1) \bigr\}$.  Then
 the vector $(a,a)$ would be represented as $(-a) (1,1)$.
+\item
+The set $\bigl\{ (1,1) , (-1,-1) \bigr\}$ does
+span $S''$, but it is not a basis as it is not a linearly independent set.
+Consequently, a vector such as $(2,2)$ can be written in multiple
+ways with this set of vectors:
+$(2,2) = 2(1,1) + 0 (-1,-1)$,
+or
+$(2,2) = 5(1,1) + 3 (-1,-1)$, etc.
+\end{enumerate}
 \end{example}
 
 Row and column spaces of a matrix are also examples of
@@ -4669,12 +4704,12 @@ Using row reduction to find the pivot columns, we found
 \end{bmatrix} 
 \right\} .
 \end{equation*}
-What we did was we found the basis of the column space.
-The basis has two elements, and so the column space of $A$ is two-dimensional.
+What we did was we found a basis of the column space.
+This basis has two elements, and so the column space of $A$ is two-dimensional.
 Notice that the rank of $A$ is two.
 \end{example}
 
-We would have followed the same procedure if we wanted to find the basis of
+We would have followed the same procedure if we wanted to find a basis of
 the subspace $X$ spanned by
 \begin{equation*}
 \begin{bmatrix}
@@ -4882,7 +4917,7 @@ third to 5.  Let us check, marking things as previously,
 .
 \end{equation*}
 There are two non-pivot columns, so we only need two vectors.
-We have found the basis of the kernel.  So,
+We have found a basis of the kernel.  So,
 \begin{equation*}
 \text{kernel of $L$} =
 \operatorname{span} \left\{
@@ -4897,15 +4932,15 @@ We have found the basis of the kernel.  So,
 \end{equation*}
 \end{example}
 
-What we did in finding a basis of the kernel is we expressed all
+What we did in finding a basis of the kernel is that we expressed all
 solutions of
 $L \vec{x} = \vec{0}$ as a linear combination of some given vectors.
 
 \pagebreak[2]
-The procedure to find the basis of the kernel of a matrix $L$:
+The procedure to find a basis of the kernel of a matrix $L$:
 \begin{enumerate}[(i)]
 \item Find the reduced row echelon form of $L$.
-\item Write down the basis of the kernel as above, one vector for each
+\item Write down a basis of the kernel as above, one vector for each
 non-pivot column.
 \end{enumerate}
 
@@ -4926,8 +4961,7 @@ n = r+k .
 The theorem is immensely useful in applications.  It allows one to compute
 the rank $r$ if one knows the nullity $k$ and vice versa, without doing any
 extra work.
-
-Let us consider an example application, a simple version of the so-called
+An example application is a simple version of the so-called
 \emph{\myindex{Fredholm alternative}}.  A similar result is true for
 differential equations.  Consider
 \begin{equation*}
@@ -5234,7 +5268,7 @@ d)~$
 $ dimension 2,
 \quad
 e)~$\begin{bmatrix}
-1 \\ 1
+1 \\ 0
 \end{bmatrix}$ dimension 1,
 \quad
 f)~$\begin{bmatrix}
@@ -5633,15 +5667,18 @@ orthogonal basis for the set of solutions of a differential equation.
 We are then able to find any particular solution by simply applying the
 orthogonal projection formula, which is just a couple of a inner products.
 
-Let us come back to linear algebra.  Suppose that we have a subspace
+Let us come back to linear algebra.  Consider a subspace $S$
 and an orthogonal
-basis $\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n$.  We wish to
-express $\vec{x}$ in terms of the basis.  If $\vec{x}$ is not in the span
-of the basis (when it is not in the given subspace),
+basis $\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n$ for $S$.
+We wish to
+express some vector $\vec{x}$ in terms of this basis.
+If $\vec{x}$ is not in the span
+of this basis (when it is not in $S$),
 then of course it is not possible,
 but the following formula
-gives us at least the orthogonal projection onto the subspace,
-or in other words, the best approximation in the subspace.
+gives us at least the orthogonal projection onto the subspace $S$,
+or in other words, the best approximation
+to $\vec{x}$ in the subspace---the vector in $S$ closest to $\vec{x}$.
 
 First suppose that $\vec{x}$ is in the span.  Then it is the sum of the
 orthogonal projections:
@@ -5914,7 +5951,7 @@ of the two vectors.  Let us find an orthogonal basis of $S$:
 \begin{align*}
 \vec{w}_1 & = (1,2,-1) , \\
 \vec{w}_2 & = (0,5,-2) 
-- \operatorname{proj}_{(1,2,-1)}\bigl((0,2,-2)\bigr)
+- \operatorname{proj}_{(1,2,-1)}\bigl((0,5,-2)\bigr)
 \\
 & =
 (0,1,-1) -
@@ -5986,7 +6023,7 @@ Suppose $\vec{v} = (1,1,-1)$.  Find
 \pagebreak[2]
 Consider the vectors $(1,2,3)$, $(-3,0,1)$, $(1,-5,3)$.
 \begin{tasks}(2)
-\task Check that the vectors are linearly independent and so form a basis.
+\task Check that the vectors are linearly independent and so form a basis of ${\mathbb{R}}^3$.
 \task Check that the vectors are mutually orthogonal, and are therefore
 an orthogonal basis.
 \task Represent $(1,1,1)$ as a linear combination of this basis.
@@ -6859,7 +6896,7 @@ Compute
 without computing the inverse.
 \end{exercise}
 \exsol{%
-$12$
+$\nicefrac{1}{12}$
 }
 
 \begin{exercise}[challenging]

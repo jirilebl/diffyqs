@@ -74,4 +74,10 @@ consistent with fixed ends.
 for clarity.
 <li>In Example 6.3.3, reverse the order of the factors
 as that's the way we write the convolution integral.
+<li>In section A.4, make sure to use "a basis" rather than "the basis"
+where appropriate.
+<li>Make Example A.4.1 into an enumerate to make it easier to parse.
+<li>Expand Example A.4.2 with a couple of new examples and make it into
+an enumerate to make it easier to parse.
+<li>In Exercise A.5.5, part a) mention that it is a basis of ${\mathbb{R}}^3$.
 <li>Many other small clarifications and improvements.
