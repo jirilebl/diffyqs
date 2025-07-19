@@ -84,6 +84,8 @@ where appropriate.
 <li>Make Example A.4.1 into an enumerate to make it easier to parse.
 <li>Expand Example A.4.2 with a couple of new examples and make it into
 an enumerate to make it easier to parse.
-<li>In Exercise A.5.5, part a) mention that it is a basis of ${\mathbb{R}}^3$.
+<li>In Exercise A.5.5, part a) mention that it is a basis of
+\({\mathbb{R}}^3.\)
 <li>Add a couple more useful Laplace transforms to the table in Appendix B.
+<li>In Appendix B, the transform for \(t^p\) is valid for \(p > -1 .\)
 <li>Many other small clarifications and improvements.
