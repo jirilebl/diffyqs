@@ -25,8 +25,8 @@ $F(s) = \mathcal{L} \bigl\{ f(t) \bigr\}= \int_0^\infty e^{-st} f(t) \, dt$ \\
 $C$ & $\frac{C}{s}$
 \\[6pt]
 $t$ & $\frac{1}{s^2}$
-\\[6pt]
-$t^2$ & $\frac{2}{s^3}$
+%\\[6pt]
+%$t^2$ & $\frac{2}{s^3}$
 \\[6pt]
 $t^n$ & $\frac{n!}{s^{n+1}}$
 \\[6pt]
@@ -50,11 +50,17 @@ $\delta(t-a) \quad (a \geq 0)$ & $e^{-as}$
 \\[6pt]
 $\operatorname{erf}\left( \frac{t}{2a} \right)$ & $\frac{1}{s} e^{(as)^2} \operatorname{erfc}(as)$
 \\[6pt]
-$\frac{1}{\sqrt{\pi t}} \exp\left(\frac{-a^2}{4t}\right) \quad (a > 0)$ &
-$\frac{e^{-a\sqrt{s}}}{\sqrt{s}}$
+$t \sin(\omega t)$ &
+$\frac{2\omega s}{{(s^2+\omega^2)}^2}$
 \\[6pt]
-$\frac{a}{\sqrt{4\pi t^3}} \exp\left(\frac{-a^2}{4t}\right) \quad (a > 0)$ &
-$e^{-a \sqrt{s}}$
+$t \cos(\omega t)$ &
+$\frac{s^2-\omega^2}{{(s^2+\omega^2)}^2}$
+\\[6pt]
+$e^{-at} \sin(\omega t)$ &
+$\frac{\omega}{{(s+a)}^2 + \omega^2}$
+\\[6pt]
+$e^{-at} \cos(\omega t)$ &
+$\frac{s+a}{{(s+a)}^2 + \omega^2}$
 \\[6pt]
 %mbxSTARTIGNORE
 \bottomrule
@@ -68,6 +74,18 @@ $f(t)$ &
 $F(s) = \mathcal{L} \bigl\{ f(t) \bigr\}= \int_0^\infty e^{-st} f(t) \, dt$ \\
 \midrule
 %mbxENDIGNORE
+$e^{-at} \sinh(\omega t)$ &
+$\frac{\omega}{{(s+a)}^2 - \omega^2}$
+\\[6pt]
+$e^{-at} \cosh(\omega t)$ &
+$\frac{s+a}{{(s+a)}^2 - \omega^2}$
+\\[6pt]
+$\frac{1}{\sqrt{\pi t}} \exp\left(\frac{-a^2}{4t}\right) \quad (a > 0)$ &
+$\frac{e^{-a\sqrt{s}}}{\sqrt{s}}$
+\\[6pt]
+$\frac{a}{\sqrt{4\pi t^3}} \exp\left(\frac{-a^2}{4t}\right) \quad (a > 0)$ &
+$e^{-a \sqrt{s}}$
+\\[6pt]
 $\frac{1}{\sqrt{\pi t}} - a e^{a^2 t} \operatorname{erfc}(a \sqrt{t}) \quad (a>0)$ &
 $\frac{1}{\sqrt{s}+a}$
 \\[6pt]
@@ -106,8 +124,8 @@ $e^{-at} f(t)$ & $F(s+a)$
 $g'(t)$ & $sG(s)-g(0)$
 \\[6pt]
 $g''(t)$ & $s^2G(s)-sg(0)-g'(0)$
-\\[6pt]
-$g'''(t)$ & $s^3G(s)-s^2g(0)-sg'(0)-g''(0)$
+%\\[6pt]
+%$g'''(t)$ & $s^3G(s)-s^2g(0)-sg'(0)-g''(0)$
 \\[6pt]
 $g^{(n)}(t)$ & $s^nG(s)-s^{n-1}g(0)-\cdots-g^{(n-1)}(0)$
 \\[6pt]
@@ -120,6 +138,10 @@ $t^nf(t)$ & ${(-1)}^nF^{(n)}(s)$
 $\int_0^t f(\tau) d\tau$ & $\frac{1}{s} F(s)$
 \\[6pt]
 $\frac{f(t)}{t}$ & $\int_s^\infty F(\sigma) d\sigma$
+\\[6pt]
+$f(t)$ periodic with period $P$ &
+$\frac{1}{1-e^{-Ps}}
+\int_0^P e^{-st} f(t) \, dt$
 \\[6pt]
 \bottomrule
 \end{tabular}
