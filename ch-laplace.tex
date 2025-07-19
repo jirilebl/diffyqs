@@ -2443,17 +2443,18 @@ Now consider the boundary condition.
 Transform $Y'(0) = F(s)$ and so $-\sqrt{s}B = F(s)$.
 In other words,
 \begin{equation*}
-Y(x) = - F(s) \frac{1}{\sqrt{s}} e^{-\sqrt{s} x} .
+Y(x) = F(s) \frac{-1}{\sqrt{s}} e^{-\sqrt{s} x} .
 \end{equation*}
 
 If we look up the inverse transform in a table such as the one in
 \Appendixref{laplacelist:appendix} (or we spend the afternoon
-doing calculus), we find 
-\begin{equation*}
-{\mathcal L}^{-1}\left[e^{-\sqrt{s} x}\right] =
-\frac{x}{\sqrt{4\pi t^3}} e^{\frac{-x^2}{4t}} ,
-\end{equation*}
-or
+doing calculus),
+we find 
+%\begin{equation*}
+%{\mathcal L}^{-1}\left[e^{-\sqrt{s} x}\right] =
+%\frac{x}{\sqrt{4\pi t^3}} e^{\frac{-x^2}{4t}} ,
+%\end{equation*}
+%or
 \begin{equation*}
 {\mathcal L}^{-1}\left[\frac{1}{\sqrt{s}} e^{-\sqrt{s} x}\right] =
 \frac{1}{\sqrt{\pi t}} e^{\frac{-x^2}{4t}} .
@@ -2462,11 +2463,11 @@ So
 \begin{equation*}
 y(x,t) =
 {\mathcal L}^{-1} \left[
-F(s) e^{-\sqrt{s} x}\right]
+F(s) \frac{-1}{\sqrt{s}} e^{-\sqrt{s} x}\right]
 =
 \int_0^t
 f(\tau) 
-\frac{1}{\sqrt{\pi {(t-\tau)}}} e^{\frac{-x^2}{4(t-\tau)}} \, d\tau .
+\frac{-1}{\sqrt{\pi {(t-\tau)}}} e^{\frac{-x^2}{4(t-\tau)}} \, d\tau .
 \end{equation*}
 \end{example}
 

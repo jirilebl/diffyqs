@@ -70,6 +70,8 @@ to remove the name.
 Change the initial shape
 of the beam to be \(\sin^2(\pi x)\) to be
 consistent with fixed ends.
+<li>Make a clearer explanation of why resonance does not occur for
+even \(n\) in the problem being solved in subsection 5.3.1.
 <li>Just after 6.3.1, give both directions in formulas
 for clarity.
 <li>In Example 6.3.3, reverse the order of the factors
@@ -80,4 +82,5 @@ where appropriate.
 <li>Expand Example A.4.2 with a couple of new examples and make it into
 an enumerate to make it easier to parse.
 <li>In Exercise A.5.5, part a) mention that it is a basis of ${\mathbb{R}}^3$.
+<li>Add a couple more useful Laplace transforms to the table in Appendix B.
 <li>Many other small clarifications and improvements.

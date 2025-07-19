@@ -657,13 +657,15 @@ $a^4 X^{(4)}T + XT'' = 0$ or
 \end{equation*}
 The equations are
 \begin{equation*}
-T'' + \lambda a^4 T = 0, \qquad
+T'' + \lambda a^4 T = 0
+\qquad \text{and} \qquad
 X^{(4)} - \lambda X = 0 .
 \end{equation*}
 The boundary conditions
 $y(0,t) = y_{xx}(0,t) = 0$ and $y(1,t) = y_{xx}(1,t) = 0$ imply
 \begin{equation*}
-X(0) =  X''(0) = 0, \qquad \text{and} \qquad
+X(0) =  X''(0) = 0
+\qquad \text{and} \qquad
 X(1) =  X''(1) = 0 .
 \end{equation*}
 The initial homogeneous condition $y_t(x,0) = 0$ implies
@@ -763,13 +765,13 @@ xylophone or vibraphone is, therefore, very different from a guitar or piano.
 Consider $f(x) = \frac{x(x-1)}{10}$.  
 On $0 < x < 1$ (you know how to do this by now)
 \begin{equation*}
-f(x) = \sum_{\substack{n=1\\n \text{~odd}}}^\infty \frac{4}{5\pi^3 n^3}
+f(x) = \sum_{\substack{n=1\\n \text{~odd}}}^\infty \frac{-4}{5\pi^3 n^3}
 \sin (n \pi x) .
 \end{equation*}
 Hence, the solution to \eqref{appeig:beameq} with the given initial
 position $f(x)$ is
 \begin{equation*}
-y(x,t) = \sum_{\substack{n=1\\n \text{~odd}}}^\infty \frac{4}{5\pi^3 n^3}
+y(x,t) = \sum_{\substack{n=1\\n \text{~odd}}}^\infty \frac{-4}{5\pi^3 n^3}
 \sin (n \pi x) \cos ( n^2 \pi^2 a^2 t ) .
 \end{equation*}
 \end{example}
@@ -931,13 +933,15 @@ y_{tt} = a^2 y_{xx} + F_0 \cos ( \omega t) ,
 \end{equation}
 with the same boundary conditions of course.
 
-We want to find the solution here that satisfies the equation above and
+Suppose we want to find the solution here that satisfies the equation
+\eqref{sps:forcedeq} and
 \begin{equation} \label{sps:forcedinitcond}
 y(0,t) = 0, \qquad y(L,t) = 0, \qquad
 y(x,0) = 0, \qquad y_t(x,0) = 0.
 \end{equation}
-That is, the string is initially at rest.  First we find a particular
+That is, the string is initially at rest.  First, we find a particular
 solution $y_p$ of \eqref{sps:forcedeq} that satisfies
+only the conditions
 $y(0,t) = y(L,t) = 0$.  We define the functions $f$ and $g$ as
 \begin{equation*}
 f(x) = -y_p(x,0), \qquad g(x) = -\frac{\partial y_p}{\partial t} (x,0) .
@@ -1022,25 +1026,40 @@ Check that $y_p$ works.
 Now we get to the point that we skipped.  Suppose 
 $\sin ( \frac{\omega L}{a} ) = 0$.  What this means is that
 $\omega$ is equal to one of the natural frequencies of the system,
-i.e.\ a multiple of $\frac{\pi a}{L}$.  We notice that if $\omega$
-is not equal to a multiple of the base frequency, but is very close,
+i.e.\ a multiple of the base frequency $\frac{\pi a}{L}$.
+We notice that if $\omega$
+is not equal to a multiple of $\frac{\pi a}{L}$,
+but is very close,
 then the coefficient $B$ in \eqref{natfreq:Beq} seems to
-become very large.  But let us not jump to conclusions just yet.
+become very large as the denominator goes to zero.
+But let us not jump to conclusions just yet
+because the numerator may also go to zero.
 When $\omega = \frac{n \pi a}{L}$
-for $n$ even, then $\cos (\frac{\omega L}{a}) = 1$ and hence we really get that
-$B=0$.  So resonance occurs only when 
+for $n$ even, then $\cos (\frac{\omega L}{a}) = 1$,
+we could simply
+take $B=0$ to obtain a nice bounded solution of the same form,
+$y_p = 
+\frac{F_0}{\omega^2}
+\bigl(
+ \cos\bigl(\frac{\omega}{a} x\bigr) -  1 \bigr)
+\cos(\omega t)$, and so no resonance is happening.
+Resonance occurs only when 
 both $\cos (\frac{\omega L}{a}) = -1$ and
-$\sin (\frac{\omega L}{a}) = 0$.  That is when $\omega = \frac{n \pi a }{L}$
+$\sin (\frac{\omega L}{a}) = 0$,
+that is, when $\omega = \frac{n \pi a }{L}$
 for \emph{odd} $n$.
-
-We could again solve for the resonance solution if we wanted to, but it is, in the right sense, the limit of the solutions as $\omega$ gets
+When $n$ is odd, if we take $\omega$ approaching
+$\frac{n \pi a }{L}$, then the numerator in the coefficient
+$B$ is not going to zero, but the denominator is, so $B$ really does
+\myquote{blow up.}
+We could again try to explicitly solve for the resonance solution if we wanted to, but it is, in the right sense, the limit of solutions as $\omega$ gets
 close to a resonance frequency.
 In real life, pure resonance never occurs anyway.
 %You would get a particular solution that would have a term
 %such as $t \cos (\omega t)$ in it (though it would be harder (but possible)
 %to find the solution using the method above).
 
-The calculation above explains why a string begins to vibrate if the
+The calculation of resonance frequencies above explains why a string begins to vibrate if the
 identical string is plucked close by.  In the absence of friction this vibration
 would get louder and louder as time goes on.
 On the other hand, you are unlikely to get large vibration if the forcing 
@@ -1054,7 +1073,7 @@ voice (yes
 this is possible, but not easy%
 \footnote{\emph{Mythbusters}, episode 31, Discovery Channel, originally aired
 may 18th 2005.}) if you happen to hit just the right
-frequency.  Remember a glass has much purer sound, i.e.\ it is more like a
+frequency.  However, a glass has much purer sound, i.e.\ it is more like a
 vibraphone, so there are far fewer resonance frequencies to hit.
 
 When the forcing function is more complicated, you decompose it in terms of

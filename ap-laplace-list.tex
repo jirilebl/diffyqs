@@ -50,11 +50,11 @@ $\delta(t-a) \quad (a \geq 0)$ & $e^{-as}$
 \\[6pt]
 $\operatorname{erf}\left( \frac{t}{2a} \right)$ & $\frac{1}{s} e^{(as)^2} \operatorname{erfc}(as)$
 \\[6pt]
-$\frac{1}{\sqrt{\pi t}} \exp\left(\frac{-a^2}{4t}\right) \quad (a \geq 0)$ &
-$\frac{e^{-as}}{\sqrt{s}}$
+$\frac{1}{\sqrt{\pi t}} \exp\left(\frac{-a^2}{4t}\right) \quad (a > 0)$ &
+$\frac{e^{-a\sqrt{s}}}{\sqrt{s}}$
 \\[6pt]
-$\frac{1}{\sqrt{\pi t}} - a e^{a^2 t} \operatorname{erfc}(a \sqrt{t}) \quad (a>0)$ &
-$\frac{1}{\sqrt{s}+a}$
+$\frac{a}{\sqrt{4\pi t^3}} \exp\left(\frac{-a^2}{4t}\right) \quad (a > 0)$ &
+$e^{-a \sqrt{s}}$
 \\[6pt]
 %mbxSTARTIGNORE
 \bottomrule
@@ -68,6 +68,33 @@ $f(t)$ &
 $F(s) = \mathcal{L} \bigl\{ f(t) \bigr\}= \int_0^\infty e^{-st} f(t) \, dt$ \\
 \midrule
 %mbxENDIGNORE
+$\frac{1}{\sqrt{\pi t}} - a e^{a^2 t} \operatorname{erfc}(a \sqrt{t}) \quad (a>0)$ &
+$\frac{1}{\sqrt{s}+a}$
+\\[6pt]
+$\operatorname{erfc}\left(\frac{a}{2\sqrt{t}}\right) \quad (a>0)$ &
+$\frac{e^{-a\sqrt{s}}}{s}$
+\\[6pt]
+$\frac{1}{2\sqrt{\pi t^3}}( e^{b t} - e^{a t})$ &
+$\sqrt{s-a}-\sqrt{s-b}$
+\\[6pt]
+$\frac{1}{t} ( e^{b t} - e^{a t})$ &
+$\ln \frac{s-a}{s-b}$
+\\[6pt]
+$J_0(at)$ &
+$\frac{1}{\sqrt{s^2+a^2}}$
+\\[6pt]
+$J_0(a\sqrt{t})$ &
+$\frac{\exp\left(\frac{-a^2}{4s}\right)}{s}$
+\\[6pt]
+$\frac{1}{\sqrt{\pi t}} \cos(a \sqrt{t})$ &
+$\frac{\exp\left(\frac{-a^2}{4s}\right)}{\sqrt{s}}$
+\\[6pt]
+$\frac{2}{\sqrt{\pi}} \sinh(a \sqrt{t})$ &
+$\frac{a \exp\left(\frac{a^2}{4s}\right)}{s^{3/2}}$
+\\[6pt]
+$\frac{1}{\sqrt{\pi t}} e^{at} (1+2at)$ &
+$\frac{s}{(s-a)^{3/2}}$
+\\[6pt]
 $a f(t) + b g(t)$ & $a F(s) + bG(s)$
 \\[6pt]
 $f(at) \quad (a > 0)$ & $\frac{1}{a}F\left( \frac{s}{a} \right)$
