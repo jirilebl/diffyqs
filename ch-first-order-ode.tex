@@ -68,7 +68,7 @@ Integration is just one way to compute the
 antiderivative (and it is a way that always works, see the following
 examples).  Integration is defined as the area under the graph, it
 only happens to also compute antiderivatives.
-For sake of consistency, we will keep using the
+For the sake of consistency, we will keep using the
 indefinite integral notation when we want an antiderivative,
 and you should \emph{always} think of the definite integral
 as a way to write it.
@@ -105,7 +105,7 @@ By the preceding discussion, the solution must be
 \begin{equation*}
 y(x) = \int_0^x e^{-t^2} \,dt + 1 .
 \end{equation*}
-Here is a good way to make fun of your friends taking second semester
+Here is a good way to make fun of your friends taking second-semester
 calculus.  Tell them to
 find the closed form solution.  Ha ha ha (bad math joke).  It is
 not possible (in closed form).
@@ -251,7 +251,7 @@ Suppose that the car accelerates at $\unitfrac[t^2]{m}{s^2}$.
 At time $t=0$ the car is at the 1 meter mark and is traveling at
 \unitfrac[10]{m}{s}.  Where is the car at time $t=10$?
 
-Well this is actually a second-order problem.  If $x$ is the distance
+Well, this is actually a second-order problem.  If $x$ is the distance
 traveled, then $x'$ is the velocity, and $x''$ is the acceleration.
 The equation with initial conditions is
 \begin{equation*}
@@ -622,7 +622,7 @@ looks nice.
 
 For most of this
 course, we will be interested in equations where existence and
-uniqueness holds, and in fact holds \myquote{globally} unlike for the equation
+uniqueness hold, and in fact hold \myquote{globally} unlike for the equation
 $y'=y^2$.
 %But it is necessary to understand the examples where things fail for the
 %aforementioned reasons.
@@ -2553,7 +2553,7 @@ with.  A computer may not care about this
 difference for a problem this simple, but suppose each step would take a
 second to compute (the function may be substantially more difficult to compute
 than $\nicefrac{y^2}{3}$).  Then the difference is 32 seconds versus about 17 minutes.
-We are not being altogether fair, a second-order method would probably
+We are not being altogether fair; a second-order method would probably
 double the time to do each step.  Even so, it is 1 minute versus 17 minutes.
 Next, suppose that we have to repeat such a calculation for different
 parameters a thousand times.  You get the idea.
@@ -3233,7 +3233,7 @@ Therefore,
 (M_y-N_x)u = u_x N - u_y M .
 \end{equation*}
 At first it may seem we replaced one differential equation by another.
-Even worse, the new equation is a PDE.
+Even worse, the new equation is a PDE\@.
 True, but all hope is not lost.
 
 A strategy that often works is to look for a $u$ that is a function
@@ -3516,12 +3516,12 @@ $F(x,y) = C$ leads to the same solution as the example.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{First-order linear PDE}
+\section{First-order linear PDEs}
 \label{fopde:section}
 
 \sectionnotes{1 lecture, can safely be skipped}
 
-We only considered ODE so far, so let us solve a linear first-order
+We have only considered ODEs so far, so let us solve a linear first-order
 PDE\@.  Consider
 \begin{equation*}
 a(x,t) \, u_x + b(x,t) \, u_t + c(x,t) \, u = g(x,t), \qquad u(x,0) = f(x) , \qquad -\infty < x < \infty,
@@ -3544,7 +3544,7 @@ This method we use is the
 \emph{\myindex{method of characteristics}}\index{characteristics}.
 The idea is to find lines along which the equation is
 an ODE that we then solve.
-We will see this technique again for second-order PDE
+We will see this technique again for second-order PDEs
 when we encounter the wave equation in \sectionref{dalemb:section}.
 
 \begin{example}
@@ -3601,7 +3601,7 @@ so $A=f$.  In other words,
 \begin{equation*}
 u(x,t) = f(x-\alpha t) .
 \end{equation*}
-Everything is simply moving right at speed $\alpha$ as $t$ increases.
+Everything is simply moving to the right at speed $\alpha$ as $t$ increases.
 The curves given by the equation
 \begin{equation*}
 \xi = \text{constant}
@@ -3785,7 +3785,7 @@ OK\@, the ODE we need to solve is
 \end{equation*}
 This is for a fixed $\xi$.  We find $u = C e^{-2s}$.
 At $s=0$, we want $u$ to be
-$\cos(\xi)$, so that is our initial condition for the ODE.
+$\cos(\xi)$, so that is our initial condition for the ODE\@.
 Moreover, $\xi = xe^{-t}$ and $s=t$.
 Consequently,
 \begin{equation*}
@@ -3810,7 +3810,7 @@ and the solution is already provided on that line!
 As $b$ ought to then be nonzero,
 it is convenient to ensure that $b$ is positive by multiplying
 the equation by $-1$
-if necessary, so that positive $s$ means positive $t$.
+if necessary, so that a positive $s$ means a positive $t$.
 
 Another remark is that if $a$ or $b$ in the equation are not constants,
 the computations can
@@ -3821,19 +3821,19 @@ characteristic coordinates.  If $b$ is not constant, your expression for $s$
 will be more complicated.
 
 Finding the characteristic coordinates is really
-a system of ODE in general if $a$ depends on $t$ or if $b$ depends on $x$.
-In that case, we would need techniques of systems of ODE
+a system of ODEs in general if $a$ depends on $t$ or if $b$ depends on $x$.
+In that case, we would need techniques of systems of ODEs
 to solve, see \chapterref{sys:chapter} or \chapterref{nlin:chapter}.  In
 general, if $a$ and $b$ are not linear functions or constants, finding closed
 form expressions for the characteristic coordinates may be impossible.
 
 Finally, the method of characteristics applies to nonlinear
-first-order PDE
+first-order PDEs
 as well.  In the nonlinear case, the characteristics depend not only
 on the differential equation, but also on the initial data.  This leads to
 not only more difficult computations, but also the formation of
 singularities where the solution breaks down at a certain point in time.
-An example application where first-order nonlinear PDE come
+An example application where first-order nonlinear PDEs come
 up is traffic flow theory, and you have probably experienced the
 formation of singularities: traffic jams.  But we digress.
 

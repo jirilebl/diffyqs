@@ -81,22 +81,22 @@ can safely be dropped, while still covering
 chapters \ref{FS:chapter} and \ref{SL:chapter}.
 \Chapterref{LT:chapter} does not depend on 
 \chapterref{FS:chapter} except that the
-PDE section \ref{laplacepde:section} makes a
+PDEs section \ref{laplacepde:section} makes a
 few references to
 \chapterref{FS:chapter},
 although it could, in theory, be covered
 separately.
 The more in-depth \appendixref{linalg:appendix} on linear algebra
 can replace the short review \sectionref{sec:matrix}
-for a course that combines linear algebra and ODE\@.
+for a course that combines linear algebra and ODEs.
 
 %\medskip
 \subsection{Typical types of courses}
 
 Several typical courses can be run with the book.
 There are the two original courses at UIUC\@,
-both cover ODE as well some PDE\@.
-Either, there is the 4 hours-a-week for a semester (Math 286 at UIUC):
+both cover ODEs as well some PDEs.
+Either there is the 4 hours-a-week for a semester (Math 286 at UIUC):
 
 \medskip
 
@@ -111,7 +111,7 @@ Either, there is the 4 hours-a-week for a semester (Math 286 at UIUC):
 
 \medskip
 
-Or, the second course at UIUC is at 3 hours-a-week (Math 285 at UIUC):
+Or the second course at UIUC is at 3 hours-a-week (Math 285 at UIUC):
 
 \medskip
 
@@ -125,7 +125,8 @@ Or, the second course at UIUC is at 3 hours-a-week (Math 285 at UIUC):
 
 \medskip
 
-A semester-long course at 3 hours a week that does not cover either systems or PDE
+A semester-long course at 3 hours a week that does not cover either systems
+or PDEs
 will cover, beyond the introduction,
 %\sectionref{introde:section},
 \chapterref{fo:chapter},
@@ -143,7 +144,7 @@ and cover
 \medskip
 
 If sections need to be skipped in the beginning, a good core of the 
-sections on single ODE is:
+sections on single ODEs is:
 \ref{introde:section},
 \ref{integralsols:section}--\ref{intfactor:section},
 \ref{auteq:section},
@@ -181,7 +182,7 @@ Semester 2:
 
 \medskip
 
-A combined course on ODE with linear algebra can run as:
+A combined course on ODEs with linear algebra can run as:
 
 \medskip
 
@@ -855,12 +856,12 @@ between ordinary and partial differential equations:
 \begin{itemize}
 \item
 \emph{Ordinary differential equations}
-\index{Ordinary differential equations}\index{ODE} or (ODE) are
+\index{Ordinary differential equations}\index{ODE} (ODE) are
 equations where the derivatives are taken with respect to only one variable.
 That is, there is only one independent variable.
 \item
 \emph{Partial differential equations}
-\index{Partial differential equations}\index{PDE} or (PDE) are
+\index{Partial differential equations}\index{PDE} (PDE) are
 equations that depend on partial derivatives of several variables.
 That is, there are several independent variables.
 \end{itemize}
@@ -1051,7 +1052,8 @@ called a \emph{\myindex{variable-coefficient}} equation.
 Finally, an equation (or system) is called \emph{\myindex{autonomous}}
 if the equation does not depend on the independent variable.
 For autonomous ordinary differential equations, the
-independent variable is then thought of as time.  Autonomous equation
+independent variable is then thought of as time.
+An autonomous equation
 means an equation that does not change with time.
 For example, Newton's law of cooling is autonomous, so are the equations
 \eqref{classification:eqnonlinode} and
@@ -1068,7 +1070,7 @@ first-order autonomous ODE would have the form
 \subsection{Exercises}
 
 \begin{exercise}
-Classify the following equations.  Are they ODE or PDE\@?  Is it an equation
+Classify the following equations.  Are they ODEs or PDEs?  Is it an equation
 or a system?  What is the order?  Is it linear or nonlinear, and if it is
 linear, is it homogeneous, constant-coefficient?  If it is an ODE\@, is it
 autonomous?
@@ -1107,14 +1109,14 @@ classification of equations of the form $F(y',y) = 0$.
 \begin{exercise}
 Write down an explicit example of a third-order, linear,
 variable-coefficient (i.e.\ not constant-coefficient),
-nonautonomous, nonhomogeneous system of two ODE such that every derivative
+nonautonomous, nonhomogeneous system of two ODEs such that every derivative
 that could appear, does appear.
 \end{exercise}
 
 \setcounter{exercise}{100}
 
 \begin{exercise}
-Classify the following equations.  Are they ODE or PDE\@?  Is it an equation
+Classify the following equations.  Are they ODEs or PDEs?  Is it an equation
 or a system?  What is the order?  Is it linear or nonlinear, and if it is
 linear, is it homogeneous, constant-coefficient?  If it is an ODE\@, is it
 autonomous?
@@ -1152,7 +1154,7 @@ equation: $a(x) y = b(x)$, solution: $y = \frac{b(x)}{a(x)}$.
 }
 
 \begin{exercise}
-For which $k$ is $\frac{dx}{dt}+x^k = t^{k+2}$ linear.  Hint: There are two answers.
+For which $k$ is $\frac{dx}{dt}+x^k = t^{k+2}$ linear?  Hint: There are two answers.
 \end{exercise}
 \exsol{%
 $k=0$ or $k=1$
