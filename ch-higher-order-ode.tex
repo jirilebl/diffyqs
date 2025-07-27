@@ -1522,7 +1522,7 @@ model the behavior by the simpler linear equation
 The errors from this approximation build up.
 So after a
 long time, the state of the real-world system might be substantially
-different from our solution.  Also we will
+different from our solution.  Also, we will
 see that in a mass-spring system, the amplitude is independent of the
 period.
 This is not true for a pendulum.  Nevertheless, for reasonably short periods of time
@@ -1731,10 +1731,11 @@ nonnegative, or in other words if $c^2 \geq 4km$.
 
 When
 $c^2 - 4km > 0$, the system is \emph{\myindex{overdamped}}.  In this case,
-there are two distinct real roots $r_1$ and $r_2$.  Both roots are
-negative:  As $\sqrt{p^2 - \omega_0^2}$ is always less than $p$,
-then
-$-p \pm \sqrt{p^2 - \omega_0^2}$ is negative in either case.
+there are two distinct real roots $r_1$ and $r_2$.
+As $\sqrt{p^2 - \omega_0^2}$ is always less than $p$,
+the expression for the roots
+$-p \pm \sqrt{p^2 - \omega_0^2}$ is negative either way.
+So both roots are negative.
 
 
 The solution is
@@ -2208,7 +2209,7 @@ and polynomials, we can use the product rule
 for differentiation to come up with a guess.  We
 need to guess a
 form for $y_p$ such that $Ly_p$ is of the same form, and 
-has all the terms needed to for 
+has all the terms needed for 
 the right-hand side.
 For example,
 \begin{equation*}
@@ -2358,7 +2359,8 @@ This makes computing the second derivative easier:
 Since $y_1$ and $y_2$ are solutions to $y''+y = 0$, we find
 $y_1'' = - y_1$
 and $y_2'' = - y_2$.
-(If the equation was a more general $y''+p(x)y' +q(x)y = 0$, we would have
+(If the equation where the more general
+$y''+p(x)y' +q(x)y = 0$, we would have
 $y_i'' = -p(x)y_i' -q(x)y_i$.) So 
 \begin{equation*}
 y'' = (u_1' y_1' + u_2' y_2') - (u_1 y_1 + u_2 y_2) .
@@ -2734,7 +2736,7 @@ x =
 \frac{20}{16 - \pi^2} \left( 2 \sin \left(\frac{4-\pi}{2} t \right)
 \sin \left( \frac{4+\pi}{2} t \right) \right) .
 \end{equation*}
-The function $x$ is a high frequency wave modulated by a low frequency
+The function $x$ is a high-frequency wave modulated by a low-frequency
 wave.
 \end{example}
 
@@ -2993,13 +2995,13 @@ $2p^2+\omega^2-\omega_0^2 = 0$.  In other words, $C'(\omega) = 0$ when
 \end{equation*}
 If $\omega_0^2 - 2p^2$ is positive, then
 $\sqrt{\omega_0^2 - 2p^2}$ is the practical resonance frequency (the
-point where $C(\omega)$ is maximal).  This follows by the first derivative
-test for example as then $C'(\omega) > 0$ for small $\omega$ in this case.
+point where $C(\omega)$ is maximal).  This conclusion follows by the first derivative
+test, for example, as then $C'(\omega) > 0$ for small $\omega$ in this case.
 If on the other hand $\omega_0^2 - 2p^2$ is not positive, then
 $C(\omega)$ achieves its maximum at
 $\omega=0$, and
 there is no practical resonance since we assume $\omega > 0$
-in our system.  In this case the amplitude gets larger as the forcing
+in our system.  In this case, the amplitude gets larger as the forcing
 frequency gets smaller.
 
 If practical resonance occurs, the frequency is smaller than
@@ -3074,8 +3076,8 @@ What is the natural frequency of the water tower?
 \task
 If $\omega$ is not the natural frequency, find a formula for the maximal
 amplitude of the resulting oscillations of the water container (the maximal
-deviation from the rest position).  The motion will be a high frequency wave
-modulated by a low frequency wave, so simply find the constant in front of the
+deviation from the rest position).  The motion will be a high-frequency wave
+modulated by a low-frequency wave, so simply find the constant in front of the
 sines.
 \task
 Suppose $A = 1$ and an earthquake with frequency 0.5 cycles per second
