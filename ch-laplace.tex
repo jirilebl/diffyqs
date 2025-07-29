@@ -772,8 +772,6 @@ For example,
 \mathcal{L} \bigl\{ \bigl( (t-1) + 1\bigr) \, u(t-1) \bigr\}
 = e^{-s} \mathcal{L} \bigl\{ t+1 \bigr\}
 = e^{-s} \left(\frac{1}{s^2} + \frac{1}{s} \right)
-%= e^{-as} \Bigl(\frac{1}{s^2} + \frac{1}{s} \Bigr)
-%= \frac{e^{-as}}{s^2} + \frac{e^{-as}}{s}
 .
 \end{equation*}
 
@@ -2419,15 +2417,21 @@ Let us use Laplace for the following problem:
 \begin{align*}
 & y_t = y_{xx}, \qquad 0 < x < \infty, \enspace t > 0,\\
 & y_x(0,t) = f(t), \\
-%& \text{for every $t$, $y(x,t)$ is bounded: } \lvert y(x,t) \rvert < M \\
-%FIXME: perhaps limit as $x \to \infty$?
 & y(x,0) = 0 .
 \end{align*}
-Really, we also impose other conditions on the solution so that, for
-example,
-the Laplace transform exists.
-For instance, we might impose that $y$ is
-bounded for each fixed time $t$.
+This problem corresponds to a half-infinite insulated rod with a given
+heat flux at one end.
+The setup would come up in real life in the case of a
+sufficiently long rod, where we would not consider a long enough time
+for our solution to notice that we do not have an infinite rod but just a
+very long one.
+In any case, the real-life situation imposes other conditions
+on our solution $y$,
+for example, we will assume that the solution is bounded.
+This boundedness condition will stand in for a boundary condition at the
+infinite end.
+Boundedness
+is also sufficient for the Laplace transform in the $t$ variable to exist.
 
 Transform the equation in the $t$ variable to find
 \begin{equation*}
@@ -2437,15 +2441,16 @@ The general solution to this ODE is
 \begin{equation*}
 Y(x) = A e^{\sqrt{s}x} + B e^{-\sqrt{s} x} .
 \end{equation*}
-First $A=0$, since otherwise $Y$ does not decay to zero as $s \to \infty$.
+Note that $A$ and $B$ depend on $s$.
+As $y$ is bounded, then $Y(x)$ is bounded for any fixed $s > 0$,
+so for $Y(x)$ to stay bounded as $x \to \infty$, we must have $A=0$.
 
-Now consider the boundary condition.
+Now consider the boundary condition at $x=0$.
 Transform $Y'(0) = F(s)$ and so $-\sqrt{s}B = F(s)$.
 In other words,
 \begin{equation*}
 Y(x) = F(s) \frac{-1}{\sqrt{s}} e^{-\sqrt{s} x} .
 \end{equation*}
-
 If we look up the inverse transform in a table such as the one in
 \Appendixref{laplacelist:appendix} (or we spend the afternoon
 doing calculus),
@@ -2530,19 +2535,20 @@ Write down a solution to
 & y_t = y_{xx}, \qquad 0 < x < \infty, \enspace t > 0,\\
 & y_x(0,t) = e^{-t}, \quad y(x,0) = 0 ,
 \end{align*}
-as an definite integral (convolution).
+as a definite integral (convolution).  Assume that $y$ is bounded.
 \end{exercise}
 
 \begin{exercise}
 Use the Laplace transform in $t$ to solve
 \begin{align*}
 & y_{tt} = y_{xx}, \qquad -\infty < x < \infty, \enspace t > 0,\\
-& y_t(x,0) = \sin(x), \quad  y(x,0) = 0 .
+& y(x,0) = 0, \quad y_t(x,0) = \sin(x) .
 \end{align*}
-Hint: Note that
-$e^{sx}$ does not go to zero as $s \to \infty$ for positive
-$x$, and 
-$e^{-sx}$ does not go to zero as $s \to \infty$ for negative $x$.
+Assume that $y$ is bounded.
+Hint: Note that for any fixed $s > 0$,
+$e^{sx}$ blows up as $x \to +\infty$
+and
+$e^{-sx}$ blows up $s \to -\infty$.
 \end{exercise}
 
 \setcounter{exercise}{100}
@@ -2590,13 +2596,33 @@ Y(-1) = 0, \quad Y(1)=0$.
 Use the Laplace transform in $t$ to solve
 \begin{align*}
 & y_{tt} = y_{xx}, \qquad -\infty < x < \infty, \enspace t > 0,\\
-& y_t(x,0) = x^2, \quad  y(x,0) = 0 .
+& y(x,0) = \sin(x), \quad  y_t(x,0) = 0 .
 \end{align*}
-Hint: Note that
-$e^{sx}$ does not go to zero as $s \to \infty$ for positive
-$x$, and 
-$e^{-sx}$ does not go to zero as $s \to \infty$ for negative $x$.
+Assume that $y$ is bounded.
+Hint: Note that for any fixed $s > 0$,
+$e^{sx}$ blows up as $x \to +\infty$
+and
+$e^{-sx}$ blows up $s \to -\infty$.
 \end{exercise}
 \exsol{%
-$y=tx^2+\frac{t^3}{3}$
+$y=\sin(x)\cos(t)$
+}
+
+\begin{exercise}
+Use the Laplace transform in $t$ to solve
+\begin{align*}
+& y_{t} = y_{xx}, \qquad 0 < x < \infty, \enspace t > 0,\\
+& y(0,t) = f(t), \quad  y(x,0) = 0 ,
+\end{align*}
+where $f(t)$ is some function.
+Assume that $y$ is bounded.
+Give the answer as a convolution.
+\end{exercise}
+\exsol{%
+$
+y(x,t) =
+\int_0^t
+f(\tau) 
+\frac{x}{2 \sqrt{\pi {(t-\tau)^3}}} e^{\frac{-x^2}{4(t-\tau)}} \, d\tau
+$
 }

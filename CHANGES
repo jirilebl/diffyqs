@@ -81,6 +81,17 @@ even \(n\) in the problem being solved in subsection 5.3.1.
 for clarity.
 <li>In Example 6.3.3, reverse the order of the factors
 as that's the way we write the convolution integral.
+<li>Give a bit more detail in 6.5.3 on a real-life application,
+introduce boundedness coming from the
+real-life application and use it to show \(A=0\) to fix an erratum.
+<li>In Exercise 6.5.6, assume that \(y\) is bounded, although
+the exercise asks for "a" solution, so this assumption is only
+given to avoid reader confusion when trying to simply apply Example 6.5.3.
+<li>In Exercise 6.5.7 assume that \(y\) is bounded as in the example
+to fix the erratum.  Also change the hint accordingly.
+<li><b>Change Exercise 6.5.104</b> to make the solution bounded and allow the
+technique of the section to solve it to fix an erratum.
+<li>Add Exercise 6.5.105
 <li>In section A.4, make sure to use "a basis" rather than "the basis"
 where appropriate.
 <li>Make Example A.4.1 into an enumerate to make it easier to parse.
