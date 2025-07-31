@@ -66,6 +66,9 @@ are solving the heat equation in subsection 4.6.1.
 equation is homogeneous as that is also needed for superposition.
 <li>In the paragraph introducing superposition in 4.7, mention homogeneity
 of the equation and also of the side conditions.
+<li>In the hint to Exercise 4.8.5,
+just get rid of \(L\) and \(\pi\) as they
+just cancel anyway.
 <li>In 4.9 and 4.10 in the diagrams for the region, make the region gray
 and make the boundary thicker.
 <li>In the exercises in 4.9, we mentioned the region by name, but in the
@@ -91,7 +94,15 @@ given to avoid reader confusion when trying to simply apply Example 6.5.3.
 to fix the erratum.  Also change the hint accordingly.
 <li><b>Change Exercise 6.5.104</b> to make the solution bounded and allow the
 technique of the section to solve it to fix an erratum.
-<li>Add Exercise 6.5.105
+<li>Add Exercise 6.5.105 for the other boundary condition
+for a second order equation.
+<li>Add Exercise 7.1.106 on reindexing series.
+<li>After Theorem 8.4.2, mention that the expression
+in the Theorem is the divergence, mention its meaning,
+why its meaning makes the theorem intuitive,
+and add it to the index.
+<li>Mention that if a chaotic system is the weather, studying
+things like attractors is like studying climate.
 <li>In section A.4, make sure to use "a basis" rather than "the basis"
 where appropriate.
 <li>Make Example A.4.1 into an enumerate to make it easier to parse.

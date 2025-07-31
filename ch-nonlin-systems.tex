@@ -553,7 +553,7 @@ See \figurevref{fig:nlin-ex813-new} for the phase diagram.
 Let us find the critical points.  These are the points where
 $-y-x^2 = 0$ and $-x+y^2=0$.  The first equation means $y = -x^2$, and
 so $y^2 = x^4$.  Plugging into the second equation we obtain 
-$-x+x^4 = 0$.  Factoring we obtain $x(1-x^3)=0$.  Since we are looking only
+$-x+x^4 = 0$.  Factoring, we obtain $x(x^3-1)=0$.  Since we are looking only
 for real solutions we get either $x=0$ or $x=1$.  Solving for the
 corresponding $y$ using $y = -x^2$, we get two critical points, one being $(0,0)$
 and the other being $(1,-1)$.  Clearly the critical points are isolated.
@@ -679,7 +679,7 @@ $\left[ \begin{smallmatrix}
 \end{smallmatrix} \right]$, which has eigenvalues $\pm i$.  So the
 linearization has a center.
 
-Using the quadratic equation, the eigenvalues of the
+Via the quadratic equation, the eigenvalues of the
 Jacobian matrix at any point $(x,y)$ are
 \begin{equation*}
 \lambda = 
@@ -702,12 +702,14 @@ for $x'=y, y' = -x+y^3$, even if the linearization has a center.  \label{fig:nli
 
 The moral of the example is that further analysis is needed when the
 linearization has a center.  The analysis will in general be more
-complicated than in the example above, and is more likely to involve
+complicated than in the example above and is more likely to involve
 case-by-case consideration.  Such a complication should not be
 surprising to you.  By now in your mathematical career, you have
-seen many places where a simple test is inconclusive, recall for example
-the second derivative test for maxima or minima, and requires more careful,
-and perhaps ad hoc analysis of the situation.
+seen many places where a simple test is inconclusive,
+and more careful, perhaps ad hoc, analysis is required.
+Recall for example when
+the second derivative test for maxima or minima is
+inconclusive.
 
 \subsection{Conservative equations}
 
@@ -1804,33 +1806,51 @@ then the system \eqref{nlin:gensys}
 has no closed trajectory inside $R$.
 \end{theorem}
 
-The theorem gives us a way of ruling out the existence of a closed
+The theorem gives a way of ruling out the existence of a closed
 trajectory, and hence a
 way of ruling out limit cycles.
+The expression
+$\frac{\partial f}{\partial x} + \frac{\partial g}{\partial y}$
+may seem random,
+but it is called the \emph{\myindex{divergence}} of the
+vector field.
+Divergence measures how much the vector field is
+\myquote{expanding} at any point and comes up
+in many other contexts.
+The theorem says that if the vector field is
+either expanding everywhere on $R$
+or contracting everywhere on $R$, then
+there is no closed trajectory and so no limit cycle.
+Perhaps this is intuitive---if particles travel along the vector
+fields and are getting further and further apart, then we
+do not expect any particles to travel in loops.
 The exception about points or curves 
-means that we can allow the expression to be zero at a few points,
-or perhaps on a curve, but not on any larger set.
+means that divergence can be zero at a few points,
+or on a curve, but not on any larger set.
 
 \begin{example}
-Let us look at $x'=y+y^2e^x$, $y'=x$ in the entire plane (see
+Consider $x'=y+y^2e^x$, $y'=x$ in the entire plane (see
 \examplevref{example:nlin-withexp}).
-The entire plane
-is simply connected and so we can apply the theorem.  We compute
+The plane
+is simply connected and the theorem applies.  We compute
 $\frac{\partial f}{\partial x} + \frac{\partial g}{\partial y} =
 y^2e^x+ 0$.  The function $y^2e^x$ is always positive except on the line
 $y=0$.  Therefore, via the theorem, the system has no closed trajectories.
 \end{example}
 
-In some books (or the internet) the theorem is not stated carefully
-and it concludes there are no periodic solutions.  That is not quite
-right.  The example above has two critical points and hence it has
-constant solutions, and constant functions are periodic.  The conclusion of
-the theorem should be that there exist no trajectories that form closed
-curves.  Another way to state the conclusion of the theorem would be to
-say that there exist no nonconstant periodic solutions that stay in $R$.
+A common informal, but not quite correct, way to state
+the theorem is to
+conclude there are no periodic solutions that stay in $R$.
+The example above has two critical points and hence it has
+constant solutions.  Constant functions are periodic.
+The conclusion of
+the theorem is that there exist no trajectories that form closed
+curves, or in other words,
+that there exist no nonconstant periodic solutions
+that stay in $R$.
 
 \begin{example}
-We consider a somewhat more complicated example.
+Consider a somewhat more complicated example.
 Take the system $x'=-y-x^2$, $y'=-x+y^2$ (see
 \examplevref{example:nlin-xplusy}).  We compute
 $\frac{\partial f}{\partial x} + \frac{\partial g}{\partial y} =
@@ -1842,9 +1862,11 @@ in the set $-x+y \leq 0$.  We cannot conclude (yet) that there is no closed
 trajectory in the entire plane.  For all we know, perhaps half of it is in the set where
 $-x+y \geq 0$ and the other half is in the set where $-x+y \leq 0$.
 
-The key is to look at the line where $-x+y=0$, or $x=y$.  On this line
-$x' = -y-x^2 = -x-x^2$ and $y' = -x+y^2 = -x+x^2$.  In particular,
-when $x=y$ then $x' \leq y'$.  That means that the arrows, the vectors
+The key is to look at the line where $-x+y=0$, or $x=y$.
+On this line,
+$x' = -y-x^2 = -x-x^2$ and $y' = -x+y^2 = -x+x^2$.
+In particular,
+if $x=y$, then $x' \leq y'$.  So the arrows, the vectors
 $(x',y')$, always point
 into the set where $-x+y \geq 0$.  There is no way we can start in the
 set where $-x+y \geq 0$
@@ -1856,14 +1878,14 @@ have points in both sets.
 \begin{example}
 Consider
 $x' = y+(x^2+y^2-1)x$, 
-$y' = -x +(x^2+y^2-1)y$, and consider the region $R$ given by $x^2+y^2 >
+$y' = -x +(x^2+y^2-1)y$ in the region $R$ given by $x^2+y^2 >
 \frac{1}{2}$.  That is, $R$ is the region outside a circle of radius
 $\frac{1}{\sqrt{2}}$ centered at the origin.  Then
 there is a closed trajectory in $R$, namely $x=\cos(t)$, $y=\sin(t)$.
 Furthermore,
 \begin{equation*}
 \frac{\partial f}{\partial x} + 
-\frac{\partial g}{\partial x} = 4x^2+4y^2-2 ,
+\frac{\partial g}{\partial y} = 4x^2+4y^2-2 ,
 \end{equation*}
 which is always positive on $R$.  So what is going on?  The Bendixson--Dulac theorem does not
 apply since the region $R$ is not simply connected---it has a hole, the
@@ -1999,8 +2021,12 @@ error, and then we somehow estimate what is in between.
 There is no way we
 can accurately measure the effects of every butterfly wing.
 Then
-we solve the equations numerically introducing new errors.  You
-should not trust weather prediction more than a few days out.
+we solve the equations numerically introducing new errors.
+You should not trust weather prediction more
+than a few days out.
+But we will see we can still get some information
+about a chaotic system on a longer time scale,
+in the context of weather, we can study the climate.
 
 Chaotic behavior was first noticed by Edward
 Lorenz\footnote{\href{https://en.wikipedia.org/wiki/Edward_Norton_Lorenz}{Edward Norton Lorenz} (1917--2008) was
@@ -2240,7 +2266,7 @@ which is now a curve in three-dimensional space.
 
 The solutions tend to an \emph{attractor} in space,
 the so-called \emph{\myindex{Lorenz attractor}}.
-In this case no strobing is
+In this case, no strobing is
 necessary, the solution will tend towards the attractor set.
 Again we cannot quite see the attractor itself, but if we try to follow a solution
 for long enough, as in the figure,
@@ -2258,10 +2284,14 @@ the right, and so on.  As this system arose in weather prediction, one can
 perhaps imagine a few days of warm weather and then a few days of cold
 weather, where it is not easy to predict when the weather will change,
 just as it is not really easy to predict far in advance when the solution
-will jump onto the other side.  See \figurevref{nlin:lorenz-graphx} for a
+will jump onto the other side.
+See \figurevref{nlin:lorenz-graphx} for a
 plot of the $x$ component of the solution drawn above.  A negative $x$
 corresponds to the left \myquote{loop} and a positive $x$
 corresponds to the right \myquote{loop}.
+On the other hand, while we cannot predict the weather,
+we \emph{can} say something about
+the climate---the weather will be somewhere near the attractor.
 
 Most of the mathematics we studied in this book is quite classical and
 well understood.
