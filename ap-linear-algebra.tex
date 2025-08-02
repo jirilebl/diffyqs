@@ -178,7 +178,7 @@ and then we travel along $(2,-3)$.
 What we did was travel one unit right, two units up, and then
 we travelled two units right, and three units down (the negative three).  That
 means that we ended up at $\bigl(1+2,2+(-3)\bigr) = (3,-1)$.
-And that's how addition always works:
+That is how addition always works:
 \begin{equation*}
 \begin{bmatrix}
 x_{1} \\ x_2 \\ \vdots \\ x_n
@@ -236,14 +236,15 @@ x_{1} \\ x_2 \\ \vdots \\ x_n
 Scaling (by a positive number) multiplies the magnitude
 and leaves direction untouched.
 The magnitude of $(1,2)$
-is $\sqrt{5}$.  The magnitude of 3 times $(1,2)$, that is, $(3,6)$, is
+is $\sqrt{5}$.  The magnitude of 3 times $(1,2)$, that is, of $(3,6)$, is
 $3\sqrt{5}$.
 
-When the scalar is negative, then when we multiply a vector by it, the
+If we multiply a vector by a negative scalar,
+the
 vector is not only scaled, but it also switches direction.
 Multiplying $(1,2)$ by $-3$ means we should go 3 times further but in the
 opposite direction, so 3 units to the left and 6 units down, or in other
-words, $(-3,-6)$.  As we mentioned above, $-\vec{y}$ is a reverse of
+words, $(-3,-6)$.  As we mentioned above, $-\vec{y}$ is the reverse of
 $\vec{y}$, and this is the same as $(-1)\vec{y}$.
 
 In \figurevref{linalg-vecscale:fig}, you can see a couple of examples of
@@ -287,7 +288,7 @@ Let us compute a small example:
 
 \medskip
 
-As we said a vector is a direction and a magnitude.  Magnitude is easy to
+We said a vector is a direction and a magnitude.  Magnitude is easy to
 represent, it is just a number.  The \emph{\myindex{direction}} is usually
 given by a vector with magnitude one.  We call such a vector a
 \emph{\myindex{unit vector}}.  That is, $\vec{u}$ is a unit vector when
@@ -339,8 +340,7 @@ vector-valued function, and the word \emph{function} is often used when the
 function is scalar-valued.
 
 A beginning student of mathematics (and many a seasoned mathematician)
-that
-sees an expression such as
+who sees an expression such as
 \begin{equation*}
 f(3x+8y)
 \end{equation*}
@@ -348,7 +348,7 @@ yearns to write
 \begin{equation*}
 3f(x)+8f(y) .
 \end{equation*}
-After all, who hasn't wanted to write $\sqrt{x+y} = \sqrt{x} + \sqrt{y}$ or
+After all, who has not wanted to write $\sqrt{x+y} = \sqrt{x} + \sqrt{y}$ or
 something like that at some point in their mathematical lives.
 Wouldn't life be simple if we could do that?
 Of course we cannot always do that (for example, not with the square roots!)
@@ -5947,14 +5947,15 @@ $\vec{w}_1,\vec{w}_2,\ldots,\vec{w}_{k-1}$.
 
 \begin{example}
 Consider the vectors $(1,2,-1)$, and $(0,5,-2)$ and call $S$ the span
-of the two vectors.  Let us find an orthogonal basis of $S$:
+of the two vectors.  Let us find an orthogonal basis of $S$
+via the Gram--Schmidt process:
 \begin{align*}
 \vec{w}_1 & = (1,2,-1) , \\
 \vec{w}_2 & = (0,5,-2) 
 - \operatorname{proj}_{(1,2,-1)}\bigl((0,5,-2)\bigr)
 \\
 & =
-(0,1,-1) -
+(0,5,-2) -
 \frac{\langle (0,5,-2), (1,2,-1) \rangle}{
 \langle (1,2,-1), (1,2,-1) \rangle
 }
@@ -6034,11 +6035,11 @@ an orthogonal basis.
 \begin{exercise}
 Let $S$ be the subspace spanned by
 $(1,3,-1)$, $(1,1,1)$.  Find an orthogonal basis of $S$
-by the Gram-Schmidt process.
+by the Gram--Schmidt process.
 \end{exercise}
 
 \begin{exercise}
-Starting with $(1,2,3)$, $(1,1,1)$, $(2,2,0)$, follow the Gram-Schmidt
+Starting with $(1,2,3)$, $(1,1,1)$, $(2,2,0)$, follow the Gram--Schmidt
 process to find an orthogonal basis of ${\mathbb{R}}^3$.
 \end{exercise}
 
@@ -6121,14 +6122,14 @@ c)~$2(1,1,-1)-2(2,-1,1)+2(1,-5,3)$
 \begin{exercise}
 Let $S$ be the subspace spanned by
 $(2,-1,1)$, $(2,2,2)$.  Find an orthogonal basis of $S$
-by the Gram-Schmidt process.
+by the Gram--Schmidt process.
 \end{exercise}
 \exsol{%
 $(2,-1,1)$, $(\nicefrac{2}{3},\nicefrac{8}{3},\nicefrac{4}{3})$
 }
 
 \begin{exercise}
-Starting with $(1,1,-1)$, $(2,3,-1)$, $(1,-1,1)$, follow the Gram-Schmidt
+Starting with $(1,1,-1)$, $(2,3,-1)$, $(1,-1,1)$, follow the Gram--Schmidt
 process to find an orthogonal basis of ${\mathbb{R}}^3$.
 \end{exercise}
 \exsol{%
@@ -6511,7 +6512,7 @@ The determinant for triangular matrices is very simple to compute.
 Consider the lower triangular matrix.  If we expand along the
 first row, we find that the determinant is 1 times the determinant
 of the lower triangular matrix $\left[ \begin{smallmatrix} 5 & 0 \\ 8 & 9
-\end{smallmatrix} \right]$.  So the deteriminant is just the
+\end{smallmatrix} \right]$.  So the determinant is just the
 product of the diagonal entries:
 \begin{equation*}
 \det \left(
