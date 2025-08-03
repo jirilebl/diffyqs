@@ -1,3 +1,9 @@
+The main focus of this edition is to fix some long standing minor
+issues and improve sections not often used in classes.
+Moreover, this version fixes many errata identified by AI,
+which seems quite capable nowadays, although I would suggest
+not using it blindly on texts like these, it is often incorrect too.
+
 <li>To improve readability, hyphenate first-order, second-order,
 constant-coefficient, etc. when used as a compound adjective.
 <li>Be consistent in using plurals for ODE and PDE as ODEs and PDEs.
