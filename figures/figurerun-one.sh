@@ -11,15 +11,23 @@ pdfcrop figurerun.pdf ${n%.pdf_t}-tex4ht.pdf
 rm figurerun.pdf
 #echo running pdftops...
 #pdftops -eps ${n%.pdf_t}-tex4ht.pdf ${n%.pdf_t}-tex4ht.eps
+echo running pdftocairo...
+pdftocairo -svg ${n%.pdf_t}-tex4ht.pdf ${n%.pdf_t}-tex4ht.svg
+echo running svgo
+svgo --config svgo.config.mjs ${n%.pdf_t}-tex4ht.svg
 #echo running pdf2svg...
 #pdf2svg ${n%.pdf_t}-tex4ht.pdf ${n%.pdf_t}-tex4ht.svg
+#echo running mutool...
+#mutool convert -F svg -o ${n%.pdf_t}-tex4ht.svg ${n%.pdf_t}-tex4ht.pdf
 #echo running inkscape to convert to svg
+#inkscape --export-type=svg ${n%.pdf_t}-tex4ht.pdf --export-filename=${n%.pdf_t}-tex4ht.svg
 #inkscape \
-  #--without-gui \
-  #--file=${n%.pdf_t}-mbxpdft.pdf \
-  #--export-plain-svg=${n%.pdf_t}-mbxpdft.svg
-echo running dvisvgm to convert to svg...
-dvisvgm --pdf --output=${n%.pdf_t}-mbxpdft.svg ${n%.pdf_t}-mbxpdft.pdf
+#  --without-gui \
+#  --file=${n%.pdf_t}-tex4ht.pdf \
+#  --export-plain-svg=${n%.pdf_t}-tex4ht.svg
+#echo running dvisvgm to convert to svg...
+#dvisvgm -n -O --pdf --output=${n%.pdf_t}-tex4ht.svg ${n%.pdf_t}-tex4ht.pdf
+#dvisvgm -f woff2,autohint -O --pdf --output=${n%.pdf_t}-tex4ht.svg ${n%.pdf_t}-tex4ht.pdf
 #echo running pdftopng...
 #../pdftopng.sh ${n%.pdf_t}-tex4ht.pdf ${n%.pdf_t}-tex4ht.png $res
 #echo removing pdf...

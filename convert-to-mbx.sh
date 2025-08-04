@@ -4,11 +4,13 @@ echo progress.  The diffyqs-html.xsl assumes a fixed location for the PreTeXt
 echo xsl file.  You need to edit this first.
 echo Do ^C to get out.
 echo 
-echo You should first run with --runpdft --optimize-svg which
-echo runs the pdft figures and then also optimizes svgs.  Without
-echo --runpdft some figures will be missing.  You can also use --full
-echo which does all three arguments.
+#echo You should first run with --runpdft --optimize-svg which
+#echo runs the pdft figures and then also optimizes svgs.  Without
+#echo --runpdft some figures will be missing.  You can also use --full
+#echo which does both arguments.
+echo You should first run with --runpdft
 echo Optimizations are in optimize-svgs.sh in figures/
+echo "But optimization (svgo) is buggy."
 echo
 echo To rerun all figures first do \"rm "*-mbx.*" "*-tex4ht.*"\", or run
 echo this script with --kill-generated.
@@ -37,15 +39,16 @@ while [ "$1" != "" ]; do
 	    OPTSVG=yes
 	    ;;
         --full)
-	    echo "OPTION (full) Will run pdf_t optimize svgs"
+	    #echo "OPTION (full) Will run pdf_t optimize svgs"
+	    echo "OPTION (full) Will run pdf_t"
 	    PDFT=yes
 	    #OPTPNG=yes
-	    OPTSVG=yes
+	    #OPTSVG=yes
             ;;
         --kill-generated)
-	    echo "OPTION (kill-generated) Killing generated figures and exiting."
+		echo "OPTION (kill-generated) Killing generated figures and exiting (not killing -mbx.svg)."
 	    cd figures
-	    rm *-mbx.(svg|png)
+	    #rm *-mbx.(svg|png)
 	    rm *-tex4ht.(svg|png)
 	    cd ..
 	    exit
