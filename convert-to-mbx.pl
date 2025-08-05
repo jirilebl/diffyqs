@@ -501,7 +501,7 @@ sub ensure_mbx_svg_version {
 	if ((not -e "$thefile-mbx.svg") and (-e "$thefile.pdf")) {
 		print "MAKING $thefile-mbx.svg from PDF\n";
 		system("pdftocairo -svg $thefile.pdf $thefile-mbx.svg");
-		system("svgo --config figures/svgo.config.mjs $thefile-mbx.svg");
+		system("svgo $thefile-mbx.svg");
 	}
 }
 
