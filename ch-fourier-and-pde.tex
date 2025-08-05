@@ -129,7 +129,7 @@ Next
 0 = x(\pi) = B \sin \bigl( \sqrt{\lambda}\, \pi \bigr) .
 \end{equation*}
 If $B$ is zero, then $x$ is not a nonzero solution.  So to get a nonzero
-solution we must have that $\sin \bigl( \sqrt{\lambda}\, \pi\bigr) = 0$.  Hence,
+solution, we must have that $\sin \bigl( \sqrt{\lambda}\, \pi\bigr) = 0$.  Hence,
 $\sqrt{\lambda}\, \pi$ must be an integer multiple of $\pi$.  In other words,
  $\sqrt{\lambda} = k$ for a positive integer $k$.
 Hence, the positive eigenvalues are
@@ -309,8 +309,6 @@ called
 if $A = A^T$ (it is equal to its transpose).
 \emph{Eigenvectors for two distinct eigenvalues of a symmetric
 matrix are orthogonal.}
-%That symmetry is required.  
-%We will not prove this fact here.
 The
 differential operators we are dealing with act much like a symmetric matrix.
 We, therefore, get the following theorem.
@@ -391,13 +389,14 @@ Finish the proof of the theorem (check the last equality in the proof) for the c
 The function $\sin (n t)$ is an eigenfunction for the problem
 $x''+\lambda x = 0$, $x(0) = 0$, $x(\pi) = 0$. 
 Hence for positive
-integers $n$ and $m$ we have the integrals
+integers $n$ and $m$, we have the integrals
 \begin{equation*}
 \int_{0}^\pi \sin (mt) \sin (nt) \,dt = 0 ,
 \quad
 \text{when } m \not = n.
 \end{equation*}
-Similarly,
+Similarly, still assuming that $m$ and $n$ are positive
+integers,
 \begin{equation*}
 \int_{0}^\pi \cos (mt) \cos (nt) \,dt = 0 ,
 \quad
@@ -405,7 +404,7 @@ Similarly,
 \qquad \text{and} \qquad
 \int_{0}^\pi  \cos (nt) \,dt = 0 .
 \end{equation*}
-And finally we also get
+Finally, we also get
 \begin{equation*}
 \int_{-\pi}^\pi \sin (mt) \sin (nt) \,dt = 0 ,
 \quad
@@ -3622,15 +3621,15 @@ to be.
 When the initial condition is already a sine series, then there is no need
 to compute anything, you just need to plug in.  Consider
 \begin{equation*}
-u_t = 0.3 \, u_{xx}, \qquad u(0,t)=u(1,t)=0, \qquad u(x,0) = 0.1 \sin(\pi t) +
-\sin(2\pi t) .
+u_t = 0.3 \, u_{xx}, \qquad u(0,t)=u(1,t)=0, \qquad u(x,0) = 0.1 \sin(\pi x) +
+\sin(2\pi x) .
 \end{equation*}
 The solution is then
 \begin{equation*}
 u(x,t) =
-0.1 \sin(\pi t) e^{- 0.3 \pi^2 t}
+0.1 \sin(\pi x) e^{- 0.3 \pi^2 t}
 + 
-\sin(2 \pi t) e^{- 1.2 \pi^2 t} .
+\sin(2 \pi x) e^{- 1.2 \pi^2 t} .
 \end{equation*}
 \end{example}
 

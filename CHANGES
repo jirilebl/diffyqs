@@ -86,6 +86,9 @@ of the beam to be \(\sin^2(\pi x)\) to be
 consistent with fixed ends.
 <li>Make a clearer explanation of why resonance does not occur for
 even \(n\) in the problem being solved in subsection 5.3.1.
+<li>In problem 5.3.101, name the function
+"triangle wave" as it's not
+usually called a sawtooth.
 <li>Just after 6.3.1, give both directions in formulas
 for clarity.
 <li>In Example 6.3.3, reverse the order of the factors
