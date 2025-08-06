@@ -13,8 +13,14 @@ echo You should first run with --runpdft
 #echo "But optimization (svgo) is buggy."
 echo
 #echo To rerun all figures first do \"rm "*-mbx.*" "*-tex4ht.*"\", or run
-echo To rerun all figures first do \"rm "*-tex4ht.*"\", or run
+echo To rerun all .fig figures to pdf and svg first
+echo do \"rm "figures/*-tex4ht.*"\", or run
 echo this script with --kill-generated.
+echo 
+echo Normally, the normal figure svg figures are not remade from the
+echo pdfs, to redo them, first do \"rm "figures/*-mbx.*"\".
+echo These are in git normally.
+echo Beware that svgo may be a bit buggy so good to check the output.
 echo
 
 if [ x`svgo -v` != "x3.0.4" ]; then
