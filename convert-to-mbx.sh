@@ -9,10 +9,11 @@ echo
 #echo --runpdft some figures will be missing.  You can also use --full
 #echo which does both arguments.
 echo You should first run with --runpdft
-echo Optimizations are in optimize-svgs.sh in figures/
-echo "But optimization (svgo) is buggy."
+#echo Optimizations are in optimize-svgs.sh in figures/
+#echo "But optimization (svgo) is buggy."
 echo
-echo To rerun all figures first do \"rm "*-mbx.*" "*-tex4ht.*"\", or run
+#echo To rerun all figures first do \"rm "*-mbx.*" "*-tex4ht.*"\", or run
+echo To rerun all figures first do \"rm "*-tex4ht.*"\", or run
 echo this script with --kill-generated.
 echo
 
@@ -32,7 +33,7 @@ fi
 
 PDFT=no
 #OPTPNG=no
-OPTSVG=no
+#OPTSVG=no
 
 # parse parameters
 while [ "$1" != "" ]; do
@@ -48,10 +49,10 @@ while [ "$1" != "" ]; do
 #	    echo "OPTION (optimize-png) Will run optimize-pngs.sh"
 #	    OPTPNG=yes
 #            ;;
-        --optimize-svg)
-	    echo "OPTION (optimize-svg) Will run optimize-svgs.sh"
-	    OPTSVG=yes
-	    ;;
+#        --optimize-svg)
+#	    echo "OPTION (optimize-svg) Will run optimize-svgs.sh"
+#	    OPTSVG=yes
+#	    ;;
         --full)
 	    #echo "OPTION (full) Will run pdf_t optimize svgs"
 	    echo "OPTION (full) Will run pdf_t"
@@ -60,7 +61,7 @@ while [ "$1" != "" ]; do
 	    #OPTSVG=yes
             ;;
         --kill-generated)
-		echo "OPTION (kill-generated) Killing generated figures and exiting (not killing -mbx.svg)."
+	    echo "OPTION (kill-generated) Killing generated figures and exiting (not killing -mbx.svg)."
 	    cd figures
 	    #rm *-mbx.(svg|png)
 	    rm *-tex4ht.(svg|png)
@@ -114,15 +115,15 @@ perl -0777 -i -pe 's:<diffyqshr/>[ \r\n]*<diffyqshr/>:<diffyqshr/>:igs' diffyqs-
 #	cd ..
 #fi
 
-if [ "$OPTSVG" = "yes" ] ; then
-	echo
-	echo OPTIMIZING SVG...
-	echo
-
-	cd figures
-	./optimize-svgs.sh
-	cd ..
-fi
+#if [ "$OPTSVG" = "yes" ] ; then
+#	echo
+#	echo OPTIMIZING SVG...
+#	echo
+#
+#	cd figures
+#	./optimize-svgs.sh
+#	cd ..
+#fi
 
 echo
 echo MOVING OLD html, CREATING NEW html, COPYING figures/ in there

@@ -14,9 +14,9 @@ Many functions can be written in terms of a power series
 \begin{equation*}
 \sum_{k=0}^\infty a_k {(x-x_0)}^k .
 \end{equation*}
-If we assume that a solution of a differential equation is written as a
-power series, then perhaps we can use a method reminiscent of undetermined
-coefficients.  That is, we will try to solve for the numbers $a_k$.
+Assuming a solution of a differential equation is a
+power series, we can perhaps use a method reminiscent of undetermined
+coefficients---we try to solve for the numbers $a_k$.
 Before we carry out this process, we review some results
 and concepts about power series.
 
@@ -147,7 +147,7 @@ L = \lim_{k\to\infty} \left \lvert \frac{c_{k+1}}{c_k} \right \rvert
 exists.  Then the series converges absolutely if $L < 1$ and diverges
 if $L > 1$.
 
-We apply this test to the series \eqref{ps:sereq1}. 
+We apply this test to the power series \eqref{ps:sereq1}. 
 Let $c_k = a_k {(x - x_0)}^k$ in the test.  Compute
 \begin{equation*}
 L = \lim_{k\to\infty} \left \lvert \frac{c_{k+1}}{c_k} \right \rvert
@@ -209,7 +209,7 @@ is $\infty$.  Otherwise, the radius of convergence is $\nicefrac{1}{A}$.
 \end{theorem}
 
 \begin{example}
-Suppose we have the series
+Consider
 \begin{equation*}
 \sum_{k=0}^\infty 2^{-k} {(x-1)}^k .
 \end{equation*}
@@ -226,7 +226,7 @@ A = \lim_{k\to\infty}
 \right \rvert
 =
 \lim_{k\to\infty} 
-2^{-1} = \nicefrac{1}{2}.
+2^{-1} = \frac{1}{2}.
 \end{equation*}
 Therefore, the radius of convergence is $2$, and the series
 converges absolutely on the interval $(-1,3)$.
@@ -246,7 +246,7 @@ a_k
 \lim_{k\to\infty} 
 2^{-1}
 =
-\nicefrac{1}{2}.
+\frac{1}{2}.
 \end{equation*}
 \end{example}
 
@@ -287,9 +287,16 @@ $\sqrt[k]{\lvert a_k \rvert}$
 might not exist.
 There exist more sophisticated ways of finding the radius of convergence,
 but those would be beyond the scope of this chapter.  The two methods above
-cover many of the series that arise in practice.  Often if the root test
-applies, so does the ratio test, and vice versa, though the limit might
-be easier to compute in one way than the other.
+cover many of the series that arise in practice.
+Often both tests apply, though the limit might
+be easier to compute in one test than the other.
+
+We remark that at the endpoints,
+$x = x_0-\rho$ and $x = x_0+\rho$,
+the series may or may not converge, and the tests above
+say nothing about convergence there.
+Sometimes convergence at the endpoints is important, but for
+our purposes, we will not worry about it much.
 
 \subsection{Analytic functions}
 
@@ -362,12 +369,12 @@ series is the same as that of the original.
 
 \begin{example}
 Let us show that the exponential $y=e^x$ solves $y'=y$.  Suppose
-we didn't know that.
+we did not know that.
 Write
 \begin{equation*}
 y = e^x = \sum_{k=0}^\infty \frac{1}{k!} x^k .
 \end{equation*}
-Now differentiate
+Differentiate $y$,
 \begin{equation*}
 y' = \sum_{k=1}^\infty k \frac{1}{k!} x^{k-1} =
 \sum_{k=1}^\infty \frac{1}{(k-1)!} x^{k-1} .

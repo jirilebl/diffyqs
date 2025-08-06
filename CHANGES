@@ -105,6 +105,8 @@ to fix the erratum.  Also change the hint accordingly.
 technique of the section to solve it to fix an erratum.
 <li>Add Exercise 6.5.105 for the other boundary condition
 for a second order equation.
+<li>Add a short remark about convergence at the endpoints and that we won't
+really worry about it here.
 <li>Add Exercise 7.1.106 on reindexing series.
 <li>After Theorem 8.4.2, mention that the expression
 in the Theorem is the divergence, mention its meaning,
