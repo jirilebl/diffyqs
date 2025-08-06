@@ -1085,6 +1085,18 @@ while(1)
 				print "\n\n\nHUH?\n\n\nNo caption/label!\n\n$para\n\n";
 				$num_errors++;
 			}
+			my $tablealign = "left";
+			if ($table =~ m/\\begin\{tabular\}.*r/) {
+				$tablealign = "right";
+				if ($table =~ m/\\begin\{tabular\}.*l/) {
+					print "\n\n\nHUH?\n\n\nBoth left/right alignments in a table\n\n$para\n\n";
+					$num_errors++;
+				}
+			}
+			if ($table =~ m/\\begin\{tabular\}.*c/) {
+				print "\n\n\nHUH?\n\n\nCenter alignment in a table not allowed yet\n\n$para\n\n";
+				$num_errors++;
+			}
 			# kill centering and the rules and the tabular 
 			$table =~ s/\\begin\{center\}[ \n]*//;
 			$table =~ s/\\end\{center\}[ \n]*//;
@@ -1101,7 +1113,7 @@ while(1)
 			my $the_num = get_table_number ();
 			print $out "<diffyqshr/><table xml:id=\"$theid\" number=\"$the_num\">\n";
 			print $out "  <title>$caption</title>\n";
-			print $out "  <tabular top=\"major\" halign=\"left\">\n";
+			print $out "  <tabular top=\"major\" halign=\"$tablealign\">\n";
 
 			if ($table =~ s/^(.*?)[ \n]*\\\\(\[.*?\])?[ \n]*//s) {
 				$fline = $1;
@@ -1135,12 +1147,28 @@ while(1)
 		#
 	#FIXME: not all substitutions are made, so check if more processing needs to be done
 	#on contents and/or caption
-	} elsif ($para =~ s/^(\\begin\{center\}[ \n]*)?\\begin\{tabular\}.*[ \n]*//) {
+	} elsif ($para =~ s/^(\\begin\{center\}[ \n]*)?\\begin\{tabular\}(.*)[ \n]*//) {
+		my $centering = $1;
+		my $tabulardef = $2;
 		print "(TABULARONLY)\n";
 		my $docenter = 0;
-		if ($1 =~ m/^\\begin\{center\}/) {
+		if ($centering =~ m/^\\begin\{center\}/) {
 			$docenter = 1;
 		}
+
+		my $tablealign = "left";
+		if ($tabulardef =~ m/r/) {
+			$tablealign = "right";
+			if ($tabulardef =~ m/l/) {
+				print "\n\n\nHUH?\n\n\nBoth left/right alignments in a table\n\n$para\n\n";
+				$num_errors++;
+			}
+		}
+		if ($tabulardef =~ m/c/) {
+			print "\n\n\nHUH?\n\n\nCenter alignment in a table not allowed yet\n\n$para\n\n";
+			$num_errors++;
+		}
+
 		if ($para =~ s/^(.*?)\\end\{tabular\}[ \n]*(\\end\{center\}[ \n]*)?//s) {
 			my $table = $1;
 
@@ -1160,9 +1188,9 @@ while(1)
 				print $out "<p>\n";
 			}
 			if ($dorules) {
-				print $out "<tabular top=\"major\" halign=\"left\">\n";
+				print $out "<tabular top=\"major\" halign=\"$tablealign\">\n";
 			} else {
-				print $out "<tabular halign=\"left\">\n";
+				print $out "<tabular halign=\"$tablealign\">\n";
 			}
 
 			if ($dorules) {
