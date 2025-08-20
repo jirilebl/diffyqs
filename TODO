@@ -16,18 +16,26 @@ minor version):
 
 SMALLER THINGS MAYBE:
 
-* Expand discussion of vector fields and how they are drawn in 3.1.
-* Add maybe a few more exercises for setting up applications in 3.1
+* Expand the section on autonomous first order ODE (1.6), namely do more
+  drawing and sketching, don't just leave it all as exercises.
+  In particular, sketch the curves for the first exercise (it's kind of
+  stupid as we give the graphs, so this needs replacing with something
+  more interesting.)  Also the second exercise is to sketch the diagrams,
+  but again we're giving the graphs and talking about it, so perhaps
+  sketch them and change the exercise.  Perhaps just replace the inline
+  exercises with some simple ones at the end.
+* Expand discussion of vector fields and how they are drawn in 3.1
+  (even more than currently?).
+* Add maybe a few more exercises for setting up applications in 3.1.
 * In 3.6 add more exercises on forced, and also improve the exposition wrt
   the units.
-* In 3.4 (or earlier?) Add some exercises on constant nonhomogeneity for
+* In 3.4 (or earlier?), add some exercises on constant nonhomogeneity for
   an invertible A, that just translates the point.
 * Include annihilator method at least in exercises of section of 2.5 
 * Perhaps change name of \vec{x}_1 solutions to avoid confusion with x_1
   components, see what other books do.
 * Add factorization idea in wave equation (d'Alembert) to write it as
-  two vector fields applied to y perhaps?  Makes more sense if we have 
-  first order before this.
+  two vector fields applied to y perhaps?
 * Perhaps mention somewhere in 2.2 how the correspondence is with $y^{(n)}$
   going to $r^n$ in the characteristic equation, might make it simpler to
   see.
