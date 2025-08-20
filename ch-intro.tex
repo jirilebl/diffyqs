@@ -452,33 +452,37 @@ course is no exception.
 \inputpdft{1-1-fig}
 \diffypdfversion{\par\vspace*{5pt}}
 \end{mywrapfigsimp}
-So how do we use differential equations in science and engineering?  
+How do we use differential equations in science and engineering?  
 First, we have some \emph{\myindex{real-world problem}} we wish
 to understand.
 We make some simplifying assumptions and create a
 \emph{\myindex{mathematical model}}.
-That is, we translate the real-world situation into a
-set of differential equations.
-Then we apply mathematics to get some sort of a
+That is, we translate the real-world situation into
+a differential equation (or equations).
+Then we use mathematics to get some sort of a
 \emph{\myindex{mathematical solution}}.
-There is still something left to do.  We have to interpret the results.
+There is still something left to do.  We must interpret the results.
 We have to figure out what the mathematical solution says about the real-world
 problem we started with.
 
-Learning how to formulate the mathematical model and how to interpret the
-results is what your physics and engineering classes do.  In this
-course, we will focus mostly on the mathematical analysis.  Sometimes we will
-work with simple real-world examples so that we have some intuition and
+Formulating the mathematical model and interpreting
+the results is what you do in your physics and engineering classes.
+In this
+course, we focus mostly on the mathematical analysis.
+Sometimes we will
+work with simple real-world examples
+to have some intuition and
 motivation about what we are doing.
-
 Let us look at 
-an example of this process.
+an example of the entire process.
+
+\begin{example}
 One of the most basic differential equations
-is the standard \emph{\myindex{exponential growth model}}.
+is the \emph{\myindex{exponential growth model}}.
 Let $P$ denote the population 
 of some bacteria on a Petri dish.  We assume that there is enough food
-and enough space.  Then the rate of growth of bacteria is proportional
-to the population---a larger population grows more quickly.  Let $t$ denote
+and enough space.  Then the rate of growth of the bacteria is proportional
+to the population---a larger population grows quicker.  Let $t$ denote
 time (say in seconds) and $P$ the population.  Our model
 is
 \begin{equation*}
@@ -486,7 +490,6 @@ is
 \end{equation*}
 for some positive constant $k > 0$.
 
-\begin{example}
 Suppose there are 100 bacteria at time 0 and 200 bacteria 10 seconds later.
 How many bacteria will there be 1 minute from time 0 (in 60 seconds)?
 
@@ -514,8 +517,8 @@ OK\@, now what?  We do not know $C$, and we do not know $k$.  But we know
 something.  We know $P(0) = 100$, and we know 
 $P(10) = 200$.  We plug these conditions in and see what happens:
 \begin{align*}
-& 100 = P(0) = C e^{k0} = C ,\\
-& 200 = P(10) = 100 \, e^{k10} .
+& 100 = P(0) = C e^{k0} = C, \quad \text{so} \quad C=100,\\
+& 200 = P(10) = C e^{k10} = 100 \, e^{k10} .
 \end{align*}
 Therefore, $2 = e^{10k}$ or $k = \frac{\ln 2}{10} \approx 0.069$.
 So 
@@ -540,7 +543,7 @@ assumptions that might not be true exactly, just approximately.
 If our assumptions are reasonable,
 then there will be approximately 6400 bacteria.
 Also, in real life $P$ is a
-discrete quantity, not a real number.  However, our model has no problem saying
+discrete quantity, that is, a whole number.  However, our model has no problem saying
 that for example at 61 seconds, $P(61) \approx 6859.35$.
 %Obviously there 
 %are either 6859 bacteria or 6860 bacteria.
@@ -548,10 +551,10 @@ that for example at 61 seconds, $P(61) \approx 6859.35$.
 
 Normally, the $k$ in $\frac{dP}{dt} = kP$ is given,
 and we want to solve
-the equation for different \emph{initial conditions\index{initial condition}}.
-What does that mean?
-Take $k=1$ for simplicity:  We want to solve the equation
-$\frac{dP}{dt} = P$ 
+the equation for some \emph{\myindex{initial condition}}.
+For example, the problem could be:
+Solve the equation
+$\frac{dP}{dt} = P$ (so $k=1$)
 subject to $P(0) = 1000$ (the initial condition).
 Then the solution is (exercise)
 \begin{equation*}
@@ -561,7 +564,9 @@ We call $P(t) = C e^t$ \emph{the \myindex{general solution}},
 as every solution
 of the equation can be written in this form for some constant $C$.  We
 need an initial condition to find out what $C$ is, in order to find the
-\emph{\myindex{particular solution}} we are looking for.  Generally, when we say
+\emph{\myindex{particular solution}} we are looking for,
+in this case, $P(t) = 1000\, e^t$.
+Generally, when we say
 \myquote{particular solution,} we just mean some solution.
 
 In real life, parameters such as $k$
@@ -592,6 +597,7 @@ Here $y$ is the dependent and $x$ the independent variable.
 The general solution for this equation is
 \begin{equation*}
 y(x) = C e^{kx} .
+\avoidbreak
 \end{equation*}
 We saw above that this function is a solution, although we used different
 variable names.
@@ -993,6 +999,10 @@ in the Amazon causing hurricanes in the Atlantic, all due to nonlinear
 equations.
 So sometimes we
 study related linear equations, such as $\theta''+\theta=0$ for the pendulum, instead.
+The solutions to $\theta''+\sin(\theta) = 0$ and
+$\theta''+\theta=0$ are different, but they are
+close for some short time, and the linear equation
+is far simpler to solve and analyze.
 
 \medskip
 
@@ -1039,7 +1049,7 @@ where $a_0, a_1, \ldots, a_n$ are all constants,
 but $b$ may depend on 
 the independent variable $x$.
 The mechanical vibrations equation
-above is a constant-coefficient nonhomogeneous second-order ODE\@.
+is a constant-coefficient nonhomogeneous second-order ODE\@.
 The same nomenclature applies to PDEs, so the transport equation,
 heat equation and wave equation are all examples of
 constant-coefficient linear PDEs.
