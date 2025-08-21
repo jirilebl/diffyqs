@@ -1,6 +1,9 @@
 <li>Improved wording in the beginning, making explicit
 what a "differential equation" is in words rather than just
 giving the example.
+<li>Use the actual formula for the Gateway Arch that
+the architects used since it's different from what was
+on Wikipedia years ago.
 <li>Start the marking of Example 0.2.1 where we actually start the example.
 <li>Add more detail in solving for the \(C\) and \(k\) inExample 0.2.1.
 <li>Improve wording in the example discussing the initial conditions.

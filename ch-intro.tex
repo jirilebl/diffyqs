@@ -691,15 +691,25 @@ of a hanging chain.  This shape is called
 a \emph{\myindex{catenary}}.
 Contrary to popular belief, this is not a
 parabola.  If you invert the graph of $\cosh$, it is also the ideal arch for
-supporting its weight.
-For example, the Gateway Arch in Saint Louis is an inverted graph of
-$\cosh$---if it were just a parabola it might fall.  The formula
-used in the design is,
-per the National Park Service:
+supporting its weight---a parabola would not work.
+For example,
+per the National Park Service,
+the exact formula used by
+the architects of the
+Gateway Arch in Saint Louis is
+(a so-called weighted catenary)
 \begin{equation*}
-y = -127.7 \; \textrm{ft} \cdot \cosh\left(\frac{x}{127.7}  \;
-\textrm{ft}\right) + 757.7 \; \textrm{ft} .
+y = A\left( \cosh \left( \frac{C}{L} x \right) - 1 \right), \quad
+\text{where}
+\quad
+A=68.7672,
+C=3.0022,
+L = 299.2239.
 \end{equation*}
+%\begin{equation*}
+%y = -127.7 \; \textrm{ft} \cdot \cosh\left(\frac{x}{127.7}  \;
+%\textrm{ft}\right) + 757.7 \; \textrm{ft} .
+%\end{equation*}
 
 
 \subsection{Exercises}
