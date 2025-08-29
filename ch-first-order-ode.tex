@@ -199,14 +199,20 @@ the solution is only defined on the interval $(-\infty, C)$ or
 $(C, \infty)$.  Usually when this happens, we only consider the solution
 on one of these intervals and not both.
 For example, if we impose an initial condition $y(0) = 1$, then
-the solution is $y=\frac{1}{1-x}$, and we would consider this solution only
-for $x$ on the interval $(-\infty,1)$.  In the figure, it is the left side
-of the graph.
+the solution is $y=\frac{1}{1-x}$, and we consider this solution only
+for $x$ on the interval $(-\infty,1)$, because our initial $x$ (that is,
+$0$) is in this interval.
+In the figure, it is the left side of the graph.
 \begin{myfig}
 \capstart
 \diffyincludegraphics{width=3in}{width=4.5in}{1over1mx}
 \caption{Plot of $y=\frac{1}{1-x}$.\label{1over1mx:fig}}
 \end{myfig}
+
+On the other hand, if we impose the initial condition $y(2)=-1$ instead, then we again get
+the solution $y=\frac{1}{1-x}$.  Now, however, it is the right hand side of
+the graph, that is, it is defined on the interval $(1,\infty)$, as
+that is the interval containing $2$, the initial $x$.
 \end{example}
 
 Classical problems leading to differential equations solvable by integration
@@ -502,7 +508,10 @@ looking at the slope field itself.
 
 \subsection{Existence and uniqueness}
 
-We wish to ask two fundamental questions about the problem
+It seems that if we want a solution starting at some point,
+we could just follow the slope field.
+With that in mind,
+we wish to ask two fundamental questions about the problem
 \begin{equation*}
 y' = f(x,y), \qquad y(x_0) = y_0.
 \end{equation*}
@@ -614,9 +623,10 @@ y = \frac{1}{\nicefrac{1}{A} - x} .
 \end{equation*}
 If $A=0$, then $y=0$ is a solution.
 
-For example, when $A=1$
+For instance, when $A=1$
 the solution \myquote{blows up} at $x=1$.  Hence, the solution does not exist
-for all $x$ even if the equation itself is nice everywhere.  The equation
+for all $x$ even if the equation itself is nice everywhere---it only exists
+in the interval $(-\infty,1)$.  The equation
 $y' = y^2$ certainly
 looks nice.
 \end{example}
