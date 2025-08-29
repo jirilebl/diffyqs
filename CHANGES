@@ -9,3 +9,7 @@ on Wikipedia years ago.
 <li>Improve wording in the example discussing the initial conditions.
 <li>In Example 1.1.4, give a second possible initial condition to illustrate
 the other possibility of the interval of definition.
+<li>Add a short explanation and example to the implicit solution example in
+1.3 to show that we can still solve for constants using initial conditions.
+<li>Slightly reword the Example 1.3.3 (Bob's coffee) to make it read better
+and separate all the variable setup into the second paragraph.

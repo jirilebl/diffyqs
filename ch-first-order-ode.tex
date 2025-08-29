@@ -860,7 +860,7 @@ Let us write the equation in the \myindex{Leibniz notation}
 \begin{equation*}
 \frac{dy}{dx} = f(x)g(y) .
 \end{equation*}
-Then we rewrite the equation as
+We rewrite the equation as
 \begin{equation*}
 \frac{dy}{g(y)} = f(x) \,dx .
 \end{equation*}
@@ -960,9 +960,14 @@ equation.  In this case, we differentiate with respect to $x$, and remember
 that $y$ is a function of $x$,
 to get
 \begin{equation*}
+2y y' + 2 \frac{1}{y} y'
+=
 y'\left(2y + \frac{2}{y}\right) = 2x .
 \end{equation*}
-Multiply both sides by $y$ and divide by $2(y^2+1)$ and you will
+That is usually called \myquote{implicit differentiation} in calculus,
+but it is just the chain rule.
+Anyway, now
+multiply both sides by $y$ and divide by $2(y^2+1)$ and you will
 get exactly the differential equation.  We leave this computation to the
 reader.
 
@@ -998,7 +1003,7 @@ to $y'=\frac{xy}{y^2+1}$.\label{implicitsols:fig}}
 The equation above also has the solution $y=0$.
 So the general solution is 
 \begin{equation*}
-y^2 + 2 \ln \, \lvert y \rvert = x^2 + D, \qquad \text{and} \qquad y=0.
+y^2 + 2 \ln \, \lvert y \rvert = x^2 + D \qquad \text{and} \qquad y=0.
 \avoidbreak
 \end{equation*}
 Sometimes these extra solutions that came up 
@@ -1006,7 +1011,15 @@ due to division by zero such as
 $y=0$
 are called \emph{singular solutions\index{singular solution}}.
 
-\subsection{Examples of separable equations}
+We still solve for the constants using initial conditions in implicit
+solutions as usual.  For example, consider the initial condition
+$y(0)=1$.  We can discount the solution $y=0$.  In the implicit solution
+let us plug in $x=0$ and $y=1$ to get $1^2 + 2 \ln \, \lvert 1 \rvert = 0^2 +
+D$, in other words, $D=1$.  So the solution for this initial condition
+is $y^2 + 2 \ln \, \lvert y \rvert = x^2 + 1$, but only the part of this
+implicit solution that is positive as that is what our initial condition requires.
+
+\subsection{More examples of separable equations}
 
 \begin{example}
 Solve $x^2y' = 1 - x^2+y^2 - x^2y^2$, $y(1) = 0$.
@@ -1032,14 +1045,16 @@ y = \tan \left(\frac{-1}{x} - x + 2 \right) .
 \begin{example} \label{sep:coffeeexample}
 Bob made a cup of coffee, and
 Bob likes to drink coffee only once it reaches 60 degrees Celsius and will not burn him.
-Initially at time $t=0$ minutes,
+Initially, right after it was poured in the cup,
 Bob measured the temperature and the coffee was 89 degrees Celsius.
 One minute later, Bob measured the coffee again and it had 85 degrees.
 The temperature of the room (the ambient temperature) is 22 degrees.
 When should Bob start drinking?
 
-Let $T$ be the temperature of the coffee in degrees Celsius, and let $A$ be
-the ambient (room) temperature, also in degrees Celsius.
+Let $T$ be the temperature of the coffee in degrees Celsius, let $A$ be
+the ambient (room) temperature, also in degrees Celsius,
+and let $t$ denote the time in minutes, with $t=0$ denoting the time
+when Bob made the coffee.
 \myindex{Newton's law of cooling} states that the rate at which the
 temperature of the coffee is changing
 is proportional to the difference between the
@@ -1049,20 +1064,22 @@ ambient temperature and the temperature of the coffee.  That is,
 \end{equation*}
 for some positive constant $k$.
 For our setup $A=22$, $T(0) = 89$, $T(1) = 85$.
-We separate variables and integrate (let $C$ and $D$ denote arbitrary
-constants):
+Let $C$ and $D$ denote arbitrary
+constants, and notice that $T - A > 0$ since the coffee is clearly warmer
+than the room.
+We separate variables and integrate. 
 \begin{align*}
 \frac{1}{T-A} \, \frac{dT}{dt} & = -k , \\
-\ln (T-A) &= -kt + C , \qquad \text{(note that } T-A > 0 \text{)} \\
-T-A &= D\, e^{-kt} ,  \\
-T &= A + D\, e^{-kt} .
+\ln (T-A) &= -kt + C , \\ %, \qquad \text{(note that } T-A > 0 \text{)} \\
+T-A &= D e^{-kt} ,  \\
+T &= A + D e^{-kt} .
 \end{align*}
 That is,
-$T = 22 + D\, e^{-kt}$.  We plug in the first condition: $89 = T(0) = 22 +
+$T = 22 + D e^{-kt}$.  We plug in the first condition: $89 = T(0) = 22 +
 D$,
 and hence $D = 67$.  So
-$T = 22 + 67\, e^{-kt}$.  The second condition says $85 = T(1) = 
-22 + 67\, e^{-k}$.  Solving for $k$, we get
+$T = 22 + 67 e^{-kt}$.  The second condition says $85 = T(1) = 
+22 + 67 e^{-k}$.  Solving for $k$, we get
 $k = - \ln \frac{85-22}{67} \approx 0.0616$.  We solve for the time $t$
 that gives a temperature of 60 degrees.  Namely, we solve
 \begin{equation*}
@@ -1099,7 +1116,7 @@ Next, assume $y \not= 0$ and separate:
 y & = \frac{3}{\nicefrac{x^2}{2} + C}
 = \frac{6}{x^2 + 2C}.
 \end{align*}
-So the general solution is
+The general solution is
 \begin{equation*}
 y = \frac{6}{x^2 + 2C} \qquad \text{and} \qquad y=0 .
 \end{equation*}
@@ -1213,7 +1230,7 @@ The range is approximately 7.45 to 12.15 minutes.
 \begin{exercise}
 A population $x$ of rabbits on an island is modeled by
 $x' = x- \bigl(\nicefrac{1}{1000} \bigr) x^2$, where the independent
-variable is time in months.  At time $t=0$, there are 40 rabbits
+variable $t$ is time in months.  At time $t=0$, there are 40 rabbits
 on the island.
 \begin{tasks}
 \task Find the solution to the equation with the initial
