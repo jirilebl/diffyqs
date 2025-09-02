@@ -2239,7 +2239,8 @@ of business.
 \end{myfig}
 
 When $h = 1.6$, then $A=B=4$.  There is only one critical point and it is
-unstable.  When the population starts above 4 million, it will tend towards
+unstable\footnote{More precisely, it is semistable.}.
+When the population starts above 4 million, it will tend towards
 4 million.  However, if it ever drops below 4 million, perhaps a worse than
 normal hurricane season one year, then humans will die out on the
 planet.  This scenario is not one that we (as the human fast food proprietor) 
@@ -2970,18 +2971,21 @@ move along $\gamma$ is the path integral
 =
 F(x_2,y_2) - F(x_1,y_1) .
 \end{equation*}
-In other words, the work done only depends on endpoints, that is, where we start and
-where we end.   For example, suppose $F$ is gravitational potential.  The
-derivative of $F$ given by $\vec{v}$ is the gravitational force.
+In other words, the work done depends only on
+the endpoints---where we start and where we end.
+For example, suppose $F$ is gravitational potential
+(physicists use the convention that $-F$ is the potential,
+but idea is the same).
+The derivative of $F$ given by $\vec{v}$ is the gravitational force.
 What we
 are saying is that the work required to move a heavy box from the ground
-floor to the roof, only depends on the change in potential energy.  That is,
-the work done is the same
+floor to the roof only depends on the change in potential energy.
+The work done is the same
 no matter what path we took; if we took the stairs or the elevator.
-Although if we took the elevator, the elevator is doing the work for us.
-The curves $F(x,y) = C$ are those where no work need be done, such as
+Although if we took the elevator, the elevator did the work for us.
+Movement along the curves $F(x,y) = C$ requires no work done, such as
 the heavy box sliding along without accelerating or braking on a perfectly
-flat roof, on a cart with incredibly well oiled wheels.
+flat roof on a cart with incredibly well-oiled wheels.
 
 An exact equation is a conservative vector field, and the implicit
 solution of this equation is the potential function.
@@ -3084,8 +3088,17 @@ As long as the second derivatives are continuous,
 =
 \frac{\partial N}{\partial x} .
 \end{equation*}
-Let us state it as
-a theorem.  Usually this is called the Poincar\'e Lemma\footnote{Named for the French polymath
+If $M_y \not= N_x$, the equation is not exact.
+For example,
+in \exampleref{exact:example:2xyandxy},
+where $M = 2x + y$ and $N = xy$,
+the equation is not exact.
+Indeed,
+$M_y = 1$ and $N_x = y$ are not equal.
+
+What is interesting is that this idea works in reverse too.
+If $M_y=N_x$, then a potential exists, at least near an initial point.
+This result is called the Poincar\'e Lemma\footnote{Named for the French polymath
 \href{https://en.wikipedia.org/wiki/Henri_Poincar\%C3\%A9}{Jules Henri
 Poincar\'e} (1854--1912).}.
 
@@ -3098,17 +3111,14 @@ $M = \frac{\partial F}{\partial x}$ and
 $N = \frac{\partial F}{\partial y}$.
 \end{theorem}
 
-The theorem doesn't give us a global $F$ defined everywhere in the plane.  In
-general, we can only find the potential locally, near some initial point.
-By this time, we have come to expect this from differential
-equations.
+%FIXME: we cover this again later, so just skip for now to improve flow.
+%The theorem does not necessarily give us a global $F$
+%defined everywhere in the plane.
+%In general, we can only find the potential locally, near some initial point.
+%By this time, we have come to expect this from differential
+%equations.
 
-Let us return to \exampleref{exact:example:2xyandxy}, where $M = 2x + y$ and $N = xy$.  
-Notice 
-$M_y = 1$ and  $N_x =
-y$, which are clearly not equal.  The equation is not exact.
-
-\begin{example}
+\begin{example} \label{exact:exactR2example}
 Solve
 \begin{equation*}
 \frac{dy}{dx} = \frac{-2x-y}{x-1}, \qquad y(0) = 1.
@@ -3121,7 +3131,7 @@ so $M = 2x+y$ and $N = x-1$.  Then
 \begin{equation*}
 M_y = 1 = N_x .
 \end{equation*}
-The equation is exact.
+Poincar\'e Lemma applies, so let us look for $F$.
 Integrating $M$ in $x$, we find
 \begin{equation*}
 F(x,y) = x^2+xy + A(y) .
@@ -3139,13 +3149,16 @@ y = \frac{-x^2-1}{x-1} .
 \end{equation*}
 \end{example}
 
+
+
 \begin{example}
 Solve
 \begin{equation*}
 \frac{-y}{x^2+y^2} dx + \frac{x}{x^2+y^2} dy = 0 , \qquad y(1) = 2.
 \end{equation*}
 We leave to the reader to check that
-$M_y = N_x$.
+$M_y = N_x$,
+so the Poincar\'e Lemma applies.
 
 This vector field $(M,N)$ is not conservative if considered as a vector
 field of the entire plane minus the origin.  The problem is that if the curve $\gamma$
@@ -3160,8 +3173,8 @@ We leave the computation of the path integral to the interested reader, or
 you can consult your multivariable calculus textbook.  So there is no
 potential function $F$ defined everywhere outside the origin $(0,0)$.
 
-If we think back to the theorem, it does not guarantee such a function
-anyway.  It only guarantees a potential function locally, that is, only in
+If we think back to the Poincar\'e Lemma, it does not guarantee such a function
+anyway.  It only guarantees a potential function $F$ locally, that is, only in
 some region near the initial point.  As $y(1) = 2$,
 we start at the point $(1,2)$.  Considering $x > 0$ and
 integrating $M$ in~$x$ or $N$ in~$y$, we find
@@ -3182,6 +3195,15 @@ $\frac{-y}{x^2+y^2} dx + \frac{x}{x^2+y^2} dy = 0$, $y(1) = 2$,
 with initial point marked.\label{exact:y2x}}
 \end{myfig}
 \end{example}
+
+If the set of points where $M$ and $N$ are defined and where $M_y=N_x$
+has no holes, such as for instance, the entire $xy$-plane,
+then the equation is exact and a global $F$ can be found.
+For example, in \exampleref{exact:exactR2example},
+$M=2x+y$ and $N=x-1$ are defined in the entire plane and
+$M_y = 1 = N_x$, so there a global $F$ exists.
+So in such a case, checking
+$M_y = N_x$ is good enough to check for being exact.
 
 \begin{example} \label{exact:exampleabove}
 Solve
