@@ -3630,7 +3630,7 @@ The equation in the coordinates $\xi$ and $s$ becomes
 \underbrace{(- \alpha u_\xi + u_s)}_{u_t}
 = 0 ,
 \end{equation*}
-or in other words
+or in other words,
 \begin{equation*}
 u_s = 0 .
 \end{equation*}
@@ -3644,7 +3644,7 @@ That is, there is some function $A$ such that
 \begin{equation*}
 u = A(\xi) = A(x - \alpha t) .
 \end{equation*}
-The initial condition says that:
+The initial condition says that
 \begin{equation*}
 f(x) = u(x,0) = A(x - \alpha 0) = A(x) ,
 \end{equation*}
@@ -3652,7 +3652,10 @@ so $A=f$.  In other words,
 \begin{equation*}
 u(x,t) = f(x-\alpha t) .
 \end{equation*}
-Everything is simply moving to the right at speed $\alpha$ as $t$ increases.
+Everything is simply moving to the
+right\footnote{That is assuming $\alpha > 0$.
+If $\alpha < 0$, then we are moving to the left.}
+with velocity $\alpha$ as $t$ increases.
 The curves given by the equation
 \begin{equation*}
 \xi = \text{constant}
@@ -3837,7 +3840,9 @@ OK\@, the ODE we need to solve is
 This is for a fixed $\xi$.  We find $u = C e^{-2s}$.
 At $s=0$, we want $u$ to be
 $\cos(\xi)$, so that is our initial condition for the ODE\@.
-Moreover, $\xi = xe^{-t}$ and $s=t$.
+Hence, $C = \cos(\xi)$.
+We solve for $\xi$ and $s$ to find
+$\xi = xe^{-t}$ and $s=t$.
 Consequently,
 \begin{equation*}
 u = e^{-2s} \cos(\xi)= e^{-2t} \cos(xe^{-t}) .
@@ -3857,7 +3862,6 @@ would imply that $u_x(x,0) = \cos(x)$,
 but $u_x(x,0) + u(x,0) = \cos(x) + \sin(x) \not= 0$.
 The problem is that the characteristic curve is now the line $t=0$,
 and the solution is already provided on that line!
-
 As $b$ ought to then be nonzero,
 it is convenient to ensure that $b$ is positive by multiplying
 the equation by $-1$
