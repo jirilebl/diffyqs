@@ -1274,7 +1274,8 @@ The dependence on $x$ can be more
 complicated.
 
 Solutions of linear equations have nice properties.  For example, the
-solution exists wherever $p(x)$ and $f(x)$ are defined and continuous, and has essentially the same
+solution exists wherever $p(x)$ and $f(x)$ are continuous,
+and it has essentially the same
 regularity (read: it is just as nice).  Most importantly for us right now,
 there is a method for solving linear first-order equations.
 
@@ -1303,8 +1304,9 @@ We are looking for a function $r(x)$, such that if
 we differentiate it, we get the same function back multiplied by $p(x)$.
 That seems like a job for the exponential function!  Let
 \begin{equation*}
-r(x) = e^{\int p(x) \,dx} .
+r(x) = e^{\int p(x) \,dx} ,
 \end{equation*}
+where $\int p(x)\, dx$ is any antiderivative of $p(x)$.
 We compute:
 \begin{equation*}
 \begin{aligned}
@@ -3251,10 +3253,10 @@ In fact, a linear equation
 \begin{equation*}
 \frac{dy}{dx} + p(x) y = f(x), \qquad
 \text{or} \qquad
-\bigl( p(x) y - f(x) \bigr)\, dx +  dy  = 0
+\bigl( p(x) y - f(x) \bigr)\, dx +  dy  = 0,
 \end{equation*}
 is always such an equation.  Let $r(x) = e^{\int p(x)\,dx}$ be the
-integrating factor for a linear equation.  Multiply the equation by $r(x)$
+integrating factor for the linear equation.  Multiply the equation by $r(x)$
 and write it in the form of $M + N \frac{dy}{dx} = 0$.
 \begin{equation*}
 r(x) p(x) y - r(x) f(x) + r(x) \frac{dy}{dx} = 0 .
