@@ -16,4 +16,5 @@ and separate all the variable setup into the second paragraph.
 <li>Remove the extraneous remark about the local nature of Poincare Lemma
 in 1.8, we cover this in Example 1.8.4 in more detail.  Then add a remark
 before Example 1.8.5
-about the case where the set has no holes such as the entire plane.
+about the case where the set has no holes such as the entire plane or the
+half-plane we just saw.

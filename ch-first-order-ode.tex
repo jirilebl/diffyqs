@@ -3111,23 +3111,16 @@ $M = \frac{\partial F}{\partial x}$ and
 $N = \frac{\partial F}{\partial y}$.
 \end{theorem}
 
-%FIXME: we cover this again later, so just skip for now to improve flow.
-%The theorem does not necessarily give us a global $F$
-%defined everywhere in the plane.
-%In general, we can only find the potential locally, near some initial point.
-%By this time, we have come to expect this from differential
-%equations.
-
 \begin{example} \label{exact:exactR2example}
 Solve
 \begin{equation*}
 \frac{dy}{dx} = \frac{-2x-y}{x-1}, \qquad y(0) = 1.
 \end{equation*}
-We write the equation as
+Write the equation as
 \begin{equation*}
 (2x+y) + (x-1)\frac{dy}{dx} = 0 ,
 \end{equation*}
-so $M = 2x+y$ and $N = x-1$.  Then
+so $M = 2x+y$, $N = x-1$, and
 \begin{equation*}
 M_y = 1 = N_x .
 \end{equation*}
@@ -3149,9 +3142,7 @@ y = \frac{-x^2-1}{x-1} .
 \end{equation*}
 \end{example}
 
-
-
-\begin{example}
+\begin{example} \label{exact:examplevortex}
 Solve
 \begin{equation*}
 \frac{-y}{x^2+y^2} dx + \frac{x}{x^2+y^2} dy = 0 , \qquad y(1) = 2.
@@ -3160,7 +3151,8 @@ We leave to the reader to check that
 $M_y = N_x$,
 so the Poincar\'e Lemma applies.
 
-This vector field $(M,N)$ is not conservative if considered as a vector
+This vector field $(M,N)$ is not conservative (the equation is not exact)
+if considered as a vector
 field of the entire plane minus the origin.  The problem is that if the curve $\gamma$
 is a circle around the origin, say starting at $(1,0)$ and
 ending at $(1,0)$ going counterclockwise, then if $F$ existed we would expect
@@ -3173,20 +3165,22 @@ We leave the computation of the path integral to the interested reader, or
 you can consult your multivariable calculus textbook.  So there is no
 potential function $F$ defined everywhere outside the origin $(0,0)$.
 
-If we think back to the Poincar\'e Lemma, it does not guarantee such a function
-anyway.  It only guarantees a potential function $F$ locally, that is, only in
-some region near the initial point.  As $y(1) = 2$,
+The Poincar\'e Lemma does not guarantee such an $F$ anyway.
+It only guarantees a potential function $F$ locally---only in
+some region containing the initial point.  As $y(1) = 2$,
 we start at the point $(1,2)$.  Considering $x > 0$ and
 integrating $M$ in~$x$ or $N$ in~$y$, we find
 \begin{equation*}
 F(x,y) = \operatorname{arctan} \bigl( \nicefrac{y}{x} \bigr) .
 \end{equation*}
+This $F$ is defined on the region $x > 0$ and so the equation is exact on
+that region.
 The implicit solution is 
 $\operatorname{arctan} \bigl( \nicefrac{y}{x} \bigr) = C$.  Solving,
 $y = \tan(C) x$.  That is, the solution is a straight line.  Solving $y(1) =
 2$ gives us that $\tan(C) = 2$, and so $y= 2x$ is the desired solution.
-See \figurevref{exact:y2x}, and note that the solution only exists for $x >
-0$.
+See \figurevref{exact:y2x}, and note again that the solution only exists for
+$x > 0$.
 \begin{myfig}
 \capstart
 \diffyincludegraphics{width=3in}{width=4.5in}{exact-y2x}
@@ -3197,12 +3191,15 @@ with initial point marked.\label{exact:y2x}}
 \end{example}
 
 If the set of points where $M$ and $N$ are defined and where $M_y=N_x$
-has no holes, such as for instance, the entire $xy$-plane,
+has \myquote{no holes,} such as, for instance, the entire $xy$-plane,
 then the equation is exact and a global $F$ can be found.
 For example, in \exampleref{exact:exactR2example},
 $M=2x+y$ and $N=x-1$ are defined in the entire plane and
 $M_y = 1 = N_x$, so there a global $F$ exists.
-So in such a case, checking
+Similarly, in \exampleref{exact:examplevortex}
+the half-plane where $x > 0$ also has \myquote{no holes}
+and a potential function existed on that region.
+So in such cases, checking
 $M_y = N_x$ is good enough to check for being exact.
 
 \begin{example} \label{exact:exampleabove}
@@ -3269,12 +3266,9 @@ Integrating
 factors for linear functions are just a special case of integrating
 factors for exact equations.
 
-But how do we find the integrating factor $u$?  Well, given an equation
-\begin{equation*}
-M \, dx + N \, dy = 0 ,
-\end{equation*}
-$u$ should be a
-function such that
+But how do we find the integrating factor $u$?  Well, for
+$uM \, dx + uN \, dy = 0$ to be exact,
+the function $u$ should satisfy
 \begin{equation*}
 \frac{\partial}{\partial y} \bigl[ u M \bigr] = 
 u_y M + u M_y = 
@@ -3424,7 +3418,8 @@ $(x+y)\cos(x)+\sin(x) + \sin(x)y' = 0$
 \end{exercise}
 
 \begin{exercise}
-Find the integrating factor for the following equations making them into
+\pagebreak[2]
+Find the integrating factors for the following equations making them into
 exact equations:
 \begin{tasks}(2)
 \task
@@ -3439,6 +3434,7 @@ $2\sin(y) \, dx + x\cos(y)\, dy = 0$
 \end{exercise}
 
 \begin{exercise}
+\pagebreak[2]
 Suppose you have an equation of the form:
 $f(x) + g(y) \frac{dy}{dx} = 0$.
 \begin{tasks}
