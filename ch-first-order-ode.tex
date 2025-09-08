@@ -2442,11 +2442,13 @@ The simplest method for approximating a solution is
 like \myquote{oiler.}}}.  It works as follows:
 Take $x_0$ and $y_0$ and compute the slope $k = f(x_0,y_0)$.  The slope is the
 change in $y$ per unit change in $x$.  Follow the line for an interval of
-length $h$ on the $x$-axis.  Hence if $y = y_0$ at $x_0$, then we say that
+length $h$ on the $x$-axis.
+We call $h$ the \emph{\myindex{step size}}.
+Hence if $y = y_0$ at $x_0$, then we say that
 $y_1$, the approximate value of $y$ at $x_1 = x_0 + h$, is
 $y_1 = y_0 + h k$.
 Rinse, repeat!  Let $k = f(x_1,y_1)$, and then compute
-$x_2 = x_1 + h$, and $y_2 = y_1 + h k$.
+$x_2 = x_1 + h$ and $y_2 = y_1 + h k$.
 Now compute $x_3$ and $y_3$ using $x_2$ and $y_2$, etc.
 Consider the equation $y' = \nicefrac{y^2}{3}$, $y(0)=1$, and $h=1$.
 Then $x_0=0$ and $y_0 = 1$.  We compute
@@ -2457,7 +2459,7 @@ Then $x_0=0$ and $y_0 = 1$.  We compute
 \nicefrac{4}{3} + 1 \cdot \frac{{(\nicefrac{4}{3})}^2}{3} =
 \nicefrac{52}{27} \approx 1.926.
 \end{align*}
-We then draw an approximate graph of the solution by
+We draw an approximate graph of the solution by
 connecting the points
 $(x_0,y_0)$,
 $(x_1,y_1)$,
@@ -2474,13 +2476,15 @@ the equation $y' = \frac{y^2}{3}$ with initial conditions $y(0)=1$.%
 \label{euler-step12:fig}}
 \end{myfig}
 
-More abstractly, for any $i=0,1,2,3,\ldots$, we compute
+We can continue along, for any $i=0,1,2,3,\ldots$, we compute
 \begin{equation*}
 x_{i+1} = x_i + h , \qquad y_{i+1}  = y_i + h\, f(x_i,y_i) .
 \end{equation*}
 The line segments we get are an
 approximate graph of the solution.
-Generally it is not exactly the solution.  See
+In particular, $y_i$ is the approximation of $y(x_i)$.
+Generally it is not exactly the solution.
+See
 \figurevref{euler-step12-sol:fig} for the plot of the real solution
 and the approximation.
 
@@ -2493,33 +2497,12 @@ the equation $y' = \frac{y^2}{3}$ with initial conditions $y(0)=1$.
 \label{euler-step12-sol:fig}}
 \end{myfig}
 
-We continue with the equation $y' = \nicefrac{y^2}{3}$, $y(0)=1$.
-Let us try
-to approximate $y(2)$ using Euler's method.  In
-Figures~\ref{euler-step12:fig}
-and~\ref{euler-step12-sol:fig} we have 
-graphically approximated $y(2)$ with step size 1.  With step
-size 1, we have $y(2) \approx 1.926$.  The real
-answer is 3.  We are approximately 1.074
-off.  Let us halve the step size.
-%\begin{align*}
-%& x_1 = x_0 + h = 0 + \nicefrac{1}{2} = \nicefrac{1}{2},
-%  & & y_1 = y_0 + h \, f(x_0,y_0)
-%          = 1 + \nicefrac{1}{2} \cdot \nicefrac{1^3}{3} = \nicefrac{7}{6} \approx 1.167,\\
-%& x_2 = x_1 + h = \nicefrac{1}{2} + \nicefrac{1}{2} = 1,
-%  & & y_2 = y_1 + h \, f(x_1,y_1) =
-%  \nicefrac{7}{6} + \nicefrac{1}{2} \cdot \frac{{(\nicefrac{7}{6})}^2}{3} =
-%  FIXME
-%\end{align*}
-Computing $y_4$ with $h=0.5$,
-we find that $y(2) \approx 2.209$, so an error of about 0.791.
-\tablevref{euler-table:table} gives the values computed
-for various parameters.
-
-\begin{exercise}
-Solve this equation exactly and show that $y(2) = 3$.
-\end{exercise}
-
+We continue with the example $y' = \nicefrac{y^2}{3}$, $y(0)=1$.
+We have approximated $y(2)$ with Euler's method with step size 1.
+We conclude that $y(2)$ is approximately $y_2$, that is,
+$y(2) \approx 1.926$.
+The real answer is 3.
+We are off by roughly 1.074.
 The difference between the actual solution and the approximate solution is
 called the error.  We usually talk about the size of the error
 and we do not care much about its sign.
@@ -2527,27 +2510,50 @@ and we do not care much about its sign.
 \text{Error} = \bigl\lvert \text{Actual } y - \text{Approximate } y
 \bigr\rvert .
 \end{equation*}
-The point is, we
-do not know the real solution.
+We usually do not know the error exactly.
 If we knew the error exactly, we would know the actual solution \ldots
 so what is the point of doing the approximation?
+
+\begin{exercise}
+Solve the problem
+$y' = \nicefrac{y^2}{3}$, $y(0)=1$
+exactly and show that $y(2) = 3$.
+\end{exercise}
+
+Let us now halve the step size to $h=0.5$ to, hopefully, improve the approximation.
+%\begin{align*}
+%& x_1 = x_0 + h = 0 + \nicefrac{1}{2} = \nicefrac{1}{2},
+%  & & y_1 = y_0 + h \, f(x_0,y_0)
+%          = 1 + \nicefrac{1}{2} \cdot \nicefrac{1^2}{3} = \nicefrac{7}{6} \approx 1.167,\\
+%& x_2 = x_1 + h = \nicefrac{1}{2} + \nicefrac{1}{2} = 1,
+%  & & y_2 = y_1 + h \, f(x_1,y_1) =
+%  \nicefrac{7}{6} + \nicefrac{1}{2} \cdot \frac{{(\nicefrac{7}{6})}^2}{3} =
+%  FIXME
+%\end{align*}
+With half the step size, we do twice as many steps.
+Here, to find $y(2)$, we do 4 steps with $h=0.5$ as then $2 = x_4$.
+Computing $y_4$,
+we find $y(2) \approx 2.209$.  An error of about 0.791.
+\tablevref{euler-table:table} gives the values computed,
+for a few more halvings.
 
 \begin{table}[h!t]
 \mybeginframe
 \capstart
 \begin{center}
-\begin{tabular}{@{}rrrr@{}}
+\begin{tabular}{@{}rrrrr@{}}
 \toprule
-$h$ & Approximate $y(2)$ & Error & $\frac{\text{Error}}{\text{Previous error}}$ \\
+$h$ & Approximate $y(2)$ & Error & $\frac{\text{Error}}{\text{Previous
+error}}$ & Steps done \\
 \midrule
-1        & 1.92593 & 1.07407 & \\
-0.5      & 2.20861 & 0.79139 & 0.73681 \\
-0.25     & 2.47250 & 0.52751 & 0.66656 \\
-0.125    & 2.68034 & 0.31966 & 0.60599 \\
-0.0625   & 2.82040 & 0.17960 & 0.56184 \\
-0.03125  & 2.90412 & 0.09588 & 0.53385 \\
-0.015625 & 2.95035 & 0.04965 & 0.51779 \\
-0.0078125& 2.97472 & 0.02528 & 0.50913 \\
+1        & 1.92593 & 1.07407 &         & 2 \\
+0.5      & 2.20861 & 0.79139 & 0.73681 & 4 \\
+0.25     & 2.47250 & 0.52751 & 0.66656 & 8 \\
+0.125    & 2.68034 & 0.31966 & 0.60599 & 16 \\
+0.0625   & 2.82040 & 0.17960 & 0.56184 & 32 \\
+0.03125  & 2.90412 & 0.09588 & 0.53385 & 64 \\
+0.015625 & 2.95035 & 0.04965 & 0.51779 & 128 \\
+0.0078125& 2.97472 & 0.02528 & 0.50913 & 256 \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -2571,9 +2577,9 @@ quarter every time we halve the interval.  The order being
 $\nicefrac{1}{4} = \nicefrac{1}{2} \times \nicefrac{1}{2}
 = {(\nicefrac{1}{2})}^2$.
 
-To get the error to be within 0.1 of the answer, we had to
-do 64 steps.  To get it to within 0.01, we would have to halve another three or
-four times, meaning doing 512 to 1024 steps.
+To get the error to be less than 0.1, we had to
+do 64 steps.  To get it below 0.01, we would have to halve another three or
+four times, doing 512 or 1024 steps.
 %That is quite a bit to do by hand.
 The improved Euler method from the exercises
 %IODE  Project II
@@ -2602,14 +2608,16 @@ we are using standard Euler).
 \begin{exercise}
 In the table above, suppose you do not know the error.  Take
 the approximate values of the function in the last two lines,
-assume that the error goes down by a factor of 2.  Can you estimate the
-error in the last time from this?  Does it (approximately) agree with the
+assume that the error goes down by a factor of a half.  Can you estimate the
+error in the last line from this?  Does it (approximately) agree with the
 table?  Now do it for the first two rows.  Does this agree with the table?
+Feel free to assume that the real value of $y(2)$ is bigger than any of the
+approximate values, but you are not allowed to know the real value.
 \end{exercise}
 
 Let us talk a little bit more about the example
-$y' = \nicefrac{y^2}{3}$, $y(0) =
-1$.  Suppose that instead of $y(2)$ we wish to find $y(3)$.
+$y' = \nicefrac{y^2}{3}$, $y(0) = 1$.
+Suppose that instead of $y(2)$, we wish to find $y(3)$.
 \tablevref{euler-table2:table}
 lists the results of this effort
 for successive halvings of $h$.  What is
@@ -2656,8 +2664,8 @@ In real applications we would not use a simple method such as Euler's.  The
 simplest method that would probably be used in a real application is the
 standard Runge--Kutta method (see exercises).  That is a
 \myindex{fourth-order method},
-meaning that if we halve the interval, the error generally
-goes down by a factor of 16 (it is fourth-order as $\nicefrac{1}{16} =
+meaning that if we halve the step size, the error
+goes down by a factor of $\nicefrac{1}{16}$ (it is fourth-order as $\nicefrac{1}{16} =
 \nicefrac{1}{2} \times \nicefrac{1}{2}
 \times \nicefrac{1}{2} \times \nicefrac{1}{2}$).
 
@@ -2824,7 +2832,8 @@ Instead of letting our new point be $(x_i+h,y_i + k_1h)$, we compute
 the slope at that point, call it $k_2$, and then take the average
 of $k_1$ and $k_2$, hoping that the average is going to be closer to
 the actual slope on the interval from $x_i$ to $x_i+h$.  And we are correct,
-if we halve the step, the error should go down by a factor of $2^2 = 4$.
+if we halve the step, the error should go down by a factor of
+${(\nicefrac{1}{2})}^2 = \nicefrac{1}{4}$.
 To summarize, the setup is the
 same as for regular Euler, except
 the computation of $y_{i+1}$ and $x_{i+1}$.
