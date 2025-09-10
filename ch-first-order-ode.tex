@@ -2917,8 +2917,10 @@ F(x,y) = x^2+y^2 .
 \caption{Solutions to $F(x,y) = x^2+y^2 = C$ for various
 $C$.\label{exact:circlesfig}}
 \end{mywrapfig}
-We are interested in the lines of constant energy, that is, lines where
-the energy is conserved:  the curves where $F(x,y) = C$,
+We are interested in the lines of constant potential\footnote{Accordingly,
+these curves are sometimes called \myindex{\emph{equipotential curves}}.},
+that is, curves where
+the potential is conserved; curves given by $F(x,y) = C$,
 for some constant $C$.  In
 our example, the curves $x^2+y^2=C$ are circles.  See
 \figurevref{exact:circlesfig}.
@@ -2937,8 +2939,8 @@ In our example,
 \begin{equation*}
 dF = 2x \, dx + 2y \, dy .
 \end{equation*}
-We apply the total derivative to $F(x,y) = C$, to find
-the differential equation $dF = 0$.  The differential equation we obtain in such a way
+If we apply the total derivative to the equation $F(x,y) = C$, we find
+the differential equation $dF = 0$.  This differential equation
 has the form
 \begin{equation*}
 M \, dx + N \, dy = 0, \qquad
@@ -3060,8 +3062,8 @@ What is the difference from what we got above, and why does it not matter?
 The procedure, once we know that the equation is exact, is:
 \begin{enumerate}[(i)]
 \item Integrate $F_x = M$ in $x$ resulting in $F(x,y) = \text{something} + A(y)$.
-\item Differentiate this $F$ in $y$, and set that equal to
-$N$, so that we may find $A(y)$ by integration.
+\item Differentiate this $F$ in $y$ and set that equal to
+$N$.   Then find $A(y)$ by integration.
 \end{enumerate}
 The procedure can also be done by first integrating in $y$ and then
 differentiating in $x$.
@@ -3086,9 +3088,9 @@ be written as $x$ plus a function of $y$.  The equation is not
 exact; no potential function $F$ exists.
 \end{example}
 
-Is there an easier way to check for the existence of $F$, other than failing
-in trying to
-find it?  Turns out there is.  Suppose
+Is there an easier way to check for exactness, other than failing
+in trying to find $F$?
+Yes there is.  Suppose
 $M = F_x$ and
 $N = F_y$.
 As long as the second derivatives are continuous,
@@ -3168,7 +3170,7 @@ This vector field $(M,N)$ is not conservative (the equation is not exact)
 if considered as a vector
 field of the entire plane minus the origin.  The problem is that if the curve $\gamma$
 is a circle around the origin, say starting at $(1,0)$ and
-ending at $(1,0)$ going counterclockwise, then if $F$ existed we would expect
+ending at $(1,0)$ going counterclockwise, then if $F$ existed, we would expect
 \begin{equation*}
 0 = F(1,0) - F(1,0) = \int_\gamma F_x \, dx + F_y \, dy = \int_\gamma \frac{-y}{x^2+y^2} \, dx +
 \frac{x}{x^2+y^2} \, dy = 2\pi .
@@ -3203,15 +3205,15 @@ with initial point marked.\label{exact:y2x}}
 \end{myfig}
 \end{example}
 
-If the set of points where $M$ and $N$ are defined and where $M_y=N_x$
+If the region where $M$ and $N$ are defined and where $M_y=N_x$
 has \myquote{no holes,} such as, for instance, the entire $xy$-plane,
-then the equation is exact and a global $F$ can be found.
+then the equation is exact and an $F$ defined on that region can be found.
 For example, in \exampleref{exact:exactR2example},
 $M=2x+y$ and $N=x-1$ are defined in the entire plane and
 $M_y = 1 = N_x$, so there a global $F$ exists.
 Similarly, in \exampleref{exact:examplevortex}
 the half-plane where $x > 0$ also has \myquote{no holes}
-and a potential function existed on that region.
+and a potential function exists on that region.
 So in such cases, checking
 $M_y = N_x$ is good enough to check for being exact.
 

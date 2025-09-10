@@ -13,12 +13,16 @@ the other possibility of the interval of definition.
 1.3 to show that we can still solve for constants using initial conditions.
 <li>Slightly reword the Example 1.3.3 (Bob's coffee) to make it read better
 and separate all the variable setup into the second paragraph.
+<li>In 1.6, add "equilibria" to the index as alternative for critical
+points.
 <li>In 1.7, mention "step size" by name when first mentioning it and add it
 to the index.
 <li>Reword the introduction of Euler's method to flow better.
 <li>Add a column to Table 1.1 with "Steps done" as we refer to these numbers
 a couple of times in the text.
 <li>Be consistent with the wording "goes down by a factor of"
+<li>In Exercise 1.7.2, add assumption that the real solution is greater
+than the approximate ones, otherwise it's not really possible.
 <li>Remove the extraneous remark about the local nature of Poincare Lemma
 in 1.8, we cover this in Example 1.8.4 in more detail.  Then add a remark
 before Example 1.8.5
