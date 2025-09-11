@@ -2572,19 +2572,19 @@ A simple improvement of the Euler method, see the exercises,
 produces a \myindex{second-order method}.
 A second-order method
 reduces the error to approximately one
-quarter every time we halve the interval.  The order being
+quarter every time we halve the step size.  The order being
 \myquote{second} means the squaring in
 $\nicefrac{1}{4} = \nicefrac{1}{2} \times \nicefrac{1}{2}
 = {(\nicefrac{1}{2})}^2$.
 
-To get the error to be less than 0.1, we had to
-do 64 steps.  To get it below 0.01, we would have to halve another three or
+To get the error to be less than 0.1, we did
+64 steps.  To get it below 0.01, we would have to halve another three or
 four times, doing 512 or 1024 steps.
 %That is quite a bit to do by hand.
 The improved Euler method from the exercises
 %IODE  Project II
 should quarter the
-error every time we halve the interval,
+error every time we halve the step size,
 so we would have to do (approximately) half as many
 \myquote{halvings} to get the same error.  This reduction can be a big deal.  With 10
 halvings (starting at $h=1$) we have 1024 steps, whereas with 5 halvings
@@ -2600,16 +2600,17 @@ parameters a thousand times.  You get the idea.
 
 In practice, we do not know how large the error is!
 How do we know what is
-the right step size?  Well, essentially, we keep halving the interval, and if we
+the right step size?  One possibility is that we keep halving the step size,
+and if we
 are lucky, we can estimate the error from a few of these calculations and the
-assumption that the error goes down by a factor of one half each time (if
-we are using standard Euler).
+assumption that the error halves each time
+(if we are using standard Euler).
 
 \begin{exercise}
 In the table above, suppose you do not know the error.  Take
 the approximate values of the function in the last two lines,
-assume that the error goes down by a factor of a half.  Can you estimate the
-error in the last line from this?  Does it (approximately) agree with the
+assume that the error halves.  Can you estimate the
+error in the last line from this information?  Does it (approximately) agree with the
 table?  Now do it for the first two rows.  Does this agree with the table?
 Feel free to assume that the real value of $y(2)$ is bigger than any of the
 approximate values, but you are not allowed to know the real value.
@@ -2660,12 +2661,13 @@ And computers might not be able to easily handle such a small step size.
 
 \medskip
 
-In real applications we would not use a simple method such as Euler's.  The
-simplest method that would probably be used in a real application is the
+In real applications, we would not use a simple method such as Euler's.  The
+simplest method one would probably use in a real application is the
 standard Runge--Kutta method (see exercises).  That is a
 \myindex{fourth-order method},
-meaning that if we halve the step size, the error
-goes down by a factor of $\nicefrac{1}{16}$ (it is fourth-order as $\nicefrac{1}{16} =
+meaning that if we halve the step size,
+the error gets multiplied by $\nicefrac{1}{16}$
+(it is fourth-order as $\nicefrac{1}{16} =
 \nicefrac{1}{2} \times \nicefrac{1}{2}
 \times \nicefrac{1}{2} \times \nicefrac{1}{2}$).
 
@@ -2674,21 +2676,21 @@ There are several competing factors to consider.
 \begin{itemize}
 \item Computational time:  Each step takes computer time.  Even if the
 function $f$ is simple to compute, we do it many times over.
-Large step size means faster computation, but perhaps not
+Large step size (fewer steps) means faster computation, but perhaps not
 the right precision.
 \item Roundoff errors: Computers only compute with a certain number of
-significant digits.  Errors introduced by rounding numbers off during our
+significant digits.  Errors introduced by rounding numbers during
 computations become noticeable when the step size becomes
 too small relative to the quantities we are working with.
 So reducing
-step size may in fact make errors worse.
+step size too much may make errors worse.
 There is a certain optimum step size
-such that the precision increases as we approach it, but then starts getting
+where the precision increases as we approach it, but then starts getting
 worse as we make our step size
 smaller still.  The trouble is that this optimum may be hard to find.
 \item Stability: Certain equations may be numerically unstable.  What may
 happen is that the numbers never seem to stabilize no matter how many times
-we halve the interval.  We may need a ridiculously small interval size,
+we halve the step size.  We may need a ridiculously small step size,
 which may not be practical due to roundoff errors or computational time
 considerations.  Such problems are sometimes called
 \emph{stiff}\index{stiff problem}.
@@ -2723,7 +2725,7 @@ $x(1)$.
 \task Solve the equation exactly.
 \task Describe what happens to the
 errors for each $h$ you used.  That is, find the factor by which the error
-changed each time you halved the interval.
+changed each time you halved the step size.
 \end{tasks}
 \end{exercise}
 \end{samepage}
@@ -2740,7 +2742,7 @@ Take $y' = -5y$, $y(0) = 1$.  We know that the
 solution should decay to zero as $x$ grows.
 Using Euler's method, start with $h=1$ and compute
 $y_1, y_2, y_3, y_4$ to try to approximate $y(4)$.  What happened?
-Now halve the interval.  Keep halving the interval and approximating $y(4)$
+Now halve the step size.  Keep halving the step size and approximating $y(4)$
 until the numbers you are getting
 start to stabilize (that is, until they start going towards zero).
 Note: You might want to use a calculator.
@@ -2763,7 +2765,6 @@ x_{i+1} = x_i + h , \\
 y_{i+1} = y_i + \frac{k_1 + 2k_2 + 2k_3 + k_4}{6}\,h ,  \\
 & k_4 = f(x_i + h,y_i + k_3 h) .
 \end{align*}
-
 
 \begin{exercise}
 \pagebreak[2]
@@ -2832,12 +2833,12 @@ Instead of letting our new point be $(x_i+h,y_i + k_1h)$, we compute
 the slope at that point, call it $k_2$, and then take the average
 of $k_1$ and $k_2$, hoping that the average is going to be closer to
 the actual slope on the interval from $x_i$ to $x_i+h$.  And we are correct,
-if we halve the step, the error should go down by a factor of
+if we halve the step, the error should get multiplied by 
 ${(\nicefrac{1}{2})}^2 = \nicefrac{1}{4}$.
 To summarize, the setup is the
 same as for regular Euler, except
 the computation of $y_{i+1}$ and $x_{i+1}$.
-At each step we compute the new slopes $k_1$ and $k_2$ and then the next
+At each step, we compute the new slopes $k_1$ and $k_2$ and then the next
 $y_{i+1}$ and $x_{i+1}$:
 \begin{align*}
 & k_1 = f(x_i,y_i) , & & 

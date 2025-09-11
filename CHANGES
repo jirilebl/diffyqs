@@ -14,11 +14,13 @@ the other possibility of the interval of definition.
 <li>Slightly reword the Example 1.3.3 (Bob's coffee) to make it read better
 and separate all the variable setup into the second paragraph.
 <li>In 1.7, mention "step size" by name when first mentioning it and add it
-to the index.
+to the index.  Also use it consistently instead of "interval" which can be
+confusing.
 <li>Reword the introduction of Euler's method to flow better.
 <li>Add a column to Table 1.1 with "Steps done" as we refer to these numbers
 a couple of times in the text.
-<li>Be consistent with the wording "goes down by a factor of"
+<li>In 1.7, try to avoid the idiomatic phrase "goes down by a factor of" as it is 
+a bit confusing.
 <li>Remove the extraneous remark about the local nature of Poincare Lemma
 in 1.8, we cover this in Example 1.8.4 in more detail.  Then add a remark
 before Example 1.8.5
