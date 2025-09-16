@@ -14,7 +14,7 @@ Consider the general
 \begin{equation*}
 A(x) y'' + B(x)y' + C(x)y = F(x) .
 \end{equation*}
-We usually divide through by $A(x)$ to get
+We often divide through by $A(x)$ to get
 \begin{equation} \label{sol:eqlin}
 y'' + p(x)y' + q(x)y = f(x) ,
 \end{equation}
@@ -102,8 +102,8 @@ are linear combinations of the two
 exponential solutions:
 $\cosh(kx) = \frac{e^{kx}  + e^{-kx}}{2} = (\nicefrac{1}{2}) e^{kx}  +
 (\nicefrac{1}{2}) e^{-kx}$ and
-$\sinh(kx) = \frac{e^{kx} - e^{-kx}}{2} = (\nicefrac{1}{2}) e^{kx}  -
-(\nicefrac{1}{2}) e^{-kx}$.
+$\sinh(kx) = \frac{e^{kx} - e^{-kx}}{2} = (\nicefrac{1}{2}) e^{kx}  +
+(\nicefrac{-1}{2}) e^{-kx}$.
 
 The functions $\sinh$ and $\cosh$ are sometimes more convenient to use than the
 exponential.  Let us review some of their properties:
@@ -195,11 +195,11 @@ y = C_1 \cos x + C_2 \sin x
 \end{equation*}
 is the general solution to $y'' + y = 0$.
 
-For two functions, checking linear independence is rather simple.  Let us
-see another example.  Consider $y''-2x^{-2}y = 0$.  Then $y_1 = x^2$ and $y_2 =
+For two functions, checking linear independence is rather simple.  Here is
+another example.  Consider $y''-2x^{-2}y = 0$.  Then $y_1 = x^2$ and $y_2 =
 \nicefrac{1}{x}$ are solutions.  To see that they are linearly independent,
-suppose one is a multiple of the other: $y_1 = A y_2$, we just have to find
-out that $A$ cannot be a constant.  In this case we have $A =
+suppose one is a multiple of the other: $y_1 = A y_2$, we just have to show
+that $A$ cannot be a constant.  In this case, we have $A =
 \nicefrac{y_1}{y_2} = x^3$, which is most decidedly not a constant.
 So $y = C_1 x^2 + C_2 \nicefrac{1}{x}$ is the general solution.
 
@@ -413,7 +413,7 @@ same when we differentiate it, so that we can take the function and its
 derivatives, add some multiples of these together, and end up with zero.
 Yes, we are talking about the exponential.
 
-Let us try\footnote{%
+We try\footnote{%
 Making an educated guess with some parameters to solve for 
 is such a central technique in differential equations that people sometimes use
 a fancy name for such a guess: \emph{\myindex{ansatz}}, German for \myquote{initial
@@ -452,7 +452,7 @@ $y$ and $y'$ and solve.
 \end{equation*}
 Either apply some matrix algebra, or just solve these by high school
 math.  For example, divide the second equation by 2
-to obtain $3 = C_1 + 2 C_2$, and subtract the two equations to
+to obtain $3 = C_1 + 2 C_2$, then subtract the two equations to
 get $5 = C_2$.  Then $C_1 = -7$ as $-2 = C_1 + 5$.  Hence, the solution we
 are
 looking for is
@@ -494,12 +494,16 @@ Suppose that $r_1$ and $r_2$ are the roots of the characteristic equation.
 \item If $r_1$ and $r_2$ are distinct and real (when $b^2 - 4ac > 0$),
 then \eqref{ccsol:eq} has the general solution
 \begin{equation*}
+\mybxbg{~~
 y = C_1 e^{r_1 x} + C_2 e^{r_2 x} .
+~~}
 \end{equation*}
 \item If $r_1 = r_2$ (happens when $b^2 - 4ac = 0$), 
 then \eqref{ccsol:eq} has the general solution
 \begin{equation*}
+\mybxbg{~~
 y = (C_1 + C_2 x)\, e^{r_1 x} .
+~~}
 \end{equation*}
 \end{enumerate}
 \end{theorem}
@@ -563,9 +567,9 @@ There are, however, some real-world problems
 where a doubled root does happen naturally (e.g.\ critically damped
 mass-spring system, as we will see).
 
-Let us give a short argument for why the solution $x e^{r x}$ works for a
+Here is a short argument for why the solution $x e^{r x}$ works for a
 doubled root.
-This case is a limiting case of
+A double root is a limit case of
 two distinct but very close roots.  Note that 
 $\frac{e^{r_2 x} - e^{r_1 x}}{r_2 - r_1}$ is a solution when the roots are
 distinct.  When we take the limit as $r_1$ goes to $r_2$, we are really
@@ -582,11 +586,12 @@ A polynomial may have complex roots.  The
 equation $r^2 + 1 = 0$ has no real roots, but it does have two complex roots.
 Here we review some properties of complex numbers\index{complex number}.
 
-Complex numbers may seem a strange concept, especially because of the
-terminology.  There is nothing imaginary or really complicated about complex
+Complex numbers may seem a strange concept, perhaps due to the
+terminology.  There is nothing imaginary or complicated about complex
 numbers.
-A complex number is simply a pair of real numbers, $(a,b)$.  
-Think of a complex number as a point in the plane.  We add complex numbers
+A complex number is simply a pair of real numbers, $(a,b)$,  
+that is,
+it is a point in the plane.  We add complex numbers
 in the straightforward way: $(a,b)+(c,d)=(a+c,b+d)$.  We define
 multiplication\index{multiplication of complex numbers} by
 \begin{equation*}
@@ -622,7 +627,7 @@ Make sure you understand (that you can justify)
 the following identities:
 \begin{tasks}(2)
 \task $i^2 = -1$, $i^3 = -i$, $i^4 = 1$,
-\task $\dfrac{1}{i} = -i$,
+\task $\frac{1}{i} = -i$,
 \task $(3-7i)(-2-9i) = \cdots = -69-13i$,
 \task $(3-2i)(3+2i) = 3^2 - {(2i)}^2 = 3^2 + 2^2 = 13$,
 \task $\frac{1}{3-2i} = \frac{1}{3-2i} \frac{3+2i}{3+2i} = \frac{3+2i}{13}
@@ -631,12 +636,15 @@ the following identities:
 \end{exercise}
 
 \pagebreak[2]
-We also define the exponential $e^{a+ib}$ of a complex number.  We do
-this by writing down the Taylor series and plugging in the complex
-number.  Because most properties of the exponential can be proved by looking
-at the Taylor series, these
-properties still hold for the complex
-exponential.  For example, the very important property: $e^{x+y} = e^x e^y$.  This means that
+We also define the exponential $e^{a+ib}$ of a complex number
+by writing down the Taylor series and plugging in the complex
+number.  Most properties of the exponential follow
+from its
+Taylor series, and so these
+properties hold for the complex
+exponential too.
+For example, we have the property:
+$e^{x+y} = e^x e^y$.  In particular,
 $e^{a+ib} = e^a e^{ib}$.  Hence, if we can compute $e^{ib}$, we can
 compute $e^{a+ib}$.  For $e^{ib}$, we use the so-called
 \emph{\myindex{Euler's formula}}.
@@ -662,10 +670,9 @@ Using Euler's formula, check the identities:
 \end{equation*}
 \end{exercise}
 
-\begin{exercise}
-Double angle identities:
+\begin{exercise}[Double angle identities]
 Start with $e^{i(2\theta)} = {\bigl(e^{i \theta} \bigr)}^2$.  Use Euler on
-each side and deduce:
+each side to deduce:
 \begin{equation*}
 \cos (2\theta) = \cos^2 \theta - \sin^2 \theta
 \qquad \text{and} \qquad
@@ -744,7 +751,9 @@ If the characteristic equation has the roots $\alpha \pm i \beta$
 (when $b^2 - 4ac < 0$),
 then the general solution is
 \begin{equation*}
+\mybxbg{~~
 y = C_1 e^{\alpha x} \cos (\beta x) + C_2 e^{\alpha x} \sin (\beta x) .
+~~}
 \end{equation*}
 \end{theorem}
 
@@ -752,8 +761,9 @@ y = C_1 e^{\alpha x} \cos (\beta x) + C_2 e^{\alpha x} \sin (\beta x) .
 Find the general solution of $y'' + k^2 y = 0$, for a constant
 $k > 0$.
 
-The characteristic equation is $r^2 + k^2 = 0$.  Therefore,
-the roots are $r = \pm ik$, and by the theorem, we have the general solution
+The characteristic equation is $r^2 + k^2 = 0$,
+and the roots are $r = \pm ik$.
+By the theorem, the general solution is
 \begin{equation*}
 y = C_1 \cos (kx) + C_2 \sin (kx) .
 \end{equation*}
