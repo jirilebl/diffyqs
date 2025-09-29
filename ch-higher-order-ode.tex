@@ -1498,7 +1498,7 @@ unforced motion.
 Our next example behaves like a mass and spring system only
 approximately. Suppose a
 mass $m$ hangs on a pendulum of length $L$.  We seek an equation for
-the angle $\theta(t)$ (in radians).  Let $g$ be the force of gravity.
+the angle $\theta(t)$ (in radians).  Let $g$ be the acceleration due to gravity.
 Elementary physics mandates that the equation is
 \begin{equation*}
 \theta'' + \frac{g}{L} \sin \theta = 0 .
@@ -1647,7 +1647,7 @@ x(t) = A \cos (2t) + B \sin (2t) .
 \end{equation*}
 Letting $x(0) = 0.5$ means $A = 0.5$.  Then $x'(t) = - 2(0.5) \sin (2t)
 + 2B \cos (2t)$.
-Letting $x'(0) = 1$ we get $B = 0.5$.  Therefore, the amplitude is
+Letting $x'(0) = 1$, we get $B = 0.5$.  Therefore, the amplitude is
 $C = \sqrt{A^2+B^2} = \sqrt{0.25+0.25} = \sqrt{0.5} \approx 0.707$.  The solution is
 \begin{equation*}
 x(t) = 0.5 \cos (2t) + 0.5 \sin (2t) .
@@ -1770,7 +1770,9 @@ obtain
 \begin{equation*}
 \frac{-C_1}{C_2} = e^{(r_2-r_1) t} .
 \end{equation*}
-This equation has at most one solution $t \geq 0$.
+This equation has at most one solution $t \geq 0$;
+the graph of $e^{(r_2-r_1) t}$ is either always increasing
+or always decreasing.
 For some initial conditions the graph never crosses the $t$-axis, as is
 evident from the sample graphs.
 
@@ -1850,7 +1852,7 @@ The envelope curves give
 the maximum amplitude of the oscillation at any given point in time.  For
 example, if you are bungee jumping, you are really interested in computing the
 envelope curve so as not to hit the concrete with your head.
-
+%
 The phase shift $\gamma$ shifts the oscillation left or right, but within the
 envelope curves (the envelope curves do not change if $\gamma$
 changes).
@@ -1869,7 +1871,7 @@ like the solution for critical damping or overdamping, where no oscillation
 happens.
 As $c$ gets larger and $c^2$ approaches $4km$,
 we find that $\omega_1$ approaches $0$.
-
+%
 On the other hand, when $c$ gets smaller, $\omega_1$ approaches $\omega_0$
 ($\omega_1$ is always smaller than $\omega_0$), and the solution looks more and more like the steady
 periodic motion of the undamped case.  The envelope curves become flatter and
@@ -2053,9 +2055,10 @@ is the general solution to \eqref{eq3.5:nh}.
 We have $L y_c = 0$ and $L y_p = 2x+1$.  As
 $L$ is a \emph{\myindex{linear operator}},
 we verify that $y$ is a solution: $L y = L ( y_c + y_p) = L y_c + L y_p = 0
-+ (2x+1)$.  Let us see
-why we obtain the \emph{general} solution.
++ (2x+1)$.
 
+Let us see
+why we obtain the \emph{general} solution.
 Let $y_p$ and $\tilde{y}_p$ be two different
 particular solutions 
 to \eqref{eq3.5:nh}.
@@ -2068,9 +2071,9 @@ w'' + 5w'+ 6w =
 (\tilde{y}_p'' + 5\tilde{y}_p'+ 6\tilde{y}_p) =
 (2x+1) - (2x+1) = 0 .
 \end{equation*}
-Using the operator notation, the calculation becomes simpler.
+With the operator notation, the calculation becomes even clearer.
 %As $L$ is a \emph{\myindex{linear operator}} and so we could just
-As $L$ is a linear operator, we write
+As $L$ is a linear operator,
 \begin{equation*}
 Lw = L(y_p - \tilde{y}_p) =
 Ly_p - L\tilde{y}_p =
@@ -2095,8 +2098,8 @@ y = y_c + y_p.
 \end{theorem}
 
 The moral of the story is that we can find the particular solution in any old
-way.  If we find a different particular solution (by a different method,
-or simply by guessing),
+way.  If we find a different particular solution (by a different method
+or by simply guessing),
 then we still get the same general solution.
 The formula may 
 look different, and the constants we have to choose to
