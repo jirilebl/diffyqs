@@ -2251,16 +2251,15 @@ left-hand side of the equation, we get
 \begin{equation*}
 y_p''-9y_p = 9Ae^{3x} - 9Ae^{3x} = 0 \not= e^{3x} .
 \end{equation*}
-There is no way to choose $A$ to make the left-hand side be $e^{3x}$.
-The trick in
-this case
+There is no way to choose $A$ to make the left-hand side $e^{3x}$.
+The trick
 is to multiply our guess by $x$ to get rid of duplication with the
-complementary solution.  That is, first we find $y_c$ (solution to $Ly =
-0$)
+complementary solution.  First, we find $y_c$ (solution to $Ly =
+0$),
 \begin{equation*}
-y_c = C_1 e^{-3x} + C_2 e^{3x} ,
+y_c = C_1 e^{-3x} + C_2 e^{3x} .
 \end{equation*}
-and we note that the $e^{3x}$ term is a duplicate with our desired guess.
+We note that the $e^{3x}$ term is a duplicate with our desired guess.
 We modify our guess to $y_p = Axe^{3x}$ so that there is no
 duplication anymore.  Let us try:
 $y_p' = Ae^{3x} + 3Axe^{3x}$ and 
@@ -2281,7 +2280,7 @@ C_1 e^{-3x} + C_2 e^{3x} + \frac{1}{6}\,xe^{3x} .
 
 It is possible that
 multiplying by $x$ does not get rid of all
-duplication.  For example,
+duplication.  Consider,
 \begin{equation*}
 y''-6y'+9y = e^{3x} .
 \end{equation*}
@@ -2293,18 +2292,26 @@ Basically, we multiply our guess by $x$
 until all duplication is gone.  \emph{But no more!}  Multiplying too many
 times will not work.
 
+Make also sure to look for duplication in the entire expression you try.  For
+the equation $y''-y=xe^x$, where $y_c = C_1e^x + C_2e^{-x}$,
+it is not enough that $xe^x$ does not appear in $y_c$.
+Trying $y_p=Ae^x+Bxe^x$ will not work
+as $e^x$ appears in $y_c$,
+you must try $y_p=Axe^x+Bx^2e^x$.
+
+
 \medskip
 
 Finally, what if the right-hand side has several terms, such as
 \begin{equation*}
 Ly = e^{2x} + \cos x .
 \end{equation*}
-In this case we find $u$ that solves $Lu = e^{2x}$ and $v$ that
+In this case, we find $u$ that solves $Lu = e^{2x}$ and $v$ that
 solves $Lv = \cos x$ (that is, do each term separately).
 If we set
-$y = u+ v$, then we find our desired solution $Ly = e^{2x} + \cos x$.
-This is because $L$ is linear; we have
-$Ly = L(u+v) = Lu + Lv = e^{2x} + \cos x$.
+$y_p = u+ v$, then we find our desired particular solution.
+That is because $L$ is linear; we have
+$Ly_p = L(u+v) = Lu + Lv = e^{2x} + \cos x$.
 
 \subsection{Variation of parameters}
 
@@ -2385,6 +2392,7 @@ y'' = (u_1' y_1' + u_2' y_2') - y ,
 and hence
 \begin{equation*}
 y'' + y = Ly = u_1' y_1' + u_2' y_2' .
+\avoidbreak
 \end{equation*}
 For $y$ to satisfy $Ly = f(x)$, we must have
 $f(x) = u_1' y_1' + u_2' y_2'$.

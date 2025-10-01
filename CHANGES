@@ -36,3 +36,9 @@ and add Poincare Lemma to the index as well.
 by boxing them to make them easy to pick out.
 <li>For the answers in the back for exercises in 2.4, make sure they all
 include units
+<li>In 2.5, add one more minor example about multiplying by \(x\) to
+emphasize that we must get rid of the duplication in the entire trial
+solution.
+<li>In the last comment on undetermined coefficients, the comment should be
+about particular solutions, otherwise it might lead to students duplicating
+the complementary solutions.
