@@ -2744,7 +2744,7 @@ x =
 %mbxlatex \end{myfig}
 
 Do notice the \myquote{beating} behavior\index{beating}
-in \figurevref{3.6:beatingfig}.  To see it,
+in \figurevref{3.6:beatingfig}.  To analyze it, we
 use the 
 trigonometric identity
 \begin{equation*}
@@ -2976,6 +2976,8 @@ Let us describe what we mean by resonance when damping is present.
 Since there were no conflicts when solving with undetermined coefficient,
 there is no term that goes to infinity.  We look instead at the
 maximum value of the amplitude of the steady periodic solution.
+That is the maximum distance that the mass will go either way from the rest
+position.
 Let $C$ be the amplitude of $x_{sp}$.
 If we plot $C$ as a function of $\omega$ (with all other
 parameters fixed), we can find its maximum.
@@ -3090,7 +3092,7 @@ to displace the container 1 meter.  For simplicity, assume no friction.
 When the earthquake hits, the water tower is at rest (it is not moving).
 %
 The earthquake induces an external force 
-$F(t) = m A \omega^2 \cos (\omega t)$.
+$F(t) = m A \omega^2 \cos (\omega t)$ newtons.
 \begin{tasks}
 \task
 What is the natural frequency of the water tower?
@@ -3120,8 +3122,8 @@ find the $\omega$ that causes practical resonance and find the
 practical resonance amplitude.
 \end{exercise}
 \exsol{%
-$\omega = \frac{\sqrt{31}}{4\sqrt{2}} \approx 0.984$ \quad
-$C(\omega) = \frac{16}{3\sqrt{7}} \approx 2.016$
+$\omega = \frac{\sqrt{31}}{4\sqrt{2}} \approx \unitfrac[0.984]{rad}{s}$ \quad
+$C(\omega) = \frac{16}{3\sqrt{7}} \approx \unit[2.016]{m}$
 }
 
 \begin{exercise}
@@ -3142,17 +3144,17 @@ $p = \frac{c}{2m}$ and $\omega_0 = \sqrt{\frac{k}{m}}$.
 
 \begin{exercise}
 Suppose there is no damping in a mass and spring system with
-$m = 5$, $k= 20$, and $F_0 = 5$.  Suppose $\omega$ is chosen
+$m = \unit[5]{kg}$, $k= \unitfrac[20]{N}{m}$, and $F_0 = \unit[5]{N}$.  Suppose $\omega$ is chosen
 to be precisely the resonance frequency.
 \begin{tasks}
 \task
 Find $\omega$.
 \task
-Find the amplitude of the oscillations at time $t=100$, given the system is at
+Find the amplitude of the oscillations at time $t=100$ seconds, given the system is at
 rest at $t=0$.
 \end{tasks}
 \end{exercise}
 \exsol{%
-a) $\omega = 2$ \quad
-b) $25$
+a) $\omega = \unitfrac[2]{rad}{s}$ \quad
+b) $\unit[25]{m}$
 }

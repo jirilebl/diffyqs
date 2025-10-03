@@ -42,3 +42,5 @@ solution.
 <li>In the last comment on undetermined coefficients, the comment should be
 about particular solutions, otherwise it might lead to students duplicating
 the complementary solutions.
+<li>In Exercise 2.6.103, give units to be consistent with the other
+exercises.
