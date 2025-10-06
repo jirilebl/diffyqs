@@ -531,8 +531,8 @@ $y_3' = y_1 + y_3$.
 \end{exercise}
 \exsol{%
 $y_1 = C_1 e^{3x}$,
-$y_2 = y(x) = C_2 e^x+ \frac{C_1}{2} e^{3 x}$,
-$y_3 = y(x) = C_3 e^x+ \frac{C_1}{2} e^{3 x}$
+$y_2 = C_2 e^x+ \frac{C_1}{2} e^{3 x}$,
+$y_3 = C_3 e^x+ \frac{C_1}{2} e^{3 x}$
 }
 
 \begin{exercise}
@@ -547,9 +547,9 @@ $y=\frac{5}{3} e^{2t} + \frac{4}{3} e^{-t}$
 Write $x''' = x+t$ as a first-order system.
 \end{exercise}
 \exsol{%
-$x_1' = x_2$,
-$x_2' = x_3$,
-$x_3' = x_1+t$
+$u_1' = u_2$,
+$u_2' = u_3$,
+$u_3' = u_1+t$, (here $u_1=x$)
 }
 
 \begin{exercise}
@@ -557,10 +557,12 @@ Write $y_1'' + y_1 + y_2 = t$,
 $y_2'' + y_1 - y_2 = t^2$ as a first-order system.
 \end{exercise}
 \exsol{%
-$y_3' + y_1 + y_2 = t$, 
-$y_4' + y_1 - y_2 = t^2$,
 $y_1' = y_3$,
-$y_2' = y_4$
+$y_2' = y_4$,
+%$y_3' + y_1 + y_2 = t$, 
+$y_3' = - y_1 - y_2 + t$, 
+%$y_4' + y_1 - y_2 = t^2$
+$y_4' = - y_1 + y_2 + t^2$
 }
 
 \begin{exercise}
