@@ -47,4 +47,7 @@ exercises.
 <li>Answer in the back to 3.1.104 ordered more naturally and in the more
 standard form.
 <li>In the answer in the back for 3.1.103, use \(u_1,u_2,u_3\) not to
-confuse with \(x\)
+confuse with \(x .\)
+<li>In the discussion introducing the fundamental matrix, mention
+the nonuniqueness of the matrix, we can multiply on the right
+by an invertible constant matrix.

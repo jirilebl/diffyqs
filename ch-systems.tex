@@ -1526,9 +1526,8 @@ $\left[ \begin{smallmatrix}
 second part of \S5.1 in \cite{EP}}\BDref{,
 \S7.4 in \cite{BD}}}
 
-First let us talk about matrix- or vector-valued functions.  
-Such a function is
-just a matrix or a vector whose entries depend on some variable.
+A matrix- or vector-valued function is
+simply a matrix or a vector whose entries depend on some variable.
 If $t$ is the independent variable, we write a
 \emph{\myindex{vector-valued function}}
 $\vec{x}(t)$ as
@@ -1557,7 +1556,7 @@ whose $ij^{\text{th}}$ entry is $a_{ij}'(t)$.
 Rules of differentiation of matrix-valued functions
 are similar to rules for normal
 functions.  Let $A(t)$ and $B(t)$ be matrix-valued
-functions.  Let $c$ a scalar and let $C$ be a constant matrix.
+functions.  Let $c$ be a scalar and $C$ a constant matrix.
 Then
 \begin{equation*}
 \begin{aligned}
@@ -1610,10 +1609,10 @@ be constant; it will not depend on $t$.
 
 \medskip
 
-When $\vec{f} = \vec{0}$ (the zero vector), then we say the system is
+When $\vec{f} = \vec{0}$ (the zero vector), we say the system is
 \emph{homogeneous\index{homogeneous system}}.
 For homogeneous linear systems, we have the
-principle of superposition, just like for single homogeneous equations.
+principle of superposition, just like for single homogeneous linear equations.
 
 \begin{theorem}[Superposition]\index{superposition}
 Let
@@ -1696,6 +1695,8 @@ Assuming that $\vec{x}_1,\vec{x}_2,\ldots,\vec{x}_n$ are linearly
 independent,
 the matrix-valued function $X(t)$ is called a \emph{\myindex{fundamental matrix}},
 or a \emph{\myindex{fundamental matrix solution}}.
+Note that the fundamental matrix is not unique; if you take any constant
+invertible $n\times n$ matrix $C$, then $X(t) C$ is another fundamental matrix.
 
 \medskip
 
