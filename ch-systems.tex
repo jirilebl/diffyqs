@@ -3202,7 +3202,7 @@ e) Two eigenvalues: $5$ and $-3$, so the behavior is a saddle.
 }
 
 \begin{exercise}
-Suppose that $\vec{x}\,' = A \vec{x}$ where $A$ is a 2 by 2 matrix
+Suppose that $\vec{x}\,' = P \vec{x}$ where $P$ is a 2 by 2 matrix
 with eigenvalues $2\pm i$.  Describe the behavior.
 \end{exercise}
 \exsol{%
@@ -4157,9 +4157,9 @@ Suppose a cart of mass \unit[2]{kg} is attached by a spring of
 constant $k=1$ to a cart of mass \unit[3]{kg}, which
 is attached to the wall by a spring also of constant $k=1$.
 Suppose that the initial position of the first cart is 1 meter in the
-positive direction from the rest position, and the second mass starts at the
-rest position.  The masses are not moving and are let go.  Find the
-position of the second mass as a function of time.
+positive direction from the rest position, and the second cart starts at the
+rest position.  The carts are not moving and are let go.  Find the
+position of the second cart as a function of time.
 \end{exercise}
 \exsol{%
 $x_2 =
@@ -4185,7 +4185,7 @@ $x_2 =
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Multiple eigenvalues} \label{sec:multeigen}
+\section{Repeated eigenvalues} \label{sec:multeigen}
 
 %mbxINTROSUBSECTION
 
@@ -4241,12 +4241,12 @@ we will repeat eigenvalues according to (algebraic) multiplicity.  So
 for the matrix $A$ above, we would say that it has eigenvalues 3 and 3.
 
 \begin{theorem}
-Suppose the $n \times n$ matrix $P$ 
+Suppose the $n \times n$ matrix $A$ 
 has $n$ real eigenvalues (not necessarily distinct), $\lambda_1$,
 $\lambda_2$, \ldots, $\lambda_n$,
 and there are $n$ linearly independent corresponding eigenvectors
 $\vec{v}_1$, $\vec{v}_2$, \ldots, $\vec{v}_n$.  Then the general solution to 
-${\vec{x}}' = P\vec{x}$
+${\vec{x}}' = A\vec{x}$
 can be written as
 \begin{equation*}
 \vec{x} = c_1 \vec{v}_1 e^{\lambda_1 t} +
@@ -4255,7 +4255,7 @@ c_n \vec{v}_n e^{\lambda_n t} .
 \end{equation*}
 \end{theorem}
 
-The \emph{geometric multiplicity} of an eigenvalue of algebraic multiplicity $n$
+The \emph{geometric multiplicity} of an eigenvalue
 is equal to the number of corresponding linearly independent eigenvectors.
 The geometric multiplicity is always less than or
 equal to the algebraic multiplicity.  The theorem handles the case
@@ -4266,7 +4266,7 @@ to the algebraic multiplicity, then we say the eigenvalue is
 
 In other words, 
 the hypothesis of the theorem could be stated as saying that if all
-the eigenvalues of $P$ are complete, then there are $n$ linearly independent
+the eigenvalues of $A$ are complete, then there are $n$ linearly independent
 eigenvectors and thus we have the given general solution.
 
 \medskip
@@ -4292,11 +4292,14 @@ eigenvectors.
 If an $n \times n$ matrix has less than $n$ linearly independent
 eigenvectors, it is said to be \emph{deficient\index{deficient matrix}}.
 Then there is at least
-one eigenvalue with an algebraic multiplicity that is higher than its geometric
+one eigenvalue with its geometric multiplicity that is less than its
+algebraic
 multiplicity.  We call this eigenvalue \emph{defective\index{defective
 eigenvalue}}
 and the difference
 between the two multiplicities we call the \emph{\myindex{defect}}.
+In other words, the defect is the number of eigenvectors we are
+\myquote{missing.}
 
 \begin{example}
 The matrix
@@ -5049,12 +5052,12 @@ of the homogeneous system.
 If we can compute the matrix exponential,
 we have another method of solving constant-coefficient homogeneous
 systems.  It also makes it easy to solve for initial conditions.  To solve 
-${\vec{x}}' = A \vec{x}$, $\vec{x}(0) = \vec{b}$, we take the solution
+${\vec{x}}' = P \vec{x}$, $\vec{x}(0) = \vec{b}$, we take the solution
 \begin{equation*}
-\vec{x} = e^{tA} \vec{b} .
+\vec{x} = e^{tP} \vec{b} .
 \end{equation*}
-This equation follows because $e^{0A} = I$,
-so $\vec{x} (0) = e^{0A} \vec{b} = \vec{b}$.
+This equation follows because $e^{0P} = I$,
+so $\vec{x} (0) = e^{0P} \vec{b} = \vec{b}$.
 
 \medskip
 
