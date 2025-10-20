@@ -2868,8 +2868,7 @@ undetermined coefficients by trying $x_p = A \cos (\omega t)
 %Hence, we will never get the kind of catastrophic scenario we have seen
 %before.
 %A slightly different notion of \myquote{resonance} will still occur.
-Let us plug
-in and solve for $A$ and $B$.
+We plug in and solve for $A$ and $B$.
 We get (the \myindex{tedious} % a bit of fun
 details are left to reader)
 \begin{equation*}
@@ -2880,19 +2879,12 @@ details are left to reader)
 \frac{F_0}{m} \cos (\omega t) .
 \end{equation*}
 
-We solve for $A$ and $B$:
+We solve for $A$ and $B$ as usual:
 \begin{equation*}
-\begin{aligned}
-& A=\frac{(\omega_0^2-\omega^2) F_0}
-{m{(2\omega p)}^2+m{(\omega_0^2-\omega^2)}^2} , \\
-& B=\frac{2 \omega p F_0}
+A=\frac{(\omega_0^2-\omega^2) F_0}
+{m{(2\omega p)}^2+m{(\omega_0^2-\omega^2)}^2} ,
+\qquad B=\frac{2 \omega p F_0}
 {m{(2\omega p)}^2+m{(\omega_0^2-\omega^2)}^2} .
-\end{aligned}
-\end{equation*}
-We also compute $C = \sqrt{A^2+B^2}$
-to be
-\begin{equation*}
-C = \frac{F_0}{m \sqrt{{(2\omega p)}^2+{(\omega_0^2-\omega^2)}^2}} .
 \end{equation*}
 Thus our particular solution is
 \begin{equation*}
@@ -2902,8 +2894,13 @@ x_p =
 \frac{2 \omega p F_0}
 {m{(2\omega p)}^2+m{(\omega_0^2-\omega^2)}^2} \sin (\omega t) .
 \end{equation*}
-In the alternative notation, we have amplitude $C$ and phase shift $\gamma$
-where (if $\omega \not= \omega_0$)
+The amplitude $C = \sqrt{A^2+B^2}$ of this solution is
+\begin{equation*}
+C = \frac{F_0}{m \sqrt{{(2\omega p)}^2+{(\omega_0^2-\omega^2)}^2}} .
+\end{equation*}
+Let us write the solution
+in the alternative form $x_p = C \cos(\omega t - \gamma)$
+for amplitude $C$ and phase shift $\gamma$ where (if $\omega \not= \omega_0$)
 \begin{equation*}
 \tan \gamma = \frac{B}{A} = \frac{2\omega p}{\omega_0^2-\omega^2} .
 \end{equation*}
@@ -2934,8 +2931,8 @@ and $\gamma = \nicefrac{\pi}{2}$.
 
 For reasons we will explain in a moment, we call $x_c$ the
 \emph{\myindex{transient solution}}
-and denote it by $x_{tr}$.  We call the
-$x_p$ from above the \emph{\myindex{steady periodic solution}} and denote it
+and denote it by $x_{tr}$.  We call
+$x_p$ the \emph{\myindex{steady periodic solution}} and denote it
 by $x_{sp}$.
 The general solution is
 \begin{equation*}
@@ -2955,17 +2952,18 @@ We might as well focus on the
 steady periodic solution and ignore the transient solution.  See
 \figurevref{3.6:transbehfig} for a graph given several different initial conditions.
 
-\begin{mywrapfig}{3.25in}
+%15 is the number of lines, must be adjusted
+\begin{mywrapfig}[15]{3.25in}
 \capstart
 \diffyincludegraphics{width=3in}{width=4.5in}{3-6-transbeh}
 \caption{Solutions with different initial conditions for parameters
 $k=1$, $m=1$, $F_0 = 1$, $c=0.7$, and $\omega=1.1$.\label{3.6:transbehfig}}
 \end{mywrapfig}
 
-The speed at which $x_{tr}$ goes to zero depends on $p$ (and
+How fast $x_{tr}$ goes to zero depends on $p$ (and
 hence $c$).  The
 bigger $p$ is (the bigger $c$ is), the \myquote{faster} $x_{tr}$ becomes negligible. 
-So the smaller the damping, the longer the \myquote{transient region.}
+Conversely, the smaller the damping, the longer the \myquote{transient region.}
 This is consistent
 with the observation that when $c=0$, the initial conditions affect the
 behavior for all time (i.e.\ an infinite \myquote{transient region}).
@@ -2973,22 +2971,25 @@ behavior for all time (i.e.\ an infinite \myquote{transient region}).
 \medskip
 
 Let us describe what we mean by resonance when damping is present.
-Since there were no conflicts when solving with undetermined coefficient,
-there is no term that goes to infinity.  We look instead at the
-maximum value of the amplitude of the steady periodic solution.
-That is the maximum distance that the mass will go either way from the rest
+There were no conflicts solving with undetermined coefficients,
+so
+no term in $x_{sp}$ goes to infinity.  Instead, we consider the
+amplitude $C$ of the steady periodic solution $x_{sp}$,
+that is, the furthest the
+mass goes either way from the rest
 position.
-Let $C$ be the amplitude of $x_{sp}$.
-If we plot $C$ as a function of $\omega$ (with all other
-parameters fixed), we can find its maximum.
-We call the $\omega$ that achieves this maximum
-the \emph{\myindex{practical resonance frequency}}.
-We call the maximal amplitude $C(\omega)$
+We plot $C$
+as a function of $\omega$ (fix all other
+parameters) and we find its maximum.
+The $\omega$ that gives this maximum
+is the \emph{\myindex{practical resonance frequency}}.
+The maximal amplitude $C(\omega)$ is
 the \emph{\myindex{practical resonance amplitude}}.
 Thus when damping is present we talk of \emph{\myindex{practical resonance}}
 rather than pure resonance.
-A sample plot for three different
-values of $c$ is given in \figurevref{3.6:pracresfig}.  As you can see, the
+\figurevref{3.6:pracresfig} shows a
+sample plot for three different
+values of $c$.  Notice that the
 practical resonance amplitude grows as damping gets smaller, and 
 practical resonance can disappear altogether when damping is large.
 
