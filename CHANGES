@@ -60,3 +60,5 @@ remark to the definition of "defect" as to its meaning.
 <li>In the beginning 3.8,
 we are using \(A\) for just about any matrix
 and \(P\) for the coefficient matrix, so don't flip to \(A\) till later.
+<li>If we are boxing things (and we are),
+box the definition of Laplace transform on page 294.

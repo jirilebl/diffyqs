@@ -52,8 +52,10 @@ frequency domain.  We use the same letter to denote that one function
 is the Laplace transform of the other.  For example, $F(s)$ is the Laplace
 transform of $f(t)$.  Let us define the transform.
 \begin{equation*}
+\mybxbg{~~
 \mathcal{L} \bigl\{ f(t) \bigr\} =
 F(s) \overset{\text{def}}{=} \int_0^\infty e^{-st} f(t) \, dt .
+~~}
 \end{equation*}
 We note that we are only considering $t \geq 0$ in the transform.  Of course,
 if we think of $t$ as time, there is no problem, we are generally interested in
@@ -336,7 +338,7 @@ Then $f(t) = g(t)$ for all $t \geq 0$.
 Both theorems hold for piecewise continuous functions as well.
 Recall that piecewise continuous means that the function
 is continuous except perhaps at a discrete set of points, where it has jump
-discontinuities like the Heaviside function.  Uniqueness, however, does
+discontinuities like the Heaviside function.  The Laplace transform, however, does
 not \myquote{see} values at the discontinuities.  So we can only conclude that
 $f(t) = g(t)$ outside of discontinuities.  For example, the unit step
 function is sometimes defined using $u(0) = \nicefrac{1}{2}$.  This new
