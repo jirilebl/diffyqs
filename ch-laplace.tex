@@ -755,16 +755,17 @@ f(t) = t \, \bigl( u(t) - u(t-1) \bigr) +
 \end{equation*}
 
 How does the Heaviside function interact with the Laplace
-transform?  We saw that
+transform?  We saw that (for $a \geq 0$)
 \begin{equation*}
 \mathcal{L} \bigl\{ u(t-a) \bigr\} = \frac{e^{-as}}{s} .
 \end{equation*}
 This computation can be generalized into a \emph{\myindex{shifting property}}
-or \emph{\myindex{second shifting property}}.
+or \emph{\myindex{second shifting property}}:
 \begin{equation} \label{ltd:sseq}
 \mybxbg{~~
 \mathcal{L} \bigl\{ f(t-a) \, u(t-a) \bigr\}
-= e^{-as} \mathcal{L} \bigl\{ f(t) \bigr\} .
+= e^{-as} \mathcal{L} \bigl\{ f(t) \bigr\}
+\qquad (a \geq 0).
 ~~}
 \end{equation}
 For example,
@@ -865,18 +866,18 @@ the system for different inputs.
 
 Let us suppose that
 all the initial conditions are zero.
-We take the Laplace transform of the equation to obtain the equation
+We take the Laplace transform of the equation to obtain, for some $A(s)$,
 \begin{equation*}
 A(s) X(s) = F(s) .
 \end{equation*}
-Solving for the ratio $\nicefrac{X(s)}{F(s)}$, we obtain the so-called
+Solving for the ratio $\nicefrac{X(s)}{F(s)}$ gives the so-called
 \emph{\myindex{transfer function}}
 $H(s) = \nicefrac{1}{A(s)}$,
 that is,
 \begin{equation*}
 H(s) = \frac{X(s)}{F(s)} .
 \end{equation*}
-In other words, $X(s) = H(s) F(s)$.  We obtain an algebraic dependence of
+In other words, $X(s) = H(s) F(s)$.  We get an algebraic dependence of
 the output of the system based on the input.  We can now easily study the
 steady-state behavior of the system given different inputs by simply
 multiplying by the transfer function.
@@ -933,7 +934,7 @@ this as
 \end{equation*}
 
 \begin{example}
-To compute ${\mathcal{L}}^{-1} \left\{\frac{1}{s(s^2+1)}\right\}$ we could
+To compute ${\mathcal{L}}^{-1} \left\{\frac{1}{s(s^2+1)}\right\}$, we could
 apply this integration rule:
 \begin{equation*}
 {\mathcal{L}}^{-1} \left\{
@@ -1009,7 +1010,7 @@ involve consulting a table.  Let us not worry about computing the inverse
 here.
 
 \begin{example}
-Suppose our function $f(t)$ is a version of the \emph{\myindex{sawtooth}}, that is,
+Suppose $f(t)$ is a version of the \emph{\myindex{sawtooth}}, that is,
 let
 $f(t) = t$ for $0 \leq t < 1$
 and use $f(t)=f(t+1)$ to extend it periodically.  So
@@ -1083,7 +1084,8 @@ Solve $x''' + x = t^3 u(t-1)$ for initial conditions $x(0) = 1$ and $x'(0) =
 \end{exercise}
 
 \begin{exercise}
-Show the second shifting property: 
+Using the definition of the Laplace transform,
+justify the second shifting property: 
 $\mathcal{L} \bigl\{ f(t-a) \, u(t-a) \bigr\}
 = e^{-as} \mathcal{L} \bigl\{ f(t) \bigr\}$.
 \end{exercise}
