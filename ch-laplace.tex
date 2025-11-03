@@ -1454,15 +1454,17 @@ not hard to numerically evaluate a definite integral.
 
 \subsection{Volterra integral equation}
 
-A common integral equation\index{integral equation}
+An integral equation\index{integral equation}
+involving convolution
+that comes up, for example, when studying systems with memory effects
 is the \emph{\myindex{Volterra integral equation}}%
 \footnote{Named for the Italian mathematician
 \href{https://en.wikipedia.org/wiki/Vito_Volterra}{Vito Volterra}
 (1860--1940).}
 \begin{equation*}
-x(t) = f(t) + \int_0^t g(t-\tau) x(\tau) \, d\tau ,
+x(t) = f(t) + \int_0^t g(t-\tau) x(\tau) \, d\tau .
 \end{equation*}
-where $f(t)$ and $g(t)$ are known functions and $x(t)$ is an unknown we
+Here $f(t)$ and $g(t)$ are known functions and $x(t)$ is an unknown we
 wish to solve for.
 To find $x(t)$,
 we apply the Laplace transform to the equation to obtain 
