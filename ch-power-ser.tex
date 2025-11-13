@@ -102,7 +102,7 @@ diverges at $x=1$.
 If a power series converges absolutely
 at some $x_1$, then for all $x$ such that
 $\lvert x - x_0  \rvert \leq \lvert x_1 - x_0 \rvert$ (that is, $x$ is
-closer than $x_1$ to $x_0$) we have
+closer than $x_1$ to $x_0$), we have
 $\lvert a_k {(x-x_0)}^k \rvert \leq
 \lvert a_k {(x_1-x_0)}^k \rvert$
 for all $k$.
@@ -177,7 +177,7 @@ and diverges if $\lvert x - x_0 \rvert > \nicefrac{1}{A}$.  That is,
 the radius of convergence is $\nicefrac{1}{A}$.
 If $A = 0$, then the series always converges.
 
-A similar test is the \emph{root test}\index{root test for series}.
+The \emph{root test} is similar\index{root test for series}.
 Suppose
 \begin{equation*}
 L = \lim_{k\to\infty} \sqrt[k]{\lvert c_k \rvert}
@@ -205,6 +205,8 @@ A =
 \end{equation*}
 exists.  If $A = 0$, then the radius of convergence of the series
 is $\infty$.  Otherwise, the radius of convergence is $\nicefrac{1}{A}$.
+Moreover, if either limit for 
+$A$ diverges to $\infty$, then the series is divergent.
 \pagebreak[3]
 \end{theorem}
 
@@ -255,7 +257,7 @@ Consider
 \begin{equation*}
 \sum_{k=0}^\infty \frac{1}{k^k} {x}^k .
 \end{equation*}
-Compute the limit for the root test,
+Compute the limit for the root test (ratio test would also work),
 \begin{equation*}
 A =
 \lim_{k\to\infty} 
@@ -275,7 +277,7 @@ A =
 0 .
 \end{equation*}
 So the radius of convergence is $\infty$: The series
-converges everywhere.  The ratio test would also work here.
+converges everywhere. %  The ratio test would also work here.
 \end{example}
 
 The root or the ratio test as given does not always apply.  That is,
@@ -285,13 +287,23 @@ $\bigl \lvert \frac{a_{k+1}}{a_k} \bigr \rvert$
 or
 $\sqrt[k]{\lvert a_k \rvert}$
 might not exist.
-There exist more sophisticated ways of finding the radius of convergence,
-but those would be beyond the scope of this chapter.  The two methods above
-cover many of the series that arise in practice.
-Often both tests apply, though the limit might
-be easier to compute in one test than the other.
+Sometimes the test must be applied to the series itself---to find
+the $L$ rather than the $A$.  For example, for the series
+$\sum_{k=1}^\infty 2^k x^{2k}$, we cannot apply the root with the $A$, we
+must work with the limit of $\sqrt[2k]{\lvert 2^k x^{2k} \rvert}$,
+which equals $L = \sqrt{2} \lvert x \rvert$.  This $L$ is less than $1$ when
+$\lvert x \rvert < \frac{1}{\sqrt{2}}$ and so $\frac{1}{\sqrt{2}}$
+is the radius of convergence.
+Other ways exist to find the radius, but ratio and root tests
+cover many series arising in practice.
+%There exist more sophisticated ways of finding the radius of convergence,
+%but those would be beyond the scope of this chapter.
+%The two methods above
+%cover many of the series that arise in practice.
+%Often both tests apply, though the limit might
+%be easier to compute in one test than the other.
 
-We remark that at the endpoints,
+At the endpoints,
 $x = x_0-\rho$ and $x = x_0+\rho$,
 the series may or may not converge, and the tests above
 say nothing about convergence there.
@@ -301,14 +313,13 @@ our purposes, we will not worry about it much.
 \subsection{Analytic functions}
 
 Functions represented by power series are called
-\emph{\myindex{analytic functions}}.  Not every function is analytic,
-although the majority of the functions you have seen in calculus are.
-An analytic function $f(x)$ is equal to its \emph{\myindex{Taylor series}}%
+\emph{\myindex{analytic functions}}.  Not all functions are analytic,
+but the functions you have seen in calculus likely all are.
+An analytic function $f(x)$ equals its \emph{\myindex{Taylor series}}%
 \footnote{Named after the English mathematician
 \href{http://en.wikipedia.org/wiki/Brook_Taylor}{Sir Brook Taylor}
 (1685--1731).} (a power series computed from $f$)
-near a point $x_0$.
-That is, for $x$ near $x_0$,
+for $x$ near a given point $x_0$:
 \begin{equation} \label{ps:tayloreq}
 f(x) = \sum_{k=0}^\infty \frac{f^{(k)}(x_0)}{k!} {(x-x_0)}^k 
 =
@@ -458,11 +469,11 @@ test tells us that the radius of convergence is $1$.  The series
 diverges for $x \leq -1$ and $x \geq 1$, even though
 $\frac{1}{1-x}$ is defined for all $x \not= 1$.
 
-We can use the geometric series together with rules for addition and
-multiplication of power series to expand rational functions around
-a point, as long as the denominator is not zero at $x_0$.  Note that
-as for polynomials, we could
-equivalently use the Taylor series expansion \eqref{ps:tayloreq}.
+Instead of applying
+the Taylor series expansion \eqref{ps:tayloreq},
+the geometric series together with rules for addition and
+multiplication of power series can be used to expand any rational function around
+a point $x_0$, as long as the denominator is not zero at $x_0$.
 
 \begin{example}
 Expand $\frac{x}{1+2x+x^2}$ as a power series around the origin ($x_0 = 0$) and

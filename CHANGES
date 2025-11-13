@@ -69,3 +69,8 @@ mention that \(a \geq 0 .\)
 <li>Introduce Volterra integral equations in a slightly more intelligent way.
 <li>Justify the "unit mass" for the pulse in beginning of 6.4.1, and get rid
 of the word "convenient" it is not convenient, it is the whole thing.
+<li>In Theorem 7.1.2, explicitly state that \(A\) going to infinity
+means divergent series.
+<li>Reword the paragraph about root/ratio test being more complicated 
+than simply computing the \(A,\) and add a very short inline example,
+as such series often appear in online homework systems made for other books.
