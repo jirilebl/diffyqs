@@ -290,8 +290,8 @@ might not exist.
 Sometimes the test must be applied to the series itself---to find
 the $L$ rather than the $A$.  For example, for the series
 $\sum_{k=1}^\infty 2^k x^{2k}$, we cannot apply the root with the $A$, we
-must work with the limit of $\sqrt[2k]{\lvert 2^k x^{2k} \rvert}$,
-which equals $L = \sqrt{2} \lvert x \rvert$.  This $L$ is less than $1$ when
+must work with the limit of $\sqrt[k]{\lvert 2^k x^{2k} \rvert}$,
+which equals $L = 2 {\lvert x \rvert}^2$.  This $L$ is less than $1$ when
 $\lvert x \rvert < \frac{1}{\sqrt{2}}$ and so $\frac{1}{\sqrt{2}}$
 is the radius of convergence.
 Other ways exist to find the radius, but ratio and root tests
@@ -531,7 +531,7 @@ So the radius of convergence is actually equal to 1.
 \end{example}
 
 When the rational function is more complicated, it is also possible
-to use method of partial fractions.  For example,
+to use the method of partial fractions.  For example,
 to find the Taylor series for $\frac{x^3+x}{x^2-1}$, we write
 \begin{equation*}
 \frac{x^3+x}{x^2-1}
@@ -724,7 +724,8 @@ We differentiate yet again to obtain (now the $k=1$ term disappears)
 \begin{equation*}
 y'' = \sum_{k=2}^\infty k(k-1) a_k x^{k-2} .
 \end{equation*}
-We reindex the series (replace $k$ with $k+2$) to obtain
+We need to subtract $y$ from $y''$, so 
+we reindex the series for $y''$ (replace $k$ with $k+2$):
 \begin{equation*}
 y'' = \sum_{k=0}^\infty (k+2)\,(k+1) \, a_{k+2} x^k .
 \end{equation*}
@@ -747,6 +748,7 @@ a_k x^k \Bigr)
 \end{equation*}
 As $y'' - y$ is supposed to be equal to 0, we know that the
 coefficients of the resulting series must be equal to 0.  Therefore,
+for every $k=0,1,2,3,\ldots$, we have
 \begin{equation*}
 (k+2)\,(k+1) \,a_{k+2} - a_k = 0 ,
 \qquad
@@ -1625,11 +1627,11 @@ for $a_k$ in the solution
 \begin{equation*}
 y = x^{r_1} \sum_{k=0}^\infty a_k x^{k}
 \end{equation*}
-results in a complex-valued function---all the $a_k$ are complex
+results in a complex-valued function---the $a_k$ are complex
 numbers.  We obtain our two linearly independent
 solutions%
 \footnote{See 
-Joseph L.\ Neuringera,
+Joseph L.\ Neuringer,
 \emph{The Frobenius method for complex roots of the indicial equation},
 International Journal of Mathematical Education in Science and Technology,
 Volume 9, Issue 1, 1978, 71--77.}
