@@ -10,9 +10,9 @@ while($line = <STDIN>)
 	if ($line =~ m/<a class="index-button.*title="Index"/) {
 		# Add extra buttons
 
-		$extra = "<a class=\"index-button button\" href=\"https://www.jirka.org/diffyqs/\" title=\"Home\" alt=\"Book Home\"><span class=\"name\">Home</span></a>\n";
+		$extra = "<a class=\"index-button button\" href=\"..\" title=\"Home\" alt=\"Book Home\"><span class=\"name\">Home</span></a>\n";
 
-		$extra .= "<a class=\"index-button button\" href=\"https://www.jirka.org/diffyqs/diffyqs.pdf\" title=\"PDF\"><span class=\"name\">PDF</span></a>\n";
+		$extra .= "<a class=\"index-button button\" href=\"../diffyqs.pdf\" title=\"PDF\"><span class=\"name\">PDF</span></a>\n";
 
 		$extra .= "<a class=\"index-button button\" href=\"https://www.amazon.com/dp/1706230230\" title=\"Paperback\" alt=\"Buy Paperback\"><span class=\"name\">Paperback</span></a>\n";
 
