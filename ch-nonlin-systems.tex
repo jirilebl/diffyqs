@@ -19,10 +19,9 @@ most phenomena require nonlinear equations.  Nonlinear equations, however,
 are notoriously more difficult to understand than linear ones, and 
 many strange new phenomena appear when we allow our equations to be
 nonlinear.
-
 Not to worry, we did not waste all this time studying linear equations.
 Nonlinear equations can often be approximated by linear ones if we only need
-a solution \myquote{locally,} for example, only for a short period of time, or
+a solution \myquote{locally}---only for a short period of time or
 only for certain parameters.  Understanding linear equations can
 also give us qualitative understanding about a more general nonlinear
 problem.  The idea is similar to what you did in calculus in trying to
@@ -88,7 +87,7 @@ It may be best to think of the system of equations as the single vector equation
 \begin{bmatrix} x \\ y \end{bmatrix} ' =
 \begin{bmatrix} f(x,y) \\ g(x,y) \end{bmatrix} .
 \end{equation}
-As in \sectionref{sec:introtosys} we draw
+As in \sectionref{sec:introtosys}, we draw
 the \emph{\myindex{phase portrait}} (or \emph{\myindex{phase diagram}}),
 where each point $(x,y)$ corresponds to a specific state of the system.
 We draw the \emph{\myindex{vector field}}
@@ -137,6 +136,7 @@ and $y$ are zero.  Let us define the \emph{critical points}\index{critical point
 as the points $(x,y)$ such that
 \begin{equation*} 
 \begin{bmatrix} f(x,y) \\ g(x,y) \end{bmatrix} = \vec{0} .
+\avoidbreak
 \end{equation*}
 In other words, these are the points where both $f(x,y)=0$ and $g(x,y)=0$.
 
@@ -231,7 +231,15 @@ and $(1,0)$.  The Jacobian matrix at any point is
 -1+2x & 0
 \end{bmatrix}.
 \end{equation*}
-Therefore at $(0,0)$, we have $u=x$ and $v=y$, and the linearization is
+At $(0,0)$, that is, when $x=0$ and $y=0$, the Jacobian matrix is
+\begin{equation*}
+\begin{bmatrix}
+0 & 1 \\
+-1 & 0
+\end{bmatrix} ,
+\end{equation*}
+and our new variables are
+$u=x$ and $v=y$.  The linearization at $(0,0)$ is
 \begin{equation*}
 \begin{bmatrix} u \\ v \end{bmatrix} ' =
 \begin{bmatrix}
@@ -241,7 +249,15 @@ Therefore at $(0,0)$, we have $u=x$ and $v=y$, and the linearization is
 \begin{bmatrix} u \\ v \end{bmatrix} .
 \end{equation*}
 
-At the point $(1,0)$, we have $u=x-1$ and $v=y$, and the linearization is
+At the point $(1,0)$, the Jacobian
+matrix is
+$\left[ \begin{smallmatrix}
+0 & 1 \\
+1 & 0
+\end{smallmatrix} \right]$,
+and our new variables are
+$u=x-1$ and $v=y$.
+The linearization at $(1,0)$ is
 \begin{equation*}
 \begin{bmatrix} u \\ v \end{bmatrix} ' =
 \begin{bmatrix}
@@ -252,8 +268,9 @@ At the point $(1,0)$, we have $u=x-1$ and $v=y$, and the linearization is
 \end{equation*}
 
 The phase diagrams of the two linearizations at the
-point $(0,0)$ and $(1,0)$ are given in \figurevref{fig:nlin-1b-lin}.  Note
-that the variables are now $u$ and $v$.  Compare
+critical points $(0,0)$ and $(1,0)$ are given in \figurevref{fig:nlin-1b-lin}.  Note
+that the variables are now $u$ and $v$, which are different at each
+critical point.  Compare
 \figureref{fig:nlin-1b-lin} with \figurevref{fig:nlin-1b}, and look especially at the
 behavior near the critical points.
 

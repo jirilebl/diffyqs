@@ -1,3 +1,4 @@
+<li>Add links to the new mirror of the website at jirilebl.github.io/diffyqs
 <li>Improved wording in the very beginning, making explicit
 what a "differential equation" is in words rather than just
 giving the example.
@@ -74,3 +75,4 @@ means divergent series.
 <li>Reword the paragraph about root/ratio test being more complicated 
 than simply computing the \(A,\) and add a very short inline example,
 as such series often appear in online homework systems made for other books.
+<li>In Example 8.1.2, add a bit more detail.
