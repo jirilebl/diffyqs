@@ -58,7 +58,7 @@ F(s) \overset{\text{def}}{=} \int_0^\infty e^{-st} f(t) \, dt .
 ~~}
 \end{equation*}
 We note that we are only considering $t \geq 0$ in the transform.  Of course,
-if we think of $t$ as time, there is no problem, we are generally interested in
+if we think of $t$ as time, there is no problem; we are generally interested in
 finding out what will happen in the future
 (the Laplace transform is one place
 where it is safe to ignore the past).
@@ -210,7 +210,7 @@ properties of the integral.  For example, suppose $C$ is a constant, then
 C \int_0^\infty e^{-st} f(t) \,dt =
 C \mathcal{L} \bigl\{ f(t) \bigr\} .
 \end{equation*}
-So we can \myquote{pull out} a constant out of the transform.
+So we can \myquote{pull out} a constant from the transform.
 Similarly, with addition.
 As linearity is important, we state it as a theorem.
 
@@ -785,7 +785,7 @@ the mass-spring system
 x''(t) + x(t) = f(t) , \quad x(0) = 0, \quad x'(0) = 0,
 \end{equation*}
 where $f(t) = 1$ if $1 \leq t < 5$ and zero otherwise.
-The $f(t)$ is not periodic and defined piecewise; no problem for Laplace.
+The function $f(t)$ is not periodic and defined piecewise; no problem for Laplace.
 Imagine a
 rocket attached to the mass is fired for 4 seconds starting at
 $t=1$.  Or perhaps imagine an RLC circuit, where the voltage is raised
@@ -1209,7 +1209,7 @@ $H(s) = \frac{1}{s^2+4}$.
 
 The Laplace transformation of a product is not the product
 of the transforms.  All hope is not lost, however.  We simply have to use
-a different type of a \myquote{product.}
+a different type of \myquote{product.}
 Take
 two functions $f(t)$ and $g(t)$ defined for $t \geq 0$,
 and define the \emph{\myindex{convolution}}%
@@ -2189,7 +2189,7 @@ See \figureref{lt:half-infinite-goo-river} for a diagram of the setup.
 \caption{Transport equation on a half line.\label{lt:half-infinite-goo-river}}
 \end{mywrapfig}
 
-A physical setup of this equation is a river of solid goo,
+A physical setup of this equation is a river of viscous goo,
 as we do not want anything to diffuse.  The function
 $y$ is the concentration of
 some toxic substance\footnote{It's a river of goo already,
@@ -2330,7 +2330,7 @@ C  u\bigl(t-\nicefrac{x}{\alpha}\bigr)
 So $y_t = - \alpha y_x$.
 \end{example}
 
-Laplace equation is very good with constant-coefficient equations.  One
+The Laplace transform is very good with constant-coefficient equations.  One
 advantage of Laplace is that it easily handles
 nonhomogeneous side conditions.
 Let us try a more complicated example.

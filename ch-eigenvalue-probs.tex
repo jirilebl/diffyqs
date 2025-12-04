@@ -159,9 +159,9 @@ and we will only consider such problems here.
 That is, a regular problem is one where
 $p(x)$, $p'(x)$, $q(x)$ and $r(x)$ are continuous, $p(x) > 0$, $r(x) > 0$,
 $q(x) \geq 0$, and $\alpha_1, \alpha_2, \beta_1, \beta_2 \geq 0$,
-where neither $\alpha_1$ and $\alpha_2$ are both zero,
+where neither $\alpha_1=\alpha_2=0$
 nor
-$\beta_1$ and $\beta_2$ are both zero.
+$\beta_1=\beta_2=0$.
 Note: Be careful about the signs.  Also be careful about the inequalities
 for $r$ and $p$, they
 must be strict for all $x$ in the interval $[a,b]$, including the endpoints!
@@ -169,7 +169,7 @@ must be strict for all $x$ in the interval $[a,b]$, including the endpoints!
 When zero
 is an eigenvalue, we usually
 start labeling the eigenvalues from 0 rather than from 1 for convenience.
-That is we label the eigenvalues $\lambda_0 < \lambda_1 < \lambda_2 < \cdots$.
+That is, we label the eigenvalues $\lambda_0 < \lambda_1 < \lambda_2 < \cdots$.
 
 \begin{example}
 The problem $y''+\lambda y=0$, $0 < x < L$, $y(0) = 0$, and $y(L) = 0$
@@ -362,9 +362,9 @@ has a unique solution for any $f(x)$ continuous on $[a,b]$.
 
 This theorem is used in much the same way as we did before in
 \sectionref{sec:scs}.  It is used when solving more general nonhomogeneous
-boundary value problems.  The theorem does not help us solve the problem, but
-it tells us when a unique solution exists, so
-that we know when to spend time looking for it.  To solve the problem
+boundary value problems.  The theorem does not help us solve the problem.
+It tells us when a unique solution exists, so
+that we know when to spend time looking for it.  To solve the problem,
 we decompose $f(x)$ and $y(x)$ in terms of eigenfunctions of the
 homogeneous
 problem, and then solve for the coefficients of the series for $y(x)$.
@@ -453,7 +453,7 @@ y(x) = A \cos \bigl( \sqrt{\lambda} \, x \bigr)
 Plugging in the boundary conditions we get
 $0 = y(0) = A$ and $0 = y'(\nicefrac{\pi}{2})
 = \sqrt{\lambda} \, B \cos \bigl(\sqrt{\lambda} \, \frac{\pi}{2}\bigr)$.
-Since $A$ is zero, then
+Since $A$ is zero,
 $B$ cannot be zero.  Hence $\cos \bigl( \sqrt{\lambda} \,
 \frac{\pi}{2}\bigr) = 0$.
 This means that
@@ -926,8 +926,8 @@ frequencies of the system are the (angular) frequencies $\frac{n \pi a}{L}$
 for integers $n \geq 1$.
 
 But these are free vibrations.  What if there is an external force acting on
-the string.  Let us assume say air vibrations (noise), for example from a second
-string.  Or perhaps a jet engine.  For simplicity, assume nice pure
+the string?  Let us assume, say, air vibrations (noise), for example from a second
+string.  Or perhaps from a jet engine.  For simplicity, assume nice pure
 sound and assume the force is uniform at every position on the string:
 The external force as a function of time $t$ is given as
 $F_0 \cos (\omega t)$ as force per unit mass, we will call this
@@ -991,7 +991,7 @@ or $A = \frac{F_0}{\omega^2}$, and also
 + B \sin \left( \frac{\omega L}{a} \right) -
 \frac{F_0}{\omega^2} .
 \end{equation*}
-Assuming that $\sin ( \frac{\omega L}{a} )$ is not zero we can solve for $B$ to
+Assuming that $\sin ( \frac{\omega L}{a} )$ is not zero, we can solve for $B$ to
 get
 \begin{equation} \label{natfreq:Beq}
 B = 
