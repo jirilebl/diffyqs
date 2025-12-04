@@ -78,3 +78,7 @@ as such series often appear in online homework systems made for other books.
 <li>In Example 8.1.2, add a bit more detail.
 <li>Add a note about the "circles" simple linear system having no limit
 cycles despite having closed trajectories after example 8.4.2.
+<li><b>Exercise A.5.105 changed to fix erratum</b>.  The three vectors given
+as an orthogonal basis was not actually orthogonal.  Replace the last
+vector with \((0,1,1)\) to make it orthogonal.  Also changed the
+vectors in a), b), c) so that the answers are again nice.
