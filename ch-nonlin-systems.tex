@@ -1770,20 +1770,24 @@ A very similar analysis applies to the system
 x' = y + {(x^2+y^2-1)} x, \qquad
 y' = -x + {(x^2+y^2-1)} y.
 \end{equation*}
-We still obtain a closed trajectory on the unit circle, and
+The unit circle is again a closed trajectory,
 points outside the unit circle spiral out to infinity, but now points
 inside the unit circle spiral towards the critical point at the origin.
-So this system does not have a limit cycle, even though it has a closed
-trajectory.
+The unit circle is an asymptotically unstable limit cycle where
+all trajectories spiral out.
+If we consider $x' = y$, $y' = -x$, then all circles centered
+at the origin (not just the unit circle) are closed trajectories,
+but no trajectory spirals onto any
+other, so none of the circles are limit cycles.
 
-Due to the Picard theorem (\thmvref{sys:picardthm}) we find that no matter
+By the Picard theorem (\thmvref{sys:picardthm}), no matter
 where we are in the plane we can always find a solution a little bit
-further in time,
+forward or backwards in time,
 as long as $f$ and $g$ have continuous derivatives.  So 
 if we find a closed trajectory in an autonomous system,
 then for every initial point inside
 the closed trajectory, the solution will exist for all time and it will stay
-bounded (it will stay inside the closed trajectory).  So the moment
+bounded (it will stay inside the closed trajectory).  The moment
 we found the solution above going around the unit circle, we knew that for
 every initial point inside the circle, the solution exists for all time and
 the Poincar\'e--Bendixson theorem applies.

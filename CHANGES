@@ -76,3 +76,5 @@ means divergent series.
 than simply computing the \(A,\) and add a very short inline example,
 as such series often appear in online homework systems made for other books.
 <li>In Example 8.1.2, add a bit more detail.
+<li>Add a note about the "circles" simple linear system having no limit
+cycles despite having closed trajectories after example 8.4.2.
