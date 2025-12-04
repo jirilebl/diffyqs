@@ -1765,7 +1765,7 @@ the unit circle, as those solutions stay bounded, but not to those outside,
 as those solutions go off to infinity.
 \end{example}
 
-A very similar analysis applies to the system
+A similar analysis applies to the system
 \begin{equation*}
 x' = y + {(x^2+y^2-1)} x, \qquad
 y' = -x + {(x^2+y^2-1)} y.
@@ -1779,9 +1779,11 @@ If we consider the linear system $x' = y$, $y' = -x$, then all circles centered
 at the origin (not just the unit circle) are closed trajectories,
 but no trajectory spirals onto any
 other, so none of the circles are limit cycles.
+By Poincar\'e--Bendixson, all these solutions are periodic.
 
-By the Picard theorem (\thmvref{sys:picardthm}), no matter
-where we are in the plane we can always find a solution a little bit
+By Picard's theorem (\thmvref{sys:picardthm}), at any point
+in the plane, we can always find a solution to
+\eqref{nlin:gensys} a little bit
 forward or backwards in time,
 as long as $f$ and $g$ have continuous derivatives.  So 
 if we find a closed trajectory in an autonomous system,
@@ -1794,12 +1796,12 @@ the Poincar\'e--Bendixson theorem applies.
 
 \medskip
 
-Let us next look for conditions when limit cycles (or periodic orbits) do not exist.
+We next look for conditions when limit cycles (or periodic orbits) do not exist.
 We assume
 the equation \eqref{nlin:gensys} is defined on a
 \emph{\myindex{simply connected region}}, that is, a region with no holes
-we can go around.  For example the entire plane is a simply
-connected region, and so is the inside of the unit disc.  However,
+we can go around.  For example, the entire plane is a simply
+connected region.  So is the inside of the unit disc.  However,
 the entire plane minus a point is not a simply connected region as it has a
 \myquote{hole} at the origin.
 
