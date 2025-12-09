@@ -166,7 +166,7 @@ homogeneous equation \eqref{sol:eqlinhom}.  Can every solution
 be written (using superposition) in the form
 $y = C_1 y_1 + C_2 y_2$?
 
-Answer is affirmative!  Provided that $y_1$ and $y_2$ are different enough in
+The answer is affirmative!  Provided that $y_1$ and $y_2$ are different enough in
 the following sense.  We say $y_1$ and $y_2$ are \emph{\myindex{linearly
 independent}} if one is not a constant multiple of the other.
 
@@ -561,24 +561,24 @@ y'' - 8 y' + 16 y =
 \end{equation*}
 \end{example}
 
-In some sense, a doubled root rarely happens.  If coefficients are 
-picked randomly, a doubled root is unlikely.
+In some sense, a double root rarely happens.  If coefficients are 
+picked randomly, a double root is unlikely.
 There are, however, some real-world problems
-where a doubled root does happen naturally (e.g.\ critically damped
+where a double root does happen naturally (e.g.\ critically damped
 mass-spring system, as we will see).
 
 Here is a short argument for why the solution $x e^{r x}$ works for a
-doubled root.
+double root.
 A double root is a limit case of
 two distinct but very close roots.  Note that 
 $\frac{e^{r_2 x} - e^{r_1 x}}{r_2 - r_1}$ is a solution when the roots are
 distinct.  When we take the limit as $r_1$ goes to $r_2$, we are really
 taking the
 derivative of $e^{rx}$ using $r$ as the variable.  Therefore, the limit is 
-$x e^{rx}$, and hence this is a solution in the doubled root case.
+$x e^{rx}$, and hence this is a solution in the double root case.
 We remark that in some numerical computations,
 two very close roots may lead to numerical instability while
-a doubled root will not.
+a double root will not.
 
 \subsection{Complex numbers and Euler's formula}
 
@@ -620,7 +620,7 @@ For example,
 The numbers
 $i$ and $-i$ are the two roots of $r^2 + 1 = 0$.
 Some engineers use the letter $j$ instead of $i$ for the square
-root of $-1$.  We use the mathematicians' convention and use $i$.
+root of $-1$.  We follow the mathematicians' convention and use $i$.
 
 \begin{exercise}
 Make sure you understand (that you can justify)
@@ -1156,7 +1156,7 @@ and $r_2 = 1$.  There should be 3 roots and the last root is reasonably
 easy to find.  The constant
 term in a monic\footnote{The word monic means that the coefficient of the
 top degree $r^d$, in our case $r^3$, is $1$.}
-polynomial such as this is the multiple of the negations of all the roots
+polynomial such as this is the product of the negations of all the roots
 because $r^3 - 3 r^2 - r + 3 = (r-r_1)(r-r_2)(r-r_3)$.
 So
 \begin{equation*}
@@ -2292,7 +2292,7 @@ Basically, we multiply our guess by $x$
 until all duplication is gone.  \emph{But no more!}  Multiplying too many
 times will not work.
 
-Make also sure to look for duplication in the entire expression you try.  For
+Also make sure to look for duplication in the entire expression you try.  For
 the equation $y''-y=xe^x$, where $y_c = C_1e^x + C_2e^{-x}$,
 it is not enough that $xe^x$ does not appear in $y_c$.
 Trying $y_p=Ae^x+Bxe^x$ will not work
