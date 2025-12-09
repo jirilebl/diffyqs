@@ -63,6 +63,9 @@ we are using \(A\) for just about any matrix
 and \(P\) for the coefficient matrix, so don't flip to \(A\) till later.
 <li>If we are boxing things (and we are),
 box the definition of Laplace transform on page 294.
+<li>Change the hint on Exercise 6.1.103 to say
+"Shifting property" as that's a neater way of doing it,
+and good practice of using it.
 <li>When giving the second shifting property on page 302,
 mention that \(a \geq 0 .\)
 <li>In Exercise 6.2.9, give more precise instructions than just "Show".

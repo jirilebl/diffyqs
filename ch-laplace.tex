@@ -203,7 +203,7 @@ Verify \tablevref{lt:table}.
 \end{exercise}
 
 Since the transform is defined by an integral, we can use the linearity
-properties of the integral.  For example, suppose $C$ is a constant, then
+properties of the integral.  For example, if $C$ is a constant, then
 \begin{equation*}
 \mathcal{L} \bigl\{ C f(t) \bigr\} =
 \int_0^\infty e^{-st} C f(t) \,dt =
@@ -216,7 +216,7 @@ As linearity is important, we state it as a theorem.
 
 \begin{theorem}[Linearity of the Laplace transform]
 \index{linearity of the Laplace transform}
-Suppose that $A$, $B$, and $C$ are constants, then
+If $A$, $B$, and $C$ are constants, then
 \begin{equation*}
 \mybxbg{~~
 \mathcal{L} \bigl\{ A f(t) + B g(t) \bigr\} =
@@ -406,7 +406,7 @@ $s(s^2+1)$ and write
 \frac{Bs+C}{s^2+1} .
 \end{equation*}
 Putting the right-hand side over a common
-denominator and equating the numerators we get
+denominator and equating the numerators, we get
 $A(s^2+1) + s(Bs+C) = s^2+s+1$.  Expanding and equating coefficients,
 we obtain $A+B = 1$, $C=1$, $A=1$,
 and thus $B=0$.  In
@@ -562,7 +562,7 @@ $2t^2-2t+1-e^{-2t}$
 }
 
 \begin{exercise}
-Find the Laplace transform of $te^{-t}$.  Hint: Integrate by parts.
+Find the Laplace transform of $te^{-t}$.  Hint: Shifting property.
 \end{exercise}
 \exsol{%
 $\frac{1}{{(s+1)}^2}$
