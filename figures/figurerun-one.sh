@@ -13,8 +13,10 @@ rm figurerun.pdf
 #pdftops -eps ${n%.pdf_t}-tex4ht.pdf ${n%.pdf_t}-tex4ht.eps
 echo running pdftocairo...
 pdftocairo -svg ${n%.pdf_t}-tex4ht.pdf ${n%.pdf_t}-tex4ht.svg
-echo running svgo
-svgo --config svgo.config.mjs ${n%.pdf_t}-tex4ht.svg
+#echo running svgo
+#svgo --config svgo.config.mjs ${n%.pdf_t}-tex4ht.svg
+echo running svgo-ll
+svgo-ll --enable=round ${n%.pdf_t}-tex4ht.svg
 #echo running pdf2svg...
 #pdf2svg ${n%.pdf_t}-tex4ht.pdf ${n%.pdf_t}-tex4ht.svg
 #echo running mutool...

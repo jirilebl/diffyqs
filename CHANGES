@@ -85,3 +85,5 @@ cycles despite having closed trajectories after example 8.4.2.
 as an orthogonal basis was not actually orthogonal.  Replace the last
 vector with \((0,1,1)\) to make it orthogonal.  Also changed the
 vectors in a), b), c) so that the answers are again nice.
+<li>Update the references to EP and BD a bit (there were a few typos).  Also
+add Judson's book to the Further Reading chapter.

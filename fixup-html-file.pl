@@ -32,7 +32,7 @@ while($line = <STDIN>)
 	}
 	if ($line =~ m/<\/body>/) {
 		print "<span class=\"print-pdf-warning\">\n";
-		print " <em>For a higher quality printout use the PDF version: <tt>https://www.jirka.org/diffyqs/diffyqs.pdf</tt></em>\n";
+		print " <em>For a higher quality printout use the PDF version: <tt>https://www.jirka.org/diffyqs/diffyqs.pdf</tt> or <tt>https://jirilebl.github.io/diffyqs/diffyqs.pdf</tt></em>\n";
 		print "</span>\n";
 	}
 	# no longer there

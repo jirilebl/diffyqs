@@ -1,6 +1,6 @@
 # Notes on Diffy Qs: Differential Equations for Engineers
 
-A free online textbook.  See https://www.jirka.org/diffyqs/
+A free online textbook.  See https://www.jirka.org/diffyqs/ or https://jirilebl.github.io/diffyqs/
 
 ## Branches:
 
@@ -24,7 +24,7 @@ The shell(``.sh``) and Perl(``.pl``) scripts here are mostly really hacky ways t
 
 * ``runpdf.sh`` does a thorough job of compiling the source to a pdf
 * ``getstats.sh`` gets statistics about the current version like number of exercises and such.
-* ``convert-to-mbx.*`` is a conversion script to PreTeXt (used to be MathBookXML or MBX) for an online version.  The output is not plain PreTeXt, it contains custom elements, so it requires a custom xsl file, see ``diffyqs-html.xsl``.  The script to run is ``convert-to-mbx.sh``, which is a shell script.  This among other things runs ``convert-to-mbx.pl``, which actually does the conversion, then it runs ``xsltproc`` on the result.  The result is stored in ``html`` subdirectory (old one is moved out of the way to ``html.(randomnumber)``).  Some svg and png figures are created in the process, they can be optimized by ``optimize-svgs.sh`` (uses ``svgo`` which you might have to install).  (There used to be pngs generated, so there is also an unused ``optimize-pngs.sh``).  Notice that an older ``svgo`` clobbers some of the more complicated figures without disabeling one of the plugins.  So best to check the output for correctness.  There is a flag ``--full`` for doing the entire conversion and optimization.
+* ``convert-to-mbx.*`` is a conversion script to PreTeXt (used to be MathBookXML or MBX) for an online version.  The output is not plain PreTeXt, it contains custom elements, so it requires a custom xsl file, see ``diffyqs-html.xsl``.  The script to run is ``convert-to-mbx.sh``, which is a shell script.  This among other things runs ``convert-to-mbx.pl``, which actually does the conversion, then it runs ``xsltproc`` on the result.  The result is stored in ``html`` subdirectory (old one is moved out of the way to ``html.(randomnumber)``).  Some svg and png figures are created in the process. There is a flag ``--full`` for doing the entire conversion (currently the same as just rerunning the pdf_t figures).
 * ``diffyqs-html.xsl`` is the xsl to use to convert the PreTeXt output.
 * ``fixup-html-file.pl`` is a perl script invoked in the web version generation.
 * ``extra.css`` is the extra CSS for the web version.

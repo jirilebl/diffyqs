@@ -4,9 +4,6 @@
   number changes.  If this is done, we could drop the manual introduction
   %mbxINTROSUBSECTION thing and do it automatically again perhaps.
 
-* Think about moving to svgo-ll, less optimization, but hopefully fewer
-  lost things
-
 Pretext/HTML:
 
 * https://pretextbook.org/doc/guide/html/processing-directory-management.html
