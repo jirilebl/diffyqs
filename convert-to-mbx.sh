@@ -4,7 +4,7 @@ echo progress.  The diffyqs-html.xsl assumes a fixed location for the PreTeXt
 echo xsl file.  You need to edit this first.
 echo Do ^C to get out.
 echo 
-echo You should first run with --runpdft
+echo You should first run with --runpdft or --full to run the pdft figures.
 echo
 echo To rerun all figures first do \"rm "*-mbx.*" "*-tex4ht.*"\", or run
 echo this script with --kill-generated.
