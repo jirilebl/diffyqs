@@ -82,6 +82,10 @@ fi
 mkdir html
 cd html
 cp -a ../figures .
+rm figures/.gitignore
+rm figures/*.sh
+rm figures/figurerun*
+rm figures/figure-concat*
 cp ../extra.css .
 cp ../logo.png .
 

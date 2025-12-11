@@ -906,12 +906,12 @@ while(1)
 			$indexes = do_line_subs($indexes);
 
 			#FIXME: Is wrapping in aligned all kosher?
-			print $out "<me>$indexes\n";
+			print $out "<md>$indexes\n";
 			print $out "\\begin{aligned}\n";
 			print "(wrapping in aligned) EQ = $eqn\n";
 			print $out "$eqn";
 			print $out "\\end{aligned}\n";
-			print $out "</me>\n";
+			print $out "</md>\n";
 		} else {
 			print "\n\n\nERROR: HUH?\n\n\nNo end align*!\n\n$para\n\n";
 			$num_errors++;
