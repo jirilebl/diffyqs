@@ -799,7 +799,7 @@ IA & = A = AI .
 \pagebreak[2]
 A few warnings are in order.
 \begin{enumerate}[(i)]
-\item $AB \not= BA$ in general (it may be true by fluke sometimes).  That is,
+\item $AB \neq BA$ in general (it may be true by fluke sometimes).  That is,
 matrices do not \myindex{commute}.
 For example, take
 $A = \left[ \begin{smallmatrix} 1 & 1 \\ 1 & 1 \end{smallmatrix} \right]$
@@ -1057,7 +1057,7 @@ We state this observation as a theorem
 as it is very important in the context of this course.
 
 \begin{theorem}
-An $n \times n$ matrix $A$ is invertible if and only if $\det (A) \not= 0$.
+An $n \times n$ matrix $A$ is invertible if and only if $\det (A) \neq 0$.
 \end{theorem}
 
 In fact, $\det(A^{-1}) \det(A) = 1$ says that $\det(A^{-1}) =
@@ -1439,7 +1439,7 @@ $\left[ \begin{smallmatrix}
 
 \begin{exercise}
 Find 3 nonzero $2 \times 2$ matrices $A$, $B$, and $C$ such that
-$AB = AC$ but $B \not= C$.
+$AB = AC$ but $B \neq C$.
 \end{exercise}
 
 \setcounter{exercise}{100}
@@ -4462,14 +4462,14 @@ $(A-3I)\vec{v}_1 = \vec{0}$ we find
 {(A-3I)}^2\vec{v}_2 = \vec{0}.
 \end{equation*}
 If 
-$(A-3I) \vec{w} \not= \vec{0}$
+$(A-3I) \vec{w} \neq \vec{0}$
 and
 ${(A-3I)}^2 \vec{w} = \vec{0}$, then 
 $(A-3I) \vec{w}$ is an eigenvector, a multiple of $\vec{v}_1$.
 In this $2 \times 2$ case, ${(A-3I)}^2$ is just the zero matrix (exercise).
 So any vector $\vec{w}$ solves
 ${(A-3I)}^2\vec{w} = \vec{0}$ and we just need a $\vec{w}$ such that
-$(A-3I)\vec{w} \not= \vec{0}$.  Then we could use
+$(A-3I)\vec{w} \neq \vec{0}$.  Then we could use
 $\vec{w}$ for $\vec{v}_2$ and $(A-3I)\vec{w}$ for $\vec{v}_1$.
 
 Note this example system ${\vec{x}}' = A \vec{x}$ has a simpler solution since
@@ -4616,7 +4616,7 @@ We find vectors such that
 \begin{equation*}
 {(A - \lambda I)}^k \vec{v} = \vec{0},
 \qquad \text{but} \qquad
-{(A - \lambda I)}^{k-1} \vec{v} \not= \vec{0}.
+{(A - \lambda I)}^{k-1} \vec{v} \neq \vec{0}.
 \end{equation*}
 Such vectors are called \emph{\myindex{generalized eigenvectors}} (then
 $\vec{v}_1 = {(A - \lambda I)}^{k-1} \vec{v}$ is an eigenvector).
@@ -4631,7 +4631,7 @@ $\vec{v}_2$ through $\vec{v}_k$ such that:
 \end{align*}
 Really once you find the $\vec{v}_k$ such that
 ${(A - \lambda I)}^k \vec{v}_k = \vec{0}$ but
-${(A - \lambda I)}^{k-1} \vec{v}_k \not= \vec{0}$, you find the entire
+${(A - \lambda I)}^{k-1} \vec{v}_k \neq \vec{0}$, you find the entire
 chain since you can compute the rest,
 $\vec{v}_{k-1} = (A - \lambda I) \vec{v}_k$,
 $\vec{v}_{k-2} = (A - \lambda I) \vec{v}_{k-1}$, etc.
@@ -4664,7 +4664,7 @@ of algebraic multiplicity 3 and defect 2, then solve
 \end{equation*}
 That is, find $\vec{v}_3$ such that 
 ${(A - \lambda I)}^3 \vec{v}_3 = \vec{0}$, but
-${(A - \lambda I)}^2 \vec{v}_3 \not= \vec{0}$.
+${(A - \lambda I)}^2 \vec{v}_3 \neq \vec{0}$.
 Then you are done as
 $\vec{v}_2 = (A - \lambda I) \vec{v}_3$
 and 
@@ -4691,7 +4691,7 @@ So there are two chains.
 To solve, first find a 
 $\vec{v}_3$ such that 
 ${(A - \lambda I)}^2 \vec{v}_3 = \vec{0}$, but
-$(A - \lambda I) \vec{v}_3 \not= \vec{0}$.
+$(A - \lambda I) \vec{v}_3 \neq \vec{0}$.
 Then $\vec{v}_2 = (A - \lambda I) \vec{v}_3$ is going to be an eigenvector.
 Then solve for an eigenvector $\vec{v}_1$ that is linearly independent 
 from $\vec{v}_2$.
@@ -5062,8 +5062,8 @@ so $\vec{x} (0) = e^{0P} \vec{b} = \vec{b}$.
 \medskip
 
 We mention a drawback of matrix exponentials.
-In general $e^{A+B} \not= e^A e^B$.  The trouble is that matrices do
-not commute, that is, in general $AB \not= BA$.
+In general $e^{A+B} \neq e^A e^B$.  The trouble is that matrices do
+not commute, that is, in general $AB \neq BA$.
 If you would try to rewrite $e^A e^B$ as $e^{A+B}$ using the Taylor series,
 you will see why the lack of commutativity becomes a problem.
 It is true that if
@@ -5072,7 +5072,7 @@ find this fact useful.  We restate this as a theorem to make a point.
 
 \begin{theorem}
 If $AB = BA$, then $e^{A+B} = e^Ae^B$.  Otherwise,
-$e^{A+B} \not= e^Ae^B$ in general.
+$e^{A+B} \neq e^Ae^B$ in general.
 \end{theorem}
 
 \subsection{Simple cases}
@@ -6038,7 +6038,7 @@ only works if $P$ does not depend on $t$, that is,
 $P$ is constant.  The
 problem is that in general
 \begin{equation*}
-\frac{d}{dt} \left[ e^{\int P(t)\,dt} \right] \not= P(t) \, e^{\int P(t)\,dt} ,
+\frac{d}{dt} \left[ e^{\int P(t)\,dt} \right] \neq P(t) \, e^{\int P(t)\,dt} ,
 \end{equation*}
 because matrix multiplication is not commutative.
 

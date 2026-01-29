@@ -1996,7 +1996,7 @@ AB =
 =
 \begin{bmatrix} 1 & 2 \\ 1 & 2 \end{bmatrix}
 \qquad
-\not=
+\neq
 \qquad
 \begin{bmatrix} 1 & 1 \\ 2 & 2 \end{bmatrix}
 =
@@ -2177,7 +2177,7 @@ We get into a bit of trouble; we are trying to divide by zero.
 
 So a $2 \times 2$ matrix $A$ is invertible whenever
 \begin{equation*}
-ad - bc \not= 0
+ad - bc \neq 0
 \end{equation*}
 and otherwise it is singular.  The expression $ad-bc$ is called
 the \emph{determinant} and we will look at it 
@@ -3481,7 +3481,7 @@ other words, the two vectors are linearly independent.
 
 If a set of vectors is linearly dependent, that is, some of the $\alpha_j$s
 are nonzero, then we can solve for one vector in terms of the others.
-Suppose $\alpha_1 \not= 0$.  Since
+Suppose $\alpha_1 \neq 0$.  Since
 $\alpha_1 \vec{x}_1 + 
 \alpha_2 \vec{x}_2 + 
 \cdots +
@@ -5651,7 +5651,7 @@ basis are orthogonal to each other, that is, if
 \begin{equation*}
 \langle \vec{v}_j , \vec{v}_k \rangle = 0
 \end{equation*}
-for all choices of $j$ and $k$ where $j \not= k$ (a nonzero vector cannot be
+for all choices of $j$ and $k$ where $j \neq k$ (a nonzero vector cannot be
 orthogonal to itself).
 A basis is furthermore called an \emph{\myindex{orthonormal basis}} if all
 the vectors in a basis are also unit vectors, that is, if all the vectors
@@ -5755,7 +5755,7 @@ a_n \langle \vec{v}_n , \vec{v}_j \rangle .
 \end{equation*}
 As the basis is orthogonal, then
 $\langle \vec{v}_k , \vec{v}_j \rangle = 0$ whenever
-$k \not= j$.  That means that only one of the terms, the $j^{\text{th}}$ one,
+$k \neq j$.  That means that only one of the terms, the $j^{\text{th}}$ one,
 on the right-hand side is nonzero and we get
 \begin{equation*}
 \langle \vec{x} , \vec{v}_j \rangle
@@ -6590,7 +6590,7 @@ This fact is an extremely useful property of the determinant, and one
 which is used often in this book:
 
 \begin{theorem}
-An $n \times n$ matrix $A$ is invertible if and only if $\det (A) \not= 0$.
+An $n \times n$ matrix $A$ is invertible if and only if $\det (A) \neq 0$.
 \end{theorem}
 
 In fact, $\det(A^{-1}) \det(A) = 1$ says that
