@@ -59,7 +59,7 @@ $x= A \cos \bigl( \sqrt{2}\,t\bigr)
 Letting $x(0) = 0$ still forces $A = 0$.
 We apply the second condition to find
 $0=x(\pi) = B \sin \bigl( \sqrt{2}\,\pi\bigr)$.
-As $\sin \bigl( \sqrt{2}\,\pi\bigr) \not= 0$ we obtain
+As $\sin \bigl( \sqrt{2}\,\pi\bigr) \neq 0$ we obtain
 $B = 0$.  Therefore $x=0$ is the unique solution to this problem.
 \end{example}
 
@@ -379,7 +379,7 @@ Integrate both sides of the equation:
 The last equality holds because of the boundary conditions.  For example, if
 we consider \eqref{bv:eq1} we have $x_1(a) = x_1(b) = x_2(a) = x_2(b) = 0$
 and so $x_2' x_1 - x_2 x_1'$ is zero at both $a$ and $b$.
-As $\lambda_1 \not= \lambda_2$, the theorem follows.
+As $\lambda_1 \neq \lambda_2$, the theorem follows.
 
 \begin{exercise}[easy]
 Finish the proof of the theorem (check the last equality in the proof) for the cases
@@ -393,14 +393,14 @@ integers $n$ and $m$, we have the integrals
 \begin{equation*}
 \int_{0}^\pi \sin (mt) \sin (nt) \,dt = 0 ,
 \quad
-\text{when } m \not = n.
+\text{when } m \neq n.
 \end{equation*}
 Similarly, still assuming that $m$ and $n$ are positive
 integers,
 \begin{equation*}
 \int_{0}^\pi \cos (mt) \cos (nt) \,dt = 0 ,
 \quad
-\text{when } m \not = n,
+\text{when } m \neq n,
 \qquad \text{and} \qquad
 \int_{0}^\pi  \cos (nt) \,dt = 0 .
 \end{equation*}
@@ -408,14 +408,14 @@ Finally, we also get
 \begin{equation*}
 \int_{-\pi}^\pi \sin (mt) \sin (nt) \,dt = 0 ,
 \quad
-\text{when } m \not = n, 
+\text{when } m \neq n, 
 \qquad \text{and} \qquad
 \int_{-\pi}^\pi  \sin (nt) \,dt = 0 ,
 \end{equation*}
 \begin{equation*}
 \int_{-\pi}^\pi \cos (mt) \cos (nt) \,dt = 0 ,
 \quad
-\text{when } m \not = n,
+\text{when } m \neq n,
 \qquad \text{and} \qquad
 \int_{-\pi}^\pi  \cos (nt) \,dt = 0 ,
 \end{equation*}
@@ -438,7 +438,7 @@ and
 %\int_{-\pi}^\pi \sin (mt) \sin (nt) \,dt = 0 \qquad \text{and} \qquad
 %\int_{-\pi}^\pi \cos (mt) \cos (nt) \,dt = 0 ,
 %\end{equation*}
-%when $m \not = n$, and 
+%when $m \neq n$, and 
 %\begin{equation*}
 %\int_{-\pi}^\pi \sin (mt) \cos (nt) \,dt = 0 ,
 %\end{equation*}
@@ -896,8 +896,8 @@ we saw in the previous section that the eigenfunctions $\cos (kt)$
 (including the constant eigenfunction), and
 $\sin (kt)$ are \emph{orthogonal\index{orthogonal!functions}}, that is,
 \begin{align*}
-\langle \, \cos (mt)\, , \, \cos (nt) \, \rangle = 0 & \qquad \text{for } m \not= n , \\
-\langle \, \sin (mt)\, , \, \sin (nt) \, \rangle = 0 & \qquad \text{for } m \not= n , \\
+\langle \, \cos (mt)\, , \, \cos (nt) \, \rangle = 0 & \qquad \text{for } m \neq n , \\
+\langle \, \sin (mt)\, , \, \sin (nt) \, \rangle = 0 & \qquad \text{for } m \neq n , \\
 \langle \, \sin (mt)\, , \, \cos (nt) \, \rangle = 0 & \qquad \text{for all } m \text{ and } n .
 \end{align*}
 For $n=1,2,3,\ldots$,
@@ -2955,7 +2955,7 @@ x(t) = \frac{a_0}{2} +
 t \left(
 a_N \cos \left( \frac{N \pi}{L} t \right) +
 b_N \sin \left( \frac{N \pi}{L} t \right) \right) +
-\sum_{\substack{n=1\\n\not= N}}^\infty
+\sum_{\substack{n=1\\n \neq N}}^\infty
 a_n \cos \left( \frac{n \pi}{L} t \right) +
 b_n \sin \left( \frac{n \pi}{L} t \right) .
 \end{equation*}
@@ -3034,7 +3034,7 @@ t \cos (3 \pi t )
 b_3
 t \sin (3 \pi t)
 +
-\sum_{\substack{n=1 \\ n~\text{odd} \\ n\not= 3}}^\infty
+\sum_{\substack{n=1 \\ n~\text{odd} \\ n \neq 3}}^\infty
 b_n
 \sin (n \pi t) . 
 \end{equation*}
@@ -3048,7 +3048,7 @@ x_p''(t) =
 \pi \, \cos (3 \pi t) - 9\pi^2 b_3 \, t \, \sin (3 \pi t)
 \\
 {} +
-\sum_{\substack{n=1 \\ n~\text{odd} \\ n\not= 3}}^\infty
+\sum_{\substack{n=1 \\ n~\text{odd} \\ n \neq 3}}^\infty
 (-n^2 \pi^2 b_n ) \,
 \sin (n \pi t) . 
 \end{multline*}
@@ -3066,7 +3066,7 @@ We now plug into the left-hand side of the differential equation.
 \phantom{\, + 12 b_3 \pi \cos (3 \pi t)} ~
 {} + 18 \pi^2 b_3 t \sin (3 \pi t)
 \\
-& {} + \sum_{\substack{n=1 \\ n~\text{odd} \\ n\not= 3}}^\infty
+& {} + \sum_{\substack{n=1 \\ n~\text{odd} \\ n \neq 3}}^\infty
 (-2n^2 \pi^2 b_n + 18\pi^2 b_n) \,
 \sin (n \pi t) . 
 \end{align*}
@@ -3079,7 +3079,7 @@ We simplify,
 12 b_3
 \pi \cos (3 \pi t)
 +
-\sum_{\substack{n=1 \\ n~\text{odd} \\ n\not= 3}}^\infty
+\sum_{\substack{n=1 \\ n~\text{odd} \\ n \neq 3}}^\infty
 (-2n^2 \pi^2 b_n + 18\pi^2 b_n)
 \sin (n \pi t) . 
 \end{equation*}
@@ -3089,7 +3089,7 @@ We equate the coefficients and solve for $a_3$ and $b_n$:
 & a_3 = \frac{4/(3\pi)}{-12\pi} = \frac{-1}{9\pi^2} , \\
 & b_3 = 0 , \\
 & b_n = \frac{4}{n\pi(18\pi^2 - 2n^2 \pi^2)} 
-= \frac{2}{\pi^3 n(9 - n^2)} \qquad \text{for } n \text{ odd and } n\not=3 .
+= \frac{2}{\pi^3 n(9 - n^2)} \qquad \text{for } n \text{ odd and } n \neq 3 .
 \end{align*}
 That is,
 \begin{equation*}
@@ -3098,7 +3098,7 @@ x_p(t) =
 \,
 t \, \cos (3 \pi t)
 +
-\sum_{\substack{n=1 \\ n~\text{odd} \\ n\not= 3}}^\infty
+\sum_{\substack{n=1 \\ n~\text{odd} \\ n \neq 3}}^\infty
 \frac{2}{\pi^3 n(9 - n^2)}
 \sin (n \pi t) . 
 \end{equation*}
