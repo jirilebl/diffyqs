@@ -4,6 +4,13 @@
   number changes.  If this is done, we could drop the manual introduction
   %mbxINTROSUBSECTION thing and do it automatically again perhaps.
 
+* Accessibility:
+  * Add the %mbxalt logic from ra
+  * Add the %mbxalt tags to all figures/images
+  * Don't make text justified, apparently it is an accessibility nono for web
+  * Check for other accessibility things to do
+  * Try to make latex work with tagging
+
 Pretext/HTML:
 
 * https://pretextbook.org/doc/guide/html/processing-directory-management.html
