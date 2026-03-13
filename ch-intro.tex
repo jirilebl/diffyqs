@@ -69,6 +69,13 @@ The dependence of the material covered is roughly:
 \end{tikzcd}
 \end{equation*}
 %mbxENDIGNORE
+%mbxlatex %mbxalt A diagram with 'Introduction' at the top with an arrow
+%mbxlatex %mbxalt to 'Chapter 1' then an arrow to 'Chapter 2', then three
+%mbxlatex %mbxalt arrows to 'Chapter 3', 'Chapter 4', 'Chapter 6', and
+%mbxlatex %mbxalt 'Chapter 7'.  'Chapter 3' has an arrow to 'Chapter 8'
+%mbxlatex %mbxalt and a dotted arrow to 'Chapter 4'. 'Chapter 4' has an 
+%mbxlatex %mbxalt arrow to 'Chapter 5' and a dotted arrow to 'Chapter 6'.
+%mbxlatex %mbxalt There is also 'Appendix A' with a dotted arrow to 'Chapter 3'.
 %mbxlatex \begin{center}
 %mbxlatex \inputpdft{chapterdiagram}
 %mbxlatex \end{center}
@@ -404,6 +411,9 @@ in a later section.
 
 \begin{mywrapfig}{3.25in}
 \capstart
+%mbxalt A plot with 3 graphs that start at the right hand side at different
+%mbxalt places, one at 3, one at 1, and one at -1.  All three lines tend towards
+%mbxalt each other and tend closer to what looks like a sine wave.
 \diffyincludegraphics{width=3in}{width=4.5in}{intro-plots-alt}
 \caption{A few solutions of $\frac{dx}{dt} + x = 2 \cos t$.\label{intro:plotsfig}}
 \end{mywrapfig}%
@@ -453,6 +463,11 @@ course is no exception.
 
 \begin{mywrapfigsimp}{3.05in}{3.35in}
 \noindent
+%mbxalt A diagram connecting three terms on top is 'Real-world problem',
+%mbxalt then an arrow marked "abstract" connects to 'Mathematical model',
+%mbxalt then an arrow marked "solve" connects to 'Mathematical solution',
+%mbxalt and finally an arrow marks "interpret connects back to the first
+%mbxalt term.
 \inputpdft{1-1-fig}
 \diffypdfversion{\par\vspace*{5pt}}
 \end{mywrapfigsimp}
@@ -535,6 +550,9 @@ At one minute, $t=60$, the population is $P(60) = 6400$.  See
 
 %mbxlatex \begin{myfig}
 %mbxlatex \capstart
+%mbxlatex %mbxalt Graph of an exponential growth function (an upward concave curve
+%mbxlatex %mbxalt that is steeper and steeper as we go rightwards) starting at 100
+%mbxlatex %mbxalt on the left hand side and ending at 6000 on the right hand side.
 %mbxlatex \diffyincludegraphics{width=3in}{width=4.5in}{intro-plotbact}
 %mbxlatex \caption{Bacteria growth in the first 60 seconds.\label{intro:plotbactfig}}
 %mbxlatex \end{myfig}

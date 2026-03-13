@@ -560,6 +560,10 @@ sub read_paragraph {
 		} elsif ($line =~ m/^%mbxENDIGNORE/) {
 			$mbxignore = 0;
 
+		# Kind of a hack
+		} elsif ($line =~ m/^%mbxalt[ \t][ \t]*.*$/) {
+			$para = $para . $line . "\n";
+
 		} elsif ($mbxignore == 0 &&
 			 ($line =~ m/^[ \t]*\\input[ \t][ \t]*(.*)$/ ||
 			  $line =~ m/^[ \t]*\\input\{(.*)\}.*$/)) {
@@ -667,6 +671,8 @@ sub read_paragraph {
 
 
 @cltags = ();
+
+$alttag = "";
 
 while(1)
 {
@@ -1229,6 +1235,13 @@ while(1)
 			print "\n\n\nERROR: HUH?\n\n\nNo end tabular/center!\n\n$para\n\n";
 			$num_errors++;
 		}
+
+	} elsif ($para =~ s/\A%mbxalt[ \t][ \t]*([^\n]*)$//m) {
+		print "add to alt tag para: $1\n";
+		$alttag = $alttag . " " . $1;
+		$alttag =~ s/^ //;
+		$alttag =~ s/  / /g;
+		$para =~ s/^[ \n]*//;
 		
 	#FIXME:Assuming that mywrapfigsimp never has a caption
 	#FIXME:Assuming that mywrapfigsimp is always just an inputpdft
@@ -1248,6 +1261,16 @@ while(1)
 			$fig =~ s/\\diffypdfversion\{.*?\{.*?\}\}[ \n]*//g;
 			$fig =~ s/\\diffypdfversion\{.*?\}[ \n]*//g;
 
+			if ($fig =~ s/^[ \n]*((?:%mbxalt .*\n)*)//) {
+				$alttag = $alttag . " " . $1;
+				$alttag =~ s/^ //;
+				$alttag =~ s/%mbxalt //g;
+				$alttag =~ s/\n/ /g;
+				$alttag =~ s/  / /g;
+				$alttag =~ s/ $//;
+				print "alt tag: $alttag\n";
+			}
+
 			# FIXME: the above needs to cleaned up, the diffypdfversion macro is not a clean way to handle this I think
 
 			if ($fig =~ m/^[ \n]*\\inputpdft\{(.*?)\}[ \n]*$/) {
@@ -1255,10 +1278,16 @@ while(1)
 				$thesizestr = get_size_of_svg("$thefile-tex4ht.svg");
 				open_paragraph ();
 				if ($thesizestr ne "") {
-					print $out "<diffyqsimage source=\"$thefile-tex4ht\" $thesizestr float=\"$float\" />\n";
+					print $out "<diffyqsimage source=\"$thefile-tex4ht\" $thesizestr float=\"$float\" ";
 				} else {
-					print $out "<diffyqsimage source=\"$thefile-tex4ht\" width=\"$thesize\" float=\"$float\" />\n";
+					print $out "<diffyqsimage source=\"$thefile-tex4ht\" width=\"$thesize\" float=\"$float\" ";
 				}
+				if ($alttag eq "") {
+					print $out "/>\n";
+				} else {
+					print $out "><shortdescription>$alttag</shortdescription></diffyqsimage>\n";
+				}
+				$alttag = "";
 				close_paragraph ();
 			} else {
 				print "\n\n\nERROR: HUH?\n\n\nmywrapfigsimp not just an inputpdft!\n\nFIG=>$fig<\n\n";
@@ -1270,20 +1299,35 @@ while(1)
 		}
 
 	#FIXME: this is based entirely too much on my usage :)
-	} elsif ($para =~ s/^\\begin\{center\}[ \n]*\\inputpdft\{(.*?)\}[ \n]*\\end\{center\}[ \n]*//) {
-		my $thefile = "figures/$1";
+	} elsif ($para =~ s/^\\begin\{center\}[ \n]*((?:%mbxalt .*\n)*)[ \n]*\\inputpdft\{(.*?)\}[ \n]*\\end\{center\}[ \n]*//) {
+		my $thefile = "figures/$2";
 		print "(CENTERED inputpdft)\n";
+
+		$alttag = $alttag . $1;
+		$alttag =~ s/%mbxalt //g;
+		$alttag =~ s/\n/ /g;
+		$alttag =~ s/  / /g;
+		$alttag =~ s/ $//;
+
+		print "alt tag: $alttag\n";
+
 		#open_paragraph ();
 		my $thesizestr = get_size_of_svg("$thefile-tex4ht.svg");
 		open_paragraph ();
 		if ($thesizestr ne "") {
-			print $out "<diffyqsimage source=\"$thefile-tex4ht\" $thesizestr />\n";
+			print $out "<diffyqsimage source=\"$thefile-tex4ht\" $thesizestr ";
 		} else {
 			#FIXME
 			print "\n\n\nERROR: HUH?\n\n\nCan't figure out the size of $thefile\n\n";
 			$num_errors++;
-			print $out "<diffyqsimage source=\"$thefile-tex4ht\" height=\"1in\" />\n";
+			print $out "<diffyqsimage source=\"$thefile-tex4ht\" height=\"1in\" ";
 		}
+		if ($alttag eq "") {
+			print $out "/>\n";
+		} else {
+			print $out "><shortdescription>$alttag</shortdescription></diffyqsimage>\n";
+		}
+		$alttag = "";
 		close_paragraph ();
 		#
 	#FIXME: this is based entirely too much on my usage :)
@@ -1294,7 +1338,13 @@ while(1)
 		ensure_mbx_svg_version ($thefile);
 		#ensure_mbx_png_version ($thefile);
 		open_paragraph ();
-		print $out "<diffyqsimage source=\"$thefile-mbx\" width=\"$width\" background-color=\"white\" inline=\"yes\" />\n";
+		print $out "<diffyqsimage source=\"$thefile-mbx\" width=\"$width\" background-color=\"white\" inline=\"yes\" ";
+		if ($alttag eq "") {
+			print $out "/>\n";
+		} else {
+			print $out "><shortdescription>$alttag</shortdescription></diffyqsimage>\n";
+		}
+		$alttag = "";
 		close_paragraph ();
 
 	#FIXME: this is based entirely too much on my usage :)
@@ -1304,7 +1354,13 @@ while(1)
 		print "(PARBOXED image >$width< >$thefile<\n)";
 		ensure_mbx_svg_version ($thefile);
 		#ensure_mbx_png_version ($thefile);
-		print $out "<diffyqsimage source=\"$thefile-mbx\" width=\"$width\" background-color=\"white\" inline=\"yes\" />\n";
+		print $out "<diffyqsimage source=\"$thefile-mbx\" width=\"$width\" background-color=\"white\" inline=\"yes\" ";
+		if ($alttag eq "") {
+			print $out "/>\n";
+		} else {
+			print $out "><shortdescription>$alttag</shortdescription></diffyqsimage>\n";
+		}
+		$alttag = "";
 		
 	#FIXME: this is based entirely too much on my usage :)
 	} elsif ($para =~ s/^\\includegraphics\[width=(.*?)\]\{(.*?)\}[ \n]*//) {
@@ -1313,7 +1369,13 @@ while(1)
 		print "(Just inlined image >$width< >$thefile<\n)";
 		ensure_mbx_svg_version ($thefile);
 		#ensure_mbx_png_version ($thefile);
-		print $out "<diffyqsimage source=\"$thefile-mbx\" width=\"$width\" background-color=\"white\" inline=\"yes\" />\n";
+		print $out "<diffyqsimage source=\"$thefile-mbx\" width=\"$width\" background-color=\"white\" inline=\"yes\" ";
+		if ($alttag eq "") {
+			print $out "/>\n";
+		} else {
+			print $out "><shortdescription>$alttag</shortdescription></diffyqsimage>\n";
+		}
+		$alttag = "";
 
 	#FIXME: not all substitutions are made, so check if more processing needs to be done
 	#on caption
@@ -1400,33 +1462,68 @@ while(1)
 				print $out "<diffyqshr/><figure xml:id=\"$theid\" number=\"$the_num\">\n";
 				print $out "  <caption>$caption</caption>\n";
 
+				if ($fig =~ s/^[ \n]*((?:%mbxalt .*\n)*)//) {
+					$alttag = $alttag . " " . $1;
+					$alttag =~ s/^ //;
+					$alttag =~ s/%mbxalt //g;
+					$alttag =~ s/\n/ /g;
+					$alttag =~ s/  / /g;
+					$alttag =~ s/ $//;
+					print "alt tag 1: $alttag\n";
+				}
+
 				if ($fig =~ m/^[ \n]*\\diffyincludegraphics\{[^}]*?\}\{([^}]*?)\}\{([^}]*?)\}[ \n]*$/) {
 					my $thesize = $1;
 					my $thefile = "figures/$2";
 					$thesize =~ s/width=//g;
 					ensure_mbx_svg_version ($thefile);
 					#ensure_mbx_png_version ($thefile);
-					print $out "  <diffyqsimage source=\"$thefile-mbx\" width=\"100\%\" background-color=\"white\" maxwidth=\"$thesize\" />\n";
+					print "IMAGE\n";
+					print $out "  <diffyqsimage source=\"$thefile-mbx\" width=\"100\%\" background-color=\"white\" maxwidth=\"$thesize\" ";
+					if ($alttag eq "") {
+						print $out "/>\n";
+					} else {
+						print $out "><shortdescription>$alttag</shortdescription></diffyqsimage>\n";
+					}
+					$alttag = "";
 					#if ($thesize ne "") {
 					#print $out "  <diffyqsimage source=\"$thefile-mbx\" width=\"$thesize\" />\n";
 					#} else {
 					#$thesizestr = get_size_of_svg("$thefile-mbx.svg");
 					#print $out "  <diffyqsimage source=\"$thefile-mbx\" $thesizestr />\n";
 					#}
-				} elsif ($fig =~ m/^[ \n]*\\diffyincludegraphics\{[^}]*?\}\{([^}]*?)\}\{([^}]*?)\}[ \n]*\\\\(\[[0-9]*pt\])?[ \n]*\\diffyincludegraphics\{[^}]*?\}\{([^}]*?)\}\{([^}]*?)\}[ \n]*$/) {
+				} elsif ($fig =~ m/^[ \n]*\\diffyincludegraphics\{[^}]*?\}\{([^}]*?)\}\{([^}]*?)\}[ \n]*\\\\(\[[0-9]*pt\])?[ \n]*((?:%mbxalt .*\n)*)[ \n]*\\diffyincludegraphics\{[^}]*?\}\{([^}]*?)\}\{([^}]*?)\}[ \n]*$/) {
 					my $thesize1 = $1;
 					my $thefile1 = "figures/$2";
-					my $thesize2 = $4;
-					my $thefile2 = "figures/$5";
+					my $alttag2 = $4;
+					my $thesize2 = $5;
+					my $thefile2 = "figures/$6";
 					$thesize1 =~ s/width=//g;
 					$thesize2 =~ s/width=//g;
+					$alttag2 =~ s/%mbxalt //g;
+					$alttag2 =~ s/\n/ /g;
+					$alttag2 =~ s/  / /g;
+					$alttag2 =~ s/ $//;
+					print "alt tag 2: $alttag2\n";
 					ensure_mbx_svg_version ($thefile1);
 					ensure_mbx_svg_version ($thefile2);
 					#ensure_mbx_png_version ($thefile1);
 					#ensure_mbx_png_version ($thefile2);
 					#FIXME: what about maxwidth?
-					print $out "  <diffyqsimage source=\"$thefile1-mbx\" width=\"100\%\" background-color=\"white\" maxwidth=\"$thesize1\" />\n";
-					print $out "  <diffyqsimage source=\"$thefile2-mbx\" width=\"100\%\" background-color=\"white\" maxwidth=\"$thesize2\" />\n";
+					print $out "  <diffyqsimage source=\"$thefile1-mbx\" width=\"100\%\" background-color=\"white\" maxwidth=\"$thesize1\" ";
+					if ($alttag eq "") {
+						print $out "/>\n";
+					} else {
+						print $out "><shortdescription>$alttag</shortdescription></diffyqsimage>\n";
+					}
+					$alttag = "";
+					print $out "  <diffyqsimage source=\"$thefile2-mbx\" width=\"100\%\" background-color=\"white\" maxwidth=\"$thesize2\" ";
+					if ($alttag2 eq "") {
+						print $out "/>\n";
+					} else {
+						print $out "><shortdescription>$alttag2</shortdescription></diffyqsimage>\n";
+					}
+					$alttag2 = "";
 
 				#2 picture version FIXME: removing these, adding hand-done guys
 				#} elsif ($fig =~ m/^[ \n]*\\diffyincludegraphics\{[^}]*?\}\{[^}]*?\}\{([^}]*?)}[ \n]*\\diffyincludegraphics\{[^}]*?\}\{[^}]*?\}\{([^}]*?)\}[ \n]*$/) {
@@ -1485,7 +1582,13 @@ while(1)
 				} elsif ($fig =~ m/^[ \n]*\\inputpdft\{(.*?)\}[ \n]*$/) {
 					my $thefile = "figures/$1";
 					my $thesizestr = get_size_of_svg("$thefile-tex4ht.svg");
-					print $out "<diffyqsimage source=\"$thefile-tex4ht\" $thesizestr />\n";
+					print $out "<diffyqsimage source=\"$thefile-tex4ht\" $thesizestr ";
+					if ($alttag eq "") {
+						print $out "/>\n";
+					} else {
+						print $out "><shortdescription>$alttag</shortdescription></diffyqsimage>\n";
+					}
+					$alttag = "";
 				} else {
 					print "\n\n\nERROR: HUH?\n\n\nFigure too complicated!\n\nFIG=>$fig<\n\n";
 					$num_errors++;
