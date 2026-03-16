@@ -44,6 +44,8 @@
 
 \usepackage[T1]{fontenc}
 
+\usepackage{perpage}
+
 \usepackage{tasks}
 \usepackage{footnote}
 \makesavenoteenv{tasks}
@@ -104,7 +106,12 @@
 
 % Footnotes should use symbols, not numbers.  Numbered footnotes are
 % evil, (footmisc no longer conflicts with hyperref)
-\usepackage[perpage,symbol*]{footmisc}
+% however footmisc now has some sort of conflict with texlive 2026
+%\usepackage[perpage,symbol*]{footmisc}
+
+\MakePerPage{footnote}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
 
 % discourage pagebreak at end of display, put before \end{equation}
 \newcommand{\avoidbreak}{\postdisplaypenalty=100}
