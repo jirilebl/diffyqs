@@ -205,11 +205,11 @@ $0$) is in this interval.
 In the figure, it is the left side of the graph.
 \begin{myfig}
 \capstart
-%mbxalt A plot of y=1/(1-x) which is a line starting at a positive value on
-%mbxalt the left, then rising towards a vertical asymptote at x=1.  Then from
-%mbxalt below there is another line that rises from the vertical asymptote
-%mbxalt and approaches the x-axis.
-\diffyincludegraphics{width=3in}{width=4.5in}{1over1mx}
+\diffyincludegraphics{width=3in}{width=4.5in}{1over1mx}{%
+A plot of y=1/(1-x) which is a line starting at a positive value on
+the left, then rising towards a vertical asymptote at x=1.  Then from
+below there is another line that rises from the vertical asymptote
+and approaches the x-axis.}
 \caption{Plot of $y=\frac{1}{1-x}$.\label{1over1mx:fig}}
 \end{myfig}
 
@@ -444,9 +444,9 @@ See \figurevref{1.3:fig0}.
 
 \begin{myfig}
 \capstart
-%mbxalt The xy plane with a short line segment of slope 3 at the point
-%mbxalt (2,1.5).
-\diffyincludegraphics{width=3in}{width=4.5in}{1-3-xysl-one}
+\diffyincludegraphics{width=3in}{width=4.5in}{1-3-xysl-one}{%
+The xy plane with a short line segment of slope 3 at the point
+(2,1.5).}
 \caption{The slope $y'=xy$ at $(2,1.5)$.\label{1.3:fig0}}
 \end{myfig}
 
@@ -474,18 +474,18 @@ and goes through your initial condition.
 \begin{myfig}
 \parbox[t]{3.0in}{
  \capstart
-%mbxalt A grid of line segments whose slope at each point is given by xy.
- \diffyincludegraphics{width=3.0in}{width=4.5in}{1-3-xysl}
+ \diffyincludegraphics{width=3.0in}{width=4.5in}{1-3-xysl}{%
+A grid of line segments whose slope at each point is given by xy.}
  \caption{Slope field of $y' = xy$.\label{1.3:fig1}}
 }
 \quad
 \parbox[t]{3.0in}{
  \capstart
-%mbxalt A grid of line segments whose slope at each point is given by xy.
-%mbxalt Overlaid are three red lines going through these line segments,
-%mbxalt one is concave up above the x-axis, one is simply the x-axis,
-%mbxalt and one is concave down below the x-axis.
- \diffyincludegraphics{width=3.0in}{width=4.5in}{1-3-xysl-sol}
+ \diffyincludegraphics{width=3.0in}{width=4.5in}{1-3-xysl-sol}{%
+A grid of line segments whose slope at each point is given by xy.
+Overlaid are three red lines going through these line segments,
+one is concave up above the x-axis, one is simply the x-axis,
+and one is concave down below the x-axis.}
  \caption{Slope field of $y' = xy$ with a graph of solutions satisfying
  $y(0) = 0.2$, $y(0) = 0$, and $y(0) = -0.2$.\label{1.3:fig2}}
 }
@@ -513,10 +513,10 @@ looking at the slope field itself.
 
 \begin{myfig}
 \capstart
-%mbxalt A grid of line segments with the slope given by y.  Overlaid
-%mbxalt are three red lines starting at various points on the left hand side that
-%mbxalt all approach the x-axis as we move right.
-\diffyincludegraphics{width=3in}{width=4.5in}{1-3-mysl-sol}
+\diffyincludegraphics{width=3in}{width=4.5in}{1-3-mysl-sol}{%
+A grid of line segments with the slope given by y.  Overlaid
+are three red lines starting at various points on the left hand side that
+all approach the x-axis as we move right.}
 \caption{Slope field of $y' = -y$ with a graph of a few solutions.\label{1.3:fig3}}
 \end{myfig}
 
@@ -562,23 +562,23 @@ the equation may have been written as the seemingly harmless $x y' = 1$.
 \begin{myfig}
 \parbox[t]{3in}{
  \capstart
-%mbxalt A grid of line segments with the slope given by 1/x.  Overlaid
-%mbxalt are red lines starting at various points on the left hand side 
-%mbxalt and the right hand side that go out the bottom of the picture
-%mbxalt as they approach the y-axis.
- \diffyincludegraphics{width=3in}{width=4.5in}{1-3-xinv-sol}
+ \diffyincludegraphics{width=3in}{width=4.5in}{1-3-xinv-sol}{%
+A grid of line segments with the slope given by 1/x.  Overlaid
+are red lines starting at various points on the left hand side 
+and the right hand side that go out the bottom of the picture
+as they approach the y-axis.}
  \caption{Slope field of $y' = \nicefrac{1}{x}$.\label{1.3:xinvfig}}
 }
 \quad
 \parbox[t]{3in}{
  \capstart
-%mbxalt A grid of line segments with the slope given by 2 times the
-%mbxalt square root of the absolute value of y.  These are lines that
-%mbxalt go generally up except on the x-axis where they are horizontal.
-%mbxalt There are two lines giving solutions, one horizontal and one
-%mbxalt going up from the bottom of the plot and hitting the origin and
-%mbxalt then leaving upwards.
- \diffyincludegraphics{width=3in}{width=4.5in}{1-3-sqrt-sol}
+ \diffyincludegraphics{width=3in}{width=4.5in}{1-3-sqrt-sol}{%
+A grid of line segments with the slope given by 2 times the
+square root of the absolute value of y.  These are lines that
+go generally up except on the x-axis where they are horizontal.
+There are two lines giving solutions, one horizontal and one
+going up from the bottom of the plot and hitting the origin and
+then leaving upwards.}
  \caption{Slope field of $y' = 2 \sqrt{\lvert y \rvert}$ with two
  solutions satisfying $y(0) = 0$.\label{1.3:sqrtfig}}
 }
@@ -695,11 +695,20 @@ Match equations $y'=1-x$, $y'=x-2y$, $y' = x(1-y)$ to slope fields.
 Justify.
 \begin{tasks}(3)
 \task
-\parbox[c]{1.75in}{\includegraphics[width=1.75in]{figures/yprimex1minusyslope}}
+\parbox[c]{1.75in}{\diffyincludegraphics{width=1.75in}{width=1.75in}{yprimex1minusyslope}{%
+A slope field where the lines have 0 slope on the y-axis, they are sloped
+upwards for negative x and y above some horizontal line and also for
+positive x and y below some horizontal line, they are sloped downwards
+otherwise.}}
 \task
-\parbox[c]{1.75in}{\includegraphics[width=1.75in]{figures/yprime1minusxslope}}
+\parbox[c]{1.75in}{\diffyincludegraphics{width=1.75in}{width=1.75in}{yprime1minusxslope}{%
+A slope field where the lines are sloped upwards for x less than some
+positive quantity and downwards otherwise.  The slope does not seem to vary
+with y.}}
 \task
-\parbox[c]{1.75in}{\includegraphics[width=1.75in]{figures/yprimexminus2yslope}}
+\parbox[c]{1.75in}{\diffyincludegraphics{width=1.75in}{width=1.75in}{yprimexminus2yslope}{%
+A slope field where above some diagonal line from lower left to upper right,
+the slopes are negative, and below this line the slopes are positive.}}
 \end{tasks}
 \end{exercise}
 \end{samepage}
@@ -769,12 +778,18 @@ that satisfies $y(0)=0$?
 \end{exercise}
 \exsol{%
 %mbxSTARTIGNORE
-\vtop{\vskip-1ex \hbox{\includegraphics[width=2in]{figures/yprimey3slope}}}
-\quad
+\vtop{\vskip-1ex \hbox{%
 %mbxENDIGNORE
 %mbxlatex \\
-%mbxlatex \includegraphics[width=2in]{figures/yprimey3slope}
+\diffyincludegraphics{width=2in}{width=2in}{yprimey3slope}{A slope field
+where the slopes are positive above the x-axis and negative below, getting
+steeper and steeper the further away from the x-axis we get.  The slopes are
+zero on the x-axis and do not seem to depend on x.}%
 %mbxlatex \\
+%mbxSTARTIGNORE
+}}
+%mbxENDIGNORE
+\quad
 $y=0$ is a solution such that $y(0)=0$.
 }
 
@@ -801,11 +816,21 @@ Match equations $y'=\sin x$, $y'=\cos y$, $y' = y\cos(x)$ to slope fields.
 Justify.
 \begin{tasks}(3)
 \task
-\parbox[c]{1.75in}{\includegraphics[width=1.75in]{figures/yprimecosyslope}}
+\parbox[c]{1.75in}{\diffyincludegraphics{width=1.75in}{width=1.75in}{yprimecosyslope}{%
+A slope field where the slopes do not seem to depend on x.  They are
+negative at the top of the picture, positive in the middle part, and
+negative again at the bottom of the picture.}}
 \task
-\parbox[c]{1.75in}{\includegraphics[width=1.75in]{figures/yprimecosxyslope}}
+\parbox[c]{1.75in}{\diffyincludegraphics{width=1.75in}{width=1.75in}{yprimecosxyslope}{%
+A slope field where the slopes are zero on the x-axis.  Above the x-axis the
+slopes first are negative, then turn positive, then turn negative.  Below
+the x-axis it is the same pattern but starting with positive, then negative,
+then positive again.}}
 \task
-\parbox[c]{1.75in}{\includegraphics[width=1.75in]{figures/yprimesinxslope}}
+\parbox[c]{1.75in}{\diffyincludegraphics{width=1.75in}{width=1.75in}{yprimesinxslope}{%
+A slope field that is zero on the y-axis.  The slopes do not appear to
+depend on y, and from left to right are first positive, then negative then
+positive and then negative again.}}
 \end{tasks}
 \end{exercise}
 \end{samepage}
@@ -1019,10 +1044,10 @@ tricky.  But sometimes, an implicit solution is the best we can do.
 
 \begin{myfig}
 \capstart
-%mbxalt Plot of the region of the xy-plane near the origin, and
-%mbxalt there are two solutions plotted one concave up above the
-%mbxalt x-axis and one concave down below the x-axis.
-\diffyincludegraphics{width=3in}{width=4.5in}{implicitsols}
+\diffyincludegraphics{width=3in}{width=4.5in}{implicitsols}{%
+Plot of the region of the xy-plane near the origin, and
+there are two solutions plotted one concave up above the
+x-axis and one concave down below the x-axis.}
 \caption{The implicit solution $y^2+2\ln \, \lvert y\rvert = x^2$
 to $y'=\frac{xy}{y^2+1}$.\label{implicitsols:fig}}
 \end{myfig}
@@ -1120,15 +1145,15 @@ it would take.  See \figurevref{sintro:coffeefig}.
 \begin{myfig}
 \capstart
 %original files coffeefig-1 coffeefig-2
-%mbxalt Two plots of the coffee temperature.  On the left, the downwards
-%mbxalt solution is shown for time 0 to 12.5 as the temperature goes
-%mbxalt from 89 to below 60.  There are horizontal lines at 89, 85,
-%mbxalt and 60.  A vertical line at t=1 intersects the solution
-%mbxalt at temperature 85.  A vertical line at t=9.21 intersects the
-%mbxalt solution at temperature 60.  The right hand plot is over longer
-%mbxalt period of time to t=80.  The solution exponentially decays
-%mbxalt towards a vertical line at temperature 22.
-\diffyincludegraphics{width=6.24in}{width=9in}{coffeefig-1-2}
+\diffyincludegraphics{width=6.24in}{width=9in}{coffeefig-1-2}{%
+Two plots of the coffee temperature.  On the left, the downwards
+solution is shown for time 0 to 12.5 as the temperature goes
+from 89 to below 60.  There are horizontal lines at 89, 85,
+and 60.  A vertical line at t=1 intersects the solution
+at temperature 85.  A vertical line at t=9.21 intersects the
+solution at temperature 60.  The right hand plot is over longer
+period of time to t=80.  The solution exponentially decays
+towards a vertical line at temperature 22.}
 \caption{Graphs of the coffee temperature function $T(t)$.
 On the left, horizontal
 lines are drawn at temperatures 60, 85, and 89.  Vertical lines
@@ -1458,12 +1483,12 @@ chemicals in bodies of water (rivers and lakes).
 
 \begin{mywrapfigsimp}{1.60in}{1.65in}
 \noindent
-%mbxalt A diagram of a tank of liquid with a pipe showing water
-%mbxalt flowing into the tank at the top and a pipe showing water leaving
-%mbxalt at the bottom.  The top input is labeled as 5 L/min, 0.1 kg/L.
-%mbxalt The bottom output is labeled as 3 L/min.  Inside the liquid is
-%mbxalt labeled as 60 L and 10 kg salt.
-\inputpdft{lin-tank}
+\inputpdft{lin-tank}{%
+A diagram of a tank of liquid with a pipe showing water
+flowing into the tank at the top and a pipe showing water leaving
+at the bottom.  The top input is labeled as 5 L/min, 0.1 kg/L.
+The bottom output is labeled as 3 L/min.  Inside the liquid is
+labeled as 60 L and 10 kg salt.}
 \end{mywrapfigsimp}
 A 100 liter tank contains 10 kilograms of salt dissolved in 60 liters of
 water.  Solution of water and salt (brine) with concentration of 0.1
@@ -1560,7 +1585,11 @@ dt
 %mbxSTARTIGNORE
 \begin{mywrapfig}{3.25in}
 \capstart
-\diffyincludegraphics{width=3in}{width=4.5in}{linear-salt-graph}
+\diffyincludegraphics{width=3in}{width=4.5in}{linear-salt-graph}{%
+A graph of a solution from t=0 to t=20
+starting at 20 and then rising, at first slowly
+then speeding up and ending at roughly 11.86 at the
+right-hand side.}
 \caption{Graph of the solution $x$ kilograms of salt in the tank at time
 $t$.\label{linear-salt-graph:fig}}
 \end{mywrapfig}
@@ -1610,11 +1639,11 @@ $\nicefrac{11.86}{100} = \unitfrac[0.1186]{kg}{liter}$, and we started
 with $\nicefrac{1}{6}$ or approximately \unitfrac[0.1667]{kg}{liter}.
 %mbxlatex \begin{myfig}
 %mbxlatex \capstart
-%mbxlatex %mbxalt A graph of a solution from t=0 to t=20
-%mbxlatex %mbxalt starting at 20 and then rising, at first slowly
-%mbxlatex %mbxalt then speeding up and ending at roughly 11.86 at the
-%mbxlatex %mbxalt right-hand side. 
-%mbxlatex \diffyincludegraphics{width=3in}{width=4.5in}{linear-salt-graph}
+%mbxlatex \diffyincludegraphics{width=3in}{width=4.5in}{linear-salt-graph}{%
+%mbxlatex A graph of a solution from t=0 to t=20
+%mbxlatex starting at 20 and then rising, at first slowly
+%mbxlatex then speeding up and ending at roughly 11.86 at the
+%mbxlatex right-hand side.}
 %mbxlatex \caption{Graph of the solution $x$ kilograms of salt in the tank at time
 %mbxlatex $t$.\label{linear-salt-graph:fig}}
 %mbxlatex \end{myfig}
@@ -2110,14 +2139,14 @@ as $t \to \infty$.  If a critical point is not stable, we say it is
 \begin{myfig}
 \parbox[t]{3.0in}{
  \capstart
-%mbxalt A plot for t from 0 to 20 and x from -10 to 10 with 
-%mbxalt a grid of lines with slopes of 0.3(5-x) given.  These 
-%mbxalt slopes are going up below the x=5 line and are going down
-%mbxalt above the x=5 line.  The slopes are steeper the further away
-%mbxalt from x=5 line we are.  Several solutions are shown which
-%mbxalt are lines starting at various points on the left and then
-%mbxalt all converging towards the x=5 line as t increases.
- \diffyincludegraphics{width=2.93in}{width=4.5in}{2-2-coffee}
+ \diffyincludegraphics{width=2.93in}{width=4.5in}{2-2-coffee}{%
+A plot for t from 0 to 20 and x from -10 to 10 with 
+a grid of lines with slopes of 0.3(5-x) given.  These 
+slopes are going up below the x=5 line and are going down
+above the x=5 line.  The slopes are steeper the further away
+from x=5 line we are.  Several solutions are shown which
+are lines starting at various points on the left and then
+all converging towards the x=5 line as t increases.}
  \caption{The slope field and some solutions of
  $x' = 0.3\,(5-x)$.\label{2.2:coffeefig}}
  %$dx/dt = -0.3*(x-5)$, $t: [0,20], x: [-10,10]$, plot solutions for
@@ -2126,16 +2155,16 @@ as $t \to \infty$.  If a critical point is not stable, we say it is
 \quad
 \parbox[t]{3.0in}{
  \capstart
-%mbxalt A plot for t from 0 to 20 and x from -5 to 10 with
-%mbxalt a grid of lines with slopes of 0.1x(5-x) given.  These 
-%mbxalt slopes are going down below the x=0 line and above the x=5
-%mbxalt line.  Between x=0 and x=5 the slopes are going up.
-%mbxalt Several solutions are shown which when starting below x=0 just keep
-%mbxalt going down and leave the plot.  When the solution is above x=0,
-%mbxalt then it rises and then approaches the x=5 line.  When the solution
-%mbxalt starts above x=5, it goes down towards and approaches the x=5 line.
-%mbxalt The lines x=0 and x=5 are also solutions.
- \diffyincludegraphics{width=3in}{width=4.5in}{2-2-logistic}
+ \diffyincludegraphics{width=3in}{width=4.5in}{2-2-logistic}{%
+A plot for t from 0 to 20 and x from -5 to 10 with
+a grid of lines with slopes of 0.1x(5-x) given.  These 
+slopes are going down below the x=0 line and above the x=5
+line.  Between x=0 and x=5 the slopes are going up.
+Several solutions are shown which when starting below x=0 just keep
+going down and leave the plot.  When the solution is above x=0,
+then it rises and then approaches the x=5 line.  When the solution
+starts above x=5, it goes down towards and approaches the x=5 line.
+The lines x=0 and x=5 are also solutions.}
  \caption{The slope field and some solutions of
  $x' = 0.1\,x\,(5-x)$.\label{2.2:logisticfig}}
 }
@@ -2208,12 +2237,12 @@ the arrow points up.  Finally, $f(-1) = -0.6 < 0$, so $f(x) < 0$ when $x <
 0$, and the arrow points down.
 
 \begin{center}
-%mbxalt A vertical line with two points marked with horizontal ticks
-%mbxalt marked as x=0 for the lower one and x=5 on the upper one.
-%mbxalt There are triangular arrows on the line.  Below x=0 the arrow points down,
-%mbxalt between the x=0 and x=5 ticks the arrow points up, and above the x=5 tick
-%mbxalt the arrow points down.
-\inputpdft{2-2-l-phasedia}
+\inputpdft{2-2-l-phasedia}{%
+A vertical line with two points marked with horizontal ticks
+marked as x=0 for the lower one and x=5 on the upper one.
+There are triangular arrows on the line.  Below x=0 the arrow points down,
+between the x=0 and x=5 ticks the arrow points up, and above the x=5 tick
+the arrow points down.}
 \end{center}
 
 \pagebreak[0]
@@ -2239,16 +2268,16 @@ Since any mathematical model we cook up will only be an approximation
 to the real world, unstable points are generally bad news.
 
 \begin{center}
-%mbxalt On the left, there are thee possible phase diagrams with one
-%mbxalt critical point marked as a horizontal tick.
-%mbxalt The first one has the arrow above
-%mbxalt and below the tick pointing away from the tick.  The second one has
-%mbxalt both arrows pointing up, the third has both arrows pointing down.
-%mbxalt These three diagrams are labeled as 'unstable'.  Then there is one
-%mbxalt phase diagram with one critical point on the right where both
-%mbxalt arrows are pointing towards the critical point.
-%mbxalt This diagram is labeled as 'stable'.
-\inputpdft{2-2-ph-class}
+\inputpdft{2-2-ph-class}{%
+On the left, there are thee possible phase diagrams with one
+critical point marked as a horizontal tick.
+The first one has the arrow above
+and below the tick pointing away from the tick.  The second one has
+both arrows pointing up, the third has both arrows pointing down.
+These three diagrams are labeled as 'unstable'.  Then there is one
+phase diagram with one critical point on the right where both
+arrows are pointing towards the critical point.
+This diagram is labeled as 'stable'.}
 \end{center}
 
 We remark that you can figure out the arrows by plotting the graph $y=f(x)$.
@@ -2303,33 +2332,33 @@ of business.
 \begin{myfig}
 \parbox[t]{3.0in}{
  \capstart
-%mbxalt A plot for t from 0 to 20 and x from 0 to 10 with
-%mbxalt a grid of lines with slopes of 0.1x(8-x)-1 given.  These 
-%mbxalt slopes are going down below roughly x=1.55 and above roughly
-%mbxalt x=6.45.  Between these two lines the slopes are going up.
-%mbxalt Several solutions are shown, which when starting below x=1.55 keep
-%mbxalt going down and leave the plot.  When the solution starts above
-%mbxalt x=1.55, then it rises and then approaches the line at roughly x=6.45.
-%mbxalt When the solution starts above x=6.45, it goes down towards and
-%mbxalt approaches this line at roughly x=6.45.  The two horizontal lines
-%mbxalt are also solutions.
- \diffyincludegraphics{width=3in}{width=4.5in}{2-2-logistic-h1}
+ \diffyincludegraphics{width=3in}{width=4.5in}{2-2-logistic-h1}{%
+A plot for t from 0 to 20 and x from 0 to 10 with
+a grid of lines with slopes of 0.1x(8-x)-1 given.  These 
+slopes are going down below roughly x=1.55 and above roughly
+x=6.45.  Between these two lines the slopes are going up.
+Several solutions are shown, which when starting below x=1.55 keep
+going down and leave the plot.  When the solution starts above
+x=1.55, then it rises and then approaches the line at roughly x=6.45.
+When the solution starts above x=6.45, it goes down towards and
+approaches this line at roughly x=6.45.  The two horizontal lines
+are also solutions.}
  \caption{The slope field and some solutions of
  $x' = 0.1\,x\,(8-x)-1$.\label{2.2:harv1}}
 }
 \quad
 \parbox[t]{3.0in}{
  \capstart
-%mbxalt A plot for t from 0 to 20 and x from 0 to 10 with
-%mbxalt a grid of lines with slopes of 0.1x(8-x)-1.6 given.  In this
-%mbxalt plot there is only one horizontal line at x=4.  The slopes are all
-%mbxalt going down above and below this line, more steeply the further away
-%mbxalt from the line we are.  Three solutions are drawn, one is the
-%mbxalt equilibrium solution as a horizontal line x=4. Another solution
-%mbxalt going down from above and approaching the x=4 is drawn and a solution
-%mbxalt starting slightly below the x=4 line and then going down and
-%mbxalt dropping off the picture before we get to the right hand side.
- \diffyincludegraphics{width=3in}{width=4.5in}{2-2-logistic-hc}
+ \diffyincludegraphics{width=3in}{width=4.5in}{2-2-logistic-hc}{%
+A plot for t from 0 to 20 and x from 0 to 10 with
+a grid of lines with slopes of 0.1x(8-x)-1.6 given.  In this
+plot there is only one horizontal line at x=4.  The slopes are all
+going down above and below this line, more steeply the further away
+from the line we are.  Three solutions are drawn, one is the
+equilibrium solution as a horizontal line x=4. Another solution
+going down from above and approaching the x=4 is drawn and a solution
+starting slightly below the x=4 line and then going down and
+dropping off the picture before we get to the right hand side.}
  \caption{The slope field and some solutions of
  $x' = 0.1\,x\,(8-x)-1.6$.\label{2.2:harvc}}
 }
@@ -2352,16 +2381,16 @@ starts.  See \figurevref{2.2:harv2}.
 
 \begin{myfig}
 \capstart
-%mbxalt A plot for t from 0 to 20 and x from 0 to 10 with
-%mbxalt a grid of lines with slopes of 0.1x(8-x)-2 given.  In this
-%mbxalt plot, there are no horizontal lines and all the slopes are down.
-%mbxalt The slopes are steeper at the top of the picture, they get slightly less
-%mbxalt steep as we get to the middle of picture and then get steeper again at the
-%mbxalt bottom.  Three solutions are drawn, all going down.
-%mbxalt Solutions start steeply down at the
-%mbxalt top of the picture then go down a bit more slowly in the middle part and
-%mbxalt then become steep again at the bottom.
-\diffyincludegraphics{width=3in}{width=4.5in}{2-2-logistic-h2}
+\diffyincludegraphics{width=3in}{width=4.5in}{2-2-logistic-h2}{%
+A plot for t from 0 to 20 and x from 0 to 10 with
+a grid of lines with slopes of 0.1x(8-x)-2 given.  In this
+plot, there are no horizontal lines and all the slopes are down.
+The slopes are steeper at the top of the picture, they get slightly less
+steep as we get to the middle of picture and then get steeper again at the
+bottom.  Three solutions are drawn, all going down.
+Solutions start steeply down at the
+top of the picture then go down a bit more slowly in the middle part and
+then become steep again at the bottom.}
 \caption{The slope field and some solutions of
 $x' = 0.1\,x\,(8-x)-2$.\label{2.2:harv2}}
 \end{myfig}
@@ -2574,15 +2603,15 @@ for the first two steps of the method.
 \begin{myfig}
 \capstart
 %original files euler-step1 euler-step2
-%mbxalt Two plots plot in the xy-plane of a slope field with slopes y^2/3
-%mbxalt in the region where x is between -1 and 3 and y is between 0 and 3.
-%mbxalt All the slopes are upwards with the ones further up being steeper.
-%mbxalt In the left plot, the first step of Euler's method is shown as
-%mbxalt a green line starting at (0,1) of slope 1/3, which is the slope at
-%mbxalt (0,1) and going right until x=1.  In the right plot, a second
-%mbxalt line is added starting at the end of the first line with slope equal 
-%mbxalt to the slope of the slope field and going further right until x=2.
-\diffyincludegraphics{width=6.24in}{width=9in}{euler-steps-1-2}
+\diffyincludegraphics{width=6.24in}{width=9in}{euler-steps-1-2}{%
+Two plots plot in the xy-plane of a slope field with slopes y^2/3
+in the region where x is between -1 and 3 and y is between 0 and 3.
+All the slopes are upwards with the ones further up being steeper.
+In the left plot, the first step of Euler's method is shown as
+a green line starting at (0,1) of slope 1/3, which is the slope at
+(0,1) and going right until x=1.  In the right plot, a second
+line is added starting at the end of the first line with slope equal 
+to the slope of the slope field and going further right until x=2.}
 \caption{First two steps of Euler's method with $h=1$ for
 the equation $y' = \frac{y^2}{3}$ with initial conditions $y(0)=1$.%
 \label{euler-step12:fig}}
@@ -2602,13 +2631,13 @@ and the approximation.
 
 \begin{myfig}
 \capstart
-%mbxalt A plot in the xy-plane of a slope field with slopes y^2/3
-%mbxalt in the region where x is between -1 and 3 and y is between 0 and 3.
-%mbxalt The first two steps are shown the two green line segments as before,
-%mbxalt but also the solution through (0,1) is drawn in red, which is curved
-%mbxalt upwards and follows the slope field.  We can see that it stays above the
-%mbxalt green line segments.
-\diffyincludegraphics{width=3in}{width=4.5in}{euler-step12-sol}
+\diffyincludegraphics{width=3in}{width=4.5in}{euler-step12-sol}{%
+A plot in the xy-plane of a slope field with slopes y^2/3
+in the region where x is between -1 and 3 and y is between 0 and 3.
+The first two steps are shown the two green line segments as before,
+but also the solution through (0,1) is drawn in red, which is curved
+upwards and follows the slope field.  We can see that it stays above the
+green line segments.}
 \caption{Two steps of Euler's method (step size 1) and the exact solution for
 the equation $y' = \frac{y^2}{3}$ with initial conditions $y(0)=1$.
 %
@@ -3030,10 +3059,10 @@ F(x,y) = x^2+y^2 .
 %16 is the number of lines, must be adjusted
 \begin{mywrapfig}[16]{3.25in}
 \capstart
-%mbxalt A plot in the xy-plane for x between roughly -13 to 13 and y
-%mbxalt between -10 to 10.  Several circles cetnered at the origin, (0,0),
-%mbxalt are drawn.
-\diffyincludegraphics{width=3in}{width=4.5in}{circlesfig}
+\diffyincludegraphics{width=3in}{width=4.5in}{circlesfig}{%
+A plot in the xy-plane for x between roughly -13 to 13 and y
+between -10 to 10.  Several circles cetnered at the origin, (0,0),
+are drawn.}
 \caption{Solutions to $F(x,y) = x^2+y^2 = C$ for various
 $C$.\label{exact:circlesfig}}
 \end{mywrapfig}
@@ -3317,11 +3346,11 @@ See \figurevref{exact:y2x}, and note again that the solution only exists for
 $x > 0$.
 \begin{myfig}
 \capstart
-%mbxalt A plot in the xy-plane for x between -5 to 5 and y from -10 to 10
-%mbxalt is shown.  A blue line is drawn starting at (0,0) to the top right
-%mbxalt corner at (5,10) is drawn with a red dot marking the initial point
-%mbxalt drawn at (1,2).
-\diffyincludegraphics{width=3in}{width=4.5in}{exact-y2x}
+\diffyincludegraphics{width=3in}{width=4.5in}{exact-y2x}{%
+A plot in the xy-plane for x between -5 to 5 and y from -10 to 10
+is shown.  A blue line is drawn starting at (0,0) to the top right
+corner at (5,10) is drawn with a red dot marking the initial point
+drawn at (1,2).}
 \caption{Solution to 
 $\frac{-y}{x^2+y^2} dx + \frac{x}{x^2+y^2} dy = 0$, $y(1) = 2$,
 with initial point marked.\label{exact:y2x}}
@@ -3803,12 +3832,12 @@ along the characteristic as $\frac{du}{ds} = 0$.
 
 \begin{mywrapfig}{2.8in}
 \capstart
-%mbxalt A diagram of the xt-plane with three lines drawn.  All three
-%mbxalt line start on the x-axis and are going steeply up and to the right.
-%mbxalt the one starting at the origin is marked as xi=0, the one to the right
-%mbxalt is marked as xi=1, and then the third one to the right of that is marked
-%mbxalt xi=2.
-\inputpdft{char-curves}
+\inputpdft{char-curves}{%
+A diagram of the xt-plane with three lines drawn.  All three
+line start on the x-axis and are going steeply up and to the right.
+the one starting at the origin is marked as xi=0, the one to the right
+is marked as xi=1, and then the third one to the right of that is marked
+xi=2.}
 \caption{Characteristic curves.\label{fopde:charcurves}}
 \end{mywrapfig}
 
@@ -3829,13 +3858,13 @@ material at position $x$ and time $t$.  See
 \begin{myfig}
 \capstart
 %original files fopde-transport-1 fopde-transport-2
-%mbxalt Two plots in the plane for x between -3 to 3 and the dependent
-%mbxalt axis between a bit less than 0.0 and a bit above 1.0.  On the left plot,
-%mbxalt there is a graph of a function which is mostly horizontal at level 0
-%mbxalt except for a sharp peak up to level 1 when x=0.
-%mbxalt On the right plot, it is the same exact peak but it is now centered
-%mbxalt at x=1.
-\diffyincludegraphics{width=6.24in}{width=9in}{fopde-transport-1-2}
+\diffyincludegraphics{width=6.24in}{width=9in}{fopde-transport-1-2}{%
+Two plots in the plane for x between -3 to 3 and the dependent
+axis between a bit less than 0.0 and a bit above 1.0.  On the left plot,
+there is a graph of a function which is mostly horizontal at level 0
+except for a sharp peak up to level 1 when x=0.
+On the right plot, it is the same exact peak but it is now centered
+at x=1.}
 \caption{Example of \myquote{transport}
 in $u_x+u_t = 0$ (that is, $\alpha = 1$) where the
 initial condition $f(x)$ is a peak at the origin.  On the left is a graph
@@ -3893,12 +3922,12 @@ See \figurevref{fopde:charcurvecurvy}.
 
 \begin{myfig}
 \capstart
-%mbxalt A diagram of the xt-plane with a sample characteristic curve
-%mbxalt drawn starting on the x-axis and going up.  The point on the curve that
-%mbxalt sits on the x-axis is marked as x=xi and also s=0.  The general point
-%mbxalt on the curve is marked as (x(s),t(s)).  The entire curve is marked as
-%mbxalt xi=constant.
-\inputpdft{char-curve-curvy}
+\inputpdft{char-curve-curvy}{%
+A diagram of the xt-plane with a sample characteristic curve
+drawn starting on the x-axis and going up.  The point on the curve that
+sits on the x-axis is marked as x=xi and also s=0.  The general point
+on the curve is marked as (x(s),t(s)).  The entire curve is marked as
+xi=constant.}
 \caption{General characteristic curve.\label{fopde:charcurvecurvy}}
 \end{myfig}
 
@@ -3957,15 +3986,15 @@ See \figurevref{fopde:surfaceplot} for a plot of $u(x,t)$ as a function of
 two variables.
 \begin{myfig}
 \capstart
-%mbxalt A surface plot of a function u(x,t) for x between -3 and 3 and t
-%mbxalt between 0 and 3.  When t=0, the surface looks line a
-%mbxalt flat line then a peak and going back down towards a flat line.
-%mbxalt As t grows the surface becomes, as t grows,
-%mbxalt closer and closer to a sideways
-%mbxalt flat surface that goes up as x grows.
-%mbxalt At t=3 it looks almost completely
-%mbxalt straight from a bit less than -3 at x=-3 and goes up to a bit below 2.
-\diffyincludegraphics{width=5in}{width=7.5in}{sol-to-fo-pde}
+\diffyincludegraphics{width=5in}{width=7.5in}{sol-to-fo-pde}{%
+A surface plot of a function u(x,t) for x between -3 and 3 and t
+between 0 and 3.  When t=0, the surface looks line a
+flat line then a peak and going back down towards a flat line.
+As t grows the surface becomes, as t grows,
+closer and closer to a sideways
+flat surface that goes up as x grows.
+At t=3 it looks almost completely
+straight from a bit less than -3 at x=-3 and goes up to a bit below 2.}
 \caption{Plot of the solution $u(x,t)$ to
 $u_x + u_t + u = x$,  $u(x,0) = e^{-x^2}$.\label{fopde:surfaceplot}}
 \end{myfig}

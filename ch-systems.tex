@@ -155,7 +155,7 @@ See \figurevref{sintro:closedbrine}.
 
 \begin{myfig}
 \capstart
-\inputpdft{lin-tank-sys}
+\inputpdft{lin-tank-sys}{FIXMEALT}
 \caption{A closed system of two brine tanks.\label{sintro:closedbrine}}
 \end{myfig}
 
@@ -219,7 +219,7 @@ consider two masses.
 
 \begin{mywrapfigsimp}{2.0in}{2.3in}
 \noindent
-\inputpdft{cartsfig}
+\inputpdft{cartsfig}{FIXMEALT}
 \end{mywrapfigsimp}
 Consider one spring with constant $k$ and two masses $m_1$
 and $m_2$.  Think of the masses as carts on
@@ -423,14 +423,14 @@ to the top right end of the plotted solution curve in the figure.
 \begin{myfig}
 \parbox[t]{3.0in}{
  \capstart
- \diffyincludegraphics{width=3.0in}{width=4.5in}{sintro-vectorfield}
+ \diffyincludegraphics{width=3.0in}{width=4.5in}{sintro-vectorfield}{FIXMEALT}
  \caption{The direction field for $x' = 2y-x$, $y' = x$.%
  \label{sintro-vectorfield:fig}}
 }
 \quad
 \parbox[t]{3.0in}{
  \capstart
- \diffyincludegraphics{width=3.0in}{width=4.5in}{sintro-vectorfield-sol}
+ \diffyincludegraphics{width=3.0in}{width=4.5in}{sintro-vectorfield-sol}{FIXMEALT}
  \caption{The direction field for $x' = 2y-x$, $y' = x$ with
  the trajectory of the solution starting at $(1,0)$
  for $0 \leq t \leq 2$.%
@@ -2885,7 +2885,7 @@ $\left[ \begin{smallmatrix} 1 \\ 1 \end{smallmatrix} \right]$.  See
 
 \begin{mywrapfig}[14]{3.25in}
 \capstart
-\diffyincludegraphics{width=3in}{width=4.5in}{pln-source-eig}
+\diffyincludegraphics{width=3in}{width=4.5in}{pln-source-eig}{FIXMEALT}
 \caption{Eigenvectors of $P$.\label{pln:source-eigfig}}
 \end{mywrapfig}
 
@@ -2922,13 +2922,13 @@ Hence we call this type of picture a
 \begin{myfig}
 \parbox[t]{3.0in}{
  \capstart
- \diffyincludegraphics{width=3in}{width=4.5in}{pln-source-eig-arr}
+ \diffyincludegraphics{width=3in}{width=4.5in}{pln-source-eig-arr}{FIXMEALT}
  \caption{Eigenvectors of $P$ with directions.\label{pln:source-eig-arrfig}}
 }
 \quad
 \parbox[t]{3.0in}{
  \capstart
- \diffyincludegraphics{width=3in}{width=4.5in}{pln-source-full}
+ \diffyincludegraphics{width=3in}{width=4.5in}{pln-source-full}{FIXMEALT}
  \caption{Example source vector field with eigenvectors and
  solutions.\label{pln:source-fullfig}}
 }
@@ -2952,14 +2952,14 @@ picture in \figurevref{pln:sink-fullfig}.  We call this type of picture a
 \begin{myfig}
 \parbox[t]{3.0in}{
  \capstart
- \diffyincludegraphics{width=3in}{width=4.5in}{pln-sink-full}
+ \diffyincludegraphics{width=3in}{width=4.5in}{pln-sink-full}{FIXMEALT}
  \caption{Example sink vector field with eigenvectors and
  solutions.\label{pln:sink-fullfig}}
 }
 \quad
 \parbox[t]{3.0in}{
  \capstart
- \diffyincludegraphics{width=3in}{width=4.5in}{pln-saddle-full}
+ \diffyincludegraphics{width=3in}{width=4.5in}{pln-saddle-full}{FIXMEALT}
  \caption{Example saddle vector field with eigenvectors and
  solutions.\label{pln:saddle-fullfig}}
 }
@@ -3022,13 +3022,13 @@ solutions.  This type of picture is sometimes called a
 \begin{myfig}
 \parbox[t]{3.0in}{
  \capstart
- \diffyincludegraphics{width=3in}{width=4.5in}{pln-ellipses}
+ \diffyincludegraphics{width=3in}{width=4.5in}{pln-ellipses}{FIXMEALT}
  \caption{Example center vector field.\label{pln:ellipsesfig}}
 }
 \quad
 \parbox[t]{3.0in}{
  \capstart
- \diffyincludegraphics{width=3in}{width=4.5in}{pln-spiral-source}
+ \diffyincludegraphics{width=3in}{width=4.5in}{pln-spiral-source}{FIXMEALT}
  \caption{Example spiral source vector field.\label{pln:spiral-sourcefig}}
 }
 \end{myfig}
@@ -3093,7 +3093,7 @@ See \figurevref{pln:spiral-sinkfig}.
 
 \begin{myfig}
 \capstart
-\diffyincludegraphics{width=3in}{width=4.5in}{pln-spiral-sink}
+\diffyincludegraphics{width=3in}{width=4.5in}{pln-spiral-sink}{FIXMEALT}
 \caption{Example spiral sink vector field.\label{pln:spiral-sinkfig}}
 \end{myfig}
 
@@ -3226,9 +3226,12 @@ behaviors that we have seen before?
 \end{exercise}
 \exsol{%
 %mbxSTARTIGNORE
-\vtop{\vskip-1ex \hbox{\includegraphics[width=2in]{figures/0100vectorfield}}}
+\vtop{\vskip-1ex \hbox{%
 %mbxENDIGNORE
-%mbxlatex \includegraphics[width=2in]{figures/0100vectorfield}
+\diffyincludegraphics{width=2in}{width=2in}{0100vectorfield}{FIXMEALT}
+%mbxSTARTIGNORE
+}}
+%mbxENDIGNORE
 \\[6pt]
 The solution does not move anywhere if $y = 0$.  When $y$ is positive,
 the solution moves (with constant speed)
@@ -3270,7 +3273,7 @@ See \figurevref{sosa:threecartsfig}.
 
 \begin{myfig}
 \capstart
-\inputpdft{threecartsfig}
+\inputpdft{threecartsfig}{FIXMEALT}
 \caption{System of masses and springs.\label{sosa:threecartsfig}}
 \end{myfig}
 
@@ -3448,7 +3451,7 @@ $k_2 = \unitfrac[2]{N}{m}$.
 
 \begin{myfig}
 \capstart
-\inputpdft{twocartswallfig}
+\inputpdft{twocartswallfig}{FIXMEALT}
 \caption{System of masses and springs.\label{sosa:twocartswallfig}}
 \end{myfig}
 
@@ -3502,7 +3505,7 @@ The two modes are plotted in \figurevref{sosa:modesfig}.
 \begin{myfig}
 \capstart
 %original files sosa-mode1 sosa-mode2
-\diffyincludegraphics{width=6.24in}{width=9in}{sosa-modes-1-2}
+\diffyincludegraphics{width=6.24in}{width=9in}{sosa-modes-1-2}{FIXMEALT}
 \caption{The two modes of the mass-spring system.  In the left plot
 the masses are moving in unison and in the right plot are masses moving in the
 opposite direction.\label{sosa:modesfig}}
@@ -3607,7 +3610,7 @@ The graphs of the two displacements, $x_1$ and $x_2$ of the two carts is in
 \figurevref{sosa:superposfig}.
 \begin{myfig}
 \capstart
-\diffyincludegraphics{width=3in}{width=4.5in}{sosa-superpos}
+\diffyincludegraphics{width=3in}{width=4.5in}{sosa-superpos}{FIXMEALT}
 \caption{Superposition of the two modes given the initial
 conditions.\label{sosa:superposfig}}
 \end{myfig}
@@ -3626,7 +3629,7 @@ car is 10 meters from a wall.  See \figurevref{sosa:railcarscrashfig}.
 
 \begin{myfig}
 \capstart
-\inputpdft{railcarscrash}
+\inputpdft{railcarscrash}{FIXMEALT}
 \caption{The crash of two rail cars.\label{sosa:railcarscrashfig}}
 \end{myfig}
 
@@ -3755,7 +3758,7 @@ we find that $t_{\text{impact}} \approx 5.22$ seconds.
 
 \begin{mywrapfig}{3.25in}
 \capstart
-\diffyincludegraphics{width=3in}{width=4.5in}{sosa-railcar}
+\diffyincludegraphics{width=3in}{width=4.5in}{sosa-railcar}{FIXMEALT}
 \caption{Position of the second car in time (ignoring the wall).\label{sosa:railcarfig}}
 \end{mywrapfig}
 

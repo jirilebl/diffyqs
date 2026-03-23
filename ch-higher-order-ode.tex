@@ -1420,7 +1420,12 @@ constant-coefficient equations.
 
 \begin{mywrapfigsimp}{2.0in}{2.3in}
 \noindent
-\inputpdft{massfigforce}
+\inputpdft{massfigforce}{%
+A diagram showing a mass labeled m,
+attached on the left to a spring labeled as k, attached to a wall on the
+left.  An arrow indicating force to the right on the mass is labeled F(t).
+An arrow below the mass indicating displacement points to the right and is
+labeled x.  The 'floor' of the diagram is labeled as 'damping c'.}
 \end{mywrapfigsimp}
 Our first example is a mass on a spring.  Suppose we have a mass $m > 0$
 (in kilograms) connected
@@ -1465,7 +1470,11 @@ before you jump off the bridge, right?  Let us give two other examples.
 %5 is the number of lines, must be adjusted
 \begin{mywrapfigsimp}[5]{1.35in}{1.65in}
 \noindent
-\inputpdft{mv-rlc}
+\inputpdft{mv-rlc}{%
+A diagram of a circuit.  Following the diagram counterclockwise, we start on
+the left with an electric source labeled E, then a resistor on the bottom
+labeled R, then an inductor on the right labeled L, then a capacitor on the
+top labeled C, then we connect back to the electric source.}
 \end{mywrapfigsimp}
 Here is an example for electrical engineers.  Consider the
 pictured \myindex{RLC circuit}.
@@ -1494,7 +1503,16 @@ unforced motion.
 %10 is the number of lines, must be adjusted
 \begin{mywrapfigsimp}[10]{1.8in}{2.16in}
 \noindent
-\inputpdft{mv-pend-deriv}
+\inputpdft{mv-pend-deriv}{%
+A diagram of a pendulum.  A pendulum is shown fixed at a point at the top
+moving along a circular arc.  The bottom of the pendulum is labeled m, and
+the angle the pendulum makes with a vertical line is labeled theta.
+The length of the pendulum is labeled L.  There is a force arrow on m
+along the circular arc away from the center labeled m L theta'', a
+force arrow in the opposite direction (towards the center) labeled m g
+sin(theta), and an arrow directly downwards from the mass labeled m g.
+The latter two arrows form a right triangle with the downward arrow forming
+the hypotenuse.}
 \end{mywrapfigsimp}
 Our next example behaves like a mass and spring system only
 approximately. Suppose a
@@ -1521,7 +1539,11 @@ same.
 
 \begin{mywrapfig}{3.25in}
 \capstart
-\diffyincludegraphics{width=3in}{width=4.5in}{mv-sintheta}
+\diffyincludegraphics{width=3in}{width=4.5in}{mv-sintheta}{%
+A plot of sin(theta) and theta, for theta between -1 and 1.  The plot of
+theta is simply a straight line from (-1,-1) to (1,1), while the plot of
+sin(theta) is almost the same but it starts a little bit above the straight
+line on the left and ends a little bit below on the right.}
 \caption{The graphs of $\sin \theta$ and $\theta$ (in radians).\label{mv:sinthetafig}}
 \end{mywrapfig}
 
@@ -1659,7 +1681,10 @@ A plot of $x(t)$ is shown in \figurevref{mv:undampedfig}.
 %15 is the number of lines, must be adjusted
 \begin{mywrapfig}[15]{3.25in}
 \capstart
-\diffyincludegraphics{width=3in}{width=4.5in}{mv-undamped}
+\diffyincludegraphics{width=3in}{width=4.5in}{mv-undamped}{%
+A graph of the function for t from 0 to 20, which is a sinusoidal curve that
+goes between roughly -0.707 and 0.707, starting at (0,0.5) going upwards,
+making a little bit more than 3 cycles in the picture.}
 \caption{Simple undamped oscillation.\label{mv:undampedfig}}
 \end{mywrapfig}
 
@@ -1732,7 +1757,14 @@ nonnegative, or in other words if $c^2 \geq 4km$.
 %mbxSTARTIGNORE
 \begin{mywrapfig}[15]{3.25in}
 \capstart
-\diffyincludegraphics{width=3in}{width=4.5in}{mv-overdamped}
+\diffyincludegraphics{width=3in}{width=4.5in}{mv-overdamped}{%
+A plot of 3 functions for t between 0 and 100.  All three graphs start at
+(0,1) and they all approach the horizontal axis being almost
+indistinguishable from it by the right side of the picture.  The first one
+starts downwards, crosses the axis and then goes back up and approaches it,
+the second starts out horizontally but turns downwards and approaches the
+axis, and the third starts upwards, then turns downwards quickly and
+approaches the axis.}
 \caption{Overdamped motion for several different initial conditions.\label{mv:overdampedfig}}
 \end{mywrapfig}
 %mbxENDIGNORE
@@ -1759,7 +1791,14 @@ time goes to infinity.  For a few sample plots for different initial
 conditions, see \figurevref{mv:overdampedfig}.
 
 %mbxlatex \begin{myfig}
-%mbxlatex \diffyincludegraphics{width=3in}{width=4.5in}{mv-overdamped}
+%mbxlatex \diffyincludegraphics{width=3in}{width=4.5in}{mv-overdamped}{%
+%mbxlatex A plot of 3 functions for t between 0 and 100.  All three graphs start at
+%mbxlatex (0,1) and they all approach the horizontal axis being almost
+%mbxlatex indistinguishable from it by the right side of the picture.  The first one
+%mbxlatex starts downwards, crosses the axis and then goes back up and approaches it,
+%mbxlatex the second starts out horizontally but turns downwards and approaches the
+%mbxlatex axis, and the third starts upwards, then turns downwards quickly and
+%mbxlatex approaches the axis.}
 %mbxlatex \caption{Overdamped motion for several different initial conditions.\label{mv:overdampedfig}}
 %mbxlatex \end{myfig}
 
@@ -1809,7 +1848,11 @@ dwell on critical damping.
 %mbxSTARTIGNORE
 \begin{mywrapfig}[13]{3.25in}
 \capstart
-\diffyincludegraphics{width=3in}{width=4.5in}{mv-underdamped}
+\diffyincludegraphics{width=3in}{width=4.5in}{mv-underdamped}{%
+A plot for t between 0 and 30.  Two decaying exponential curves one starting it (0,1)
+and one starting at (0,-1) are shown.  A sinusoidal-like curve winds between
+them, starting at the top curve, going down the bottom curve, then back up
+and so on.}
 \caption{Underdamped motion with the envelope curves shown.\label{mv:underdampedfig}}
 \end{mywrapfig}
 %mbxENDIGNORE
@@ -1841,7 +1884,11 @@ An example plot is given in \figurevref{mv:underdampedfig}.  Note that we
 still have that $x(t) \to 0$ as $t \to \infty$.
 
 %mbxlatex \begin{myfig}
-%mbxlatex \diffyincludegraphics{width=3in}{width=4.5in}{mv-underdamped}
+%mbxlatex \diffyincludegraphics{width=3in}{width=4.5in}{mv-underdamped}{%
+%mbxlatex A plot for t between 0 and 30.  Two decaying exponential curves one starting it (0,1)
+%mbxlatex and one starting at (0,-1) are shown.  A sinusoidal-like curve winds between
+%mbxlatex them, starting at the top curve, going down the bottom curve, then back up
+%mbxlatex and so on.}
 %mbxlatex \caption{Underdamped motion with the envelope curves shown.\label{mv:underdampedfig}}
 %mbxlatex \end{myfig}
 
@@ -2637,7 +2684,12 @@ $y=x^2+2x+3$
 
 \begin{mywrapfigsimp}{2.0in}{2.3in}
 \noindent
-\inputpdft{massfigforce}
+\inputpdft{massfigforce}{%
+A diagram showing a mass labeled m,
+attached on the left to a spring labeled as k, attached to a wall on the
+left.  An arrow indicating force to the right on the mass is labeled F(t).
+An arrow below the mass indicating displacement points to the right and is
+labeled x.  The 'floor' of the diagram is labeled as 'damping c'.}
 \end{mywrapfigsimp}
 Let us return back to the example of a mass on a spring.  We examine
 the case of forced oscillations, which we did not yet handle.  That is, we consider the equation
@@ -2720,7 +2772,9 @@ x = C_1 \cos (4 t) + C_2 \sin (4 t) +
 %mbxSTARTIGNORE
 \begin{mywrapfig}[15]{3.25in}
 \capstart
-\diffyincludegraphics{width=3in}{width=4.5in}{3-6-beating}
+\diffyincludegraphics{width=3in}{width=4.5in}{3-6-beating}{%
+A plot of a quickly oscillating curve whose amplitude starts at zero, then
+grows, then goes to zero, then grows again, etc.}
 \caption{Graph of
 $\frac{20}{16 - \pi^2} \bigl( \cos (\pi t)- \cos (4 t) \bigr)$.\label{3.6:beatingfig}}
 \end{mywrapfig}
@@ -2739,7 +2793,9 @@ x =
 
 %mbxlatex \begin{myfig}
 %mbxlatex \capstart
-%mbxlatex \diffyincludegraphics{width=3in}{width=4.5in}{3-6-beating}
+%mbxlatex \diffyincludegraphics{width=3in}{width=4.5in}{3-6-beating}{%
+%mbxlatex A plot of a quickly oscillating curve whose amplitude starts at zero, then
+%mbxlatex grows, then goes to zero, then grows again, etc.}
 %mbxlatex \caption{Graph of
 %mbxlatex $\frac{20}{16 - \pi^2} \bigl( \cos (\pi t)- \cos (4 t) \bigr)$.\label{3.6:beatingfig}}
 %mbxlatex \end{myfig}
@@ -2800,7 +2856,9 @@ $m=1$, $\omega = \pi$.
 
 \begin{mywrapfig}{3.25in}
 \capstart
-\diffyincludegraphics{width=3in}{width=4.5in}{3-6-resonance}
+\diffyincludegraphics{width=3in}{width=4.5in}{3-6-resonance}{%
+A quickly oscillating curve whose amplitude starts at zero but then
+grows linearly as we move to the right in the plot.}
 \caption{Graph of
 $\frac{1}{\pi} t \sin (\pi t)$.\label{3.6:resonancefig}}
 \end{mywrapfig}
@@ -2956,7 +3014,10 @@ steady periodic solution and ignore the transient solution.  See
 %15 is the number of lines, must be adjusted
 \begin{mywrapfig}[15]{3.25in}
 \capstart
-\diffyincludegraphics{width=3in}{width=4.5in}{3-6-transbeh}
+\diffyincludegraphics{width=3in}{width=4.5in}{3-6-transbeh}{%
+A plot of several solutions that start at different points on the left hand
+side.  As t goes from 0 to 20, they all approach and are almost
+indistinguishable from an oscillating sinusoidal curve.}
 \caption{Solutions with different initial conditions for parameters
 $k=1$, $m=1$, $F_0 = 1$, $c=0.7$, and $\omega=1.1$.\label{3.6:transbehfig}}
 \end{mywrapfig}
@@ -2996,7 +3057,13 @@ practical resonance can disappear altogether when damping is large.
 
 \begin{myfig}
 \capstart
-\diffyincludegraphics{width=3in}{width=4.5in}{3-6-pracres}
+\diffyincludegraphics{width=3in}{width=4.5in}{3-6-pracres}{%
+A plot of three versions of a function C(omega) for omega between 0 and 3.
+The line on top starts at 1, rises up to a peak of a little more than 2.5
+just before omega=1, then it decays down towards zero.  The middle line does
+roughly the same thing but reaches a smaller peak a little earlier.  The
+bottom line simply goes downwards reaching no peak.  They all have roughly
+the same small value at omega=3.}
 \caption{Graph of $C(\omega)$ showing practical resonance with parameters
 $k=1$, $m=1$, $F_0 = 1$. The top line is with $c=0.4$, the middle line with
 $c=0.8$, and the bottom line with

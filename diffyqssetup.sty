@@ -286,7 +286,7 @@ Remark
 
 
 % Here we input .pdf_t files
-\newcommand{\inputpdft}[1]{\subimport*{figures/}{#1.pdf_t}}
+\newcommand{\inputpdft}[2]{\subimport*{figures/}{#1.pdf_t}}
 
 %Fake contents lines
 \newcommand{\addfakecontentsline}[1]{\addcontentsline{toc}{chapter}{#1}}
@@ -295,7 +295,7 @@ Remark
 \newcommand{\addextraspacetotoc}{\addtocontents{toc}{\protect\enlargethispage{\baselineskip}}}
 
 % graphics include
-\newcommand{\diffyincludegraphics}[3]{\includegraphics[#1]{figures/#3}}
+\newcommand{\diffyincludegraphics}[4]{\includegraphics[#1]{figures/#3}}
 
 % only for pdf output
 \newcommand{\diffypdfversion}[1]{#1}
