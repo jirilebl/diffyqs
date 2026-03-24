@@ -8,7 +8,6 @@
 
 * Accessibility:
   * Add the alt tags to all figures/images, search for FIXMEALT
-  * Don't make text justified, apparently it is an accessibility nono for web
   * Check for other accessibility things to do
   * Try to make latex work with tagging
 

@@ -15,7 +15,8 @@ open(my $in,'<', "diffyqs.tex") or die $!;
 open(my $out, '>' ,"diffyqs-out.xml") or die $!; 
 
 # This is used for checking texts for grammar etc on alt texts
-# can normally be commented out
+# can normally be commented out (search out and comment out all the other
+# places where $alttexts appears)
 open(my $alttexts, '>' ,"alttexts.txt") or die $!; 
  
 $mbxignore = 0;
@@ -668,7 +669,6 @@ sub read_paragraph {
 	return $para;
 }
 
-
 sub alttag_substs {
 	$a = shift;
 
@@ -682,7 +682,6 @@ sub alttag_substs {
 
 	return $a;
 }
-
 
 
 @cltags = ();
@@ -1290,7 +1289,6 @@ while(1)
 				} else {
 					print $out "><shortdescription>$alttag</shortdescription></diffyqsimage>\n";
 				}
-				$alttag = "";
 				close_paragraph ();
 			} else {
 				print "\n\n\nERROR: HUH?\n\n\nmywrapfigsimp not just an inputpdft!\n\nFIG=>$fig<\n\n";
@@ -1328,7 +1326,6 @@ while(1)
 		} else {
 			print $out "><shortdescription>$alttag</shortdescription></diffyqsimage>\n";
 		}
-		$alttag = "";
 		close_paragraph ();
 		#
 	#FIXME: this is based entirely too much on my usage :)
@@ -1349,7 +1346,6 @@ while(1)
 		} else {
 			print $out "><shortdescription>$alttag</shortdescription></diffyqsimage>\n";
 		}
-		$alttag = "";
 		close_paragraph ();
 
 	#FIXME: this is based entirely too much on my usage :)
@@ -1369,7 +1365,6 @@ while(1)
 		} else {
 			print $out "><shortdescription>$alttag</shortdescription></diffyqsimage>\n";
 		}
-		$alttag = "";
 		
 	#FIXME: this is based entirely too much on my usage :)
 	} elsif ($para =~ s/^\\diffyincludegraphics\{[^}]*?\}\{width=([^}]*?)\}\{([^}]*?)\}\{([^}]*?)\}[ \n]*//) {
@@ -1388,7 +1383,6 @@ while(1)
 		} else {
 			print $out "><shortdescription>$alttag</shortdescription></diffyqsimage>\n";
 		}
-		$alttag = "";
 
 	#FIXME: not all substitutions are made, so check if more processing needs to be done
 	#on caption
@@ -1492,7 +1486,6 @@ while(1)
 					} else {
 						print $out "><shortdescription>$alttag</shortdescription></diffyqsimage>\n";
 					}
-					$alttag = "";
 					#if ($thesize ne "") {
 					#print $out "  <diffyqsimage source=\"$thefile-mbx\" width=\"$thesize\" />\n";
 					#} else {
@@ -1532,7 +1525,6 @@ while(1)
 					} else {
 						print $out "><shortdescription>$alttag2</shortdescription></diffyqsimage>\n";
 					}
-					$alttag2 = "";
 
 				#2 picture version FIXME: removing these, adding hand-done guys
 				#} elsif ($fig =~ m/^[ \n]*\\diffyincludegraphics\{[^}]*?\}\{[^}]*?\}\{([^}]*?)}[ \n]*\\diffyincludegraphics\{[^}]*?\}\{[^}]*?\}\{([^}]*?)\}[ \n]*$/) {
@@ -1602,7 +1594,6 @@ while(1)
 					} else {
 						print $out "><shortdescription>$alttag</shortdescription></diffyqsimage>\n";
 					}
-					$alttag = "";
 				} else {
 					print "\n\n\nERROR: HUH?\n\n\nFigure too complicated!\n\nFIG=>$fig<\n\n";
 					$num_errors++;

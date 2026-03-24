@@ -102,7 +102,9 @@ around, however, it should always keep the same direction and the same magnitude
 
 \begin{myfig}
 \capstart
-\inputpdft{linalg-vecarrow}{FIXMEALT}
+\inputpdft{linalg-vecarrow}{%
+A diagram of the x1 x2 plane, with an arrow drawn from the point
+(0,0) to the point (1,2).}
 \caption{The vector $(1,2)$ drawn as an arrow from the origin to the point
 $(1,2)$.\label{linalg-vecarrow:fig}}
 \end{myfig}
@@ -165,7 +167,13 @@ move along one, and then along the other.  See
 
 \begin{myfig}
 \capstart
-\inputpdft{linalg-vecadd}{FIXMEALT}
+\inputpdft{linalg-vecadd}{%
+A diagram of the x1 x2 plane.  A dotted arrow is drawn from
+the point (0,0) to the point (1,2).  A dashed arrow is
+drawn from the point (1,2) to the point (3,-1), that is, starting from
+the head of the dotted arrow.  A solid arrow is drawn from (0,0)
+to the point (3,-1), that is, starting at the origin and ending at
+the head of the dashed arrow.}
 \caption{Adding the vectors $(1,2)$, drawn dotted, and $(2,-3)$, drawn dashed.  The
 result, $(3,-1)$, is drawn as a solid arrow.\label{linalg-vecadd:fig}}
 \end{myfig}
@@ -206,7 +214,14 @@ then $-\vec{y}$ is $(2,-1)$.
 
 \begin{myfig}
 \capstart
-\inputpdft{linalg-vecsub}{FIXMEALT}
+\inputpdft{linalg-vecsub}{%
+A diagram of the x1 x2 plane.  A dotted arrow is drawn from
+the point (0,0) to the point (1,2).  A dashed arrow is
+drawn from the point (3,1) to the point (1,2), that is, starting from
+the point (3,1) and ending up at the head of the dotted arrow.
+A solid arrow is drawn from (0,0)
+to the point (3,1), that is, starting at the origin and ending at
+the tail of the dashed arrow.}
 \caption{Subtraction, the vector $(1,2)$, drawn dotted, minus $(-2,1)$,
 drawn dashed.  The
 result, $(3,1)$, is drawn as a solid arrow.\label{linalg-vecsub:fig}}
@@ -251,7 +266,14 @@ what scaling a vector means visually.
 
 \begin{myfig}
 \capstart
-\inputpdft{linalg-vecscale}{FIXMEALT}
+\inputpdft{linalg-vecscale}{%
+Three diagrams.
+First, the vector x is drawn as an arrow.
+Next, the vector 2x is drawn
+as an arrow twice is long with two reference versions of x drawn
+alongside for scale.  Finally, the vector -1.5x is drawn which
+goes in the opposite direction and has length that is 1.5 times that of
+x.  Again two reference versions of x are drawn along side for scale.}
 \caption{A vector $\vec{x}$, the vector $2\vec{x}$ (same direction,
 double the magnitude), and the vector $-1.5\vec{x}$ (opposite direction,
 1.5 times the magnitude).\label{linalg-vecscale:fig}}
@@ -5480,7 +5502,12 @@ we can just decree that $0 \leq \theta \leq \pi$.
 \begin{myfig}
 %\begin{mywrapfig}{3.25in}
 \capstart
-\inputpdft{vec-angle}{FIXMEALT}
+\inputpdft{vec-angle}{%
+A diagrma with two vectors x and y going from the same point,
+x going up and to the right, and y going down and to the right.
+The angle from y to x counterclockwise is marked theta.
+The angle from x to y clockwise is marked - theta.
+The angle from x to y counterclockwise is marked 2 pi - theta.}
 \caption{Angle between vectors.\label{vec-angle:fig}}
 \end{myfig}
 %\end{mywrapfig}
