@@ -579,6 +579,7 @@ sub read_paragraph {
 
 				 $in = pop @ins;
 			 }
+			 print $alttexts "FILE: $thefile\n\n";
 
 		#This will only work right if the paragraphs are separated, that is if it is
 		#in the middle of a paragraph it put the %mbx line in the wrong place
