@@ -18,6 +18,7 @@ open(my $out, '>' ,"diffyqs-out.xml") or die $!;
 # can normally be commented out (search out and comment out all the other
 # places where $alttexts appears)
 open(my $alttexts, '>' ,"alttexts.txt") or die $!; 
+$alttextnum = 0;
  
 $mbxignore = 0;
 
@@ -680,6 +681,7 @@ sub alttag_substs {
 
 	# write to a file for checking
 	print $alttexts "$a\n\n";
+	$alttextnum++;
 
 	return $a;
 }
@@ -2053,5 +2055,7 @@ close ($in);
 close ($out); 
 
 close ($alttexts); 
+
+print "\nDone! (number of errors: $num_errors) "; 
+print "(number of alt texts: $alttextnum)\n";
  
-print "\nDone! (number of errors $num_errors)\n"; 

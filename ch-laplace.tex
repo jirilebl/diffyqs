@@ -846,7 +846,11 @@ The plot of this solution is given in \figurevref{lt:heavisideexfig}.
 
 \begin{myfig}
 \capstart
-\diffyincludegraphics{width=3in}{width=4.5in}{lt-heavisideex}{FIXMEALT}
+\diffyincludegraphics{width=3in}{width=4.5in}{lt-heavisideex}{%
+A plot of a function for t=0 to 20.  The function starts at zero
+and stays at zero until t=1 when it curves upwards and follows a sightly
+deformed sinusoid curve before settling into a regular sinusoid curve
+past t=5.}
 \caption{Plot of $x(t)$.\label{lt:heavisideexfig}}
 \end{myfig}
 \end{example}
@@ -2307,7 +2311,13 @@ speed $\alpha$.
 
 \begin{myfig}
 \capstart
-\inputpdft{half-infinite-goo-river-wavefront}{FIXMEALT}
+\inputpdft{half-infinite-goo-river-wavefront}{%
+A diagram of the first quadrant of the xt-plane (positive x and t).
+The x-axis, which is the horizontal, is labeled y=0 and the t-axis
+is labeled y=C.  A diagonal straight line from the origin up
+and to the right is labeled 'wavefront, slope 1/alpha'.  The region
+above this line is shaded dark and labeled y=C.
+The region below the line is shaded lightly and labeled y=0.}
 \caption{Wavefront of toxic substance is a line of slope
 $\nicefrac{1}{\alpha}$.\label{lt:half-infinite-goo-river-wavefront}}
 \end{myfig}
@@ -2406,7 +2416,13 @@ See \figurevref{lt:half-infinite-ill-posed}.
 
 \begin{myfig}
 \capstart
-\inputpdft{half-infinite-ill-posed}{FIXMEALT}
+\inputpdft{half-infinite-ill-posed}{%
+A diagram of the xt-plane where the first quadrant is shaded.
+The horizontal x-axis is labeled y=0 and the vertical t-axis is
+labeled y=sin(t).  The point (0,1) on the t-axis is labeled
+as y(0,1)=sin(1) and the point (1,0) on the x-axis is labeled
+y(1,0)=0.  The two points are connected with a line labeled as t=-x+1
+and also with 'y is constant along this characteristic curve.}
 \caption{Ill-posed problem.\label{lt:half-infinite-ill-posed}}
 \end{myfig}
 
