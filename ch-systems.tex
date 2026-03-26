@@ -157,12 +157,12 @@ See \figurevref{sintro:closedbrine}.
 \capstart
 \inputpdft{lin-tank-sys}{%
 A diagram of two tanks with liquid.  The substance in the first tank
-is labeled as x1 to signify the amount of salt
-and the substance in the second tank is labeled as x2.
-Both tanks have a label that Vol.=V to signify that the volume
+is labeled as x sub 1 to signify the amount of salt
+and the substance in the second tank is labeled as x sub 2.
+Both tanks have a label that Vol. equals V to signify that the volume
 is the same and equal to V in both tanks.  There are two pipes
-each carrying liquid from one tank to the other and they are both marked with
-r signifying the flow.}
+each carrying liquid from one tank to the other
+and they are both marked with r signifying the flow.}
 \caption{A closed system of two brine tanks.\label{sintro:closedbrine}}
 \end{myfig}
 
@@ -228,11 +228,11 @@ consider two masses.
 \noindent
 \inputpdft{cartsfig}{%
 A diagram of two carts on wheels connected by a spring.
-The carts are labeled as m1 and m2 signifying the masses.
+The carts are labeled as m sub 1 and m sub 2 signifying the masses.
 The spring is labeled as k signifying the spring constant.
 There is a vertical tick and a rightward horizontal arrow below
-each cart labeled as x1 and x2 respectively, signifying that
-their state as shown is the rest position and x1 and x2 give
+each cart labeled as x sub 1 and x sub 2 respectively, signifying that
+their state as shown is the rest position and x sub 1 and x sub 2 give
 the displacement of each cart from its rest position.}
 \end{mywrapfigsimp}
 Consider one spring with constant $k$ and two masses $m_1$
@@ -440,7 +440,7 @@ to the top right end of the plotted solution curve in the figure.
  \diffyincludegraphics{width=3.0in}{width=4.5in}{sintro-vectorfield}{%
 A diagram of a direction field, that is, a grid of small arrows.
 The arrows on the top of the diagram point generally rightward, the arrows
-on the right hand side point generally upward.  Along the x=y
+on the right hand side point generally upward.  Along the x equals y
 diagonal the arrows are pointing away from the origin and the 
 arrows elsewhere tend to point towards this line and then slowly changing
 to point in the same direction as the arrows on the diagonal.}
@@ -453,7 +453,7 @@ to point in the same direction as the arrows on the diagonal.}
  \diffyincludegraphics{width=3.0in}{width=4.5in}{sintro-vectorfield-sol}{%
 A diagram of the same direction field as the previous figure, but now with
 a solution starting at (1,0) which flows for a moment towards the diagonal
-x=y then turns sharply rightward and then flows alongside the diagonal to
+x equals y then turns sharply rightward and then flows alongside the diagonal to
 the top right corner, ending before it gets to the corner of the picture.}
  \caption{The direction field for $x' = 2y-x$, $y' = x$ with
  the trajectory of the solution starting at $(1,0)$
@@ -2953,7 +2953,7 @@ Hence we call this type of picture a
 A diagram of the xy-plane with two red arrows representing 
 two vectors (1,0) and (1,1), now with arrows pointing
 away from the origin and also black lines along the two arrows, one
-is the line x=y and the other is the x-axis.}
+is the line x equals y and the other is the x-axis.}
  \caption{Eigenvectors of $P$ with directions.\label{pln:source-eig-arrfig}}
 }
 \quad
@@ -3002,12 +3002,14 @@ point towards the origin rather than away from it.}
  \capstart
  \diffyincludegraphics{width=3in}{width=4.5in}{pln-saddle-full}{%
 A diagram of a saddle, here one of the black lines is still the x-axis,
-but the other line is a line with slope -3 through the origin.  The arrow on
+but the other line is a line with slope minus 3 through the origin.
+The arrow on
 the x-axis representing the eigenvector (1,0) points to the right,
-while the arrow representing the eigenvector (1,-3) now points towards the
+while the arrow representing the eigenvector (1, minus 3)
+now points towards the
 origin as the eigenvalue is negative.  The arrows of the direction field
 in each 4 of the sectors between the two lines first go along the line with
-slope -3 towards the origin, and once the arrows get close enough to the
+slope minus 3 towards the origin, and once the arrows get close enough to the
 x-axis they start going away from the origin in the direction of the x-axis.
 Several trajectories that follow these arrows are shown.}
  \caption{Example saddle vector field with eigenvectors and
@@ -3339,11 +3341,12 @@ See \figurevref{sosa:threecartsfig}.
 \capstart
 \inputpdft{threecartsfig}{%
 A diagram of three carts on wheels in a row labeled, from left to right,
-m1, m2, and m3 signifying their masses.
-There is a spring labeled k1 attached to a wall on the left
-and the first cart.  There is a spring labeled k2 connecting cart 1 and cart
-2.  There is a spring labeled k3 connecting cart 2 and cart 3.
-There is a spring labeled k4 connecting cart 3 to a wall on the right.}
+m sub 1, m sub 2, and m sub 3 signifying their masses.
+There is a spring labeled k sub 1 attached to a wall on the left
+and the first cart.
+There is a spring labeled k sub 2 connecting cart 1 and cart 2.
+There is a spring labeled k sub 3 connecting cart 2 and cart 3.
+There is a spring labeled k sub 4 connecting cart 3 to a wall on the right.}
 \caption{System of masses and springs.\label{sosa:threecartsfig}}
 \end{myfig}
 
@@ -3523,10 +3526,10 @@ $k_2 = \unitfrac[2]{N}{m}$.
 \capstart
 \inputpdft{twocartswallfig}{%
 A diagram of two carts on wheels in a row labeled, from left to right,
-m1 and m2 signifying their masses.
-There is a spring labeled k1 attached to a wall on the left
-and the first cart.  There is a spring labeled k2 connecting cart 1 and cart
-2.}
+m sub 1 and m sub 2 signifying their masses.
+There is a spring labeled k sub 1 attached to a wall on the left
+and the first cart.
+There is a spring labeled k sub 2 connecting cart 1 and cart 2.}
 \caption{System of masses and springs.\label{sosa:twocartswallfig}}
 \end{myfig}
 
@@ -3583,10 +3586,10 @@ The two modes are plotted in \figurevref{sosa:modesfig}.
 \diffyincludegraphics{width=6.24in}{width=9in}{sosa-modes-1-2}{%
 Two plots are given, both are for t from 0 to 10.  In the left-hand
 plot, two sinusoidal (cosine) functions are moving in unison, one with
-amplitude 1 and one with amplitude 2, they are simply the graphs of cos(t)
-and 2cos(t).  In the right-hand plot, two cosine functions are moving in
+amplitude 1 and one with amplitude 2, they are simply the graphs of cosine of t
+and 2 cosine of t.  In the right-hand plot, two cosine functions are moving in
 opposite direction with twice the frequency, they are simply the graphs
-of cos(2t) and -cos(2t).}
+of cosine of 2 t and minus cosine of 2 t.}
 \caption{The two modes of the mass-spring system.  In the left plot
 the masses are moving in unison and in the right plot are masses moving in the
 opposite direction.\label{sosa:modesfig}}
@@ -3692,7 +3695,8 @@ The graphs of the two displacements, $x_1$ and $x_2$ of the two carts is in
 \begin{myfig}
 \capstart
 \diffyincludegraphics{width=3in}{width=4.5in}{sosa-superpos}{%
-Two functions are plotted for t=0 to t=10.  The motion is a somewhat
+Two functions are plotted for t equals 0 to t equals 10.
+The motion is a somewhat
 complicated but still periodic.}
 \caption{Superposition of the two modes given the initial
 conditions.\label{sosa:superposfig}}
@@ -3848,9 +3852,10 @@ we find that $t_{\text{impact}} \approx 5.22$ seconds.
 \begin{mywrapfig}{3.25in}
 \capstart
 \diffyincludegraphics{width=3in}{width=4.5in}{sosa-railcar}{%
-A graph of a function for t=0 to t=6.  The function starts at
+A graph of a function for t equals 0 to t equals 6.  The function starts at
 zero and starts moving horizontally and curves upwards to rise to
-and curve back to a horizontal plateau between t=3 and t=4 at value
+and curve back to a horizontal plateau between
+t equals 3 and t equals 4 at value
 slightly less than 7.5.  The function 
 then again curves upwards and reaches the value of 10 at t slightly
 larger than 5.}

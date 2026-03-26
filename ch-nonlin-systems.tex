@@ -117,8 +117,8 @@ A direction field plot (a grid of arrows) in the xy-plane.
 In the center, the arrows go around the critical point at the
 origin in a clockwise direction.  Then
 at the point (1,0) the direction field is a saddle point, that is,
-the arrows in a diagonally down direction go towards the critical point
-and in a diagonally upwards direction go away from the critical point.
+the arrows along a diagonally down sloped curve go towards the critical point
+and in a diagonally upwards sloped curve go away from the critical point.
 To the left of the critical point, the arrows go roughly down, above the critical
 point the arrows go roughly rightwards,
 on the right of the critical point the arrows point roughly upwards,
@@ -138,7 +138,7 @@ are in the upper half of the picture and then turn rightwards until they are
 in the right half of the picture where they turn diagonally upwards leaving
 the picture.  Then a couple of other trajectories start below the x-axis on
 the right side of the picture close to the x-axis, then simply turn
-rightwards until they leave the picture, never making it past x=1.}
+rightwards until they leave the picture, never making it past x equals 1.}
 \caption{Phase portrait with some trajectories of
 $x' = y$, $y' = -x+x^2$. \label{fig:nlin-1b}}
 \end{myfig}
@@ -312,9 +312,10 @@ behavior near the critical points.
 Two direction field plots (grid of arrows) in the uv-plane.
 On the left the arrows simply go clockwise around the origin, with several
 circular trajectories drawn.  On the right is a
-picture of a saddle where along the line v=u the arrows point away from the
-origin and along v=-u the arrows point towards the origin.  The lines v=u
-and v=-u are drawn as trajectories.  In the picture divided by these lines,
+picture of a saddle where along the line v equals u the arrows point away from the
+origin and along v equals minus u the arrows point towards the origin.  The
+lines v equals u
+and v equals minus u are drawn as trajectories.  In the picture divided by these lines,
 in the region on the left, the arrows point generally downward, towards the
 top going slightly to the right and towards the bottom going slightly to the
 left.  There is a trajectory in this region
@@ -473,7 +474,7 @@ roughly upward, and on the bottom, they are roughly leftward.}}
 \task
 \parbox[c]{1.75in}{\diffyincludegraphics{width=1.75in}{width=1.75in}{nlin-exer-ypx2-mx}{%
 A direction field plot in the xy-plane.
-The arrows seem to be going around the origin countrclockwise, but not
+The arrows seem to be going around the origin counterclockwise, but not
 in a perfectly circular way.
 At the top, the arrows are mostly rightward although being somewhat upward
 facing on the left and downward facing on the right and they are slightly
@@ -490,7 +491,8 @@ down and to the right at the bottom right corner.}}
 A direction field plot in the xy-plane.
 The arrows seem to come from the top left and point down and to the right
 roughly.  They keep going in that direction but almost as if they want to
-take a detour around the origin.  Those that start above the y=-x
+take a detour around the origin.
+Those that start above the y equals minus x
 line go in a curve around and above the origin, while those that
 start below the line take a curve around and below the origin.}}
 \end{tasks}
@@ -664,7 +666,18 @@ and the other being $(1,-1)$.  Clearly the critical points are isolated.
 
 \begin{myfig}
 \capstart
-\diffyincludegraphics{width=3in}{width=4.5in}{nlin-ex813-new}{FIXMEALT}
+\diffyincludegraphics{width=3in}{width=4.5in}{nlin-ex813-new}{%
+A direction field plot in the xy-plane for x between minus 2 and 2
+and y between minus 2 and 2.  There are two critical points, one at the
+origin and one at (1, minus 1).  The origin is a saddle with arrows 
+coming into it along an upwards diagonal curve and arrows going
+out along the downwards diagonal curve.  The point (1, minus 1) is a sink with
+arrows pointing towards it.  Several trajectories are shown with
+trajectories that start on the right side for y roughly below
+y equals 1 and
+on the bottom roughly to the right of x equals minus 1 going into the sink.  Other
+trajectories turn toward and leave the picture on the upper left side
+of the plot.}
 \caption{The phase portrait with few sample trajectories of 
 $x'=-y-x^2$, $y'=-x+y^2$.  \label{fig:nlin-ex813-new}}
 \end{myfig}
@@ -732,7 +745,14 @@ point is a spiral source, and therefore an unstable equilibrium point.
 
 \begin{myfig}
 \capstart
-\diffyincludegraphics{width=3in}{width=4.5in}{nlin-ex813}{FIXMEALT}
+\diffyincludegraphics{width=3in}{width=4.5in}{nlin-ex813}{%
+A direction field plot in the xy-plane for x between minus 2 and 2
+and y between minus 2 and 2.  The origin is a saddle critical point
+with arrows coming into the origin along a downwards sloped curve
+and arrows coming out along an upwards sloped curve.  The
+point (0, minus 1) is a spiral source with arrows winding counterclockwise out
+of the critical point.  Several trajectories are shown notably two
+that spiral out of the critical point at (0, minus 1).}
 \caption{The phase portrait with few sample trajectories of 
 $x'=y+y^2e^x$, $y'=x$.  \label{fig:nlin-ex813}}
 \end{myfig}
@@ -798,7 +818,12 @@ initial condition near the origin is given in
 \figurevref{fig:nlin-unstable-center}.
 \begin{myfig}
 \capstart
-\diffyincludegraphics{width=3in}{width=4.5in}{nlin-unstable-centerfig}{FIXMEALT}
+\diffyincludegraphics{width=3in}{width=4.5in}{nlin-unstable-centerfig}{%
+A direction field plot in the xy-plane.
+The arrows around the origin seem to circle the origin in the
+counterclockwise direction.  There is a very tightly wound trajectory shown
+that winds out of the critical point and eventually leaves the picture (even
+turning in a different direction from the winding).}
 \caption{An unstable critical point (spiral source) at the origin
 for $x'=y, y' = -x+y^3$, even if the linearization has a center.  \label{fig:nlin-unstable-center}}
 \end{myfig}
@@ -1121,7 +1146,21 @@ where for simplicity we let $\frac{g}{L} = 1$.
 
 \begin{myfig}
 \capstart
-\diffyincludegraphics{width=3in}{width=4.5in}{nlin-pend-phasediag}{FIXMEALT}
+\diffyincludegraphics{width=3in}{width=4.5in}{nlin-pend-phasediag}{%
+A direction field plot in the theta omega plane
+(the angle theta being the horizontal direction)
+for theta between minus 7 and 7 and for omega between minus 3 and 3.
+There are 5 critical points shown.
+Three are 3 centers shown, one at the origin, one at (minus 2 pi,0)
+ad one at (2 pi,0).  The arrows are winding clockwise around the centers.
+There are 2 saddles shown, one at (minus pi,0) and one at (pi,0).
+Several trajectories are drawn.  Trajectories around the centers simply go
+around in ellipses.  Trajectories that start on the left high on the left
+hand side simply go in a wavy motion as if repelled by the centers along the
+top of the plot and leave on the right hand side of the plot.
+The trajectories on the bottom do the same thing in reverse.
+There are also the trajectories that go around the centers and hit the
+saddles diagonally.}
 \caption{Phase plane diagram and some trajectories of
 the nonlinear pendulum equation. \label{fig:nlin-pend-phasediag}}
 \end{myfig}
@@ -1168,7 +1207,16 @@ velocities.
 
 \begin{myfig}
 \capstart
-\inputpdft{nlin-pend}{FIXMEALT}
+\inputpdft{nlin-pend}{%
+Four diagrams of the possible motions of the pendulum.
+From left to right, the first picture is a stationary pendulum hanging
+down with the label 'theta equals 0'.
+The second picture labeled 'Small angular velocities' is a
+swinging pendulum with an arrow indicating back and forth motion in
+a circular arc.   The third picture labeled 'theta equals pi' is a
+stationary pendulum balanced exactly upwards.  The
+final picture, labeled 'Large angular velocities', is a pendulum rotating
+completely around its axis.}
 \caption{Various possibilities for the motion of the pendulum. \label{fig:nlin-pend}}
 \end{myfig}
 
@@ -1246,7 +1294,14 @@ a 45 degree angle.  At a 5 degree initial angle, the error is only $0.048 \%$.
 \begin{myfig}
 \capstart
 %original files nlin-T-vs-T0-abs nlin-T-vs-T0-relerr
-\diffyincludegraphics{width=6.24in}{width=9in}{nlin-T-vs-T0-abs-relerr}{FIXMEALT}
+\diffyincludegraphics{width=6.24in}{width=9in}{nlin-T-vs-T0-abs-relerr}{%
+Two plots.  On the left plot, there is a plot of T and T sub linear as
+functions of theta sub 0 for theta sub 0 between 0 and pi over 2.
+The plot of T sub linear is a horizontal line at 2 pi,
+while the plot of T starts at 2 pi on the left, but slowly rises to
+well above 7 on the right.  On the right plot is a plot of the relative
+error of the two quantities starting out at zero for theta sub 0 equals 0,
+then rising and at about 0.15 on the right.}
 \caption{The plot of $T$ and $T_{\text{linear}}$ with $\frac{g}{L} =
 1$ (left), and the plot of the relative
 error $\frac{T-T_{\text{linear}}}{T}$ (right), for $\theta_0$ between 0 and
@@ -2422,7 +2477,7 @@ also in art.
 \capstart
 \diffyincludegraphics{width=3in}{width=4.5in}{nlin-lorenz-graphx}{%
 A graph of a function in the tx-plane for t from 0 to 15 and
-x between roughly -18 to 18.
+x between roughly minus 18 to 18.
 The function starts slightly above the t-axis and makes a sharp peak up
 above the t-axis,
 then a sharp peak down, then a sharp peak up, then 6 sharp peaks
@@ -2467,7 +2522,7 @@ was used to run the game for 10,000 iterations to obtain the picture in
 \begin{myfig}
 \capstart
 \diffyincludegraphics{width=3in}{width=4.5in}{nlin-sierpinski}{%
-A diagram of the so-called Sierpinsky triangle composed of dots in
+A diagram of the so-called Sierpinski triangle composed of dots in
 the xy-plane.  The vertices of the triangle are at (0,0), (1,0),
 and (0.5,0.8).  There is a smaller similar upside down empty triangle with
 the middle of the sides of the big triangle as vertices.
