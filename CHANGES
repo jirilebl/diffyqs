@@ -1,3 +1,13 @@
+<li>In Example 5.3.1, note that we are trying to find a solution y
+to (5.7)
+satisfying the zero boundary conditions (5.8).  Then it was confusing
+as the problem needed to solve for \(y_c\) was simply using \(y,\)
+but right after that, we write y for the solution of the entire
+problem.  So use \(w\) for the problem used to solve for \(y_c\) so that
+\(y\) is only used for the entire problem.  In the setup for \(w\)
+we now mark the \(f(x) \) and \(g(x) .\)  Then when we write
+out the solution we mention again that it is a solution to (5.7)
+subject to (5.8).
 <li>In the example of the mapping in section A.6 reorder the vertices
 of the square so that they go around the square in a counterclockwise
 motion rather than being out of order.

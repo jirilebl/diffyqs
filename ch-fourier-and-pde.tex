@@ -2839,6 +2839,7 @@ not in \cite{BD}}}
 \begin{mywrapfigsimp}{2.0in}{2.3in}
 \noindent
 \inputpdft{massfigforce}{%
+%note that this diagram appears more than once in the book
 A diagram showing a mass labeled m,
 attached on the left to a spring labeled as k, attached to a wall on the
 left.  An arrow indicating force to the right on the mass is labeled F(t).
@@ -3647,7 +3648,13 @@ in \figurevref{heat:wireexfig} for $0 \leq t \leq 100$.
 
 \begin{myfig}
 \capstart
-\diffyincludegraphics{width=5in}{width=7.5in}{heat-wireex}{FIXMEALT}
+\diffyincludegraphics{width=5in}{width=7.5in}{heat-wireex}{%
+A plot of the graph of a function u(x,t) over the xt-plane
+over the region where x is between 0 and 1 and t is between 0
+and 100.  At t=0, the function is an upward arc that reaches up to 12.5 in
+the middle while being zero at x=0 and x=1.
+The surface then slopes downward and approaches the xt-plane as time goes
+on while being 0 at the edges where x=0 or x=1.}
 \caption{Plot of the temperature $u(x,t)$ of the wire at position $x$
 at time $t$ for $0 \leq t \leq 100$.  Notice the side conditions
 $u(0,t)=u(1,t)=0$ and how the exponential makes the temperature decay
@@ -3868,7 +3875,13 @@ u(x,t)
 
 \begin{myfig}
 \capstart
-\diffyincludegraphics{width=5in}{width=7.5in}{heat-wireisolex}{FIXMEALT}
+\diffyincludegraphics{width=5in}{width=7.5in}{heat-wireisolex}{%
+A plot of the graph of a function u(x,t) over the xt-plane
+over the region where x is between 0 and 1 and t is between 0
+and 30.  At t=0, the function is an upward arc that reaches up to 12.5 in
+the middle while being zero at x=0 and x=1.
+The surface then seems to try to approach a flat horizontal plane at u equal
+roughly 8.33 as t grows.}
 \caption{Plot of the temperature of the insulated wire at position $x$
 at time $t$.\label{heat:wireisolexfig}}
 \end{myfig}
@@ -4123,6 +4136,7 @@ See
 \begin{myfig}
 \capstart
 \inputpdft{sps-vibstr}{%
+%note that this diagram appears more than once in the book
 Diagram of a string of a guitar (a shaded guitar is in the background),
 the bridge of the guitar is at x=0 on the x-axis and the nut of the
 guitar is at x=L.  The string is fixed to the x-axis at these two points.
@@ -4507,7 +4521,14 @@ way.
 
 \begin{myfig}
 \capstart
-\diffyincludegraphics{width=5in}{width=7.5in}{wave-pluckedex}{FIXMEALT}
+\diffyincludegraphics{width=5in}{width=7.5in}{wave-pluckedex}{%
+A plot of the graph of a function u(x,t) over the xt-plane
+over the region where x is between 0 and 2 and t is between 0
+and 3.  At t=0, the function is an upward triangle reaching 0.1 in
+the middle.  The surface is 0 on the sides where x=0 or x=1.
+The surface looks like half an upwards pyramid that ends at t=1
+and then there is an inverted downward pyramid that reaches down to -0.1
+for t between 1 and 3.}
 \caption{Shape of the plucked string for $0 < t < 3$.\label{wave:pluckedexfig}}
 \end{myfig}
 
@@ -5563,7 +5584,12 @@ u(x,y) =
 
 \begin{myfig}
 \capstart
-\diffyincludegraphics{width=5in}{width=7.5in}{dirichsquareplot}{FIXMEALT}
+\diffyincludegraphics{width=5in}{width=7.5in}{dirichsquareplot}{%
+A plot of the graph of a function u(x,y) over the xy-plane
+over the square region where x is between 0 and pi and y is between 0
+and pi.  On the side of the square where y=0, the function equals pi and on
+the remaining three sides it is 0.  In the middle it appears almost as if
+one stretched a rubber sheet and fixed it on the sides at the given values.}
 \caption{Steady state temperature of a square plate, three sides
 held at zero and one side held at $\pi$.\label{dirichsquareplot:fig}}
 \end{myfig}
@@ -6068,7 +6094,12 @@ is very close to zero.  That is because $r^{10}$ is rather small when $r$
 is close to 0.
 \begin{myfig}
 \capstart
-\diffyincludegraphics{width=5in}{width=7.5in}{dirichdisc-tenspeed}{FIXMEALT}
+\diffyincludegraphics{width=5in}{width=7.5in}{dirichdisc-tenspeed}{%
+A plot of the graph of a function u(x,y) over the xy-plane
+over the inside of the circle of radius 1 centered at the origin.
+On the boundary the surface is oscillating up and down 10 times
+around the circumference.  Then inside the surface approaches 0 quickly
+as (x,y) gets closer and closer to the origin.}
 \caption{The solution of the Dirichlet problem in the disc with
 $\cos(10\,\theta)$ as boundary data.\label{dirichdisc:tenspeedfig}}
 \end{myfig}
@@ -6129,7 +6160,13 @@ r\sin(\theta)
 \end{equation*}
 \begin{myfig}
 \capstart
-\diffyincludegraphics{width=5in}{width=7.5in}{dirichdisc-zero2y}{FIXMEALT}
+\diffyincludegraphics{width=5in}{width=7.5in}{dirichdisc-zero2y}{%
+A plot of the graph of a function u(x,y) over the xy-plane
+over the inside of the circle of radius 1 centered at the origin.
+On the boundary the surface is eather at zero when y is negative
+or going up linearly with y for positive y.  Inside the circle,
+the surface appears as if a rubber sheet had been placed on 
+the values at the boundary.}
 \caption{The solution of the Dirichlet problem with
 boundary data 0 for $y < 0$ and $2y$ for $y > 0$.\label{dirichdisc:zero2yfig}}
 \end{myfig}
