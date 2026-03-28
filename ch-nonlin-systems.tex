@@ -1793,7 +1793,26 @@ quickly tends to a periodic solution.
 \begin{myfig}
 \capstart
 %original files nlin-van-der-phase nlin-van-der-plot1
-\diffyincludegraphics{width=6.24in}{width=9in}{nlin-van-der-phase-plot1}{FIXMEALT}
+\diffyincludegraphics{width=6.24in}{width=9in}{nlin-van-der-phase-plot1}{%
+On the left is a phase plane (direction plot) of a Van der Pol oscillator where
+the horizontal axis is the x and the vertical axis is the derivative x
+prime.  The horizontal axis is between minus 4 and 4, and so is the
+vertical.  On this plot the arrows seem to be going around the origin
+in the clockwise manner,
+however, there is a single trajectory that is a closed curve (a loop),
+which is called the limit cycle.  Its shape is very roughly a sideways
+very rounded rectangle.  It is roughly between minus 2 and 2 on the
+horizontal x axis and between minus 3 and 3 on the vertical axis.
+A trajectory starting inside this
+limit cycle spirals outwards towards the limit cycle and gets closer
+and closer to it.  Similarly several trajectories starting outside approach
+the limit cycle from the outside and get closer and closer to it.  Both from
+the inside and the outside, the approach is very quick and the trajectories
+do not even go around once before being indistinguishable from the limit
+cycle.  On the right there is a plot on the tx-plane for t between 0 to 30
+of a sample
+solution starting near the origin.  It quickly goes into
+a large periodic oscillation between roughly minus 2 and 2.}
 \caption{The phase portrait (left) and a graph of a sample solution
 of the Van der Pol oscillator.\label{fig:nlin-van-der-fig}}
 \end{myfig}
@@ -1906,7 +1925,12 @@ $(1.02,0)$, $(0.9,0)$, and $(0.1,0)$ are drawn in
 %\begin{mywrapfig}{3.25in}
 \begin{myfig}
 \capstart
-\diffyincludegraphics{width=3in}{width=4.5in}{nlin-unstable-limit-cycle}{FIXMEALT}
+\diffyincludegraphics{width=3in}{width=4.5in}{nlin-unstable-limit-cycle}{%
+A direction plot of an unstable limit cycle in the xy-plane
+where the circular limit cycle is on the unit circle, and all the arrows go
+roughly clockwise.  A trajectory from the inside approaches the limit cycle,
+while a trajectory starting just outside of the limit cycle goes around one
+and a half times before peeling off and leaving the picture at the top.}
 \caption{Unstable limit cycle example.\label{fig:nlin-unstable-limit-cycle}}
 \end{myfig}
 %\end{mywrapfig}
@@ -2281,7 +2305,19 @@ we mean by the system behaving chaotically.
 \begin{myfig}
 \capstart
 %original files nlin-duf-two-traj nlin-duf-two-sols
-\diffyincludegraphics{width=6.24in}{width=9in}{nlin-duf-two-traj-sols}{FIXMEALT}
+\diffyincludegraphics{width=6.24in}{width=9in}{nlin-duf-two-traj-sols}{%
+On the left, there is a plot of two trajectories in the phase space (the
+space with x on the horizontal axis and x prime on the vertical axis).
+The two trajectories start on the right of the plot very close to
+each other and follow a similar path for a while but diverge very quickly
+and are unrecognizable after a while.  The shape they follow is roughly
+a large loop on the left and then a smaller loop on the right sometimes
+making a smaller loop in between.  On the right is a plot of x over
+t from 0 to 15 for the two solutions going up and down as they follow the
+shapes described.  They are almost indistinguishable on
+the left and almost the same until roughly t equals 7,
+but by the time t is 15 they are visibly different and quite
+far apart.}
 \caption{On left, two trajectories in phase space for $0 \leq t \leq 15$, for the Duffing equation
 one with initial conditions $(2,3)$ and the other with $(2,2.9)$.  On
 right the two solutions in $(x,t)$-space. \label{nlin:duf-two-traj}}
@@ -2367,7 +2403,11 @@ After plotting enough points, a curious pattern emerges in
 \begin{myfig}
 \capstart
 %original files nlin-strange nlin-strange2
-\diffyincludegraphics{width=6.24in}{width=9in}{nlin-strange-strange2}{FIXMEALT}
+\diffyincludegraphics{width=6.24in}{width=9in}{nlin-strange-strange2}{%
+Two plots of thousands of points of the strange attractor.  Each one is
+slightly differently deformed as the one on the right is phase shifted.
+The points seem to be settling on thin bands that are bent and wrapped
+around each other and distorted as if looking through a funhouse mirror.}
 \caption{Strange attractor.  The left plot 
 is with no phase shift, the right plot has phase shift
 $\nicefrac{\pi}{4}$. \label{nlin:strange}}
@@ -2457,7 +2497,13 @@ See \figurevref{nlin:lorenz} for a sample trajectory,
 which is now a curve in three-dimensional space.
 \begin{myfig}
 \capstart
-\diffyincludegraphics{width=3in}{width=4.5in}{nlin-lorenz}{FIXMEALT}
+\diffyincludegraphics{width=3in}{width=4.5in}{nlin-lorenz}{%
+A trajectory in a 3 dimensional xyz space.
+It is roughly two loops meeting at an angle with the trajectory going
+around each loop one or more times then switching
+seemingly randomly to the other loop and then back again after one or 
+more loops, each one of different radius.  Some people describe this picture
+as resembling a butterfly.}
 \caption{A trajectory in the Lorenz system. \label{nlin:lorenz}}
 \end{myfig}
 
