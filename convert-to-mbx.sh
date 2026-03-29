@@ -84,6 +84,9 @@ cd html
 cp -a ../figures .
 rm figures/.gitignore
 rm figures/*.sh
+rm figures/*.pdf
+rm figures/*.fig
+rm figures/*.pdf_t
 rm figures/figurerun*
 rm figures/figure-concat*
 cp ../extra.css .

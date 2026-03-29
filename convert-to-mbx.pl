@@ -1334,7 +1334,7 @@ while(1)
 	#FIXME: this is based entirely too much on my usage :)
 	} elsif ($para =~ s/^\\\\[ \n]*\\diffyincludegraphics\{[^}]*?\}\{width=([^}]*?)\}\{([^}]*?)\}\{([^}]*?)\}[ \n]*\\\\[ \n]*//) {
 		my $width = $1;
-		my $thefile = $2;
+		my $thefile = "figures/$2";
 		my $alttag = alttag_substs($3);
 		print "(BRed image >$width< >$thefile<\n)";
 		print "alt tag: $alttag\n";
@@ -1354,7 +1354,7 @@ while(1)
 	#FIXME: this is based entirely too much on my usage :)
 	} elsif ($para =~ s/^\\parbox\[c\]\{[^}]*?\}\{\\diffyincludegraphics\{[^}]*?\}\{width=([^}]*?)\}\{([^}]*?)\}\{([^}]*?)\}\}[ \n]*//) {
 		my $width = $1;
-		my $thefile = $2;
+		my $thefile = "figures/$2";
 		my $alttag = alttag_substs($3);
 		print "(PARBOXED image >$width< >$thefile<\n)";
 		print "alt tag: $alttag\n";
@@ -1372,7 +1372,7 @@ while(1)
 	#FIXME: this is based entirely too much on my usage :)
 	} elsif ($para =~ s/^\\diffyincludegraphics\{[^}]*?\}\{width=([^}]*?)\}\{([^}]*?)\}\{([^}]*?)\}[ \n]*//) {
 		my $width = $1;
-		my $thefile = $2;
+		my $thefile = "figures/$2";
 		my $alttag = alttag_substs($3);
 		print "(Just plain inlined image >$width< >$thefile<\n)";
 		print "alt tag: $alttag\n";
