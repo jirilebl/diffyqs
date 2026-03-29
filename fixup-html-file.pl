@@ -10,11 +10,11 @@ while($line = <STDIN>)
 	if ($line =~ m/<a class="index-button.*title="Index"/) {
 		# Add extra buttons
 
-		$extra = "<a class=\"index-button button\" href=\"..\" title=\"Home\" alt=\"Book Home\"><span class=\"name\">Home</span></a>\n";
+		$extra = "<a class=\"index-button button\" href=\"..\" title=\"Book Home\"><span class=\"name\">Home</span></a>\n";
 
-		$extra .= "<a class=\"index-button button\" href=\"../diffyqs.pdf\" title=\"PDF\"><span class=\"name\">PDF</span></a>\n";
+		$extra .= "<a class=\"index-button button\" href=\"../diffyqs.pdf\" title=\"PDF Version\"><span class=\"name\">PDF</span></a>\n";
 
-		$extra .= "<a class=\"index-button button\" href=\"https://www.amazon.com/dp/1706230230\" title=\"Paperback\" alt=\"Buy Paperback\"><span class=\"name\">Paperback</span></a>\n";
+		$extra .= "<a class=\"index-button button\" href=\"https://www.amazon.com/dp/1706230230\" title=\"Buy Paperback\"><span class=\"name\">Paperback</span></a>\n";
 
 		if (not ($line =~ s/<div class="searchbox"/$extra<div class="searchbox"/)) {
 			print STDERR "Can't add extra buttons!";
