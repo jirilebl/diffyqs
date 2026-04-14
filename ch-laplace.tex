@@ -718,7 +718,7 @@ u(t) =
 \capstart
 \diffyincludegraphics{width=3in}{width=4.5in}{lt-heaviside}{%
 A plot of the unit step function on the interval from minus 1 to 1.
-The function is zero for negative x and 1 for positive x.}
+The function is zero for negative t and 1 for positive t.}
 \caption{Plot of the Heaviside (unit step) function
 $u(t)$.\label{lt:heavisidefig}}
 \end{myfig}
@@ -787,7 +787,7 @@ the mass-spring system
 x''(t) + x(t) = f(t) , \quad x(0) = 0, \quad x'(0) = 0,
 \end{equation*}
 where $f(t) = 1$ if $1 \leq t < 5$ and zero otherwise.
-The function $f(t)$ is not periodic and defined piecewise; no problem for Laplace.
+The function $f(t)$ is not periodic and is defined piecewise; no problem for Laplace.
 Imagine a
 rocket attached to the mass is fired for 4 seconds starting at
 $t=1$.  Or perhaps imagine an RLC circuit, where the voltage is raised
@@ -848,7 +848,7 @@ The plot of this solution is given in \figurevref{lt:heavisideexfig}.
 \capstart
 \diffyincludegraphics{width=3in}{width=4.5in}{lt-heavisideex}{%
 A plot of a function for t equals 0 to 20.  The function starts at zero
-and stays at zero until t equals 1 when it curves upwards and follows a sightly
+and stays at zero until t equals 1 when it curves upwards and follows a slightly
 deformed sinusoid curve before settling into a regular sinusoid curve
 past t equals 5.}
 \caption{Plot of $x(t)$.\label{lt:heavisideexfig}}
@@ -864,7 +864,7 @@ form
 L x = f(t) ,
 \end{equation*}
 where $L$ is a linear constant-coefficient differential operator.
-Then $f(t)$ is usually thought of as input of the system and $x(t)$ is
+Then $f(t)$ is usually thought of as the input of the system and $x(t)$ is
 thought of as the output of the system.  For example, for a mass-spring
 system the input is the forcing function and the output is the behavior of the
 mass.  We would like to have a convenient way to study the behavior of
@@ -919,8 +919,8 @@ $X(s) = H(s) F(s) = \frac{1}{s^2+\omega_0^2} \, F(s)$.
 
 \subsection{Transforms of integrals}
 
-A feature of Laplace transforms is that it is also able to easily deal
-with integral equations.  That is, equations in which integrals rather than
+A feature of the Laplace transform is that it is able to deal
+with integral equations.  These are equations in which integrals rather than
 derivatives of functions appear.  The basic property, which can be proved
 by applying the definition and doing integration by parts, is 
 \begin{equation*}
@@ -1107,7 +1107,7 @@ Find a formula for the amplitude of the resulting oscillation
 in terms of the amount of time the rocket is fired.
 \task
  Is there
-a nonzero time (if so what is it?)
+a nonzero time (if so, what is it?)
 for which the rocket fires and the resulting oscillation
 has amplitude 0 (the mass is not moving)?
 \end{tasks}
@@ -1138,11 +1138,11 @@ $x(0)=0$, $x'(0)=0$.
 
 \begin{exercise}
 Suppose $Lx = f(t)$, $x(0)=0$, $x'(0)=0$
-for the input function $f(t) = t$ has the output
+for the input function $f(t) = t$ gives the output
 $x(t) = 2e^{-t} + te^{-t} + (t-2)$.
 \begin{tasks}
 \task Find $F(s)$, $X(s)$, and the transfer function $H(s)$.
-\task If the input is instead $f(t) = \sin(t)$ instead, find the new output $x(t)$.
+\task If the input is instead $f(t) = \sin(t)$, find the new output $x(t)$.
 \end{tasks}
 \end{exercise}
 
@@ -1190,7 +1190,7 @@ $H(s) = \frac{1}{s+1}$
 
 \begin{exercise}
 Suppose $Lx = f(t)$, $x(0)=0$, $x'(0)=0$
-for the input function $f(t) = 4$ has the output
+for the input function $f(t) = 4$ gives the output
 $x(t) = 1 - \cos(2 t)$.  Find $F(s)$, $X(s)$, and the transfer function
 $H(s)$.
 \end{exercise}
@@ -1220,7 +1220,7 @@ Take
 two functions $f(t)$ and $g(t)$ defined for $t \geq 0$,
 and define the \emph{\myindex{convolution}}%
 \footnote{%
-For those that have seen convolution before, you may have
+For those who have seen convolution before, you may have
 seen it defined as
 $(f * g)(t) =
 \int_{-\infty}^\infty f(\tau) g(t-\tau) \, d\tau$.  This definition
@@ -1457,7 +1457,7 @@ x(t)
 Hence,
 we can solve any constant-coefficient equation with an arbitrary forcing
 function $f(t)$ as a definite integral using convolution.
-A definite integral, rather than a closed form solution, is usually enough
+A definite integral, rather than a closed-form solution, is usually enough
 for most practical purposes.  It is
 not hard to numerically evaluate a definite integral.
 
@@ -1475,14 +1475,15 @@ x(t) = f(t) + \int_0^t g(t-\tau) x(\tau) \, d\tau .
 \end{equation*}
 Here $f(t)$ and $g(t)$ are known functions and $x(t)$ is an unknown we
 wish to solve for.
-We have $x(t) = f(t) + (g * x)(t)$, so the question is if convolution is
-like a product, can we also \myquote{divide} to solve this equation.
+We have $x(t) = f(t) + (g * x)(t)$, so the question is:
+If convolution is
+like a product, can we also \myquote{divide} to solve this equation?
 We apply the Laplace transform to the equation to obtain 
 \begin{equation*}
 X(s) = F(s) + G(s) X(s) ,
 \end{equation*}
 where $X(s)$, $F(s)$, and $G(s)$ are the Laplace transforms of $x(t)$, $f(t)$, and
-$g(t)$ respectively.  We find
+$g(t)$, respectively.  We find
 \begin{equation*}
 X(s) = \frac{F(s)}{1-G(s)} .
 \end{equation*}
