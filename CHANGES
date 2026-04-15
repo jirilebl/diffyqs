@@ -11,3 +11,8 @@ subject to (5.8).
 <li>In the example of the mapping in section A.6 reorder the vertices
 of the square so that they go around the square in a counterclockwise
 motion rather than being out of order.
+<li>A little bit of rewording in subsection 8.3.1 on the pendulum.
+<li>In Example 8.4.1, mention that \(y=x'\) on the phase diagram as usual
+just to reinforce.
+<li>In subsection 8.5.1, also explicitly mention that \(y=x'\)
+as usual.
