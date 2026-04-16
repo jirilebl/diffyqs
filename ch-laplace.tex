@@ -2188,7 +2188,7 @@ multiplications by the transformed variable $s$.
 The PDE becomes an ODE\@, which we solve.
 Afterwards, we invert the transform to find a solution to the original
 problem.
-It is best to see the procedure on an example.
+It is best to see the procedure in an example.
 
 \begin{example}
 Consider the first-order PDE
@@ -2209,19 +2209,19 @@ See \figureref{lt:half-infinite-goo-river} for a diagram of the setup.
 \begin{mywrapfig}{3.1in}
 \capstart
 \inputpdft{half-infinite-goo-river}{%
-A diagram of the xy-plane with the first quadrant shaded
+A diagram of the xt-plane with the first quadrant shaded
 and labeled y sub t equals minus alpha times y sub x,
 the x-axis labeled y equals 0,
-and the y-axis labeled y equals C.}
+and the t-axis labeled y equals C.}
 \caption{Transport equation on a half line.\label{lt:half-infinite-goo-river}}
 \end{mywrapfig}
 
 A physical setup of this equation is a river of viscous goo,
 as we do not want anything to diffuse.  The function
 $y$ is the concentration of
-some toxic substance\footnote{It's a river of goo already,
-we're not hurting the environment much more.}.
-The variable $x$ denotes position where $x=0$
+some toxic substance\footnote{It's a river of goo already.
+We're not hurting the environment much more.}.
+The variable $x$ denotes position, where $x=0$
 is the location of a factory spewing the toxic substance into the
 river.  The toxic substance flows into the river so that at $x=0$ the
 concentration is always $C$.  We wish to see what happens past the factory,
@@ -2240,7 +2240,7 @@ Y(x)
 = {\mathcal L} \bigl\{ y(x,t) \bigr\}
 = \int_0^\infty y(x,t) e^{-st} \,dt .
 \end{equation*}
-The transform of a derivative with respect to $x$ is just differentiating 
+The transform of a derivative with respect to $x$ is just the derivative of 
 the transformed function:
 \begin{equation*}
 {\mathcal L} \bigl\{ y_x(x,t) \bigr\} =
@@ -2281,8 +2281,9 @@ We solve the ODE problem $sY(x) = -\alpha Y'(x)$, $Y(0) = \frac{C}{s}$, to find
 \begin{equation*}
 Y(x) = \frac{C}{s} e^{-\frac{s}{\alpha} x} .
 \end{equation*}
-We are not done, we have $Y(x)$, but we really want $y(x,t)$.  We 
-transform the $s$ variable back to $t$.
+We are not done.
+We have $Y(x)$, but we really want $y(x,t)$.
+We transform the $s$ variable back to $t$.
 Let 
 \begin{equation*}
 u(t) = \begin{cases} 0 & \text{if $t < 0$}, \\ 1 & \text{otherwise}
@@ -2318,8 +2319,9 @@ See \figurevref{lt:half-infinite-goo-river-wavefront} for a diagram of this
 solution.  The line of slope $\nicefrac{1}{\alpha}$ indicates
 the wavefront of the toxic substance in the picture as it is leaving the
 factory.
-What the equation does is simply move the initial condition to the right at
-speed $\alpha$.
+What the equation does is to try to move the initial condition to the right
+at speed $\alpha$,
+and so it moves the boundary condition (the wavefront) too.
 
 \begin{myfig}
 \capstart
@@ -2335,10 +2337,11 @@ $\nicefrac{1}{\alpha}$.\label{lt:half-infinite-goo-river-wavefront}}
 \end{myfig}
 
 
-Shhh\ldots $y$ is not differentiable, it is not even continuous
+Shhh\ldots $y$ is not differentiable.
+It is not even continuous
 (nobody ever seems to notice).  How could we plug something that's not
 differentiable into the equation?
-Well, just think of a differentiable function very very close to $y$.
+Well, just think of a differentiable function very, very close to $y$.
 Or, if you recognize the derivative of the Heaviside function as the delta
 function, then all is well too:
 \begin{equation*}
@@ -2448,7 +2451,7 @@ and the solution ought to be
 Y(x) = \frac{1}{s^2+1} e^{sx} .
 \end{equation*}
 Importantly, this Laplace transform does not decay to zero at infinity!  That is,
-since $x > 0$ in the region of interest, then
+since $x > 0$ in the region of interest,
 \begin{equation*}
 \lim_{s \to \infty}
 \frac{1}{s^2+1} e^{sx}
@@ -2477,8 +2480,8 @@ sufficiently long rod, where we would not consider a long enough time
 for our solution to notice that we do not have an infinite rod but just a
 very long one.
 In any case, the real-life situation imposes other conditions
-on our solution $y$,
-for example, we will assume that the solution is bounded.
+on our solution $y$.
+For example, we will assume that the solution is bounded.
 This boundedness condition will stand in for a boundary condition at the
 infinite end.
 Boundedness
