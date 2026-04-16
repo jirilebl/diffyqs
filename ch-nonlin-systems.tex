@@ -851,7 +851,7 @@ where $f(x)$ is an arbitrary function, is called a
 is a conservative equation.  The equations are conservative as there is no
 friction in the system so the energy in the system is \myquote{conserved.}
 Let us write this equation as a
-system of nonlinear ODEs.
+system of nonlinear ODEs:
 \begin{equation*}
 x' = y, \qquad y' = -f(x) .
 \end{equation*}
@@ -866,7 +866,7 @@ x'' = y' = \frac{dy}{dx} x' = y \frac{dy}{dx} ,
 where the prime indicates a derivative with respect to $t$.  
 We obtain $y \frac{dy}{dx} + f(x) = 0$.  We integrate with respect to
 $x$ to get
-$\int y \frac{dy}{dx} \,dx + \int f(x)\, dx = C$.  In other words
+$\int y \frac{dy}{dx} \,dx + \int f(x)\, dx = C$.  In other words,
 \begin{equation*}
 \frac{1}{2} y^2  + \int f(x)\, dx = C .
 \end{equation*}
@@ -1095,9 +1095,9 @@ The length of the pendulum is labeled L.}
 This equation is a conservative
 equation, so we can use our analysis of conservative equations
 from the previous section.
-Let us change the equation to a two-dimensional
+We change the equation to a two-dimensional
 system in variables $(\theta,\omega)$ by introducing the new
-variable $\omega$:
+variable $\omega = \theta'$:
 \begin{equation*}
 \begin{bmatrix}
 \theta \\ \omega
@@ -1113,7 +1113,10 @@ The critical points of this system are when $\omega = 0$ and $-\frac{g}{L}
 points are when $\omega = 0$ and $\theta$ is a multiple of $\pi$.  That is,
 the points are $\ldots (-2\pi,0), (-\pi,0), (0,0), (\pi,0), (2\pi,0)
 \ldots$.  While there are infinitely many critical points, they are all isolated.
-Let us compute the Jacobian matrix:
+For conservative equations, there are two types of
+critical points.  Either stable centers, or saddle points.
+
+We compute the Jacobian matrix:
 \begin{equation*}
 \begin{bmatrix}
 \frac{\partial}{\partial \theta} \Bigl( \omega \Bigr) & 
@@ -1127,11 +1130,8 @@ Let us compute the Jacobian matrix:
 - \frac{g}{L} \cos \theta & 0
 \end{bmatrix} .
 \end{equation*}
-
-For conservative equations, there are two types of
-critical points.  Either stable centers, or saddle points.  The eigenvalues
-of the Jacobian matrix are $\lambda = \pm \sqrt{-\frac{g}{L}\cos \theta}$.
-
+The eigenvalues
+of this matrix are $\lambda = \pm \sqrt{-\frac{g}{L}\cos \theta}$.
 The
 eigenvalues are going to be real when $\cos \theta < 0$.  This happens at the odd multiples of $\pi$.
 The
@@ -1165,7 +1165,7 @@ saddles diagonally.}
 the nonlinear pendulum equation. \label{fig:nlin-pend-phasediag}}
 \end{myfig}
 
-In the linearized equation we have only a single critical point, the center
+In the linearized equation, we have only a single critical point, the center
 at $(0,0)$.  Now we see more clearly what we meant when we said the
 linearization is good for small angles.  The horizontal axis is the
 deflection angle.  The vertical axis is the angular velocity of the
@@ -1520,7 +1520,7 @@ d (a-by)
 0 .
 \end{split}
 \end{equation*}
-So along the trajectories $C$ is constant.  In fact, the expression $C =
+So $C$ is constant along the trajectories.  In fact, the expression $C =
 \frac{y^a x^d}{e^{cx+by}}$ gives us an implicit equation for the
 trajectories.  In any case, once we have found this constant of motion,
 it must be true that the
@@ -1783,9 +1783,9 @@ originated with electrical circuits, but finds applications
 in diverse fields such as biology, seismology, and
 other physical sciences.
 
-For simplicity, let us use $\mu = 1$.  A
+For simplicity, we use $\mu = 1$.  A
 phase diagram is given in the left-hand plot in
-\figurevref{fig:nlin-van-der-fig}.  Notice how the
+\figurevref{fig:nlin-van-der-fig}, where $y=x'$ as usual.  Notice how the
 trajectories seem to very quickly settle on a closed curve.  On the
 right-hand side is the plot of a single solution for $t=0$ to $t=30$ with
 initial conditions $x(0) = 0.1$ and $x'(0) = 0.1$.  The solution
@@ -2294,11 +2294,11 @@ x''+0.05 x' + x^3 = 8\cos(t) .
 The equation is not autonomous, so we cannot 
 draw the vector field in the phase plane.
 We can still draw
-trajectories.   
+trajectories, where $y=x'$ as usual.   
 In \figurevref{nlin:duf-two-traj}, we plot trajectories for $t$ going from 0
 to 15 for two very close initial conditions
 $(2,3)$ and $(2,2.9)$, and also the solutions in the $(x,t)$ space.  The two
-trajectories are close at first, but after a while diverge significantly.
+trajectories are close at first, but soon diverge significantly.
 This sensitivity to initial conditions is precisely what
 we mean by the system behaving chaotically.
 
@@ -2336,19 +2336,19 @@ wiggles on each.}
 \end{myfig}
 
 \pagebreak[2]
-Let us see the long term behavior.
+Let us consider the long term behavior.
 In \figurevref{nlin:duf-long},
-we plot the behavior of the system for initial conditions $(2,3)$ for
+we plot the solution $x$ with initial conditions $(2,3)$ for
 a longer period of time.
-It is hard to see any particular pattern
+It is hard to see any pattern
 in the shape of the solution except that it seems to oscillate, but each
-oscillation appears quite unique.  The oscillation
+oscillation appears quite unique.  Oscillation
 is expected due to the forcing term.
 We mention that to produce the picture accurately,
 a ridiculously large number of steps\footnote{In
 fact for reference, 30,000 steps were used with the Runge--Kutta
 algorithm, see exercises in \sectionref{numer:section}.}
-had to be used in the numerical
+were used in the numerical
 algorithm,
 as even small errors quickly propagate in a chaotic system.
 
