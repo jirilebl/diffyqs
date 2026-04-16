@@ -8,6 +8,10 @@ problem.  So use \(w\) for the problem used to solve for \(y_c\) so that
 we now mark the \(f(x) \) and \(g(x) .\)  Then when we write
 out the solution we mention again that it is a solution to (5.7)
 subject to (5.8).
+<li>In the discussion after Remark 6.4.2, improve the exposition about
+differentiating under the integral: Emphasize we are
+assuming that the functions are zero for negative \(t\)
+and add more detail to the footnote.
 <li>In the example of the mapping in section A.6 reorder the vertices
 of the square so that they go around the square in a counterclockwise
 motion rather than being out of order.
