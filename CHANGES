@@ -1,6 +1,10 @@
 <li>In example 1.4.2, split the long list of equations in two
 to make things more readable (and to fit within the screen in
 the web version).  Also, improve some of the nearby wording.
+<li>In the pendulum example in section 2.4, reword and very
+slightly simplify the setup and include units.
+<li>Move the floated images a bit up in 4.10.1 for a slightly better layout,
+<li>A few minor extra explanations in 4.10.
 <li>In Example 5.3.1, note that we are trying to find a solution y
 to (5.7)
 satisfying the zero boundary conditions (5.8).  Then it was confusing
@@ -18,10 +22,18 @@ and add more detail to the footnote.
 <li>In section 7.2, use expressions like \(4 \cdot 3 \cdot 2\)
 instead of \((4)(3)(2)\) as it is less busy, more readable, and
 slightly shorter, especially when a longer list is involved.
-<li>In Example 7.2, reword the part where the general
+<li>In Example 7.2.2, reword the part where the general
 terms for the coefficients are obtained to be more logical,
 explicitly show how the zero coefficients come about,
 and compute up to \(a_9\) to see the pattern more clearly.
+<li>In the beginning of 7.3.2, say again that the
+coefficients are polynomials.
+<li>In item (ii) of the Frobenius method avoid saying it is
+\(x^r\) as it in fact often not that coefficient.
+<li>A little bit of rewording in 7.3.3 to clarify the
+definition of the gamma function and how it is used
+with nonpositive arguments so that the formulas given
+make sense.
 <li>A little bit of rewording in subsection 8.3.1 on the pendulum.
 <li>In Example 8.4.1, mention that \(y=x'\) on the phase diagram as usual
 just to reinforce.
@@ -30,3 +42,5 @@ as usual.
 <li>In the example of the mapping in section A.6 reorder the vertices
 of the square so that they go around the square in a counterclockwise
 motion rather than being out of order.
+<li>Make some long equations a bit narrower
+in the web version by splitting some lines.

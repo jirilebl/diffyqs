@@ -990,13 +990,16 @@ That is, a function $f(t)$ where $f(t) = f(t+P)$ for some constant $P$ (the peri
 Well, let us compute $F(s)$:
 \begin{equation*}
 \begin{split}
-F(s)
-& = \int_0^\infty e^{-st} f(t) \, dt
+F(s) & = \int_0^\infty e^{-st} f(t) \, dt
+%mbxlatex \\
+%mbxlatex &
 = \int_0^P e^{-st} f(t) \, dt
 + \int_P^\infty e^{-st} f(t) \, dt
 \\
 & = \int_0^P e^{-st} f(t) \, dt
 + \int_0^\infty e^{-s(t+P)} f(t+P) \, dt
+%mbxlatex \\
+%mbxlatex &
 = \int_0^P e^{-st} f(t) \, dt
 + e^{-Ps} \int_0^\infty e^{-st} f(t) \, dt
 \\

@@ -1460,9 +1460,9 @@ motion}} if $F \equiv 0$ (if $F$ is identically zero),
 \item \emph{undamped\index{undamped motion}} if $c = 0$.
 \end{enumerate}
 
-This system appears in lots of applications even if it does not at first
-seem like it.  Many real-world scenarios can be simplified to
-a mass on a spring.  For example, a bungee jump setup is essentially a mass
+This equation appears in lots of applications even if it does not
+seem like it at first.  Many real-world scenarios can be simplified to
+a mass on a spring.  For example, a bungee jump is essentially a mass
 and spring system (you are the mass).  It would be good if someone did the math
 before you jump off the bridge, right?  Let us give two other examples.
 
@@ -1501,8 +1501,8 @@ unforced motion.
 
 \medskip
 
-%10 is the number of lines, must be adjusted
-\begin{mywrapfigsimp}[10]{1.8in}{2.16in}
+%9 is the number of lines, must be adjusted
+\begin{mywrapfigsimp}[9]{1.8in}{2.16in}
 \noindent
 \inputpdft{mv-pend-deriv}{%
 A diagram of a pendulum.  A pendulum is shown fixed at a point at the top
@@ -1519,20 +1519,20 @@ the hypotenuse.}
 \end{mywrapfigsimp}
 Our next example behaves like a mass and spring system only
 approximately. Suppose a
-mass $m$ hangs on a pendulum of length $L$.  We seek an equation for
-the angle $\theta(t)$ (in radians).  Let $g$ be the acceleration due to gravity.
-Elementary physics mandates that the equation is
-\begin{equation*}
-\theta'' + \frac{g}{L} \sin \theta = 0 .
-\end{equation*}
-
-Let us derive this equation using \myindex{Newton's second law}:
-force equals mass times acceleration.  The acceleration is
+mass of $m$ kilograms hangs on a pendulum of length $L$ meters.  We seek an equation for
+the angle $\theta(t)$ (in radians).  Let $g$ be the acceleration due to
+gravity in meters per second squared.
+Let us derive an equation for $\theta$ using \myindex{Newton's second law}:
+Force equals mass times acceleration.  The acceleration is
 $L \theta''$ and mass is $m$.  So $mL\theta''$ has to be equal
 to the tangential component of the force given by the gravity, which is
 $m g \sin \theta$ in the opposite direction.
 So $mL\theta'' = -mg \sin \theta$.
-The $m$ curiously cancels from the equation.
+The $m$ curiously cancels from the equation and we end up with the equation
+\begin{equation*}
+\theta'' + \frac{g}{L} \sin \theta = 0 .
+\end{equation*}
+
 
 Now we make our approximation.  For small $\theta$ we have that approximately
 $\sin \theta \approx \theta$.  This can be seen by looking at the graph.

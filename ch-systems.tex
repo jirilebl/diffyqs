@@ -3996,7 +3996,16 @@ The equation is
 \begin{bmatrix}
 0 \\ 2
 \end{bmatrix}
-\cos (3 t) \qquad \text{or} \qquad
+\cos (3 t)
+%mbxSTARTIGNORE
+\qquad
+%mbxENDIGNORE
+%mbxlatex \quad
+\text{or}
+%mbxSTARTIGNORE
+\qquad
+%mbxENDIGNORE
+%mbxlatex \quad
 {\vec{x}}'' =
 \begin{bmatrix}
 -3 & 1 \\
@@ -4070,7 +4079,13 @@ Combining with the general solution of the associated
 homogeneous problem, we get that the general solution to
 ${\vec{x}}'' = A \vec{x} + \vec{F} \cos (\omega t)$ is
 \begin{equation*}
-\vec{x} = \vec{x}_c + \vec{x}_p =
+%mbxlatex \begin{split}
+\vec{x}
+%mbxlatex &
+= \vec{x}_c + \vec{x}_p
+%mbxlatex \\
+%mbxlatex &
+=
 \begin{bmatrix} 1 \\
 \noalign{\smallskip}
 2 \end{bmatrix}
@@ -4087,6 +4102,7 @@ ${\vec{x}}'' = A \vec{x} + \vec{F} \cos (\omega t)$ is
 \frac{-3}{10}
 \end{bmatrix}
 \cos (3t) .
+%mbxlatex \end{split}
 \end{equation*}
 We would then solve for the constants
 $a_1$, $a_2$, $b_1$, and $b_2$ using
@@ -5093,23 +5109,30 @@ e^{at} = 1 + at
 Recall $k! = 1 \cdot 2 \cdot 3 \cdots k$ is the factorial, and $0! = 1$.
 We differentiate this series term by term
 \begin{equation*}
-\frac{d}{dt} \left(e^{at} \right) = 
+%mbxlatex \begin{split}
+\frac{d}{dt} \left(e^{at} \right)
+%mbxlatex &
+= 
 0
 + a
 + a^2 t
 + \frac{a^3t^2}{2}
 + \frac{a^4t^3}{6}
 + \cdots
-= a \left(
+%mbxlatex \\
+%mbxlatex &
+=
+a \left(
 1
 + a t
 + \frac{{(at)}^2}{2}
 + \frac{{(at)}^3}{6}
 + \cdots \right)
 = a e^{at}.
+%mbxlatex \end{split}
 \end{equation*}
 Maybe we can try the same trick with matrices.  For an $n \times n$
-matrix $A$ we define the
+matrix $A$, we define the
 \emph{\myindex{matrix exponential}\index{exponential of a matrix}} as
 \begin{equation*}
 \mybxbg{~~

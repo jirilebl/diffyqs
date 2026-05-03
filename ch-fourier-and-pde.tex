@@ -4508,7 +4508,7 @@ y(x,t) & =
 \sin \left( \frac{3 \pi}{2}  x \right)
 \cos \left( \frac{3 \pi}{2}  t \right)
 \\
-& \hspace{20em}
+& \hspace{15em}
 +
 \frac{0.8}{25 \pi^2}
 \sin \left( \frac{5 \pi}{2}  x \right)
@@ -5008,11 +5008,17 @@ y_t(x,0) =
 Yay!  We're smoking now.  OK\@, now the boundary conditions.  Note
 that $F(x)$ and $G(x)$ are odd.  So
 \begin{equation*}
-y(0,t) =
+%mbxlatex \begin{split}
+y(0,t)
+%mbxlatex &
+=
 \frac{F(-at) + F(at)}{2} + \frac{1}{2a} \int_{-at}^{at} G(s) \,ds 
+%mbxlatex \\
+%mbxlatex &
 =
 \frac{-F(at) + F(at)}{2} + \frac{1}{2a} \int_{-at}^{at} G(s) \,ds 
 = 0 + 0 = 0.
+%mbxlatex \end{split}
 \end{equation*}
 Now $F(x)$ is odd and $2L$-periodic, so
 \begin{equation*}
@@ -5858,10 +5864,6 @@ $u(x,y) =
 
 \subsection{Laplace in polar coordinates}
 
-A more natural setting for the Laplace equation $\Delta u = 0$
-is a circle rather than a rectangle.  On the other hand, what makes the
-problem somewhat more difficult is that we need polar coordinates.
-
 \begin{mywrapfigsimp}[5]{1.3in}{1.5in}
 \diffypdfversion{\vspace*{5pt}}
 \noindent
@@ -5873,6 +5875,9 @@ the point is marked as r, and the angle it makes with the positive x-axis
 is labeled as theta.}
 \diffypdfversion{\vspace*{5pt}}
 \end{mywrapfigsimp}
+A more natural setting for the Laplace equation $\Delta u = 0$
+is a circle rather than a rectangle.  On the other hand, what makes the
+problem somewhat more difficult is that we need polar coordinates.
 Recall that the polar coordinates for the $(x,y)$-plane are $(r,\theta)$: 
 \begin{equation*}
 x = r \cos \theta , \quad y = r \sin \theta ,
@@ -5880,12 +5885,6 @@ x = r \cos \theta , \quad y = r \sin \theta ,
 where $r \geq 0$ and $-\pi < \theta \leq \pi$.  So the point $(x,y)$ is
 distance $r$ from the origin at an angle $\theta$ from the positive
 $x$-axis.
-
-Now that we know our coordinates, let us give the problem we wish
-to solve.  We have a circular region of radius 1, and we are interested
-in the Dirichlet problem for the Laplace equation for this region.  Let
-$u(r,\theta)$ denote the temperature at the point $(r,\theta)$ in polar
-coordinates.
 
 \begin{mywrapfigsimp}{2.4in}{2.7in}
 \noindent
@@ -5895,6 +5894,13 @@ The inside of the circle is shaded and marked with Delta u equals 0.
 The boundary circle is a dark bold line that is labeled as
 u of (1,theta) equals g of theta.}
 \end{mywrapfigsimp}
+Now that we know our coordinates, let us give the problem we wish
+to solve.  We have a circular region of radius 1, and we are interested
+in the Dirichlet problem for the Laplace equation for this region.  Let
+$u(r,\theta)$ denote the temperature at the point $(r,\theta)$ in polar
+coordinates.
+We will prescribe the temperature on the circle as $g(\theta)$.
+
 We have the problem:
 \begin{equation} \label{dirichdisc:theprobeq}
 \begin{aligned}
@@ -6457,8 +6463,8 @@ Sometimes the limits
 of the integral are given as 0 to $2\pi$; everything inside is
 $2\pi$-periodic in $\alpha$, so this does not change the integral.
 
-%12 is the number of lines, must be adjusted
-\begin{mywrapfigsimp}[12]{2.1in}{2.4in}
+%11 is the number of lines, must be adjusted
+\begin{mywrapfigsimp}[11]{2.1in}{2.4in}
 \diffypdfversion{\vspace*{5pt}}
 \noindent
 \inputpdft{poisson}{%
@@ -6469,7 +6475,12 @@ the distance from the center to (r,theta) is r, and the
 distance between (1,alpha) and (r,theta) is s.}
 \end{mywrapfigsimp}
 Let us not leave the Poisson kernel without explaining its geometric
-meaning.  Let $s$ be the distance from $(r,\theta)$ to
+meaning.
+The kernel corresponding to the point $(r,\theta)$ in the disc
+and the point $(1,\alpha)$ on the boundary depends only
+on the distance of $(r,\theta)$ from the center and
+the distance of $(r,\theta)$ and $(1,\alpha)$.
+Let $s$ be the distance from $(r,\theta)$ to
 $(1,\alpha)$.
 This distance $s$ in polar coordinates is given precisely by the square root
 of $1 - 2r\cos(\theta-\alpha) +r^2$.  That is, the Poisson kernel is really

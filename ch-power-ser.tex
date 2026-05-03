@@ -32,8 +32,16 @@ a_3 {(x-x_0)}^3 + \cdots,
 \end{equation}
 where $a_0,a_1,a_2,\ldots,a_k,\ldots$ and $x_0$ are constants.  Let
 \begin{equation*}
-S_n(x) = \sum_{k=0}^n a_k {(x-x_0)}^k =
+%mbxlatex \begin{split}
+S_n(x)
+%mbxlatex &
+=
+\sum_{k=0}^n a_k {(x-x_0)}^k
+%mbxlatex \\
+%mbxlatex &
+=
 a_0 + a_1 (x-x_0) + a_2 {(x-x_0)}^2 + a_3 {(x-x_0)}^3 + \cdots + a_n {(x-x_0)}^n ,
+%mbxlatex \end{split}
 \end{equation*}
 denote the so-called \emph{\myindex{partial sum}}.  If for some $x$,
 the limit
@@ -62,7 +70,7 @@ The series
 \end{equation*}
 is convergent for any $x$.
 Recall that $k! = 1\cdot 2\cdot 3 \cdots k$ is the
-factorial.  By convention we define $0! = 1$.
+factorial.  By convention, we define $0! = 1$.
 You may recall that this series
 converges to $e^x$.
 \end{example}
@@ -102,7 +110,7 @@ diverges at $x=1$.
 If a power series converges absolutely
 at some $x_1$, then for all $x$ such that
 $\lvert x - x_0  \rvert \leq \lvert x_1 - x_0 \rvert$ (that is, $x$ is
-closer than $x_1$ to $x_0$), we have
+no further than $x_1$ to $x_0$), we have
 $\lvert a_k {(x-x_0)}^k \rvert \leq
 \lvert a_k {(x_1-x_0)}^k \rvert$
 for all $k$.
@@ -260,7 +268,7 @@ a_k
 \begin{example}
 Consider
 \begin{equation*}
-\sum_{k=0}^\infty \frac{1}{k^k} {x}^k .
+\sum_{k=1}^\infty \frac{1}{k^k} {x}^k .
 \end{equation*}
 Compute the limit for the root test (ratio test would also work),
 \begin{equation*}
@@ -403,8 +411,8 @@ y' = \sum_{k=1}^\infty k \frac{1}{k!} x^{k-1} =
 \end{equation*}
 We \emph{reindex}\index{reindexing the series}
 the series by simply replacing $k$ with $k+1$.  The series
-does not change, what changes is simply how we write it.  After
-reindexing the series starts 
+does not change; what changes is simply how we write it.  After
+reindexing, the series starts 
 at $k=0$ again.
 \begin{equation*}
 \sum_{k=1}^\infty \frac{1}{(k-1)!} x^{k-1} =
@@ -697,9 +705,9 @@ P(x) y'' + Q(x) y' + R(x) y = 0 .
 Suppose that $P(x)$, $Q(x)$, and $R(x)$ are polynomials.  We will 
 try a solution of the form
 \begin{equation*}
-y = \sum_{k=0}^\infty a_k {(x-x_0)}^k
+y = \sum_{k=0}^\infty a_k {(x-x_0)}^k ,
 \end{equation*}
-and solve for the $a_k$ to try to obtain a solution defined in some
+and solve for the $a_k$ to obtain a solution defined in some
 interval around $x_0$.
 
 The point $x_0$ is called an \emph{\myindex{ordinary point}}
@@ -707,9 +715,9 @@ if $P(x_0) \neq 0$.  That is, the functions
 \begin{equation*}
 \frac{Q(x)}{P(x)} \qquad \text{and} \qquad \frac{R(x)}{P(x)}
 \end{equation*}
-are defined for $x$ near $x_0$.  If $P(x_0) = 0$, then we say $x_0$
+are defined for $x$ near $x_0$.  If $P(x_0) = 0$, then $x_0$
 is a \emph{\myindex{singular point}}.  Handling singular points is
-harder than ordinary points and so we now focus only on ordinary points.
+harder than handling ordinary points and so we now focus only on ordinary points.
 
 \begin{example}
 We start with a very simple example
@@ -792,7 +800,10 @@ a_k = a_{2n+1} = \frac{a_1}{(2n+1)!} .
 \end{equation*}
 We write down the series for the solution
 \begin{equation*}
-y =
+%mbxlatex \begin{split}
+y
+%mbxlatex &
+=
 \sum_{k=0}^\infty
 a_k x^k
 =
@@ -802,6 +813,8 @@ a_k x^k
 +
 \frac{a_1}{(2n+1)!} \,x^{2n+1}
 \right)
+%mbxlatex \\
+%mbxlatex &
 =
 a_0
 \sum_{n=0}^\infty
@@ -810,6 +823,7 @@ a_0
 a_1
 \sum_{n=0}^\infty
 \frac{1}{(2n+1)!} \,x^{2n+1} .
+%mbxlatex \end{split}
 \end{equation*}
 We recognize the two series as the hyperbolic sine and cosine.
 Therefore,
@@ -844,7 +858,7 @@ We differentiate twice (as above) to obtain
 \begin{equation*}
 y'' = \sum_{k=2}^\infty k\,(k-1) \, a_k x^{k-2} .
 \end{equation*}
-We plug $y$ into the equation
+We plug $y$ into the equation:
 \begin{equation*}
 \begin{split}
 0 = y''-xy &= 
@@ -860,7 +874,7 @@ x
 \end{split}
 \end{equation*}
 We reindex and synchronize the start indexes to make the series
-possible to add
+possible to sum:
 \begin{equation*}
 \begin{split}
 0 = y''-xy
@@ -1066,8 +1080,8 @@ a_5 = \frac{2(3-n)}{5 \cdot 4} a_3
 \end{align*}
 We separate the even and odd coefficients to find that
 \begin{align*}
-a_{2m} &=\frac{2^m(-n)(2-n)\cdots(2m-2-n)}{(2m)!} , \\
-a_{2m+1} &=\frac{2^m(1-n)(3-n)\cdots(2m-1-n)}{(2m+1)!} .
+a_{2m} &=\frac{2^m(-n)(2-n)\cdots(2m-2-n)}{(2m)!} a_0, \\
+a_{2m+1} &=\frac{2^m(1-n)(3-n)\cdots(2m-1-n)}{(2m+1)!} a_1 .
 \end{align*}
 We write down the two series, one with the even powers and one with the
 odd:
@@ -1392,6 +1406,8 @@ We plug those into our equation:
 \\
 &= 
 4x^2 \, \Biggl( \sum_{k=0}^\infty (k+r)\,(k+r-1) \, a_k x^{k+r-2}  \Biggr)
+%mbxlatex \\
+%mbxlatex & \phantom{mmm}
 -
 4x^2 \, \Biggl( \sum_{k=0}^\infty (k+r) \, a_k x^{k+r-1}  \Biggr)
 +
@@ -1421,7 +1437,10 @@ We plug those into our equation:
 \Biggl( \sum_{k=1}^\infty 2a_{k-1} x^{k+r} \Biggr)
 \\
 &=
-4r(r-1) \, a_0 x^r  + a_0 x^r + 
+4r(r-1) \, a_0 x^r  + a_0 x^r
+%mbxlatex \\
+%mbxlatex & \phantom{mmm}
++ 
 \sum_{k=1}^\infty
 \Bigl( 4 (k+r)\,(k+r-1) \, a_k
 -
@@ -1432,7 +1451,10 @@ a_k
 2a_{k-1} \Bigr) \, x^{k+r} 
 \\
 &=
-\bigl( 4r(r-1) + 1 \bigr) \, a_0 x^r + 
+\bigl( 4r(r-1) + 1 \bigr) \, a_0 x^r
+%mbxlatex \\
+%mbxlatex & \phantom{mmm}
++ 
 \sum_{k=1}^\infty
 \Bigl( \bigl( 4 (k+r)\,(k+r-1) + 1 \bigr) \, a_k
 -
@@ -1467,13 +1489,13 @@ a_k
 Let us set $a_0 = 1$.  Then
 \begin{equation*}
 a_1 = \frac{1}{1} a_0 = 1 ,
-\qquad
+\quad
 a_2 = \frac{1}{2} a_1 = \frac{1}{2} ,
-\qquad
+\quad
 a_3 = \frac{1}{3} a_2 = \frac{1}{3 \cdot 2} ,
-\qquad
+\quad
 a_4 = \frac{1}{4} a_3 = \frac{1}{4 \cdot 3 \cdot 2} ,
-\qquad \cdots
+\quad \cdots
 \end{equation*}
 Extrapolating, we notice that
 \begin{equation*}
@@ -1530,7 +1552,9 @@ Let
 \begin{equation*}
 P(x) y'' + Q(x) y' + R(x) y = 0
 \end{equation*}
-be an ODE\@.  As before, if $P(x_0) = 0$, then $x_0$ is a
+be an ODE for polynomials
+$P(x)$, $Q(x)$, and $R(x)$.
+As before, if $P(x_0) = 0$, then $x_0$ is a
 singular point.
 If we divide by $P(x)$ to put the equation in standard form
 $y'' + \frac{Q(x)}{P(x)} y' + \frac{R(x)}{P(x)} y = 0$,
@@ -1541,7 +1565,8 @@ More specifically, if the limits
 \qquad \text{and} \qquad
 \lim_{x \to x_0} ~ (x-x_0)^2 \frac{R(x)}{P(x)}
 \end{equation*}
-both exist and are finite, then we say that $x_0$ is
+both exist and are finite,
+then we say that $x_0$ is
 a \emph{\myindex{regular singular point}}.
 
 \begin{example}
@@ -1605,11 +1630,12 @@ We seek a Frobenius-type solution of the form
 \begin{equation*}
 y = \sum_{k=0}^\infty a_k x^{k+r} .
 \end{equation*}
-We plug this $y$ into equation \eqref{eq:frobeniusmethod}.  We collect
-terms and write everything as a single series.
+We plug this $y$ into the left-hand side of
+equation \eqref{eq:frobeniusmethod}, collect
+terms, and write everything as a single series.
 \item
 The obtained series must be zero.  Setting the first
-coefficient (usually the coefficient of $x^r$) in the series
+coefficient (the one with the smallest power) in the series
 to zero we obtain the
 \emph{indicial equation}, which is a quadratic polynomial in $r$.
 \item
@@ -1639,7 +1665,7 @@ y_2 = x^{r} \sum_{k=0}^\infty b_k x^{k} + (\ln x) y_1 ,
 into equation \eqref{eq:frobeniusmethod} and solving for the constants $b_k$.
 \item
 If the indicial equation has two real roots such that $r_1-r_2$ is
-an integer, then one solution is
+an integer, then, assuming $r_1$ is the larger root, one solution is
 \begin{equation*}
 y_1 = x^{r_1} \sum_{k=0}^\infty a_k x^{k} ,
 \end{equation*}
@@ -1697,7 +1723,7 @@ into Bessel's equation of order $p$, we obtain the indicial equation
 \begin{equation*}
 r(r-1)+r-p^2 = (r-p)(r+p) = 0 .
 \end{equation*}
-We obtain two roots, $r_1 = p$ and $r_2 = -p$.
+Unless $p=0$, we obtain two roots, $r_1 = p$ and $r_2 = -p$.
 If $p$ is not an integer, then following the method of Frobenius and
 setting $a_0 = 1$, we find
 linearly independent solutions of the form
@@ -1717,12 +1743,12 @@ Verify that the indicial equation of Bessel's equation of order $p$ is
 $(r-p)(r+p)=0$.
 \task
 Suppose $p$ is not an integer.  Carry out the computation
-to obtain the solutions $y_1$ and $y_2$ above.
+to find the solutions $y_1$ and $y_2$ above.
 \end{tasks}
 \end{exercise}
 
 Bessel functions are convenient constant multiples of $y_1$ and $y_2$.
-First we must define the \emph{gamma function}
+First, we define the \emph{gamma function}
 \begin{equation*}
 \Gamma(x) = \int_0^\infty t^{x-1} e^{-t} \, dt .
 \end{equation*}
@@ -1731,8 +1757,8 @@ The gamma function also has a wonderful property
 \begin{equation*}
 \Gamma(x+1) = x \Gamma(x) .
 \end{equation*}
-From this property, it follows that $\Gamma(n) = (n-1)!$ when $n$ is an
-integer.  So the gamma function is a continuous version of the factorial.  We
+From this property, it follows that $\Gamma(n) = (n-1)!$ when $n$ is a
+positive integer.  So the gamma function is a continuous version of the factorial.  We
 compute:
 \begin{align*}
 & \Gamma(k+p+1)=(k+p)(k-1+p)\cdots (2+p)(1+p) \Gamma(1+p) ,
@@ -1744,6 +1770,13 @@ compute:
 Verify the identities above using 
 $\Gamma(x+1) = x \Gamma(x)$.
 \end{exercise}
+
+Using $\Gamma(x+1) = x \Gamma(x)$,
+we define the gamma function for 
+all $x$ except nonpositive integers. 
+The reciprocal $\frac{1}{\Gamma(x)}$
+can be defined for all $x$ by letting $\frac{1}{\Gamma(x)}$ be zero
+for integers $x \leq 0$.
 
 We define the \emph{Bessel functions of the first kind}%
 \index{Bessel function of the first kind} of
@@ -1764,21 +1797,23 @@ order $p$ and $-p$ as
 As these are constant multiples of the solutions we found above, these are
 both solutions to Bessel's equation of order $p$.  The constants are picked
 for convenience.
-
-When $p$ is not an integer, $J_p$
-and $J_{-p}$ are linearly independent.  When $n$ is an integer we 
-obtain
+As the reciprocal of $\Gamma$ is defined for all $x$, the formulas
+on the right hold even for integer $p$.
+When $n$ is a nonnegative integer,
 \begin{equation*}
 J_n(x) =
 \sum_{k=0}^\infty
 \frac{{(-1)}^k}{k! \,(k+n)!}
 {\left(\frac{x}{2}\right)}^{2k+n} .
 \end{equation*}
-In this case
+
+When $p$ is not an integer, $J_p$
+and $J_{-p}$ are linearly independent.
+For integer orders, one can check that
 \begin{equation*}
-J_n(x) = {(-1)}^nJ_{-n}(x) ,
+J_n(x) = {(-1)}^nJ_{-n}(x) .
 \end{equation*}
-and so $J_{-n}$ is not a second linearly independent
+So $J_{-n}$ is not a second linearly independent
 solution.  The other solution is the
 so-called \emph{\myindex{Bessel function of second kind}}.  These make
 sense only for integer orders $n$ and
@@ -1792,7 +1827,7 @@ Each linear combination of $J_p(x)$ and $J_{-p}(x)$ is a solution
 to Bessel's equation of order $p$.  Then as we take the limit as $p$
 goes to $n$, we see that $Y_n(x)$ is a solution to Bessel's equation of
 order $n$.  It also turns out that $Y_n(x)$ and $J_n(x)$ are linearly
-independent.  Therefore when $n$ is an integer, we have the
+independent.  Therefore, when $n$ is an integer, we have the
 general solution to Bessel's equation of order $n$:
 \begin{equation*}
 y = A J_n(x) + B Y_n(x) ,
@@ -1814,7 +1849,8 @@ functions oscillate, although they are not periodic.  See
 \diffyincludegraphics{width=6.24in}{width=9in}{bessel-first-second}{%
 Two plots are shown.  In the left-hand plot, two functions that seem
 to oscillate are graphed for x from 0 to 10, with one starting at
-0 but with slope 1, and one starting at 1 with slope zero.  Their amplitude
+0 but with positive slope,
+and one starting at 1 with slope zero.  Their amplitude
 seems to be decreasing as x gets larger.  In the right-hand plot,
 similarly two similar plots are shown but now both of them seem to start
 from minus infinity and go up along the y axis first.}
