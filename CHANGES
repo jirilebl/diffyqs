@@ -1,3 +1,6 @@
+<li>In example 1.4.2, split the long list of equations in two
+to make things more readable (and to fit within the screen in
+the web version).  Also, improve some of the nearby wording.
 <li>In Example 5.3.1, note that we are trying to find a solution y
 to (5.7)
 satisfying the zero boundary conditions (5.8).  Then it was confusing
@@ -12,11 +15,18 @@ subject to (5.8).
 differentiating under the integral: Emphasize we are
 assuming that the functions are zero for negative \(t\)
 and add more detail to the footnote.
-<li>In the example of the mapping in section A.6 reorder the vertices
-of the square so that they go around the square in a counterclockwise
-motion rather than being out of order.
+<li>In section 7.2, use expressions like \(4 \cdot 3 \cdot 2\)
+instead of \((4)(3)(2)\) as it is less busy, more readable, and
+slightly shorter, especially when a longer list is involved.
+<li>In Example 7.2, reword the part where the general
+terms for the coefficients are obtained to be more logical,
+explicitly show how the zero coefficients come about,
+and compute up to \(a_9\) to see the pattern more clearly.
 <li>A little bit of rewording in subsection 8.3.1 on the pendulum.
 <li>In Example 8.4.1, mention that \(y=x'\) on the phase diagram as usual
 just to reinforce.
 <li>In subsection 8.5.1, also explicitly mention that \(y=x'\)
 as usual.
+<li>In the example of the mapping in section A.6 reorder the vertices
+of the square so that they go around the square in a counterclockwise
+motion rather than being out of order.

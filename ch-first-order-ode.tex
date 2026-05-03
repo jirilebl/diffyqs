@@ -1551,7 +1551,7 @@ r(t) = \exp \left( \int \frac{3}{60+2t} dt  \right)
 =
 {(60+2t)}^{3/2} .
 \end{equation*}
-We multiply both sides of the equation by $r(t)$ to get
+We multiply both sides of the equation by $r(t)$ and simplify,
 \begin{align*}
 {(60+2t)}^{3/2} \frac{dx}{dt} +
 {(60+2t)}^{3/2} \frac{3}{60+2t} x
@@ -1560,7 +1560,10 @@ We multiply both sides of the equation by $r(t)$ to get
 \frac{d}{dt}\left[
 {(60+2t)}^{3/2} x \right]
 & =
-0.5{(60+2t)}^{3/2} ,\\
+0.5{(60+2t)}^{3/2} .\\
+\end{align*}
+We integrate and solve,
+\begin{align*}
 {(60+2t)}^{3/2} x
 & =
 \int 
@@ -1587,7 +1590,8 @@ dt
 \end{align*}
 
 %mbxSTARTIGNORE
-\begin{mywrapfig}{3.25in}
+%17 is the number of lines, must be adjusted
+\begin{mywrapfig}[17]{3.25in}
 \capstart
 \diffyincludegraphics{width=3in}{width=4.5in}{linear-salt-graph}{%
 A graph of a solution from t equals 0 to t equals 20
@@ -1616,12 +1620,12 @@ or
 C=4 ({60}^{3/2}) \approx 1859.03 .
 \end{equation*}
 
-We know $5$ liters per minute are flowing in and $3$ liters per minute are flowing out,
-so the volume is increasing by $2$ liters a minute.
+As $5$ liters per minute are flowing in and $3$ liters per minute are flowing out,
+the volume is increasing by $2$ liters a minute.
 So the tank is
 full when $60+2t = 100$, or when $t=20$.
-We are interested in the value of $x$ when the tank is full,
-that is, we want to compute $x(20)$:
+We want the value of $x$ when the tank is full,
+that is, we compute $x(20)$:
 \begin{equation*}
 \begin{split}
 x(20) & = 
@@ -1636,8 +1640,7 @@ x(20) & =
 \end{split}
 \end{equation*}
 There are $\unit[11.86]{kg}$ of salt in the tank when it is full.
-See \figurevref{linear-salt-graph:fig} for the graph of $x$ over $t$.
-
+See \figurevref{linear-salt-graph:fig} for the graph of $x$ of $t$.
 The concentration when the tank is full is approximately
 $\nicefrac{11.86}{100} = \unitfrac[0.1186]{kg}{liter}$, and we started
 with $\nicefrac{1}{6}$ or approximately \unitfrac[0.1667]{kg}{liter}.
@@ -3753,7 +3756,7 @@ $F(x,y) = C$ leads to the same solution as the example.
 We have only considered ODEs so far, so let us solve a linear first-order
 PDE\@.  Consider
 \begin{equation*}
-a(x,t) \, u_x + b(x,t) \, u_t + c(x,t) \, u = g(x,t), \qquad u(x,0) = f(x) , \qquad -\infty < x < \infty,
+a(x,t) \, u_x + b(x,t) \, u_t + c(x,t) \, u = g(x,t), \quad u(x,0) = f(x) , \quad -\infty < x < \infty,
 \quad t > 0 ,
 \end{equation*}
 where $u(x,t)$ is a function of $x$ and $t$.

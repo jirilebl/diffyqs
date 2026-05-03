@@ -2558,13 +2558,15 @@ to separate out the real and imaginary part.
 
 \medskip
 
-Returning to our problem,
+Returning to our example problem,
 \begin{equation*}
-\vec{x}_1 =
+\begin{split}
+\vec{x}_1 & =
 \begin{bmatrix} i \\ 1 \end{bmatrix} e^{(1-i)t}
 =
 \begin{bmatrix} i \\ 1 \end{bmatrix} \left( e^t \cos t - i e^t \sin t \right)
-=
+\\
+& =
 \begin{bmatrix}
 i e^t \cos t + e^t \sin t  \\
 e^t \cos t - i e^t \sin t
@@ -2580,8 +2582,9 @@ e^t \cos t  \\
 - e^t \sin t
 \end{bmatrix}
 .
+\end{split}
 \end{equation*}
-Then
+The two real-valued linearly independent solutions we seek are
 \begin{equation*}
 \operatorname{Re} \vec{x}_1 = 
 \begin{bmatrix}
@@ -2594,8 +2597,8 @@ e^t \cos t
 e^t \cos t \\
 - e^t \sin t
 \end{bmatrix}
+.
 \end{equation*}
-are the two real-valued linearly independent solutions we seek.
 
 \begin{exercise}
 Check that these really are solutions.
