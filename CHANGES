@@ -44,3 +44,5 @@ of the square so that they go around the square in a counterclockwise
 motion rather than being out of order.
 <li>Make some long equations a bit narrower
 in the web version by splitting some lines.
+<li>Add alt texts to all the figures to make the book fully accessible
+(a version of this work has been online since March).
