@@ -1441,7 +1441,7 @@ $\frac{\pi^4}{5} + \sum\limits_{n=1}^\infty
 \subsection{$2L$-periodic functions}
 
 We computed the Fourier series for a $2\pi$-periodic function, but what
-about functions of different periods.  Well, fear not, the computation is a
+about functions of different periods?  Well, fear not, the computation is a
 simple case of change of variables.  We just rescale the independent
 axis.  Consider a $2L$-periodic function $f(t)$.  The $L$ is called
 the \emph{\myindex{half period}}.  Let $s = \frac{\pi}{L}  t$.
@@ -1504,7 +1504,8 @@ f(t) \, \sin \left( \frac{n \pi}{L} t \right) \, dt .
 
 The two most common half periods that show up in examples
 are $\pi$ and 1 because of the simplicity of the formulas.  We should stress that we have
-done no new mathematics, we have only changed variables.  If you understand 
+done no new mathematics---we have only changed variables.
+If you understand 
 the Fourier series for $2\pi$-periodic functions, you understand it for
 $2L$-periodic functions.  You can think of it as just using
 different units for time.  All that we are doing is moving some constants
@@ -1543,7 +1544,7 @@ a_n & = \int_{-1}^1 f(t) \cos (n \pi t) \, dt \\
 & = 2 \int_{0}^1 t \cos (n \pi t) \, dt \\
  & = 2 \left[ \frac{t}{n \pi} \sin (n \pi t) \right]_{t=0}^1 -
 2 \int_{0}^1 \frac{1}{n \pi} \sin (n \pi t) \, dt \\
-& =  0 + \frac{1}{n^2 \pi^2} \Bigl[ \cos (n \pi t) \Bigr]_{t=0}^1
+& =  0 + \frac{2}{n^2 \pi^2} \Bigl[ \cos (n \pi t) \Bigr]_{t=0}^1
  =  \frac{2 \bigl( {(-1)}^n -1 \bigr) }{n^2 \pi^2}
 =
 \begin{cases}
@@ -1605,7 +1606,7 @@ and up to the ${20}^{\text{th}}$ harmonic (right graph).\label{gfs:sawcontfsfig}
 
 \subsection{Convergence}
 
-We will need the one sided limits of functions.
+We will need the one-sided limits of functions.
 We will use the following notation
 \begin{equation*}
 f(c-) = \lim_{t \uparrow c} f(t),
@@ -1635,7 +1636,7 @@ on the intervals
 $(t_0,t_1)$, 
 $(t_1,t_2)$, \ldots, 
 $(t_{k-1},t_k)$.
-Also suppose that all the one sided limits exist, that is,
+Also suppose that all the one-sided limits exist, that is,
 all of
 $f(t_0+)$,
 $f(t_1-)$,
@@ -1674,7 +1675,7 @@ even piecewise continuous.
 The function $f(t) = \sqrt[3]{t}$ is not piecewise smooth on
 $[-1,1]$ (or any other interval containing zero).  
 The function $f(t)$ is continuous, but
-its derivative $f'(t) = \frac{1}{3t^{2/3}}$, is unbounded near zero and hence not piecewise
+its derivative $f'(t) = \frac{1}{3t^{2/3}}$ is unbounded near zero and hence not piecewise
 continuous.
 \end{example}
 
@@ -1712,7 +1713,7 @@ converges to $f(t)$ everywhere.  We can always just redefine $f(t)$
 by changing the value at each discontinuity appropriately.  Then we can write
 an equals sign between $f(t)$ and the series without any worry.
 We mentioned this fact
-briefly at the end last section.
+briefly at the end of the last section.
 
 The theorem does not say how fast the series converges.
 Think back to the discussion of the Gibbs phenomenon in the last section.
@@ -1873,7 +1874,7 @@ the plot is almost indistinguishable from the plot of $f(t)$ in
 In fact, the coefficient 
 $\frac{8}{27 \pi^3}$ is already just $0.0096$ (approximately).
 The reason for this behavior is the $n^3$ term in the denominator.
-The coefficients $b_n$ in this case go to zero as fast as
+The coefficients $b_n$ go to zero as fast as
 $\nicefrac{1}{n^3}$ goes to
 zero.
 \end{example}
@@ -1889,7 +1890,7 @@ then the Fourier coefficients will go to
 zero as $\nicefrac{1}{n^2}$.  If you have discontinuities, then 
 the Fourier coefficients will go to zero approximately as $\nicefrac{1}{n}$.
 For more general functions the story is somewhat more complicated but the
-same idea holds, the more derivatives you have, the faster the coefficients
+same idea holds: The more derivatives you have, the faster the coefficients
 go to zero.  Similar reasoning works in reverse.  If the coefficients go to
 zero like $\nicefrac{1}{n^2}$ (or faster),
 you always obtain a continuous function.  If
@@ -1916,7 +1917,7 @@ at most points, but there are points where $f'(t)$ is not differentiable.
 It has corners, but no jumps.
 If we
 differentiate again (where we can), we find that the function
-$f''(t)$,
+$f''(t)$
 now fails to be continuous (has jumps)
 \begin{equation*}
 f''(t) = \sum_{n=1}^\infty \frac{-1}{n} \sin (n t) .
@@ -2244,7 +2245,7 @@ functions in more detail.
 Recall that a function $f(t)$ is \emph{odd}\index{odd function} if $f(-t) =
 -f(t)$.  A function $f(t)$ is \emph{even}\index{even function} if
 $f(-t) = f(t)$.  For example, $\cos (n t)$ is even and $\sin (n t)$ is odd.
-Similarly the function $t^k$ is even if $k$ is even and odd if $k$ is odd.
+Similarly, the function $t^k$ is even if $k$ is even and odd if $k$ is odd.
 
 \begin{exercise}
 Take two functions $f(t)$ and $g(t)$ and define their product $h(t) =
@@ -2261,12 +2262,12 @@ even functions.  On the other hand,
 if $f(t)$ is odd and $g(t)$ even, then we cannot say anything about
 the sum
 $f(t) + g(t)$.  In fact, the Fourier series of any function is a sum of
-an odd (the sine terms) and an even (the cosine terms) function.
+an odd function (the sine terms) and an even function (the cosine terms).
 
 In this section, we consider odd and even periodic
 functions.  We have previously defined the $2L$-periodic extension
 of a function defined on the interval $[-L,L]$.  Sometimes we are only
-interested in the function on the range $[0,L]$, and it would be convenient
+interested in the function on the interval $[0,L]$, and it would be convenient
 to have an odd (resp.\ even) function.  If the function is odd (resp.\ even),
 all the cosine (resp.\ sine) terms disappear.
 What we will do is
@@ -2327,8 +2328,9 @@ t\,(1-t)$, $0 \leq t \leq 1$.\label{scs:oddevenextfig}}
 
 \subsection{Sine and cosine series}
 
-Let $f(t)$ be an odd $2L$-periodic function.  We write 
-the Fourier series for $f(t)$.  First, we compute the coefficients $a_n$ (including
+Let us write the Fourier series for
+an odd $2L$-periodic function $f(t)$.
+First, we compute the coefficients $a_n$ (including
 $n=0$) and get
 \begin{equation*}
 a_n = \frac{1}{L} \int_{-L}^L f(t) \cos \left( \frac{n \pi}{L} t \right)
@@ -2336,7 +2338,7 @@ a_n = \frac{1}{L} \int_{-L}^L f(t) \cos \left( \frac{n \pi}{L} t \right)
 \end{equation*}
 That is, the Fourier series of an odd function has no cosine terms.
 The integral is zero
-as $f(t) \cos \left( {n \pi}{L} t \right)$
+as $f(t) \cos \left( \frac{n \pi}{L} t \right)$
 is an odd function (product of an odd and an
 even function is odd) and the integral of an odd function over a symmetric
 interval is zero.
@@ -2356,7 +2358,8 @@ The Fourier series of an odd $f(t)$ is then
 \sum_{n=1}^\infty b_n \sin \left( \frac{n \pi}{L} t \right) .
 \end{equation*}
 
-Similarly, if $f(t)$ is an even $2L$-periodic function.  For the same exact
+Now suppose $f(t)$ is an even $2L$-periodic function.
+For the same exact
 reasons as above, we find that $b_n = 0$ and
 \begin{equation*}
 a_n = 
@@ -2375,8 +2378,8 @@ The Fourier series of an even $f(t)$ is then
 \end{equation*}
 
 An interesting consequence is that the coefficients of the Fourier series of
-an odd (or even) function can be computed by just integrating over the half
-interval $[0,L]$.  Therefore, we can compute the Fourier series of
+an odd (or even) function can be computed by just integrating over the
+half-interval $[0,L]$.  Therefore, we can compute the Fourier series of
 the odd (or even) extension of a
 function by computing certain integrals over the interval
 where the original function is defined.
@@ -2470,7 +2473,7 @@ a_n & = \frac{2}{\pi}
 & = 
 \frac{4}{n^2\pi}
 \Bigl[ t \cos (n t) \Bigr]_0^\pi
-+
+-
 \frac{4}{n^2\pi}
 \int_0^\pi \cos (n t) \, dt
 = 
@@ -2597,7 +2600,7 @@ x(t) =
 \end{equation*}
 See \figurevref{bnd-dirich-graph:fig} for a graph of the solution.
 Notice that because the eigenfunctions satisfy the boundary conditions, 
-and $x$ is written in terms of the boundary conditions, then $x$
+and $x$ is written in terms of the eigenfunctions, then $x$
 satisfies the boundary conditions.
 \begin{myfig}
 \capstart
@@ -2792,7 +2795,7 @@ $\cos(2t)$
 \qquad
 b) 
 $\sum\limits_{\substack{n=1 \\n \text{ odd}}}^\infty
-\frac{-4n}{\pi n^2 - 4 \pi}
+\frac{4n}{\pi n^2 - 4 \pi}
 \sin(n t)$
 }
 
@@ -4168,7 +4171,7 @@ a^2 y_{xx} ,
 \end{equation*}
 for some constant $a > 0$.
 The intuition is similar to the heat equation, replacing velocity with
-acceleration: the acceleration at a specific point is proportional to the second
+acceleration: The acceleration at a specific point is proportional to the second
 derivative of the shape of the string.  In other words,
 when the string is
 concave down then $y_{xx}$ is negative and the string wants to accelerate
@@ -5209,14 +5212,14 @@ y(x,t) =
 \end{equation*}
 we notice that we have only used the initial conditions in the interval
 $[x-at,x+at]$.  The endpoints of this interval are called the
-\emph{\myindex{wavefronts}}, as that is where the wave front is given an
+\emph{\myindex{wavefronts}}, as that is where the wave front is, given an
 initial ($t=0$) disturbance at $x$.
 If $a=1$, an observer sitting at $x=0$ at time $t=1$ has only seen the
-initial conditions for $x$ in the range $[-1,1]$
+initial conditions for $x$ in the interval $[-1,1]$
 and is blissfully unaware of anything else.
 This is why, for example, we do not know that a supernova has occurred in the
 universe until we see its light, millions of years from the time
-when it did in fact happen.
+when it happened.
 
 \subsection{Exercises}
 
@@ -6575,7 +6578,7 @@ Let $g(\theta)$ be the function $xy = \cos \theta \sin
 \theta$ on the boundary.  Use the series solution to find a solution
 to the Dirichlet problem $\Delta u = 0$, $u(1,\theta) = g(\theta)$.  Now
 convert the solution to Cartesian coordinates $x$ and $y$.  Is this
-solution surprising?  Hint: use your trig identities.
+solution surprising?  Hint: Use your trig identities.
 \end{exercise}
 
 \begin{exercise}
@@ -6634,7 +6637,7 @@ $u = 1-x$
 \begin{tasks}
 \task
 Try and guess a solution to $\Delta u = -1$, $u(1,\theta) = 0$.
-Hint: try a solution that only depends on~$r$.  Also first, don't worry
+Hint: Try a solution that only depends on~$r$.  Also first, don't worry
 about the boundary condition.
 \task
 Now solve $\Delta u = -1$, $u(1,\theta) = \sin(2\theta)$ using
