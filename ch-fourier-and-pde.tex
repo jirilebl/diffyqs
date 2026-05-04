@@ -42,7 +42,7 @@ Then $x = \sin t$ is another solution (besides $x=0$) satisfying both boundary
 conditions.  There are more.  Write down the general
 solution of the differential equation, which is $x= A \cos t + B \sin t$.
 The condition $x(0) = 0$ forces $A=0$.  Letting $x(\pi) = 0$ does not
-give us any more information as $x = B \sin t$ already satisfies both
+give us any more information, as $x = B \sin t$ already satisfies both
 boundary conditions.
 Hence, there are infinitely many solutions of the form $x = B \sin t$,
 where $B$ is an arbitrary constant.
@@ -59,8 +59,8 @@ $x= A \cos \bigl( \sqrt{2}\,t\bigr)
 Letting $x(0) = 0$ still forces $A = 0$.
 We apply the second condition to find
 $0=x(\pi) = B \sin \bigl( \sqrt{2}\,\pi\bigr)$.
-As $\sin \bigl( \sqrt{2}\,\pi\bigr) \neq 0$ we obtain
-$B = 0$.  Therefore $x=0$ is the unique solution to this problem.
+As $\sin \bigl( \sqrt{2}\,\pi\bigr) \neq 0$, we obtain
+$B = 0$.  Therefore, $x=0$ is the unique solution to this problem.
 \end{example}
 
 What is going on?  We will be interested in finding which
@@ -117,7 +117,7 @@ x'' + \lambda x = 0, \quad x(0) = 0, \quad x(\pi) = 0 .
 
 We have to handle
 the cases $\lambda > 0$, $\lambda = 0$, and $\lambda < 0$ separately.
-First suppose that $\lambda > 0$.  Then
+First, suppose that $\lambda > 0$.  Then
 the general solution to $x''+\lambda x = 0$ is
 \begin{equation*}
 x = A \cos \bigl( \sqrt{\lambda}\, t\bigr)
@@ -130,15 +130,15 @@ Next
 \end{equation*}
 If $B$ is zero, then $x$ is not a nonzero solution.  So to get a nonzero
 solution, we must have that $\sin \bigl( \sqrt{\lambda}\, \pi\bigr) = 0$.  Hence,
-$\sqrt{\lambda}\, \pi$ must be an integer multiple of $\pi$.  In other words,
- $\sqrt{\lambda} = k$ for a positive integer $k$.
+$\sqrt{\lambda}\, \pi$ must be an integer multiple of $\pi$.
+In other words, $\sqrt{\lambda} = k$ for a positive integer $k$.
 Hence, the positive eigenvalues are
 $k^2$ for all integers $k \geq 1$.  Corresponding eigenfunctions
 can be taken as $x=\sin (k t)$.  Just like for eigenvectors, constant
 multiples of an eigenfunction are also eigenfunctions,
 so we only need to pick one.
 
-Now suppose that $\lambda = 0$.  In this case the equation is $x'' = 0$,
+Now, suppose that $\lambda = 0$.  In this case the equation is $x'' = 0$,
 and its general solution is $x = At + B$.  The condition $x(0) = 0$ implies
 that $B=0$, and $x(\pi) = 0$ implies that $A = 0$.  This means that $\lambda
 = 0$ is \emph{not} an eigenvalue.
@@ -147,7 +147,7 @@ Finally, suppose that $\lambda < 0$.  In this case we have the general
 solution\footnote{Recall that
 $\cosh s = \frac{1}{2}(e^s+e^{-s})$
 and
-$\sinh s = \frac{1}{2}(e^s-e^{-s})$.  As an exercise
+$\sinh s = \frac{1}{2}(e^s-e^{-s})$.  As an exercise,
 try the computation with the general solution written as
 $x = A e^{\sqrt{-\lambda}\, t} + B e^{-\sqrt{-\lambda}\, t}$ (for
 different $A$ and $B$ of course).}
@@ -158,9 +158,9 @@ x = A \cosh \bigl( \sqrt{-\lambda}\, t\bigr)
 Letting $x(0) = 0$ implies that $A = 0$ (recall $\cosh 0 = 1$ and $\sinh 0 =
 0$).  So our solution must be $x = B \sinh \bigl( \sqrt{-\lambda}\, t \bigr)$ and satisfy
 $x(\pi) = 0$.  This is only possible if $B$ is zero.  Why?  Because
-$\sinh \xi$ is only zero when $\xi=0$.  You should plot sinh to see this
+$\sinh \xi$ is only zero when $\xi=0$.  You should plot $\sinh$ to see this
 fact.
-We can also see this from the definition of sinh.
+We can also see this from the definition of $\sinh$.
 We get $0 = \sinh \xi = \frac{e^\xi -
 e^{-\xi}}{2}$.  Hence $e^\xi = e^{-\xi}$, which implies $\xi = -\xi$ and that is only
 true if $\xi=0$.  So there are no negative eigenvalues.
@@ -173,8 +173,7 @@ In summary, the eigenvalues and corresponding eigenfunctions are
 \end{example}
 
 \begin{example}
-Compute the 
- eigenvalues and eigenfunctions of
+Compute the eigenvalues and eigenfunctions of
 \begin{equation*}
 x'' + \lambda x = 0, \quad x'(0) = 0, \quad x'(\pi) = 0 .
 \end{equation*}
@@ -279,9 +278,9 @@ A \cos \bigl(\sqrt{\lambda}\, \pi\bigr)
 + B \sin \bigl( \sqrt{\lambda}\, \pi\bigr).
 \end{equation*}
 Hence either $B=0$ or $\sin \bigl( \sqrt{\lambda}\, \pi\bigr) = 0$.
-Similarly (exercise) if we differentiate $x$ and plug in the second
-condition we find that $A=0$ or $\sin \bigl( \sqrt{\lambda}\, \pi\bigr) = 0$.
-Therefore, unless we want $A$ and $B$ to both be zero (which we do not)
+Similarly (exercise), if we differentiate $x$ and plug in the second
+condition, we find that $A=0$ or $\sin \bigl( \sqrt{\lambda}\, \pi\bigr) = 0$.
+Therefore, unless we want $A$ and $B$ to both be zero (which we do not),
 we must have $\sin \bigl( \sqrt{\lambda}\, \pi \bigr) = 0$.  Hence, $\sqrt{\lambda}$
 is an integer and the eigenvalues are yet again $\lambda = k^2$ for
 an integer $k \geq 1$.  In this case, however, 
@@ -473,7 +472,7 @@ The theorem is also true for the other types of
 boundary conditions we considered.
 The theorem means that if $\lambda$ is not an eigenvalue, the nonhomogeneous
 equation \eqref{simpfrednonhomeq} has a unique solution for every right-hand
-side.  On the other hand if $\lambda$ is an eigenvalue, then 
+side.  On the other hand, if $\lambda$ is an eigenvalue, then 
 \eqref{simpfrednonhomeq} need not have a solution for every $f$,
 and furthermore,
 even if it happens to have a solution, the solution is not
@@ -511,7 +510,7 @@ no volume, just a mathematical curve.
 We suppose the tension on the string is a constant $T$ in Newtons.
 %If we take a small segment and we look at the tension at the endpoints, we
 %see that this force is tangential and we will assume that the magnitude is
-%the same at both end points.  Hence the magnitude
+%the same at both endpoints.  Hence the magnitude
 %is constant everywhere and we will
 %call its magnitude $T$.
 Assuming that the deflection is small,
@@ -519,12 +518,12 @@ we can use Newton's second law (let us skip the derivation) to get the equation
 \begin{equation*}
 T y'' + \rho \omega^2 y = 0 .
 \end{equation*}
-To check the units notice that the units of $y''$ are $\unitfrac{m}{m^2}$, as the derivative is
+To check the units, notice that the units of $y''$ are $\unitfrac{m}{m^2}$, as the derivative is
 in terms of $x$.
 
 Let $L$ be the length of the string (in meters) and the string
-is fixed at the beginning and end
-points.  Hence, $y(0) = 0$ and $y(L) = 0$.  See
+is fixed at both endpoints.
+Hence, $y(0) = 0$ and $y(L) = 0$.  See
 \figurevref{bvp:whirstringfig}.
 
 \begin{myfig}
@@ -542,7 +541,7 @@ $y'' + \frac{\rho \omega^2}{T} y = 0$.
 The setup is similar to \examplevref{bvp:eig1ex}, except for the
 interval length being $L$ instead of $\pi$.  We are looking for eigenvalues
 of $y'' + \lambda y = 0, y(0) = 0, y(L) = 0$ where
-$\lambda = \frac{\rho \omega^2}{T}$.  As before
+$\lambda = \frac{\rho \omega^2}{T}$.  As before,
 there are no nonpositive eigenvalues.  With $\lambda > 0$,
 the general solution to the equation is
 $y = A \cos \bigl(  \sqrt{\lambda} \,x \bigr)
@@ -566,8 +565,8 @@ Let us assume that $\rho$ and $T$ are fixed and we are changing $\omega$.
 For most values of $\omega$, the string is in the equilibrium state.  When 
 the angular velocity $\omega$ hits a value
 $\omega = \frac{k \pi \sqrt{T}}{L\sqrt{\rho}}$, then the string 
-pops out and has the shape of a sin wave crossing the
-$x$-axis $k-1$ times between the end points.
+pops out and has the shape of a sine wave crossing the
+$x$-axis $k-1$ times between the endpoints.
 For example, at $k=1$, the string does not cross the $x$-axis
 and the shape looks like in \figurevref{bvp:whirstringfig}.
 On the other hand, when $k=3$ the string crosses the $x$-axis
@@ -636,7 +635,7 @@ Finish the calculation and show that there are no negative eigenvalues.
 
 \begin{exercise}
 Consider a spinning string of length 2 and linear density 0.1 and tension 3.
-Find smallest angular velocity when the string pops out.
+Find the smallest angular velocity when the string pops out.
 \end{exercise}
 \exsol{%
 $\omega = \pi \sqrt{\frac{15}{2}}$
@@ -666,7 +665,7 @@ $x(t) = - \sin(t)$
 Consider
 $x' + \lambda x = 0$ and $x(0)=0$, $x(1) = 0$.  Why does it not
 have any eigenvalues?  Why does every first-order equation with two endpoint
-conditions such as above have no eigenvalues?
+conditions such as the one above have no eigenvalues?
 \end{exercise}
 \exsol{%
 General solution is $x = C e^{-\lambda t}$.  Since $x(0) = 0$ then $C=0$, and so $x(t) = 0$.
@@ -712,13 +711,13 @@ x'' + \omega_0^2 x = F_0 \cos ( \omega t) .
 One way to solve \eqref{ts:deq} is to
 decompose $f(t)$ as a sum of cosines (and sines) and then
 solve many problems of the form \eqref{ts:deqcos}.  We then use
-the principle of superposition, to sum up all the solutions we got
+the principle of superposition to sum up all these solutions
 to get a solution to \eqref{ts:deq}.
 
 Before we proceed, let us talk a little bit more in detail about
 periodic functions.
 A function is said to be \emph{\myindex{periodic}} with period $P$ if
-$f(t) = f(t+P)$ for all $t$.  For brevity we say $f(t)$ is $P$-periodic.
+$f(t) = f(t+P)$ for all $t$.  For brevity, we say $f(t)$ is $P$-periodic.
 Note that a $P$-periodic function is also $2P$-periodic, $3P$-periodic
 and so on.
 For example, $\cos (t)$ and $\sin (t)$ are
@@ -726,7 +725,7 @@ $2\pi$-periodic.  So are $\cos (kt)$ and $\sin (kt)$ for all integers $k$.  The
 constant functions are an extreme example.  They are periodic for any period
 (exercise).
 
-Normally we start with a function $f(t)$ defined on some interval $[-L,L]$,
+Normally, we start with a function $f(t)$ defined on some interval $[-L,L]$,
 and we want to
 \emph{extend $f(t)$ periodically}\index{extend periodically}\index{periodic extension}
 to make it
@@ -735,7 +734,7 @@ by defining a new function $F(t)$
 such that for $t$ in $[-L,L]$, $F(t) = f(t)$.  For $t$ in $[L,3L]$,
 we define $F(t) = f(t-2L)$, for $t$ in $[-3L,-L]$, $F(t) = f(t+2L)$, and
 so on.
-To make that work we needed $f(-L) = f(L)$.
+To make that work, we needed $f(-L) = f(L)$.
 We could have also started with $f$
 defined only on the half-open interval $(-L,L]$ and then define $f(-L) = f(L)$.
 
@@ -744,7 +743,7 @@ Define $f(t) = 1-t^2$ on $[-1,1]$.  Extend $f(t)$ periodically to
 a 2-periodic function.
 For $1 \leq t \leq 3$, we get
 $f(t) = 1-{(t-2)}^2$.
-For $-3 \leq t \leq 1$, we get
+For $-3 \leq t \leq -1$, we get
 $f(t) = 1-{(t+2)}^2$.
 For $3 \leq t \leq 5$, we get
 $f(t) = 1-{(t-4)}^2$.  And so on.
@@ -1026,7 +1025,8 @@ a_0 = \frac{1}{\pi} \int_{-\pi}^\pi t \,dt = 0 .
 We will often use the result from calculus that says that the integral of an odd
 function over a symmetric interval is zero.  Recall that an
 \emph{\myindex{odd function}} is a
-function $\varphi(t)$ such that $\varphi(-t) = -\varphi(t)$.  For example
+function $\varphi(t)$ such that $\varphi(-t) = -\varphi(t)$.
+For example,
 the functions $t$, $\sin t$, or (importantly for us)
 $t \cos (nt)$ are all odd functions.  Thus
 \begin{equation*}
@@ -1243,9 +1243,9 @@ We will say more about convergence in the next section.
 Roughly speaking,
 if $f(t)$ is a nice enough function then the series
 converges to $f(t)$ wherever $f(t)$ is continuous.  Let us, however,
-briefly mention an effect of the discontinuity.  Zoom in near the
-discontinuity in the square wave.  Further, plot the first 100
-harmonics, see
+briefly mention an effect of the discontinuity.
+We zoom in near the discontinuity in the square wave
+and we plot the first 100 harmonics.  See
 \figurevref{ts:squarewavegibbsfig}.  While the
 series is a very good approximation away from the discontinuities, the error
 (the overshoot)
@@ -1289,12 +1289,12 @@ many different pure tones of frequencies that are multiples of the
 fundamental frequency.
 In music,
 the higher frequencies are called the \emph{\myindex{overtones}}.
-All the frequencies that appear are called the
+The set of all the frequencies that appear is called the
 \emph{\myindex{spectrum}} of the signal.
 On the other hand,
 if the signal were
 a simple sine wave instead of the square wave,
-then it is only the pure tone of
+then it would be only the pure tone of
 fundamental frequency (no overtones).
 The simplest way to make sound using a computer is the square wave,
 and the sound is very different from a pure tone.
@@ -1385,9 +1385,13 @@ Suppose $f(t)$ is defined on $(-\pi,\pi]$ as $f(t) = \sin(\pi t)$.  Extend
 periodically and compute the Fourier series.
 \end{exercise}
 \exsol{%
+%$\sum\limits_{n=1}^\infty
+%\frac{(\pi-n) \sin( \pi n+{\pi}^{2})
+%+(\pi+n)\sin(\pi n-{\pi}^{2}) }{\pi {n}^{2}-{\pi}^{3}}
+%\sin(nt)$
+%This simplifies to:
 $\sum\limits_{n=1}^\infty
-\frac{(\pi-n) \sin( \pi n+{\pi}^{2})
-+(\pi+n)\sin(\pi n-{\pi}^{2}) }{\pi {n}^{2}-{\pi}^{3}}
+\frac{2n {(-1)}^{n} \sin({\pi}^{2})}{\pi({\pi}^{2} - {n}^{2})}
 \sin(nt)$
 %$a_0 = \frac{1}{\pi} \int_{-\pi}^\pi \sin(\pi t) \, dt$
 %\\
@@ -1867,7 +1871,7 @@ to the third harmonic, that is,
 the plot is almost indistinguishable from the plot of $f(t)$ in
 \figurevref{gfs:smoothexfig}.
 In fact, the coefficient 
-$\frac{8}{27 \pi^3}$ is already just 0.0096 (approximately).
+$\frac{8}{27 \pi^3}$ is already just $0.0096$ (approximately).
 The reason for this behavior is the $n^3$ term in the denominator.
 The coefficients $b_n$ in this case go to zero as fast as
 $\nicefrac{1}{n^3}$ goes to

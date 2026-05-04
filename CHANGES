@@ -3,6 +3,7 @@ to make things more readable (and to fit within the screen in
 the web version).  Also, improve some of the nearby wording.
 <li>In the pendulum example in section 2.4, reword and very
 slightly simplify the setup and include units.
+<li>Simplify the solution in the back for 4.2.102.
 <li>Move the floated images a bit up in 4.10.1 for a slightly better layout,
 <li>A few minor extra explanations in 4.10.
 <li>In Example 5.3.1, note that we are trying to find a solution y
