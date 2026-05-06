@@ -3370,7 +3370,7 @@ so-called \emph{\myindex{one-dimensional heat equation}}\index{heat equation}:
 k \frac{\partial^2 u}{\partial x^2} ,
 ~~}
 \end{equation*}
-where $k > 0$ is a constant (the \emph{\myindex{thermal conductivity}} of the material).
+where $k > 0$ is a constant (the \emph{\myindex{thermal diffusivity}} of the material).
 That is, the change in heat with respect to time at some point
 is proportional to the second
 derivative of the heat in the $x$ direction---along the wire.
@@ -3430,10 +3430,10 @@ u_x(0,t) = 0 \quad \text{and} \quad u_x(L,t) = 0
 Let us see why that is so.
 If $u_x$ is positive at some point $x_0$, then at a particular time,
 $u$ is smaller to the left of $x_0$ and higher to the right of $x_0$.
-Heat is flowing from high heat to low heat, that is, to the left.
+Heat is flowing from high temperature to low temperature, that is, to the left.
 On the other hand, if $u_x$ is negative, then heat is again flowing
-from high heat to low
-heat, that is, to the right.  So when $u_x$ is zero,
+from high temperature to low
+temperature, that is, to the right.  So when $u_x$ is zero,
 we are at a point where 
 heat is not flowing in either direction.
 In other words, $u_x(0,t) = 0$ means
@@ -3613,8 +3613,8 @@ See \figurevref{heat:wireexinitfig}.
 Suppose we want to find the temperature function $u(x,t)$.
 In particular, suppose we
 want to find when (at what time $t$)
-does the maximum temperature in the wire 
-drop to one half of the initial maximum of 12.5.
+the maximum temperature in the wire 
+drops to one half of the initial maximum of 12.5.
 
 \begin{myfig}
 \capstart
@@ -3648,7 +3648,7 @@ b_n = 2 \int_0^1 50\,x\,(1-x) \sin (n \pi x) \,dx
 \frac{400}{\pi^3 n^3} & \text{if } n \text{ odd} .
 \end{cases}
 \end{equation*}
-We plug in these coefficients into the series for $u(x,t)$ to obtain the
+We plug these coefficients into the series for $u(x,t)$ to obtain the
 solution
 \begin{equation*}
 u(x,t) = 
@@ -3698,7 +3698,8 @@ u(0.5,t) \approx
 \frac{400}{\pi^3}
 \, e^{-\pi^2 \, 0.003 \, t} .
 \end{equation*}
-The approximation gets better and better as $t$ gets larger as the other
+The approximation gets better and better as $t$ gets larger,
+because the other
 terms decay much faster.
 We plot the function $u(0.5,t)$, the temperature at the midpoint of the wire
 at time $t$, and its approximation by the first term
@@ -3725,9 +3726,9 @@ is a general feature of solving the heat equation.
 If you are interested in behavior for large enough $t$, only the
 first one or two terms may be necessary.
 
-We get back to the question of when is the maximum temperature one half of the
-initial maximum temperature.  That is, when is the temperature
-at the midpoint $\nicefrac{12.5}{2} = 6.25$.  The graph suggests
+We get back to the question of when the maximum temperature is one half of the
+initial maximum temperature.  That is, when the temperature
+at the midpoint is $\nicefrac{12.5}{2} = 6.25$.  The graph suggests
 that the approximation by the first term will be close enough.  We
 solve
 \begin{equation*}
@@ -3746,7 +3747,7 @@ So the maximum temperature drops to half at about $t=24.5$.
 
 We mention an interesting behavior of the solution to the heat equation.
 The heat equation
-\myquote{smoothes} out the function $f(x)$ as $t$ grows.  For a fixed $t$,
+\myquote{smooths} out the function $f(x)$ as $t$ grows.  For a fixed $t$,
 the solution is a Fourier series with coefficients
 $b_n e^{\frac{-n^2 \pi^2}{L^2} k t}$.  If $t > 0$, then these coefficients
 go to zero faster than any $\frac{1}{n^p}$ for any power $p$.  In other
@@ -3982,7 +3983,7 @@ Verify that it satisfies the equation $u_{xx} = 0$.
 \end{exercise}
 
 \begin{exercise}
-Use separation variables to find a nontrivial
+Use separation of variables to find a nontrivial
 solution to $u_{xx} + u_{yy} = 0$, where $u(x,0) = 0$ and $u(0,y) = 0$.
 Hint: Try $u(x,y) = X(x)Y(y)$.
 \end{exercise}
@@ -4116,13 +4117,13 @@ Suppose that the temperature on the wire is fixed at $0$
 at the ends, $L=1$, $k=1$, and $u(x,0) = 100\sin(2 \pi x)$.
 \begin{tasks}
 \task
-What is the temperature at $x = \nicefrac{1}{2}$ at any time.
+What is the temperature at $x = \nicefrac{1}{2}$ at any time?
 \task
 What is the maximum and the minimum temperature on the wire
-at $t=0$.
+at $t=0$?
 \task
 At what time is the maximum temperature on the wire exactly
-one half of the initial maximum at $t=0$.
+one half of the initial maximum at $t=0$?
 \end{tasks}
 \end{exercise}
 \exsol{%
