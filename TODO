@@ -4,11 +4,7 @@
   number changes.  If this is done, we could drop the manual introduction
   %mbxINTROSUBSECTION thing and do it automatically again perhaps.
 
-* FIX the tikz-cd diagram on the first page of text, some latex bug
-
 * Accessibility:
-  * Add the alt tags to all figures/images, search for FIXMEALT
-  * Check for other accessibility things to do
   * Try to make latex work with tagging
 
 Pretext/HTML:
