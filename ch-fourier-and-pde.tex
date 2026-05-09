@@ -138,12 +138,12 @@ can be taken as $x=\sin (k t)$.  Just like for eigenvectors, constant
 multiples of an eigenfunction are also eigenfunctions,
 so we only need to pick one.
 
-Now, suppose that $\lambda = 0$.  In this case the equation is $x'' = 0$,
+Now, suppose that $\lambda = 0$.  In this case, the equation is $x'' = 0$,
 and its general solution is $x = At + B$.  The condition $x(0) = 0$ implies
 that $B=0$, and $x(\pi) = 0$ implies that $A = 0$.  This means that $\lambda
 = 0$ is \emph{not} an eigenvalue.
 
-Finally, suppose that $\lambda < 0$.  In this case we have the general
+Finally, suppose that $\lambda < 0$.  In this case, we have the general
 solution\footnote{Recall that
 $\cosh s = \frac{1}{2}(e^s+e^{-s})$
 and
@@ -4152,8 +4152,8 @@ See
 \capstart
 \inputpdft{sps-vibstr}{%
 %note that this diagram appears more than once in the book
-Diagram of a string of a guitar (a shaded guitar is in the background),
-the bridge of the guitar is at x equals 0 on the x-axis and the nut of the
+Diagram of a string of a guitar (a shaded guitar is in the background).
+The bridge of the guitar is at x equals 0 on the x-axis and the nut of the
 guitar is at x equals L.  The string is fixed to the x-axis at these two points.
 The string appears to be plucked in the middle upwards making a wide
 triangle.  The vertical axis is labeled y, and an arrow indicates that
@@ -4200,10 +4200,10 @@ so superposition works just as it did for the
 heat equation.
 Superposition also preserves the homogeneous 
 side conditions $y(0,t)=0$ and $y(L,t)=0$.
-Again we will use separation of variables to find
+Again, we will use separation of variables to find
 enough building-block solutions to get the particular solution
 also solving the nonhomogeneous initial conditions.  There is
-one change however.  We will solve two separate problems
+one change.  We will solve two separate problems
 and add their solutions.
 
 The two problems we will solve are
@@ -4259,7 +4259,7 @@ Rewriting, we get
 \begin{equation*}
 \frac{T''(t)}{a^2 T(t)} = \frac{X''(x)}{X(x)} .
 \end{equation*}
-Again, left-hand side depends only on $t$ and the right-hand side depends
+Again, the left-hand side depends only on $t$ and the right-hand side depends
 only on $x$.  So both sides equal a constant, which we denote by
 $-\lambda$:
 \begin{equation*}
@@ -4333,7 +4333,7 @@ $w_t(x,0) = g(x)$.
 \end{exercise}
 
 We solve \eqref{wave:zeq} similarly.  We again try
-$z(x,y) = X(x)T(t)$.  The procedure works exactly the same at first.
+$z(x,t) = X(x)T(t)$.  The procedure works exactly the same at first.
 We obtain
 \begin{align*}
 X''(x) + \lambda X(x) &= 0 , \\
@@ -4434,8 +4434,8 @@ c_n
 \end{theorem}
 
 \begin{example} \label{example:pluckedstring}
-Consider a string of length 2 plucked in the middle,
-it has an initial shape given in \figurevref{wave:pluckedstrfig}.
+Consider a string of length 2 plucked in the middle.
+It has an initial shape given in \figurevref{wave:pluckedstrfig}.
 That is,
 \begin{equation*}
 f(x) = \begin{cases}
@@ -4537,7 +4537,7 @@ way.
 \begin{myfig}
 \capstart
 \diffyincludegraphics{width=5in}{width=7.5in}{wave-pluckedex}{%
-A plot of the graph of a function u of (x,t) over the xt-plane
+A plot of the graph of a function y of (x,t) over the xt-plane
 over the region where x is between 0 and 2 and t is between 0
 and 3.  At t equals 0, the function is an upward triangle reaching 0.1 in
 the middle.  The surface is 0 on the sides where x equals 0 or x equals 1.
@@ -4551,8 +4551,8 @@ Make sure you understand what the plot, such as the one in the figure, is
 telling you.  For each fixed $t$, you can think of the function 
 $y(x,t)$ as just a function of $x$.  This function gives you the shape of the
 string at time $t$.  See \figurevref{wave:pluckedtsfig} for plots of
-at $y$ as a function of $x$ at several different values of $t$.
-On this plot, you can see the sharp edges remaining much better.
+$y$ as a function of $x$ at several different values of $t$.
+On these plots, you can see the sharp edges remaining much better.
 
 \begin{myfig}
 \capstart
@@ -4618,11 +4618,11 @@ Except for the constant $a$, this solution looks the same if we
 flip time and space.
 In general, the solution for a fixed $x$ is a Fourier series in $t$, for
 a fixed $t$ it is a Fourier series in $x$, and the coefficients are related.
-If the shape $f(x)$ or the initial velocity $g(x)$ have lots of corners, then
+If the shape $f(x)$ or the initial velocity $g(x)$ has lots of corners, then
 the sound wave will have lots of corners.  That is because the Fourier coefficients
 of the initial shape decay to zero (as $n \to \infty$) at the same rate as the Fourier coefficients
 of the wave in time (for some fixed $x$).  So if you use a sharp object to
-pick the string, you get a sharper sound with lots of high-frequency
+pluck the string, you get a sharper sound with lots of high-frequency
 components, while if you use your thumb, you get a softer sound without
 so many high overtones.
 Similarly, if you pluck close to the bridge (close
@@ -4671,9 +4671,9 @@ raise the string some distance $b$ at the midpoint and let go.
 
 \begin{samepage}
 \begin{exercise}
-Imagine that a stringed musical instrument falls on the floor.  Suppose that
-the length of the string is 1 and $a=1$.  When the musical instrument hits
-the ground the string was in rest position and hence $y(x,0) = 0$.  However,
+Imagine that a stringed musical instrument fell on the floor.  Suppose that
+the length of the string is 1 and $a=1$.  When the musical instrument hit
+the ground, the string was in rest position and hence $y(x,0) = 0$.  However,
 the string was moving at some velocity at impact ($t=0$),
 say $y_t(x,0) = -1$.  Find the
 solution
@@ -4699,7 +4699,7 @@ should be expressed as integrals of $f(x)$.
 
 \begin{exercise}
 Suppose you touch the guitar string exactly in the middle to
-ensure another condition $u(\nicefrac{L}{2},t) = 0$ for all time.
+ensure another condition $y(\nicefrac{L}{2},t) = 0$ for all time.
 Which multiples of the fundamental frequency $\frac{\pi a}{L}$
 show up in the solution?
 \end{exercise}
@@ -4958,7 +4958,7 @@ In \sectionref{fopde:section} it is used to solve
 first-order linear PDEs.
 Basically, to solve the wave equation (or more general
 hyperbolic equations) we find certain characteristic curves along which
-the equation is really just an ODE\@, or a pair of ODEs.  In this case
+the equation is really just an ODE\@, or a pair of ODEs.  In this case,
 these are the curves where $\xi$ and $\eta$ are constant.
 
 \subsection{D'Alembert's formula}
@@ -5060,7 +5060,7 @@ And voil\`a, it works.
 
 \begin{example} \label{dalemb:implusexample}
 D'Alembert says that the solution is a superposition of
-two functions (waves) moving in the opposite direction at \myquote{speed} $a$.
+two functions (waves) moving in opposite directions at \myquote{speed} $a$.
 To get an idea of
 how it works, we work out the following example.
 Consider the simpler setup
@@ -5097,7 +5097,7 @@ compute $y(0.1,0.6)$, we notice $x-t = -0.5$ and $x+t = 0.7$.
 Now $F(-0.5) =
 -f(0.5) = - 20\,(0.55 - 0.5) = -1$
 and $F(0.7) = f(0.7) = 0$.  Hence
-$y(0.1,0.6) = \frac{-1 + 0}{2} = -0.5$.  As you can see the d'Alembert
+$y(0.1,0.6) = \frac{-1 + 0}{2} = -0.5$.  As you can see, the d'Alembert
 solution is much easier to actually compute and to plot than the Fourier series
 solution.  See \figurevref{dalemb:impulsfig} for plots of the solution $y$
 for several different $t$.
@@ -5144,7 +5144,7 @@ y(x,t) = A(x-at) + B(x+at) .
 If you think about it, the exact formulas for $A$ and $B$ are not hard
 to guess once you realize what kind of side conditions $y(x,t)$ is supposed to
 satisfy.  Let us walk through the formula again, but slightly differently.
-Best approach is to do it in stages.  When $g(x) = 0$ (and hence
+The best approach is to do it in stages.  When $g(x) = 0$ (and hence
 $G(x) = 0$), the solution is
 \begin{equation*}
 \frac{ F(x-at) + F(x+at) }{2} .
@@ -5194,7 +5194,7 @@ The corners bring us to another interesting remark.  Nobody ever notices at firs
 that our example solutions are not even differentiable (they have corners):
 In \exampleref{dalemb:implusexample} above, the solution is not
 differentiable whenever $x=t+0.5$ or $x=-t+0.5$ for example.
-Really to be able to compute $u_{xx}$ or $u_{tt}$, you need not one, but two
+Really, to be able to compute $y_{xx}$ or $y_{tt}$, you need not one, but two
 derivatives.  Fear not, we could think of a shape that is very nearly
 $F(x)$ but does have two derivatives by rounding the corners a little bit,
 and then the solution would be very nearly
@@ -5203,7 +5203,7 @@ $\frac{F(x-t)+F(x+t)}{2}$ and nobody would notice the switch.
 \medskip
 
 One final remark is what the d'Alembert solution tells us about what
-part of the initial conditions influence the solution at a certain point.
+bits of the initial conditions influence the solution at a certain point.
 We can figure this out by \myquote{traveling backwards along the
 characteristics.}  Suppose that the string is very long (perhaps
 infinite) for simplicity.  Since the solution at time $t$ is
@@ -5366,9 +5366,10 @@ c) $y(3,9) = \nicefrac{1}{2}$
 Consider an insulated wire, a plate, or a 3-dimensional object.
 We apply
 certain fixed temperatures on the ends of the wire, the edges of the plate,
-or on all sides of the 3-dimensional object.  We wish to find out what is the
-\emph{\myindex{steady-state temperature}} distribution.  That is, we wish to know what will
-be the temperature after long enough period of time.
+or on all sides of the 3-dimensional object.  We wish to find the
+\emph{\myindex{steady-state temperature}} distribution.
+That is, we wish to know
+the temperature after a long enough period of time.
 
 We are really seeking a solution to the heat equation that is not
 dependent on time.
@@ -5390,7 +5391,7 @@ u(x) = \frac{T_2-T_1}{L} x + T_1 .
 \end{equation*}
 It is simply a straight line from one end to the other.
 This solution agrees with the common-sense
-intuition on how heat should be
+intuition about how heat should be
 distributed in the wire.  So in one dimension, the steady-state solutions
 are just straight lines.
 
@@ -5411,8 +5412,8 @@ can define $\Delta$ to be the right thing for any number of space
 dimensions and then the heat equation is always
 $u_t = k \Delta u$.  The operator $\Delta$ is called the \emph{\myindex{Laplacian}}.
 
-OK\@, now that we have notation out of the way, let us see what does an equation
-for the steady-state solution look like.  We are looking for a solution to
+OK\@, now that we have notation out of the way, let us see what an equation
+for the steady-state solution looks like.  We are looking for a solution to
 \eqref{dirich:heateq} that does not depend on $t$, that is,
 $u_t = 0$.
 Hence, we are looking for a
@@ -5433,11 +5434,11 @@ and have many nice properties and
 applications far beyond the steady-state heat problem.
 
 Harmonic functions in two variables are no longer just linear
-(so not just plane graphs).  For example, you can check that the functions
+(graphs are not just planes).  For example, you can check that the functions
 $x^2-y^2$ and $xy$ are harmonic.  However, note that if $u_{xx}$ is positive, $u$ is concave
 up in the $x$ direction, then $u_{yy}$ must be negative and $u$ must be
 concave down in the $y$ direction.  A harmonic function can never
-have any \myquote{hilltop} or \myquote{valley} on the graph.  This observation is
+have a \myquote{hilltop} or \myquote{valley} on the graph.  This observation is
 consistent with our intuitive idea of steady-state heat distribution;
 the hottest or coldest spot should not be inside.
 
@@ -5454,11 +5455,11 @@ this region such that $u$ agrees with the values we specified on the
 boundary.
 
 In this section, we consider a rectangular region.  For simplicity,
-we specify boundary values to be zero at 3 of the four edges and only
-specify an arbitrary function at one edge.  As we still have the
-principle of superposition, we can use this simpler
+we specify boundary values to be zero at three of the four edges and only
+specify an arbitrary function at one edge.
+With the principle of superposition, we can use this simpler
 solution to derive the general
-solution for arbitrary boundary values by solving 4 different problems,
+solution for arbitrary boundary values by solving four different problems,
 one for each edge, and adding those solutions together.
 This setup is left as an exercise.
 
@@ -5607,11 +5608,10 @@ b_n
 }
 \avoidbreak
 \end{equation*}
-As $u_n$ satisfies \eqref{dirich:eq1}--\eqref{dirich:eq4} and any linear
-combination (finite or infinite) of $u_n$ also satisfies 
-\eqref{dirich:eq1}--\eqref{dirich:eq4}, then $u$ satisfies
-\eqref{dirich:eq1}--\eqref{dirich:eq4}.
-We plug in $y=0$ to see $u$
+As $u_n$ satisfies \eqref{dirich:eq1}--\eqref{dirich:eq4}, a linear
+combination (finite or infinite) of $u_n$, and hence $u$, satisfies 
+\eqref{dirich:eq1}--\eqref{dirich:eq4}. 
+We plug in $y=0$ to see that $u$
 satisfies 
 \eqref{dirich:eq5} as well.
 
@@ -5652,7 +5652,7 @@ held at zero and one side held at $\pi$.\label{dirichsquareplot:fig}}
 
 This scenario
 corresponds to the steady-state temperature on a square plate of width $\pi$
-with 3 sides held at 0 degrees and one side held at $\pi$ degrees.
+with three sides held at 0 degrees and one side held at $\pi$ degrees.
 If we have arbitrary initial data on all sides, then we solve four problems,
 each using one piece of nonhomogeneous data.  Then we use the principle of
 superposition to add up all four solutions to have a solution to the
@@ -5663,7 +5663,7 @@ way to visualize solutions of the Laplace equation is to
 take a wire and bend
 it so that it corresponds to the graph of the
 temperature above the boundary of your region.  Cut a rubber sheet in
-the shape of your region---a square in our case---and stretch it
+the shape of your region---a square in our case---and stretch it,
 fixing the edges of the sheet to the wire.
 The rubber sheet is a good approximation of the graph of the solution to
 the Laplace equation with the given boundary data.
