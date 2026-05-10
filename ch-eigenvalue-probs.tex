@@ -163,7 +163,8 @@ where neither $\alpha_1=\alpha_2=0$
 nor
 $\beta_1=\beta_2=0$.
 Note: Be careful about the signs.  Also be careful about the inequalities
-for $r$ and $p$, they
+for $r$ and $p$.
+They
 must be strict for all $x$ in the interval $[a,b]$, including the endpoints!
 
 When zero
@@ -230,7 +231,7 @@ try $\lambda > 0$.  We plug in the boundary conditions:
 If $A=0$, then $B=0$ and vice versa; therefore, both are nonzero.
 So $B = \frac{hA}{\sqrt{\lambda}}$, and
 $0 = -A \sqrt{\lambda}\, \sin \bigl( \sqrt{\lambda}\bigr) + \frac{hA}{\sqrt{\lambda}}
-\sqrt{\lambda}\, \cos \bigl( \sqrt{\lambda}\bigr)$.  As $A \neq 0$ we get
+\sqrt{\lambda}\, \cos \bigl( \sqrt{\lambda}\bigr)$.  As $A \neq 0$, we get
 \begin{equation*}
 0 = 
 - \sqrt{\lambda}\, \sin \bigl( \sqrt{\lambda}\bigr)
@@ -273,7 +274,8 @@ y_2(x) \approx \cos (3.43\, x ) + \frac{1}{3.43}
 \capstart
 \diffyincludegraphics{width=3in}{width=4.5in}{sl-tanx1overx}{%
 On the xy-plane a graph of two functions over the interval 0 to 7.
-The first function 1 over x comes down from the top of the picture on the left
+The first function, 1 over x,
+comes down from the top of the picture on the left,
 drops very quickly towards the x-axis, then keeps slowly approaching it but
 never crossing it as x grows.  The second function is the tangent, which
 starts at zero when x equals 0 and then quickly curves up and leaves the picture
@@ -295,7 +297,7 @@ we have shown that $\sin (nx)$ are orthogonal for distinct $n$ on $[0,\pi]$.
 For general Sturm--Liouville problems we need a more general setup.
 Let $r(x)$
 be a \emph{\myindex{weight function}} (any function, though generally we
-assume it is positive) on $[a,b]$.  Two functions $f(x)$, $g(x)$
+assume it is positive) on $[a,b]$.  Two functions $f(x)$ and $g(x)$
 are said to be
 \emph{orthogonal\index{orthogonal!with respect to a weight}} 
 with respect to the weight function
@@ -323,7 +325,7 @@ think of a change of variables such that $d\xi = r(x)\, dx$.
 Eigenfunctions of a
 regular Sturm--Liouville problem satisfy an orthogonality property, just
 like the eigenfunctions in \sectionref{bvp:section}.
-Its proof is very similar to the analogous 
+Its proof is very similar to that of the analogous 
 \thmvref{bvp:orthogonaleigen}.
 
 \begin{theorem}
@@ -652,7 +654,8 @@ The equation that governs this setup is
 \begin{equation*}
 a^4 \frac{\partial^4 y}{\partial x^4} + \frac{\partial^2 y}{\partial t^2} = 0,
 \end{equation*}
-for some constant $a > 0$, let us not worry about the physics\footnote{If
+for some constant $a > 0$.
+Let us not worry about the physics\footnote{If
 you are interested, $a^4 = \frac{EI}{\rho}$, where $E$ is the elastic
 modulus, $I$ is the second moment of area of the cross section,
 and $\rho$ is linear density.}.
@@ -694,12 +697,12 @@ T'(0) = 0 .
 As usual, we leave the nonhomogeneous $y(x,0) = f(x)$ for later.
 
 Considering the equation for $T$, that is,
-$T'' + \lambda a^4 T = 0$, and physical intuition leads us
+$T'' + \lambda a^4 T = 0$, physical intuition leads us
 to the fact that if $\lambda$ is an eigenvalue then $\lambda > 0$:
-We expect vibration and not exponential growth nor
+We expect vibration and not exponential growth or
 decay in the $t$ direction (there is no friction in our model for instance).
 So there are no negative eigenvalues.
-Similarly $\lambda = 0$ is not an eigenvalue.
+Similarly, $\lambda = 0$ is not an eigenvalue.
 
 \begin{exercise}
 Justify $\lambda > 0$ just from the equation for $X$ and the boundary
@@ -768,17 +771,17 @@ So $y(x,t)$ solves \eqref{appeig:beameq}.
 The natural (angular) frequencies of the system are $n^2 \pi^2 a^2$.
 These frequencies are all integer multiples of the fundamental frequency
 $\pi^2 a^2$, so we get a nice musical note.  The exact frequencies
-and their amplitude
+and their amplitudes
 are what musicians call the \emph{\myindex{timbre}} of the note (outside
 of music it is called the spectrum).
 
-The timbre of a beam
-is different from that of a vibrating string where we get \myquote{more}
+The timbre of a simply supported beam
+is different from that of a vibrating string, where we get \myquote{more}
 of the lower frequencies since we get all integer multiples,
-$1,2,3,4,5,\ldots$.  For a steel beam we get
-only the square multiples $1,4,9,16,25,\ldots$.  That is why when you hit a
-steel beam you hear a very pure sound.  The sound of a
-xylophone or vibraphone is, therefore, very different from
+$1,2,3,4,5,\ldots$.  For a simply supported beam, we get
+only the square multiples $1,4,9,16,25,\ldots$, and so
+we get something much closer to a pure sound.
+The sound of a xylophone or vibraphone is, therefore, very different from
 that of a guitar or piano.
 
 \begin{example}
@@ -801,12 +804,12 @@ three basic possibilities: hinged, free, or fixed.  Consider
 the end at $x=0$.  For the other end, it is the same idea.
 If the end is \emph{hinged}\index{hinged end of beam}, then
 \begin{equation*}
-u(0,t) = u_{xx}(0,t) = 0 .
+y(0,t) = y_{xx}(0,t) = 0 .
 \end{equation*}
 If the end is \emph{free}\index{free end of beam}, that is, it is just
 floating in air, then
 \begin{equation*}
-u_{xx}(0,t) = u_{xxx}(0,t) = 0 .
+y_{xx}(0,t) = y_{xxx}(0,t) = 0 .
 \end{equation*}
 And finally, if the end is
 \emph{clamped}\index{clamped end of beam}
@@ -815,7 +818,7 @@ or
 wall,
 then
 \begin{equation*}
-u(0,t) = u_{x}(0,t) = 0 .
+y(0,t) = y_{x}(0,t) = 0 .
 \end{equation*}
 
 
@@ -861,7 +864,7 @@ Suppose you have
 & y(x,0) = f(x), \quad y_{t}(x,0) = g(x) .
 \end{aligned}
 \end{equation*}
-That is, you have also an initial velocity.  Find a series solution.  Hint:
+That is, you also have an initial velocity.  Find a series solution.  Hint:
 Use the same idea as we did for the wave equation.
 \end{exercise}
 
@@ -885,7 +888,7 @@ transverse deviation of the beam at position $x$ on the beam ($0 < x < 10$).
 You know that the
 constants are such that this satisfies the equation $y_{tt} + 9 y_{xxxx} =
 0$.   Suppose you know that the initial shape of the beam is the graph of
-$\sin^2(\pi x)$, and the initial velocity is uniformly equal to $x(10-x)$.
+$\sin^2(\pi x)$, and the initial velocity is equal to $x(10-x)$.
 Set up the equation together with the
 boundary and initial conditions.  Just set up, do not solve.
 \end{exercise}
@@ -950,11 +953,11 @@ for integers $n \geq 1$.
 
 But these are free vibrations.  What if there is an external force acting on
 the string?  Let us assume, say, air vibrations (noise), for example from a second
-string.  Or perhaps from a jet engine.  For simplicity, assume nice pure
+string.  Or perhaps from a jet engine.  For simplicity, assume a nice pure
 sound and assume the force is uniform at every position on the string:
 The external force as a function of time $t$ is given as
-$F_0 \cos (\omega t)$ as force per unit mass, we will call this
-the forcing function.  Then our wave
+$F_0 \cos (\omega t)$ as force per unit mass.
+We will call this the forcing function.  Then our wave
 equation becomes (remember force is mass times acceleration)
 \begin{equation} \label{sps:forcedeq}
 y_{tt} = a^2 y_{xx} + F_0 \cos ( \omega t) ,
@@ -974,7 +977,7 @@ $y(0,t) = y(L,t) = 0$.  We define the functions $f$ and $g$ as
 \begin{equation*}
 f(x) = -y_p(x,0), \qquad g(x) = -\frac{\partial y_p}{\partial t} (x,0) .
 \end{equation*}
-We then find solution $y_c$ of \eqref{sps:freevib}.  If we add the two
+We then find a solution $y_c$ of \eqref{sps:freevib}.  If we add the two
 solutions, we find that $y = y_c + y_p$ solves \eqref{sps:forcedeq} with
 the initial conditions.
 
@@ -1051,11 +1054,11 @@ y_p(x,t) =
 Check that $y_p$ works.
 \end{exercise}
 
-Now we get to the point that we skipped.  Suppose 
-$\sin ( \frac{\omega L}{a} ) = 0$.  What this means is that
+We get to the point that we skipped.  Suppose 
+$\sin ( \frac{\omega L}{a} ) = 0$.  This means that
 $\omega$ is equal to one of the natural frequencies of the system,
 i.e.\ a multiple of the base frequency $\frac{\pi a}{L}$.
-We notice that if $\omega$
+If $\omega$
 is not equal to a multiple of $\frac{\pi a}{L}$,
 but is very close,
 then the coefficient $B$ in \eqref{natfreq:Beq} seems to
@@ -1063,8 +1066,8 @@ become very large as the denominator goes to zero.
 But let us not jump to conclusions just yet
 because the numerator may also go to zero.
 When $\omega = \frac{n \pi a}{L}$
-for $n$ even, then $\cos (\frac{\omega L}{a}) = 1$,
-we could simply
+for $n$ even, then $\cos (\frac{\omega L}{a}) = 1$.
+We could simply
 take $B=0$ to obtain a nice bounded solution of the same form,
 $y_p = 
 \frac{F_0}{\omega^2}
@@ -1087,7 +1090,8 @@ In real life, pure resonance never occurs anyway.
 %such as $t \cos (\omega t)$ in it (though it would be harder (but possible)
 %to find the solution using the method above).
 
-The calculation of resonance frequencies above explains why a string begins to vibrate if the
+The calculation of resonance frequencies above explains why a string begins
+to vibrate if an
 identical string is plucked close by.  In the absence of friction this vibration
 would get louder and louder as time goes on.
 On the other hand, you are unlikely to get large vibration if the forcing 
@@ -1100,12 +1104,12 @@ Similar resonance phenomena occur when you break a wine glass using human
 voice (yes,
 this is possible, but not easy%
 \footnote{\emph{Mythbusters}, episode 31, Discovery Channel, originally aired
-may 18th 2005.}) if you happen to hit just the right
-frequency.  However, a glass has much purer sound, i.e.\ it is more like a
+May 18th 2005.}) if you happen to hit just the right
+frequency.  However, a glass has a much purer sound, i.e.\ it is more like a
 vibraphone, so there are far fewer resonance frequencies to hit.
 
 When the forcing function is more complicated, you decompose it in terms of
-the Fourier series and apply the result above.  You may also need to solve
+its Fourier series and apply the result above.  You may also need to solve
 the problem above if the forcing function is a sine rather than a cosine,
 but if you think about it, the solution is almost the same.
 %  That is, the
@@ -1212,13 +1216,14 @@ u(0,t) = T_0 + A_0 \cos (\omega t) ,
 \end{equation*}
 where $T_0$ is the yearly mean
 temperature, and
-$t=0$ is midsummer (you can put
-negative sign above to make it midwinter if you wish).  $A_0$ gives 
-the typical variation for the year.  That is,
-the hottest temperature is $T_0 + A_0$ and the coldest is $T_0 - A_0$.
+$t=0$ is midsummer (put
+a negative sign above to make it midwinter if you wish).
+The constant $A_0$ gives 
+the typical variation for the year:
+The hottest temperature is $T_0 + A_0$ and the coldest is $T_0 - A_0$.
 For simplicity, we assume that $T_0 = 0$.
 The frequency $\omega$ is picked depending on the units of $t$, such that
-when $t=\unit[1]{year}$, then $\omega t = 2 \pi$.  For example if $t$ is
+when $t=\unit[1]{year}$, then $\omega t = 2 \pi$.  For example, if $t$ is
 in years, then $\omega = 2\pi$.
 
 It seems reasonable that the temperature at depth $x$ also oscillates
@@ -1239,7 +1244,7 @@ Suppose we have a complex-valued function
 h(x,t) = X(x)\, e^{i\omega t} .
 \end{equation*}
 We look for an $h$ such that $\operatorname{Re} h = u$.
-To find an $h$, whose real part satisfies \eqref{sps:ueq}, we look for
+To find an $h$ whose real part satisfies \eqref{sps:ueq}, we look for
 an $h$ such that
 \begin{equation} \label{sps:heq}
 h_t = k h_{xx}, \qquad h(0,t) = A_0 e^{i\omega t} .
@@ -1313,11 +1318,11 @@ Yay!
 
 Notice the phase is different at different depths.  At depth $x$ the
 phase is delayed by $x \sqrt{\frac{\omega}{2k}}$.
-For example in cgs units (centimeters-grams-seconds)\index{cgs units}
+For example, in cgs units (centimeters-grams-seconds)\index{cgs units}
 we have $k=0.005$ (typical value for soil),
 $\omega = \frac{2\pi}{\text{seconds in a year}}
-= \frac{2\pi}{31,557,341} \approx 1.99 \times {10}^{-7}$.   Then
-if we compute where the phase shift $x \sqrt{\frac{\omega}{2k}} = \pi$
+= \frac{2\pi}{31,557,341} \approx 1.99 \times {10}^{-7}$.   Then,
+if we compute where the phase shift $x \sqrt{\frac{\omega}{2k}} = \pi$,
 we find the depth in centimeters where the seasons are reversed.  That is,
 we get the depth at which summer is the coldest and winter is the warmest.
 We get
@@ -1338,7 +1343,7 @@ You need not dig very deep to get an effective
 temperature.
 The temperature differential could also be used for energy.  A home could
 be heated or cooled by taking advantage of the fact above.
-Even without Earth's core you could heat a home in the winter and cool it
+Even without Earth's core, you could heat a home in the winter and cool it
 in the summer.  Earth's core makes the
 temperature higher the deeper you dig, although you need to dig somewhat
 deep to feel a difference.
@@ -1385,7 +1390,7 @@ Find the particular solution.
 %Fourier series of the forcing function is:
 %\sum\limits_{\substack{n=1 \\ n \text{ odd}}}^\infty
 %\frac{-4}{\pi n^2}
-%\cos (n \pi t)
+%\cos (n t)
 $y_p(x,t) =
 \sum\limits_{\substack{n=1 \\ n \text{ odd}}}^\infty
 \frac{-4}{\pi n^4}

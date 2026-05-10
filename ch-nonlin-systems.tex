@@ -14,7 +14,7 @@
 
 Except for a few brief detours in \chapterref{fo:chapter},
 we considered mostly linear
-equations.  Linear equations suffice in many applications, but in reality
+equations.  Linear equations suffice in many applications, but in reality,
 most phenomena require nonlinear equations.  Nonlinear equations, however,
 are notoriously more difficult to understand than linear ones, and 
 many strange new phenomena appear when we allow our equations to be
@@ -55,7 +55,8 @@ angle $\theta$ is small and the time period involved is short.
 You might ask: Why don't we just solve the nonlinear problem?  Well, it
 might be very difficult, impractical, or impossible to solve analytically,
 depending on the equation in question.  We may
-not even be interested in the actual solution, we might only be interested
+not even be interested in the actual solution.
+We might only be interested
 in some qualitative idea of what the solution is doing.  For example,
 %we may be interested in
 what happens as time goes to infinity?
@@ -99,7 +100,7 @@ We draw the \emph{\myindex{vector field}}
 given at each
 point $(x,y)$ by the vector
 $\left[ \begin{smallmatrix} f(x,y) \\ g(x,y) \end{smallmatrix} \right]$.
-And as before if we find solutions, we draw the trajectories
+And as before, if we find solutions, we draw the trajectories
 by plotting all points $\bigl(x(t),y(t)\bigr)$ for a certain range of $t$.
 
 \begin{example} \label{example:nlin-1b-example}
@@ -127,7 +128,7 @@ The arrows appear longer the further away from the critical point they are.
 Several trajectories are also drawn.  Around the critical point at
 (0,0) there are several egg-shaped trajectories with the pointy end in the
 positive x-direction.  Then there is one trajectory seeming to
-going 'through' the critical point at (1,0) making a loop, although if one
+go 'through' the critical point at (1,0) making a loop, although if one
 were to make a loop, one would have to go against the arrows once one goes
 through the critical point.  Then there are several other trajectories,
 there are several trajectories that start on the bottom right go diagonally
@@ -153,7 +154,7 @@ If we zoom into the diagram near a point where
 $\left[ \begin{smallmatrix} f(x,y) \\ g(x,y) \end{smallmatrix} \right]$ is
 not zero, then nearby the arrows point generally in essentially that same
 direction and have essentially the same magnitude.
-In other words the behavior is not that interesting near such a point.
+In other words, the behavior is not that interesting near such a point.
 We are of course assuming that $f(x,y)$ and $g(x,y)$ are continuous.
 
 Let us concentrate on those points in the phase diagram
@@ -206,7 +207,7 @@ the origin $(0,0)$.
 Let us put the understanding we gained in that section to good use
 understanding what happens near critical points of nonlinear systems.
 
-In calculus we learned to estimate a function by taking its
+In calculus, we learned to estimate a function by taking its
 derivative and linearizing.  We work similarly with nonlinear systems of ODEs.
 Suppose $(x_0,y_0)$ is a critical point.
 First change variables to $(u,v)$, so that $(u,v)=(0,0)$ corresponds to
@@ -215,7 +216,7 @@ $(x_0,y_0)$.  That is,
 u=x-x_0, \qquad v=y-y_0 .
 \end{equation*}
 Next we need to find the derivative.  In multivariable calculus you may
-have seen that the several variables version of the derivative is the
+have seen that the several-variables version of the derivative is the
 \emph{\myindex{Jacobian matrix}}%
 \footnote{Named for the German mathematician
 \href{https://en.wikipedia.org/wiki/Carl_Gustav_Jacob_Jacobi}{Carl Gustav Jacob Jacobi}
@@ -355,13 +356,13 @@ to the vector fields below.  Justify.
 \task
 \parbox[c]{1.75in}{\diffyincludegraphics{width=1.75in}{width=1.75in}{nlin-exer-xy-1py2}{%
 A direction field in the xy-plane where all the arrows 
-seem to be roughly zero along the x-axis.  The arrows above the
+seem small and pointing directly upwards along the x-axis.  The arrows above the
 x-axis point upwards and away from the origin and the arrows below
 the x axis point also roughly upwards and towards the origin.}}
 \task
 \parbox[c]{1.75in}{\diffyincludegraphics{width=1.75in}{width=1.75in}{nlin-exer-x2-y2}{%
 A direction field in the xy-plane where the arrow is zero at the origin,
-on the x-axis point rightward, on the y-axis point rightward.  In the first
+on the x-axis point rightward, on the y-axis point upward.  In the first
 quadrant, the arrows point roughly away from the origin, and in the third
 quadrant they point roughly towards the origin.  In the second quadrant,
 the arrows start rightwards at the right and slowly turn upwards as we move
@@ -441,8 +442,6 @@ $u'=\pi v$, $v'=-v$.
 At $(1,1)$ using $u=x-1$, $v=y-1$ the linearization is
 $u'=-\pi v$, $v'=v$.\\
 b) Critical points $(0,0)$ and $(0,-1)$.
-Using $u=x$, $v=y$ the linearization is
-$u'=u+v$, $v'=u$.\\
 At $(0,0)$ using $u=x$, $v=y$ the linearization is
 $u'=u+v$, $v'=u$.
 At $(0,-1)$ using $u=x$, $v=y+1$ the linearization is
@@ -474,7 +473,7 @@ roughly upward, and on the bottom, they are roughly leftward.}}
 \task
 \parbox[c]{1.75in}{\diffyincludegraphics{width=1.75in}{width=1.75in}{nlin-exer-ypx2-mx}{%
 A direction field plot in the xy-plane.
-The arrows seem to be going around the origin counterclockwise, but not
+The arrows seem to be going around the origin clockwise, but not
 in a perfectly circular way.
 At the top, the arrows are mostly rightward although being somewhat upward
 facing on the left and downward facing on the right and they are slightly
@@ -517,7 +516,7 @@ x' = x + z^2, \qquad y' = z^2-y, \qquad z' = z+x^2.
 Critical points are $(0,0,0)$, and
 $(-1, 1, -1)$.
 The linearization at the origin using variables $u=x$, $v=y$, $w=z$ is
-$u' = u$, $v'=-v$, $z' = w$.
+$u' = u$, $v'=-v$, $w' = w$.
 The linearization at the point $(-1,1,-1)$ using variables $u=x+1$,
 $v=y-1$, $w=z+1$ is
 %$x=u-1$
@@ -1943,7 +1942,7 @@ For points off the unit circle, the second term in
 $x'$ pushes the solution further
 away from the $y$-axis than the system $x' = y$, $y' = -x$,
 and $y'$ pushes the solution further away from the $x$-axis
-than the linear system $x'=y$, $y' = -x$.  In other words for all
+than the linear system $x'=y$, $y' = -x$.  In other words, for all
 other initial conditions the trajectory will spiral out.
 
 This means that for initial conditions inside the unit circle, the solution
