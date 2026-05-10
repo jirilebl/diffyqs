@@ -552,13 +552,16 @@ $u' = f(u,v,w)$, $v'=g(u,v,w)$, $w' = 1$.
 A critical point is
 \emph{isolated}\index{isolated critical point}
 if it is the only critical point in some small
-\myquote{neighborhood} of the point.  That is, if we zoom in far enough it is the
-only critical point we see.  In the example above, the critical point was
-isolated.  If on the other hand there would be a whole curve of critical
+\myquote{neighborhood} of the point.
+That is, if we zoom in enough, it is the
+only critical point we see.
+In \exampleref{example:nlin-1b-example} above,
+both critical points are isolated.
+If, on the other hand, there were a whole curve of critical
 points, then it would not be isolated.
 
 A system is called \emph{\myindex{almost linear}} at a critical point
-$(x_0,y_0)$, if the critical point is isolated and the Jacobian matrix at the point
+$(x_0,y_0)$ if the critical point is isolated and the Jacobian matrix at the point
 is invertible, or equivalently if the linearized system has an isolated
 critical point.  In such a case, the nonlinear terms are very small
 and the system behaves like its linearization, at least if we are close
@@ -580,7 +583,7 @@ critical point at $(0,0)$, however the Jacobian matrix
 \end{equation*}
 is zero when $(x,y) = (0,0)$.  So the system is not almost
 linear.
-Even a worse example is the system $x' = x$, $y' = x^2$, which does not have 
+An even worse example is the system $x' = x$, $y' = x^2$, which does not have 
 isolated critical points; $x'$ and $y'$ are both zero
 whenever $x=0$, that is, the entire $y$-axis.
 
@@ -594,7 +597,7 @@ of situations that arise in applications.
 \subsection{Stability and classification of isolated critical points}
 
 Once we have an isolated critical point, the system is almost linear at
-that critical point, and we computed the
+that critical point, and we have computed the
 associated linearized system, we can classify what happens to the 
 solutions.  We more or less use the classification for linear
 two-variable systems from \sectionref{sec:twodimaut}, with one minor
@@ -636,7 +639,7 @@ around $(x_0,y_0)$, the trajectory
 of the system never goes further away from $(x_0,y_0)$ than $\epsilon$.
 An \emph{\myindex{unstable critical point}} is one that is not stable.
 Informally, a point is stable if we start close to a critical point and
-follow a trajectory we either go towards, or at least not away
+follow a trajectory, we either go towards, or at least not away
 from,
 this critical point.
 
@@ -657,9 +660,9 @@ $y'=-x+y^2$.
 See \figurevref{fig:nlin-ex813-new} for the phase diagram.
 Let us find the critical points.  These are the points where
 $-y-x^2 = 0$ and $-x+y^2=0$.  The first equation means $y = -x^2$, and
-so $y^2 = x^4$.  Plugging into the second equation we obtain 
+so $y^2 = x^4$.  Plugging into the second equation, we obtain 
 $-x+x^4 = 0$.  Factoring, we obtain $x(x^3-1)=0$.  Since we are looking only
-for real solutions we get either $x=0$ or $x=1$.  Solving for the
+for real solutions, we get either $x=0$ or $x=1$.  Solving for the
 corresponding $y$ using $y = -x^2$, we get two critical points, one being $(0,0)$
 and the other being $(1,-1)$.  Clearly the critical points are isolated.
 
@@ -681,26 +684,26 @@ of the plot.}
 $x'=-y-x^2$, $y'=-x+y^2$.  \label{fig:nlin-ex813-new}}
 \end{myfig}
 
-
-Let us compute the Jacobian matrix:
+The Jacobian matrix is
 \begin{equation*}
 \begin{bmatrix}
 -2x & -1 \\
 -1 & 2y
 \end{bmatrix} .
 \end{equation*}
-At the point $(0,0)$ we get the matrix
-$\left[ \begin{smallmatrix} 0 & -1 \\ -1 & 0 \end{smallmatrix} \right]$ and
-so the two eigenvalues are $1$ and $-1$.  As the matrix is invertible, the system is almost linear
+At the point $(0,0)$, we get the matrix
+$\left[ \begin{smallmatrix} 0 & -1 \\ -1 & 0 \end{smallmatrix} \right]$
+whose eigenvalues are $1$ and $-1$.  As the matrix is invertible, the system is almost linear
 at $(0,0)$.  As the eigenvalues are real
 and of opposite signs, we get a saddle point, which is an unstable
 equilibrium point.
 
-At the point $(1,-1)$ we get the matrix
-$\left[ \begin{smallmatrix} -2 & -1 \\ -1 & -2 \end{smallmatrix} \right]$ and
-computing the eigenvalues we get $-1$, $-3$.
+At the point $(1,-1)$, we get the matrix
+$\left[ \begin{smallmatrix} -2 & -1 \\ -1 & -2 \end{smallmatrix} \right]$
+whose
+eigenvalues are $-1$ and $-3$.
 The matrix is invertible, and so the system is almost linear at $(1,-1)$.
-As we have real eigenvalues and both negative, the critical
+As both eigenvalues are real and negative, the critical
 point is a sink, and therefore an asymptotically stable equilibrium point.
 That is, if we start with any point $(x_i,y_i)$ close to $(1,-1)$ as
 an initial condition and plot a trajectory, it approaches $(1,-1)$.
@@ -715,9 +718,9 @@ initial points.
 \end{example}
 
 \begin{example} \label{example:nlin-withexp}
-Let us look at
+Consider
 $x'=y+y^2e^x$,
-$y'=x$.  First let us find the critical points.  These are the points where
+$y'=x$.  First, we find the critical points.  These are the points where
 $y+y^2e^x = 0$ and $x=0$.  Simplifying we get $0=y+y^2 = y(y+1)$.  So the
 critical points are $(0,0)$ and $(0,-1)$, and hence are isolated.  Let us
 compute the Jacobian matrix:
@@ -914,7 +917,7 @@ The trajectories are given by
 y = \pm \sqrt{ - 2 \int f(x)\, dx + 2C} .
 \end{equation*}
 So all trajectories are mirrored across the $x$-axis.  In particular,
-there can be no spiral sources nor sinks.
+there can be no spiral sources or sinks.
 The Jacobian matrix is
 \begin{equation*}
 \begin{bmatrix}
@@ -938,7 +941,8 @@ There are never any sinks or sources.
 \subsection{Exercises}
 
 \begin{exercise}
-For the systems below, find and classify the critical points, also indicate
+For the systems below, find and classify the critical points.
+Also indicate
 if the equilibria are stable, asymptotically stable, or unstable.
 \begin{tasks}(2)
 \task $x'=-x+3x^2, y'=-y$
@@ -971,7 +975,7 @@ Suppose $x'=-xy$, $y'=x^2-1-y$.
 Show there are two spiral sinks at
 $(-1,0)$ and $(1,0)$.
 \task
-For any initial point of the form $(0,y_0)$, find what is the trajectory.
+For any initial point of the form $(0,y_0)$, find the trajectory.
 \task
 Can a trajectory starting at $(x_0,y_0)$ where $x_0 > 0$ spiral into 
 the critical point at $(-1,0)$?  Why or why not?
@@ -980,7 +984,8 @@ the critical point at $(-1,0)$?  Why or why not?
 \end{samepage}
 
 \begin{exercise} \label{exercise:increasing}
-In the example $x'=y$, $y'=y^3-x$ show that for any trajectory, the distance
+In the example $x'=y$, $y'=y^3-x$,
+show that for any trajectory, the distance
 from the origin is an increasing function.
 Conclude
 that at the origin the system behaves like a spiral source.
@@ -999,7 +1004,7 @@ Are there any critical points?
 \begin{exercise}
 Suppose that $x' = f(x,y)$, $y' = g(x,y)$.  Suppose that $g(x,y) > 1$ for
 all $x$ and $y$.  Are there any critical points?  What can we say about the
-trajectories at $t$ goes to infinity?
+trajectories as $t$ goes to infinity?
 \end{exercise}
 
 \setcounter{exercise}{100}
@@ -1113,7 +1118,7 @@ points are when $\omega = 0$ and $\theta$ is a multiple of $\pi$.  That is,
 the points are $\ldots (-2\pi,0), (-\pi,0), (0,0), (\pi,0), (2\pi,0)
 \ldots$.  While there are infinitely many critical points, they are all isolated.
 For conservative equations, there are two types of
-critical points.  Either stable centers, or saddle points.
+critical points: either stable centers or saddle points.
 
 We compute the Jacobian matrix:
 \begin{equation*}
@@ -1154,7 +1159,7 @@ There are 3 centers shown, one at the origin, one at (minus 2 pi,0)
 and one at (2 pi,0).  The arrows are winding clockwise around the centers.
 There are 2 saddles shown, one at (minus pi,0) and one at (pi,0).
 Several trajectories are drawn.  Trajectories around the centers simply go
-around in ellipses.  Trajectories that start on the left high on the
+around in ellipses.  Trajectories that start high on the
 left-hand side simply go in a wavy motion as if repelled by the centers along the
 top of the plot and leave on the right-hand side of the plot.
 The trajectories on the bottom do the same thing in reverse.
@@ -1193,7 +1198,8 @@ and is hanging straight down.  This is a stable place for the
 pendulum to be, hence this is a \emph{stable} equilibrium.
 
 The other type of equilibrium solution is at the unstable point, for example
-$\theta = \pi$.  Here the pendulum is upside down.  Sure you can balance the
+$\theta = \pi$.  Here the pendulum is upside down.
+Sure, you can balance the
 pendulum this way and it will stay, but this is an \emph{unstable} equilibrium.
 Even the tiniest push will make the pendulum start swinging wildly.
 
@@ -1281,9 +1287,10 @@ T_{\text{linear}} = 2\pi \sqrt{\frac{L}{g}} .
 \end{equation*}
 We plot $T$, $T_{\text{linear}}$, and the relative error
 $\frac{T-T_{\text{linear}}}{T}$ in \figurevref{fig:TvsT0}.  The relative error
-says how far is our approximation from the real period percentage-wise.
-Note that $T_{\text{linear}}$ is simply a constant, it does not change with
-the initial angle $\theta_0$.  The actual period $T$ gets larger and larger as
+says how far our approximation is from the real period percentage-wise.
+Note that $T_{\text{linear}}$ is simply a constant.
+It does not change with the initial angle $\theta_0$.
+The actual period $T$ gets larger and larger as
 $\theta_0$ gets larger.
 Notice how the relative error is small when $\theta_0$ is small.  It is
 still only $15\%$ when $\theta_0 = \nicefrac{\pi}{2}$, that is, a 90 degree
@@ -1319,7 +1326,7 @@ oscillation, so we could think of that as infinite period.
 
 \subsection{Predator-prey or Lotka--Volterra systems}
 
-One of the most common simple applications of nonlinear systems are the
+One of the most common simple applications of nonlinear systems is the
 so-called \emph{\myindex{predator-prey}} or
 \emph{\myindex{Lotka--Volterra}}%
 \footnote{Named for the American mathematician, chemist, and statistician
@@ -1327,16 +1334,17 @@ so-called \emph{\myindex{predator-prey}} or
 (1880--1949) and the Italian mathematician and physicist
 \href{https://en.wikipedia.org/wiki/Vito_Volterra}{Vito Volterra}
 (1860--1940).}
-systems.  For example, these systems arise 
+systems.  For example, such a system arises
 when two species interact, one as the prey and one as the predator.  It is
 then no surprise that the equations also see applications in economics.
 The system also arises in chemical reactions.
 In biology, this system of equations explains the natural periodic variations of populations of
-different species in nature.  Before the application of differential
+different species.  Before the application of differential
 equations, these periodic variations in the population baffled biologists.
 
 We keep
-with the classical example of hares and foxes in a forest, it is the
+with the classical example of hares and foxes in a forest.
+It is the
 easiest to understand.
 \begin{equation*}
 \begin{aligned}
@@ -1407,8 +1415,9 @@ diagonally and then go back down along the left-hand side.  The large
 trajectories look like a very rounded triangle.
 On the right is a plot for t between 0 and 40, where the graph of predators
 is in thick red and prey in thin blue.  The predators start lower than prey.
-The prey grow quickly at first reaching a peak when the predators start
+The prey grow quickly at first reaching a peak when the predators are
 growing, and then the prey goes down significantly.  Once the prey is
+roughly
 halfway down its peak, the predators peak and start going down.  The prey
 stops falling and recovers and starts growing again, while predators keep
 falling a little longer. Then the cycle repeats.
@@ -1554,8 +1563,8 @@ stable system.  But any solar system with more than 1 planet proved very
 difficult indeed.  In fact, such a system behaves chaotically (see 
 \sectionref{sec:chaos}), meaning small changes in initial conditions lead to very
 different long-term outcomes.  From numerical experimentation and
-measurements, we know the earth will not fly out into the empty space
-or crash into the sun, for at least some millions of years or so.
+measurements, we know the Earth will not fly out into empty space
+or crash into the Sun, for at least some millions of years or so.
 But we do not know what happens beyond that.
 
 \subsection{Exercises}
@@ -1566,8 +1575,8 @@ Take the \emph{\myindex{damped nonlinear pendulum equation}} $\theta '' + \mu \t
 \sin \theta = 0$ for some $\mu > 0$ (that is, there is some friction).
 \begin{tasks}
 \task
-Suppose $\mu = 1$ and $\nicefrac{g}{L} = 1$ for simplicity, find and
-classify the critical points.
+Suppose $\mu = 1$ and $\nicefrac{g}{L} = 1$ for simplicity.
+Find and classify the critical points.
 \task
 Do the same for any $\mu > 0$ and any $g$
 and $L$, but such that the damping is small, in particular, $\mu^2 <
@@ -1612,13 +1621,9 @@ attains a maximum at $(\nicefrac{d}{c},\nicefrac{a}{b})$.
 Suppose that for the pendulum equation we take a trajectory giving the
 spinning-around motion, for example $\omega = \sqrt{\frac{2g}{L} \cos \theta
 + \frac{2g}{L} + \omega_0^2}$.  This is the trajectory where the lowest
-angular velocity is $\omega_0^2$.  Find an integral expression for how long it takes
+angular velocity is $\omega_0$.  Find an integral expression for how long it takes
 the pendulum to go all the way around.
 \end{exercise}
-
-%Suppose we have the system predator-prey system where the foxes are also
-%hunted at a constant rate $hy$ proportional to the population.  That is,
-%$x' = (a-by)x,$  $y' = (cx-d)y - hy$.  Find and analyze the critical points.
 
 \begin{exercise}[challenging]
 Take the pendulum, suppose the initial position is $\theta = 0$.
@@ -1633,12 +1638,12 @@ for any higher initial angular velocity,
 the pendulum will keep going around its
 axis, and for any lower initial angular velocity, the pendulum will simply
 swing back and forth.
-Hint: When the pendulum doesn't go over the top the expression for $\omega$
+Hint: When the pendulum doesn't go over the top, the expression for $\omega$
 will be undefined for some $\theta$s.
 \task
 What do you think happens if the initial condition is $(0,\omega_1)$,
 that is, the initial angle is 0, and the initial angular velocity is exactly
-$\omega_1$.
+$\omega_1$?
 \end{tasks}
 \end{exercise}
 
@@ -1666,7 +1671,7 @@ oscillate, just like an overdamped mass-spring system.
 }
 
 \begin{exercise}
-Suppose we have the system predator-prey system where the foxes are also
+Suppose we have the predator-prey system where the foxes are also
 killed at a constant rate $h$ ($h$ foxes killed per unit time):
 $x' = (a-by)x,$  $y' = (cx-d)y - h$.
 \begin{tasks}
@@ -1720,8 +1725,9 @@ positive numbers.  Hint: Think of the constant of motion.
 \exsol{%
 The critical points are on the line $x=0$.  In the positive
 quadrant the $y'$ is always positive and so the fox population always grows.
-The constant of motion is $C = y^ae^{-cx-by}$, for any $C$ this curve must
-hit the $y$-axis (why?), so the trajectory will simply approach a point on the $y$
+The constant of motion is $C = y^ae^{-cx-by}$.
+For any $C$, this curve must hit the $y$-axis (why?),
+so the trajectory will simply approach a point on the $y$
 axis somewhere and the number of hares will go to zero.
 }
 
@@ -2162,14 +2168,14 @@ given by $y=0$ (where we get zero), so no closed trajectories.
 
 \begin{exercise}
 Suppose an autonomous system in the plane has a solution
-$x=\cos(t)+e^{-t}$, $y=\sin(t)+e^{-t}$.  What can you say
+$x=\cos(t)(1+e^{-t})$, $y=\sin(t)(1+e^{-t})$.  What can you say
 about the system (in particular about limit cycles and periodic solutions)?
 \end{exercise}
 \exsol{%
 Using Poincar\'e--Bendixson Theorem,
 the system has a limit cycle, which is the unit circle centered at the
 origin, as
-$x=\cos(t)+e^{-t}$, $y=\sin(t)+e^{-t}$ gets closer and closer to the unit
+$x=\cos(t)(1+e^{-t})$, $y=\sin(t)(1+e^{-t})$ gets closer and closer to the unit
 circle.  Thus $x=\cos(t)$, $y=\sin(t)$ is the periodic
 solution.
 }
