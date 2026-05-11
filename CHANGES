@@ -44,8 +44,16 @@ make sense.
 <li>A little bit of rewording in subsection 8.3.1 on the pendulum.
 <li>In Example 8.4.1, mention that \(y=x'\) on the phase diagram as usual
 just to reinforce.
+<li>Reword the discussion after Theorem 8.4.1 to include what happens
+with critical points.
+<li><b>Change Exercise 8.4.102</b> to fix an erratum.
+The given
+trajectory had a typo making it impossible to be
+a trajectory of any system.
 <li>In subsection 8.5.1, also explicitly mention that \(y=x'\)
 as usual.
+<li>Be more precise when invoking Poincare-Bendixson in 8.5.
+<li>Simplify the answer in the back for 8.5.101.
 <li>In the example of the mapping in section A.6 reorder the vertices
 of the square so that they go around the square in a counterclockwise
 motion rather than being out of order.

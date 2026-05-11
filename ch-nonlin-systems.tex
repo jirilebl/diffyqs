@@ -36,7 +36,7 @@ moving along a circular arc.  The bottom of the pendulum is labeled m, and
 the angle the pendulum makes with a vertical line is labeled theta.
 The length of the pendulum is labeled L.}
 \end{mywrapfigsimp}
-In \sectionref{sec:mv} we looked at the pendulum of %mass $m$ and
+In \sectionref{sec:mv} we looked at the pendulum of
 length $L$.  The goal was to solve for the angle $\theta(t)$ as
 a function of the time $t$.  The equation for the setup is
 the nonlinear equation
@@ -1596,7 +1596,7 @@ x' = (0.4-0.01y)x - \gamma x^2, \qquad y' = (0.003x-0.3)y .
 For the following two values of $\gamma$,
 find and classify all the critical points in the positive quadrant, that is, for
 $x \geq 0$ and $y \geq 0$.  Then sketch the phase diagram.  Discuss the
-implication for the long term behavior of the population.
+implication for the long-term behavior of the population.
 \begin{tasks}(2)
 \task
 $\gamma=0.001$, 
@@ -1803,14 +1803,14 @@ On the left is a phase plane (direction plot) of a Van der Pol oscillator where
 the horizontal axis is the x and the vertical axis is the derivative x
 prime.  The horizontal axis is between minus 4 and 4, and so is the
 vertical.  On this plot the arrows seem to be going around the origin
-in a clockwise manner,
-however, there is a single trajectory that is a closed curve (a loop),
-which is called the limit cycle.  Its shape is very roughly a sideways
-very rounded rectangle.  It is roughly between minus 2 and 2 on the
+in a clockwise manner.
+However, there is a single trajectory that is a closed curve (a loop),
+which is called the limit cycle.  Its shape is very roughly a sideways,
+rounded rectangle.  It is roughly between minus 2 and 2 on the
 horizontal x axis and between minus 3 and 3 on the vertical axis.
 A trajectory starting inside this
 limit cycle spirals outwards towards the limit cycle and gets closer
-and closer to it.  Similarly several trajectories starting outside approach
+and closer to it.  Similarly, several trajectories starting outside approach
 the limit cycle from the outside and get closer and closer to it.  Both from
 the inside and the outside, the approach is very quick and the trajectories
 do not even go around once before being indistinguishable from the limit
@@ -1823,12 +1823,13 @@ of the Van der Pol oscillator.\label{fig:nlin-van-der-fig}}
 \end{myfig}
 
 The Van der Pol oscillator is an 
-example of so-called \emph{\myindex{relaxation oscillation}}.  The word
-relaxation comes from the sudden jump (the very steep part of the solution).
-For larger $\mu$ the steep part becomes even more pronounced, for small $\mu$ 
-the limit cycle looks more like a circle.  In fact, setting
-$\mu = 0$, we get $x''+x=0$, which is a linear system with a
-center and all trajectories become circles.
+example of \emph{\myindex{relaxation oscillation}}.  The word
+relaxation refers to the sudden jump (the very steep part of the solution).
+For larger $\mu$, the steep part is more pronounced.
+For smaller $\mu$,
+the limit cycle looks more like a circle.  In fact, if
+$\mu = 0$, then $x''+x=0$, which is a linear system with a
+center and all trajectories are circles.
 \end{example}
 
 A trajectory in the phase portrait that is a closed 
@@ -1845,26 +1846,7 @@ limit cycle is called
 The limit cycle in the Van der Pol oscillator is 
 asymptotically stable.
 
-%The fact that the Van der Pol oscillator has a limit cycle follows from
-%the following theorem.
-%
-%\begin{theorem}[Li\'enard\footnote{FIXME}]
-%An equation of the form (a so-called \emph{\myindex{Li\'enard equation}})
-%\begin{equation*}
-%x'' + f(x) x' + g(x) = 0
-%\end{equation*}
-%for continuously differentiable $f(x)$ and $g(x)$, where $f(x)$ is an even
-%function and $g(x)$ an odd function, has a unique limit cycle if $g(x) > 0$
-%for all $x >0$ and $F(x) = \int_0^x f(s)\,ds$ satisfies
-%satisfies
-%\begin{equation*}
-%\lim_{x \to \infty} F(x) = \infty
-%\end{equation*}
-%and there is some unique number $x_0$ such that
-%$F(x) < 0$ for $0 < x < x_0$ and $F(x)$
-%\end{theorem}
-
-Given a closed trajectory on an autonomous system,
+Given a closed trajectory in an autonomous system,
 any solution that starts on it is periodic.
 Such a curve is called a
 \emph{\myindex{periodic orbit}}.
@@ -1887,27 +1869,28 @@ $R$ in the plane.
 (1861--1935) was a Swedish mathematician.}]%
 \index{Poincar\'e--Bendixson Theorem}
 Suppose $R$ is a closed bounded region (a region in the plane that includes
-its boundary and does not have points arbitrarily far from the origin).
+its boundary and does not have points arbitrarily far from the origin)
+and \eqref{nlin:gensys} has no critical points in $R$.
 Suppose $\bigl(x(t), y(t)\bigr)$ is a solution of
 \eqref{nlin:gensys} in $R$ that exists
 for all $t \geq t_0$.  Then either the solution is a periodic function,
 or the solution tends towards a periodic solution in $R$.
 \end{theorem}
 
-The main point of the theorem is that if you find one solution that exists
+The point of the theorem is that if you find one solution that exists
 for all $t$ large enough (that is, as $t$ goes to infinity) and stays
-within a bounded region, then
-you have found either a periodic orbit, or a solution that spirals towards a
-limit cycle or tends to a critical point.
-That is, in the long term, the
-behavior is very close to a periodic function.
-Note that a constant solution at a critical point is periodic (with
-any period).
+within a bounded region without critical points, then
+you have found either a periodic orbit or a solution that spirals towards a
+limit cycle---in the long term, the
+solution is very close to a periodic function.
+If $R$ contains critical points, the behavior may be
+more complicated:  The solution could tend towards a loop
+composed of critical points connected by trajectories, or 
+the solution could simply tend towards a critical point.
 The theorem is more a qualitative statement rather than
-something to help us in computations.  In practice it is hard to find
-analytic solutions and so hard to show rigorously that they exist for all
-time.
-But if we think the solution exists we numerically solve for a
+something to help us in computations.  In practice, it is hard to either
+find analytic solutions or to show that they exist for all time.
+But if we think the solution exists, we numerically solve for a
 large time to approximate the limit cycle.
 Another caveat is that the theorem only works in two
 dimensions.  In three dimensions and higher, there is simply too much room.
@@ -1923,7 +1906,7 @@ Consider
 x' = y + {(x^2+y^2-1)}^2 x, \qquad
 y' = -x + {(x^2+y^2-1)}^2 y.
 \end{equation*}
-A vector field along with solutions with initial conditions
+A vector field and solutions with initial conditions
 $(1.02,0)$, $(0.9,0)$, and $(0.1,0)$ are drawn in
 \figurevref{fig:nlin-unstable-limit-cycle}.
 
@@ -1970,12 +1953,13 @@ The unit circle is again a closed trajectory,
 points outside the unit circle spiral out to infinity, but now points
 inside the unit circle spiral towards the critical point at the origin.
 The unit circle is an asymptotically unstable limit cycle where
-all trajectories spiral out.
+all trajectories spiral away.
 If we consider the linear system $x' = y$, $y' = -x$, then all circles centered
 at the origin (not just the unit circle) are closed trajectories,
 but no trajectory spirals onto any
 other, so none of the circles are limit cycles.
-By Poincar\'e--Bendixson, all these solutions are periodic.
+%By Poincar\'e--Bendixson, 
+All these solutions are periodic.
 
 By Picard's theorem (\thmvref{sys:picardthm}), at any point
 in the plane, we can always find a solution to
@@ -2195,13 +2179,13 @@ says there is no closed trajectory lying entirely in the set $x^2 < 1$.
 }
 
 \begin{exercise}
-Suppose we have the system $r' = \sin(r)$, $\theta' = 1$ given
+Consider the system $r' = \sin(r)$, $\theta' = 1$ given
 in polar coordinates.  Find all the closed trajectories.
 \end{exercise}
 \exsol{%
 The closed trajectories are those where $\sin(r) = 0$, therefore,
 all the circles centered at the origin with radius that
-is a multiple of $\pi$ are closed
+is a positive multiple of $\pi$ are closed
 trajectories.
 }
 
@@ -2219,40 +2203,40 @@ trajectories.
 You have surely heard the story about the
 flap of a butterfly wing in the Amazon causing hurricanes in the North
 Atlantic.  In a prior section, we mentioned that a small change in
-initial conditions of the planets can lead to very different configuration
+initial conditions of the planets can lead to very different configurations
 of the planets in the long term.  These are examples of
 \emph{\myindex{chaotic systems}}.
-Mathematical chaos is not really chaos, there is precise order behind the
-scenes.  Everything is still deterministic.  However a chaotic system is extremely
+Mathematical chaos is not really chaos---there is precise order behind the
+scenes.  Everything is still deterministic.  However, a chaotic system is extremely
 sensitive to initial conditions.  This also means even small errors induced 
 via numerical approximation create large errors very quickly, so it is
 almost impossible to numerically approximate for long times.
 This is a large part of
 the trouble, as chaotic systems cannot be in general solved analytically.
 
-Take the weather, the most well-known chaotic system.
+Take the weather, perhaps the most well-known chaotic system.
 A small change in the initial conditions
 (the temperature at every point of the atmosphere for example) produces
-drastically different predictions in relatively short time, and so we cannot
+drastically different predictions in a relatively short time, and so we cannot
 accurately predict weather.  And we do not actually know the
 exact initial conditions.  We measure temperatures at a few points with some
 error, and then we somehow estimate what is in between.
 There is no way we
 can accurately measure the effects of every butterfly wing.
 Then
-we solve the equations numerically introducing new errors.
+we solve the equations numerically, introducing new errors.
 You should not trust weather prediction more
 than a few days out.
 But we will see we can still get some information
-about a chaotic system on a longer time scale,
-in the context of weather, we can study the climate.
+about a chaotic system on a longer time scale.
+In the context of weather, we can study the climate.
 
 Chaotic behavior was first noticed by Edward
 Lorenz\footnote{\href{https://en.wikipedia.org/wiki/Edward_Norton_Lorenz}{Edward Norton Lorenz} (1917--2008) was
 an American mathematician and meteorologist.}
 in the
 1960s when trying to model thermally induced air convection (movement).
-Lorentz was looking at the relatively simple system:
+Lorenz was looking at the relatively simple system:
 \begin{equation*}
 x' = -10x +10y, \qquad y' = 28x-y-xz, \qquad z'=-\frac{8}{3}z + xy .
 \end{equation*}
@@ -2272,9 +2256,9 @@ setup are somewhat complicated, and their derivation is quite
 \myindex{tedious}, so we
 will not bother to write them down.  The idea is to put a pendulum on the
 end of another pendulum.  The movement of the bottom mass
-will appear chaotic.  This type of chaotic system is a basis for a
-whole number of office novelty desk toys.  It is simple to build a
-version.  Take a piece of a string.  Tie two heavy nuts at different
+will appear chaotic.  This type of chaotic system is the basis for a
+number of office novelty desk toys.  It is simple to build a
+version.  Take a piece of string.  Tie two heavy nuts at different
 points of the string; one at the end, and one a bit above.  Now give the
 bottom nut a little push.  As long as the swings are not too big and the
 string stays tight, you have a double pendulum system.
@@ -2333,16 +2317,16 @@ right the two solutions in $(x,t)$-space. \label{nlin:duf-two-traj}}
 \capstart
 \diffyincludegraphics{width=6.24in}{width=9in}{nlin-duf-long}{%
 A wide graph for t between 0 and 100 where the vertical x axis goes between
-roughly -3 to 3.  The plot is function which goes up and down many times
+roughly -3 to 3.  The plot shows a function which goes up and down many times
 roughly at the same overall rhythm and the peaks and troughs are very roughly at
-the same hight, but each peak has a very different shape with distinct
+the same height, but each peak has a very different shape with distinct
 wiggles on each.}
 \caption{The solution to the given Duffing equation for $t$ from 0 to 100.
 \label{nlin:duf-long}}
 \end{myfig}
 
 \pagebreak[2]
-Let us consider the long term behavior.
+Let us consider the long-term behavior.
 In \figurevref{nlin:duf-long},
 we plot the solution $x$ with initial conditions $(2,3)$ for
 a longer period of time.
@@ -2362,13 +2346,13 @@ as even small errors quickly propagate in a chaotic system.
 It is very difficult to analyze chaotic systems, or to find the
 order behind the madness, but let us try to do something that we did for
 the standard mass-spring system.  One way we analyzed
-the system is that we figured out what was the long term behavior (not
+the system is that we figured out what the long-term behavior was (not
 dependent on initial conditions).  From the figure above, it is clear
-that we will not get a nice exact description of the long term behavior
+that we will not get a nice exact description of the long-term behavior
 for this chaotic system, but
 perhaps we can find some order to what happens on each
 \myquote{oscillation}
-and what do these oscillations have in common.
+and what these oscillations have in common.
 
 The concept we explore
 is that of a \emph{\myindex{Poincar\'e section}}%
@@ -2422,7 +2406,7 @@ $\nicefrac{\pi}{4}$. \label{nlin:strange}}
 Given a sequence of points, 
 an \emph{\myindex{attractor}} is a set towards which the points
 in the sequence
-eventually get closer and closer to, that is, they are attracted.  The
+eventually get closer and closer, that is, they are attracted.  The
 Poincar\'e section is not really the attractor itself, but as
 the points are very close to it, we see its shape.  The strange
 attractor is a very complicated set.   It has
@@ -2433,7 +2417,7 @@ The initial condition makes no difference.  If
 we start with a different initial condition, the points eventually
 gravitate towards the attractor, and so as long as we throw away the first
 few points, we get the same picture.
-Similarly small errors in the numerical approximations do not matter here.
+Similarly, small errors in the numerical approximations do not matter here.
 
 An amazing thing is that a chaotic system such as the Duffing equation is
 not random at all.  There is a very complicated order to it, and the strange
@@ -2488,8 +2472,9 @@ equation.
 The Poincar\'e--Bendixson Theorem says that
 a solution to an autonomous
 two-dimensional system that exists for all time in the future
-and does not go towards infinity
-is periodic or tends towards a periodic solution.  Hardly the chaotic
+either goes towards infinity, is periodic, approaches a loop,
+or perhaps goes towards a critical point.
+Hardly the chaotic
 behavior we are looking for.
 
 In three dimensions, even autonomous systems can be chaotic.
@@ -2583,9 +2568,9 @@ the three
 vertices of a triangle and label them, say $p_1$, $p_2$
 and $p_3$.  Draw some
 random point $p$ (it does not have to be one of the three points above).
-Roll a die to pick of the $p_1$, $p_2$, or $p_3$
+Roll a die to pick one of the $p_1$, $p_2$, or $p_3$
 randomly (for example 1 and 4 mean $p_1$, 2 and 5 mean $p_2$, and 3 and 6
-mean $p_3$).  Suppose we picked $p_2$, then let $p_{\text{new}}$ be the
+mean $p_3$).  Suppose we picked $p_2$.  Let $p_{\text{new}}$ be the
 point exactly halfway between $p$ and $p_2$.  Draw this point and let $p$
 now refer to this new point $p_{\text{new}}$.  Rinse, repeat.  Try to be
 precise and draw as many iterations as possible.  Your points will be
@@ -2602,7 +2587,7 @@ A diagram of the so-called Sierpinski triangle composed of dots in
 the xy-plane.  The vertices of the triangle are at (0,0), (1,0),
 and (0.5,0.8).  There is a smaller similar upside down empty triangle with
 the middle of the sides of the big triangle as vertices.
-The remaining 3 upright triangles are not filled, but each have an
+The remaining 3 upright triangles are not filled, but each has an
 empty triangle like that in the middle and the three upright triangles
 repeat the pattern forever.  The entire triangle then appears as if it is
 made up of infinitely many upside down empty triangles.}
@@ -2630,14 +2615,14 @@ Discuss.
 Find critical points of the Lorenz system and the associated linearizations.
 \end{exercise}
 \exsol{%
-Critical points: $(0,0,0)$, $(3\sqrt{8},3 \sqrt{8}, 27)$,
-$(-3 \sqrt{8},-3 \sqrt{8}, 27)$.
+Critical points: $(0,0,0)$, $(6\sqrt{2},6 \sqrt{2}, 27)$,
+$(-6 \sqrt{2},-6 \sqrt{2}, 27)$.
 Linearization at $(0,0,0)$ using $u=x$, $v=y$, $w=z$ is
 $u' = -10u+10v$, $v'=28u-v$, $w'=-(\nicefrac{8}{3})w$.
-Linearization at $(3 \sqrt{8},3\sqrt{8},27)$ using $u=x-3\sqrt{8}$,
-$v=y-3\sqrt{8}$, $w=z-27$ is
-$u' = -10u+10v$, $v'=u-v-3\sqrt{8}w$, $w'=3\sqrt{8}u+3\sqrt{8}v-(\nicefrac{8}{3})w$.
-Linearization at $(-3 \sqrt{8},-3\sqrt{8},27)$ using $u=x+3\sqrt{8}$,
-$v=y+3\sqrt{8}$, $w=z-27$ is
-$u' = -10u+10v$, $v'=u-v+3\sqrt{8}w$, $w'=-3\sqrt{8}u-3\sqrt{8}v-(\nicefrac{8}{3})w$.
+Linearization at $(6 \sqrt{2},6\sqrt{2},27)$ using $u=x-6\sqrt{2}$,
+$v=y-6\sqrt{2}$, $w=z-27$ is
+$u' = -10u+10v$, $v'=u-v-6\sqrt{2}w$, $w'=6\sqrt{2}u+6\sqrt{2}v-(\nicefrac{8}{3})w$.
+Linearization at $(-6 \sqrt{2},-6\sqrt{2},27)$ using $u=x+6\sqrt{2}$,
+$v=y+6\sqrt{2}$, $w=z-27$ is
+$u' = -10u+10v$, $v'=u-v+6\sqrt{2}w$, $w'=-6\sqrt{2}u-6\sqrt{2}v-(\nicefrac{8}{3})w$.
 }
