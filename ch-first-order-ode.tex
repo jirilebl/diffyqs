@@ -51,7 +51,7 @@ Now is a good time to discuss a point about
 calculus notation and terminology.  Calculus
 textbooks muddy the waters by talking about the integral as primarily the
 so-called indefinite integral.  The \myindex{indefinite integral}
-is really the \emph{\myindex{antiderivative}} 
+is really the \emph{\myindex{antiderivative}}
 (in fact the whole one-parameter family
 of antiderivatives).  There really exists only one integral and that
 is the definite integral.
@@ -107,7 +107,7 @@ y(x) = \int_0^x e^{-t^2} \,dt + 1 .
 \end{equation*}
 Here is a good way to make fun of your friends taking second-semester
 calculus.  Tell them to
-find the closed form solution.  Ha ha ha (bad math joke).  It is
+find the closed-form solution.  Ha ha ha (bad math joke).  It is
 not possible (in closed form).
 There is absolutely nothing wrong with writing the solution as a
 definite integral.
@@ -161,7 +161,7 @@ where $D$ is an arbitrary constant.
 Now we solve for $y$ (actually for $\lvert y \rvert$).
 \begin{equation*}
 \lvert y \rvert =
-e^{kx-kD} = 
+e^{kx-kD} =
 e^{-kD} e^{k x} .
 \end{equation*}
 If we replace $e^{-kD}$ with an arbitrary constant $C$, we can
@@ -221,7 +221,7 @@ that is the interval containing $2$, the initial $x$.
 \end{example}
 
 Classical problems leading to differential equations solvable by integration
-are problems 
+are problems
 dealing with \myindex{velocity},
 \myindex{acceleration}, and \myindex{distance}.  You have surely seen these
 problems before in your calculus class.
@@ -238,14 +238,14 @@ x' = e^{t/2} .
 \end{equation*}
 We just integrate this equation to get that
 \begin{equation*}
-x(t) = 2 e^{t/2} + C . 
+x(t) = 2 e^{t/2} + C .
 \end{equation*}
 We still need to figure out $C$.  We know that when $t=0$, then
 $x=0$.  That is, $x(0) = 0$.  So
 \begin{equation*}
 0 = x(0) = 2e^{0/2} + C = 2 + C .
 \end{equation*}
-Thus $C = -2$ and 
+Thus $C = -2$ and
 \begin{equation*}
 x(t) = 2 e^{t/2} - 2 .
 \end{equation*}
@@ -380,14 +380,14 @@ If $n=1$, then $y = e^x$.
 }
 
 \begin{exercise}
-The rate of change of the volume of a snowball that is melting is 
+The rate of change of the volume of a snowball that is melting is
 proportional to the surface area of the snowball.  Suppose the
 snowball is perfectly spherical.  The volume (in centimeters cubed)
 of a ball of radius $r$ centimeters is
 $(\nicefrac{4}{3}) \pi r^3$.  The surface area is
 $4 \pi r^2$.  Set up the differential equation for how the radius $r$ is changing.
 Then, suppose that at time $t=0$ minutes, the radius is 10 centimeters.
-After 5 minutes, the radius is 8 centimeters.  At what time $t$ will the 
+After 5 minutes, the radius is 8 centimeters.  At what time $t$ will the
 snowball be completely melted?
 \end{exercise}
 \exsol{%
@@ -431,9 +431,9 @@ the solutions, or find approximate solutions.
 
 %As you have seen in IODE Lab I (if you did it),
 The equation $y' = f(x,y)$
-gives you a slope at each point 
+gives you a slope at each point
 in the
-$(x,y)$-plane.  And this is the slope a solution $y(x)$ would have 
+$(x,y)$-plane.  And this is the slope a solution $y(x)$ would have
 at $x$ if its value was $y$.  In other words, $f(x,y)$ is the slope
 of a solution whose graph runs through the
 point $(x,y)$.  At a point $(x,y)$, we draw a short line
@@ -565,7 +565,7 @@ the equation may have been written as the seemingly harmless $x y' = 1$.
  \capstart
  \diffyincludegraphics{width=3in}{width=4.5in}{1-3-xinv-sol}{%
 A grid of line segments with the slope given by 1 over x.  Overlaid
-are red lines starting at various points on the left-hand side 
+are red lines starting at various points on the left-hand side
 and the right-hand side that go out the bottom of the picture
 as they approach the y-axis.}
  \caption{Slope field of $y' = \nicefrac{1}{x}$.\label{1.3:xinvfig}}
@@ -612,7 +612,7 @@ Of course there is.  We have the following theorem,
 known as Picard's theorem%
 \footnote{Named after the French mathematician
 \href{https://en.wikipedia.org/wiki/Charles_\%C3\%89mile_Picard}{Charles \'Emile Picard}
-(1856--1941)}. 
+(1856--1941)}.
 
 \begin{theorem}[Picard's theorem on existence and uniqueness]%
 \label{slope:picardthm}%
@@ -626,7 +626,7 @@ y' = f(x,y), \qquad y(x_0) = y_0,
 exists (at least for $x$ in some small interval) and is unique.
 \end{theorem}
 
-Note that the problems $y' = \nicefrac{1}{x}$, $y(0) = 0$ and 
+Note that the problems $y' = \nicefrac{1}{x}$, $y(0) = 0$ and
 $y' = 2 \sqrt{\lvert y \rvert}$, $y(0) = 0$ do not satisfy the hypothesis of the
 theorem.
 Even if we can use the theorem,
@@ -726,7 +726,7 @@ what happens to $y(x)$ as $x$ goes to positive infinity?  Explain.
 Take $(y-x)y' = 0$, $y(0) = 0$.
 \begin{tasks}
 \task Find two distinct solutions.
-\task Explain why this does not violate Picard's theorem.  
+\task Explain why this does not violate Picard's theorem.
 \end{tasks}
 \end{exercise}
 
@@ -800,7 +800,7 @@ Is it possible to solve $y' = xy$ for $y(0) = 0$?  Is the solution unique?
 \end{exercise}
 \exsol{%
 Yes a solution exists.  The equation is $y' = f(x,y)$ where $f(x,y) = xy$.  The function
-$f(x,y)$ is continuous and 
+$f(x,y)$ is continuous and
 $\frac{\partial f}{\partial y} = x$, which is also continuous near $(0,0)$.
 So a solution exists and is unique.  (In fact, $y=0$ is the solution.)
 }
@@ -888,7 +888,7 @@ exist for every $x$.
 When a differential equation is of the form
 $y' = f(x)$,
 we integrate:
-$y = \int f(x) \,dx + C$. 
+$y = \int f(x) \,dx + C$.
 Unfortunately, simply integrating no longer works for the
 general form of the equation
 $y' = f(x,y)$.
@@ -919,7 +919,7 @@ Both sides look like something we can integrate.  We obtain
 \begin{equation*}
 \int \frac{dy}{g(y)} = \int f(x) \,dx + C .
 \end{equation*}
-If we can find closed form expressions
+If we can find closed-form expressions
 for these two integrals, we can, perhaps, solve for $y$.
 
 \begin{example} \label{example:yprimeisxy}
@@ -957,7 +957,7 @@ y' = D x e^{\frac{x^2}{2}} = x \left( D e^{\frac{x^2}{2}} \right) = xy .
 Yay!
 \end{example}
 
-You may be worried that we 
+You may be worried that we
 integrated in two different variables.
 We seemingly did a different operation to each side.
 Perhaps we should be a little bit more careful
@@ -1055,12 +1055,12 @@ to $y'=\frac{xy}{y^2+1}$.\label{implicitsols:fig}}
 \end{myfig}
 
 The equation above also has the solution $y=0$.
-So the general solution is 
+So the general solution is
 \begin{equation*}
 y^2 + 2 \ln \, \lvert y \rvert = x^2 + D \qquad \text{and} \qquad y=0.
 \avoidbreak
 \end{equation*}
-Sometimes these extra solutions that came up 
+Sometimes these extra solutions that came up
 due to division by zero such as
 $y=0$
 are called \emph{singular solutions\index{singular solution}}.
@@ -1121,7 +1121,7 @@ For our setup $A=22$, $T(0) = 89$, $T(1) = 85$.
 Let $C$ and $D$ denote arbitrary
 constants, and notice that $T - A > 0$ since the coffee is clearly warmer
 than the room.
-We separate variables and integrate. 
+We separate variables and integrate.
 \begin{align*}
 \frac{1}{T-A} \, \frac{dT}{dt} & = -k , \\
 \ln (T-A) &= -kt + C , \\ %, \qquad \text{(note that } T-A > 0 \text{)} \\
@@ -1132,7 +1132,7 @@ That is,
 $T = 22 + D e^{-kt}$.  We plug in the first condition: $89 = T(0) = 22 +
 D$,
 and hence $D = 67$.  So
-$T = 22 + 67 e^{-kt}$.  The second condition says $85 = T(1) = 
+$T = 22 + 67 e^{-kt}$.  The second condition says $85 = T(1) =
 22 + 67 e^{-k}$.  Solving for $k$, we get
 $k = - \ln \frac{85-22}{67} \approx 0.0616$.  We solve for the time $t$
 that gives a temperature of 60 degrees.  Namely, we solve
@@ -1298,7 +1298,7 @@ on the island.
 \task Find the solution to the equation with the initial
 condition.
 \task
-How many rabbits are on the island in 1 month, 5 months, 
+How many rabbits are on the island in 1 month, 5 months,
 10 months, 15 months (round to the nearest integer).
 \end{tasks}
 \end{exercise}
@@ -1318,11 +1318,10 @@ a) $x = \frac{1000e^t}{e^t+24}$. \quad b) 102 rabbits after one month,
 \sectionnotes{1 lecture\EPref{, \S1.5 in \cite{EP}}\BDref{,
 \S2.1 in \cite{BD}}}
 
-One of the most important types of equations we will learn to solve are
-the so-called
-\emph{linear equations\index{linear equation}}.
+\emph{Linear equations\index{linear equation}}
+are one of the most important types of equations we will learn to solve.
 In fact, the majority of the course is about linear
-equations.  In this section we focus on the
+equations.  In this section, we focus on the
 \emph{\myindex{first-order linear equation}}.
 A first-order equation is linear if we can put it
 into the form:
@@ -1380,9 +1379,9 @@ y & = e^{-\int p(x) \,dx} \left( \int e^{\int p(x) \,dx} f(x) \,dx + C \right) .
 \end{aligned}
 \end{equation*}
 
-Of course, to get a closed form formula for $y$,
+Of course, to get a closed-form formula for $y$,
 we need to be able to find a
-closed form formula for the integrals appearing above.
+closed-form formula for the integrals appearing above.
 
 \begin{example}
 Solve
@@ -1469,7 +1468,7 @@ $y' + p(x) y = f(x)$, $y(x_0) = y_0$,
 there is an explicit formula \eqref{lei:defsol} for the
 solution.  Second, it follows
 from the formula \eqref{lei:defsol} that if $p(x)$
-and $f(x)$ are continuous on some interval $(a,b)$, then the 
+and $f(x)$ are continuous on some interval $(a,b)$, then the
 solution $y(x)$ exists and is differentiable on $(a,b)$.  Compare
 with the simple nonlinear example we have seen previously, $y'=y^2$,
 and compare to \thmref{slope:picardthm}.
@@ -1492,10 +1491,10 @@ at the bottom.  The top input is labeled as 5 liters per minute,
 0.1 kilograms per liter.
 The bottom output is labeled as 3 liters per minute.
 Inside the liquid is
-labeled as 60 liters and 10 kilograms salt.}
+labeled as 60 liters and 10 kilograms of salt.}
 \end{mywrapfigsimp}
 A 100 liter tank contains 10 kilograms of salt dissolved in 60 liters of
-water.  Solution of water and salt (brine) with concentration of 0.1
+water.  A solution of water and salt (brine) with concentration of 0.1
 kilograms per
 liter is flowing in at the rate of 5 liters a minute.  The solution
 in the tank is well stirred and flows out at a rate of 3 liters a minute.
@@ -1503,19 +1502,19 @@ How much salt is in the tank when the tank is full?
 
 To solve this problem, we need to find the differential equation
 for this setup.
-Let $x$ denote the kilograms of salt in the tank,
+Let $x$ denote the kilograms of salt in the tank, and
 let $t$ denote the time in minutes.  For a small change $\Delta t$ in
 time, the change in $x$ (denoted $\Delta x$) is approximately
 \begin{equation*}
 \Delta x \approx
-(\text{rate in} \times \text{concentration in}) \Delta t - 
+(\text{rate in} \times \text{concentration in}) \Delta t -
 (\text{rate out} \times \text{concentration out}) \Delta t .
 \end{equation*}
 Dividing through by $\Delta t$ and
 taking the limit $\Delta t \to 0$, we see that
 \begin{equation*}
 \frac{dx}{dt} =
-(\text{rate in} \times \text{concentration in})  - 
+(\text{rate in} \times \text{concentration in}) -
 (\text{rate out} \times \text{concentration out}) .
 \end{equation*}
 In our example,
@@ -1532,7 +1531,7 @@ In our example,
 Our differential equation is
 \begin{equation*}
 \frac{dx}{dt} =
-(5 \times 0.1)  - 
+(5 \times 0.1) -
 \left(3 \frac{x}{60+2t}\right) .
 \end{equation*}
 In the form \eqref{lineq:eq1}, it is
@@ -1566,13 +1565,13 @@ We integrate and solve,
 \begin{align*}
 {(60+2t)}^{3/2} x
 & =
-\int 
+\int
 0.5{(60+2t)}^{3/2}
 dt
 +C ,\\
  x
 & =
-{(60+2t)}^{-3/2} \int 
+{(60+2t)}^{-3/2} \int
 \frac{
 {(60+2t)}^{3/2}
 }{2}
@@ -1628,7 +1627,7 @@ We want the value of $x$ when the tank is full,
 that is, we compute $x(20)$:
 \begin{equation*}
 \begin{split}
-x(20) & = 
+x(20) & =
 \frac{60+40}{10}
 +C{(60+40)}^{-3/2}
 \\
@@ -1640,7 +1639,7 @@ x(20) & =
 \end{split}
 \end{equation*}
 There are $\unit[11.86]{kg}$ of salt in the tank when it is full.
-See \figurevref{linear-salt-graph:fig} for the graph of $x$ of $t$.
+See \figurevref{linear-salt-graph:fig} for the graph of $x(t)$.
 The concentration when the tank is full is approximately
 $\nicefrac{11.86}{100} = \unitfrac[0.1186]{kg}{liter}$, and we started
 with $\nicefrac{1}{6}$ or approximately \unitfrac[0.1667]{kg}{liter}.
@@ -1648,7 +1647,7 @@ with $\nicefrac{1}{6}$ or approximately \unitfrac[0.1667]{kg}{liter}.
 %mbxlatex \capstart
 %mbxlatex \diffyincludegraphics{width=3in}{width=4.5in}{linear-salt-graph}{%
 %mbxlatex A graph of a solution from t equals 0 to t equals 20
-%mbxlatex starting at 20 and then rising, at first slowly
+%mbxlatex starting at 10 and then rising, at first slowly
 %mbxlatex then speeding up and ending at roughly 11.86 at the
 %mbxlatex right-hand side.}
 %mbxlatex \caption{Graph of the solution $x$ kilograms of salt in the tank at time
@@ -1658,8 +1657,8 @@ with $\nicefrac{1}{6}$ or approximately \unitfrac[0.1667]{kg}{liter}.
 
 \subsection{Exercises}
 
-In the exercises, feel free to leave answer as a definite integral if a
-closed form solution cannot be found.  If you can find a closed form
+In the exercises, feel free to leave the answer as a definite integral if a
+closed-form solution cannot be found.  If you can find a closed-form
 solution, you should give that.
 
 \begin{exercise}
@@ -1754,7 +1753,7 @@ $y = 2 e^{\cos(2x)+1} + 1$
 Suppose a water tank is being pumped out at \unitfrac[3]{L}{min}.  The
 water tank starts at \unit[10]{L} of clean water.
 Water with
-toxic substance is flowing into the tank at \unitfrac[2]{L}{min},
+a toxic substance is flowing into the tank at \unitfrac[2]{L}{min},
 with concentration \unitfrac[$20t$]{g}{L} at time $t$.
 When the tank is half empty, how many grams of toxic substance are in the
 tank (assuming perfect mixing)?
@@ -1764,7 +1763,7 @@ $250$ grams
 }
 
 \begin{exercise}
-There is bacteria on a plate and a toxic substance is being added that slows
+There are bacteria on a plate and a toxic substance is being added that slows
 down the rate of growth of the bacteria.
 That is,
 suppose that $\frac{dP}{dt} = (2-0.1\,t)P$.  If $P(0) = 1000$, find
@@ -1807,7 +1806,7 @@ end up with a simpler equation to solve.
 
 The equation
 \begin{equation*}
-y' = {(x-y+1)}^2 
+y' = {(x-y+1)}^2
 \end{equation*}
 is neither separable nor linear.  What can we do?
 How about trying to change variables, so that in the new variables the
@@ -1896,7 +1895,7 @@ y' + p(x)y = q(x)y^n .
 This equation
 looks a lot like a linear equation except for the $y^n$.  If $n=0$ or
 $n=1$, then the equation is linear and we can solve it.  Otherwise,
-the substitution $v=y^{1-n}$ transforms the 
+the substitution $v=y^{1-n}$ transforms the
 Bernoulli equation into a linear equation.  Note that $n$
 need not be an integer.
 
@@ -1933,12 +1932,12 @@ at $x=1 > 0$.  Let us compute the integrating factor.  Here $p(s)$ from formula
 \eqref{lei:defsol} is $\frac{-4(s+1)}{s}$.
 \begin{align*}
 e^{\int_1^x p(s)\,ds} & = \exp \left( \int_1^x \frac{-4(s+1)}{s} \,ds \right) =
-e^{-4x-4\ln(x)+4} = 
+e^{-4x-4\ln(x)+4} =
 e^{-4x+4} x^{-4}
 =
 \frac{e^{-4x+4}}{x^4} , \\
 e^{-\int_1^x p(s)\,ds} & =
-e^{4x+4\ln(x)-4} = 
+e^{4x+4\ln(x)-4} =
 e^{4x-4} x^4 .
 \end{align*}
 We now plug in to \eqref{lei:defsol}
@@ -1965,7 +1964,7 @@ definite integral in our solution.  Now \myquote{unsubstitute}
 
 \subsection{Homogeneous equations}
 
-Another type of equations we can solve by substitution are the 
+Another type of equations we can solve by substitution are the
 so-called \emph{homogeneous equations\index{homogeneous equation}}.
 Suppose that we can write the differential equation as
 \begin{equation*}
@@ -1977,7 +1976,7 @@ v = \frac{y}{x} \qquad \text{and therefore} \qquad y' = v + x v' .
 \end{equation*}
 We note that the equation is transformed into
 \begin{equation*}
-v+ xv' = F(v) \qquad \text{or} \qquad xv' = F(v)-v 
+v+ xv' = F(v) \qquad \text{or} \qquad xv' = F(v)-v
 \qquad \text{or} \qquad \frac{v'}{F(v)-v} = \frac{1}{x} .
 \end{equation*}
 Hence an implicit solution is
@@ -1989,7 +1988,7 @@ divide by zero in $\nicefrac{y}{x}$).  So we will either assume $x > 0$
 or $x < 0$ depending on the initial condition.
 
 \begin{example}
-Solve 
+Solve
 \begin{equation*}
 x^2y' = y^2+xy, \qquad y(1)=1.
 \end{equation*}
@@ -2020,7 +2019,7 @@ We unsubstitute
 \qquad
 y = \frac{-x}{\ln  x  + C} .
 \end{equation*}
-We want $y(1)=1$, so 
+We want $y(1)=1$, so
 \begin{equation*}
 1 = y(1) = \frac{-1}{\ln  1 + C} = \frac{-1}{C} .
 \end{equation*}
@@ -2135,7 +2134,7 @@ Note also, by looking at the graph, that the solution $x=A$ is
 \myquote{stable} in
 that small perturbations in $x$ do not lead to substantially different
 solutions as $t$ grows.
-If we change the initial condition a little bit, then as 
+If we change the initial condition a little bit, then as
 $t \to \infty$, we still get $x(t) \to A$.
 We call such a critical point
 \emph{stable}\index{stable critical point}.
@@ -2147,8 +2146,8 @@ as $t \to \infty$.  If a critical point is not stable, we say it is
 \parbox[t]{3.0in}{
  \capstart
  \diffyincludegraphics{width=2.93in}{width=4.5in}{2-2-coffee}{%
-A plot for t from 0 to 20 and x from minus 10 to 10 with 
-a grid of lines with slopes of 0.3 times quantity 5 minus x.  These 
+A plot for t from 0 to 20 and x from minus 10 to 10 with
+a grid of lines with slopes of 0.3 times quantity 5 minus x.  These
 slopes are going up below the x equals 5 line and are going down
 above the x equals 5 line.  The slopes are steeper the further away
 from x equals 5 line we are.  Several solutions are shown which
@@ -2165,9 +2164,9 @@ all converging towards the x equals 5 line as t increases.}
  \diffyincludegraphics{width=3in}{width=4.5in}{2-2-logistic}{%
 A plot for t from 0 to 20 and x from minus 5 to 10 with
 a grid of lines with slopes of 0.1 times x times quantity 5 minus x.
-These 
-slopes are going down below the x equals 0 line and above the x equals 5
-line.  Between x equals 0 and x equals 5 the slopes are going up.
+These slopes are going down below the x equals 0 line
+and above the x equals 5 line.
+Between x equals 0 and x equals 5 the slopes are going up.
 Several solutions are shown which when starting below x equals 0 just keep
 going down and leave the plot.  When the solution is above x equals 0,
 then it rises and then approaches the x equals 5 line.  When the solution
@@ -2187,7 +2186,7 @@ Consider now the \emph{\myindex{logistic equation}}
 \end{equation*}
 for some positive $k$ and $M$.  This equation is commonly used to model
 population if we know the limiting population $M$, that is, the maximum
-sustainable population.  The logistic equation leads to 
+sustainable population.  The logistic equation leads to
 less catastrophic
 predictions on world population than $x'=kx$.  In the real world, there is no
 such thing as negative population, but we will still consider negative $x$ for
@@ -2200,10 +2199,9 @@ unstable.
 It is not necessary to find the exact solutions to understand their long
 term behavior, that is, behavior as time goes to infinity.
 From the slope field above of
-$x' = 0.1 x(5-x)$, we 
-see that
+$x' = 0.1 x(5-x)$, we see that
 \begin{equation*}
-\lim_{t\to \infty} x(t) = 
+\lim_{t\to \infty} x(t) =
 \begin{cases}
 5 & \text{if } \; x(0) > 0 , \\
 0 & \text{if } \; x(0) = 0 , \\
@@ -2222,7 +2220,7 @@ the equation.  In any case, the solution does go to $-\infty$, but it may get
 there rather quickly.
 
 
-If we are interested only in the long term behavior of the solution, 
+If we are interested only in the long term behavior of the solution,
 we would be doing unnecessary work if we solved the
 equation exactly.
 We could draw the slope field, but
@@ -2234,7 +2232,7 @@ We draw the $x$-axis, we mark all the critical points,
 and then we draw arrows in
 between.  Since $x$ is the dependent variable, we draw the axis vertically,
 as it appears in the slope field diagrams above.
-If $f(x) > 0$, we draw an up arrow.  If $f(x) < 0$, we draw 
+If $f(x) > 0$, we draw an up arrow.  If $f(x) < 0$, we draw
 a down arrow.
 To figure this out, we could just plug in some $x$ between the critical
 points, $f(x)$ will have the same sign at all $x$ between two critical
@@ -2271,10 +2269,10 @@ you are getting the same type of curves.
 
 \pagebreak[0]
 Once we draw the phase diagram, we classify critical points
-as stable or unstable\footnote{Unstable 
+as stable or unstable\footnote{Unstable
 points with one of the
 arrows pointing towards the critical point are sometimes called
-\emph{semistable}\index{semistable critical point}.}.  
+\emph{semistable}\index{semistable critical point}.}.
 Since any mathematical model we cook up will only be an approximation
 to the real world, unstable points are generally bad news.
 
@@ -2332,7 +2330,7 @@ $h$.
 
 For example, let $M=8$ and $k=0.1$.
 When $h=1$, then $A$ and $B$ are distinct and positive.
-See \figurevref{2.2:harv1} for the slope field.  As long as 
+See \figurevref{2.2:harv1} for the slope field.  As long as
 the population starts above $B$, which is approximately 1.55 million, then
 the population will not die out, it will tend towards $A \approx
 6.45$ million.  If ever a catastrophe happens and
@@ -2384,7 +2382,7 @@ unstable\footnote{More precisely, it is semistable.}.
 When the population starts above 4 million, it will tend towards
 4 million.  However, if it ever drops below 4 million, perhaps a worse than
 normal hurricane season one year, then humans will die out on the
-planet.  This scenario is not one that we (as the human fast food proprietor) 
+planet.  This scenario is not one that we (as the human fast food proprietor)
 want to be in.  A small perturbation of the equilibrium state and we are out
 of business.  There is no room for error.  See \figurevref{2.2:harvc}.
 
@@ -2454,12 +2452,12 @@ $x(0) = 0.5$.
 \begin{exercise}
 Start with the logistic equation
 $\frac{dx}{dt} = kx(M-x)$.
-Suppose we modify our harvesting.  That is we will only harvest 
+Suppose we modify our harvesting.  That is we will only harvest
 an amount proportional to current population.  In other words, we harvest $hx$
 per unit of time
 for some $h > 0$ (similar to earlier example with $h$ replaced with $hx$).
 \begin{tasks}
-\task Construct the differential equation. 
+\task Construct the differential equation.
 \task Show that if $kM > h$, then
 the equation is still logistic.
 \task What happens when $kM < h$?
@@ -2506,7 +2504,7 @@ c) 1
 Let $x'=e^{-x}$.
 \begin{tasks}(2)
 \task Find and classify all critical points.
-\task Find $\displaystyle \lim_{t\to\infty} x(t)$ given any 
+\task Find $\displaystyle \lim_{t\to\infty} x(t)$ given any
 initial condition.
 \end{tasks}
 \end{exercise}
@@ -2626,7 +2624,7 @@ All the slopes are upwards with the ones further up being steeper.
 In the left plot, the first step of Euler's method is shown as
 a green line starting at (0,1) of slope 1 over 3, which is the slope at
 (0,1) and going right until x equals 1.  In the right plot, a second
-line is added starting at the end of the first line with slope equal 
+line is added starting at the end of the first line with slope equal
 to the slope of the slope field and going further right until x equals 2.}
 \caption{First two steps of Euler's method with $h=1$ for
 the equation $y' = \frac{y^2}{3}$ with initial conditions $y(0)=1$.%
@@ -2725,7 +2723,7 @@ of $y'=\nicefrac{y^2}{3}$, $y(0)=1$.\label{euler-table:table}}
 \myendframe
 \end{table}
 
-Note that except for the first few times, each time we halve 
+Note that except for the first few times, each time we halve
 the $h$, the error approximately halves.
 Halving of the error is a general feature of Euler's method as it is a
 \emph{\myindex{first-order method}}.
@@ -2884,7 +2882,7 @@ Consider $\dfrac{dx}{dt} = t-x$, $x(0)=1$.
 \task Use Euler's method
 with step sizes $h = 1, \nicefrac{1}{2}, \nicefrac{1}{4}, \nicefrac{1}{8}$ to
 approximate
-$x(1)$. 
+$x(1)$.
 \task Solve the equation exactly.
 \task Describe what happens to the
 errors for each $h$ you used.  That is, find the factor by which the error
@@ -2921,7 +2919,7 @@ and then we compute the next $x_{i+1}$ and $y_{i+1}$:
 \begin{align*}
 & k_1 = f(x_i,y_i) , & & \\
 & k_2 = f\bigl(x_i + \nicefrac{h}{2},y_i + k_1 (\nicefrac{h}{2})\bigr) ,
-& & 
+& &
 x_{i+1} = x_i + h , \\
 & k_3 = f\bigl(x_i + \nicefrac{h}{2},y_i + k_2 (\nicefrac{h}{2})\bigr) ,
 & &
@@ -2996,7 +2994,7 @@ Instead of letting our new point be $(x_i+h,y_i + k_1h)$, we compute
 the slope at that point, call it $k_2$, and then take the average
 of $k_1$ and $k_2$, hoping that the average is going to be closer to
 the actual slope on the interval from $x_i$ to $x_i+h$.  And we are correct,
-if we halve the step, the error should get multiplied by 
+if we halve the step, the error should get multiplied by
 ${(\nicefrac{1}{2})}^2 = \nicefrac{1}{4}$.
 To summarize, the setup is the
 same as for regular Euler, except
@@ -3004,7 +3002,7 @@ the computation of $y_{i+1}$ and $x_{i+1}$.
 At each step, we compute the new slopes $k_1$ and $k_2$ and then the next
 $y_{i+1}$ and $x_{i+1}$:
 \begin{align*}
-& k_1 = f(x_i,y_i) , & & 
+& k_1 = f(x_i,y_i) , & &
 x_{i+1} = x_i + h , \\
 & k_2 = f(x_i + h,y_i + k_1h) ,
 & & y_{i+1} = y_i + \frac{k_1+k_2}{2}\,h .
@@ -3024,23 +3022,23 @@ $y(1)$.
 \end{tasks}
 \end{exercise}
 \exsol{%
-a) Improved Euler: $y(1) \approx 3.3897$ for $h=\nicefrac{1}{4}$, 
-$y(1) \approx 3.4237$ for $h=\nicefrac{1}{8}$, 
+a) Improved Euler: $y(1) \approx 3.3897$ for $h=\nicefrac{1}{4}$,
+$y(1) \approx 3.4237$ for $h=\nicefrac{1}{8}$,
 \quad
-b) Standard Euler: $y(1) \approx 2.8828$ for $h=\nicefrac{1}{4}$, 
-$y(1) \approx 3.1316$ for $h=\nicefrac{1}{8}$, 
+b) Standard Euler: $y(1) \approx 2.8828$ for $h=\nicefrac{1}{4}$,
+$y(1) \approx 3.1316$ for $h=\nicefrac{1}{8}$,
 \quad
 c) $y = 2e^x-x-1$, so $y(1)$ is approximately $3.4366$.
 \quad
 d) Approximate errors for improved Euler:
-$0.046852$ for $h=\nicefrac{1}{4}$ 
+$0.046852$ for $h=\nicefrac{1}{4}$
 and
-$0.012881$ for $h=\nicefrac{1}{8}$. 
+$0.012881$ for $h=\nicefrac{1}{8}$.
 \quad
 For standard Euler:
-$0.55375$ for $h=\nicefrac{1}{4}$ 
+$0.55375$ for $h=\nicefrac{1}{4}$
 and
-$0.30499$ for $h=\nicefrac{1}{8}$. 
+$0.30499$ for $h=\nicefrac{1}{8}$.
 \quad
 Factor is approximately $0.27$ for improved Euler and
 $0.55$ for standard Euler.
@@ -3063,9 +3061,9 @@ engineering is an
 %equations requires a little bit of multivariable calculus and a tiny
 %bit of physics.
 Suppose $F(x,y)$ is a function of two variables, which we call the
-\emph{\myindex{potential function}}.  The naming should suggest 
+\emph{\myindex{potential function}}.  The naming should suggest
 potential energy, or electric potential.  Exact equations and potential
-functions appear when there is a conservation law at play, such as 
+functions appear when there is a conservation law at play, such as
 conservation of energy.
 Let us make up a simple example.  Consider
 \begin{equation*}
@@ -3120,7 +3118,7 @@ In our simple example, we obtain the equation
 \text{or} \qquad
 2x + 2y \, \frac{dy}{dx} = 0 .
 \end{equation*}
-Since we obtained this equation by differentiating $x^2+y^2=C$, 
+Since we obtained this equation by differentiating $x^2+y^2=C$,
 the equation is exact.
 We often wish to solve for $y$ in terms of $x$.  In our example,
 \begin{equation*}
@@ -3180,7 +3178,7 @@ x + y \frac{dy}{dx} = 0 .
 \end{equation*}
 It is up to us to find some potential $F$ that works.  Many different $F$
 will work; adding a constant to $F$ does not change the equation.
-Once we have a potential function $F$, the equation 
+Once we have a potential function $F$, the equation
 $F\bigl(x,y(x)\bigr) = C$
 gives an implicit solution of the ODE\@.
 
@@ -3200,7 +3198,7 @@ F(x,y) = x^2 + A(y) ,
 \end{equation}
 for some function $A(y)$.  The function $A$ is the \myquote{constant of
 integration,} though it is only constant as far as $x$ is concerned, and
-may still depend on $y$.  Now differentiate \eqref{eq:exact:fint} in $y$ 
+may still depend on $y$.  Now differentiate \eqref{eq:exact:fint} in $y$
 and set it equal to $N$, which is what $F_y$ is supposed to be:
 \begin{equation*}
 2y = F_y (x,y) = A'(y) .
@@ -3237,7 +3235,7 @@ Pretty easy huh?  Let's try this again.
 Consider now $2x+y + xy \frac{dy}{dx} = 0$.
 
 OK\@, so $M = 2x+y$ and $N=xy$.  We try to proceed as before.
-Suppose 
+Suppose
 $F$ exists.  Then $F_x (x,y) = 2x+y$.
 We integrate:
 \begin{equation*}
@@ -3354,7 +3352,7 @@ F(x,y) = \operatorname{arctan} \bigl( \nicefrac{y}{x} \bigr) .
 \end{equation*}
 This $F$ is defined on the region $x > 0$ and so the equation is exact on
 that region.
-The implicit solution is 
+The implicit solution is
 $\operatorname{arctan} \bigl( \nicefrac{y}{x} \bigr) = C$.  Solving,
 $y = \tan(C) x$.  That is, the solution is a straight line.  Solving $y(1) =
 2$ gives us that $\tan(C) = 2$, and so $y= 2x$ is the desired solution.
@@ -3367,7 +3365,7 @@ A plot in the xy-plane for x between minus 5 to 5 and y from minus 10 to 10
 is shown.  A blue line is drawn starting at (0,0) to the top right
 corner at (5,10) with a red dot marking the initial point
 drawn at (1,2).}
-\caption{Solution to 
+\caption{Solution to
 $\frac{-y}{x^2+y^2} dx + \frac{x}{x^2+y^2} dy = 0$, $y(1) = 2$,
 with initial point marked.\label{exact:y2x}}
 \end{myfig}
@@ -3453,9 +3451,9 @@ But how do we find the integrating factor $u$?  Well, for
 $uM \, dx + uN \, dy = 0$ to be exact,
 the function $u$ should satisfy
 \begin{equation*}
-\frac{\partial}{\partial y} \bigl[ u M \bigr] = 
-u_y M + u M_y = 
-\frac{\partial}{\partial x} \bigl[ u N \bigr] = 
+\frac{\partial}{\partial y} \bigl[ u M \bigr] =
+u_y M + u M_y =
+\frac{\partial}{\partial x} \bigl[ u N \bigr] =
 u_x N + u N_x .
 \end{equation*}
 Therefore,
@@ -3515,9 +3513,9 @@ Compute
 \begin{equation*}
 M_y-N_x = \frac{2y}{x+1} - 0 = \frac{2y}{x+1} .
 \end{equation*}
-As this is not zero, the equation is not exact.  We notice 
+As this is not zero, the equation is not exact.  We notice
 \begin{equation*}
-P(x) = \frac{M_y-N_x}{N} = \frac{2y}{x+1} \, \frac{1}{2y} = \frac{1}{x+1} 
+P(x) = \frac{M_y-N_x}{N} = \frac{2y}{x+1} \, \frac{1}{2y} = \frac{1}{x+1}
 \end{equation*}
 is a function of $x$ alone.    We compute the integrating factor
 \begin{equation*}
@@ -3548,7 +3546,7 @@ M_y-N_x = 2y-y = y .
 \end{equation*}
 As this is not zero, the equation is not exact.  We observe
 \begin{equation*}
-Q(y) = \frac{M_y-N_x}{M} = \frac{y}{y^2} = \frac{1}{y} 
+Q(y) = \frac{M_y-N_x}{M} = \frac{y}{y^2} = \frac{1}{y}
 \end{equation*}
 is a function of $y$ alone.    We compute the integrating factor
 \begin{equation*}
@@ -3572,7 +3570,7 @@ and
 Consequently, $A'(y) = \nicefrac{1}{y}$ or $A(y) = \ln \, \lvert y \rvert$.  Thus $F(x,y)
 = xy + \ln \, \lvert y \rvert$.
 It is not possible to solve $F(x,y)=C$ for $y$
-in terms of elementary functions, so 
+in terms of elementary functions, so
 let us be content with the implicit solution:
 \begin{equation*}
 xy + \ln \, \lvert y \rvert = C .
@@ -3662,7 +3660,7 @@ equation.  So there exists (at least locally)
 the so-called \emph{\myindex{harmonic conjugate}} function
 $v(x,y)$ such that $v_x = -u_y$ and $v_y = u_x$.
 \end{tasks}
-Verify that the following $u$ are harmonic and 
+Verify that the following $u$ are harmonic and
 find the corresponding harmonic conjugates $v$:
 \begin{tasks}[resume](3)
 \task $u = 2xy$
@@ -3768,7 +3766,7 @@ In these problems, it is useful to think of $x$ as position and $t$ as time.
 The equation describes the evolution of a function of $x$ as
 time goes on.
 Below, the coefficients $a$, $b$, $c$, and the function $g$
-are mostly going to be constant or zero.  
+are mostly going to be constant or zero.
 The method we describe works with nonconstant coefficients,
 although the computations may get difficult quickly.
 
@@ -3859,7 +3857,7 @@ xi equals 2.}
 \caption{Characteristic curves.\label{fopde:charcurves}}
 \end{mywrapfig}
 
-In the $(x,t)$ coordinates, the characteristic curves satisfy 
+In the $(x,t)$ coordinates, the characteristic curves satisfy
 $t = \frac{1}{\alpha} ( x- \xi)$, and are in fact lines.
 The slope of characteristic lines is
 $\frac{1}{\alpha}$, and for each different $\xi$, we get a different
@@ -3869,7 +3867,7 @@ We see why $\alpha u_x + u_t = 0$ is called the
 transport equation: Everything travels at some constant speed.
 This behavior is called \emph{\myindex{convection}}.
 An example application is material being moved by a river where the material
-does not diffuse and is simply carried along.  In this setup, $x$ is 
+does not diffuse and is simply carried along.  In this setup, $x$ is
 the position along the river, $t$ is the time, and $u(x,t)$ the concentration the
 material at position $x$ and time $t$.  See
 \figurevref{fopde:transportfig} for an example.
@@ -3916,7 +3914,7 @@ So the equation is an ODE\@.  It is a linear
 ODE that we can solve using the integrating factor.
 
 To find the characteristics, think of a curve given parametrically
-$\bigl(x(s),t(s)\bigr)$.  We try to have the curve satisfy 
+$\bigl(x(s),t(s)\bigr)$.  We try to have the curve satisfy
 \begin{equation*}
 \frac{dx}{ds} = a, \qquad \frac{dt}{ds} = b .
 \end{equation*}
@@ -3924,7 +3922,7 @@ Why?
 Because when we think of $x$ and $t$ as functions of $s$, we find, using the
 chain rule,
 \begin{equation*}
-\frac{du}{ds} + c u = 
+\frac{du}{ds} + c u =
 \underbrace{\left( u_x \frac{dx}{ds} + u_t
 \frac{dt}{ds}\right)}_{\frac{du}{ds}} + c u =
 a u_x + b u_t + c u = g .
@@ -3977,7 +3975,7 @@ to solve along the characteristic is
 \begin{equation*}
 \frac{du}{ds} + u = s+ \xi .
 \end{equation*}
-The general solution of this equation, treating $\xi$ as a parameter, is 
+The general solution of this equation, treating $\xi$ as a parameter, is
 $u = C e^{-s}+s+\xi-1$, for some $C$, which can depend on $\xi$.
 At $s=0$, our initial condition is that $u$ is
 $e^{-\xi^2}$, since at $s=0$, we have $x=\xi$.
@@ -3996,7 +3994,7 @@ Substitute $\xi = x-t$ and $s=t$ to find $u$ in terms of $x$ and $t$:
 \begin{split}
 u
 & =
-e^{-\xi^2-s} + (1 - \xi) e^{-s} +s+\xi-1 
+e^{-\xi^2-s} + (1 - \xi) e^{-s} +s+\xi-1
 \\
 & =
 e^{-{(x-t)}^2-t} + (1 - x + t) e^{-t} +x-1 .
@@ -4081,7 +4079,7 @@ Another remark is that if $a$ or $b$ in the equation are not constants,
 the computations can
 quickly get out of hand, as the expressions for the characteristic
 coordinates become messy and then solving the ODE becomes even messier.
-In the examples above, $b$ was always $1$, meaning we got $s=t$ in the 
+In the examples above, $b$ was always $1$, meaning we got $s=t$ in the
 characteristic coordinates.  If $b$ is not constant, your expression for $s$
 will be more complicated.
 
@@ -4089,8 +4087,8 @@ Finding the characteristic coordinates is really
 a system of ODEs in general if $a$ depends on $t$ or if $b$ depends on $x$.
 In that case, we would need techniques of systems of ODEs
 to solve, see \chapterref{sys:chapter} or \chapterref{nlin:chapter}.  In
-general, if $a$ and $b$ are not linear functions or constants, finding closed
-form expressions for the characteristic coordinates may be impossible.
+general, if $a$ and $b$ are not linear functions or constants, finding
+closed-form expressions for the characteristic coordinates may be impossible.
 
 Finally, the method of characteristics applies to nonlinear
 first-order PDEs
