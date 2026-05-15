@@ -4,6 +4,12 @@
 
 my ($arg) = @ARGV;
 
+$didaddbuttons = 0;
+$didmathjaxconfig = 0;
+$didheadstyleadd = 0;
+$didheadstyleadd = 0;
+$didprintwarn = 0;
+
 while($line = <STDIN>)
 {
 	$line =~ s{<span[^>]*><button id="light-dark-button".*</button></span>}{};
@@ -17,9 +23,17 @@ while($line = <STDIN>)
 		$extra .= "<a class=\"index-button button\" href=\"https://www.amazon.com/dp/1706230230\" title=\"Buy Paperback\"><span class=\"name\">Paperback</span></a>\n";
 
 		if (not ($line =~ s/<div class="searchbox"/$extra<div class="searchbox"/)) {
-			print STDERR "Can't add extra buttons!";
+			print STDERR "ERROR: Can't add extra buttons!";
 			exit 1;
 		}
+		$didaddbuttons ++;
+	}
+	if ($line =~ m/<\/script><script.*mathjax\@4\/tex-mml-chtml/) {
+		#avoid inline math wrapping, it does awful things
+		print "window.MathJax = window.MathJax || {};\n";
+  		print "window.MathJax.chtml = window.MathJax.chtml || {};\n";
+  		print "window.MathJax.chtml.linebreaks = { inline: false };\n";
+		$didmathjaxconfig ++;
 	}
 	if ($line =~ m/<\/head>/) {
 		print "<style>\n";
@@ -29,19 +43,31 @@ while($line = <STDIN>)
 		print " .print-pdf-warning { display:none; }\n";
 		print " \@media print { .print-pdf-warning { display:inline; } }\n";
 		print "</style>\n";
+		$didheadstyleadd ++;
 	}
 	if ($line =~ m/<\/body>/) {
 		print "<span class=\"print-pdf-warning\">\n";
 		print " <em>For a higher quality printout use the PDF version: <tt>https://www.jirka.org/diffyqs/diffyqs.pdf</tt> or <tt>https://jirilebl.github.io/diffyqs/diffyqs.pdf</tt></em>\n";
 		print "</span>\n";
+		$didprintwarn ++;
 	}
 	# no longer there
 	#$line =~ s/>Authored in PreTeXt</>Created with PreTeXt</;
 	
 	# In case chtml is broken again
+	# Possibly not correct with move to mathjax 4, so fix before using
 	#$line =~ s/^  chtml: {/  svg: {/;
 	#$line =~ s/tex-chtml[.]js/tex-svg.js/;
 
 	#print line
 	print $line;
+}
+
+if ($didaddbuttons != 1 ||
+    $didmathjaxconfig != 1 ||
+    $didheadstyleadd != 1 ||
+    $didheadstyleadd != 1 ||
+    $didprintwarn != 1) {
+    print STDERR "ERROR: did not add something!";
+    exit 1;
 }
