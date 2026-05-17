@@ -7,12 +7,23 @@ my ($arg) = @ARGV;
 $didaddbuttons = 0;
 $didmathjaxconfig = 0;
 $didheadstyleadd = 0;
-$didheadstyleadd = 0;
 $didprintwarn = 0;
+$isindex = 0;
 
 while($line = <STDIN>)
 {
 	$line =~ s{<span[^>]*><button id="light-dark-button".*</button></span>}{};
+	if ($line =~ m/<title>[A-Za-z ]*Index<\/title>/) {
+	  	$isindex = 1;
+	}
+	# This is the redirect page, do not do anything to it
+	if ($line =~ m/<meta http-equiv.*refresh.*0; URL=.*>/) {
+		print $line;
+		while($line = <STDIN>) {
+			print $line;
+		}
+	 	exit 0;
+	}
 	if ($line =~ m/<a class="index-button.*title="Index"/) {
 		# Add extra buttons
 
@@ -63,9 +74,8 @@ while($line = <STDIN>)
 	print $line;
 }
 
-if ($didaddbuttons != 1 ||
+if (($isindex == 0 && $didaddbuttons != 1) ||
     $didmathjaxconfig != 1 ||
-    $didheadstyleadd != 1 ||
     $didheadstyleadd != 1 ||
     $didprintwarn != 1) {
     print STDERR "ERROR: did not add something!";

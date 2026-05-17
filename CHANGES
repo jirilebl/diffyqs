@@ -54,6 +54,8 @@ a trajectory of any system.
 as usual.
 <li>Be more precise when invoking Poincare-Bendixson in 8.5.
 <li>Simplify the answer in the back for 8.5.101.
+<li>In the derivation of the formula for the orthogonal projection,
+be more clear with \(\theta\) being acute or obtuse.
 <li>In the example of the mapping in section A.6 reorder the vertices
 of the square so that they go around the square in a counterclockwise
 motion rather than being out of order.

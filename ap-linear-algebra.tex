@@ -16,7 +16,7 @@ mappings, as those are both rather useful and rather easy to handle.
 Mathematicians joke that
 \myquote{to an engineer every problem is linear, and everything is a
 matrix.}
-And well, they (the engineers) are not wrong. 
+And well, they (the engineers) are not wrong.
 Quite often, solving an engineering problem is figuring out the
 right finite-dimensional linear problem to solve, which is then
 solved with some matrix manipulation.
@@ -67,7 +67,7 @@ Sometimes we call this the $n$-dimensional
 \footnote{Named after the ancient Greek mathematician
 \href{https://en.wikipedia.org/wiki/Euclid}{Euclid of Alexandria}
 (around 300 BC), possibly the most famous of mathematicians; even
-small towns often have Euclid Street or Euclid Avenue.}. 
+small towns often have Euclid Street or Euclid Avenue.}.
 In two dimensions, ${\mathbb R}^2$ is called the
 \emph{\myindex{cartesian plane}}%
 \footnote{Named after the French mathematician
@@ -140,7 +140,7 @@ For reasons that will become clear in the next section, we often
 write vectors as so-called
 \emph{column vectors}\index{column vector}:
 \begin{equation*}
-\vec{x} = 
+\vec{x} =
 \begin{bmatrix}
 x_{1} \\ x_2 \\ \vdots \\ x_n
 \end{bmatrix} .
@@ -291,12 +291,12 @@ Let us compute a small example:
 2
 \begin{bmatrix}
 -4 \\ -1
-\end{bmatrix} 
+\end{bmatrix}
 -
 3
 \begin{bmatrix}
 -2 \\ 2
-\end{bmatrix} 
+\end{bmatrix}
 =
 \begin{bmatrix}
 3(1)+2(-4)-3(-2) \\ 3(2)+2(-1)-3(2)
@@ -318,7 +318,7 @@ $\lVert \vec{u} \rVert = 1$.  For instance, the vectors $(1,0)$,
 $(\nicefrac{1}{\sqrt{2}},\nicefrac{1}{\sqrt{2}})$, and $(0,-1)$ are all
 unit vectors.
 
-To represent the direction of a vector $\vec{x}$, we need to find the 
+To represent the direction of a vector $\vec{x}$, we need to find the
 unit vector in the same direction.  To do so, we simply rescale
 $\vec{x}$ by the reciprocal of the magnitude:
 $\frac{1}{\lVert \vec{x} \rVert} \vec{x}$, or more concisely,
@@ -351,7 +351,7 @@ F
 \begin{bmatrix} 2 \\ 6 \end{bmatrix} .
 \end{equation*}
 If $F$ is a mapping that takes vectors in
-${\mathbb R}^2$ to 
+${\mathbb R}^2$ to
 ${\mathbb R}^2$ (such as the above), we write
 \begin{equation*}
 F \colon {\mathbb R}^2 \to {\mathbb R}^2 .
@@ -424,7 +424,7 @@ is an $m
 \times n$ array of numbers ($m$ rows and $n$ columns).  A
 $3 \times 5$ matrix is
 \begin{equation*}
-A = 
+A =
 \begin{bmatrix}
 a_{11} & a_{12} & a_{13} & a_{14} & a_{15} \\
 a_{21} & a_{22} & a_{23} & a_{24} & a_{25} \\
@@ -435,7 +435,7 @@ The numbers $a_{ij}$ are called \emph{elements}\index{element of a matrix}
 or \emph{entries}\index{entry of a matrix}.
 
 A column vector is simply an $m \times 1$ matrix.  Similarly to
-a column vector, there is also a 
+a column vector, there is also a
 \emph{\myindex{row vector}}, which is a $1 \times n$ matrix.
 If we have an $n \times n$ matrix, then we say that it is a
 \emph{\myindex{square matrix}}.
@@ -486,13 +486,12 @@ In ${\mathbb R}^3$, these vectors are
 \end{equation*}
 You may recall from calculus of several variables that these are
 sometimes called $\vec{\imath}$, $\vec{\jmath}$, $\vec{k}$.
-
-The reason these are called a \emph{\myindex{basis}} is that every other
+The reason these are called a \emph{\myindex{basis}} is that every
 vector can be written as a unique \emph{\myindex{linear combination}} of them.
 For example, in ${\mathbb R}^3$ the vector $(4,5,6)$ can be written as
 \begin{equation*}
-4 \vec{e}_1 + 
-5 \vec{e}_2 + 
+4 \vec{e}_1 +
+5 \vec{e}_2 +
 6 \vec{e}_3
 =
 4
@@ -521,7 +520,7 @@ as a linear
 mapping, takes $\vec{e}_1$, $\vec{e}_2$, etc.
 For instance, consider
 \begin{equation*}
-M = 
+M =
 \begin{bmatrix}
 1 & 2 \\ 3 & 4
 \end{bmatrix} .
@@ -566,7 +565,7 @@ and $m$ columns, then the mapping $A \colon {\mathbb R}^m \to {\mathbb R}^n$
 takes $\vec{e}_j$ to the $j^{\text{th}}$ column of $A$.
 For example,
 \begin{equation*}
-A = 
+A =
 \begin{bmatrix}
 a_{11} & a_{12} & a_{13} & a_{14} & a_{15} \\
 a_{21} & a_{22} & a_{23} & a_{24} & a_{25} \\
@@ -636,28 +635,28 @@ x_5
 0 \\ 0 \\ 0 \\ 0 \\ 1
 \end{bmatrix}
 =
-x_1 \vec{e}_1 + 
-x_2 \vec{e}_2 + 
-x_3 \vec{e}_3 + 
-x_4 \vec{e}_4 + 
+x_1 \vec{e}_1 +
+x_2 \vec{e}_2 +
+x_3 \vec{e}_3 +
+x_4 \vec{e}_4 +
 x_5 \vec{e}_5 .
 \end{equation*}
 Then
 \begin{equation*}
 A \vec{x}
 =
-A ( 
-x_1 \vec{e}_1 + 
-x_2 \vec{e}_2 + 
-x_3 \vec{e}_3 + 
-x_4 \vec{e}_4 + 
-x_5 \vec{e}_5 
+A (
+x_1 \vec{e}_1 +
+x_2 \vec{e}_2 +
+x_3 \vec{e}_3 +
+x_4 \vec{e}_4 +
+x_5 \vec{e}_5
 )
 =
-x_1 A\vec{e}_1 + 
-x_2 A\vec{e}_2 + 
-x_3 A\vec{e}_3 + 
-x_4 A\vec{e}_4 + 
+x_1 A\vec{e}_1 +
+x_2 A\vec{e}_2 +
+x_3 A\vec{e}_3 +
+x_4 A\vec{e}_4 +
 x_5 A\vec{e}_5 .
 \end{equation*}
 If we know where $A$ takes all the basis vectors, we know where it takes
@@ -702,7 +701,7 @@ linear mappings, and linear mappings being matrices.
 
 Or can we?  In this book we study mostly linear differential operators,
 and linear differential operators are linear mappings, although they are
-not acting on ${\mathbb R}^n$, but on 
+not acting on ${\mathbb R}^n$, but on
 an infinite-dimensional space of functions:
 \begin{equation*}
 L f = g .
@@ -741,27 +740,27 @@ finite-dimensional space.
 To end the section, we notice how $A \vec{x}$ can be written more succinctly.
 Suppose
 \begin{equation*}
-A = 
+A =
 \begin{bmatrix}
 a_{11} & a_{12} & a_{13} \\
 a_{21} & a_{22} & a_{23}
 \end{bmatrix}
 \qquad \text{and} \qquad
-\vec{x} = 
+\vec{x} =
 \begin{bmatrix}
-x_1 \\ x_2 \\ x_3 
+x_1 \\ x_2 \\ x_3
 \end{bmatrix} .
 \end{equation*}
 Then
 \begin{equation*}
-A \vec{x} = 
+A \vec{x} =
 \begin{bmatrix}
 a_{11} & a_{12} & a_{13} \\
 a_{21} & a_{22} & a_{23}
 \end{bmatrix}
 \begin{bmatrix}
-x_1 \\ x_2 \\ x_3 
-\end{bmatrix} 
+x_1 \\ x_2 \\ x_3
+\end{bmatrix}
 =
 \begin{bmatrix}
 a_{11} x_1 + a_{12} x_2 + a_{13} x_3 \\
@@ -775,7 +774,7 @@ For example,
 \end{bmatrix}
 \begin{bmatrix}
 2 \\ -1
-\end{bmatrix} 
+\end{bmatrix}
 =
 \begin{bmatrix}
 1 \cdot 2 + 2 \cdot (-1) \\
@@ -799,7 +798,7 @@ On a piece of graph paper draw the vectors:
 \task
 $\begin{bmatrix}
 2 \\
-5 
+5
 \end{bmatrix}
 $
 \task
@@ -865,7 +864,7 @@ Compute the magnitude of
 \task
 $\begin{bmatrix}
 7 \\
-2 
+2
 \end{bmatrix}
 $
 \task
@@ -887,7 +886,7 @@ Compute
 \task
 $\begin{bmatrix}
 2 \\
-3 
+3
 \end{bmatrix}
 +
 \begin{bmatrix}
@@ -898,7 +897,7 @@ $
 \task
 $\begin{bmatrix}
 -2 \\
-3 
+3
 \end{bmatrix}
 -
 \begin{bmatrix}
@@ -910,21 +909,21 @@ $
 $
 -\begin{bmatrix}
 -3 \\
-2 
+2
 \end{bmatrix}
 $
 \task
 $
 4\begin{bmatrix}
 -1 \\
-5 
+5
 \end{bmatrix}
 $
 \task
 $
 5\begin{bmatrix}
 1 \\
-0 
+0
 \end{bmatrix}
 +
 9
@@ -937,7 +936,7 @@ $
 $
 3\begin{bmatrix}
 1 \\
--8 
+-8
 \end{bmatrix}
 -
 2
@@ -955,7 +954,7 @@ Find the unit vector in the direction of the given vector
 \task
 $\begin{bmatrix}
 1 \\
--3 
+-3
 \end{bmatrix}
 $
 \task
@@ -1000,7 +999,7 @@ $\vec{x}-\vec{x}$
 
 \begin{exercise}
 Suppose a linear mapping $F \colon {\mathbb R}^2 \to {\mathbb R}^2$
-takes $(1,0)$ to $(2,-1)$ and it takes $(0,1)$ to $(3,3)$. 
+takes $(1,0)$ to $(2,-1)$ and it takes $(0,1)$ to $(3,3)$.
 Where does it take
 \begin{tasks}(3)
 \task
@@ -1069,7 +1068,7 @@ Find the unit vector in the direction of the given vector
 \task
 $\begin{bmatrix}
 -1 \\
-1 
+1
 \end{bmatrix}
 $
 \task
@@ -1106,7 +1105,7 @@ Compute
 \task
 $\begin{bmatrix}
 3 \\
-1 
+1
 \end{bmatrix}
 +
 \begin{bmatrix}
@@ -1117,7 +1116,7 @@ $
 \task
 $\begin{bmatrix}
 -1 \\
-2 
+2
 \end{bmatrix}
 -
 \begin{bmatrix}
@@ -1129,21 +1128,21 @@ $
 $
 -\begin{bmatrix}
 -5 \\
-3 
+3
 \end{bmatrix}
 $
 \task
 $
 2\begin{bmatrix}
 -2 \\
-4 
+4
 \end{bmatrix}
 $
 \task
 $
 3\begin{bmatrix}
 1 \\
-0 
+0
 \end{bmatrix}
 +
 7
@@ -1156,7 +1155,7 @@ $
 $
 2\begin{bmatrix}
 2 \\
--3 
+-3
 \end{bmatrix}
 -
 6
@@ -1213,7 +1212,7 @@ a)~$20$
 
 \begin{exercise}
 Suppose a linear mapping $F \colon {\mathbb R}^2 \to {\mathbb R}^2$
-takes $(1,0)$ to $(1,-1)$ and it takes $(0,1)$ to $(2,0)$. 
+takes $(1,0)$ to $(1,-1)$ and it takes $(0,1)$ to $(2,0)$.
 Where does it take
 \begin{tasks}(3)
 \task
@@ -1252,12 +1251,13 @@ If we have another mapping $\beta$, then
 \alpha x + \beta x = (\alpha + \beta) x .
 \end{equation*}
 We get a new mapping $\alpha+\beta$ that multiplies $x$ by, well,
-$\alpha+\beta$.  If $D$ is a mapping that doubles its input, 
+$\alpha+\beta$.  If $D$ is a mapping that doubles its input,
 $Dx = 2x$, and $T$ is a mapping that triples, $Tx = 3x$, then
 $D+T$ is a mapping that multiplies by $5$, $(D+T)x = 5x$.
 
-Similarly we can \emph{compose} such mappings, that
-is, we could apply one and then the other.  We take $x$, we run it through
+Similarly we can \emph{compose} such mappings.
+That is, we could apply one and then the other.
+We take $x$, we run it through
 the first mapping $\alpha$ to get $\alpha$ times $x$, then we run
 $\alpha x$ through the second mapping $\beta$.  In other words,
 \begin{equation*}
@@ -1290,13 +1290,13 @@ $ij^{\text{th}}$ entry of $A$ is $a_{ij}$, and the
 $ij^{\text{th}}$ entry of $B$ is $b_{ij}$, then the
 $ij^{\text{th}}$ entry of $A+B$ is $a_{ij} + b_{ij}$.  If
 \begin{equation*}
-A = 
+A =
 \begin{bmatrix}
 a_{11} & a_{12} & a_{13}  \\
 a_{21} & a_{22} & a_{23}
 \end{bmatrix}
 \qquad \text{and} \qquad
-B = 
+B =
 \begin{bmatrix}
 b_{11} & b_{12} & b_{13}  \\
 b_{21} & b_{22} & b_{23}
@@ -1304,7 +1304,7 @@ b_{21} & b_{22} & b_{23}
 \end{equation*}
 then
 \begin{equation*}
-A+B = 
+A+B =
 \begin{bmatrix}
 a_{11} + b_{11} & a_{12} + b_{12} & a_{13} + b_{13}  \\
 a_{21} + b_{21} & a_{22} + b_{22} & a_{23} + b_{23}
@@ -1389,7 +1389,7 @@ regroup things:
 \end{bmatrix}
 \right)
 \\
-& = 
+& =
 2
 \left(
 \begin{bmatrix}
@@ -1419,7 +1419,7 @@ regroup things:
 \end{bmatrix}
 \right)
 \\
-& = 
+& =
 2
 \begin{bmatrix}
 1+7 \\
@@ -1455,7 +1455,7 @@ regroup things:
 \begin{bmatrix}
 2 \\
 -1
-\end{bmatrix} 
+\end{bmatrix}
 \quad
 \left(
 =
@@ -1519,13 +1519,13 @@ That is just scaling the result by $\alpha$.  If you think about it,
 scaling every term in $A$ by $\alpha$ achieves just that:
 If
 \begin{equation*}
-A = 
+A =
 \begin{bmatrix}
 a_{11} & a_{12} & a_{13}  \\
 a_{21} & a_{22} & a_{23}
 \end{bmatrix},
 \qquad\text{then} \qquad
-\alpha A = 
+\alpha A =
 \begin{bmatrix}
 \alpha a_{11} & \alpha a_{12} & \alpha a_{13}  \\
 \alpha a_{21} & \alpha a_{22} & \alpha a_{23}
@@ -1569,7 +1569,7 @@ ${\mathbb R}^n$.  The composition $AB$ should work as follows
 \begin{equation*}
 AB\vec{x} = A(B\vec{x}) .
 \end{equation*}
-First, a vector $\vec{x}$ in ${\mathbb R}^p$ gets taken to 
+First, a vector $\vec{x}$ in ${\mathbb R}^p$ gets taken to
 the vector $B\vec{x}$ in
 ${\mathbb R}^n$.  Then the mapping $A$ takes it to the vector $A(B\vec{x})$
 in ${\mathbb R}^m$.  In other words, the composition $AB$ should be an $m
@@ -1597,8 +1597,8 @@ and what the product should be.
 Let us see how to actually compute matrix multiplication.
 We start with the so-called
 \emph{\myindex{dot product}} (or \emph{\myindex{inner product}}) of two vectors.
-Usually this is a row vector multiplied
-with a column vector of the same size.  Dot product multiplies
+Usually, this is a row vector multiplied
+by a column vector of the same size.  Dot product multiplies
 each pair of entries from the first and the second vector and sums these
 products.  The result is a single number.
 For example,
@@ -1645,17 +1645,17 @@ b_{31} & b_{32}
 \end{bmatrix}
 =
 \begin{bmatrix}
-a_{11} b_{11} + 
-a_{12} b_{21} + 
-a_{13} b_{31} & &
-a_{11} b_{12} + 
-a_{12} b_{22} + 
+a_{11} b_{11} +
+a_{12} b_{21} +
+a_{13} b_{31} & ~~
+a_{11} b_{12} +
+a_{12} b_{22} +
 a_{13} b_{32} \\
-a_{21} b_{11} + 
-a_{22} b_{21} + 
-a_{23} b_{31} & &
-a_{21} b_{12} + 
-a_{22} b_{22} + 
+a_{21} b_{11} +
+a_{22} b_{21} +
+a_{23} b_{31} & ~~
+a_{21} b_{12} +
+a_{22} b_{22} +
 a_{23} b_{32}
 \end{bmatrix} ,
 \end{equation}
@@ -1672,9 +1672,9 @@ or with some numbers:
 \end{bmatrix}
 =
 \begin{bmatrix}
-1\cdot (-1) + 2\cdot (-7) + 3 \cdot 1 &  &
+1\cdot (-1) + 2\cdot (-7) + 3 \cdot 1 & ~~
 1\cdot 2 + 2\cdot 0 + 3 \cdot (-1) \\
-4\cdot (-1) + 5\cdot (-7) + 6 \cdot 1 &  &
+4\cdot (-1) + 5\cdot (-7) + 6 \cdot 1 & ~~
 4\cdot 2 + 5\cdot 0 + 6 \cdot (-1)
 \end{bmatrix}
 =
@@ -1696,7 +1696,7 @@ For example,
 \end{bmatrix}
 \begin{bmatrix}
 2 \\ -1
-\end{bmatrix} 
+\end{bmatrix}
 =
 \begin{bmatrix}
 1 \cdot 2 + 2 \cdot (-1) \\
@@ -1721,7 +1721,7 @@ $B = [ \vec{b}_1 ~ \vec{b}_2 ~ \cdots ~ \vec{b}_p ]$, where
 $\vec{b}_1, \vec{b}_2, \ldots, \vec{b}_p$ are the columns of $B$.  Then
 for an $m \times n$ matrix $A$,
 \begin{equation*}
-AB = 
+AB =
 A [ \vec{b}_1 ~ \vec{b}_2 ~ \cdots ~ \vec{b}_p ]
 =
 [ A\vec{b}_1 ~ A\vec{b}_2 ~ \cdots ~ A\vec{b}_p ] .
@@ -1730,7 +1730,7 @@ The columns of the $m \times p$ matrix $AB$
 are the
 vectors $A\vec{b}_1, A\vec{b}_2, \ldots, A\vec{b}_p$.
 For example, in \eqref{linalg:eqmatrixmulex},
-the columns of 
+the columns of
 \begin{equation*}
 \begin{bmatrix}
 a_{11} & a_{12} & a_{13} \\
@@ -1792,7 +1792,7 @@ Let us see how the matrix works on a smaller example,
 \begin{equation*}
 \begin{bmatrix}
 a_{11} & a_{12} \\
-a_{21} & a_{22} 
+a_{21} & a_{22}
 \end{bmatrix}
 \begin{bmatrix}
 1 & 0 \\
@@ -1800,17 +1800,17 @@ a_{21} & a_{22}
 \end{bmatrix} =
 \begin{bmatrix}
 a_{11} \cdot 1 + a_{12} \cdot 0
-& &
+& ~~
 a_{11} \cdot 0 + a_{12} \cdot 1
 \\
 a_{21} \cdot 1 + a_{22} \cdot 0
-& &
+& ~~
 a_{21} \cdot 0 + a_{22} \cdot 1
 \end{bmatrix}
 =
 \begin{bmatrix}
 a_{11} & a_{12} \\
-a_{21} & a_{22} 
+a_{21} & a_{22}
 \end{bmatrix} .
 \end{equation*}
 Multiplication by the identity from the left looks similar, and also
@@ -1926,7 +1926,7 @@ Or how about multiplication by scalars:
 \begin{bmatrix}
 -9 & -21 \\ 6 & 14
 \end{bmatrix}
-}_{A B} 
+}_{A B}
 =
 \underbrace{
 \begin{bmatrix}
@@ -2014,7 +2014,7 @@ $A = \left[ \begin{smallmatrix} 1 & 1 \\ 1 & 1 \end{smallmatrix} \right]$
 and
 $B = \left[ \begin{smallmatrix} 1 & 0 \\ 0 & 2 \end{smallmatrix} \right]$:
 \begin{equation*}
-AB = 
+AB =
 \begin{bmatrix} 1 & 1 \\ 1 & 1 \end{bmatrix}
 \begin{bmatrix} 1 & 0 \\ 0 & 2 \end{bmatrix}
 =
@@ -2057,7 +2057,7 @@ Suppose that $A$ and $B$ are $n \times n$ matrices such that
 AB = I = BA .
 \end{equation*}
 Then we call $B$ the inverse of $A$ and we denote $B$ by $A^{-1}$.
-Perhaps not surprisingly, ${(A^{-1})}^{-1} = A$, since if the inverse of $A$ 
+Perhaps not surprisingly, ${(A^{-1})}^{-1} = A$, since if the inverse of $A$
 is $B$, then the inverse of $B$ is $A$.
 If the inverse of $A$ exists, then we say $A$ is
 \emph{invertible\index{invertible matrix}}.
@@ -2068,20 +2068,12 @@ If $A = [a]$ is a $1 \times 1$ matrix, then $A^{-1}$ is $a^{-1} =
 \frac{1}{a}$.  That is where the notation comes from.  The computation is not nearly as simple when $A$ is
 larger.
 
-%Singular matrices are those you cannot \myquote{divide by.}
-%So the mistake of \myquote{division by zero} is replaced by the mistake
-%\myquote{inverting a singular matrix.}
-
 The proper formulation of the cancellation rule is:
 \begin{center}
 \emph{If $A$ is invertible,
 then
 $AB = AC$ implies $B=C$.}
 \end{center}
-%Similarly:
-%\emph{If $A$ is invertible,
-%then
-%$BA = CA$ implies $B=C$.}
 The computation is what you would do in regular algebra with numbers,
 but you have to
 be careful never to commute matrices:
@@ -2096,7 +2088,6 @@ And similarly for cancellation on the right:
 \emph{If $A$ is invertible,
 then $BA = CA$ implies $B=C$.}
 \end{center}
-
 The rule says, among other things, that the
 inverse of a matrix is unique if it exists:  If $AB = I = AC$, then $A$ is
 invertible and $B=C$.
@@ -2169,7 +2160,7 @@ Let's try it:
 \end{bmatrix} .
 \end{equation*}
 Just as we cannot divide by every number, not every matrix is
-invertible.  In the case of matrices however we may have singular
+invertible.  In the case of matrices, however, we may have singular
 matrices that are not zero.  For example,
 \begin{equation*}
 \begin{bmatrix}
@@ -2196,15 +2187,15 @@ Let us try it:
 %mbxENDIGNORE
 %mbxlatex \text{???}
 \end{equation*}
-We get into a bit of trouble; we are trying to divide by zero.
-%The matrix is not invertible, it is singular.
+We get into a bit of trouble:
+We are trying to divide by zero.
 
 So a $2 \times 2$ matrix $A$ is invertible whenever
 \begin{equation*}
 ad - bc \neq 0
 \end{equation*}
 and otherwise it is singular.  The expression $ad-bc$ is called
-the \emph{determinant} and we will look at it 
+the \emph{determinant} and we will look at it
 more carefully in a later section.
 There is a similar expression for a square
 matrix of any size.
@@ -2255,13 +2246,13 @@ the $k^{\text{th}}$ row by $d_k$.  For example,
 \begin{bmatrix}
 1 & 1 & 1 \\
 1 & 1 & 1 \\
-1 & 1 & 1 
+1 & 1 & 1
 \end{bmatrix}
 =
 \begin{bmatrix}
 2 & 2 & 2 \\
 3 & 3 & 3 \\
--1 & -1 & -1 
+-1 & -1 & -1
 \end{bmatrix} .
 \end{equation*}
 On the other hand, multiplying on the right, they multiply the columns:
@@ -2269,7 +2260,7 @@ On the other hand, multiplying on the right, they multiply the columns:
 \begin{bmatrix}
 1 & 1 & 1 \\
 1 & 1 & 1 \\
-1 & 1 & 1 
+1 & 1 & 1
 \end{bmatrix}
 \begin{bmatrix}
 2 & 0 & 0 \\
@@ -2280,7 +2271,7 @@ On the other hand, multiplying on the right, they multiply the columns:
 \begin{bmatrix}
 2 & 3 & -1 \\
 2 & 3 & -1 \\
-2 & 3 & -1 
+2 & 3 & -1
 \end{bmatrix} .
 \end{equation*}
 And it is really easy to multiply two diagonal matrices together---we
@@ -2289,7 +2280,7 @@ multiply the entries:
 \begin{bmatrix}
 1 & 0 & 0 \\
 0 & 2 & 0 \\
-0 & 0 & 3 
+0 & 0 & 3
 \end{bmatrix}
 \begin{bmatrix}
 2 & 0 & 0 \\
@@ -2300,29 +2291,28 @@ multiply the entries:
 \begin{bmatrix}
 1 \cdot 2 & 0 & 0 \\
 0 & 2 \cdot 3 & 0 \\
-0 & 0 & 3 \cdot (-1) 
+0 & 0 & 3 \cdot (-1)
 \end{bmatrix}
 =
 \begin{bmatrix}
 2 & 0 & 0 \\
 0 & 6 & 0 \\
-0 & 0 & -3 
+0 & 0 & -3
 \end{bmatrix} .
 \end{equation*}
 
-For this last reason, they are easy to invert, you simply invert
-each diagonal element:
+For this last reason, they are easy to invert---you simply invert each diagonal element:
 \begin{equation*}
 \begin{bmatrix}
 d_1 & 0 & 0 \\
 0 & d_2 & 0 \\
-0 & 0 & d_3 
+0 & 0 & d_3
 \end{bmatrix}^{-1}
 =
 \begin{bmatrix}
 d_1^{-1} & 0 & 0 \\
 0 & d_2^{-1} & 0 \\
-0 & 0 & d_3^{-1} 
+0 & 0 & d_3^{-1}
 \end{bmatrix} .
 \end{equation*}
 Let us check an example
@@ -2331,14 +2321,14 @@ Let us check an example
 \begin{bmatrix}
 2 & 0 & 0 \\
 0 & 3 & 0 \\
-0 & 0 & 4 
+0 & 0 & 4
 \end{bmatrix}^{-1}
 }_{A^{-1}}
 \underbrace{
 \begin{bmatrix}
 2 & 0 & 0 \\
 0 & 3 & 0 \\
-0 & 0 & 4 
+0 & 0 & 4
 \end{bmatrix}
 }_{A}
 =
@@ -2346,14 +2336,14 @@ Let us check an example
 \begin{bmatrix}
 \frac{1}{2} & 0 & 0 \\
 0 & \frac{1}{3} & 0 \\
-0 & 0 & \frac{1}{4} 
+0 & 0 & \frac{1}{4}
 \end{bmatrix}
 }_{A^{-1}}
 \underbrace{
 \begin{bmatrix}
 2 & 0 & 0 \\
 0 & 3 & 0 \\
-0 & 0 & 4 
+0 & 0 & 4
 \end{bmatrix}
 }_{A}
 =
@@ -2361,7 +2351,7 @@ Let us check an example
 \begin{bmatrix}
 1 & 0 & 0 \\
 0 & 1 & 0 \\
-0 & 0 & 1 
+0 & 0 & 1
 \end{bmatrix}
 }_{I} .
 \end{equation*}
@@ -2371,9 +2361,10 @@ case of diagonal matrices.
 
 \subsection{Transpose}
 
-Vectors do not always have to be column vectors,
-that is just a convention.
-Swapping rows and columns is from time to time needed.
+Vectors do not always have to be column vectors.
+That is just a convention.
+From time to time,
+swapping rows and columns is needed.
 The operation that swaps rows and columns is the so-called
 \emph{\myindex{transpose}}.
 The transpose of $A$ is denoted by $A^T$.  Example:
@@ -2385,7 +2376,7 @@ The transpose of $A$ is denoted by $A^T$.  Example:
 \begin{bmatrix}
 1 & 4 \\
 2 & 5 \\
-3 & 6 
+3 & 6
 \end{bmatrix} .
 \end{equation*}
 Transpose takes an $m \times n$ matrix to an $n \times m$ matrix.
@@ -2416,7 +2407,7 @@ For example,
 \begin{bmatrix}
 1 & 4 \\
 2 & 5 \\
-3 & 6 
+3 & 6
 \end{bmatrix} .
 \end{equation*}
 It is left to the reader to verify that computing the matrix product on the
@@ -2451,7 +2442,7 @@ if $A = A^T$.  For example,
 \end{bmatrix}
 \end{equation*}
 is a symmetric matrix.  Notice that a symmetric matrix is always
-square, that is, $n \times n$.  Symmetric matrices 
+square, that is, $n \times n$.  Symmetric matrices
 have many nice properties\footnote{Although so far we have not learned
 enough about matrices to really appreciate them.},
 and come up quite often in applications.
@@ -2594,18 +2585,18 @@ Compute the inverse of the given matrices
 \task
 $\begin{bmatrix}
 -2 & 0 \\
-0 & 1 
+0 & 1
 \end{bmatrix}$
 \task
 $\begin{bmatrix}
 3 & 0 & 0 \\
-0 & -2 & 0 \\ 
+0 & -2 & 0 \\
 0 & 0 & 1
 \end{bmatrix}$
 \task
 $\begin{bmatrix}
 1 & 0 & 0 & 0 \\
-0 & -1 & 0 & 0 \\ 
+0 & -1 & 0 & 0 \\
 0 & 0 & 0.01 & 0 \\
 0 & 0 & 0 & -5
 \end{bmatrix}$
@@ -2818,18 +2809,18 @@ Compute the inverse of the given matrices
 \task
 $\begin{bmatrix}
 2 & 0 \\
-0 & 3 
+0 & 3
 \end{bmatrix}$
 \task
 $\begin{bmatrix}
 4 & 0 & 0 \\
-0 & 5 & 0 \\ 
+0 & 5 & 0 \\
 0 & 0 & -1
 \end{bmatrix}$
 \task
 $\begin{bmatrix}
 -1 & 0 & 0 & 0 \\
-0 & 2 & 0 & 0 \\ 
+0 & 2 & 0 & 0 \\
 0 & 0 & 3 & 0 \\
 0 & 0 & 0 & 0.1
 \end{bmatrix}$
@@ -2838,18 +2829,18 @@ $\begin{bmatrix}
 \exsol{%
 a)~$\begin{bmatrix}
 \nicefrac{1}{2} & 0 \\
-0 & \nicefrac{1}{3} 
+0 & \nicefrac{1}{3}
 \end{bmatrix}$
 \quad
 b)~$\begin{bmatrix}
 \nicefrac{1}{4} & 0 & 0 \\
-0 & \nicefrac{1}{5} & 0 \\ 
+0 & \nicefrac{1}{5} & 0 \\
 0 & 0 & -1
 \end{bmatrix}$
 \quad
 c)~$\begin{bmatrix}
 -1 & 0 & 0 & 0 \\
-0 & \nicefrac{1}{2} & 0 & 0 \\ 
+0 & \nicefrac{1}{2} & 0 & 0 \\
 0 & 0 & \nicefrac{1}{3} & 0 \\
 0 & 0 & 0 & 10
 \end{bmatrix}$
@@ -2899,7 +2890,7 @@ The system \eqref{linalg:elim:eq} is written as
 \begin{bmatrix}
 2 & 2 & 2 \\
 1 & 1 & 3 \\
-1 & 4 & 1 
+1 & 4 & 1
 \end{bmatrix}
 }_{A}
 \underbrace{
@@ -2907,7 +2898,7 @@ The system \eqref{linalg:elim:eq} is written as
 x_1 \\
 x_2 \\
 x_3
-\end{bmatrix} 
+\end{bmatrix}
 }_{\vec{x}}
 =
 \underbrace{
@@ -2918,15 +2909,17 @@ x_3
 \end{bmatrix}
 }_{\vec{b}} .
 \end{equation*}
-If we knew the inverse of $A$, then we would be done; we would simply solve
+If we knew the inverse of $A$, then we would be done.
+We would simply solve
 the equation:
 \begin{equation*}
 \vec{x} = A^{-1} A \vec{x} = A^{-1} \vec{b} .
 \end{equation*}
-Well, but that is part of the problem, we do not know how to compute the
+Well, but that is part of the problem.
+We do not know how to compute the
 inverse for matrices bigger than $2 \times 2$.
-We will see later that to compute the inverse we are really solving
-$A \vec{x} = \vec{b}$ for several different $\vec{b}$.  In other words, 
+We will see later that to compute the inverse, we are really solving
+$A \vec{x} = \vec{b}$ for several different $\vec{b}$.  In other words,
 we will need to do elimination to find $A^{-1}$.
 In addition, we may wish to solve $A \vec{x} = \vec{b}$
 if $A$ is not invertible, or perhaps not even square.
@@ -2936,7 +2929,7 @@ if $A$ is not invertible, or perhaps not even square.
 Let us return to the equations themselves and see how we can manipulate
 them.
 There are a few operations we can perform on the equations that do not change
-the solution.  First, perhaps an operation that may seem stupid, we can swap 
+the solution.  First, perhaps an operation that may seem stupid, we can swap
 two equations in \eqref{linalg:elim:eq}:
 \begin{equation*}
 \begin{aligned}
@@ -3019,7 +3012,7 @@ the operations become:
 \item Add a multiple of one row to another row.
 \end{enumerate}
 \pagebreak[2]
-We run these operations until we 
+We run these operations until we
 get into a state where it is easy to read off the answer,
 or until we get into a contradiction indicating no solution.
 
@@ -3027,7 +3020,7 @@ More specifically, we run the operations until we obtain the so-called
 \emph{\myindex{row echelon form}}\index{echelon form}.
 Let us call
 the first (from the left) nonzero entry in each row the
-\emph{\myindex{leading entry}}.  
+\emph{\myindex{leading entry}}.
 A matrix is in \emph{row echelon form} if
 the following conditions are satisfied:
 \begin{enumerate}[(i)]
@@ -3107,13 +3100,13 @@ entries are marked:
 The procedure we will describe to find a reduced row echelon form
 of a matrix
 is called \emph{\myindex{Gauss--Jordan elimination}}.
-The first part of it, which obtains a row echelon form, is called 
+The first part of it, which obtains a row echelon form, is called
 \emph{\myindex{Gaussian elimination}} or
 \emph{\myindex{row reduction}}.  For some problems, a row echelon
 form is sufficient, and it is a bit less work to only do this first part.
 
 To attain the row echelon form we work systematically.
-We go column by column, starting at the first column.  We find topmost
+We go column by column, starting at the first column.  We find the topmost
 entry in the first column that is not zero, and we call it the
 \emph{\myindex{pivot}}.  If there is no nonzero entry
 we move to the next column.  We swap rows to put the row with
@@ -3129,7 +3122,7 @@ Below the pivot row, all the entries in these columns are just
 zero.  Then we focus on the smaller matrix and we repeat the steps
 above.
 
-It is best shown by example, so let us go back to the 
+It is best shown by example, so let us go back to the
 example from the beginning of the section.
 We keep the vertical line in the matrix,
 even though the procedure works on any matrix, not just
@@ -3211,7 +3204,7 @@ And we divide the pivot row by 3.
 \end{equation*}
 We do not need to subtract anything as everything below the pivot is already
 zero.  We move on.  We again start ignoring the second row and second
-column and focus on 
+column and focus on
 \begin{equation*}
 \left[
 \begin{array}{ccc|c}
@@ -3229,7 +3222,7 @@ We find the pivot, then divide that row by 2:
 0 & 1 & 0 & 3 \\
 0 & 0 & \mybxsm{2} & 4
 \end{array}
-\right] 
+\right]
 \qquad \to \qquad
 \left[
 \begin{array}{ccc|c}
@@ -3261,7 +3254,7 @@ Subtract the last row from the first to get
 \begin{array}{ccc|c}
 1 & 1 & 0 & -1 \\
 0 & 1 & 0 & 3 \\
-0 & 0 & 1 & 2 
+0 & 0 & 1 & 2
 \end{array}
 \right] .
 \end{equation*}
@@ -3273,7 +3266,7 @@ this row from the top row to get
 \begin{array}{ccc|c}
 1 & 0 & 0 & -4 \\
 0 & 1 & 0 & 3 \\
-0 & 0 & 1 & 2 
+0 & 0 & 1 & 2
 \end{array}
 \right] .
 \end{equation*}
@@ -3296,11 +3289,12 @@ that the row echelon form we found was
 \begin{array}{ccc|c}
 1 & 2 & 3 & 4 \\
 0 & 0 & 1 & 3 \\
-0 & 0 & 0 & 1 
+0 & 0 & 0 & 1
 \end{array}
 \right] .
 \end{equation*}
-Then we have an equation $0=1$ coming from the last row.  That is impossible
+Then we have an equation $0=1$ coming from the last row.  That is
+impossible,
 and the equations are what we call \emph{\myindex{inconsistent}}.  There is no solution
 to $A \vec{x} = \vec{b}$.
 
@@ -3311,7 +3305,7 @@ On the other hand, if we find a row echelon form
 \begin{array}{ccc|c}
 1 & 2 & 3 & 4 \\
 0 & 0 & 1 & 3 \\
-0 & 0 & 0 & 0 
+0 & 0 & 0 & 0
 \end{array}
 \right] ,
 \end{equation*}
@@ -3324,12 +3318,12 @@ pivots.
 \begin{array}{ccc|c}
 \mybxsm{1} & 2 & 0 & -5 \\
 0 & 0 & \mybxsm{1} & 3 \\
-0 & 0 & 0 & 0 
+0 & 0 & 0 & 0
 \end{array}
 \right]
 \end{equation*}
 The last row is all zeros; it just says $0=0$ and we ignore it.
-The two remaining equations are 
+The two remaining equations are
 \begin{equation*}
 x_1 + 2 x_2 = -5 , \qquad
 x_3 = 3 .
@@ -3341,12 +3335,12 @@ and in the third column:
 & x_1 = - 2 x_2 -5 , \\
 & x_3 = 3 .
 \end{align*}
-The variable $x_2$ can be anything you wish and we still get a solution.
+The variable $x_2$ can be anything you wish, and we still get a solution.
 The $x_2$ is called a \emph{\myindex{free variable}}.
 There are infinitely many solutions, one for every choice of $x_2$.
 If we pick $x_2=0$,
 then $x_1 = -5$, and $x_3 = 3$ give a solution.  But we also get a solution
-by picking say $x_2 = 1$, in which case $x_1 = -9$ and $x_3 = 3$,
+by picking say $x_2 = 1$, in which case $x_1 = -7$ and $x_3 = 3$,
 or by picking $x_2 = -5$ in which case $x_1 = 5$ and $x_3 = 3$.
 
 \medskip
@@ -3380,12 +3374,12 @@ There is no need to write an augmented matrix in this
 case.  As the elementary operations do not do anything to a zero column, it
 always stays a zero column.  Moreover, $A \vec{x} = \vec{0}$ always has at
 least one solution, namely $\vec{x} = \vec{0}$.  Such a system
-is always consistent.  It may have other solutions:  If you find
-any free variables, then you get infinitely many solutions.
+is always consistent.  It may have other solutions:  If we find
+any free variables, then we get infinitely many solutions.
 
 The set of solutions of $A \vec{x} = \vec{0}$ comes up quite often
 so people give it a name.  It is called the
-\emph{\myindex{nullspace}} or the 
+\emph{\myindex{nullspace}} or the
 \emph{\myindex{kernel}} of $A$.
 One place where the kernel comes up is invertibility of a square matrix $A$.
 If the kernel of $A$ contains a nonzero vector, then it contains
@@ -3403,7 +3397,7 @@ then $A$ is not invertible.  We will return to this idea later.
 If rows of a matrix correspond to equations, it may be good to find out
 how many equations we really need to find the same set of solutions.
 Similarly, if we find a number of solutions to a linear equation
-$A \vec{x} = \vec{0}$, we may ask if we found enough 
+$A \vec{x} = \vec{0}$, we may ask if we found enough
 so that all other solutions can be formed out of the given set.
 The concept we want is that of linear independence.
 That same concept is useful for differential equations, for
@@ -3412,8 +3406,8 @@ example in \chapterref{ho:chapter}.
 Given row or column vectors $\vec{y}_1, \vec{y}_2, \ldots, \vec{y}_n$,
 a \emph{\myindex{linear combination}} is an expression of the form
 \begin{equation*}
-\alpha_1 \vec{y}_1 + 
-\alpha_2 \vec{y}_2 + 
+\alpha_1 \vec{y}_1 +
+\alpha_2 \vec{y}_2 +
 \cdots +
 \alpha_n \vec{y}_n ,
 \end{equation*}
@@ -3436,47 +3430,47 @@ is a linear combination of the rows of $A$.
 The way linear combinations come up in our study of differential
 equations is similar to the following computation.  Suppose that
 $\vec{x}_1$, $\vec{x}_2$, \ldots, $\vec{x}_n$ are solutions
-to $A \vec{x}_1 = \vec{0}$, 
+to $A \vec{x}_1 = \vec{0}$,
 $A \vec{x}_2 = \vec{0}$, \ldots,
 $A \vec{x}_n = \vec{0}$.
 Then the linear combination
 \begin{equation*}
-\vec{y} = \alpha_1 \vec{x}_1 + 
-\alpha_2 \vec{x}_2 + 
+\vec{y} = \alpha_1 \vec{x}_1 +
+\alpha_2 \vec{x}_2 +
 \cdots +
-\alpha_n \vec{x}_n 
+\alpha_n \vec{x}_n
 \end{equation*}
 is a solution to $A \vec{y} = \vec{0}$:
 \begin{multline*}
 A \vec{y} =
-A (\alpha_1 \vec{x}_1 + 
-\alpha_2 \vec{x}_2 + 
+A (\alpha_1 \vec{x}_1 +
+\alpha_2 \vec{x}_2 +
 \cdots +
 \alpha_n \vec{x}_n )
 =
 \\
 =
-\alpha_1 A \vec{x}_1 + 
-\alpha_2 A \vec{x}_2 + 
+\alpha_1 A \vec{x}_1 +
+\alpha_2 A \vec{x}_2 +
 \cdots +
 \alpha_n A \vec{x}_n
 =
-\alpha_1 \vec{0} + 
-\alpha_2 \vec{0} + 
+\alpha_1 \vec{0} +
+\alpha_2 \vec{0} +
 \cdots +
 \alpha_n \vec{0} = \vec{0} .
 \end{multline*}
 
-So if you have found enough solutions, you have them all.  The question is,
+So if we find enough solutions, we have all solutions.  The question is,
 when did we find enough of them?
 
 We say the vectors $\vec{y}_1$, $\vec{y}_2$, \ldots, $\vec{y}_n$ are
 \emph{\myindex{linearly independent}} if the only solution to
 \begin{equation*}
-\alpha_1 \vec{x}_1 + 
-\alpha_2 \vec{x}_2 + 
+\alpha_1 \vec{x}_1 +
+\alpha_2 \vec{x}_2 +
 \cdots +
-\alpha_n \vec{x}_n 
+\alpha_n \vec{x}_n
 =
 \vec{0}
 \end{equation*}
@@ -3506,19 +3500,19 @@ other words, the two vectors are linearly independent.
 If a set of vectors is linearly dependent, that is, some of the $\alpha_j$s
 are nonzero, then we can solve for one vector in terms of the others.
 Suppose $\alpha_1 \neq 0$.  Since
-$\alpha_1 \vec{x}_1 + 
-\alpha_2 \vec{x}_2 + 
+$\alpha_1 \vec{x}_1 +
+\alpha_2 \vec{x}_2 +
 \cdots +
-\alpha_n \vec{x}_n 
+\alpha_n \vec{x}_n
 =
 \vec{0}$, then
 \begin{equation*}
-\vec{x}_1 
+\vec{x}_1
 =
 \frac{-\alpha_2}{\alpha_1}
-\vec{x}_2 - 
+\vec{x}_2 -
 \frac{-\alpha_3}{\alpha_1}
-\vec{x}_3 + 
+\vec{x}_3 +
 \cdots +
 \frac{-\alpha_n}{\alpha_1}
 \vec{x}_n .
@@ -3603,7 +3597,7 @@ solution is
 1 & 2 & 3
 \end{bmatrix} -2
 \begin{bmatrix}
-4 & 5 & 6 
+4 & 5 & 6
 \end{bmatrix} +
 \begin{bmatrix}
 7 & 8 & 9
@@ -3642,18 +3636,18 @@ In particular, the number of linearly independent rows is the same.
 And in the row echelon form, all nonzero rows are linearly independent.
 This is not hard to see.
 Consider the two nonzero rows in the example above.
-Suppose we 
+Suppose we
 tried to solve for the $\alpha_1$ and $\alpha_2$
 in
 \begin{equation*}
 \alpha_1
 \begin{bmatrix}
 1 & 2 & 3
-\end{bmatrix} 
+\end{bmatrix}
 +
 \alpha_2
 \begin{bmatrix}
-0 & 1 & 2 
+0 & 1 & 2
 \end{bmatrix} =
 \begin{bmatrix}
 0 & 0 & 0
@@ -3747,7 +3741,8 @@ $\operatorname{rank} A = \operatorname{rank} A^T$
 
 In particular, to find a set of linearly independent columns we need to
 look at where the pivots were.  If you recall above, when solving $A \vec{x}
-= \vec{0}$ the key was finding the pivots, any non-pivot columns corresponded to
+= \vec{0}$ the key was finding the pivots.
+Any non-pivot columns corresponded to
 free variables.  That means we can solve for the non-pivot columns in terms
 of the pivot columns.  Let's see an example.  First we reduce some
 random matrix:
@@ -3764,13 +3759,13 @@ We find a pivot and reduce the rows below:
 \mybxsm{1} & 2 & 3 & 4 \\
 2 & 4 & 5 & 6 \\
 3 & 6 & 7 & 8
-\end{bmatrix} 
+\end{bmatrix}
 \to
 \begin{bmatrix}
 \mybxsm{1} & 2 & 3 & 4 \\
 0 & 0 & -1 & -2 \\
 3 & 6 & 7 & 8
-\end{bmatrix} 
+\end{bmatrix}
 \to
 \begin{bmatrix}
 \mybxsm{1} & 2 & 3 & 4 \\
@@ -3784,19 +3779,19 @@ We find the next pivot, make it one, and rinse and repeat:
 \mybxsm{1} & 2 & 3 & 4 \\
 0 & 0 & \mybxsm{-1} & -2 \\
 0 & 0 & -2 & -4
-\end{bmatrix} 
+\end{bmatrix}
 \to
 \begin{bmatrix}
 \mybxsm{1} & 2 & 3 & 4 \\
 0 & 0 & \mybxsm{1} & 2 \\
 0 & 0 & -2 & -4
-\end{bmatrix} 
+\end{bmatrix}
 \to
 \begin{bmatrix}
 \mybxsm{1} & 2 & 3 & 4 \\
 0 & 0 & \mybxsm{1} & 2 \\
 0 & 0 & 0 & 0
-\end{bmatrix} . 
+\end{bmatrix} .
 \end{equation*}
 The final matrix is the row echelon form of the matrix.
 Consider the pivots that we marked.
@@ -3817,7 +3812,7 @@ the third column.  In other words
 \begin{bmatrix}
 1 \\
 2 \\
-3 
+3
 \end{bmatrix}
 ,
 \begin{bmatrix}
@@ -3874,7 +3869,7 @@ we started with the vectors
 \begin{bmatrix}
 1 \\
 2 \\
-3 
+3
 \end{bmatrix}
 ,
 \quad
@@ -3907,7 +3902,7 @@ the span of all four of the vectors.  So $\vec{v}_2$ and $\vec{v}_4$
 can both be written as linear combinations of $\vec{v}_1$ and $\vec{v}_3$.
 A common thing that comes up in practice is that one gets a set of vectors
 whose span is the set of solutions of some problem.  But perhaps we get way
-too many vectors, we want to simplify.  For example above, all vectors in
+too many vectors, and we want to simplify.  For example above, all vectors in
 the span of
 $\vec{v}_1, \vec{v}_2, \vec{v}_3, \vec{v}_4$ can be written
 $\alpha_1 \vec{v}_1 + \alpha_2 \vec{v}_2 + \alpha_3 \vec{v}_3 + \alpha_4
@@ -3917,7 +3912,7 @@ $a \vec{v}_1 + b \vec{v}_3$ for two numbers $a$ and $b$.  And one has to
 admit, that looks much simpler.  Moreover, these numbers $a$ and $b$ are
 unique.  More on that in the next section.
 
-To find this linearly independent set we simply take our vectors
+To find this linearly independent set, we simply take our vectors
 and form the matrix $[ \vec{v}_1 ~ \vec{v}_2 ~ \vec{v}_3 ~ \vec{v}_4 ]$,
 that is, the matrix
 \begin{equation*}
@@ -3939,12 +3934,12 @@ variables), then $A$ is invertible.
 This is equivalent to the $n \times n$ matrix $A$ being of rank $n$.
 
 In particular, if $A \vec{x} = \vec{b}$ then $\vec{x} = A^{-1} \vec{b}$.
-Now we just need to compute what $A^{-1}$ is.  We can surely 
+Now we just need to compute what $A^{-1}$ is.  We can surely
 do elimination every time we want to find $A^{-1} \vec{b}$, but that
 would be ridiculous.  The mapping $A^{-1}$ is linear and
 hence given by a matrix, and we have seen that to figure out the matrix
 we just need to find where $A^{-1}$ takes the standard basis vectors
-$\vec{e}_1$, 
+$\vec{e}_1$,
 $\vec{e}_2$, \ldots,
 $\vec{e}_n$.
 
@@ -3955,7 +3950,7 @@ $A \vec{x} = \vec{e}_2$.  And so on.  It is really just $n$
 eliminations that we need to do.  But it gets even easier.
 If you think about it, the elimination is the same for
 everything on the left side of the augmented matrix.  Doing
-$n$ eliminations separately we would redo most of the computations.
+$n$ eliminations separately, we would redo most of the computations.
 Best is to do all at once.
 
 Therefore, to find the inverse of $A$, we write an $n
@@ -3963,12 +3958,12 @@ Therefore, to find the inverse of $A$, we write an $n
 matrix, whose columns are precisely the standard basis vectors.
 We then perform row reduction until we arrive at the reduced row echelon
 form.  If $A$ is invertible, then pivots can be found in every column of $A$,
-and so the 
-reduced row echelon form of $[ \,A ~|~ I\, ]$ 
+and so the
+reduced row echelon form of $[ \,A ~|~ I\, ]$
 looks like $[ \,I ~|~ A^{-1}\, ]$.
 We then just read off the inverse $A^{-1}$.
 If you do not find a pivot in every
-one of the first $n$ columns of the augmented matrix, then 
+one of the first $n$ columns of the augmented matrix, then
 $A$ is not invertible.
 
 This is best seen by example.  Suppose we wish to invert the matrix
@@ -4061,7 +4056,7 @@ So
 \end{bmatrix} .
 \end{equation*}
 Not too terrible, no?  Perhaps harder than inverting a $2 \times 2$ matrix
-for which we had a simple formula, but not too bad.  Really in practice this 
+for which we had a simple formula, but not too bad.  In practice, this
 is done efficiently by a computer.
 
 \subsection{Exercises}
@@ -4524,7 +4519,7 @@ the same span.
 $\begin{bmatrix}
 3 \\ 1 \\ -5
 \end{bmatrix}
-, 
+,
 \begin{bmatrix}
 0 \\ 3 \\ -1
 \end{bmatrix}$
@@ -4545,9 +4540,8 @@ $\begin{bmatrix}
 \subsection{Subspaces, basis, and dimension}
 
 We often find ourselves looking at the set of
-solutions of a linear equation $L\vec{x} = \vec{0}$ for some matrix $L$,
-that is, we are interested in the kernel of $L$.
-%Unless the only solution to the equation is $\vec{x} = \vec{0}$,
+solutions of a linear equation $L\vec{x} = \vec{0}$ for some matrix $L$.
+That is, we are interested in the kernel of $L$.
 The set of all such solutions has a nice structure:  It looks and
 acts a lot like some euclidean space ${\mathbb R}^k$.
 
@@ -4562,7 +4556,7 @@ are also members of $S$.  That is, we can add and multiply by scalars
 and we still land in $S$.  So every linear combination of vectors of
 $S$ is still in $S$.  That is really what a subspace is.  It is a subset
 where we can take linear combinations and still end up being in the subset.
-Consequently the span of a number of vectors is automatically a subspace.
+Consequently, the span of a number of vectors is automatically a subspace.
 
 \begin{example} \label{example:simplesubspaces}
 \begin{enumerate}[(i)]
@@ -4572,13 +4566,13 @@ ${\mathbb R}^n$.  Adding any two vectors in ${\mathbb R}^n$ gets a vector in
 ${\mathbb R}^n$, and so does multiplying by scalars.
 \item
 The set $S' = \{ \vec{0} \}$, that is,
-the set of the zero vector by itself, is 
+the set of the zero vector by itself, is
 also a subspace of ${\mathbb R}^n$.  There is only one vector in this
 subspace, so we only need to verify the definition for that one vector, and everything checks
 out: $\vec{0}+\vec{0} = \vec{0}$ and $\alpha \vec{0} = \vec{0}$.
 \item
 The set $S''$ of all the vectors of the form
-$(a,a)$ for any real number $a$, such as $(1,1)$, $(3,3)$, or $(-0.5,-0.5)$
+$(a,a)$ for any real number $a$, such as $(1,1)$, $(3,3)$, or $(-0.5,-0.5)$,
 is a subspace of ${\mathbb R}^2$.  Adding two such vectors, say
 $(1,1)+(3,3) = (4,4)$ again gets a vector of the same form, and so does
 multiplying by a scalar, say $8(1,1) = (8,8)$.
@@ -4591,14 +4585,14 @@ If $S$ is a subspace and we can find $k$ linearly independent vectors in $S$
 \end{equation*}
 such that every other vector in $S$ is a linear combination of $\vec{v}_1,
 \vec{v}_2,\ldots, \vec{v}_k$,
-then the set 
+then the set
 $\{ \vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k \}$ is called a
 \emph{\myindex{basis}} of $S$.  In other words, $S$
-is the span of 
+is the span of
 $\{ \vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k \}$
 and there is no smaller subset of these vectors that spans $S$.
 We say that $S$ has dimension $k$,
-and we write 
+and we write
 \begin{equation*}
 \dim S = k .
 \end{equation*}
@@ -4613,9 +4607,9 @@ basis
 $\{ \vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k \}$, such that every
 $\vec{w}$ in $S$ can be uniquely represented by
 \begin{equation*}
-\vec{w} = 
-\alpha_1 \vec{v}_1 + 
-\alpha_2 \vec{v}_2 + 
+\vec{w} =
+\alpha_1 \vec{v}_1 +
+\alpha_2 \vec{v}_2 +
 \cdots
 +
 \alpha_k \vec{v}_k ,
@@ -4628,7 +4622,7 @@ scalars $\alpha_1$, $\alpha_2$, \ldots, $\alpha_k$ are unique.
 
 Just as a vector in ${\mathbb R}^k$ is represented by a $k$-tuple of
 numbers, so is a vector in a $k$-dimensional subspace of ${\mathbb R}^n$
-represented by a unique $k$-tuple of numbers.  At least once we have fixed a basis.
+represented by a unique $k$-tuple of numbers, at least once we have fixed a basis.
 A different basis would give a different $k$-tuple of numbers for the same
 vector.
 
@@ -4672,9 +4666,9 @@ The subspace $S''$ from \exampleref{example:simplesubspaces}, that is, the set o
 vectors $(a,a)$, is of dimension~1.  One possible basis is simply
 $\bigl\{ (1,1) \bigr\}$, the single
 vector $(1,1)$: Every vector in $S''$ can be represented by $a (1,1) =
-(a,a)$.  Similarly another possible basis would be
+(a,a)$.  Similarly, another possible basis would be
 $\bigl\{ (-1,-1) \bigr\}$.  Then
-the vector $(a,a)$ would be represented as $(-a) (1,1)$.
+the vector $(a,a)$ would be represented as $(-a) (-1,-1)$.
 \item
 The set $\bigl\{ (1,1) , (-1,-1) \bigr\}$ does
 span $S''$, but it is not a basis as it is not a linearly independent set.
@@ -4710,7 +4704,7 @@ Using row reduction to find the pivot columns, we found
 1 & 2 & 3 & 4 \\
 2 & 4 & 5 & 6 \\
 3 & 6 & 7 & 8
-\end{bmatrix} 
+\end{bmatrix}
 \right)
 =
 \operatorname{span}
@@ -4718,14 +4712,14 @@ Using row reduction to find the pivot columns, we found
 \begin{bmatrix}
 1 \\
 2 \\
-3 
-\end{bmatrix} 
+3
+\end{bmatrix}
 ,
 \begin{bmatrix}
 3 \\
 5 \\
-7 
-\end{bmatrix} 
+7
+\end{bmatrix}
 \right\} .
 \end{equation*}
 What we did was we found a basis of the column space.
@@ -4739,25 +4733,25 @@ the subspace $X$ spanned by
 \begin{bmatrix}
 1 \\
 2 \\
-3 
-\end{bmatrix} 
+3
+\end{bmatrix}
 ,
 \begin{bmatrix}
 2 \\
 4 \\
-6 
-\end{bmatrix} 
+6
+\end{bmatrix}
 ,
 \begin{bmatrix}
 3 \\
 5 \\
-7 
-\end{bmatrix} 
+7
+\end{bmatrix}
 ,
 \begin{bmatrix}
 4 \\
 6 \\
-8 
+8
 \end{bmatrix}
 .
 \end{equation*}
@@ -4766,7 +4760,7 @@ and repeated the computation above.  The subspace $X$ is then the column space o
 $A$.
 
 \begin{example}
-Consider the matrix 
+Consider the matrix
 \begin{equation*}
 L =
 \begin{bmatrix}
@@ -4786,19 +4780,19 @@ It is the 3-dimensional space
 1 \\
 0 \\
 0
-\end{bmatrix} 
+\end{bmatrix}
 ,
 \begin{bmatrix}
 0 \\
 1 \\
 0
-\end{bmatrix} 
+\end{bmatrix}
 ,
 \begin{bmatrix}
 0 \\
 0 \\
 1
-\end{bmatrix} 
+\end{bmatrix}
 \right\}
 = {\mathbb{R}}^3 .
 \end{equation*}
@@ -4808,64 +4802,64 @@ The row space is the 3-dimensional space
 \operatorname{span} \left\{
 \begin{bmatrix}
 1 & 2 & 0 & 0 & 3
-\end{bmatrix} 
+\end{bmatrix}
 ,
 \begin{bmatrix}
 0 & 0 & 1 & 0 & 4
-\end{bmatrix} 
+\end{bmatrix}
 ,
 \begin{bmatrix}
 0 & 0 & 0 & 1 & 5
-\end{bmatrix} 
+\end{bmatrix}
 \right\} .
 \end{equation*}
 As these vectors have 5 components, we think of the row space of $L$
 as a subspace of ${\mathbb{R}}^5$.
 \end{example}
 
-The way the dimensions worked out in the examples is not 
+The way the dimensions worked out in the examples is not
 an accident.  Since the number of vectors that we needed to take
 was always the same as the number of pivots, and the number of pivots
 is the rank, we get the following result.
 
 \begin{theorem}[Rank]
-The dimension of the column space and the dimension of the row space 
+The dimension of the column space and the dimension of the row space
 of a matrix $A$ are both equal to the rank of $A$.
 \end{theorem}
 
 \subsection{Kernel}
 
-The set of solutions of a linear equation $L\vec{x} = \vec{0}$, 
+The set of solutions of a linear equation $L\vec{x} = \vec{0}$,
 the kernel of $L$, is a subspace:
 If $\vec{x}$ and $\vec{y}$ are solutions,
 then
 \begin{equation*}
-L(\vec{x}+\vec{y}) = 
-L\vec{x}+L\vec{y} = 
+L(\vec{x}+\vec{y}) =
+L\vec{x}+L\vec{y} =
 \vec{0}+\vec{0} = \vec{0} ,
 \qquad \text{and} \qquad
-L(\alpha \vec{x}) = 
-\alpha L \vec{x} = 
+L(\alpha \vec{x}) =
+\alpha L \vec{x} =
 \alpha \vec{0} = \vec{0}.
 \end{equation*}
 So $\vec{x}+\vec{y}$ and $\alpha \vec{x}$ are solutions.
-%In other words, the kernel of $L$ is a subspace.
 The dimension of the kernel is called the \emph{\myindex{nullity}} of the
 matrix.
 
 The same sort of idea governs the solutions of linear differential
-equations.  We try to describe the kernel of a linear differential 
+equations.  We try to describe the kernel of a linear differential
 operator, and as it is a subspace, we look for a basis of this
 kernel.  Much of this book is dedicated to finding such bases.
 
 The kernel of a matrix is the same as the kernel of its reduced row echelon
 form.  For a matrix in reduced row echelon form, the kernel is rather easy to
-find.  If a vector $\vec{x}$ is applied to a matrix $L$, then each entry in
+find.  If we take a product of a matrix $L$ and a vector $\vec{x}$,
+then each entry in
 $\vec{x}$ corresponds to a column of $L$, the column that the entry
 multiplies.
 To find the kernel,
-pick a 
-non-pivot column make a vector that has a $-1$ in the entry
+pick a
+non-pivot column and make a vector that has a $-1$ in the entry
 corresponding to this non-pivot column and zeros at all the other entries
 corresponding to the other non-pivot columns.
 Then for all the entries
@@ -4877,7 +4871,7 @@ This procedure is best understood by example.
 \begin{example}
 Consider
 \begin{equation*}
-L = 
+L =
 \begin{bmatrix}
 \mybxsm{1} & 2 & 0 & 0 & 3 \\
 0 & 0 & \mybxsm{1} & 0 & 4 \\
@@ -4887,7 +4881,7 @@ L =
 This matrix is in reduced row echelon form, the pivots are marked.
 There are two non-pivot columns, so the kernel has dimension 2, that
 is, it is the span of 2 vectors.  Let us find the first vector.
-We look at the first non-pivot column, the $2^{\text{nd}}$ column, 
+We look at the first non-pivot column, the $2^{\text{nd}}$ column,
 and we put a $-1$ in the
 $2^{\text{nd}}$ entry of our vector.  We put a $0$ in the $5^{\text{th}}$
 entry as the $5^{\text{th}}$ column is also a non-pivot column:
@@ -4910,7 +4904,7 @@ where:
 1 & \mybxsm{2} & 0 & 0 & 3 \\
 0 & \mybxsm{0} & 1 & 0 & 4 \\
 0 & \mybxsm{0} & 0 & 1 & 5
-\end{bmatrix} 
+\end{bmatrix}
 \begin{bmatrix}
 \mybxsm{2} \\ -1 \\ \mybxsm{0} \\ \mybxsm{0} \\ 0
 \end{bmatrix}
@@ -4920,7 +4914,7 @@ where:
 \end{bmatrix}
 .
 \end{equation*}
-Yay!  How about the second vector.  We start with
+Yay!  How about the second vector?  We start with
 \begin{equation*}
 \begin{bmatrix}
 ? \\ 0 \\ ? \\ ? \\ -1 .
@@ -4933,7 +4927,7 @@ third to 5.  Let us check, marking things as previously,
 1 & 2 & 0 & 0 & \mybxsm{3} \\
 0 & 0 & 1 & 0 & \mybxsm{4} \\
 0 & 0 & 0 & 1 & \mybxsm{5}
-\end{bmatrix} 
+\end{bmatrix}
 \begin{bmatrix}
 \mybxsm{3} \\ 0 \\ \mybxsm{4} \\ \mybxsm{5} \\ -1
 \end{bmatrix}
@@ -4973,7 +4967,7 @@ non-pivot column.
 
 
 The rank of a matrix is the dimension of the column space, and that is
-the span on the pivot columns, while the kernel is the span of vectors
+the span of the pivot columns, while the kernel is the span of certain vectors,
 one for each non-pivot column.  So the two numbers must add to the number of
 columns.
 
@@ -5147,7 +5141,7 @@ and the dimension.
 \begin{exercise}
 Consider a square matrix $A$, and suppose that $\vec{x}$ is a nonzero
 vector such that $A \vec{x} = \vec{0}$.  What does the Fredholm alternative
-say about invertibility of $A$.
+say about invertibility of $A$?
 \end{exercise}
 
 \begin{exercise}
@@ -5256,7 +5250,7 @@ $
 a)~$\begin{bmatrix}
 1 \\ 2
 \end{bmatrix}
-, 
+,
 \begin{bmatrix}
 1 \\ 1
 \end{bmatrix}$ dimension 2,
@@ -5352,7 +5346,7 @@ d)~$\begin{bmatrix} -1 \\ 0 \\ 0 \end{bmatrix}$, $\begin{bmatrix} 0 \\ 1 \\ -1 \
 }
 
 \begin{exercise}
-Suppose the column space of a $9 \times 5$ matrix $A$ of dimension 3.  Find
+Suppose the column space of a $9 \times 5$ matrix $A$ is of dimension 3.  Find
 \begin{tasks}(2)
 \task
 Rank of $A$.
@@ -5384,8 +5378,8 @@ a)~3 \quad b)~2 \quad c)~3 \quad d)~2 \quad e)~3
 \subsection{Inner product and orthogonality}
 
 To do basic geometry, we need length, and we need angles.
-We have already seen the euclidean length, so let us figure out angles. 
-Mostly, we are worried about 
+We have already seen the euclidean length, so let us figure out angles.
+Mostly, we are worried about
 the right angle\footnote{When Euclid defined angles in his
 \emph{Elements}, the only angle he ever really defined was the right angle.}.
 
@@ -5405,10 +5399,10 @@ x_1 y_1 + x_2 y_2 + \cdots + x_n y_n
 \end{equation*}
 Why do we seemingly give a new notation for the dot product
 ($\langle \vec{x} , \vec{y} \rangle$ instead of just
-$\vec{x} \cdot \vec{y}$)?  
+$\vec{x} \cdot \vec{y}$)?
 Because there are other possible inner products, which are not the dot
 product, although we will not worry about others here.
-An inner product can even be defined on spaces of functions
+An inner product can even be defined on spaces of functions,
 as we do in
 \chapterref{FS:chapter}:
 \begin{equation*}
@@ -5446,9 +5440,6 @@ The standard inner product gives the euclidean length:
 = \sqrt{x_1^2 + x_2^2 + \cdots + x_n^2} .
 \end{equation*}
 How does it give angles?
-%  If we take two vectors $\vec{x}$ and $\vec{y}$
-%and base them at the same point, they make an angle $\theta$.  How do
-%we compute $\theta$?
 You may recall a formula
 for the standard inner product (the dot product)
 from multivariable calculus in
@@ -5473,17 +5464,7 @@ In fact, one could even talk about angles between functions this way, and
 we do in \chapterref{FS:chapter}, where we talk about orthogonal functions
 (functions at right angle to each other).
 
-%FIXME: not sure if it makes sense to explain
-%To see why the formula should work, consider $\vec{v} = (1,0)$, a unit
-%vector in the positive $x$ direction if we think of ${\mathbb{R}}^2$
-%as the normal $xy$-plane.
-%which points horizontally and to the right on the 
-%
-%and $\vec{y}
-%= (\cos\theta,\sin\theta)$.  The vector $\vec{x}$ points is horizontal   Both are unit vectors and $\vec{x} \cdot
-%\vec{y} = \cos \theta$.
-
-To compute the angle we compute
+To compute the angle, we solve for $\cos \theta$:
 \begin{equation*}
 \cos \theta
 =
@@ -5494,15 +5475,14 @@ Our angles are always in radians.
 We are computing the cosine of the angle,
 which is really the best
 we can do.  Given two vectors at an angle $\theta$, we can give the angle as
-$-\theta$, $2\pi-\theta$, etc.,
-see \figurevref{vec-angle:fig}.
+$-\theta$, $2\pi-\theta$, etc.
+See \figurevref{vec-angle:fig}.
 Fortunately,
 $\cos \theta = \cos (-\theta) = \cos(2\pi - \theta)$.
 If we solve for $\theta$ using the inverse cosine $\cos^{-1}$,
 we can just decree that $0 \leq \theta \leq \pi$.
 
 \begin{myfig}
-%\begin{mywrapfig}{3.25in}
 \capstart
 \inputpdft{vec-angle}{%
 A diagram with two vectors x and y going from the same point,
@@ -5512,7 +5492,6 @@ The angle from x to y clockwise is marked minus theta.
 The angle from x to y counterclockwise is marked 2 pi minus theta.}
 \caption{Angle between vectors.\label{vec-angle:fig}}
 \end{myfig}
-%\end{mywrapfig}
 
 \begin{example}
 Let us compute the angle between the vectors $(3,0)$ and $(1,1)$ in the
@@ -5526,15 +5505,6 @@ Compute
 \end{equation*}
 Therefore $\theta = \nicefrac{\pi}{4}$.
 \end{example}
-
-%While we do not have any real model for ${\mathbb{R}}^n$ when $n$ is not 2
-%or 3, 
-%we simply define the angle between two vectors using the formula above.
-%This makes sense as any two vectors based at the origin
-%lie in a 2-dimensional plane (subspace),
-%and the formula works in 2 dimensions.
-%
-%\medskip
 
 As we said, the most important angle is the right angle.  A right angle
 is $\nicefrac{\pi}{2}$ radians, and $\cos (\nicefrac{\pi}{2}) = 0$, so the
@@ -5581,17 +5551,17 @@ of $\vec{w}$ onto $\vec{v}$ as
 For the geometric idea, see \figurevref{vec-orthoproj:fig}.  That is, we
 find the \myquote{shadow of $\vec{w}$} on the line spanned by $\vec{v}$ if the
 direction of the sun's rays
-were exactly perpendicular to the line. 
+were exactly perpendicular to the line.
 Another way of thinking about it is that the tip of the arrow of
 $\operatorname{proj}_{\vec{v}}(\vec{w})$ is the closest point on the line
 spanned by $\vec{v}$ to the tip of the arrow of $\vec{w}$.
-In terms of euclidean distance, 
+In terms of euclidean distance,
 $\vec{u} = \operatorname{proj}_{\vec{v}}(\vec{w})$ minimizes the
 distance
 $\lVert \vec{w} - \vec{u} \rVert$ among all vectors $\vec{u}$ that are
 multiples of $\vec{v}$.
 Because of this, this projection comes up often in applied
-mathematics in all sorts of contexts we cannot solve a problem
+mathematics in all sorts of contexts where we cannot solve a problem
 exactly: We cannot always solve
 \myquote{Find $\vec{w}$ as a multiple of
 $\vec{v}$,}
@@ -5608,9 +5578,10 @@ as proj sub v of w is shown in dark bold.}
 \caption{Orthogonal projection.\label{vec-orthoproj:fig}}
 \end{myfig}
 
-The formula follows from basic trigonometry.  The length of
+The formula follows from basic trigonometry.  If $\theta$ is acute, the length of
 $\operatorname{proj}_{\vec{v}}(\vec{w})$ should be
-$\cos \theta$ times the length of $\vec{w}$, that is, $(\cos \theta)\lVert\vec{w}\rVert$.
+$\cos \theta$ times the length of $\vec{w}$, that is, $(\cos
+\theta)\lVert\vec{w}\rVert$.
 We take the unit vector in the direction of $\vec{v}$, that is,
 $\frac{\vec{v}}{\lVert \vec{v} \rVert}$ and we multiply it by the length of
 the projection.  In other words,
@@ -5630,6 +5601,8 @@ the projection.  In other words,
 }
 \vec{v} .
 \end{equation*}
+The computation works for obtuse $\theta$ ($\cos \theta < 0$)
+as we need to also switch direction.
 
 \begin{example}
 Suppose we wish to project the vector $(3,2,1)$ onto the vector $(1,2,3)$.
@@ -5652,9 +5625,10 @@ Compute
 \end{split}
 \end{equation*}
 
-Let us double check that the projection is orthogonal.  That is
+We double check that the projection is orthogonal.  That is,
 $\vec{w}-\operatorname{proj}_{\vec{v}}(\vec{w})$ ought to be orthogonal to
-$\vec{v}$, see the right angle in \figurevref{vec-orthoproj:fig}.  That is,
+$\vec{v}$.
+See the right angle in \figurevref{vec-orthoproj:fig}.  In other words,
 \begin{equation*}
 (3,2,1) - \operatorname{proj}_{(1,2,3)} \bigl( (3,2,1) \bigr)
 =
@@ -5662,8 +5636,7 @@ $\vec{v}$, see the right angle in \figurevref{vec-orthoproj:fig}.  That is,
 =
 \left(\frac{16}{7},\frac{4}{7},\frac{-8}{7}\right)
 \end{equation*}
-ought to be orthogonal to $(1,2,3)$.  We compute the inner product and we
-had better get zero:
+ought to be orthogonal to $(1,2,3)$.  The inner product had better be zero:
 \begin{equation*}
 \left\langle
 \left(\frac{16}{7},\frac{4}{7},\frac{-8}{7}\right)
@@ -5698,11 +5671,11 @@ magnitude.
 The reason why we are interested in orthogonal (or orthonormal) bases is
 that they make it really simple to represent a vector (or a projection onto
 a subspace) in the basis.  The formula for the orthogonal projection
-onto a vector gives us the coefficients.  In 
-\chapterref{FS:chapter}, we use the same idea by finding the correct 
+onto a vector gives us the coefficients.  In
+\chapterref{FS:chapter}, we use the same idea by finding the correct
 orthogonal basis for the set of solutions of a differential equation.
 We are then able to find any particular solution by simply applying the
-orthogonal projection formula, which is just a couple of a inner products.
+orthogonal projection formula, which is just a couple of inner products.
 
 Let us come back to linear algebra.  Consider a subspace $S$
 and an orthogonal
@@ -5710,7 +5683,7 @@ basis $\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n$ for $S$.
 We wish to
 express some vector $\vec{x}$ in terms of this basis.
 If $\vec{x}$ is not in the span
-of this basis (when it is not in $S$),
+of this basis (when $\vec{x}$ is not in $S$),
 then of course it is not possible,
 but the following formula
 gives us at least the orthogonal projection onto the subspace $S$,
@@ -5720,7 +5693,7 @@ to $\vec{x}$ in the subspace---the vector in $S$ closest to $\vec{x}$.
 First suppose that $\vec{x}$ is in the span.  Then it is the sum of the
 orthogonal projections:
 \begin{equation*}
-\vec{x} = 
+\vec{x} =
 \operatorname{proj}_{\vec{v}_1} ( \vec{x} )
 +
 \operatorname{proj}_{\vec{v}_2} ( \vec{x} )
@@ -5748,19 +5721,19 @@ orthogonal projections:
 \end{equation*}
 In other words, if we want to write
 $\vec{x} =
-a_1 \vec{v}_1 + 
+a_1 \vec{v}_1 +
 a_2 \vec{v}_2 + \cdots +
 a_n \vec{v}_n$, then
 \begin{equation*}
-a_1 = 
+a_1 =
 \frac{\langle \vec{x}, \vec{v}_1 \rangle}{
 \langle \vec{v}_1, \vec{v}_1 \rangle
 } , \quad
-a_2 = 
+a_2 =
 \frac{\langle \vec{x}, \vec{v}_2 \rangle}{
 \langle \vec{v}_2, \vec{v}_2 \rangle
 } , \quad \ldots , \quad
-a_n = 
+a_n =
 \frac{\langle \vec{x}, \vec{v}_n \rangle}{
 \langle \vec{v}_n, \vec{v}_n \rangle
 } .
@@ -5768,7 +5741,7 @@ a_n =
 
 Another way to derive this formula is to work in reverse.  Suppose that
 $\vec{x} =
-a_1 \vec{v}_1 + 
+a_1 \vec{v}_1 +
 a_2 \vec{v}_2 + \cdots +
 a_n \vec{v}_n$.  Take an inner product with $\vec{v}_j$, and
 use the properties of the inner product:
@@ -5776,18 +5749,18 @@ use the properties of the inner product:
 \begin{split}
 \langle \vec{x} , \vec{v}_j \rangle
 & =
-\langle a_1 \vec{v}_1 + 
+\langle a_1 \vec{v}_1 +
 a_2 \vec{v}_2 + \cdots +
 a_n \vec{v}_n , \vec{v}_j \rangle
 \\
 & =
-a_1 \langle \vec{v}_1 , \vec{v}_j \rangle + 
-a_2 \langle \vec{v}_2 , \vec{v}_j \rangle + 
+a_1 \langle \vec{v}_1 , \vec{v}_j \rangle +
+a_2 \langle \vec{v}_2 , \vec{v}_j \rangle +
 \cdots +
 a_n \langle \vec{v}_n , \vec{v}_j \rangle .
 \end{split}
 \end{equation*}
-As the basis is orthogonal, then
+As the basis is orthogonal,
 $\langle \vec{v}_k , \vec{v}_j \rangle = 0$ whenever
 $k \neq j$.  That means that only one of the terms, the $j^{\text{th}}$ one,
 on the right-hand side is nonzero and we get
@@ -5810,13 +5783,13 @@ that is, we wish to find $a_1$ and $a_2$ such that
 \end{equation*}
 We compute:
 \begin{equation*}
-a_1 = 
+a_1 =
 \frac{\langle (3,4), (1,1) \rangle}{
 \langle (1,1), (1,1) \rangle
 }
 =
 \frac{7}{2}, \qquad
-a_2 = 
+a_2 =
 \frac{\langle (3,4), (1,-1) \rangle}{
 \langle (1,-1), (1,-1) \rangle
 }
@@ -5881,7 +5854,7 @@ that is the span of $\vec{v}_1,\vec{v}_2,\ldots,\vec{v}_n$ and $\vec{x}$
 is any vector.  Let $\operatorname{proj}_{S}(\vec{x})$ be the vector in $S$
 that is the closest to $\vec{x}$.  Then
 \begin{equation*}
-\operatorname{proj}_{S}(\vec{x}) = 
+\operatorname{proj}_{S}(\vec{x}) =
 \frac{\langle \vec{x}, \vec{v}_1 \rangle}{
 \langle \vec{v}_1, \vec{v}_1 \rangle
 }
@@ -5916,7 +5889,7 @@ equations, the finite element methods.
 The vectors $(1,2,3)$ and $(3,0,-1)$ are orthogonal, and so they are
 an orthogonal basis of a subspace $S$:
 \begin{equation*}
-S = 
+S =
 \operatorname{span} \bigl\{ (1,2,3), (3,0,-1) \bigr\} .
 \end{equation*}
 Let us find the vector in $S$ that is closest to $(2,1,0)$.  That is,
@@ -5988,7 +5961,7 @@ of the two vectors.  Let us find an orthogonal basis of $S$
 via the Gram--Schmidt process:
 \begin{align*}
 \vec{w}_1 & = (1,2,-1) , \\
-\vec{w}_2 & = (0,5,-2) 
+\vec{w}_2 & = (0,5,-2)
 - \operatorname{proj}_{(1,2,-1)}\bigl((0,5,-2)\bigr)
 \\
 & =
@@ -6112,9 +6085,9 @@ $\theta \approx 0.3876$
 }
 
 \begin{exercise}
-Given that $\langle \vec{v} , \vec{w} \rangle = 1$ and
-$\langle \vec{v} , \vec{u} \rangle = -1$  and
-$\lVert \vec{v} \rVert = 3$  and
+Given that $\langle \vec{v} , \vec{w} \rangle = 1$,
+$\langle \vec{v} , \vec{u} \rangle = -1$, and
+$\lVert \vec{v} \rVert = 3$, compute
 \begin{tasks}(3)
 \task $\langle 3 \vec{u} , 5 \vec{v} \rangle$
 \task $\langle \vec{v} , 2 \vec{w} + 3 \vec{u} \rangle$
@@ -6136,7 +6109,7 @@ Suppose $\vec{v} = (1,0,-1)$.  Find
 \end{tasks}
 \end{exercise}
 \exsol{%
-a)~$(\nicefrac{-1}{2},0,\frac{1}{2})$ \quad
+a)~$(\nicefrac{-1}{2},0,\nicefrac{1}{2})$ \quad
 b)~$(0,0,0)$ \quad
 c)~$(2,0,-2)$
 }
@@ -6187,7 +6160,7 @@ the determinant of a $1 \times 1$ matrix as the value of its only entry
 \begin{equation*}
 \det \left(
 \begin{bmatrix}
-a 
+a
 \end{bmatrix}
 \right)
 \overset{\text{def}}{=}
@@ -6209,11 +6182,11 @@ Before defining the
 determinant for larger matrices, we note
 the meaning of the determinant.
 An $n \times n$ matrix
-gives a mapping of the $n$-dimensional euclidean space ${\mathbb{R}}^n$ to 
+gives a mapping of the $n$-dimensional euclidean space ${\mathbb{R}}^n$ to
 itself.
 So a $2 \times 2$ matrix $A$ is a mapping of
-the plane to itself.  The determinant of 
-$A$ is the factor by which the area of objects changes. 
+the plane to itself.  The determinant of
+$A$ is the factor by which the area of objects changes.
 If we take the unit square (square of side 1) in the plane, then
 $A$ takes the square to a parallelogram of area $\lvert\det(A)\rvert$.  The sign
 of $\det(A)$ denotes a change of orientation (negative if the axes get flipped).  For
@@ -6229,7 +6202,7 @@ Then $\det(A) = 1+1 = 2$.
 Let us see where $A$ sends the unit square---the square with vertices
 $(0,0)$, $(1,0)$, $(1,1)$, and $(0,1)$.
 The point $(0,0)$ gets sent
-to $(0,0)$.  
+to $(0,0)$.
 \begin{equation*}
 \begin{bmatrix}
 1 & 1 \\
@@ -6240,7 +6213,7 @@ to $(0,0)$.
 \end{bmatrix} =
 \begin{bmatrix}
 1 \\
--1 
+-1
 \end{bmatrix}
 ,
 \qquad
@@ -6253,7 +6226,7 @@ to $(0,0)$.
 \end{bmatrix} =
 \begin{bmatrix}
 2 \\
-0 
+0
 \end{bmatrix}
 ,
 \qquad
@@ -6266,7 +6239,7 @@ to $(0,0)$.
 \end{bmatrix} =
 \begin{bmatrix}
 1 \\
-1 
+1
 \end{bmatrix}
 .
 \end{equation*}
@@ -6288,7 +6261,7 @@ with arrows.}
 $A$.\label{linalg-imagesquare:fig}}
 \end{myfig}
 
-In general, the image of a square is going to be a \myindex{parallelogram}.
+In general, the image of a square is a \myindex{parallelogram}.
 In high school geometry, you may have seen a formula for
 computing the area of a \myindex{parallelogram}
 with vertices $(0,0)$, $(a,c)$, $(b,d)$
@@ -6296,7 +6269,7 @@ and $(a+b,c+d)$.  The area is
 \begin{equation*}
 \left\lvert \, \det \left(
 \begin{bmatrix} a & b \\ c & d \end{bmatrix}
-\right) \, \right\lvert
+\right) \, \right\rvert
 =
 \lvert
 a d - b c
@@ -6314,10 +6287,10 @@ There are a number of ways to define the determinant for an $n \times n$
 matrix.  Let us use the so-called \emph{\myindex{cofactor expansion}}.
 We define $A_{ij}$ as
 the matrix $A$ with the $i^{\text{th}}$ row and the $j^{\text{th}}$ column
-deleted.  For example, if
+deleted.  For example,
 \begin{equation*}
-\text{If} \qquad
-A = 
+\text{if} \qquad
+A =
 \begin{bmatrix}
 1 & 2 & 3 \\
 4 & 5 & 6 \\
@@ -6326,7 +6299,7 @@ A =
 \qquad
 \text{then}
 \qquad
-A_{12} = 
+A_{12} =
 \begin{bmatrix}
 4 & 6 \\
 7 & 9
@@ -6334,7 +6307,7 @@ A_{12} =
 \qquad
 \text{and}
 \qquad
-A_{23} = 
+A_{23} =
 \begin{bmatrix}
 1 & 2 \\
 7 & 8
@@ -6351,13 +6324,13 @@ a_{1j} \det (A_{1j}) ,
 or in other words
 \begin{equation*}
 \det (A) =
-a_{11} \det (A_{11}) - 
-a_{12} \det (A_{12}) + 
-a_{13} \det (A_{13}) - 
+a_{11} \det (A_{11}) -
+a_{12} \det (A_{12}) +
+a_{13} \det (A_{13}) -
 \cdots
 \begin{cases}
 + a_{1n} \det (A_{1n}) & \text{if } n \text{ is odd,} \\
-- a_{1n} \det (A_{1n}) & \text{if } n \text{ even.}
+- a_{1n} \det (A_{1n}) & \text{if } n \text{ is even.}
 \end{cases}
 \end{equation*}
 For a $3 \times 3$ matrix,
@@ -6406,8 +6379,8 @@ a_{12} \det (A_{12}) + a_{13} \det (A_{13})$.  For example,
 \end{split}
 \end{equation*}
 
-It turns out that we did not have to necessarily use the first row.  That is
-for any $i$,
+It turns out that we did not have to necessarily use the first row.
+That is, for any $i$,
 \begin{equation*}
 \det (A)
 =
@@ -6515,7 +6488,7 @@ of the matrix.  And that is why
 this method of computing the determinant is called the
 \emph{cofactor expansion}.
 
-Similarly we do not need to expand along a row, we can expand
+Similarly, we do not need to expand along a row; we can expand
 along a column.  For any $j$,
 \begin{equation*}
 \det (A)
@@ -6550,7 +6523,7 @@ matrix is one where everything above the diagonal is zero.  For example,
 \end{bmatrix} .
 \end{equation*}
 
-The determinant for triangular matrices is very simple to compute.  
+The determinant for triangular matrices is very simple to compute.
 Consider the lower triangular matrix.  If we expand along the
 first row, we find that the determinant is 1 times the determinant
 of the lower triangular matrix $\left[ \begin{smallmatrix} 5 & 0 \\ 8 & 9
@@ -6562,7 +6535,7 @@ product of the diagonal entries:
 1 & 0 & 0 \\
 4 & 5 & 0 \\
 7 & 8 & 9
-\end{bmatrix} 
+\end{bmatrix}
 \right)
 =
 1 \cdot 5 \cdot 9 = 45 .
@@ -6617,7 +6590,7 @@ go up by a factor of $6$.  This is true in general:
 \end{equation*}
 \end{theorem}
 
-This property is one of the most useful, and it is employed often to 
+This property is one of the most useful, and it is employed often to
 actually compute determinants.  A particularly interesting consequence is to
 note what it means for the existence of inverses.
 Take $A$ and $B$ to be inverses, that is, $AB=I$.  Then
@@ -6656,15 +6629,10 @@ d & -b \\
 Notice the determinant of the matrix
 $[\begin{smallmatrix}a&b\\c&d\end{smallmatrix}]$
 in the denominator of the fraction.
-The formula only works if the determinant is nonzero, otherwise we are
-dividing by zero.
-
-%\medskip
-%
-%FIXME: perhaps computing using elimination
+The formula only works if the determinant is nonzero.
+Otherwise, we are dividing by zero.
 
 \medskip
-
 
 A common notation for the determinant is a pair of vertical
 lines:
@@ -6816,7 +6784,7 @@ answers).
 
 \begin{exercise}
 Suppose $A$ and $S$ are $n \times n$ matrices, and $S$ is invertible.
-Suppose that $\det(A) = 3$.  Compute $\det(S^{-1}AS)$ and 
+Suppose that $\det(A) = 3$.  Compute $\det(S^{-1}AS)$ and
 $\det(SAS^{-1})$.  Justify your answer using the theorems in this section.
 \end{exercise}
 
