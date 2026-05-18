@@ -1036,7 +1036,7 @@ way of plotting solutions to implicit equations.
 For example, for $D=0$, if you plot all the points $(x,y)$ that
 are solutions to $y^2+2\ln \, \lvert y\rvert=x^2$,
 you find the two curves in \figurevref{implicitsols:fig}.  This is not quite
-a graph of a function. For each $x$ there are two choices of $y$.
+a graph of a function. For each $x$, there are two choices of $y$.
 To find a function, you have to pick one of these two curves.
 You pick the one that satisfies your initial condition if you have one.
 For instance, the top curve satisfies the condition $y(1)=1$.
@@ -1061,13 +1061,13 @@ y^2 + 2 \ln \, \lvert y \rvert = x^2 + D \qquad \text{and} \qquad y=0.
 \avoidbreak
 \end{equation*}
 Sometimes these extra solutions that came up
-due to division by zero such as
-$y=0$
+due to division by zero, such as
+$y=0$ above,
 are called \emph{singular solutions\index{singular solution}}.
 
 We still solve for the constants using initial conditions in implicit
 solutions as usual.  For example, consider the initial condition
-$y(0)=1$.  We can discount the solution $y=0$.  In the implicit solution
+$y(0)=1$.  We can discount the solution $y=0$.  In the implicit solution,
 let us plug in $x=0$ and $y=1$ to get $1^2 + 2 \ln \, \lvert 1 \rvert = 0^2 +
 D$, in other words, $D=1$.  So the solution for this initial condition
 is $y^2 + 2 \ln \, \lvert y \rvert = x^2 + 1$, but only the part of this
@@ -1086,7 +1086,7 @@ Separate variables, integrate, and solve for $y$:
 \begin{align*}
 \frac{y'}{1+y^2} & = \frac{1 - x^2}{x^2} , \\
 \frac{y'}{1+y^2} & = \frac{1}{x^2} - 1 , \\
-\operatorname{arctan} (y) & = \frac{-1}{x} - x + C , \\
+\arctan (y) & = \frac{-1}{x} - x + C , \\
 y & = \tan \left(\frac{-1}{x} - x + C\right) .
 \end{align*}
 Solve for the initial condition, $0 = \tan(-2+C)$ to get $C=2$ (or $C = 2 +
@@ -1279,7 +1279,7 @@ $\sin(y) = -\cos(x) + C$
 \begin{exercise}
 Take \exampleref{sep:coffeeexample} with the same numbers: 89 degrees at
 $t=0$, 85 degrees at $t=1$, and ambient temperature
-of 22 degrees.  Suppose these temperatures were measured with precision of
+of 22 degrees.  Suppose these temperatures were measured with a precision of
 $\pm 0.5$ degrees.  Given this imprecision, the time
 it takes the coffee to cool to (exactly) 60 degrees is also only known in a
 certain range.  Find this range.  Hint: Think about what kind of error makes
@@ -1329,8 +1329,8 @@ into the form:
 y' + p(x) y = f(x) .
 \end{equation}
 The word
-\myquote{linear} means linear in $y$ and $y'$;
-no higher powers or functions of $y$ or $y'$ appear.
+\myquote{linear} means linear in $y$ and $y'$:
+No higher powers or functions of $y$ or $y'$ appear.
 The dependence on $x$ can be more
 complicated.
 
@@ -1423,7 +1423,7 @@ the integrating factor and show that the solution you get in the end is the
 same as what we got above.
 \end{exercise}
 
-Advice: Do not try to remember the formula for $y$ itself; that is way too
+Advice: Do not try to remember the formula for $y$ itself---that is way too
 hard.  It is easier to remember the process and repeat it.
 
 Since we cannot always evaluate the integrals in closed form, it is useful to
@@ -1810,7 +1810,7 @@ y' = {(x-y+1)}^2
 \end{equation*}
 is neither separable nor linear.  What can we do?
 How about trying to change variables, so that in the new variables the
-equation is simpler.  We use another variable $v$, which we treat as
+equation is simpler?  We use another variable $v$, which we treat as
 a function of $x$.  We try
 \begin{equation*}
 v = x-y+1 .
@@ -1821,7 +1821,7 @@ obtain $v' = 1 - y'$.  So $y' = 1-v'$.  We plug this into the equation to get
 \begin{equation*}
 1-v' = v^2 .
 \end{equation*}
-In other words, $v' = 1-v^2$.  Such an equation we know how to solve by
+In other words, $v' = 1-v^2$.  We know how to solve such an equation by
 separating variables:
 \begin{equation*}
 \frac{1}{1-v^2} \,dv = dx .
@@ -1875,7 +1875,7 @@ $e^y y'$ & $v=e^y$ \\ \bottomrule
 \end{center}
 
 Usually, you try to substitute in the \myquote{most complicated} part of the
-equation, with the hopes of simplifying it.  The table above is just a rule
+equation, with the hope of simplifying it.  The table above is just a rule
 of thumb.  You might have to modify your guesses.  If a substitution
 does not work (it does not make the equation any simpler), try a different one.
 
@@ -1964,7 +1964,7 @@ definite integral in our solution.  Now \myquote{unsubstitute}
 
 \subsection{Homogeneous equations}
 
-Another type of equations we can solve by substitution are the
+Using substitution, we can also solve the
 so-called \emph{homogeneous equations\index{homogeneous equation}}.
 Suppose that we can write the differential equation as
 \begin{equation*}
@@ -2212,8 +2212,9 @@ Here DNE means \myquote{does not exist.}  From just looking at the slope
 field, we
 cannot quite decide what happens if $x(0) < 0$.  It could be that the
 solution does not exist for $t$ all the way to $\infty$.
-Think of the equation $x' = x^2$; we
-have seen that solutions only exist for some finite period of time.  Same can happen
+Think of the equation $x' = x^2$.
+We have seen that solutions only exist for some finite period of time.
+Same can happen
 here.  In our example equation above it turns out that the
 solution does not exist for all time, but to see that we would have to solve
 the equation.  In any case, the solution does go to $-\infty$, but it may get
@@ -2234,9 +2235,9 @@ between.  Since $x$ is the dependent variable, we draw the axis vertically,
 as it appears in the slope field diagrams above.
 If $f(x) > 0$, we draw an up arrow.  If $f(x) < 0$, we draw
 a down arrow.
-To figure this out, we could just plug in some $x$ between the critical
-points, $f(x)$ will have the same sign at all $x$ between two critical
-points as long $f(x)$ is continuous.
+To figure out the sign, we could just plug in some $x$ between the critical
+points because $f(x)$ will have the same sign at all $x$ between two critical
+points as long as $f(x)$ is continuous.
 For example, $f(6) = -0.6 < 0$, so $f(x) < 0$ for $x > 5$,
 and the arrow above $x=5$ is a down
 arrow.  Next, $f(1) = 0.4 > 0$, so $f(x) > 0$ whenever $0 < x < 5$, and
@@ -2272,10 +2273,7 @@ Once we draw the phase diagram, we classify critical points
 as stable or unstable\footnote{Unstable
 points with one of the
 arrows pointing towards the critical point are sometimes called
-\emph{semistable}\index{semistable critical point}.}.
-Since any mathematical model we cook up will only be an approximation
-to the real world, unstable points are generally bad news.
-
+\emph{semistable}\index{semistable critical point}.}:
 \begin{center}
 \inputpdft{2-2-ph-class}{%
 On the left, there are three possible phase diagrams with one
@@ -2288,9 +2286,10 @@ phase diagram with one critical point on the right where both
 arrows are pointing towards the critical point.
 This diagram is labeled as 'stable'.}
 \end{center}
-
+Since any mathematical model we cook up will only be an approximation
+to the real world, unstable points are generally bad news.
 We remark that you can figure out the arrows by plotting the graph $y=f(x)$.
-However, in that case note that $x$ is then the dependent variable and will
+For that graph, note that $x$ is the independent variable and will
 be on the horizontal axis.
 
 \medskip
@@ -2452,8 +2451,8 @@ $x(0) = 0.5$.
 \begin{exercise}
 Start with the logistic equation
 $\frac{dx}{dt} = kx(M-x)$.
-Suppose we modify our harvesting.  That is we will only harvest
-an amount proportional to current population.  In other words, we harvest $hx$
+Suppose we modify our harvesting.  We will only harvest
+an amount proportional to the current population.  In other words, we harvest $hx$
 per unit of time
 for some $h > 0$ (similar to earlier example with $h$ replaced with $hx$).
 \begin{tasks}
@@ -2627,11 +2626,11 @@ a green line starting at (0,1) of slope 1 over 3, which is the slope at
 line is added starting at the end of the first line with slope equal
 to the slope of the slope field and going further right until x equals 2.}
 \caption{First two steps of Euler's method with $h=1$ for
-the equation $y' = \frac{y^2}{3}$ with initial conditions $y(0)=1$.%
+the equation $y' = \frac{y^2}{3}$ with initial condition $y(0)=1$.%
 \label{euler-step12:fig}}
 \end{myfig}
 
-We can continue along, for any $i=0,1,2,3,\ldots$, we compute
+We can continue along: For any $i=0,1,2,3,\ldots$, we compute
 \begin{equation*}
 x_{i+1} = x_i + h , \qquad y_{i+1}  = y_i + h\, f(x_i,y_i) .
 \end{equation*}
@@ -2653,7 +2652,7 @@ but also the solution through (0,1) is drawn in red, which is curved
 upwards and follows the slope field.  We can see that it stays above the
 green line segments.}
 \caption{Two steps of Euler's method (step size 1) and the exact solution for
-the equation $y' = \frac{y^2}{3}$ with initial conditions $y(0)=1$.
+the equation $y' = \frac{y^2}{3}$ with initial condition $y(0)=1$.
 %
 \label{euler-step12-sol:fig}}
 \end{myfig}
@@ -2718,8 +2717,8 @@ error}}$ & Steps done \\
 \bottomrule
 \end{tabular}
 \end{center}
-\caption{Euler's method approximation of $y(2)$ where
-of $y'=\nicefrac{y^2}{3}$, $y(0)=1$.\label{euler-table:table}}
+\caption{Euler's method approximation of $y(2)$ for
+$y'=\nicefrac{y^2}{3}$, $y(0)=1$.\label{euler-table:table}}
 \myendframe
 \end{table}
 
@@ -2729,7 +2728,7 @@ Halving of the error is a general feature of Euler's method as it is a
 \emph{\myindex{first-order method}}.
 %  In the IODE Project II you are
 %asked to implement a \myindex{second-order method}.
-A simple improvement of the Euler method, see the exercises,
+A simple improvement of the Euler method (see the exercises)
 produces a \myindex{second-order method}.
 A second-order method
 reduces the error to approximately one
@@ -2806,8 +2805,8 @@ $h$ & Approximate $y(3)$ \\
 \bottomrule
 \end{tabular}
 \end{center}
-\caption{Attempts to use Euler's to approximate $y(3)$ where
-of $y'=\nicefrac{y^2}{3}$, $y(0)=1$.\label{euler-table2:table}}
+\caption{Attempts to use Euler's to approximate $y(3)$ for
+$y'=\nicefrac{y^2}{3}$, $y(0)=1$.\label{euler-table2:table}}
 \myendframe
 \end{table}
 
@@ -2923,7 +2922,7 @@ and then we compute the next $x_{i+1}$ and $y_{i+1}$:
 x_{i+1} = x_i + h , \\
 & k_3 = f\bigl(x_i + \nicefrac{h}{2},y_i + k_2 (\nicefrac{h}{2})\bigr) ,
 & &
-y_{i+1} = y_i + \frac{k_1 + 2k_2 + 2k_3 + k_4}{6}\,h ,  \\
+y_{i+1} = y_i + \frac{k_1 + 2k_2 + 2k_3 + k_4}{6}\,h , \\
 & k_4 = f(x_i + h,y_i + k_3 h) .
 \end{align*}
 
@@ -2993,8 +2992,8 @@ slope $k_1 = f(x_i,y_i)$, and then look at the point $(x_i+h,y_i + k_1h)$.
 Instead of letting our new point be $(x_i+h,y_i + k_1h)$, we compute
 the slope at that point, call it $k_2$, and then take the average
 of $k_1$ and $k_2$, hoping that the average is going to be closer to
-the actual slope on the interval from $x_i$ to $x_i+h$.  And we are correct,
-if we halve the step, the error should get multiplied by
+the actual slope on the interval from $x_i$ to $x_i+h$.  And we are correct:
+If we halve the step, the error should get multiplied by
 ${(\nicefrac{1}{2})}^2 = \nicefrac{1}{4}$.
 To summarize, the setup is the
 same as for regular Euler, except
@@ -3057,9 +3056,6 @@ $0.55$ for standard Euler.
 A type of equation that comes up quite often in physics and
 engineering is an
 \emph{\myindex{exact equation}}.
-%  To truly make sense out of these
-%equations requires a little bit of multivariable calculus and a tiny
-%bit of physics.
 Suppose $F(x,y)$ is a function of two variables, which we call the
 \emph{\myindex{potential function}}.  The naming should suggest
 potential energy, or electric potential.  Exact equations and potential
@@ -3081,7 +3077,7 @@ are drawn.}
 $C$.\label{exact:circlesfig}}
 \end{mywrapfig}
 We are interested in the lines of constant potential\footnote{Accordingly,
-these curves are sometimes called \emph{\myindex{equipotential curves}}.};
+these curves are sometimes called \emph{\myindex{equipotential curves}}.}:
 curves given by $F(x,y) = C$,
 for some constant $C$.  In
 our example, the curves $x^2+y^2=C$ are circles.  See
@@ -3152,7 +3148,7 @@ In other words, the work done depends only on
 the endpoints---where we start and where we end.
 For example, suppose $F$ is gravitational potential
 (physicists use the convention that $-F$ is the potential,
-but idea is the same).
+but the idea is the same).
 The derivative of $F$ given by $\vec{v}$ is the gravitational force.
 What we
 are saying is that the work required to move a heavy box from the ground
@@ -3229,7 +3225,7 @@ $N$.   Then find $A(y)$ by integration.
 \end{enumerate}
 The procedure can also be done by first integrating in $y$ and then
 differentiating in $x$.
-Pretty easy huh?  Let's try this again.
+Pretty easy, huh?  Let's try this again.
 
 \begin{example} \label{exact:example:2xyandxy}
 Consider now $2x+y + xy \frac{dy}{dx} = 0$.
@@ -3301,7 +3297,7 @@ so $M = 2x+y$, $N = x-1$, and
 \begin{equation*}
 M_y = 1 = N_x .
 \end{equation*}
-Poincar\'e Lemma applies, so let us look for $F$.
+The Poincar\'e Lemma applies, so let us look for $F$.
 Integrating $M$ in $x$, we find
 \begin{equation*}
 F(x,y) = x^2+xy + A(y) .
@@ -3348,12 +3344,12 @@ some region containing the initial point.  As $y(1) = 2$,
 we start at the point $(1,2)$.  Considering $x > 0$ and
 integrating $M$ in~$x$ or $N$ in~$y$, we find
 \begin{equation*}
-F(x,y) = \operatorname{arctan} \bigl( \nicefrac{y}{x} \bigr) .
+F(x,y) = \arctan \bigl( \nicefrac{y}{x} \bigr) .
 \end{equation*}
 This $F$ is defined on the region $x > 0$ and so the equation is exact on
 that region.
 The implicit solution is
-$\operatorname{arctan} \bigl( \nicefrac{y}{x} \bigr) = C$.  Solving,
+$\arctan \bigl( \nicefrac{y}{x} \bigr) = C$.  Solving,
 $y = \tan(C) x$.  That is, the solution is a straight line.  Solving $y(1) =
 2$ gives us that $\tan(C) = 2$, and so $y= 2x$ is the desired solution.
 See \figurevref{exact:y2x}, and note again that the solution only exists for
@@ -3376,12 +3372,12 @@ has \myquote{no holes,} such as, for instance, the entire $xy$-plane,
 then the equation is exact and an $F$ defined on that region can be found.
 For example, in \exampleref{exact:exactR2example},
 $M=2x+y$ and $N=x-1$ are defined in the entire plane and
-$M_y = 1 = N_x$, so there a global $F$ exists.
+$M_y = 1 = N_x$, so a global $F$ exists there.
 Similarly, in \exampleref{exact:examplevortex}
 the half-plane where $x > 0$ also has \myquote{no holes}
 and a potential function exists on that region.
 So in such cases, checking
-$M_y = N_x$ is good enough to check for being exact.
+$M_y = N_x$ is good enough to check for exactness.
 
 \begin{example} \label{exact:exampleabove}
 Solve
@@ -3575,7 +3571,7 @@ let us be content with the implicit solution:
 \begin{equation*}
 xy + \ln \, \lvert y \rvert = C .
 \end{equation*}
-We are looking for the general solution and we divided by
+We are looking for the general solution, and we divided by
 $y$ above.  We should check what happens when $y=0$, as the equation itself
 makes perfect sense in that case.  We plug in $y=0$ to find the
 equation is satisfied.  So $y=0$ is also a solution.
@@ -3655,7 +3651,7 @@ A function $u(x,y)$ is said to be a \emph{\myindex{harmonic function}} if
 $u_{xx} + u_{yy} = 0$.
 \begin{tasks}
 \task
-Show if $u$ is harmonic, $-u_y \, dx + u_x \, dy = 0$ is an exact
+Show that if $u$ is harmonic, $-u_y \, dx + u_x \, dy = 0$ is an exact
 equation.  So there exists (at least locally)
 the so-called \emph{\myindex{harmonic conjugate}} function
 $v(x,y)$ such that $v_x = -u_y$ and $v_y = u_x$.
@@ -3770,7 +3766,7 @@ are mostly going to be constant or zero.
 The method we describe works with nonconstant coefficients,
 although the computations may get difficult quickly.
 
-This method we use is the
+We will use the
 \emph{\myindex{method of characteristics}}\index{characteristics}.
 The idea is to find lines along which the equation is
 an ODE that we then solve.
@@ -3868,7 +3864,8 @@ transport equation: Everything travels at some constant speed.
 This behavior is called \emph{\myindex{convection}}.
 An example application is material being moved by a river where the material
 does not diffuse and is simply carried along.  In this setup, $x$ is
-the position along the river, $t$ is the time, and $u(x,t)$ the concentration the
+the position along the river, $t$ is the time, and $u(x,t)$ the
+concentration of the
 material at position $x$ and time $t$.  See
 \figurevref{fopde:transportfig} for an example.
 \begin{myfig}
