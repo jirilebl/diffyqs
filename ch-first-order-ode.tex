@@ -260,7 +260,7 @@ x(10) = 2e^{10/2} - 2 \approx 294 \text{ meters} .
 
 \begin{example}
 Suppose that the car accelerates at $\unitfrac[t^2]{m}{s^2}$.
-At time $t=0$ the car is at the 1 meter mark and is traveling at
+At time $t=0$ the car is at the 1-meter mark and is traveling at
 \unitfrac[10]{m}{s}.  Where is the car at time $t=10$?
 
 Well, this is actually a second-order problem.  If $x$ is the distance
@@ -328,7 +328,7 @@ answer as a definite integral.
 A dropped ball accelerates downwards at a constant rate $9.8$ meters per second
 squared.  Set up the differential equation for the height above ground $h$ in meters.
 Then supposing $h(0) = 100$ meters, how long does it take for the ball to hit
-the ground.
+the ground?
 \end{exercise}
 
 \begin{exercise}
@@ -503,7 +503,7 @@ We see this behavior just
 from the slope field and imagining what solutions ought to do.
 
 We see a different behavior for the equation
-$y' = -y$.  The slope field and a few solutions is in
+$y' = -y$.  For the slope field and a few solutions,
 see \figurevref{1.3:fig3}.
 If we think of moving from left to right (perhaps $x$ is time
 and time is usually increasing), then
@@ -612,7 +612,7 @@ Of course there is.  We have the following theorem,
 known as Picard's theorem%
 \footnote{Named after the French mathematician
 \href{https://en.wikipedia.org/wiki/Charles_\%C3\%89mile_Picard}{Charles \'Emile Picard}
-(1856--1941)}.
+(1856--1941).}.
 
 \begin{theorem}[Picard's theorem on existence and uniqueness]%
 \label{slope:picardthm}%
@@ -667,17 +667,17 @@ $y'=y^2$.
 \subsection{Exercises}
 
 \begin{exercise}
-Sketch slope field for $y'=e^{x-y}$.  How do the solutions behave as $x$
+Sketch the slope field for $y'=e^{x-y}$.  How do the solutions behave as $x$
 grows?  Can you guess a particular solution by looking at the slope
 field?
 \end{exercise}
 
 \begin{exercise}
-Sketch slope field for $y'=x^2$.
+Sketch the slope field for $y'=x^2$.
 \end{exercise}
 
 \begin{exercise}
-Sketch slope field for $y'=y^2$.
+Sketch the slope field for $y'=y^2$.
 \end{exercise}
 
 \begin{exercise}
@@ -860,7 +860,7 @@ The equation does not have a continuously differentiable solution.
 Suppose it did. Notice that
 $y'(0) = 1$.  By the first derivative test, $y(x) > 0$ for small positive $x$.
 But then for those $x$, we have $y'(x) = f\bigl(y(x)\bigr) = 0$.
-It is not possible for $y'$ to be continous, $y'(0)=1$ and
+It is not possible for $y'$ to be continuous, $y'(0)=1$ and
 $y'(x) = 0$ for arbitrarily small positive $x$.
 }
 
@@ -907,15 +907,15 @@ if we can write it as
 y' = f(x)g(y) ,
 \end{equation*}
 for some functions $f(x)$ and $g(y)$.
-Let us write the equation in the \myindex{Leibniz notation}
+In \myindex{Leibniz notation}, the equation is
 \begin{equation*}
-\frac{dy}{dx} = f(x)g(y) .
+\frac{dy}{dx} = f(x)g(y) ,
 \end{equation*}
-We rewrite the equation as
+which we rewrite as
 \begin{equation*}
 \frac{dy}{g(y)} = f(x) \,dx .
 \end{equation*}
-Both sides look like something we can integrate.  We obtain
+Both sides now look like something we can integrate.  We obtain
 \begin{equation*}
 \int \frac{dy}{g(y)} = \int f(x) \,dx + C .
 \end{equation*}
@@ -1299,7 +1299,7 @@ on the island.
 condition.
 \task
 How many rabbits are on the island in 1 month, 5 months,
-10 months, 15 months (round to the nearest integer).
+10 months, 15 months (round to the nearest integer)?
 \end{tasks}
 \end{exercise}
 \exsol{%
@@ -1413,7 +1413,7 @@ y = e^{x-x^2} - 2 e^{-x^2} .
 \end{example}
 
 Note that we do not care which antiderivative we take when computing
-$e^{\int p(x) dx}$.  You can always add a constant of integration,
+$e^{\int p(x) \, dx}$.  You can always add a constant of integration,
 but those constants
 will not matter in the end.
 
@@ -1493,8 +1493,8 @@ The bottom output is labeled as 3 liters per minute.
 Inside the liquid is
 labeled as 60 liters and 10 kilograms of salt.}
 \end{mywrapfigsimp}
-A 100 liter tank contains 10 kilograms of salt dissolved in 60 liters of
-water.  A solution of water and salt (brine) with concentration of 0.1
+A 100-liter tank contains 10 kilograms of salt dissolved in 60 liters of
+water.  A solution of water and salt (brine) with a concentration of 0.1
 kilograms per
 liter is flowing in at the rate of 5 liters a minute.  The solution
 in the tank is well stirred and flows out at a rate of 3 liters a minute.
@@ -1718,7 +1718,7 @@ initial conditions make much of a difference?  Why or why not?
 
 \begin{exercise}
 Initially 5 grams of salt are dissolved in 20 liters of water.  Brine
-with concentration of salt 2 grams of salt per liter is added at a rate
+with a salt concentration of 2 grams per liter is added at a rate
 of 3 liters a minute.  The tank is mixed well and is drained at 3 liters
 a minute.  How long does the process have to continue until there are 20 grams
 of salt in the tank?
@@ -2007,26 +2007,26 @@ which has a solution
 \begin{equation*}
 \begin{aligned}
 \int \frac{1}{v^2} \,dv &= \ln \, \lvert x \rvert + C , \\
-\frac{-1}{v} &= \ln  x + C , \\
-v &= \frac{-1}{\ln  x  + C} .
+\frac{-1}{v} &= \ln x + C , \\
+v &= \frac{-1}{\ln x  + C} .
 \end{aligned}
 \end{equation*}
 We unsubstitute
 \begin{equation*}
-\frac{y}{x} = \frac{-1}{\ln  x  + C} ,
+\frac{y}{x} = \frac{-1}{\ln x  + C} ,
 \qquad
 \text{or}
 \qquad
-y = \frac{-x}{\ln  x  + C} .
+y = \frac{-x}{\ln x  + C} .
 \end{equation*}
 We want $y(1)=1$, so
 \begin{equation*}
-1 = y(1) = \frac{-1}{\ln  1 + C} = \frac{-1}{C} .
+1 = y(1) = \frac{-1}{\ln 1 + C} = \frac{-1}{C} .
 \end{equation*}
 Thus $C = -1$ and
 the solution we are looking for is
 \begin{equation*}
-y = \frac{-x}{\ln  x  -1} .
+y = \frac{-x}{\ln x -1} .
 \end{equation*}
 \end{example}
 
@@ -2188,7 +2188,7 @@ for some positive $k$ and $M$.  This equation is commonly used to model
 population if we know the limiting population $M$, that is, the maximum
 sustainable population.  The logistic equation leads to
 less catastrophic
-predictions on world population than $x'=kx$.  In the real world, there is no
+predictions about world population than $x'=kx$.  In the real world, there is no
 such thing as negative population, but we will still consider negative $x$ for
 the purposes of the math.
 
@@ -2196,8 +2196,8 @@ See \figurevref{2.2:logisticfig} for an example, $x' = 0.1 x(5-x)$.
 There are two critical points, $x=0$ and $x=5$.  The critical point
 at $x=5$ is stable, while the critical point at $x=0$ is
 unstable.
-It is not necessary to find the exact solutions to understand their long
-term behavior, that is, behavior as time goes to infinity.
+It is not necessary to find the exact solutions to understand their
+long-term behavior, that is, behavior as time goes to infinity.
 From the slope field above of
 $x' = 0.1 x(5-x)$, we see that
 \begin{equation*}
@@ -2221,7 +2221,7 @@ the equation.  In any case, the solution does go to $-\infty$, but it may get
 there rather quickly.
 
 
-If we are interested only in the long term behavior of the solution,
+If we are interested only in the long-term behavior of the solution,
 we would be doing unnecessary work if we solved the
 equation exactly.
 We could draw the slope field, but
@@ -2379,7 +2379,7 @@ dropping off the picture before we get to the right-hand side.}
 When $h = 1.6$, then $A=B=4$.  There is only one critical point and it is
 unstable\footnote{More precisely, it is semistable.}.
 When the population starts above 4 million, it will tend towards
-4 million.  However, if it ever drops below 4 million, perhaps a worse than
+4 million.  However, if it ever drops below 4 million, perhaps due to a worse than
 normal hurricane season one year, then humans will die out on the
 planet.  This scenario is not one that we (as the human fast food proprietor)
 want to be in.  A small perturbation of the equilibrium state and we are out
@@ -2863,7 +2863,7 @@ have the right answer.
 We have seen just the beginnings of the challenges that appear in real
 applications.  Numerical approximation of solutions to differential
 equations is an active research area for engineers and mathematicians.  For
-example, the general purpose method used for the ODE solver in Matlab and
+example, the general-purpose method used for the ODE solver in Matlab and
 Octave (as of this writing) is a method that appeared in the literature only
 in the 1980s.
 
@@ -2916,14 +2916,17 @@ the computation of $y_{i+1}$ and $x_{i+1}$.
 That is, in each step we compute slopes $k_1$, $k_2$, $k_3$, and $k_4$,
 and then we compute the next $x_{i+1}$ and $y_{i+1}$:
 \begin{align*}
-& k_1 = f(x_i,y_i) , & & \\
+& k_1 = f(x_i,y_i) ,
+&
 & k_2 = f\bigl(x_i + \nicefrac{h}{2},y_i + k_1 (\nicefrac{h}{2})\bigr) ,
-& &
-x_{i+1} = x_i + h , \\
+\\
 & k_3 = f\bigl(x_i + \nicefrac{h}{2},y_i + k_2 (\nicefrac{h}{2})\bigr) ,
-& &
-y_{i+1} = y_i + \frac{k_1 + 2k_2 + 2k_3 + k_4}{6}\,h , \\
-& k_4 = f(x_i + h,y_i + k_3 h) .
+&
+& k_4 = f(x_i + h,y_i + k_3 h) ,
+\\
+& x_{i+1} = x_i + h ,
+&
+& y_{i+1} = y_i + \frac{k_1 + 2k_2 + 2k_3 + k_4}{6}\,h .
 \end{align*}
 
 \begin{exercise}
@@ -3001,10 +3004,13 @@ the computation of $y_{i+1}$ and $x_{i+1}$.
 At each step, we compute the new slopes $k_1$ and $k_2$ and then the next
 $y_{i+1}$ and $x_{i+1}$:
 \begin{align*}
-& k_1 = f(x_i,y_i) , & &
-x_{i+1} = x_i + h , \\
+& k_1 = f(x_i,y_i) ,
+&
 & k_2 = f(x_i + h,y_i + k_1h) ,
-& & y_{i+1} = y_i + \frac{k_1+k_2}{2}\,h .
+\\
+& x_{i+1} = x_i + h ,
+&
+& y_{i+1} = y_i + \frac{k_1+k_2}{2}\,h .
 \end{align*}
 
 
@@ -3428,7 +3434,7 @@ In fact, a linear equation
 \begin{equation*}
 \frac{dy}{dx} + p(x) y = f(x), \qquad
 \text{or} \qquad
-\bigl( p(x) y - f(x) \bigr)\, dx +  dy  = 0,
+\bigl( p(x) y - f(x) \bigr)\, dx + dy  = 0,
 \end{equation*}
 is always such an equation.  Let $r(x) = e^{\int p(x)\,dx}$ be the
 integrating factor for the linear equation.  Multiply the equation by $r(x)$
@@ -3560,9 +3566,9 @@ We follow the procedure for exact equations
 F(x,y) = xy + A(y) ,
 \end{equation*}
 and
-\begin{equation}
+\begin{equation*}
 \frac{xy+1}{y} = x+\frac{1}{y} = x+ A'(y) .
-\end{equation}
+\end{equation*}
 Consequently, $A'(y) = \nicefrac{1}{y}$ or $A(y) = \ln \, \lvert y \rvert$.  Thus $F(x,y)
 = xy + \ln \, \lvert y \rvert$.
 It is not possible to solve $F(x,y)=C$ for $y$

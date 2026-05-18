@@ -1,6 +1,13 @@
 <li>In example 1.4.2, split the long list of equations in two
 to make things more readable (and to fit within the screen in
 the web version).  Also, improve some of the nearby wording.
+<li>In the exercises for 1.7, when describing Runge-Kutta and
+the improved Euler, order the equations more logically left-to-right
+then top-to-bottom.  Among other things, this should make it more intuitive
+to read for screen readers.
+<li>In chapter 1, equation 1.6 on page 70 was numbered by mistake so take
+the number out.  Consequently the number of the equation on page 74 is now
+1.6.
 <li>In the pendulum example in section 2.4, reword and very
 slightly simplify the setup and include units.
 <li>In chapters 4 and 5, whenever writing a sum in the \(\sum\) notation
