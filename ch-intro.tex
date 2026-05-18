@@ -98,13 +98,13 @@ can replace the short review \sectionref{sec:matrix}
 for a course that combines linear algebra and ODEs.
 
 %\medskip
-\subsection{Typical types of courses}
+\subsection{Typical courses}
 
-Several typical courses can be run with the book.
+Several different courses can be run with the book.
 There are the two original one-semester
-courses at UIUC\@,
-both cover ODEs as well as some PDEs.
-First course runs at 4 hours a week (Math 286):
+courses at UIUC\@.
+Both cover ODEs as well as some PDEs.
+The first course runs at 4 hours a week (Math 286):
 
 \medskip
 
@@ -128,8 +128,8 @@ The second course at UIUC runs 3 hours a week (Math 285):
 \chapterref{fo:chapter} (\ref{integralsols:section}--\ref{numer:section}),
 \chapterref{ho:chapter},
 \chapterref{FS:chapter} (\ref{bvp:section}--\ref{dirich:section}),
-(and maybe \chapterref{SL:chapter},
-\ref{LT:chapter}, or \ref{ps:chapter}).
+and maybe \chapterref{SL:chapter},
+\ref{LT:chapter}, or \ref{ps:chapter}.
 
 \medskip
 
@@ -199,8 +199,8 @@ A combined course on ODEs with linear algebra can run as:
 \chapterref{fo:chapter} (\ref{integralsols:section}--\ref{numer:section}),
 \chapterref{ho:chapter},
 \appendixref{linalg:appendix},
-\chapterref{sys:chapter} (w/o \sectionref{sec:matrix}), (possibly
-\chapterref{nlin:chapter}).
+\chapterref{sys:chapter} (w/o \sectionref{sec:matrix}), possibly
+\chapterref{nlin:chapter}.
 
 \medskip
 
@@ -446,7 +446,7 @@ When you can find exact solutions, they are usually preferable to
 approximate solutions.  It is important to understand how
 such solutions are found.
 Although in real applications you will
-leave much of the actual calculations to computers, you
+leave many of the actual calculations to computers, you
 need to understand what they are doing.  It is often necessary
 to simplify or transform your equations into something that a computer can
 understand and solve.
@@ -564,7 +564,7 @@ At one minute, $t=60$, the population is $P(60) = 6400$.  See
 
 Let us interpret the results.  Does our solution
 mean that
-there must be exactly 6400 bacteria on the plate at 60s?  No!  We made
+there must be exactly 6400 bacteria on the plate at 60 seconds?  No!  We made
 assumptions that might not be true exactly, just approximately.
 If our assumptions are reasonable,
 then there will be approximately 6400 bacteria.
@@ -701,7 +701,7 @@ In equations of higher order, you get more constants you must solve for to
 get a particular solution and hence you need more initial conditions.
 The equation $\frac{d^2y}{dx^2} = 0$ has the
 general solution $y = C_1 x + C_2$; simply integrate twice and don't forget
-about the constant of integration.  Consider the initial conditions $y(0) =
+about the constants of integration.  Consider the initial conditions $y(0) =
 2$ and $y'(0) = 3$.  We plug in our general solution and solve for the
 constants:
 \begin{equation*}
@@ -896,14 +896,13 @@ the most basic classification.  We already saw the distinction
 between ordinary and partial differential equations:
 \begin{itemize}
 \item
-\emph{Ordinary differential equations}
-\index{Ordinary differential equations}\index{ODE} (ODE) are
-equations where the derivatives are taken with respect to only one variable.
+An \emph{ordinary differential equation}\index{Ordinary differential equation}\index{ODE}
+(ODE) is an
+equation where the derivatives are taken with respect to only one variable.
 That is, there is only one independent variable.
 \item
-\emph{Partial differential equations}
-\index{Partial differential equations}\index{PDE} (PDE) are
-equations that depend on partial derivatives of several variables.
+A \emph{partial differential equation}\index{Partial differential equation}\index{PDE}
+(PDE) is an equation that depend on partial derivatives of several variables.
 That is, there are several independent variables.
 \end{itemize}
 
@@ -1009,7 +1008,7 @@ the divergence and curl in terms of partial derivatives.
 If an equation is not linear, we say it is
 \emph{nonlinear}\index{nonlinear equation}.
 Let us see some
-example nonlinear equations.  \myindex{Burger's equation},
+example nonlinear equations.  \myindex{Burgers' equation},
 \begin{equation*}
 \frac{\partial y}{\partial t} +
 y \frac{\partial y}{\partial x} =

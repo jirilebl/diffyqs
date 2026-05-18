@@ -54,9 +54,9 @@
 %mbxdocinfo    <initialism>DIFFYQS</initialism>
 
 
-%mbxmacro \newcommand{\nicefrac}[2]{{{}^{#1}}\!/\!{{}_{#2}}}
-%mbxmacro \newcommand{\unitfrac}[3][\!\!]{#1 \,\, {{}^{#2}}\!/\!{{}_{#3}}}
-%mbxmacro \newcommand{\unit}[2][\!\!]{#1 \,\, #2}
+%mbxmacro \newcommand{\nicefrac}[2]{{}^{#1}\!/\!{}_{#2}}
+%mbxmacro \newcommand{\unitfrac}[3][\!\!]{#1 \,\, \nicefrac{\mathrm{#2}}{\mathrm{#3}}}
+%mbxmacro \newcommand{\unit}[2][\!\!]{#1 \,\, \mathrm{#2}}
 %mbxmacro \newcommand{\noalign}[1]{}
 %mbxmacro \newcommand{\qed}{\qquad \Box}
 %mbxmacro \newcommand{\mybxbg}[1]{\boxed{#1}}
