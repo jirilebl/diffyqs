@@ -27,8 +27,8 @@
 	<knowl exercise-inline="no" />
 	<knowl exercise-sectional="no" />
 
-	<!-- test dark mode first.  What about the figures? -->
-	<css theme="default-modern" provide-dark-mode="no" />
+	<!-- tested dark mode.  Figures are not ideal, but OK. -->
+	<css theme="default-modern" provide-dark-mode="yes" />
     </html>
 
     <numbering>
