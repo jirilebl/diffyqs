@@ -1,3 +1,11 @@
+/* invert dark mode figures, this gets it almost exactly,
+ * but probably wouldn't look right with other themes */
+:root.dark-mode img.diffyimg {
+  filter: invert(0.8625) hue-rotate(180deg);
+}
+:root.dark-mode img[src="logo.png"] {
+  filter: invert(0.8625) hue-rotate(180deg);
+}
 /*#ptx-content {
  max-width: 820px !important; text-align: justify !important;
 }*/

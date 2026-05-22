@@ -27,7 +27,7 @@
 	<knowl exercise-inline="no" />
 	<knowl exercise-sectional="no" />
 
-	<!-- tested dark mode.  Figures are not ideal, but OK. -->
+	<!-- tested dark mode.  Figures are not 100% but they get dark with the extra.css. -->
 	<css theme="default-modern" provide-dark-mode="yes" />
     </html>
 
