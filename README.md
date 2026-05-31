@@ -1,6 +1,8 @@
 # Notes on Diffy Qs: Differential Equations for Engineers
 
-A free online textbook on differential equations.  It is aimed at engineering undergraduates.  See https://www.jirka.org/diffyqs/ or https://jirilebl.github.io/diffyqs/
+A free online textbook on differential equations.  It is aimed at engineering undergraduates.  It is  written in LaTeX and is under the creative commons license allowing modification and customization.  There is an HTML version that is built out of this LaTeX source code by running it through a custom perl script to produce PreTeXt XML source which is then converted to HTML using the custom XSL.  It does not use completely standard PreTeXt, but very close, main difference is handling of figures and numbering.
+
+See https://www.jirka.org/diffyqs/ or https://jirilebl.github.io/diffyqs/
 
 ## Branches:
 
