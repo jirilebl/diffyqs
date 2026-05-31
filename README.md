@@ -1,6 +1,6 @@
 # Notes on Diffy Qs: Differential Equations for Engineers
 
-A free online textbook.  See https://www.jirka.org/diffyqs/ or https://jirilebl.github.io/diffyqs/
+A free online textbook on differential equations.  It is aimed at engineering undergraduates.  See https://www.jirka.org/diffyqs/ or https://jirilebl.github.io/diffyqs/
 
 ## Branches:
 
