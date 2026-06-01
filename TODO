@@ -11,9 +11,9 @@ Pretext/HTML:
 
 * https://pretextbook.org/doc/guide/html/processing-directory-management.html
 
-* pretext: Turn off inline linebreaking for math, it is done in the most inapproriate places.
-
-* pretext: Check linebreaking when screen gets small for display math.
+* pretext: Check linebreaking when screen gets small for display math,
+  lookfor displayOverflow, and perhaps set it to 'overflow' that might be
+  the nicest one.  Currently we scroll it seems.
 
 Further down the road perhaps (some of them could be doable in next
 minor version):
