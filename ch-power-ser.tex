@@ -30,7 +30,13 @@ a_1 (x-x_0) +
 a_2 {(x-x_0)}^2 +
 a_3 {(x-x_0)}^3 + \cdots,
 \end{equation}
-where $a_0,a_1,a_2,\ldots,a_k,\ldots$ and $x_0$ are constants.  Let
+where $a_0,a_1,a_2,\ldots,a_k,\ldots$ and $x_0$ are constants.
+The $a_k$ are called the \emph{coefficients}%
+\index{coefficients of power series}%
+\index{power series coefficients} and $x_0$ is called
+the \emph{center}\index{center of a power series}%
+\index{power series center}.
+Let
 \begin{equation*}
 %mbxlatex \begin{split}
 S_n(x)
@@ -68,7 +74,8 @@ The series
 \sum_{k=0}^\infty \frac{1}{k!} x^k = 
 1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \cdots
 \end{equation*}
-is convergent for any $x$.
+converges at every $x$.
+Here, $a_k = \nicefrac{1}{k!}$ and $x_0 = 0$.
 Recall that $k! = 1\cdot 2\cdot 3 \cdots k$ is the
 factorial.  By convention, we define $0! = 1$.
 You may recall that this series
@@ -84,7 +91,7 @@ at $x$ whenever the limit
 \end{equation*}
 exists.  That is, the series
 $\sum_{k=0}^\infty \lvert a_k \rvert \, {\lvert x-x_0 \rvert}^k$
-is convergent.
+converges.
 If \eqref{ps:sereq1} converges absolutely at $x$, then it
 converges at $x$.  However, the opposite implication is not true.
 
@@ -111,12 +118,14 @@ If a power series converges absolutely
 at some $x_1$, then for all $x$ such that
 $\lvert x - x_0  \rvert \leq \lvert x_1 - x_0 \rvert$ (that is, $x$ is
 no further than $x_1$ to $x_0$), we have
-$\lvert a_k {(x-x_0)}^k \rvert \leq
-\lvert a_k {(x_1-x_0)}^k \rvert$
+$\lvert a_k \rvert \, {\lvert x-x_0 \rvert}^k \leq
+\lvert a_k \rvert \, { \lvert x_1-x_0 \rvert}^k$
 for all $k$.
-As the numbers $\lvert a_k {(x_1-x_0)}^k \rvert$ sum to some finite
+As the numbers $\lvert a_k \rvert \, {\lvert x_1-x_0 \rvert}^k$
+sum to some finite
 limit, summing smaller positive numbers
-$\lvert a_k {(x-x_0)}^k \rvert$ must also have a finite limit.
+$\lvert a_k \rvert \, {\lvert x-x_0 \rvert}^k$
+must also have a finite limit.
 Hence, the series must converge
 absolutely at $x$. %  We have the following result.
 
