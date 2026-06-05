@@ -1,0 +1,494 @@
+\documentclass[10pt,aspectratio=169]{beamer}
+
+% All the boilerplate is in deslides.sty
+\usepackage{deslides}
+
+\author{Ji\v{r}\'i Lebl}
+
+\institute[OSU]{%
+Oklahoma State University%
+%Departemento pri Matematiko de Oklahoma {\^S}tata Universitato%
+}
+
+\title{29. Power series, part 1\\(Notes on Diffy Qs, 7.1)}
+
+\date{}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+
+%\bigskip
+
+\begin{center}
+The textbook: \url{https://www.jirka.org/diffyqs/}
+
+or \url{https://jirilebl.github.io/diffyqs/}
+\end{center}
+\end{frame}
+
+\begin{frame}
+Wouldn't it be nice if all functions were polynomials?
+
+E.g., we could just apply undetermined coefficients all the time.
+
+\pause
+\medskip
+
+Instead of polynomials, consider \emph{power series}:
+\[
+\sum_{k=0}^\infty a_k {(x-x_0)}^k =
+a_0 + 
+a_1 (x-x_0) +
+a_2 {(x-x_0)}^2 +
+a_3 {(x-x_0)}^3 + \cdots.
+\]
+$a_0,a_1,a_2,\ldots,a_k,\ldots$ (coefficients) and $x_0$ (center) are
+constants.
+
+\pause
+\medskip
+
+The \emph{partial sum} is the sum of the first $n$ terms:
+\[
+S_n(x)
+=
+\sum_{k=0}^n a_k {(x-x_0)}^k
+=
+a_0 + a_1 (x-x_0) + a_2 {(x-x_0)}^2 + a_3 {(x-x_0)}^3 + \cdots + a_n {(x-x_0)}^n ,
+\]
+
+\pause
+Say the series \emph{converges at $x$} if the following limit exists:
+\[
+\sum_{k=0}^\infty a_k {(x-x_0)}^k = 
+\lim_{n\to \infty} S_n(x) = \lim_{n\to\infty} \sum_{k=0}^n a_k {(x-x_0)}^k
+\]
+\end{frame}
+
+\begin{frame}
+$\displaystyle \sum_{k=0}^\infty a_k {(x-x_0)}^k$
+\quad
+always converges at $x=x_0$ (to $a_0$).
+
+\pause
+\medskip
+
+The series is \emph{convergent}
+if it converges at some $x \neq x_0$ (\emph{divergent} otherwise).
+
+\pause
+\medskip
+
+\textbf{Example:}
+\quad
+$\displaystyle
+\sum_{k=0}^\infty \frac{1}{k!} x^k = 
+1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \cdots$
+\quad
+converges at every $x$ (to $e^x$ in fact).
+
+\pause
+\vspace*{-8pt}
+
+\hfill
+{\small (Recall: $k! = 1\cdot 2\cdot 3 \cdots k$ and $0! = 1$.)}
+
+
+\pause
+The series 
+\emph{converges absolutely} at $x$ if
+\quad
+$\displaystyle
+\sum_{k=0}^\infty
+\lvert a_k \rvert \, {\lvert x-x_0 \rvert}^k 
+$
+\quad
+converges $\Bigl($ {\small $\!\displaystyle \lim\limits_{n\to\infty}
+\sum\limits_{k=0}^n
+\lvert a_k \rvert \, {\lvert x-x_0 \rvert}^k$ exists}
+{$\!\Bigr)$}
+
+\pause
+absolute convergence $\Rightarrow$ convergence, but
+not vice-versa.
+
+\pause
+\textbf{Example:}
+\quad
+$\displaystyle
+\sum_{k=1}^\infty \frac{1}{k} x^k
+$\quad
+converges absolutely whenever $-1 < x < 1$.
+
+\vspace*{-7pt}
+
+\pause
+It converges at $x=-1$:
+By the alternating series test,
+$\displaystyle \sum_{k=1}^\infty \frac{{(-1)}^k}{k}$ converges,
+
+\vspace*{-7pt}
+
+\pause
+but not absolutely as $\displaystyle \sum_{k=1}^\infty \frac{1}{k}$ does not converge.
+
+\vspace*{-7pt}
+
+\pause
+\hfill That also means that the series diverges at $x=1$.
+
+\end{frame}
+
+\begin{frame}
+
+Suppose a power series converges absolutely at some $x_1$
+and $x$ is no further than $x_1$ to $x_0$:
+
+\medskip
+
+\qquad
+$\lvert x - x_0  \rvert \leq \lvert x_1 - x_0 \rvert$
+\pause
+\qquad
+$\Rightarrow$
+\qquad
+$\lvert a_k \rvert \, {\lvert x-x_0\rvert }^k \leq \lvert a_k \rvert
+\, {\lvert x_1-x_0 \rvert}^k$ \quad for all $k$.
+
+\pause
+\medskip
+
+\qquad
+$\phantom{\lvert x - x_0  \rvert \leq \lvert x_1 - x_0 \rvert}$
+\qquad
+$\Rightarrow$
+\qquad
+$\displaystyle
+\sum_{k=0}^\infty \lvert a_k \rvert \, {\lvert x-x_0\rvert }^k$
+\quad
+converges ~~{\small (a sum of smaller numbers)}
+
+\pause
+\medskip
+
+\textbf{Theorem:}
+For a power series, there exists a number
+$\rho$ (we allow $\rho=\infty$)
+called the \emph{radius of convergence} such that
+the series converges absolutely on the interval
+$(x_0-\rho,x_0+\rho)$ and diverges for $x < x_0-\rho$ and $x > x_0+\rho$.
+We write $\rho=\infty$ if
+the series converges for all $x$.
+
+\begin{center}
+\scalebox{0.7}{\subimport*{../figures/}{ps-conv.pdf_t}}
+\end{center}
+
+\pause
+\vspace*{-5pt}
+
+For
+\quad
+$\displaystyle
+\sum_{k=0}^\infty \frac{1}{k!} x^k$
+\quad
+$\rho = \infty$.
+\qquad
+\pause
+For
+\quad
+$\displaystyle
+\sum_{k=0}^\infty \frac{1}{k} x^k$
+\quad
+$\rho = 1$.
+
+\pause
+\vspace*{-5pt}
+
+$\rho = 0$ if the series is
+divergent.
+\qquad
+E.g.,
+\quad
+$\displaystyle
+\sum_{k=0}^\infty k! x^k$
+\quad
+diverges for all $x \neq 0$,
+so $\rho=0$.
+
+\end{frame}
+
+\begin{frame}
+How do we find $\rho$?  \pause
+We use the \emph{ratio test} or the \emph{root test}.
+
+\pause
+\textbf{Ratio test:}
+Given
+\quad
+$\displaystyle
+\sum_{k=0}^\infty c_k
+$,
+\quad
+suppose
+\quad
+$L = \lim_{k\to\infty} \left \lvert \frac{c_{k+1}}{c_k} \right \rvert$.
+
+\pause
+$\Rightarrow$ \quad
+the series converges absolutely if $L < 1$ and
+diverges if $L > 1$.
+
+\pause
+\medskip
+
+Given
+\quad
+$\displaystyle
+\sum_{k=0}^\infty a_k {(x-x_0)}^k
+$,
+\quad
+$
+\displaystyle
+L = \lim_{k\to\infty} \left \lvert \frac{c_{k+1}}{c_k} \right \rvert
+\pause
+=
+\lim_{k\to\infty} \left \lvert
+\frac{a_{k+1} {(x - x_0)}^{k+1}}{a_k {(x - x_0)}^k}
+\right \rvert
+=
+\pause
+\lim_{k\to\infty} \left \lvert
+\frac{a_{k+1}}{a_k}
+\right \rvert
+\lvert  x - x_0 \rvert
+$.
+
+Let
+\quad
+$\displaystyle A =
+\lim_{k\to\infty} \left \lvert
+\frac{a_{k+1}}{a_k}
+\right \rvert$.
+\quad
+\pause
+The series converges absolutely if $1 > L = A \lvert x - x_0 \rvert$.
+
+\pause
+\medskip
+
+The radius of convergence is $\displaystyle \rho = \nicefrac{1}{A}$
+\qquad
+($A = 0 \, \Rightarrow \, \rho=\infty$ and
+$A = \infty \, \Rightarrow \, \rho=0$).
+
+\pause
+\medskip
+
+\textbf{Root test:} Same but
+\quad
+$\displaystyle
+L = \lim_{k\to\infty} \sqrt[k]{\lvert c_k \rvert}$
+\quad
+and so
+\quad
+$\displaystyle
+A = \lim_{k\to\infty} \sqrt[k]{\lvert a_k \rvert}$.
+
+\end{frame}
+
+\begin{frame}
+
+
+\textbf{Example:}
+Consider
+\quad
+$\displaystyle
+\sum_{k=0}^\infty 2^{-k} {(x-1)}^k$.
+
+\pause
+Compute
+\quad
+$\displaystyle
+A = \lim_{k\to\infty} 
+\left \lvert
+\frac{a_{k+1}}{a_k}
+\right \rvert
+\pause
+=
+\lim_{k\to\infty} 
+\left \lvert
+\frac{2^{-k-1}}{2^{-k}}
+\right \rvert
+\pause
+=
+\lim_{k\to\infty} 
+2^{-1} = \frac{1}{2}$.
+
+\pause
+\medskip
+
+$\Rightarrow$ $\rho = 2$.
+\pause
+As $x_0 = 1$,
+the series converges absolutely on
+the interval $(1-2,1+2) = (-1,3)$.
+
+\medskip
+\pause
+
+Root test would also work:
+\quad
+$\displaystyle
+A = 
+\lim_{k\to\infty} 
+\sqrt[k]{\lvert
+a_k
+\rvert}
+=
+\lim_{k\to\infty} 
+\sqrt[k]{\lvert
+2^{-k}
+\rvert}
+=
+\lim_{k\to\infty} 
+2^{-1}
+=
+\frac{1}{2}$.
+
+\pause
+\medskip
+
+\textbf{Example:}
+Consider
+\quad
+$\displaystyle
+\sum_{k=1}^\infty \frac{1}{k^k} {x}^k$.
+
+\pause
+Compute
+\quad
+$\displaystyle
+A =
+\lim_{k\to\infty} 
+\sqrt[k]{\lvert a_k \rvert}
+\pause
+=
+\lim_{k\to\infty} 
+\sqrt[k]{
+\left\lvert\frac{1}{k^k}\right\rvert}
+=
+\pause
+\lim_{k\to\infty} 
+\sqrt[k]{
+{\left\lvert\frac{1}{k}\right\rvert}^{k}}
+\pause
+=
+\lim_{k\to\infty} 
+\frac{1}{k}
+=
+0$.
+
+\pause
+\medskip
+
+The radius of convergence is $\infty$: The series
+converges everywhere.
+
+\end{frame}
+
+\begin{frame}
+The limits
+$\bigl \lvert \frac{a_{k+1}}{a_k} \bigr \rvert$
+or
+$\sqrt[k]{\lvert a_k \rvert}$
+might not exist always.
+
+\pause
+\medskip
+
+Sometimes we can't compute the $A$, but we can compute the
+$L$ for the terms given.
+
+\pause
+\medskip
+
+\textbf{Example:}
+Consider \quad
+$\displaystyle \sum_{k=1}^\infty 2^k x^{2k}$.
+
+\pause
+\medskip
+
+Note that $a_n = 0$ if $n$ is odd and $a_n = a_{2k} = 2^k = 2^{n/2}$
+if $n$ is even.
+
+\medskip
+\pause
+
+We cannot compute $A$:
+$\bigl \lvert \frac{a_{n+1}}{a_n} \bigr \rvert$
+is undefined if $n$ is odd and
+$\sqrt[n]{\lvert a_n \rvert}$ jumps between $0$
+and $\sqrt{2}$.
+
+\pause
+\medskip
+
+But
+\quad
+$\displaystyle
+L = \lim_{k\to \infty}
+\sqrt[k]{\lvert 2^k x^{2k} \rvert}
+= 2 {\lvert x\rvert}^2$
+
+\pause
+\medskip
+
+The series converges absolutely if \quad
+$L = 2 {\lvert x\rvert}^2 < 1$,
+
+\pause
+\medskip
+
+in other words, if
+\quad ${\lvert x\rvert}^2 < \dfrac{1}{2}$
+\quad
+or
+\quad ${\lvert x\rvert} < \dfrac{1}{\sqrt{2}}$.
+
+\pause
+\medskip
+
+The radius of convergence is $\rho = \dfrac{1}{\sqrt{2}}$.
+
+\end{frame}
+
+\begin{frame}
+
+At the endpoints,
+$x = x_0-\rho$ and $x = x_0+\rho$,
+a power series may or may not converge.
+
+\pause
+\medskip
+
+Neither ratio nor root test are going to apply at the
+endpoints.
+
+\pause
+\medskip
+
+Sometimes convergence at the endpoints is important.
+
+\pause
+\medskip
+
+Fortunately, for our purposes, the radius of convergence is enough.
+
+\end{frame}
+
+
+\end{document}
