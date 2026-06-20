@@ -416,24 +416,24 @@ Expand $\dfrac{1}{x}$ around $x_0 = 7$.
 $\displaystyle
 \frac{1}{x}
 =
-\frac{1}{7 - (x-7)}
+\frac{1}{7 + (x-7)}
 \pause
 =
 \frac{1}{7}
-\frac{1}{1 - \frac{1}{7}(x-7)}
+\frac{1}{1 - \frac{-1}{7}(x-7)}
 \pause
 =
 \frac{1}{7}
-\sum_{k=0}^\infty {\left(\frac{1}{7}(x-7) \right)}^k
+\sum_{k=0}^\infty {\left(\frac{-1}{7}(x-7) \right)}^k
 \pause
 =
-\sum_{k=0}^\infty \frac{1}{7^{k+1}} (x-7)^k$.
+\sum_{k=0}^\infty \frac{{(-1)}^k}{7^{k+1}} (x-7)^k$.
 
 \pause
 \medskip
 
 Converges when 
-$\left\lvert \dfrac{1}{7}(x-7) \right\rvert < 1$ or
+$\left\lvert \dfrac{-1}{7}(x-7) \right\rvert < 1$ or
 $\lvert x-7 \rvert < 7$, so $\rho = 7$.
 
 
