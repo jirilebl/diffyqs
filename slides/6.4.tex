@@ -30,7 +30,6 @@ or \url{https://jirilebl.github.io/diffyqs/}
 
 \begin{frame}
 A way to study a physical system is by putting
-
 in a short pulse and seeing the output.
 
 \medskip
@@ -74,7 +73,7 @@ The Laplace transform is
 
 \medskip
 
-$\qquad \displaystyle
+$\quad \displaystyle
 \begin{aligned}
 {\mathcal{L}} \bigl\{ \varphi(t) \bigr\}
 & =
@@ -86,6 +85,15 @@ M
 \frac{e^{-as} - e^{-bs}}{s} .
 \end{aligned}
 $
+
+\qquad \qquad
+\qquad \qquad
+\qquad  \quad
+{\small
+\emph{Recall: }
+${\mathcal{L}} \bigl\{ u(t-a) \bigr\} = \frac{e^{-as}}{s}$}
+
+
 
 \medskip
 \pause
@@ -126,7 +134,7 @@ so \quad ${\mathcal{L}} \bigl\{ \delta(t) \bigr\} = 1$.
 \medskip
 \pause
 
-There is no such ``function'' (it is a ``generalized function'')
+There is no such function (it is a ``generalized function'')
 
 \medskip
 \pause
@@ -171,8 +179,8 @@ $\varphi(t) = \dfrac{u(t) - u(t-b)}{b}$.
 
 For small $b$ and continuous $f(t)$,
 \[
-\int_{-\infty}^\infty \varphi(t) f(t) \,dt =
-\int_{-\infty}^\infty \frac{u(t) - u(t-b)}{b} f(t) \,dt
+\int_{-\infty}^\infty \varphi(t) f(t) \,dt
+%= \int_{-\infty}^\infty \frac{u(t) - u(t-b)}{b} f(t) \,dt
 \pause
 =
 \frac{1}{b} \int_{0}^b f(t) \,dt
@@ -245,16 +253,15 @@ Note that $\frac{s+1}{s}$ is not a proper rational function.
 \]
 
 \pause
-\medskip
 
 \emph{Remark:}
 $
 {\mathcal{L}} \bigl\{ u(t-a) \bigr\} = \frac{e^{-as}}{s}
 $.
 
-\pause
 If $u(t-a)$ had a derivative,
 its Laplace transform would be
+\quad
 $s \frac{e^{-as}}{s} = e^{-as}$.
 \pause
 Moreover
@@ -278,9 +285,11 @@ think of $f(t)$ as the input, and $x(t)$ as the output.
 \pause
 
 The solution to
-\[
+\qquad
+$
 L x = \delta(t)
-\]
+$
+\qquad
 is called the \emph{impulse response}.
 
 \pause
@@ -352,15 +361,16 @@ h''(t-\tau) \, d\tau
 \pause
 If $h(t)$ is the impulse response, then
 \[
+f(t)
+\pause
+=
+(f * \delta)(t)
+\pause
+= 
 f * (h'' + \omega_0^2 h) =
 \pause
 (f * h'') + \omega_0^2 (f * h) =
 (f * h)'' + \omega_0^2 (f * h) .
-\]
-\pause
-and
-\[
-(f * \delta)(t) = f(t).
 \]
 \pause
 So 
@@ -465,7 +475,7 @@ We still need to apply $y(2) = 0$ and $y''(2) = 0$.
 \frac{-1}{6} + 2 C_1 + \frac{4}{3} C_2 ,
 \]
 \pause
-Note that for $x$ near 2, $u(x-1)=1$ so
+For $x$ near 2, $u(x-1)=1$.  So
 \[
 0 = y''(2) = \frac{-3\cdot 2 \cdot (2-1)}{6} + \frac{C_2}{6} 3\cdot 2 \cdot 2
 \pause
