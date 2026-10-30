@@ -256,7 +256,7 @@ We obtain
 \begin{equation*}
 x(2) = 2e^{2/2} - 2 \approx 3.44 \text{ meters} ,
 \qquad
-x(10) = 2e^{10/2} - 2 \approx 294 \text{ meters} .
+x(10) = 2e^{10/2} - 2 \approx 295 \text{ meters} .
 \end{equation*}
 \end{example}
 
@@ -2710,7 +2710,7 @@ error}}$ & Steps done \\
 \midrule
 1        & 1.92593 & 1.07407 &         & 2 \\
 0.5      & 2.20861 & 0.79139 & 0.73681 & 4 \\
-0.25     & 2.47250 & 0.52751 & 0.66656 & 8 \\
+0.25     & 2.47249 & 0.52751 & 0.66656 & 8 \\
 0.125    & 2.68034 & 0.31966 & 0.60599 & 16 \\
 0.0625   & 2.82040 & 0.17960 & 0.56184 & 32 \\
 0.03125  & 2.90412 & 0.09588 & 0.53385 & 64 \\
@@ -2739,24 +2739,25 @@ quarter every time we halve the step size.  The order being
 $\nicefrac{1}{4} = \nicefrac{1}{2} \times \nicefrac{1}{2}
 = {(\nicefrac{1}{2})}^2$.
 
-To get the error to be less than 0.1, we did
-64 steps.  To get it below 0.01, we would have to halve another three or
-four times, doing 512 or 1024 steps.
-%That is quite a bit to do by hand.
+To get the error to be less than 0.1, we do
+64 steps.  To get it below 0.01, we have to halve another
+four times, doing 1024 steps.
 The improved Euler method from the exercises
-%IODE  Project II
 should quarter the
 error every time we halve the step size,
-so we would have to do (approximately) half as many
-\myquote{halvings} to get the same error.  This reduction can be a big deal.  With 10
-halvings (starting at $h=1$) we have 1024 steps, whereas with 5 halvings
-we only have to do 32 steps, assuming that the error was comparable to start
-with.  A computer may not care about this
-difference for a problem this simple, but suppose each step would take a
-second to compute (the function may be substantially more difficult to compute
-than $\nicefrac{y^2}{3}$).  Then the difference is 32 seconds versus about 17 minutes.
+so we have to do (approximately) half as many
+\myquote{halvings} to get the same error,
+assuming that the error is comparable to start with.
+This reduction can be a big deal.
+The improved Euler gets the error under 0.01 after only 4 halvings (32
+steps), while the standard Euler needs 9 halvings (1024 steps).
+A computer may not care about this
+difference for a simple problem, but suppose each step takes a
+second (the function may be substantially more difficult to compute
+than $\nicefrac{y^2}{3}$).  Then the difference is 32 seconds 
+versus about 17 minutes.
 We are not being altogether fair; a second-order method would probably
-double the time to do each step.  Even so, it is 1 minute versus 17 minutes.
+double the time to do each step.  Even so, it is roughly a minute versus 17 minutes.
 Next, suppose that we have to repeat such a calculation for different
 parameters a thousand times.  You get the idea.
 
@@ -3350,7 +3351,9 @@ The Poincar\'e Lemma does not guarantee such an $F$ anyway.
 It only guarantees a potential function $F$ locally---only in
 some region containing the initial point.  As $y(1) = 2$,
 we start at the point $(1,2)$.  Considering $x > 0$ and
-integrating $M$ in~$x$ or $N$ in~$y$, we find
+integrating
+%$M$ in~$x$ or
+$N$ in~$y$, we find
 \begin{equation*}
 F(x,y) = \arctan \bigl( \nicefrac{y}{x} \bigr) .
 \end{equation*}
@@ -3448,7 +3451,7 @@ Then $M = r(x) p(x) y - r(x) f(x)$, so
 $M_y = r(x) p(x)$, while $N = r(x)$, so
 $N_x = r'(x) = r(x) p(x)$.  In other words, we have an exact equation.
 Integrating
-factors for linear functions are just a special case of integrating
+factors for linear equations are just a special case of integrating
 factors for exact equations.
 
 But how do we find the integrating factor $u$?  Well, for
@@ -4017,8 +4020,8 @@ As t grows the surface becomes, as t grows,
 closer and closer to a sideways
 flat surface that goes up as x grows.
 At t equals 3 it looks almost completely
-straight from a bit less than minus 3 at x equals minus 3
-and goes up to a bit below 2.}
+straight from less than minus 3 at x equals minus 3
+and goes up to a bit above 2.}
 \caption{Plot of the solution $u(x,t)$ to
 $u_x + u_t + u = x$,  $u(x,0) = e^{-x^2}$.\label{fopde:surfaceplot}}
 \end{myfig}

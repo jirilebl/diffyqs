@@ -34,8 +34,8 @@ and this book aims to be more or less a drop-in replacement.
 Other books I used as sources of information and inspiration
 are E.L.\ Ince's classic (and inexpensive)
 \emph{Ordinary Differential Equations}~\cite{I},
-Stanley Farlow's \emph{Differential Equations and Their
-Applications}~\cite{F}, now available from Dover,
+Stanley Farlow's \emph{An Introduction to Differential Equations and Their
+Applications}~\cite{F},
 Berg and McGregor's
 \emph{Elementary Partial Differential Equations}~\cite{BM},
 and William Trench's free book
@@ -139,7 +139,7 @@ will cover, beyond the introduction,
 %\sectionref{introde:section},
 \chapterref{fo:chapter},
 \chapterref{ho:chapter},
-\chapterref{LT:chapter}, and \chapterref{ps:chapter},
+\chapterref{LT:chapter}, and \chapterref{ps:chapter}
 (with sections skipped as above).
 On the other hand, a typical course that covers
 systems will probably need to skip Laplace and power series
@@ -163,7 +163,7 @@ sections on single ODEs is:
 \medskip
 
 The complete book can be covered at a reasonably
-fast pace at approximately 76 lectures
+fast pace in approximately 76 lectures
 (without \appendixref{linalg:appendix})
 or 86 lectures (with \appendixref{linalg:appendix} replacing
 \sectionref{sec:matrix}).
@@ -340,7 +340,7 @@ tough time getting a good grade in your classes.
 A \emph{\myindex{differential equation}} is simply an equation that involves
 not only an unknown variable, but also its derivatives.
 You have seen and even solved many
-differential equations already in calculus perhaps without knowing about it.
+differential equations already in calculus, perhaps without knowing about it.
 Here is an example you may not have seen:
 \begin{equation} \label{eq1}
 \frac{dx}{dt} + x = 2 \cos t .
@@ -457,15 +457,16 @@ To be a successful engineer or scientist, you will be required to solve
 problems in your job that you have never seen before.  It is important to
 learn problem solving techniques, so that you may apply those techniques to
 new problems.  A common mistake is to expect to learn some prescription for
-solving all the problems you will encounter in your later career.  This
-course is no exception.
+solving all the problems you will encounter in your later career.
+This course will not give you one either, but it will help you become a
+better problem solver.
 
 \subsection{Differential equations in practice}
 
 \begin{mywrapfigsimp}{3.05in}{3.35in}
 \noindent
 \inputpdft{1-1-fig}{%
-A diagram connecting three terms on top is 'Real-world problem',
+A diagram connecting three terms.  On top is 'Real-world problem',
 then an arrow marked 'abstract' connects to 'Mathematical model',
 then an arrow marked 'solve' connects to 'Mathematical solution',
 and finally an arrow marked 'interpret' connects back to the first
@@ -503,12 +504,12 @@ Let $P$ denote the population
 of some bacteria on a Petri dish.  We assume that there is enough food
 and enough space.  Then the rate of growth of the bacteria is proportional
 to the population---a larger population grows faster.  Let $t$ denote
-time (say in seconds) and $P$ the population.  Our model
+time (say in seconds).  Our model
 is
 \begin{equation*}
 \frac{dP}{dt} = kP ,
 \end{equation*}
-for some positive constant $k > 0$.
+for some positive constant $k$.
 
 Suppose there are 100 bacteria at time 0 and 200 bacteria 10 seconds later.
 How many bacteria will there be 1 minute from time 0 (in 60 seconds)?
@@ -793,8 +794,8 @@ Is there a solution to $y' = y$, such that $y(0) = y(1)$?
 
 \begin{exercise}
 The population of city X was 100 thousand 20 years ago, and
-it was 120 thousand 10 years ago.  Assuming constant
-growth, you can use the exponential population model
+it was 120 thousand 10 years ago.  Assuming a constant
+growth rate, you can use the exponential population model
 (like for the bacteria).  What do you estimate the population is now?
 \end{exercise}
 
@@ -802,7 +803,7 @@ growth, you can use the exponential population model
 Suppose that a football coach gets a salary of
 one million dollars now, and a raise of $10\%$ every year
 (so exponential model, like population of bacteria).
-Let $s$ be the salary in millions of dollars, and $t$ is time in years.
+Let $s$ be the salary in millions of dollars, and $t$ the time in years.
 \begin{tasks}(2)
 \task
 What are $s(0)$ and $s(1)$?
@@ -896,13 +897,13 @@ the most basic classification.  We already saw the distinction
 between ordinary and partial differential equations:
 \begin{itemize}
 \item
-An \emph{ordinary differential equation}\index{Ordinary differential equation}\index{ODE}
+An \emph{\myindex{ordinary differential equation}}\index{ODE}
 (ODE) is an
 equation where the derivatives are taken with respect to only one variable.
 That is, there is only one independent variable.
 \item
-A \emph{partial differential equation}\index{Partial differential equation}\index{PDE}
-(PDE) is an equation that depend on partial derivatives of several variables.
+A \emph{\myindex{partial differential equation}}\index{PDE}
+(PDE) is an equation that depends on partial derivatives of several variables.
 That is, there are several independent variables.
 \end{itemize}
 
@@ -1046,7 +1047,7 @@ all terms depend on the dependent variable.  That is, if no
 term is a function of the independent variables alone.  Otherwise, the
 equation is called \emph{\myindex{nonhomogeneous}} or
 \emph{\myindex{inhomogeneous}}.  For example,
-the exponential growth equation, the wave equation, or the transport equation above
+the exponential growth equation, the wave equation, and the transport equation above
 are homogeneous. The mechanical vibrations equation above is nonhomogeneous
 as long as $f(t)$ is not the zero function.  Similarly, if the ambient temperature $A$ is nonzero,
 Newton's law of cooling is nonhomogeneous.
@@ -1086,7 +1087,7 @@ the independent variable $x$.
 The mechanical vibrations equation
 is a constant-coefficient nonhomogeneous second-order ODE\@.
 The same nomenclature applies to PDEs, so the transport equation,
-heat equation and wave equation are all examples of
+heat equation, and wave equation are all examples of
 constant-coefficient linear PDEs.
 A linear equation whose coefficients are not constants is sometimes
 called a \emph{\myindex{variable-coefficient}} equation.
@@ -1099,7 +1100,7 @@ For autonomous ordinary differential equations, the
 independent variable is then thought of as time.
 An autonomous equation
 means an equation that does not change with time.
-For example, Newton's law of cooling is autonomous, so are the equations
+For example, Newton's law of cooling is autonomous, and so are the equations
 \eqref{classification:eqnonlinode} and
 \eqref{classification:pendulum}.  On the other hand, mechanical
 vibrations (as long as $f(t)$ is nonconstant) or
@@ -1186,7 +1187,7 @@ ODE\@, equation, $7^{\text{th}}$-order, linear, homogeneous, constant-coefficien
 d)
 ODE\@, equation, $2^{\text{nd}}$-order, linear, nonhomogeneous, constant-coefficient, autonomous.\\
 e)
-ODE\@, system, $2^{\text{nd}}$-order, nonlinear.\\
+ODE\@, system, $2^{\text{nd}}$-order, nonlinear, not autonomous.\\
 f)
 PDE\@, equation, $2^{\text{nd}}$-order, nonlinear.
 }
