@@ -30,6 +30,7 @@ equation
 y'' + p(x)y' + q(x)y = 0 .
 \end{equation}
 We have already seen some second-order linear homogeneous equations.
+For $k > 0$:
 \begin{align*}
 \qquad y'' + k^2 y & = 0 &
 & \text{Two solutions are:} \quad y_1 = \cos (kx), \quad y_2 = \sin(kx) . \qquad \\
@@ -137,12 +138,12 @@ y(a) = b_0 , \qquad y'(a) = b_1 .
 \end{equation*}
 \end{theorem}
 
-For example, the equation $y'' + k^2 y = 0$ with $y(0) = b_0$ and $y'(0) = b_1$
+For example, the equation $y'' + k^2 y = 0$ ($k > 0$) with $y(0) = b_0$ and $y'(0) = b_1$
 has the solution
 \begin{equation*}
 y(x) = b_0 \cos (kx) + \frac{b_1}{k} \sin (kx) .
 \end{equation*}
-The equation $y'' - k^2 y = 0$ with $y(0) = b_0$ and $y'(0) = b_1$
+The equation $y'' - k^2 y = 0$ ($k > 0$) with $y(0) = b_0$ and $y'(0) = b_1$
 has the solution
 \begin{equation*}
 y(x) = b_0 \cosh (kx) + \frac{b_1}{k} \sinh (kx) .
@@ -288,7 +289,7 @@ Equations of the form $a x^2 y'' + b x y' + c y = 0$ are called
 \emph{Euler's equations\index{Euler's equation}} or
 \emph{Cauchy--Euler equations\index{Cauchy--Euler equation}}.
 They are solved by trying
-$y=x^r$ and solving for $r$ (assume $x \geq 0$ for simplicity).
+$y=x^r$ and solving for $r$ (assume $x > 0$ for simplicity).
 
 \begin{exercise} \label{sol:eulerex}
 \pagebreak[2]
@@ -511,7 +512,7 @@ y = (C_1 + C_2 x)\, e^{r_1 x} .
 \begin{example} \label{example:expsecondorder}
 Solve
 \begin{equation*}
-y'' - k^2 y = 0 .
+y'' - k^2 y = 0 \qquad \text{where } k > 0 .
 \end{equation*}
 The characteristic equation is $r^2 - k^2 = 0$ or 
 $(r-k)(r+k) = 0$.  Consequently, $e^{-k x}$ and $e^{kx}$ are the two
@@ -1892,7 +1893,7 @@ still have that $x(t) \to 0$ as $t \to \infty$.
 
 %mbxlatex \begin{myfig}
 %mbxlatex \diffyincludegraphics{width=3in}{width=4.5in}{mv-underdamped}{%
-%mbxlatex A plot for t between 0 and 30.  Two decaying exponential curves one starting it (0,1)
+%mbxlatex A plot for t between 0 and 30.  Two decaying exponential curves one starting at (0,1)
 %mbxlatex and one starting at (0, minus 1) are shown.  A sinusoidal-like curve winds between
 %mbxlatex them, starting at the top curve, going down the bottom curve, then back up
 %mbxlatex and so on.}
@@ -2027,12 +2028,12 @@ c) $I = 10 e^{-t} \cos(\sqrt{3} \, t) + \frac{10}{\sqrt{3}} e^{-t}
 
 \begin{exercise}
 \pagebreak[2]
-A \unit[5000]{kg} railcar hits a bumper (a spring) at \unitfrac[1]{m}{s},
+A \unit[5,000]{kg} railcar hits a bumper (a spring) at \unitfrac[1]{m}{s},
 and the spring compresses by \unit[0.1]{m}.  Assume no damping.
 \begin{tasks}
 \task Find $k$.
 \task How far does the spring compress when a
-\unit[10000]{kg} railcar hits the spring at the same speed?
+\unit[10,000]{kg} railcar hits the spring at the same speed?
 \task If the spring
 would break if it compresses further than \unit[0.3]{m}, what is the maximum
 mass of a railcar that can hit it at \unitfrac[1]{m}{s}?
@@ -2042,13 +2043,13 @@ at \unitfrac[2]{m}{s}?
 \end{tasks}
 \end{exercise}
 \exsol{%
-a) $k=\unitfrac[500000]{N}{m}$
+a) $k=\unitfrac[500,000]{N}{m}$
 \quad
 b) $\frac{1}{5\sqrt{2}} \approx \unit[0.141]{m}$
 \quad
-c) \unit[45000]{kg}
+c) \unit[45,000]{kg}
 \quad
-d) \unit[11250]{kg}
+d) \unit[11,250]{kg}
 }
 
 \begin{exercise}
@@ -2800,7 +2801,6 @@ x =
 \end{equation*}
 
 %mbxlatex \begin{myfig}
-%mbxlatex \capstart
 %mbxlatex \diffyincludegraphics{width=3in}{width=4.5in}{3-6-beating}{%
 %mbxlatex A plot of a quickly oscillating curve whose amplitude starts at zero, then
 %mbxlatex grows, then goes to zero, then grows again, etc.}
@@ -3030,13 +3030,20 @@ indistinguishable from an oscillating sinusoidal curve.}
 $k=1$, $m=1$, $F_0 = 1$, $c=0.7$, and $\omega=1.1$.\label{3.6:transbehfig}}
 \end{mywrapfig}
 
-How fast $x_{tr}$ goes to zero depends on $p$ (and
-hence $c$).  The
-bigger $p$ is (the bigger $c$ is), the \myquote{faster} $x_{tr}$ becomes negligible. 
+How fast $x_{tr}$ goes to zero depends on $p$
+(and hence $c$).
+Below critical damping, that is, $p < \omega_0$,
+the bigger $p$ is (the bigger $c$ is),
+the \myquote{faster} $x_{tr}$ becomes negligible.
 Conversely, the smaller the damping, the longer the \myquote{transient region.}
 This is consistent
 with the observation that when $c=0$, the initial conditions affect the
 behavior for all time (i.e.\ an infinite \myquote{transient region}).
+Past critical damping, $p > \omega_0$, the transient
+region gets longer as $p$ grows, as one of
+the two roots, $r_1 = -p + \sqrt{p^2-\omega_0^2}$, gets closer to $0$.
+Of course, where we think the \myquote{transient region} ends
+depends on what we are willing to consider \myquote{negligible.}
 
 \medskip
 

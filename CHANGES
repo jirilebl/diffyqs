@@ -5,6 +5,16 @@ improved Euler.  Then the timings are the same.
 <li>In Example 1.8.4, just say to integrate \(N\) in \(y,\)
 as integrating \(M\) in \(x\) would require an extra step.
 <li>Replace Figure 1.23, the previous was very lightly off.
+<li>Reword the paragraph about the relationship between damping
+and the length of the transient region in 2.6.2 to fix an erratum.
+Add a note about what happens above critical damping, and also add 
+a sentence about "transient region" being a fuzzy concept.
+<li>
+Explicitly state that \(k &gt; 1\) in 2.1 wherever it was implicitly required.
+<li>In the remark after Exercise 2.1.5 say we assume
+\(x\) is positive rather than nonnegative, that avoids technicalities
+we don't want the reader to think about at this point.
+<li>Explicitly require that \(k &gt; 0\) in Example 2.2.1
 <li>In Remark 6.4.1, do not use \(s\) as a dummy variable
 of integration, use \(\tau .\)
 <li>On first page of 7.1, define the terms "coefficients" and "center"
