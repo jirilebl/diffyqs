@@ -4,6 +4,7 @@ That requires 9 halvings with standard Euler and 4 halvings with
 improved Euler.  Then the timings are the same.
 <li>In Example 1.8.4, just say to integrate \(N\) in \(y,\)
 as integrating \(M\) in \(x\) would require an extra step.
+<li>Replace Figure 1.23, the previous was very lightly off.
 <li>In Remark 6.4.1, do not use \(s\) as a dummy variable
 of integration, use \(\tau .\)
 <li>On first page of 7.1, define the terms "coefficients" and "center"
