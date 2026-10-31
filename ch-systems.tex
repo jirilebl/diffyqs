@@ -442,7 +442,7 @@ A diagram of a direction field, that is, a grid of small arrows.
 The arrows on the top of the diagram point generally rightward, the arrows
 on the right-hand side point generally upward.  Along the x equals y
 diagonal the arrows are pointing away from the origin and the 
-arrows elsewhere tend to point towards this line and then slowly changing
+arrows elsewhere tend to point towards this line and then slowly change
 to point in the same direction as the arrows on the diagonal.}
  \caption{The direction field for $x' = 2y-x$, $y' = x$.%
  \label{sintro-vectorfield:fig}}
@@ -533,7 +533,7 @@ $y'' + {(x'+y')}^2 -x = 0$ as a first-order system of ODEs.
 \end{exercise}
 
 \begin{exercise}
-Suppose two masses on carts on frictionless surface are at 
+Suppose two masses on carts on a frictionless surface are at 
 displacements $x_1$ and $x_2$ as in \examplevref{sintro:carts-example}.
 Suppose that a rocket applies force $F$ in the positive direction on cart
 $x_1$.  Set up the system of equations.
@@ -543,7 +543,7 @@ $x_1$.  Set up the system of equations.
 Suppose the tanks are as in 
 \examplevref{sintro:closedbrine-example}, starting both at volume $V$,
 but now the rate of flow from tank 1 to tank 2 is $r_1$, and
-rate of flow from tank 2 to tank one is $r_2$.
+rate of flow from tank 2 to tank 1 is $r_2$.
 Notice that the volumes are now not constant.  Set up the system of equations.
 \end{exercise}
 
@@ -590,7 +590,7 @@ $y_4' = - y_1 + y_2 + t^2$
 }
 
 \begin{exercise}
-Suppose two masses on carts on frictionless surface are at 
+Suppose two masses on carts on a frictionless surface are at 
 displacements $x_1$ and $x_2$ as in \examplevref{sintro:carts-example}.
 Suppose initial displacement is $x_1(0)=x_2(0)=0$, and initial velocity is $x_1'(0) = x_2'(0) = a$ for some number $a$.
 Use your intuition
@@ -836,7 +836,8 @@ $A = B = \left[ \begin{smallmatrix} 0 & 1 \\ 0 & 0 \end{smallmatrix}
 \right]$.
 \end{enumerate}
 
-For the last two items to hold, we would need to \myquote{divide} by
+For the implications in the last two items to hold,
+we would need to \myquote{divide} by
 a matrix.  This is where the \emph{\myindex{matrix inverse}} comes in.
 Suppose that $A$ and $B$ are $n \times n$ matrices such that
 \begin{equation*}
@@ -946,7 +947,7 @@ and $(a+b,c+d)$.  And it is precisely
 \begin{equation*}
 \left\lvert \, \det \left(
 \begin{bmatrix} a & b \\ c & d \end{bmatrix}
-\right) \, \right\lvert.
+\right) \, \right\rvert.
 \end{equation*}
 The vertical lines above mean absolute value.
 The matrix $\left[ \begin{smallmatrix} a & b \\ c & d \end{smallmatrix}
@@ -2459,7 +2460,7 @@ Start with $\lambda = 1-i$.
 i & 1 \\
 -1 & i
 \end{bmatrix}
-\vec{v} = \vec{0}.
+\vec{v} & = \vec{0}.
 \end{align*}
 The equations $i v_1 + v_2 = 0$ and $-v_1 + iv_2 = 0$
 are multiples of each other.  So we only need to consider one of them.
@@ -2549,7 +2550,7 @@ that
 \vec{x}_4 =
 \operatorname{Im} \vec{x}_1 =
 \frac{\vec{x}_1 - \overline{\vec{x}_1}}{2i}  =
-\frac{\vec{x}_1 - \vec{x}_2}{2i} .
+\frac{\vec{x}_1 - \vec{x}_2}{2i}
 \end{equation*}
 is also a real-valued solution.  It turns out that $\vec{x}_3$ and
 $\vec{x}_4$ are linearly independent.
@@ -2889,7 +2890,7 @@ The system is autonomous (compare this section
 to \sectionref{auteq:section}),
 and so we draw a vector field (see the end of
 \sectionref{sec:introtosys}).
-We will be able to visually understand this vectorfield
+We will be able to visually understand this vector field
 and the solutions of the ODE in terms of the
 eigenvalues and eigenvectors of the matrix $P$.
 For this section,
@@ -3011,7 +3012,7 @@ the x-axis representing the eigenvector (1,0) points to the right,
 while the arrow representing the eigenvector (1, minus 3)
 now points towards the
 origin as the eigenvalue is negative.  The arrows of the direction field
-in each 4 of the sectors between the two lines first go along the line with
+in each of the 4 sectors between the two lines first go along the line with
 slope minus 3 towards the origin, and once the arrows get close enough to the
 x-axis they start going away from the origin in the direction of the x-axis.
 Several trajectories that follow these arrows are shown.}
@@ -3079,7 +3080,7 @@ solutions.  This type of picture is sometimes called a
  \capstart
  \diffyincludegraphics{width=3in}{width=4.5in}{pln-ellipses}{%
 A direction field is shown where the arrows point in a way where
-following them would lead us along an ellipse that is taller than wider
+following them would lead us along an ellipse that is taller than it is wide
 and in a clockwise direction.
 The arrows are longer the further away from the origin we get.
 Several such ellipses representing the trajectories are shown.}
@@ -3210,7 +3211,7 @@ for the mass-spring system.
 \task Convert this to a system of first-order equations.
 \task Classify for what $m, c, k$ do you get which behavior.
 \task Explain from physical intuition why you do not get all the
-different kinds of behavior here?
+different kinds of behavior here.
 \end{tasks}
 \end{exercise}
 
@@ -3239,8 +3240,8 @@ You can assume that $a$ and $b$ are not zero.
 Take the system from \examplevref{sintro:closedbrine-example},
 $x_1'=\frac{r}{V}(x_2-x_1)$,
 $x_2'=\frac{r}{V}(x_1-x_2)$.
-As we said, one of the eigenvalues is zero.  What is the other eigenvalue, how
-does the picture look like, and what happens when $t$ goes to infinity.
+As we said, one of the eigenvalues is zero.  What is the other eigenvalue,
+what does the picture look like, and what happens when $t$ goes to infinity?
 \end{exercise}
 
 \setcounter{exercise}{100}
@@ -3591,11 +3592,11 @@ Two plots are given, both are for t from 0 to 10.  In the left-hand
 plot, two sinusoidal (cosine) functions are moving in unison, one with
 amplitude 1 and one with amplitude 2, they are simply the graphs of cosine of t
 and 2 cosine of t.  In the right-hand plot, two cosine functions are moving in
-opposite direction with twice the frequency, they are simply the graphs
+opposite directions with twice the frequency, they are simply the graphs
 of cosine of 2 t and minus cosine of 2 t.}
 \caption{The two modes of the mass-spring system.  In the left plot
-the masses are moving in unison and in the right plot are masses moving in the
-opposite direction.\label{sosa:modesfig}}
+the masses are moving in unison and in the right plot the masses are moving in
+opposite directions.\label{sosa:modesfig}}
 \end{myfig}
 
 Let us write the solution as
@@ -3699,7 +3700,7 @@ The graphs of the two displacements, $x_1$ and $x_2$ of the two carts is in
 \capstart
 \diffyincludegraphics{width=3in}{width=4.5in}{sosa-superpos}{%
 Two functions are plotted for t equals 0 to t equals 10.
-The motion is a somewhat
+The motion is somewhat
 complicated but still periodic.}
 \caption{Superposition of the two modes given the initial
 conditions.\label{sosa:superposfig}}
@@ -3711,7 +3712,7 @@ We have two toy rail
 cars.  Car 1 of mass \unit[2]{kg} is traveling at \unitfrac[3]{m}{s}
 towards the second
 rail car of mass \unit[1]{kg}.  There is a bumper on the second rail car that
-engages at the moment the cars hit (it connects to two cars)
+engages at the moment the cars hit (it connects the two cars)
 and does not let go.
 The bumper acts like a spring of spring constant $k=\unitfrac[2]{N}{m}$.
 The second
@@ -3722,8 +3723,8 @@ car is 10 meters from a wall.  See \figurevref{sosa:railcarscrashfig}.
 \inputpdft{railcarscrash}{%
 A diagram of two carts on wheels, on the left there is a cart labeled
 m1 with an arrow pointing right indicating that this cart is moving right.
-A little distance away there is second cart labeled m2 with a spring on a
-left labeled k, which is not connected to anything on its left side.
+A little distance away there is a second cart labeled m2 with a spring on
+its left labeled k, which is not connected to anything on its left side.
 There is a wall on the right and a label indicates that it is 10 meters
 away to the right of the second cart.}
 \caption{The crash of two rail cars.\label{sosa:railcarscrashfig}}
@@ -3795,7 +3796,7 @@ We now apply the initial conditions.  First the cars start at position 0
 so $x_1 (0) = 0$ and $x_2(0) = 0$.  The first car is traveling at
 \unitfrac[3]{m}{s},
 so $x_1'(0) = 3$ and the second car starts at rest, so $x_2'(0) = 0$.
-The first conditions says
+The first condition says
 \begin{equation*}
 \vec{0} = \vec{x}(0) = 
 \begin{bmatrix}
@@ -3897,7 +3898,7 @@ $x_2\left(\frac{2 \pi}{\sqrt{3}}\right) =
 quarter meters from the wall.
 
 Alternatively Bob could move away from the wall
-towards the incoming car 2, where another safe distance is
+towards the incoming car 1, where another safe distance is
 $x_2 \left( \frac{4 \pi}{\sqrt{3}} \right) = \frac{8 \pi}{\sqrt{3}}
 \approx 14.51$ and so on.  We can use all the different
 $t$ such that $x_2'(t) = 0$.  Of course $t=0$ is also a solution,
@@ -3962,7 +3963,7 @@ $-\omega^2$ is not an eigenvalue of $A$.  That is true if and only if $\omega$
 is not a natural frequency of the system.
 
 We simplified things a little bit.  If we wish to have the
-forcing term to be in the units of force, say Newtons, then we must write
+forcing term be in the units of force, say Newtons, then we must write
 \begin{equation*}
 M \vec{x}'' = K \vec{x} + \vec{G} \cos(\omega t) .
 \end{equation*}
@@ -4125,7 +4126,7 @@ because we will have to try a particular solution of the form
 \vec{d} \, \cos (\omega t) .
 \end{equation*}
 That is assuming that the eigenvalues of the coefficient matrix are distinct.
-Next, note that the amplitude of this solution grows without bound as $t$ grows.
+Note that the amplitude of this solution grows without bound as $t$ grows.
 
 \subsection{Exercises}
 
@@ -4161,7 +4162,7 @@ time, the first mass will always come to a stop.
 \end{exercise}
 
 \begin{exercise}
-Let us take the \examplevref{sosa:railcarexample}, but that at
+Let us take the \examplevref{sosa:railcarexample}, but suppose that at
 time of impact, car 2 is moving to the left with speed
 \unitfrac[3]{m}{s}.
 \begin{tasks}
@@ -4411,7 +4412,7 @@ eigenvectors.
 
 \subsection{Defective eigenvalues}
 
-If an $n \times n$ matrix has less than $n$ linearly independent
+If an $n \times n$ matrix has fewer than $n$ linearly independent
 eigenvectors, it is said to be \emph{deficient\index{deficient matrix}}.
 Then there is at least
 one eigenvalue with its geometric multiplicity that is less than its
@@ -5089,7 +5090,7 @@ Consider the constant-coefficient equation
 \begin{equation*}
 {\vec{x}}' = P \vec{x} .
 \end{equation*}
-If this would be just one equation (when $P$ is a number or a $1
+If this were just one equation (when $P$ is a number or a $1
 \times 1$ matrix), then the solution would be
 \begin{equation*}
 \vec{x} = e^{Pt} .
@@ -5194,7 +5195,7 @@ so $\vec{x} (0) = e^{0P} \vec{b} = \vec{b}$.
 We mention a drawback of matrix exponentials.
 In general $e^{A+B} \neq e^A e^B$.  The trouble is that matrices do
 not commute, that is, in general $AB \neq BA$.
-If you would try to rewrite $e^A e^B$ as $e^{A+B}$ using the Taylor series,
+If you try to rewrite $e^A e^B$ as $e^{A+B}$ using the Taylor series,
 you will see why the lack of commutativity becomes a problem.
 It is true that if
 $AB = BA$, that is, if $A$ and $B$ commute, then $e^{A+B} = e^Ae^B$.  We will
@@ -5740,7 +5741,7 @@ $\left[ \begin{smallmatrix}
 \begin{tasks}
 \task Find matrix $A$ with these properties.
 \task Find a fundamental matrix solution to ${\vec{x}}' = A \vec{x}$.
-\task Solve the system in with initial conditions $\vec{x}(0) =
+\task Solve the system with initial conditions $\vec{x}(0) =
 \left[ \begin{smallmatrix}
 2 \\
 3
@@ -6578,13 +6579,13 @@ undetermined coefficients\index{undetermined coefficients!for systems} also
 works for systems.
 The only
 difference is that we use unknown vectors rather than just
-numbers.  Same caveats apply to undetermined coefficients for systems
+numbers.  The same caveats apply to undetermined coefficients for systems
 as for single equations.  This method does not always work.
-Furthermore, if the right-hand side is complicated, we have to solve
+Furthermore, if the right-hand side is complicated, we need to solve
 for lots of
 variables.  Each element of an
-unknown vector is an unknown number.  In a system of 3 equations with
-say 4 unknown vectors (this would not be uncommon), we already have 12
+unknown vector is an unknown number.  In a system of, say, 3 equations with
+4 unknown vectors (this would not be uncommon), we have 12
 unknown numbers to solve for.
 The method can turn into a lot of
 \myindex{tedious} % a bit of fun
@@ -7064,7 +7065,7 @@ we can obtain the general solution by adding in constants of integration.
 Doing so would add $X(t) \vec{c}$ for a vector $\vec{c}$ of arbitrary constants.  But
 that is precisely the complementary solution.
 
-\subsection{Second-order constant-coefficients}
+\subsection{Second-order constant-coefficient}
 
 \subsubsection{Undetermined coefficients}
 
@@ -7106,7 +7107,9 @@ to do the same thing as we do for first-order systems.
 
 You can never go wrong by putting in more terms than needed into
 your guess.  Those extra coefficients will turn out to
-be zero.  But it is useful to save some time and effort.
+be zero or possibly can be chosen freely when they come from the
+complementary solution.
+But it is useful to save some time and effort.
 
 \subsubsection{Eigenvector decomposition}
 
