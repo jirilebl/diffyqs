@@ -793,27 +793,27 @@ vectors $\vec{w}_1$ and $\vec{w}_2$, we write
 \end{equation*}
 Let us find the formula for $a_1$ and $a_2$.  We compute,
 \begin{equation*}
-\langle \vec{v} , \vec{w_1} \rangle
+\langle \vec{v} , \vec{w}_1 \rangle
 =
-\langle a_1 \vec{w}_1  + a_2 \vec{w}_2 , \vec{w_1} \rangle
+\langle a_1 \vec{w}_1  + a_2 \vec{w}_2 , \vec{w}_1 \rangle
 =
-a_1 \langle \vec{w}_1 , \vec{w_1} \rangle
+a_1 \langle \vec{w}_1 , \vec{w}_1 \rangle
 +
-a_2 \underbrace{\langle \vec{w}_2 , \vec{w_1} \rangle}_{=0}
+a_2 \underbrace{\langle \vec{w}_2 , \vec{w}_1 \rangle}_{=0}
 =
-a_1 \langle \vec{w}_1 , \vec{w_1} \rangle .
+a_1 \langle \vec{w}_1 , \vec{w}_1 \rangle .
 \end{equation*}
 Therefore,
 \begin{equation*}
 a_1 = 
-\frac{\langle \vec{v} , \vec{w_1} \rangle}{
-\langle \vec{w}_1 , \vec{w_1} \rangle} .
+\frac{\langle \vec{v} , \vec{w}_1 \rangle}{
+\langle \vec{w}_1 , \vec{w}_1 \rangle} .
 \end{equation*}
 Similarly,
 \begin{equation*}
 a_2 = 
-\frac{\langle \vec{v} , \vec{w_2} \rangle}{
-\langle \vec{w}_2 , \vec{w_2} \rangle} .
+\frac{\langle \vec{v} , \vec{w}_2 \rangle}{
+\langle \vec{w}_2 , \vec{w}_2 \rangle} .
 \end{equation*}
 You probably remember this formula from vector calculus.
 
@@ -821,23 +821,23 @@ You probably remember this formula from vector calculus.
 Write
 $\vec{v} = \left[ \begin{smallmatrix} 2 \\ 3 \end{smallmatrix} \right]$
 as a linear combination of 
-$\vec{w_1} = \left[ \begin{smallmatrix} 1 \\ -1 \end{smallmatrix} \right]$
+$\vec{w}_1 = \left[ \begin{smallmatrix} 1 \\ -1 \end{smallmatrix} \right]$
 and
-$\vec{w_2} = \left[ \begin{smallmatrix} 1 \\ 1 \end{smallmatrix} \right]$.
+$\vec{w}_2 = \left[ \begin{smallmatrix} 1 \\ 1 \end{smallmatrix} \right]$.
 
 Note that $\vec{w}_1$ and $\vec{w}_2$ are orthogonal
 as $\langle \vec{w}_1 , \vec{w}_2 \rangle = 1(1) + (-1)1 = 0$.
 Then
 \begin{align*}
 & a_1 = 
-\frac{\langle \vec{v} , \vec{w_1} \rangle}{
-\langle \vec{w}_1 , \vec{w_1} \rangle}
+\frac{\langle \vec{v} , \vec{w}_1 \rangle}{
+\langle \vec{w}_1 , \vec{w}_1 \rangle}
 =
 \frac{2(1) + 3(-1)}{1(1) + (-1)(-1)} = \frac{-1}{2} ,
 \\
 & a_2 = 
-\frac{\langle \vec{v} , \vec{w_2} \rangle}{
-\langle \vec{w}_2 , \vec{w_2} \rangle}
+\frac{\langle \vec{v} , \vec{w}_2 \rangle}{
+\langle \vec{w}_2 , \vec{w}_2 \rangle}
 =
 \frac{2 + 3}{1 + 1} = \frac{5}{2} .
 \end{align*}
@@ -1351,7 +1351,7 @@ Extend periodically and compute the Fourier series of $f(t)$.
 \end{exercise}
 
 There is another form of the Fourier series using complex exponentials
-$e^{nt}$ for $n=\ldots,-2,-1,0,1,2,\ldots$ instead of
+$e^{int}$ for $n=\ldots,-2,-1,0,1,2,\ldots$ instead of
 $\cos(nt)$ and $\sin(nt)$ for positive $n$.  This form may be easier
 to work with sometimes.  It is certainly more compact to write,
 and there is only one formula for the coefficients.  On the downside,
@@ -1677,7 +1677,7 @@ piecewise smooth without mentioning an interval.
 \end{example}
 
 \begin{example}
-The function $f(t) = \lvert t \lvert$
+The function $f(t) = \lvert t \rvert$
 is piecewise smooth.
 \end{example}
 
@@ -2113,12 +2113,12 @@ extended periodically.
 \end{tasks}
 \end{exercise}
 \exsol{%
-a) $\frac{8}{6} +
+a) $\frac{4}{3} +
 \sum\limits_{n=1}^\infty
 \frac{16{(-1)}^n}{\pi^2 n^2}
 \cos\bigl(\frac{n\pi}{2} t\bigr)$
 \quad
-b) $\frac{8}{6}
+b) $\frac{4}{3}
 -
 \frac{16}{\pi^2 }
 \cos\bigl(\frac{\pi}{2} t\bigr)
@@ -2222,7 +2222,7 @@ $\nicefrac{\pi}{4} = \sum\limits_{n=1}^\infty
 \nicefrac{1}{7} + \cdots$.
 \qquad
 c) Using the first 4 terms get $\nicefrac{76}{105}\approx 0.72$ (quite a bad
-approximation, you would have to take about 50 terms to start to get to
+approximation, you would have to take about 25 terms to start to get to
 within $0.01$ of $\nicefrac{\pi}{4}$).
 }
 
@@ -3760,11 +3760,11 @@ in \figurevref{heat:wireexmaxfig}.
 \begin{myfig}
 \capstart
 \diffyincludegraphics{width=3in}{width=4.5in}{heat-wireex-max}{%
-A graph of two very similar functions for t from 0 to 1, both decaying
-down to a relatively small value at t equals 1.  The bottom curve starts
+A graph of two very similar functions for t from 0 to 100, both decaying
+down to a relatively small value at t equals 100.  The bottom curve starts
 exactly at 12.5 at t equals 0, while the top curve is very slightly above
-at t equals 0.  They get closer and closer and by the time t equals 1 they are hard to
-tell apart.}
+at t equals 0.  They get closer and closer and from about t equal 5
+onwards, they are hard to tell apart.}
 \caption{Temperature at the midpoint of the wire (the bottom curve),
 and the approximation of this temperature by using only the first term in
 the series (top curve).\label{heat:wireexmaxfig}}
@@ -4594,7 +4594,7 @@ way.
 A plot of the graph of a function y of (x,t) over the xt-plane
 over the region where x is between 0 and 2 and t is between 0
 and 3.  At t equals 0, the function is an upward triangle reaching 0.1 in
-the middle.  The surface is 0 on the sides where x equals 0 or x equals 1.
+the middle.  The surface is 0 on the sides where x equals 0 or x equals 2.
 The surface looks like half an upwards pyramid that ends at t equals 1
 and then there is an inverted downward pyramid that reaches down to minus 0.1
 for t between 1 and 3.}
@@ -5328,7 +5328,7 @@ f(x) =
 0 & \text{if } \; \phantom{{-1} \leq {} }x < -1, \\
 x+1 & \text{if } \; {-1} \leq x < 0, \\
 -x+1 & \text{if } \; \phantom{-}0 \leq x < 1, \\
-0 & \text{if } \; \phantom{-}1 < x .
+0 & \text{if } \; \phantom{-}1 \leq x .
 \end{cases}
 \end{equation*}
 Solve using the d'Alembert solution. That is, write down a piecewise
@@ -5669,7 +5669,7 @@ satisfies
 
 \begin{example}
 Take $w=h=\pi$ and let $f(x) = \pi$.  Let us compute the sine
-series for the function $\pi$ (same as the series for the square wave).
+series for the function $\pi$ (essentially the square wave series).
 For $0 < x < \pi$, we have
 \begin{equation*}
 f(x) =

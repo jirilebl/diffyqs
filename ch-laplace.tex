@@ -1211,7 +1211,7 @@ $H(s) = \frac{1}{s^2+4}$.
 
 %mbxINTROSUBSECTION
 
-\sectionnotes{1 or 1.5 lectures\EPref{, \S7.2 in \cite{EP}}\BDref{,
+\sectionnotes{1--1.5 lectures\EPref{, \S7.4 in \cite{EP}}\BDref{,
 \S6.6 in \cite{BD}}}
 
 \subsection{The convolution}
@@ -1333,7 +1333,7 @@ Suppose we wish to find the inverse Laplace transform of
 \frac{1}{s+1}
 .
 \end{equation*}
-We recognize the two entries of \tableref{ltd:table}:
+We recognize the two entries of \tableref{lt:table}:
 \begin{equation*}
 \mathcal{L}^{-1} 
 \left\{
@@ -1629,7 +1629,7 @@ $\int_0^t f(\tau) \bigl( 1 - \cos (t-\tau)\bigr)\, d\tau$
 
 %mbxINTROSUBSECTION
 
-\sectionnotes{1 or 1.5 lecture\EPref{, \S7.6 in \cite{EP}}\BDref{,
+\sectionnotes{1--1.5 lectures\EPref{, \S7.6 in \cite{EP}}\BDref{,
 \S6.5 in \cite{BD}}}
 
 \subsection{Rectangular pulse}
@@ -2261,7 +2261,7 @@ we use the rules from \sectionref{transformsofders:section}:
 sY(x) - y(x,0) .
 \end{equation*}
 
-In our specific case,
+In our case,
 $y(x,0)=0$, and so
 ${\mathcal L} \bigl\{ y_t(x,t) \bigr\} = sY(x)$.  We transform the equation
 to find
@@ -2269,7 +2269,7 @@ to find
 sY(x) = -\alpha Y'(x) .
 \end{equation*}
 This ODE needs an initial condition.  The initial condition is the
-other side condition of the PDE\@, the one that depends on $x$.  Everything
+other side condition of the PDE\@, the boundary condition at $x=0$.  Everything
 is transformed, so we must also transform this condition
 \begin{equation*}
 Y(0) = 
@@ -2509,7 +2509,7 @@ In other words,
 Y(x) = F(s) \frac{-1}{\sqrt{s}} e^{-\sqrt{s} x} .
 \end{equation*}
 If we look up the inverse transform in a table such as the one in
-\Appendixref{laplacelist:appendix} (or we spend the afternoon
+\appendixref{laplacelist:appendix} (or we spend the afternoon
 doing calculus),
 we find 
 %\begin{equation*}

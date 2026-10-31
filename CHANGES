@@ -15,6 +15,10 @@ Explicitly state that \(k &gt; 1\) in 2.1 wherever it was implicitly required.
 \(x\) is positive rather than nonnegative, that avoids technicalities
 we don't want the reader to think about at this point.
 <li>Explicitly require that \(k &gt; 0\) in Example 2.2.1
+<li>In the answer in the back for part c of Exercise 4.3.105,
+the remark about 50 terms is overstating it (that's using the simple
+error estimate), in reality you get to within 0.01 with 25 terms,
+so just say 25 now.
 <li>In Remark 6.4.1, do not use \(s\) as a dummy variable
 of integration, use \(\tau .\)
 <li>On first page of 7.1, define the terms "coefficients" and "center"
