@@ -58,7 +58,7 @@ exists, we say the series \eqref{ps:sereq1}
 \emph{converges}\index{convergence of a power series} at $x$.
 At $x=x_0$, the series always converges to $a_0$.
 When \eqref{ps:sereq1}
-converges at any other $x \neq x_0$,
+converges at some other $x \neq x_0$,
 we say \eqref{ps:sereq1} is a
 \emph{\myindex{convergent power series}}, and we write
 \begin{equation*}
@@ -117,7 +117,7 @@ diverges at $x=1$.
 If a power series converges absolutely
 at some $x_1$, then for all $x$ such that
 $\lvert x - x_0  \rvert \leq \lvert x_1 - x_0 \rvert$ (that is, $x$ is
-no further than $x_1$ to $x_0$), we have
+no further from $x_0$ than $x_1$ is), we have
 $\lvert a_k \rvert \, {\lvert x-x_0 \rvert}^k \leq
 \lvert a_k \rvert \, { \lvert x_1-x_0 \rvert}^k$
 for all $k$.
@@ -311,7 +311,7 @@ $\sqrt[k]{\lvert a_k \rvert}$
 might not exist.
 Sometimes the test must be applied to the series itself---to find
 the $L$ rather than the $A$.  For example, for the series
-$\sum_{k=1}^\infty 2^k x^{2k}$, we cannot apply the root with the $A$, we
+$\sum_{k=1}^\infty 2^k x^{2k}$, we cannot apply the root test with the $A$, we
 must work with the limit of $\sqrt[k]{\lvert 2^k x^{2k} \rvert}$,
 which equals $L = 2 {\lvert x \rvert}^2$.  This $L$ is less than $1$ when
 $\lvert x \rvert < \frac{1}{\sqrt{2}}$ and so $\frac{1}{\sqrt{2}}$
@@ -339,7 +339,7 @@ Functions represented by power series are called
 but the functions you have seen in calculus likely all are.
 An analytic function $f(x)$ equals its \emph{\myindex{Taylor series}}%
 \footnote{Named after the English mathematician
-\href{http://en.wikipedia.org/wiki/Brook_Taylor}{Sir Brook Taylor}
+\href{http://en.wikipedia.org/wiki/Brook_Taylor}{Brook Taylor}
 (1685--1731).} (a power series computed from $f$)
 for $x$ near a given point $x_0$:
 \begin{equation} \label{ps:tayloreq}
@@ -373,7 +373,7 @@ need to take more and more terms of the Taylor series.
 \capstart
 \diffyincludegraphics{width=3in}{width=4.5in}{ps-sin}{%
 A plot of the sine function on the interval minus 10 to 10.
-Then two approximations plotted that both come from the bottom of the
+Two approximations are also plotted that both come from the bottom of the
 picture approach the sine function graph, both are very close to it
 in an interval around the origin, and both leave after a while through
 the top of the picture.  One of the approximations is close to the
@@ -389,7 +389,7 @@ One of the main properties of power series that we will use is
 that we can differentiate them term by term.  That is,
 suppose that 
 $\sum a_k {(x-x_0)}^k$ is a convergent power series.  Then
-for $x$ in the radius of convergence, we have
+for $x$ inside the radius of convergence, we have
 \begin{equation*}
 \frac{d}{dx}
 \left[\sum_{k=0}^\infty a_k {(x-x_0)}^k\right]
@@ -711,7 +711,9 @@ Consider a linear second-order homogeneous ODE of the form
 \begin{equation*}
 P(x) y'' + Q(x) y' + R(x) y = 0 .
 \end{equation*}
-Suppose that $P(x)$, $Q(x)$, and $R(x)$ are polynomials.  We will 
+Suppose that $P(x)$, $Q(x)$, and $R(x)$ are polynomials (or
+more generally analytic functions, that is, functions defined by power
+series).  We will 
 try a solution of the form
 \begin{equation*}
 y = \sum_{k=0}^\infty a_k {(x-x_0)}^k ,
@@ -733,11 +735,12 @@ We start with a very simple example
 \begin{equation*}
 y'' - y = 0 .
 \end{equation*}
-Let us try a power series solution near $x_0 = 0$,
-which is an ordinary point.  Every point is an ordinary
-point in fact, as the equation is a constant-coefficient one.  We already know
-we should obtain exponentials or the hyperbolic sine and cosine,
-but let us pretend we do not know this fact.
+Every point is an ordinary
+point, as the equation is a constant-coefficient one.
+We try a power series solution near $x_0 = 0$.
+We already know
+we will obtain exponentials or the hyperbolic sine and cosine,
+but we pretend we do not know this fact.
 
 We try
 \begin{equation*}
@@ -787,7 +790,7 @@ a_{k+2} = \frac{a_k}{(k+2)(k+1)} .
 The equation above is called a \emph{\myindex{recurrence relation}}
 for the coefficients of the power series.
 It does not matter what $a_0$ or $a_1$ are.  They can be arbitrary.
-But once we pick $a_0$ and $a_1$, all other coefficients are
+Once we pick $a_0$ and $a_1$, all other coefficients are
 determined by the recurrence relation.
 
 Let us see what the coefficients
@@ -842,9 +845,9 @@ a_0 \cosh x + a_1 \sinh x .
 \end{equation*}
 \end{example}
 
-Of course, in general we will not be able to recognize 
+In general, we will not be able to recognize 
 the series that appears, since usually there will not be
-any elementary function that matches it.  In that case, we will be
+any elementary function that matches it.  We will be
 content with the series.
 
 \begin{example}
@@ -1108,7 +1111,7 @@ Then
 y(x) = a_0 y_1(x) + a_1 y_2(x) .
 \end{equation*}
 
-We remark that if $n$ is a positive even integer, then $y_1(x)$ is a
+We remark that if $n$ is a nonnegative even integer, then $y_1(x)$ is a
 polynomial as all the coefficients in the series beyond
 degree $n$ are zero.  If $n$ is a positive odd integer, then $y_2(x)$ is
 a polynomial.  For example, if $n=4$, then
@@ -1142,7 +1145,7 @@ Use power series methods to solve $y''+x^2y = 0$ at the point $x_0 = 0$.
 
 \begin{exercise}
 The methods work for other orders than second order.  Try the methods
-of this section to solve the first-order system $y'-xy = 0$ at
+of this section to solve the first-order equation $y'-xy = 0$ at
 the point $x_0 = 0$.
 \end{exercise}
 
@@ -1562,13 +1565,13 @@ Let
 P(x) y'' + Q(x) y' + R(x) y = 0
 \end{equation*}
 be an ODE for polynomials
-$P(x)$, $Q(x)$, and $R(x)$.
+$P(x)$, $Q(x)$, and $R(x)$ (or more generally analytic functions).
 As before, if $P(x_0) = 0$, then $x_0$ is a
 singular point.
 If we divide by $P(x)$ to put the equation in standard form
 $y'' + \frac{Q(x)}{P(x)} y' + \frac{R(x)}{P(x)} y = 0$,
 perhaps the singularities introduced are not too bad.
-More specifically, if the limits
+More specifically, if $x_0$ is a singular point and the limits
 \begin{equation*}
 \lim_{x \to x_0} ~ (x-x_0) \frac{Q(x)}{P(x)}
 \qquad \text{and} \qquad
@@ -1617,7 +1620,7 @@ The main
 idea is the following theorem.
 
 \begin{theorem}[Method of Frobenius]
-Suppose that 
+If
 \begin{equation} \label{eq:frobeniusmethod}
 P(x) y'' + Q(x) y' + R(x) y = 0
 \end{equation}
@@ -1662,18 +1665,18 @@ y_2 = x^{r_2} \sum_{k=0}^\infty b_k x^{k} ,
 \end{equation*}
 and solve for all $b_k$ to obtain the second solution.
 \item
-If the indicial equation has a doubled root $r$, then there we find 
+If the indicial equation has a doubled root $r$, then we find 
 one solution
 \begin{equation*}
-y_1 = x^{r} \sum_{k=0}^\infty a_k x^{k} ,
+y_1 = x^{r} \sum_{k=0}^\infty a_k x^{k} .
 \end{equation*}
-and then we obtain a new solution by plugging
+We obtain a new linearly independent solution by plugging
 \begin{equation*}
-y_2 = x^{r} \sum_{k=0}^\infty b_k x^{k} + (\ln x) y_1 ,
+y_2 = x^{r} \sum_{k=0}^\infty b_k x^{k} + (\ln x) y_1
 \end{equation*}
 into equation \eqref{eq:frobeniusmethod} and solving for the constants $b_k$.
 \item
-If the indicial equation has two real roots such that $r_1-r_2$ is
+If the indicial equation has two distinct real roots such that $r_1-r_2$ is
 an integer, then, assuming $r_1$ is the larger root, one solution is
 \begin{equation*}
 y_1 = x^{r_1} \sum_{k=0}^\infty a_k x^{k} ,
@@ -1753,6 +1756,11 @@ $(r-p)(r+p)=0$.
 \task
 Suppose $p$ is not an integer.  Carry out the computation
 to find the solutions $y_1$ and $y_2$ above.
+Note that the Frobenius method applies differently when
+$p$ is a multiple of $\nicefrac{1}{2}$.
+\task
+Show that if $p=1$, then there is no Frobenius-type solution
+of the form $y = x^{-1} \sum_{k=0}^\infty b_k x^{k}$.
 \end{tasks}
 \end{exercise}
 
@@ -1824,9 +1832,10 @@ J_n(x) = {(-1)}^nJ_{-n}(x) .
 \end{equation*}
 So $J_{-n}$ is not a second linearly independent
 solution.  The other solution is the
-so-called \emph{\myindex{Bessel function of second kind}}.  These make
-sense only for integer orders $n$ and
-are defined as limits of linear combinations of $J_p(x)$ and $J_{-p}(x)$, as
+so-called \emph{\myindex{Bessel function of second kind}},
+which is needed for integer orders $n$.
+We define it
+as a limit of linear combinations of $J_p(x)$ and $J_{-p}(x)$, as
 $p$ approaches $n$ in the
 following way:
 \begin{equation*}
@@ -1861,7 +1870,7 @@ to oscillate are graphed for x from 0 to 10, with one starting at
 0 but with positive slope,
 and one starting at 1 with slope zero.  Their amplitude
 seems to be decreasing as x gets larger.  In the right-hand plot,
-similarly two similar plots are shown but now both of them seem to start
+two similar plots are shown but now both of them seem to start
 from minus infinity and go up along the y axis first.}
 \caption{Plot of the $J_0(x)$ and $J_1(x)$ in the first graph
 and $Y_0(x)$ and $Y_1(x)$ in the second graph.\label{bessel:graphsfig}}

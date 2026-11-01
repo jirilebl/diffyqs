@@ -235,7 +235,7 @@ Because of this, when we wish to distinguish between vectors and numbers, we
 call the numbers \emph{scalars}\index{scalar}.
 For example,
 suppose we want to travel three times further.  If the vector is $(1,2)$,
-travelling 3 times further means going 3 units to the right and 6 units up,
+traveling 3 times further means going 3 units to the right and 6 units up,
 so we get the vector $(3,6)$.
 We just multiply each number in the vector by 3.
 If $\alpha$ is a number, then
@@ -1712,7 +1712,7 @@ example we gave.
 
 You should stare at the computation of multiplication of matrices $AB$
 and
-the previous definition of $A\vec{y}$ as a mapping
+the previous definition of $A\vec{x}$ as a mapping
 for a moment.
 What we are doing with matrix multiplication is applying
 the mapping $A$ to the columns of $B$.  This is usually written as follows.
@@ -3464,7 +3464,7 @@ A (\alpha_1 \vec{x}_1 +
 So if we find enough solutions, we have all solutions.  The question is,
 when did we find enough of them?
 
-We say the vectors $\vec{y}_1$, $\vec{y}_2$, \ldots, $\vec{y}_n$ are
+We say the vectors $\vec{x}_1$, $\vec{x}_2$, \ldots, $\vec{x}_n$ are
 \emph{\myindex{linearly independent}} if the only solution to
 \begin{equation*}
 \alpha_1 \vec{x}_1 +
@@ -3510,7 +3510,7 @@ $\alpha_1 \vec{x}_1 +
 \vec{x}_1
 =
 \frac{-\alpha_2}{\alpha_1}
-\vec{x}_2 -
+\vec{x}_2 +
 \frac{-\alpha_3}{\alpha_1}
 \vec{x}_3 +
 \cdots +
@@ -3661,7 +3661,7 @@ We only have two nonzero rows,
 and they are linearly independent, so the rank of the matrix is 2.
 
 The span of the rows is called the \emph{\myindex{row space}}.
-The row space of $A$ and the row echelon form of $A$ are the same.
+The row space of $A$ and the row space of the row echelon form of $A$ are the same.
 In the example,
 \begin{equation*}
 \begin{split}
@@ -4486,7 +4486,7 @@ That is, find the pivot columns of the matrices.
 \exsol{%
 a)~$\begin{bmatrix} 7 \\ 7 \\ 7\end{bmatrix}$,
 $\begin{bmatrix} -1 \\ 7 \\ 6\end{bmatrix}$,
-$\begin{bmatrix} 7 \\ 6 \\ 2\end{bmatrix}$
+$\begin{bmatrix} 6 \\ 7 \\ 2\end{bmatrix}$
 \quad
 b)~$\begin{bmatrix} 1 \\ 1 \\ 2\end{bmatrix}$
 \quad
@@ -4917,8 +4917,8 @@ where:
 Yay!  How about the second vector?  We start with
 \begin{equation*}
 \begin{bmatrix}
-? \\ 0 \\ ? \\ ? \\ -1 .
-\end{bmatrix}
+? \\ 0 \\ ? \\ ? \\ -1
+\end{bmatrix} .
 \end{equation*}
 We set the first question mark to 3, the second to 4, and the
 third to 5.  Let us check, marking things as previously,
@@ -5415,7 +5415,7 @@ But we digress.
 The inner product satisfies the following rules:
 \begin{enumerate}[(i)]
 \item $\langle \vec{x} , \vec{x} \rangle \geq 0$, and
-$\langle \vec{x} , \vec{x} \rangle = 0$ if and only if $\vec{x} = 0$,
+$\langle \vec{x} , \vec{x} \rangle = 0$ if and only if $\vec{x} = \vec{0}$,
 \item $\langle \vec{x} , \vec{y} \rangle = \langle \vec{y} , \vec{x}
 \rangle$,
 \item $\langle a\vec{x} , \vec{y} \rangle =
@@ -5850,7 +5850,8 @@ using row reduction of a $20 \times 21$ matrix.
 As we said above, the formula still works even if $\vec{x}$ is not in the
 subspace, although then it does not get us the vector $\vec{x}$
 but its projection.  More concretely, suppose that $S$ is a subspace
-that is the span of $\vec{v}_1,\vec{v}_2,\ldots,\vec{v}_n$ and $\vec{x}$
+with orthogonal basis
+$\vec{v}_1,\vec{v}_2,\ldots,\vec{v}_n$ and $\vec{x}$
 is any vector.  Let $\operatorname{proj}_{S}(\vec{x})$ be the vector in $S$
 that is the closest to $\vec{x}$.  Then
 \begin{equation*}
@@ -6911,7 +6912,7 @@ $\nicefrac{1}{12}$
 }
 
 \begin{exercise}[challenging]
-Find all the $x$ that make the matrix inverse
+Find all the integers $x$ that make the matrix inverse
 \begin{equation*}
 \begin{bmatrix}
 1 & 2 \\ 1 & x

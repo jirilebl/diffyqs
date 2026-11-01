@@ -29,7 +29,7 @@ X'(0) = 0 & ~~X(L) = 0 & ~~\text{(Mixed), or} \\
 X(0) = 0 & ~~X'(L) = 0 & ~~\text{(Mixed)}, \ldots
 \end{array}
 \end{equation*}
-These boundary problems came up in the study of the heat equation $u_t =
+These boundary value problems came up in the study of the heat equation $u_t =
 k u_{xx}$ when we were trying to solve the equation by the method of
 separation of variables in \sectionref{heateq:section}.
 Dirichlet conditions correspond to applying a
@@ -150,7 +150,7 @@ Moreover, if $q(x) \geq 0$ and $\alpha_1, \alpha_2, \beta_1, \beta_2 \geq 0$,
 then $\lambda_n \geq 0$ for all $n$.
 \end{theorem}
 
-Problems satisfying the hypothesis of the theorem
+Problems satisfying the hypotheses of the theorem
 (including the \myquote{Moreover})
 are called
 \emph{regular Sturm--Liouville problems\index{regular Sturm--Liouville problem}}%
@@ -454,7 +454,7 @@ $\lambda \geq 0$.
 
 Suppose $\lambda = 0$.  The general solution is $y(x) = Ax + B$.
 We plug in the
-initial conditions to get $0=y(0) = B$, and $0 = y'(\nicefrac{\pi}{2}) = A$.
+boundary conditions to get $0=y(0) = B$, and $0 = y'(\nicefrac{\pi}{2}) = A$.
 Hence $\lambda = 0$ is not an eigenvalue.
 
 So let us consider $\lambda > 0$, where
@@ -487,7 +487,7 @@ A little bit of calculus shows
 = \frac{\pi}{4} .
 \end{equation*}
 
-So any piecewise smooth function $f(x)$ on $[0,\nicefrac{\pi}{2}]$ can be written as
+So any piecewise smooth continuous function $f(x)$ on $[0,\nicefrac{\pi}{2}]$ can be written as
 \begin{equation*}
 f(x) = \sum_{n=1}^\infty c_n \sin \bigl( (2n-1)x \bigr) ,
 \end{equation*}
@@ -1121,7 +1121,7 @@ but if you think about it, the solution is almost the same.
 %Let us do the computation for specific values.
 Suppose $F_0 = 1$, $\omega = 1$, $L=1$, and $a=1$.
 Let us find a solution $y$ to \eqref{sps:forcedeq}
-satisfying the zero boundary conditions
+satisfying the zero side conditions
 \eqref{sps:forcedinitcond}.  First we find
 \begin{equation*}
 y_p(x,t) =
@@ -1321,7 +1321,7 @@ phase is delayed by $x \sqrt{\frac{\omega}{2k}}$.
 For example, in cgs units (centimeters-grams-seconds)\index{cgs units}
 we have $k=0.005$ (typical value for soil),
 $\omega = \frac{2\pi}{\text{seconds in a year}}
-= \frac{2\pi}{31,557,341} \approx 1.99 \times {10}^{-7}$.   Then,
+= \frac{2\pi}{31,557,600} \approx 1.99 \times {10}^{-7}$.   Then,
 if we compute where the phase shift $x \sqrt{\frac{\omega}{2k}} = \pi$,
 we find the depth in centimeters where the seasons are reversed.  That is,
 we get the depth at which summer is the coldest and winter is the warmest.

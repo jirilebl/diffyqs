@@ -365,7 +365,7 @@ A direction field in the xy-plane where the arrow is zero at the origin,
 on the x-axis point rightward, on the y-axis point upward.  In the first
 quadrant, the arrows point roughly away from the origin, and in the third
 quadrant they point roughly towards the origin.  In the second quadrant,
-the arrows start rightwards at the right and slowly turn upwards as we move
+the arrows start rightwards at the left and slowly turn upwards as we move
 right.  In the fourth quadrant, the arrows start upwards at the bottom and
 turn rightwards as we move up.}}
 \task
@@ -478,12 +478,12 @@ in a perfectly circular way.
 At the top, the arrows are mostly rightward although being somewhat upward
 facing on the left and downward facing on the right and they are slightly
 smaller in the middle of the picture.  On the left side
-of the picture, the arrows are all pointing roughly leftward and upward,
+of the picture, the arrows are all pointing roughly rightward and upward,
 although they are smaller on the bottom of the picture.  On the right
 side of the picture, the arrows are pointing roughly rightward and slightly
 downward being smaller on the bottom of the picture.  Along the bottom
-of the picture from left to right, the arrows start upward and to the left
-then slowly turn rightward, than downward until they end pointing
+of the picture from left to right, the arrows start upward and to the right
+then slowly turn leftward, then downward until they end pointing
 down and to the right at the bottom right corner.}} 
 \task
 \parbox[c]{1.75in}{\diffyincludegraphics{width=1.75in}{width=1.75in}{nlin-exer-y2-mx2}{%
@@ -596,9 +596,9 @@ of situations that arise in applications.
 
 \subsection{Stability and classification of isolated critical points}
 
-Once we have an isolated critical point, the system is almost linear at
-that critical point, and we have computed the
-associated linearized system, we can classify what happens to the 
+Once we have an isolated critical point at which the system is almost linear,
+and we have computed the associated linearized system,
+we can classify what happens to the 
 solutions.  We more or less use the classification for linear
 two-variable systems from \sectionref{sec:twodimaut}, with one minor
 caveat.
@@ -823,7 +823,7 @@ initial condition near the origin is given in
 \diffyincludegraphics{width=3in}{width=4.5in}{nlin-unstable-centerfig}{%
 A direction field plot in the xy-plane.
 The arrows around the origin seem to circle the origin in the
-counterclockwise direction.  There is a very tightly wound trajectory shown
+clockwise direction.  There is a very tightly wound trajectory shown
 that winds out of the critical point and eventually leaves the picture (even
 turning in a different direction from the winding).}
 \caption{An unstable critical point (spiral source) at the origin
@@ -1895,9 +1895,12 @@ large time to approximate the limit cycle.
 Another caveat is that the theorem only works in two
 dimensions.  In three dimensions and higher, there is simply too much room.
 
-The theorem applies to all solutions in the Van der Pol oscillator.
-Solutions that start at any point except the origin $(0,0)$ tend to the
-periodic solution around the limit cycle, and the initial condition
+In the Van der Pol oscillator,
+the theorem can be applied to
+all solutions that start at any point except the origin $(0,0)$,
+and they tend to the
+periodic solution around the limit cycle.
+The initial condition
 of $(0,0)$ gives the constant solution $x=0$, $y=0$.
 
 \begin{example}
@@ -1925,7 +1928,7 @@ and a half times before peeling off and leaving the picture at the top.}
 %\end{mywrapfig}
 
 Notice that points on the unit circle (distance one from the origin)
-satisfy $x^2+y^2-1=0$.  And $x(t) = \sin(t)$, $y = \cos(t)$ is a solution
+satisfy $x^2+y^2-1=0$.  And $x(t) = \sin(t)$, $y(t) = \cos(t)$ is a solution
 of the system.  Therefore we have a closed trajectory.
 For points off the unit circle, the second term in
 $x'$ pushes the solution further
@@ -1939,7 +1942,8 @@ spirals out towards the periodic solution on the unit circle, and
 for initial conditions outside the unit circle the solutions spiral off
 towards infinity.  Therefore the unit circle is a limit cycle, but
 not an asymptotically stable one.
-The Poincar\'e--Bendixson Theorem applies to the initial points inside
+The Poincar\'e--Bendixson Theorem can be applied to the nonconstant
+solutions with initial points inside
 the unit circle, as those solutions stay bounded, but not to those outside,
 as those solutions go off to infinity.
 \end{example}
@@ -1952,7 +1956,7 @@ y' = -x + {(x^2+y^2-1)} y.
 The unit circle is again a closed trajectory,
 points outside the unit circle spiral out to infinity, but now points
 inside the unit circle spiral towards the critical point at the origin.
-The unit circle is an asymptotically unstable limit cycle where
+The unit circle is an unstable limit cycle where
 all trajectories spiral away.
 If we consider the linear system $x' = y$, $y' = -x$, then all circles centered
 at the origin (not just the unit circle) are closed trajectories,
@@ -1983,7 +1987,7 @@ the equation \eqref{nlin:gensys} is defined on a
 we can go around.  For example, the entire plane is a simply
 connected region.  So is the inside of the unit disc.  However,
 the entire plane minus a point is not a simply connected region as it has a
-\myquote{hole} at the origin.
+\myquote{hole} at the missing point.
 
 \begin{theorem}[Bendixson--Dulac%
 \footnote{%
@@ -2084,7 +2088,7 @@ $x' = y+(x^2+y^2-1)x$,
 $y' = -x +(x^2+y^2-1)y$ in the region $R$ given by $x^2+y^2 >
 \frac{1}{2}$.  That is, $R$ is the region outside a circle of radius
 $\frac{1}{\sqrt{2}}$ centered at the origin.  Then
-there is a closed trajectory in $R$, namely $x=\cos(t)$, $y=\sin(t)$.
+there is a closed trajectory in $R$, namely $x=\sin(t)$, $y=\cos(t)$.
 Furthermore,
 \begin{equation*}
 \frac{\partial f}{\partial x} + 

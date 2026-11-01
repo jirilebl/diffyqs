@@ -19,6 +19,8 @@ we don't want the reader to think about at this point.
 the remark about 50 terms is overstating it (that's using the simple
 error estimate), in reality you get to within 0.01 with 25 terms,
 so just say 25 now.
+<li>Use 31,557,600 for the number of seconds in a year, which is more
+standard.  It also doesn't actually change anything in the calculation.
 <li>In Remark 6.4.1, do not use \(s\) as a dummy variable
 of integration, use \(\tau .\)
 <li>On first page of 7.1, define the terms "coefficients" and "center"
@@ -27,3 +29,11 @@ for completeness.
 in Example 7.1.1 just to make things extra clear.
 <li>In the paragraph explaining 7.1.2, use the same expression as in the
 definition of absolute convergence for clarity.
+<li>In 7.2 and 7.3, say that (parenthetically) P, Q, and R can be
+analytic functions more generally.  This is in fact used in the exercises,
+so we might as well.
+<li><b>In Exercise 7.3.1, add a note to part b about multiples of half being
+diffrent.  Also add part c to show that the solutions (without logs) do not
+work for \(p=1 .\)</b>
+<li><b>Exercise A.6.104 changed to ask for integer \(x\)
+as that was intended and that is what the answer in the back assumes.</b>
