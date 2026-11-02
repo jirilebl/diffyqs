@@ -1,3 +1,9 @@
+<li><b>In Exercise 1.2.105</b> drop the
+"continuously" as it makes the problem unnecessarily complicated.  There just
+isn't any differentiable solution either.  Revise
+the solution in the back for this.
+<li>In subsection 1.5.3, add a couple of sentences about
+the singular solutions arising from solving the separableequation for \(v.\)
 <li>Fix the erratum on "number of steps and halvings"
 to be about this particular example and getting error under 0.01.
 That requires 9 halvings with standard Euler and 4 halvings with

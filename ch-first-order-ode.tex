@@ -265,8 +265,8 @@ Suppose that the car accelerates at $\unitfrac[t^2]{m}{s^2}$.
 At time $t=0$ the car is at the 1-meter mark and is traveling at
 \unitfrac[10]{m}{s}.  Where is the car at time $t=10$?
 
-Well, this is actually a second-order problem.  If $x$ is the distance
-traveled, then $x'$ is the velocity, and $x''$ is the acceleration.
+Well, this is actually a second-order problem.  If $x$ is the position of
+the car, then $x'$ is the velocity, and $x''$ is the acceleration.
 The equation with initial conditions is
 \begin{equation*}
 x'' = t^2 , \qquad x(0) = 1 , \qquad x'(0) = 10 .
@@ -767,10 +767,13 @@ Guess a solution given the initial condition
 $y(0) = 1$.
 \task
 Can graphs of two solutions of the equation for different initial conditions
+(two different values of $y(0)$)
 ever intersect?
 \task
-Given $y(0) = 0$, what can you say about the solution.  In particular,
-can $y(x) > 1$ for any $x$?  Can $y(x) = 1$ for any $x$?  Why or why not?
+Given $y(0) = 0$, what can you say about the solution?
+In particular,
+can $y(x) > 1$ for any $x$?  Can $y(x) = 1$ for any $x$?
+Why or why not?
 \end{tasks}
 \end{exercise}
 
@@ -854,16 +857,19 @@ f(y) =
 1 & \text{ if $y \leq 0$} .
 \end{cases}
 \end{equation*}
-Does $y' = f(y)$, $y(0) = 0$ have a continuously differentiable solution?  Does Picard apply?  Why, or why not?
+Does $y' = f(y)$, $y(0) = 0$ have a differentiable solution?  Does Picard apply?  Why, or why not?
 \end{exercise}
 \exsol{%
 Picard does not apply as $f$ is not continuous at $y=0$.
-The equation does not have a continuously differentiable solution.
+The equation does not have a differentiable solution.
 Suppose it did. Notice that
-$y'(0) = 1$.  By the first derivative test, $y(x) > 0$ for small positive $x$.
+$y'(0) = 1$.  As the derivative is positive at $0$,
+$y(x) > 0$ for small positive $x$.
 But then for those $x$, we have $y'(x) = f\bigl(y(x)\bigr) = 0$.
-It is not possible for $y'$ to be continuous, $y'(0)=1$ and
-$y'(x) = 0$ for arbitrarily small positive $x$.
+So $y$ is constant for $x > 0$, that makes it constant up to $x=0$ and
+$y(0)=0$.  So $y(x)=0$ for small positive $x$,
+but we just said that $y(x) > 0$
+for small positive $x$.
 }
 
 \begin{exercise}
@@ -1103,7 +1109,7 @@ Bob made a cup of coffee, and
 Bob likes to drink coffee only once it reaches 60 degrees Celsius and will not burn him.
 Initially, right after it was poured in the cup,
 Bob measured the temperature and the coffee was 89 degrees Celsius.
-One minute later, Bob measured the coffee again and it had 85 degrees.
+One minute later, Bob measured the coffee again and it was 85 degrees.
 The temperature of the room (the ambient temperature) is 22 degrees.
 When should Bob start drinking?
 
@@ -1977,6 +1983,7 @@ Here we try the substitutions
 v = \frac{y}{x} \qquad \text{and therefore} \qquad y' = v + x v' .
 \end{equation*}
 We note that the equation is transformed into
+a separable equation:
 \begin{equation*}
 v+ xv' = F(v) \qquad \text{or} \qquad xv' = F(v)-v
 \qquad \text{or} \qquad \frac{v'}{F(v)-v} = \frac{1}{x} .
@@ -1988,6 +1995,10 @@ Hence an implicit solution is
 Clearly this solution does not work when $x = 0$ (we would, after all,
 divide by zero in $\nicefrac{y}{x}$).  So we will either assume $x > 0$
 or $x < 0$ depending on the initial condition.
+Moreover, we assumed we can divide by $F(v)-v$.
+For any $v_0$ so that
+$F(v_0)=v_0$, we can find a singular solution $v=v_0$,
+or in other words, $y = v_0 x$.
 
 \begin{example}
 Solve
@@ -2000,6 +2011,9 @@ the form $y'= {\left(\nicefrac{y}{x}\right)}^2+\nicefrac{y}{x}$,
 that is, $F(v) = v^2+v$.
 As the initial condition is for a positive $x$ value,
 we will assume $x > 0$.
+Furthermore, the only root of $F(v)-v$ is $v=0$,
+and the singular solution $y=0$ is not the solution
+we are looking for.
 We substitute $v=\nicefrac{y}{x}$ to get
 the separable equation
 \begin{equation*}
@@ -2475,7 +2489,7 @@ uninfected people, $S-x$.
 \task Write down the differential equation.
 \task Supposing $x(0) > 0$, that is, some people are infected at time $t=0$,
 what is
-$\displaystyle \lim_{t\to\infty} x(t)$.
+$\displaystyle \lim_{t\to\infty} x(t)$?
 \task Does the solution to part b) agree with your intuition?  Why or why not?
 \end{tasks}
 \end{exercise}
@@ -2649,7 +2663,7 @@ and the approximation.
 \diffyincludegraphics{width=3in}{width=4.5in}{euler-step12-sol}{%
 A plot in the xy-plane of a slope field with slopes y squared over 3
 in the region where x is between minus 1 and 3 and y is between 0 and 3.
-The first two steps are shown the two green line segments as before,
+The first two steps are shown as the two green line segments as before,
 but also the solution through (0,1) is drawn in red, which is curved
 upwards and follows the slope field.  We can see that it stays above the
 green line segments.}
@@ -2808,7 +2822,7 @@ $h$ & Approximate $y(3)$ \\
 \bottomrule
 \end{tabular}
 \end{center}
-\caption{Attempts to use Euler's to approximate $y(3)$ for
+\caption{Attempts to use Euler's method to approximate $y(3)$ for
 $y'=\nicefrac{y^2}{3}$, $y(0)=1$.\label{euler-table2:table}}
 \myendframe
 \end{table}
@@ -3417,7 +3431,7 @@ y = \pm \sqrt{\frac{C-(\nicefrac{1}{3})x^3}{x+1}} .
 \end{equation*}
 When $x=-1$, the term in front of $\frac{dy}{dx}$ is zero,
 and our explicit solution is not valid.
-The given equation has no solution (for $y(x)$) near $x=-1$, but
+The given equation has no solution (for $y(x)$) through $x=-1$, but
 the equation $(x^2+y^2) \, dx + 2y(x+1) \, dy = 0$ does have
 a solution $x=-1$.  In fact, one could solve for $x$ in terms
 of $y$ for any initial condition.  The solution is messy,
@@ -3855,7 +3869,7 @@ along the characteristic as $\frac{du}{ds} = 0$.
 \capstart
 \inputpdft{char-curves}{%
 A diagram of the xt-plane with three lines drawn.  All three
-line start on the x-axis and are going steeply up and to the right.
+lines start on the x-axis and are going steeply up and to the right.
 The one starting at the origin is marked as xi equals 0,
 the one to the right
 is marked as xi equals 1,
@@ -4016,7 +4030,7 @@ two variables.
 A surface plot of a function u of (x,t) for x between minus 3 and 3 and t
 between 0 and 3.  When t equals 0, the surface looks like a
 flat line then a peak and going back down towards a flat line.
-As t grows the surface becomes, as t grows,
+As t grows the surface becomes
 closer and closer to a sideways
 flat surface that goes up as x grows.
 At t equals 3 it looks almost completely
