@@ -45,7 +45,7 @@ more of them.
 Suppose $y_1$ and $y_2$ are two solutions of the
 homogeneous equation \eqref{sol:eqlinhom}.  Then 
 \begin{equation*}
-y(x) = C_1 y_1(x) + C_2 y_2(x) ,
+y(x) = C_1 y_1(x) + C_2 y_2(x)
 \end{equation*}
 also solves \eqref{sol:eqlinhom} for arbitrary constants $C_1$ and $C_2$.
 \end{theorem}
@@ -130,7 +130,7 @@ $I$, $a$ is a number in $I$,
 and $b_0, b_1$ are constants.
 Then the equation
 \begin{equation*}
-y'' + p(x) y' + q(x) y = f(x) ,
+y'' + p(x) y' + q(x) y = f(x)
 \end{equation*}
 has exactly one solution $y(x)$ defined on the interval $I$ satisfying the initial conditions
 \begin{equation*}
@@ -199,7 +199,7 @@ is the general solution to $y'' + y = 0$.
 For two functions, checking linear independence is rather simple.  Here is
 another example.  Consider $y''-2x^{-2}y = 0$.  Then $y_1 = x^2$ and $y_2 =
 \nicefrac{1}{x}$ are solutions.  To see that they are linearly independent,
-suppose one is a multiple of the other: $y_1 = A y_2$, we just have to show
+suppose one is a multiple of the other: $y_1 = A y_2$.  We just have to show
 that $A$ cannot be a constant.  In this case, we have $A =
 \nicefrac{y_1}{y_2} = x^3$, which is most decidedly not a constant.
 So $y = C_1 x^2 + C_2 \nicefrac{1}{x}$ is the general solution.
@@ -247,6 +247,7 @@ Since we have a formula for the solution to the first-order linear equation,
 we can write a formula for $y_2$:
 \begin{equation*}
 y_2(x) = y_1(x) \int \frac{e^{-\int p(x)\,dx}}{{\bigl(y_1(x)\bigr)}^2} \,dx
+.
 \end{equation*}
 However, it is much easier to remember that we just need to try $y_2(x) =
 y_1(x) v(x)$ and find $v(x)$ as we did above.  The technique
@@ -349,7 +350,7 @@ $y''-2xy' + 4y = 0$.
 Are $\sin(x)$ and $e^x$ linearly independent?  Justify.
 \end{exercise}
 \exsol{%
-Yes.  To justify try to find a constant $A$ such that $\sin(x) = A e^x$
+Yes.  To justify, try to find a constant $A$ such that $\sin(x) = A e^x$
 for all $x$.
 }
 
@@ -1000,7 +1001,7 @@ y(a) = b_0, \quad y'(a) = b_1, \quad \ldots, \quad y^{(n-1)}(a) = b_{n-1} .
 \subsection{Linear independence}
 
 When we had two functions $y_1$ and $y_2$, we said they were linearly
-independent if one was not a multiple of the other.  Same idea holds for
+independent if one was not a multiple of the other.  The same idea holds for
 $n$ functions, although in this case it is easier to state as follows. The functions
 $y_1$, $y_2$, \ldots, $y_n$ are \emph{\myindex{linearly independent}} if
 the equation
@@ -1082,7 +1083,7 @@ independent.
 
 \begin{example}
 On the other hand, the functions $e^x$, $e^{-x}$, and $\cosh x$ are linearly
-dependent.  Simply apply definition of the hyperbolic cosine:
+dependent.  Simply apply the definition of the hyperbolic cosine:
 \begin{equation*}
 \cosh x = \frac{e^x + e^{-x}}{2} 
 \qquad
@@ -1382,7 +1383,7 @@ $y=0$
 
 \begin{exercise}
 Are $e^{x}$, $e^{x+1}$, $e^{2x}$, $\sin(x)$ linearly independent?
-If so, show it, if not find a linear combination that gives $0$.
+If so, show it, if not, find a linear combination that gives $0$.
 \end{exercise}
 \exsol{%
 No.  $e^1 e^x -  e^{x+1} = 0$.
@@ -1390,7 +1391,7 @@ No.  $e^1 e^x -  e^{x+1} = 0$.
 
 \begin{exercise}
 Are $\sin(x)$, $x$, $x\sin(x)$ linearly independent?
-If so, show it, if not find a linear combination that gives $0$.
+If so, show it, if not, find a linear combination that gives $0$.
 \end{exercise}
 \exsol{%
 Yes.  (Hint: First note that $\sin(x)$ is bounded.  Then note that
@@ -1616,7 +1617,7 @@ $\alpha$ and $\beta$ be?
 
 While it is easier to use the first form with $A$ and $B$
 to solve for the initial conditions, the second form is more natural.
-The constants $C$ and $\gamma$ have nice physical interpretation.
+The constants $C$ and $\gamma$ have a nice physical interpretation.
 Write the solution as
 \begin{equation*}
 x(t) = C \cos ( \omega_0 t - \gamma ) .
@@ -1699,7 +1700,7 @@ making a little bit more than 3 cycles in the picture.}
 In general, for free undamped motion, a solution of the
 form
 \begin{equation*}
-x(t) = A \cos (\omega_0 t) + B \sin (\omega_0 t) ,
+x(t) = A \cos (\omega_0 t) + B \sin (\omega_0 t)
 \end{equation*}
 corresponds to the initial conditions $x(0) = A$ and $x'(0) = \omega_0 B$.
 It is easy to find $A$ and $B$ from the initial
@@ -1731,7 +1732,7 @@ correct quadrant for you.
 
 Let us now focus on \myindex{damped} motion.  We rewrite the equation
 \begin{equation*}
-m x'' + c x' + kx = 0,
+m x'' + c x' + kx = 0
 \end{equation*}
 as
 \begin{equation*}
@@ -2008,11 +2009,11 @@ $k=\unitfrac[\nicefrac{8}{9}]{N}{m}$ (and larger)
 }
 
 \begin{exercise}
-Suppose we have an RLC circuit with a resistor of 100 milliohms (0.1 ohms),
+Consider an RLC circuit with a resistor of 100 milliohms (0.1 ohms),
 inductor of inductance of 50 millihenries (0.05 henries), and a capacitor of 5 farads, with
 constant voltage.
 \begin{tasks}
-\task Set up the ODE equation for the current $I$.
+\task Set up the ODE for the current $I$.
 \task Find the general solution.
 \task Solve for $I(0) = 10$ and $I'(0) = 0$.
 \end{tasks}
@@ -2352,8 +2353,8 @@ Also make sure to look for duplication in the entire expression you try.  For
 the equation $y''-y=xe^x$, where $y_c = C_1e^x + C_2e^{-x}$,
 it is not enough that $xe^x$ does not appear in $y_c$.
 Trying $y_p=Ae^x+Bxe^x$ will not work
-as $e^x$ appears in $y_c$,
-you must try $y_p=Axe^x+Bx^2e^x$.
+as $e^x$ appears in $y_c$.
+You must try $y_p=Axe^x+Bx^2e^x$.
 
 
 \medskip
@@ -2700,7 +2701,7 @@ left.  An arrow indicating force to the right on the mass is labeled F of t.
 An arrow below the mass indicating displacement points to the right and is
 labeled x.  The 'floor' of the diagram is labeled as 'damping c'.}
 \end{mywrapfigsimp}
-Let us return back to the example of a mass on a spring.  We examine
+Let us return to the example of a mass on a spring.  We examine
 the case of forced oscillations, which we did not yet handle.  That is, we consider the equation
 \begin{equation*}
 mx'' + cx' + kx = F(t) ,
@@ -2937,7 +2938,7 @@ undetermined coefficients by trying $x_p = A \cos (\omega t)
 %A slightly different notion of \myquote{resonance} will still occur.
 We plug in and solve for $A$ and $B$.
 We get (the \myindex{tedious} % a bit of fun
-details are left to reader)
+details are left to the reader)
 \begin{equation*}
 \bigl((\omega_0^2  - \omega^2)B - 2\omega p A\bigr) \sin (\omega t)
 +
@@ -3198,7 +3199,8 @@ Will the tower collapse?
 \setcounter{exercise}{100}
 
 \begin{exercise}
-A mass of \unit[4]{kg} on a spring with $k=\unitfrac[4]{N}{m}$ and a damping
+A mass of \unit[4]{kg} is attached to a spring with $k=\unitfrac[4]{N}{m}$ and a
+damper with damping
 constant $c=\unitfrac[1]{Ns}{m}$.
 Suppose that $F_0 = \unit[2]{N}$.
 Using the forcing function $F_0 \cos (\omega t)$,
