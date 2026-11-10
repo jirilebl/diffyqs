@@ -169,10 +169,10 @@ and they are both marked with r signifying the flow.}
 The rate of change of $x_1$,
 that is, $x_1'$, is the
 rate of salt entering minus the rate leaving.
-The density of the salt in tank 2 is $\nicefrac{x_2}{V}$,
+The concentration of the salt in tank 2 is $\nicefrac{x_2}{V}$,
 so the rate of salt entering tank 1 is
 $\nicefrac{x_2}{V}$ times $r$.
-The density of the salt in tank 1 is $\nicefrac{x_1}{V}$,
+The concentration of the salt in tank 1 is $\nicefrac{x_1}{V}$,
 so the rate of salt leaving tank 1 is
 $\nicefrac{x_1}{V}$ times $r$.
 In other words,
@@ -283,9 +283,9 @@ u_{n-1}' & = u_n , \\
 u_n' & = F(u_n,u_{n-1},\ldots,u_2,u_1,x) .
 \end{align*}
 We solve
-this system for $u_1$, $u_2$, \ldots, $u_n$.  Once we have solved
-for the $u$,
-we can discard $u_2$ through $u_n$ and let $y = u_1$.
+this system for $u_1$, $u_2$, \ldots, $u_n$.
+We can then discard $u_2$ through $u_n$
+and let $y = u_1$.
 This $y$ solves the original equation.
 
 \begin{example}
@@ -401,7 +401,8 @@ many points on the $xy$-plane.
 For example, at the point $(1,2)$, we draw the vector
 $\bigl(2(2)-1,1\bigr) = (3,1)$,
 a vector pointing to the right and a little bit up,
-while at the point $(2,1)$ we draw the vector $\bigl(2(1)-2,2\bigr) = (0,2)$
+while at the point $(2,1)$ we draw the vector
+$\bigl(2(1)-2,2\bigr) = (0,2)$,
 a vector that points straight up.
 When drawing the vectors, we will scale down
 their size to fit many of them on the same direction field.
@@ -543,7 +544,7 @@ $x_1$.  Set up the system of equations.
 Suppose the tanks are as in 
 \examplevref{sintro:closedbrine-example}, starting both at volume $V$,
 but now the rate of flow from tank 1 to tank 2 is $r_1$, and
-rate of flow from tank 2 to tank 1 is $r_2$.
+the rate of flow from tank 2 to tank 1 is $r_2$.
 Notice that the volumes are now not constant.  Set up the system of equations.
 \end{exercise}
 
@@ -594,7 +595,7 @@ Suppose two masses on carts on a frictionless surface are at
 displacements $x_1$ and $x_2$ as in \examplevref{sintro:carts-example}.
 Suppose initial displacement is $x_1(0)=x_2(0)=0$, and initial velocity is $x_1'(0) = x_2'(0) = a$ for some number $a$.
 Use your intuition
-to solve the system, explain your reasoning.
+to solve the system, and explain your reasoning.
 \end{exercise}
 \exsol{%
 $x_1 = x_2 = at$.  Explanation of the intuition is left to reader.
@@ -610,7 +611,7 @@ from tank 2 back into tank 1 is $r-s$ (assume $r > s$).
 \begin{tasks}
 \task Draw the picture.
 \task Set up the system of equations.
-\task Intuitively, what happens as $t$ goes to infinity, explain.
+\task Intuitively, what happens as $t$ goes to infinity? Explain.
 \end{tasks}
 \end{exercise}
 \exsol{%
@@ -723,6 +724,7 @@ The transpose of $A$ is denoted by $A^T$.  Example:
 2 & 5 \\
 3 & 6 
 \end{bmatrix}
+.
 \end{equation*}
 
 \subsection{Matrix multiplication}
@@ -787,7 +789,7 @@ $m \times p$.  Example:
 \begin{bmatrix}
 6 & 2 & 1 \\
 15 & 5 & 1
-\end{bmatrix}
+\end{bmatrix} .
 \end{multline*}
 
 For multiplication, we want an analogue of a 1.  This analogue is the
@@ -977,7 +979,7 @@ a_{13} \det (A_{13}) -
 \cdots
 \begin{cases}
 + a_{1n} \det (A_{1n}) & \text{if } n \text{ is odd,} \\
-- a_{1n} \det (A_{1n}) & \text{if } n \text{ even.}
+- a_{1n} \det (A_{1n}) & \text{if } n \text{ is even.}
 \end{cases}
 \end{equation*}
 We alternately add and subtract the determinants of the submatrices
@@ -1202,6 +1204,7 @@ Now subtract the first row from the second and third row:
 0 & 3 & 0 & 9
 \end{array}
 \right]
+.
 \end{equation*}
 Multiply the last row by $\nicefrac{1}{3}$ and the second row by $\nicefrac{1}{2}$:
 \begin{equation*}
@@ -1212,6 +1215,7 @@ Multiply the last row by $\nicefrac{1}{3}$ and the second row by $\nicefrac{1}{2
 0 & 1 & 0 & 3
 \end{array}
 \right]
+.
 \end{equation*}
 Swap rows 2 and 3:
 \begin{equation*}
@@ -1222,6 +1226,7 @@ Swap rows 2 and 3:
 0 & 0 & 1 & 2
 \end{array}
 \right]
+.
 \end{equation*}
 Subtract the last row from the first, then subtract the second row
 from the first:
@@ -1233,6 +1238,7 @@ from the first:
 0 & 0 & 1 & 2
 \end{array}
 \right]
+.
 \end{equation*}
 Finally, we think about what equations this augmented matrix represents:
 $x_1 = -4$, $x_2 = 3$, and $x_3 = 2$.  We try this solution in the original
@@ -1295,7 +1301,7 @@ Free variables mean that we can pick those variables
 to be anything we want and then solve for the rest of the unknowns.
 
 \begin{example}
-The following augmented matrix is in reduced row echelon form.
+The following augmented matrix is in reduced row echelon form:
 \begin{equation*}
 \left[
 \begin{array}{ccc|c}
@@ -1304,9 +1310,10 @@ The following augmented matrix is in reduced row echelon form.
 0 & 0 & 0 & 0
 \end{array}
 \right]
+.
 \end{equation*}
-Suppose
-the variables are $x_1$, $x_2$, and $x_3$.  Then $x_2$ is the
+If the variables are $x_1$, $x_2$, and $x_3$ as usual,
+then $x_2$ is the
 free variable, $x_1 = 3 - 2x_2$, and $x_3 = 1$.
 
 \medskip
@@ -1365,11 +1372,11 @@ $\left[ \begin{smallmatrix}
 \left[ \begin{smallmatrix}
 5 \\
 6
-\end{smallmatrix} \right]$ by using matrix inverse.
+\end{smallmatrix} \right]$ by using the matrix inverse.
 \end{exercise}
 
 \begin{exercise}
-Compute determinant of
+Compute the determinant of
 $\left[ \begin{smallmatrix}
 9 & -2 & -6 \\
 -8 & 3 & 6 \\
@@ -1378,7 +1385,7 @@ $\left[ \begin{smallmatrix}
 \end{exercise}
 
 \begin{exercise}
-Compute determinant of
+Compute the determinant of
 $\left[ \begin{smallmatrix}
 1 & 2 & 3 & 1 \\
 4 & 0 & 5 & 0 \\
@@ -1389,7 +1396,7 @@ make the calculations simpler.
 \end{exercise}
 
 \begin{exercise}
-Compute inverse of
+Compute the inverse of
 $\left[ \begin{smallmatrix}
 1 & 2 & 3 \\
 1 & 1 & 1 \\
@@ -1429,7 +1436,7 @@ $\left[ \begin{smallmatrix}
 1 \\
 2 \\
 3
-\end{smallmatrix} \right]$ .
+\end{smallmatrix} \right]$.
 \end{exercise}
 
 \begin{exercise}
@@ -1470,12 +1477,12 @@ $AB = AC$ but $B \neq C$.
 \setcounter{exercise}{100}
 
 \begin{exercise}
-Compute determinant of
+Compute the determinant of
 $\left[ \begin{smallmatrix}
 1 & 1 & 1 \\
 2 & 3 & -5 \\
 1 & -1 & 0
-\end{smallmatrix}\right]$
+\end{smallmatrix}\right]$.
 \end{exercise}
 \exsol{%
 $-15$
@@ -1709,19 +1716,22 @@ is the only solution and $\vec{x}_1$,
 $\vec{x}_2$, and $\vec{x}_3$ are linearly independent.
 \end{example}
 
-The linear combination $c_1 \vec{x}_1 + c_2 \vec{x}_2 + \cdots + c_n
+Given solutions $\vec{x}_1,\vec{x}_2,\ldots,\vec{x}_n$
+to $\vec{x}'=P\vec{x}$,
+the linear combination $c_1 \vec{x}_1 + c_2 \vec{x}_2 + \cdots + c_n
 \vec{x}_n$ could always be written as
 \begin{equation*}
-X(t)\,\vec{c} ,
+X\,\vec{c} ,
 \end{equation*}
-where $X(t)$ is the matrix with columns $\vec{x}_1, \vec{x}_2, \ldots, \vec{x}_n$,
+where $X=X(t)$ is the matrix with columns $\vec{x}_1, \vec{x}_2, \ldots, \vec{x}_n$,
 and $\vec{c}$ is the column vector with entries $c_1, c_2, \ldots, c_n$.
 Assuming that $\vec{x}_1,\vec{x}_2,\ldots,\vec{x}_n$ are linearly
 independent,
 the matrix-valued function $X(t)$ is called a \emph{\myindex{fundamental matrix}},
 or a \emph{\myindex{fundamental matrix solution}}.
+In particular, we have $X' = PX$.
 Note that the fundamental matrix is not unique; if you take any constant
-invertible $n\times n$ matrix $C$, then $X(t) C$ is another fundamental matrix.
+invertible $n\times n$ matrix $C$, then $X C$ is another fundamental matrix.
 
 \medskip
 
@@ -2296,8 +2306,8 @@ $\lambda = 3$ in the example above?  How are the two eigenvectors related?
 \begin{exercise}
 When the matrix is $2 \times 2$ you do not need to
 %write down the augmented matrix and
-do row operations when computing an eigenvector,
-you can read it off from $A-\lambda I$
+do row operations when computing an eigenvector.
+You can read it off from $A-\lambda I$
 (if you have computed the eigenvalues correctly).
 Can you see why?  Explain.  Try it for the matrix
 $\left[ \begin{smallmatrix} 2 & 1 \\ 1 & 2 \end{smallmatrix} \right]$.
@@ -2526,8 +2536,8 @@ is a corresponding eigenvector.  Then
 \end{equation*}
 is a solution (complex-valued) of
 ${\vec{x}}' = P \vec{x}$.  \hyperref[eulersformula]{Euler's formula}
-shows that $\overline{e^{a+ib}} =
-e^{a-ib}$,
+shows that $\overline{e^{(a+ib)t}} =
+e^{(a-ib)t}$,
 and so
 \begin{equation*}
 \vec{x}_2 = \overline{\vec{x}_1} = \overline{\vec{v}} e^{(a-ib)t}
@@ -2634,7 +2644,7 @@ We summarize the discussion as a theorem.
 
 \begin{theorem}
 Let $P$ be a real-valued constant matrix.
-If $P$ has a complex eigenvalue $a+ib$ and a corresponding eigenvector
+If $P$ has a complex eigenvalue $a+ib$ (assuming $b\neq 0$) and a corresponding eigenvector
 $\vec{v}$, then $P$ also has a complex eigenvalue $a-ib$ with
 a corresponding eigenvector $\overline{\vec{v}}$.
 Furthermore,
@@ -3063,10 +3073,10 @@ parts of $\vec{v} e^{2it}$ are
 \begin{bmatrix} 1 \\ 2i \end{bmatrix} e^{2it} =
 \begin{bmatrix} \sin (2t) \\ 2 \cos (2t) \end{bmatrix} .
 \end{equation*}
-We can take any linear combination of them to get other solutions,
-which one we take
+We can take any linear combination of them to get other solutions.
+Which one we take
 depends on the initial
-conditions.  Now note that the real part is
+conditions.  Note that the real part is
 a parametric equation for an ellipse.  Same with the imaginary part
 and in fact any linear combination of the two.
 This is what happens in general when the eigenvalues are purely imaginary.
@@ -3209,7 +3219,7 @@ Take the equation $m x'' + c x' + kx = 0$, with $m > 0$, $c \geq 0$, $k > 0$
 for the mass-spring system.
 \begin{tasks}
 \task Convert this to a system of first-order equations.
-\task Classify for what $m, c, k$ do you get which behavior.
+\task Classify for what $m, c, k$ you get which behavior.
 \task Explain from physical intuition why you do not get all the
 different kinds of behavior here.
 \end{tasks}
@@ -3327,7 +3337,7 @@ not in \cite{BD}}}
 
 \subsection{Undamped mass-spring systems}
 
-While we did say that we can usually only study first-order systems, it is
+While we did say that we need only study first-order systems, it is
 sometimes more convenient to analyze the system in the way it arises naturally.
 For example, consider 3 masses connected by springs between two
 walls.  We could pick any higher number, and the math would be essentially
@@ -3460,7 +3470,7 @@ In our example, and in other common applications,
 $A$ has only real negative
 eigenvalues (and possibly a zero eigenvalue).  So we study only this
 case.  When an eigenvalue $\lambda$ is negative, it means that
-$\alpha^2 = \lambda$ is negative.  Hence there is some real number $\omega$
+$\alpha^2 = \lambda$ is negative.  Hence there is some real positive number $\omega$
 such that $-\omega^2 = \lambda$.  Then $\alpha = \pm i \omega$.
 For $\alpha = i \omega$, the solution we guessed is $\vec{x} = \vec{v} e^{i \omega t}$ or
 \begin{equation*}
@@ -3694,7 +3704,7 @@ Again solve (exercise) to find  $b_1 = 2$, $b_2 = -1$.  So our solution is
 4 \sin (t) - \cos(2t) + \sin(2t)
 \end{bmatrix} .
 \end{equation*}
-The graphs of the two displacements, $x_1$ and $x_2$ of the two carts is in
+The graphs of the two displacements, $x_1$ and $x_2$, of the two carts are in
 \figurevref{sosa:superposfig}.
 \begin{myfig}
 \capstart
@@ -4126,7 +4136,7 @@ because we will have to try a particular solution of the form
 \vec{d} \, \cos (\omega t) .
 \end{equation*}
 That is assuming that the eigenvalues of the coefficient matrix are distinct.
-Note that the amplitude of this solution grows without bound as $t$ grows.
+Note that if $\vec{c} \neq \vec{0}$, the amplitude of this solution grows without bound as $t$ grows.
 
 \subsection{Exercises}
 
@@ -4675,7 +4685,7 @@ The first equation says that $v_2 = 0$, so the last equation
 is $-v_1 -v_3 = 0$.  Let $v_3$ be the free variable to find
 that $v_1 = -v_3$.  Perhaps let $v_3 = -1$ to find an eigenvector
 $\left[ \begin{smallmatrix} 1 \\ 0 \\ -1 \end{smallmatrix} \right]$.
-Problem is that setting $v_3$ to anything else just gets multiples
+The problem is that setting $v_3$ to anything else just gets multiples
 of this vector and so we have a defect of~1.
 Let $\vec{v}_1$ be the eigenvector and we look for
 a generalized eigenvector $\vec{v}_2$:
@@ -5140,6 +5150,7 @@ matrix $A$, we define the
 \mybxbg{~~
 e^A \overset{\text{def}}{=} I + A + \frac{1}{2} A^2 + 
 \frac{1}{6} A^3 + \cdots + \frac{1}{k!} A^k + \cdots
+.
 ~~}
 \end{equation*}
 We will not worry about convergence---the series really does
@@ -5283,7 +5294,7 @@ Suppose that $A$ is $2 \times 2$ and $\lambda$
 is the only eigenvalue.  Show that ${(A - \lambda I)}^2 = 0$, and therefore
 that we can write $A = \lambda I + B$, where $B^2 = 0$ (and possibly $B=0$).
 Hint: First
-write down what does it mean for the eigenvalue to be of multiplicity 2.
+write down what it means for the eigenvalue to be of multiplicity 2.
 You will get
 an equation for the entries.  Now compute the square of $B$.
 \end{exercise}
@@ -5582,7 +5593,7 @@ If we plug $t=0$ into
 $X(t) \left[ X(0) \right]^{-1}$, we get the identity as needed.
 We can multiply a fundamental matrix solution on the right by any
 constant invertible matrix and we still get a fundamental matrix solution.
-All we are doing is changing what are the arbitrary constants in the general
+All we are doing is changing what the arbitrary constants are in the general
 solution $\vec{x}(t) = X(t)\, \vec{c}$.
 
 \subsection{Approximations}
@@ -5745,7 +5756,7 @@ $\left[ \begin{smallmatrix}
 \left[ \begin{smallmatrix}
 2 \\
 3
-\end{smallmatrix} \right]$ .
+\end{smallmatrix} \right]$.
 \end{tasks}
 \end{exercise}
 

@@ -31,6 +31,19 @@ Explicitly state that \(k &gt; 1\) in 2.1 wherever it was implicitly required.
 \(x\) is positive rather than nonnegative, that avoids technicalities
 we don't want the reader to think about at this point.
 <li>Explicitly require that \(k &gt; 0\) in Example 2.2.1
+<li>When introducing the fundamental matrix solution in 3.3, emphasize that
+we still mean that the columns are solutions to the homogeneous equation (we
+are still in the context of Theorem 3.3.1), which the student might have
+forgotten as there was Example 3.3.1 in between.
+<li>In the paragraph introducing \(X(t),\) the fact that the \((t)\) is
+always there may be distracting as we are dropping it for the columns
+separately.  So drop it from how we introduce it,
+but emphasize that it is a matrix-valued function
+by writing \(X=X(t).\)
+<li>In the discussion before Theorem 3.4.2, when using Euler's formula, do
+it with the t in there.
+<li>In Theorem 3.4.2, add a parenthetical that we are assuming that
+\(b\neq 0,\) which we were assuming implicitly.
 <li>In the answer in the back for part c of Exercise 4.3.105,
 the remark about 50 terms is overstating it (that's using the simple
 error estimate), in reality you get to within 0.01 with 25 terms,
