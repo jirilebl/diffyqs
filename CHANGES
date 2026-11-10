@@ -16,6 +16,11 @@ improved Euler.  Then the timings are the same.
 <li>In Example 1.8.4, just say to integrate \(N\) in \(y,\)
 as integrating \(M\) in \(x\) would require an extra step.
 <li>Replace Figure 1.23, the previous was very lightly off.
+<li>In Theorem 2.1.3, mention that we are working on
+some interval.
+<li><b>Assume \(a\neq 0\) in Exercises 2.1.6, 2.1.7, and 2.2.14</b> to fix an erratum.
+<li>After equation (2.3) assume that \(a \neq 0\) as
+are are implicitly assuming that.
 <li>Reword the paragraph about the relationship between damping
 and the length of the transient region in 2.6.2 to fix an erratum.
 Add a note about what happens above critical damping, and also add 

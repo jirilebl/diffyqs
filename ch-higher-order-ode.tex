@@ -172,7 +172,7 @@ the following sense.  We say $y_1$ and $y_2$ are \emph{\myindex{linearly
 independent}} if one is not a constant multiple of the other.
 
 \begin{theorem}
-Let $p, q$ be continuous functions.
+Let $p, q$ be continuous functions on some interval.
 Let $y_1$ and $y_2$ be two linearly independent
 solutions to the homogeneous equation \eqref{sol:eqlinhom}. 
 Then every other solution is 
@@ -294,7 +294,7 @@ $y=x^r$ and solving for $r$ (assume $x > 0$ for simplicity).
 
 \begin{exercise} \label{sol:eulerex}
 \pagebreak[2]
-Suppose that ${(b-a)}^2-4ac > 0$.
+Suppose that $a \neq 0$ and ${(b-a)}^2-4ac > 0$.
 \begin{tasks}
 \task Find a formula for the general solution
 of Euler's equation (see above) $a x^2 y'' + b x y' + c y = 0$.
@@ -307,7 +307,7 @@ We will revisit the case when ${(b-a)}^2-4ac < 0$ later.
 
 \begin{exercise} \label{sol:eulerexln}
 Same equation as in \exerciseref{sol:eulerex}.
-Suppose ${(b-a)}^2-4ac = 0$.  Find a formula for the general solution
+Suppose $a \neq 0$ and ${(b-a)}^2-4ac = 0$.  Find a formula for the general solution
 of $a x^2 y'' + b x y' + c y = 0$.  Hint: Try $y=x^r \ln x$ for the second
 solution.
 \end{exercise}
@@ -469,7 +469,7 @@ Suppose that we have an equation
 \begin{equation} \label{ccsol:eq}
 a y'' + b y' + c y = 0 ,
 \end{equation}
-where $a, b, c$ are constants.  Try the solution $y = e^{rx}$ to obtain
+where $a, b, c$ are constants and $a \neq 0$.  Try the solution $y = e^{rx}$ to obtain
 \begin{equation*}
 a r^2 e^{rx} + 
 b r e^{rx} + 
@@ -837,8 +837,8 @@ $2y' + 3y = 0$ using the methods of this section.
 
 \begin{exercise}
 Let us revisit the Cauchy--Euler equations\index{Cauchy--Euler equation} of
-\exercisevref{sol:eulerex}.  Suppose now
-that ${(b-a)}^2-4ac < 0$.  Find a formula for the general solution
+\exercisevref{sol:eulerex}.  Suppose
+that $a \neq 0$ and ${(b-a)}^2-4ac < 0$.  Find a formula for the general solution
 of $a x^2 y'' + b x y' + c y = 0$.  Hint: Note that $x^r = e^{r \ln x}$.
 \end{exercise}
 
@@ -1513,7 +1513,8 @@ the angle the pendulum makes with a vertical line is labeled theta.
 The length of the pendulum is labeled L.  There is a force arrow on m
 along the circular arc away from the center labeled
 m times L times second derivative of theta, a
-force arrow in the opposite direction (towards the center) labeled
+force arrow in the opposite direction (towards the bottom of the circular
+arc) labeled
 m times g times sin of theta,
 and an arrow directly downwards from the mass labeled m times g.
 The latter two arrows form a right triangle with the downward arrow forming
