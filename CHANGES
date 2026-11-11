@@ -48,6 +48,19 @@ it with the t in there.
 the remark about 50 terms is overstating it (that's using the simple
 error estimate), in reality you get to within 0.01 with 25 terms,
 so just say 25 now.
+<li>On the exercises in section 4.5, add a parenthetical that in case of
+resonance, just a particular resonant solution should be found).
+<li>
+<b>Add a detailed hint to Exercise 4.10.9 part b.</b>
+It was marked as challenging, but it is just way <i>too</i>
+challenging for students at this level.  Also change
+the indices in part c to be compatible with part b.
+<li>When defining "piecewise smooth", explicitly note
+that such functions can have jumps and corners
+(the examples show this, but make it explicit).
+<li>In Theorem 4.3.2, and 4.3.3,
+explicitly state that the
+formulas only hold where they make sense.
 <li>Use 31,557,600 for the number of seconds in a year, which is more
 standard.  It also doesn't actually change anything in the calculation.
 <li>In Remark 6.4.1, do not use \(s\) as a dummy variable

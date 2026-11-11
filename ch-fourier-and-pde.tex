@@ -251,7 +251,7 @@ and again we find
 that there are no negative eigenvalues.
 
 For $\lambda = 0$, the general solution is $x = At + B$.  The condition
-$x(-\pi) = x(\pi)$ implies that $A=0$ ($A\pi + B = -A\pi +B$ implies $A=0$).
+$x(-\pi) = x(\pi)$ implies that $A=0$ ($-A\pi + B = A\pi +B$ implies $A=0$).
 The second condition $x'(-\pi) = x'(\pi)$ says nothing about $B$ and hence
 $\lambda=0$ is an eigenvalue with a corresponding eigenfunction $x=1$.
 
@@ -480,7 +480,7 @@ unique.
 
 We also want to reinforce the idea here that linear differential operators have
 much in common with matrices.  So it is no surprise that
-there is a finite-dimensional version of Fredholm alternative for matrices as
+there is a finite-dimensional version of the Fredholm alternative for matrices as
 well.  Let $A$ be an $n \times n$ matrix.  The Fredholm alternative then
 states that either $(A-\lambda I) \vec{x}
 = \vec{0}$ has a nontrivial solution, or $(A-\lambda I) \vec{x} = \vec{b}$
@@ -497,7 +497,7 @@ Let us consider a physical application of an endpoint problem.
 Suppose we have a tightly stretched quickly spinning elastic
 string or rope of uniform linear density $\rho$, for example in
 $\unitfrac{kg}{m}$.
-Let us put this problem into the $xy$-plane and both $x$ and $y$
+Let us put this problem into the $xy$-plane where both $x$ and $y$
 are in meters.  The $x$-axis represents the
 position on the string.  The string rotates at angular velocity $\omega$,
 in $\unitfrac{radians}{s}$.
@@ -507,7 +507,7 @@ measures its deflection from the equilibrium position, $y=0$, on the $x$-axis.
 Hence the graph of $y$ gives the shape of the string.
 We consider an ideal string with
 no volume, just a mathematical curve.
-We suppose the tension on the string is a constant $T$ in Newtons.
+We suppose the tension on the string is a constant $T$ in newtons.
 %If we take a small segment and we look at the tension at the endpoints, we
 %see that this force is tangential and we will assume that the magnitude is
 %the same at both endpoints.  Hence the magnitude
@@ -521,7 +521,7 @@ T y'' + \rho \omega^2 y = 0 .
 To check the units, notice that the units of $y''$ are $\unitfrac{m}{m^2}$, as the derivative is
 in terms of $x$.
 
-Let $L$ be the length of the string (in meters) and the string
+Let $L$ be the length of the string (in meters) and suppose the string
 is fixed at both endpoints.
 Hence, $y(0) = 0$ and $y(L) = 0$.  See
 \figurevref{bvp:whirstringfig}.
@@ -1182,14 +1182,15 @@ The Fourier series is
 \sin \bigl( (2k-1)\, t \bigr) .
 \end{equation*}
 
-The first 3 harmonics of the series for $f(t)$ are
+The series for $f(t)$ up to the
+$3^{\text{rd}}$ harmonic is
 \begin{equation*}
 \frac{\pi}{2}
 +
 2 \, \sin (t)
 +
 \frac{2}{3}  \sin (3t)
-+ \cdots
++ \cdots .
 \end{equation*}
 The plot of these first three and also of the first 20 terms of the series
 is given in
@@ -1220,7 +1221,7 @@ the equation
 f(t) = 
 \frac{\pi}{2} + \sum_{k=1}^\infty
 \frac{2}{2k-1} 
-\sin \bigl( (2k-1)\, t \bigr) .
+\sin \bigl( (2k-1)\, t \bigr)
 \end{equation*}
 is only an equality for such $t$ where $f(t)$ is continuous.
 We do not get an equality for $t=-\pi,0,\pi$ and all the other discontinuities
@@ -1665,9 +1666,11 @@ exist and are finite.
 Then
 we say $f(t)$ is \emph{\myindex{piecewise continuous}}.
 
-If moreover, $f(t)$ is differentiable at all but finitely many points,
+If, moreover, $f(t)$ is differentiable at all but finitely many points,
 and $f'(t)$ is piecewise continuous, then 
 $f(t)$ is said to be \emph{\myindex{piecewise smooth}}.
+Note that a piecewise smooth function is allowed to have
+jumps and corners.
 
 \begin{example}
 The square wave function, \eqref{gfs:sqwaveeq} extended periodically,
@@ -1759,7 +1762,7 @@ a_n \cos \Bigl( \frac{n \pi}{L} t \Bigr)
 \Bigr]
 \end{equation*}
 is a piecewise smooth continuous function and the derivative $f'(t)$ is
-piecewise smooth.  Then the derivative can be
+piecewise smooth.  Then the derivative (away from any ``corners'') can be
 obtained by differentiating term by term,
 \begin{equation*}
 f'(t) = \sum_{n=1}^\infty
@@ -1796,7 +1799,7 @@ F(t) = \frac{a_0 t}{2} + C + \sum_{n=1}^\infty
 + \frac{-b_n L}{n \pi}  \cos \Bigl( \frac{n \pi}{L} t \Bigr)
 \Bigr] ,
 \end{equation*}
-where $F'(t) = f(t)$ and $C$ is an arbitrary constant.
+where $F'(t) = f(t)$ (where $f(t)$ is continuous) and $C$ is an arbitrary constant.
 \end{theorem}
 
 Note that the series for $F(t)$ is no longer a Fourier series as it contains
@@ -2056,7 +2059,7 @@ extended periodically.
 \begin{tasks}
 \task Compute the Fourier series for $f(t)$.
 \task Write out the series explicitly up to the $3^{\text{rd}}$ harmonic.
-\task What does the series converge to at $t=1$.
+\task What does the series converge to at $t=1$?
 \end{tasks}
 \end{exercise}
 
@@ -2840,8 +2843,8 @@ Let $f(t)$ be defined on $0 \leq t < 1$.  Consider
 the average of the two extensions
 $g(t) = \frac{F_{\text{odd}}(t)+ F_{\text{even}}(t)}{2}$.
 \begin{tasks}(2)
-\task What is $g(t)$ if $0 \leq t < 1$ (Justify!)
-\task What is $g(t)$ if $-1 < t < 0$ (Justify!)
+\task What is $g(t)$ if $0 \leq t < 1$? (Justify!)
+\task What is $g(t)$ if $-1 < t < 0$? (Justify!)
 \end{tasks}
 \end{exercise}
 \exsol{%
@@ -3278,31 +3281,31 @@ into details here.
 \begin{exercise}
 Let $F(t) = \frac{1}{2} + \sum_{n=1}^\infty \frac{1}{n^2} \cos (n \pi t)$.
 Find
-the steady periodic solution to
-$x'' + 2 x = F(t)$.  Express your solution as a Fourier series.
+the steady periodic solution (or a resonant particular solution) to
+$x'' + 2 x = F(t)$.  Express your solution as a series.
 \end{exercise}
 
 \begin{exercise}
 Let $F(t) = \sum_{n=1}^\infty \frac{1}{n^3} \sin (n \pi t)$.  Find
-the steady periodic solution to
-$x'' + x' + x = F(t)$.  Express your solution as a Fourier series.
+the steady periodic solution (or a resonant particular solution) to
+$x'' + x' + x = F(t)$.  Express your solution as a series.
 \end{exercise}
 
 \begin{exercise}
 Let $F(t) = \sum_{n=1}^\infty \frac{1}{n^2} \cos (n \pi t)$.  Find
-the steady periodic solution to
-$x'' + 4 x = F(t)$.  Express your solution as a Fourier series.
+the steady periodic solution (or a resonant particular solution) to
+$x'' + 4 x = F(t)$.  Express your solution as a series.
 \end{exercise}
 
 \begin{exercise}
 Let $F(t) = t$ for $-1 < t < 1$ and extended periodically.
-Find the steady periodic solution to
+Find the steady periodic solution (or a resonant particular solution) to
 $x'' + x = F(t)$.  Express your solution as a series.
 \end{exercise}
 
 \begin{exercise}
 Let $F(t) = t$ for $-1 < t < 1$ and extended periodically.
-Find the steady periodic solution to
+Find the steady periodic solution (or a resonant particular solution) to
 $x'' + \pi^2 x = F(t)$.  Express your solution as a series.
 \end{exercise}
 
@@ -3310,8 +3313,8 @@ $x'' + \pi^2 x = F(t)$.  Express your solution as a series.
 
 \begin{exercise}
 Let $F(t) = \sin(2\pi t) + 0.1 \cos(10 \pi t)$.
-Find the steady periodic solution to $x'' + \sqrt{2}\, x = F(t)$.
-Express your solution as a Fourier series.
+Find the steady periodic solution (or a resonant particular solution) to $x'' + \sqrt{2}\, x = F(t)$.
+Express your solution as a series.
 \end{exercise}
 \exsol{%
 $x = \frac{1}{\sqrt{2}-4 \pi^2} \sin(2\pi t) + \frac{0.1}{\sqrt{2}-100 \pi^2} \cos(10 \pi t)$
@@ -3319,8 +3322,8 @@ $x = \frac{1}{\sqrt{2}-4 \pi^2} \sin(2\pi t) + \frac{0.1}{\sqrt{2}-100 \pi^2} \c
 
 \begin{exercise}
 Let $F(t) = \sum_{n=1}^\infty e^{-n} \cos(2 n t)$.
-Find the steady periodic solution to $x'' + 3 x = F(t)$.
-Express your solution as a Fourier series.
+Find the steady periodic solution (or a resonant particular solution) to $x'' + 3 x = F(t)$.
+Express your solution as a series.
 \end{exercise}
 \exsol{%
 $x =
@@ -3330,7 +3333,7 @@ $x =
 
 \begin{exercise}
 Let $F(t) = \lvert t \rvert$ for $-1 \leq t \leq 1$ extended periodically.
-Find the steady periodic solution to $x'' + \sqrt{3}\, x = F(t)$.
+Find the steady periodic solution (or a resonant particular solution) to $x'' + \sqrt{3}\, x = F(t)$.
 Express your solution as a series.
 \end{exercise}
 \exsol{%
@@ -3342,7 +3345,7 @@ $x =
 
 \begin{exercise}
 Let $F(t) = \lvert t \rvert$ for $-1 \leq t \leq 1$ extended periodically.
-Find the steady periodic solution to $x'' + \pi^2 x = F(t)$.
+Find the steady periodic solution (or a resonant particular solution) to $x'' + \pi^2 x = F(t)$.
 Express your solution as a series.
 \end{exercise}
 \exsol{%
@@ -4624,7 +4627,7 @@ that goes back down to 0 at the same slope as before.}
 \diffyincludegraphics{width=6.24in}{width=9in}{wave-plucked-t0p8-t1p2}{%
 Two graphs of the shape of a plucked string in the xy-plane,
 where x is between 0 and 2.
-On the left is the shape at t equals 0.8, which similar to the one at t
+On the left is the shape at t equals 0.8, which is similar to the one at t
 equals 0.4
 above, but now the horizontal segment at the top is longer and comes
 earlier.  On the right is the shape at t equals 1.2, which is an inverted version
@@ -5112,7 +5115,7 @@ y(L,t) =
 \end{equation*}
 And voil\`a, it works.
 
-\begin{example} \label{dalemb:implusexample}
+\begin{example} \label{dalemb:impulsexample}
 D'Alembert says that the solution is a superposition of
 two functions (waves) moving in opposite directions at \myquote{speed} $a$.
 To get an idea of
@@ -5246,7 +5249,7 @@ had corners, the solution also has corners at every time $t$.
 
 The corners bring us to another interesting remark.  Nobody ever notices at first
 that our example solutions are not even differentiable (they have corners):
-In \exampleref{dalemb:implusexample} above, the solution is not
+In \exampleref{dalemb:impulsexample} above, the solution is not
 differentiable whenever $x=t+0.5$ or $x=-t+0.5$ for example.
 Really, to be able to compute $y_{xx}$ or $y_{tt}$, you need not one, but two
 derivatives.  Fear not, we could think of a shape that is very nearly
@@ -5267,7 +5270,7 @@ y(x,t) =
 \end{equation*}
 we notice that we have only used the initial conditions in the interval
 $[x-at,x+at]$.  The endpoints of this interval are called the
-\emph{\myindex{wavefronts}}, as that is where the wave front is, given an
+\emph{\myindex{wavefronts}}, as that is where the wavefront is, given an
 initial ($t=0$) disturbance at $x$.
 If $a=1$, an observer sitting at $x=0$ at time $t=1$ has only seen the
 initial conditions for $x$ in the interval $[-1,1]$
@@ -5411,7 +5414,7 @@ c) $y(3,9) = \nicefrac{1}{2}$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \sectionnewpage
-\section{Steady state temperature and the Laplacian}
+\section{Steady-state temperature and the Laplacian}
 \label{dirich:section}
 
 \sectionnotes{1 lecture\EPref{, \S9.7 in \cite{EP}}\BDref{,
@@ -5697,7 +5700,7 @@ over the square region where x is between 0 and pi and y is between 0
 and pi.  On the side of the square where y equals 0, the function equals pi and on
 the remaining three sides it is 0.  In the middle it appears almost as if
 one stretched a rubber sheet and fixed it on the sides at the given values.}
-\caption{Steady state temperature of a square plate, three sides
+\caption{Steady-state temperature of a square plate, three sides
 held at zero and one side held at $\pi$.\label{dirichsquareplot:fig}}
 \end{myfig}
 \end{example}
@@ -5986,7 +5989,7 @@ x_\theta = - r \sin \theta, \\
 y_\theta = r \cos \theta.
 \end{aligned}
 \end{equation*}
-By chain rule, we obtain
+By the chain rule, we obtain
 \begin{align*}
 u_r & = u_x x_r + u_y y_r = \cos(\theta) u_x + \sin(\theta) u_y ,
 \\
@@ -6665,10 +6668,28 @@ $\Delta u = 0$, $u(1,\theta) = x^2y^3 + 5 x^2$.  Write the answer in Cartesian c
 Now solve
 $\Delta u = 0$, $u(1,\theta) = x^k y^\ell$.
 Write the solution in Cartesian coordinates.
+Hint: First write $z=x+iy$ (so $\bar{z}=x-iy$), that is,
+$x = \frac{z+\bar{z}}{2}$ and 
+$y = \frac{z-\bar{z}}{2i}$.
+Then expand as
+$x^k y^\ell =
+\frac{{(-i)}^\ell}{2^{k+\ell}} \sum_{j=0}^{k+\ell} d_{j,k,\ell}
+z^{k+\ell-j}\bar{z}^j$,
+where
+$d_{j,k,\ell}$ is the coefficient of $t^j$ in the expansion of
+${(1+t)}^k{(1-t)}^\ell$,
+that is,
+$d_{j,k,\ell} = \sum_{p=\max(0,j-k)}^{\min(j,\ell)} {(-1)}^p \binom{\ell}{p}
+\binom{k}{j-p}$
+(those $\binom{a}{b}$ are binomial coefficients).
+Feel free to use the notation $d_{j,k,\ell}$ in your answer.
+Write $z$ using the complex exponential and think about
+how to write the solution.  Then change back to $x$
+and $y$.
 \task
-Given a polynomial $P(x,y) = \sum_{j=0}^m \sum_{k=0}^n c_{j,k}
-x^j y^k$, solve $\Delta u = 0$, $u(1,\theta) = P(x,y)$ (that is, write down
-the formula for the answer).  Write the answer
+Given a polynomial $P(x,y) = \sum_{k=0}^m \sum_{\ell=0}^n c_{k,\ell}
+x^k y^\ell$, solve $\Delta u = 0$, $u(1,\theta) = P(x,y)$ (that is, write down
+a formula for the answer).  Write the answer
 in Cartesian coordinates.
 \end{tasks}
 Notice the answer is again a polynomial in $x$ and $y$.
