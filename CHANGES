@@ -61,6 +61,18 @@ that such functions can have jumps and corners
 <li>In Theorem 4.3.2, and 4.3.3,
 explicitly state that the
 formulas only hold where they make sense.
+<li><b>Change Exercise 5.1.6 to fix an erratum.</b>
+The interval should be \([0,\pi/\gamma].\)
+<li><b>Change Exercise 5.1.7 to fix an erratum.</b>
+The exercise is too difficult and not the intended one.
+Change it to \(y^{(4)}-\lambda y = 0\) and the first
+derivatives become second derivatives in the boundary conditions.
+<li>Add Exercise 5.1.103 on finding eigenvalues 
+and expansion 
+<li><b>Change Exercise 5.2.3 to fix an erratum</b>.  
+We do not do longitudinal vibrations here, just transverse.  Since we are
+changing the exercise change the initial positions and velocities to be
+consistent with the boundary values (square the \(x-5\) in shape).
 <li>Use 31,557,600 for the number of seconds in a year, which is more
 standard.  It also doesn't actually change anything in the calculation.
 <li>In Remark 6.4.1, do not use \(s\) as a dummy variable

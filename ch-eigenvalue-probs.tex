@@ -281,7 +281,7 @@ never crossing it as x grows.  The second function is the tangent, which
 starts at zero when x equals 0 and then quickly curves up and leaves the picture
 before pi over 2 while crossing the graph of 1 over x the first time.  After pi
 over 2,
-the tangent reappears from the bottom of the picture curves right and then
+the tangent reappears from the bottom of the picture, curves right and then
 left before leaving the picture again before 3 pi over 2.  It crosses the graph of
 1 over x the second time in that interval.  After 3 pi over 2, it reappears from the
 bottom and again goes up and crosses the graph of 1 over x the third time.}
@@ -551,17 +551,18 @@ y'' + \lambda y = 0, \quad y'(0) = 0, \quad y(1) = 0 .
 \end{exercise}
 
 \begin{exercise}
-Suppose that you had a Sturm--Liouville problem on the interval
-$[0,1]$ and came up with
+Suppose that you had a Sturm--Liouville problem (with $r(x)=1$) on the interval
+$[0,\nicefrac{\pi}{\gamma}]$ and came up with
 $y_n(x) = \sin (\gamma n x)$, where $\gamma > 0$ is some constant.
-Decompose $f(x) = x$, $0 < x < 1$ in terms of these eigenfunctions.
+Decompose $f(x) = x$, $0 < x < \nicefrac{\pi}{\gamma}$
+in terms of these eigenfunctions.
 \end{exercise}
 
 \begin{exercise}
 Find eigenvalues and eigenfunctions of
 \begin{equation*}
-y^{(4)}+\lambda y = 0, \quad y(0) = 0, \quad y'(0) = 0, \quad y(1) = 0, \quad
-y'(1) = 0 .
+y^{(4)}-\lambda y = 0, \quad y(0) = 0, \quad y''(0) = 0, \quad y(1) = 0, \quad
+y''(1) = 0 .
 \end{equation*}
 This problem is not a Sturm--Liouville problem, but the idea is the same.
 \end{exercise}
@@ -572,7 +573,7 @@ Find eigenvalues and eigenfunctions for
 \frac{d}{dx} (e^x y') + \lambda e^x y = 0, \quad y(0) = 0, \quad y(1) = 0 .
 \end{equation*}
 %Or at least set up the integrals you would need to solve.
-Hint: First write the system as a constant-coefficient system to find
+Hint: First write the system as a constant-coefficient equation to find
 general solutions.  Do note that \thmvref{sl:slregthm} guarantees $\lambda \geq 0$.
 \end{exercise}
 
@@ -620,6 +621,31 @@ a)~$p(x) = 1$, $q(x) = 0$, $r(x) = \frac{1}{x}$, $\alpha_1 = 1$, $\alpha_2 =
 0$, $\beta_1 = 1$, $\beta_2 = 0$.  The problem is not regular.
 b)~$p(x) = 1+x^2$, $q(x) = x^2$, $r(x) = 1$, $\alpha_1 = 1$, $\alpha_2 =
 0$, $\beta_1 = 1$, $\beta_2 = 1$.  The problem is regular.
+}
+
+\begin{exercise}[challenging]
+On the interval $[1,e]$, consider
+\begin{equation*}
+\frac{d}{dx} (x y') + \lambda \frac{1}{x} y = 0, \quad y(1) = 0,
+\quad y(e) = 0 .
+\end{equation*}
+\begin{tasks}
+\task
+Find the eigenvalues and eigenfunctions.
+Hint: The change of variables $t = \ln x$ helps.
+Note: \thmvref{sl:slregthm} guarantees $\lambda \geq 0$.
+\task
+Expand $f(x) = \ln x$ for $1 < x < e$
+as a series using
+the eigenfunctions you found.
+\end{tasks}
+\end{exercise}
+\exsol{%
+Note that $r(x) = \frac{1}{x}$.
+a)~Eigenvalues are $\lambda_n = n^2\pi^2$ for $n=1,2,3,\ldots$.  Corresponding
+eigenfunctions are $\sin(n \pi \ln x)$.
+b)~$\ln x = \sum\limits_{n=1}^\infty
+\frac{2{(-1)}^{n+1}}{n\pi} \sin(n\pi \ln x)$.
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -828,8 +854,9 @@ y(0,t) = y_{x}(0,t) = 0 .
 Suppose you have a beam of length 5 with free ends.  Let $y$ be the
 transverse deviation of the beam at position $x$ on the beam ($0 < x < 5$).
 You know that the
-constants are such that this satisfies the equation $y_{tt} + 4 y_{xxxx} =
-0$.   Suppose you know that the initial shape of the beam is the graph of
+constants are such that this satisfies the equation
+$4 y_{xxxx} + y_{tt} = 0$.
+Suppose you know that the initial shape of the beam is the graph of
 $x(5-x)$, and the initial velocity is uniformly equal to 2 (same for each $x$)
 in the positive $y$ direction.  Set up the equation together with the
 boundary and initial conditions.  Just set up, do not solve.
@@ -838,13 +865,13 @@ boundary and initial conditions.  Just set up, do not solve.
 \begin{exercise}
 Suppose you have a beam of length 5 with one end free and one end fixed
 (the fixed end is at $x=5$).
-Let $u$ be the
-longitudinal deviation of the beam at position $x$ on the beam ($0 < x < 5$).
+Let $y$ be the
+transverse deviation of the beam at position $x$ on the beam ($0 < x < 5$).
 You know that the
-constants are such that this satisfies the equation $u_{tt} = 4 u_{xx}$.
+constants are such that this satisfies the equation $4 y_{xxxx} + y_{tt} = 0$.
 Suppose you know that the initial displacement of the beam
-is $\frac{x-5}{50}$, and the initial velocity is $\frac{-(x-5)}{100}$
-in the positive $u$ direction.  Set up the equation together with the
+is $\frac{{(x-5)}^2}{50}$, and the initial velocity is $\frac{-(x-5)}{100}$
+in the positive $y$ direction.  Set up the equation together with the
 boundary and initial conditions.  Just set up, do not solve.
 \end{exercise}
 
@@ -1133,12 +1160,16 @@ y_p(x,t) =
 \right)
 \cos (t) .
 \end{equation*}
-Write $B = \frac{\cos (1) - 1}{\sin (1)}$ for simplicity.
+Write $B = \frac{-(\cos (1) - 1)}{\sin (1)}$ for simplicity,
+so
+$y_p(x,t) =
+\bigl(
+\cos (x) + B \sin (x) -1 \bigr) \cos (t)$.
 
 Plug in $t=0$ into $y_p$ to get
 \begin{equation*}
 f(x) =- y_p(x,0) = 
-- \cos x +
+- \cos x -
 B \sin x
 +1 ,
 \end{equation*}
@@ -1149,7 +1180,7 @@ Hence to find $y_c$, we need to solve the problem
 \begin{align*}
 & w_{tt} = w_{xx} , \\
 & w(0,t) = 0 , \quad w(1,t) = 0 , \\
-& w(x,0) = f(x) = - \cos x + B \sin x +1 , \\
+& w(x,0) = f(x) = - \cos x - B \sin x +1 , \\
 & w_t(x,0) = g(x) = 0 ,
 \end{align*}
 and set $y_c=w$.
@@ -1360,8 +1391,8 @@ is $F_0 \sin (\omega t)$.  Derive the particular solution $y_p$.
 Take the forced vibrating string.
 Suppose that $L=1$, $a=1$.  Suppose that the forcing function
 is the square wave that is 1 on the interval $0 < t < \pi$ and
-$-1$ on the interval $-\pi < t < 0$.
-Find the particular solution.  Hint: You may want to use result
+$-1$ on the interval $-\pi < t < 0$ extended periodically.
+Find the particular solution.  Hint: You may want to use the result
 of \exerciseref{sps:sinforceexr}.
 \end{exercise}
 
