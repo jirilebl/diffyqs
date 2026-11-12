@@ -8,7 +8,7 @@ variables in Maxwell's equations.
 isn't any differentiable solution either.  Revise
 the solution in the back for this.
 <li>In subsection 1.5.3, add a couple of sentences about
-the singular solutions arising from solving the separableequation for \(v.\)
+the singular solutions arising from solving the separable equation for \(v.\)
 <li>Fix the erratum on "number of steps and halvings"
 to be about this particular example and getting error under 0.01.
 That requires 9 halvings with standard Euler and 4 halvings with
@@ -75,6 +75,13 @@ changing the exercise change the initial positions and velocities to be
 consistent with the boundary values (square the \(x-5\) in shape).
 <li>Use 31,557,600 for the number of seconds in a year, which is more
 standard.  It also doesn't actually change anything in the calculation.
+<li>At the end of section 6.1, use
+\(\frac{P(s)}{Q(s)}\) rather than
+\(\frac{F(s)}{G(s)}\) to avoid confusion with usage of \(F(s)\) and \(G(s)\)
+elsewhere.
+<li>In subsection 6.2.4, just say "behavior of the system" rather than
+"steady-state behavior of the system" since we don't discuss steady-state
+here.
 <li>In Remark 6.4.1, do not use \(s\) as a dummy variable
 of integration, use \(\tau .\)
 <li>On first page of 7.1, define the terms "coefficients" and "center"
@@ -83,11 +90,18 @@ for completeness.
 in Example 7.1.1 just to make things extra clear.
 <li>In the paragraph explaining 7.1.2, use the same expression as in the
 definition of absolute convergence for clarity.
+<li>Add a bit more detail in the example for using root/ratio test
+for the even series.  Also use \(m\) instead of \(k\) for the index here
+so that it is clearer that it is not the \(k\) from the test.
 <li>In 7.2 and 7.3, say that (parenthetically) P, Q, and R can be
 analytic functions more generally.  This is in fact used in the exercises,
 so we might as well.
 <li><b>In Exercise 7.3.1, add a note to part b about multiples of half being
 diffrent.  Also add part c to show that the solutions (without logs) do not
 work for \(p=1 .\)</b>
+<li><b>Change the equation slightly in Exercise 7.3.3 to fix an erratum.</b>
+The previous one ended up with complex roots rather than real roots
+due to a typo.  The equation should be \(x^2y''+x y' -(1_x) y = 0 .\)
+Note the minus sign.
 <li><b>Exercise A.6.104 changed to ask for integer \(x\)
 as that was intended and that is what the answer in the back assumes.</b>

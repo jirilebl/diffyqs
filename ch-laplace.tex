@@ -194,7 +194,7 @@ $e^{-at}$ & $\frac{1}{s+a}$
 \end{tabular}
 \end{center}
 \caption{Some Laplace transforms ($C$, $\omega$, and $a$ are
-constants).\label{lt:table}}
+constants, $n$ a nonnegative integer).\label{lt:table}}
 \myendframe
 \end{table}
 
@@ -291,7 +291,7 @@ If the limit exists and is finite (usually zero), then $f(t)$ is of
 exponential order.
 
 \begin{exercise}
-Use L'Hopital's rule from calculus to show that a polynomial is of
+Use L'H\^{o}pital's rule from calculus to show that a polynomial is of
 exponential order.  Hint: Note that a sum of two exponential-order functions
 is also of exponential order.  Then show that $t^n$ is of exponential order
 for any $n$.
@@ -480,12 +480,12 @@ Finally, we put it all together with the shifting property to find
 Often, we want to be able to apply the inverse Laplace transform to
 rational functions, that is, functions of the form
 \begin{equation*}
-\frac{F(s)}{G(s)}
+\frac{P(s)}{Q(s)}
 \end{equation*}
-where $F(s)$ and $G(s)$ are polynomials.  If $\frac{F(s)}{G(s)}$ is
+where $P(s)$ and $Q(s)$ are polynomials.  If $\frac{P(s)}{Q(s)}$ is
 the Laplace transform of an exponential-order function,
-it goes to zero as $s \to \infty$, and so the degree of $F(s)$
-must be smaller than that of $G(s)$.  Such rational functions
+it goes to zero as $s \to \infty$, and so the degree of $P(s)$
+must be smaller than that of $Q(s)$.  Such rational functions
 are called \emph{proper rational functions\index{proper rational function}}
 and we can always apply the method of partial fractions without polynomial
 division.
@@ -569,7 +569,7 @@ $\frac{1}{{(s+1)}^2}$
 }
 
 \begin{exercise}
-Find the Laplace transform of $\sin(t)e^{-t}$.  Hint: Integrate by parts.
+Find the Laplace transform of $\sin(t)e^{-t}$.  Hint: Shifting property.
 \end{exercise}
 \exsol{%
 $\frac{1}{s^2+2s+2}$
@@ -858,7 +858,7 @@ past t equals 5.}
 \subsection{Transfer functions}
 
 The Laplace transform leads to the following useful concept for studying the
-steady-state behavior of a linear system.  Consider an equation of the
+behavior of a linear system.  Consider an equation of the
 form
 \begin{equation*}
 L x = f(t) ,
@@ -885,7 +885,7 @@ H(s) = \frac{X(s)}{F(s)} .
 \end{equation*}
 In other words, $X(s) = H(s) F(s)$.  We get an algebraic dependence of
 the output of the system based on the input.  We can now easily study the
-steady-state behavior of the system given different inputs by simply
+behavior of the system given different inputs by simply
 multiplying by the transfer function.
 Moreover, it is possible to compute the $H(s)$ without knowing exactly what
 the equation is by observing the output $X(s)$ for a given input $F(s)$.
@@ -1079,8 +1079,8 @@ Solve $x'' + x = u(t-1)$ for initial conditions $x(0) = 0$ and $x'(0) = 0$.
 \end{exercise}
 
 \begin{exercise}
-Show the \myquote{differentiation of the transform} property.  Suppose
-$\mathcal{L} \bigl\{ f(t) \bigr\} = F(s)$, then show
+Show the \myquote{differentiation of the transform} property.  If
+$\mathcal{L} \bigl\{ f(t) \bigr\} = F(s)$, show
 \begin{equation*}
 \mathcal{L} \bigl\{ -t f(t) \bigr\} = F'(s) .
 \end{equation*}
@@ -1591,7 +1591,7 @@ Laplace transform of $e^{-t^2}$.
 \setcounter{exercise}{100}
 
 \begin{exercise}
-Let $f(t) = \cos t$ for $t \geq 0$, and $g(t) = e^{-t}$.  Compute
+Let $f(t) = \cos t$ and $g(t) = e^{-t}$ for $t \geq 0$.  Compute
 $f * g$.
 \end{exercise}
 \exsol{%
@@ -1788,7 +1788,8 @@ As we can integrate $\delta(t)$, we compute its Laplace transform:
 \mybxbg{~~
 {\mathcal{L}} \bigl\{ \delta(t-a) \bigr\}
 =
-\int_{0}^\infty e^{-st} \delta(t-a) \,dt = e^{-as} .
+\int_{0}^\infty e^{-st} \delta(t-a) \,dt = e^{-as}
+\qquad (a \geq 0).
 ~~}
 \end{equation*}
 In particular,
@@ -1797,7 +1798,7 @@ In particular,
 \end{equation*}
 
 \begin{remark} \label{remark:deltaderivofjump}
-The Laplace transform of $\delta(t-a)$ would be 
+The Laplace transform of $\delta(t-a)$ (where $a \geq 0$) would be 
 the Laplace transform of the derivative of the Heaviside function
 $u(t-a)$, if the Heaviside function had a derivative.
 First,
@@ -1981,7 +1982,7 @@ the vertical direction.  The deflection $y(x)$ satisfies the
 \href{https://en.wikipedia.org/wiki/Daniel_Bernoulli}{Daniel Bernoulli}
 (1700--1782), the nephew of Jacob,
 and
-\href{https://en.wikipedia.org/wiki/Euler}{Leonhard Paul Euler}
+\href{https://en.wikipedia.org/wiki/Leonhard_Euler}{Leonhard Euler}
 (1707--1783).},
 \begin{equation*}
 EI \frac{d^4 y}{dx^4} = F(x) ,
@@ -2549,7 +2550,7 @@ Solve
 \end{exercise}
 
 \begin{exercise}
-Solve
+For $\alpha > 0$, solve
 \begin{align*}
 & y_t + \alpha y_x = 0, \qquad 0 < x < \infty, \enspace t > 0,
 \\
@@ -2567,7 +2568,7 @@ Solve
 \end{exercise}
 
 \begin{exercise}
-For an $\alpha > 0$, solve
+For $\alpha > 0$, solve
 \begin{align*}
 & y_t + \alpha y_x + y = 0, \qquad 0 < x < \infty, \enspace t > 0,
 \\
@@ -2584,6 +2585,8 @@ variable
 & y(0,t) = 1, \quad y(1,t) =  t, \quad y(x,0) = 1-x, \quad y_t(x,0) = 1 .
 \end{align*}
 Do not solve the problem.
+Note that $\mathcal{L} \{ y_{xt} \}
+= \frac{d}{dx} \bigl[ sY(x) - y(x,0) \bigr] = sY'(x) - y_x(x,0)$.
 \end{exercise}
 
 \begin{exercise}
@@ -2623,7 +2626,7 @@ $y=(x-t)u(t-x)+t$
 }
 
 \begin{exercise}
-For a $c > 0$, solve
+For $c > 0$, solve
 \begin{align*}
 & y_t + y_x + c y = 0, \qquad 0 < x < \infty, \enspace t > 0,
 \\
