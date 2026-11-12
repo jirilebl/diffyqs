@@ -101,7 +101,7 @@ diffrent.  Also add part c to show that the solutions (without logs) do not
 work for \(p=1 .\)</b>
 <li><b>Change the equation slightly in Exercise 7.3.3 to fix an erratum.</b>
 The previous one ended up with complex roots rather than real roots
-due to a typo.  The equation should be \(x^2y''+x y' -(1_x) y = 0 .\)
+due to a typo.  The equation should be \(x^2y''+x y' -(1+x) y = 0 .\)
 Note the minus sign.
 <li><b>Exercise A.6.104 changed to ask for integer \(x\)
 as that was intended and that is what the answer in the back assumes.</b>
