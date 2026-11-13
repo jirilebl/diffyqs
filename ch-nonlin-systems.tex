@@ -126,12 +126,16 @@ on the right of the critical point the arrows point roughly upwards,
 and below the critical point the arrows point roughly leftwards.
 The arrows appear longer the further away from the critical point they are.
 Several trajectories are also drawn.  Around the critical point at
-(0,0) there are several egg-shaped trajectories with the pointy end in the
-positive x-direction.  Then there is one trajectory seeming to
-go 'through' the critical point at (1,0) making a loop, although if one
-were to make a loop, one would have to go against the arrows once one goes
-through the critical point.  Then there are several other trajectories,
-there are several trajectories that start on the bottom right go diagonally
+(0,0) there are several egg-shaped trajectories going clockwise
+with the pointy end in the positive x-direction.
+Then there is one trajectory seeming to
+go 'through' the critical point at (1,0) making a loop, although the loop
+starting and ending at the critical point (1,0)
+still goes clockwise around the origin.  So following
+that trajectory would require making a sharp left turn
+at the critical point.
+Then there are several other trajectories that
+start on the bottom right go diagonally
 up but then turn leftwards until they get to the left half of the picture
 staying below the x-axis.
 Then they turn upwards until we
@@ -388,7 +392,7 @@ Find the critical points and linearizations of the following systems.
 \end{exercise}
 
 \begin{exercise}
-For the following systems, verify they have critical point at $(0,0)$,
+For the following systems, verify they have a critical point at $(0,0)$,
 and find the linearization at $(0,0)$.
 \begin{tasks}(2)
 \task $x'=x+2y+x^2-y^2$, \enspace $y'=2y-x^2$
@@ -680,7 +684,7 @@ y equals 1 and
 on the bottom roughly to the right of x equals minus 1 going into the sink.  Other
 trajectories turn toward and leave the picture on the upper left side
 of the plot.}
-\caption{The phase portrait with few sample trajectories of 
+\caption{The phase portrait with a few sample trajectories of 
 $x'=-y-x^2$, $y'=-x+y^2$.  \label{fig:nlin-ex813-new}}
 \end{myfig}
 
@@ -789,7 +793,7 @@ point.
 
 \begin{example}
 An example of such a problematic behavior is the system
-$x'=y, y' = -x+y^3$.  The only critical point
+$x'=y$, $y' = -x+y^3$.  The only critical point
 is the origin $(0,0)$.  The Jacobian matrix is 
 \begin{equation*}
 \begin{bmatrix}
@@ -827,7 +831,7 @@ clockwise direction.  There is a very tightly wound trajectory shown
 that winds out of the critical point and eventually leaves the picture (even
 turning in a different direction from the winding).}
 \caption{An unstable critical point (spiral source) at the origin
-for $x'=y, y' = -x+y^3$, even if the linearization has a center.  \label{fig:nlin-unstable-center}}
+for $x'=y$, $y' = -x+y^3$, even if the linearization has a center.  \label{fig:nlin-unstable-center}}
 \end{myfig}
 \end{example}
 
@@ -945,7 +949,7 @@ For the systems below, find and classify the critical points.
 Also indicate
 if the equilibria are stable, asymptotically stable, or unstable.
 \begin{tasks}(2)
-\task $x'=-x+3x^2, y'=-y$
+\task $x'=-x+3x^2$, $y'=-y$
 \task $x'=x^2+y^2-1$, $y'=x$
 \task $x'=ye^x$, $y'=y-x+y^2$
 \end{tasks}
@@ -985,13 +989,14 @@ the critical point at $(-1,0)$?  Why or why not?
 
 \begin{exercise} \label{exercise:increasing}
 In the example $x'=y$, $y'=y^3-x$,
-show that for any trajectory, the distance
+show that for any trajectory not starting at the origin,
+the distance
 from the origin is an increasing function.
 Conclude
 that at the origin the system behaves like a spiral source.
 Hint: Consider $f(t) =
 {\bigl(x(t)\bigr)}^2 + 
-{\bigl(y(t)\bigr)}^2$ and show it has positive derivative.
+{\bigl(y(t)\bigr)}^2$ and show that $f'(t) \geq 0$.
 \end{exercise}
 
 
@@ -1115,7 +1120,7 @@ variable $\omega = \theta'$:
 The critical points of this system are when $\omega = 0$ and $-\frac{g}{L}
 \sin \theta = 0$, or in other words if $\sin \theta = 0$.  So the critical
 points are when $\omega = 0$ and $\theta$ is a multiple of $\pi$.  That is,
-the points are $\ldots (-2\pi,0), (-\pi,0), (0,0), (\pi,0), (2\pi,0)
+the points are $\ldots, (-2\pi,0), (-\pi,0), (0,0), (\pi,0), (2\pi,0),
 \ldots$.  While there are infinitely many critical points, they are all isolated.
 For conservative equations, there are two types of
 critical points: either stable centers or saddle points.
@@ -1142,9 +1147,9 @@ The
 eigenvalues are going to be purely imaginary 
 when $\cos \theta > 0$.  This happens at the even
 multiples of $\pi$.  Therefore the system has a stable center at
-the points $\ldots (-2\pi,0), (0,0), (2\pi,0) \ldots$, and it has an
+the points $\ldots, (-2\pi,0), (0,0), (2\pi,0), \ldots$, and it has an
 unstable saddle at
-the points $\ldots (-3\pi,0), (-\pi,0), (\pi,0), (3\pi,0) \ldots$.  Look at the
+the points $\ldots, (-3\pi,0), (-\pi,0), (\pi,0), (3\pi,0), \ldots$.  Look at the
 phase diagram in \figurevref{fig:nlin-pend-phasediag},
 where for simplicity we let $\frac{g}{L} = 1$.
 
@@ -1460,11 +1465,11 @@ foxes would go extinct, that is, you would approach the origin.  If you
 started with no foxes and a few hares, then the hares would keep multiplying
 without check, and so you would go away from the origin.
 
-OK\@, how about the other critical point at $(\nicefrac{d}{c},\nicefrac{a}{b})$.  Here
+OK\@, how about the other critical point at $(\nicefrac{d}{c},\nicefrac{a}{b})$?  Here
 the Jacobian matrix becomes
 \begin{equation*}
 \begin{bmatrix}
-0 & -\frac{bd}{c} \\
+0 & \frac{-bd}{c} \\
 \frac{ac}{b} & 0
 \end{bmatrix} .
 \end{equation*}
@@ -1533,17 +1538,17 @@ So $C$ is constant along the trajectories.  In fact, the expression $C =
 trajectories.  In any case, once we have found this constant of motion,
 it must be true that the
 trajectories are simple curves---the level curves of
-$\frac{y^a x^d}{e^{cx+by}}$.  It turns out, the critical point at
+$\frac{y^a x^d}{e^{cx+by}}$.  The critical point at
 $(\nicefrac{d}{c},\nicefrac{a}{b})$ is a maximum for $C$ (left as an exercise).
 So $(\nicefrac{d}{c},\nicefrac{a}{b})$ is a stable equilibrium point, and 
 we do not have to worry about the foxes and hares going extinct or their
 populations exploding.
 
-One blemish on this wonderful model is that the number of foxes and hares
+One blemish on this wonderful model is that the numbers of foxes and hares
 are discrete quantities and we are modeling with continuous variables.  Our
 model has no problem with there being 0.1 fox in the forest for example,
 while in reality that makes no sense.  The approximation is a reasonable one
-as long as the number of foxes and hares are large, but it does not make
+as long as the numbers of foxes and hares are large, but it does not make
 much sense for small numbers.  One must be careful in interpreting any
 results from such a model.
 
@@ -1703,7 +1708,7 @@ $\left[
 \end{smallmatrix}
 \right]$.
 b)~For the specific numbers given, the second critical point is
-$(\frac{550}{3},40)$
+$(\frac{550}{3},40)$, and
 the matrix is
 $\left[
 \begin{smallmatrix}
@@ -1720,15 +1725,15 @@ so something will die out in the forest.
 Suppose the foxes never die.  That is, we have the system $x' = (a-by)x,$ $y' = cxy$.
 Find the critical points and notice they are not isolated.  
 What will happen to the population in the forest if it starts at some
-positive numbers.  Hint: Think of the constant of motion.
+positive numbers?  Hint: Think of the constant of motion.
 \end{exercise}
 \exsol{%
 The critical points are on the line $x=0$.  In the positive
-quadrant the $y'$ is always positive and so the fox population always grows.
+quadrant $y'$ is always positive and so the fox population always grows.
 The constant of motion is $C = y^ae^{-cx-by}$.
 For any $C$, this curve must hit the $y$-axis (why?),
-so the trajectory will simply approach a point on the $y$
-axis somewhere and the number of hares will go to zero.
+so the trajectory will simply approach a point on the
+$y$-axis somewhere and the number of hares will go to zero.
 }
 
 
@@ -1791,8 +1796,8 @@ other physical sciences.
 For simplicity, we use $\mu = 1$.  A
 phase diagram is given in the left-hand plot in
 \figurevref{fig:nlin-van-der-fig}, where $y=x'$ as usual.  Notice how the
-trajectories seem to very quickly settle on a closed curve.  On the
-right-hand side is the plot of a single solution for $t=0$ to $t=30$ with
+trajectories seem to quickly settle on a closed curve, the limit cycle.  On the
+right-hand plot is a single solution for $t=0$ to $t=30$ with
 initial conditions $x(0) = 0.1$ and $x'(0) = 0.1$.  The solution
 quickly tends to a periodic solution.
 \begin{myfig}
@@ -1800,7 +1805,7 @@ quickly tends to a periodic solution.
 %original files nlin-van-der-phase nlin-van-der-plot1
 \diffyincludegraphics{width=6.24in}{width=9in}{nlin-van-der-phase-plot1}{%
 On the left is a phase plane (direction plot) of a Van der Pol oscillator where
-the horizontal axis is the x and the vertical axis is the derivative x
+the horizontal axis is x and the vertical axis is the derivative x
 prime.  The horizontal axis is between minus 4 and 4, and so is the
 vertical.  On this plot the arrows seem to be going around the origin
 in a clockwise manner.
@@ -1867,7 +1872,7 @@ $R$ in the plane.
 \begin{theorem}[Poincar\'e--Bendixson\footnote{%
 \href{https://en.wikipedia.org/wiki/Ivar_Otto_Bendixson}{Ivar Otto Bendixson}
 (1861--1935) was a Swedish mathematician.}]%
-\index{Poincar\'e--Bendixson Theorem}
+\index{Poincar\'e--Bendixson theorem}
 Suppose $R$ is a closed bounded region (a region in the plane that includes
 its boundary and does not have points arbitrarily far from the origin)
 and \eqref{nlin:gensys} has no critical points in $R$.
@@ -1887,6 +1892,8 @@ If $R$ contains critical points, the behavior may be
 more complicated:  The solution could tend towards a loop
 composed of critical points connected by trajectories, or 
 the solution could simply tend towards a critical point.
+You usually apply the theorem by removing from $R$
+a small disc around each critical point.
 The theorem is more a qualitative statement rather than
 something to help us in computations.  In practice, it is hard to either
 find analytic solutions or to show that they exist for all time.
@@ -1896,14 +1903,15 @@ Another caveat is that the theorem only works in two
 dimensions.  In three dimensions and higher, there is simply too much room.
 
 In the Van der Pol oscillator,
-the theorem can be applied to
-all solutions that start at any point except the origin $(0,0)$,
+the theorem applies to
+all solutions that start at any point except the critical point at the origin $(0,0)$,
 and they tend to the
 periodic solution around the limit cycle.
 The initial condition
 of $(0,0)$ gives the constant solution $x=0$, $y=0$.
 
 \begin{example}
+\label{example:repellingpointlimitcycle}
 Consider
 \begin{equation*}
 x' = y + {(x^2+y^2-1)}^2 x, \qquad
@@ -1927,22 +1935,28 @@ and a half times before peeling off and leaving the picture at the top.}
 \end{myfig}
 %\end{mywrapfig}
 
-Notice that points on the unit circle (distance one from the origin)
-satisfy $x^2+y^2-1=0$.  And $x(t) = \sin(t)$, $y(t) = \cos(t)$ is a solution
-of the system.  Therefore we have a closed trajectory.
+Points on the unit circle (distance one from the origin)
+satisfy $x^2+y^2-1=0$, and $x(t) = \sin(t)$, $y(t) = \cos(t)$ is a solution of the system.
+So we have a closed trajectory.
 For points off the unit circle, the second term in
 $x'$ pushes the solution further
 away from the $y$-axis than the system $x' = y$, $y' = -x$,
 and $y'$ pushes the solution further away from the $x$-axis
-than the linear system $x'=y$, $y' = -x$.  In other words, for all
-other initial conditions the trajectory will spiral out.
+than the linear system $x'=y$, $y' = -x$.
+In other words, for all
+initial conditions not on the unit circle
+(and not at the origin) the trajectory will spiral out.
 
-This means that for initial conditions inside the unit circle, the solution
-spirals out towards the periodic solution on the unit circle, and
-for initial conditions outside the unit circle the solutions spiral off
-towards infinity.  Therefore the unit circle is a limit cycle, but
+For initial conditions inside the unit circle (except the origin), the
+solutions
+spiral out towards the periodic solution on the unit circle.
+For initial conditions outside the unit circle the solutions spiral off
+towards infinity.
+Hence the unit circle is a limit cycle, but
 not an asymptotically stable one.
-The Poincar\'e--Bendixson Theorem can be applied to the nonconstant
+Taking a region that avoids a small neighborhood
+of the origin (which is a critical point),
+the Poincar\'e--Bendixson theorem applies to the nonconstant
 solutions with initial points inside
 the unit circle, as those solutions stay bounded, but not to those outside,
 as those solutions go off to infinity.
@@ -1958,11 +1972,11 @@ points outside the unit circle spiral out to infinity, but now points
 inside the unit circle spiral towards the critical point at the origin.
 The unit circle is an unstable limit cycle where
 all trajectories spiral away.
+
 If we consider the linear system $x' = y$, $y' = -x$, then all circles centered
 at the origin (not just the unit circle) are closed trajectories,
 but no trajectory spirals onto any
 other, so none of the circles are limit cycles.
-%By Poincar\'e--Bendixson, 
 All these solutions are periodic.
 
 By Picard's theorem (\thmvref{sys:picardthm}), at any point
@@ -1973,10 +1987,12 @@ as long as $f$ and $g$ have continuous derivatives.  So
 if we find a closed trajectory in an autonomous system,
 then for every initial point inside
 the closed trajectory, the solution will exist for all time and it will stay
-bounded (it will stay inside the closed trajectory).  The moment
-we found the solution above going around the unit circle, we knew that for
-every initial point inside the circle, the solution exists for all time and
-the Poincar\'e--Bendixson theorem applies.
+bounded (it will stay inside the closed trajectory).
+So in the example above,
+the moment we found
+the solution going around the unit circle,
+we know all solutions for initial conditions
+inside the unit circle exist for all time.
 
 \medskip
 
@@ -1993,13 +2009,13 @@ the entire plane minus a point is not a simply connected region as it has a
 \footnote{%
 \href{https://en.wikipedia.org/wiki/Henri_Dulac}{Henri Dulac} (1870--1955)
 was a French mathematician.}]%
-\index{Bendixson--Dulac Theorem}
+\index{Bendixson--Dulac theorem}
 Suppose $R$ is a simply connected region,
 and the expression%
 %Suppose $f$ and $g$ are functions with continuous derivatives in
 %a simply connected region $R$, and
 %If the expression%
-\footnote{Usually the expression in the Bendixson--Dulac Theorem is
+\footnote{Usually the expression in the Bendixson--Dulac theorem is
 $\frac{\partial (\varphi f)}{\partial x} + \frac{\partial (\varphi
 g)}{\partial y}$
 for some continuously differentiable function $\varphi$.  For simplicity,
@@ -2008,7 +2024,7 @@ let us just consider the case $\varphi = 1$.}
 \frac{\partial f}{\partial x} + \frac{\partial g}{\partial y}
 \end{equation*}
 is either always positive or always negative
-on $R$ (except perhaps a small set such as on isolated points or curves)
+on $R$ (except perhaps a small set such as on isolated points or curves),
 then the system \eqref{nlin:gensys}
 has no closed trajectory inside $R$.
 \end{theorem}
@@ -2117,14 +2133,14 @@ That is, the theorem says something about certain elements of $A$.
 \end{exercise}
 
 \begin{exercise}
-Explain why the Bendixson--Dulac Theorem does not apply for any conservative
+Explain why the Bendixson--Dulac theorem does not apply for any conservative
 system $x''+h(x) = 0$.
 \end{exercise}
 
 \begin{exercise}
-A system such as $x'=x, y'=y$ has solutions that exist for all time $t$,
+A system such as $x'=x$, $y'=y$ has solutions that exist for all time $t$,
 yet there are no closed trajectories.  Explain
-why the Poincar\'e--Bendixson Theorem does not apply.
+why the Poincar\'e--Bendixson theorem does not apply.
 \end{exercise}
 
 \begin{exercise}
@@ -2146,7 +2162,7 @@ Show that the following systems have no closed trajectories.
 \end{tasks}
 \end{exercise}
 \exsol{%
-Use Bendixson--Dulac Theorem.
+Use Bendixson--Dulac theorem.
 a) $f_x+g_y = 1+1 > 0$, so no closed trajectories.
 b) $f_x+g_y = -\sin^2(y)+0 < 0$ for all $x,y$ except the lines
 given by $y=k\pi$ (where we get zero), so no closed trajectories.
@@ -2160,12 +2176,12 @@ $x=\cos(t)(1+e^{-t})$, $y=\sin(t)(1+e^{-t})$.  What can you say
 about the system (in particular about limit cycles and periodic solutions)?
 \end{exercise}
 \exsol{%
-Using Poincar\'e--Bendixson Theorem,
+Using Poincar\'e--Bendixson theorem,
 the system has a limit cycle, which is the unit circle centered at the
 origin, as
 $x=\cos(t)(1+e^{-t})$, $y=\sin(t)(1+e^{-t})$ gets closer and closer to the unit
-circle.  Thus $x=\cos(t)$, $y=\sin(t)$ is the periodic
-solution.
+circle.
+Thus $x=\cos(t)$, $y=\sin(t)$ is a periodic solution.
 }
 
 \begin{exercise}
@@ -2178,7 +2194,7 @@ Compare with \figurevref{fig:nlin-van-der-fig}.
 \end{exercise}
 \exsol{%
 $f(x,y) = y$, $g(x,y) = \mu(1-x^2)y-x$.  So
-$f_x+g_y = \mu(1-x^2)$.  The Bendixson--Dulac Theorem
+$f_x+g_y = \mu(1-x^2)$.  The Bendixson--Dulac theorem
 says there is no closed trajectory lying entirely in the set $x^2 < 1$.
 }
 
@@ -2292,7 +2308,7 @@ We can still draw
 trajectories, where $y=x'$ as usual.   
 In \figurevref{nlin:duf-two-traj}, we plot trajectories for $t$ going from 0
 to 15 for two very close initial conditions
-$(2,3)$ and $(2,2.9)$, and also the solutions in the $(x,t)$ space.  The two
+$(2,3)$ and $(2,2.9)$, and also the solutions in the $(x,t)$-space.  The two
 trajectories are close at first, but soon diverge significantly.
 This sensitivity to initial conditions is precisely what
 we mean by the system behaving chaotically.
@@ -2313,15 +2329,16 @@ shapes described.  They are almost indistinguishable on
 the left and almost the same until roughly t equals 7,
 but by the time t is 15 they are visibly different and quite
 far apart.}
-\caption{On left, two trajectories in phase space for $0 \leq t \leq 15$, for the Duffing equation
-one with initial conditions $(2,3)$ and the other with $(2,2.9)$.  On
-right the two solutions in $(x,t)$-space. \label{nlin:duf-two-traj}}
+\caption{On the left, two trajectories in phase space for $0 \leq t \leq 15$ for the Duffing equation,
+one with initial conditions $(2,3)$ and the other with $(2,2.9)$.
+On the right,
+the two solutions in $(x,t)$-space. \label{nlin:duf-two-traj}}
 \end{myfig}
 
 \begin{myfig}
 \capstart
 \diffyincludegraphics{width=6.24in}{width=9in}{nlin-duf-long}{%
-A wide graph for t between 0 and 100 where the vertical x axis goes between
+A wide graph for t between 0 and 100 where the vertical x-axis goes between
 roughly -3 to 3.  The plot shows a function which goes up and down many times
 roughly at the same overall rhythm and the peaks and troughs are very roughly at
 the same height, but each peak has a very different shape with distinct
@@ -2445,10 +2462,10 @@ The picture is the right-hand side of
 It is as if we had
 rotated, moved, and slightly distorted the original.
 For each phase shift you can find the
-set of points towards which the system periodically keeps coming back to.
+set of points towards which the system periodically keeps coming back.
 
-Study the pictures and notice especially the scales---where are
-these attractors located in the phase plane.  Notice the
+Study the pictures and notice especially the scales---where
+these attractors are located in the phase plane.  Notice the
 regions where the strange attractor lives and compare it to the plot of the
 trajectories in \figurevref{nlin:duf-two-traj}.
 
@@ -2474,7 +2491,7 @@ quickly, and we settle into always the same steady periodic motion.
 In two dimensions to find chaotic behavior,
 we must study forced, or non-autonomous, systems such as the Duffing
 equation.
-The Poincar\'e--Bendixson Theorem says that
+The Poincar\'e--Bendixson theorem says that
 a solution to an autonomous
 two-dimensional system that exists for all time in the future
 either goes towards infinity, is periodic, approaches a loop,
@@ -2560,7 +2577,7 @@ not seem to be much of a pattern that one can see.}
 
 \begin{exercise}
 For the non-chaotic equation
-$x''+2p x' + \omega_0^2 x = \frac{F_0}{m} \cos (\omega t)$, suppose we
+$x''+2p x' + \omega_0^2 x = \frac{F_0}{m} \cos (\omega t)$ (assume $p > 0$), suppose we
 strobe with frequency $\omega$ as we mentioned above.  Use the known
 steady periodic solution to find precisely the point which is the attractor
 for the Poincar\'e section.

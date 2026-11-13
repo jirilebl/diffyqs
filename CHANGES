@@ -103,5 +103,11 @@ work for \(p=1 .\)</b>
 The previous one ended up with complex roots rather than real roots
 due to a typo.  The equation should be \(x^2y''+x y' -(1+x) y = 0 .\)
 Note the minus sign.
+<li><b>Change Exercise 8.2.5 slightly to fix erratum.</b> Obviously, we are
+not talking about the constant solution starting at the origin.
+<li><b>In Exercise 8.5.1, explicitly assume that \(p \gt 0 .\)</b>
+<li>Improve wording around the Poincare-Bendixson theorem to mention how it
+is applied, in particular we remove a little disc around
+the critical points.  Also mention this in the example.
 <li><b>Exercise A.6.104 changed to ask for integer \(x\)
 as that was intended and that is what the answer in the back assumes.</b>
