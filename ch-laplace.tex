@@ -12,11 +12,11 @@
 
 \subsection{The transform}
 
-In this chapter, we will discuss the Laplace transform%
+In this chapter, we will discuss the Laplace transform.%
 \footnote{Just like the Laplace equation and the Laplacian, the Laplace
 transform is also named after 
 \href{https://en.wikipedia.org/wiki/Laplace}{Pierre-Simon, marquis de Laplace}
-(1749--1827).}.
+(1749--1827).}
 The Laplace transform
 is a very efficient method to solve certain ODE or PDE problems.
 The transform takes a differential equation and turns it into
@@ -40,7 +40,8 @@ m x''(t) + c x'(t) + k x(t) = f(t) .
 We can think of $t$ as time and $f(t)$ as incoming signal.  The Laplace
 transform will convert the equation from a differential equation in time to
 an algebraic (no derivatives) equation, where the new independent variable
-$s$ is thought of as the frequency.\footnote{Really, it is the \myquote{frequency} in terms
+$s$ is thought of as the frequency.%
+\footnote{Really, it is the \myquote{frequency} in terms
 of complex numbers, but we digress.}
 
 We can think of the \emph{\myindex{Laplace transform}} as a black box.  It
@@ -122,12 +123,12 @@ Again, the limit only exists if $s > 0$.
 
 \begin{example}
 A common function is the \emph{\myindex{unit step function}}, which is
-sometimes called the \emph{\myindex{Heaviside function}}%
+sometimes called the \emph{\myindex{Heaviside function}}.%
 \footnote{The function is named after the English mathematician, engineer, and
 physicist
 \href{https://en.wikipedia.org/wiki/Heaviside}{Oliver Heaviside}
 (1850--1925).  Only
-by coincidence is the function \myquote{heavy} on \myquote{one side.}}.
+by coincidence is the function \myquote{heavy} on \myquote{one side.}}
 This function is generally given as
 \begin{equation*}
 u(t) = 
@@ -1926,7 +1927,7 @@ h''(t-\tau) \, d\tau
 = (f * h'')(t) .
 \end{equation*}
 We differentiate twice under the
-integral\footnote{%
+integral.\footnote{%
 You may be worried about the fact that our $h$
 is not really twice differentiable, in fact, $h'(0)$
 does not exist as a normal derivative, and $h''$ involves
@@ -1936,7 +1937,7 @@ for this computation and either apply the standard
 Leibniz rule (that $h(t)=0$ for $t < 0$ is important) or
 note that for such functions,
 the integral is actually over
-$(-\infty,\infty)$ rather than over $[0,t]$.}.
+$(-\infty,\infty)$ rather than over $[0,t]$.}
 Suppose that $h(t)$ is the impulse response (solution to $h''+\omega_0^2 h = \delta(t)$).
 If we convolve the entire equation \eqref{eq:lteximpulseresp},
 the left-hand side becomes
@@ -1975,7 +1976,7 @@ representing point loads on a steel beam.  Consider a beam
 of length $L$, resting on two simple supports at the ends.  Let $x$ denote
 the position on the beam, and let $y(x)$ denote the deflection of the beam in
 the vertical direction.  The deflection $y(x)$ satisfies the
-\emph{\myindex{Euler--Bernoulli equation}}%
+\emph{\myindex{Euler--Bernoulli equation}},%
 \footnote{Named for the Swiss mathematicians
 \href{https://en.wikipedia.org/wiki/Jacob_Bernoulli}{Jacob Bernoulli}
 (1654--1705),
@@ -1983,7 +1984,7 @@ the vertical direction.  The deflection $y(x)$ satisfies the
 (1700--1782), the nephew of Jacob,
 and
 \href{https://en.wikipedia.org/wiki/Leonhard_Euler}{Leonhard Euler}
-(1707--1783).},
+(1707--1783).}
 \begin{equation*}
 EI \frac{d^4 y}{dx^4} = F(x) ,
 \end{equation*}
@@ -2178,8 +2179,9 @@ $3 \delta(t-1) + 2 t$
 \sectionnotes{1--1.5 lecture, can be skipped}
 
 The Laplace transform comes from the same family of transforms as does the
-Fourier series\footnote{There is also a Fourier transform
-on the real line that looks sort of like the Laplace transform.},
+Fourier series,%
+\footnote{There is also a Fourier transform
+on the real line that looks sort of like the Laplace transform.}
 which we used in \chapterref{FS:chapter} to solve partial differential
 equations (PDEs).
 It is therefore not surprising that we can also solve PDEs with the Laplace
@@ -2223,8 +2225,8 @@ and the t-axis labeled y equals C.}
 A physical setup of this equation is a river of viscous goo,
 as we do not want anything to diffuse.  The function
 $y$ is the concentration of
-some toxic substance\footnote{It's a river of goo already.
-We're not hurting the environment much more.}.
+some toxic substance.\footnote{It's a river of goo already.
+We're not hurting the environment much more.}
 The variable $x$ denotes position, where $x=0$
 is the location of a factory spewing the toxic substance into the
 river.  The toxic substance flows into the river so that at $x=0$ the
